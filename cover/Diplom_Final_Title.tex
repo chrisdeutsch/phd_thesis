@@ -1,0 +1,39 @@
+%
+% Title page layout for printed version
+%
+\titlehead{%
+  \centering
+  {\fontsize{44}{50}\selectfont
+    Universität Bonn}
+
+  \vspace*{20pt}
+
+  \begin{singlespace}
+    \fontsize{30}{40}\selectfont
+    \InstituteName
+  \end{singlespace}
+}
+\title{\thesistitle}
+\author{\LARGE\thesisauthor}
+\date{}
+\publishers{\vspace*{\fill}
+  \raggedright
+  {\normalsize
+    \begin{otherlanguage}{ngerman}
+      Dieser Forschungsbericht wurde als Diplomarbeit von der
+      Mathematisch-Naturwissenschaftlichen Fakultät der Universität Bonn
+      angenommen.
+    \end{otherlanguage}
+
+    \vspace*{10ex minus 4ex}
+
+    \noindent
+    \begin{tabular}{@{}ll}
+      Angenommen am:         & \thesissubmit\\
+      \thesisrefereeonetext: & \thesisrefereeone\\
+      \thesisrefereetwotext: & \thesisrefereetwo
+    \end{tabular}
+  }
+}
+
+\forcetwosidetitle

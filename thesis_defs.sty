@@ -1,0 +1,39 @@
+% A few useful definitions.
+\newcommand{\mysim}{\sim\!}
+\newcommand{\mysimeq}{\simeq\!}
+
+\newcommand{\pho}{\phantom{0}}
+\newcommand{\phplus}{\phantom{+}}
+
+% Better is to use the commath or physics packages.
+% \newcommand{\dif}{\text{d}}
+
+% HEP units - assuming you are using siunitx
+\DeclareSIUnit\clight{\text{\ensuremath{c}}}
+\DeclareSIUnit[per-mode=symbol]\MeVovercsq{\MeV\per\clight\squared}
+\DeclareSIUnit[per-mode=symbol]\GeVovercsq{\GeV\per\clight\squared}
+\DeclareSIUnit\pb{\pico\barn}
+\DeclareSIUnit\invpb{\per\pico\barn}
+
+% Particles - see also the hepnicenames/heppennames/hepparticles packages.
+\newcommand*{\KoS}{\ensuremath{K_{S}^{0}}\xspace}
+
+% Kinematics
+\newcommand*{\pTmiss}{\ensuremath{p_{\text{T}}^{\text{miss}}}\xspace}
+
+% If you use the siunitx package include any decimal number in \SI or \num
+% e.g. \num{2.3} \SI{2.3E4}{\GeV}. The decimal point will be replaced
+% by a comma if you switch your document language to German!
+% You do this by specifying the locale in siunitx.
+%
+% The old way to achieve this is commented out here.
+% Include the following definition to
+% make ',' an ordinary symbol in decimal numbers
+%\DecimalMathComma
+% \mathchardef\CommaOrdinary="013B
+% \mathchardef\CommaPunct   ="613B
+% \mathcode`,="8000   % , im Math-Mode aktiv ("8000) machen
+% {\catcode`\,=\active
+%  \gdef ,{\obeyspaces\futurelet\next\CommaCheck}}
+% \def\CommaCheck{\if\space\next\CommaPunct\else\CommaOrdinary\fi}
+

@@ -1,0 +1,68 @@
+\documentclass[Master, Submit, ngerman, UKenglish]{scrbook}
+%------------------------------------------------------------------------------
+% Wrapper for producing cover pages for theses in
+% a Physics or Astronomy Institute in the University of Bonn
+
+% Specify the thesis type as an option: PhD, Master, Diplom, Bachelor
+% Specify the thesis stage as an option: Draft (default), Submit, Final, PILibrary
+%------------------------------------------------------------------------------
+% Pass TeX Live version to the package
+% Use command pdflatex --version to find out which version you are running
+\usepackage[twoside=false, texlive=2017]{ubonn-thesis}
+
+%------------------------------------------------------------------------------
+% The following definitions are used to produce the title pages
+% needed at various stages
+\newcommand{\thesistitle}{Title of the Thesis}
+\newcommand*{\thesisauthor}{Author's name}
+\newcommand*{\thesistown}{Place of birth}
+\renewcommand*{\InstituteName}{\PI}
+\renewcommand*{\inInstitute}{\inPI}
+\renewcommand*{\InstituteAddress}{\PIaddress}
+% Adjust \thesisreferee...text depending on male/female referee
+\newcommand*{\thesisrefereeonetext}{1.\ Gutachter}
+\newcommand*{\thesisrefereeone}{Prof.\ Dr.\ John Smith}
+\newcommand*{\thesisrefereetwotext}{2.\ Gutachterin}
+\newcommand*{\thesisrefereetwo}{Prof.\ Dr.\ Anne Jones}
+% Date when thesis was submitted (Master/Diplom)
+% Year or Month, Year when thesis was submitted (PhD)
+\newcommand*{\thesissubmit}{XX.YY.2021}
+% \newcommand*{\thesissubmit}{Month 2021}
+% Date of thesis examination (PhD)
+\newcommand*{\thesispromotion}{XX.YY.2021}
+% Month and year of the final printed version of the thesis
+\newcommand*{\thesismonth}{MMM}
+\newcommand*{\thesisyear}{2021}
+\newcommand*{\thesisnumber}{BONN-IR-2021-XXX}
+% Dedication
+% \newcommand*{\thesisdedication}{}
+
+%------------------------------------------------------------------------------
+% The abstract is only needed for the printed version and should be in
+% English regardless of the language of the thesis
+\newcommand{\thesisabstract}{%
+  This thesis is the result of many years of research into how to format
+  a document using \LaTeX. It contains examples and recommendations on
+  what packages to use and how to use them. It makes no attempt to be
+  an introduction to \LaTeX. Indeed some basic \LaTeX{} knowledge is assumed. 
+  It is geared to (particle) physics theses, but may be useful for others.
+  In order to make the abstract longer, we simply repeat it!
+  This thesis is the result of many years of research into how to format
+  a document using \LaTeX. It contains examples and recommendations on
+  what packages to use and how to use them. It makes no attempt to be
+  an introduction to \LaTeX. Indeed some basic \LaTeX{} knowledge is assumed. 
+  It is geared to (particle) physics theses, but may be useful for others.
+}
+
+%------------------------------------------------------------------------------
+% Give a list of directories where figures can be found. Do not leave
+% any spaces in the list and end the directory name with a /
+\graphicspath{{figs/cover/}}
+
+%------------------------------------------------------------------------------
+\begin{document}
+
+% Make cover and title pages
+\makethesistitle
+
+\end{document}

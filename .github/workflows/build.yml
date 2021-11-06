@@ -1,0 +1,16 @@
+name: Make PDF
+on: [push]
+jobs:
+  Compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Compilation
+        uses: ./.github/actions/latexmk-action
+      - name: Upload Document
+        uses: actions/upload-artifact@v2
+        with:
+          name: thesis
+          path: phd_thesis.pdf
+          if-no-files-found: error

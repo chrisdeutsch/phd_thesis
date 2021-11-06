@@ -1,0 +1,57 @@
+% Cover page layout for the department library version
+
+% Adjust the left margin to compensate for twoside option.
+% The size of the adjustment may have to be adjusted 
+% if you change the fraction of the page area that is used for the text.
+
+{\thispagestyle{empty}
+\begin{addmargin}[\UBNcoveroffset]{-\UBNcoveroffset}
+  % \addtolength{\oddsidemargin}{1.0cm}\addtolength{\topmargin}{1.0cm}
+  \rmfamily\setlength{\parindent}{0pt}
+  \begin{center}
+    {\fontsize{44}{50}\selectfont
+      Universität Bonn}
+
+    \vspace*{20pt}
+
+    \begin{singlespace}
+      \fontsize{30}{40}\selectfont
+      \InstituteName
+    \end{singlespace}
+
+    \vspace*{40pt}
+
+    \begin{onehalfspace}
+      \bfseries\huge
+      \thesistitle
+    \end{onehalfspace}
+
+    \vspace*{20pt}
+
+    {\LARGE
+      \thesisauthor
+    }
+  \end{center}
+
+  \vspace*{\fill}
+
+  \thesisabstract
+
+  \vspace*{\fill}
+
+  {\normalfont\normalsize
+    \parbox{0.3\textwidth}{\InstituteAddress}
+    \hspace{\fill}
+    \parbox{0.35\textwidth}{%
+      \centering
+      \includegraphics[width=5cm]{instituts_siegel}
+    }
+    \hspace{\fill}
+    \parbox{0.3\textwidth}{%
+      \thesisnumber\\
+      \thesismonth{} \thesisyear\\
+      ISSN-0172-8741
+    }
+  }
+\end{addmargin}
+}

@@ -1,0 +1,884 @@
+%------------------------------------------------------------------------------
+% Style file for a thesis written in the University of Bonn
+%
+% Note that "make update" can overwrite this file.
+%
+% See CHANGELOG.md or Git log for history of changes.
+% Responsible: Ian Brock (brock@physik.uni-bonn.de).
+%------------------------------------------------------------------------------
+\ProvidesPackage{ubonn-thesis}[2021/07/01 Version 9.0.0 University of Bonn thesis package]
+\NeedsTeXFormat{LaTeX2e}
+% Needs 2013 TeX Live or later - this contains 2011/06/27 version of LaTeX.
+\NeedsTeXFormat{LaTeX2e}[2011/01/01]
+
+% Set TeX Live version
+\providecommand*{\texlive}{2017}
+
+% Set institute information
+\providecommand*{\InstituteName}{\PI}
+\providecommand*{\inInstitute}{\inPI}
+\providecommand*{\InstituteAddress}{\PIaddress}
+
+% Thesis type
+\providecommand*{\ThesisType}{Unknown}
+\providecommand*{\ThesisVersion}{Draft}
+
+% ifthen package gives more possibilities than native \if
+\RequirePackage{ifthen}
+
+%-------------------------------------------------------------------------------
+% Use kvoptions package to set options
+% \RequirePackage{xkvltxp}
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{
+  family=UBN,
+  prefix=UBN@
+}
+\DeclareBoolOption[false]{PhD}
+\DeclareBoolOption[false]{Master}
+\DeclareBoolOption[false]{Diplom}
+\DeclareBoolOption[false]{Bachelor}
+\DeclareBoolOption[false]{Draft}
+\DeclareBoolOption[false]{Submit}
+\DeclareBoolOption[false]{Final}
+\DeclareBoolOption[false]{PILibrary}
+\DeclareStringOption{thesistype}
+\DeclareStringOption{thesisversion}
+
+\DeclareBoolOption[true]{twoside}
+\DeclareBoolOption[true]{newtx}
+\DeclareBoolOption[false]{txfonts}
+\DeclareBoolOption[false]{palatino}
+\DeclareBoolOption[false]{fontname}
+\DeclareBoolOption[true]{subcaption}
+\DeclareBoolOption[false]{subfig}
+\DeclareBoolOption[false]{subfigure}
+\DeclareBoolOption[false]{xtab}
+\DeclareBoolOption[true]{longtable}
+\DeclareBoolOption[false]{supertabular}
+\DeclareBoolOption[true]{tableheading}
+\DeclareBoolOption[true]{biblatex}
+\DeclareBoolOption[true]{siunitx}
+\DeclareBoolOption[false]{eVkern}
+\DeclareBoolOption[false]{dcolumn}
+\DeclareBoolOption[false]{diffcoeff}
+\DeclareBoolOption[false]{derivative}
+\DeclareBoolOption[false]{physics}
+\DeclareBoolOption[true]{hepparticles}
+\DeclareBoolOption[true]{hepitalic}
+\DeclareBoolOption[true]{mhchem}
+\DeclareBoolOption[true]{bookmark}
+\DeclareBoolOption[false]{feynmf}
+\DeclareBoolOption[false]{feynmp}
+\DeclareBoolOption[false]{titlesec}
+\DeclareBoolOption[false]{astrobib}
+\DeclareBoolOption[true]{floatopt}
+\DeclareBoolOption[false]{todonotes}
+\DeclareBoolOption[false]{shownotes}
+\DeclareBoolOption[true]{cleveref}
+\DeclareBoolOption[true]{clevercaps}
+\DeclareBoolOption[false]{firstinits}
+\DeclareBoolOption[false]{showframe}
+\DeclareStringOption[1cm]{coveroffset}
+\DeclareStringOption{texlive}
+\DeclareStringOption[biber]{backend}
+\DeclareStringOption{bibencoding}
+\DeclareStringOption[numeric-comp]{bibstyle}
+\ProcessKeyvalOptions*
+
+%-------------------------------------------------------------------------------
+% TeX Live version specified as an option
+\ifthenelse{\equal{\UBN@texlive}{}}{}{%
+  \renewcommand*{\texlive}{\UBN@texlive}
+}
+\typeout{ubonn-thesis: texlive is [\texlive].}
+
+% Thesis type specified as an option
+\ifthenelse{\boolean{UBN@PhD}}{%
+  \typeout{ubonn-thesis: setting things up for a PhD thesis.}
+  \renewcommand*{\ThesisType}{PhD}
+}{%
+  \ifthenelse{\boolean{UBN@Master}}{%
+    \typeout{ubonn-thesis: setting things up for a Master thesis.}
+    \renewcommand*{\ThesisType}{Master}
+  }{%
+    \ifthenelse{\boolean{UBN@Diplom}}{%
+      \typeout{ubonn-thesis: setting things up for a Diplom thesis.}
+      \renewcommand*{\ThesisType}{Diplom}
+    }{%
+      \ifthenelse{\boolean{UBN@Bachelor}}{%
+        \typeout{ubonn-thesis: setting things up for a Bachelor thesis.}
+        \renewcommand*{\ThesisType}{Bachelor}
+      }{}
+    }
+  }
+}
+
+% PI library thesis version - includes extra cover page
+\ifthenelse{\boolean{UBN@PILibrary}}{%
+  \typeout{ubonn-thesis: creating version for PI library.}
+  \renewcommand*{\ThesisVersion}{PILibrary}
+}{}
+% Submission version of thesis
+\ifthenelse{\boolean{UBN@Submit}}{%
+  \typeout{ubonn-thesis: creating submission version of thesis.}
+  \renewcommand*{\ThesisVersion}{Submit}
+}{}
+% Final print version of thesis
+\ifthenelse{\boolean{UBN@Final}}{%
+  \typeout{ubonn-thesis: creating final version of thesis for print shop and ULB.}
+  \renewcommand*{\ThesisVersion}{Final}
+}{}
+
+% Thesis type/version specified as a string
+\ifthenelse{\equal{\UBN@thesistype}{}}{}{%
+  \renewcommand*{\ThesisType}{\UBN@thesistype}
+}
+\ifthenelse{\equal{\UBN@thesisversion}{}}{}{%
+  \renewcommand*{\ThesisVersion}{\UBN@thesisversion}
+}
+
+% Test if we are runnibng pdflatex or xelatex.
+\RequirePackage{iftex}
+
+% Some hacks to get rid of KOMA-Script warnings.
+\RequirePackage{scrhack}
+
+% Font control for pdfLaTeX. Only one font package at a time!
+\ifthenelse{\boolean{PDFTeX}}{%
+  \ifthenelse{\boolean{UBN@txfonts}}{%
+    \typeout{ubonn-thesis: using pdflatex and txfonts fonts.}
+    \UBN@newtxfalse
+    \UBN@palatinofalse
+  }{%
+    \ifthenelse{\boolean{UBN@palatino}}{%
+      \typeout{ubonn-thesis: using pdflatex and Palatino fonts.}
+      \UBN@txfontsfalse
+      \UBN@newtxfalse
+    }{%
+      \ifthenelse{\boolean{UBN@newtx}}{%
+        \typeout{ubonn-thesis: using pdflatex and newtx fonts.}
+        \UBN@txfontsfalse
+        \UBN@palatinofalse
+      }{}
+    }
+  }
+}{}
+
+% Font control for XeLaTeX. Only one font package at a time!
+\ifthenelse{\boolean{XeTeX}}{%
+  \ifthenelse{\boolean{UBN@txfonts}}{%
+    \typeout{ubonn-thesis: using xelatex and TeX Gyre Termes fonts.}
+    \UBN@newtxfalse
+    \UBN@palatinofalse
+  }{%
+    \ifthenelse{\boolean{UBN@palatino}}{%
+      \typeout{ubonn-thesis: using xelatex and TeX Gyre Pagella fonts.}
+      \UBN@txfontsfalse
+      \UBN@newtxfalse
+    }{%
+      \ifthenelse{\boolean{UBN@newtx}}{%
+        \typeout{ubonn-thesis: using xelatex and TeX Gyre Termes fonts.}
+        \UBN@txfontsfalse
+        \UBN@palatinofalse
+      }{}
+    }
+  }
+}{}
+
+% Font control for XeLaTeX. Only one font package at a time!
+\ifthenelse{\boolean{LuaTeX}}{%
+  \ifthenelse{\boolean{UBN@txfonts}}{%
+    \typeout{ubonn-thesis: using lualatex and TeX Gyre Termes fonts.}
+    \UBN@newtxfalse
+    \UBN@palatinofalse
+  }{%
+    \ifthenelse{\boolean{UBN@palatino}}{%
+      \typeout{ubonn-thesis: using lualatex and TeX Gyre Pagella fonts.}
+      \UBN@txfontsfalse
+      \UBN@newtxfalse
+    }{%
+      \ifthenelse{\boolean{UBN@newtx}}{%
+        \typeout{ubonn-thesis: using lualatex and TeX Gyre Termes fonts.}
+        \UBN@txfontsfalse
+        \UBN@palatinofalse
+      }{}
+    }
+  }
+}{}
+
+% xtab and supertabular do not mix
+\ifthenelse{\boolean{UBN@supertabular}}{%
+  \UBN@xtabfalse
+}{%
+  \ifthenelse{\boolean{UBN@xtab}}{%
+    \UBN@supertabularfalse
+  }{}
+}
+
+% Only one subfigure package at a time!
+\ifthenelse{\boolean{UBN@subfigure}}{%
+  \UBN@subfigfalse
+  \UBN@subcaptionfalse
+}{%
+  \ifthenelse{\boolean{UBN@subfig}}{%
+    \UBN@subfigurefalse
+    \UBN@subcaptionfalse
+  }{%
+    \ifthenelse{\boolean{UBN@subcaption}}{%
+      \UBN@subfigurefalse
+      \UBN@subfigfalse
+    }{}
+  }
+}
+
+% Use firstinits or giveninits
+\ifthenelse{\texlive < 2016}{%
+  \newcommand*{\UBN@initials}{firstinits=true}
+}{%
+  \newcommand*{\UBN@initials}{giveninits=true}
+}
+
+% If asked to show notes also turn on todonotes
+\ifthenelse{\boolean{UBN@shownotes}}{\UBN@todonotestrue}{}
+
+% Specify the language(s) in the documentclass and then use babel.
+\RequirePackage{babel}
+
+% Define a variable with the language to pass to todonotes and cleveref
+\RequirePackage{iflang}
+\typeout{ubonn-thesis: current language is \languagename.}
+\IfLanguageName{ngerman}{%
+  \typeout{ubonn-thesis: setting language to ngerman.}
+  \newcommand*{\UBN@language}{ngerman}
+}{%
+  \typeout{ubonn-thesis: setting language to english.}
+  \newcommand*{\UBN@language}{english}
+}
+
+%------------------------------------------------------------------------------
+% General KOMA script options - other options affecting header/footer
+% section titles and captions are at the end of this file
+\KOMAoptions{fontsize=11pt, paper=a4}
+% Header and footer - if scrlayer-scrpage is not available try scrpage2 instead.
+\RequirePackage[headsepline]{scrlayer-scrpage}
+% Add List of Figures/Tables to Table of Contents
+\KOMAoptions{listof=totoc}
+% Commands to add bibliography to the Table of Contents are in the main file
+% For biblatex, add option [heading=bibintoc] to \printbibliography
+% For traditional BibTeX, add option \KOMAoptions{toc=bibliography}
+% No paragraph indentation, but instead half-line space
+% \KOMAoptions{parskip=half}
+
+%------------------------------------------------------------------------------
+% Page layout
+% You can either use geometry or the built-in typearea
+% typearea allows you to easily take into account extra space needed
+% for binding using the BCOR parameter.
+% The DIV parameter tells it how many elements the page
+% should be split into.
+% \RequirePackage[scale=0.75]{geometry}
+\KOMAoptions{headinclude=true, footinclude=false}
+\KOMAoptions{DIV=12}
+\newlength{\UBNcoveroffset}
+\ifthenelse{\boolean{UBN@twoside}}{
+  \typeout{ubonn-thesis: set twoside option true.}
+  \KOMAoptions{twoside=true}
+  \typeout{ubonn_thesis: apply BCOR correction of 5mm.}
+  \KOMAoptions{BCOR=5mm}
+  \typeout{ubonn-thesis: centre cover/title page.}
+  \KOMAoptions{titlepage=firstiscover}
+  \setlength{\UBNcoveroffset}{\UBN@coveroffset}
+}{%
+  \typeout{ubonn-thesis: set twoside option false.}
+  \KOMAoptions{twoside=false}
+  \setlength{\UBNcoveroffset}{0pt}
+}
+
+% Title page should include \lowertitleback etc., even with twoside=false.
+% Fix from https://tex.stackexchange.com/questions/113713/substituting-lowerbacktitle-in-one-sided-document
+\newcommand*{\forcetwosidetitle}[1][1]{%
+ \begingroup
+   \cleardoubleoddpage
+   % \KOMAoptions{titlepage=true}% useful e.g. for scrartcl
+   \csname @twosidetrue\endcsname
+   \maketitle[{#1}]
+ \endgroup
+}
+
+% Cover and title pages of thesis
+\newcommand{\makethesistitle}{%
+  % Only needed for the printed final version to be submitted to the department library
+  % Do not use this page for thesis submission to the Prüfungsamt or Promotionsbüro!
+  \ifthenelse{\equal{\ThesisVersion}{PILibrary}}{%
+    \typeout{Document \jobname, Info: PI library version of thesis}
+    \input{cover/\ThesisType_Cover}
+  }{}
+
+  % Start counting pages from the title page
+  \frontmatter
+
+  % Dedication has to come before \maketitle
+  \@ifundefined{thesisdedication}{\typeout{ubonn-thesis: thesis dedication not defined}}{%
+    \ifthenelse{\equal{\thesisdedication}{}}{\typeout{ubonn-thesis: empty thesis dedication}}{%
+        \dedication{\thesisdedication}
+    }
+  }
+  % \ifdef{\thesisdedication}{%
+  %   \ifthenelse{\equal{\thesisdedication}{}}{}{%
+  %     \dedication{\thesisdedication}
+  %   }{%
+  %     \typeout{ubonn-thesis: empty thesis dedication}
+  %   }
+  % }
+
+  % Select the correct title page(s)
+  \ifthenelse{\equal{\ThesisType}{Unknown}}{%
+    \typeout{Document \jobname, Error: Unknown thesis type - no title page printed}
+  }{%
+    % Bachelor thesis only has one title page
+    \ifthenelse{\equal{\ThesisType}{Bachelor}}{%
+      \typeout{Document \jobname, Info: Bachelor thesis}
+      \input{cover/\ThesisType_Title}
+    }{%
+      \ifthenelse{\equal{\ThesisVersion}{Final} \OR \equal{\ThesisVersion}{PILibrary}}{%
+        % Final and PI library versions
+        \typeout{Document \jobname, Info: Final version of a \ThesisType  thesis}
+        \input{cover/\ThesisType_Final_Title}
+      }{% Submission and draft versions
+        \input{cover/\ThesisType_Submit_Title}
+        \typeout{Document \jobname, Info: Draft/submission version of a \ThesisType  thesis}
+      }
+    }
+  }
+}
+
+%-------------------------------------------------------------------------------
+% Math packages that have to come early 
+% AMS math (for some font collections this has to come before their selection)
+% \RequirePackage{amsmath, amssymb}
+
+%-------------------------------------------------------------------------------
+% Fonts for pdfLaTeX
+\ifthenelse{\boolean{PDFTeX}}{%
+  \typeout{ubonn-thesis: setting fonts for pdflatex.}
+  % Input encoding, font and language
+  \RequirePackage[utf8]{inputenc}
+
+  % New version of the txfonts times-roman font
+  \ifthenelse{\boolean{UBN@newtx}}{%
+    \RequirePackage{newtxtext}
+    \RequirePackage{newtxmath}
+  }{}
+  % Times-roman font
+  \ifthenelse{\boolean{UBN@txfonts}}{%
+    \RequirePackage[varg]{txfonts} % Used in ATLAS papers
+    \RequirePackage[T1]{fontenc}
+  }{}
+  % Palatino for rm and math | Helvetica for ss | Courier for tt
+  \ifthenelse{\boolean{UBN@palatino}}{%
+    \RequirePackage{mathpazo} % math & rm
+    \linespread{1.05}         % Palatino needs more leading (space between lines)
+    \RequirePackage[scaled]{helvet} % ss
+    \RequirePackage{courier}  % tt
+    \normalfont
+    \RequirePackage[T1]{fontenc}
+  }{}
+  % Other font collections one can consider
+  % \RequirePackage{lmodern}
+  % Variations with times
+  % \RequirePackage{mathptmx}      % Included as an option in ATLAS papers
+  % \RequirePackage{times}
+  % Math design
+  % \RequirePackage[utopia]{mathdesign}
+  % \RequirePackage[charter]{mathdesign}
+  % Palatino
+  % \RequirePackage{pxfonts}
+  % Collections with different fonts for numbers in text and math mode
+  % \RequirePackage{bookman}
+  % \RequirePackage{newcent}
+  % \RequirePackage{palatino}
+  
+  % Turn on bold math when using \bfseries
+  \def\bfseries{\fontseries\bfdefault\selectfont\boldmath}
+}{}
+
+%------------------------------------------------------------------------------
+% csquotes is recommended for quoting correctly for the language used
+% The option autostyle=true continuously adapts the style to the language.
+% Use autostyle=once to fix it to the main language of the document.
+% \RequirePackage[german=guillemets,autostyle=true,style=mythesis]{csquotes}
+\RequirePackage[autostyle=true]{csquotes}
+% \RequirePackage[german=guillemets,autostyle=true]{csquotes}
+
+% It seems common in British documents to use American-like quotes,
+% i.e. outer double quotes and inner single quotes
+% The following commands define a new variant called myenglish
+% and then use this variant if the language is set to british or UKenglish
+\DeclareQuoteStyle[mybritish]{myenglish}%
+  {\textquotedblleft}{\textquotedblright}%
+  {\textquoteleft}{\textquoteright}
+\DeclareQuoteAlias[mybritish]{myenglish}{myenglish}
+\DeclareQuoteAlias{myenglish}{british}
+\DeclareQuoteAlias{myenglish}{UKenglish}
+
+% It is possible for you to define your own quotation style
+% \DeclareQuoteStyle{mythesis}%
+%   {\textquotedblleft}{\textquotedblright}%
+%   {\textquoteleft}{\textquoteright}
+% \setquotestyle{mythesis}
+
+%-------------------------------------------------------------------------------
+% Extensions to amsmath.
+\RequirePackage{mathtools}
+
+%-------------------------------------------------------------------------------
+% Nicer fractions - load before siunitx for older versions of TeX Live.
+\RequirePackage{xfrac}
+
+%-------------------------------------------------------------------------------
+\ifthenelse{\boolean{UBN@siunitx}}{%
+  \RequirePackage{siunitx}
+  \sisetup{separate-uncertainty}
+  \sisetup{range-units=single, list-units=single}
+  \sisetup{group-digits=integer, group-minimum-digits=4}
+  \sisetup{detect-all}
+  \ifthenelse{\boolean{UBN@eVkern}}{%
+    \typeout{ubonn-thesis: Applying kern to eV.}
+    \DeclareSIUnit\electronvolt{\text{e\kern-.1em V}}
+  }{}
+  % Barn needed in some versions of siunitx.
+  \DeclareSIUnit\barn{b}
+  % Units - for German thesis \num{4.3} will be printed as 4,3
+  \addto\extrasngerman{\sisetup{locale = DE}}
+  \addto\extrasamerican{\sisetup{locale = US}}
+  \addto\extrasUSenglish{\sisetup{locale = US}}
+  \addto\extrasbritish{\sisetup{locale = UK}}
+  \addto\extrasUKenglish{\sisetup{locale = UK}}
+}{}
+% \RequirePackage{units}
+% \RequirePackage{hepunits}
+% \RequirePackage[squaren]{SIunits}
+
+%-------------------------------------------------------------------------------
+% Figures and graphics
+\RequirePackage{graphicx}
+\ifthenelse{\boolean{UBN@feynmf}}{\RequirePackage{feynmf}}{}
+\ifthenelse{\boolean{UBN@feynmp}}{%
+  \RequirePackage{feynmp}
+  \DeclareGraphicsRule{*}{mps}{*}{}
+}{}
+
+\ifthenelse{\boolean{UBN@subcaption}}{%
+  \RequirePackage[labelformat=simple]{subcaption}
+  \renewcommand\thesubfigure{(\alph{subfigure})}
+  \renewcommand\thesubtable{(\alph{subtable})}
+}{%
+  \ifthenelse{\boolean{UBN@subfig}}{%
+    \RequirePackage[labelformat=simple,listofformat=subsimple,subrefformat=empty]{subfig}
+    \renewcommand\thesubfigure{(\alph{subfigure})}
+    \renewcommand\thesubtable{(\alph{subtable})}
+  }{%
+    \ifthenelse{\boolean{UBN@subfigure}}{%
+      \RequirePackage[TABBOTCAP]{subfigure}
+    }{}
+  }
+}
+% \RequirePackage[lofdepth,lotdepth]{subfig}
+% Alternative to subfig, which is also newer
+% \RequirePackage{subcaption}
+
+%-------------------------------------------------------------------------------
+% Tables
+\RequirePackage{rotating}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\ifthenelse{\boolean{UBN@dcolumn}}{\RequirePackage{dcolumn}}{}
+\ifthenelse{\boolean{UBN@xtab}}{\RequirePackage[pageshow]{xtab}}{}
+\ifthenelse{\boolean{UBN@longtable}}{\RequirePackage{longtable}}{}
+\ifthenelse{\boolean{UBN@supertabular}}{\RequirePackage{supertabular}}{}
+% Be careful trying to use ziffer and dcolumn together
+% \RequirePackage{ziffer}
+
+% Spacing for table captions above table.
+\ifthenelse{\boolean{UBN@tableheading}}{\KOMAoption{captions}{tableheading}}{}
+
+% diffcoeff and derivative are packages for derivatives.
+\ifthenelse{\boolean{UBN@diffcoeff}}{%
+  \ifthenelse{\texlive < 2018}{%
+    \RequirePackage{diffcoeff}
+    \diffset[roman = true]
+  }{%
+    \RequirePackage[ISO]{diffcoeff}
+  }
+}{%
+  \ifthenelse{\boolean{UBN@derivative}}{%
+    \RequirePackage{derivative}
+  }{}
+}
+
+% physics is a (deprecated) package for mathematical constructions that are useful in physics.
+\ifthenelse{\boolean{UBN@physics}}{\RequirePackage{physics}}{}
+
+% Standardised particles names and format
+% hepnicenames also includes heppennames
+\ifthenelse{\boolean{UBN@hepparticles}}{%
+  \ifthenelse{\boolean{UBN@hepitalic}}{%
+    \RequirePackage[italic]{hepnicenames}
+  }{%
+    \RequirePackage{hepnicenames}
+  }
+  % Adjust the kerning for bar over particles with narrow glyphs (from Andy Buckley)
+  \def\@shiftlen@anti@gen@bar{0mu}
+}
+
+% Chemical elements
+\ifthenelse{\boolean{UBN@mhchem}}{\RequirePackage[version=4]{mhchem}}{}
+
+%------------------------------------------------------------------------------
+% Fonts with XeLaTeX or LuaLaTeX.
+% Preferred way (Will Robertson TUGboat, Volume 39 (2018), No. 2) is to use filename.
+% Using fontname availabloe as an option.
+\ifthenelse{\boolean{XeTeX} \OR \boolean{LuaTeX}}{%
+  \RequirePackage[math-style=ISO, bold-style=ISO,
+    warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  % Times roman (TeX Gutre Termes)
+  \ifthenelse{\boolean{UBN@newtx} \OR \boolean{UBN@txfonts}}{%
+    \ifthenelse{\boolean{UBN@fontname}}{%
+      \typeout{ubonn-thesis: using font name to select font.}
+      \setmainfont{TeX Gyre Termes}
+      \setmathfont{TeX Gyre Termes Math}
+      \setmathfont[version=bold]{TeX Gyre Termes Math}
+    }{%
+      \typeout{ubonn-thesis: using filename to select font.}
+      \setmainfont{texgyretermes}[
+        Extension = .otf ,
+        UprightFont = *-regular ,
+        ItalicFont = *-italic ,
+        BoldFont = *-bold ,
+        BoldItalicFont = *-bolditalic ,
+      ]
+      \setmathfont{texgyretermes-math.otf}
+      \setmathfont[version=bold]{texgyretermes-math.otf}
+    }
+    % \setmathrm{TeX Gyre Termes}
+  }{}
+
+  % Palatino (TeX Gyre Pagella)
+  \ifthenelse{\boolean{UBN@palatino}}{%
+    \ifthenelse{\boolean{UBN@fontname}}{%
+      \typeout{ubonn-thesis: using font name to select font.}
+      \setmainfont{TeX Gyre Pagella}
+      \setmathfont{TeX Gyre Pagella Math}
+      \setmathfont[version=bold]{TeX Gyre Pagella Math}
+      % \setmathfont(Greek)[Uppercase=regular, Lowercase=Regular]{TeX Gyre Pagella}
+    }{%
+      \typeout{ubonn-thesis: using filename to select font.}
+      \setmainfont{texgyrepagella}[
+        Extension = .otf ,
+        UprightFont = *-regular ,
+        ItalicFont = *-italic ,
+        BoldFont = *-bold ,
+        BoldItalicFont = *-bolditalic ,
+      ]
+      \setmathfont{texgyrepagella-math.otf}
+      \setmathfont[version=bold]{texgyrepagella-math.otf}
+    }
+  }{}
+
+% If TeX Gyre fonts used, also use them for sans serif and monospaced fonts.
+  \ifthenelse{\boolean{UBN@newtx} \OR \boolean{UBN@txfonts} \OR \boolean{UBN@palatino}}{%
+    \ifthenelse{\boolean{UBN@fontname}}{%
+      \setsansfont{TeX Gyre Heros}
+      \setmonofont{TeX Gyre Cursor}
+    }{%
+      \setsansfont{texgyreheros}[
+        Extension = .otf ,
+        UprightFont = *-regular ,
+        ItalicFont = *-italic ,
+        BoldFont = *-bold ,
+        BoldItalicFont = *-bolditalic ,
+      ]
+      \setmonofont{texgyrecursor}[
+        Extension = .otf ,
+        UprightFont = *-regular ,
+        ItalicFont = *-italic ,
+        BoldFont = *-bold ,
+        BoldItalicFont = *-bolditalic ,
+      ]
+    }
+  }{}
+}{}
+
+\RequirePackage{microtype}
+\RequirePackage[svgnames]{xcolor}
+\RequirePackage{xspace}
+\RequirePackage{setspace}
+\RequirePackage{scrdate,scrtime}
+
+% Fixes appendices displaying in pdf viewer index/outline under first appendix
+% instead of under Appendix heading
+\ifthenelse{\boolean{UBN@bookmark}}{\RequirePackage{bookmark}}{}
+
+% Add a \mynote command
+\ifthenelse{\boolean{UBN@todonotes}}{%
+  \ifthenelse{\boolean{UBN@shownotes}}{%
+    \typeout{ubonn-thesis: showing notes.}
+    % \KOMAoptions{BCOR=-1cm}
+    % \addtolength{\marginparwidth}{1.5cm}
+    % \addtolength{\textwidth}{-1.5cm}
+    \RequirePackage[\UBN@language, textsize=scriptsize]{todonotes}
+    \newcommand{\mynote}[3][]{%
+      \ifthenelse{ \equal{#1}{} }
+        {\textcolor{magenta}{#2}\todo[color=magenta!20, linecolor=magenta]{#3}\xspace}
+        {\textcolor{magenta}{#2}\todo[color=magenta!20, linecolor=magenta, #1]{#3}\xspace}
+    }
+  }{%
+    \typeout{ubonn-thesis: not showing notes.}
+    \RequirePackage[disable, \UBN@language, textsize=scriptsize]{todonotes}
+    \newcommand{\mynote}[3][]{\todo[#1]{#2}\xspace}
+  }
+}
+
+% showframe package is useful to check positioning of things.
+% Set a non-zero \overfillrule at the same time.
+\ifthenelse{\boolean{UBN@showframe}}{
+  \usepackage{showframe}
+  \overfullrule=1mm
+}{}
+
+%-------------------------------------------------------------------------------
+% Use biblatex and biber for the bibliography.
+% Style is numeric and comp option changes [1,2,3] into [1-3].
+% sorting=none    means the order is as they are cited.
+% giveninits=true means initials are used for first names.
+% Older versions of TeX Live use the option firstinits instead.
+% Some more tweaks should be made to the appearance,
+% see/include ubonn-biblatex.sty.
+\ifUBN@biblatex
+  \ifx\UBN@bibencoding\@empty
+    \newcommand*{\UBN@biblatexencoding}{}
+  \else
+    \newcommand*{\UBN@biblatexencoding}{bibencoding=\UBN@bibencoding,}
+  \fi
+  \ifUBN@astrobib
+    \RequirePackage[backend=\UBN@backend, \UBN@biblatexencoding
+      style=authoryear, natbib=true, refsection=chapter,
+      block=none, \UBN@initials]{biblatex}
+  \else
+    \RequirePackage[backend=\UBN@backend, \UBN@biblatexencoding
+      style=\UBN@bibstyle, sorting=none,
+      \UBN@initials]{biblatex}
+  \fi
+\fi
+
+%-------------------------------------------------------------------------------
+% Add ability to click on links and references.
+% Define some darker colours first
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkyellow}{rgb}{0.5,0.5,0}
+\definecolor{darkcyan}{rgb}{0,0.5,0.5}
+\definecolor{darkmagenta}{rgb}{0.5,0,0.5}
+% Note that the colours also apply to the printed version.
+% It probably make sense to keep them for an online version and set
+% them all to black when producing the printed thesis.
+% The hyperref package should come last
+\PassOptionsToPackage{hyphens}{url}
+\RequirePackage{hyperref}
+\hypersetup{colorlinks,breaklinks}
+\hypersetup{linkcolor=blue,citecolor=darkmagenta,urlcolor=darkgreen}
+\hypersetup{bookmarksnumbered=true, bookmarksopen=true, bookmarksopenlevel=0}
+\hypersetup{unicode,psdextra}
+
+%-------------------------------------------------------------------------------
+% cleveref has to be included late
+% Decide whether to capitalise Fig., Table etc. or not.
+\ifthenelse{\boolean{UBN@cleveref}}{%
+  \typeout{ubonn-thesis: using cleveref.}
+  \ifthenelse{\boolean{UBN@clevercaps}}{%
+    \RequirePackage[capitalise, \UBN@language]{cleveref}
+  }{%
+    \RequirePackage[\UBN@language]{cleveref}
+  }
+}{%
+  \typeout{ubonn-thesis: not using cleveref.}
+}
+
+%-------------------------------------------------------------------------------
+% More options for KOMA script
+
+% General font for title, section headings etc.
+% \setkomafont{disposition}{\rmfamily\bfseries\upshape}
+\setkomafont{title}{\normalfont\bfseries\huge}
+\setkomafont{subtitle}{\normalfont\Large}
+% Upright font for headers and footers
+\setkomafont{pageheadfoot}{\normalfont}
+
+% Do not put a dot after Section/Chapter, nor in the figure caption.
+\KOMAoptions{numbers=noendperiod}
+% Write Chapter 1 at beginning of each chapter, if this is not an article
+\@ifclassloaded{scrartcl}{}{\KOMAoptions{chapterprefix=true,appendixprefix=true}}
+
+%-------------------------------------------------------------------------------
+% Only change chapter titles if this is not an article
+\@ifclassloaded{scrartcl}{}{%
+  \ifthenelse{\boolean{UBN@titlesec}}{%
+  % Packages to change the chapter heading format
+  % titlesec works, but gives a warning from KOMA-Script
+    \RequirePackage{titlesec}
+    \titleformat{\chapter}[display]
+      {\bfseries\sffamily\huge}
+      {\filleft\MakeUppercase{\Large\chaptertitlename} \Huge\thechapter}
+      {2ex}
+      {\titlerule
+        \vspace{1ex}%
+        \filright}
+      [\vspace{1ex}%
+      \titlerule]
+  }{%
+    % Code from http://www.komascript.de/chapterwithlines
+    %\renewcommand*{\thechapter}{\Roman{chapter}}
+    \newcommand*{\chapternumbersize}{\Huge}
+    \renewcommand*{\chapterformat}{%
+      \raggedleft
+      \ifXeTeX
+        \MakeUppercase{\Large\chapapp}\enskip\chapternumbersize\thechapter\\
+      \else
+        \textls{\MakeUppercase{\Large\chapapp}}\enskip\chapternumbersize\thechapter\\
+      \fi
+      %\MakeUppercase{\Large\chapapp}\enskip\chapternumbersize\thechapter\\
+      \hrulefill\\[-.25ex]
+    }
+    \renewcommand*{\chapterheadstartvskip}{\vskip 4\baselineskip}
+    \renewcommand*{\chapterheadendvskip}{%
+      \vspace{-\baselineskip}\noindent{\setlength{\parskip}{0pt}\Huge\hrulefill\par}
+      \vspace{\baselineskip}
+    }
+  }
+}
+
+% Alternative way of adjusting the \chapter heading
+% Taken from http://tex.stackexchange.com/questions/173389/chapter-title-adjusting-with-koma-script
+% This code works well, except that the bibliography gets a chapter number.
+% The KOMA-Script solution above is also simpler.
+%  \def\@makechapterhead#1{%
+%    \vspace*{10\p@}%
+%    {\parindent \z@ \raggedleft \reset@font
+%      \sffamily \bfseries \Huge \MakeUppercase{\Large\@chapapp}  \thechapter\vspace*{-5\p@}
+%      \par\nobreak
+%      \interlinepenalty\@M\hrulefill\newline\vspace*{-5\p@}
+%      \huge \bfseries #1\par\nobreak
+%      \vspace*{-8\p@}%
+%      \hrulefill
+%      \par\nobreak
+%      \vskip 30\p@
+%    }
+%  }
+%
+%  % Adjust the \chapter* heading
+%  \def\@makeschapterhead#1{%
+%    \vspace*{4\p@}%
+%    {\parindent \z@ \raggedright \reset@font
+%      \sffamily
+%      \interlinepenalty\@M\hrulefill\newline\vspace*{-5\p@}
+%      \huge \bfseries #1\par\nobreak
+%      \vspace*{-8\p@}%
+%      \hrulefill
+%      \par\nobreak
+%      \vskip 30\p@
+%    }
+%  }
+% \fi
+
+
+%-------------------------------------------------------------------------------
+% Do not centre one-line figure captions.
+% \KOMAoptions{captions=nooneline}
+% Font and layout for figure and table captions
+\setkomafont{caption}{\normalfont\small}
+% \setkomafont{caption}{\normalfont\slshape}
+% Do not include a : after the figure/table number
+% \renewcommand*{\captionformat}{\ }
+% \renewcommand*{\figureformat}{\bfseries\slshape Fig.\ \thefigure}
+\setcapindent{0pt}
+
+% Default width for figures
+\newlength{\figwidth}
+\setlength{\figwidth}{0.8\textwidth}
+
+% More space between rows in tables
+% \setlength{\extrarowheight}{0.5ex}
+
+% Adjust float settings to try to avoid problems.
+% These follow the UK FAQ - see also P.199-200 of the LaTeX Book
+\ifthenelse{\boolean{UBN@floatopt}}{%
+  \renewcommand{\topfraction}{0.85}
+  \renewcommand{\bottomfraction}{0.70}
+  \renewcommand{\textfraction}{0.15}
+  \renewcommand{\floatpagefraction}{0.66}
+  \renewcommand{\dbltopfraction}{0.66}
+  \renewcommand{\dblfloatpagefraction}{0.66}
+  \setcounter{topnumber}{9}
+  \setcounter{bottomnumber}{9}
+  \setcounter{totalnumber}{20}
+}{}
+
+%-------------------------------------------------------------------------------
+% Set the header and footer
+% The optional argument is for pages in scrplain mode - first page of chapters etc.
+% The required argument is for the usual scrheadings pages
+%
+% Use the following to debug what header/footer is used where
+% \ihead[Scrplain ihead]{Scrheadings ihead}
+% \chead[Scrplain chead]{Scrheadings chead}
+% \ohead[Scrplain ohead]{Scrheadings ohead}
+% \ifoot[Scrplain ifoot]{Scrheadings ifoot}
+% \cfoot[Scrplain cfoot]{Scrheadings cfoot}
+% \ofoot[Scrplain ofoot]{Scrheadings ofoot}
+%
+% \cfoot[\thepage]{\thepage}
+\pagestyle{scrheadings}
+
+% Footnote settings
+\deffootnote{1em}{1em}{\textsuperscript{\thefootnotemark}\ }
+
+% Unit of length used for Feynman graphs in feynmf
+\setlength{\unitlength}{1mm}
+
+% Make sure everything is set up properly, even after spacings have
+% been changed.
+\KOMAoptions{DIV=last}
+
+%-------------------------------------------------------------------------------
+% Institutes names and addresses - maybe put in an extra file?
+\newcommand*{\PI}{Physikalisches Institut}
+\newcommand*{\inPI}{im Physikalischen Institut}
+\newcommand{\PIaddress}{Physikalisches Institut der\\
+Universität Bonn\\
+Nussallee 12\\
+D-53115 Bonn}
+
+\newcommand*{\HISKP}{Helmholtz-Institut für\\ Strahlen- und Kernphysik}
+\newcommand*{\inHISKP}{im Helmholtz-Institut für Strahlen- und Kernphysik}
+\newcommand{\HISKPaddress}{Helmholtz-Institut für\\
+ Strahlen- und Kernphysik\\
+Universität Bonn\\
+Nussallee 14--16\\
+D-53115 Bonn}
+
+\newcommand*{\IAP}{Institut für Angewandte Physik}
+\newcommand*{\inIAP}{im Institut für Angewandte Physik}
+\newcommand{\IAPaddress}{Institut für Angewandte Physik\\
+Universität Bonn\\
+Wegelstr.\ 8\\
+D-53115 Bonn}
+
+\newcommand*{\AIFA}{Argelander-Institut für Astronomie}
+\newcommand*{\inAIFA}{im Argelander-Institut für Astronomie}
+\newcommand{\AIFAaddress}{Argelander-Institut für Astronomie\\
+Universität Bonn\\
+Auf dem Hügel 71\\
+D-53121 Bonn}

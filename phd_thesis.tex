@@ -1,0 +1,211 @@
+\documentclass[PhD, UKenglish]{scrbook}
+%------------------------------------------------------------------------------
+% This file contains a skeleton thesis for
+% a Physics or Astronomy Institute in the University of Bonn.
+
+% Specify the thesis type as an option: PhD, Master, Diplom, Bachelor.
+% Specify the thesis stage as an option: Draft (default), Submit, Final, PILibrary.
+
+% Specify the language(s) in the class and then use babel.
+% If you need more than one language, give the default language last,
+% e.g. ngerman, UKenglish for a thesis in British (UK) English where you want
+% to be able to set the language to German for some part of it.
+
+%------------------------------------------------------------------------------
+% Pass TeX Live version to the package.
+% Use command pdflatex --version to find out which version you are running.
+% twoside=true is suitable for printing, while twoside=false is probably better for PDF version.
+\usepackage[twoside=true, texlive=2019]{ubonn-thesis}
+
+%------------------------------------------------------------------------------
+% Adjustments to standard biblatex style.
+% Change option to backref=false when your thesis is ready to turn off back-referencing.
+% Pass the option showurl=false to shorten your bibliography by not including url fields.
+\usepackage[backref=true]{ubonn-biblatex}
+
+%------------------------------------------------------------------------------
+% Glossary package
+% \usepackage[acronym,toc,nosuper]{glossaries}
+% TikZ packages and libraries
+% \usepackage{tikz}
+% \usepackage{tikz-3dplot}
+% \usepackage{pgfplots}
+% \usetikzlibrary{positioning,shapes,arrows}
+% \usetikzlibrary{decorations.pathmorphing}
+% \usetikzlibrary{decorations.markings}
+\usepackage{thesis_defs}
+
+%------------------------------------------------------------------------------
+% Instead of colouring  links, cites, table of contents etc.
+% put them in a coloured box for the screen version.
+% This is probably a good idea when you print your thesis.
+% \hypersetup{colorlinks=false,
+%   linkbordercolor=blue,citebordercolor=magenta,urlbordercolor=darkgreen
+% }
+
+%------------------------------------------------------------------------------
+% When writing your thesis it is often helpful to have the date and
+% time in the output file. Comment this out for the final version.
+\ifoot[\today{} \thistime]{\today{} \thistime}
+
+% In order to check if your labels are referenced try the refcheck package
+% \usepackage{refcheck}
+
+%------------------------------------------------------------------------------
+% biblatex is included by ubonn-thesis. Look there for the settings used.
+% See the options for settings that can be changed easily.
+% For further changes copy the \RequirePackage[...]{biblatex} here
+% and include ubonn-thesis with the option biblatex=false.
+
+% Specify the bibliography files here and not at the end!
+% Use standard_refs-bibtex if you use bibtex or bibtex8
+% and standard_refs-biber  if you use biber
+\addbibresource{bib/thesis_refs.bib}
+\addbibresource{bib/standard_refs-biber.bib}
+
+%------------------------------------------------------------------------------
+% The following definitions are used to produce the title pages
+% needed at various stages
+\newcommand{\thesistitle}{Search for Di-Higgs Production with the ATLAS Experiment}
+\newcommand*{\thesisauthor}{Christopher Deutsch}
+\newcommand*{\thesistown}{Neuwied}
+\renewcommand*{\InstituteName}{\PI}
+\renewcommand*{\inInstitute}{\inPI}
+\renewcommand*{\InstituteAddress}{\PIaddress}
+% Adjust \thesisreferee...text depending on male/female referee
+\newcommand*{\thesisrefereeonetext}{1.\ Gutachter}
+\newcommand*{\thesisrefereeone}{Prof.\ Dr.\ Jochen Christian Dingfelder}
+\newcommand*{\thesisrefereetwotext}{2.\ Gutachterin}
+\newcommand*{\thesisrefereetwo}{TBD}
+% Date when thesis was submitted (Master/Diplom)
+% Year or Month, Year when thesis was submitted (PhD)
+\newcommand*{\thesissubmit}{XX.YY.2021}
+% \newcommand*{\thesissubmit}{Month 2021}
+% Date of thesis examination (PhD)
+\newcommand*{\thesispromotion}{XX.YY.2021}
+% Month and year of the final printed version of the thesis
+\newcommand*{\thesismonth}{MMM}
+\newcommand*{\thesisyear}{2021}
+\newcommand*{\thesisnumber}{BONN-IR-2021-XXX}
+% Dedication
+% \newcommand*{\thesisdedication}{}
+
+%------------------------------------------------------------------------------
+% The abstract is only needed for the printed version and should be in
+% English regardless of the language of the thesis
+\newcommand{\thesisabstract}{%
+  \begin{otherlanguage}{UKenglish}
+    This is your thesis abstract. It may be in a language that is
+    different from the rest of your thesis.
+  \end{otherlanguage}
+}
+
+%------------------------------------------------------------------------------
+% \includeonly can be used to select which chapters you want to process
+% A simple \include command just inserts a \clearpage before and after the file
+% Note that \includeonly can be quite picky! Do not forget to put a
+% comma after the filename, otherwise it will simply be ignored!
+% \includeonly{%
+%   thesis_intro,
+%   thesis_appendix,
+%   thesis_acknowledge
+% }
+
+%------------------------------------------------------------------------------
+% Give a list of directories where figures can be found. Do not leave
+% any spaces in the list and end the directory name with a /
+\graphicspath{%
+  {figs/}%
+  {figs/cover/}%
+}
+
+%------------------------------------------------------------------------------
+% Make a glossary and a list of acronyms
+% \makeglossaries
+
+% Glossary entries
+% \input{thesis_glossary}
+
+% Draft version - add the word DRAFT on the cover pages
+\ifthenelse{\equal{\ThesisVersion}{Draft}}{%
+  \usepackage{background}
+  \backgroundsetup{contents=DRAFT, color=blue!30}
+}
+
+%------------------------------------------------------------------------------
+\begin{document}
+
+% Make cover and title pages
+\makethesistitle
+
+\pagestyle{scrplain}
+
+%------------------------------------------------------------------------------
+% You can add your acknowledgements here - don't forget to also add
+% them to \includeonly above
+\include{thesis_acknowledge}
+
+\tableofcontents
+
+\mainmatter
+\pagestyle{scrheadings}
+
+% Turn off DRAFT for the following pages
+\ifthenelse{\equal{\ThesisVersion}{Draft}}{%
+  \backgroundsetup{contents={}}
+}{}
+
+%------------------------------------------------------------------------------
+% Add your chapters here - don't forget to also add them to \includeonly above
+\include{thesis_intro}
+% Uncomment the following command to get references per chapter.
+% Put it inside the file or change \include to \input if you do not want the references
+% on a separate page
+% \printbibliography[heading=subbibliography]
+
+%------------------------------------------------------------------------------
+% Include the following lines and comment out \printbibliography if
+% you use BiBTeX for the bibliography.
+% If you use biblatex package the files should be specified in the preamble.
+% \KOMAoptions{toc=bibliography}
+% {\raggedright
+%   \bibliographystyle{../refs/atlasBibStyleWithTitle.bst}
+%   % \bibliographystyle{unsrt}
+%   \bibliography{./thesis_refs,../refs/standard_refs-bibtex}
+% }
+
+%------------------------------------------------------------------------------
+\appendix
+% \part*{Appendix}
+% Add your appendices here - don't forget to also add them to \includeonly above
+\include{thesis_appendix}
+% \printbibliography[heading=subbibliography]
+
+%------------------------------------------------------------------------------
+% Use biblatex for the bibliography
+% Add bibliography to Table of Contents
+% Comment out this command if your references are printed for each chapter.
+\printbibliography[heading=bibintoc]
+
+%------------------------------------------------------------------------------
+% Declare lists of figures and tables and acknowledgements as backmatter
+% Chapter/section numbers are turned off
+\backmatter
+
+\listoffigures
+\listoftables
+
+%------------------------------------------------------------------------------
+% Print the glossary and list of acronyms
+% \printglossaries
+
+%------------------------------------------------------------------------------
+% You could instead add your acknowledgements here - don't forget to
+% also add them to \includeonly above
+% \include{thesis_acknowledge}
+
+%------------------------------------------------------------------------------
+% CV needed when you submit your PhD thesis
+% \input{thesis_cv}
+
+\end{document}
