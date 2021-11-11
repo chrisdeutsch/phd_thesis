@@ -15,7 +15,7 @@
 % Pass TeX Live version to the package.
 % Use command pdflatex --version to find out which version you are running.
 % twoside=true is suitable for printing, while twoside=false is probably better for PDF version.
-\usepackage[twoside=true, texlive=2020]{ubonn-thesis}
+\usepackage[twoside=true, texlive=2020, todonotes=true, shownotes=true]{ubonn-thesis}
 
 %------------------------------------------------------------------------------
 % Adjustments to standard biblatex style.
@@ -165,6 +165,9 @@
 %------------------------------------------------------------------------------
 % Add your chapters here - don't forget to also add them to \includeonly above
 \include{chapters/introduction}
+\include{chapters/statistical_methods}
+
+
 % Uncomment the following command to get references per chapter.
 % Put it inside the file or change \include to \input if you do not want the references
 % on a separate page
@@ -180,6 +183,8 @@
 %   % \bibliographystyle{unsrt}
 %   \bibliography{./thesis_refs,../refs/standard_refs-bibtex}
 % }
+
+
 
 %------------------------------------------------------------------------------
 \appendix

@@ -1,0 +1,233 @@
+% ==============================================================================
+\chapter{Statistical Methods}
+\label{sec:statistical_methods}
+% ==============================================================================
+
+The following gives an introduction into the techniques used for the
+statistical analysis.
+
+
+\section{Maximum Likelihood Estimation}
+
+\todo[inline]{Need to be careful about continous and discrete random
+  variables here. In the end a mixture of continuous and discrete
+  observables is used.}
+
+Let~$f(\mathbf{x}; \boldtheta)$ be the joint density (or
+probability in the discrete case) of the vector of random
+variables~$\mathbf{X}$ that is specified by
+parameters~$\boldtheta$. For a given
+observation~$\mathbf{x}_\text{obs}$\todo{sample? How does $n$ for
+  asymptotics get in here?} of the random variables~$\mathbf{X}$ one
+can consider the joint density at the observed point as a function of
+the parameter vector~$\boldtheta$
+\begin{align*}
+  L(\boldtheta) = f(\mathbf{x}_\text{obs}; \boldtheta)
+\end{align*}
+which is called the likelihood function. The parameters~$\boldtheta$
+of the joint distribution~$f(\mathbf{x}; \boldtheta)$ can be inferred
+by the use of maximum likelihood estimation (MLE) by
+\begin{align*}
+  \hat{\boldtheta} = \argmax_{\boldtheta} L(\boldtheta)
+\end{align*}
+where~$\hat{\boldtheta}$ is an estimator of the parameters based on
+the observed values of~$\mathbf{X}$, i.e.\ the estimator is chosen
+such that the density / probability of
+observing~$\mathbf{x}_\text{obs}$ is maximized. The maximum likelihood
+estimate has the following asymptotic properties~\cite{cramer1999}:
+\begin{enumerate}
+\item Unbiased -- $\hat{\boldtheta}$ converges to the true
+  value~$\boldtheta$
+\item Normal --
+\item Efficient -- estimator has minimum variance in the large sample limit
+\end{enumerate}
+
+Frequently one takes the logarithm of the likelihood, which being a
+monotonic transformation does not change the parameter values of the
+maximum, to convert the products / exponentials frequently appearing
+in the liklihood function into sums / factors.
+
+
+The probability density function~$f$ is frequently intractable
+analytically but can be estimated using Monte Carlo
+simulation. Therefore, one can discretise the the observable of
+interest into~$k$~bins such that the probability for an event to fall
+into bin~$i$ can be described by
+\begin{align*}
+  p_i(\boldtheta) = \int_\text{bin} f(x; \boldtheta) \, \mathrm{d}x
+\end{align*}
+or using frequentist methods when only MC simulation is available. In
+the case of the binned distribution, the likelihood function for a
+fixed sample of size~$n$ is given by the probability mass function of
+the multinomial distribution
+\begin{align*}
+  L(\boldtheta) = \frac{n!}{\prod_{i=1}^k n_i!} \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
+\end{align*}
+where~$n_i$ corresponds to the number of observations in bin~$i$ with
+the condition that
+\begin{align*}
+  \sum_{i = 1}^k n_i = n \quad \text{and} \quad \sum_{i = 1}^k p_i(\boldtheta) = 1 \,\text{.}
+\end{align*}
+
+In high energy physics, the size of the collected dataset is not fixed
+a priori but is varying according to a Poisson distribution with an
+expected rate~$\nu$. This is accounted for in the so-called ``extended
+likelihood function''~\cite{cowan1998}:
+\begin{align*}
+  L(\nu, \boldtheta) =
+  \frac{\nu^n e^{-\nu}}{n!} \times \frac{n!}
+  {\prod_{i = 1}^k n_{i}!}
+  \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
+\end{align*}
+which follows from the joint distribution given by the product of the
+Poisson and multinomial probability mass functions.  With the
+expectation value of the number of events in bin~$i$ given
+by~$\nu_i(\boldtheta) = \nu p_i(\boldtheta)$\todo{Can $\nu$ depend on
+  \boldtheta? In principle it can and should!?} and the previously
+mentioned conditions it follows that
+\begin{align*}
+  L(\nu_1, \dots, \nu_k, \boldtheta) = \prod_{i = 1}^k \frac{\nu_i^{n_i} e^{-\nu_i}}{n_i!}
+\end{align*}
+which is the product of Poisson probabilities of observing~$n_i$
+events in a bin with an expected number of events~$\nu_i$ (the
+dependency on \boldtheta is omitted).
+
+% The Poisson part gives the probability of observing~$n$ events while
+% the multinomial describes the probability of distributing these events
+% among~$k$ bins. In general~$\nu_i$ can depend on~\boldtheta.
+
+In general we are interested in mixture models, where events can
+originate from different processes and the observable, which is called
+the discriminant in this context as it aims to distinguish betwen the
+different parts of the mixture, follows a process-specific
+distribution. For illustration consider two species of events, one
+from a signal process with PDF $f_\text{S}(x; \boldtheta)$ and from a
+background process with PDF $f_\text{B}(x; \boldtheta)$. Consider a
+model where the signal process contributes with a fraction~$\alpha$
+such that the PDF of the mixture is:
+\begin{align*}
+  f(x; \mu, \boldtheta) = \alpha f_\text{S}(x; \boldtheta) + (1 - \alpha) f_\text{B}(x; \boldtheta) \,\text{.}
+\end{align*}
+In practice~$f_\text{B}$ is frequently itself a mixture model
+consisting of multiple background processes. In the binned
+representation this mixture model yields:
+\begin{align*}
+  \nu_i(\mu, \boldtheta) = \mu \nu_i^\text{S}(\boldtheta) + \nu_i^\text{B}(\boldtheta)
+\end{align*}
+with the signal strength~$\mu$ being a parameter of the model, which
+is frequently expressed as the cross section of the signal process
+with respect to a baseline value like the SM expectation.
+
+The parameter~$\mu$ of the mixture model is usually the parameter of
+interest (POI) while the other parameters~\boldtheta, which need to be
+determined to estimate the signal strength, are called nuisance
+parameters.
+
+\todo[inline]{Maybe stress that at this point it's a particular choice
+  model?}
+
+The binned / extended likelihood function is further extended by
+incorporating multiple analysis channels, additional free parameters
+(like the signal strength), systematic uncertainties, and auxiliary
+measurements. With a set of analysis channels~$\mathcal{C}$, a set of
+bins in a given channel~$\mathcal{B}_\mathcal{C}$, and a set of
+auxiliary measurements~$\mathbb{S}$, the likelihood function can be
+written as~\cite{cranmer2012}:
+\begin{align*}
+  L(\boldalpha, \boldphi, \boldgamma) =
+  \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{\mathcal{C}}}
+  \mathrm{Pois}\left( n_{cb} \mid \nu_{cb}(\boldalpha, \boldphi, \boldgamma) \right)
+  \mathrm{Pois}\left(m_{cb} \mid  \gamma_{cb} \tau_{cb} \right)
+  \prod_{p \in \mathbb{S}} f_p\left(a_p \mid \alpha_p \right)
+\end{align*}
+Latin letter correspond to observables while greek letters correspond
+to nuisance parameters.
+
+\begin{align*}
+  \nu_{cb}(\boldalpha, \boldphi, \boldgamma) = \sum_{s \in \mathcal{S}} \gamma_{cb} \, \phi_{cs} \, \eta_{cs}(\boldalpha) \, \sigma_{csb}(\boldalpha)
+\end{align*}
+$\boldalpha = (\alpha_i)_i$, $\boldphi = (\phi_{cs})_{cs}$,
+$\boldgamma = (\gamma_{cb})$.
+
+
+\todo[inline]{Describe: histogram-based uncertainties, normalisation
+  uncertainties, free normalisation factors, MC stat uncertainty}
+
+
+\subsection{Barlow-Beeston}
+
+\cite{barlow1993,conway2011}
+
+
+\section{Hypothesis Testing}
+
+What is the null hypothesis / alternative hypothesis?
+
+Composite hypothesis: hypothesis depending on some parameter, e.g.\
+signal strength.
+
+What is a test statistic? Ideally a single number allowing to
+discriminate between competing hypotheses.
+
+
+$\boldtheta \in \boldsymbol{\Theta}_0$ (usually a simple hypothesis,
+i.e.\ the set has one element)
+
+$\boldtheta \in \boldsymbol{\Theta}_1$ (composite hypothesis)
+
+
+
+\subsection{Likelihood Ratio Test and Neyman-Pearson Lemma}
+
+
+Significance~$\alpha$ (type I error) and power~$1 - \beta$ (beta: type II error)
+
+\begin{align*}
+  \Lambda = \frac{L(\boldsymbol{\theta}_0 \mid \mathbf{x})}{L(\boldsymbol{\theta}_1 \mid \mathbf{x})}
+\end{align*}
+
+Neyman-Pearson: likelihood ratio test provides the optimal test, i.e.\
+for a given significance level it yields the largest power.
+
+
+Profile likelihood:
+\begin{align*}
+  \mathcal{L}_\text{p}(\mu) = \sup_\theta \mathcal{L}(\mu, \theta \mid \mathbf{x}) \\
+  \hat{\hat{\theta}}(\mu) = \argmax_\theta \mathcal{L}(\mu, \theta \mid \mathbf{x})
+\end{align*}
+
+Profile likelihood ratio test statistic:
+\begin{align*}
+  \Lambda(\mu) = \frac{\mathcal{L}\left( \mu, \hat{\hat{\theta}} \mid \mathbf{x} \right)}
+                      {\mathcal{L}\left( \hat{\mu}, \hat{\theta} \mid \mathbf{x} \right)}
+\end{align*}
+
+hat: estimator to distinguish it from the true value of the parameter.
+
+Asymptotic distributions: Wilk's theorem
+
+\subsection{Discovery Significance}
+
+\subsection{Limit Setting}
+
+CLs method CLs = (CLs+b / CLb)
+
+\cite{Read:2002hq}
+
+
+
+% Statistical Analysis:
+
+% Maximum likelihood \mathcal{L}(\theta | \mathbf{x})L(θ∣x) estimation (profile likelihood - not needed?)
+% Binned likelihood fit in HEP (systematic uncertainties)
+% Hypothesis testing: Neyman Pearson lemma, Likelihood ratio (\LambdaΛ) test
+% Wilk's theorem (asymptotic approximation)
+% Discovery significance (q0)
+% Limit setting (CLs / CLs+b)
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis"
+%%% End:
