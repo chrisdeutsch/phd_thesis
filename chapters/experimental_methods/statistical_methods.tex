@@ -1,13 +1,14 @@
 % ==============================================================================
-\chapter{Statistical Methods}
+\section{Statistical Methods}
 \label{sec:statistical_methods}
 % ==============================================================================
 
 The following gives an introduction into the techniques used for the
-statistical analysis.
+statistical analysis. Statistical inference is used to extract useful
+information from measurement results and to test competing hypotheses.
 
 
-\section{Maximum Likelihood Estimation}
+\subsection{The Method of Maximum Likelihood}
 
 \todo[inline]{Need to be careful about continous and discrete random
   variables here. In the end a mixture of continuous and discrete
@@ -42,10 +43,10 @@ estimate has the following asymptotic properties~\cite{cramer1999}:
 \item Efficient -- estimator has minimum variance in the large sample limit
 \end{enumerate}
 
-Frequently one takes the logarithm of the likelihood, which being a
-monotonic transformation does not change the parameter values of the
-maximum, to convert the products / exponentials frequently appearing
-in the liklihood function into sums / factors.
+Frequently one minimises the negative logarithm of the likelihood
+(NLL) instead, which being a monotonic transformation does not change
+the parameter values extremum, to convert the products / exponentials
+frequently appearing in the liklihood function into sums / factors.
 
 
 The probability density function~$f$ is frequently intractable
@@ -159,15 +160,29 @@ $\boldgamma = (\gamma_{cb})$.
 \cite{barlow1993,conway2011}
 
 
-\section{Hypothesis Testing}
+\subsection{Hypothesis Testing}
 
-What is the null hypothesis / alternative hypothesis?
+Hypothesis testing aims to distinguish between a null hypothesis~$H_0$
+(e.g.\ the Standard Model) and an alternative hypothesis~$H_1$. The
+value of a test statistic~$t(\mathbf{x})$, which is commonly a real
+number, serves to indicate agreement with $H_0$ or $H_1$,
+respectively. Various methods exist to construct suitable test
+statistics.
+
+A rejection region of the test can be defined by setting a threshold
+on the test statistic, i.e.\ $t > t_\text{cut}$, which specifies the
+significance~$\alpha$ of the test, which is the probability to reject
+$H_0$ in favour of $H_1$ if $H_0$ was true (type I error
+rate). Moreover, the power of the test, $1 - \beta$, is specified,
+which is related to the probability~$\beta$ of accepting $H_1$ when
+$H_0$ was true (type II error rate). The field of particle physics
+adopts the convention that the null hypothesis needs to be rejected at
+a significance level of~$\alpha = \num{2.87e-7}$ ($5\sigma$) to claim
+discovery of new phenomena.
+
 
 Composite hypothesis: hypothesis depending on some parameter, e.g.\
 signal strength.
-
-What is a test statistic? Ideally a single number allowing to
-discriminate between competing hypotheses.
 
 
 $\boldtheta \in \boldsymbol{\Theta}_0$ (usually a simple hypothesis,
@@ -175,26 +190,33 @@ i.e.\ the set has one element)
 
 $\boldtheta \in \boldsymbol{\Theta}_1$ (composite hypothesis)
 
+Nested model: The b-only model is the special case of~$\mu = 0$.
+
 
 
 \subsection{Likelihood Ratio Test and Neyman-Pearson Lemma}
 
-
-Significance~$\alpha$ (type I error) and power~$1 - \beta$ (beta: type II error)
-
+The (profile) Likelihood Ratio Test is the optimal test based on the
+Neyman-Pearson lemma~\cite{neyman1933} meaning for a given
+significance level yielding the largest power.
 \begin{align*}
-  \Lambda = \frac{L(\boldsymbol{\theta}_0 \mid \mathbf{x})}{L(\boldsymbol{\theta}_1 \mid \mathbf{x})}
+  \Lambda = \frac{L(\boldtheta \mid H_0)}{L(\boldtheta \mid H_1)}
 \end{align*}
 
-Neyman-Pearson: likelihood ratio test provides the optimal test, i.e.\
-for a given significance level it yields the largest power.
 
 
-Profile likelihood:
+The likelihood ratio still depends on both the parameters of interest
+as well as the nuisance parameters. The profile likelihood given by
 \begin{align*}
-  \mathcal{L}_\text{p}(\mu) = \sup_\theta \mathcal{L}(\mu, \theta \mid \mathbf{x}) \\
-  \hat{\hat{\theta}}(\mu) = \argmax_\theta \mathcal{L}(\mu, \theta \mid \mathbf{x})
+  L_\text{p}(\mu) = \sup_\theta L(\mu, \theta) % \\
+%  \hat{\hat{\theta}}(\mu) = \argmax_\theta \mathcal{L}(\mu, \theta \mid \mathbf{x})
 \end{align*}
+and represents a profile of the likelihood function along the line
+given by~$\hat{\hat{\theta}}(\mu) = \argmax_\theta L(\mu, \theta)$
+(sometimes called the conditional maximum likelihood estimate of the
+nuisance parameters given~$\mu$ -- double hat to distinguish it from
+the maximum likelihood estimate~$\hat{\theta}$). The maximum of the
+profile likelihood coincides with the maximum likelihood estimate.
 
 Profile likelihood ratio test statistic:
 \begin{align*}
@@ -204,11 +226,14 @@ Profile likelihood ratio test statistic:
 
 hat: estimator to distinguish it from the true value of the parameter.
 
-Asymptotic distributions: Wilk's theorem
+Asymptotic distributions: Wilk's theorem (valid under some regularity
+conditions: asymptotic, nested, either model is correct, identifiable,
+i.e.\ any value of parameters is uniquely assigned to a distinct
+hypothesis)
 
 \subsection{Discovery Significance}
 
-\subsection{Limit Setting}
+\subsection{Exclusion Limits}
 
 CLs method CLs = (CLs+b / CLb)
 
@@ -218,16 +243,12 @@ CLs method CLs = (CLs+b / CLb)
 
 % Statistical Analysis:
 
-% Maximum likelihood \mathcal{L}(\theta | \mathbf{x})L(θ∣x) estimation (profile likelihood - not needed?)
-% Binned likelihood fit in HEP (systematic uncertainties)
 % Hypothesis testing: Neyman Pearson lemma, Likelihood ratio (\LambdaΛ) test
 % Wilk's theorem (asymptotic approximation)
 % Discovery significance (q0)
 % Limit setting (CLs / CLs+b)
 
-
-
 %%% Local Variables:
 %%% mode: latex
-%%% TeX-master: "../phd_thesis"
+%%% TeX-master: "../../phd_thesis"
 %%% End:
