@@ -23,13 +23,13 @@ observation~$\mathbf{x}_\text{obs}$\todo{sample? How does $n$ for
 can consider the joint density at the observed point as a function of
 the parameter vector~$\boldtheta$
 \begin{align*}
-  L(\boldtheta) = f(\mathbf{x}_\text{obs}; \boldtheta)
+  L(\boldtheta \mid \boldx) = f(\mathbf{x}_\text{obs}; \boldtheta)
 \end{align*}
 which is called the likelihood function. The parameters~$\boldtheta$
 of the joint distribution~$f(\mathbf{x}; \boldtheta)$ can be inferred
 by the use of maximum likelihood estimation (MLE) by
 \begin{align*}
-  \hat{\boldtheta} = \argmax_{\boldtheta} L(\boldtheta)
+  \hat{\boldtheta} = \argmax_{\boldtheta} L(\boldtheta \mid \boldx)
 \end{align*}
 where~$\hat{\boldtheta}$ is an estimator of the parameters based on
 the observed values of~$\mathbf{X}$, i.e.\ the estimator is chosen
@@ -62,7 +62,7 @@ the case of the binned distribution, the likelihood function for a
 fixed sample of size~$n$ is given by the probability mass function of
 the multinomial distribution
 \begin{align*}
-  L(\boldtheta) = \frac{n!}{\prod_{i=1}^k n_i!} \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
+  L(\boldtheta \mid \boldn) = \frac{n!}{\prod_{i=1}^k n_i!} \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
 \end{align*}
 where~$n_i$ corresponds to the number of observations in bin~$i$ with
 the condition that
@@ -75,7 +75,7 @@ a priori but is varying according to a Poisson distribution with an
 expected rate~$\nu$. This is accounted for in the so-called ``extended
 likelihood function''~\cite{cowan1998}:
 \begin{align*}
-  L(\nu, \boldtheta) =
+  L(\nu, \boldtheta \mid \boldn) =
   \frac{\nu^n e^{-\nu}}{n!} \times \frac{n!}
   {\prod_{i = 1}^k n_{i}!}
   \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
@@ -87,7 +87,7 @@ by~$\nu_i(\boldtheta) = \nu p_i(\boldtheta)$\todo{Can $\nu$ depend on
   \boldtheta? In principle it can and should!?} and the previously
 mentioned conditions it follows that
 \begin{align*}
-  L(\nu_1, \dots, \nu_k, \boldtheta) = \prod_{i = 1}^k \frac{\nu_i^{n_i} e^{-\nu_i}}{n_i!}
+  L(\nu_1, \dots, \nu_k, \boldtheta \mid \boldn) = \prod_{i = 1}^k \frac{\nu_i^{n_i} e^{-\nu_i}}{n_i!}
 \end{align*}
 which is the product of Poisson probabilities of observing~$n_i$
 events in a bin with an expected number of events~$\nu_i$ (the
@@ -162,6 +162,13 @@ $\boldgamma = (\gamma_{cb})$.
 
 \subsection{Hypothesis Testing}
 
+What is a hypothesis? A population that is described by a specific set
+of parameters. Hypothesis tests distinguish between two complementary
+hypotheses. Hypothesis test provides a rule to either accept (reject)
+the null hypothesis, rejecting (accepting) the alternative based on an
+observed sample from a population.
+
+
 Hypothesis testing aims to distinguish between a null hypothesis~$H_0$
 (e.g.\ the Standard Model) and an alternative hypothesis~$H_1$. The
 value of a test statistic~$t(\mathbf{x})$, which is commonly a real
@@ -194,16 +201,24 @@ Nested model: The b-only model is the special case of~$\mu = 0$.
 
 
 
-\subsection{Likelihood Ratio Test and Neyman-Pearson Lemma}
+\subsubsection{Likelihood Ratio Test and Neyman-Pearson Lemma}
 
 The (profile) Likelihood Ratio Test is the optimal test based on the
 Neyman-Pearson lemma~\cite{neyman1933} meaning for a given
 significance level yielding the largest power.
 \begin{align*}
-  \Lambda = \frac{L(\boldtheta \mid H_0)}{L(\boldtheta \mid H_1)}
+  \lambda = \frac{L(\boldtheta \mid H_0)}{L(\boldtheta \mid H_1)}
 \end{align*}
 
+\todo[inline]{The Likelihood Ratio Test is only the optimal test if
+  there are no free parameters.}
 
+Likelihood ratio test for nested models (i.e.\ the alternativ model
+contains the null hypothesis as a subset~$\Theta_0 \subset \Theta$:
+\begin{align}
+  \lambda = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \boldx)}{\sup_{\theta \in \Theta\phantom{_0}} L(\theta \mid \boldx)}
+\end{align}
+$-2 \ln \lambda$
 
 The likelihood ratio still depends on both the parameters of interest
 as well as the nuisance parameters. The profile likelihood given by
@@ -218,7 +233,16 @@ nuisance parameters given~$\mu$ -- double hat to distinguish it from
 the maximum likelihood estimate~$\hat{\theta}$). The maximum of the
 profile likelihood coincides with the maximum likelihood estimate.
 
-Profile likelihood ratio test statistic:
+
+In HEP we usually have a model where the signal contribution is
+controlled by the signal strenght~$\mu \geq 0$ where~$\mu = 0$
+corresponds to the background-only hypothesis. Thus the likelihood
+ratio test for a null hypothesis with signal strength~$\mu$ is written as
+\begin{align}
+  \lambda(\mu) = \frac{\sup_\theta L(\mu, \theta \mid \boldx)}{\sup_{\mu,\theta} L(\mu, \theta \mid \boldx)}
+\end{align}
+
+
 \begin{align*}
   \Lambda(\mu) = \frac{\mathcal{L}\left( \mu, \hat{\hat{\theta}} \mid \mathbf{x} \right)}
                       {\mathcal{L}\left( \hat{\mu}, \hat{\theta} \mid \mathbf{x} \right)}
@@ -231,11 +255,46 @@ conditions: asymptotic, nested, either model is correct, identifiable,
 i.e.\ any value of parameters is uniquely assigned to a distinct
 hypothesis)
 
-\subsection{Discovery Significance}
 
-\subsection{Exclusion Limits}
+
+
+
+\subsubsection{Discovery Significance}
+
+\begin{align}
+  q_0 =
+  \begin{cases}
+    -2 \log \lambda(0) & \muhat \geq 0 \\
+    0 & \muhat < 0
+  \end{cases}
+\end{align}
+
+
+\subsubsection{Confidence Intervals \& Upper Limits}
+
+A confidence interval (comparison to point estimate, e.g.\ MLE) is an
+interval of a parameter derived from the observed sample that covers
+the true value with a given coverage probabilty. (The interval is the
+random quantity and not the parameter).
+
+As an inversion of hypothesis tests (what mu null hypothesis would be
+rejected?).
+
+Asymptotic properties of likelihood ratio -> should be roughly normal
+in the minimum, can be taylor expanded and then confidence intervals
+can be extracted from the Hessian at the MLE.
 
 CLs method CLs = (CLs+b / CLb)
+
+\begin{align}
+  \tilde{q}_\mu =
+  \begin{cases}
+    -2 \ln \tilde{\lambda}(\mu) & \muhat \leq \mu \\
+    0 & \muhat > \mu
+  \end{cases}
+\end{align}
+
+
 
 \cite{Read:2002hq}
 
