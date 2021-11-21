@@ -81,8 +81,9 @@ likelihood function''~\cite{cowan1998}:
   \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
 \end{align*}
 which follows from the joint distribution given by the product of the
-Poisson and multinomial probability mass functions.  With the
-expectation value of the number of events in bin~$i$ given
+Poisson and multinomial probability mass functions (conditional on the
+number of events observed?).  With the expectation value of the number
+of events in bin~$i$ given
 by~$\nu_i(\boldtheta) = \nu p_i(\boldtheta)$\todo{Can $\nu$ depend on
   \boldtheta? In principle it can and should!?} and the previously
 mentioned conditions it follows that
@@ -110,8 +111,9 @@ such that the PDF of the mixture is:
   f(x; \mu, \boldtheta) = \alpha f_\text{S}(x; \boldtheta) + (1 - \alpha) f_\text{B}(x; \boldtheta) \,\text{.}
 \end{align*}
 In practice~$f_\text{B}$ is frequently itself a mixture model
-consisting of multiple background processes. In the binned
-representation this mixture model yields:
+consisting of multiple background processes. ($f_\text{S}$ should only
+depend on $\boldtheta_\text{s}$ same for bkg.?) In the binned representation this
+mixture model yields:
 \begin{align*}
   \nu_i(\mu, \boldtheta) = \mu \nu_i^\text{S}(\boldtheta) + \nu_i^\text{B}(\boldtheta)
 \end{align*}
@@ -185,7 +187,9 @@ which is related to the probability~$\beta$ of accepting $H_1$ when
 $H_0$ was true (type II error rate). The field of particle physics
 adopts the convention that the null hypothesis needs to be rejected at
 a significance level of~$\alpha = \num{2.87e-7}$ ($5\sigma$) to claim
-discovery of new phenomena.
+discovery of new phenomena (which is intentionally low to prevent
+false discoveries). Exclusion of signal models is usually done at 95\%
+confidence level ($\alpha = 0.05$).
 
 
 Composite hypothesis: hypothesis depending on some parameter, e.g.\
@@ -218,7 +222,8 @@ contains the null hypothesis as a subset~$\Theta_0 \subset \Theta$:
 \begin{align}
   \lambda = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \boldx)}{\sup_{\theta \in \Theta\phantom{_0}} L(\theta \mid \boldx)}
 \end{align}
-$-2 \ln \lambda$
+Frequently, the test statistics are expressed as~$-2 \ln \lambda$ due
+to the asymptotic properties of the sampling distributions.
 
 The likelihood ratio still depends on both the parameters of interest
 as well as the nuisance parameters. The profile likelihood given by
@@ -257,8 +262,6 @@ hypothesis)
 
 
 
-
-
 \subsubsection{Discovery Significance}
 
 \begin{align}
@@ -268,6 +271,10 @@ hypothesis)
     0 & \muhat < 0
   \end{cases}
 \end{align}
+Asymptotic distribution: non-central chi-square with degrees of
+freedom according to the number of POIs. In the case of the null
+hypothesis, this reduces to the result from Wilk (non-centrality
+factor is zero) but really it is a half chi-square distribution.
 
 
 \subsubsection{Confidence Intervals \& Upper Limits}
@@ -277,14 +284,16 @@ interval of a parameter derived from the observed sample that covers
 the true value with a given coverage probabilty. (The interval is the
 random quantity and not the parameter).
 
-As an inversion of hypothesis tests (what mu null hypothesis would be
-rejected?).
+The calculation of confidence intervals and upper limits can be
+depicted as an inversion of hypothesis tests. The question is which
+$\mu$ null hypothesis would be rejected at a fixed significance
+level~$\alpha$. The confidence interval is then the region which
+cannot be rejected at the specified coverage $1 - \alpha$.
 
 Asymptotic properties of likelihood ratio -> should be roughly normal
 in the minimum, can be taylor expanded and then confidence intervals
 can be extracted from the Hessian at the MLE.
 
-CLs method CLs = (CLs+b / CLb)
 
 \begin{align}
   \tilde{q}_\mu =
@@ -294,9 +303,19 @@ CLs method CLs = (CLs+b / CLb)
   \end{cases}
 \end{align}
 
+Asimov (for CLs method)?
+
+CLs method: \cite{Read:2002hq}
+
+\begin{align}
+  \text{CL}_\text{s+b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid \mu) \, \mathrm{d}\tilde{q}_\mu \\
+  \text{CL}_\text{b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid 0) \, \mathrm{d}\tilde{q}_\mu
+\end{align}
 
 
-\cite{Read:2002hq}
+\begin{align}
+  \text{CL}_\text{s} = \frac{\text{CL}_\text{s+b}}{\text{CL}_\text{b}}
+\end{align}
 
 
 
