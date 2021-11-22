@@ -34,6 +34,9 @@
 % \usetikzlibrary{decorations.pathmorphing}
 % \usetikzlibrary{decorations.markings}
 \usepackage{thesis_defs}
+\usepackage{atlasmisc}
+\usepackage{atlasparticle}
+\usepackage{atlasunit}
 
 %------------------------------------------------------------------------------
 % Instead of colouring  links, cites, table of contents etc.
@@ -172,20 +175,24 @@
 %==============================================================================
 \input{chapters/introduction}
 
+
 % ==============================================================================
 \chapter{The Standard Model of Particle Physics}
 \label{sec:standard_model}
 % ==============================================================================
+
 
 % ==============================================================================
 \chapter{Beyond the Standard Model}
 \label{sec:bsm}
 % ==============================================================================
 
+
 % ==============================================================================
 \chapter{The ATLAS Experiment and the Large Hadron Collider}
 \label{sec:atlas_and_lhc}
 % ==============================================================================
+
 
 % ==============================================================================
 \chapter{Experimental Methods}
@@ -193,20 +200,34 @@
 % ==============================================================================
 \input{chapters/experimental_methods/statistical_methods}
 
+
 % ==============================================================================
 \chapter{Tau Identification using Neural Networks}
 \label{sec:tauid}
 % ==============================================================================
+\input{chapters/tau_identification/tauid}
+
 
 % ==============================================================================
 \chapter{Search for Higgs Boson Pair Production}
 \label{sec:dihiggs}
 % ==============================================================================
+\input{chapters/higgs_pair_production/introduction}
+\input{chapters/higgs_pair_production/data_and_simulation}
+\input{chapters/higgs_pair_production/event_reconstruction}
+\input{chapters/higgs_pair_production/event_selection}
+\input{chapters/higgs_pair_production/background_estimation}
+\input{chapters/higgs_pair_production/uncertainties}
+\input{chapters/higgs_pair_production/statistical_analysis}
+
 
 % ==============================================================================
-\chapter{Higgs Self Coupling}
+\chapter{Constraining the Higgs Boson Self-Coupling}
 \label{sec:higgs_self_coupling}
 % ==============================================================================
+\input{chapters/higgs_self_coupling/notes}
+\input{chapters/higgs_self_coupling/signal}
+
 
 % ==============================================================================
 \chapter{Conclusion}
@@ -235,7 +256,7 @@
 \appendix
 % \part*{Appendix}
 % Add your appendices here - don't forget to also add them to \includeonly above
-\include{chapters/appendix}
+% \include{chapters/appendix}
 % \printbibliography[heading=subbibliography]
 
 %------------------------------------------------------------------------------
@@ -266,3 +287,8 @@
 % \input{chapters/cv}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

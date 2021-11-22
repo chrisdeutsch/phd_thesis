@@ -1,0 +1,77 @@
+\section{Signals with Varied Higgs Boson Self-Coupling}
+
+Cross section is at $\NNLO_\text{FTapprox}$ with approximate finite top mass.
+
+The samples are $\NLO_\text{FTapprox}$ (old sample) and $\NLO_\text{FT}$ (new
+sample -- softer $m_{hh}$ spectrum).
+
+
+\subsubsection{Understanding $\kappa_{\lambda}$ Dependency of Signal}
+% From here: https://arxiv.org/pdf/1910.00012.pdf
+
+$\kappa_\lambda = 2.2 - 2.4$ point of maximum destructive interference.
+
+$\kappa_\lambda < -1$ and $\kappa_\lambda > 5$ triangle-type diagram
+starts dominating (enhancing low $m_\text{HH}$-region).
+
+Factorization of cross section amplitudes:
+\begin{align*}
+  A(\ktop, \klambda)
+  = A_\square(\ktop) + A_\triangle(\ktop, \klambda)
+  = \ktop^2 A_\square^\prime + \ktop \klambda A_\triangle^\prime
+\end{align*}
+At leading order write amplitude as sum of box diagram amplitude and
+triangle diagram amplitude and rewrite with coupling independent parts
+of amplitudes $A^\prime$.
+\begin{align*}
+  \sigma &\propto \int \left| A(\ktop, \klambda) \right|^2 \\
+         &= \int \left|A_\square(\ktop)\right|^2 + \left|A_\triangle(\ktop, \klambda)\right|^2
+           + 2 \operatorname{Re}\left( \overline{A_\square(\ktop)} \, A_\triangle(\ktop, \klambda) \right) \\
+         &= \int \ktop^4 \left[ \left| A_\square^\prime \right|^2 + \left( \frac{\klambda}{\ktop}  \right)^2 \left| A_\triangle^\prime \right|^2 + 2 \frac{\klambda}{\ktop} \operatorname{Re}\left(\overline{A_\square^\prime} A_\triangle^\prime\right) \right]
+\end{align*}
+Findings:
+\begin{itemize}
+\item At leading order the kinematics of Higgs pair production is
+  soley described by $\frac{\klambda}{\ktop}$ (the total cross section
+  does depend on both individually)
+
+\item For fixed \ktop the total LO cross section of Higgs pair
+  production can be described by a second order polynomial in \klambda
+\end{itemize}
+
+
+The cross section can be divided into three distinct parts (the box
+term, the triangle term and the interference term). If one produces
+three samples with different \ktop and \klambda values, one can solve
+for these terms and describe the general cross section (as a function
+of \ktop and \klambda) as follows (in ATLAS the following basis is
+used $S(\ktop, \klambda)$ with the samples
+$S(1, 0), S(1, 1), S(1, 20)$). The basis is suitable since $S(1, 0)$
+directly relates to the box diagram amplitude, $S(1, 20)$ is dominated
+by the triangle diagram, and for the SM point $S(1, 1)$ there is large
+interference between box and triangle diagram therefore giving access
+to the interference term:
+\begin{align*}
+  \frac{\mathrm{d}\sigma}{\mathrm{d}\mathbf{x}} = \ktop^2 \left(
+  \left[ \ktop^2 + \frac{\klambda^2 - 21 \klambda \ktop}{20} \right] S(1, 0, \mathbf{x})
+  + \left[ \frac{20 \klambda \ktop - \klambda^2}{19} \right] S(1, 1, \mathbf{x})
+  + \left[ \frac{\klambda^2 - \klambda \ktop}{380}  \right] S(1, 20, \mathbf{x})
+  \right)
+\end{align*}
+
+
+\begin{align*}
+  \frac{\mathrm{d}\sigma}{\mathrm{d}\mathbf{x}} (\ktop, \klambda) = \ktop^2 \left(
+  \left[ \ktop^2 + \frac{\klambda^2 - 21 \klambda \ktop}{20} \right] \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\mathbf{x}} \right|_{\ktop = 1, \klambda = 0}
+  + \left[ \frac{20 \klambda \ktop - \klambda^2}{19} \right] \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\mathbf{x}} \right|_{\ktop = 1, \klambda = 1}
+  + \left[ \frac{\klambda^2 - \klambda \ktop}{380}  \right] \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\mathbf{x}} \right|_{\ktop = 1, \klambda = 20}
+  \right)
+\end{align*}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:

@@ -1,0 +1,185 @@
+\section{Event Selection}
+
+An event selection is applied to select events consistent with a \bbtthh final
+state. Due to the chosen MVA analysis strategy, the selection does not aim to
+reduce backgrounds significantly.
+
+\subsection{Event Cleaning}
+
+\todo[inline]{Primary vertex requirements \& jet cleaning}
+
+\todo[inline]{Muon cleaning / muons from cosmics? Are we applying this?}
+
+\todo[inline]{Analysis specific object counts \& thresholds from trigger}
+
+\todo[inline]{Cuts aiming to reduce backgrounds, e.g.\ $m_{\tau\tau} >
+  \SI{60}{\GeV}$ to reduce DY}
+
+\todo[inline]{SR selection (not really applicable -- maybe talk about PNN)??? Anti-Tau CR}
+
+\todo[inline]{b-jet energy correction}
+
+\todo[inline]{Observables used to reduce backgrounds: dRTauTau, dRBB, mtautau,
+  mbb, mHH}
+
+\subsection{Trigger}
+\label{sec:trigger}
+
+\todo[inline]{Trigger \& trigger evolution}
+
+In the \tauhad\tauhad channel, events are selected using single (STT) and di-\tauhad
+triggers (DTT). The list of triggers used can be found in \cref{tab:triggers_hadhad}.
+
+\begin{table}[h]
+  \centering
+
+  \scriptsize
+
+  \begin{tabular}{ll}
+    \toprule
+    Trigger & Period \\
+
+    \midrule
+    \multicolumn{2}{c}{Single \tauhad triggers (STT)} \\
+    \midrule
+
+    HLT\_tau80\_medium1\_tracktwo\_L1TAU60 & 15 -- 16 A \\
+    HLT\_tau125\_medium1\_tracktwo & 16 B -- 16 D3 \\
+    HLT\_tau160\_medium1\_tracktwo & 16 D4 -- 17 B4 \\
+    HLT\_tau160\_medium1\_tracktwo\_L1TAU100 & 17 B5 -- 17 end \\
+    HLT\_tau160\_medium1\_tracktwoEF\_L1TAU100 & 18 -- \\
+    HLT\_tau160\_mediumRNN\_tracktwoMVA\_L1TAU100 & 18 K -- \\
+
+    \midrule
+    \multicolumn{2}{c}{Di-\tauhad triggers (DTT)} \\
+    \midrule
+
+    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo\_L1TAU20IM\_2TAU12IM & 15 \\
+    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo & 16 -- 17 B4 \\
+    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo\_L1TAU20IM\_2TAU12IM\_4J12 & 17 \\
+    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo\_L1DR-TAU20ITAU12I-J25 & 17 B5 -- 17 end \\
+    HLT\_tau35\_medium1\_tracktwoEF\_tau25\_medium1\_tracktwoEF\_L1TAU20IM\_2TAU12IM\_4J12.0ETA23 & 18 -- \\
+    HLT\_tau35\_medium1\_tracktwoEF\_tau25\_medium1\_tracktwoEF\_L1DR-TAU20ITAU12I-J25 & 18 -- \\
+    HLT\_tau35\_mediumRNN\_tracktwoMVA\_tau25\_mediumRNN\_tracktwoMVA\_L1TAU20IM\_2TAU12IM\_4J12.0ETA23 & 18 K -- \\
+    HLT\_tau35\_mediumRNN\_tracktwoMVA\_tau25\_mediumRNN\_tracktwoMVA\_L1DR-TAU20ITAU12I-J25 & 18 K -- \\
+
+    \bottomrule
+  \end{tabular}
+
+  \caption{Triggers used for data taking in the \tauhad\tauhad channel.}
+  \label{tab:triggers_hadhad}
+\end{table}
+
+Priority is given to STT events if the reconstructed \tauhad fulfil the
+\pT-threshold of the trigger (\SI{100}{\GeV} for \verb|tau80|, \SI{140}{\GeV}
+for \verb|tau125| and \SI{180}{\GeV} for \verb|tau160|) and are geometrically
+matched to the HLT object that fired the trigger.
+
+If the event does not fulfil the STT criteria, then the DTT is checked. The
+\pT-thresholds for \tauhadvis is \SI{40}{\GeV} (\SI{30}{\GeV}) for the leading
+(subleading) \tauhadvis candidate.
+
+For three runs (336506, 336548, 336567) during 2017 data taking, L1Topo-based
+triggers were mistakenly disabled in the trigger firmware also affecting the
+\verb|L1DR-TAU20ITAU12I-J25| trigger. As a backup the almost unprescaled
+\verb|HLT_tau35_medium1_tracktwo_tau25_medium1_tracktwo| trigger was used.
+
+In 2017 / 2018 two different di-\tauhad triggers with different L1 seeds are
+used. The L1 seeds are \verb|L1TAU20IM_2TAU12IM_4J12| and
+\verb|L1TAU20IM_2TAU12IM_4J12.0ETA23| (4J12) and \verb|L1DR-TAU20ITAU12I-J25|
+(L1Topo) and differ in the requirements on \tauhadvis and additional jets.
+
+The 4J12 trigger requires two\footnote{Two \tauhadvis already satisfy 2J12}
+additional jets at L1 with $\ET > \SI{12}{\GeV}$. Additionally, in 2018 the jets
+are required to be in $|\eta| < 2.3$. The L1Topo trigger uses the ATLAS
+topological trigger introduced in 2017 to require a $\Delta R(\tauhad, \tauhad)
+< 2.8$ on both \tauhad as well as one additional jet with $\ET > \SI{25}{\GeV}$
+at L1.
+
+Orthogonality (and being on plateau of the trigger turn-on) between the 4J12 and
+L1Topo trigger channel is ensured by offline cuts discussed in
+Section.%~\ref{subsec:selhh_hadhad}.
+
+During TS1 new \tauhadvis triggers employing RNN-based \tauhad identification
+and MVA-based energy calibration were deployed. Starting from Period K, the
+recommendation is to use a logical OR between the old
+(\verb|medium1_tracktwoEF|) and new triggers (\verb|mediumRNN_tracktwoMVA|).
+
+
+\subsection{Selection of $\pp \ra hh \ra \bbbar\tauhad\tauhad$ Events}
+
+
+\subsubsection{Preselection}
+
+Trigger selection follows \cref{sec:trigger}
+
+\subsubsection{Signal Region}
+
+The SR selection is as follows:
+\begin{itemize}
+\item Exactly two reconstructed \tauhadvis passing \textit{loose} identification
+  (RNN)
+
+\item Unit electric charge of \tauhadvis candidate with opposite sign as
+  reconstructed from the tracks associated to the \tauhadvis candidates
+
+\item Two or more jets
+
+\item Exactly two \btagged jets with the \SI{77}{\percent} working point of the
+  DL1r tagger
+
+\item No reconstructed and identified electrons and muons in the event
+
+\item Passing the trigger selection described in \cref{sec:trigger}
+
+\item The \tauhadvis are geometrically matched to objects that fired either the
+  STT or the DTT trigger.
+
+\item \mMMC > \SI{60}{\GeV}
+
+\item At least one \bjet with \pT > \SI{45}{\GeV} \todo{Can we drop this?}
+\end{itemize}
+
+
+Orthogonality between the L1Topo and the 4J12 DTT is ensured by offline cuts on
+\tauhadvis and jet \pT:
+\begin{itemize}
+\item STT events: \tauhadvis are required to pass a trigger-dependent \pT
+  threshold as described in \cref{sec:trigger}. STT events are prioritised over
+  DTT events.
+
+\item DTT events in 2015-2016: The leading jet is required to have \pT >
+  \SI{80}{\GeV} due to the additional jet requirement (J25) at L1 in 2016. This
+  ensures that the L1 trigger is close to its efficiency plateau, minimizing the
+  impact of a mismatch in trigger efficiency in data / MC.
+
+\item DTT events in 2017-2018: Are categorised into two categories depending on
+  the triggers to be checked:\todo{Chris: need to check treatment of non-L1Topo
+    trigger at the beginning of 2017}
+  \begin{itemize}
+  \item If leading and subleading jet $\pT > \SI{45}{\GeV}$: Event is considered a
+    4J12 event. This cut ensures that the additional jet requirement at L1 (J12)
+    is fulfilled.
+  \item Else if leading jet $\pT > \SI{80}{\GeV}$ and $\dRtautau \leq 2.5$:
+    Event is considered a L1Topo event. The jet \pT and \dRtautau cut ensure
+    that the additional J25 and \dRtautau requirement at L1 are fulfilled.
+  \end{itemize}
+\end{itemize}
+
+
+\todo[inline]{There is a \SI{23}{\GeV} subleading \tauhadvis \pT cut at
+  derivation level which will affect STT events.}
+
+
+
+
+
+
+
+\todo[inline]{Acceptance times efficiency plot for resonant analysis.}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:

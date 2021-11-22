@@ -1,0 +1,47 @@
+\section{Systematic Uncertainties}
+
+\todo[inline]{Split in experimental \& theory uncertainties}
+
+\subsection{Experimental Uncertainties}
+
+\todo[inline]{Experimental: Jets -- JES, JER, JVT, b-tag}
+
+\todo[inline]{Experimental: TAUS -- TES, Reco, ID}
+
+\todo[inline]{Experimental: electrons / muons -- ?}
+
+\todo[inline]{Experimental: MET -- all momentum / energy uncertainties are
+  propagated to MET, additionally uncertainties related to the soft term}
+
+\subsection{Extrapolation Uncertainties}
+
+The normalization for the Z+HF and \ttbar backgrounds are measured in dedicated
+control regions. An extrapolation uncertainty from the control region A to a
+signal region B is estimated using the relative acceptance times efficiency between A and B:
+\begin{align*}
+  \mathcal{R} = \frac{ \left( \mathcal{A} \times \varepsilon \right)_\text{B}}{\left( \mathcal{A} \times \varepsilon \right)_\text{A}} = \frac{ \left( \sigma \times \mathcal{A} \times \varepsilon \right)_\text{B}}{\left( \sigma \times \mathcal{A} \times \varepsilon \right)_\text{A}} = \frac{N_\text{B}}{N_\text{A}}
+\end{align*}
+The uncertainty on $\mathcal{R}$ is used as an extrapolation uncertainty and is
+estimated as follows:
+\begin{align*}
+  \text{Relative extrapolation uncertainty} = \frac{\mathcal{R}_\text{var} - \mathcal{R}_\text{nom}}{\mathcal{R}_\text{nom}}
+\end{align*}
+where the relative acceptance times efficiency is calculated for the nominal
+$\mathcal{R}_\text{nom}$ and variation $\mathcal{R}_\text{var}$.
+
+\todo[inline]{Theory: PDF, \alphas, renormalization and factorization scale}
+
+\todo[inline]{Theory: simualted processes not normalized in data \ra
+  uncertainties on theory xsec is applied}
+
+\todo[inline]{Theory: V+jets -- resummation, CKKW matching}
+
+\todo[inline]{Theory: \ttbar -- ME, PS, ISR, FSR}
+
+\todo[inline]{Theory: Signal -- ?}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:

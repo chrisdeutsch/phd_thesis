@@ -1,0 +1,50 @@
+\section{Data and Simulated Event Samples}
+
+Data taken in \pp collisions during \RunTwo of the LHC between 2015--2018 at a
+center of mass energy of $\sqs = \SI{13}{\TeV}$ with a minimum bunch spacing of
+\SI{25}{ns}.
+
+% https://twiki.cern.ch/twiki/bin/view/AtlasProtected/GoodRunListsForAnalysisRun2
+% https://twiki.cern.ch/twiki/bin/viewauth/Atlas/DataPreparationCheckListForPhysicsAnalysis
+The data is required to pass quality cuts \todo{complete me: GRL, LAr noise
+  bursts, Tile corrupted events, SCT corrupted events, incomplete events}.
+
+% https://twiki.cern.ch/twiki/bin/view/Atlas/LuminosityForPhysics
+% https://twiki.cern.ch/twiki/bin/view/AtlasProtected/GoodRunListsForAnalysisRun2
+% 2015 (OflLumi-13TeV-008): 3219.56 ipb
+% 2016 (OflLumi-13TeV-009): 32988.1 ipb
+% 2017 (OflLumi-13TeV-010): 44307.4 ipb
+% 2018 (OflLumi-13TeV-010): 58450.1 ipb
+The integrated luminosity of the combined 2015--2018 dataset corresponds to
+\SI{139.0}{\ifb} with an uncertainty of
+\SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021} as measured by
+LUCID~\cite{LUCID2}.
+
+\todo[inline]{Backgrounds from MC / data; fullsim-fastsim; pileup - overlay of
+  minbias events and reweighting to match conditions in data}
+
+\todo[inline]{Details on generation of major backgrounds and signal: \ttbar,
+  V+jets, single top, ttH, signal, etc.}
+
+For \ttbar and single top production \POWHEGBOX is used.
+
+For V+jets \SHERPA{2.2.1} is used.
+
+For diboson \SHERPA{2.2.1} is used.
+
+The production of single Higgs bosons is considered as a background.
+
+% https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID450xxx/MC15.450149.MadGraphHerwig7EvtGen_PDF23LO_X300tohh_bbtautau_hadhad.py
+The resonant di-Higgs production in a 2HDM model $\pp \ra X \ra hh$ in ggF was
+generated using \MADGRAPH for the matrix element at LO interfaced to
+\HERWIG{7.1.0.3} LO for the parton shower. An alternative sample replacing
+\HERWIG with \PYTHIA{8} for the parton shower. Using narrow width approximation
+where the heavy scalar is assumed to have a decay width of $\Gamma_X =
+\SI{10}{\MeV}$. \todo{Which masses are available?} The cross-section for the
+resonant production is set to $\sigma(\pp \ra X \ra hh) = \SI{1}{\pb}$.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:

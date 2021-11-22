@@ -1,0 +1,106 @@
+\section{Event Reconstruction}
+
+\todo[inline]{The same reconstruction and identification algorithms are applied
+  to simulation and data. Dedicated corrections are applied to account for
+  differences in efficiency / calibrations between simulation and data.}
+
+\subsection{Primary Vertex Selection}
+
+\subsection{Jets}
+\todo[inline]{Jet building from clusters; calibration; bad jet veto; JVT;
+  b-tagging}
+
+\subsection{Hadronically Decaying Tau Leptons}
+
+\todo[inline]{taus: seeding; energy scale (LC \& BRT); track selection;
+  acceptance; Tau-ID (jet \& e)}
+
+\subsection{Electrons}
+
+\todo[inline]{electrons: reco \& ID / isolation}
+
+\subsection{Muons}
+
+\todo[inline]{muons: reco \& ID / isolation}
+
+\subsection{Missing Transverse Momentum}
+
+\todo[inline]{\MET: negative vector sum of reconstructed objects; soft term}
+
+\subsection{Overlap Removal}
+
+% https://gitlab.cern.ch/atlas/athena/tree/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/
+% Harmonization note: https://cds.cern.ch/record/1743654/files/ATL-COM-PHYS-2014-451.pdf
+
+After the event is reconstructed a overlap-removal procedure is applied to
+resolve ambiguities when a physical object is reconstructed as multiple
+particles in the ATLAS detector. The angular distance $\dRy =
+\sqrt{\Delta y^2 + \Delta \phi^2}$ is used to measure the overlap of two
+reconstructed objects. \todo{Why rapidity instead of pseudorapidity?}
+
+The following step-by-step procedure is used to resolve ambiguities in the
+reconstructed objects:
+\begin{itemize}
+  % https://indico.cern.ch/event/807799/contributions/3362328/attachments/1818680/2973610/Presentation.pdf
+  % https://indico.cern.ch/event/814156/contributions/3396841/attachments/1830226/2997072/Presentation.pdf
+%\item jet - $\mu$: Reject jet if not \btagged, $N_\text{tracks} < 4$ and $\dRy
+%  < 0.4$
+
+% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleEleOverlapTool.cxx
+\item $e_1$ - $e_2$: Reject $e_1$ if both electrons share the track and ${\pT}_1
+  < {\pT}_2$
+
+% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseEleOverlapTool.cxx
+\item \tauhadvis - $e$: Reject \tauhadvis if $\dRy < 0.2$ and $e$ passes \verb|DFCommonElectronsLHLoose|
+
+% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseMuOverlapTool.cxx
+\item \tauhadvis - $\mu$: Reject \tauhadvis if $\dRy < 0.2$:\\
+  Case 1 ($\tauhadvis \pT > \SI{50}{\GeV}$): $p_{\text{T}, \mu} > \SI{2}{\GeV}$
+  and combined muon\\
+  Case 2 ($\tauhadvis \pT \leq \SI{50}{\GeV}$): $p_{\text{T}, \mu} > \SI{2}{\GeV}$
+
+% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleMuSharedTrkOverlapTool.cxx
+\item $\mu$ - $e$: Reject $\mu$ if calo-muon and shared ID track
+\item $e$ - $\mu$: Reject $e$ if shared ID track
+
+% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleJetOverlapTool.cxx
+\item jet - $e$: Reject jet if $\dRy < 0.2$, not \btagged or \btagged and
+  ${\pT}_{e} > \SI{100}{\GeV}$
+\item $e$ - jet: Reject $e$ if $\dRy < 0.4$
+
+% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/MuJetOverlapTool.cxx
+\item jet - $\mu$: Reject jet if not \btagged, $N_\text{track} < 3$ ($p_\text{T,
+  track} > \SI{500}{\MeV}$), and $\dRy < 0.2$
+\item $\mu$ - jet: Reject $\mu$ if $\dRy < 0.4$
+\end{itemize}
+Due to a bug in the PFlow jet reconstruction, an additional OLR step removing
+prompt muons being reconstructed as fake jets is implemented in the official ASG
+OLR tool.
+
+Additionally, an analysis-specific overlap-removal procedure for \tauhadvis,
+anti-\tauhadvis and jets is implemented:
+\begin{itemize}
+\item jet - \tauhadvis: Reject jet if $\dRy < 0.2$
+\item anti-\tauhadvis - jet: Reject anti-\tauhad if jet is \btagged and $\dRy <
+  0.2$
+\item jet - anti-\tauhadvis: Reject jet  if $\dRy < 0.2$
+\end{itemize}
+This establishes the following priority: \tauhadvis > \btagged jet >
+anti-\tauhadvis > un-tagged jet.
+
+The priority, \btagged jet > \tauhadvis > anti-\tauhadvis > un-tagged jet, was
+investigated as an alternative but found to reduce signal acceptance in the
+2-tag region significantly due to limited \tauhad rejection of the DL1r \btag
+algorithm at the \SI{77}{\percent} working point. With the alternative priority
+the signal acceptance is reduced by about \SI{8}{\percent} (\SI{13}{\percent})
+in $\tauhad\taulep$ ($\tauhad\tauhad$).
+
+\todo[inline]{Is the above still up to date for PflowJets?}
+
+\todo[inline]{Special treatment of lepton OLR for b-jet corrections}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:
