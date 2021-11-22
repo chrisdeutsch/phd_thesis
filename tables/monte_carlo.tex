@@ -1,0 +1,45 @@
+% From VH->bb evidence paper:
+% Events containing W or Z bosons with jets (V +jets) were simulated using the Sherpa
+% 2.2.1 generator. Matrix elements were calculated for up to two partons at NLO and four
+% partons at LO using the OpenLoops [67] and Comix [68] matrix-element generators. The
+% number of expected V + jets events is rescaled using the NNLO cross-sections [71].
+
+\begin{tabular}{lllllll}
+  \toprule
+  Process                             & ME Generator    & ME PDF         & ME Order & PS and Hadronisation & UE Model Tune & Cross-Section Order \\
+  \midrule
+  \multicolumn{7}{l}{\textbf{Signals}} \\
+  \midrule
+  Non-resonant $\Pgluon\Pgluon \ra \PHiggs\PHiggs$ (ggF) &&&&&& \\
+  Non-resonant $\Pquark\Pquark \ra \Pquark\Pquark\PHiggs\PHiggs$ (VBF) &&&&&& \\
+  Resonant $\Pgluon\Pgluon \ra \PX \ra \PHiggs\PHiggs$ &&&&&& \\
+  \midrule
+  \multicolumn{7}{l}{\textbf{Top quark}} \\
+  \midrule
+  \ttbar &&&&&& \\
+  Single \Ptop ($s$-channel) &&&&&& \\
+  Single \Ptop ($t$-channel) &&&&&& \\
+  Single \Ptop ($\PW\Ptop$-channel) &&&&&& \\
+  $\ttbar\PZ$ &&&&&& \\
+  $\ttbar\PW$ &&&&&& \\
+  \midrule
+  \multicolumn{7}{l}{\textbf{Vector boson + jets}} \\
+  \midrule
+  $\PW \ra \Plepton \Pnu$              & \SHERPA{2.2.1} & \NNPDF{3.0NNLO} & NLO? & \SHERPA{2.2.1}      & Default       & NNLO \\
+  $\PZ / \Pphoton^{*} \ra \ell\ell$    & \SHERPA{2.2.1} & \NNPDF{3.0NNLO} & NLO? & \SHERPA{2.2.1}      & Default       & NNLO \\
+  \midrule
+  \multicolumn{7}{l}{\textbf{Diboson}} \\
+  \midrule
+  $\PW\PW$, $\PW\PZ$, $\PZ\PZ$ & \SHERPA{2.2.1} & ?               & & \SHERPA{2.2.1}      & ?             & ? \\
+  \midrule
+  \multicolumn{7}{l}{\textbf{Single Higgs boson}} \\
+  \midrule
+  $\PHiggs \ra $ &&&&&& \\
+  $V \PHiggs \ra $ &&&&&& \\
+  \bottomrule
+\end{tabular}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis.tex"
+%%% End:
