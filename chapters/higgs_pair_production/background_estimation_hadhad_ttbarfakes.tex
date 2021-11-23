@@ -1,4 +1,67 @@
-Put estimation of fake-\tauhadvis in \ttbar here.
+In the fully-hadronic \hadhad channel, \ttbar with \faketauhad are a
+significant background contribution. In contrast to \faketauhad from
+multi-jet where both reconstructed \tauhad candidates are originating
+from jets, in $\ttbar \ra \Pbottom \PWp \APbottom \PWm$ frequently
+only a single \tauhadvis candidate originates from jets of hadronic
+decays of the \PW.
+
+The quality of the modelling of \faketauhad in simulation is generally
+unknown and needs to be checked. The pre-fit distributions\todo{Show?}
+showed no significant indication of large mismodelling. However, a
+data-driven method is still employed to get an idea about the level of
+agreement between data and MC and to provide uncertainties on these
+contributions.
+
+Given the reasonable agreement of the Monte Carlo simulation with the
+data, an approach of correcting the misidentification efficiencies in
+simulation using a data-driven measurement is chosen. Two approaches
+were investigated, one being the direct measurement of the
+misidentification efficiency
+\begin{align*}
+  \text{Fake rate:}\quad \varepsilon_\text{mis-ID}^\text{data} = \frac{N_\text{post-ID}^\text{data}}{N_\text{pre-ID}^\text{data}}
+\end{align*}
+and the other being a measurement of the misidentification efficiency
+relative to the one in simulation
+\begin{align*}
+  \text{Fake scale factor:}\quad
+  \text{SF} =
+  \frac{\varepsilon_\text{mis-ID}^\text{data}}{\varepsilon_\text{mis-ID}^\text{MC}} =
+  \frac{N_\text{post-ID}^\text{data} / N_\text{pre-ID}^\text{data}}{N_\text{post-ID}^\text{MC} / N_\text{pre-ID}^\text{MC}}
+  = \frac{N_\text{post-ID}^\text{data}}{N_\text{post-ID}^\text{MC}} \cdot \frac{N_\text{pre-ID}^\text{MC}}{N_\text{pre-ID}^\text{data}}
+\end{align*}
+The second term is completely independent of the modelling of the
+\tauhadvis identification efficiency and describes the overall
+modelling of \ttbar in Monte Carlo simulation. This term is assumed to
+be a constant overall normalisation difference between MC and
+data. Differential shape differences will be accounted for in the
+systematic uncertainties on \ttbar modelling when extracting the scale
+factors.
+
+\todo[inline]{How would these be applied any differently? What are the
+  advantages of either method?}
+
+
+\subsubsection{Measurement of scale factors}
+
+The transverse mass of the \PW boson is used as a variable
+discriminating between. The main idea is to distinguish between
+semi-leptonic and di-leptonic \ttbar since two true taus would be
+expected in di-leptonic and jets faking taus in semi-leptonic. The
+all-hadronic mode is negligible due to the presence of one electron or
+muon.
+
+To distinguish between semi-leptonic and di-leptonic \ttbar, one can try to reconstruct the transverse mass of the \PW boson
+\begin{align*}
+  \mTW = \sqrt{\left( | \myvec{p}_{\text{T}, \ell} | + | \pTmiss | \right)^2
+               - \myvec{p}_{\text{T}, \ell} \cdot \pTmiss}
+\end{align*}
+where $\myvec{p}_{\text{T}, \ell}$ and \pTmiss are the vectors of the
+lepton ($e$ or $\mu$) momentum and missing transverse momentum in the
+transverse plane. For semi-leptonic \ttbar the event rate drops
+significantly beyond \SI{100}{\GeV} while for di-leptonic \ttbar, due
+to the presence of additional neutrinos, the transverse mass extends
+to larger values.
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../phd_thesis"
