@@ -193,7 +193,7 @@ confidence level ($\alpha = 0.05$).
 
 
 Composite hypothesis: hypothesis depending on some parameter, e.g.\
-signal strength.
+signal strength, nuisance parameters.
 
 
 $\boldtheta \in \boldsymbol{\Theta}_0$ (usually a simple hypothesis,
@@ -201,7 +201,8 @@ i.e.\ the set has one element)
 
 $\boldtheta \in \boldsymbol{\Theta}_1$ (composite hypothesis)
 
-Nested model: The b-only model is the special case of~$\mu = 0$.
+Nested model: The b-only model is a limiting case of the
+alternative~$\mu \ra 0$.
 
 
 
@@ -217,13 +218,16 @@ significance level yielding the largest power.
 \todo[inline]{The Likelihood Ratio Test is only the optimal test if
   there are no free parameters.}
 
-Likelihood ratio test for nested models (i.e.\ the alternativ model
-contains the null hypothesis as a subset~$\Theta_0 \subset \Theta$:
+Likelihood ratio test for nested / composite models (i.e.\ the
+alternativ model contains the null hypothesis as a
+subset~$\Theta_0 \subset \Theta$:
 \begin{align}
   \lambda = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \boldx)}{\sup_{\theta \in \Theta\phantom{_0}} L(\theta \mid \boldx)}
 \end{align}
-Frequently, the test statistics are expressed as~$-2 \ln \lambda$ due
-to the asymptotic properties of the sampling distributions.
+where the numerator is the restricted MLE over $\Theta_0$ and the
+numerator the unrestricted MLE. Frequently, the test statistics are
+expressed as~$-2 \ln \lambda$ due to the asymptotic properties of the
+sampling distributions.
 
 The likelihood ratio still depends on both the parameters of interest
 as well as the nuisance parameters. The profile likelihood given by
@@ -253,6 +257,7 @@ ratio test for a null hypothesis with signal strength~$\mu$ is written as
                       {\mathcal{L}\left( \hat{\mu}, \hat{\theta} \mid \mathbf{x} \right)}
 \end{align*}
 
+
 hat: estimator to distinguish it from the true value of the parameter.
 
 Asymptotic distributions: Wilk's theorem (valid under some regularity
@@ -264,8 +269,9 @@ hypothesis)
 
 \subsubsection{Discovery Significance}
 
-\cite{Cowan:2010js}
 
+The test statistic for the discovery of a positive signal
+is~\cite{Cowan:2010js}:
 \begin{align}
   q_0 =
   \begin{cases}
@@ -273,6 +279,10 @@ hypothesis)
     0 & \muhat < 0
   \end{cases}
 \end{align}
+
+
+
+
 Asymptotic distribution: non-central chi-square with degrees of
 freedom according to the number of POIs. In the case of the null
 hypothesis, this reduces to the result from Wilk (non-centrality

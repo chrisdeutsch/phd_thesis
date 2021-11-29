@@ -37,6 +37,9 @@ data. Differential shape differences will be accounted for in the
 systematic uncertainties on \ttbar modelling when extracting the scale
 factors.
 
+\todo[inline]{Main point: scale factor method provides a correction
+  that is applied post-ID.}
+
 \todo[inline]{How would these be applied any differently? What are the
   advantages of either method?}
 
@@ -50,7 +53,8 @@ expected in di-leptonic and jets faking taus in semi-leptonic. The
 all-hadronic mode is negligible due to the presence of one electron or
 muon.
 
-To distinguish between semi-leptonic and di-leptonic \ttbar, one can try to reconstruct the transverse mass of the \PW boson
+To distinguish between semi-leptonic and di-leptonic \ttbar, one can
+try to reconstruct the transverse mass of the \PW boson
 \begin{align*}
   \mTW = \sqrt{\left( | \myvec{p}_{\text{T}, \ell} | + | \pTmiss | \right)^2
                - \myvec{p}_{\text{T}, \ell} \cdot \pTmiss}
@@ -61,6 +65,125 @@ transverse plane. For semi-leptonic \ttbar the event rate drops
 significantly beyond \SI{100}{\GeV} while for di-leptonic \ttbar, due
 to the presence of additional neutrinos, the transverse mass extends
 to larger values.
+
+A top control region is defined in the $\Plepton + \tauhadvis$ final
+state, where \Plepton can be either electrons or muons. The control
+region is similar to the top control region used in the \lephad
+channel (c.f.\ \cref{sec:}) with minor alterations. It is defined by
+requiring exactly one \tauhadvis and exactly one electron or muon
+passing the identification criteria\todo{reference}, and exactly two
+\btagged jets. Only events passing the single lepton trigger selection
+are considered. The \tauhadvis and the other lepton is required to
+have opposite electric charge. The \tauhadvis selection is adapted to
+more closely follow the selection of the \hadhad channel, that is the
+\tauhadvis candidate is required to have $\pT > \SI{25}{\GeV}$ and
+\tauhadvis are considered up to $|\eta| < 2.5$ in pseudorapidity
+(instead of 2.3 in the \lephad channel). A selection of
+$\mBB > \SI{150}{\GeV}$ ensures orthogonality with the signal region
+of the \lephad channel.\todo{Have this in a table?}
+
+\todo[inline]{Talk about offline reconstructed taus and their identification}
+
+The \tauhadvis misidentification efficiencies depend on the \tauhadvis
+identification algorithm and the associated working point that is
+used. In this analysis the loose working point of the RNN \tauhadvis
+identification algorithm is used as the baseline \tauhadvis
+selection. In the \hadhad channel events are selected employing
+single- and di-\tauhadvis triggers which also employ identification
+algorithms to reduce trigger-rates at the HLT. These algorithms are
+developed to be similar to their counterparts in the \tauhadvis
+reconstruction\todo{Mention that they might diverge to some extend
+  esp.\ given we now use RNN?}. Differences between the identification
+at the HLT and during the offline reconstruction are expected and due
+to limitations in the read-out of the detector and the time available
+to make a decision on whether the event is accepted or rejected.
+
+The effect of this two-stage selection of \tauhadvis based on
+identification criteria, first at the HLT and then during offline
+reconstruction, needs to be taken into account when measuring
+corrections to the \tauhadvis misidentification efficiencies. The top
+control region, which is collected using single electron and muon
+triggers, allows to estimate the corrections for \tauhadvis without
+any requirements at the HLT.
+
+The requirements at the HLT can be emulated by requiring that the
+event passes appropriately chosen single-\tauhadvis triggers. The
+triggers with the lowest thresholds on the \tauhadvis \pT are chosen
+that use the same chain of algorithms\todo{Energy scale,
+  Identification} as is used by the trigger-selection in the signal
+region of the \hadhad channel. Generally, only prescaled versions of
+these triggers were available during data-taking but the trigger
+decision can be recalculated in retrospect
+(\textit{resurrected}). Three sub-regions of the top control region
+are defined by requiring that the events pass the decision of the
+resurrected triggers outlined in~\Cref{tab:triggers_ttbar_fake_sf} and
+that the reconstructed \tauhadvis is geometrically matched to the
+\tauhadvis candidate at the HLT (off the corresponding \tauhadvis
+trigger leg).
+
+\begin{table}[htbp]
+  \centering
+
+  \begin{tabular}{lp{7cm}p{5cm}}
+    \toprule
+    Offline ID & HLT chain & Relevance \\
+    \midrule
+    loose      & -- & {Subleading \tauhadvis candidates for events selected by single-\tauhadvis triggers.} \\
+               && \\
+    loose      & \verb|HLT_tau25_medium1_tracktwo| & {\tauhadvis candidates selected by di-\tauhadvis triggers in 2015-2017.} \\
+               && \\
+    loose      & \verb|HLT_tau25_medium1_tracktwoEF| & {\tauhadvis candidates selected by di-\tauhadvis triggers in 2018 until period K.} \\
+               && \\
+    loose & \verb|HLT_tau25_medium1_tracktwoEF| \par \textbf{or} \par \verb|HLT_tau25_mediumRNN_tracktwoMVA|  & {\tauhadvis candidates selected by di-\tauhadvis triggers in 2018 from period K.}\\
+    \bottomrule
+  \end{tabular}
+
+  \todo[inline]{Describe the identification cuts applied at the HLT?}
+
+  \caption{Combinations of \tauhadvis identification algorithms at the
+    HLT and the offline reconstruction.}
+  \label{tab:triggers_ttbar_fake_sf}
+\end{table}
+
+
+The available dataset for the measurement is as follows:
+\begin{itemize}
+
+\item \verb|HLT_tau25_medium1_tracktwo|: \SI{139}{\ifb}
+
+\item \verb|HLT_tau25_medium1_tracktwoEF|: \SI{58}{\ifb}
+
+\item \verb|HLT_tau25_mediumRNN_tracktwoMVA|: \SI{37}{\ifb}
+
+\end{itemize}
+
+The measurement regions are subdivided by the decay mode of the
+\tauhadvis (1-prong or 3-prong) and in bins of \tauhadvis \pT:
+\begin{itemize}
+\item 1-prong \tauhadvis with $\pT / \si{\GeV}$: $[25, 30)$, $[30, 35)$,
+  $[35, 40)$, $[40, 45)$, $[45, 55)$, $[55, 70)$, $[70, \infty)$
+
+\item 3-prong \tauhadvis with $\pT / \si{\GeV}$: $[25, 30)$, $[30, 40)$,
+  $[40, 50)$, $[50, 70)$, $[70, \infty)$
+\end{itemize}
+these regions are chosen such that their size and allows for a
+determination of corrections with limited impact of statistical
+uncertainty while allowing to extract potential \pT dependencies of
+the correction.
+
+
+% Fit model
+Fit \mTW
+
+Backgrounds:\\
+\ttbar and \ttbar with fake \tauhad\\
+single top \\
+V+jets \\
+Multi-jet is neglected
+
+Regions \& normalisation factors
+
+
 
 %%% Local Variables:
 %%% mode: latex
