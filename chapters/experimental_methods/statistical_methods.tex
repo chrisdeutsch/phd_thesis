@@ -10,44 +10,63 @@ information from measurement results and to test competing hypotheses.
 
 \subsection{The Method of Maximum Likelihood}
 
-\todo[inline]{Need to be careful about continous and discrete random
-  variables here. In the end a mixture of continuous and discrete
-  observables is used.}
-
-Let~$f(\mathbf{x}; \boldtheta)$ be the joint density (or
-probability in the discrete case) of the vector of random
-variables~$\mathbf{X}$ that is specified by
+Let~$f(\myvec{x} \mid \boldtheta)$ be the joint probability
+density\footnote{The principles outlined in the following also hold
+  for discrete probabiltiy distributions where the equivalent of the
+  probability density is the probability mass.} of a vector of random
+variables~$\myvec{X} = (X_1, \dots, X_n)$ that depends on
 parameters~$\boldtheta$. For a given
-observation~$\mathbf{x}_\text{obs}$\todo{sample? How does $n$ for
-  asymptotics get in here?} of the random variables~$\mathbf{X}$ one
-can consider the joint density at the observed point as a function of
+realisation~$\myvec{x} = (x_1, \dots, x_n)$ of~$\myvec{X}$ one can
+consider the joint density at the point~$\myvec{x}$ as a function of
 the parameter vector~$\boldtheta$
 \begin{align*}
-  L(\boldtheta \mid \boldx) = f(\mathbf{x}_\text{obs}; \boldtheta)
+  L(\boldtheta \mid \boldx) = f(\boldx \mid \boldtheta) \overset{\text{i.i.d.}}{=} \prod_{i=1}^n f(x_i \mid \boldtheta)
 \end{align*}
-which is called the likelihood function. The parameters~$\boldtheta$
-of the joint distribution~$f(\mathbf{x}; \boldtheta)$ can be inferred
-by the use of maximum likelihood estimation (MLE) by
+which is called the likelihood function. The last equality holds for
+independent and identically
+distributed~$X_i \sim f(x \mid \boldtheta)$. The likelihood function
+connects the probability density of the (fixed)
+observation~$\myvec{x}$ with the parameter vector~\boldtheta. The
+parameters of the joint distribution can be inferred from the
+observation using of maximum likelihood estimation by
 \begin{align*}
-  \hat{\boldtheta} = \argmax_{\boldtheta} L(\boldtheta \mid \boldx)
+  \hat{\boldtheta}(\boldx) = \argmax_{\boldtheta} L(\boldtheta \mid \boldx)
 \end{align*}
 where~$\hat{\boldtheta}$ is an estimator of the parameters based on
-the observed values of~$\mathbf{X}$, i.e.\ the estimator is chosen
-such that the density / probability of
-observing~$\mathbf{x}_\text{obs}$ is maximized. The maximum likelihood
-estimate has the following asymptotic properties~\cite{cramer1999}:
-\begin{enumerate}
-\item Unbiased -- $\hat{\boldtheta}$ converges to the true
-  value~$\boldtheta$
-\item Normal --
-\item Efficient -- estimator has minimum variance in the large sample limit
-\end{enumerate}
+the observed value of~\myvec{X}, i.e.\ the estimator is chosen such
+that the likelihood of observing~\boldx is maximised.
+
+The likelihood function is a fundamental part of frequentist
+statistical inference used to analyse results of high-energy physics
+experiments. Maximum likelihood estimators have convenient properties
+in the large sample limit under some general regularity
+conditions\footnote{For a detailed description of these conditions see
+  for example~\cite{casella2001}.} on the likelihood
+function. Let~$\hat{\theta}_n$ denote the maximum likelihood estimator
+for~$\theta$ on a sample of size~$n$, then the estimator has the
+following asymptotic properties~\cite{casella2001}:
+\begin{description}
+\item[Consistency] The estimator converges to the true value~$\theta$
+  with an arbitrarily small deviation as the sample size tends to
+  infinity, i.e.\
+  $\lim_{n \ra \infty} P(|\hat{\theta}_n - \theta| < \epsilon) = 1$
+  for any $\epsilon > 0$. In this limit the estimator is unbiased with
+  vanishing variance.
+
+\item[Asymptotic normality and efficiency] In the large sample
+  limit~$\sqrt{n}(\hat{\theta}_n - \theta)$ converges in distribution
+  to a normal distribution with zero mean and variance~$v(\theta)$,
+  where~$\theta$ is the true value of the parameter and~$v(\theta)$
+  the \textit{asymptotic variance} of the estimator. The estimator is
+  \textit{asymptotically efficient} in the sense that~$v(\theta)$
+  reaches the Cram\'er--Rao lower bound for the asymptotic variance of
+  estimators.
+\end{description}
 
 Frequently one minimises the negative logarithm of the likelihood
 (NLL) instead, which being a monotonic transformation does not change
 the parameter values extremum, to convert the products / exponentials
 frequently appearing in the liklihood function into sums / factors.
-
 
 The probability density function~$f$ is frequently intractable
 analytically but can be estimated using Monte Carlo
