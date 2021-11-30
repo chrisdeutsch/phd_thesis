@@ -1,0 +1,93 @@
+% ==============================================================================
+\section{Trigger}
+\label{sec:trigger}
+% ==============================================================================
+\todo[inline]{This should be elsewhere.}
+
+\todo[inline]{For more information on 2017 and 2018 triggers see the
+  TauCP INT note.}
+
+The L1 tau trigger (calorimeter only) remained unchanged during Run~2
+(aside from topological requirements).
+
+Taxonomy of trigger chains (in athena: HLT threshold, selection, preselection):
+
+\vspace{1em}
+
+\verb|HLT_tau25_medium1_tracktwo| (2015 -- 2016)~\cite{ATLAS-CONF-2017-061}:\\
+Three step process:
+\begin{enumerate}
+\item Calorimeter preselection: The calorimeter is read out in full
+  granularity for the region of interest marked by the L1
+  trigger. Topoclusters are built from calorimeter cells and
+  calibrated with the local hadronic calibration (LC). The vectorial
+  sum of clusters defines the jet seed for tau reconstruction. The
+  core clusters of the jet seed are used to estimate the tau energy
+  which is then calibrated using parametrised methods (subtracting
+  pileup and correcting the response). The HLT tau \pT cuts are
+  applied at this stage. \verb|tau25|
+
+\item Track preselection (two-staged): Fast tracking (Fast Track
+  Finder) is performed in a narrow cone around the center tau jet seed
+  to find the highest momentum track to determine the $z$-location of
+  the primary vertex from which the tau likely originated. Once the
+  vertex is determined, fast tracking is performed over the full ROI
+  but restricted in $|\Delta z|$ to be close to the leading
+  track. Tracks with at least 1 GeV are kept as core tracks
+  $\Delta R < 0.2$ and isolation tracks~$0.2 < \Delta R <
+  0.4$. Multiplicity requirements are enforced, so 1 to 3 core tracks
+  and maximum 1 isolation track. \verb|tracktwo|
+
+\item Offline-like selection: Precision tracking (similar to offline
+  reconstruction) is performed which is seeded using FTF tracks from
+  the previous step (i.e. it is refining the tracks found by FTF).
+
+
+  A BDT (two one for
+  1-prong one for multi-prong) is used to identify taus similar to
+  what would be used for offline identification of taus. A medium
+  working point is chosen with efficiencies: 96\% for 1-prong and 82\%
+  for 3-prong in Ztautau. \verb|medium1|
+\end{enumerate}
+
+For 2017 data-taking the triggers were similar to the 15--16
+algorithms with some tunings of the track preselection to prevent
+pile-up from impacting the multiplicity requirements (mostly due to
+the upper bound of 3 core tracks for 3-prong taus). Moreover, the
+track multiplicity and identification cuts were relaxed for very high
+momenta (200 GeV and higher) but this is barely relevant for the work
+presented in this thesis.
+
+\vspace{1em}
+
+\verb|HLT_tau25_medium1_tracktwoEF| (2018 -- ):\\
+The track multiplicity (core and iso.) which was applied in the track
+preselection stage using Fast-Track-Finder tracks introduced
+introduced inefficiencies for 3-prong taus in high pileup
+conditions. Therefore, the track multiplicity selection was removed
+and applied at a later stage on precision tracks that have better
+pileup and fake track rejection. \verb|tracktwoEF|
+
+\vspace{1em}
+
+\verb|HLT_tau25_mediumRNN_tracktwoMVA| (2018 K --):\\
+The (parametric) calibration in the first step is replaced by an
+MVA-based energy calibration using Boosted Regression Trees similar to
+the algorithm for offline tau calibration but without track und tau
+substructure information. Additionally, the tau identification step is
+replaced using the RNN algorithm (similar to offline) with minor
+adjustments of input variables (dead sensors in hit counts). Separate
+networks are trained for 0-prong and 1-prong.  The multi-prong network
+is using the offline tune.  A dedicated medium working point for the
+HLT is used with the following efficiency targets: 0-prong: 65\%;
+96.5\% 1-prong; 86.5\% multi-prong. The recovery 0-track taus recovers
+efficiency for cases (predominantely low momentum / high pileup),
+which can happen due to inefficiencies in FTF that are used to seed
+precision tracking. These can be recovered in offline reconstruction
+with full tracking.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:
