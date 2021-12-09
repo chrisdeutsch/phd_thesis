@@ -65,28 +65,29 @@ factors.
   advantages of either method?}
 
 
-\subsubsection{Measurement of scale factors}
+\subsubsection{Measurement region}
 
-A top control region is defined in the $\Plepton + \tauhadvis$ final
-state, where \Plepton can be either electrons or muons. The control
-region is similar to the top control region used in the \lephad
-channel where it is used to calculate fake factors for \tauhadvis
-mimicked by jets in \ttbar (c.f.\ \cref{sec:}). Minor alterations are
-applied to the region definition to ensure a consistent \tauhadvis
-selection with the \hadhad channel.
+A top control region is defined in a $\Plepton + \tauhadvis$ final
+state, where \Plepton can be either electrons or muons. The region is
+similar to the top control region used in the \lephad channel where it
+is used to calculate fake factors for \tauhadvis mimicked by jets in
+\ttbar (c.f.\ \cref{sec:}). Minor alterations are applied to the
+region definition to ensure a consistent \tauhadvis selection with the
+\hadhad channel.
 
-It is defined by requiring exactly one \tauhadvis and exactly one
-electron or muon passing the identification criteria\todo{reference},
-and exactly two \btagged jets. Only events passing the single lepton
-trigger selection are considered. The \tauhadvis and the electron /
-muon are required to have opposite electric charge. The \tauhadvis
-selection is adapted to more closely follow the selection of the
-\hadhad channel, that is the \tauhadvis candidate is required to have
-$\pT > \SI{25}{\GeV}$ and \tauhadvis are considered up to
-$|\eta| < 2.5$ in pseudorapidity (instead of 2.3 in the \lephad
-channel). A selection of $\mBB > \SI{150}{\GeV}$ ensures orthogonality
-with the signal region of the \lephad channel.\todo{Have this in a
-  table?}
+The region is defined by requiring exactly one \tauhadvis passing
+loose identification, exactly one electron or muon passing the
+identification criteria\todo{reference}, and exactly two \btagged
+jets. Only events passing the single lepton trigger selection are
+considered. The \tauhadvis and the electron / muon are required to
+have opposite electric charge. The \tauhadvis selection is adapted to
+more closely follow the selection of the \hadhad channel\footnote{In
+  the \lephad channel the \tauhadvis candidates are required to fulfil
+  $\pT > \SI{20}{\GeV}$ and $|\eta| < 2.3$.}, that is the \tauhadvis
+candidate is required to have $\pT > \SI{25}{\GeV}$ with a
+pseudorapidity up to~$|\eta| < 2.5$. Orthogonality with the signal
+region of the \lephad channel is ensured by requiring
+$\mBB > \SI{150}{\GeV}$.
 
 \todo[inline]{Why OS? SS will likely be enhanced in fakes. Charge
   correlations are more similar to the hadhad SR where the dominant
@@ -110,75 +111,78 @@ The \tauhadvis misidentification efficiencies depend on the \tauhadvis
 identification algorithm and the associated working point that is
 used. In this analysis the loose working point of the RNN \tauhadvis
 identification algorithm is used as the baseline \tauhadvis
-selection. In the \hadhad channel events are selected employing
-single- and di-\tauhadvis triggers which also employ identification
+selection. In the \hadhad channel events are selected with single- and
+di-\tauhadvis triggers which also use \tauhadvis identification
 algorithms to reduce trigger-rates at the HLT. These algorithms are
 developed to be similar to their counterparts in the \tauhadvis
-reconstruction\todo{Mention that they might diverge to some extend
-  esp.\ given we now use RNN?}. Differences between the identification
-at the HLT and during the offline reconstruction are expected and due
-to limitations in the read-out of the detector and the time available
-to make a decision on whether the event is accepted or rejected.
+reconstruction. Divergences between the identification algorithms used
+in the HLT and in offline \tauhadvis reconstruction are expected due
+to limitations in detector read-out and time budget at the HLT. New
+developments in offline \tauhadvis reconstruction and identification
+during Run~2 data-taking cannot be retroactively applied leading to
+additional differences between algorithms.
 
 The effect of this two-stage selection of \tauhadvis based on
 identification criteria, first at the HLT and then during offline
 reconstruction, needs to be taken into account when measuring
-corrections to the \tauhadvis misidentification efficiencies. The top
-control region, which is collected using single electron and muon
-triggers, allows to estimate the corrections for \tauhadvis without
-any requirements at the HLT.
+corrections to the \tauhadvis misidentification efficiencies. As a
+result, one needs to differentiate between both trigger categories in
+the \hadhad channel. In events selected by single-\tauhadvis triggers
+it is sufficient for a single \tauhadvis to pass reconstruction and
+identification at the HLT. For di-\tauhadvis triggers both candidates
+need to fulfil the requirements at the HLT.  The top control region,
+which uses single electron and muon triggers, allows the direct
+estimation of corrections for \tauhadvis without any requirements at
+the HLT.
 
-The requirements at the HLT can be emulated by requiring that the
-event passes appropriately chosen single-\tauhadvis triggers. The
-triggers with the lowest thresholds on the \tauhadvis \pT are chosen
-that use the same chain of algorithms\todo{Energy scale,
-  Identification} as is used by the trigger-selection in the signal
-region of the \hadhad channel. Generally, only prescaled versions of
-these triggers were available during data-taking but the trigger
-decision can be recalculated in retrospect
-(\textit{resurrected}). Three sub-regions of the top control region
-are defined by requiring that the events pass the decision of the
-resurrected triggers outlined in~\Cref{tab:triggers_ttbar_fake_sf} and
-that the reconstructed \tauhadvis is geometrically matched to the
-\tauhadvis candidate at the HLT (off the corresponding \tauhadvis
-trigger leg).
-
-\begin{table}[htbp]
-  \centering
-
-  \begin{tabular}{lp{7cm}p{5cm}}
-    \toprule
-    Offline ID & HLT chain & Relevance \\
-    \midrule
-    loose      & -- & {Subleading \tauhadvis candidates for events selected by single-\tauhadvis triggers.} \\
-               && \\
-    loose      & \verb|HLT_tau25_medium1_tracktwo| & {\tauhadvis candidates selected by di-\tauhadvis triggers in 2015-2017.} \\
-               && \\
-    loose      & \verb|HLT_tau25_medium1_tracktwoEF| & {\tauhadvis candidates selected by di-\tauhadvis triggers in 2018 until period K.} \\
-               && \\
-    loose & \verb|HLT_tau25_medium1_tracktwoEF| \par \textbf{or} \par \verb|HLT_tau25_mediumRNN_tracktwoMVA|  & {\tauhadvis candidates selected by di-\tauhadvis triggers in 2018 from period K.}\\
-    \bottomrule
-  \end{tabular}
-
-  \todo[inline]{Describe the identification cuts applied at the HLT?}
-  \todo[inline]{How does medium trigger ID related to loose offline ID?}
-
-  \caption{Combinations of \tauhadvis identification algorithms at the
-    HLT and the offline reconstruction.}
-  \label{tab:triggers_ttbar_fake_sf}
-\end{table}
-
-
-The available dataset for the measurement is as follows:
+The selection at the HLT can be emulated by requiring that events in
+the top control region, which were originally selected using single
+lepton triggers, also pass an appropriately chosen single-\tauhadvis
+trigger and that the \tauhadvis candidate is matched to a
+reconstructed and identified \tauhadvis at the HLT. At the HLT, the
+transverse momentum threshold on the \tauhadvis needs to be as low as
+\SI{25}{\GeV} and the chain of algorithms needs to correspond to what
+is used to select events for the \hadhad signal region (c.f.\
+\Cref{sec:trigger}).  Generally, only prescaled versions of these
+triggers were available during data-taking in Run~2 of the LHC but
+given that the events are already recorded using single lepton
+triggers, the HLT algorithms can be re-run such that these triggers
+can be \textit{resurrected} without the application of a prescale. The
+relevant single-\tauhadvis triggers are listed in the
+following\footnote{For an explanation of the nomenclature see
+  \Cref{reference}}:
 \begin{itemize}
 
-\item \verb|HLT_tau25_medium1_tracktwo| (Run~2): \SI{139}{\ifb}
+\item \verb|HLT_tau25_medium1_tracktwo|: Primary trigger chain used
+  for data-taking from 2015 to 2017. HLT emulation is available for
+  the entire Run~2 dataset corresponding to \SI{139}{\ifb} of
+  integrated luminosity.
 
-\item \verb|HLT_tau25_medium1_tracktwoEF| (2018): \SI{58}{\ifb}
+\item \verb|HLT_tau25_medium1_tracktwoEF|: Primary trigger chain used
+  for data-taking in 2018. Emulated trigger decisions are only
+  available for runs in 2018 corresponding to an integrated luminosity
+  of \SI{58}{\ifb}.
 
-\item \verb|HLT_tau25_mediumRNN_tracktwoMVA| (2018 K --): \SI{37}{\ifb}
+\item \verb|HLT_tau25_mediumRNN_tracktwoMVA|: Supplementary trigger
+  chain introduced starting with period K in 2018. The available
+  dataset corresponds to \SI{37}{\ifb} of integrated luminosity.  This
+  trigger chain is recommended to be used in conjunction with the
+  previous item. Hereafter, when refering to
+  \verb|HLT_tau25_mediumRNN_tracktwoMVA| a ``logical or'' with
+  \verb|HLT_tau25_medium1_tracktwoEF| is implied.
 
 \end{itemize}
+
+In total four configurations of \tauhadvis selection need to be
+considered when measuring corrections to the \tauhadvis
+misidentification efficiencies in \ttbar. In case of no additional HLT
+requirements, these can be determined from the top control region
+directly. Three sub-regions of the top control region are defined for
+cases where requirements are imposed on \tauhadvis at the HLT. These
+are defined by ensuring that the resurrected triggers select the event
+and that the reconstructed \tauhadvis candidate is geometrically
+matched to the \tauhadvis candidate at the HLT. Separate measurements
+are performed in these regions.
 
 \todo[inline]{Talk about offline reconstructed taus and their identification}
 
