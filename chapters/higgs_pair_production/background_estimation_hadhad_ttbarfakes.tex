@@ -13,15 +13,20 @@ jet. Frequently, this background arises
 from~$\ttbar \ra \Pbottom \PWp \APbottom \PWm$ where one \PW decays
 leptonically producing a real \tauhad and the other decaying
 hadronically into jets with one mimicking the signature of a
-\tauhadvis in the detector. This semi-leptonic case, where only one
-\tauhadvis candidate is originating from a jet, is the dominant source
-of \faketauhadvis background from \ttbar. The case where both
-\tauhadvis candidates are originating from misidentified jets is
-comparatively small explaining approximately~\SI{15}{\percent} of
-\ttbar with \faketauhadvis in the signal region of the \hadhad
-channel. This is dissimilar to the multi-jet background discussed
+\tauhadvis in the detector. In this case, hereafter referred to as
+semi-leptonic \ttbar, only one \tauhadvis candidate is originating
+from a jet and is the dominant source of \faketauhadvis background
+from \ttbar in the \hadhad channel. The case where both \tauhadvis
+candidates are originating from misidentified jets is comparatively
+small explaining approximately~\SI{15}{\percent} of \ttbar with
+\faketauhadvis in the signal region of the \hadhad channel. This is
+dissimilar to the multi-jet background discussed
 in~\Cref{sec:hadhad_multijet} where both \tauhadvis candidates are
 originating from quark or gluon jets.
+
+\todo[inline]{Clarify that we refer to di-leptonic \ttbar as ttbar
+  where both Ws decay leptonically. in semi-leptonic \ttbar only one
+  of the W bosons decays leptonically the other hadronically.}
 
 The quality of the modelling of \faketauhadvis in simulation is
 generally unknown and no calibrations of selection efficiencies are
@@ -64,16 +69,19 @@ factors.
 \todo[inline]{How would these be applied any differently? What are the
   advantages of either method?}
 
+\todo[inline]{Should already say that this is extracted in a
+  likelihood fit.}
+
 
 \subsubsection{Measurement region}
 
 A top control region is defined in a $\Plepton + \tauhadvis$ final
-state, where \Plepton can be either electrons or muons. The region is
+state with \Plepton being either an electron or a muon. The region is
 similar to the top control region used in the \lephad channel where it
-is used to calculate fake factors for \tauhadvis mimicked by jets in
-\ttbar (c.f.\ \cref{sec:}). Minor alterations are applied to the
-region definition to ensure a consistent \tauhadvis selection with the
-\hadhad channel.
+is used to calculate fake factors for \tauhadvis mimicked by jets
+produced in \ttbar (c.f.\ \cref{sec:}). Minor alterations are applied
+to the region definition to ensure a consistent \tauhadvis selection
+with the \hadhad channel.
 
 The region is defined by requiring exactly one \tauhadvis passing
 loose identification, exactly one electron or muon passing the
@@ -94,12 +102,14 @@ $\mBB > \SI{150}{\GeV}$.
   contribution are events where only one tau is fake.}
 
 The control region selects \ttbar with high purity of approximately
-\SI{94}{\percent} (pre-fit). Di-leptonic \ttbar ($\ell + \tauhad$)
-where the \tauhadvis candidate is matched to a~\tauhad at truth-level
-is selected with a purity of \SI{66}{\percent}. The fractional
-contribution of \ttbar with \tauhadvis originating from quark or gluon
-jets is \SI{28}{\percent}. Minor backgrounds in this region are single
-top (\SI{4}{\percent}) and vector boson production in association with
+\SI{94}{\percent} (pre-fit). The largest part with a purity of
+\SI{66}{\percent} is \ttbar with a $\ell + \tau$ final state where
+$\ell$ is either an electron or muon and the $\tau$ lepton decays
+hadronically. This contribution will be subsequently referred to as
+di-leptonic \ttbar.  The fractional contribution of \ttbar with
+\tauhadvis originating from quark or gluon jets is
+\SI{28}{\percent}. Minor backgrounds in this region are single top
+(\SI{4}{\percent}) and vector boson production in association with
 jets (\SI{2}{\percent}). The contribution of multi-jet background is
 assumed to be negligible compared to the contribution of
 \ttbar\todo{Why is this negligible? Based on the assumptions made by
@@ -255,14 +265,21 @@ is used, where $\Delta \phi$ is the angle between the lepton
 transverse momentum~$\myvec{p}_{\text{T}}^{\ell}$ and the missing
 transverse momentum~\pTmiss.
 
-The distribution of \mTW in the top control region is shown
-in~\Cref{fig:ttbarsf_mtw_pdf} inclusive in reconstructed \tauhadvis
-decay mode and transverse momentum. The primary source of
-\faketauhadvis is \ttbar in a lepton + jets final state which features
-a quick reduction in event rate for transverse masses beyond the mass
-of the \PW boson. In contrast, \ttbar in the di-lepton final state
-shows a comparatively heavy tail towards large values of \mTW due to
-the presence of an additional neutrino.
+The distribution of \mTW for \ttbar with di- and semi-leptonic final
+states in the top control region is shown
+in~\Cref{fig:ttbarsf_mtw_pdf}.
+% inclusive in reconstructed \tauhadvis decay mode and transverse momentum.
+The primary source of events containing a \faketauhadvis in the top
+control region is semi-leptonic \ttbar with an electron or muon and
+jets. This contribution features a quick reduction in event rate for
+transverse masses beyond the mass of the \PW boson. In contrast,
+di-leptonic \ttbar shows a comparatively heavy tail towards large
+values of \mTW due to the presence of an additional neutrino.  The
+\mTW distribution of semi-leptonic \ttbar remains stable with respect
+to changes in the considered momentum range for the reconstructed
+\tauhadvis candidate. This is not the case for the di-lepton
+contribution where the tail towards high \mTW is further enhanced with
+increasing \pT of the \tauhadvis candidate\todo{Show?}.
 
 % The main idea is to distinguish between semi-leptonic and di-leptonic
 % \ttbar since two true taus would be expected in di-leptonic and jets
@@ -278,9 +295,6 @@ the presence of an additional neutrino.
 % to the presence of additional neutrinos, the transverse mass extends
 % to larger values.
 
-
-%\Cref{fig:ttbarsf_mtw_examples_prefit}.
-
 \begin{figure}[htbp]
   \centering
 
@@ -293,22 +307,33 @@ the presence of an additional neutrino.
 \end{figure}
 
 
-% To distinguish between semi-leptonic and di-leptonic \ttbar, one can
-% try to reconstruct the transverse mass of the \PW boson
-% \begin{align*}
-%   \mTW = \sqrt{\left( | \myvec{p}_{\text{T}, \ell} | + | \pTmiss | \right)^2
-%                - \myvec{p}_{\text{T}, \ell} \cdot \pTmiss}
-% \end{align*}
-% where $\myvec{p}_{\text{T}, \ell}$ and \pTmiss are the vectors of the
-% lepton ($e$ or $\mu$) momentum and missing transverse momentum in the
-% transverse plane.
+% Fit model
 
+% - Top control region (possibly after HLT matching) split um in decay
+% mode and \tauhadvis pt bins
+% - 5 bins in mTW (40 GeV width) are used to separate the contributions
+% - In every bin freely float the fake tauhadvis contribution
+% - Globally float the ttbar cross section (affecting both the true and fake tau components)
+% -> This is done because at low momenta the separation by mTW
 
-
-
-
-
-
+The regions entering the fit model are determined by the charged
+particle multiplicity of the reconstructed \tauhadvis candidate and
+the reconstructed \tauhadvis \pT. For the measurement after HLT
+\tauhadvis identification the events entering the fit are also
+required to pass trigger matching to the resurrected trigger of
+interest. Each measurement region enters the fit with five bins in
+\mTW to distinguish between \ttbar with \faketauhadvis and with real
+\tauhadvis. In~\Cref{fig:ttbarsf_mtw_examples_prefit} the \mTW
+distribution is shown prior to the fit for two exemplary regions after
+requiring trigger-matching.  The normalisation of \ttbar with
+\faketauhadvis is allowed to vary freely in every measurement region
+separately. The (fiducial?)  \ttbar cross section is extracted from
+the fit to data. This is accomplished by allowing the normalisation of
+\ttbar with and without \faketauhadvis to vary freely. The associated
+normalisation factor is fully correlated between all measurement
+regions. This approach is taken as opposed to leaving the overall
+\ttbar cross section free in every measurement region separately due
+to the weak discrimination power of \mTW for small \tauhadvis \pT.
 
 
 \begin{figure}[htbp]
@@ -333,37 +358,40 @@ the presence of an additional neutrino.
 
 
 
-
-% Fit model
-Fit \mTW
-
-Regions \& normalisation factors
-
-
-
-
-
-
-\todo[inline]{Possibly use the SS region to get better constraints on
-  ttbar and ttbarFakes.}
-
-
 \subsubsection{Measurement uncertainties}
 
 To prevent the scale factor measurement from absorbing modelling
 issues, systematic uncertainties are applied to the modelling of
-\ttbar with true \tauhadvis.
+\ttbar with true and fake-\tauhadvis.
+
+Additional uncertainties are discussed later?
 
 
-\subsubsection{Application in the analysis}
+\subsubsection{Results and application}
 
-Propagation of correlations.
+The fit model introduces large anti-correlations between the global
+\ttbar cross section and the extracted normalisation factors for
+\ttbar with \faketauhadvis. This coupling also introduces large
+positive correlations between the extracted NFs for fake
+\tauhadvis. These correlations need to be taken into account when
+estimating uncertainties on the final background estimate in the
+signal region of the \hadhad channel.
 
-How it's applied in \hadhad.
+The uncertainties after the fit are de-correlated by diagonalising the
+covariance matrix of the normalisation factors after the fit. The
+resulting eigenvalues and -vectors can be viewed as independent
+uncertainties with the eigenvalue corresponding to the overall
+variance. These can be used to construct independent variations of the
+NF measurement that can be propagated as separate nuisance parameters
+in the final fit extracting the di-Higgs signals.
 
-Additional uncertainties.
+How it is applied in \hadhad.
 
-
+\todo[inline]{Possibly include the SS region (in addition to OS) to
+  get better constraints on ttbar and ttbarFakes. Possibly can float
+  both true and fake \ttbar in every region reducing the correlation
+  between the resulting NFs. One would have to account for possible
+  biases from charge correlations.}
 
 
 %%% Local Variables:
