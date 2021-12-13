@@ -1,0 +1,90 @@
+% HadHad
+%
+% Limits on mu:
+%
+% Observed: 4.951880
+% Expected: 4.417623
+% +2sigma: 8.241901
+% +1sigma: 6.148054
+% -1sigma: 3.183142
+% -2sigma: 2.371052
+%
+% Limits on cross section (pp -> X -> HH) [fb]:
+%
+% Observed: 145.192822
+% Expected: 131.195222
+% +2sigma: 244.769181
+% +1sigma: 182.585791
+% -1sigma: 94.533422
+% -2sigma: 70.415858
+%
+%
+% Combined
+%
+% Limits on mu:
+%
+% Observed: 4.638811
+% Expected: 3.853337
+% +2sigma: 7.189119
+% +1sigma: 5.362730
+% -1sigma: 2.776542
+% -2sigma: 2.068185
+%
+% Limits on cross section (pp -> X -> HH) [fb]:
+%
+% Observed: 134.695928
+% Expected: 113.975643
+% +2sigma: 212.642842
+% +1sigma: 158.621120
+% -1sigma: 82.125762
+% -2sigma: 61.173666
+
+
+% LepHad
+%
+% Limits on mu:
+%
+% Observed: 9.068480
+% Expected: 7.853792
+% +2sigma: 14.652715
+% +1sigma: 10.930206
+% -1sigma: 5.659092
+% -2sigma: 4.215333
+%
+% Limits on cross section (pp -> X -> HH) [fb]:
+%
+% Observed: 264.540213
+% Expected: 232.168000
+% +2sigma: 433.152751
+% +1sigma: 323.110685
+% -1sigma: 167.289900
+% -2sigma: 124.610551
+
+\begin{tabular}{
+  lc
+  S[round-mode=figures, round-precision=3]
+  S[round-mode=figures, round-precision=3]
+  S[round-mode=figures, round-precision=3]
+  S[round-mode=figures, round-precision=3]
+  S[round-mode=figures, round-precision=3]
+  S[round-mode=figures, round-precision=3]
+  }
+  \toprule
+  && {Observed} & {$-2\sigma$} & {$-1\sigma$} & {Expected} & {$+1\sigma$} & {$+2\sigma$} \\
+  \midrule
+  \multirow{2}{*}{\lephad channel} & {$\sigma_\text{ggF+VBF} / \si{\femto\barn}$} & 264.540213 & 124.610551 & 167.289900 & 232.168000 & 323.110685 & 433.152751 \\
+                                   & {$\mu$} & 9.068480 & 4.215333 & 5.659092 & 7.853792 & 10.930206 & 14.652715 \\
+  \midrule
+  \multirow{2}{*}{\hadhad channel} & {$\sigma_\text{ggF+VBF} / \si{\femto\barn}$} & 145.192822 & 70.415858 & 94.533422 & 131.195222 & 182.585791 & 244.769181 \\
+                                   & {$\mu$} & 4.951880 & 2.371052 & 3.183142 & 4.417623 & 6.148054 & 8.241901 \\
+  \midrule
+  \multirow{2}{*}{Combination}     & {$\sigma_\text{ggF+VBF} / \si{\femto\barn}$} & 134.695928 & 61.173666 & 82.125762 & 113.975643 & 158.621120 & 212.642842 \\
+                                   & {$\mu$} & 4.638811 & 2.068185 & 2.776542 & 3.853337 & 5.362730 & 7.189119 \\
+  \bottomrule
+\end{tabular}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis"
+%%% End:
