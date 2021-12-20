@@ -6,12 +6,15 @@
 
 \todo[inline]{Maybe say a thing about fake rates for quark / gluon jets.}
 
+\todo[inline]{\tauhadvis misidentification efficiencies should be jet
+  misidentification efficiencies in \ttbar.}
+
 A significant background contribution in the \hadhad channel is
 represented by \ttbar production where at least one \tauhadvis
 candidate is originating from a misidentified quark or gluon
 jet. Frequently, this background arises
-from~$\ttbar \ra \Pbottom \PWp \APbottom \PWm$ where one \PW decays
-leptonically producing a real \tauhad and the other decaying
+from~$\ttbar \ra \Pbottom \PWp \APbottom \PWm$ where one \PW boson
+decays leptonically producing a real \tauhad and the other decaying
 hadronically into jets with one mimicking the signature of a
 \tauhadvis in the detector. In this case, hereafter referred to as
 semi-leptonic \ttbar, only one \tauhadvis candidate is originating
@@ -20,7 +23,7 @@ from \ttbar in the \hadhad channel. The case where both \tauhadvis
 candidates are originating from misidentified jets is comparatively
 small explaining approximately~\SI{15}{\percent} of \ttbar with
 \faketauhadvis in the signal region of the \hadhad channel. This is
-dissimilar to the multi-jet background discussed
+different from the multi-jet background discussed
 in~\Cref{sec:hadhad_multijet} where both \tauhadvis candidates are
 originating from quark or gluon jets.
 
@@ -31,11 +34,12 @@ originating from quark or gluon jets.
 The quality of the modelling of \faketauhadvis in simulation is
 generally unknown and no calibrations of selection efficiencies are
 provided. The pre-fit distributions shown
-in~\Cref{reference}\todo{Find good plots} show no indication of large
-mismodelling of the \faketauhadvis contribution in simulated \ttbar. A
-data-driven estimation method is still useful to provide information
-about the level of agreement between data and simulation and to
-provide uncertainties on these background contributions.
+in~\Cref{reference}\todo{Find good plots. Maybe 2-tag SS?} show no
+indication of large mismodelling of the \faketauhadvis contribution in
+simulated \ttbar. A data-driven estimation method is still useful to
+provide information about the level of agreement between data and
+simulation and to provide uncertainties on these background
+contributions.
 
 Given the observed agreement of the Monte Carlo simulation with the
 data, an approach of correcting the misidentification efficiencies in
@@ -63,15 +67,16 @@ data. Differential shape differences will be accounted for in the
 systematic uncertainties on \ttbar modelling when extracting the scale
 factors.
 
-\todo[inline]{Main point: scale factor method provides a correction
-  that is applied post-ID.}
+The correction can be determined including its dependence of
+\faketauhadvis properties by performing a maximum likelihood fit in a
+dedicated control region enhanced in \ttbar. It can be applied as a
+multiplicative factor on \faketauhadvis candidates after \tauhadvis
+reconstruction and identification in the \hadhad signal region to
+obtain a background estimate. Therefore, it will be called the
+\faketauhadvis scale factor (SF) in the following.
 
-\todo[inline]{How would these be applied any differently? What are the
-  advantages of either method?}
-
-\todo[inline]{Should already say that this is extracted in a
-  likelihood fit.}
-
+\todo[inline]{How would these (fake rates / SFs) be applied any
+  differently? What are the advantages of either method?}
 
 \subsubsection{Measurement region}
 
@@ -102,48 +107,53 @@ $\mBB > \SI{150}{\GeV}$.
   contribution are events where only one tau is fake.}
 
 The control region selects \ttbar with high purity of approximately
-\SI{94}{\percent} (pre-fit). The largest part with a purity of
-\SI{66}{\percent} is \ttbar with a $\ell + \tau$ final state where
-$\ell$ is either an electron or muon and the $\tau$ lepton decays
+\SI{94}{\percent} (pre-fit). The largest part, with a purity of
+\SI{66}{\percent}, is \ttbar with a $\ell + \tau$ final state where
+$\ell$ is either an electron or muon and the $\tau$~lepton decays
 hadronically. This contribution will be subsequently referred to as
-di-leptonic \ttbar.  The fractional contribution of \ttbar with
-\tauhadvis originating from quark or gluon jets is
-\SI{28}{\percent}. Minor backgrounds in this region are single top
-(\SI{4}{\percent}) and vector boson production in association with
-jets (\SI{2}{\percent}). The contribution of multi-jet background is
-assumed to be negligible compared to the contribution of
-\ttbar\todo{Why is this negligible? Based on the assumptions made by
-  lephad?}.
+di-leptonic \ttbar. The production of \ttbar with \tauhadvis
+originating from quark or gluon jets, which is the process of interest
+for this measurement, constitutes a purity of~\SI{28}{\percent}.
+Minor backgrounds in this region are single top (\SI{4}{\percent}) and
+vector boson production in association with jets
+(\SI{2}{\percent}). The contribution of multi-jet background is
+assumed to be negligible.\todo{Why is this negligible? Based on the
+  assumptions made by lephad?}
 
 \todo[inline]{Fraction of quark / gluon jets?}
 
-The \tauhadvis misidentification efficiencies depend on the \tauhadvis
-identification algorithm and the associated working point that is
-used. In this analysis the loose working point of the RNN \tauhadvis
-identification algorithm is used as the baseline \tauhadvis
-selection. In the \hadhad channel events are selected with single- and
-di-\tauhadvis triggers which also use \tauhadvis identification
-algorithms to reduce trigger-rates at the HLT. These algorithms are
-developed to be similar to their counterparts in the \tauhadvis
-reconstruction. Divergences between the identification algorithms used
-in the HLT and in offline \tauhadvis reconstruction are expected due
-to limitations in detector read-out and time budget at the HLT. New
-developments in offline \tauhadvis reconstruction and identification
-during Run~2 data-taking cannot be retroactively applied leading to
-additional differences between algorithms.
+
+The misidentification efficiencies of jets as \tauhadvis depend on the
+identification requirements placed on \tauhadvis candidates during
+offline event reconstruction. In this analysis the loose working point
+of the RNN \tauhadvis~identification algorithm serves as the baseline
+\tauhadvis selection. In the \hadhad channel events are selected with
+single- and di-\tauhadvis triggers which use isolation and
+identification criteria to reduce trigger-rates in various stages of
+the ATLAS trigger system. Calorimeter-based isolation requirements are
+applied to \tauhadvis candidates at L1, while at the HLT more
+sophisticated \tauhadvis~identification algorithms are used.  The HLT
+algorithms are developed to be similar to their counterparts in the
+\tauhadvis reconstruction. However, divergences between the
+identification algorithms used in the HLT and in offline \tauhadvis
+reconstruction are expected due to limitations in detector read-out
+and time budget at the HLT. New developments in offline \tauhadvis
+reconstruction and identification during Run~2 data-taking cannot be
+retroactively applied leading to additional differences between the
+algorithms.
 
 The effect of this two-stage selection of \tauhadvis based on
-identification criteria, first at the HLT and then during offline
-reconstruction, needs to be taken into account when measuring
-corrections to the \tauhadvis misidentification efficiencies. As a
-result, one needs to differentiate between both trigger categories in
-the \hadhad channel. In events selected by single-\tauhadvis triggers
-it is sufficient for a single \tauhadvis to pass reconstruction and
-identification at the HLT. For di-\tauhadvis triggers both candidates
-need to fulfil the requirements at the HLT.  The top control region,
-which uses single electron and muon triggers, allows the direct
-estimation of corrections for \tauhadvis without any requirements at
-the HLT.
+identification criteria, first at trigger-level and then during
+offline event reconstruction, needs to be taken into account when
+measuring corrections to the \tauhadvis misidentification
+efficiencies. Thus one needs to differentiate between both trigger
+categories in the \hadhad channel. In events selected by
+single-\tauhadvis triggers it is sufficient for a single \tauhadvis to
+pass reconstruction and identification at the HLT. For di-\tauhadvis
+triggers both candidates need to fulfil the requirements at the HLT.
+The top control region, which uses single electron and muon triggers,
+allows the direct estimation of corrections for \tauhadvis without any
+requirements at the HLT.
 
 The selection at the HLT can be emulated by requiring that events in
 the top control region, which were originally selected using single
@@ -153,23 +163,23 @@ reconstructed and identified \tauhadvis at the HLT. At the HLT, the
 transverse momentum threshold on the \tauhadvis needs to be as low as
 \SI{25}{\GeV} and the chain of algorithms needs to correspond to what
 is used to select events for the \hadhad signal region (c.f.\
-\Cref{sec:trigger}).  Generally, only prescaled versions of these
+\Cref{sec:exp_trigger}).  Generally, only prescaled versions of these
 triggers were available during data-taking in Run~2 of the LHC but
 given that the events are already recorded using single lepton
-triggers, the HLT algorithms can be re-run such that these triggers
-can be \textit{resurrected} without the application of a prescale. The
-relevant single-\tauhadvis triggers are listed in the
+triggers, the HLT algorithms can be re-run such that these trigger
+decisions can be \textit{resurrected} without the application of a
+prescale. The relevant single-\tauhadvis triggers are listed in the
 following\footnote{For an explanation of the nomenclature see
   \Cref{reference}}:
 \begin{itemize}
 
 \item \verb|HLT_tau25_medium1_tracktwo|: Primary trigger chain used
-  for data-taking from 2015 to 2017. HLT emulation is available for
-  the entire Run~2 dataset corresponding to \SI{139}{\ifb} of
-  integrated luminosity.
+  for data-taking from 2015 to 2017. Resurrected trigger decisions are
+  available for the entire Run~2 dataset corresponding to
+  \SI{139}{\ifb} of integrated luminosity.
 
 \item \verb|HLT_tau25_medium1_tracktwoEF|: Primary trigger chain used
-  for data-taking in 2018. Emulated trigger decisions are only
+  for data-taking in 2018. Resurrected trigger decisions are only
   available for runs in 2018 corresponding to an integrated luminosity
   of \SI{58}{\ifb}.
 
@@ -187,12 +197,12 @@ In total four configurations of \tauhadvis selection need to be
 considered when measuring corrections to the \tauhadvis
 misidentification efficiencies in \ttbar. In case of no additional HLT
 requirements, these can be determined from the top control region
-directly. Three sub-regions of the top control region are defined for
-cases where requirements are imposed on \tauhadvis at the HLT. These
-are defined by ensuring that the resurrected triggers select the event
-and that the reconstructed \tauhadvis candidate is geometrically
-matched to the \tauhadvis candidate at the HLT. Separate measurements
-are performed in these regions.
+directly. Three non-disjoint sub-regions of the top control region are
+defined for cases where requirements are imposed on \tauhadvis at the
+HLT. These are defined by ensuring that the resurrected triggers
+select the event and that the reconstructed \tauhadvis candidate is
+geometrically matched to the \tauhadvis candidate at the HLT. Separate
+measurements are performed in these regions.
 
 \todo[inline]{Talk about offline reconstructed taus and their identification}
 
@@ -201,18 +211,20 @@ are performed in these regions.
 
 The \tauhadvis misidentification efficiencies strongly depend on the
 charged particle multiplicity and visible transverse momentum of the
-reconstructed \tauhadvis candidate. This might also be reflected in
-corrections to the misidentification efficiency of \tauhadvis in
-simulation. Therefore, the correction factor measurement is subdivided
-according to the reconstructed decay mode (1- or 3-prong) and
-\tauhadvis~\pT:
+reconstructed \tauhadvis candidate (c.f.\ \Cref{sec:tauid}). This
+might also be reflected in corrections to the misidentification
+efficiency of \tauhadvis in simulation. Therefore, the correction
+factor measurement is performed in dependence of the reconstructed
+decay mode (1- or 3-prong) and \tauhadvis~\pT. This is achieved by
+performing a scale factor measurement in disjoint subregions defined
+as follows:
 \begin{itemize}
 
 \item 1-prong \tauhadvis with $\pT / \si{\GeV}$: $[25, 30)$, $[30, 35)$,
-  $[35, 40)$, $[40, 45)$, $[45, 55)$, $[55, 70)$, $[70, \infty)$
+  $[35, 40)$, $[40, 45)$, $[45, 55)$, $[55, 70)$, $[70, \infty)$.
 
 \item 3-prong \tauhadvis with $\pT / \si{\GeV}$: $[25, 30)$, $[30, 40)$,
-  $[40, 50)$, $[50, 70)$, $[70, \infty)$
+  $[40, 50)$, $[50, 70)$, $[70, \infty)$.
 
 \end{itemize}
 These regions are chosen such that their size allows for a
@@ -251,35 +263,37 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
 \end{figure}
 
 The top control region has a large contamination of \ttbar with a
-di-lepton final state where the \tauhadvis originates from a \tauhad
-decay. This contribution is not sensitive to the jet \ra \tauhadvis
-misidentification efficiency but has to be estimated when extracting
-correction factors. To distinguish between di-leptonic \ttbar with
-true \tauhadvis and (primarily) semi-leptonic \ttbar with
+di-lepton final state where the \tauhadvis candidate originates from a
+\tauhad decay. This contribution is not sensitive to the jet \ra
+\tauhadvis misidentification efficiency but has to be estimated when
+extracting correction factors. To distinguish between di-leptonic
+\ttbar with true \tauhadvis and primarily semi-leptonic \ttbar with
 \faketauhadvis, an estimate of the transverse mass between the lepton
-$\ell$ and \pTmissAbs (assuming massless daughter particles)
+$\ell$ and \pTmissAbs given by
 \begin{align*}
   \mTW = \sqrt{2 | \myvec{p}_{\text{T}}^{\ell} | | \pTmiss | \left( 1 - \cos \Delta\phi \right)}
 \end{align*}
-is used, where $\Delta \phi$ is the angle between the lepton
-transverse momentum~$\myvec{p}_{\text{T}}^{\ell}$ and the missing
-transverse momentum~\pTmiss.
+is used\footnote{Under the assumption of massless daughter particles
+  in a two-body decay.}, where $\Delta \phi$ is the angle between the
+lepton transverse momentum~$\myvec{p}_{\text{T}}^{\ell}$ and the
+missing transverse momentum~\pTmiss.
 
 The distribution of \mTW for \ttbar with di- and semi-leptonic final
-states in the top control region is shown
-in~\Cref{fig:ttbarsf_mtw_pdf}.
+states is shown in~\Cref{fig:ttbarsf_mtw_pdf} for the considered top
+control region.
 % inclusive in reconstructed \tauhadvis decay mode and transverse momentum.
-The primary source of events containing a \faketauhadvis in the top
-control region is semi-leptonic \ttbar with an electron or muon and
-jets. This contribution features a quick reduction in event rate for
-transverse masses beyond the mass of the \PW boson. In contrast,
-di-leptonic \ttbar shows a comparatively heavy tail towards large
-values of \mTW due to the presence of an additional neutrino.  The
-\mTW distribution of semi-leptonic \ttbar remains stable with respect
-to changes in the considered momentum range for the reconstructed
-\tauhadvis candidate. This is not the case for the di-lepton
-contribution where the tail towards high \mTW is further enhanced with
-increasing \pT of the \tauhadvis candidate\todo{Show?}.
+The primary source of events containing a \faketauhadvis is
+semi-leptonic \ttbar with an electron or muon and additional jets from
+the hadronic decay of a \PW boson. This contribution features a quick
+reduction in event rate for transverse masses beyond the mass of the
+\PW boson. In contrast, di-leptonic \ttbar final states show a
+comparatively heavy tail towards large values of \mTW due to the
+presence of an additional neutrino.  The \mTW distribution of
+semi-leptonic \ttbar remains stable with respect to changes in the
+considered momentum range for the reconstructed \tauhadvis
+candidate. This is not the case for the di-lepton contribution where
+the tail towards high \mTW is further enhanced with increasing \pT of
+the \tauhadvis candidate\todo{Show?}.
 
 % The main idea is to distinguish between semi-leptonic and di-leptonic
 % \ttbar since two true taus would be expected in di-leptonic and jets
@@ -322,18 +336,18 @@ the reconstructed \tauhadvis \pT. For the measurement after HLT
 \tauhadvis identification the events entering the fit are also
 required to pass trigger matching to the resurrected trigger of
 interest. Each measurement region enters the fit with five bins in
-\mTW to distinguish between \ttbar with \faketauhadvis and with real
+\mTW to distinguish between \ttbar with \faketauhadvis and real
 \tauhadvis. In~\Cref{fig:ttbarsf_mtw_examples_prefit} the \mTW
 distribution is shown prior to the fit for two exemplary regions after
 requiring trigger-matching.  The normalisation of \ttbar with
 \faketauhadvis is allowed to vary freely in every measurement region
-separately. The (fiducial?)  \ttbar cross section is extracted from
-the fit to data. This is accomplished by allowing the normalisation of
-\ttbar with and without \faketauhadvis to vary freely. The associated
+separately. The total \ttbar cross section is extracted from the fit
+to data. This is accomplished by allowing the normalisation of \ttbar
+with and without \faketauhadvis to vary freely. The associated
 normalisation factor is fully correlated between all measurement
 regions. This approach is taken as opposed to leaving the overall
-\ttbar cross section free in every measurement region separately due
-to the weak discrimination power of \mTW for small \tauhadvis \pT.
+\ttbar cross section free in every sub-region separately due to the
+weak discrimination power of \mTW for small \tauhadvis \pT.
 
 
 \begin{figure}[htbp]
@@ -357,14 +371,126 @@ to the weak discrimination power of \mTW for small \tauhadvis \pT.
 \end{figure}
 
 
-
 \subsubsection{Measurement uncertainties}
 
-To prevent the scale factor measurement from absorbing modelling
-issues, systematic uncertainties are applied to the modelling of
-\ttbar with true and fake-\tauhadvis.
+The expectated number of events in bins entering the fit is subject to
+statistical, experimental and theoretical uncertainties. These
+uncertainties can affect the shapes and normalisations of the
+predictions and the relative acceptance between different measurement
+regions. As a result, systematic uncertainties affecting the modelling
+of \ttbar with true and fake-\tauhadvis are of primary concern due to
+their ability to affect the the extracted scale factors. In the
+following a description of the uncertainties is given with a focus of
+theoretical modelling uncertainties dedicated to this
+measurement. Experimental uncertainties are briefly summarised due to
+their overlap with the uncertainties in the model used to extract the
+di-Higgs signal. A more detailed discussion will follow when
+discussing this fit model in~\Cref{sec:uncertainties}.
 
-Additional uncertainties are discussed later?
+Statistical uncertainties arise from the finite size of the simulation
+used to estimate the physics processes entering this
+measurement. These uncertainties are encoded in the likelihood model
+using the Barlow-Beeston
+method~\cite{barlow1993,conway2011}.
+
+Major detector-related experimental uncertainties arise from the
+reconstruction and selection of electrons, muons, \tauhadvis and jets.
+These uncertainties affect the reconstructed momenta in scale,
+resolution and direction as well as the selection efficiencies (e.g.\
+isolation, identification, trigger efficiencies, etc.). Additionally,
+when requiring that events pass a resurrected trigger decision of
+single \tauhadvis triggers, efficiency corrections and their
+associated uncertainties are applied to \tauhadvis that are
+geometrically matched to \tauhad. Uncertainties in the reconstruction
+of \pTmissAbs are accounting for changes in energy scale and
+resolution. The uncertainty on efficiency of \btag and the
+associated mis-tag rates of jets originating from light quarks and
+charm are accounted for.\todo{Luminosity,Electron / Muon triggers,
+  JVT,PRW?}
+
+% https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
+Theoretical uncertainties on the modelling of \ttbar in simulation
+which uses \POWHEGBOX[v2] as a matrix element (ME) generator
+interfaced to \PYTHIA[8.230] for the parton shower (PS) need to be
+estimated. Since the total cross section of \ttbar is allowed to vary
+freely during maximum likelihood estimation, uncertainties on the
+overall normalisation of \ttbar are omitted. However, uncertainties on
+the relative acceptance between regions need to be propagated to the
+final discriminant\todo{Unclear.}. The following sources of
+uncertainties are considered:
+\begin{itemize}
+
+\item Hard scatter and NLO+PS matching: The uncertainty on the
+  modelling due to the choice of generator describing the hard scatter
+  process is estimated by comparing the nominal simulation of \ttbar
+  with an alternative setup replacing \POWHEGBOX with \MGNLO as the ME
+  generator. This comparison also serves to probe the effect of
+  different matching schemes between the NLO matrix element and parton
+  shower employed by both generators (\POWHEG
+  method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} vs MC@NLO
+  method~\cite{Frixione:2002ik}).
+
+\item Parton shower and hadronisation model: The uncertainty of the
+  modelling of the parton shower and non-perturbative effects is
+  estimated by replacing \PYTHIA with \HERWIG as the PS generator.
+
+\item Missing higher order contributions in perturbative QCD: The
+  renormalisation scale~\muR and factorisation scale~\muF is doubled
+  and halved to probe the dependence of the simulation on missing
+  higher orders of the expansion in \alphas (after truncation at some
+  order). For calculations at sufficiently high order the process
+  should be independent of the scales.
+
+\item ISR \& FSR: An uncertainty on the emission of
+  ISR is estimated by varying $\alphas^\text{ISR}$ in the A14 set of
+  tuned parameters of \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021}.
+  % Tune of the MPI, ISR, FSR parameters in Pythia8
+  The renormalisation scale used for FSR branchings doubled and halved
+  to vary the emitted final state radiation.
+  % https://pythia.org/latest-manual/Variations.html
+
+\item Modelling of the hardest emission: The damping
+  parameter~$h_\text{damp}$ in \POWHEGBOX[v2] is varied to
+  $3 \, m_\text{top}$ instead of $1.5 \, m_\text{top}$ for the nominal
+  simulation setup. This parameter controls the modelling of the
+  hardest emission in the NLO+PS \POWHEG-method.
+\end{itemize}
+% PDF uncertainties were neglected.
+
+Uncertainties estimated by comparing the nominal with an alternative
+simulation sample (i.e.\ NLO+PS matching, PS, $h_\text{damp}$
+variations) are parametrised in \tauhadvis \pT, \tauhadvis decay mode
+and \mTW separately for \ttbar with true and \faketauhadvis.  A smooth
+description of these uncertainties is obtained by performing a
+polynomial regression to the resulting ratio of the histogram of the
+variation to the nominal histogram. For every category, i.e.\ 1-prong
+/ 3-prong \tauhadvis and true- / \faketauhadvis, this is done in two
+steps: First a regression to the ratio is performed in \tauhadvis \pT
+which is subsequently applied and the residual non-closure in \mTW is
+checked.
+
+Generally, little non-closure is observed after taking into account
+the \tauhadvis \pT effect of the variations. Minor shape differences
+are only taken into account for the ME and PS variations for true
+\tauhadvis. The variations of the damping parameter~$h_\text{damp}$
+show no statistically significant effect depending on \tauhadvis or
+\mTW. Thus only an uncertainty on the relative normalisation between
+categories is assigned. The alternative parton shower has the largest
+effect on the modelling of \faketauhadvis.
+
+A reduced set of the minor background contributions is considered. For
+the production of single top-quarks, the uncertainties on the cross
+section is applied in the fit. Due to the known normalisation
+discrepancy in \Vjets in the presence of jets originating from heavy
+flavour, an uncertainty of \SI{30}{\percent} is applied to the overall
+normalisation of the process.
+
+The effect of uncertainties on the predicted rate is parametrised by
+nuisance parameters that enter the likelihood fit with Gaussian
+constraints. Uncertainties arising from the same source are assumed to
+be fully correlated across all regions and bins.
+
+\todo[inline]{Additional uncertainties are discussed later?}
 
 
 \subsubsection{Results and application}
@@ -392,6 +518,13 @@ How it is applied in \hadhad.
   both true and fake \ttbar in every region reducing the correlation
   between the resulting NFs. One would have to account for possible
   biases from charge correlations.}
+
+
+\subsubsection{Anti-ID measurement?}
+
+This measurement was repeated in the Anti-ID region to provide an
+estimate of the uncertainty of the subtraction for the fake factor
+method.
 
 
 %%% Local Variables:
