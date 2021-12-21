@@ -13,3 +13,4 @@
 *.toc
 auto/
 *-converted-to.pdf
+*.synctex.gz
