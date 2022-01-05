@@ -373,15 +373,15 @@ weak discrimination power of \mTW for small \tauhadvis \pT.
 
 \subsubsection{Measurement uncertainties}
 
-The expected number of events in bins entering the fit is subject to
-statistical, experimental and theoretical uncertainties. These
-uncertainties can affect the shapes and normalisations of the
-predictions and the relative acceptance between different measurement
-regions. As a result, systematic uncertainties affecting the modelling
-of \ttbar with true and fake-\tauhadvis are of primary concern due to
-their ability to alter the the extracted scale factors. In the
-following a description of the uncertainties is given with a focus of
-theoretical modelling uncertainties dedicated to this
+The expected number of events in bins entering the statistical
+analysis are subject to statistical, experimental and theoretical
+uncertainties. These uncertainties can affect the shapes and
+normalisations of the predictions and the relative acceptance between
+different measurement regions. As a result, systematic uncertainties
+affecting the modelling of \ttbar with true and fake-\tauhadvis are of
+primary concern due to their ability to alter the the extracted scale
+factors. In the following a description of the uncertainties is given
+with a focus of theoretical modelling uncertainties dedicated to this
 measurement. Experimental uncertainties are only briefly summarised
 due to their overlap with the uncertainties in the model used to
 extract the di-Higgs signal. A more detailed discussion on
@@ -406,12 +406,12 @@ to \tauhad. Uncertainties in the reconstruction of the missing
 transverse momentum are accounting for changes in momentum scale and
 resolution. The uncertainty on efficiencies for \bjets passing \btag
 and mis-tag rates of jets originating from light and charm quarks are
-propagated from dedicated calibration measurements performed in
-ATLAS. Other experimental uncertainties originating from trigger
-efficiencies of single lepton triggers, efficiency of jet vertex
-tagging, reweighting of pile-up conditions in simulation to match the
-Run~2 conditions, and the luminosity used to normalise the simulated
-datasets are included.
+propagated from dedicated calibration measurements performed by the
+ATLAS collaboration. Other experimental uncertainties originating from
+trigger efficiencies of single lepton triggers, efficiency of jet
+vertex tagging, reweighting of pile-up conditions in simulation to
+match the Run~2 conditions, and the luminosity used to normalise the
+simulated datasets are included.
 
 % https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
 Theoretical uncertainties on the acceptance of \ttbar in simulation,
@@ -550,13 +550,10 @@ is assigned.
     \PYTHIA[8]) with the variation (\POWHEGBOX[v2] +
     \HERWIG[7]). Shown are the uncertainty for 1-prong (a,b) and
     3-prong (c,d) \tauhadvis matched to true \tauhad. The lower
-    threshold on \tauhadvis \pT was relaxed to \SI{20}{\GeV} compared
-    to the top control region.}
+    threshold on \tauhadvis \pT was relaxed to \SI{20}{\GeV} (from
+    \SI{25}{\GeV}) compared to the top control region.}
   \label{fig:ttbarSF_uncertainty_ps}
 \end{figure}
-
-
-\todo{Mention that pT range is altered compared to the measurement}
 
 \todo{Maybe discuss later that polynomial regression is not so
   well-defined theoretically.}
@@ -564,55 +561,43 @@ is assigned.
 % The alternative parton shower has the largest effect on the
 % modelling of \faketauhadvis.
 
-Relative acceptance uncertainty only for true \tauhadvis.  Only shape
-effects on \mTW of uncertainties affecting \faketauhadvis are
-propagated (including from intra-bin tau pt variations).
+Acceptance uncertainties on \ttbar with \faketauhadvis are assigned as
+shape-only uncertainties in all measurement regions since the
+normalisation of this component is extracted in the likelihood fit.
+In contrast, the normalisation of \ttbar with true \tauhadvis is not
+extracted in each measurement region separately. Therefore, both the
+normalisation and the shape effect of the \ttbar acceptance
+uncertainties are propagated to the fit for the true \tauhadvis
+contribution.
 
 A reduced set of the minor background contributions is considered. For
 the production of single top-quarks, the uncertainties on the cross
-section is applied in the fit. Due to the known normalisation
+section are applied in the fit. Due to the known normalisation
 discrepancy in \Vjets in the presence of jets originating from heavy
 flavour, an uncertainty of \SI{30}{\percent} is applied to the overall
 normalisation of the process.
 
-The effect of uncertainties on the predicted rate is parametrised by
-nuisance parameters that enter the likelihood fit with Gaussian
-constraints. Uncertainties arising from the same source are assumed to
-be fully correlated across all regions and bins.
+The effect of uncertainties on the predicted rates are parametrised by
+nuisance parameters that enter the maximum likelihood fit with
+Gaussian constraint terms. Uncertainties arising from the same source
+are assumed to be fully correlated across all regions and bins.
 
 \todo[inline]{Additional uncertainties are discussed later?}
 
 
-
-
-
-
-
 \subsubsection{Results and application}
 
+The fitted scale factors are shown in~\Cref{fig:}.
+
+Fit cross checks (i.e.\ pulls, constraints).
+
 The fit model introduces large anti-correlations between the global
-\ttbar cross section and the extracted normalisation factors for
-\ttbar with \faketauhadvis. This coupling also introduces large
-positive correlations between the extracted NFs for fake
-\tauhadvis. These correlations need to be taken into account when
-estimating uncertainties on the final background estimate in the
-signal region of the \hadhad channel.
-
-The uncertainties after the fit are de-correlated by diagonalising the
-covariance matrix of the normalisation factors after the fit. The
-resulting eigenvalues and -vectors can be viewed as independent
-uncertainties with the eigenvalue corresponding to the overall
-variance. These can be used to construct independent variations of the
-NF measurement that can be propagated as separate nuisance parameters
-in the final fit extracting the di-Higgs signals.
-
-How it is applied in \hadhad.
-
-\todo[inline]{Possibly include the SS region (in addition to OS) to
-  get better constraints on ttbar and ttbarFakes. Possibly can float
-  both true and fake \ttbar in every region reducing the correlation
-  between the resulting NFs. One would have to account for possible
-  biases from charge correlations.}
+\ttbar cross section and the extracted scale factors for \ttbar with
+\faketauhadvis (cf.~\Cref{fig:ttbarSF_corr_matrix}). \todo{Why?} This
+coupling also introduces large positive correlations between the
+extracted NFs for fake \tauhadvis. These correlations need to be taken
+into account when estimating uncertainties on the final background
+estimate in the signal region of the \hadhad channel.
 
 \begin{figure}[htbp]
   \centering
@@ -625,8 +610,64 @@ How it is applied in \hadhad.
     parameters are included if the absolute value of its correlation
     coefficient exceeds \SI{30}{\percent} with at least one parameter
     of interest.}
-  %\label{fig}
+  \label{fig:ttbarSF_corr_matrix}
 \end{figure}
+
+The correlations of the measured scale factors need to be accounted
+for when propagating the measurement uncertainties to the estimate of
+the \ttbar with \faketauhadvis background in the \hadhad SR. A
+convenient method to achieve this is by providing decorrelated
+variations of the measurement that jointly explain the total
+uncertainty of the scale factors. These sets of scale factor
+variations can be used to propagate the measurement uncertainty to the
+background estimate without having to account for correlations.
+
+A decorrelated set of variations can be obtained by a linear
+transformation procedure of the $N$ original scale factors. The
+necessary transformation is obtained by diagonalising the post-fit
+covariance matrix resulting in a set of eigenvectors and
+eigenvalues. The eigenvectors from this procedure provide an
+alternative basis in which the measurement is described by $N$ linear
+combinations of SFs with vanishing correlation. In this frame the
+eigenvalues describe the variance of the $N$ linear combinations. This
+decomposition is used to construct independent variations of the SF
+measurement by performing $\pm 1 \sigma$ variations in the diagonal
+frame with subsequent back-transformation to the original
+(non-diagonal) frame. This procedure yields $N$ variations of the
+scale factor measurement each with an up- and
+down-variation\footnote{The notion of up- and down-variations is
+  merely mathematical, i.e.\ according to the variation in the
+  diagonal frame, and does not have a concrete physical meaning.}. The
+variations are ordered in descending variance in the diagonal frame
+and thus the effect of the variation on the background estimate is
+also expected to approximately follow a descending order. An example
+of the first two variations for the X measurement is shown
+in~\Cref{fig:ttbarSF_eigenvariations}.
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_1p}
+    %\caption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_3p}
+    %\caption{}
+  \end{subfigure}
+
+  \caption{Eigenvariations for \texttt{HLT\_tau25\_medium1\_tracktwo}
+    for 1-prong (left) and 3-prong \tauhadvis (right).}
+  \label{fig:ttbarSF_eigenvariations}
+\end{figure}
+
+How it is applied in \hadhad.
+
+\todo[inline]{Possibly include the SS region (in addition to OS) to
+  get better constraints on ttbar and ttbarFakes. Possibly can float
+  both true and fake \ttbar in every region reducing the correlation
+  between the resulting NFs. One would have to account for possible
+  biases from charge correlations.}
 
 
 \subsubsection{Anti-ID measurement?}
