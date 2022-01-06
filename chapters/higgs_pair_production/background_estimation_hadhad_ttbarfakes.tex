@@ -754,7 +754,81 @@ factors.
 
 \subsubsection{Application}
 
-How it is applied in \hadhad.
+An estimate of the \ttbar background with \faketauhadvis in the SR of
+the \hadhad channel can be obtained by applying suitable scale factors
+to events containing at least one \faketauhadvis in \ttbar simulation.
+These events are required to pass the SR selection criteria of the
+\hadhad channel. This includes the event being selected by a trigger
+according to the selection strategy outlined in~\Cref{sec:trigger} and
+the reconstructed \tauhadvis candidates being matched to \tauhadvis at
+the HLT accordingly.
+
+The sets of scale factors are chosen depending on the trigger category
+and whether the leading, subleading, or both \tauhadvis are
+originating from jet. Strategy is outlined
+in~\Cref{tab:ttbarSF_application_rule}.
+
+% STT: (note the simplification)
+% Leading fake tau: HLT_tau25
+% Subleading fake tau: OFFL
+% Both fake tau: HLT_tau25 & OFFL
+
+% DTT:
+% Leading fake tau: HLT_tau25
+% Subleading fake tau: HLT_tau25
+% Both fake tau: HLT_tau25^2
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/ttbarSF_application_rule}
+
+  \caption{Event weight for the fake estimate.  Scale factors for
+    \faketauhadvis with (without) HLT trigger identification are
+    denoted $\text{SF}_\text{HLT}(\tau)$
+    ($\text{SF}_\text{loose}(\tau)$) where the SF set is chosen
+    according to the trigger algorithm used during the run of the
+    event.  The \tauhadvis candidates leading and subleading in \pTvis
+    are denoted $\tau_{\text{lead.}}$ and $\tau_{\text{subl.}}$,
+    respectively.}
+  \label{tab:ttbarSF_application_rule}
+\end{table}
+
+
+% For
+% single 𝜏 had trigger events, the scale factors corresponding to
+% HLT_tau25 are applied to a leading fake 𝜏 had and the offline ID only
+% scale factors to subleading fake 𝜏 had .
+% For di-𝜏 had trigger events,
+% the HLT_tau25 scale factors to leading and subleading fake 𝜏 had .
+% A
+% comparison of uncorrected fakes and scale factor corrected fakes from
+% 𝑡 𝑡 ¯ MC can be found in Figure 214 in Appendix E.6. Considering
+% statistical and systematic uncertainties, no large differences are
+% observed between the scale factor corrected and uncorrect 𝜏 had fakes
+% from simulation.  However, the scale factor estimate will still be
+% used as it provides a measurement-driven estimate of uncertainties on
+% the fake 𝜏 had modelling in 𝑡 𝑡 ¯ .
+
+
+% When applying the scale factors to events in the 𝜏 had 𝜏 had -channel,
+% an approach similar to the application of true 𝜏 had calibrations
+% (e.g. trigger and offline 𝜏 had ), where it is assumed that the
+% calibrations factorize in a multi-𝜏 had final state, is taken. In this
+% analysis this assumption only affects the 𝑡 𝑡 ¯ final state with two
+% fake 𝜏 had (FF events). This contribution is a subleading source of
+% fake 𝜏 had making up only 15 % of the
+% total 𝑡 𝑡 ¯ +fake 𝜏 had contribution (the dominant contributions are
+% events where only one 𝜏 had is fake – i.e.  TF and FT events). The
+% uncertainties related to the fake scale factor measurement are assumed
+% to be
+% fully correlated between both 𝜏 had in DTT FF events 12 and are
+% propagated as such to the final background estimate in the 𝜏 had 𝜏 had
+% -channel. Compared to the size of the uncertainties affecting FF
+% events (e.g. 40 %
+% for the 𝜏 lep 𝜏 had → 𝜏 had 𝜏 had extrapolation uncertainties,
+% c.f. Table 24), deviations from this assumption are thought to be
+% negligible.
 
 \todo[inline]{Possibly include the SS region (in addition to OS) to
   get better constraints on ttbar and ttbarFakes. Possibly can float
