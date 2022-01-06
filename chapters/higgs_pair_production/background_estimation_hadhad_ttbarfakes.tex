@@ -371,7 +371,7 @@ weak discrimination power of \mTW for small \tauhadvis \pT.
 \end{figure}
 
 
-\subsubsection{Measurement uncertainties}
+\subsubsection{Uncertainties}
 
 The expected number of events in bins entering the statistical
 analysis are subject to statistical, experimental and theoretical
@@ -585,23 +585,100 @@ are assumed to be fully correlated across all regions and bins.
 \todo[inline]{Additional uncertainties are discussed later?}
 
 
-\subsubsection{Results and application}
+\subsubsection{Measurement results}
 
-The fitted scale factors are shown in~\Cref{fig:}.
+The measured corrections for \faketauhadvis in \ttbar simulation using
+\POWHEGBOX[v2]~+~\PYTHIA[8] are shown in
+\Cref{fig:ttbarSF_postfit_SF}. The measurement shows varying agreement
+between the nominal prediction in simulation and the data-driven
+method depending on \tauhadvis~\pT and identification criteria applied
+to \tauhadvis candidates. The size of the extracted correction can
+reach up to \SI{50}{\percent} at high \tauhadvis \pT where the
+simulation overestimates the contribution of \faketauhadvis in \ttbar.
 
-Fit cross checks (i.e.\ pulls, constraints).
+For \faketauhadis reconstructed as 1-prong \tauhadvis candidates,
+depicted in~\Cref{fig:ttbarSF_postfit_SF_a,fig:ttbarSF_postfit_SF_c},
+the corrections are of the order of \SI{20}{\percent} in the low and
+intermediate transverse momentum regime
+(\tauhadvis $\pT < \SI{70}{\GeV}$).  The dependency of the extracted
+scale factors shows no strong systematic dependence on the \tauhadvis
+identification applied at the HLT as well as the differences in HLT
+identification algorithms.
 
-The fit model introduces large anti-correlations between the global
-\ttbar cross section and the extracted scale factors for \ttbar with
-\faketauhadvis (cf.~\Cref{fig:ttbarSF_corr_matrix}). \todo{Why?} This
-coupling also introduces large positive correlations between the
-extracted NFs for fake \tauhadvis. These correlations need to be taken
-into account when estimating uncertainties on the final background
-estimate in the signal region of the \hadhad channel.
+In~\Cref{fig:ttbarSF_postfit_SF_b,fig:ttbarSF_postfit_SF_d} the
+measured scale factors for \faketauhadvis reconstructed as 3-prong
+candidates are shown. For 3-prong candidates the abundance of
+\faketauhadvis is underestimated in simulation in the low and
+intermediate \tauhadvis~\pT region requiring corrections of
+approximately \num{20} to \SI{30}{\percent}. The contribution of
+\faketauhadvis in simulation at high momenta tends to be overestimated
+although with large measurement uncertainties due to the small
+expected contribution of \faketauhadvis. This is further magnified for
+the \texttt{medium1\_tracktwoEF} and \texttt{mediumMVA\_tracktwoRNN}
+trigger chains where only partial datasets are available for the
+measurements.
+
+\todo[inline]{This measurement can provide a correction as well as a
+  measurement-driven estimate of the uncertainties of
+  \faketauhadvis. Although the uncertainties seem large at high
+  momenta, the abundance of events where this is relevant is small.}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[scale=0.9]{ttbarSF/correlation_matrix}
+
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_offl_tau25_1p}
+    \caption{}
+    \label{fig:ttbarSF_postfit_SF_a}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_offl_tau25_3p}
+    \caption{}
+    \label{fig:ttbarSF_postfit_SF_b}
+  \end{subfigure}
+
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_tau25_1p}
+    \caption{}
+    \label{fig:ttbarSF_postfit_SF_c}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_tau25_3p}
+    \caption{}
+    \label{fig:ttbarSF_postfit_SF_d}
+  \end{subfigure}
+
+  \caption{Measured \faketauhadvis scale factors in \ttbar
+    (\POWHEGBOX[v2] + \PYTHIA[8]) for all relevant \tauhadvis
+    identification criteria used in the analysis. A comparison of
+    \faketauhadvis scale factors between loose identification and
+    loose~+~HLT~identification is shown in (a) and (b) for 1- and
+    3-prong, respecively. Figures (c) and (d) compare the effect of
+    different HLT identification algorithms on the extracted scale
+    factors. In all cases the last bin summarises events with
+    \tauhadvis~$\pT \geq \SI{70}{\GeV}$.  The markers are shifted from
+    the geometrical bin center for illustration purposes.}
+  \label{fig:ttbarSF_postfit_SF}
+\end{figure}
+
+Fit cross checks (i.e.\ pulls, constraints). Ranking plot?
+
+The fit model introduces large anti-correlations between the global
+\ttbar cross section and the extracted scale factors for \ttbar with
+\faketauhadvis as is seen
+in~\Cref{fig:ttbarSF_corr_matrix}. \todo{Why: Change in the global
+  \ttbar normalisation affecting \ttbar with true and fake taus, can
+  be compensated (at least partially) by an opposite sign change in
+  the SF in all bins. This is possible to some extent due to
+  relatively weak discrimination power especially in a low momentum
+  regime.} This coupling also introduces large positive correlations
+between the extracted NFs for fake \tauhadvis. These correlations need
+to be taken into account when estimating uncertainties on the final
+background estimate in the signal region of the \hadhad channel.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.88]{ttbarSF/correlation_matrix}
 
   \caption{Correlation matrix at the maximum likelihood estimate of
     the fit model for the scale factor measurement of the
@@ -641,25 +718,35 @@ down-variation\footnote{The notion of up- and down-variations is
 variations are ordered in descending variance in the diagonal frame
 and thus the effect of the variation on the background estimate is
 also expected to approximately follow a descending order. An example
-of the first two variations for the X measurement is shown
-in~\Cref{fig:ttbarSF_eigenvariations}.
+of this decomposition is shown
+in~\Cref{fig:ttbarSF_eigenvariations}.\todo{Interpretation of this
+  plot?}
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_1p}
-    %\caption{}
+    \caption{1-prong \tauhadvis}
+    \label{fig:ttbarSF_eigenvariations_1p}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_3p}
-    %\caption{}
+    \caption{3-prong \tauhadvis}
+    \label{fig:ttbarSF_eigenvariations_3p}
   \end{subfigure}
 
-  \caption{Eigenvariations for \texttt{HLT\_tau25\_medium1\_tracktwo}
-    for 1-prong (left) and 3-prong \tauhadvis (right).}
+  \caption{Variations resulting from the decorrelation procedure for
+    the scale factor measurement of \tauhadvis passing matching to the
+    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. Shown are the two
+    variations explaining most of the variance, \texttt{EIGEN0} and
+    \texttt{EIGEN1}, and the variation explaining the least variance,
+    \texttt{EIGEN9}.}
   \label{fig:ttbarSF_eigenvariations}
 \end{figure}
+
+
+\subsubsection{Application}
 
 How it is applied in \hadhad.
 
@@ -669,6 +756,7 @@ How it is applied in \hadhad.
   between the resulting NFs. One would have to account for possible
   biases from charge correlations.}
 
+\todo[inline]{There need to be some validation checks here...}
 
 \subsubsection{Anti-ID measurement?}
 
