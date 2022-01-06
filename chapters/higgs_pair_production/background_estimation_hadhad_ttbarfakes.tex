@@ -596,33 +596,6 @@ to \tauhadvis candidates. The size of the extracted correction can
 reach up to \SI{50}{\percent} at high \tauhadvis \pT where the
 simulation overestimates the contribution of \faketauhadvis in \ttbar.
 
-For \faketauhadvis reconstructed as 1-prong \tauhadvis candidates,
-depicted in~\Cref{fig:ttbarSF_postfit_SF_a,fig:ttbarSF_postfit_SF_c},
-the corrections are of the order of \SI{20}{\percent} in the low and
-intermediate transverse momentum regime
-(\tauhadvis $\pT < \SI{70}{\GeV}$).  The dependency of the extracted
-scale factors shows no strong systematic dependence on the \tauhadvis
-identification applied at the HLT as well as the differences in HLT
-identification algorithms.
-
-In~\Cref{fig:ttbarSF_postfit_SF_b,fig:ttbarSF_postfit_SF_d} the
-measured scale factors for \faketauhadvis reconstructed as 3-prong
-candidates are shown. For 3-prong candidates the abundance of
-\faketauhadvis is underestimated in simulation in the low and
-intermediate \tauhadvis~\pT region requiring corrections of
-approximately \num{20} to \SI{30}{\percent}. The contribution of
-\faketauhadvis in simulation at high momenta tends to be overestimated
-although with large measurement uncertainties due to the small
-expected contribution of \faketauhadvis. This is further magnified for
-the \texttt{medium1\_tracktwoEF} and \texttt{mediumMVA\_tracktwoRNN}
-trigger chains where only partial datasets are available for the
-measurements.
-
-\todo[inline]{This measurement can provide a correction as well as a
-  measurement-driven estimate of the uncertainties of
-  \faketauhadvis. Although the uncertainties seem large at high
-  momenta, the abundance of events where this is relevant is small.}
-
 \begin{figure}[htbp]
   \centering
 
@@ -661,20 +634,48 @@ measurements.
   \label{fig:ttbarSF_postfit_SF}
 \end{figure}
 
-Fit cross checks (i.e.\ pulls, constraints). Ranking plot?
+For \faketauhadvis reconstructed as 1-prong \tauhadvis candidates,
+depicted in~\Cref{fig:ttbarSF_postfit_SF_a,fig:ttbarSF_postfit_SF_c},
+the corrections are of the order of \SI{20}{\percent} in the low and
+intermediate transverse momentum regime
+(\tauhadvis $\pT < \SI{70}{\GeV}$).  The dependency of the extracted
+scale factors shows no strong systematic dependence on the \tauhadvis
+identification applied at the HLT as well as the differences in HLT
+identification algorithms.
+
+In~\Cref{fig:ttbarSF_postfit_SF_b,fig:ttbarSF_postfit_SF_d} the
+measured scale factors for \faketauhadvis reconstructed as 3-prong
+candidates are shown. For 3-prong candidates the abundance of
+\faketauhadvis is underestimated in simulation in the low and
+intermediate \tauhadvis~\pT region requiring corrections of
+approximately \num{20} to \SI{30}{\percent}. The contribution of
+\faketauhadvis in simulation at high momenta tends to be overestimated
+although with large measurement uncertainties due to the small
+expected contribution of \faketauhadvis. This is further magnified for
+the \texttt{medium1\_tracktwoEF} and \texttt{mediumMVA\_tracktwoRNN}
+trigger chains where only partial datasets are available for the
+measurements.
+
+\todo[inline]{Fit cross checks: pulls, constraints, ranking?}
+
+\todo[inline]{This measurement can provide a correction as well as a
+  measurement-driven estimate of the uncertainties of
+  \faketauhadvis. Although the uncertainties seem large at high
+  momenta, the abundance of events where this is relevant is small.}
 
 The fit model introduces large anti-correlations between the global
-\ttbar cross section and the extracted scale factors for \ttbar with
-\faketauhadvis as is seen
-in~\Cref{fig:ttbarSF_corr_matrix}. \todo{Why: Change in the global
-  \ttbar normalisation affecting \ttbar with true and fake taus, can
-  be compensated (at least partially) by an opposite sign change in
-  the SF in all bins. This is possible to some extent due to
-  relatively weak discrimination power especially in a low momentum
-  regime.} This coupling also introduces large positive correlations
-between the extracted NFs for fake \tauhadvis. These correlations need
-to be taken into account when estimating uncertainties on the final
-background estimate in the signal region of the \hadhad channel.
+\ttbar normalisation and the extracted scale factors for \ttbar with
+\faketauhadvis. An exemplary correlation matrix for one measurement is
+shown in~\Cref{fig:ttbarSF_corr_matrix} showing the most relevant
+correlations between parameters of interest and nuisance parameters.
+The anti-correlations are a result of the limited discrimination power
+of \mTW in distinguishing between \ttbar with true- and \faketauhadvis
+which is especially poor for low \tauhadvis transverse momenta. Thus a
+change in the global \ttbar normalisation, affecting both \ttbar with
+true and \faketauhadvis, can be partially compensated by an increase
+in the \faketauhadvis SFs. This coupling between scale factors and
+global \ttbar normalisation introduces large positive correlations
+also between the scale factors themselves.
 
 \begin{figure}[htbp]
   \centering
@@ -690,37 +691,40 @@ background estimate in the signal region of the \hadhad channel.
   \label{fig:ttbarSF_corr_matrix}
 \end{figure}
 
-The correlations of the measured scale factors need to be accounted
-for when propagating the measurement uncertainties to the estimate of
-the \ttbar with \faketauhadvis background in the \hadhad SR. A
-convenient method to achieve this is by providing decorrelated
-variations of the measurement that jointly explain the total
-uncertainty of the scale factors. These sets of scale factor
-variations can be used to propagate the measurement uncertainty to the
-background estimate without having to account for correlations.
+Correlations between the extracted scale factors needs to be taken
+into account when propagating the measurement uncertainties to the
+estimate of \ttbar with \faketauhadvis in the \hadhad SR. A convenient
+method to achieve this is by providing decorrelated variations of the
+measurement that jointly explain the total uncertainty of all scale
+factors. These sets of scale factor variations can be used to
+propagate the uncertainties without having to account for
+correlations.
 
 A decorrelated set of variations can be obtained by a linear
-transformation procedure of the $N$ original scale factors. The
+transformation procedure of the $N$~original scale factors. The
 necessary transformation is obtained by diagonalising the post-fit
 covariance matrix resulting in a set of eigenvectors and
-eigenvalues. The eigenvectors from this procedure provide an
-alternative basis in which the measurement is described by $N$ linear
-combinations of SFs with vanishing correlation. In this frame the
-eigenvalues describe the variance of the $N$ linear combinations. This
-decomposition is used to construct independent variations of the SF
-measurement by performing $\pm 1 \sigma$ variations in the diagonal
-frame with subsequent back-transformation to the original
-(non-diagonal) frame. This procedure yields $N$ variations of the
-scale factor measurement each with an up- and
-down-variation\footnote{The notion of up- and down-variations is
-  merely mathematical, i.e.\ according to the variation in the
-  diagonal frame, and does not have a concrete physical meaning.}. The
-variations are ordered in descending variance in the diagonal frame
-and thus the effect of the variation on the background estimate is
-also expected to approximately follow a descending order. An example
-of this decomposition is shown
-in~\Cref{fig:ttbarSF_eigenvariations}.\todo{Interpretation of this
-  plot?}
+eigenvalues. The eigenvectors provide an alternative basis in which
+the measurement is described by $N$ linear combinations of SFs. The
+covariance between two different linear combinations is zero by
+construction and the eigenvalues describe the variance of individual
+linear combinations. This decomposition is used to construct
+decorrelated variations of the SF measurement by performing
+$\pm 1 \sigma$ variations in the diagonal frame with subsequent
+back-transformation to the original (non-diagonal) frame. This
+procedure yields $N$ variations of the scale factor measurement each
+with an up- and down-variation\footnote{The notion of up- and
+  down-variations is merely mathematical, i.e.\ according to the
+  variation in the diagonal frame, and does not have a concrete
+  physical meaning.}. The variations are ordered in descending
+variance in the diagonal frame and thus the effect size of the
+variation on the background estimate is also expected to approximately
+follow a descending order. An example of this decomposition is shown
+in~\Cref{fig:ttbarSF_eigenvariations}. The effect of large
+correlations between scale factors can be seen in the leading
+variation (\texttt{EIGEN0}) as a systematic shift of the SF variation
+in the same direction with respect to the nominal scale
+factors.
 
 \begin{figure}[htbp]
   \centering
@@ -741,7 +745,9 @@ in~\Cref{fig:ttbarSF_eigenvariations}.\todo{Interpretation of this
     \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. Shown are the two
     variations explaining most of the variance, \texttt{EIGEN0} and
     \texttt{EIGEN1}, and the variation explaining the least variance,
-    \texttt{EIGEN9}.}
+    \texttt{EIGEN9}. Adding the deviations of all SF variations
+    (\texttt{EIGEN0} - \texttt{EIGEN9}) from the nominal result in
+    quadrature recovers the total systematic error.}
   \label{fig:ttbarSF_eigenvariations}
 \end{figure}
 
