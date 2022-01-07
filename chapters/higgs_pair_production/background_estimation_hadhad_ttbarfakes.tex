@@ -763,20 +763,27 @@ according to the selection strategy outlined in~\Cref{sec:trigger} and
 the reconstructed \tauhadvis candidates being matched to \tauhadvis at
 the HLT accordingly.
 
-The sets of scale factors are chosen depending on the trigger category
-and whether the leading, subleading, or both \tauhadvis are
-originating from jet. Strategy is outlined
+The scale factors are chosen depending on the trigger category and
+whether the \tauhadvis candidate leading in \pT, subleading, or both
+are originating from jets. In cases where both \tauhadvis are
+originating from a quark- or gluon-jet, the correction is assumed to
+factorise and the product of scale factors is assigned as the event
+weight.
+
+For di-\tauhadvis triggers both \tauhadvis candidates pass
+identification requirements at the HLT. In this case the scale factor
+measurement is chosen according to the active trigger chain.  For
+events selected by single-\tauhadvis triggers only one \tauhadvis
+candidate is required to pass HLT \tauhadvis identification
+requirements. A simplification is made for these events where it is
+assumed that the \tauhadvis candidate leading in \pT passed the HLT
+\tauhadvis identification. This assumption is valid for more than
+\SI{99}{\percent} of \ttbar events in the STT category. Therefore,
+scale factors with HLT identification are applied when the leading
+\tauhadvis is faked by a jet; scale factors without HLT identification
+are applied when the subleading \tauhadvis is faked by a jet. The
+event weight calculation is summarised
 in~\Cref{tab:ttbarSF_application_rule}.
-
-% STT: (note the simplification)
-% Leading fake tau: HLT_tau25
-% Subleading fake tau: OFFL
-% Both fake tau: HLT_tau25 & OFFL
-
-% DTT:
-% Leading fake tau: HLT_tau25
-% Subleading fake tau: HLT_tau25
-% Both fake tau: HLT_tau25^2
 
 \begin{table}[htbp]
   \centering
