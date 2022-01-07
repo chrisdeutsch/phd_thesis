@@ -723,8 +723,7 @@ follow a descending order. An example of this decomposition is shown
 in~\Cref{fig:ttbarSF_eigenvariations}. The effect of large
 correlations between scale factors can be seen in the leading
 variation (\texttt{EIGEN0}) as a systematic shift of the SF variation
-in the same direction with respect to the nominal scale
-factors.
+in the same direction with respect to the nominal scale factors.
 
 \begin{figure}[htbp]
   \centering
@@ -764,8 +763,8 @@ the reconstructed \tauhadvis candidates being matched to \tauhadvis at
 the HLT accordingly.
 
 The scale factors are chosen depending on the trigger category and
-whether the \tauhadvis candidate leading in \pT, subleading, or both
-are originating from jets. In cases where both \tauhadvis are
+whether the \tauhadvis candidate is leading in \pT, subleading, or
+both are originating from jets. In cases where both \tauhadvis are
 originating from a quark- or gluon-jet, the correction is assumed to
 factorise and the product of scale factors is assigned as the event
 weight.
@@ -837,19 +836,42 @@ in~\Cref{tab:ttbarSF_application_rule}.
 % c.f. Table 24), deviations from this assumption are thought to be
 % negligible.
 
-\todo[inline]{Possibly include the SS region (in addition to OS) to
-  get better constraints on ttbar and ttbarFakes. Possibly can float
-  both true and fake \ttbar in every region reducing the correlation
-  between the resulting NFs. One would have to account for possible
-  biases from charge correlations.}
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/ttbarSF_yields}
+
+  \caption{Total yield of simulated \ttbar with \faketauhadvis in the
+    \hadhad SR before and after correction using the measured scale
+    factors. The uncorrected yield is shown with MC statistical
+    uncertainties only; the corrected yield with MC statistical, and
+    systematic uncertainties of the SF measurement.}
+  \label{tab:ttbarSF_yields}
+\end{table}
+
+\todo[inline]{More comparison of fake estimates?}
 
 \todo[inline]{There need to be some validation checks here...}
+
+
+\subsubsection{Systematic uncertainties}
+
 
 \subsubsection{Anti-ID measurement?}
 
 This measurement was repeated in the Anti-ID region to provide an
 estimate of the uncertainty of the subtraction for the fake factor
 method.
+
+
+
+\todo[inline]{Possibly include the SS region (in addition to OS) to
+  get better constraints on ttbar and ttbarFakes. Possibly can float
+  both true and fake \ttbar in every region reducing the correlation
+  between the resulting NFs. One would have to account for possible
+  biases from charge correlations.}
+
 
 \todo[inline]{Fitting polynomials to the uncertainties is not well
   justified. A more general set of smooth functions should be
