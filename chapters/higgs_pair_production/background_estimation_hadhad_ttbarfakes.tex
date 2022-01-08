@@ -797,6 +797,9 @@ in~\Cref{tab:ttbarSF_application_rule}.
     event.  The \tauhadvis candidates leading and subleading in \pTvis
     are denoted $\tau_{\text{lead.}}$ and $\tau_{\text{subl.}}$,
     respectively.}
+
+  \todo[inline]{Rather put in all uncertainties?}
+
   \label{tab:ttbarSF_application_rule}
 \end{table}
 
@@ -857,14 +860,80 @@ in~\Cref{tab:ttbarSF_application_rule}.
 
 \subsubsection{Systematic uncertainties}
 
+\todo[inline]{How does STT play into this? The momentum thresholds are
+  unrealistically high so that it can barely be measured with this
+  approach.}
+
+A systematic uncertainty measuring the effect of transverse momentum
+thresholds on \tauhadvis at the HLT is derived. Events selected by
+di-\tauhadvis triggers have \tauhadvis passing HLT thresholds of
+\SI{35}{\GeV} and \SI{25}{\GeV} on \pTvis for the leading and
+subleading candidate, respectively. These triggers only differ in
+these thresholds but not in isolation and identification requirements
+applied at the HLT. The scale factors used for the background estimate
+of \ttbar + \faketauhadvis in the \hadhad SR were measured after
+requiring matching to triggers with \SI{25}{\GeV} thresholds,
+primarily targeting the effect of the identification requirements, and
+possible differences due to the HLT momentum selection is neglected.
+This approximation is applied due to a large overlap in events
+selected by both triggers beyond the \tauhadvis \pT threshold of
+\SI{40}{\GeV}, exceeding the HLT threshold by \SI{5}{GeV}, applied at
+reconstruction-level. The overlap is studied in simulated \ttbar with
+at least one \faketauhadvis in the top control region used for the
+scale factor measurement by examining the probability of an event
+passing the \texttt{HLT\_tau35\_*} triggers provided the event passes
+\texttt{HLT\_tau25\_*}. Beyond the \pTvis threshold of \SI{40}{\GeV}
+the overlap between both triggers is \SI{95}{\percent} for
+\faketauhadvis reconstructed as 1-prong candidates; \SI{85}{\percent}
+for \faketauhadvis reconstructed as 3-prong candidates\todo{Overlap
+  plot from INT?}. Moving away from the \pTvis threshold leads to a
+further increase in overlap, reaching close to \SI{100}{\percent} for
+$\pTvis > \SI{50}{\GeV}$ for 1-prong, and $\pTvis > \SI{60}{\GeV}$ for
+3-prong candidates.
+
+The scale factor measurement is repeated requiring matching to
+\tauhadvis triggers with \SI{35}{\GeV} thresholds on
+$\pTvis^\text{HLT}$ and compared to the measurement for \SI{25}{\GeV}
+in the region of non-negligible overlap, i.e.\
+$\SI{40}{\GeV} \leq \pTvis < \SI{50}{\GeV}$ for 1-prong, and
+$\SI{40}{\GeV} \leq \pTvis < \SI{60}{\GeV}$ for 3-prong
+candidates. The central value of the extracted scale factors agrees
+within \SI{10}{\percent} with the measurement of the
+\texttt{HLT\_tau25\_*} triggers. The deviation of the central value is
+assigned as an additional uncertainty in cases where the leading
+\tauhadvis candidates is faked by a
+jet. \Cref{tab:ttbarSF_tau25_35_uncertainty} shows the resulting
+uncertainty assigned in the relevant \pTvis regime.
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/ttbarSF_tau25_35_uncertainty}
+
+  \caption{Uncertainty tau25 tau35}
+  \label{tab:ttbarSF_tau25_35_uncertainty}
+\end{table}
+
+% An uncertainty is assigned for 𝑡 𝑡 ¯
+% events where the leading 𝜏 had candidate is faked by a jet to account
+% for this approximation.  This uncertainty is applied for fake 1-prong
+% 𝜏 had up to 50 GeV and fake 3-prong 𝜏 had up to 60 GeV. Beyond these
+% thresholds the 𝜏 had candidates are sufficiently far away from the
+% trigger-thresholds such that the difference between the triggers is
+% negligible. The size of the uncertainty is derived by comparing the
+% nominal scale factor measurement with an alternative measurement where
+% events are required to match the equivalent HLT_tau35 triggers. In
+% Table 22 the approximate size of these uncertainties are summarized.
+% The shape impact of these uncertainties are propagated to the fit. The
+% overall normalization impact of these uncertainties on the estimate of
+% 𝑡 𝑡 ¯ with a leading fake 𝜏 had is sm
+
 
 \subsubsection{Anti-ID measurement?}
 
 This measurement was repeated in the Anti-ID region to provide an
 estimate of the uncertainty of the subtraction for the fake factor
 method.
-
-
 
 \todo[inline]{Possibly include the SS region (in addition to OS) to
   get better constraints on ttbar and ttbarFakes. Possibly can float
