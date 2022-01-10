@@ -133,9 +133,9 @@ identification criteria to reduce trigger-rates in various stages of
 the ATLAS trigger system. Calorimeter-based isolation requirements are
 applied to \tauhadvis candidates at L1, while at the HLT more
 sophisticated \tauhadvis~identification algorithms are used.  The HLT
-algorithms are developed to be similar to their counterparts in the
+algorithms were developed to be similar to their counterparts in the
 \tauhadvis reconstruction. However, divergences between the
-identification algorithms used in the HLT and in offline \tauhadvis
+identification algorithms used at the HLT and in offline \tauhadvis
 reconstruction are expected due to limitations in detector read-out
 and time budget at the HLT. New developments in offline \tauhadvis
 reconstruction and identification during Run~2 data-taking cannot be
@@ -159,17 +159,17 @@ The selection at the HLT can be emulated by requiring that events in
 the top control region, which were originally selected using single
 lepton triggers, also pass an appropriately chosen single-\tauhadvis
 trigger and that the \tauhadvis candidate is matched to a
-reconstructed and identified \tauhadvis at the HLT. At the HLT, the
-transverse momentum threshold on the \tauhadvis needs to be as low as
-\SI{25}{\GeV} and the chain of algorithms needs to correspond to what
-is used to select events for the \hadhad signal region (c.f.\
-\Cref{sec:exp_trigger}).  Generally, only prescaled versions of these
-triggers were available during data-taking in Run~2 of the LHC but
-given that the events are already recorded using single lepton
-triggers, the HLT algorithms can be re-run such that these trigger
-decisions can be \textit{resurrected} without the application of a
-prescale. The relevant single-\tauhadvis triggers are listed in the
-following\footnote{For an explanation of the nomenclature see
+reconstructed and identified \tauhadvis at the HLT. At HLT-level the
+lowest transverse momentum threshold on the \tauhadvis relevant for
+this analysis is $\pTHLT > \SI{25}{\GeV}$, with the chain of HLT
+algorithms corresponding to the selection employed in the \hadhad
+signal region (cf.\ \Cref{sec:exp_trigger}). Generally, only prescaled
+versions of these triggers were available during data-taking in Run~2
+of the LHC but given that the events are already recorded using single
+lepton triggers, the HLT algorithms can be re-run such that these
+trigger decisions can be \textit{resurrected} without the application
+of a prescale. The relevant single-\tauhadvis triggers are listed in
+the following\footnote{For an explanation of the nomenclature see
   \Cref{reference}}:
 \begin{itemize}
 
@@ -230,11 +230,11 @@ as follows:
 These regions are chosen such that their size allows for a
 determination of the corrections with limited impact of statistical
 uncertainties while allowing to extract potential \pT dependencies of
-the correction factors. In cases where trigger-matching is applied,
-the \tauhadvis \pT interval from 25 to \SI{30}{\GeV} is omitted due to
-the trigger not being fully efficient in this regime. This is
-analogous to the selection applied for the \hadhad signal region. An
-exemplary summary of the measurement regions is shown
+the correction factors. In cases where trigger-matching is applied the
+\tauhadvis \pT interval from 25 to \SI{30}{\GeV} is omitted due to the
+trigger not being fully efficient in this regime. This is analogous to
+the selection applied for the \hadhad signal region. An exemplary
+summary of the measurement regions is shown
 in~\Cref{fig:ttbarsf_region_summary_prefit}.
 
 \begin{figure}[htbp]
@@ -256,7 +256,7 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
   \caption{Summary of regions used for determination of the \tauhadvis
     misidentification efficiency corrections. The $x$-axis shows the
     regions separated according to the reconstructed decay mode into
-    either 1-prong (1P) and 3-prong \tauhadvis as well as the
+    either 1-prong (1P) and 3-prong (3P) \tauhadvis as well as the
     \tauhadvis $\pT /\si{\GeV}$ bin interval. The figures are shown
     with the pre-fit background model.}
   \label{fig:ttbarsf_region_summary_prefit}
@@ -317,6 +317,7 @@ the \tauhadvis candidate\todo{Show?}.
   \caption{Transverse mass distribution between lepton and \pTmiss in
     \ttbar simulation. Inclusive in \tauhadvis transverse momentum and
     decay mode. Without applying HLT requirements.}
+  \todo[inline]{Missing neutrino for \tauhad?}
   \label{fig:ttbarsf_mtw_pdf}
 \end{figure}
 
@@ -510,9 +511,9 @@ in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}
 for the PS variation. The non-closure is assigned as an uncertainty
 fully correlated with the \pT effect. The variations of the damping
 parameter related to the NLO+PS matching in \POWHEG show no
-statistically significant effect depending on \tauhadvis or \mTW. Thus
-only an uncertainty on the relative normalisation between categories
-is assigned.
+statistically significant effect depending on \tauhadvis \pT or
+\mTW. Thus only an uncertainty on the relative normalisation between
+categories is assigned.
 
 \begin{figure}[htbp]
   \centering
@@ -571,7 +572,7 @@ uncertainties are propagated to the fit for the true \tauhadvis
 contribution.
 
 A reduced set of the minor background contributions is considered. For
-the production of single top-quarks, the uncertainties on the cross
+the production of single top-quarks the uncertainties on the cross
 section are applied in the fit. Due to the known normalisation
 discrepancy in \Vjets in the presence of jets originating from heavy
 flavour, an uncertainty of \SI{30}{\percent} is applied to the overall
@@ -637,11 +638,10 @@ simulation overestimates the contribution of \faketauhadvis in \ttbar.
 For \faketauhadvis reconstructed as 1-prong \tauhadvis candidates,
 depicted in~\Cref{fig:ttbarSF_postfit_SF_a,fig:ttbarSF_postfit_SF_c},
 the corrections are of the order of \SI{20}{\percent} in the low and
-intermediate transverse momentum regime
-(\tauhadvis $\pT < \SI{70}{\GeV}$).  The dependency of the extracted
-scale factors shows no strong systematic dependence on the \tauhadvis
-identification applied at the HLT as well as the differences in HLT
-identification algorithms.
+intermediate transverse momentum regime ($\pTvis < \SI{70}{\GeV}$).
+The dependency of the extracted scale factors shows no strong
+systematic dependence regarding the \tauhadvis identification applied
+at the HLT, and differences in identification algorithms.
 
 In~\Cref{fig:ttbarSF_postfit_SF_b,fig:ttbarSF_postfit_SF_d} the
 measured scale factors for \faketauhadvis reconstructed as 3-prong
@@ -673,9 +673,9 @@ of \mTW in distinguishing between \ttbar with true- and \faketauhadvis
 which is especially poor for low \tauhadvis transverse momenta. Thus a
 change in the global \ttbar normalisation, affecting both \ttbar with
 true and \faketauhadvis, can be partially compensated by an increase
-in the \faketauhadvis SFs. This coupling between scale factors and
-global \ttbar normalisation introduces large positive correlations
-also between the scale factors themselves.
+in the \faketauhadvis scale factors. This coupling between scale
+factors and global \ttbar normalisation introduces large positive
+correlations also between the scale factors themselves.
 
 \begin{figure}[htbp]
   \centering
@@ -693,37 +693,39 @@ also between the scale factors themselves.
 
 Correlations between the extracted scale factors needs to be taken
 into account when propagating the measurement uncertainties to the
-estimate of \ttbar with \faketauhadvis in the \hadhad SR. A convenient
-method to achieve this is by providing decorrelated variations of the
-measurement that jointly explain the total uncertainty of all scale
-factors. These sets of scale factor variations can be used to
-propagate the uncertainties without having to account for
-correlations.
+estimate of \ttbar with \faketauhadvis in the \hadhad signal region. A
+convenient method to achieve this is by providing decorrelated
+variations of the measurement that jointly explain the total
+uncertainty of all scale factors. These sets of scale factor
+variations can be used to propagate the uncertainties without having
+to account for correlations.
 
 A decorrelated set of variations can be obtained by a linear
 transformation procedure of the $N$~original scale factors. The
 necessary transformation is obtained by diagonalising the post-fit
 covariance matrix resulting in a set of eigenvectors and
 eigenvalues. The eigenvectors provide an alternative basis in which
-the measurement is described by $N$ linear combinations of SFs. The
+the measurement is described by $N$~linear combinations of SFs. The
 covariance between two different linear combinations is zero by
 construction and the eigenvalues describe the variance of individual
 linear combinations. This decomposition is used to construct
 decorrelated variations of the SF measurement by performing
-$\pm 1 \sigma$ variations in the diagonal frame with subsequent
-back-transformation to the original (non-diagonal) frame. This
-procedure yields $N$ variations of the scale factor measurement each
-with an up- and down-variation\footnote{The notion of up- and
-  down-variations is merely mathematical, i.e.\ according to the
-  variation in the diagonal frame, and does not have a concrete
-  physical meaning.}. The variations are ordered in descending
-variance in the diagonal frame and thus the effect size of the
-variation on the background estimate is also expected to approximately
-follow a descending order. An example of this decomposition is shown
-in~\Cref{fig:ttbarSF_eigenvariations}. The effect of large
-correlations between scale factors can be seen in the leading
-variation (\texttt{EIGEN0}) as a systematic shift of the SF variation
-in the same direction with respect to the nominal scale factors.
+$\pm 1 \sigma$ variations in the frame with diagonal covariance
+matrix, followed by a transformation to the original frame (with
+non-diagonal covariance matrix). This procedure yields $N$ variations
+of the scale factor measurement each with an up- and
+down-variation\footnote{The notion of up- and down-variations is
+  merely mathematical, i.e.\ according to the variation in the
+  diagonal frame, and does not have a concrete physical meaning.}. The
+variations are ordered in descending variance in the diagonal frame
+and thus the effect size of the variation on the background estimate
+is also expected to approximately follow a descending order\todo{Maybe
+  clarify why it is only approximate.}. An example of this
+decomposition is shown in~\Cref{fig:ttbarSF_eigenvariations}. The
+effect of large correlations between scale factors can be seen in the
+leading variation (\texttt{EIGEN0}) as a systematic shift of the SF
+variation in the same direction with respect to the nominal scale
+factors.
 
 \begin{figure}[htbp]
   \centering
@@ -756,69 +758,57 @@ in the same direction with respect to the nominal scale factors.
 An estimate of the \ttbar background with \faketauhadvis in the SR of
 the \hadhad channel can be obtained by applying suitable scale factors
 to events containing at least one \faketauhadvis in \ttbar simulation.
-These events are required to pass the SR selection criteria of the
-\hadhad channel. This includes the event being selected by a trigger
-according to the selection strategy outlined in~\Cref{sec:trigger} and
-the reconstructed \tauhadvis candidates being matched to \tauhadvis at
-the HLT accordingly.
+These events are required to pass the signal region selection criteria
+of the \hadhad channel. This includes the event being selected by a
+trigger according to the selection strategy outlined
+in~\Cref{sec:trigger} and the reconstructed \tauhadvis candidates
+being matched to \tauhadvis at the HLT accordingly.
 
 The scale factors are chosen depending on the trigger category and
-whether the \tauhadvis candidate is leading in \pT, subleading, or
-both are originating from jets. In cases where both \tauhadvis are
-originating from a quark- or gluon-jet, the correction is assumed to
-factorise and the product of scale factors is assigned as the event
-weight.
+whether the \faketauhadvis is the \tauhadvis candidate leading in \pT,
+subleading in \pT, or whether both candidates are originating from
+quark- or gluon-jets. In cases where both \tauhadvis faked by jets,
+the correction is assumed to factorise and the product of scale
+factors is assigned as the event weight.
 
-For di-\tauhadvis triggers both \tauhadvis candidates pass
-identification requirements at the HLT. In this case the scale factor
-measurement is chosen according to the active trigger chain.  For
-events selected by single-\tauhadvis triggers only one \tauhadvis
-candidate is required to pass HLT \tauhadvis identification
-requirements. A simplification is made for these events where it is
-assumed that the \tauhadvis candidate leading in \pT passed the HLT
-\tauhadvis identification. This assumption is valid for more than
-\SI{99}{\percent} of \ttbar events in the STT category. Therefore,
-scale factors with HLT identification are applied when the leading
-\tauhadvis is faked by a jet; scale factors without HLT identification
-are applied when the subleading \tauhadvis is faked by a jet. The
-event weight calculation is summarised
-in~\Cref{tab:ttbarSF_application_rule}.
+In events selected by di-\tauhadvis triggers both \tauhadvis
+candidates have to pass identification requirements at the HLT. In
+this case the scale factor measurement is chosen according to the
+active trigger chain, independent on which \tauhadvis candidate is
+originating from a jet. In events selected by single-\tauhadvis
+triggers at leaast one \tauhadvis candidate is required to pass the
+HLT \tauhadvis identification requirement. A simplification is made
+assuming that the \tauhadvis candidate leading in \pT passed the HLT
+\tauhadvis identification, causing the event to be selected by the
+trigger. This assumption is valid for more than \SI{99}{\percent} of
+\ttbar events containing \faketauhadvis in the STT
+category. Therefore, scale factors with HLT identification are applied
+when the leading \tauhadvis is faked by a jet; scale factors without
+HLT identification are applied when the subleading \tauhadvis is faked
+by a jet. Similar to the di-\tauhadvis trigger case, the set of scale
+factors for the candidate passing HLT identification is chosen
+according to the active trigger chain. The event weight calculation is
+summarised in~\Cref{tab:ttbarSF_application_rule}.
 
 \begin{table}[htbp]
   \centering
 
   \input{tables/ttbarSF_application_rule}
 
-  \caption{Event weight for the fake estimate.  Scale factors for
-    \faketauhadvis with (without) HLT trigger identification are
-    denoted $\text{SF}_\text{HLT}(\tau)$
-    ($\text{SF}_\text{loose}(\tau)$) where the SF set is chosen
-    according to the trigger algorithm used during the run of the
-    event.  The \tauhadvis candidates leading and subleading in \pTvis
-    are denoted $\tau_{\text{lead.}}$ and $\tau_{\text{subl.}}$,
-    respectively.}
-
-  \todo[inline]{Rather put in all uncertainties?}
-
+  \caption{Construction of the multiplicative event weight for
+    data-driven correction of \ttbar with \faketauhadvis in
+    simulation. Events are distinguished whether the leading
+    \tauhadvis candidate ($\tau_{\text{lead.}}$), the subleading
+    \tauhadvis candidate ($\tau_{\text{subl.}}$), or both are faked by
+    a jet.  Scale factors for \faketauhadvis without HLT trigger
+    identification, i.e.\ only with loose offline \tauhadvis
+    identification, are denoted as $\text{SF}_{\text{loose}}$;
+    scale factors with HLT trigger identification as
+    $\text{SF}_\text{HLT}$. The set of scale factors after HLT
+    \tauhadvis identification is chosen according to the trigger
+    algorithm used during the run where the event occurred.}
   \label{tab:ttbarSF_application_rule}
 \end{table}
-
-
-% For
-% single 𝜏 had trigger events, the scale factors corresponding to
-% HLT_tau25 are applied to a leading fake 𝜏 had and the offline ID only
-% scale factors to subleading fake 𝜏 had .
-% For di-𝜏 had trigger events,
-% the HLT_tau25 scale factors to leading and subleading fake 𝜏 had .
-% A
-% comparison of uncorrected fakes and scale factor corrected fakes from
-% 𝑡 𝑡 ¯ MC can be found in Figure 214 in Appendix E.6. Considering
-% statistical and systematic uncertainties, no large differences are
-% observed between the scale factor corrected and uncorrect 𝜏 had fakes
-% from simulation.  However, the scale factor estimate will still be
-% used as it provides a measurement-driven estimate of uncertainties on
-% the fake 𝜏 had modelling in 𝑡 𝑡 ¯ .
-
 
 % When applying the scale factors to events in the 𝜏 had 𝜏 had -channel,
 % an approach similar to the application of true 𝜏 had calibrations
@@ -850,6 +840,7 @@ in~\Cref{tab:ttbarSF_application_rule}.
     factors. The uncorrected yield is shown with MC statistical
     uncertainties only; the corrected yield with MC statistical, and
     systematic uncertainties of the SF measurement.}
+  \todo[inline]{Rather put in all uncertainties?}
   \label{tab:ttbarSF_yields}
 \end{table}
 
