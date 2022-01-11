@@ -977,14 +977,14 @@ uncertainty overa range auf \tauhadvis \pT. \todo{Interpretation. What if pT > 1
   \label{fig:ttbarSF_extrapol_shape}
 \end{figure}
 
-The extrapolation uncertainty for the subdominant contribution of
-\ttbar with two \faketauhadvis.\todo{continue}
-In \ttbar events where both \tauhadvis are originating from jets,
-there is some ambiguity in how to match the \tauhadvis properties
-between the measurement region and the application region. These
-events are a subleading contribution to the total \ttbar +
-\faketauhadvis backgrounds and therefore only a overall normalisation
-uncertainty is assigned for simplification.
+A different approach is taken for the extrapolation uncertainty
+between SF-CR and \hadhad SR for cases where both \tauhadvis
+candidates are faked by a quark- or gluon-jet. Only a normalisation
+uncertainty is assigned due to the ambiguous matching of \tauhadvis
+candidates between the \lephad (1 \faketauhadvis) and the \hadhad
+region (2 \faketauhadvis). This approximation is made to avoid this
+ambiguity and is further motivated by it being a subdominant component
+relative to the total \ttbarFakes background.
 
 The extrapolation uncertainties are summarised
 in~\Cref{tab:ttbarSF_acceptance_uncertainty}. The parton shower
@@ -997,15 +997,13 @@ between the SF-CR and the SR, ranging from \SIrange{20}{40}{\percent}.
   \input{tables/ttbarSF_acceptance_uncertainty}
 
   \caption{Normalisation uncertainties on the relative acceptance
-    between SF-CR and SR. The uncertainties are rounded to two
-    significant figures. $^\dagger$: The parton shower uncertainty is
-    parametrised as a function of \tauhadvis \pT (see
-    also~\Cref{fig:ttbarSF_extrapol_shape}).}
-  \todo[inline]{finish me}
+    between SF-CR and SR. The uncertainties are symmetrised and
+    rounded to two significant figures. $\dagger$: The parton shower
+    uncertainty is parametrised as a function of \tauhadvis \pT (see
+    also~\Cref{fig:ttbarSF_extrapol_shape}) and is not included in the
+    total uncertainty.}
   \label{tab:ttbarSF_acceptance_uncertainty}
 \end{table}
-
-
 
 
 \subsubsection{Anti-ID measurement?}
