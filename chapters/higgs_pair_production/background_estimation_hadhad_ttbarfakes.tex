@@ -863,16 +863,16 @@ and subleading candidate, respectively. These triggers only differ in
 the \pTHLT~threshold with isolation and identification requirements
 remaining the same.
 
-The estimate of the \ttbar + \faketauhadvis background where the
-\faketauhadvis is required to pass trigger-matching employs scale
-factors measured for triggers with $\pTHLT > \SI{25}{\GeV}$, primarily
-targeting the effect of isolation and identification requirements,
-thus neglecting differences due to the \pTHLT~selection. This is an
-approximation for cases where the leading \tauhadvis candidate in the
-DTT category is mimicked by a jet and is motivated by the large
-overlap in events selected by both triggers beyond the
-$\pTvis > \SI{40}{\GeV}$ threshold applied to the leading \tauhadvis
-in the DTT category at offline reconstruction-level.
+The estimate of the \ttbarFakes background where the \faketauhadvis is
+required to pass trigger-matching employs scale factors measured for
+triggers with $\pTHLT > \SI{25}{\GeV}$, primarily targeting the effect
+of isolation and identification requirements, thus neglecting
+differences due to the \pTHLT~selection. This is an approximation for
+cases where the leading \tauhadvis candidate in the DTT category is
+mimicked by a jet and is motivated by the large overlap in events
+selected by both triggers beyond the $\pTvis > \SI{40}{\GeV}$
+threshold applied to the leading \tauhadvis in the DTT category at
+offline reconstruction-level.
 
 The overlap is studied in simulated \ttbar with at least one
 \faketauhadvis in the top control region by examining the
@@ -922,34 +922,63 @@ leading \tauhadvis is close to the trigger thresholds.
   \label{tab:ttbarSF_tau25_35_uncertainty}
 \end{table}
 
-The measurement of the scale factors is performed in a region
-different from the \hadhad signal region where they are applied. As a
-result, an uncertainty needs to be assigned on the relative difference
-in the acceptance of \ttbar + \faketauhadvis between the measurement
-region (\lephad top CR) and the application region (\hadhad SR),
-effectively serving as an extrapolation uncertainty. This uncertainty
-is determined by performing variations of the \ttbar modelling in
-simulation and estimating change in the relative acceptance between
-both regions, i.e.\ the ratio of the acceptance in the application
-region and the measurement region\footnote{This method of estimating
-  will be further discussed in ...}.
+The measurement of the scale factors is performed in a region (\lephad
+SF-CR) different from where they are applied (\hadhad SR). Thus, an
+uncertainty is assigned on the relative difference in the acceptance
+of \ttbarFakes between the measurement region and the application
+region, effectively serving as an extrapolation uncertainty. This
+uncertainty is determined by performing variations of the \ttbar
+modelling in simulation and estimating the change in relative
+acceptance between both regions, i.e.\ the ratio of the acceptance in
+the application region and the measurement region\footnote{This method
+  of estimating will be further discussed in ...
+  \begin{align*}
+    \frac{N_\text{A}^\text{Var.} / N_\text{B}^\text{Var.}}{N_\text{A}^\text{Nom.} / N_\text{B}^\text{Nom.}} - 1
+  \end{align*}
+}.
 
-The extrapolation uncertainties between top control region and signal
-region consider the same sources of uncertainties as used for the
-scale factor measurement. Separate estimation techniques are used for
-\ttbar with a single \faketauhadvis and two \faketauhadvis.
+The estimation of extrapolation uncertainties between SF-CR and
+\hadhad SR considers the same sources of \ttbar modelling variations
+as used for the scale factor measurement. Different parametrisations
+are derived for \ttbar with a single \faketauhadvis and two
+\faketauhadvis in the \hadhad SR.
 
-In \ttbar events with a single \faketauhadvis the extrapolation
-uncertainty is examined in dependence on \faketauhadvis \pT separately
-for 1- and 3-prong candidates. Except for the parton shower, no
-\pT-dependent effect on the extrapolation uncertainty is observed. The
-uncertainty originating from comparisons of the \PYTHIA[8] and
-\HERWIG[7] parton shower results in a shape-dependence of the
-extrapolation uncertainty as a function of \tauhadvis \pT and is shown
-in \Cref{fig:ttbarSF_extrapol_shape}. Similar to the modelling
-uncertainties for the measurement, a polynomial is fitted to smoothly
-interpolate the extrapolation uncertainty.
+For \ttbar events with a single \faketauhadvis in the \hadhad SR the
+extrapolation uncertainty is examined in dependence on \pT of the
+\faketauhadvis, separately for 1- and 3-prong candidates. Except for
+the parton shower variation, no \pT-dependent effect on the
+uncertainty is observed.  The comparison of alternative parton shower
+programs, comparing \PYTHIA[8] and \HERWIG[7], results in a
+shape-dependence of the extrapolation uncertainty as a function of
+\tauhadvis \pT which is shown in~\Cref{fig:ttbarSF_extrapol_shape}.
+Similar to the modelling uncertainties for the measurement, a
+polynomial is fitted to smoothly interpolate the extrapolation
+uncertainty overa range auf \tauhadvis \pT. \todo{Interpretation. What if pT > 150?}
 
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_extrapol_PS_1p}
+    \caption{}
+    \label{fig:ttbarSF_extrapol_shape_a}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{.495\textwidth}
+    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_extrapol_PS_3p}
+    \caption{}
+    \label{fig:ttbarSF_extrapol_shape_b}
+  \end{subfigure}
+
+  \caption{Extrapolation uncertainty of the scale factors measured in
+    the SF-CR to the \hadhad SR based on parton shower comparisons
+    (\PYTHIA[8] and \HERWIG[7]). The uncertainty is shown for 1-prong
+    (a) and 3-prong \faketauhadvis (b) including a fit of polynomials
+    to the binned estimate of the uncertainty. }
+  \label{fig:ttbarSF_extrapol_shape}
+\end{figure}
+
+The extrapolation uncertainty for the subdominant contribution of
+\ttbar with two \faketauhadvis.\todo{continue}
 In \ttbar events where both \tauhadvis are originating from jets,
 there is some ambiguity in how to match the \tauhadvis properties
 between the measurement region and the application region. These
@@ -958,15 +987,20 @@ events are a subleading contribution to the total \ttbar +
 uncertainty is assigned for simplification.
 
 The extrapolation uncertainties are summarised
-in~\Cref{tab:ttbarSF_acceptance_uncertainty}.
+in~\Cref{tab:ttbarSF_acceptance_uncertainty}. The parton shower
+variations dominate the total uncertainty on the relative acceptance
+between the SF-CR and the SR, ranging from \SIrange{20}{40}{\percent}.
 
 \begin{table}[htbp]
   \centering
 
   \input{tables/ttbarSF_acceptance_uncertainty}
 
-  \caption{Uncertainy acceptance (symmetrised). Rounded to two
-    figures.}
+  \caption{Normalisation uncertainties on the relative acceptance
+    between SF-CR and SR. The uncertainties are rounded to two
+    significant figures. $^\dagger$: The parton shower uncertainty is
+    parametrised as a function of \tauhadvis \pT (see
+    also~\Cref{fig:ttbarSF_extrapol_shape}).}
   \todo[inline]{finish me}
   \label{tab:ttbarSF_acceptance_uncertainty}
 \end{table}
