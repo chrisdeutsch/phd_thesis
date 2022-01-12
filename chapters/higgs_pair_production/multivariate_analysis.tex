@@ -1,10 +1,64 @@
 \section{Multivariate analysis}
 
+The event selection described in~\Cref{sec:event_selection} only
+serves as a preselection with the intention that selected events
+follow the expected topology of the signal and that basic kinematic
+requirements, ensuring trigger efficiencies are in saturation, are
+fulfilled.
+
+The non-resonant and resonant production of SM Higgs boson pairs have
+distinct kinematic properties that can be used to reject large
+fractions of background contributions. An example independent of the
+production mode of SM Higgs boson pairs is the invariant mass of the
+\bbbar pair and the \tauhad\tauhad which can be reconstructed. A
+number of reconstructed quantities can be defined that offer
+discrimination power to distinguish between the various signals and
+backgrounds.
+
+Multivariate methods are employed to exploit the discrimination power
+of multiple reconstructed quantities and their correlations to
+classify events regarding their signal- and
+background-likeness. Depending on the search different methods are
+used.
+
+\todo[inline]{Should talk about strategy: Fitting MVA score directly.}
+
+The search of non-resonant \HH production in the SM uses Boosted
+Decision Trees (BDT) to distinguish between signal and background.
+
+The search for resonant \HH production in BSM scenarios considers
+multiple different mass hypotheses for the resonance decaying into SM
+Higgs boson pairs. Therefore, this case represents a classification
+task that varies as a function of the resonance mass. Parametric
+neural networks (PNN), first introduced to HEP
+in~\Cref{Baldi:2016fzo}, are used as a convenient approach to handle
+such tasks.
+
+
 \subsection{Discriminating variables}
+
+Discriminating variables were rechecked (in \hadhad) from previous
+publication and found to be all significant except for MET centrality.
+
+The discriminating variables used: \mMMC, \mBB, \mHH, \dRtautau, \dRbb.
+
 
 \subsection{Extraction of the non-resonant signal using boosted decision trees}
 
+\todo[inline]{Optimisation}
+\todo[inline]{Performance?}
+
+
 \subsection{Extraction of resonant signals with parametric neural networks}
+
+
+\todo[inline]{Optimisation}
+\todo[inline]{Performance: Detuning studies}
+
+
+\subsection{Others?}
+
+\todo[inline]{Variable ranking}
 
 
 %%% Local Variables:
