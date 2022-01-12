@@ -1,3 +1,6 @@
+% Source:
+% https://docs.google.com/spreadsheets/d/1uwVElPaR1HuqEHaL8eAh5pEoGdK2ZBQ8D_Ob8lSSPwE/edit#gid=0
+
 % fSumw[1]=2705.09, x=0.5, error=22.9788
 
 % Only measurement uncertainties
@@ -8,17 +11,20 @@
 
 \begin{tabular}{
   l
+  @{\hskip 16pt}
   S[table-format=4.0(2)]
+  @{\hskip 16pt}
   S[table-format=4.0(3)]
   }
   \toprule
-  Process & {MC} & {MC+SF} \\
+  & \multicolumn{2}{c}{Event yield in \ttbar simulation} \\
+  Process & {Uncorrected} & {SF correction} \\
   \midrule
-  \ttbar + \faketauhadvis (TF) & 1428 +- 16 & 1434 +- 88 \\
-  \ttbar + \faketauhadvis (FT) & 854 +- 13 & 699 +- 73 \\
-  \ttbar + \faketauhadvis (FF) & 423 +- 12 & 359 +- 54 \\
+  \ttbar + \faketauhadvis (TF) & 1428 +- 16 & 1430 +- 230 \\
+  \ttbar + \faketauhadvis (FT) & 854 +- 13 & 699 +- 88 \\
+  \ttbar + \faketauhadvis (FF) & 423 +- 12 & 360 +- 160 \\
   \midrule
-  \ttbar + \faketauhadvis (total) & 2705 +- 23 & 2490 +- 210 \\
+  \ttbar + \faketauhadvis (total) & 2705 +- 23 & 2490 +- 320 \\
   \bottomrule
 \end{tabular}
 

@@ -11,13 +11,13 @@
 
 A significant background contribution in the \hadhad channel is
 represented by \ttbar production where at least one \tauhadvis
-candidate is originating from a misidentified quark or gluon
-jet. Frequently, this background arises
-from~$\ttbar \ra \Pbottom \PWp \APbottom \PWm$ where one \PW boson
-decays leptonically producing a real \tauhad and the other decaying
-hadronically into jets with one mimicking the signature of a
-\tauhadvis in the detector. In this case, hereafter referred to as
-semi-leptonic \ttbar, only one \tauhadvis candidate is originating
+candidate is originating from a misidentified quark or gluon jet,
+which is subsequently referred to as \ttbarFakes. Frequently, this
+background arises from~$\ttbar \ra \Pbottom \PWp \APbottom \PWm$ where
+one \PW boson decays leptonically producing a real \tauhad and the
+other decaying hadronically into jets with one mimicking the signature
+of a \tauhadvis in the detector. In this case, hereafter referred to
+as semi-leptonic \ttbar, only one \tauhadvis candidate is originating
 from a jet and is the dominant source of \faketauhadvis background
 from \ttbar in the \hadhad channel. The case where both \tauhadvis
 candidates are originating from misidentified jets is comparatively
@@ -830,25 +830,6 @@ summarised in~\Cref{tab:ttbarSF_application_rule}.
 % negligible.
 
 
-\begin{table}[htbp]
-  \centering
-
-  \input{tables/ttbarSF_yields}
-
-  \caption{Total yield of simulated \ttbar with \faketauhadvis in the
-    \hadhad SR before and after correction using the measured scale
-    factors. The uncorrected yield is shown with MC statistical
-    uncertainties only; the corrected yield with MC statistical, and
-    systematic uncertainties of the SF measurement.}
-  \todo[inline]{Rather put in all uncertainties?}
-  \label{tab:ttbarSF_yields}
-\end{table}
-
-\todo[inline]{More comparison of fake estimates?}
-
-\todo[inline]{There need to be some validation checks here...}
-
-
 \subsubsection{Systematic uncertainties}
 
 \todo[inline]{How does STT play into this? The momentum thresholds are
@@ -953,7 +934,8 @@ shape-dependence of the extrapolation uncertainty as a function of
 \tauhadvis \pT which is shown in~\Cref{fig:ttbarSF_extrapol_shape}.
 Similar to the modelling uncertainties for the measurement, a
 polynomial is fitted to smoothly interpolate the extrapolation
-uncertainty overa range auf \tauhadvis \pT. \todo{Interpretation. What if pT > 150?}
+uncertainty over a range of \tauhadvis \pT. \todo{Interpretation. What
+  if pT > 150?}
 
 \begin{figure}[htbp]
   \centering
@@ -1004,6 +986,74 @@ between the SF-CR and the SR, ranging from \SIrange{20}{40}{\percent}.
     total uncertainty.}
   \label{tab:ttbarSF_acceptance_uncertainty}
 \end{table}
+
+
+\subsubsection{Discussion}
+
+The determination of the \ttbarFakes background in the \hadhad signal
+region using the scale factor method described in this section
+provides a principled way to estimate this background and its
+uncertainty based on a measurement-driven
+approach. In~\Cref{tab:ttbarSF_yields} the event yield of \ttbarFakes
+in the \hadhad signal region is shown and compared to \ttbar
+simulation without corrections.
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/ttbarSF_yields}
+
+  \caption{Total event yield in simulated \ttbar with \faketauhadvis
+    in the \hadhad SR before and after correction using the measured
+    scale factors. The uncorrected event yield is shown with MC
+    statistical uncertainties only; the corrected event yield with MC
+    statistical and systematic uncertainties of the scale factor method.}
+
+  \label{tab:ttbarSF_yields}
+\end{table}
+
+The total \ttbarFakes event yield in the \hadhad SR is determined with
+a relative precision of \SI{13}{\percent}, agreeing with the
+uncorrected estimate of the total yield within uncertainties. The
+expected number of \ttbarFakes events is slightly smaller after
+correction since the measured scale factors for high \pT
+\faketauhadvis tend to be smaller than unity. Moreover, this is
+reflected in the larger relative change of the FT-component, which on
+average contains \faketauhadvis with \pT of about \SI{65}{\GeV}.
+
+The total uncertainty on the \ttbarFakes yield in the SR can be
+separated into categories to understand the relative importances of
+the sources of uncertainty:
+\begin{align*}
+  \sigma_\text{total}^{\ttbarFakes} = \valuesep\numerrt{22}{stat.}%
+  \valuesep\numerrt{210}{meas.}%
+  \valuesep\numerrt{240}{extrapol.}%
+  \valuesep\numerrt{3.6}{trigger threshold} \,\text{.}
+\end{align*}
+The uncertainties originating from the SF measurement in the SF-CR
+(meas.) and the extrapolation uncertainties (extrapol.) have
+contributions of similar size to the uncertainty. The extrapolation
+uncertainty is dominated by the comparison of different parton shower
+programs. The \faketauhadvis \pT-dependent PS uncertainty, affecting
+the TF- and FT-components of the background, has a particularly large
+impact on the TF contribution. This is due to the large uncertainty
+for 1-prong \faketauhadvis candidates, making up $\frac{3}{4}$ of
+\faketauhadvis in \ttbar, at low transverse momenta as shown
+in~\Cref{fig:ttbarSF_extrapol_shape_a}. Due to the momentum ordering,
+the average \faketauhadvis \pT in \ttbarFakes (TF) is approximately
+\SI{40}{\GeV}.
+
+Statistical uncertainties from the finite number of simulated events
+(stat.) and the uncertainty based on the comparison of different
+trigger thresholds (trigger threshold) have negligible impact on the
+total yield in the \hadhad SR.
+
+% Measurement uncertainties on total yield are highly correlated: ca. 90%
+% PS uncertainty for 1-prong taus is anti-correlated due to sign-change of uncertainty
+
+\todo[inline]{More comparison of fake estimates?}
+
+\todo[inline]{There need to be some validation checks here...}
 
 
 \subsubsection{Anti-ID measurement?}

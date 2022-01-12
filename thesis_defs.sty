@@ -94,3 +94,98 @@
 \newcommand*{\boldalpha}{\ensuremath{\myvec{\alpha}}\xspace}
 \newcommand*{\boldphi}{\ensuremath{\myvec{\phi}}\xspace}
 \newcommand*{\boldgamma}{\ensuremath{\myvec{\gamma}}\xspace}
+
+
+% From thesis guide v9.0.0:
+% Extra commands to copy with separate statistical and systematic
+% errors as well as asymmetric errors
+\newcommand*\valuesep{\,}
+\sisetup{number-unit-product = \valuesep}
+
+% Error with text
+\newcommand*\numerrt[3][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{\pm \num{#2}\valuesep\text{(#3)}}%
+  \endgroup
+}
+
+% Asymmetric error
+\newcommand*\numpmerr[3][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{^{\num[retain-explicit-plus]{#2}}_{\num{#3}}}%
+  \endgroup
+}
+
+% Asymmetric error with text
+\newcommand*\numpmerrt[4][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{^{\num[retain-explicit-plus]{#2}}_{\num{#3}}%
+    \valuesep\text{(#4)}}%
+  \endgroup
+}
+
+\newcommand*\SIpmerr[5][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{(\num{#2}\valuesep\numpmerr{#3}{#4})\valuesep{\si{#5}}}%
+  \endgroup
+}
+
+\newcommand*\SIerrt[5][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{(\num{#2}\valuesep\numerrt{#3}{#4})\valuesep{(#5)}}%
+  \endgroup
+}
+
+\newcommand*\SIerrtt[7][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{(\num{#2}%
+    \valuesep\numerrt{#3}{#4}%
+    \valuesep\numerrt{#5}{#6})%
+    \valuesep{(#7)}}%
+  \endgroup
+}
+
+\newcommand*\SIpmerrt[6][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{(\num{#2}%
+    \valuesep\numpmerrt{#3}{#4}{#5})%
+    \valuesep\si{#6}}%
+  \endgroup
+}
+
+\newcommand*\SIpmerrtt[9][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{(\num{#2}%
+    \valuesep\numpmerrt{#3}{#4}{#5}%
+    \valuesep\numpmerrt{#6}{#7}{#8})%
+    \valuesep\si{#9}}%
+  \endgroup
+}
+
+\newcommand*\SIerrs[5][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{(\num{#2}%
+    \valuesep\numerrt{#3}{stat.}%
+    \valuesep\numerrt{#4}{sys.})%
+    \valuesep\si{#5}}%
+  \endgroup
+}
+
+\newcommand*\SIpmerrs[7][]{%
+  \begingroup
+  \sisetup{#1}%
+  \ensuremath{(\num{#2}
+    \valuesep\numpmerrt{#3}{#4}{stat.}
+    \valuesep\numpmerrt{#5}{#6}{sys.})%
+    \valuesep\si{#7}}%
+  \endgroup
+}
