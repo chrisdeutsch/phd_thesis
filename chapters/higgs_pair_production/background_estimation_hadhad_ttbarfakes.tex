@@ -299,7 +299,7 @@ lepton transverse momentum~$\myvec{p}_{\text{T}}^{\ell}$ and the
 missing transverse momentum~\pTmiss.
 
 The distribution of \mTW for \ttbar with di- and semi-leptonic final
-states is shown in~\Cref{fig:ttbarsf_mtw_pdf} for the considered top
+states is shown in~\Cref{fig:ttbarsf_mtw_pdf} for the considered
 control region.
 % inclusive in reconstructed \tauhadvis decay mode and transverse momentum.
 The primary source of events containing a \faketauhadvis is
@@ -363,13 +363,12 @@ distribution is shown prior to the fit for two exemplary regions after
 requiring trigger-matching.  The normalisation of \ttbar with
 \faketauhadvis is allowed to vary freely in every measurement region
 separately. The total \ttbar cross section is extracted from the fit
-to data. This is accomplished by allowing the normalisation of \ttbar
-with and without \faketauhadvis to vary freely. The associated
-normalisation factor is fully correlated between all measurement
-regions. This approach is taken as opposed to leaving the overall
-\ttbar cross section free in every sub-region separately due to the
-weak discrimination power of \mTW for small \tauhadvis \pT.
-
+to data. This is accomplished by allowing the inclusive normalisation
+of \ttbar, i.e.\ independent of the presence of \faketauhadvis, to
+vary freely. The associated normalisation factor is fully correlated
+between all measurement regions. This approach is taken as opposed to
+leaving the \ttbar normalisation free in every sub-region separately
+due to the weak discrimination power of \mTW for small \tauhadvis \pT.
 
 \begin{figure}[htbp]
   \centering
@@ -396,17 +395,17 @@ weak discrimination power of \mTW for small \tauhadvis \pT.
 
 The expected number of events in bins entering the statistical
 analysis are subject to statistical, experimental and theoretical
-uncertainties. These uncertainties can affect the shapes and
-normalisations of the predictions and the relative acceptance between
+uncertainties. These uncertainties can affect the shape and
+normalisation of the predictions and the relative acceptance between
 different measurement regions. As a result, systematic uncertainties
 affecting the modelling of \ttbar with true and fake-\tauhadvis are of
 primary concern due to their ability to alter the the extracted scale
-factors. In the following a description of the uncertainties is given
+factors. In the following, a description of the uncertainties is given
 with a focus of theoretical modelling uncertainties dedicated to this
 measurement. Experimental uncertainties are only briefly summarised
 due to their overlap with the uncertainties in the model used to
-extract the di-Higgs signal. A more detailed discussion on
-experimental uncertainties will follow when discussing this fit model
+extract the \HH signal. A more detailed discussion on experimental
+uncertainties will follow when discussing this fit model
 in~\Cref{sec:uncertainties}.
 
 Statistical uncertainties arising from the finite size of the
@@ -420,7 +419,7 @@ These uncertainties affect the reconstructed momenta in scale,
 resolution and direction as well as the selection efficiencies of
 reconstructed objects and events, e.g.~due to isolation requirements
 or the trigger selection. When requiring events to pass the
-resurrected trigger decision of single \tauhadvis triggers,
+resurrected trigger decision of single-\tauhadvis triggers,
 calibrations of trigger selection efficiencies and their associated
 uncertainties are applied to \tauhadvis that are geometrically matched
 to \tauhad. Uncertainties in the reconstruction of the missing
@@ -440,7 +439,7 @@ which uses \POWHEGBOX[v2]~\cite{Frixione:2007nw} as a matrix element
 (ME) generator interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea}
 for the parton shower (PS), need to be estimated. The total cross
 section of \ttbar is allowed to vary freely in the fit model, thus
-uncertainties on the overall normalisation of \ttbar are
+uncertainties affecting only the normalisation of \ttbar are
 omitted. However, uncertainties changing the relative acceptance
 between regions entering the simultaneous fit and effects changing the
 shape of the \mTW discriminant need to be estimated. The following
@@ -479,12 +478,11 @@ sources of uncertainties are considered:
   FSR branchings in \PYTHIA[8].
   % https://pythia.org/latest-manual/Variations.html
 
-\item Damping factor for first emission (NLO+PS matching): The damping
-  parameter~\hdamp in \POWHEGBOX[v2] is increased to
-  $3 m_\text{top}$ (from $1.5 m_\text{top}$) and compared with the
-  nominal simulation setup. The \hdamp parameter effectively
-  controls the modelling of the first emission beyond Born-level in
-  the NLO+PS \POWHEG-method.
+\item Damping factor for first emission: The damping parameter~\hdamp
+  in \POWHEGBOX[v2] is increased to $3 m_\text{top}$ (from
+  $1.5 m_\text{top}$) and compared with the nominal simulation
+  setup. The \hdamp parameter effectively controls the modelling of
+  the first emission beyond Born-level in the NLO+PS \POWHEG-method.
 \end{itemize}
 % PDF uncertainties were neglected.
 The prescriptions to calculate the \ttbar modelling uncertainties are
@@ -502,8 +500,8 @@ of the simulation program.
 
 Uncertainties estimated by performing a two-sample comparison (NLO+PS
 matching, PS, \hdamp) are parametrised in \tauhadvis \pT,
-reconstructed \tauhad decay mode and \mTW separately for \ttbar with
-true and \faketauhadvis. A smooth functional dependence of these
+reconstructed \tauhadvis decay mode and \mTW separately for \ttbar
+with true and \faketauhadvis. A smooth functional dependence of these
 uncertainties is obtained by performing polynomial regression of the
 relative change in yield comparing the alternative with the nominal
 sample in bins of \tauhadvis \pT and \mTW. This approach is taken to
@@ -689,13 +687,13 @@ The fit model introduces large anti-correlations between the global
 shown in~\Cref{fig:ttbarSF_corr_matrix} showing the most relevant
 correlations between parameters of interest and nuisance parameters.
 The anti-correlations are a result of the limited discrimination power
-of \mTW in distinguishing between \ttbar with true- and \faketauhadvis
-which is especially poor for low \tauhadvis transverse momenta. Thus a
-change in the global \ttbar normalisation, affecting both \ttbar with
-true and \faketauhadvis, can be partially compensated by an increase
-in the \faketauhadvis scale factors. This coupling between scale
-factors and global \ttbar normalisation introduces large positive
-correlations also between the scale factors themselves.
+of \mTW in distinguishing between \ttbar with true- and
+\faketauhadvis, which is especially poor for low \tauhadvis transverse
+momenta. Thus a change in the global \ttbar normalisation, affecting
+both \ttbar with true and \faketauhadvis, can be partially compensated
+by an increase in the \faketauhadvis scale factors. The coupling
+between scale factors and global \ttbar normalisation introduces large
+positive correlations also between the scale factors themselves.
 
 \begin{figure}[htbp]
   \centering
@@ -711,9 +709,9 @@ correlations also between the scale factors themselves.
   \label{fig:ttbarSF_corr_matrix}
 \end{figure}
 
-Correlations between the extracted scale factors needs to be taken
-into account when propagating the measurement uncertainties to the
-estimate of \ttbar with \faketauhadvis in the \hadhad signal region. A
+Correlations between the extracted scale factors need to be taken into
+account when propagating the measurement uncertainties to the estimate
+of \ttbar with \faketauhadvis in the \hadhad signal region. A
 convenient method to achieve this is by providing decorrelated
 variations of the measurement that jointly explain the total
 uncertainty of all scale factors. These sets of scale factor
