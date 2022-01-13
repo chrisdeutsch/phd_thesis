@@ -1,92 +1,99 @@
-\todo[inline]{Talk about some motivation for this method: Believe that
-  MC does an OK job at estimating fake taus -- no deviations visible
-  without corrections. Absence of a good ttbar control region that is
-  close to hadhad in the final state -- need to go to lephad for
-  measurement.}
-
-\todo[inline]{Maybe say a thing about fake rates for quark / gluon jets.}
-
-\todo[inline]{\tauhadvis misidentification efficiencies should be jet
-  misidentification efficiencies in \ttbar.}
-
-A significant background contribution in the \hadhad channel is
-represented by \ttbar production where at least one \tauhadvis
-candidate is originating from a misidentified quark or gluon jet,
-which is subsequently referred to as \ttbarFakes. Frequently, this
-background arises from~$\ttbar \ra \Pbottom \PWp \APbottom \PWm$ where
-one \PW boson decays leptonically producing a real \tauhad and the
-other decaying hadronically into jets with one mimicking the signature
-of a \tauhadvis in the detector. In this case, hereafter referred to
-as semi-leptonic \ttbar, only one \tauhadvis candidate is originating
-from a jet and is the dominant source of \faketauhadvis background
-from \ttbar in the \hadhad channel. The case where both \tauhadvis
-candidates are originating from misidentified jets is comparatively
-small explaining approximately~\SI{15}{\percent} of \ttbar with
-\faketauhadvis in the signal region of the \hadhad channel. This is
-different from the multi-jet background discussed
-in~\Cref{sec:hadhad_multijet} where both \tauhadvis candidates are
-originating from quark or gluon jets.
-
 \todo[inline]{Clarify that we refer to di-leptonic \ttbar as ttbar
   where both Ws decay leptonically. in semi-leptonic \ttbar only one
   of the W bosons decays leptonically the other hadronically.}
 
+
+Top-quark pair production with at least one \tauhadvis candidate
+originating from a misidentified quark- or gluon-jet represents a
+large background in the \hadhad channel of the search for resonant and
+non-resonant Higgs boson pair production. This background, hereafter
+referred to as \ttbarFakes, is frequently produced in
+$\ttbar \ra \Pbottom \PWp \APbottom \PWm$ with one leptonic decay of a
+\PW boson into a \taulepton, which subsequently decays hadronically;
+the other \PW boson decaying hadronically, producing jets that mimick
+the signature of a \tauhadvis in the detector. This source of
+\faketauhadvis backgrounds in semi-leptonic decay modes of \ttbar in
+which only one \tauhadvis candidate is originating from a jet is the
+dominant contribution to the \faketauhadvis background from \ttbar in
+the \hadhad channel. Cases where both \tauhadvis candidates are
+originating from misidentified jets is comparatively small explaining
+approximately~\SI{15}{\percent} of \ttbar with \faketauhadvis in the
+\hadhad SR. This is in contrast with the multi-jet background
+discussed in~\Cref{sec:hadhad_multijet} where both \tauhadvis
+candidates are originating from quark or gluon jets. Moreover, the
+fraction of gluon- and quark-initiated jets differs between both
+processes, with quark-jets being more abundant in \ttbar. This has an
+effect on \faketauhadvis estimation since the probability of a jet
+being misidentified as a \tauhadvis, the so-called \emph{fake rate},
+is significantly larger for quark-initiated jets.
+
 The quality of the modelling of \faketauhadvis in simulation is
-generally unknown and no calibrations of selection efficiencies are
-provided. The pre-fit distributions shown
+generally unknown and calibrations of \faketauhadvis selection
+efficiencies are not available. The pre-fit distributions shown
 in~\Cref{reference}\todo{Find good plots. Maybe 2-tag SS?} show no
 indication of large mismodelling of the \faketauhadvis contribution in
 simulated \ttbar. A data-driven estimation method is still useful to
 provide information about the level of agreement between data and
-simulation and to provide uncertainties on these background
-contributions.
+simulation and uncertainties on these background contributions.
 
 Given the observed agreement of the Monte Carlo simulation with the
-data, an approach of correcting the misidentification efficiencies in
-simulation using a data-driven measurement is chosen. Two approaches
-were investigated, one being the direct measurement of the
-misidentification efficiency in data (the so-called \textit{fake
-  rate})
-\begin{align*}
-  \varepsilon_\text{mis-ID}^\text{data} = \frac{N_\text{post-ID}^\text{data}}{N_\text{pre-ID}^\text{data}}
-\end{align*}
-and the other being a measurement of the misidentification efficiency
-relative to the one in simulation
-\begin{align*}
-  \text{Fake scale factor:}\quad
-  \text{SF} =
-  \frac{\varepsilon_\text{mis-ID}^\text{data}}{\varepsilon_\text{mis-ID}^\text{MC}} =
-  \frac{N_\text{post-ID}^\text{data} / N_\text{pre-ID}^\text{data}}{N_\text{post-ID}^\text{MC} / N_\text{pre-ID}^\text{MC}}
-  = \frac{N_\text{post-ID}^\text{data}}{N_\text{post-ID}^\text{MC}} \cdot \frac{N_\text{pre-ID}^\text{MC}}{N_\text{pre-ID}^\text{data}}
-\end{align*}
-The second term is completely independent of the modelling of the
-\tauhadvis identification efficiency and describes the overall
-modelling of \ttbar in Monte Carlo simulation. This term is assumed to
-be a constant overall normalisation difference between MC and
-data. Differential shape differences will be accounted for in the
-systematic uncertainties on \ttbar modelling when extracting the scale
-factors.
+data, an approach of correcting the \jettotauhadvis misidentification
+efficiencies in simulation using a data-driven measurement is
+chosen. This correction can be determined by comparing the prediction
+of \ttbarFakes in a suitable control region with the observed
+data. The control region should have high \ttbar purity with a
+measurable contribution of \ttbarFakes and exactly one \tauhadvis
+candidate, isolating the effect of differing misidentification
+efficiencies in simulation and data.
 
-The correction can be determined including its dependence of
-\faketauhadvis properties by performing a maximum likelihood fit in a
-dedicated control region enhanced in \ttbar. It can be applied as a
-multiplicative factor on \faketauhadvis candidates after \tauhadvis
-reconstruction and identification in the \hadhad signal region to
-obtain a background estimate. Therefore, it will be called the
-\faketauhadvis scale factor (SF) in the following.
+The correction is defined as multiplicative \emph{scale factors} (SF)
+that are applicable to \faketauhadvis after \tauid, calibrating the
+\jettotauhadvis misidentification efficiencies in simulation. The
+scale factors are determined as a function of \faketauhadvis
+properties using a maximum likelihood fit in a top control region. The
+corrections are applied in the \hadhad SR to obtain an estimate of the
+\ttbarFakes background and the associated uncertainties.
 
 \todo[inline]{How would these (fake rates / SFs) be applied any
   differently? What are the advantages of either method?}
 
+% Two approaches were investigated, one being the direct
+% measurement of the misidentification efficiency in data (the so-called
+% \textit{fake rate})
+% \begin{align*}
+%   \varepsilon_\text{mis-ID}^\text{data} = \frac{N_\text{post-ID}^\text{data}}{N_\text{total}^\text{data}}
+% \end{align*}
+% and the other being a measurement of the misidentification efficiency
+% relative to the one in simulation
+% \begin{align*}
+%   \text{Fake scale factor:}\quad
+%   \text{SF} =
+%   \frac{\varepsilon_\text{mis-ID}^\text{data}}{\varepsilon_\text{mis-ID}^\text{MC}} =
+%   \frac{N_\text{post-ID}^\text{data} / N_\text{total}^\text{data}}{N_\text{post-ID}^\text{MC} / N_\text{total}^\text{MC}}
+%   = \frac{N_\text{post-ID}^\text{data}}{N_\text{post-ID}^\text{MC}} \cdot \frac{N_\text{total}^\text{MC}}{N_\text{total}^\text{data}}
+% \end{align*}
+% The second term is completely independent of the modelling of the
+% \tauhadvis identification efficiency and describes the overall
+% modelling of \ttbar in Monte Carlo simulation. This term is assumed to
+% be a constant overall normalisation difference between MC and
+% data. Differential shape differences will be accounted for in the
+% systematic uncertainties on \ttbar modelling when extracting the scale
+% factors.
+
+
 \subsubsection{Measurement region}
 
-A top control region is defined in a $\Plepton + \tauhadvis$ final
-state with \Plepton being either an electron or a muon. The region is
-similar to the top control region used in the \lephad channel where it
-is used to calculate fake factors for \tauhadvis mimicked by jets
-produced in \ttbar (c.f.\ \cref{sec:}). Minor alterations are applied
-to the region definition to ensure a consistent \tauhadvis selection
-with the \hadhad channel.
+\todo[inline]{Talk about some motivation for this method: Absence of a
+  good ttbar control region that is close to hadhad in the final state
+  -- need to go to lephad for measurement.}
+
+A top control region (SF-CR) is defined in a $\Plepton + \tauhadvis$
+final state with \Plepton being either an electron or a muon. The
+region is similar to the top control region used in the \lephad
+channel where it is used to calculate fake factors for \tauhadvis
+mimicked by jets produced in \ttbar (c.f.\ \cref{sec:}). Minor
+alterations are applied to the region definition to ensure a
+consistent \tauhadvis selection with the \hadhad channel.
 
 The region is defined by requiring exactly one \tauhadvis passing
 loose identification, exactly one electron or muon passing the
@@ -145,7 +152,7 @@ algorithms.
 The effect of this two-stage selection of \tauhadvis based on
 identification criteria, first at trigger-level and then during
 offline event reconstruction, needs to be taken into account when
-measuring corrections to the \tauhadvis misidentification
+measuring corrections to the \jettotauhadvis misidentification
 efficiencies. Thus one needs to differentiate between both trigger
 categories in the \hadhad channel. In events selected by
 single-\tauhadvis triggers it is sufficient for a single \tauhadvis to
@@ -194,7 +201,7 @@ the following\footnote{For an explanation of the nomenclature see
 \end{itemize}
 
 In total four configurations of \tauhadvis selection need to be
-considered when measuring corrections to the \tauhadvis
+considered when measuring corrections to the \jettotauhadvis
 misidentification efficiencies in \ttbar. In case of no additional HLT
 requirements, these can be determined from the top control region
 directly. Three non-disjoint sub-regions of the top control region are
@@ -206,14 +213,16 @@ measurements are performed in these regions.
 
 \todo[inline]{Talk about offline reconstructed taus and their identification}
 
+\todo[inline]{Plots of \faketauhadvis \pT at least.}
+
 
 \subsubsection{Fit model}
 
-The \tauhadvis misidentification efficiencies strongly depend on the
-charged particle multiplicity and visible transverse momentum of the
-reconstructed \tauhadvis candidate (c.f.\ \Cref{sec:tauid}). This
-might also be reflected in corrections to the misidentification
-efficiency of \tauhadvis in simulation. Therefore, the correction
+The \jettotauhadvis misidentification efficiencies strongly depend on
+the charged particle multiplicity and visible transverse momentum of
+the reconstructed \tauhadvis candidate (c.f.\ \Cref{sec:tauid}). This
+might also be reflected in corrections to the \jettotauhadvis
+misidentification efficiency in simulation. Therefore, the correction
 factor measurement is performed in dependence of the reconstructed
 decay mode (1- or 3-prong) and \tauhadvis~\pT. This is achieved by
 performing a scale factor measurement in disjoint subregions defined
@@ -253,20 +262,21 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
       offline \tauhadvis reconstruction.}
   \end{subfigure}
 
-  \caption{Summary of regions used for determination of the \tauhadvis
-    misidentification efficiency corrections. The $x$-axis shows the
-    regions separated according to the reconstructed decay mode into
-    either 1-prong (1P) and 3-prong (3P) \tauhadvis as well as the
-    \tauhadvis $\pT /\si{\GeV}$ bin interval. The figures are shown
-    with the pre-fit background model.}
+  \caption{Summary of regions used for determination of the
+    \jettotauhadvis misidentification efficiency corrections. The
+    $x$-axis shows the regions separated according to the
+    reconstructed decay mode into either 1-prong (1P) and 3-prong (3P)
+    \tauhadvis as well as the \tauhadvis $\pT /\si{\GeV}$ bin
+    interval. The figures are shown with the pre-fit background
+    model.}
   \label{fig:ttbarsf_region_summary_prefit}
 \end{figure}
 
 The top control region has a large contamination of \ttbar with a
 di-lepton final state where the \tauhadvis candidate originates from a
-\tauhad decay. This contribution is not sensitive to the jet \ra
-\tauhadvis misidentification efficiency but has to be estimated when
-extracting correction factors. To distinguish between di-leptonic
+\tauhad decay. This contribution is not sensitive to the
+\jettotauhadvis misidentification efficiency but has to be estimated
+when extracting correction factors. To distinguish between di-leptonic
 \ttbar with true \tauhadvis and primarily semi-leptonic \ttbar with
 \faketauhadvis, an estimate of the transverse mass between the lepton
 $\ell$ and \pTmissAbs given by
