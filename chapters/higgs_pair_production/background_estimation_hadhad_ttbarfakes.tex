@@ -2,6 +2,9 @@
   where both Ws decay leptonically. in semi-leptonic \ttbar only one
   of the W bosons decays leptonically the other hadronically.}
 
+\todo[inline]{Talk about some motivation for this method: Absence of a
+  good ttbar control region that is close to hadhad in the final state
+  -- need to go to lephad for measurement.}
 
 Top-quark pair production with at least one \tauhadvis candidate
 originating from a misidentified quark- or gluon-jet represents a
@@ -12,8 +15,8 @@ $\ttbar \ra \Pbottom \PWp \APbottom \PWm$ with one leptonic decay of a
 \PW boson into a \taulepton, which subsequently decays hadronically;
 the other \PW boson decaying hadronically, producing jets that mimick
 the signature of a \tauhadvis in the detector. This source of
-\faketauhadvis backgrounds in semi-leptonic decay modes of \ttbar in
-which only one \tauhadvis candidate is originating from a jet is the
+\faketauhadvis background in semi-leptonic decay modes of \ttbar, in
+which only one \tauhadvis candidate is originating from a jet, is the
 dominant contribution to the \faketauhadvis background from \ttbar in
 the \hadhad channel. Cases where both \tauhadvis candidates are
 originating from misidentified jets is comparatively small explaining
@@ -25,7 +28,7 @@ fraction of gluon- and quark-initiated jets differs between both
 processes, with quark-jets being more abundant in \ttbar. This has an
 effect on \faketauhadvis estimation since the probability of a jet
 being misidentified as a \tauhadvis, the so-called \emph{fake rate},
-is significantly larger for quark-initiated jets.
+is significantly larger for quark-initiated jets\todo{Numbers?}.
 
 The quality of the modelling of \faketauhadvis in simulation is
 generally unknown and calibrations of \faketauhadvis selection
@@ -54,9 +57,6 @@ properties using a maximum likelihood fit in a top control region. The
 corrections are applied in the \hadhad SR to obtain an estimate of the
 \ttbarFakes background and the associated uncertainties.
 
-\todo[inline]{How would these (fake rates / SFs) be applied any
-  differently? What are the advantages of either method?}
-
 % Two approaches were investigated, one being the direct
 % measurement of the misidentification efficiency in data (the so-called
 % \textit{fake rate})
@@ -83,64 +83,69 @@ corrections are applied in the \hadhad SR to obtain an estimate of the
 
 \subsubsection{Measurement region}
 
-\todo[inline]{Talk about some motivation for this method: Absence of a
-  good ttbar control region that is close to hadhad in the final state
-  -- need to go to lephad for measurement.}
-
-A top control region (SF-CR) is defined in a $\Plepton + \tauhadvis$
-final state with \Plepton being either an electron or a muon. The
-region is similar to the top control region used in the \lephad
-channel where it is used to calculate fake factors for \tauhadvis
-mimicked by jets produced in \ttbar (c.f.\ \cref{sec:}). Minor
-alterations are applied to the region definition to ensure a
-consistent \tauhadvis selection with the \hadhad channel.
+A top control region (SF-CR) is defined in the $\Plepton + \tauhadvis$
+reconstructed final state with \Plepton being either an electron or a
+muon. The region is similar to the top control region used in the
+\lephad channel where it is used to calculate fake factors for
+\tauhadvis mimicked by jets produced in \ttbar (c.f.\
+\cref{sec:}). Minor alterations are applied to the region definition
+to ensure a consistent \tauhadvis selection with the \hadhad SR.
 
 The region is defined by requiring exactly one \tauhadvis passing
-loose identification, exactly one electron or muon passing the
-identification criteria\todo{reference}, and exactly two \btagged
-jets. Only events passing the single lepton trigger selection are
-considered. The \tauhadvis and the electron / muon are required to
-have opposite electric charge. The \tauhadvis selection is adapted to
-more closely follow the selection of the \hadhad channel\footnote{In
-  the \lephad channel the \tauhadvis candidates are required to fulfil
-  $\pT > \SI{20}{\GeV}$ and $|\eta| < 2.3$.}, that is the \tauhadvis
-candidate is required to have $\pT > \SI{25}{\GeV}$ with a
-pseudorapidity up to~$|\eta| < 2.5$. Orthogonality with the signal
-region of the \lephad channel is ensured by requiring
-$\mBB > \SI{150}{\GeV}$.
+loose identification, exactly one electron or muon passing isolation
+and identification criteria\todo{reference}, and exactly two \btagged
+jets. Only events passing single lepton trigger selection are
+considered. The \tauhadvis selection is adapted to more closely follow
+the selection of the \hadhad channel by requiring \tauhadvis
+candidates to fulfil $\pT > \SI{25}{\GeV}$ and $|\eta| < 2.5$ (instead
+of $\pT > \SI{20}{\GeV}$ and $|\eta| < \num{2.3}$ in the \lephad
+channel).
 
-\todo[inline]{Why OS? SS will likely be enhanced in fakes. Charge
-  correlations are more similar to the hadhad SR where the dominant
-  contribution are events where only one tau is fake.}
+Electron / muon and \tauhadvis candidate are required to be
+reconstructed with electric charges of opposite sign. This requirement
+ensures that charge correlations between $\ell$ and \faketauhadvis,
+which are present in semi-leptonic \ttbar, are similar to the ones
+between \tauhadvis candidates in the \hadhad SR for the dominant
+contribution of \ttbar with a single \faketauhadvis. This effect was
+first observed in the context of searches for $\HH \to \bbtautau$
+in~\cite{bokan}.
+
+Orthogonality between the SF-CR and the signal region of the \lephad
+channel is ensured by requiring $\mBB > \SI{150}{\GeV}$.
+
+% \footnote{Leptons $\ell$ and true \tauhadvis are have high
+% probability to be reconstructed with the correct electric charge in
+% the SF-CR. In \ttbar the \faketauhadvis candidate is more likely to
+% have opposite-sign electric charge . As a result, in the same-sign
+% region the quark/gluon composition of jets is likely different which
+% also affects the fake rates.}.
+
 
 The control region selects \ttbar with high purity of approximately
 \SI{94}{\percent} (pre-fit). The largest part, with a purity of
-\SI{66}{\percent}, is \ttbar with a $\ell + \tau$ final state where
-$\ell$ is either an electron or muon and the $\tau$~lepton decays
-hadronically. This contribution will be subsequently referred to as
-di-leptonic \ttbar. The production of \ttbar with \tauhadvis
-originating from quark or gluon jets, which is the process of interest
-for this measurement, constitutes a purity of~\SI{28}{\percent}.
-Minor backgrounds in this region are single top (\SI{4}{\percent}) and
-vector boson production in association with jets
-(\SI{2}{\percent}). The contribution of multi-jet background is
+\SI{66}{\percent}, is \ttbar with a final state containing
+$\ell + \tau$ where $\ell$ is either an electron or muon and the
+\taulepton decays hadronically. This contribution will be subsequently
+referred to as di-leptonic \ttbar. The production of \ttbar with
+\tauhadvis originating from quark or gluon jets, which is the process
+of interest for this measurement, constitutes a purity
+of~\SI{28}{\percent}.  Minor backgrounds in this region are single top
+(\SI{4}{\percent}) and vector boson production in association with
+jets (\SI{2}{\percent}). The contribution of multi-jet background is
 assumed to be negligible.\todo{Why is this negligible? Based on the
   assumptions made by lephad?}
-
-\todo[inline]{Fraction of quark / gluon jets?}
-
 
 The misidentification efficiencies of jets as \tauhadvis depend on the
 identification requirements placed on \tauhadvis candidates during
 offline event reconstruction. In this analysis the loose working point
 of the RNN \tauhadvis~identification algorithm serves as the baseline
-\tauhadvis selection. In the \hadhad channel events are selected with
-single- and di-\tauhadvis triggers which use isolation and
-identification criteria to reduce trigger-rates in various stages of
-the ATLAS trigger system. Calorimeter-based isolation requirements are
-applied to \tauhadvis candidates at L1, while at the HLT more
-sophisticated \tauhadvis~identification algorithms are used.  The HLT
-algorithms were developed to be similar to their counterparts in the
+selection. In the \hadhad channel events are selected with single- and
+di-\tauhadvis triggers which use isolation and identification criteria
+to reduce trigger-rates in various stages of the ATLAS trigger
+system. Calorimeter-based isolation requirements are applied to
+\tauhadvis candidates at L1, while at the HLT more sophisticated
+\tauhadvis~identification algorithms are used.  The HLT algorithms
+were developed to be similar to their counterparts of the offline
 \tauhadvis reconstruction. However, divergences between the
 identification algorithms used at the HLT and in offline \tauhadvis
 reconstruction are expected due to limitations in detector read-out
@@ -158,31 +163,34 @@ categories in the \hadhad channel. In events selected by
 single-\tauhadvis triggers it is sufficient for a single \tauhadvis to
 pass reconstruction and identification at the HLT. For di-\tauhadvis
 triggers both candidates need to fulfil the requirements at the HLT.
-The top control region, which uses single electron and muon triggers,
-allows the direct estimation of corrections for \tauhadvis without any
-requirements at the HLT.
+Events in the SF-CR, which are selected using single electron and muon
+triggers, allows the direct estimation of corrections for \tauhadvis
+without any requirements at the HLT.
 
 The selection at the HLT can be emulated by requiring that events in
-the top control region, which were originally selected using single
-lepton triggers, also pass an appropriately chosen single-\tauhadvis
-trigger and that the \tauhadvis candidate is matched to a
-reconstructed and identified \tauhadvis at the HLT. At HLT-level the
-lowest transverse momentum threshold on the \tauhadvis relevant for
-this analysis is $\pTHLT > \SI{25}{\GeV}$, with the chain of HLT
-algorithms corresponding to the selection employed in the \hadhad
-signal region (cf.\ \Cref{sec:exp_trigger}). Generally, only prescaled
-versions of these triggers were available during data-taking in Run~2
-of the LHC but given that the events are already recorded using single
-lepton triggers, the HLT algorithms can be re-run such that these
+the SF-CR also pass an appropriately chosen single-\tauhadvis trigger.
+In addition, \tauhadvis candidates of the offline \tauhadvis
+reconstruction are required to be geometrically matched to a
+reconstructed and identified \tauhadvis candidate at the HLT. For this
+matching procedure the chain of algorithms employed by the HLT
+\tauhadvis reconstruction is chosen to reflect the trigger selection
+employed in the \hadhad SR previously described in
+\Cref{sec:exp_trigger}.
+
+The lowest transverse momentum threshold on \tauhadvis at HLT-level
+relevant for the analysis is $\pTHLT > \SI{25}{\GeV}$, which
+corresponds to the threshold applied to \tauhadvis subleading in \pT
+selected by di-\tauhadvis triggers. Generally, only prescaled versions
+of these triggers were available during data-taking in Run~2 of the
+LHC. However, the events were already recorded using single lepton
+triggers which allows the HLT algorithms to be re-run such that the
 trigger decisions can be \textit{resurrected} without the application
 of a prescale. The relevant single-\tauhadvis triggers are listed in
-the following\footnote{For an explanation of the nomenclature see
-  \Cref{reference}}:
+the following:%
 \begin{itemize}
-
 \item \verb|HLT_tau25_medium1_tracktwo|: Primary trigger chain used
   for data-taking from 2015 to 2017. Resurrected trigger decisions are
-  available for the entire Run~2 dataset corresponding to
+  available for the entirety of the Run~2 dataset corresponding to
   \SI{139}{\ifb} of integrated luminosity.
 
 \item \verb|HLT_tau25_medium1_tracktwoEF|: Primary trigger chain used
@@ -197,19 +205,21 @@ the following\footnote{For an explanation of the nomenclature see
   previous item. Hereafter, when refering to
   \verb|HLT_tau25_mediumRNN_tracktwoMVA| a ``logical or'' with
   \verb|HLT_tau25_medium1_tracktwoEF| is implied.
-
 \end{itemize}
 
 In total four configurations of \tauhadvis selection need to be
 considered when measuring corrections to the \jettotauhadvis
 misidentification efficiencies in \ttbar. In case of no additional HLT
-requirements, these can be determined from the top control region
-directly. Three non-disjoint sub-regions of the top control region are
-defined for cases where requirements are imposed on \tauhadvis at the
-HLT. These are defined by ensuring that the resurrected triggers
-select the event and that the reconstructed \tauhadvis candidate is
-geometrically matched to the \tauhadvis candidate at the HLT. Separate
-measurements are performed in these regions.
+requirements, these can be determined from the SF-CR directly. Three
+non-disjoint sub-regions of the SF-CR are defined for cases where
+requirements are imposed on \tauhadvis at the HLT. Events entering
+these regions are required to be selected by the resurrected trigger
+and the reconstructed \tauhadvis candidate needs to be geometrically
+matched to an identified \tauhadvis candidate at the HLT. Separate
+scale factor measurements are performed in these regions.These are defined
+by ensuring that the resurrected triggers select the event and that
+the reconstructed \tauhadvis candidate is geometrically matched to the
+\tauhadvis candidate at the HLT.
 
 \todo[inline]{Talk about offline reconstructed taus and their identification}
 
