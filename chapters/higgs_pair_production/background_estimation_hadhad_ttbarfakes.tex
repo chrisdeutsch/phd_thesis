@@ -21,7 +21,7 @@ dominant contribution to the \faketauhadvis background from \ttbar in
 the \hadhad channel. Cases where both \tauhadvis candidates are
 originating from misidentified jets is comparatively small explaining
 approximately~\SI{15}{\percent} of \ttbar with \faketauhadvis in the
-\hadhad SR. This is in contrast with the multi-jet background
+\hadhad SR. This is in contrast with the \multijet background
 discussed in~\Cref{sec:hadhad_multijet} where both \tauhadvis
 candidates are originating from quark or gluon jets. Moreover, the
 fraction of gluon- and quark-initiated jets differs between both
@@ -131,7 +131,7 @@ referred to as di-leptonic \ttbar. The production of \ttbar with
 of interest for this measurement, constitutes a purity
 of~\SI{28}{\percent}.  Minor backgrounds in this region are single top
 (\SI{4}{\percent}) and vector boson production in association with
-jets (\SI{2}{\percent}). The contribution of multi-jet background is
+jets (\SI{2}{\percent}). The contribution of \multijet background is
 assumed to be negligible.\todo{Why is this negligible? Based on the
   assumptions made by lephad?}
 
@@ -737,7 +737,7 @@ down-variation\footnote{The notion of up- and down-variations is
   diagonal frame, and does not have a concrete physical meaning.}. The
 variations are ordered in descending variance in the diagonal frame
 and thus the effect size of the variation on the background estimate
-is also expected to approximately follow a descending order\todo{Maybe
+is also expected to roughly follow a descending order\todo{Maybe
   clarify why it is only approximate.}. An example of this
 decomposition is shown in~\Cref{fig:ttbarSF_eigenvariations}. The
 effect of large correlations between scale factors can be seen in the
@@ -1074,11 +1074,53 @@ total yield in the \hadhad SR.
 \todo[inline]{There need to be some validation checks here...}
 
 
-\subsubsection{Anti-ID measurement?}
+\subsubsection{Estimation of \ttbarFakes subtraction in FF-method}
 
-This measurement was repeated in the Anti-ID region to provide an
-estimate of the uncertainty of the subtraction for the fake factor
-method.
+The estimation of the \multijet background in the \hadhad SR,
+previously described in \Cref{sec:hadhad_multijet}, necessitates a
+large subtraction of \ttbarFakes in the 2 $b$-tag \antiid region with
+opposite sign \tauhadvis charge. The concept of estimating the
+\ttbarFakes background using the scale factor method is extended to
+the \antiid region to provide corrections and uncertainties on the
+subtraction performed during \multijet estimation.
+
+The scale factor measurement is repeated using the same SF-CR
+definitions except for inverting the offline \tauhadvis identification
+requirement. Instead of \tauhadvis passing loose offline \tauid,
+\tauhadvis are required to fail the loose working point but having an
+RNN \tauid score exceeding \num{0.01}. The same requirements from the
+ID-region measurement regarding the reconstruction and identification
+of \tauhadvis at the HLT are imposed.
+
+The inversion of the \tauid requirement rejects most \ttbar with
+\tauhadvis originating from hadronic decays of \tauleptons yielding a
+region with high purity of \ttbarFakes (\todo{number}). Matching
+offline reconstructed \tauhadvis to HLT \tauhadvis reduces the total
+yield (\todo{number}) and purity (\todo{number}) of \ttbarFakes in the
+\antiid region.
+
+A reduced set of experimental uncertainties is used for this
+measurement due to practical limitiations in the dataset preparation
+for the \lephad \antiid region. Uncertainties varying the
+four-momentum of reconstructed objects are omitted except
+uncertainties on the \tauhadvis energy scale. Other uncertainties that
+can be expressed by alternative event weights, for example
+uncertainties on tagging efficiencies, are kept. Due to this
+constraint the total deviation of the central value of the scale
+factors measured in the \antiid region from unity is assigned as an
+additional uncertainty when propagating the uncertainty to the
+\multijet estimate in the \hadhad SR.
+
+The scale factors measured in the Anti-ID region are shown in. The
+efficiency of selecting a quark- or gluon-jet as an \antitau are well
+predicted in simulation of \ttbar.
+
+The same decomposition of the scale factors is used to provide
+decorrelation variations of the measurement. Only the leading
+variations are used to define the subtraction uncertainty.
+
+Scale factors are applied in \hadhad following the same application
+rule.
 
 \todo[inline]{Possibly include the SS region (in addition to OS) to
   get better constraints on ttbar and ttbarFakes. Possibly can float
