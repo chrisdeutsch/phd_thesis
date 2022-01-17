@@ -67,41 +67,58 @@ further increasing the capacity of the model~\cite{hastie09}.
 
 When using multivariate methods in measurements or searches for new
 physics, it has to be ensured that the methods are evaluated on a
-dataset that was not used for training or model selection, thus
-providing an estimator of the generalised performance. In this
-analysis, events are categorised according to their event number into
-even- and odd-numbered events, yielding an even- and odd-fold,
-respectively. The training and model selection can proceed by using
-one of the two folds withholding the remaining fold for later
-evaluation. This procedure is applied twice by using each fold for
-training once.
+dataset that was not used for training or model selection (the process
+of choosing the model to fit), thus providing an estimator of the
+generalised performance. In this analysis, events are categorised
+according to their event number into even- and odd-numbered events,
+yielding an even- and odd-fold, respectively. The training and model
+selection can proceed by using one of the two folds withholding the
+remaining fold for later evaluation. This procedure is applied twice
+by using each fold for training once.
 
 After model selection and training, the models are evaluated by
 applying the model trained on the even-fold on odd-numbered events and
 the model trained on the odd-fold on even-numbered events. This
-approach, which is called two-fold \emph{cross validation}, provides
-an unbiased evaluation of the MVA scores using the entirety of the
-available dataset. The same evaluation method is applied to signal
-region data recorded by the ATLAS detector, which is not part of the
-training procedure.
+approach, which is called two-fold \emph{cross
+  validation}~\cite{hastie09,bishop06}, provides an unbiased
+evaluation of the MVA scores using the entirety of the available
+dataset. The same evaluation method is applied to signal region data
+recorded by the ATLAS detector, which is not part of the training
+procedure.
 
-% five-fold cross validation
+Similar to the biased predictions obtained when evaluating
+multivariate methods on datasets used for training, the process of
+model selection needs to be performed on a dataset that is independent
+of the one used for final evaluation of the
+method~\cite{cawley10}. Model selection is the process of choosing a
+particular configuration of the algorithm, for example input variables
+and other hyperparameters, based on a metric indicating the
+performance of the model.
 
-% A form of nested cross validation
+The model selection is performed by using five-fold cross validation
+(CV), which is a generalisation of the two-fold approach described
+previously to a larger number of subdivisions, separately on the even-
+and the odd-numbered events. This approach effectively nests a
+five-fold CV inside the a two-fold CV and is therefore called
+\emph{nested cross validation}\todo{cite \cite{stone74}?}.
 
-% Hyperparameter tuning choices -> made on 'training'-half
-
-% No tuning choice are made based on 'testing performance'.
-
-% Cross validation: 5-fold cross validation
+\Cref{fig:cross_validation} shows a schematic description of one step
+of the nested cross validation approach. \todo{Continue: 5-folds
+  average metric / stddev of metric}
 
 \begin{figure}[htbp]
   \centering
 
-  \caption{Training - Validation - Testing}
-  \label{fig:bla}
-\end{figure}
+  \includegraphics[scale=1]{mva/kfold}
 
+  \caption{Five-fold cross validation approach for model selection on
+    even-numbered events. The separation of events into disjoint
+    subsets (folds) is indicated by rectangles. The purpose of the
+    subset is denoted below. A single step out of a total of five, the
+    number of possible assignments of the evaluation fold, is
+    shown. The hold-out dataset is not used for model selection.}
+  \label{fig:cross_validation}
+\end{figure}
 
 
 \subsection{Discriminating variables}
@@ -161,11 +178,15 @@ used to extract the non-resonant and resonant production of \HH.
   Decision Trees in the \hadhad channel}
 \label{sec:mva_smbdt}
 
+TMVA
+
 \todo[inline]{Optimisation}
+
+Random grid search
+
 \todo[inline]{Performance?}
 
 
-TMVA
 
 
 
@@ -181,6 +202,8 @@ Input parameter + input variables are inputs to the NN
 Standardised by subtracting median and dividing by interquartile range.
 
 Keras, Tensorflow, lwtnn
+
+
 
 
 \todo[inline]{Optimisation}
