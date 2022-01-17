@@ -53,24 +53,134 @@ interpolation properties of PNN as well as the training and
 optimisation procedures used. \todo{Variable importance?}
 
 
+\subsection{Cross validation method}
+\label{sec:mva_crossvalidation}
+
+Many machine learning algorithms, due to their ability to approximate
+large classes of functions, are susceptible to fitting statistical
+fluctuations in the data that are used to train a model. As a result,
+predictions of performance characteristics of the model based on the
+training data might not generalise to previously unseen data. In
+extreme cases, frequently called overfitting, the performance of the
+model evaluated on an independent dataset starts to degrade when
+further increasing the capacity of the model~\cite{hastie09}.
+
+When using multivariate methods in measurements or searches for new
+physics, it has to be ensured that the methods are evaluated on a
+dataset that was not used for training or model selection, thus
+providing an estimator of the generalised performance. In this
+analysis, events are categorised according to their event number into
+even- and odd-numbered events, yielding an even- and odd-fold,
+respectively. The training and model selection can proceed by using
+one of the two folds withholding the remaining fold for later
+evaluation. This procedure is applied twice by using each fold for
+training once.
+
+After model selection and training, the models are evaluated by
+applying the model trained on the even-fold on odd-numbered events and
+the model trained on the odd-fold on even-numbered events. This
+approach, which is called two-fold \emph{cross validation}, provides
+an unbiased evaluation of the MVA scores using the entirety of the
+available dataset. The same evaluation method is applied to signal
+region data recorded by the ATLAS detector, which is not part of the
+training procedure.
+
+% five-fold cross validation
+
+% A form of nested cross validation
+
+% Hyperparameter tuning choices -> made on 'training'-half
+
+% No tuning choice are made based on 'testing performance'.
+
+% Cross validation: 5-fold cross validation
+
+\begin{figure}[htbp]
+  \centering
+
+  \caption{Training - Validation - Testing}
+  \label{fig:bla}
+\end{figure}
+
+
+
 \subsection{Discriminating variables}
 \label{sec:mva_discriminating variables}
+
+The set of variables provided to multivariate classification methods
+is crucial to its performance in distinguishing between
+classes.\todo{More intro.}
+
+The initial choice of variables for the \hadhad and \lephad channels
+was based on a previous publication by the ATLAS collaboration in the
+same search channel using a partial Run~2
+dataset~\cite{HIGG-2016-16-witherratum}. This choice was verified for
+the analysis employing the full Run~2 dataset by removing variables
+not contributing to the classification performance and testing
+variables that were not included in the earlier publication.
+
+
+
+
+
+
+
+
+
 
 Discriminating variables were rechecked (in \hadhad) from previous
 publication and found to be all significant except for MET centrality.
 
+
+
+
 The discriminating variables used: \mMMC, \mBB, \mHH, \dRtautau, \dRbb.
 
 
-\subsection{Extraction of the non-resonant signal using boosted decision trees}
+
+
+
+A summary of the discriminating variables used for signal extraction
+is shown in~\Cref{tab:mva_inputvars}. The same sets of variables are
+used to extract the non-resonant and resonant production of \HH.
+
+\begin{table}[htbp]
+  \centering
+
+  \missingfigure{Table of input variables}
+
+  \caption{Discriminating variables used to extract the non-resonant
+    and resonant \HH signals in the \hadhad, \lephad SLT, and \lephad
+    LTT channels.}
+  \label{tab:mva_inputvars}
+\end{table}
+
+
+
+\subsection{Extraction of the non-resonant signal using Boosted
+  Decision Trees in the \hadhad channel}
 \label{sec:mva_smbdt}
 
 \todo[inline]{Optimisation}
 \todo[inline]{Performance?}
 
 
+TMVA
+
+
+
 \subsection{Extraction of resonant signals with parametric neural networks}
 \label{sec:mva_pnn}
+
+Signal spectra connected to one or more physics parameters.
+
+Input parameter: resonance mass \mX
+
+Input parameter + input variables are inputs to the NN
+
+Standardised by subtracting median and dividing by interquartile range.
+
+Keras, Tensorflow, lwtnn
 
 
 \todo[inline]{Optimisation}
