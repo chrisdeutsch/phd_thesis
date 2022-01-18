@@ -139,16 +139,16 @@ assumed to be negligible.\todo{Why is this negligible? Based on the
   \centering
 
   \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/PTVR}%
-  \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/MTWVR}
+  \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/ETAVR}
 
-  \caption{Distribution of \tauhadvis \pT and \mTW in the scale factor
-    control region (SF-CR) prior to the maximum likelihood fit. Events
-    with \tauhadvis \pT (\mTW) larger than \SI{200}{\GeV} are merged
-    into the last bin. The uncertainty contains all statistical and
-    systematic uncertainties except for normalisation uncertainties on
-    \ttbar arising from its modelling in simulation. Modelling
-    uncertainties affecting the shape of the distributions are
-    included.}
+  \caption{Distribution of \tauhadvis \pT and $\eta$ in the scale
+    factor control region (SF-CR) prior to the maximum likelihood
+    fit. Events with \tauhadvis \pT larger than \SI{200}{\GeV} are
+    merged into the last bin. The uncertainty contains all statistical
+    and systematic uncertainties except for normalisation
+    uncertainties on \ttbar arising from its modelling in
+    simulation. Modelling uncertainties affecting the shape of the
+    distributions are included.}
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
@@ -401,12 +401,11 @@ due to the weak discrimination power of \mTW for small \tauhadvis \pT.
       $\SI{30}{\GeV} \leq \pTvis < \SI{40}{\GeV}$.}
   \end{subfigure}
 
-  \caption{Two examples of \mTW distributions. Events with
+  \caption{Two examples of \mTW distributions as they enter the
+    maximum likelihood estimation procedure. Events with
     $\mTW > \SI{200}{\GeV}$ are merged into the last bin of the
     histogram.}
   \label{fig:ttbarsf_mtw_examples_prefit}
-
-  \todo[inline]{Remove ATLAS label, remove / 40 GeV.}
 \end{figure}
 
 
@@ -691,9 +690,33 @@ although with large measurement uncertainties due to the small
 expected contribution of \faketauhadvis. This is further magnified for
 the \texttt{medium1\_tracktwoEF} and \texttt{mediumMVA\_tracktwoRNN}
 trigger chains where only partial datasets are available for the
-measurements.
+measurements.\todo{\ttbar normalisation?}
 
-\todo[inline]{Fit cross checks: pulls, constraints, ranking?}
+Pulls and constraints of nuisance parameters are examined for all
+measurements\todo{Appendix?}. The measured nuisance parameters agree
+within uncertainties with the central values of their auxiliary
+measurements. Few instances are observed where the scale factor
+measurement puts more stringent constraints on nuisance parameters
+compared to the prior measurement of the parameter. In all cases the
+post-fit uncertainty is not smaller than \SI{70}{\percent} of the
+prior uncertainty.
+
+The largest parameter constraints, in the following given as
+$\sigma_\text{post-fit} / \sigma_\text{pre-fit}$, are observed for the
+\pTmissAbs scale uncertainty~(\SI{70}{\percent}), the ME / PS
+uncertainties on \ttbar~(\SI{75}{\percent}), and \tauhadvis energy
+scale uncertainty~(\SI{80}{\percent}). The \mTW discriminant used for
+the scale factor measurement is sensitive to the modelling of the
+\pTmissAbs, thus some constraints on associated parameters are
+expected. Similarly, the abundance of \ttbar and high statistical
+precision\todo{fill}. The \tauhadvis energy scale measurements are
+performed in $Z \ra \tau_{\mu} \tauhad$ tag-and-probe\todo{citation?}
+which cannot access \tauhadvis momenta relevant for measurements in
+\ttbar.  It cannot be fully excluded, however, that these constraints
+arise from a lack of flexibility of the fit model.
+
+\Cref{fig:ttbarSF_postfit_ptmtw} shows the inclusive SF-CR after the
+maximum likelihood fit\todo{interpretation}.
 
 \todo[inline]{This measurement can provide a correction as well as a
   measurement-driven estimate of the uncertainties of
@@ -706,9 +729,24 @@ measurements.
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/PTVR_postFit}
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/MTWVR_postFit}
 
-  \caption{Postfit}
+  \caption{Distribution of \tauhadvis \pT and \mTW in the scale factor
+    control region (SF-CR) after the maximum likelihood fit. Events
+    with \tauhadvis \pT (\mTW) larger than \SI{200}{\GeV}
+    (\SI{250}{\GeV}) are merged into the last bin. The uncertainty
+    contains all statistical and systematic uncertainties, including
+    the post-fit uncertainties on scale factors.}
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
+
+
+% Distribution of \tauhadvis \pT and $\eta$ in the scale
+%     factor control region (SF-CR) prior to the maximum likelihood
+%     fit. Events with \tauhadvis \pT larger than \SI{200}{\GeV} are
+%     merged into the last bin. The uncertainty contains all statistical
+%     and systematic uncertainties except for normalisation
+%     uncertainties on \ttbar arising from its modelling in
+%     simulation. Modelling uncertainties affecting the shape of the
+%     distributions are included.
 
 The fit model introduces large anti-correlations between the global
 \ttbar normalisation and the extracted scale factors for \ttbar with
