@@ -98,13 +98,21 @@ performance of the model.
 The model selection is performed by using five-fold cross validation
 (CV), which is a generalisation of the two-fold approach described
 previously to a larger number of subdivisions, separately on the even-
-and the odd-numbered events. This approach effectively nests a
-five-fold CV inside the a two-fold CV and is therefore called
-\emph{nested cross validation}\todo{cite \cite{stone74}?}.
+and the odd-numbered events. This approach effectively nests five-fold
+CV inside of two-fold CV and is therefore called \emph{nested cross
+  validation}~\cite{cawley10,stone74}.
 
-\Cref{fig:cross_validation} shows a schematic description of one step
-of the nested cross validation approach. \todo{Continue: 5-folds
-  average metric / stddev of metric}
+\Cref{fig:cross_validation} shows a schematic description of one
+iteration of the nested cross validation approach. The inner,
+five-fold CV randomly splits events into five disjoint subsets
+(folds). For every choice of fold used to evaluate the model, the
+model is trained on the remaining four folds, subsequently evaluating
+the trained model on the evaluation-fold. A decision between two
+competing models can be made by comparing the average and standard
+deviation of the evaluation metric over the five iterations of the
+inner CV. Only after the best-performing model is
+selected\todo{Retrain on all five folds}, it is evaluated on the
+hold-out dataset.
 
 \begin{figure}[htbp]
   \centering
