@@ -145,14 +145,6 @@ not contributing to the classification performance and testing
 variables that were not included in the earlier publication.
 
 
-
-
-
-
-
-
-
-
 Discriminating variables were rechecked (in \hadhad) from previous
 publication and found to be all significant except for MET centrality.
 
@@ -162,21 +154,85 @@ publication and found to be all significant except for MET centrality.
 The discriminating variables used: \mMMC, \mBB, \mHH, \dRtautau, \dRbb.
 
 
-
-
-
 A summary of the discriminating variables used for signal extraction
 is shown in~\Cref{tab:mva_inputvars}. The same sets of variables are
 used to extract the non-resonant and resonant production of \HH.
 
+\lephad channel variables. In the following lepton refers to either an
+electron or a muon:
+\begin{description}
+
+\item[\mMMC] Invariant mass of the $\tau\tau$-system calculated with
+  the MMC.
+
+\item[\mBB] Invariant mass of the $b$-jet candidate pair after $b$-jet
+  momentum corrections.
+
+\item[\mHH] Invariant mass of the decay products of both Higgs
+  bosons. The four-momentum of the $\PHiggs \ra \Ptauon \APtauon$
+  candidate is reconstructed using the MMC;
+  $\PHiggs \ra \Pbottom \APbottom$ using the four-momenta of the
+  $b$-jet candidate pair after momentum corrections.
+
+\item[\dRtautau] Lorentz-invariant angular distance between pair of
+  visible \taulepton decay products.
+
+\item[\dRbb] Lorentz-invariant angular distance between the pair of
+  $b$-jet candidates after momentum corrections.
+
+\item[$\Delta \pT(\ell, \tauhadvis)$] The transverse momentum
+  difference between lepton and \tauhadvis.
+
+\item[\mTW] \todo{Omit?}
+
+\item[\pTmiss $\phi$ centrality] A measure of the relative angular
+  position of \pTmiss and visible \taulepton decay products
+  (electrons, muons, or \tauhadvis) in the transverse plane. The
+  measurement is relative to the line bisecting the azimuthal angle
+  between the pair of visible \taulepton decay products and is defined
+  as~\cite{HIGG-2013-32, HIGG-2016-16-witherratum}:
+  \begin{align*}
+    \pTmiss\text{ }\phi\text{ centrality} = \frac{A + B}{\sqrt{A^2 + B^2}} \text{,}
+  \end{align*}
+  where
+  \begin{align*}
+    A = \frac{\sin(\phi_{\pTmiss} - \phi_{\tau_1})}{\sin(\phi_{\tau_2} - \phi_{\tau_1})} \qquad B = \frac{\sin(\phi_{\tau_2} - \phi_{\pTmiss})}{\sin(\phi_{\tau_2} - \phi_{\tau_1})} \text{,}
+  \end{align*}
+  with $\phi_{\pTmiss}$ and $\phi_{\tau_1}$ / $\phi_{\tau_2}$ denoting
+  the azimuthal angle of \pTmiss and visible \taulepton decay
+  products, respectively.
+
+  The \pTmiss $\phi$ centrality reaches a maximum of $\sqrt{2}$
+  (minimum of $-\sqrt{2}$) when \pTmiss is aligned with the bisecting
+  line, pointing into the smaller (larger) angle spanned by the pair
+  of visible \taulepton decay products. In configurations where
+  \pTmiss is collinear with one of the visible \taulepton decay
+  products it takes a value of 1.
+
+\item[$\Delta\phi(\ell\tauhadvis, bb)$] Azimuthal angle between the
+  $\ell + \tauhadvis$ system and the system consisting of the two
+  \bjet candidates.
+
+\item[$\Delta\phi(\ell, \pTmiss)$] Azimuthal angle between the lepton
+  and \pTmiss.
+
+\item[$\Delta\phi(\pTauTau, \pTmiss)$] Azimuthal angle between
+  $\tau\tau$-system, reconstructed using the MMC, and \pTmiss.
+
+\item[$s_{\text{T}}$] The effective mass of the event defined as the
+  scalar sum of tranverse momenta of all selected jets, \tauhadvis,
+  leptons, and \pTmissAbs.
+\end{description}
+
+
 \begin{table}[htbp]
   \centering
 
-  \missingfigure{Table of input variables}
+  \input{tables/mva_variables}
 
-  \caption{Discriminating variables used to extract the non-resonant
-    and resonant \HH signals in the \hadhad, \lephad SLT, and \lephad
-    LTT channels.}
+  \caption{Discriminating variables used by the multivariate methods
+    to extract the non-resonant and resonant \HH signals in the
+    \hadhad, \lephad SLT, and \lephad LTT channels.}
   \label{tab:mva_inputvars}
 \end{table}
 
