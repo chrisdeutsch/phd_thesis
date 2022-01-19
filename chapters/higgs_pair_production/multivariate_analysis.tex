@@ -110,8 +110,8 @@ model is trained on the remaining four folds, subsequently evaluating
 the trained model on the evaluation-fold. A decision between two
 competing models can be made by comparing the average and standard
 deviation of the evaluation metric over the five iterations of the
-inner CV. Only after the best-performing model is
-selected\todo{Retrain on all five folds}, it is evaluated on the
+inner CV. Only after the best-performing model is selected, usually
+after re-fitting the model on all five folds, it is evaluated on the
 hold-out dataset.
 
 \begin{figure}[htbp]
@@ -133,16 +133,87 @@ hold-out dataset.
 \label{sec:mva_discriminating variables}
 
 The set of variables provided to multivariate classification methods
-is crucial to its performance in distinguishing between
-classes.\todo{More intro.}
+is crucial to its performance in distinguishing between classes. The
+initial choice of variables considered in this search was based on a
+previous publication in the same analysis channel by the ATLAS
+collaboration using a partial dataset of \SI{36.1}{\ifb} recorded
+during Run~2~\cite{HIGG-2016-16-witherratum}.
 
-The initial choice of variables for the \hadhad and \lephad channels
-was based on a previous publication by the ATLAS collaboration in the
-same search channel using a partial Run~2
-dataset~\cite{HIGG-2016-16-witherratum}. This choice was verified for
-the analysis employing the full Run~2 dataset by removing variables
-not contributing to the classification performance and testing
-variables that were not included in the earlier publication.
+The pair production of SM Higgs bosons has kinematic features that
+allow to distinguish it from the main backgrounds in the $\bbtautau$
+search channel. Candidates of the $\PHiggs \ra \Pbottom\APbottom$ and
+$\PHiggs \ra \Ptauon\APtauon$ decays are explicitly reconstructed
+(cf.\todo{backref}) and can be used to estimate properties of the SM
+Higgs bosons in signal processes. Among the most important variables
+distinguishing between signal and background processes are \PHiggs-
+and \HH-system invariant masses.
+
+The Missing Mass Calculator (MMC)~\cite{Elagin:2010aw} is used to
+reconstruct the four-momentum of the Higgs candidate decaying into
+pairs of \tauleptons, providing an estimate of the $\tau\tau$-system
+mass, \mMMC. For the signal processes in the \hadhad
+channel\footnote{The presence of an additional neutrino in the \lephad
+  channel makes mass reconstruction of the $\tau\tau$-system more
+  difficult degrading the resolution.}, \mMMC provides an estimate of
+the Higgs boson mass with a resolution of \SIrange{15}{18}{\GeV}
+depending on the momentum of the Higgs boson. Similarly, the mass of
+the $\PHiggs \ra \Pbottom\APbottom$ candidate, consisting of two
+\btagged jets, is reconstructed from the four-momenta of the jets
+after $b$-jet momentum correction (cf.~\todo{backref}). In this case,
+the Higgs boson mass can be reconstructed with a resolution of
+\SIrange{13}{18}{\GeV}.
+
+The performance of both mass reconstruction techniques is summarised
+in~\Cref{fig:mass_reconstruction_H} for the resonant production of
+Higgs boson pairs as a function of the resonance mass.
+
+\mMMC and \mBB very sensitive to non-resonant production
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics{mva/mass_resolution}
+    \caption{\PHiggs-system mass reconstruction}
+    \label{fig:mass_reconstruction_H}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{.5\textwidth}
+    \centering
+    \includegraphics{mva/mhh_resolution}
+    \caption{\HH-system mass reconstruction}
+    \label{fig:mass_reconstruction_HH}
+  \end{subfigure}
+
+  \caption{Performance of methods used to reconstruct the
+    \PHiggs-system mass (a) and the \HH-system mass (b) in the \hadhad
+    SR estimated using simulation of $\PX \ra \HH \ra \bbtautau$
+    processes. The top panels show the median mass prediction,
+    $P_{50}^{m}$, of the respective method. The bottom panels show
+    half the difference between the 84th and 16th percentile as an
+    estimate of the resolution. For the \HH-system reconstruction,
+    these quantities are shown relative to the mass of the resonance.}
+  \label{fig:mass_reconstruction}
+\end{figure}
+
+
+\mHH very sensitive for resonant production modes at high \mX.
+
+
+
+\dRtautau \dRbb offer probes of the Higgs momentum.
+
+
+This choice was verified for the analysis employing the full Run~2
+dataset by removing variables not contributing to the classification
+performance and testing variables that were not included in the
+earlier publication.
+
+
+
+The same input variables are used for resonant and non-resonant
+production of Higgs bosons pairs (though different for channels).
 
 
 Discriminating variables were rechecked (in \hadhad) from previous
@@ -151,7 +222,6 @@ publication and found to be all significant except for MET centrality.
 
 
 
-The discriminating variables used: \mMMC, \mBB, \mHH, \dRtautau, \dRbb.
 
 
 A summary of the discriminating variables used for signal extraction
@@ -183,7 +253,9 @@ electron or a muon:
 \item[$\Delta \pT(\ell, \tauhadvis)$] The transverse momentum
   difference between lepton and \tauhadvis.
 
-\item[\mTW] \todo{Omit?}
+\item[\mTW] Transverse mass of the \PW boson for processes where
+  \pTmiss solely originates from the decay $\PW \ra \ell \nu_\ell$ defined as:
+  $\mTW = \sqrt{2 |\pT^{\ell}| |\pTmiss| \cos(1 - \Delta\phi)}$.
 
 \item[\pTmiss $\phi$ centrality] A measure of the relative angular
   position of \pTmiss and visible \taulepton decay products
@@ -235,6 +307,13 @@ electron or a muon:
     \hadhad, \lephad SLT, and \lephad LTT channels.}
   \label{tab:mva_inputvars}
 \end{table}
+
+
+
+
+Plots of the discriminating variables in the SR of the \hadhad channel
+are shown in~\Cref{sec:}. A selection of important input variables in
+the \lephad channel are documented in~\cite{ATLAS-CONF-2021-030}.
 
 
 
