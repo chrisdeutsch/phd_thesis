@@ -287,68 +287,118 @@ leptons, $\ell$, only electrons or muons are implied.\nopagebreak
   \label{tab:mva_inputvar}
 \end{table}
 
-Additional variables in the \lephad SLT and LTT channels are
-documented in~\cite{ATLAS-CONF-2021-030}.
+The \pTmiss $\phi$ centrality, used in the \hadhad channel of the
+previous publication~\cite{HIGG-2016-16-witherratum}, was not found to
+contribute to the classification performance when comparing models
+with cross validation (cf.~\Cref{sec:mva_crossvalidation}) in the
+\hadhad channel. It is therefore removed as an input to the
+multivariate analysis of the \hadhad channel.
 
-Discriminating variables were rechecked (in \hadhad) from previous
-publication and found to be all significant except for MET centrality.
+The five discriminating variables used in the \hadhad channel are
+shown in~\Cref{fig:mva_inputs}. A selection of variables in the
+\lephad SLT and LTT channels are documented
+in~\cite{ATLAS-CONF-2021-030}.
 
-This choice was verified for the analysis employing the full Run~2
-dataset by removing variables not contributing to the classification
-performance and testing variables that were not included in the
-earlier publication.
-
-The \pTmiss $\phi$ centrality, which was included in the previous
-publication~\cite{HIGG-2016-16-witherratum}, is not found contribute
-to the signal-background classification in the cross validation
-approach.
-
-Plots of the discriminating variables in the SR of the \hadhad channel
-are shown in~\Cref{sec:}.
-
-\begin{figure}[p]
+\begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}[t]{.495\textwidth}
-    \centering
-    \missingfigure{mtautau}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[t]{.495\textwidth}
-    \centering
-    \missingfigure{mBB}
+  \begin{subfigure}[t]{.48\textwidth}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distmMMC_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit}
+  \end{subfigure}\hfill %
+  \begin{subfigure}[t]{.48\textwidth}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distmBB_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit}
   \end{subfigure}
 
-  \begin{subfigure}[t]{.495\textwidth}
-    \centering
-    \missingfigure{mHH}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[t]{.495\textwidth}
-    \centering
-    \missingfigure{dRTauTau}
+  \begin{subfigure}[t]{.48\textwidth}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distdRTauTau_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit}
+  \end{subfigure}\hfill %
+  \begin{subfigure}[t]{.48\textwidth}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distdRBB_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit}
   \end{subfigure}
 
-  \begin{subfigure}[t]{.495\textwidth}
-    \centering
-    \missingfigure{dRBB}
+  \begin{subfigure}[t]{.48\textwidth}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distmHH_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefitlog}
   \end{subfigure}
 
-  \caption{MVA input variables used in the hadhad channel.}
+  \caption{Distributions of the MVA input variables in the SR of the
+    \hadhad-channel prior to the maximum likelhood fit. The
+    uncertainty bands include all statistical and systematic
+    uncertainties of the background model. The non-resonant \HH signal
+    is normalised to the SM cross section multiplied by 100.}
+  \todo[inline]{Missing signal... Restrict mtt mbb range to 500 GeV}
   \label{fig:mva_inputs}
 \end{figure}
-
 
 
 \subsection{Extraction of the non-resonant signal using Boosted
   Decision Trees in the \hadhad channel}
 \label{sec:mva_smbdt}
 
-TMVA
+The extraction of the non-resonant \HH signal is performed by training
+BDTs to perform binary classification, distinguishing the signal
+process, $\HH \to \bbtautau$, from the backgrounds. Events in the
+2~$b$-tag preselection region of the \hadhad channel are used to train
+the BDTs. The training uses simulation of the non-resonant \HH
+production as the \emph{signal class}; the combination of all
+backgrounds considered in the analysis as the \emph{background class}.
+The individual background processes, which are estimated from
+simulation or data (multi-jet), are weighted according to their
+relative cross-sections. The implementation of the BDT algorithm in
+the \emph{Toolkit for Multivariate Data Analysis}
+(TMVA)~\cite{Hocker:2007ht} is used.
+
+The BDT configuration is optimised using a random grid search. For
+every hyperparameter of the algorithm a set of parameter values to
+test is defined. All possible combinations of parameters values define
+the parameter grid from which configurations are drawn randomly (with
+replacement). The expected performance of the configuration is
+evaluated using 5-fold cross validation separately on even- and
+odd-numbered events.
+
+The hyperparameter grid is defined
+in~\Cref{tab:hyperparameter_grid_bdt}. The Gini index is used as the
+splitting criterion in the decision tree algorithm, testing 400
+possible cuts on input variables for every branching of the tree. The
+total number of signal and background events are ensured to be equal
+by rescaling of the event weights. Other settings remain at the
+default values of TMVA~v4.2.1 (ROOT~6.16/00).
+
+\begin{table}[htbp]
+  \centering
+  \input{tables/hyperparameters_bdt}
+  \caption{Hyperparameter grid used in the random grid search. The
+    underlined values show the final configuration after
+    optimisation.}
+  \label{tab:hyperparameter_grid_bdt}
+\end{table}
+
+The metric used for optimisation is the area under the \emph{receiver
+  operating characteristic} curve (ROC-AUC). The ROC curve is defined
+as the parametric curve given by
+$(x, y) = \left( \varepsilon_{\text{s}}(t), \varepsilon_{\text{b}}(t)
+\right)$, where $t$ is a lower threshold applied on the score of a
+classifier, and $\varepsilon_\text{s}$ / $\varepsilon_\text{b}$ the
+signal and background efficiency of this selection, respectively. A
+value of the ROC-AUC of 1 indicates perfect classification, while a
+value of 0.5 indicates random classification according to the prior
+class probabilities\todo{not true}.
+
+Mean ROC-AUC and standard deviation of ROC-AUC:\\
+train even: \num{0.9803 +- 0.0008}\\
+train odd: \num{0.9787 +- 0.0012}
+
 
 \todo[inline]{Optimisation}
 
-Random grid search
-
 \todo[inline]{Performance?}
+
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Variable importance BDT}
+  \label{tab:variable_importance_bdt}
+\end{table}
 
 
 
@@ -356,6 +406,16 @@ Random grid search
 
 \subsection{Extraction of resonant signals with parametric neural networks}
 \label{sec:mva_pnn}
+
+
+\begin{table}[htbp]
+  \centering
+  \input{tables/hyperparameters_pnn}
+  \caption{Hyperparameter grid}
+  \todo[inline]{Explain the layer size business}
+  \label{tab:hyperparameter_grid_pnn}
+\end{table}
+
 
 Signal spectra connected to one or more physics parameters.
 
