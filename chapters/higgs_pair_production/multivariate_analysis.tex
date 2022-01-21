@@ -323,9 +323,8 @@ in~\cite{ATLAS-CONF-2021-030}.
   \caption{Distributions of the MVA input variables in the SR of the
     \hadhad-channel prior to the maximum likelhood fit. The
     uncertainty bands include all statistical and systematic
-    uncertainties of the background model. The non-resonant \HH signal
-    is normalised to the SM cross section multiplied by 100.}
-  \todo[inline]{Missing signal... Restrict mtt mbb range to 500 GeV}
+    uncertainties of the background model. The resonant and
+    non-resonant \HH signals are scaled by arbitrary factors for visibility.}
   \label{fig:mva_inputs}
 \end{figure}
 
@@ -336,7 +335,7 @@ in~\cite{ATLAS-CONF-2021-030}.
 
 The extraction of the non-resonant \HH signal is performed by training
 BDTs to perform binary classification, distinguishing the signal
-process, $\HH \to \bbtautau$, from the backgrounds. Events in the
+process, $\HH \to \bbtautau$, from the background. Events in the
 2~$b$-tag preselection region of the \hadhad channel are used to train
 the BDTs. The training uses simulation of the non-resonant \HH
 production as the \emph{signal class}; the combination of all
@@ -360,8 +359,8 @@ in~\Cref{tab:hyperparameter_grid_bdt}. The Gini index is used as the
 splitting criterion in the decision tree algorithm, testing 400
 possible cuts on input variables for every branching of the tree. The
 total number of signal and background events are ensured to be equal
-by rescaling of the event weights. Other settings remain at the
-default values of TMVA~v4.2.1 (ROOT~6.16/00).
+by rescaling of the event weights prior to the training. Other
+settings remain at the default values of TMVA~v4.2.1~(ROOT~6.16/00).
 
 \begin{table}[htbp]
   \centering
@@ -373,24 +372,60 @@ default values of TMVA~v4.2.1 (ROOT~6.16/00).
 \end{table}
 
 The metric used for optimisation is the area under the \emph{receiver
-  operating characteristic} curve (ROC-AUC). The ROC curve is defined
-as the parametric curve given by
-$(x, y) = \left( \varepsilon_{\text{s}}(t), \varepsilon_{\text{b}}(t)
-\right)$, where $t$ is a lower threshold applied on the score of a
-classifier, and $\varepsilon_\text{s}$ / $\varepsilon_\text{b}$ the
-signal and background efficiency of this selection, respectively. A
-value of the ROC-AUC of 1 indicates perfect classification, while a
-value of 0.5 indicates random classification according to the prior
-class probabilities\todo{not true}.
+  operating characteristic} curve (ROC-AUC). The ROC curve is
+defined\footnote{The ROC curve relates the true positive rate
+  ($\varepsilon_\text{s}$) and false positive rate
+  ($\varepsilon_\text{b}$) given varying thresholds on the output of a
+  binary classifier. The definition used here uses conventions
+  commonly used in HEP to express this relationship.} as the
+parametric curve given by
+$(x, y) = \left( \varepsilon_{\text{s}}(t), 1 -
+  \varepsilon_{\text{b}}(t) \right)$, where $t$ is a lower threshold
+applied on the score of a classifier, and $\varepsilon_\text{s}$ /
+$\varepsilon_\text{b}$ the signal and background efficiency of this
+selection, respectively. A value of the ROC-AUC of 1 indicates perfect
+classification, while a value of 0.5 randomly assigned classes. The
+ROC-AUC is chosen as the metric to be optimised as it summarises the
+classifier's performance over all possible working points,
+i.e.~choices of thresholds on the classifier output~\cite{james13}.
 
-Mean ROC-AUC and standard deviation of ROC-AUC:\\
-train even: \num{0.9803 +- 0.0008}\\
-train odd: \num{0.9787 +- 0.0012}
+In total, approximately 1600 unique BDT configurations are tested
+during the model selection process. The steps described in the
+following are applied on the datasets containing even- and
+odd-numbered events separately. The 5-fold CV approach described
+in~\Cref{sec:mva_crossvalidation} is used to evaluate the performance
+of a given hyperparameter configuration. For a fixed configuration the
+ROC-AUC average and standard deviation is calculated over all
+iterations of the CV.
 
+Out of all evaluated configurations, the ROC-AUC of the 200 best
+performing model configurations are statistically indistinguishable
+based on the CV results. In the absence of a clearly preferred
+configuration, the highest ranking configuration with the smallest
+maximum tree depth is chosen. A smaller tree depth, effectively
+limiting the number variable interactions used in the
+classifier~\cite{hastie09}, is chosen to be less reliant on the
+quality of the modelling of higher order variable interactions in the
+training data.
 
-\todo[inline]{Optimisation}
+The chosen configuration, shown in~\Cref{tab:hyperparameter_grid_bdt},
+is 5th and 7th ranking with a ROC-AUC of \num{0.9803 +- 0.0008} and
+\num{0.9787 +- 0.0012} in CV on even- and odd-numbered events,
+respectively. In both cases the same configuration is the highest
+ranking one with a tree depth of 2. After choosing the configuration,
+the classifiers are re-trained on the entirety of their respective
+outer folds, providing the final classifiers to extract the SM \HH
+signal.
 
-\todo[inline]{Performance?}
+It should be noted that the model selection should be done
+independently on both outer folds of the CV, typically leading to two
+different configuration choices for even- and odd-numbered events, to
+be free of model selection bias. The decision rule was not fixed a
+priori, thus it cannot be excluded that the results informed the final
+decision. This effect, however, is assumed to be negligible given the
+large overlap of the best ranking configurations.\todo{Write properly}
+
+\todo[inline]{Performance? ROC and distribution of SMBDT.}
 
 
 \begin{table}[htbp]
