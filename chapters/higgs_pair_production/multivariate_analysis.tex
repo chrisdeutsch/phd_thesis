@@ -443,10 +443,44 @@ large overlap of the best ranking configurations.\todo{Write properly}
 \label{sec:mva_pnn}
 
 
+Note that 375 was excluded from the training
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{.49\textwidth}
+    \includegraphics[width=\textwidth]{mva/detuning}
+    \caption{Response of final PNN configuration used in the search
+      for resonant production of \HH.}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{mva/interpolation}
+    \caption{Comparison of PNN before hyperparameter optimisation when
+      including (solid) and excluding (dashed) certain resonance
+      masses in training.}
+  \end{subfigure}
+
+  \caption{Expected signal significance of a scalar resonance with
+    mass \mX as a function of the PNN mass parameter. The significance
+    is estimated by binning the PNN score for a given value of the
+    parameter and adding the Asimov significance of all bins in
+    quadrature. Only statistical uncertainties are considered. The
+    binning is determined by an algorithm that will be described
+    in~\Cref{sec:binning_alg}. The curves are scaled such that the
+    significance is 1 when the PNN mass parameter is equal to \mX of
+    the hypothesis under test. Dashed lines correspond to signal mass
+    hypotheses that were not included in the PNN training.}
+  \label{fig:pnn_properties}
+\end{figure}
+
+
 \begin{table}[htbp]
   \centering
   \input{tables/hyperparameters_pnn}
-  \caption{Hyperparameter grid}
+  \caption{Hyperparameter grid. $\dagger$: Only applicable if the
+    number of hidden layers is larger than 1 and 2, respectively.}
   \todo[inline]{Explain the layer size business}
   \label{tab:hyperparameter_grid_pnn}
 \end{table}
@@ -460,7 +494,20 @@ Input parameter + input variables are inputs to the NN
 
 Standardised by subtracting median and dividing by interquartile range.
 
-Keras, Tensorflow, lwtnn
+Keras~\cite{keras}, Tensorflow\cite{tensorflow2015-whitepaper},
+lwtnn~\cite{lwtnn}.
+
+
+The metric used for optimisation of the PNN is the ROC-AUC for
+$\mX = \SI{325}{\GeV}$. At this point there is a large overlap of
+signal and background. Moreover, compared to other search channels
+\bbtautau is most competitive in an intermediate mass range of 300 to
+600 GeV.
+
+About top 400 indistinguishable.
+
+ROC-AUC (325) on even: \num{0.9764 +- 0.0009} ROC-AUC (325) on odd:
+\num{0.9754 +- 0.0009}
 
 
 
