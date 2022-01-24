@@ -436,15 +436,53 @@ large overlap of the best ranking configurations.\todo{Write properly}
 \end{table}
 
 
-
-
-
 \subsection{Extraction of resonant signals with parametric neural networks}
 \label{sec:mva_pnn}
 
+The search for \HH production via scalar resonances considers
+resonance masses ranging from \SIrange{251}{1600}{\GeV}. The joint
+probability density of the discriminating variables for resonant \HH
+signals is expected to vary smoothly as a function of the resonance
+mass \mX. For optimal signal sensitivity this dependency needs to be
+exploited when extracting signals from the background processes.
 
-Note that 375 was excluded from the training
+Using multivariate classifiers for signal extraction, one possible
+method of incorporating the \mX dependency of the classification task
+is to train a classifier for every signal hypothesis. This approach
+was previously pursued in~\cite{HIGG-2016-16-witherratum} using BDTs
+for classification. An alternative approach is to use classification
+methods that incorporate this dependency directly during training.
 
+%%%
+Signal spectra connected to one or more physics parameters.
+
+Input parameter: resonance mass \mX
+
+Input parameter + input variables are inputs to the NN
+%%%
+
+PNN~\cite{Baldi:2016fzo}
+
+Benefits: single classifier for all \mX, able to interpolate, closeby
+parameter points can inform the classification (effectively higher
+statistics for training)
+
+Prior to training the discriminating variables are centered and scaled
+by subtracting the median and dividing by the interquartile range of
+the distribution of the variable.
+
+The generator level \mX is included in addition to the five
+discriminating variables as an input to the NN. This value is
+undefined for background processes. A given background event is
+assigned a random value of \mX drawn from the distribution of \mX
+present in the signal training data. After every epoch during training
+the value of \mX for background events is re-drawn.
+
+In total 19 different resonance mass hypotheses are part of the PNN
+training. An additional point at $\mX = \SI{375}{\GeV}$ was added
+later but no re-training of the PNN was performed.
+
+The benefits of PNN are shown in~\Cref{fig:pnn_properties}.
 
 \begin{figure}[htbp]
   \centering
@@ -475,28 +513,11 @@ Note that 375 was excluded from the training
   \label{fig:pnn_properties}
 \end{figure}
 
-
-\begin{table}[htbp]
-  \centering
-  \input{tables/hyperparameters_pnn}
-  \caption{Hyperparameter grid. $\dagger$: Only applicable if the
-    number of hidden layers is larger than 1 and 2, respectively.}
-  \todo[inline]{Explain the layer size business}
-  \label{tab:hyperparameter_grid_pnn}
-\end{table}
-
-
-Signal spectra connected to one or more physics parameters.
-
-Input parameter: resonance mass \mX
-
-Input parameter + input variables are inputs to the NN
-
-Standardised by subtracting median and dividing by interquartile range.
-
-Keras~\cite{keras}, Tensorflow\cite{tensorflow2015-whitepaper},
-lwtnn~\cite{lwtnn}.
-
+The PNN configuration is optimised using the same nested cross
+validation approach used for the BDT for non-resonant \HH
+production. The training is implemented in \textsc{Keras}~\cite{keras}
+using the \textsc{TensorFlow}~\cite{tensorflow2015-whitepaper}
+backend. The PNN is evaluated using \textsc{lwtnn}~\cite{lwtnn}.
 
 The metric used for optimisation of the PNN is the ROC-AUC for
 $\mX = \SI{325}{\GeV}$. At this point there is a large overlap of
@@ -509,11 +530,14 @@ About top 400 indistinguishable.
 ROC-AUC (325) on even: \num{0.9764 +- 0.0009} ROC-AUC (325) on odd:
 \num{0.9754 +- 0.0009}
 
-
-
-
-\todo[inline]{Optimisation}
-\todo[inline]{Performance: Detuning studies}
+\begin{table}[htbp]
+  \centering
+  \input{tables/hyperparameters_pnn}
+  \caption{Hyperparameter grid. $\dagger$: Only applicable if the
+    number of hidden layers is larger than 1 and 2, respectively.}
+  \todo[inline]{Explain the layer size business}
+  \label{tab:hyperparameter_grid_pnn}
+\end{table}
 
 
 \subsection{Others?}
