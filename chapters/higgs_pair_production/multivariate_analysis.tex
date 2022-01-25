@@ -1,56 +1,64 @@
 \section{Multivariate analysis}
 
 The event selection described in~\Cref{sec:event_selection} only
-serves as a preselection with the intention that selected events
-follow the expected topology of the signal and that basic kinematic
-requirements, ensuring trigger efficiencies are in saturation, are
-fulfilled.\todo{Say something about signal to background ratio}
+serves as a pre-selection to select events following the the expected
+topology of the signal processes, and ensuring that basic requirements
+on kinematic properties of final state objects are fulfilled. %
+% , ensuring trigger efficiencies are in saturation,
+The signal-to-background ratio at this level of selection, with
+background being three orders of magnitude more abundant than the
+expected non-resonant \HH signal in the \hadhad channel
+(cf.~\Cref{tab:hadhad_presel_yields}), is not sufficient to provide
+any signal sensitivity.
 
-The non-resonant and resonant production of SM Higgs boson pairs have
+The non-resonant and resonant production of Higgs boson pairs have
 distinct kinematic properties that can be used to reject backgrounds
-in the signal region. An example that is independent of the production
-mode of SM Higgs boson pairs is the invariant mass of the \bbbar pair
-and the \hadhad which can be reconstructed. A number of reconstructed
-quantities can be defined that offer discrimination power to
-distinguish between the various signals and backgrounds.
+in the signal region. An example, largely independent of the \HH
+production mode, are the reconstructed invariant masses of Higgs boson
+decay products. A number of reconstructed quantities can be defined
+that offer discrimination power to distinguish between the various
+signals and backgrounds.
 
-Multivariate methods are employed to exploit the discrimination power
-of multiple reconstructed quantities and their correlations to
-classify events regarding their signal- and
-background-likeness. Depending on the \HH production mode and analysis
-category different methods are used.
+Multivariate methods are used to exploit the discrimination power of
+multiple reconstructed quantities and their correlations, classifying
+events regarding their similarity to the signal and background
+processes. Depending on the \HH production mode and analysis category
+different methods are used.
 
-The search of non-resonant \HH production in the SM uses Boosted
+The search for non-resonant \HH production in the SM uses Boosted
 Decision Trees and Neural Networks to distinguish between signal and
 background in the \hadhad and \lephad channel, respectively. When
 searching for resonant \HH production in BSM scenarios, multiple mass
-hypotheses for the scalar resonance decaying into SM Higgs boson pairs
-are considered. The signal event kinematics are therefore dependent on
-the mass of the resonance, \mX, and as a result the classification
-task continuously varies as a function of \mX. This is in contrast to
-the former case where the kinematic properties of signal events are
-fixed. Classification tasks that vary as a function of a parameter,
-for example the resonance mass, can be performed by \emph{Parametric
-  Neural Networks} (PNN), first introduced to HEP
+hypotheses for the scalar resonance decaying into Higgs boson pairs
+are considered. The kinematics of final state particles in signal
+events are dependent on the mass of the resonance, \mX, and as a
+result the classification task continuously varies with \mX. This is
+in contrast to the former case where the kinematic properties of
+signal events follow from a fixed distribution. Classification tasks
+that vary as a function of a physical or theoretical parameter, for
+example the mass of a resonance, can be performed by \emph{Parametric
+  Neural Networks} (PNN) and were first introduced to HEP
 in~\cite{Baldi:2016fzo}. PNN provide a single classifier that is able
-to handle multiple classification tasks, while being able to smoothly
-interpolate the parameter to values not seen during training.
+to handle multiple classification tasks described by one or multiple
+parameters, while being able to smoothly interpolate to parameter
+values not seen during training of the network.
 
 The scores provided by these multivariate classification methods,
-hereafter called MVA scores, are later used as a discriminant in the
-maximum likelihood fit to extract the signal of interest and set upper
-limits on signal strengths and cross-sections. No further selections
-are applied to events entering the signal extraction procedure such
-that the preselection regions are also the signal regions in the
-respective channels.
+hereafter called MVA scores, are later used as a discriminant in
+maximum likelihood fits to extract the signal of interest, setting
+upper limits on signal strengths and cross-sections. No further
+selections are applied to events entering the signal extraction
+procedure such that the pre-selection regions are also signal regions
+of the respective channels.
 
-In~\Cref{sec:mva_discriminating variables} the choice of
-discriminating variables to classify signal and background processes
-will be motivated. Afterwards, the training and optimisation of the
-classifiers used to extract non-resonant signal is described
-in~\Cref{sec:mva_smbdt}. Finally, \Cref{sec:mva_pnn} will explain the
-interpolation properties of PNN as well as the training and
-optimisation procedures used. \todo{Variable importance?}
+\Cref{sec:mva_crossvalidation} begins by describing the cross
+validation method used to ensure that model selection and MVA
+predictions are unbiased.  In~\Cref{sec:mva_discriminating variables}
+the choice of discriminating variables to classify signal and
+background processes will be motivated. Afterwards, the training and
+optimisation of the classifiers used to extract non-resonant signal is
+described in~\Cref{sec:mva_smbdt}. Finally, \Cref{sec:mva_pnn}
+describes the classification using PNN and their main properties.
 
 
 \subsection{Cross validation method}
@@ -65,16 +73,16 @@ extreme cases, frequently called overfitting, the performance of the
 model evaluated on an independent dataset starts to degrade when
 further increasing the capacity of the model~\cite{hastie09}.
 
-When using multivariate methods in measurements or searches for new
-physics, it has to be ensured that the methods are evaluated on a
-dataset that was not used for training or model selection (the process
-of choosing the model to fit), thus providing an estimator of the
-generalised performance. In this analysis, events are categorised
-according to their event number into even- and odd-numbered events,
-yielding an even- and odd-fold, respectively. The training and model
-selection can proceed by using one of the two folds withholding the
-remaining fold for later evaluation. This procedure is applied twice
-by using each fold for training once.
+When using multivariate methods in searches for new physics, it has to
+be ensured that the methods are evaluated on a dataset that was not
+used for training or model selection (the process of choosing the
+model to fit), thus providing an estimate of the generalised
+performance. In this analysis, events are categorised according to
+their event number into even- and odd-numbered events, yielding an
+even- and odd-fold, respectively. The training and model selection can
+proceed by using one of the two folds withholding the remaining fold
+for later evaluation. This procedure is applied twice by using each
+fold for training once.
 
 After model selection and training, the models are evaluated by
 applying the model trained on the even-fold on odd-numbered events and
@@ -91,16 +99,19 @@ multivariate methods on datasets used for training, the process of
 model selection needs to be performed on a dataset that is independent
 of the one used for final evaluation of the
 method~\cite{cawley10}. Model selection is the process of choosing a
-particular configuration of the algorithm, for example input variables
-and other hyperparameters, based on a metric indicating the
-performance of the model.
+particular configuration of an algorithm (or between different
+algorithms), for example input variables and other hyperparameters,
+based on a metric indicating the performance of the model. Making this
+choice based on the performance on the withheld dataset meant for
+later evaluation will introduce a selection bias and represents a form
+of overfitting.
 
-The model selection is performed by using five-fold cross validation
-(CV), which is a generalisation of the two-fold approach described
-previously to a larger number of subdivisions, separately on the even-
-and the odd-numbered events. This approach effectively nests five-fold
-CV inside of two-fold CV and is therefore called \emph{nested cross
-  validation}~\cite{cawley10,stone74}.
+In this search the model selection is performed using five-fold cross
+validation (CV), which is a generalisation of the two-fold approach
+described previously to a larger number of subdivisions, separately on
+even- and odd-numbered events. This approach effectively nests
+five-fold CV inside of two-fold CV and is therefore called
+\emph{nested cross validation}~\cite{cawley10,stone74}.
 
 \Cref{fig:cross_validation} shows a schematic description of one
 iteration of the nested cross validation approach. The inner,
@@ -109,10 +120,9 @@ five-fold CV randomly splits events into five disjoint subsets
 model is trained on the remaining four folds, subsequently evaluating
 the trained model on the evaluation-fold. A decision between two
 competing models can be made by comparing the average and standard
-deviation of the evaluation metric over the five iterations of the
-inner CV. Only after the best-performing model is selected, usually
-after re-fitting the model on all five folds, it is evaluated on the
-hold-out dataset.
+deviation of a metric over the five iterations of the inner CV. Only
+after the best-performing model is selected, usually after re-fitting
+the model on all five folds, it is evaluated on the hold-out dataset.
 
 \begin{figure}[htbp]
   \centering
@@ -134,45 +144,47 @@ hold-out dataset.
 
 The set of variables provided to multivariate classification methods
 is crucial to its performance in distinguishing between classes. The
-initial choice of variables considered in this search was based on a
+initial choice of variables considered in this search is based on a
 previous publication in the same analysis channel by the ATLAS
 collaboration using a partial dataset of \SI{36.1}{\ifb} recorded
-during Run~2~\cite{HIGG-2016-16-witherratum}.
+during Run~2 of the LHC~\cite{HIGG-2016-16-witherratum}. Only minor
+changes to the variable choice are performed for this search.
 
-The pair production of SM Higgs bosons has kinematic features that
-allow to distinguish it from the main backgrounds in the $\bbtautau$
-search channel. Candidates for the products of
-$\PHiggs \ra \Pbottom\APbottom$ and $\PHiggs \ra \Ptauon\APtauon$
-decays are reconstructed (cf.~\Cref{sec:}) and can be used to estimate
-properties of the SM Higgs bosons in signal processes. Among the most
-important variables distinguishing between signal and background
-processes are \PHiggs- and \HH-system invariant masses.
+The kinematic features of Higgs boson pair production allow to
+distinguish it from the main backgrounds in the \bbtautau search
+channel. Candidates for the products of
+$\PHiggs \ra \Pbottom\APbottom$ and $\PHiggs \ra \tautau$ decays are
+reconstructed (cf.~\Cref{sec:reconstruction_of_higgs_candidates}) and
+can be used to estimate four-momenta of Higgs bosons in signal
+events. Among the most important variables distinguishing between
+signal and background processes are \PHiggs- and \HH-system invariant
+masses.
 
 The Missing Mass Calculator (MMC)~\cite{Elagin:2010aw} is used to
-reconstruct the four-momentum of the Higgs candidate decaying into
-pairs of \tauleptons, providing an estimate of the $\tau\tau$-system
-mass, \mMMC. For the signal processes in the \hadhad
-channel\footnote{The presence of an additional neutrino in the \lephad
-  channel makes mass reconstruction of the $\tau\tau$-system more
-  difficult degrading the resolution.}, \mMMC provides an estimate of
-the Higgs boson mass with a resolution\todo{Is this the right word?}
-of \SIrange{15}{18}{\GeV} depending on the momentum of the Higgs
-boson. Similarly, the mass of the $\PHiggs \ra \Pbottom\APbottom$
-candidate, consisting of two \btagged jets, is reconstructed from the
-four-momenta of the jets after $b$-jet momentum correction
-(cf.~\Cref{sec:}). In this case, the Higgs boson mass can be
-reconstructed with a resolution of \SIrange{13}{18}{\GeV}.\todo{Does
-  it make sense to call this a resolution?}
+reconstruct the four-momentum of the Higgs boson candidate decaying
+into pairs of \tauleptons, thus providing an estimate of the
+$\tau\tau$-system mass, \mMMC. The mass resolution of the MMC ranges
+from \SIrange{15}{18}{\GeV} for signal processes depending on the
+momentum of the Higgs boson in the \hadhad channel\footnote{The
+  presence of an additional neutrino in the \lephad channel makes mass
+  reconstruction of the $\tau\tau$-system more difficult degrading the
+  mass resolution of the MMC.}.
+
+The invariant mass of the $\PHiggs \ra \Pbottom\APbottom$ candidate,
+consisting of two \btagged jets, is reconstructed using the
+four-momenta of both jets after $b$-jet momentum correction
+(cf.~\Cref{sec:bjet_momentum_corrections}). For the considered signal
+processes the Higgs boson mass can be reconstructed with a resolution
+of \SIrange{13}{18}{\GeV}.
 
 The performance of the \PHiggs mass reconstruction is summarised
-in~\Cref{fig:mass_reconstruction_H} for the resonant production of
-Higgs boson pairs as a function of the resonance mass. In conjunction,
-the narrow mass peaks in \mMMC and \mBB expected for the signal
-processes provide large rejection power against most
-backgrounds. Therefore, \mMMC and \mBB are used as inputs to the MVAs
-in all analysis categories.
-
-\todo{Move to event selection section?}
+in~\Cref{fig:mass_reconstruction_H} for the resonant production \HH as
+a function of the resonance mass. The broad peaks in the \mMMC and
+\mBB spectra close to the Higgs boson mass allow to select signals
+with high efficiency while providing large rejection power against
+most SM backgrounds. Both \PHiggs-system masses are used as inputs to
+the MVAs in all analysis categories.\todo{Move to event selection
+  reconstruction / section?}
 
 \begin{figure}[htbp]
   \centering
@@ -205,29 +217,33 @@ in all analysis categories.
 
 The invariant mass of the decay products of both Higgs bosons, \mHH,
 provides another discriminant used in all analysis categories. It is
-determined from the sum of four-momenta of $\Ptauon\APtauon$-system,
-reconstructed using the MMC, and $\bbbar$-system, calculated as the
-sum of $b$-jet candidate four-momenta after $b$-jet momentum
-correction. With a peak width of \SIrange{8}{10}{\percent} relative to
-the mass of the resonance and the prevalence of most backgrounds at
-low values of \mHH, it provides an important discriminant for the
-search in the resonant production mode.
+determined from the sum of four-momenta of the
+$\Ptauon\APtauon$-system, reconstructed using the MMC, and
+$\bbbar$-system, calculated as the sum of $b$-jet candidate
+four-momenta after $b$-jet momentum correction. With a typical mass
+resolution of \SIrange{8}{10}{\percent} relative to the mass of the
+resonance and the prevalence of most backgrounds at low values of
+\mHH, it provides an important discriminant in the search for \HH in
+the resonant production mode.
 
-With the exception of resonant production with low \mX, Higgs bosons
-originating from the signal processes are typically produced with
-large momentum in the \HH rest frame. As a result, the angular
-separation of the (visible) \PHiggs decay products is small. The
-Lorentz-invariant angular distances \dRtautau and \dRbb between the
+Higgs bosons originating from signal processes are typically produced
+with large momenta in the \HH rest frame, the exception being \HH
+production via resonances with masses close to the \HH production
+threshold, leading to a small angular separation of the (visible)
+\PHiggs decay products. The distances \dRtautau and \dRbb between the
 visible decay products of the \taulepton and $b$-jet candidate pair,
 respecively, provide discrimination power against multi-jet and top
-pair production. % , except for \dRbb in \lephad LTT,
+pair production where \taulepton and $b$-jet candidates are less
+collimated.
+% , except for \dRbb in \lephad LTT,
 
-In a given analysis category, the same input variables are used in
-MVAs used to extract the resonant and non-resonant \HH signal. The
-choice of variables differs between categories and is summarised
-in~\Cref{tab:mva_inputvar}. A brief description of variables used in
-the \lephad channel is given in the following. When referring to
-leptons, $\ell$, only electrons or muons are implied.\nopagebreak
+In a given analysis category the multivariate methods use the same
+input variables to extract \HH signal in the resonant and non-resonant
+production modes. The choice of variables differs between categories
+and is summarised in~\Cref{tab:mva_inputvar}. A brief description of
+variables used in the \lephad channel is given in the following.
+Reconstructed electrons and muons are collectively referred to as
+leptons ($\ell$).
 \begin{description}
 
 \item[$\Delta \pT(\ell, \tauhadvis)$] The transverse momentum
@@ -281,21 +297,22 @@ leptons, $\ell$, only electrons or muons are implied.\nopagebreak
 
   \input{tables/mva_variables}
 
-  \caption{Discriminating variables used by the multivariate methods
-    to extract the non-resonant and resonant \HH signals in the
-    \hadhad, \lephad SLT, and \lephad LTT channels.}
+  \caption{Discriminating variables used by the multivariate
+    classifiers distinguishing between events originating from signal
+    and background processes in all three analysis categories. The
+    same input variables are used for the search in the non-resonant
+    and resonant production modes.}
   \label{tab:mva_inputvar}
 \end{table}
 
-The \pTmiss $\phi$ centrality, used in the \hadhad channel of the
-previous publication~\cite{HIGG-2016-16-witherratum}, was not found to
-contribute to the classification performance when comparing models
-with cross validation (cf.~\Cref{sec:mva_crossvalidation}) in the
-\hadhad channel. It is therefore removed as an input to the
-multivariate analysis of the \hadhad channel.
+The \pTmiss $\phi$ centrality, previously used in the \hadhad
+channel~\cite{HIGG-2016-16-witherratum}, was not found to contribute
+to the classification performance when comparing models with cross
+validation in the \hadhad channel. It is therefore removed as an input
+to the multivariate analysis of the \hadhad channel.
 
-The five discriminating variables used in the \hadhad channel are
-shown in~\Cref{fig:mva_inputs}. A selection of variables in the
+All five discriminating variables used in the \hadhad channel are
+shown in~\Cref{fig:mva_inputs}. A selection of variables used in the
 \lephad SLT and LTT channels are documented
 in~\cite{ATLAS-CONF-2021-030}.
 
@@ -321,23 +338,24 @@ in~\cite{ATLAS-CONF-2021-030}.
   \end{subfigure}
 
   \caption{Distributions of the MVA input variables in the SR of the
-    \hadhad-channel prior to the maximum likelhood fit. The
+    \hadhad channel prior to the maximum likelhood fit. The
     uncertainty bands include all statistical and systematic
     uncertainties of the background model. The resonant and
-    non-resonant \HH signals are scaled by arbitrary factors for visibility.}
+    non-resonant \HH signals are scaled by arbitrary factors for
+    visibility.}
   \label{fig:mva_inputs}
 \end{figure}
 
 
-\subsection{Extraction of the non-resonant signal using Boosted
-  Decision Trees in the \hadhad channel}
+\subsection{Extraction of the non-resonant \HH production using
+  Boosted Decision Trees in the \hadhad channel}
 \label{sec:mva_smbdt}
 
 The extraction of the non-resonant \HH signal is performed by training
 BDTs to perform binary classification, distinguishing the signal
 process, $\HH \to \bbtautau$, from the background. Events in the
-2~$b$-tag preselection region of the \hadhad channel are used to train
-the BDTs. The training uses simulation of the non-resonant \HH
+2~$b$-tag pre-selection region of the \hadhad channel are used to
+train the BDTs. The training uses simulation of the non-resonant \HH
 production as the \emph{signal class}; the combination of all
 backgrounds considered in the analysis as the \emph{background class}.
 The individual background processes, which are estimated from
@@ -425,18 +443,41 @@ priori, thus it cannot be excluded that the results informed the final
 decision. This effect, however, is assumed to be negligible given the
 large overlap of the best ranking configurations.\todo{Write properly}
 
-\todo[inline]{Performance? ROC and distribution of SMBDT.}
+\todo[inline]{Performance? ROC and distribution of SMBDT. -> Could
+  connect back to ``three orders of magnitude''.}
 
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{.48\textwidth}
+    \missingfigure{SMBDT score}
+  \end{subfigure}\hfill %
+  \begin{subfigure}[t]{.48\textwidth}
+    \missingfigure{ROC-AUC?}
+  \end{subfigure}
+
+  \caption{ROC (?) and SMBDT distribution}
+\end{figure}
+
+To understand how the BDT uses the input variables the permutation
+importance is used \Cref{tab:variable_importance}. To extract the SM
+signal the invariant masses of the two Higgs boson candidates is most
+important.\todo{Move ROC-AUC to variable importance part?}
 
 \begin{table}[htbp]
   \centering
+
+  \missingfigure{Variable importance}
 
   \caption{Variable importance BDT}
   \label{tab:variable_importance_bdt}
 \end{table}
 
 
-\subsection{Extraction of resonant signals with parametric neural networks}
+\subsection{Extraction of resonant \HH production with Parametric
+  Neural Networks}
 \label{sec:mva_pnn}
 
 The search for \HH production via scalar resonances considers
@@ -465,11 +506,11 @@ PNN~\cite{Baldi:2016fzo}
 
 Benefits: single classifier for all \mX, able to interpolate, closeby
 parameter points can inform the classification (effectively higher
-statistics for training)
+statistics for training -> context provided)
 
 Prior to training the discriminating variables are centered and scaled
 by subtracting the median and dividing by the interquartile range of
-the distribution of the variable.
+the distribution of the variable.\todo{Scaling of the parameter}
 
 The generator level \mX is included in addition to the five
 discriminating variables as an input to the NN. This value is
