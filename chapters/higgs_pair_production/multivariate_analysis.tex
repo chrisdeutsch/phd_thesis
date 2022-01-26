@@ -316,6 +316,9 @@ shown in~\Cref{fig:mva_inputs}. A selection of variables used in the
 \lephad SLT and LTT channels are documented
 in~\cite{ATLAS-CONF-2021-030}.
 
+
+% \Cref{fig:mva_input_correlations}
+
 \begin{figure}[htbp]
   \centering
 
@@ -344,6 +347,35 @@ in~\cite{ATLAS-CONF-2021-030}.
     non-resonant \HH signals are scaled by arbitrary factors for
     visibility.}
   \label{fig:mva_inputs}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{.49\textwidth}
+    \includegraphics[width=\textwidth]{mva/correlations/NonResHH_pearson}
+    \caption{SM \HH (gluon fusion)}
+  \end{subfigure}\hfill %
+  \begin{subfigure}[t]{.49\textwidth}
+    \includegraphics[width=\textwidth]{mva/correlations/ttbar_pearson}
+    \caption{\ttbar}
+  \end{subfigure}
+
+  \begin{subfigure}[t]{.49\textwidth}
+    \includegraphics[width=\textwidth]{mva/correlations/Ztautau_pearson}
+    \caption{$Z \rightarrow \tautau + \text{jets}$}
+  \end{subfigure}\hfill %
+  \begin{subfigure}[t]{.49\textwidth}
+    \includegraphics[width=\textwidth]{mva/correlations/Fake_pearson}
+    \caption{Multi-jet}
+  \end{subfigure}
+
+  \caption{Correlation matrices of the MVA input variables for the SM
+    \HH signal and the three largest background contributions (b) -
+    (d) in the \hadhad SR.}
+  \label{fig:mva_input_correlations}
+  \todo[inline]{Cite in text and interpret (or move appendix).}
 \end{figure}
 
 
@@ -632,12 +664,6 @@ ROC-AUC (325) on even: \num{0.9764 +- 0.0009} ROC-AUC (325) on odd:
   \todo[inline]{Explain the layer size business}
   \label{tab:hyperparameter_grid_pnn}
 \end{table}
-
-
-\subsection{Others?}
-
-\todo[inline]{Variable ranking}
-
 
 %%% Local Variables:
 %%% mode: latex
