@@ -375,7 +375,10 @@ in~\cite{ATLAS-CONF-2021-030}.
     \HH signal and the three largest background contributions (b) -
     (d) in the \hadhad SR.}
   \label{fig:mva_input_correlations}
-  \todo[inline]{Cite in text and interpret (or move appendix).}
+  \todo[inline]{Cite in text and interpret (or move
+    appendix). Different 'correlation patterns' between these
+    backgrounds can be used in multivariate methods to better classify
+    signal from background.}
 \end{figure}
 
 
@@ -478,6 +481,12 @@ priori, thus it cannot be excluded that the results informed the final
 decision. This effect, however, is assumed to be negligible given the
 large overlap of the best ranking configurations.\todo{Write properly}
 
+% The BDT classifier was also compared to an optimised feedforward
+% neural network, following the approach taken in the \lephad
+% channel. The optimised NN could not outperform the BDT, although it
+% provided comparable classification performance, thus it was decided to
+% use the BDT for the final analysis.
+
 
 \subsubsection{Predictive performance and variable importance}
 
@@ -502,6 +511,10 @@ signal and most background processes.
   \label{fig:mva_smbdt_prefit}
 \end{figure}
 
+
+\todo[inline]{Mention ROC-AUC: With and without VBF}
+
+
 The last two bins of the BDT score histogram contribute the most to
 the signal sensitivity.  The expected number of signal (background)
 events in the last two bins is 2.6 (24) out of 5.6 (9200) events
@@ -511,14 +524,24 @@ provide a background rejection of two orders of magnitude
 ($\varepsilon_\text{b}^{-1} \approx 380$) while selecting almost half
 of all signal events entering the pre-selection region.
 
+
 The single largest background remaining in the last two BDT bins is
 $\PZ \rightarrow \tautau + \text{jets}$ (6.9).  The rejection of SM
 Higgs (single) provided by the BDT is relatively small. Combined with
 the comparatively large cross section of single Higgs boson production
 it constitutes the second largest background (4.8) at high MVA score
-comparable to \ttbar (4.6).
+comparable to \ttbar (4.6). The relevant production modes are ggF, ZH
+and ttH with Htautau. ZH with Higgs decaying to bs plays smaller role
+(\SI{15}{\percent}).
 
-\todo[inline]{Mention ROC-AUC}
+The production of single Higgs bosons represents the second most
+abundant background in the most signal-like bins of the final
+discriminant\todo{BDT prividing little rejection}. The primary source
+being~$\PHiggs \rightarrow \tautau$ with about equal contribution from
+the gluon fusion, $\PZ\PHiggs$, and $\ttbar\PHiggs$ production
+modes. A small fraction of \SI{15}{\percent} is originating from
+$\PHiggs \rightarrow \bbbar$ in associated production with a \PZ
+boson.
 
 The importance of input variables in the BDT can be estimated using
 the \emph{permutation importance} technique. It is a method to inspect
@@ -538,12 +561,17 @@ collinear features this means that some importance can be assigned to
 multiple related variables even if a strict subset of variables
 contains the information relevant to the problem. This effect needs to
 be considered when interpreting rankings based on the permutation
-importance.\todo{Correlation between input variables?}
+importance.
 
 In~\Cref{tab:variable_importance_bdt} a ranking of the input variables
 to the BDT for the SM \HH signal is shown based the change in ROC-AUC
-according to the permutation importance approach.
-
+according to the permutation importance approach. The \PHiggs-system
+masses are the most important inputs to the BDT, contributing with
+approximately equal importance due to similar mass reconstruction
+performance of \mMMC and \mBB. In the non-resonant production mode,
+the \HH-system mass is of lesser importance due to the similarities of
+the \mHH spectra between signal and background
+(cf.~\Cref{fig:mva_inputs}).
 
 \begin{table}[htbp]
   \centering
@@ -557,8 +585,6 @@ according to the permutation importance approach.
     0.001 and therefore omitted.}
   \label{tab:variable_importance_bdt}
 \end{table}
-
-Maybe say something regarding lephad and the NN cross check.
 
 
 \subsection{Extraction of resonant \HH production with Parametric
