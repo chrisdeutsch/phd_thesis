@@ -690,20 +690,24 @@ same.
   \label{tab:hyperparameter_grid_pnn}
 \end{table}
 
+No clear choice of optimisation metric exists to evaluate a continuum
+of related classification task. For simplicity, the ROC-AUC of the PNN
+when performing binary classification of a resonant signal with
+$\mX = \SI{325}{\GeV}$ against background is chosen. This choice is
+motivated by the strength of the $\PX \to \HH \to \bbtautau$ search
+channel in an intermediate mass range of the scalar resonance from
+approximately \SI{300}{\GeV} to \SI{600}{\GeV} compared to other
+channels in $\bbbar\gamma\gamma$ and $\bbbar\bbbar$ final states which
+are expected dominate the low and high \mX signal sensitivity,
+respectively. The similarity of the \HH signal from resonant
+production with the bulk of the background is largest at low resonance
+masses, thus a lower value of \mX in the considered range is selected.
 
-
-The metric used for optimisation of the PNN is the ROC-AUC for
-$\mX = \SI{325}{\GeV}$. At this point there is a large overlap of
-signal and background. Moreover, compared to other search channels
-\bbtautau is most competitive in an intermediate mass range of 300 to
-600 GeV.
-
-About top 400 indistinguishable.
+About 1600 unique model configurations are tested. The highest ranking
+400 are indistinguishable in terms of CV.
 
 ROC-AUC (325) on even: \num{0.9764 +- 0.0009} ROC-AUC (325) on odd:
 \num{0.9754 +- 0.0009}
-
-
 
 
 \subsubsection{Evaluation}
