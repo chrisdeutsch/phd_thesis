@@ -639,25 +639,74 @@ feedforward neural networks. At evaluation time the parameter value is
 held fixed according to the classification problem that should be
 solved.
 
-A given background event is
-assigned a random value of \mX drawn from the distribution of \mX
-present in the signal training data. After every epoch during training
-the value of \mX for background events is re-drawn.
+
+\subsubsection{Implementation and hyperparameter optimisation}
+
+The PNN is trained using simulated signal events of 19 different mass
+hypotheses of the scalar resonance (cf.~\Cref{tab:monte_carlo}). An
+additional point at $\mX = \SI{375}{\GeV}$ was included at a later
+stage of the analysis and was not part of the training and
+optimisation process. The same treatment of background events as
+described in the previous section is used. The signal samples are
+combined, ensuring that every \mX hypothesis contributes with the same
+total event weight to the combined sample, subsequently normalising
+the combined signal and background sample to have equal weight. The
+5-fold CV approach\todo{Mention it is stratified?} is used for model
+selection.
+
+The training proceeds by minimising the binary cross-entropy loss
+using stochastic gradient descent with momentum and exponential
+learning rate decay. As part of the training process the
+discriminating variables are centered and scaled by subtracting the
+median and dividing by the interquartile range of the variable for
+better conditioning of the loss minimisation. Similarly, the values of
+the mass parameter are transformed into $[0, 1]$. The values of the
+mass parameter for background events is sampled from the distribution
+of \mX in the combined signal sample and is re-sampled after every
+training epoch.
+
+The neural networks consist of multiple fully-connected layers with
+ReLU activation, except for the final layer which uses sigmoid
+activation. The training is implemented in \textsc{Keras}~\cite{keras}
+using the \textsc{TensorFlow}~\cite{tensorflow2015-whitepaper}
+backend. Trained PNN are evaluated using \textsc{lwtnn}~\cite{lwtnn}.
+
+The PNN hyperparameters are optimised using the random grid search
+with nested cross validation approach used for the BDT targeting
+non-resonant \HH production. The parameter grid is defined
+in~\Cref{tab:hyperparameter_grid_pnn}. To reduce the dimensionality of
+the hyperparameter space, the number of neurons in the hidden layers
+except for the first and last hidden layers are required to be the
+same.
+
+\begin{table}[htbp]
+  \centering
+  \input{tables/hyperparameters_pnn}
+  \caption{Parameter values used to defined the grid of
+    hyperparameters considered for the optimisation of the PNN
+    configuration. Parameters marked with $*$ and $\dagger$ are only
+    applicable when the number of hidden layers is larger than 1 and
+    2, respectively.}
+  \label{tab:hyperparameter_grid_pnn}
+\end{table}
 
 
-%%%
-Input parameter: resonance mass \mX
-Input parameter + input variables are inputs to the NN
-%%%
 
-Prior to training the discriminating variables are centered and scaled
-by subtracting the median and dividing by the interquartile range of
-the distribution of the variable.\todo{Scaling of the parameter}
+The metric used for optimisation of the PNN is the ROC-AUC for
+$\mX = \SI{325}{\GeV}$. At this point there is a large overlap of
+signal and background. Moreover, compared to other search channels
+\bbtautau is most competitive in an intermediate mass range of 300 to
+600 GeV.
+
+About top 400 indistinguishable.
+
+ROC-AUC (325) on even: \num{0.9764 +- 0.0009} ROC-AUC (325) on odd:
+\num{0.9754 +- 0.0009}
 
 
-In total 19 different resonance mass hypotheses are part of the PNN
-training. An additional point at $\mX = \SI{375}{\GeV}$ was added
-later but no re-training of the PNN was performed.
+
+
+\subsubsection{Evaluation}
 
 The benefits of PNN are shown in~\Cref{fig:pnn_properties}.
 
@@ -690,31 +739,6 @@ The benefits of PNN are shown in~\Cref{fig:pnn_properties}.
   \label{fig:pnn_properties}
 \end{figure}
 
-The PNN configuration is optimised using the same nested cross
-validation approach used for the BDT for non-resonant \HH
-production. The training is implemented in \textsc{Keras}~\cite{keras}
-using the \textsc{TensorFlow}~\cite{tensorflow2015-whitepaper}
-backend. The PNN is evaluated using \textsc{lwtnn}~\cite{lwtnn}.
-
-The metric used for optimisation of the PNN is the ROC-AUC for
-$\mX = \SI{325}{\GeV}$. At this point there is a large overlap of
-signal and background. Moreover, compared to other search channels
-\bbtautau is most competitive in an intermediate mass range of 300 to
-600 GeV.
-
-About top 400 indistinguishable.
-
-ROC-AUC (325) on even: \num{0.9764 +- 0.0009} ROC-AUC (325) on odd:
-\num{0.9754 +- 0.0009}
-
-\begin{table}[htbp]
-  \centering
-  \input{tables/hyperparameters_pnn}
-  \caption{Hyperparameter grid. $\dagger$: Only applicable if the
-    number of hidden layers is larger than 1 and 2, respectively.}
-  \todo[inline]{Explain the layer size business}
-  \label{tab:hyperparameter_grid_pnn}
-\end{table}
 
 %%% Local Variables:
 %%% mode: latex
