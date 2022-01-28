@@ -722,9 +722,97 @@ odd-numbered events\footnote{On the dataset with odd-numbered events
 then re-fit on all five folds of the inner CV separately for even- and
 odd-numbered events.
 
-\subsubsection{Evaluation}
+\subsubsection{Evaluation of PNN performance}
 
-The benefits of PNN are shown in~\Cref{fig:pnn_properties}.
+In~\Cref{fig:pnn_score_prefit} the PNN score is shown evaluated in the
+\hadhad signal region with a \mX parameter of 300, 500 and
+\SI{1000}{\GeV} on the withheld data. The PNN is able to select the
+signal of interest given the parameter is set to the corresponding
+value. Depending on the classification task the PNN is solving,
+diffent backgrounds populate the most signal-like region at high MVA
+score.
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{.49\textwidth}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distPNN300_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
+    \caption{}
+    \label{fig:pnn_score_prefit_300}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distPNN500_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
+    \caption{}
+    \label{fig:pnn_score_prefit_500}
+  \end{subfigure}
+
+  \begin{subfigure}[t]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distPNN1000_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
+    \caption{}
+    \label{fig:pnn_score_prefit_1000}
+  \end{subfigure}
+
+  \caption{Distribution of the PNN score evaluated with PNN mass
+    parameters set to \SI{300}{\GeV} (a), \SI{500}{\GeV} (b), and
+    \SI{1000}{\GeV} (c) prior to the maximum likelihood fit.  The
+    signal overlay is normalised to a cross-section of
+    $\Pproton\Pproton \to \PX \to \HH$ of \SI{1}{\pico\barn}. The
+    choice of binning and excess in data for he the most signal-like
+    bin of the PNN ($\mX = \SI{1000}{\GeV}$) score will be discussed
+    in a later sections (REFERENCE).}
+  \label{fig:pnn_score_prefit}
+\end{figure}
+
+When searching for resonances of low mass, for example \SI{300}{\GeV}
+shown in~\Cref{fig:pnn_score_prefit_300}, the dominant background in
+the two most signal-like bins is \ttbar with both true and
+\faketauhadvis with \SI{80}{\percent} of the total background. At
+intermediate masses of around \SI{500}{\GeV} the background
+contribution is similar to the non-resonant \HH case in the SM due to
+it having an average \mHH of about \SI{500}{\GeV} after pre-selection.
+At high masses, the signal-like bins are populated predominately by
+boosted $\PZ \to \tautau$ recoiling against jets of heavy flavour.
+
+The two previously highlighted properties of the PNN, the ability to
+solve a continuously varying classification parametrised by \mX and
+the ability to interpolate to values of \mX not seen during training,
+are investigated in the following. For this investigation an
+approximation of the expected signal significance is used. The PNN
+score distribution for a given setting of the parameter and a given
+benchmark signal is binned according to an automatic binning algorithm
+that will be formally introduced in~\Cref{sec:binning_alg} that aims
+to yield high signal sensitivity while limiting the impact of
+background statistical uncertainties and ensuring reasonable validity
+of asymptotic approximations. The approximate significance of a
+Poisson counting experiment in the absence of uncertainties on the
+signal and background expectations,
+$\nu_\text{s} / \sqrt{\nu_\text{b}}$, of all bins is added in
+quadrature. This sum will be dominated by the most signal-like bins of
+the PNN score distributions.
+
+This metric is used in~\Cref{fig:pnn_detuning} by inspecting the
+significance of a given benchmark signal as the mass parameter of the
+PNN is varied. The highest expected significance for a given benchmark
+results when the PNN's parameter is set to the resonance mass of the
+benchmark signal. The width of the significance curves also reflect
+the mass sensitivity of the MVA analysis strategy. Note that this
+method is aimed at the discovery of a signal and thus does not perform
+optimally in terms of the mass resolution. This can be seen in FIGURE,
+where the width of XXX is shown which is much larger than the
+intrinsic resolution on mHH at high mass. In case of a discovery a new
+analysis would be needed to more accurately predict the resonance
+mass.
+
+The interpolation property is checked, \Cref{fig:pnn_interpolation},
+by removing signals from the training and comparing the significance
+response for a given signal that was excluded in training. Testing the
+removed significances yielded close to the same peak significance as
+in the training that included the point.  This motivates the use of
+the PNN also for the 375 GeV mass point which was added to fill a gap
+in mass sensitivity (seen in~\Cref{fig:pnn_detuning}) where it could
+be possible to miss a signal.
 
 \begin{figure}[htbp]
   \centering
@@ -733,6 +821,7 @@ The benefits of PNN are shown in~\Cref{fig:pnn_properties}.
     \includegraphics[width=\textwidth]{mva/detuning}
     \caption{Response of final PNN configuration used in the search
       for resonant production of \HH.}
+    \label{fig:pnn_detuning}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.49\textwidth}
     \centering
@@ -740,6 +829,7 @@ The benefits of PNN are shown in~\Cref{fig:pnn_properties}.
     \caption{Comparison of PNN before hyperparameter optimisation when
       including (solid) and excluding (dashed) certain resonance
       masses in training.}
+    \label{fig:pnn_interpolation}
   \end{subfigure}
 
   \caption{Expected signal significance of a scalar resonance with
