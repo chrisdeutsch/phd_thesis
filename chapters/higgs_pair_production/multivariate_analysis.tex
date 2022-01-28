@@ -646,13 +646,15 @@ The PNN is trained using simulated signal events of 19 different mass
 hypotheses of the scalar resonance (cf.~\Cref{tab:monte_carlo}). An
 additional point at $\mX = \SI{375}{\GeV}$ was included at a later
 stage of the analysis and was not part of the training and
-optimisation process. The same treatment of background events as
-described in the previous section is used. The signal samples are
-combined, ensuring that every \mX hypothesis contributes with the same
-total event weight to the combined sample, subsequently normalising
-the combined signal and background sample to have equal weight. The
-5-fold CV approach\todo{Mention it is stratified?} is used for model
-selection.
+optimisation process. The same treatment of background processes as
+described in the previous section is used. The non-resonant production
+of \HH predicted by the SM is not included as a background.
+% Because it has not yet been observed
+The signal samples are combined, ensuring that every \mX hypothesis
+contributes with the same total event weight to the combined sample,
+subsequently normalising the combined signal and background sample to
+have equal weight. The 5-fold CV approach\todo{Mention it is
+  stratified?} is used for model selection.
 
 The training proceeds by minimising the binary cross-entropy loss
 using stochastic gradient descent with momentum and exponential
@@ -686,7 +688,8 @@ same.
     hyperparameters considered for the optimisation of the PNN
     configuration. Parameters marked with $*$ and $\dagger$ are only
     applicable when the number of hidden layers is larger than 1 and
-    2, respectively.}
+    2, respectively. The underlined values show the final PNN
+    configuration after hyperparameter optimisation.}
   \label{tab:hyperparameter_grid_pnn}
 \end{table}
 
@@ -703,12 +706,21 @@ respectively. The similarity of the \HH signal from resonant
 production with the bulk of the background is largest at low resonance
 masses, thus a lower value of \mX in the considered range is selected.
 
-About 1600 unique model configurations are tested. The highest ranking
-400 are indistinguishable in terms of CV.
-
-ROC-AUC (325) on even: \num{0.9764 +- 0.0009} ROC-AUC (325) on odd:
-\num{0.9754 +- 0.0009}
-
+About 1600 unique configurations of the PNN are tested, the 400
+highest ranking in ROC-AUC showing compatible performance in terms of
+the performance estimate obtained from CV. A single configuration is
+obtained by choosing the best performing parameter set in CV on
+even-numbered events and using the same configuration for odd-numbered
+events. The chosen configuration, underlined
+in~\Cref{tab:hyperparameter_grid_pnn}, has a ROC-AUC in 5-fold CV of
+\num{0.9764 +- 0.0009} on even- and \num{0.9754 +- 0.0009} on
+odd-numbered events\footnote{On the dataset with odd-numbered events
+  the chosen configuration is the 54th highest ranking one in terms of
+  the ROC-AUC. For comparison, the highest ranking model on
+  odd-numbered event has a ROC-AUC of \num{0.9761 +- 0.0020}, showing
+  compatible performance with the chosen configuration.}. The PNN are
+then re-fit on all five folds of the inner CV separately for even- and
+odd-numbered events.
 
 \subsubsection{Evaluation}
 
