@@ -491,6 +491,7 @@ large overlap of the best ranking configurations.
 
 
 \subsubsection{Predictive performance and variable importance}
+\label{sec:bdt_performance}
 
 In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDT,
 which are evaluated on events withheld from training and model
@@ -600,11 +601,11 @@ the \mHH spectra between signal and background
   Neural Networks}
 \label{sec:mva_pnn}
 
-The search for \HH production via scalar resonances considers
-resonance masses ranging from \SI{251}{\GeV} up to \SI{1600}{\GeV},
-probing a wide range of kinematic configurations of the final state
-particles. As a result, the joint probability density of the
-discriminating variables for signal varies with the resonance
+The search for \HH production via narrow-width scalar resonances
+considers resonance masses ranging from \SI{251}{\GeV} up to
+\SI{1600}{\GeV}, probing a wide range of kinematic configurations of
+the final state particles. As a result, the joint probability density
+of the discriminating variables for signal varies with the resonance
 mass. This is particularly prominent in the marginal distributions of
 \mHH, \dRtautau, and \dRbb, previously shown in~\Cref{fig:mva_inputs}
 for three \mX hypotheses, where the overlap between the signal and
@@ -905,7 +906,14 @@ properties of the resonance.
 % Better than \mHH resolution at low mass? Why?
 % Lower side about what one would expect from the mHH resolution
 
-Variable importance
+A ranking of the variable importance is provided
+in~\Cref{tab:pnn_ranking} following the permutation importance
+approach introduced in~\Cref{sec:bdt_performance}. The \PHiggs-system
+masses continue being important discriminants to reject backgrounds
+relevant for searches of resonances in the low to intermediate mass
+range. The reconstructed mass of the \HH-system provides an important
+discriminant over the entire range of considered resonance masses,
+becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 
 \begin{table}[htbp]
   \centering
@@ -932,7 +940,24 @@ Variable importance
   %   \subcaption{$\mX = \SI{700}{\GeV}$}
   % \end{subtable}
 
-  \caption{Variable ranking.}
+
+  % # PNN600
+  % Bootstrap original: 0.99702 +- 0.00011
+  % # ['dRTauTau', 'dRBB', 'mMMC', 'mBB', 'mHH']
+  % 0,-0.01050,0.00020
+  % 1,-0.00400,0.00007
+  % 2,-0.09039,0.00037
+  % 3,-0.09391,0.00056
+  % 4,-0.18373,0.00103
+
+  \caption{Permutation importance of the input variables to the PNN
+    measured as the change in ROC-AUC (for the binary classification
+    task between a signal with mass \mX and total background) when
+    permuting the values of a single variable over all events. The
+    mean $\Delta\text{ROC-AUC}$ over 10 permutations is displayed. The
+    statistical uncertainty is below 0.002 for (a) and 0.001 for (b)
+    and (c) and thus omitted.  Variables are ordered in in descending
+    importance.}
   \label{tab:pnn_ranking}
 \end{table}
 
