@@ -847,62 +847,63 @@ retraining of the PNN. % Why was it added? -> potential gap in
 
 % Multiple classification tasks + interpolate -> can use detuning as
 % an estimate of the mass sensitivity
-The width of the significance response of the PNN as a function of the
-parameter can be used to understand the sensitivity of the signal
-extraction method to the mass of the scalar resonance. The response,
-previously shown in~\Cref{fig:pnn_detuning}, exhibits peaks of a width
-of few tens of \si{\GeV} when testing signal hypotheses at low
-\mX.
-
-Four exemplary
-
-Given these two properties of PNN, the width of the significance
-response curve of the PNN as a function of the parameter
-(cf.~\Cref{fig:pnn_properties}) can be used to estimate the
-sensitivity of the signal extraction method to the mass of the scalar
-resonance.
-
-This is shown in~\Cref{tab:pnn_width}
-
-
-Reasonable 'resolution' at low mass but degrading towards higher
-masses. Better than \mHH resolution at low mass? Why?
-
-specificity
-
-% Lower side about what one would expect from the mHH resolution
-
-% Getting asymmetric at very high masses.
-
-% specificity
-
-For example, an injected signal of true \mX of \SI{1000}{\GeV} reach a
-maximum significance of the hypothesis test. Tests at 900, 1100, and
-1200 would also be at least 75\% as significant as the test at
-
-
-The , as the use of classifiers in this analysis is optimised for
-discovery of scalar resonances and not for measurements of their
-masses.
-
-The width of the significance curves also reflect the mass sensitivity
-of the MVA analysis strategy. Note that this method is aimed at the
-discovery of a signal and thus does not perform optimally in terms of
-the mass resolution. This can be seen in FIGURE, where the width of
-XXX is shown which is much larger than the intrinsic resolution on mHH
-at high mass. In case of a discovery a new analysis would be needed to
-more accurately predict the resonance mass.
-
+The width of the significance response of the PNN as the mass
+parameter is varied can serve to understand the sensitivity and
+specificity of the signal extraction method in distinguishing between
+different signal hypotheses. The response, previously shown
+in~\Cref{fig:pnn_detuning}, exhibits peaks of increasing width as the
+tested signal hypothesis increases in \mX. This is illustrated
+in~\Cref{tab:pnn_width} where intervals of the PNN parameter are given
+that yield signal significances exceeding \SI{75}{\percent} and
+\SI{50}{\percent} of the maximum for a given hypothesis. At very high
+masses of the resonance, the signal extraction method, while being
+highly sensitive, loses specificity to the signal hypothesis of
+interest.
 
 \begin{table}[htbp]
   \centering
 
   \input{tables/pnn_width}
 
-  \caption{Intervals}
+  \caption{Intervals of the PNN mass parameter where a hypothesis test
+    of a signal with a given resonance mass in the PNN score
+    distribution would yield \SI{75}{\percent} (\SI{50}{\percent}) of
+    the expected significance at the maximum.}
   \label{tab:pnn_width}
 \end{table}
 
+% Example
+This effect can be illustrated by considering the hypothesis of a
+signal with $\mX = \SI{1000}{\GeV}$. The score of the PNN evaluated
+with a mass parameter of \SI{1000}{\GeV} will yield a hypothesis test
+with an expected significance close to the maximum. However, tests
+performed using PNN mass parameter values of \num{900}, \num{1100},
+and \SI{1200}{\GeV}, are expected to be significant at a level of
+\SI{75}{\percent} of the maximum.
+
+% Explanation
+The reason for the reduced specificity in selecting signals with high
+\mX primarily originates from two sources. Firstly, the experimental
+mass resolution presents a bound in distinguishing between competeting
+signal hypotheses. Secondly and more pertinent to the choice of
+analysis strategy, the approach of using binary classification, even
+when parametrised in \mX, does not guarantee optimal discrimination
+between signal hypotheses. A resulting side-effect is that the
+intervals presented~\Cref{tab:pnn_width} show an asymmetry towards
+larger values of the mass parameter, which originates from the
+exponentially falling background density\footnote{Neural networks
+  approximate probabilistic classification based on the ratio of
+  signal and background densities. An univariate example is the
+  presence of a symmetric signal peak on a falling background
+  spectrum. A classification rule based on the density ratio will be
+  asymmetric with respect to the centre of symmetry of the signal
+  density.} in \mHH\todo{Strong statement given this is MVA.}. The
+approach of using binary classification in this search is primiarily
+optimised for discovery as opposed to the measurement of the
+properties of the resonance.
+
+% Better than \mHH resolution at low mass? Why?
+% Lower side about what one would expect from the mHH resolution
 
 Variable importance
 
