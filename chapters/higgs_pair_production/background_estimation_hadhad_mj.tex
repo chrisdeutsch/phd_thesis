@@ -1,5 +1,65 @@
 \label{sec:hadhad_multijet}
 
+Multi-jet production represents a relevant source of background in the
+\hadhad signal region, with both \tauhadvis candidates originating
+from the misidentification of quark- or gluon-initiated jets. It
+represents the second largest background with \faketauhadvis in the
+\hadhad SR after the dominant \ttbarFakes contribution.
+
+The multi-jet background is estimated using the fake factor method
+which is a data-driven method for background estimation. The method is
+applicable in cases where two observables\footnote{For the fake factor
+  method one observable is related to identification or isolation
+  criteria of reconstructed physics objects, distinuishing it from the
+  more general ABCD method.} exist that are statistically independent
+for the background process, while also being strong discriminators
+between the background process of interest and more signal-like
+events. Four disjoint regions can be defined, three
+background-enriched CRs and a SR, by applying selections on both
+observables. The independence assumption allows to relate the observed
+number of background events in the three CRs with the background
+expectation in the SR, yielding data-driven estimate of the background
+in the SR.
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[scale=1]{fakefactors/regions}
+
+  \caption{Region definitions}
+  \label{fig:fakefactor_regions}
+\end{figure}
+
+Checked in 1-tag OS. Does agreement in 1-tag OS confirm that charge
+and ID are independent?
+
+\begin{itemize}
+\item General idea of FFs (ABCD-like method): Derived under the
+  assumption that the the probability of multi-jet events to pass into
+  either ID or Anti-ID region is independent of the charge.
+
+\item Definition of regions (OS, SS / ID, Anti-ID) Maybe a figure?
+
+\item Anti-ID region definition: Limitation due to ATLAS data
+  reduction in derivations (at least one loose tau -- prevents doing
+  AA; minimum RNN > 0.01 -- prevents full Anti-ID)
+
+\item Meausrement region: 1-tag (2-tag too little multi-jet purity due
+  to large contamination of \faketauhadvis from \ttbar, also low statistical precision)
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
 Events where one or more \tauhadvis is faked by jets originating from quarks or
 gluons are estimated from dedicated control regions. Three fake enriched regions
 are defined by requiring:
