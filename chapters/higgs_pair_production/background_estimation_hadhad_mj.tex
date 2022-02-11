@@ -9,17 +9,58 @@ represents the second largest background with \faketauhadvis in the
 The multi-jet background is estimated using the fake factor method
 which is a data-driven method for background estimation. The method is
 applicable in cases where two observables\footnote{For the fake factor
-  method one observable is related to identification or isolation
-  criteria of reconstructed physics objects, distinuishing it from the
-  more general ABCD method.} exist that are statistically independent
-for the background process, while also being strong discriminators
-between the background process of interest and more signal-like
-events. Four disjoint regions can be defined, three
-background-enriched CRs and a SR, by applying selections on both
-observables. The independence assumption allows to relate the observed
-number of background events in the three CRs with the background
-expectation in the SR, yielding data-driven estimate of the background
-in the SR.
+  method one observable (the one that form the ratio of the fake
+  factors...) is related to identification or isolation criteria of
+  reconstructed physics objects, distinuishing it from the more
+  general ABCD method.} exist that are statistically independent for
+the background process, while also being strong discriminators between
+the background process of interest and more signal-like events. Four
+disjoint regions can be defined, three background-enriched CRs and a
+SR, by applying selections on both observables. The independence
+assumption allows to relate the observed number of background events
+in the three CRs with the background expectation in the SR, yielding
+data-driven estimate of the background in the SR.
+
+In the \hadhad channel two observables allowing to define multi-jet
+enriched control regions are the \tauid requirements applied to
+\tauhadvis candidates and the sign of the electric charges of both
+candidates.
+
+In the \hadhad SR, \tauhadvis candidates are required to pass the
+loose \tauid working point. The regions defined by this requirement
+are herafter called the ID regions. This \tauid requirement is relaxed
+to obtain a region enhanced in multi-jet events by requiring that
+exactly one \tauhadvis fails the loose \tauid working point, still
+fulfilling a very loose working point corresponding to a percent level
+efficiency loss in true \tauhad ($\text{RNN score} > 0.01$). The ID
+requirements cannot be fully inverted due to selections applied for
+data reduction in the ATLAS experiment in datasets targeting
+$\PHiggs \to \hadhad$ where at least one \tauhadvis is required to
+pass the loose working point and both \tauhadvis fulfilling
+$\text{RNN score}$ > 0.01.\todo{Maybe say that this is not really a
+  problem?}
+
+The electric charge of both \tauhadvis candidates produced from the
+signal processes of interest and dominant backgrounds with two
+\tauhadvis orginating for hadronic $\tau$~decays ($\PZ \to \tautau$,
+$\PHiggs \to \tautau$, \ttbar) are expected to be reconstructed with
+opposite sign (OS) electric charge. The OS requirement is inverted
+yielding regions with \tauhadvis of same sign (SS) electric charge
+that are depleted of processes including two \tauhad. The multi-jet
+background contributes equally to the OS and SS regions since the
+\tauhadvis reconstruction is largely insensitive to the charge of the
+partons initiating the jets\todo{Isn't that contradictory with what we
+  have seen in the ttbar fakes?} that are misidentified as \tauhadvis.
+
+$\tau$~decays
+
+opposite sign electric charge (OS)
+
+\faketauhadvis originating in multi-jet processes
+
+Signal contamination
+
+
 
 \begin{figure}[htbp]
   \centering
@@ -48,16 +89,6 @@ and ID are independent?
   to large contamination of \faketauhadvis from \ttbar, also low statistical precision)
 
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
 
 
 Events where one or more \tauhadvis is faked by jets originating from quarks or
