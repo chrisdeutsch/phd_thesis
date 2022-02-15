@@ -1,0 +1,30 @@
+% Size of subtraction and multi-jet purity:
+%                        multi_jet  non_multi_jet  multi_jet_error  non_multi_jet_error  multi_jet_purity
+% anti_id charge_sign
+% False   OS            408.197943    7971.802057       105.950917            53.344135          0.048711
+%         SS           1299.622259    1001.377741        50.345854            15.287412          0.564808
+% True    OS           8429.603396    8864.396604       139.699303            47.136984          0.487429
+%         SS           7653.735896    3338.264104       108.557939            28.157166          0.696301
+
+\begin{tabular}{
+  ll
+  S[table-format=5.0(3)]
+  S[table-format=5.0(3)]
+  c}
+  \toprule
+  \multicolumn{2}{l}{Region} & {$N_\text{multi-jet}$} & {$N_\text{non-multi-jet}$} & {Multi-jet purity} \\
+  \midrule
+  SS & ID      & 1300 +- 60  & 1000 +- 20 & 56\,\% \\
+  SS & Anti-ID & 7650 +- 110 & 3340 +- 30 & 70\,\% \\
+  OS & ID      & {--}        & {--}       & {--} \\
+  OS & Anti-ID & 8430 +- 140 & 8860 +- 50 & 49\,\% \\
+  \bottomrule
+\end{tabular}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis"
+%%% End:
