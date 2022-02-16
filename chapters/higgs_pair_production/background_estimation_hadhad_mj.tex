@@ -1,105 +1,129 @@
 \label{sec:hadhad_multijet}
 
-Multi-jet production represents a relevant source of background in the
-\hadhad signal region, with both \tauhadvis candidates originating
-from the misidentification of quark- or gluon-initiated jets. It
-represents the second largest background with \faketauhadvis in the
-\hadhad SR after the dominant \ttbarFakes contribution.
+Multi-jet production is a source of background in the \hadhad signal
+region where both \tauhadvis candidates originate from the
+misidentification of quark- or gluon-initiated jets. It represents the
+second largest background with \faketauhadvis in the \hadhad SR after
+the dominant \ttbarFakes contribution.
 
 The multi-jet background is estimated using the fake factor method
-which is a data-driven method for background estimation. The method is
-applicable in cases where two observables exist that are statistically
-independent for the background process, while also being strong
-discriminators between the background process of interest and more
-signal-like events. Four disjoint regions can be defined, three
-background-enriched CRs and a SR, by applying selections on both
-observables. The independence assumption allows to relate the observed
-number of background events in the three CRs with the background
-expectation in the SR, yielding data-driven estimate of the background
-in the SR.
+which is a data-driven method for background estimation. It is
+applicable in cases where two event observables exist that are
+statistically independent for the background process to be estimated,
+while also being strong discriminators between the background and
+other processes (signal and non-multi-jet processes). Four disjoint
+regions can be defined, three background-enriched control regions and
+a signal-like region, by performing a binary categorisation for each
+observable. The assumption of statistical independence allows to
+relate the expected number of events for the background process
+between the control regions and the signal-like region, thus yielding
+a data-driven estimate of the expected background contribution in the
+signal-like region.
 
-In the \hadhad channel two observables allowing to define multi-jet
-enriched control regions are the \tauid requirements applied to
-\tauhadvis candidates and the sign of the electric charges of both
-candidates.
+In the \hadhad channel, two observables allowing to define control
+regions enriched in multi-jet events are the \tauid requirements
+applied to \tauhadvis candidates and the sign of the electric charges
+of both candidates.
 
-In the \hadhad SR, \tauhadvis candidates are required to pass the
-loose \tauid working point. The regions defined by this requirement
-are herafter called the ID regions. This \tauid requirement is
-(partially) inverted to obtain a region enhanced in multi-jet events
-by requiring that exactly one \tauhadvis fails the loose \tauid
-working point, still fulfilling a very loose working point
-corresponding to a percent level efficiency loss in true \tauhad
-($\text{RNN score} > 0.01$). The regions defined according to these
-requirements are herafter referred to as Anti-ID regions. The ID
-requirements cannot be fully inverted due to selections applied for
-data reduction in the ATLAS experiment in datasets targeting
-$\PHiggs \to \hadhad$ where at least one \tauhadvis is required to
-pass the loose working point and both \tauhadvis fulfilling
-$\text{RNN score}$ > 0.01.\todo{Maybe say that this is not really a
-  problem?}
+In the \hadhad signal region, \tauhadvis candidates are required to
+pass the loose \tauid working point. This requirement defines regions
+where both \tauhadvis candidates pass \tauid which are herafter
+referred to as ID regions. The selection is partially inverted to
+obtain control regions enhanced in multi-jet events by requiring that
+exactly one \tauhadvis candidate is failing the loose \tauid working
+point, while still passing a working point corresponding to an
+efficiency loss of \tauhad of about 1\,\% ($\text{RNN score} >
+0.01$). The \tauhadvis candidates fulfilling this selection are
+referred to as anti-\tauhadvis and the regions defined by the
+inversion of the identification criterion as Anti-ID regions. The
+identification criterion cannot be fully inverted due to
+pre-selections\footnote{Datasets targeting $\PHiggs \to \hadhad$
+  require events with at least one \tauhadvis passing the loose \tauid
+  working point and one \tauhadvis with an RNN \tauid score exceeding
+  0.01.} applied in the data reduction pipeline of the ATLAS
+experiment. However, the fake factor method is still valid in the
+presence of these constraints.
 
-The electric charge of both \tauhadvis candidates produced from the
-signal processes and dominant sources of backgrounds with two
-\tauhadvis orginating for hadronic $\tau$~decays ($\PZ \to \tautau$,
+The electric charge of both \tauhadvis candidates produced from signal
+processes and dominant sources of backgrounds with two \tauhadvis
+orginating for hadronic $\tau$~decays ($\PZ \to \tautau$,
 $\PHiggs \to \tautau$, \ttbar) are expected to be reconstructed with
-opposite sign (OS) electric charge. The OS requirement is inverted
-yielding regions with \tauhadvis candidates of same sign (SS) electric
-charge that are depleted of processes where both \tauhadvis orginate
-from hadronic $\tau$ decays. The multi-jet background is expected to
-contribute similarly to the OS and SS regions since the \tauhadvis
-charge reconstruction is not very sensitive to the charge of the
-partons initiating the jets.
+opposite-sign (OS) electric charge. The OS requirement is inverted
+yielding regions with \tauhadvis candidates of same-sign (SS) electric
+charge, depleting the region of processes where both \tauhadvis
+orginate from hadronic $\tau$ decays. In contrast, the multi-jet
+background contributes similarly to the OS and SS regions since
+\tauhadvis charge reconstruction has little sensitivity to the
+relative sign of the electric charge between partons initiating jets
+that are being misidentified as \tauhadvis.
 
 With the previously defined control regions and assumption of
 independence of both categorical observables, the expected multi-jet
 contribution in regions with \tauhadvis passing loose identification
-and opposite-sign electric charge can be estimated using
+and with \tauhadvis pairs of opposite-sign electric charge can be
+estimated using
 \begin{align*}
   N_\text{multi-jet}^{\text{OS, ID}} =
   N_\text{multi-jet}^{\text{OS, Anti-ID}}
   \cdot
   \underbrace{\frac{N_\text{multi-jet}^{\text{SS, ID}}}
                    {N_\text{multi-jet}^{\text{SS, Anti-ID}}}}
-  _{\text{FF}_\text{SS}} \,\text{,}
+  _{= \text{FF}_\text{SS}} \,\text{,}
   \label{eq:ff_method}
 \end{align*}
 where $N_\text{multi-jet}$ is the number of multi-jet events in a
 given region. The fake factor (FF) measures the ratio of multi-jet
-events in the ID and Anti-ID region\footnote{For the fake factor
-  method one observable (the one that form the ratio of the fake
-  factors...) is related to identification or isolation criteria of
-  reconstructed physics objects, distinuishing it from the more
-  general ABCD method.}. \todo{Differential description...}
+events in the ID and Anti-ID region\footnote{The use of identification
+  or isolation criteria to define the ratio is the main difference
+  between the fake factor method and the more general ABCD method.}.
 
-The previously defined control regions do not provide a pure sample of
-multi-jet events thus $N_\text{multi-jet}$ needs to be estimated
-separately. The number of multi-jet events is estimated by subtracting
-from the number of observed events ($N_\text{data}$), the expected
-number of non-multi-jet events ($N_\text{non-multi-jet}$) estimated
-using Monte Carlo simulation, i.e.\
-$N_\text{multi-jet} = N_\text{data} - N_\text{non-multi-jet}$.
+The probability of misidentifying a quark- or gluon-jet as a hadronic
+$\tau$ decay depends strongly on the properties of the reconstructed
+\tauhadvis candidate. Particularly, the reconstructed decay mode and
+visible transverse momentum affect the probability of a jet
+reconstructed as a \tauhadvis to pass \tauid (cf.\
+\Cref{sec:tauid}). To control for this effect, fake factor
+measurements are frequently performed in bins of observables related
+to properties of reconstructed \tauhadvis.
+
+The control regions defined by inverting the OS and ID requirements on
+\tauhadvis do not provide pure samples of multi-jet events. Therefore,
+number of multi-jet events is estimated according to
+\begin{align*}
+  N_\text{multi-jet} = N_\text{data} - N_\text{non-multi-jet} \,\text{,}
+\end{align*}
+where $N_\text{data}$ is the observed number of events in the
+multi-jet enriched region and $N_\text{non-multi-jet}$ the expected
+contribution of non-multi-jet events estimated using simulation.
 
 In~\Cref{tab:mjfakes_yields} the multi-jet and non-multi-jet yields in
 the regions relevant for the \faketauhadvis estimation are
-summarised. The 2 $b$-tag region is not well suited to estimate the
-fake factors:
+summarised. The 2 $b$-tag region, while most similar to the signal
+region, is not well suited to estimate fake factors:
 \begin{itemize}
-\item The regions entering the fake factor measurement have a sizable
-  contamination from non-multi-jet backgrounds that have to be
-  subtracted. The primary source of non-multi-jet background is
-  \ttbarFakes.
 
-\item The \btag requirement strongly suppresses the multi-jet
-  contribution leading to large statistical uncertainties on the
-  estimated fake factors, preventing differential measurements of fake
-  factors.
+\item The 2 $b$-tag regions used in the fake factor method have a
+  large contamination from non-multi-jet backgrounds, primarily
+  \ttbarFakes, that have to be subtracted. The large size of the
+  subtraction leads to a degradation of the statistical precision of
+  measured fake factors and introduce large systematic uncertainties
+  originating from the modelling of the subtracted components.
 
-\item The absence of a 2 $b$-tag multi-jet validation region prevents
-  validation the multi-jet estimate obtained with the fake factor
-  method. Moreover, the independence of the charge sign and ID
-  observables used for the FF method cannot be checked.
+\item The \btag requirement suppresses the multi-jet contribution in
+  the control regions preventing a differential measurement of fake
+  factors in properties of the \tauhadvis.
+
+\item The multi-jet estimate cannot be validated in the 2 $b$-tag
+  region due to the absence of a region with high multi-jet purity
+  that is similar to the signal region.
+
+  % Resultingly, the statistical independence of the charge sign and ID
+  % observables employed by the FF method cannot be verified.
 \end{itemize}
+These issues are addressed by performing the fake factor measurement
+in the 1 $b$-tag region, which has a higher abundance and purity of
+multi-jet events, and extrapolating the measurement into the 2 $b$-tag
+region to obtain a multi-jet background estimate in the signal region.
 
 \begin{table}[htbp]
   \centering
@@ -108,6 +132,7 @@ fake factors:
     \centering
     \input{tables/mjfakes_yield_table_1tag}
     \subcaption{1 $b$-tag regions}
+    \label{tab:mjfakes_yields_1tag}
   \end{subtable}
 
   \begin{subtable}[t]{\textwidth}
@@ -116,38 +141,79 @@ fake factors:
     \subcaption{2 $b$-tag regions}
   \end{subtable}
 
-  \caption{Statistical uncertainties only. The signal region (2
-    $b$-tag OS ID) is omitted.}
+  \caption{Number of multi-jet events in regions defined by different
+    \tauhadvis pair electric charge (OS, SS) and \tauhadvis
+    identification (ID, Anti-ID). The number of multi-jet events,
+    $N_\text{multi-jet}$, is estimated by subtracting the number
+    non-multi-jet events, $N_\text{non-multi-jet}$, estimated using
+    Monte Carlo simulation from the observed number of events in this
+    region. In (a) the breakdown is shown after a 1 $b$-tag
+    requirement; in (b) after a 2 $b$-tag requirement (the SR -- 2
+    $b$-tag OS ID -- is omitted). The uncertainties are from
+    statistical sources only.}
   \label{tab:mjfakes_yields}
 \end{table}
 
-Instead use 1-tag (do not expect \btag to affect fake factor estimate)
-% Dominant subtraction is ttbar, execpt for 1-tag OS ID where it is
-% Ztautau.
-
-
-% Can use table to prove independence:
-% (ID | SS) / (Anti-ID | SS) = 17.9
-% (ID | OS) / (Anti-ID | OS) = 17.5
-
-% 1. Use 1-tag since it has higher abundance of multi-jet, less subtraction and can be used to validate independence
-
-% Signal contamination / other background contamination
-
-% Yield table / plots of regions
-
+A schematic illustration of this approach is given
+in~\Cref{fig:fakefactor_regions}. Fake factors measured in the 1
+$b$-tag regions ($\text{FF}_\text{SS}^\text{1-tag}$) are applied to
+events in the 2 $b$-tag OS Anti-ID region after subtraction of
+non-multi-jet contributions to obtain multi-jet templates in the
+signal region. Multiplicative transfer factors
+($\text{TF}_{1 \ra 2\,b\text{-tag}}$) are applied to
+$\text{FF}_\text{SS}^\text{1-tag}$ when used in 2 $b$-tag regions,
+absorbing possible differences between fake factors measured in 1 and
+2 $b$-tag regions and the uncertainties associated with this
+extrapolation.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[scale=1]{fakefactors/regions}
 
-  \caption{Region definitions}
+  \caption{Schematic description of the fake factor method employed to
+    estimate the multi-jet background in the signal region of the
+    \hadhad channel. The squares represent the multi-jet events
+    ($N_\text{multi-jet} = N_\text{data} - N_\text{non-multi-jet}$) in
+    a particular region.}
   \label{fig:fakefactor_regions}
 \end{figure}
 
+The 1 $b$-tag OS ID region serves as a validation region to check the
+closure of the multi-jet estimate and thus verify the independence of
+the categorical observables related to \tauid (ID / Anti-ID) and
+electric charge of the \tauhadvis pair (OS / SS). This approach is
+equivalent\todo{Is it really? I don't think so.} to a comparison of
+fake factors measured in the OS and SS
+regions\footnote{\Cref{tab:mjfakes_yields_1tag} can be used to
+  calculate inclusive fake factors in the OS and SS regions, yielding
+  $\text{FF}_\text{SS}^\text{1-tag} \approx
+  \text{FF}_\text{OS}^\text{1-tag} \approx 0.18$, which is a
+  sufficient condition for statistical independence of the fake factor
+  observables at the level of the inclusive selection.}, which have to
+agree under the assumptions of the method.
+
+
+% The fake factors are not expected to depend strongly
+% on the applied \btag requirement
+
+% Dominant subtraction is ttbar, execpt for 1-tag OS ID where it is
+% Ztautau.
+
+% Signal contamination / other background contamination
+
+% Yield table / plots of regions
+
+Talk about binning:
+- DTT / STT
+- DTT differential (how?)
+
+
+
 % Checked in 1-tag OS. Does agreement in 1-tag OS confirm that charge
 % and ID are independent? Closure, yes
+
+\todo[inline]{Old stuff below:}
 
 The fake factor (FF) measures the ratio of events with fake \tauhadvis in ID and
 Anti-ID region:
