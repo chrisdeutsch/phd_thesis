@@ -6,6 +6,8 @@ misidentification of quark- or gluon-initiated jets. It represents the
 second largest background with \faketauhadvis in the \hadhad SR after
 the dominant \ttbarFakes contribution.
 
+\subsubsection{The fake factor method}
+
 The multi-jet background is estimated using the fake factor method
 which is a data-driven method for background estimation. It is
 applicable in cases where two event observables exist that are
@@ -95,6 +97,8 @@ number of multi-jet events is estimated according to
 where $N_\text{data}$ is the observed number of events in the
 multi-jet enriched region and $N_\text{non-multi-jet}$ the expected
 contribution of non-multi-jet events estimated using simulation.
+
+
 
 In~\Cref{tab:mjfakes_yields} the multi-jet and non-multi-jet yields in
 the regions relevant for the \faketauhadvis estimation are
@@ -194,6 +198,35 @@ regions\footnote{\Cref{tab:mjfakes_yields_1tag} can be used to
 agree under the assumptions of the method.
 
 
+\subsubsection{Measurement of fake factors}
+
+% - STT / DTT binning
+The fake factor measurement is performed separately for events
+selected by single- and di-\tauhadvis triggers as well the years of
+data collection. During Run~2 of the LHC, different \tauhadvis trigger
+chains were used by the ATLAS experiment to collect the data used in
+this analysis. As a result, the topologies of the selected events and
+the \tauid applied at the high-level trigger changed as Run~2
+progressed. To account for possible differences resulting from the
+change in trigger-selection, the fake factor measurement is subdivided
+into three major data collection periods: 2015-2016, 2017, and 2018.
+
+% - DTT fake factors (differential)
+
+
+% Outline:
+% - STT fake factors
+% - Transfer factor calculation
+% - Uncertainties
+%
+% Additional info that would be interesting:
+% - Subtraction
+
+\subsubsection{Estimation of multi-jet backgrounds in the signal region}
+
+\subsubsection{Systematic Uncertainties}
+
+
 % The fake factors are not expected to depend strongly
 % on the applied \btag requirement
 
@@ -203,12 +236,6 @@ agree under the assumptions of the method.
 % Signal contamination / other background contamination
 
 % Yield table / plots of regions
-
-Talk about binning:
-- DTT / STT
-- DTT differential (how?)
-
-
 
 % Checked in 1-tag OS. Does agreement in 1-tag OS confirm that charge
 % and ID are independent? Closure, yes
@@ -275,6 +302,51 @@ being used to select events used for the analysis.
 
 \todo[inline]{Can we make the STT FF depend on the trigger-match instead of
   the leading / subleading binning?}
+
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.45\textwidth]{fakefactors/transfer_factors}
+
+  \caption{Transfer Factors}
+  \label{fig:mjfakes_transfer_factor}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.45\textwidth]{fakefactors/fake_factors_stt}
+
+  \todo[inline]{Largest deviation for leading 1-prong tau possibly due
+    to looser pT threshold.}
+
+  \caption{STT fake factors}
+  \label{fig:mjfakes_stt_ffs}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_1516}
+    \subcaption{DTT fake factors measured using 2015-2016 data}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_17}
+    \subcaption{DTT fake factors measured using 2017 data}
+  \end{subfigure}
+
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_18}
+    \subcaption{DTT fake factors measured using 2018 data}
+  \end{subfigure}
+
+  \caption{Fake Factors DTT}
+  \label{fig:mjfakes_fake_factors}
+\end{figure}
 
 
 %%% Local Variables:
