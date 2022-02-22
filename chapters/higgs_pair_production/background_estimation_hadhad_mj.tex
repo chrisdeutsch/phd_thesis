@@ -27,18 +27,18 @@ regions enriched in multi-jet events are the \tauid requirements
 applied to \tauhadvis candidates and the sign of the electric charges
 of both candidates.
 
-In the \hadhad signal region, \tauhadvis candidates are required to
-pass the loose \tauid working point. This requirement defines regions
-where both \tauhadvis candidates pass \tauid which are herafter
-referred to as ID regions. The selection is partially inverted to
-obtain control regions enhanced in multi-jet events by requiring that
-exactly one \tauhadvis candidate is failing the loose \tauid working
-point, while still passing a working point corresponding to an
-efficiency loss of \tauhad of about 1\,\% ($\text{RNN score} >
-0.01$). The \tauhadvis candidates fulfilling this selection are
-referred to as anti-\tauhadvis and the regions defined by the
-inversion of the identification criterion as Anti-ID regions. The
-identification criterion cannot be fully inverted due to
+In the signal region, \tauhadvis candidates are required to pass the
+loose \tauid working point. This requirement defines regions where
+both \tauhadvis candidates pass \tauid which are herafter referred to
+as ID regions. The selection is partially inverted to obtain control
+regions enhanced in multi-jet events by requiring that exactly one
+\tauhadvis candidate is failing the loose \tauid working point, while
+still passing a working point corresponding to an efficiency loss of
+\tauhad of about 1\,\% ($\text{RNN score} > 0.01$). The \tauhadvis
+candidates fulfilling this selection are referred to as
+anti-\tauhadvis and the regions defined by the inversion of the
+identification criterion as Anti-ID regions. The identification
+criterion cannot be fully inverted due to
 pre-selections\footnote{Datasets targeting $\PHiggs \to \hadhad$
   require events with at least one \tauhadvis passing the loose \tauid
   working point and one \tauhadvis with an RNN \tauid score exceeding
@@ -69,9 +69,8 @@ estimated using
   N_\text{multi-jet}^{\text{OS, Anti-ID}}
   \cdot
   \underbrace{\frac{N_\text{multi-jet}^{\text{SS, ID}}}
-                   {N_\text{multi-jet}^{\text{SS, Anti-ID}}}}
+  {N_\text{multi-jet}^{\text{SS, Anti-ID}}}}
   _{= \text{FF}_\text{SS}} \,\text{,}
-  \label{eq:ff_method}
 \end{align*}
 where $N_\text{multi-jet}$ is the number of multi-jet events in a
 given region. The fake factor (FF) measures the ratio of multi-jet
@@ -97,8 +96,6 @@ number of multi-jet events is estimated according to
 where $N_\text{data}$ is the observed number of events in the
 multi-jet enriched region and $N_\text{non-multi-jet}$ the expected
 contribution of non-multi-jet events estimated using simulation.
-
-
 
 In~\Cref{tab:mjfakes_yields} the multi-jet and non-multi-jet yields in
 the regions relevant for the \faketauhadvis estimation are
@@ -202,47 +199,198 @@ agree under the assumptions of the method.
 
 % - STT / DTT binning
 The fake factor measurement is performed separately for events
-selected by single- and di-\tauhadvis triggers as well the years of
+selected by single- and di-\tauhadvis triggers as well as the years of
 data collection. During Run~2 of the LHC, different \tauhadvis trigger
 chains were used by the ATLAS experiment to collect the data used in
 this analysis. As a result, the topologies of the selected events and
 the \tauid applied at the high-level trigger changed as Run~2
 progressed. To account for possible differences resulting from the
 change in trigger-selection, the fake factor measurement is subdivided
-into three major data collection periods: 2015-2016, 2017, and 2018.
-
-% - DTT fake factors (differential)
-
+into three major data collection periods: 2015-2016, 2017, and
+2018. The 1 $b$-tag regions relevant to the measurement of fake
+factors are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_1tag_ss_id}
-    \subcaption{ID region}
+    \subcaption{Leading \tauhadvis \pT in the 1 $b$-tag SS ID region}
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_1tag_ss_id}
-    \subcaption{ID region}
+    \subcaption{Sub-leading \tauhadvis \pT in the 1 $b$-tag SS ID
+      region}
   \end{subfigure}
 
   \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_1tag_ss_antiid}
-    \subcaption{Anti-ID region}
+    \subcaption{Leading \tauhadvis \pT in the 1 $b$-tag SS Anti-ID region}
   \end{subfigure}
   \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_1tag_ss_antiid}
-    \subcaption{Anti-ID region}
+    \subcaption{Sub-leading \tauhadvis \pT in the 1 $b$-tag SS Anti-ID
+      region}
   \end{subfigure}
 
-  \caption{1-tag SS ID and Anti-ID region.}
+  \caption{1-tag SS ID and Anti-ID region. MC background is stat.\
+    uncertainty only. At pre-selection level inclusive in years,
+    triggers etc. Correspond to yields in
+    \Cref{tab:mjfakes_yields_1tag} SS.}
   \label{fig:mjfakes_1tag_ss_plots}
 \end{figure}
 
+% Binning based on anti-tau
+The fake factors are primarily determined by the properties of the
+anti-\tauhadvis
+
+
+{% Group for extra definitions
+  \newcommand*{\ffargs}{\ensuremath{( \myvec{x}_{\tau} )}\xspace}
+
+  \newcommand*{\NmjID}[2]{\ensuremath{N_\text{multi-jet}^{\text{#1, loose }\tau_{#2}}}\xspace}
+  \newcommand*{\NmjIDIncl}[1]{\ensuremath{N_\text{multi-jet}^{\text{#1, ID}}}\xspace}
+
+  \newcommand*{\NmjAntiIDIncl}[1]{\ensuremath{N_\text{multi-jet}^{\text{#1, Anti-ID}}}\xspace}
+  \newcommand*{\NmjAntiID}[2]{\ensuremath{N_\text{multi-jet}^{\text{#1, anti-}\tau_{#2}}}\xspace}
+
+  \todo[inline]{Assumption: For DTT both taus can be treated
+    independently as the only difference is \pT (not the case for STT
+    thus different treatment).}
+
+  The Anti-ID region can partitioned into two regions differing in
+  whether the \tauhadvis candidate leading or sub-leading in \pT is
+  reconstructed as the anti-\tauhadvis. Provided the conditions for
+  the fake factor method are fulfilled, both regions can be used to
+  obtain individual estimates of the multi-jet background in the OS ID
+  region. The notation used to describe the fake factor measurement is
+  introduced in the following:
+  \begin{description}[style=standard]
+  \item[$\tau_0$ ($\tau_1$)] The \tauhadvis candidate leading (sub-leading) in \pT.
+
+  \item[$\myvec{x}_\tau$] Categorical observables of a \tauhadvis
+    candidate that define the bin of the fake factor measurement. The
+    observables used for the di-\tauhadvis trigger fake factors are
+    the reconstructed decay mode ($N_\text{tracks}$), the bin of
+    \tauhadvis \pT, and the bin of \tauhadvis $\eta$.
+
+  \item[$\NmjID{SS(OS)}{i}\ffargs$] Number of multi-jet events in the
+    SS (OS) ID region where~$\tau_i$ has
+    observables~$\myvec{x}_\tau$. \todo{Maybe distinguish better from
+      the FF estimate?}
+
+  \item[$\NmjAntiID{SS(OS)}{i}\ffargs$] Number of multi-jet events in
+    the SS (OS) Anti-ID region where $\tau_i$ is the anti-\tauhadvis
+    with observables~$\myvec{x}_\tau$.
+  \end{description}
+  With these definitions, two sets of fake factors can be defined as
+  \begin{align*}
+    \FF_{i}\ffargs &= \frac{\NmjID{SS}{i} \ffargs}{\NmjAntiID{SS}{i}\ffargs}
+                     \quad \text{for} \quad i = 0, 1 \,\text{,}
+  \end{align*}
+  where $\FF_{i}$ is the fake factor relating the ID region with the
+  partition of the Anti-ID region where $\tau_i$ is the
+  anti-\tauhadvis. These can be used to obtain two multi-jet estimates
+  in the OS region given by
+  \begin{align*}
+    \NmjID{OS}{i}\ffargs = \FF_{i}\ffargs \cdot \NmjAntiID{OS}{i}\ffargs
+    \quad \text{for} \quad i = 0, 1 \,\text{.}
+  \end{align*}
+  An average of both estimates can be calculated, yielding fake
+  factors that are inclusive in whether the anti-\tauhadvis is the
+  leading or sub-leading \tauhadvis candidate. The inclusive fake
+  factors can be expressed as
+  \begin{align*}
+    \FF_\text{incl.}\ffargs = \frac{1}{2} \left[ f_0\ffargs \cdot \FF_0\ffargs
+    + f_1\ffargs \cdot \FF_1\ffargs \right] \,\text{,}
+  \end{align*}
+  with $f_i\ffargs$ being the fraction of Anti-ID events where
+  $\tau_i$ is the anti-\tauhadvis and has
+  observables~$\myvec{x}_\tau$. The inclusive fake factor can be
+  measured directly according to
+  \begin{align*}
+    \FF_\text{incl.}\ffargs
+    = \frac{1}{2} \frac{ \NmjID{SS}{0}\ffargs + \NmjID{SS}{1}\ffargs }
+                       { \NmjAntiID{SS}{0}\ffargs + \NmjAntiID{SS}{1}\ffargs }
+  \end{align*}
+  and the multi-jet estimate in the OS region obtained by
+  \begin{align*}
+    \NmjIDIncl{OS}\ffargs = \FF_\text{incl.}\ffargs \cdot \NmjAntiIDIncl{OS}\ffargs \,\text{,}
+  \end{align*}
+  where $\NmjAntiIDIncl{OS}\ffargs$ is the number of multi-jet events
+  in the OS Anti-ID region\todo{Emphasise that this is now the
+    inclusive region?} with anti-\tauhadvis $\myvec{x}_\tau$.
+
+  Benefits of this approach: The inclusive fake factor is parametrised
+  directly in the properties of the anti-\tauhadvis while maximally
+  using the available number of events in the Anti-ID region.
+}
+
+
+% - DTT fake factors (differential)
+Events selected by di-\tauhadvis triggers are additionally measured
+separately for
+
+In DTT, both taus can be treated on the same level (aside from pt
+ordering).
+
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_1516}
+    \subcaption{DTT fake factors measured using 2015-2016 data}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_17}
+    \subcaption{DTT fake factors measured using 2017 data}
+  \end{subfigure}
+
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_18}
+    \subcaption{DTT fake factors measured using 2018 data}
+  \end{subfigure}
+
+  \caption{Combined Fake Factors DTT. The last bin is inclusive in all
+    \pT larger than \SI{150}{\GeV}.}
+  \label{fig:mjfakes_fake_factors}
+\end{figure}
+
+
+
 % - STT fake factors
+Here it makes a difference whether the leading or the subleading tau
+is an anti-\tauhadvis since this entails a particular \pT distribtion
+(and the FFs are not binned in \pT).
+
 
 % Additional info that would be interesting:
 % - Subtraction
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.45\textwidth]{fakefactors/fake_factors_stt}
+
+  \todo[inline]{Largest deviation for leading 1-prong tau possibly due
+    to looser pT threshold.}
+
+  \caption{STT fake factors}
+  \label{fig:mjfakes_stt_ffs}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.45\textwidth]{fakefactors/transfer_factors}
+
+  \caption{Transfer Factors}
+  \label{fig:mjfakes_transfer_factor}
+\end{figure}
+
 
 \subsubsection{Estimation of multi-jet backgrounds in the signal region}
 
@@ -332,48 +480,10 @@ being used to select events used for the analysis.
 
 
 
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{fakefactors/transfer_factors}
-
-  \caption{Transfer Factors}
-  \label{fig:mjfakes_transfer_factor}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.45\textwidth]{fakefactors/fake_factors_stt}
-
-  \todo[inline]{Largest deviation for leading 1-prong tau possibly due
-    to looser pT threshold.}
-
-  \caption{STT fake factors}
-  \label{fig:mjfakes_stt_ffs}
-\end{figure}
 
 
-\begin{figure}[htbp]
-  \centering
 
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_1516}
-    \subcaption{DTT fake factors measured using 2015-2016 data}
-  \end{subfigure}
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_17}
-    \subcaption{DTT fake factors measured using 2017 data}
-  \end{subfigure}
 
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_18}
-    \subcaption{DTT fake factors measured using 2018 data}
-  \end{subfigure}
-
-  \caption{Fake Factors DTT}
-  \label{fig:mjfakes_fake_factors}
-\end{figure}
 
 
 %%% Local Variables:
