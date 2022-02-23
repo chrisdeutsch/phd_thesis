@@ -24,12 +24,12 @@ signal-like region.
 
 In the \hadhad channel, two observables allowing to define control
 regions enriched in multi-jet events are the \tauid requirements
-applied to \tauhadvis candidates and the sign of the electric charges
-of both candidates.
+fulfilled by the \tauhadvis candidates and the sign of the electric
+charges of both candidates.
 
 In the signal region, \tauhadvis candidates are required to pass the
 loose \tauid working point. This requirement defines regions where
-both \tauhadvis candidates pass \tauid which are herafter referred to
+both \tauhadvis candidates pass identification which are referred to
 as ID regions. The selection is partially inverted to obtain control
 regions enhanced in multi-jet events by requiring that exactly one
 \tauhadvis candidate is failing the loose \tauid working point, while
@@ -44,7 +44,8 @@ pre-selections\footnote{Datasets targeting $\PHiggs \to \hadhad$
   working point and one \tauhadvis with an RNN \tauid score exceeding
   0.01.} applied in the data reduction pipeline of the ATLAS
 experiment. However, the fake factor method is still valid in the
-presence of these constraints.
+presence of these constraints provided the underlying assumptions of
+the method hold.
 
 The electric charge of both \tauhadvis candidates produced from signal
 processes and dominant sources of backgrounds with two \tauhadvis
@@ -79,13 +80,13 @@ events in the ID and Anti-ID region\footnote{The use of identification
   between the fake factor method and the more general ABCD method.}.
 
 The probability of misidentifying a quark- or gluon-jet as a hadronic
-$\tau$ decay depends strongly on the properties of the reconstructed
-\tauhadvis candidate. Particularly, the reconstructed decay mode and
-visible transverse momentum affect the probability of a jet
-reconstructed as a \tauhadvis to pass \tauid (cf.\
-\Cref{sec:tauid}). To control for this effect, fake factor
-measurements are frequently performed in bins of observables related
-to properties of reconstructed \tauhadvis.
+$\tau$ decay depends on the properties of the reconstructed \tauhadvis
+candidate. Particularly, the reconstructed decay mode and visible
+transverse momentum affect the probability of a jet reconstructed as a
+\tauhadvis to pass \tauid (cf.\ \Cref{sec:tauid}). To control for this
+effect, fake factor measurements are frequently performed in bins of
+observables related to properties of reconstructed
+\tauhadvis.\todo{Does this fit here?}
 
 The control regions defined by inverting the OS and ID requirements on
 \tauhadvis do not provide pure samples of multi-jet events. Therefore,
@@ -107,7 +108,7 @@ region, is not well suited to estimate fake factors:
   large contamination from non-multi-jet backgrounds, primarily
   \ttbarFakes, that have to be subtracted. The large size of the
   subtraction leads to a degradation of the statistical precision of
-  measured fake factors and introduce large systematic uncertainties
+  measured fake factors and inflates systematic uncertainties
   originating from the modelling of the subtracted components.
 
 \item The \btag requirement suppresses the multi-jet contribution in
@@ -124,7 +125,11 @@ region, is not well suited to estimate fake factors:
 These issues are addressed by performing the fake factor measurement
 in the 1 $b$-tag region, which has a higher abundance and purity of
 multi-jet events, and extrapolating the measurement into the 2 $b$-tag
-region to obtain a multi-jet background estimate in the signal region.
+region to obtain a multi-jet background estimate in the signal
+region. Distributions of the \pT of the leading and sub-leading
+\tauhadvis candidates in the regions relevant to the fake factor
+measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
+
 
 \begin{table}[htbp]
   \centering
@@ -155,6 +160,39 @@ region to obtain a multi-jet background estimate in the signal region.
   \label{tab:mjfakes_yields}
 \end{table}
 
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_1tag_ss_id}
+    \subcaption{1 $b$-tag SS ID region}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_1tag_ss_id}
+    \subcaption{1 $b$-tag SS ID region}
+  \end{subfigure}
+
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_1tag_ss_antiid}
+    \subcaption{1 $b$-tag SS Anti-ID region}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_1tag_ss_antiid}
+    \subcaption{1 $b$-tag SS Anti-ID region}
+  \end{subfigure}
+
+  \caption{Leading (a,c) and sub-leading \tauhadvis \pT (b,d) in
+    regions entering the fake factor measurement. The 1 $b$-tag SS ID
+    region is shown in (a,b) and the 1 $b$-tag Anti-ID region in
+    (c,d). Coloured histograms are contributions from non-multi-jet
+    processes (shown with statistical uncertainties only) that are
+    subtracted during the measurement. All regions are shown
+    inclusively at pre-selection level corresponding to the SS region
+    yields and multi-jet purities in \Cref{tab:mjfakes_yields_1tag}.}
+  \label{fig:mjfakes_1tag_ss_plots}
+\end{figure}
+
 A schematic illustration of this approach is given
 in~\Cref{fig:fakefactor_regions}. Fake factors measured in the 1
 $b$-tag regions ($\text{FF}_\text{SS}^\text{1-tag}$) are applied to
@@ -181,69 +219,67 @@ extrapolation.
 \end{figure}
 
 The 1 $b$-tag OS ID region serves as a validation region to check the
-closure of the multi-jet estimate and thus verify the independence of
-the categorical observables related to \tauid (ID / Anti-ID) and
-electric charge of the \tauhadvis pair (OS / SS). This approach is
-equivalent\todo{Is it really? I don't think so.} to a comparison of
-fake factors measured in the OS and SS
-regions\footnote{\Cref{tab:mjfakes_yields_1tag} can be used to
+agreement of the total background prediction with the observed data.
+% verify the independence of the observables related to \tauid and
+% electric charge of the \tauhadvis pair.
+This approach is equivalent\todo{Is it really? I
+  don't think so.} to a comparison of fake factors measured in the OS
+and SS regions\footnote{\Cref{tab:mjfakes_yields_1tag} can be used to
   calculate inclusive fake factors in the OS and SS regions, yielding
   $\text{FF}_\text{SS}^\text{1-tag} \approx
   \text{FF}_\text{OS}^\text{1-tag} \approx 0.18$, which is a
   sufficient condition for statistical independence of the fake factor
   observables at the level of the inclusive selection.}, which have to
-agree under the assumptions of the method.
+agree under the assumptions of the method.\todo{Needs some work...}
 
 
 \subsubsection{Measurement of fake factors}
 
-% - STT / DTT binning
+% Binning in years / trigger
 The fake factor measurement is performed separately for events
 selected by single- and di-\tauhadvis triggers as well as the years of
 data collection. During Run~2 of the LHC, different \tauhadvis trigger
 chains were used by the ATLAS experiment to collect the data used in
 this analysis. As a result, the topologies of the selected events and
-the \tauid applied at the high-level trigger changed as Run~2
+the \tauid applied at the high-level trigger (HLT) changed as Run~2
 progressed. To account for possible differences resulting from the
 change in trigger-selection, the fake factor measurement is subdivided
 into three major data collection periods: 2015-2016, 2017, and
-2018. The 1 $b$-tag regions relevant to the measurement of fake
-factors are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
+2018. % The 1 $b$-tag SS regions relevant to the measurement of fake
+% factors are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
 
-\begin{figure}[htbp]
-  \centering
+% Reason for binning in
+The categorisation of the fake factors by trigger that selected the
+event is further motivated by the difference between single- and
+di-\tauhadvis triggers. Single-\tauhadvis triggers require one
+\tauhadvis candidate with high transverse momentum that is identified
+at the HLT without any selections applied to the other candidate. In
+contrast, di-\tauhadvis triggers require both \tauhadvis to be
+identified at the HLT with similar transverse momentum thresholds
+applied to both. This allows \tauhadvis candidates in in the
+di-\tauhadvis trigger category to be treated equally once
+\pT-threshold effects are accounted for. This is not the case in
+events selected by single-\tauhadvis triggers.
 
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_1tag_ss_id}
-    \subcaption{Leading \tauhadvis \pT in the 1 $b$-tag SS ID region}
-  \end{subfigure}
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_1tag_ss_id}
-    \subcaption{Sub-leading \tauhadvis \pT in the 1 $b$-tag SS ID
-      region}
-  \end{subfigure}
+Dependencies of the fake factors on reconstructed quantities of
+\tauhadvis candidates are accounted for by further categorisation
+based on the \tauhadvis that distinguishes the ID from the Anti-ID
+regions. The fake factor measurement is performed separately for 1-
+and 3-prong \tauhadvis candidates, independently of the trigger
+category.
 
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_1tag_ss_antiid}
-    \subcaption{Leading \tauhadvis \pT in the 1 $b$-tag SS Anti-ID region}
-  \end{subfigure}
-  \begin{subfigure}{0.49\textwidth}
-    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_1tag_ss_antiid}
-    \subcaption{Sub-leading \tauhadvis \pT in the 1 $b$-tag SS Anti-ID
-      region}
-  \end{subfigure}
+Fake factors for events selected by di-\tauhadvis triggers are
+additionally measured in dependence of the \tauhadvis \pT and
+separately for \tauhadvis in the barrel and endcap regions of the
+ATLAS detector. In contrast, few multi-jet events enter the
+single-\tauhadvis trigger category due to stringent \pT requirements,
+thus not allowing a large number of subdivisions of the
+measurement. Therefore, the fake factors for singe-\tauhadvis trigger
+events are measured separately for cases where the anti-\tauhadvis is
+leading and the sub-leading in \pT.
 
-  \caption{1-tag SS ID and Anti-ID region. MC background is stat.\
-    uncertainty only. At pre-selection level inclusive in years,
-    triggers etc. Correspond to yields in
-    \Cref{tab:mjfakes_yields_1tag} SS.}
-  \label{fig:mjfakes_1tag_ss_plots}
-\end{figure}
 
-% Binning based on anti-tau
-The fake factors are primarily determined by the properties of the
-anti-\tauhadvis
-
+\subsubsection{Fake factors: di-\tauhadvis triggers}
 
 {% Group for extra definitions
   \newcommand*{\ffargs}{\ensuremath{( \myvec{x}_{\tau} )}\xspace}
@@ -253,10 +289,6 @@ anti-\tauhadvis
 
   \newcommand*{\NmjAntiIDIncl}[1]{\ensuremath{N_\text{multi-jet}^{\text{#1, Anti-ID}}}\xspace}
   \newcommand*{\NmjAntiID}[2]{\ensuremath{N_\text{multi-jet}^{\text{#1, anti-}\tau_{#2}}}\xspace}
-
-  \todo[inline]{Assumption: For DTT both taus can be treated
-    independently as the only difference is \pT (not the case for STT
-    thus different treatment).}
 
   The Anti-ID region can partitioned into two regions differing in
   whether the \tauhadvis candidate leading or sub-leading in \pT is
@@ -359,6 +391,7 @@ ordering).
 \end{figure}
 
 
+\subsubsection{Measurement of fake factors: single-\tauhadvis triggers}
 
 % - STT fake factors
 Here it makes a difference whether the leading or the subleading tau
