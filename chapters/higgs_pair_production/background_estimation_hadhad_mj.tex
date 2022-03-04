@@ -39,13 +39,13 @@ efficiency loss of \tauhad of about 1\,\% ($\text{RNN score} >
 referred to as anti-\tauhadvis and the regions defined by the
 inversion of the identification criterion as Anti-ID regions. The
 identification criterion cannot be fully inverted due to
-pre-selections\footnote{Datasets targeting $\PHiggs \to \hadhad$
-  require events with at least one \tauhadvis passing the loose \tauid
-  working point and one \tauhadvis with an RNN \tauid score exceeding
-  0.01.} applied in the data reduction pipeline of the ATLAS
-experiment. However, the fake factor method is still valid in the
-presence of these constraints provided the underlying assumptions of
-the method hold.
+pre-selections\footnote{In the ATLAS collaboration, datasets targeting
+  $\PHiggs \to \hadhad$ processes require events with at least one
+  \tauhadvis passing the loose \tauid working point and one \tauhadvis
+  with a \tauid score exceeding 0.01.} applied in the data reduction
+pipeline of the ATLAS experiment. However, the fake factor method is
+still valid in the presence of these constraints provided the
+underlying assumptions of the method hold.
 
 The electric charge of both \tauhadvis candidates produced from signal
 processes and dominant sources of backgrounds with two \tauhadvis
@@ -408,7 +408,9 @@ in~\Cref{fig:mjfakes_fake_factors}.
     markers) and endcap regions (blue markers) of the ATLAS
     detector. Events with (anti-)\tauhadvis $\pT > \SI{150}{\GeV}$ are
     merged into the last fake factor bin. Uncertainties are from
-    statistical sources only.}
+    statistical sources only. Systematic uncertainties originating
+    from the non-multi-jet subtraction are assumed to be negligible
+    due to the small size of the subtraction.}
   \label{fig:mjfakes_fake_factors}
 \end{figure}
 
@@ -478,6 +480,187 @@ factors are summarised in~\Cref{fig:mjfakes_stt_ffs}.
 % - Subtraction in Anti-ID region
 
 \subsubsection{Validation of the Fake Estimate in 1-tag OS}
+
+An independent validation of the background estimation technique can
+be performed in the 1 $b$-tag OS region, which is not part of the fake
+factor measurement. At pre-selection level, this region has a
+multi-jet purity of about \SI{50}{\percent} with other contributions
+from $\Zjets$ and \ttbar. The multi-jet purity can be increased for
+validation purposes of the multi-jet background estimate by requiring
+% https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MetSignificance
+% Using `TreatPUJets == true' and Basic soft term (met::Random)
+\begin{align*}
+  \mMMC > \SI{110}{\GeV} \qquad \text{and} \qquad \mathcal{S} < 3 \,\text{,}
+\end{align*}
+where $\mathcal{S}$ is the object-based \pTmissAbs
+significance~\cite{ATLAS-CONF-2018-038} that measures the statistical
+significance of a test probing the hypothesis of no real \pTmissAbs
+compared to the alternative of having real \pTmissAbs. The
+contribution of \Zjets is reduced by rejecting events close to the \PZ
+boson mass. Multi-jet events are expected to have little real
+\pTmissAbs, thus events with significant \pTmissAbs are rejected to
+reduce the \ttbar contribution in this
+region. In~\Cref{fig:fake_factor_OSVR_cutvars} both variables are
+shown in the 1 $b$-tag OS region at pre-selection level to illustrate
+this choice of selection for the multi-jet validation region. The
+purity of multi-jet validation region is increased to about
+\SI{75}{\percent}.
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/mMMC_presel}
+    \subcaption{}
+  \end{subfigure}\hspace*{0.04\textwidth}%
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/metSig_presel}
+    \subcaption{}
+  \end{subfigure}
+
+  \caption{The invariant di-\tauhad mass (a) and the object-based
+    \pTmissAbs significance (b) in the 1 $b$-tag OS ID region at
+    pre-selection level. The estimate of the multi-jet background
+    (light blue) is obtained using the fake factor method (cf.\
+    \Cref{fig:fakefactor_regions}). Fake-\tauhadvis originating from
+    \ttbar (red) are estimated using simulation. The background
+    prediction is shown pre-fit, including statistical and
+    detector-related systematic uncertainties.}
+  \label{fig:fake_factor_OSVR_cutvars}
+\end{figure}
+
+The background prediction in the multi-jet validation region is
+compared to data in~\Cref{fig:fake_factor_OSVR_kinematics}. The
+multi-jet background is estimated using the fake factor method by
+applying fake factors measured in the SS regions to events in the OS
+Anti-ID region. The background prediction is in good agreement with
+the observed data in the validation region, indicating the validity of
+the assumptions made by the fake factor method.
+
+\begin{figure}[p]
+  \centering
+
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau0Pt_fakevr}
+  \end{subfigure}\hspace*{0.04\textwidth}%
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau1Pt_fakevr}
+  \end{subfigure}
+
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau0Eta_fakevr}
+  \end{subfigure}\hspace*{0.04\textwidth}%
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau1Eta_fakevr}
+  \end{subfigure}
+
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau0Ntrk_fakevr}
+  \end{subfigure}\hspace*{0.04\textwidth}%
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau1Ntrk_fakevr}
+  \end{subfigure}
+
+  \caption{Validation of \tauhadvis observables in the multi-jet VR (1
+    $b$-tag OS, $\mMMC > \SI{110}{\GeV}$, and $\mathcal{S} < 3$). The
+    estimate of the multi-jet background (light blue) is obtained
+    using the fake factor method (cf.\
+    \Cref{fig:fakefactor_regions}). Observables (top: \tauhadvis \pT,
+    center: \tauhadvis $\eta$, bottom: \tauhadvis $N_\text{tracks}$)
+    of the \tauhadvis candidates leading (left) and sub-leading in \pT
+    (right) are shown. The background prediction is shown pre-fit,
+    including statistical and detector-related systematic
+    uncertainties.}%
+  \label{fig:fake_factor_OSVR_kinematics}%
+  % Explicitly say that there are no fake uncertainties here yet?
+\end{figure}
+
+Further tests of the assumptions can be performed by direct comparison
+of fake factors previously measured in the 1 $b$-tag SS region with
+the ones that would be obtained from a measurement in the 1 $b$-tag OS
+multi-jet VR. Differences between both sets of fake factors can then
+be applied as a non-closure uncertainty when applying fake factors
+measured in SS regions in OS regions.
+
+In~\Cref{fig:fake_factor_OSSS} a comparison of fake factors measured
+in the 1 $b$-tag OS multi-jet VR and the 1 $b$-tag SS region is
+shown.
+
+Few events compared to SS and comparatively large subtraction -> large
+statistical uncertainties.
+
+The fake factors are compared using $\chi^2$-tests showing good
+agreement with one exception. The di-\tauhadvis trigger fake factor
+(2015-2016) for 3-prong \tauhadvis with \pT from
+\SIrange{50}{65}{\GeV} in the endcaps of the ATLAS detector shows
+significant deviations of \SI{50}{\percent} between OS and SS regions.
+
+
+% Say something regarding the independence?
+
+% Independence -> SS and OS fake factors have to agree
+%
+% measure OS fake factors in this region and add full difference as an uncertainty.
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[t]{0.48\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_18}
+    \subcaption{Comparison of OS and SS fake factors for events
+      selected by di-\tauhadvis triggers. Only the 2018 data
+      collection period is shown for illustration purposes.}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{0.48\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_stt}
+    \subcaption{Comparison of OS and SS fake factors for events
+      selected by single-\tauhadvis triggers for all major data
+      collection periods.}
+  \end{subfigure}
+
+  \caption{Relative deviation of fake factors measured in the 1
+    $b$-tag OS multi-jet VR compared to the nominal set of fake
+    factors measured in the 1 $b$-tag SS region (cf.\
+    \Cref{fig:mjfakes_fake_factors,fig:mjfakes_stt_ffs}). The relative
+    deviation is measured as $\FF_\text{OS} / \FF_\text{SS} - 1$ and
+    is used to define a non-closure uncertainty that is propagated to
+    the multi-jet background estimate when applying SS fake factors to
+    events in OS regions. Statistical uncertainties from the finite
+    number of observed data events and the non-multi-jet subtraction
+    are shown.}
+  \label{fig:fake_factor_OSSS}
+\end{figure}
+
+
+
+
+\subsubsection{Transfer factors}
+
+The signal region is in 2 $b$-tag...
+
+% Problems:
+%
+% - Very few events in SS region and high impurities from ttbar fakes
+%   -> Only inclusive fake factors possible
+%
+%   - Transfer factor is determined by comparing the inclusive fake
+%   factor calculated in 1-tag to an inclusive fake factor calculated
+%   in 2-tag.
+%
+%   - Transfer factors show good agremeent between the 1- and 2-tag
+%   region with large uncertainties
+%
+%   - Large uncertainties indicate that we have little sensitivity to
+%   the differences between 1- and 2-tag regions.
+%
+%   - Therefore the 1-tag fake factors are used also in 2-tag region
+%   after multiplying them by the transfer factor
+%
+%   - The primary aim of the transfer factor is to estimate an
+%   uncertainty by coherently (conservative approach) varying the
+%   transfer factors up and down separate for all four categories.
+
+
 
 \subsubsection{Systematic Uncertainties}
 
