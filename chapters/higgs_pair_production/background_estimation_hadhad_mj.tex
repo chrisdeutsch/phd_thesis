@@ -446,17 +446,17 @@ the analysis.
 
 The measurement of fake factors for events selected by
 single-\tauhadvis triggers proceeds differently from the di-\tauhadvis
-trigger case. Due to the selections applied at the HLT and the
-typically large difference in \pT between both \tauhadvis candidates,
-the single-\tauhadvis trigger fake factors are measured separately for
-the leading and the sub-leading \tauhadvis candidates. Additionally,
-the high \pT thresholds on \tauhadvis at trigger-level provide large
-rejection of most SM processes, limiting the number of events entering
-the control regions for the fake factor measurement, thus preventing a
+trigger case. Due to the selections applied at the HLT and the usually
+large difference in \pT between both \tauhadvis candidates, the
+single-\tauhadvis trigger fake factors are measured separately for the
+leading and sub-leading \tauhadvis candidates. Additionally, the high
+\pT thresholds on \tauhadvis at trigger-level provide large rejection
+of most SM processes, limiting the number of events entering the
+control regions for the fake factor measurement, thus preventing a
 differential fake factor measurement in \tauhadvis \pT and $\eta$.
 
 The approach of averaging the background estimates obtained from the
-two partitions of the Anti-ID region is still valid for
+two partitions of the Anti-ID region remains valid for
 single-\tauhadvis triggers, including~\Cref{eq:inclusive_fake_factor}
 which can be used to calculate the fake factors. The main difference
 between the the single- and di-\tauhadvis trigger fake factor
@@ -474,51 +474,38 @@ whether the anti-\tauhadvis is leading or sub-leading in \pT.
 % triggers cannot be measured differentially in \tauhadvis \pT and
 % $\eta$.
 
-The single-\tauhadvis trigger fake factors are measured in four
-categories for each of the three major data collection periods.
-
-The STT fake factors are measured in four categories for every major
-period of data collection: 1- and 3-prong \tauhadvis and whether the
-\tauhadvis is leading or sub-leading in \pT. The resulting fake
-factors are summarised in~\Cref{fig:mjfakes_stt_ffs}.
-
-Formally, \Cref{eq:inclusive_fake_factor} is still used for this
-measurement by replacing the
-$\myvec{x}_\tau$ now including an
-indicator variable .
-
-
-
+The measured single-\tauhadvis trigger fake factors are shown
+in~\Cref{fig:mjfakes_stt_ffs} for the three major data collection
+periods. Each period is divided into four categories depending on
+$N_{\text{tracks}}$ and whether the anti-\tauhadvis is leading
+($\tau_0$) or sub-leading ($\tau_1$) in \pT.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.495\textwidth]{fakefactors/fake_factors_stt}
 
-  \caption{Fake factors (1 $b$-tag SS) for events selected by
-    single-\tauhadvis triggers measured separately for the three major
-    data collection periods. The measurement is performed (inclusively
-    in \tauhadvis \pT and $\eta$) in bins of the reconstructed
+  \caption{Single-\tauhadvis trigger fake factors measured in the 1
+    $b$-tag SS region, separately for the three major data collection
+    periods. The measurement is performed in bins of the reconstructed
     \tauhadvis decay mode (1- and 3-prong) and separately for cases
-    where the \pT leading and sub-leading \tauhadvis is the
-    anti-\tauhadvis ($\tau_0$ and $\tau_1$).}%
+    where the anti-\tauhadvis is leading ($\tau_0$) and sub-leading in
+    \pT ($\tau_1$).}%
   \label{fig:mjfakes_stt_ffs}
-
-  \todo[inline]{Largest deviation for leading 1-prong tau possibly due
-    to looser pT threshold.}
+  % \todo[inline]{Largest deviation for leading 1-prong tau possibly
+  % due to looser pT threshold.}
 \end{figure}
 
 
 \subsubsection{Validation of the multi-jet estimate in the 1 $b$-tag OS region}
 
-An independent validation of the background estimation technique can
-be performed in the 1 $b$-tag OS region (cf.\
-\Cref{fig:fakefactor_regions}).
+An independent validation of the background estimate can be performed
+in the 1 $b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}).
 % , which is not part of the fake factor measurement.
 At pre-selection level this region has a multi-jet purity of ca.\
-\SI{50}{\percent} with dominant non-multi-jet contributions from
-\Zjets and \ttbar. The multi-jet purity is further increased for
-validation purposes by requiring events to fulfil
+\SI{50}{\percent} with the dominant non-multi-jet contributions
+originating from \Zjets and \ttbar. The multi-jet purity is enhanced
+for validation purposes by requiring events to fulfil
 % https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MetSignificance
 % Using `TreatPUJets == true' and Basic soft term (met::Random)
 \begin{align*}
@@ -533,14 +520,15 @@ of \pTmissAbs primarily originating from undetected weakly interacting
 particles.
 
 The variables used to define the multi-jet validation region are shown
-in~\Cref{fig:fake_factor_OSVR_cutvars} after the pre-selection. The
-contribution of \Zjets is reduced by rejecting events with di-$\tauhad$
-masses close to the \PZ boson mass.  Multi-jet events are expected to
-have little real \pTmissAbs, thus events with a significant \pTmissAbs
-measurement are rejected to reduce the \ttbar contribution in this
-region. The selection increases the multi-jet purity in the validation
-region to \SI{75}{\percent} with a multi-jet selection efficiency of
-about \SI{50}{\percent} with respect to the pre-selection.
+in~\Cref{fig:fake_factor_OSVR_cutvars} after pre-selection. The
+contribution of \Zjets is reduced by rejecting events with
+di-$\tauhad$ masses close to the \PZ boson mass.  Multi-jet events are
+expected to have little real \pTmissAbs, thus events with a
+significant \pTmissAbs measurement are rejected to reduce the \ttbar
+contribution in this region. The selection increases the multi-jet
+purity in the validation region to \SI{75}{\percent} with a multi-jet
+selection efficiency of about \SI{50}{\percent} with respect to the
+pre-selection.
 
 \begin{figure}[htbp]
   \centering
@@ -565,15 +553,17 @@ about \SI{50}{\percent} with respect to the pre-selection.
   \label{fig:fake_factor_OSVR_cutvars}
 \end{figure}
 
-The background prediction in the multi-jet validation region is
-compared to data in~\Cref{fig:fake_factor_OSVR_kinematics}. The
-multi-jet background is estimated using the fake factor method by
-applying fake factors measured in the SS regions to events in the OS
-Anti-ID region. The background prediction is in good agreement with
-the observed data in the validation region, indicating the validity of
-the assumptions made by the fake factor method.
+The multi-jet background prediction in the validation region is
+obtained by applying the measured fake factors to events in the OS
+Anti-ID region after subtracting non-multi-jet contributions. The
+non-multi-jet backgrounds in the OS ID region are estimated using
+simulation. The total background prediction in the multi-jet VR is
+compared to data in~\Cref{fig:fake_factor_OSVR_kinematics} for several
+observables of the leading and sub-leading \tauhadvis candidate.
 
-\begin{figure}[p]
+
+
+\begin{figure}[htbp]
   \centering
 
   \begin{subfigure}{0.45\textwidth}
@@ -597,46 +587,40 @@ the assumptions made by the fake factor method.
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau1Ntrk_fakevr}
   \end{subfigure}
 
-  \caption{Validation of \tauhadvis observables in the multi-jet VR (1
-    $b$-tag OS, $\mMMC > \SI{110}{\GeV}$, and $\mathcal{S} < 3$). The
-    estimate of the multi-jet background (light blue) is obtained
-    using the fake factor method (cf.\
-    \Cref{fig:fakefactor_regions}). Observables (top: \tauhadvis \pT,
-    center: \tauhadvis $\eta$, bottom: \tauhadvis $N_\text{tracks}$)
-    of the \tauhadvis candidates leading (left) and sub-leading in \pT
-    (right) are shown. The background prediction is shown pre-fit,
-    including statistical and detector-related systematic
-    uncertainties.}%
+  \caption{Validation of \tauhadvis observables in the multi-jet VR
+    defined by the requirements: 1 $b$-tag OS,
+    $\mMMC > \SI{110}{\GeV}$, and $\mathcal{S} < 3$. The multi-jet
+    background prediction (blue) is obtained using the fake factor
+    method. The \tauhadvis observables \pT (top), $\eta$ (center), and
+    $N_{\text{tracks}}$ (bottom) are shown for the leading (left) and
+    sub-leading \tauhadvis (right). The background prediction is shown
+    prior to the fit and includes statistical and detector-related
+    systematic uncertainties.}%
   \label{fig:fake_factor_OSVR_kinematics}%
   % Explicitly say that there are no fake uncertainties here yet?
 \end{figure}
 
-Further tests of the assumptions can be performed by direct comparison
-of fake factors previously measured in the 1 $b$-tag SS region with
-the ones that would be obtained from a measurement in the 1 $b$-tag OS
-multi-jet VR. Differences between both sets of fake factors can then
-be applied as a non-closure uncertainty when applying fake factors
-measured in SS regions in OS regions.
+Good agreement between the background prediction and data is observed
+in the validation region for \tauhadvis-related observables. Further
+tests of the assumptions of the fake factor method can be performed by
+a comparison of the fake factors measured in the 1 $b$-tag SS region
+with fake factors obtained from a measurement in the 1 $b$-tag OS
+multi-jet VR. Under the assumptions of the fake factor method, both OS
+and SS fake factors are expected to agree. Possible differences
+between both sets of fake factors can originate from a violation of
+the assumptions or from errors in the non-multi-jet subtraction.
 
-In~\Cref{fig:fake_factor_OSSS} a comparison of fake factors measured
-in the 1 $b$-tag OS multi-jet VR and the 1 $b$-tag SS region is
-shown.
-
-Few events compared to SS and comparatively large subtraction -> large
-statistical uncertainties.
-
-The fake factors are compared using $\chi^2$-tests showing good
-agreement with one exception. The di-\tauhadvis trigger fake factor
-(2015-2016) for 3-prong \tauhadvis with \pT from
-\SIrange{50}{65}{\GeV} in the endcaps of the ATLAS detector shows
-significant deviations of \SI{50}{\percent} between OS and SS regions.
-
-
-% Say something regarding the independence?
-
-% Independence -> SS and OS fake factors have to agree
-%
-% measure OS fake factors in this region and add full difference as an uncertainty.
+The comparison of OS and SS fake factors is shown
+in~\Cref{fig:fake_factor_OSSS} exemplary for di-\tauhadvis trigger
+fake factors for the 2018 period and for all single-\tauhadvis trigger
+fake factors. The fake factors are compared using $\chi^2$-tests
+showing good agreement with one exception. A relative deviation of
+\SI{50}{\percent} is observed for a single fake factor
+bin\footnote{3-prong \tauhadvis with \pT from \SIrange{50}{65}{\GeV}
+  in the endcap regions.} for di-\tauhadvis triggers in 2015-2016. To
+account for the non-closure, the full difference between the central
+values of OS and SS fake factors is assigned as a systematic
+uncertainty and propagated to the multi-jet estimate.
 
 \begin{figure}[htbp]
   \centering
@@ -646,12 +630,14 @@ significant deviations of \SI{50}{\percent} between OS and SS regions.
     \subcaption{Comparison of OS and SS fake factors for events
       selected by di-\tauhadvis triggers. Only the 2018 data
       collection period is shown for illustration purposes.}
+    \label{fig:fake_factor_OSSS_dtt}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{0.48\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_stt}
     \subcaption{Comparison of OS and SS fake factors for events
       selected by single-\tauhadvis triggers for all major data
       collection periods.}
+    \label{fig:fake_factor_OSSS_stt}
   \end{subfigure}
 
   \caption{Relative deviation of fake factors measured in the 1
