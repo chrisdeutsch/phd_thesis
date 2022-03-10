@@ -561,8 +561,6 @@ simulation. The total background prediction in the multi-jet VR is
 compared to data in~\Cref{fig:fake_factor_OSVR_kinematics} for several
 observables of the leading and sub-leading \tauhadvis candidate.
 
-
-
 \begin{figure}[htbp]
   \centering
 
@@ -654,57 +652,118 @@ uncertainty and propagated to the multi-jet estimate.
 \end{figure}
 
 
-
 \subsubsection{Estimation of multi-jet backgrounds in the signal region}
 
-% - Transfer factor calculation
-% - Subtraction in Anti-ID region
+The estimation of the multi-jet background in the \hadhad signal
+region (2 $b$-tag OS ID) is obtained by applying fake factors from the
+1 $b$-tag SS region to events in the 2 $b$-tag OS Anti-ID region after
+subtraction of non-multi-jet processes. In addition, these fake
+factors are multiplied by a 1 to 2 $b$-tag transfer factor to account
+for possible differences between fake factors for 1 and 2 $b$-tag
+regions (cf.\ \Cref{fig:fakefactor_regions}). The change in \btag
+requirement is not expected to affect the measured fake factors, such
+that the transfer factors mainly serve to provide a measurement-driven
+estimate of the uncertainty on the extrapolation.
+
+The transfer factor is determined by comparing fake factors measured
+in the 2 $b$-tag SS region to ones extracted in the 1 $b$-tag SS
+region. Due to the large multi-jet rejection of the 2 $b$-tag
+requirement, the fake factors are measured inclusively in the trigger
+category, \tauhadvis \pT and \tauhadvis $\eta$. The 1 to 2 $b$-tag
+transfer factor is defined as the ratio
+\begin{align*}
+  \text{TF}_{1 \ra 2\,b\text{-tag}} = \frac{\FF_{\text{SS}}^{2\,b\text{-tag}}}{\FF_{\text{SS}}^{1\,b\text{-tag}}} \,\text{.}
+\end{align*}
+
+In~\Cref{fig:mjfakes_transfer_factor} the measured transfer factors
+are shown. No statistically significant deviations between 1 and 2 $b$
+-tag fake factors is observed. The statistical uncertainties on the
+transfer factors are propagated to the multi-jet estimate in 2 $b$-tag
+regions providing an extrapolation uncertainty.
+
+%   - Large uncertainties indicate that we have little sensitivity to
+%   the differences between 1- and 2-tag regions.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.495\textwidth]{fakefactors/transfer_factors}
 
-  \caption{Transfer Factors}
+  \caption{Transfer factors describing the ratio of fake factors
+    measured in the 2 and 1 $b$-tag regions. The transfer factors are
+    applied as multiplicative factors to 1 $b$-tag fake factors when
+    they are applied in 2 $b$-tag regions. The statistical
+    uncertainties are shown.}
   \label{fig:mjfakes_transfer_factor}
 \end{figure}
 
+A disadvantage of applying the fake factor method in the 2 $b$-tag
+region is the low multi-jet purity of ca.\ \SI{50}{\percent} in the 2
+$b$-tag OS Anti-ID region (cf.\
+\Cref{tab:mjfakes_yields}). Resultingly, a large subtraction of
+non-multi-jet processes has to be performed when applying fake factors
+to obtain the multi-jet prediction in the signal region.  The size of
+the subtraction in the 2 $b$-tag OS Anti-ID is illustrated
+in~\Cref{fig:mjfakes_2tag_os_antiid}, showing that the dominant source
+non-multi-jet events is \ttbarFakes. Due to the large relative size of
+the subtracted non-multi-jet component, any uncertainties affecting
+the subtracted components will have a large impact on the multi-jet
+estimate in the ID region. This is the main limitation of the
+multi-jet estimation method used in this analysis.
 
-\subsubsection{Transfer factors}
+\begin{figure}[htbp]
+  \centering
 
-The signal region is in 2 $b$-tag...
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_2tag_os_antiid}
+    \subcaption{}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_2tag_os_antiid}
+    \subcaption{}
+  \end{subfigure}
 
-% Problems:
-%
-% - Very few events in SS region and high impurities from ttbar fakes
-%   -> Only inclusive fake factors possible
-%
-%   - Transfer factor is determined by comparing the inclusive fake
-%   factor calculated in 1-tag to an inclusive fake factor calculated
-%   in 2-tag.
-%
-%   - Transfer factors show good agremeent between the 1- and 2-tag
-%   region with large uncertainties
-%
-%   - Large uncertainties indicate that we have little sensitivity to
-%   the differences between 1- and 2-tag regions.
-%
-%   - Therefore the 1-tag fake factors are used also in 2-tag region
-%   after multiplying them by the transfer factor
-%
-%   - The primary aim of the transfer factor is to estimate an
-%   uncertainty by coherently (conservative approach) varying the
-%   transfer factors up and down separate for all four categories.
-
+  \caption{Histogram of the leading (a) and sub-leading (b) \tauhadvis
+    candidate \pT in the 2 $b$-tag OS Anti-ID region. Non-multi-jet
+    backgrounds are display as coloured histograms and include the
+    statistical uncertainty of the prediction. The difference between
+    the observed data and the non-multi-jet background prediction is
+    attributed to the missing multi-jet estimate.}
+  \label{fig:mjfakes_2tag_os_antiid}
+\end{figure}
 
 
 \subsubsection{Systematic Uncertainties}
 
-% - Uncertainties
+The following systematic uncertainties are considered and propagated
+to the multi-jet estimate in the \hadhad signal region:
+\begin{itemize}
+\item The statistical uncertainty of the fake factor measurement.
+\item Non-closure uncertainty between fake factors estimated in the 1
+  $b$-tag OS and SS regions.
+\item Uncertainties on the subtraction of \ttbar, \ttbarFakes, and
+  other non-multi-jet processes in the 2 $b$-tag OS Anti-ID region.
+\end{itemize}
 
+% Statistical uncertainty of FF (1.4 \%)
+The effect of the statistical uncertainty on the multi-jet estimate in
+the signal region is estimated by performing $\pm 1 \sigma$ variations
+of individual bins of the fake factor measurement. The analysis is
+insensitive to variations of individual fake factor bins and thus the
+effect of all bins is combined into an overall normalisation
+uncertainty on the multi-jet estimate. The normalisation uncertainty
+on the multi-jet estimate originating from the statistical precision
+of the fake factor measurement is \SI{1.4}{\percent}.
 
-% The fake factors are not expected to depend strongly
-% on the applied \btag requirement
+% Extrapolation uncertainty
+
+% Statistical uncertainty (1.4\%)
+% Transfer factor uncertainty (varying coherently all four categories)
+% OS-SS uncertainty
+%
+% Subtraction uncertainty
+%   ttbar
+%   non-ttbar
 
 % Dominant subtraction is ttbar, execpt for 1-tag OS ID where it is
 % Ztautau.
@@ -712,11 +771,6 @@ The signal region is in 2 $b$-tag...
 % Signal contamination / other background contamination
 
 % Yield table / plots of regions
-
-% Checked in 1-tag OS. Does agreement in 1-tag OS confirm that charge
-% and ID are independent? Closure, yes
-
-\todo[inline]{Old stuff below:}
 
 Systematic uncertainties are assigned to cover possible difference
 betwen OS and SS fake factors, varying the subtraction in the OS
