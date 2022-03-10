@@ -711,6 +711,8 @@ the subtracted components will have a large impact on the multi-jet
 estimate in the ID region. This is the main limitation of the
 multi-jet estimation method used in this analysis.
 
+\todo[inline]{Refer to \Cref{sec:bkg_hadhad_ttbarfakes}.}
+
 \begin{figure}[htbp]
   \centering
 
@@ -733,14 +735,28 @@ multi-jet estimation method used in this analysis.
 \end{figure}
 
 
-\subsubsection{Systematic Uncertainties}
+\subsubsection{Uncertainties}
+
+% Statistical uncertainties
+The statistical uncertainty of the multi-jet estimate due to the
+finite number of observed events in the 2 $b$-tag OS Anti-ID region
+and the simulation-based subtraction of non-multi-jet events. The
+statistical uncertainty on the normalisation of the multi-jet
+background in the \hadhad SR is \SI{1.9}{\percent}. % This uncertainty
+% is included in the likelihood used for the statistical analysis by
+% employing the Barlow-Beeston method~\cite{barlow1993,conway2011}.
 
 The following systematic uncertainties are considered and propagated
 to the multi-jet estimate in the \hadhad signal region:
 \begin{itemize}
 \item The statistical uncertainty of the fake factor measurement.
+
 \item Non-closure uncertainty between fake factors estimated in the 1
   $b$-tag OS and SS regions.
+
+\item Uncertainties on the extrapolation of fake factors measured in
+  the 1 $b$-tag region to 2 $b$-tag regions.
+
 \item Uncertainties on the subtraction of \ttbar, \ttbarFakes, and
   other non-multi-jet processes in the 2 $b$-tag OS Anti-ID region.
 \end{itemize}
@@ -756,14 +772,21 @@ on the multi-jet estimate originating from the statistical precision
 of the fake factor measurement is \SI{1.4}{\percent}.
 
 % Extrapolation uncertainty
+An uncertainty on the extrapolation of fake factors measured in the 1
+$b$-tag SS region to the 2 $b$-tag region is estimated by performing
+$\pm 1 \sigma$ variations of the transfer factors. The four categories
+of the transfer factor measurement are varied separately. As a
+conservative estimate of the uncertainty, transfer factors of the
+three major data collection periods are varied coherently within a
+given category of the measurement.
 
-% Statistical uncertainty (1.4\%)
 % Transfer factor uncertainty (varying coherently all four categories)
 % OS-SS uncertainty
 %
 % Subtraction uncertainty
-%   ttbar
-%   non-ttbar
+%   ttbar (+16.8% -18.6%)
+%   ttbar fakes
+%   other (50% up and down)
 
 % Dominant subtraction is ttbar, execpt for 1-tag OS ID where it is
 % Ztautau.
@@ -771,6 +794,20 @@ of the fake factor measurement is \SI{1.4}{\percent}.
 % Signal contamination / other background contamination
 
 % Yield table / plots of regions
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/multi_jet_uncertainties}
+
+  \caption{Impact of uncertainties on the normalisation of the
+    multi-jet estimate in the \hadhad signal region. Shape effects of
+    variations are propagated to the multi-jet estimate with the
+    exception of \texttt{FF\_STAT\_HADHADSR}. The treatment of
+    statistical uncertainties ($\dagger$) in the context of
+    likelihood-based tests will be discussed in~REFERENCE.}
+  \label{tab:multi_jet_uncertainties}
+\end{table}
 
 Systematic uncertainties are assigned to cover possible difference
 betwen OS and SS fake factors, varying the subtraction in the OS
