@@ -735,65 +735,119 @@ multi-jet estimation method used in this analysis.
 \end{figure}
 
 
-\subsubsection{Uncertainties}
+\subsubsection{Uncertainties on the multi-jet prediction in the
+  \hadhad signal region}
 
-% Statistical uncertainties
-The statistical uncertainty of the multi-jet estimate due to the
-finite number of observed events in the 2 $b$-tag OS Anti-ID region
-and the simulation-based subtraction of non-multi-jet events. The
-statistical uncertainty on the normalisation of the multi-jet
-background in the \hadhad SR is \SI{1.9}{\percent}. % This uncertainty
-% is included in the likelihood used for the statistical analysis by
-% employing the Barlow-Beeston method~\cite{barlow1993,conway2011}.
+% Uncertainty ranking:
+% ttbarFake subtraction: ~7.4%
+% Other subtraction: 5.9%
+% Extrapol: ~5.5%
+% ttbar subtraction: ~2.8%
+% Statistical: 1.9 %
+% FF statistical: 1.4%
+% OS/SS non-closure: 1.0%
+%
+% Total: ~11.5%
 
 The following systematic uncertainties are considered and propagated
 to the multi-jet estimate in the \hadhad signal region:
 \begin{itemize}
-\item The statistical uncertainty of the fake factor measurement.
+
+\item Fake factor measurement statistical uncertainties.
 
 \item Non-closure uncertainty between fake factors estimated in the 1
   $b$-tag OS and SS regions.
 
-\item Uncertainties on the extrapolation of fake factors measured in
-  the 1 $b$-tag region to 2 $b$-tag regions.
+\item Extrapolation uncertainties of fake factors measured in 1
+  $b$-tag regions to 2 $b$-tag regions.
 
-\item Uncertainties on the subtraction of \ttbar, \ttbarFakes, and
-  other non-multi-jet processes in the 2 $b$-tag OS Anti-ID region.
+\item Non-multi-jet subtraction uncertainties originating from the
+  subtraction of \ttbar, \ttbarFakes, and other processes in the 2
+  $b$-tag OS Anti-ID region.
+
 \end{itemize}
 
-% Statistical uncertainty of FF (1.4 \%)
-The effect of the statistical uncertainty on the multi-jet estimate in
-the signal region is estimated by performing $\pm 1 \sigma$ variations
-of individual bins of the fake factor measurement. The analysis is
-insensitive to variations of individual fake factor bins and thus the
-effect of all bins is combined into an overall normalisation
-uncertainty on the multi-jet estimate. The normalisation uncertainty
-on the multi-jet estimate originating from the statistical precision
-of the fake factor measurement is \SI{1.4}{\percent}.
+% FF measurement statistical uncertainty (1.4%)
+The effect of the statistical uncertainty of the fake factor
+measurement on the multi-jet estimate in the signal region is
+estimated by performing $\pm 1 \sigma$ variations of individual bins
+of the measurement. The discriminants used in this analysis are
+largely insensitive to variations of individual fake factors and thus
+their effect is combined into an overall normalisation uncertainty on
+the multi-jet estimate to reduce the number of free parameters of the
+background model. The normalisation uncertainty on the multi-jet
+prediction in the signal region is \SI{1.4}{\percent}.
 
-% Extrapolation uncertainty
-An uncertainty on the extrapolation of fake factors measured in the 1
-$b$-tag SS region to the 2 $b$-tag region is estimated by performing
-$\pm 1 \sigma$ variations of the transfer factors. The four categories
-of the transfer factor measurement are varied separately. As a
-conservative estimate of the uncertainty, transfer factors of the
-three major data collection periods are varied coherently within a
-given category of the measurement.
-
-% Transfer factor uncertainty (varying coherently all four categories)
 % OS-SS uncertainty
-%
+The non-closure uncertainty from the comparison of fake factors
+measured in the SS and OS regions is estimated by assigning the full
+difference between the central values of OS and SS fake factors as an
+uncertainty on the fake factors. The shape effect of this variation on
+multi-jet prediction in the signal region is propagated. The
+difference between OS and SS fake factors is small, thus the
+non-closure uncertainty has only a minor impat on the normalisation of
+the multi-jet estimate of \SI{1.0}{\percent}.
+
+% Extrapolation uncertainty (varying coherently for all four
+% categories)
+The uncertainty on the extrapolation of fake factors from the 1
+$b$-tag to 2 $b$-tag regions is estimated by performing variations of
+the measured transfer factors within their statistical
+uncertainty. The variations are performed separately for the four
+categories of the transfer factor measurement. As a conservative
+estimate of the uncertainty, transfer factors of the three data
+collection periods are varied coherently in a given
+category. Resultingly, the multi-jet background model has four degrees
+of freedom originating from extrapolation uncertainties and any shape
+effect of these variations is propagated to the distributions of
+interest. The combined uncertainty of these variations on the
+multi-jet normalisation in the signal region is \SI{5.5}{\percent}.
+
 % Subtraction uncertainty
 %   ttbar (+16.8% -18.6%)
 %   ttbar fakes
 %   other (50% up and down)
+Systematic uncertainties originating from the subtraction of
+non-multi-jet events in the 2 $b$-tag OS Anti-ID region are estimated
+by performing variations of the subtracted contributions from \ttbar,
+\ttbarFakes and other non-multi-jet processes, which are propagated to
+the multi-jet prediction.
 
-% Dominant subtraction is ttbar, execpt for 1-tag OS ID where it is
-% Ztautau.
+The normalisation of the subtracted \ttbar component is varied by
+$+\SI{16.8}{\percent}$ and $-\SI{18.6}{\percent}$ according to its
+modelling uncertainty. The modelling uncertainty is estimated, in
+accordance with~\Cref{sec:bkg_hadhad_ttbarfakes}
+and~\cite{ATL-PHYS-PUB-2020-023}, by performing variations of: the
+hard scatter and PS+NLO matching ($\pm\SI{6.0}{\percent}$), the parton
+shower and hadronisation ($\pm\SI{11}{\percent}$), the renormalisation
+and factorisation scales ($\substack{+9.9 \\ -9.4}\,\%$ /
+$\substack{+2.8 \\ -2.2}\,\%$), the initial- and final-state radiation
+($\substack{+0.53 \\ -0.68}\,\%$ / $\substack{+5.4 \\ -10.0}\,\%$).
 
-% Signal contamination / other background contamination
+The subtracted \ttbarFakes component...
+\todo[inline]{Continue...}
 
-% Yield table / plots of regions
+The normalisation of other non-multi-jet processes, which is a minor
+contribution (numbers? \SI{9}{\percent}) mostly originating from
+\Vjets and single top production, is varied by \SI{50}{\percent} as a
+conservative estimate and propagated to the multi-jet prediction. The
+overall uncertainty on the multi-jet prediction in the signal region
+is \SI{5.9}{\percent}.
+
+The finite number of events in the 2 $b$-tag OS Anti-ID region and the
+simulation-based subtraction of non-multi-jet processes leads to a
+statistical uncertainty of \SI{1.9}{\percent} on the multi-jet
+normalisation in the signal region.
+
+% % Statistical uncertainties
+% The statistical uncertainty of the multi-jet estimate due to the
+% finite number of observed events in the 2 $b$-tag OS Anti-ID region
+% and the simulation-based subtraction of non-multi-jet events. The
+% statistical uncertainty on the normalisation of the multi-jet
+% background in the \hadhad SR is \SI{1.9}{\percent}. % This uncertainty
+% % is included in the likelihood used for the statistical analysis by
+% % employing the Barlow-Beeston method~\cite{barlow1993,conway2011}.
+
 
 \begin{table}[htbp]
   \centering
@@ -809,8 +863,11 @@ given category of the measurement.
   \label{tab:multi_jet_uncertainties}
 \end{table}
 
+% Yield table / plots of regions
+
 Systematic uncertainties are assigned to cover possible difference
 betwen OS and SS fake factors, varying the subtraction in the OS
+
 Anti-ID region. Moreover, the fake factors are independently varied by
 their statistical uncertainty.
 
