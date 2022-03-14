@@ -4,8 +4,18 @@
 % partons at LO using the OpenLoops [67] and Comix [68] matrix-element generators. The
 % number of expected V + jets events is rescaled using the NNLO cross-sections [71].
 
-
 % Separate PS PDF?
+
+% Z+jets
+%
+% NNLO cross section: https://cds.cern.ch/record/1287902/files/ATL-COM-PHYS-2010-695.pdf
+%
+% Dagger: NLO @ 0,1,2 partons / LO @ 3,4 partons
+% (Comix~\cite{Gleisberg:2008fv},
+% \OPENLOOPS~\cite{Buccioni:2019sur,Cascioli:2011va,Denner:2016kdg})
+
+% MadGraph(v.2.7.3p3.atlas6)+Pythia8(v.244p3)+EvtGen(v.1.7.0)
+\footnotesize
 
 \begin{tabular}{lllllll}
   \toprule
@@ -13,13 +23,13 @@
   \midrule
   \multicolumn{7}{l}{\textbf{Signals}} \\
   \midrule
-  Non-resonant $\Pgluon\Pgluon \ra \PHiggs\PHiggs$ (ggF) &&&&&& NNLO FTapprox.~\cite{Grazzini:2018bsd} \\
-  Non-resonant $\Pquark\Pquark \ra \Pquark\Pquark\PHiggs\PHiggs$ (VBF) &&&&&& \\
-  Resonant $\Pgluon\Pgluon \ra \PX \ra \PHiggs\PHiggs$ &&&&&& -- \\
+  Non-resonant $\Pgluon\Pgluon \ra \PHiggs\PHiggs$ & \POWHEGBOX[v2] & \PDFforLHC[15] & NLO & \PYTHIA[8.244] && NNLO FTapprox.~\cite{Grazzini:2018bsd} \\
+  Non-resonant $\Pquark\Pquark \ra \Pquark\Pquark\PHiggs\PHiggs$ & \MGNLO[2.7.3] & \NNPDF[3.0nlo] & LO & \PYTHIA[8.244] && N$^3$LO (QCD)~\cite{Dreyer:2018qbw} \\
+  Resonant $\Pgluon\Pgluon \ra \PX \ra \PHiggs\PHiggs$ & \MGNLO[2.6.1] & \NNPDF[2.3lo] & LO & \HERWIG[7.1.3] && -- \\
   \midrule
   \multicolumn{7}{l}{\textbf{Top quark}} \\
   \midrule
-  \ttbar &&&&&& \\
+  \ttbar & \POWHEGBOX[v2]~\cite{Frixione:2007nw,Nason:2004rx,Frixione:2007vw,Alioli:2010xd} & \NNPDF[3.0nlo]~\cite{Ball:2014uwa} & NLO & \PYTHIA[8.230]~\cite{Sjostrand:2014zea} & A14~\cite{ATL-PHYS-PUB-2014-021} & NNLO+NNLL~\cite{Beneke:2011mq,Cacciari:2011hy,Baernreuther:2012ws,Czakon:2012zr,Czakon:2012pz,Czakon:2013goa,Czakon:2011xx} \\
   Single \Ptop ($s$-channel) &&&&&& NLO~\cite{stopxsec} \\
   Single \Ptop ($t$-channel) &&&&&& NLO~\cite{stopxsec} \\
   Single \Ptop ($\PW\Ptop$-channel) &&&&&& NNLO approx.~\cite{stopxsec} \\
@@ -28,8 +38,8 @@
   \midrule
   \multicolumn{7}{l}{\textbf{Vector boson + jets}} \\
   \midrule
-  $\PW \ra \Plepton \Pnu$              & \SHERPA{2.2.1} & \NNPDF{3.0NNLO} & NLO? & \SHERPA{2.2.1}      & Default       & NNLO \\
-  $\PZ / \Pphoton^{*} \ra \ell\ell$    & \SHERPA{2.2.1} & \NNPDF{3.0NNLO} & NLO? & \SHERPA{2.2.1}      & Default       & NNLO \\
+  $\PW \ra \Plepton \Pnu$              & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}      & Default       & NNLO~\cite{Anastasiou:2003ds} \\
+  $\PZ / \Pphoton^{*} \ra \ell\ell$    & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}      & Default       & NNLO~\cite{Anastasiou:2003ds} \\
   \midrule
   \multicolumn{7}{l}{\textbf{Diboson}} \\
   \midrule
@@ -41,6 +51,7 @@
   $V \PHiggs \ra $ &&&&&& \\
   \bottomrule
 \end{tabular}
+
 
 %%% Local Variables:
 %%% mode: latex
