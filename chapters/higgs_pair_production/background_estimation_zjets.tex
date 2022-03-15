@@ -6,70 +6,126 @@
 % Differential cross-sections for Z + b-jets at 13 TeV
 % https://link.springer.com/content/pdf/10.1007/JHEP07(2020)044.pdf
 
+The production of \PZ bosons in association with jets is estimated
+using events simulated by \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}
+interfaced to the matrix element generators
+\OPENLOOPS~\cite{Buccioni:2019sur,Cascioli:2011va,Denner:2016kdg} and
+Comix~\cite{Gleisberg:2008fv} (cf.\
+\Cref{sec:data_and_simulation}). The matrix elements are provided at
+NLO for final states with up to two partons and at LO for final states
+with up to four partons. The inclusive cross section is normalised to
+NNLO~\cite{Anastasiou:2003ds}.
 
+% Why IS HF difficult?
+The requirement of two \btagged jets in the signal regions of this
+analysis leads to an enhancement of \PZ bosons produced in association
+with quarks of heavy flavour (HF). Modelling of this background using
+simulation is difficult due to its sensitivity to the flavour
+structure of the proton and the modelling of gluons splitting to
+bottom or charm quarks.
 
+The nominal prediction of the \SHERPA[2.2.1] configuration used for
+event generation, which employs a 5 flavour number scheme for the
+treatment of $b$-quarks in the proton, is known to underestimate the
+cross section of $\PZ + b$-jets by \SIrange{10}{30}{\percent}
+depending on the considered phase
+space~\cite{STDM-2017-38}. Therefore, the normalisation of the
+background originating from the production of \PZ bosons in
+association with heavy flavour quarks, herafter referred to as \ZHF,
+is measured in a dedicated control region targeting $Z + b$-jets and
+extrapolated to the signal regions.
 
+The approach of estimating the \ZHF background, which is described in
+the following, is adopted with few modifications from the previous
+publication in this channel~\cite{HIGG-2016-16-witherratum} which
+built on the findings of searches for $VH$
+($\PHiggs \to \bbbar$)~\cite{HIGG-2016-29}.
 
-See Boson plus jets pubnote: \cite{ATL-PHYS-PUB-2017-006}
-
-Z+HF is sensitive to the b quark PDF (5FNS) and gluon to bb splitting.
-
-
-\todo[inline]{This should probably be in the ``Event Selection'' part.}
-% From VH->bb evidence paper:
-% Events containing W or Z bosons with jets (V +jets) were simulated using the Sherpa
-% 2.2.1 generator. Matrix elements were calculated for up to two partons at NLO and four
-% partons at LO using the OpenLoops [67] and Comix [68] matrix-element generators. The
-% number of expected V + jets events is rescaled using the NNLO cross-sections [71].
-
-
-Previous analyses of ATLAS using \SHERPA{2.2.1} suggest that the
-simulation underestimates the Z+jets cross section in final states
-with \Pbottom-quarks.
-
-The simulation of~$\PZ+\text{jets}$ with \SHERPA{2.2.1} employs a 5
-flavour number scheme and is known to not accurately predict the
-normalisation in regions enhanced in heavy flavour
-jets~\cite{HIGG-2016-29,STDM-2017-38}\todo{None of these sources claim
-  there is mismodelling.}. It frequently underestimates the
-contribution of $\PZ$ + heavy flavour jets by
-\SIrange{20}{30}{\percent} depending on the region of
-phase-space. Thus a dedicated control region enhanced in the
-production of \PZ bosons in association with heavy flavour jets is
-included in the statistical analysis and the overall normalisation is
-extracted in the fit to data.
-
-Why is modelling of Z+HF difficult?
-
-Old bbWW paper: \cite{HDBS-2018-33}
-
+% Control region definition
 A dedicated control region is defined targeting the production of
-$\PZ \ra \Plp\Plm$ in association with heavy flavour jets, where \Pl
-can be electrons or muons. The data for this CR is selected using
-single- and di-lepton triggers of same flavour leptons. Depending on
-the instantaneous luminosity, the offline thresholds on the leading
-object \pT are \SIrange{25}{27}{\GeV} for single-\Pe,
-\SIrange{21}{28}{\GeV} for single-\Pmu. The di-\Pe triggers uses
-symmetric \pT thresholds on both the leading and subleading ranging
-from \SIrange{13}{25}{\GeV}. The di-\Pmu triggers have asymmetric
-thresholds with the leading muon requiring having at least
-\SIrange{19}{24}{\GeV} \pT and the subleading one at least
-\SI{10}{\GeV}. The offline \pT thresholds ensure that the threshold at
-HLT is exceeded by \SI{1}{\GeV} for electrons and at least
-\SI{5}{\percent} for muons.
+$\PZ \ra \Plp\Plm$ ($\ell = e , \mu$) in association with jets
+originating from heavy flavour quarks. The definitions of
+reconstructed objects used in the control region follow the
+description in~\Cref{sec:object_reconstruction}.
 
-Events are selected to be consistent with the decay of a \PZ boson
-into electrons or muons in association with $b$-tagged jets. The
-leptons are required to be of same flavour but with opposite electric
-charges. The dilepton invariant mass is required to be within
-$\SI{75}{\GeV} < \mll < \SI{110}{\GeV}$.
+Events are recorded using single-lepton triggers and di-lepton
+triggers selecting same flavour lepton pairs. Thresholds are applied
+to the \pT of electrons and muons after offline reconstruction,
+ensuring that the triggers are fully efficient. Depending on the run
+conditions of the LHC, the offline thresholds on the \pT-leading
+object range from \SIrange{25}{27}{\GeV} for single-electron and
+\SIrange{21}{28}{\GeV} for single-muon triggers. Events selected by
+di-electron triggers need to pass symmetric \pT thresholds on both the
+leading and sub-leading electron ranging from
+\SIrange{13}{25}{\GeV}. Di-muon triggers use asymmetric thresholds of
+\SIrange{19}{24}{\GeV} on the leading and \SI{10}{\GeV} on the
+sub-leading muon.
 
-Additionally, to ensure orthogonality with signal regions of searches
-for Higgs boson pair production in final states with $\bbbar\Plp\Plm$
-and \MET, the invariant di-$b$-jet mass is required to
-be~$\mBB \not\in [\SI{40}{\GeV}, \SI{210}{\GeV}]$.
+All events are required to be consistent with the decay of a \PZ boson
+into electrons or muons in association with $b$-tagged jets. Leptons
+are required to be of same flavour with opposite electric charges and
+the di-lepton invariant mass needs to
+fulfil~$\SI{75}{\GeV} < \mll < \SI{110}{\GeV}$. Exactly two \btagged
+jets are required with invariant di-$b$-jet mass
+fulfilling~$\mBB \not\in [\SI{40}{\GeV}, \SI{210}{\GeV}]$. The
+requirement on \mBB had to be introduced to ensure orthogonality with
+the signal regions of searches for Higgs boson pair production in
+final states with $\bbbar\Plp\Plm + \pTmissAbs$.
 
+% Labeling and fit
+% https://twiki.cern.ch/twiki/bin/view/AtlasProtected/FlavourTaggingLabeling
+Simulated \Zjets events entering the \ZHF control region are
+categorised according to a generator-level flavour label assigned to
+the \btagged jets. Reconstructed jets are labeled as either $b$, $c$,
+or \emph{light} ($l$) according to the presence of hadrons within a
+cone of $\Delta R < 0.3$ centered on the jet axis. If a $b$- or
+$c$-flavoured hadron with a transverse momentum of at least
+\SI{5}{\GeV} is found within the cone, the jet is labeled $b$ or $c$,
+respectively. When a hadron matches multiple jets the ambiguity is
+resolved by giving precedence to the closest jet in $\Delta R$. Jets
+that are not matched to any $b$- or $c$-flavoured hadrons are labeled
+as \emph{light}.
+
+\Zjets events can be partitioned according to the flavour label of the
+two \btagged jets into six categories: $Z + bb$, $Z + bc$, $Z + cc$,
+$Z + bl$, $Z + cl$, and $Z + ll$. Contributions from $Z + bb$,
+$Z + bc$, and $Z + cc$, where both $b$-jet candidates are matched to
+hadrons of heavy flavour at generator-level, are combined and
+collectively referred to as \ZHF. The remaining \Zjets events with at
+least one \emph{light}-jet are combined into a sample referred to as
+\ZLF.
+
+The pre-fit event yield in the \ZHF control region is given
+in~\Cref{tab:zcr_prefit_yields} employing the previously introduced
+categorisation of \Zjets events. Events entering the control region
+predominately originate from \ZHF or top quark pair production.
+% Only about 3% of top quark is single top
+The majority of \ZHF events originate from $Z + bb$ accounting for
+\SI{90}{\percent} of the inclusive sample.
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/zcr_prefit_yields}
+
+  \caption{Event yields in the \ZHF control region prior to the
+    likelihood fit. The \emph{Other} category summarises smaller
+    backgrounds and is largely dominated by events originating from
+    di-boson processes. The uncertainties on the event yield include
+    all experimental and systematic uncertainties (pre-fit).}
+  \label{tab:zcr_prefit_yields}
+\end{table}
+
+The \ZHF control region selects di-leptonic \ttbar
+
+% Large contribution from \ttbar (single top negligible)
+%   -> Need discriminant
+
+
+% TODO: Pre-fit yield table
 Likelihood fit of the~\mll distribution.
+
+% Included in the SR fits: Systematic uncertainties are introduced at a later stage...
 
 \begin{figure}[htbp]
   \centering
@@ -81,7 +137,9 @@ Likelihood fit of the~\mll distribution.
     region prior to the likelihood fit. The contribution of \Zjets is
     sub-divided into cases where both $b$-jet candidates are matched
     to heavy flavour quarks ($b$ or $c$) and cases where at most one
-    candidate is matched to heavy flavour quarks at generator-level.}
+    candidate is matched to heavy flavour quarks at
+    generator-level. The uncertainty includes all statistical and
+    systematic uncertainties.}
   \label{fig:zcr_mll_prefit}
 \end{figure}
 
