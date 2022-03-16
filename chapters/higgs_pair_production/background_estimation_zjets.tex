@@ -39,7 +39,8 @@ The approach of estimating the \ZHF background, which is described in
 the following, is adopted with few modifications from the previous
 publication in this channel~\cite{HIGG-2016-16-witherratum} which
 built on the findings of searches for $VH$
-($\PHiggs \to \bbbar$)~\cite{HIGG-2016-29}.
+($\PHiggs \to \bbbar$)~\cite{HIGG-2016-29}.\todo{Cite Petar's thesis
+  here.}
 
 % Control region definition
 A dedicated control region is defined targeting the production of
@@ -70,7 +71,8 @@ jets are required with invariant di-$b$-jet mass
 fulfilling~$\mBB \not\in [\SI{40}{\GeV}, \SI{210}{\GeV}]$. The
 requirement on \mBB had to be introduced to ensure orthogonality with
 the signal regions of searches for Higgs boson pair production in
-final states with $\bbbar\Plp\Plm + \pTmissAbs$.
+final states with $\bbbar\Plp\Plm + \pTmissAbs$. After the \ZHF
+control region selection, the electron and muon channels are combined.
 
 % Labeling and fit
 % https://twiki.cern.ch/twiki/bin/view/AtlasProtected/FlavourTaggingLabeling
@@ -104,46 +106,81 @@ The majority of \ZHF events originate from $Z + bb$ accounting for
 \SI{90}{\percent} of the inclusive sample.
 
 \begin{table}[htbp]
-  \centering
+  \begin{subtable}{0.5\textwidth}
+    \centering
 
-  \input{tables/zcr_prefit_yields}
+    \input{tables/zcr_prefit_yields}
 
-  \caption{Event yields in the \ZHF control region prior to the
-    likelihood fit. The \emph{Other} category summarises smaller
-    backgrounds and is largely dominated by events originating from
-    di-boson processes. The uncertainties on the event yield include
-    all experimental and systematic uncertainties (pre-fit).}
-  \label{tab:zcr_prefit_yields}
+    \subcaption{Pre-fit}
+    \label{tab:zcr_prefit_yields}
+  \end{subtable}
+  \begin{subtable}{0.5\textwidth}
+    \centering
+
+    \input{tables/zcr_postfit_yields}
+
+    \subcaption{Post-fit (\ZHF control region only)}
+    \label{tab:zcr_postfit_yields}
+  \end{subtable}
+
+  \caption{Event yields in the \ZHF control region before (a) and
+    after (b) the likelihood fit restricted to the control region. The
+    \emph{Other} category summarises smaller backgrounds and is
+    largely dominated by events originating from di-boson
+    processes. The uncertainties on the event yield include all
+    experimental and systematic uncertainties.}
+  \label{tab:zcr_yields}
 \end{table}
 
-The \ZHF control region selects di-leptonic \ttbar
-
-% Large contribution from \ttbar (single top negligible)
-%   -> Need discriminant
-
-
-% TODO: Pre-fit yield table
-Likelihood fit of the~\mll distribution.
-
-% Included in the SR fits: Systematic uncertainties are introduced at a later stage...
+The \ZHF control region selects many events originating from
+di-leptonic \ttbar. Since the normalisations of both \ttbar and \ZHF
+are extracted from a fit to data, a discriminant distinguishing
+between both components is required. The invariant di-lepton mass,
+\mll, which is shown prior to the likelihood fit
+in~\Cref{fig:zcr_mll_prefit}, is used for this purpose. A discrepancy
+attributable to the normalisation of the \ZHF background can be
+observed when comparing the pre-fit prediction with the observed data.
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.55\textwidth]{zhfcr/Region_BMin0_incJet1_Y2015_DZllbbCR_T2_L2_distmLL_J2_Prefit_fixed}
+
+  \begin{subfigure}{.485\textwidth}
+    \includegraphics[width=\textwidth]{zhfcr/Region_BMin0_incJet1_Y2015_DZllbbCR_T2_L2_distmLL_J2_Prefit_fixed}
+    \subcaption{Pre-fit}
+    \label{fig:zcr_mll_prefit}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{.485\textwidth}
+    \includegraphics[width=\textwidth]{zhfcr/Region_BMin0_incJet1_Y2015_DZllbbCR_T2_L2_distmLL_J2_GlobalFit_conditionnal_mu0_fixed}
+    \subcaption{Post-fit (\ZHF control region only)}
+    \label{fig:zcr_mll_postfit}
+  \end{subfigure}
 
   \caption{Distribution of the invariant di-lepton mass for the
     combination of electron- and muon-channel in the Z+HF control
-    region prior to the likelihood fit. The contribution of \Zjets is
-    sub-divided into cases where both $b$-jet candidates are matched
-    to heavy flavour quarks ($b$ or $c$) and cases where at most one
-    candidate is matched to heavy flavour quarks at
-    generator-level. The uncertainty includes all statistical and
-    systematic uncertainties.}
-  \label{fig:zcr_mll_prefit}
+    region before (a) and after (b) the likelihood fit restricted to
+    the control region. The contribution of \Zjets is sub-divided into
+    cases where both $b$-jet candidates are matched to heavy flavour
+    quarks ($b$ or $c$) and cases where at most one candidate is
+    matched to heavy flavour quarks at generator-level. The
+    uncertainty includes all statistical and systematic
+    uncertainties.}
 \end{figure}
 
-
+% ATLAS_norm_Zhf    1.3856e+00 +/-  1.19e-01
+% ATLAS_norm_ttbar    9.7290e-01 +/-  3.92e-02
+% Included in the SR fits: Systematic uncertainties are introduced at a later stage...
+The \ZHF control region is later included in the likelihood fits that
+are used to extract the \HH signals. Systematic uncertainties and the
+combined fit model will be discussed in detail
+in~\Cref{sec:uncertainties,sec:statistical_analysis}. Perform fits of
+the control region only, the normalisation factors of \ZHF
+are~\num{1.39 \pm 0.12} and for \ttbar~\num{0.97 \pm 0.04}. The
+abundance of di-leptonic \ttbar in the control region provides
+stringent constraints on the normalisation of the \ttbar background in
+addition to constraining \ZHF. The post-fit event yields and \mll
+distribution is shown in~\Cref{tab:zcr_postfit_yields}
+and~\Cref{fig:zcr_mll_postfit}, respectively.
 
 %%% Local Variables:
 %%% mode: latex
