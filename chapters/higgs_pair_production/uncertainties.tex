@@ -1,9 +1,52 @@
 \section{Systematic Uncertainties}
 \label{sec:uncertainties}
 
-\todo[inline]{Split in experimental \& theory uncertainties}
-
 \subsection{Experimental Uncertainties}
+
+The uncertainty on the integrated luminosity of the $pp$ collision
+dataset collected with the ATLAS detector in the period from 2015 to
+2018 is \SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This
+uncertainty is applied to all processes estimated using simulation
+that are normalised using theory cross sections.
+
+An uncertainty on the reweighting of the instantaneous luminosity
+distribution used for the pile-up overlay in simulated data to match
+the conditions observed in data is considered.
+
+Electrons... \cite{EGAM-2018-01} \\
+scale, resolution \\
+Efficiencies of ID, Isolation, Reconstruction and trigger
+
+Muons... \cite{MUON-2018-03} \\
+Scale, (Sagitta) , (ID? MS?) \\
+Efficiencies: Reconstruction, Isolation, Trigger
+
+Taus... \\
+Scale \\
+Efficiencies: Reconstruction, Identification, eVeto (taus and
+electrons reconstructed as taus), Trigger
+
+
+Jets... (JVT, JES, JER) -- JES/JER \cite{JETM-2018-05}
+
+MET
+
+Flavour tagging... \cite{FTAG-2018-01}
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/uncertainties_experimental}
+
+  \caption{Table of CP uncertainties}
+  \label{tab:bla}
+\end{table}
+
+
+\subsubsection{Experimental?}
+
+
+\todo[inline]{Split in experimental \& theory uncertainties}
 
 \todo[inline]{Experimental: Jets -- JES, JER, JVT, b-tag}
 
@@ -29,6 +72,8 @@ estimated as follows:
 \end{align*}
 where the relative acceptance times efficiency is calculated for the nominal
 $\mathcal{R}_\text{nom}$ and variation $\mathcal{R}_\text{var}$.
+
+\subsection{Modelling Uncertainties}
 
 \todo[inline]{Theory: PDF, \alphas, renormalization and factorization scale}
 
