@@ -13,9 +13,16 @@ An uncertainty on the reweighting of the instantaneous luminosity
 distribution used for the pile-up overlay in simulated data to match
 the conditions observed in data is considered.
 
-Electrons... \cite{EGAM-2018-01} \\
-scale, resolution \\
-Efficiencies of ID, Isolation, Reconstruction and trigger
+Uncertainties on electrons in simulation are obtained from dedicated
+calibration measurements~\cite{EGAM-2018-01,TRIG-2018-05} updated for
+the \SI{139}{\per\femto\barn} Run~2 dataset. The electron energy scale
+and resolution is measured in $Z \to e^+e^-$ events and propagated to
+predictions by shifting and smearing momenta of electrons in
+simulation. Uncertainties on the calibration of electron
+reconstruction, identification, isolation, and trigger efficiencies in
+simulation are obtained from measurements in~$J/\psi \to e^+e^-$ and
+$Z \to e^+e^-$ events and applied as alternative weights to electrons
+in simulation.
 
 Muons... \cite{MUON-2018-03} \\
 Scale, (Sagitta) , (ID? MS?) \\
@@ -25,7 +32,6 @@ Taus... \\
 Scale \\
 Efficiencies: Reconstruction, Identification, eVeto (taus and
 electrons reconstructed as taus), Trigger
-
 
 Jets... (JVT, JES, JER) -- JES/JER \cite{JETM-2018-05}
 
@@ -42,6 +48,9 @@ Flavour tagging... \cite{FTAG-2018-01}
   \label{tab:bla}
 \end{table}
 
+\todo[inline]{Where applicable, dedicated calibrations for ATLAS fast
+  simulation are used.}
+
 
 \subsubsection{Experimental?}
 
@@ -57,23 +66,61 @@ Flavour tagging... \cite{FTAG-2018-01}
 \todo[inline]{Experimental: MET -- all momentum / energy uncertainties are
   propagated to MET, additionally uncertainties related to the soft term}
 
+
 \subsection{Extrapolation Uncertainties}
 
-The normalization for the Z+HF and \ttbar backgrounds are measured in dedicated
-control regions. An extrapolation uncertainty from the control region A to a
-signal region B is estimated using the relative acceptance times efficiency between A and B:
+The normalisation of the \ZHF and \ttbar backgrounds are measured in
+the combined likelihood fit of control and signal regions. Constraints
+on the normalisation of the \ZHF background primarily originate from
+the dedicated control region. The \ttbar background normalisation is
+constrained in the signal region of the \lephad SLT channel and the
+\ZHF control region. Due to the determination of the normalisation of
+these processes from the fit to data, any uncertainties on the overall
+normalisation of these processes, for example uncertainties on cross
+sections or the integrated luminosity, are omitted. However, the use
+of these normalisation measurements in other regions requires the
+introduction of extrapolation uncertainties.
+
+The extrapolation uncertainties are defined with respect to a
+reference region, for which the \ZHF control region is chosen due to
+its ability to constrain the normalisation of both the \ZHF and the
+\ttbar backgrounds. In all other regions extrapolation uncertainties
+are assigned to account for uncertainties in the modelling of the
+background process with simulation relative to the reference
+region. This introduces additional degrees of freedom in the
+background model by allowing the normalisation factors of background
+templates in other regions to deviate from the reference normalisation
+within their constraints given by the uncertainty.
+
+Consider the general case of a physics process that is estimated using
+simulation and normalised by a fit to observed data in two analysis
+regions A and B, with region A being defined as the reference
+region. The probability of an event originating from the process to be
+recorded in a given region is given by the product of the acceptance
+and efficiency, \AccTimesEff, for a given region. The nominal result
+of the simulation predicts how \AccTimesEff relates between both
+regions and one can define the ratio
 \begin{align*}
-  \mathcal{R} = \frac{ \left( \mathcal{A} \times \varepsilon \right)_\text{B}}{\left( \mathcal{A} \times \varepsilon \right)_\text{A}} = \frac{ \left( \sigma \times \mathcal{A} \times \varepsilon \right)_\text{B}}{\left( \sigma \times \mathcal{A} \times \varepsilon \right)_\text{A}} = \frac{N_\text{B}}{N_\text{A}}
+  \mathcal{R} = \frac{(\AccTimesEff)_{\text{B}}}{(\AccTimesEff)_{\text{A}}} \,\text{,}
 \end{align*}
-The uncertainty on $\mathcal{R}$ is used as an extrapolation uncertainty and is
-estimated as follows:
+which will be be referred to as the \emph{relative acceptance} between
+regions A and B, herafter. Uncertainties on the relative acceptance
+have to be assigned as uncertainties on the normalisation of the
+background in region B\todo{Can one show this mathematically?}. These
+uncertainties are estimated by performing variations of the background
+prediction, for example by using alternative generator setups, and
+estimating a relative uncertainty on~$\mathcal{R}$ according to
 \begin{align*}
-  \text{Relative extrapolation uncertainty} = \frac{\mathcal{R}_\text{var} - \mathcal{R}_\text{nom}}{\mathcal{R}_\text{nom}}
+  X = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})}
 \end{align*}
-where the relative acceptance times efficiency is calculated for the nominal
-$\mathcal{R}_\text{nom}$ and variation $\mathcal{R}_\text{var}$.
+
+% The shape effects of uncertainties are estimated separately and will be described in~\Cref{sec:modelling_uncertainties}.
+
+% Note: Sign is important -> direction of effect when correlating systematics
+
 
 \subsection{Modelling Uncertainties}
+\label{sec:modelling_uncertainties}
 
 \todo[inline]{Theory: PDF, \alphas, renormalization and factorization scale}
 
