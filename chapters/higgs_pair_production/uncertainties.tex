@@ -3,6 +3,8 @@
 
 \subsection{Experimental Uncertainties}
 
+\todo[inline]{Make this a 'description'?}
+
 The uncertainty on the integrated luminosity of the $pp$ collision
 dataset collected with the ATLAS detector in the period from 2015 to
 2018 is \SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This
@@ -67,7 +69,8 @@ Flavour tagging... \cite{FTAG-2018-01}
   propagated to MET, additionally uncertainties related to the soft term}
 
 
-\subsection{Extrapolation Uncertainties}
+\subsection{Uncertainties on the relative acceptance of \ZHF and
+  \ttbar between regions}
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in
 the combined likelihood fit of control and signal regions. Constraints
@@ -76,54 +79,135 @@ the dedicated control region. The \ttbar background normalisation is
 constrained in the signal region of the \lephad SLT channel and the
 \ZHF control region. Due to the determination of the normalisation of
 these processes from the fit to data, any uncertainties on the overall
-normalisation of these processes, for example uncertainties on cross
-sections or the integrated luminosity, are omitted. However, the use
-of these normalisation measurements in other regions requires the
-introduction of extrapolation uncertainties.
+normalisation of these processes, for example uncertainties on the
+total cross sections, are omitted. Uncertainties changing the relative
+acceptance of \ZHF or \ttbar events between regions have to be
+considered instead. These uncertainties will be referred to as
+\emph{relative acceptance uncertainties}, hereafter. The approach
+outlined in the following was originally adopted by the previously
+published analysis in this channel~\cite{HIGG-2016-16-witherratum}
+from searches and measurements of
+$VH$~($H\to\bbbar$)~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
 
-The extrapolation uncertainties are defined with respect to a
+Relative acceptance uncertainties are defined with respect to a
 reference region, for which the \ZHF control region is chosen due to
 its ability to constrain the normalisation of both the \ZHF and the
-\ttbar backgrounds. In all other regions extrapolation uncertainties
-are assigned to account for uncertainties in the modelling of the
-background process with simulation relative to the reference
-region. This introduces additional degrees of freedom in the
-background model by allowing the normalisation factors of background
-templates in other regions to deviate from the reference normalisation
-within their constraints given by the uncertainty.
+\ttbar backgrounds. In non-reference regions normalisation
+uncertainties are assigned to \ZHF and \ttbar backgrounds to account
+for uncertainties in the modelling of the acceptance of these
+processes in simulation relative to the reference region. This
+introduces additional degrees of freedom in the background model by
+allowing the normalisation factors of the background templates in
+non-reference regions to deviate from the normalisation factors in the
+reference region within constraints.
 
-Consider the general case of a physics process that is estimated using
+Consider a general case of a physics process that is estimated using
 simulation and normalised by a fit to observed data in two analysis
 regions A and B, with region A being defined as the reference
 region. The probability of an event originating from the process to be
 recorded in a given region is given by the product of the acceptance
-and efficiency, \AccTimesEff, for a given region. The nominal result
-of the simulation predicts how \AccTimesEff relates between both
-regions and one can define the ratio
+and efficiency, $(\AccTimesEff)_{\text{R}}$, in a given region~R. The
+nominal result of the simulation predicts how \AccTimesEff relates
+between both regions and one can define the ratio
 \begin{align*}
   \mathcal{R} = \frac{(\AccTimesEff)_{\text{B}}}{(\AccTimesEff)_{\text{A}}} \,\text{,}
 \end{align*}
 which will be be referred to as the \emph{relative acceptance} between
-regions A and B, herafter. Uncertainties on the relative acceptance
-are assigned as uncertainties on the normalisation of the background
-in region B\todo{Can one show this mathematically?}. These
-uncertainties are estimated by performing variations of the background
-prediction, for example by using alternative generator setups, and
-estimating a relative change of~$\mathcal{R}$ according to
+regions A and B. Uncertainties on the modelling of $\mathcal{R}$ in
+simulation are assigned as additional uncertainties on the
+normalisation of the background in region B\todo{Show
+  mathematically?}. These uncertainties are estimated by performing
+variations of the background prediction, for example by using
+alternative generator setups, and estimating a relative change
+of~$\mathcal{R}$ according to
 \begin{align*}
   \frac{\Delta \mathcal{R}}{\mathcal{R}} = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})} \,\text{.}
 \end{align*}
-The absolute value\footnote{When introducing multiple regions, the
-  relative sign of $\Delta \mathcal{R} / \mathcal{R}$ when comparing
-  different regions to the same reference is important when
-  correlating these uncertainties in the statistical analysis and is
-  kept to allow to consistently define the variations.} of
-$\Delta \mathcal{R} / \mathcal{R}$ is considered the extrapolation
-uncertainty.
+% This uncertainty on the relative acceptance between the the reference
+% region A and region B is included in the background model by assigning
+% a normalisation uncertainty of $\Delta \mathcal{R} / \mathcal{R}$ on
+% the background in region B.
+
+% The absolute value\footnote{When introducing multiple regions, the
+%   relative sign of $\Delta \mathcal{R} / \mathcal{R}$ when comparing
+%   different regions to the same reference is important when
+%   correlating these uncertainties in the statistical analysis and is
+%   kept to allow to consistently define the variations.} of
+% $\Delta \mathcal{R} / \mathcal{R}$ is considered the extrapolation
+% uncertainty.
 
 % The shape effects of uncertainties are estimated separately and will be described in~\Cref{sec:modelling_uncertainties}.
 
 % Note: Sign is important -> direction of effect when correlating systematics
+
+The relative acceptance uncertainties are estimated separately for the
+\ZHF and \ttbar backgrounds for all three signal regions (\hadhad,
+\lephad SLT, \lephad LTT) with respect to the \ZHF control
+region. Uncertainties originating from the same source are assumed to
+be fully correlated.
+
+The following variations of the modelling of the \ZHF using simulation
+are considered. The approach follows prescriptions developed by the
+ATLAS collaboration:
+\begin{description}
+\item[Renormalisation and factorisation scales] Six variations of the
+  renormalisation and factorisation scales are performed using
+  internal reweighting implemented in \SHERPA[2.2.1], altering the
+  scales by factors of $\frac{1}{2}$ and $2$. The following variations
+  are considered:
+  \begin{align*}
+    \left( \frac{\muR}{\muR^{\text{nom.}}}, \frac{\muF}{\muF^{\text{nom.}}} \right) \in
+    \left\{ (\tfrac{1}{2}, \tfrac{1}{2}), (\tfrac{1}{2}, 1), (1, \tfrac{1}{2}), (1, 2), (2, 1), (2, 2) \right\} \,\text{,}
+  \end{align*}
+  where $\muR^{\text{nom.}}$ and $\muF^{\text{nom.}}$ are the nominal
+  values of the scales.
+
+\item[Resummation scale] The resummation scale \todo{more explanation}
+  is varied by factors $\frac{1}{2}$ and 2. The variation is provided
+  as a reweighting of event weights by the
+  collaboration~\cite{anders:2017} and is parametrised in the
+  transverse momentum of the \PZ boson and the number of jets
+  (anti-$k_{t}$ $R = 0.4$ with $\pT > \SI{20}{\GeV}$) at truth-level.
+
+\item[Multi-jet merging] The \Vjets samples produced with
+  \SHERPA[2.2.1] uses matrix elements of NLO accuracy for up to two
+  jets and LO for up to four jets. The different jet multiplicities
+  are merged using an extended CKKW
+  algorithm~\cite{Catani:2001cc,Hoeche:2009rj}. The merging
+  scale\footnote{What does it mean?}, which is a parameter of the
+  algorithm, is varied from \SI{20}{\GeV} to \SI{30}{\GeV} and
+  \SI{15}{\GeV}, respectively.
+
+  The variations of the merging scale are also provided as weights to
+  be applied to the nominal event generation following the approach
+  for variations of the resummation scale.
+
+\item[PDF+\alphas] Uncertainties on the \NNPDF[3.0nnlo] set of
+  PDFs~\cite{Ball:2014uwa} are evaluated using 100 replica sets
+  provided through the \textsc{LHAPDF6}
+  library~\cite{Buckley:2014ana}. Similarly, the \NNPDF[3.0nnlo] PDF
+  sets with $\alphas(Q^2=\mZ^2) = 0.117$ and $0.119$ are compared to
+  the nominal value of $0.118$. Finally, an uncertainty from the
+  choice of PDF set is considered by comparing with two alternative
+  PDF sets, \MMHT[nnlo68cl]~\cite{Harland-Lang:2014zoa} and
+  \CT[14nnlo]~\cite{Dulat:2015mca}.
+
+\item[Alternative generator and parton shower] The nominal prediction
+  obtained with \SHERPA[2.2.1] (\OPENLOOPS and Comix) is compared to
+  an alternative setup using~\MGNLO[2.2.2]~\cite{Alwall:2014hca} for
+  the calculation of LO matrix elements interfaced
+  to~\PYTHIA[8.186]~\cite{Sjostrand:2007gs} for parton showering.
+
+\end{description}
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/uncertainties_zhf_extrapol}
+
+  \caption{Uncertainties on \ZHF with reference \ZHF control region.}
+  \label{tab:uncertainties_zhf_extrapol}
+\end{table}
 
 
 \begin{table}[htbp]
@@ -135,14 +219,7 @@ uncertainty.
   \label{tab:uncertainties_ttbar_extrapol}
 \end{table}
 
-\begin{table}[htbp]
-  \centering
 
-  \input{tables/uncertainties_zhf_extrapol}
-
-  \caption{Uncertainties on \ZHF with reference \ZHF control region.}
-  \label{tab:uncertainties_zhf_extrapol}
-\end{table}
 
 
 \subsection{Modelling Uncertainties}
