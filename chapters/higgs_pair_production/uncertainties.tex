@@ -120,9 +120,10 @@ normalisation of the background in region B\todo{Show
 variations of the background prediction, for example by using
 alternative generator setups, and estimating a relative change
 of~$\mathcal{R}$ according to
-\begin{align*}
+\begin{align}
   \frac{\Delta \mathcal{R}}{\mathcal{R}} = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})} \,\text{.}
-\end{align*}
+  \label{eq:relative_acceptance_uncertainty}
+\end{align}
 % This uncertainty on the relative acceptance between the the reference
 % region A and region B is included in the background model by assigning
 % a normalisation uncertainty of $\Delta \mathcal{R} / \mathcal{R}$ on
@@ -150,16 +151,16 @@ The following variations of the modelling of the \ZHF using simulation
 are considered. The approach follows prescriptions developed by the
 ATLAS collaboration:
 \begin{description}
-\item[Renormalisation and factorisation scales] Six variations of the
-  renormalisation and factorisation scales are performed using
+\item[Factorisation and renormalisation scales] Six variations of the
+factorisation and renormalisation scales are performed using
   internal reweighting implemented in \SHERPA[2.2.1], altering the
   scales by factors of $\frac{1}{2}$ and $2$. The following variations
   are considered:
   \begin{align*}
-    \left( \frac{\muR}{\muR^{\text{nom.}}}, \frac{\muF}{\muF^{\text{nom.}}} \right) \in
+    \left( \frac{\muF}{\muF^{\text{nom.}}}, \frac{\muR}{\muR^{\text{nom.}}} \right) \in
     \left\{ (\tfrac{1}{2}, \tfrac{1}{2}), (\tfrac{1}{2}, 1), (1, \tfrac{1}{2}), (1, 2), (2, 1), (2, 2) \right\} \,\text{,}
   \end{align*}
-  where $\muR^{\text{nom.}}$ and $\muF^{\text{nom.}}$ are the nominal
+  where $\muF^{\text{nom.}}$ and $\muR^{\text{nom.}}$ are the nominal
   values of the scales.
 
 \item[Resummation scale] The resummation scale \todo{more explanation}
@@ -199,6 +200,7 @@ ATLAS collaboration:
   to~\PYTHIA[8.186]~\cite{Sjostrand:2007gs} for parton showering.
 
 \end{description}
+These variations are used to estimate the relative acceptance uncertainties for the \ZHF background according to \Cref{eq:relative_acceptance_uncertainty} and are summarised in \Cref{tab:uncertainties_zhf_extrapol}.
 
 \begin{table}[htbp]
   \centering
