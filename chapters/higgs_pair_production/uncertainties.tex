@@ -69,7 +69,12 @@ Flavour tagging... \cite{FTAG-2018-01}
   propagated to MET, additionally uncertainties related to the soft term}
 
 
-\subsection{Uncertainties on the relative acceptance of \ZHF and
+\subsection{Theory uncertainties}%
+\label{sec:modelling_uncertainties}%
+\label{sec:theory_uncertainties}
+
+
+\subsubsection{Uncertainties on the relative acceptance of \ZHF and
   \ttbar between regions}
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in
@@ -200,35 +205,73 @@ developed by the ATLAS collaboration:
   to~\PYTHIA[8.186]~\cite{Sjostrand:2007gs} for parton showering.
 
 \end{description}
-These variations are used to estimate the relative acceptance
-uncertainties for the \ZHF background according to
-\Cref{eq:relative_acceptance_uncertainty} and are summarised in
-\Cref{tab:uncertainties_zhf_extrapol}.
+These variations are used to estimate uncertainties on the relative
+acceptance for the \ZHF background in all
+three signal regions according
+to~\Cref{eq:relative_acceptance_uncertainty}. The relative acceptance
+uncertainties in the signal regions are summarised
+in~\Cref{tab:uncertainties_zhf_extrapol}.
 
 \begin{table}[htbp]
   \centering
 
   \input{tables/uncertainties_zhf_extrapol}
 
-  \caption{Uncertainties on \ZHF with reference \ZHF control region.}
+  \caption{Relative acceptance uncertainties on the \ZHF background
+    ($Z+bb$, $Z+bc$, $Z+cc$) in all three signal regions. The relative
+    sign of the effect of variations between the signal regions is
+    indicated by the ``$\pm$'' and ``$\mp$'' prefixes. The total
+    uncertainty is given for illustration of the size of the
+    uncertainties only.}
   \label{tab:uncertainties_zhf_extrapol}
+  \todo[inline]{Use S column type}
 \end{table}
 
+The \lephad SLT signal region selection is the closest to the \ZHF
+control region, resulting in a small relative acceptance uncertainty
+of approximately \SI{9}{\percent}. The \hadhad and \lephad LTT
+channels deviate yielding an uncertainty of approximately
+\SI{16}{\percent}. In all cases the dominant sources of uncertainty
+are the scale variations as well as the comparison with
+\MGNLO+\PYTHIA[8]\todo{This needs some work}.
+
+The relative acceptance uncertainties are similarly estimated for the
+floating \ttbar background in all three signal regions. The
+prescriptions documented in~\cite{ATL-PHYS-PUB-2020-023} are used to
+estimate modelling uncertainties for the nominal configuration of the
+\ttbar simulation using \POWHEGBOX[v2]+\PYTHIA[8]. A revised version
+of these prescriptions were previously presented
+in~\Cref{sec:bkg_hadhad_ttbarfakes} as part of the \ttbarFakes scale
+factor measurement. In the following, a brief description highlighting
+the differences is given.
+
+The uncertainty of the modelling of the hard interaction (parton
+shower) is evaluated by replacing \POWHEGBOX[v2] (\PYTHIA[8]) with
+\MGNLO (\HERWIG[7]) for the matrix element (parton shower)
+generation. Explicit variations of the factorisation scale,
+renormalisation scale, and \PYTHIA[8] damping parameter, $\hdamp$, are
+omitted. They are included in the variation of initial-state radiation
+instead. The uncertainty on the final-state radiation is estimated
+using interal reweighting in \PYTHIA[8] to change the scale used for
+FSR branchings. Similarly, uncertainties on the PDF set and the value
+of \alphas is estimated using internal reweighting.
+
+The relative acceptance uncertainty for \ttbar backgrounds in the
+three signal regions (relative to the \ZHF control region) is given
+in~\Cref{tab:uncertainties_ttbar_extrapol}.
 
 \begin{table}[htbp]
   \centering
 
   \input{tables/uncertainties_ttbar_extrapol}
 
-  \caption{Uncertainties on \ttbar with reference \ZHF control region.}
+  \caption{Relative acceptance uncertainties on the \ttbar background
+    in all three signal regions. The relative sign of the effect of
+    variations between the signal regions is indicated by the
+    ``$\pm$'' and ``$\mp$'' prefixes. The total uncertainty is given
+    for illustration of the size of the uncertainties only.}
   \label{tab:uncertainties_ttbar_extrapol}
 \end{table}
-
-
-
-
-\subsection{Modelling Uncertainties}
-\label{sec:modelling_uncertainties}
 
 \todo[inline]{Theory: PDF, \alphas, renormalization and factorization scale}
 
