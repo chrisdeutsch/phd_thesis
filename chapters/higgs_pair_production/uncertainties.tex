@@ -103,26 +103,20 @@ ratio
 which will be be referred to as the \emph{relative acceptance} between
 regions A and B. Uncertainties on the modelling of $\mathcal{R}$ in
 simulation are assigned as uncertainties on the normalisation of the
-background process in region B\todo{Show mathematically?}. They are
-estimated by performing variations of the background prediction, for
-example using alternative generator configurations, and estimating a
-relative change of~$\mathcal{R}$ according to
+background process in region B\todo{Show mathematically?} (no
+additional uncertainties are assigned in the reference region).They
+are estimated by performing variations of the background prediction,
+for example using alternative generator configurations, and estimating
+a relative change of~$\mathcal{R}$ according to
 \begin{align}
   \frac{\Delta \mathcal{R}}{\mathcal{R}} = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})} \,\text{.}
   \label{eq:relative_acceptance_uncertainty}
 \end{align}
 The relative acceptance is used to define the uncertainties due to the
-cancellation effects of variations leading to the same relative change
-in \AccTimesEff in both regions, which corresponds to an overall
-change in normalisation and can be absorbed in the normalisation
-factor of the process.
-
-The relative acceptance uncertainties are defined using the \ZHF
-control region as a reference, which provides good constraints on both
-the \ZHF and \ttbar backgrounds. The uncertainties are derived for
-both backgrounds and in all three signal regions separately and are
-assigned as normalisation uncertianties on \ZHF and \ttbar backgrounds
-in the signal regions.
+cancellation of the effect of variations leading to the same relative
+change in \AccTimesEff in both regions, which corresponds to an
+overall change in normalisation and can be absorbed in the
+normalisation factor of the process.
 
 % This uncertainty on the relative acceptance between the the
 % reference region A and region B is included in the background model
@@ -141,21 +135,27 @@ in the signal regions.
 
 % Note: Sign is important -> direction of effect when correlating systematics
 
-The relative acceptance uncertainties are estimated separately for the
-\ZHF and \ttbar backgrounds for all three signal regions (\hadhad,
-\lephad SLT, \lephad LTT) with respect to the \ZHF control
-region. Uncertainties originating from the same source are assumed to
-be fully correlated.
+The relative acceptance uncertainties are defined using the \ZHF
+control region as a reference, which provides good constraints on both
+the \ZHF and \ttbar backgrounds. The uncertainties are estimated
+separately for the \ZHF and \ttbar backgrounds in all three signal
+regions (\hadhad, \lephad SLT, \lephad LTT). Uncertainties originating
+from the same source are assumed to be fully correlated between all
+analysis regions.
 
-The following variations of the modelling of the \ZHF using simulation
-are considered. The approach follows prescriptions developed by the
-ATLAS collaboration:
+The relative acceptance uncertainties originating from the modelling
+of the \ZHF background in simulation are estimated by performing
+variations of the event generation process. A brief description of the
+variations is given in the following, reproducing the prescriptions
+developed by the ATLAS collaboration:
 \begin{description}
+
 \item[Factorisation and renormalisation scales] Six variations of the
-factorisation and renormalisation scales are performed using
-  internal reweighting implemented in \SHERPA[2.2.1], altering the
-  scales by factors of $\frac{1}{2}$ and $2$. The following variations
-  are considered:
+  factorisation and renormalisation scales are performed using
+  internal reweighting implemented in
+  \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}, altering the scales by
+  factors of $\frac{1}{2}$ and $2$. The following variations are
+  considered:
   \begin{align*}
     \left( \frac{\muF}{\muF^{\text{nom.}}}, \frac{\muR}{\muR^{\text{nom.}}} \right) \in
     \left\{ (\tfrac{1}{2}, \tfrac{1}{2}), (\tfrac{1}{2}, 1), (1, \tfrac{1}{2}), (1, 2), (2, 1), (2, 2) \right\} \,\text{,}
@@ -163,40 +163,40 @@ factorisation and renormalisation scales are performed using
   where $\muF^{\text{nom.}}$ and $\muR^{\text{nom.}}$ are the nominal
   values of the scales.
 
-\item[Resummation scale] The resummation scale \todo{more explanation}
-  is varied by factors $\frac{1}{2}$ and 2. The variation is provided
-  as a reweighting of event weights by the
-  collaboration~\cite{anders:2017} and is parametrised in the
-  transverse momentum of the \PZ boson and the number of jets
-  (anti-$k_{t}$ $R = 0.4$ with $\pT > \SI{20}{\GeV}$) at truth-level.
+\item[Resummation scale] The scale of the resummation of soft gluon
+  emissions in the \SHERPA parton shower is varied by factors
+  $\frac{1}{2}$ and 2. Variations of the resummation scale are
+  provided in parametrised form with respect to the default \SHERPA
+  configuration in~\cite{anders:2017}.
 
-\item[Multi-jet merging] The \Vjets samples produced with
+\item[Multi-jet merging scale] The simulation of \Zjets events with
   \SHERPA[2.2.1] uses matrix elements of NLO accuracy for up to two
-  jets and LO for up to four jets. The different jet multiplicities
-  are merged using an extended CKKW
-  algorithm~\cite{Catani:2001cc,Hoeche:2009rj}. The merging
-  scale\footnote{What does it mean?}, which is a parameter of the
-  algorithm, is varied from \SI{20}{\GeV} to \SI{30}{\GeV} and
-  \SI{15}{\GeV}, respectively.
-
-  The variations of the merging scale are also provided as weights to
-  be applied to the nominal event generation following the approach
-  for variations of the resummation scale.
+  and LO for up to four partons. The multi-parton matrix elements are
+  merged with the parton shower using an extension of the CKKW
+  algorithm~\cite{Catani:2001cc,Hoeche:2009rj,Hoeche:2012yf}. The
+  characteristic scale~$Q_{\text{cut}}$ of the multi-jet merging
+  algorithm is varied from its nominal value of
+  $Q_{\text{cut}} = \SI{20}{\GeV}$ to \SI{15}{\GeV} and
+  \SI{30}{\GeV}~\cite{anders:2017}. These variations are provided,
+  following the approach for the resummation scale, in parametrised
+  form in~\cite{anders:2017}.
+  %\cite{ATLAS:2021yza}
 
 \item[PDF+\alphas] Uncertainties on the \NNPDF[3.0nnlo] set of
   PDFs~\cite{Ball:2014uwa} are evaluated using 100 replica sets
-  provided through the \textsc{LHAPDF6}
-  library~\cite{Buckley:2014ana}. Similarly, the \NNPDF[3.0nnlo] PDF
-  sets with $\alphas(Q^2=\mZ^2) = 0.117$ and $0.119$ are compared to
-  the nominal value of $0.118$. Finally, an uncertainty from the
-  choice of PDF set is considered by comparing with two alternative
-  PDF sets, \MMHT[nnlo68cl]~\cite{Harland-Lang:2014zoa} and
+  provided through the \textsc{LHAPDF6} library~\cite{Buckley:2014ana}
+  and implemented using internal reweighting in \SHERPA. The
+  uncertainty on \alphas propagated by comparing \NNPDF[3.0nnlo] PDF
+  sets with $\alphas(\mZ^2) = 0.117$ and $0.119$ with the nominal set
+  using a value of $0.118$. Finally, an uncertainty on the choice of
+  PDF set is estimated by comparing with two alternative PDF sets
+  \MMHT[nnlo68cl]~\cite{Harland-Lang:2014zoa} and
   \CT[14nnlo]~\cite{Dulat:2015mca}.
 
-\item[Alternative generator and parton shower] The nominal prediction
-  obtained with \SHERPA[2.2.1] (\OPENLOOPS and Comix) is compared to
-  an alternative setup using~\MGNLO[2.2.2]~\cite{Alwall:2014hca} for
-  the calculation of LO matrix elements interfaced
+\item[Alternative generator and parton shower] The prediction of
+  \Zjets with the default configuration of \SHERPA[2.2.1] is compared
+  to an alternative setup using~\MGNLO[2.2.2]~\cite{Alwall:2014hca}
+  for the calculation of the hard interaction at LO interfaced
   to~\PYTHIA[8.186]~\cite{Sjostrand:2007gs} for parton showering.
 
 \end{description}
