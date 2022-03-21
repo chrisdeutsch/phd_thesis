@@ -273,18 +273,54 @@ in~\Cref{tab:uncertainties_ttbar_extrapol}.
   \label{tab:uncertainties_ttbar_extrapol}
 \end{table}
 
-\todo[inline]{Theory: PDF, \alphas, renormalization and factorization scale}
 
-\todo[inline]{Theory: simualted processes not normalized in data \ra
-  uncertainties on theory xsec is applied}
 
-\todo[inline]{Theory: V+jets -- resummation, CKKW matching}
+\subsubsection{Signal modelling uncertainties: SM $HH$}
 
-\todo[inline]{Theory: \ttbar -- ME, PS, ISR, FSR -- Generally good
-  modelling in bulk of phase space but can be problematic in tails /
-  phase space corners.}
 
-\todo[inline]{Theory: Signal -- ?}
+% CROSS SECTION
+
+ggF:
+
+Cross section at NNLO \FTapprox (only when doing a signal strength measurement)
+
+PDF+\alphas uncertainty of \SI{\pm 3.0}{\percent}~\cite{LHCHWGHH}\\
+
+Scale and \mtop scheme uncertainty of $^{+6\%}_{-23\%}$~\cite{Baglio:2020wgt}.
+
+
+
+
+
+VBF:
+
+N$^3$LO
+
+Scale $^{+0.03\%}_{-0.04\%}$~\cite{LHCHWGHH}
+
+PDF+\alphas~\SI{\pm 2.1}{\percent}~\cite{LHCHWGHH}
+
+
+% normSys("THEO_XS_SCALE_VBFSMHH", 1-0.0004, 1+0.0003, {"hhttbbVBFSM"});
+% normSys("THEO_XS_PDFalphas_VBFSMHH", 0.021, {"hhttbbVBFSM"});
+
+
+% ACCEPTANCE
+
+% ggF =====================================================
+%              hadhad          lephad SLT      lephad LTT
+% PS           4.3 %           7.6 %           7.5 %
+% Scale        1.4 %           1.2 %           1.0 %
+
+% VBF =====================================================
+%              hadhad          lephad SLT      lephad LTT
+% PS           3.0 %           6.3 %           2.1 %
+% Scale        *shape          1.0 %           1.0 %
+% PDF+alphas   1.0 %           -------- negligible --------
+
+
+
+\subsubsection{Signal modelling uncertainties: BSM $X \to HH$}
 
 
 %%% Local Variables:
