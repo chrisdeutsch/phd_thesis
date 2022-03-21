@@ -76,64 +76,64 @@ The normalisation of the \ZHF and \ttbar backgrounds are measured in
 the combined likelihood fit of control and signal regions. Constraints
 on the normalisation of the \ZHF background primarily originate from
 the dedicated control region. The \ttbar background normalisation is
-constrained in the signal region of the \lephad SLT channel and the
-\ZHF control region. Due to the determination of the normalisation of
-these processes from the fit to data, any uncertainties on the overall
-normalisation of these processes, for example uncertainties on the
-total cross sections, are omitted. Uncertainties changing the relative
-acceptance of \ZHF or \ttbar events between regions have to be
-considered instead. These uncertainties will be referred to as
-\emph{relative acceptance uncertainties}, hereafter. The approach
-outlined in the following was originally adopted by the previously
-published analysis in this channel~\cite{HIGG-2016-16-witherratum}
-from searches and measurements of
-$VH$~($H\to\bbbar$)~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
+mainly constrained in the signal region of the \lephad SLT channel and
+the \ZHF control region. Due to the determination of the normalisation
+of these processes from the fit to data, any uncertainties on their
+overall normalisation, for example uncertainties on the total cross
+sections, are omitted. Uncertainties changing the relative acceptance
+of \ZHF or \ttbar events between regions have to be considered
+instead. These uncertainties will be referred to as \emph{relative
+  acceptance uncertainties}, hereafter. The approach outlined in the
+following was originally adopted by the previously published analysis
+in this channel~\cite{HIGG-2016-16-witherratum} from searches and
+measurements of $VH$~($H\to\bbbar$)
+production~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
 
-Relative acceptance uncertainties are defined with respect to a
-reference region, for which the \ZHF control region is chosen due to
-its ability to constrain the normalisation of both the \ZHF and the
-\ttbar backgrounds. In non-reference regions normalisation
-uncertainties are assigned to \ZHF and \ttbar backgrounds to account
-for uncertainties in the modelling of the acceptance of these
-processes in simulation relative to the reference region. This
-introduces additional degrees of freedom in the background model by
-allowing the normalisation factors of the background templates in
-non-reference regions to deviate from the normalisation factors in the
-reference region within constraints.
-
-Consider a general case of a physics process that is estimated using
-simulation and normalised by a fit to observed data in two analysis
+Assuming a general case of a background process that is estimated
+using simulation and normalised by a fit to data in two analysis
 regions A and B, with region A being defined as the reference
-region. The probability of an event originating from the process to be
-recorded in a given region is given by the product of the acceptance
-and efficiency, $(\AccTimesEff)_{\text{R}}$, in a given region~R. The
-nominal result of the simulation predicts how \AccTimesEff relates
-between both regions and one can define the ratio
+region. In this case, the probability of an event to be selected in a
+given region~R is given by the product of acceptance and efficiency,
+$(\AccTimesEff)_{\text{R}}$, for this region. The simulation predicts
+how \AccTimesEff relates between both regions and one can define the
+ratio
 \begin{align*}
   \mathcal{R} = \frac{(\AccTimesEff)_{\text{B}}}{(\AccTimesEff)_{\text{A}}} \,\text{,}
 \end{align*}
 which will be be referred to as the \emph{relative acceptance} between
 regions A and B. Uncertainties on the modelling of $\mathcal{R}$ in
-simulation are assigned as additional uncertainties on the
-normalisation of the background in region B\todo{Show
-  mathematically?}. These uncertainties are estimated by performing
-variations of the background prediction, for example by using
-alternative generator setups, and estimating a relative change
-of~$\mathcal{R}$ according to
+simulation are assigned as uncertainties on the normalisation of the
+background process in region B\todo{Show mathematically?}. They are
+estimated by performing variations of the background prediction, for
+example using alternative generator configurations, and estimating a
+relative change of~$\mathcal{R}$ according to
 \begin{align}
   \frac{\Delta \mathcal{R}}{\mathcal{R}} = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})} \,\text{.}
   \label{eq:relative_acceptance_uncertainty}
 \end{align}
-% This uncertainty on the relative acceptance between the the reference
-% region A and region B is included in the background model by assigning
-% a normalisation uncertainty of $\Delta \mathcal{R} / \mathcal{R}$ on
-% the background in region B.
+The relative acceptance is used to define the uncertainties due to the
+cancellation effects of variations leading to the same relative change
+in \AccTimesEff in both regions, which corresponds to an overall
+change in normalisation and can be absorbed in the normalisation
+factor of the process.
+
+The relative acceptance uncertainties are defined using the \ZHF
+control region as a reference, which provides good constraints on both
+the \ZHF and \ttbar backgrounds. The uncertainties are derived for
+both backgrounds and in all three signal regions separately and are
+assigned as normalisation uncertianties on \ZHF and \ttbar backgrounds
+in the signal regions.
+
+% This uncertainty on the relative acceptance between the the
+% reference region A and region B is included in the background model
+% by assigning a normalisation uncertainty of
+% $\Delta \mathcal{R} / \mathcal{R}$ on the background in region B.
 
 % The absolute value\footnote{When introducing multiple regions, the
-%   relative sign of $\Delta \mathcal{R} / \mathcal{R}$ when comparing
-%   different regions to the same reference is important when
-%   correlating these uncertainties in the statistical analysis and is
-%   kept to allow to consistently define the variations.} of
+% relative sign of $\Delta \mathcal{R} / \mathcal{R}$ when comparing
+% different regions to the same reference is important when
+% correlating these uncertainties in the statistical analysis and is
+% kept to allow to consistently define the variations.} of
 % $\Delta \mathcal{R} / \mathcal{R}$ is considered the extrapolation
 % uncertainty.
 
@@ -200,7 +200,10 @@ factorisation and renormalisation scales are performed using
   to~\PYTHIA[8.186]~\cite{Sjostrand:2007gs} for parton showering.
 
 \end{description}
-These variations are used to estimate the relative acceptance uncertainties for the \ZHF background according to \Cref{eq:relative_acceptance_uncertainty} and are summarised in \Cref{tab:uncertainties_zhf_extrapol}.
+These variations are used to estimate the relative acceptance
+uncertainties for the \ZHF background according to
+\Cref{eq:relative_acceptance_uncertainty} and are summarised in
+\Cref{tab:uncertainties_zhf_extrapol}.
 
 \begin{table}[htbp]
   \centering
