@@ -344,6 +344,9 @@ implemented as a shape uncertainty for later statistical evaluation.
   \label{tab:theory_uncertainty_signal}
 \end{table}
 
+\todo[inline]{Acceptance uncertainties are assumed to be fully
+  correlated across channels but uncorrelated across production
+  modes.}
 
 \subsubsection{Signal modelling uncertainties: BSM $X \to HH$}
 
@@ -374,33 +377,26 @@ points of \mX are linearly interpolated
 ($\mX > \SI{1000}{\GeV}$) to estimate uncertainties for signal masses
 for which no alternative samples were produced.\todo{Table? Figure?}
 
-Uncertainties from factorisation and renormalisation scales, as well
-as from PDF+\alphas are evaluated using a generator-level analysis for
-two mass points with $\mX = \SI{500}{\GeV}$ and \SI{1000}{\GeV}.
-
-
+Uncertainties from factorisation and renormalisation scales, and from
+PDF+\alphas are evaluated at generator-level for two mass points with
+$\mX = \SI{500}{\GeV}$ and \SI{1000}{\GeV} after approximating the
+selections applied in the analysis. The uncertainties were found to be
+negligible compared to the parton shower uncertainties and are
+therefore omitted.
 
 An additional uncertainty is assigned in the \hadhad and \lephad LTT
-channels due to the lack of calibrations of \tauhadvis trigger
-efficiencies when using ATLAS fast calorimeter simulation~CITATION.
-
-
-due to the use of fast calorimeter simulation~CITATION
-
-An additional uncertainty is assigned on the modelling of \tauhadvis
-triggers
-
-
-
-Fast simulation (up to 1 TeV): hadhad and LTT
-
-
-
-
-Scale uncertainties: Negligible
-
-PDF+alphas: negligible
-
+channels to signal samples using fast simulation with
+\textsc{ATLFAST-II}~\cite{SOFT-2010-01}. The efficiency of \tauhadvis
+triggers was found to deviate between full and fast simulation,
+without dedicated calibrations of \tauhadvis trigger efficiencies in
+fast simulation being available. An uncertainty is estimated by
+comparing the acceptance between full and fast simulation for a
+benchmark sample at a mass of \SI{400}{\GeV}. The acceptance predicted
+using fast simulation is \SI{6.5}{\percent} (\SI{3.6}{\percent})
+larger than in full simulation for the \hadhad (\lephad LTT) signal
+region. The difference is assigned as an additional uncertainty in
+both channels for all mass points simulated using \textsc{ATLFAST-II}
+(i.e.\ $\mX \leq \SI{1000}{\GeV}$).
 
 %%% Local Variables:
 %%% mode: latex
