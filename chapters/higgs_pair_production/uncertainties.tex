@@ -73,6 +73,8 @@ Flavour tagging... \cite{FTAG-2018-01}
 \label{sec:modelling_uncertainties}%
 \label{sec:theory_uncertainties}
 
+\todo[inline]{Write Intro: Introduce what is meant with ``acceptance'', i.e.\ \AccTimesEff.}
+
 
 \subsubsection{Uncertainties on the relative acceptance of \ZHF and
   \ttbar between regions}
@@ -344,6 +346,60 @@ implemented as a shape uncertainty for later statistical evaluation.
 
 
 \subsubsection{Signal modelling uncertainties: BSM $X \to HH$}
+
+Uncertainties on the acceptance of BSM \HH production via scalar
+resonances are estimated for the choice of parton shower program,
+factorisation and renormalisation scales, and PDF+\alphas. The
+uncertainties are calculated for a subset of all mass points
+considered in the statistical analysis and subsequently extrapolated
+to the full set.
+
+The acceptance uncertainty from the choice of parton shower program is
+estimated by replacing the default setup using \HERWIG[7.1.3] with
+\PYTHIA[8.235] for signals with six different masses:
+\begin{align*}
+  \mX / \si{\GeV} \in \left\{ 251, 260, 280, 400, 500, 1000
+\right\} \,\text{.}
+\end{align*}
+The uncertainty is estimated by comparing the acceptance of
+signal-like events, which for this purpose are defined as events
+exceeding the 15-th percentile of the PNN score distribution for the
+default event generation setup, between both parton shower
+programs. This approach is taken due to large changes in acceptance of
+(background-like) signal events at low PNN score to which this search
+is not sensitive, thus avoiding an inflation of the parton shower
+uncertainty at high PNN score. The uncertainties evaluated at six
+points of \mX are linearly interpolated
+($\SI{251}{\GeV} < \mX < \SI{1000}{\GeV}$) and extrapolated
+($\mX > \SI{1000}{\GeV}$) to estimate uncertainties for signal masses
+for which no alternative samples were produced.\todo{Table? Figure?}
+
+Uncertainties from factorisation and renormalisation scales, as well
+as from PDF+\alphas are evaluated using a generator-level analysis for
+two mass points with $\mX = \SI{500}{\GeV}$ and \SI{1000}{\GeV}.
+
+
+
+An additional uncertainty is assigned in the \hadhad and \lephad LTT
+channels due to the lack of calibrations of \tauhadvis trigger
+efficiencies when using ATLAS fast calorimeter simulation~CITATION.
+
+
+due to the use of fast calorimeter simulation~CITATION
+
+An additional uncertainty is assigned on the modelling of \tauhadvis
+triggers
+
+
+
+Fast simulation (up to 1 TeV): hadhad and LTT
+
+
+
+
+Scale uncertainties: Negligible
+
+PDF+alphas: negligible
 
 
 %%% Local Variables:
