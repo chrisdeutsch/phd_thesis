@@ -15,11 +15,10 @@
 % \OPENLOOPS~\cite{Buccioni:2019sur,Cascioli:2011va,Denner:2016kdg})
 
 % MadGraph(v.2.7.3p3.atlas6)+Pythia8(v.244p3)+EvtGen(v.1.7.0)
-\footnotesize
 
 \begin{tabular}{lllllll}
   \toprule
-  Process                             & ME Generator    & ME PDF         & ME Order & PS and Hadronisation & UE Model Tune & Cross-Section Order \\
+  Process                             & ME Generator    & ME PDF         & ME Order & PS and Hadronisation & Tune & Cross-Section Order \\
   \midrule
   \multicolumn{7}{l}{\textbf{Signals}} \\
   \midrule
@@ -38,17 +37,22 @@
   \midrule
   \multicolumn{7}{l}{\textbf{Vector boson + jets}} \\
   \midrule
-  $\PW \ra \Plepton \Pnu$              & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}~\cite{Schumann:2007mg}      & Default       & NNLO~\cite{Anastasiou:2003ds} \\
-  $\PZ / \Pphoton^{*} \ra \ell\ell$    & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}~\cite{Schumann:2007mg}      & Default       & NNLO~\cite{Anastasiou:2003ds} \\
+  $\PW \ra \Plepton \Pnu$          & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}~\cite{Schumann:2007mg} & \SHERPA & NNLO~\cite{ATL-PHYS-PUB-2017-006,Anastasiou:2003ds} \\
+  $\PZ / \Pphoton^{*} \ra \ell\ell$ & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}~\cite{Schumann:2007mg} & \SHERPA & NNLO~\cite{ATL-PHYS-PUB-2017-006,Anastasiou:2003ds} \\
   \midrule
   \multicolumn{7}{l}{\textbf{Diboson}} \\
   \midrule
-  $\PW\PW$, $\PW\PZ$, $\PZ\PZ$ & \SHERPA{2.2.1} & ?               & & \SHERPA{2.2.1}      & ?             & ? \\
+  $\PW\PW$, $\PW\PZ$, $\PZ\PZ$ & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^*$ & \SHERPA{2.2.1} & \SHERPA & NLO$^*$ (Generator) \\
   \midrule
   \multicolumn{7}{l}{\textbf{Single Higgs boson}} \\
   \midrule
-  $\PHiggs \ra $ &&&&&& \\
-  $V \PHiggs \ra $ &&&&&& \\
+  $H \to \tautau$ (ggF) & \POWHEGBOX[v2] & \NNPDF[30nnlo] & NNLO & \PYTHIA[8.212] & \AZNLO & N$^3$LO (NLO EWK) \\
+  $H \to \tautau$ (VBF) & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO & \PYTHIA[8.230]  & \AZNLO & NNLO approx.\ (NLO EWK) \\
+  $H \to \tautau$ ($qq \to VH$)  & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO (+1jet)  (LO$^\ddag$)& \PYTHIA[8.212] (8.244$^\ddag$) & \AZNLO & NNLO (NLO EWK) \\
+  $H \to \tautau$ ($gg \to ZH$) & \POWHEGBOX[v2] & \NNPDF[30nlo] & LO & \PYTHIA[8.244] & \AZNLO & \\
+  $H \to \bbbar$ ($qq \to VH$)   & \POWHEGBOX[v2] & \NNPDF[30nlo] & & \PYTHIA[8.212]  & \AZNLO & \\
+  $H \to \bbbar$ ($gg \to ZH$)  & \POWHEGBOX[v2] & \NNPDF[30nlo] & LO & \PYTHIA[8.212]  & \AZNLO & \\
+  $\ttbar H$ ($H \to \text{any}$)    & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO & \PYTHIA[8.230]  & A14 & NLO (NLO EWK) \\
   \bottomrule
 \end{tabular}
 

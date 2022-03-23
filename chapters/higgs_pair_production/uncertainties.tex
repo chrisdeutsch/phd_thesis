@@ -75,6 +75,8 @@ Flavour tagging... \cite{FTAG-2018-01}
 
 \todo[inline]{Write Intro: Introduce what is meant with ``acceptance'', i.e.\ \AccTimesEff.}
 
+\todo[inline]{Uncertainties on Higgs branching ratios}
+
 
 \subsubsection{Uncertainties on the relative acceptance of \ZHF and
   \ttbar between regions}
@@ -174,7 +176,7 @@ developed by the ATLAS collaboration:
   emissions in the \SHERPA parton shower is varied by factors
   $\frac{1}{2}$ and 2. Variations of the resummation scale are
   provided in parametrised form with respect to the default \SHERPA
-  configuration in~\cite{anders:2017}.
+  configuration in Ref.~\cite{anders:2017}.
 
 \item[Multi-jet merging scale] The simulation of \Zjets events with
   \SHERPA[2.2.1] uses matrix elements of NLO accuracy for up to two
@@ -186,7 +188,7 @@ developed by the ATLAS collaboration:
   $Q_{\text{cut}} = \SI{20}{\GeV}$ to \SI{15}{\GeV} and
   \SI{30}{\GeV}~\cite{anders:2017}. These variations are provided,
   following the approach for the resummation scale, in parametrised
-  form in~\cite{anders:2017}.
+  form in Ref.~\cite{anders:2017}.
   %\cite{ATLAS:2021yza}
 
 \item[PDF+\alphas] Uncertainties on the \NNPDF[3.0nnlo] set of
@@ -239,7 +241,7 @@ are the scale variations as well as the comparison with
 
 The relative acceptance uncertainties are similarly estimated for the
 floating \ttbar background in all three signal regions. The
-prescriptions documented in~\cite{ATL-PHYS-PUB-2020-023} are used to
+prescriptions documented in Ref.~\cite{ATL-PHYS-PUB-2020-023} are used to
 estimate modelling uncertainties for the nominal configuration of the
 \ttbar simulation using \POWHEGBOX[v2]+\PYTHIA[8]. A revised version
 of these prescriptions were previously presented
@@ -275,6 +277,50 @@ in~\Cref{tab:uncertainties_ttbar_extrapol}.
   \label{tab:uncertainties_ttbar_extrapol}
 \end{table}
 
+\subsubsection{``Shape'' uncertainties for \ZHF and \ttbar}
+
+
+\subsubsection{Modelling uncertainties on minor backgrounds}
+
+For all minor backgrounds cross section and acceptance uncertainties
+are considered. All uncertainties are assumed to only affect the
+normalisation but not the shape.  \todo[inline]{Many of the minor
+  background uncertainties have been taken from VHbb.}  A brief
+description of the uncertainties on minor backgrounds is given in the
+following:
+\begin{description}
+
+\item[$Z + (bl, cl, ll)$] A normalisation uncertainty of
+  \SI{5}{\percent} is assigned to account for the uncertainty on the
+  predicted cross section of \Zjets production at
+  NNLO~\cite{Anastasiou:2003ds} used to normalise the sample. An
+  acceptance uncertainty of \SI{23}{\percent} is adopted from
+  Ref.~\cite{HIGG-2018-51}.
+
+\item[$W + \text{jets}$] A \SI{5}{\percent} cross section uncertainty
+  is assigned to the NNLO cross section
+  prediction~\cite{Anastasiou:2003ds}. A normalisation uncertainty of
+  \SI{37}{\percent} is assigned in the \lephad channels adopted from
+  Ref.~\cite{HIGG-2018-51}. This uncertainty is inflated to
+  \SI{50}{\percent} in the \hadhad channel since \Wjets is not part of
+  the data-driven \faketauhadvis estimation.
+
+\item[Diboson] Normalisation uncertainties of \SI{20}{\percent},
+  \SI{26}{\percent}, and \SI{25}{\percent} are applied to $ZZ$, $WZ$,
+  and $WW$ production, respectively. These uncertainties are adopted
+  from Ref.~\cite{HIGG-2018-51}.
+
+\item[Single top]
+
+\item[Single SM $H$ production] Cross section uncertainties for all SM
+  $H$ production processes are assigned according to the
+  recommendations outlined in Ref.~\cite{deFlorian:2016spz}.
+
+  Uncertainties on the branching ratios of
+  $\PHiggs \to \tautau$ and $\PHiggs \to \bbbar$ for
+  $m_{\PHiggs} = \SI{125.0}{\GeV}$ are assigned where applicable and
+  taken from Ref.~\cite{deFlorian:2016spz}.
+\end{description}
 
 
 \subsubsection{Signal modelling uncertainties: SM $HH$}
@@ -293,6 +339,9 @@ N$^3$LO, the scale uncertainties
 are~$^{+0.03\%}_{-0.04\%}$~\cite{LHCHWGHH} and the uncertainty from
 PDF and \alphas is~\SI{\pm 2.1}{\percent}~\cite{LHCHWGHH}.
 % Scale and scheme of the virtual top mass (\mtop scheme uncertainty)
+
+\todo[inline]{Uncertainties on the branching ratio of
+  $H \to \tautau / \bbbar$.}
 
 Uncertainties on the signal acceptances are derived in all signal
 regions by performing variations of the signal generation process. The
@@ -394,9 +443,12 @@ comparing the acceptance between full and fast simulation for a
 benchmark sample at a mass of \SI{400}{\GeV}. The acceptance predicted
 using fast simulation is \SI{6.5}{\percent} (\SI{3.6}{\percent})
 larger than in full simulation for the \hadhad (\lephad LTT) signal
-region. The difference is assigned as an additional uncertainty in
-both channels for all mass points simulated using \textsc{ATLFAST-II}
-(i.e.\ $\mX \leq \SI{1000}{\GeV}$).
+region. Kinematic and MVA input variables are compared between fast
+and full simulation showing no significant deviations in the shapes of
+their distributions. Therefore, the difference in acceptance is
+assigned as an additional normalisation uncertainty in the \hadhad and
+\lephad LTT channel for all mass points simulated using
+\textsc{ATLFAST-II}~(i.e.\ $\mX \leq \SI{1000}{\GeV}$).
 
 %%% Local Variables:
 %%% mode: latex
