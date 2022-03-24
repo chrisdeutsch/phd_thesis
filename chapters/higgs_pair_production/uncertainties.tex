@@ -310,7 +310,31 @@ following:
   and $WW$ production, respectively. These uncertainties are adopted
   from Ref.~\cite{HIGG-2018-51}.
 
-\item[Single top]
+\item[Single top] Uncertainties on the cross section used to normalise
+  the predictions are taken from Ref.~\cite{stopxsec}. A
+  \SI{20}{\percent} acceptance uncertainty is assigned to the minor
+  contribution of single top produced in $s$- and $t$-channel diagrams
+  which is adopted from Ref.~\cite{HIGG-2018-51}.
+
+  Acceptance uncertainties are derived in the analysis phase space for
+  $tW$ production which is the dominant source of single top
+  background in this analysis. An uncertainty on the NLO+PS matching
+  and the choice of parton shower program is estimated separately by
+  comparison with an alternative simulation setups using \MGNLO[2.6.2]
+  and \HERWIG[7], respectively. Uncertainties on PDF+\alphas and the
+  amount of initial- and final-state radiation are obtained by
+  reweighting of the nominal simulation result. Finally, an
+  uncertainty on the treatment of the removal of interference between
+  $tW$ (at NLO) and \ttbar production is estimated by performing
+  MC-to-MC comparisons of the nominal diagram removal and diagram
+  subtraction schemes~\cite{Frixione:2008yi}.
+
+  The total acceptance uncertainty of $tW$ production is
+  \SI{34}{\percent}, \SI{14}{\percent}, \SI{23}{\percent} in the
+  \hadhad, \lephad SLT, and \lephad LTT signal region,
+  respectively. The shape effect of the FSR and $tW$-$\ttbar$
+  interference uncertainties on the MVA discriminants are propagated
+  using suitable parametrisations.
 
 \item[Single SM $H$ production] Uncertainties on the total cross
   section of the SM $H$ production modes considered as backgrounds are
@@ -325,14 +349,14 @@ following:
 
   Acceptance uncertainties in the phase space selected by the analysis
   are derived for single Higgs boson backgrounds produced via $ZH$,
-  $\ttbar H$ for both $H \to \tautau$ and $H \to \bbbar$. These
-  uncertainties are derived by varying the parton shower program
-  (\HERWIG[7]), PDF+\alphas, and factorisation / renormalisation
-  scales and are assigned as normalisation uncertainties when
-  non-negligible. Additionally for $\ttbar H$ production, an
-  uncertainty on the NLO+PS matching is assigned by comparing with an
-  alternative generator (\MGNLO[v2.6.0]), and uncertainties targeting
-  the modelling of initial- and final-state radiation.
+  $\ttbar H$ for both $H \to \tautau$ and $H \to \bbbar$. They are
+  derived by varying the parton shower program (\HERWIG[7]),
+  PDF+\alphas, and factorisation / renormalisation scales and assigned
+  as normalisation uncertainties when non-negligible. Additionally for
+  $\ttbar H$ production, an uncertainty on the NLO+PS matching is
+  assigned by comparing with an alternative generator
+  (\MGNLO[v2.6.0]), and uncertainties targeting the modelling of
+  initial- and final-state radiation.
 
   Uncertainties on the branching ratios of $\PHiggs \to \tautau$ and
   $\PHiggs \to \bbbar$ for $m_{\PHiggs} = \SI{125.0}{\GeV}$ are
@@ -340,6 +364,14 @@ following:
   Ref.~\cite{deFlorian:2016spz}.
 \end{description}
 
+
+\begin{table}[htbp]
+  \centering
+
+  \missingfigure[figwidth=0.75\textwidth]{Summary of bkg uncertainties.}
+
+  \caption{Summary of minor background uncertainties}
+\end{table}
 
 \subsubsection{Signal modelling uncertainties: SM $HH$}
 
