@@ -312,14 +312,32 @@ following:
 
 \item[Single top]
 
-\item[Single SM $H$ production] Cross section uncertainties for all SM
-  $H$ production processes are assigned according to the
-  recommendations outlined in Ref.~\cite{deFlorian:2016spz}.
+\item[Single SM $H$ production] Uncertainties on the total cross
+  section of the SM $H$ production modes considered as backgrounds are
+  assigned according to the recommendations in
+  Ref.~\cite{deFlorian:2016spz} ($m_{H} = \SI{125.0}{\GeV}$). An
+  acceptance uncertainty of \SI{100}{\percent} is assigned to
+  $H \to \tautau$ backgrounds produced via ggF, VBF, and $WH$ entering
+  the signal regions to account for difficulties in the modelling of
+  final states in association with heavy flavour
+  quarks\todo{Citation?} and the lack of a dedicated background
+  estimate for single Higgs bosons production via $bbH$.
 
-  Uncertainties on the branching ratios of
-  $\PHiggs \to \tautau$ and $\PHiggs \to \bbbar$ for
-  $m_{\PHiggs} = \SI{125.0}{\GeV}$ are assigned where applicable and
-  taken from Ref.~\cite{deFlorian:2016spz}.
+  Acceptance uncertainties in the phase space selected by the analysis
+  are derived for single Higgs boson backgrounds produced via $ZH$,
+  $\ttbar H$ for both $H \to \tautau$ and $H \to \bbbar$. These
+  uncertainties are derived by varying the parton shower program
+  (\HERWIG[7]), PDF+\alphas, and factorisation / renormalisation
+  scales and are assigned as normalisation uncertainties when
+  non-negligible. Additionally for $\ttbar H$ production, an
+  uncertainty on the NLO+PS matching is assigned by comparing with an
+  alternative generator (\MGNLO[v2.6.0]), and uncertainties targeting
+  the modelling of initial- and final-state radiation.
+
+  Uncertainties on the branching ratios of $\PHiggs \to \tautau$ and
+  $\PHiggs \to \bbbar$ for $m_{\PHiggs} = \SI{125.0}{\GeV}$ are
+  assigned to the relevant processes and are taken from
+  Ref.~\cite{deFlorian:2016spz}.
 \end{description}
 
 
