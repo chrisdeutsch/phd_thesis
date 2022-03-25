@@ -38,6 +38,8 @@
   and $Z \to e^+e^-$ events and applied as alternative weights to
   electrons in simulation.
 
+  $e$-Veto efficiency.
+
 \item[Muons]
   Muons... \cite{MUON-2018-03} \\
   Scale, (Sagitta) , (ID? MS?) \\
@@ -77,9 +79,25 @@
 \label{sec:modelling_uncertainties}%
 \label{sec:theory_uncertainties}
 
-\todo[inline]{Write Intro: Introduce what is meant with ``acceptance'', i.e.\ \AccTimesEff.}
+A number of theoretical uncertainties have to be considered for signal
+and background processes that are estimated using simulation. For a
+given process these uncertainties are split, where applicable, into
+uncertainties on the cross section of the process, uncertainties on
+the acceptance of an analysis selection (e.g.\ the signal region
+selection), and uncertainties affecting acceptance in terms of the
+shape of the discriminants used for the statistical analysis in
+certain regions. With few exceptions, acceptance uncertainties on a
+given process that originate from the same source are assumed to be
+fully correlated between all analysis regions.
 
-\todo[inline]{Uncertainties on Higgs branching ratios}
+The description of theory uncertainties is divided into several parts.
+First, the treatment of uncertainties on the major \ZHF and \ttbar
+backgrounds is described, representing a special case since the cross
+section of these processes is determined from the fit to observed
+data. Subsequently, the uncertainties on all other background
+processes estimated with simulation and normalised using theoretical
+predictions are described. Finally, uncertainties on the modelling of
+the SM \HH and BSM $X \to \HH$ signals are described.
 
 
 \subsubsection{Uncertainties on the relative acceptance of \ZHF and
@@ -299,7 +317,7 @@ in~\Cref{tab:uncertainties_ttbar_extrapol}.
 % THEO_ACC_Zhf_GENERATOR
 % THEO_ACC_Zhf_SCALE
 
-\subsubsection{Modelling uncertainties on minor backgrounds}
+\subsubsection{Uncertainties on minor backgrounds}
 
 For all minor backgrounds cross section and acceptance uncertainties
 are considered. All uncertainties are assumed to only affect the
@@ -474,6 +492,8 @@ factorisation and renormalisation scales, and PDF+\alphas. The
 uncertainties are calculated for a subset of all mass points
 considered in the statistical analysis and subsequently extrapolated
 to the full set.
+
+\todo[inline]{Uncertainties on Higgs branching ratios}
 
 The acceptance uncertainty from the choice of parton shower program is
 estimated by replacing the default setup using \HERWIG[7.1.3] with
