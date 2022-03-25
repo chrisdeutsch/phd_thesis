@@ -2,13 +2,23 @@
 \label{sec:uncertainties}
 
 % In \Cref{sec:experimental_uncertainties}
-% Detector related uncertainties
-% Uncertainties related to the data-driven background estimates
+%
+% - Detector related uncertainties
+% - Uncertainties related to the data-driven background estimates
 
 % In \Cref{sec:theory_uncertainties}
-% Cross section uncertainties
-% Relative acceptance uncertainties
-% Acceptance uncertainties
+% - Cross section uncertainties
+% - Relative acceptance uncertainties
+% - Acceptance uncertainties
+
+% Uncertainties are tightly connected to the fit model thus here only
+% give the 'definitions' of the uncertainties
+
+% Additional post-processing (smoothing and pruning) steps will be
+% described with the fit model in~\Cref{sec:}.
+
+% The correlation scheme between uncertainties is further discussed
+% with the fit model.
 
 \subsection{Experimental Uncertainties}
 \label{sec:experimental_uncertainties}
@@ -84,40 +94,41 @@ and background processes that are estimated using simulation. For a
 given process these uncertainties are split, where applicable, into
 uncertainties on the cross section of the process, uncertainties on
 the acceptance of an analysis selection (e.g.\ the signal region
-selection), and uncertainties affecting acceptance in terms of the
-shape of the discriminants used for the statistical analysis in
-certain regions. With few exceptions, acceptance uncertainties on a
-given process that originate from the same source are assumed to be
-fully correlated between all analysis regions.
+selection), and uncertainties affecting the acceptance in terms of the
+shape of discriminants used for the statistical analysis. With few
+exceptions, acceptance uncertainties on a given process that originate
+from the same source are assumed to be fully correlated between all
+analysis regions.
 
 The description of theory uncertainties is divided into several parts.
 First, the treatment of uncertainties on the major \ZHF and \ttbar
 backgrounds is described, representing a special case since the cross
 section of these processes is determined from the fit to observed
-data. Subsequently, the uncertainties on all other background
-processes estimated with simulation and normalised using theoretical
-predictions are described. Finally, uncertainties on the modelling of
-the SM \HH and BSM $X \to \HH$ signals are described.
+data. Subsequently, uncertainties on other background processes
+estimated with simulation and normalised using theoretical predictions
+are briefly outlined. Finally, uncertainties on the modelling of the
+SM \HH and BSM $X \to \HH$ signals are presented.
 
-
-\subsubsection{Uncertainties on the relative acceptance of \ZHF and
-  \ttbar between regions}
+%\subsubsection{Uncertainties on the relative acceptance of \ZHF and
+% \ttbar between regions}
+\subsubsection{Acceptance uncertainties on \ZHF and \ttbar backgrounds}
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in
 the combined likelihood fit of control and signal regions. Constraints
 on the normalisation of the \ZHF background primarily originate from
-the dedicated control region. The \ttbar background normalisation is
-mainly constrained in the signal region of the \lephad SLT channel and
-the \ZHF control region. Due to the determination of the normalisation
-of these processes from the fit to data, any uncertainties on their
-overall normalisation, for example uncertainties on the total cross
-sections, are omitted. Uncertainties changing the relative acceptance
-of \ZHF or \ttbar events between regions have to be considered
-instead. These uncertainties will be referred to as \emph{relative
-  acceptance uncertainties}, hereafter. The approach outlined in the
-following was originally adopted by the previously published analysis
-in this channel~\cite{HIGG-2016-16-witherratum} from searches and
-measurements of $VH$~($H\to\bbbar$)
+the dedicated control region. The normalisation of the \ttbar
+background is mainly constrained in the signal region of the \lephad
+SLT channel and the \ZHF control region. Due to the determination of
+the normalisation of these processes from the fit to data, any
+uncertainties on their overall normalisation, for example
+uncertainties on the total cross sections, are omitted. Uncertainties
+changing the relative acceptance of \ZHF or \ttbar events between
+regions have to be considered instead. These uncertainties will be
+referred to as \emph{relative acceptance uncertainties},
+hereafter. The approach outlined in the following was originally
+adopted by the previously published analysis in this
+channel~\cite{HIGG-2016-16-witherratum} from searches and measurements
+of $VH$~($H\to\bbbar$)
 production~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
 
 Assuming a general case of a background process that is estimated
@@ -167,8 +178,8 @@ normalisation factor of the process.
 % Note: Sign is important -> direction of effect when correlating systematics
 
 The relative acceptance uncertainties are defined using the \ZHF
-control region as a reference, which provides good constraints on both
-the \ZHF and \ttbar backgrounds. The uncertainties are estimated
+control region as a reference, which provides constraints on both the
+\ZHF and \ttbar backgrounds. The uncertainties are estimated
 separately for the \ZHF and \ttbar backgrounds in all three signal
 regions (\hadhad, \lephad SLT, \lephad LTT). Uncertainties originating
 from the same source are assumed to be fully correlated between all
@@ -176,7 +187,7 @@ analysis regions.
 
 The relative acceptance uncertainties originating from the modelling
 of the \ZHF background in simulation are estimated by performing
-variations of the event generation process. A brief description of the
+variations of the event generation. A brief description of the
 variations is given in the following, reproducing the prescriptions
 developed by the ATLAS collaboration:
 \begin{description}
@@ -195,7 +206,7 @@ developed by the ATLAS collaboration:
   values of the scales.
 
 \item[Resummation scale] The scale of the resummation of soft gluon
-  emissions in the \SHERPA parton shower is varied by factors
+  emissions in the \SHERPA parton shower is varied by factors of
   $\frac{1}{2}$ and 2. Variations of the resummation scale are
   provided in parametrised form with respect to the default \SHERPA
   configuration in Ref.~\cite{anders:2017}.
@@ -231,27 +242,26 @@ developed by the ATLAS collaboration:
   to~\PYTHIA[8.186]~\cite{Sjostrand:2007gs} for parton showering.
 
 \end{description}
-These variations are used to estimate uncertainties on the relative
-acceptance for the \ZHF background in all
-three signal regions according
-to~\Cref{eq:relative_acceptance_uncertainty}. The relative acceptance
-uncertainties in the signal regions are summarised
-in~\Cref{tab:uncertainties_zhf_extrapol}.
+Relative acceptance uncertainties on the \ZHF background are derived
+using these variations according
+to~\Cref{eq:relative_acceptance_uncertainty} for the three signal
+regions. The uncertainties are summarised
+in~\Cref{tab:uncertainties_zhf_extrapol} separately for all sources of
+uncertainty.
 
-\begin{table}[htbp]
-  \centering
+% \begin{table}[htbp]
+%   \centering
 
-  \input{tables/uncertainties_zhf_extrapol}
+%   \input{tables/uncertainties_zhf_extrapol}
 
-  \caption{Relative acceptance uncertainties on the \ZHF background
-    ($Z+bb$, $Z+bc$, $Z+cc$) in all three signal regions. The relative
-    sign of the effect of variations between the signal regions is
-    indicated by the ``$\pm$'' and ``$\mp$'' prefixes. The total
-    uncertainty is given for illustration of the size of the
-    uncertainties only.}
-  \label{tab:uncertainties_zhf_extrapol}
-  \todo[inline]{Use S column type}
-\end{table}
+%   \caption{Relative acceptance uncertainties on the \ZHF background
+%     ($Z+bb$, $Z+bc$, $Z+cc$) in the three signal regions. The relative
+%     sign of the effect of variations between the signal regions is
+%     indicated by the ``$\pm$'' and ``$\mp$'' prefixes. The total
+%     uncertainty is given for illustration of the size of the
+%     uncertainties only.}
+%   \label{tab:uncertainties_zhf_extrapol}
+% \end{table}
 
 The \lephad SLT signal region selection is the closest to the \ZHF
 control region, resulting in a small relative acceptance uncertainty
@@ -261,45 +271,89 @@ channels deviate yielding an uncertainty of approximately
 are the scale variations as well as the comparison with
 \MGNLO+\PYTHIA[8]\todo{This needs some work}.
 
-The relative acceptance uncertainties are similarly estimated for the
-floating \ttbar background in all three signal regions. The
-prescriptions documented in Ref.~\cite{ATL-PHYS-PUB-2020-023} are used to
-estimate modelling uncertainties for the nominal configuration of the
-\ttbar simulation using \POWHEGBOX[v2]+\PYTHIA[8]. A revised version
-of these prescriptions were previously presented
+The relative acceptance uncertainties on the \ttbar background are
+estimated using a similar approach in all three signal regions. The
+prescriptions documented in Ref.~\cite{ATL-PHYS-PUB-2020-023} are used
+to estimate modelling uncertainties on the nominal prediction obtained
+from simulation with \POWHEGBOX[v2]+\PYTHIA[8]. A revised version of
+these prescriptions was previously presented
 in~\Cref{sec:bkg_hadhad_ttbarfakes} as part of the \ttbarFakes scale
-factor measurement. In the following, a brief description highlighting
-the differences is given.
+factor measurement. In the following, the prescriptions are
+summarsied, highlighting the differences with respect to the previous
+description.
 
 The uncertainty of the modelling of the hard interaction (parton
 shower) is evaluated by replacing \POWHEGBOX[v2] (\PYTHIA[8]) with
 \MGNLO (\HERWIG[7]) for the matrix element (parton shower)
-generation. Explicit variations of the factorisation scale,
-renormalisation scale, and \PYTHIA[8] damping parameter, $\hdamp$, are
-omitted. They are included in the variation of initial-state radiation
-instead. The uncertainty on the final-state radiation is estimated
-using interal reweighting in \PYTHIA[8] to change the scale used for
-FSR branchings. Similarly, uncertainties on the PDF set and the value
-of \alphas is estimated using internal reweighting.
-
-The relative acceptance uncertainty for \ttbar backgrounds in the
-three signal regions (relative to the \ZHF control region) is given
-in~\Cref{tab:uncertainties_ttbar_extrapol}.
+generation. Explicit variations of the scales, and \PYTHIA[8] damping
+parameter, $\hdamp$, are omitted. Instead they are included in the
+variations of the initial-state radiation. The uncertainties on the
+amount of final-state radiation and the PDF+\alphas uncertainties are
+estimated using internal reweighting in \PYTHIA[8]. The relative
+acceptance uncertainty for \ttbar backgrounds in the three signal
+regions is given in~\Cref{tab:uncertainties_ttbar_extrapol}.
 
 \begin{table}[htbp]
   \centering
 
-  \input{tables/uncertainties_ttbar_extrapol}
+  \begin{subtable}[t]{0.95\textwidth}
+    \centering
 
-  \caption{Relative acceptance uncertainties on the \ttbar background
-    in all three signal regions. The relative sign of the effect of
-    variations between the signal regions is indicated by the
-    ``$\pm$'' and ``$\mp$'' prefixes. The total uncertainty is given
-    for illustration of the size of the uncertainties only.}
-  \label{tab:uncertainties_ttbar_extrapol}
+    \input{tables/uncertainties_zhf_extrapol}
+    \subcaption{\ZHF ($Z+bb$, $Z+bc$, $Z+cc$) background}
+    \label{tab:uncertainties_zhf_extrapol}
+  \end{subtable}
+
+  \vspace{0.5em}
+
+  \begin{subtable}[t]{0.95\textwidth}
+    \centering
+
+    \input{tables/uncertainties_ttbar_extrapol}
+    \subcaption{\ttbar background}
+    \label{tab:uncertainties_ttbar_extrapol}
+  \end{subtable}
+
+  \caption{Relative acceptance uncertainties on the \ZHF (a) and
+    \ttbar background (b) in the three signal regions. The relative
+    sign of the effect of variations between the signal regions is
+    indicated by the ``$\pm$'' and ``$\mp$'' prefixes. The total
+    uncertainty is given for illustration of the size of the
+    uncertainties only.}
 \end{table}
 
-\subsubsection{``Shape'' uncertainties for \ZHF and \ttbar}
+The relative acceptance uncertainties are implemented as uncertainties
+on the normalisation of the respective backgrounds in signal
+regions. Variations of the modelling in simulation can also change the
+shapes of discriminants used for signal extraction, including $\mll$
+in the \ZHF control region, which have to be considered.
+
+The impact of modelling variations on the distributions of the MVA
+discriminants in the signal regions and the \mll distribution in the
+\ZHF control region are investigated by comparing the shape of the
+varied with the nominal distribution. In cases where the shapes do not
+differ significantly, no additional shape uncertainties are
+assigned. When deviations are observed, the shape-impact of the
+variation is propagated and correlated with the corresponding
+normalisation uncertainty.
+
+The shape effects on the \ZHF background are propagated to the
+discriminants for uncertainties from the comparison with the
+alternative matrix element generator (\hadhad) and the factorisation
+and renormalisation scales (\hadhad and \lephad SLT/LTT). All other
+variations are found to have negligible impact on the shapes of the
+discriminants. In the \ZHF control region shape effects are also found
+to be negligible.
+
+For the \ttbar background the effects of the following variations are
+propagated as an uncertainty to the final discriminants: the
+uncertainty from the comparison with altenrative matrix element
+generators and parton shower programs (\hadhad and \lephad SLT), and
+the uncertainty on the amount of initial- and final-state radiation
+(\hadhad). The variations of \ttbar modelling are not found to have a
+significant impact on the shape of the background in the \ZHF control
+region and the LTT signal region.
+
 
 % We have the following shape uncertainties
 %
@@ -325,6 +379,9 @@ normalisation but not the shape.  \todo[inline]{Many of the minor
   background uncertainties have been taken from VHbb.}  A brief
 description of the uncertainties on minor backgrounds is given in the
 following:
+
+\todo[inline]{No uncertainties on $ttW$ and $ttZ$?}
+
 \begin{description}
 
 \item[$Z + (bl, cl, ll)$] A normalisation uncertainty of
