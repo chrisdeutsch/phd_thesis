@@ -1,4 +1,4 @@
-\section{Statistical Analysis}
+\section{Statistical analysis}
 \label{sec:statistical_analysis}
 
 \todo[inline]{Fit, limits, treatment of systematics in fit}
@@ -7,8 +7,14 @@ Why binned likelihood (and not unbinned)?
 
 Directly fit MVA score.
 
+\Cref{sec:statistical_methods} introduced the methods that are used
+for the statistical analysis.
 
-\subsection{Binning Algorithm}
+\todo[inline]{Maybe say something about blinding?}
+
+\todo[inline]{Chapter with validation plots before this one?}
+
+\subsection{Re-binning algorithm}
 \label{sec:binning_alg}
 
 The signal sensitivity of a binned maximum likelihood fit of
@@ -66,7 +72,6 @@ merged) bin.
 % expects at least 5 events so that asymptotic approximations of the
 % test statistics can be used.
 
-
 % Motivation of terms:
 % 1\% have some bins in background dominated region
 % signal fraction weighted 50\% to have relatively fine bins in the most signal-like regions
@@ -77,7 +82,40 @@ contents, the MVA scores are displayed as equidistant bins.
 
 \todo[inline]{Visualise the rebinning somehow?}
 
-\subsection{Results}
+
+\subsection{Signal and background model}
+
+\todo[inline]{Signal is ggF + VBF}
+\todo[inline]{Reminder of freely floating backgrounds}
+
+\subsubsection{Interpolation and symmetrisation}
+\subsubsection{Smoothing and pruning}
+\subsubsection{Correlated uncertainties?}
+
+\subsection{Results of the search for non-resonant production of SM $HH$}
+
+\subsection{Results of the search for resonant production of $HH$}
+
+\todo[inline]{Ranking plots}
+\todo[inline]{Pull plots? (+Asimov)}
+\todo[inline]{Post fit plots of MVAs}
+
+\begin{table}[htbp]
+  \centering
+
+  % Workspaces: comb_2022_01_29
+  \input{tables/non_res_limits}
+
+  \caption{Upper limits on the total cross section of Higgs pair
+    production via ggF and VBF as well as the signal
+    strength~$\mu = \sigma_\text{ggF+VBF} /
+    \sigma_\text{ggF+VBF}^\text{SM}$ at 95\% $\text{CL}_\text{s}$.}
+  \todo[inline]{Make a note somewhere that the cross section upper
+    limits are using a different workspace which removes cross section
+    uncertainties.}
+  \label{tab:limits_non_resonant}
+\end{table}
+
 
 \begin{figure}[htbp]
   \centering
@@ -97,7 +135,13 @@ contents, the MVA scores are displayed as equidistant bins.
   \label{fig:local_pvalues}
 \end{figure}
 
+
+
+\subsection{Estimation of the global significance}
+
+
 \subsection{Discussion}
+
 
 
 
