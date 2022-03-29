@@ -3,8 +3,6 @@
 
 \todo[inline]{Fit, limits, treatment of systematics in fit}
 
-Why binned likelihood (and not unbinned)?
-
 Directly fit MVA score.
 
 \Cref{sec:statistical_methods} introduced the methods that are used
@@ -16,6 +14,8 @@ for the statistical analysis.
 
 \subsection{Re-binning algorithm}
 \label{sec:binning_alg}
+
+\todo[inline]{Move to signal / background model?}
 
 The signal sensitivity of a binned maximum likelihood fit of
 MVA scores depends strongly on the choice of binning used for the
@@ -83,22 +83,116 @@ contents, the MVA scores are displayed as equidistant bins.
 \todo[inline]{Visualise the rebinning somehow?}
 
 
-\subsection{Signal and background model}
+\subsection{The signal and background model}
 
 \todo[inline]{Signal is ggF + VBF}
 \todo[inline]{Reminder of freely floating backgrounds}
+\todo[inline]{Emphasise that there are really many models for each MVA score that is fit.}
+\todo[inline]{Models developed in a blind analysis (blind -> high MVA score region blinded)}
 
+\subsubsection{Re-binning algorithm}
 \subsubsection{Interpolation and symmetrisation}
 \subsubsection{Smoothing and pruning}
-\subsubsection{Correlated uncertainties?}
+\subsubsection{Nuisance parameter correlation scheme}
+\subsubsection{Model validation}
 
 \subsection{Results of the search for non-resonant production of SM $HH$}
 
-\subsection{Results of the search for resonant production of $HH$}
 
-\todo[inline]{Ranking plots}
-\todo[inline]{Pull plots? (+Asimov)}
-\todo[inline]{Post fit plots of MVAs}
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_nonres/postfit/Region_BMin0_incJet1_distNN_J2_DSM_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
+
+    \subcaption{\lephad SLT channel}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_nonres/postfit/Region_BMin0_incJet1_distNN_J2_DSM_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
+
+    \subcaption{\lephad LTT channel}
+  \end{subfigure}
+
+  \vspace{0.5em}
+
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_nonres/postfit/Region_BMin0_incJet1_distSMBDT_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
+
+    \subcaption{\hadhad channel}
+  \end{subfigure}
+
+  \caption{Distribution of the MVA discriminants used to extract the
+    non-resonant SM \HH signal in the \lephad SLT (a), \lephad LTT
+    (b), and \hadhad (c) channel after the background-only fit of all
+    signal and control regions. The signal overlay is scaled to the
+    expected upper limit on the signal strength of $3.9$ from the
+    combination of all channels.}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.46\textwidth}
+    \includegraphics[width=\textwidth]{results_nonres/postfit_mvainputs/Region_BMin0_incJet1_distmMMC_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.46\textwidth}
+    \includegraphics[width=\textwidth]{results_nonres/postfit_mvainputs/Region_BMin0_incJet1_distmBB_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0}
+  \end{subfigure}
+
+  \begin{subfigure}{0.46\textwidth}
+    \includegraphics[width=\textwidth]{results_nonres/postfit_mvainputs/Region_BMin0_incJet1_distdRTauTau_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.46\textwidth}
+    \includegraphics[width=\textwidth]{results_nonres/postfit_mvainputs/Region_BMin0_incJet1_distdRBB_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0}
+  \end{subfigure}
+
+  \begin{subfigure}{0.46\textwidth}
+    \includegraphics[width=\textwidth]{results_nonres/postfit_mvainputs/Region_BMin0_incJet1_distmHH_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
+  \end{subfigure}
+
+  \caption{Distributions of the BDT input variables in the \hadhad
+    signal region after the background-only fit of MVA scores and \mll
+    in signal and control regions. The expected SM $\HH$ signal is
+    overlayed after scaling the normalisation by 400.}
+\end{figure}
+
+
+
+% q0 (obs): 0.357911
+% sig (obs): 0.598257
+% pval (obs): 0.274834
+
+% SM (Asimov mu = 1)
+% Median significance: 0.667530
+% Median pValue: 0.252217
+
+The background-only hypothesis is compared to the alternative of the
+background in addition to a positive SM \HH signal with
+strength~$\mu$. The likelihood ratio test comparing both hypotheses
+yields an observed $p$-value of \SI{27.5}{\percent} (expected
+$p$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
+dataset). Therefore, the background-only hypothesis cannot be rejected
+and thus upper limits on the SM \HH signal strength and cross sections
+are placed using the \CLs method.
+
+
+
+\todo[inline]{Postfit MVA input plots (hadhad)}
+\todo[inline]{Postfit yields: inclusively and in the last (last two) bin(s)?}
+\todo[inline]{Postfit norm factors?}
+
+\todo[inline]{Goodness of fit? -> Good fit so set limits.}
+
+\todo[inline]{Postfit ranking: combined, hadhad, lephad}
+\todo[inline]{Grouped impact? / Breakdown?}
 
 \begin{table}[htbp]
   \centering
@@ -115,6 +209,15 @@ contents, the MVA scores are displayed as equidistant bins.
     uncertainties.}
   \label{tab:limits_non_resonant}
 \end{table}
+
+
+\subsection{Results of the search for resonant production of $HH$}
+
+\todo[inline]{Post fit plots of MVAs}
+\todo[inline]{Ranking plots: Selected masses combined only}
+\todo[inline]{Pull plots? (+Asimov)}
+
+
 
 
 \begin{figure}[htbp]
@@ -135,14 +238,16 @@ contents, the MVA scores are displayed as equidistant bins.
   \label{fig:local_pvalues}
 \end{figure}
 
-
-
-\subsection{Estimation of the global significance}
-
+\subsection{Global significance estimation of the $\mX = \SI{1000}{\GeV}$ excess}
 
 \subsection{Discussion}
 
+\todo[inline]{What are the limiting factors? Data statistics /
+  statistical precision of the bkg estimate (could be improved with a
+  better data-driven background estimate).}
 
+\todo[inline]{Systematic uncertainty relatively unimportant at this
+  stage.}
 
 
 \begin{table}[htbp]
