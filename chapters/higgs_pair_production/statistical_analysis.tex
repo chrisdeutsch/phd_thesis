@@ -6,8 +6,8 @@ framework presented in~\Cref{sec:statistical_methods} to search for
 non-resonant production of SM \HH and production via scalar resonances
 with masses ranging from \SIrange{251}{1600}{\GeV}.
 
-A probabilistic model is constructed, for the given signal hypothesis
-to be probed, that simultaneously describes the observables in bins of
+A probabilistic model is constructed targeting the signal hypothesis
+to be probed that simultaneously describes the observables in bins of
 the MVA descriminants in the signal regions and \mll in the \ZHF
 control region using the signal and background estimates and their
 uncertainties described in earlier sections. The discriminants are
@@ -98,54 +98,59 @@ in~\Cref{sec:barlow_beeston}.
 \subsubsection{Re-binning algorithm}%
 \label{sec:binning_alg}
 
-The signal sensitivity of a binned maximum likelihood fit of
-MVA scores depends strongly on the choice of binning used for the
+The signal sensitivity of likelihood-ratio tests using binned MVA
+score distributions depends on the choice of binning used for the
 discriminant. The purity of signal increases with increasing MVA
 score, with most signal (background) being concentrated at the highest
-(lowest) MVA scores. For optimal expected signal sensitivity, the
-binning has to be chosen such that regions in MVA score with low
+(lowest) scores. For good expected signal sensitivity, the binning has
+to be chosen such that regions in MVA score with low
 signal-to-background ratio are separated from regions with high
 signal-to-background ratio.
 
-In this analysis an iterative re-binning algorithm is used to provide
-the binning of the discriminants for the likelihood fits. The aim of
-the algorithm is to provide good expected signal sensitivity while
-ensuring that the background model obeys predefined constraints on the
-statistical uncertainty and expected number of events in each bin. The
-constraints are intended to stabilise the likelihood fits and ensure
-reasonable validity of the asymptotic approximations used for the
-sampling distributions of test statistics used in the statistical
-analysis. The algorithm was previously used
-in~\cite{HIGG-2016-16-witherratum} and is continued to be used in the
-\hadhad channel of this search. A different algorithm, while
-conceptually similar, is used in the \lephad channel and is
-detailed~\cite{ATLAS-CONF-2021-030}.
+In this analysis an iterative re-binning algorithm is used to
+determine the binning of discriminants used to construct the
+likelihood functions. The aim of the algorithm is to provide good
+expected signal sensitivity while ensuring that the background
+prediction obeys predefined constraints on the statistical uncertainty
+and expected number of events in each bin. The constraints are
+intended to stabilise the fits and ensure the validity of asymptotic
+approximations of the sampling distributions of the test statistics
+used in the statistical analysis. The algorithm described in the
+following was previously used in Ref.~\cite{HIGG-2016-16-witherratum}
+and is continued to be used in the \hadhad channel of this search. A
+different algorithm, while conceptually similar, is used in the
+\lephad channels and is described in Ref.~\cite{ATLAS-CONF-2021-030}.
 
 The re-binning algorithm is provided with MVA score histograms with
-fine, equidistant binning ($N_\text{bins} = 1000$) for the signal and
-total background expectation. It proceeds by iteratively merging bins,
-starting from the most-signal like MVA score bins, until the bin
-fulfills a set of requirements:
+fine, equidistant binning ($N_\text{bins} = 1000$) of the signal and
+total background expectation at the nominal values of all nuisance
+parameters. It proceeds by iteratively merging bins, starting from the
+most-signal like MVA score bins, until the bin fulfills a set of
+requirements:
 \begin{enumerate}
 
-\item The relative statistical uncertainty of the background in the
-  bin must be smaller
-  than~\mbox{$\SI{50}{\percent} \cdot f_\text{s} + \SI{1}{\percent}$},
-  where $f_\text{s}$ is the fraction of signal events entering the bin
-  relative to the expected number of signal events in the signal
-  region. This requirement limits the statistical uncertainty on the
-  background in the most signal-like bins after re-binning to be in
-  the range of \SIrange{10}{20}{\percent}.
+\item The relative statistical uncertainty of the background
+  prediction in the bin must be smaller
+  than~\mbox{$\SI{50}{\percent} \times f_\text{s} +
+    \SI{1}{\percent}$}, where $f_\text{s}$ is the fraction of signal
+  events in the bin relative to the total number of signal events in
+  the considered region.  This requirement limits the statistical
+  uncertainty of the background estimate in the most signal-like bins
+  after re-binning to be in the range of \SIrange{10}{20}{\percent}.
 
 \item The expected number of background events in the bin must be
   larger than 5.
 
 \end{enumerate}
 When a bin fulfilling all requirements is found, the process is
-repeated starting from the next un-merged bin. The algorithm
-terminates with a final bin at low MVA score. If the final bin does
-not fulfil the criteria, it is merged with the preceeding (already
-merged) bin.
+repeated starting from the next bin that is not yet merged. The
+algorithm terminates with a final bin at low MVA score. If the final
+bin does not fulfil the criteria, it is merged with the preceeding
+bin.
+
+The size of bins resulting from the re-binning procedure can vary by
+multiple orders of magnitude. For better visualisation of the bin
+contents, the MVA scores are displayed as equidistant bins.
 
 % The algorithm provides a binning that improves the analysis
 % sensitivity while fulfilling criteria on the background model:
@@ -153,18 +158,30 @@ merged) bin.
 % expects at least 5 events so that asymptotic approximations of the
 % test statistics can be used.
 
-% Motivation of terms:
-% 1\% have some bins in background dominated region
-% signal fraction weighted 50\% to have relatively fine bins in the most signal-like regions
-
-The size of bins resulting from the re-binning procedure can vary by
-multiple orders of magnitude. For better visualisation of the bin
-contents, the MVA scores are displayed as equidistant bins.
-
-\todo[inline]{Visualise the rebinning somehow?}
+% Motivation of terms: 1\% have some bins in background dominated
+% region signal fraction weighted 50\% to have relatively fine bins in
+% the most signal-like regions
 
 
-\subsubsection{Interpolation and symmetrisation}
+\subsubsection{Process merging}
+
+\subsubsection{Symmetrisation of uncertainties}
+
+\subsubsection{Inter- / Extrapolation}
+
+\todo[inline]{Uncertainties split in norm and shape part?}
+\todo[inline]{Shape uncertainties seem to be polynomial interpolation and linear extrapolation}
+
+Uncertainties are provided in the form of templates corresponding to
+$\pm 1\sigma$ variations. The likelihood model needs to interpolate
+and extrapolate the effect of variations for any value of the
+associated nuisance parameter and not just $\pm 1$ or 0.
+
+The inter- and extrapolation is performed bin-wise using a piecewise
+definition using exponentials for extrapolation and a polynomial for
+interpolation~\cite{cranmer2012}. The function and its first and
+second derivative are required to be continiuous in the value of the
+nuisance parameter.
 
 Why interpolation?
 
