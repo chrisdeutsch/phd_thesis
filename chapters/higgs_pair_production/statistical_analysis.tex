@@ -1,21 +1,102 @@
 \section{Statistical analysis}
 \label{sec:statistical_analysis}
 
-\todo[inline]{Fit, limits, treatment of systematics in fit}
+The statistical analysis of the results proceeds using the frequentist
+framework presented in~\Cref{sec:statistical_methods} to search for
+non-resonant production of SM \HH and production via scalar resonances
+with masses ranging from \SIrange{251}{1600}{\GeV}.
 
-Directly fit MVA score.
+A probabilistic model is constructed, for the given signal hypothesis
+to be probed, that simultaneously describes the observables in bins of
+the MVA descriminants in the signal regions and \mll in the \ZHF
+control region using the signal and background estimates and their
+uncertainties described in earlier sections. The discriminants are
+summarised in~\Cref{tab:fitted_variable} for all regions entering the
+models for the SM and BSM search.
 
-\Cref{sec:statistical_methods} introduced the methods that are used
-for the statistical analysis.
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{lccccc}
+    \toprule
+    & \multicolumn{4}{c}{Discriminant used in channel} \\
+    \cline{2-5}
+    Search & \hadhad & \lephad SLT & \lephad LTT & \ZHF CR \\
+    \midrule
+    Non-resonant SM \HH & BDT & NN & NN & \mll \\
+    Resonant $X \to \HH$ & PNN (\mX) & PNN (\mX) & PNN (\mX) & \mll \\
+    \bottomrule
+  \end{tabular}
+  \caption{Summary of the types of discriminants used in the binned
+    likelihood fits in the three signal regions and the control
+    region. The search for resonant production of Higgs boson pairs
+    uses the PNN distribution evaluated with a mass parameter equal to
+    the resonance mass to be probed.}
+  \label{tab:fitted_variable}
+\end{table}
 
-\todo[inline]{Maybe say something about blinding?}
+The parameters of interest (POI) for the search for non-resonant SM
+\HH production are the cross section of the combination of the ggF and
+VBF production modes, \xsecggfvbf, and the signal strength
+\begin{align*}
+  \mu = \frac{\xsecggfvbf}{\xsecggfvbf^{\text{SM}}} \,\text{,}
+\end{align*}
+which measures the cross section relative to the Standard Model
+prediction
+of~$\xsecggfvbf^{\text{SM}} = \SI{31.05}{\femto\barn} \text{ (ggF)} +
+\SI{1.726}{\femto\barn} \text{
+  (VBF)}$~\cite{Grazzini:2018bsd,Dreyer:2018qbw}. In the BSM scenario
+of resonant production of Higgs boson pairs via scalar resonances,
+only the total cross section of $\sigma(pp \to X \to HH)$ is
+considered as the POI. Moreover, the non-resonant production of SM \HH
+is not considered as a background in the search for scalar resonances
+as there is no experimental evidence for its existence yet.
+
+In the following, the details of the signal and background model are
+described in~\Cref{sec:sig_bkg_model}. In~\Cref{sec:results_nonres}
+and~\Cref{sec:results_res} the results are presented.
+% after performing model parameter estimation using the maximum
+% likelihood method and performing likelihood ratio tests to compare
+% competing hypothese.
 
 \todo[inline]{Chapter with validation plots before this one?}
 
-\subsection{Re-binning algorithm}
-\label{sec:binning_alg}
+\subsection{The signal and background model}%
+\label{sec:sig_bkg_model}
 
-\todo[inline]{Move to signal / background model?}
+The signal and background model describes the expected number of
+events in bins .
+
+The sensitivity to a given signal depends due to the use of MVA
+discriminants (cf.\ \Cref{tab:fitted_variable})
+
+The use of MVA discriminants in the statistical analysis .
+
+The binning of data in the \ZHF control region is the same in all
+cases (cf.\ REFERENCE).
+
+
+The model described in the following is to be used in a simultaneous
+maximum likelihood fit of binned MVA discriminants.
+
+For every signal hypothesis dedicated models are constructed.
+
+The signal considered for non-resonant SM \HH search are ggF+VBF.
+
+\todo[inline]{Simultaneous maximum likelihood fit of binned MVA
+  discriminants and control regions to estimate the model parameters.}
+
+The statistical uncertainties on the background prediction using
+simulation and control region data are implemented in the likelihood
+model according to the simplified Barlow-Beeston method introduced
+in~\Cref{sec:barlow_beeston}.
+
+\todo[inline]{Reminder of freely floating backgrounds}
+\todo[inline]{Emphasise that there are really many models for each MVA score that is fit.}
+\todo[inline]{Models developed in a blind analysis (blind -> high MVA score region blinded)}
+\todo[inline]{Maybe say something about blinding?}
+
+\subsubsection{Re-binning algorithm}%
+\label{sec:binning_alg}
 
 The signal sensitivity of a binned maximum likelihood fit of
 MVA scores depends strongly on the choice of binning used for the
@@ -83,20 +164,26 @@ contents, the MVA scores are displayed as equidistant bins.
 \todo[inline]{Visualise the rebinning somehow?}
 
 
-\subsection{The signal and background model}
-
-\todo[inline]{Signal is ggF + VBF}
-\todo[inline]{Reminder of freely floating backgrounds}
-\todo[inline]{Emphasise that there are really many models for each MVA score that is fit.}
-\todo[inline]{Models developed in a blind analysis (blind -> high MVA score region blinded)}
-
-\subsubsection{Re-binning algorithm}
 \subsubsection{Interpolation and symmetrisation}
+
+Why interpolation?
+
+Default setup of HistFactory:
+\begin{itemize}
+\item Normalisation: exponential
+\item Shape: Linear?
+\end{itemize}
+
 \subsubsection{Smoothing and pruning}
 \subsubsection{Nuisance parameter correlation scheme}
 \subsubsection{Model validation}
 
+
+
+
+
 \subsection{Results of the search for non-resonant production of SM $HH$}
+\label{sec:results_nonres}
 
 
 \begin{figure}[htbp]
@@ -212,11 +299,11 @@ are placed using the \CLs method.
 
 
 \subsection{Results of the search for resonant production of $HH$}
+\label{sec:results_res}
 
 \todo[inline]{Post fit plots of MVAs}
 \todo[inline]{Ranking plots: Selected masses combined only}
 \todo[inline]{Pull plots? (+Asimov)}
-
 
 
 
