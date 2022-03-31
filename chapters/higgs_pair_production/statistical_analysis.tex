@@ -7,9 +7,9 @@ non-resonant production of SM \HH and production via scalar resonances
 with masses ranging from \SIrange{251}{1600}{\GeV}.
 
 A probabilistic model is constructed targeting the signal hypothesis
-to be probed that simultaneously describes the observables in bins of
-the MVA descriminants in the signal regions and \mll in the \ZHF
-control region using the signal and background estimates and their
+to be probed that simultaneously describes the data in bins of the MVA
+descriminants in the signal regions and \mll in the \ZHF control
+region using the signal and background estimates and their
 uncertainties described in earlier sections. The discriminants are
 summarised in~\Cref{tab:fitted_variable} for all regions entering the
 models for the SM and BSM search.
@@ -167,29 +167,34 @@ contents, the MVA scores are displayed as equidistant bins.
 
 \subsubsection{Symmetrisation of uncertainties}
 
-\subsubsection{Inter- / Extrapolation}
+\subsubsection{Inter- and extrapolation of systematic variations}
 
-\todo[inline]{Uncertainties split in norm and shape part?}
-\todo[inline]{Shape uncertainties seem to be polynomial interpolation and linear extrapolation}
+To define a (continuous) likelihood function, the signal and
+background predictions have to be parametrised as continuous functions
+of the nuisance parameters. Conventionally, uncertainties on the
+normalisation or the normalisation and shape of a prediction in a
+given analysis region are determined only for two values of the
+nuisance parameters correponding to $\pm 1\sigma$ ($\alpha = \pm 1$)
+variations in addition to the nominal prediction. The parametrised
+predictions needed for the definition of the likelihood function are
+obtained using interpolation ($\vert \alpha \vert \leq 1$) and
+extrapolation methods ($\vert \alpha \vert > 1$) provided by
+\textsc{HistFactory}~\cite{cranmer2012}.
 
-Uncertainties are provided in the form of templates corresponding to
-$\pm 1\sigma$ variations. The likelihood model needs to interpolate
-and extrapolate the effect of variations for any value of the
-associated nuisance parameter and not just $\pm 1$ or 0.
+All uncertainties are decomposed into two correlated components
+employing different inter- and extrapolation methods. The first
+component are uncertainties on the sample normalisations in a given
+region which are parametrised using multiplicative normalisation
+factors determined from 6th order polynomial interpolation and
+exponential extrapolation in $\alpha$. Exponential extrapolation is
+used to prevent the normalisation factors from becoming negative. The
+second component are shape variations of the discriminant in a given
+region that leave the normalisation invariant. The parametrised shape
+variations are obtained using 6th order polynomial interpolation and
+linear extrapolation. In both cases the resulting functions are
+required to be continuous and have continuous first and second
+derivatives at the boundaries.
 
-The inter- and extrapolation is performed bin-wise using a piecewise
-definition using exponentials for extrapolation and a polynomial for
-interpolation~\cite{cranmer2012}. The function and its first and
-second derivative are required to be continiuous in the value of the
-nuisance parameter.
-
-Why interpolation?
-
-Default setup of HistFactory:
-\begin{itemize}
-\item Normalisation: exponential
-\item Shape: Linear?
-\end{itemize}
 
 \subsubsection{Smoothing and pruning}
 \subsubsection{Nuisance parameter correlation scheme}
