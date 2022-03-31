@@ -163,11 +163,11 @@ contents, the MVA scores are displayed as equidistant bins.
 % the most signal-like regions
 
 
-\subsubsection{Process merging}
+\subsubsection{Merging of physics processes}
 
-\subsubsection{Symmetrisation of uncertainties}
+\subsubsection{Symmetrisation of systematic uncertainties}
 
-\subsubsection{Inter- and extrapolation of systematic variations}
+\subsubsection{Inter- and extrapolation of systematic uncertainties}
 
 To define a (continuous) likelihood function, the signal and
 background predictions have to be parametrised as continuous functions
@@ -196,28 +196,47 @@ required to be continuous and have continuous first and second
 derivatives at the boundaries.
 
 
-\subsubsection{Smoothing and pruning}
+\subsubsection{Smoothing and pruning of systematic uncertainties}
 
-Smoothing applied to shape uncertainties.
+The derivation of shape uncertainties are susceptible to statistical
+fluctuations\footnote{This is can also be the case for normalisation
+  uncertainties which are not the subject of the smoothing
+  algorithm. In this case the user is responsible to ensure that
+  normalisation uncertainties are determined with sufficient
+  precision.} which can introduce spurious pulls and constraints on
+nuisance parameters when performing maximum likelihood fits of the
+model. Frequently this is the case when shape uncertainties are
+derived from MC-to-MC comparisons or from variations that change the
+four-momentum of final state particles. In these cases a smoothing
+procedure is applied to the templates describing the uncertainties on
+the shape of the discriminant. Shape uncertainties that are based on
+the reweighting of the nominal prediction are less sensitive to
+statistical fluctuations, unless the weight distribution has high
+variance, and thus no smoothing is applied by default. Exceptions are
+made in some cases for example for the weight-based FSR uncertainties
+for the production of top quarks for which smoothing is applied due to
+the large variance of the associated weight distribution.
 
-Smoothing applied for variations 4-vector systematics and re-weighting
-based systematics with weight distributions that have high variance?
+The smoothing procedure, adopted from Ref.~\cite{HIGG-2013-23}, uses
+iterative rebinning of the histogram-based templates describing the
+shape uncertainties, merging bins starting with bins that are most
+compatible until the statistical uncertainty in all bins is below
+\SI{5}{\percent} and the shape template has a monotonic
+dependency\todo{Why?} on the (MVA) discriminant. This procedure is
+applied, when configured for a given uncertainty, separately for all
+analysis regions and samples after merging.
 
-smoothRebinMonotonic
-
-
-The signal and background model is simplified by removing small
-systematic variations. This pruning procedure is applied separately
-for all samples and analysis regions after merging, symmetrisation,
-and smoothing. Additionally, uncertainties on the normalisation and
-shape are pruned separately.
-
-The normalisation component of an uncertainty for a given sample and
-analysis category is removed if both the $+1\sigma$ and $-1\sigma$
-variations are within \SI{0.5}{\percent} with respect to the nominal
-prediction. The shape component of an uncertainty is removed if the up
-an down variation results in changes within \SI{0.5}{\percent} of the
-nominal prediction in all bins in the analysis region.
+The signal and background model is further simplified by removing
+small systematic variations. This pruning procedure is applied
+separately for all samples and analysis regions after merging,
+symmetrisation, and smoothing. Additionally, uncertainties on the
+normalisation and shape are pruned separately. The normalisation
+component of an uncertainty for a given sample and analysis category
+is removed if both the $+1\sigma$ and $-1\sigma$ variations are within
+\SI{0.5}{\percent} with respect to the nominal prediction. The shape
+component of an uncertainty is removed if both the $+1\sigma$ and
+$-1\sigma$ variations results in changes within \SI{0.5}{\percent} of
+the nominal prediction in all bins in the analysis region.
 
 
 \subsubsection{Nuisance parameter correlation scheme}
