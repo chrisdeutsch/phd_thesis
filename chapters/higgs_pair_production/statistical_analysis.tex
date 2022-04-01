@@ -282,15 +282,71 @@ the nominal prediction in all bins in the analysis region.
 
 
 \subsubsection{Nuisance parameter correlation scheme}
+
+- All norm factors ( affecting signal, Z+(bb,bc,cc),
+ttbar/ttbarFakes(in hadhad) ) are fully correlated between all
+channels. Uncertainties on the relative acceptance are correlated when
+they are from the same source with the exception of the.
+
+- All event and object reconstruction (and lumi) related uncertainties
+are fully correlated between all channels.
+
+- Theoretical uncertainties on cross sections and acceptances are
+correlated between all channels (if they are from the same source).
+
+- Nuisance parameters on the data-driven background estimation are
+separate since different methods are used.
+
+
 \subsubsection{Model validation}
 
+The model is developed and validated by performing:
 
+1. Fits of Asimov datasets
 
+2. Fits of data in control regions
+
+3. Fits of data in control regions and MVA discriminants with only
+\hadhad / \lephad signal regions.
+
+4. Fits of data control regions and MVA discriminants blinding the
+high MVA score regions.
+
+Based on these studies decisions where made on decorrelation of
+uncertainties (PS) and symmetrisation / smoothing applied to
+uncertainties.
 
 
 \subsection{Results of the search for non-resonant production of SM $HH$}
 \label{sec:results_nonres}
 
+The results of the unblinded search for non-resonant production of SM
+\HH are presented in the following for the combination of the \hadhad
+and \lephad channels. Additionally, results are presented prior to the
+combination of the \hadhad and \lephad channels to illustrate the
+signal sensitivity of different channels and the differences in impact
+of systematic uncertainties between channels.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATLAS_norm_Zhf      1.4021e+00 +/-  1.11e-01 %
+% ATLAS_norm_ttbar    9.7030e-01 +/-  3.76e-02 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The normalisation factors of \ttbar and \ZHF are estimated using a
+likelihood fit of the background-only model to be \num{0.97 +- 0.04}
+and \num{1.40 +- 0.11}, respectively, which are consistent with the
+result obtained from fits of the control region only.
+
+In~\Cref{fig:mvascores_postfit} the MVA score distributions predicted
+by the background-only model are compared to data in the \hadhad,
+\lephad SLT, and \lephad LTT channels after the maximum likelihood fit
+to data combining all signal and control regions.
+
+\todo[inline]{Merging for illustration:
+  Top-quark = ttbar and single top production,
+  other = ???
+  SM Higgs = Combination of all single Higgs boson backgrounds
+  \faketauhadvis backgrounds in the \hadhad channel distinguished between multi-jet (MJ) and top pair production (\ttbar)
+}
 
 \begin{figure}[htbp]
   \centering
@@ -325,10 +381,35 @@ the nominal prediction in all bins in the analysis region.
     (b), and \hadhad (c) channel after the background-only fit of all
     signal and control regions. The signal overlay is scaled to the
     expected upper limit on the signal strength of $3.9$ from the
-    combination of all channels.}
+    combination of all channels.}%
+  \label{fig:mvascores_postfit}
 \end{figure}
 
+\todo[inline]{Post-fit yield table...}
 
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/smhh_postfit_yield_lastbins}
+
+  \caption{Expected event yields in the two most signal-like bins of
+    the BDT (\hadhad) and NN (\lephad) after the background-only
+    fit. The category ``Other'' combines multiple smaller backgrounds:
+    $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$,
+    $Z \to \mu^{+}\mu^{-}$, \Wjets, diboson, and $\ttbar V$.}
+
+  \todo[inline]{It looks like the error propagation effectively
+    symmetrises the error (HH should be asymmetric).}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % self.setBkgOthers = {"Zhf", "Zlf", "Zttlf",     %
+  %                            "W", "Wtt", "Wjets", %
+  %                            "diboson",           %
+  %                            "DY", "DYtt",        %
+  %                            "ttW", "ttZ"}        %
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \label{tab:postfit_signallike_smhh}
+\end{table}
 
 \begin{figure}[htbp]
   \centering
@@ -354,7 +435,8 @@ the nominal prediction in all bins in the analysis region.
   \caption{Distributions of the BDT input variables in the \hadhad
     signal region after the background-only fit of MVA scores and \mll
     in signal and control regions. The expected SM $\HH$ signal is
-    overlayed after scaling the normalisation by 400.}
+    overlayed with a normalisation corresponding to 400
+    times~$\xsecggfvbf^{\text{SM}}$.}
 \end{figure}
 
 
@@ -377,12 +459,9 @@ and thus upper limits on the SM \HH signal strength and cross sections
 are placed using the \CLs method.
 
 
-
 \todo[inline]{Postfit MVA input plots (hadhad)}
 \todo[inline]{Postfit yields: inclusively and in the last (last two) bin(s)?}
 \todo[inline]{Postfit norm factors?}
-
-\todo[inline]{Goodness of fit? -> Good fit so set limits.}
 
 \todo[inline]{Postfit ranking: combined, hadhad, lephad}
 \todo[inline]{Grouped impact? / Breakdown?}
