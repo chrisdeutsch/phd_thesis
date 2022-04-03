@@ -198,6 +198,8 @@ derivatives at the boundaries.
 
 \subsubsection{Smoothing and pruning of systematic uncertainties}
 
+% https://indico.cern.ch/event/736395/contributions/3040869/attachments/1671620/2684026/SmoothingPruning.pdf
+% https://cds.cern.ch/record/2692202/files/CERN-THESIS-2018-447.pdf
 The derivation of shape uncertainties are susceptible to statistical
 fluctuations\footnote{This is can also be the case for normalisation
   uncertainties which are not the subject of the smoothing
@@ -240,6 +242,15 @@ the nominal prediction in all bins in the analysis region.
 
 
 \subsubsection{Nuisance parameter correlation scheme}
+
+
+
+
+
+
+
+
+
 \subsubsection{Model validation}
 
 
@@ -360,6 +371,30 @@ are placed using the \CLs method.
     uncertainties.}
   \label{tab:limits_non_resonant}
 \end{table}
+
+
+
+\begin{sidewaysfigure}[p]
+  \centering
+
+  \begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_combined}
+    \subcaption{Combination}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_hadhad}
+    \subcaption{\hadhad-only}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.32\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_lephad}
+    \subcaption{\lephad-only}
+  \end{subfigure}
+
+  \caption{Rankings}
+\end{sidewaysfigure}
 
 
 \subsection{Results of the search for resonant production of $HH$}
