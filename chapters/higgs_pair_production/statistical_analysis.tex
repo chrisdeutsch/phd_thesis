@@ -299,6 +299,9 @@ correlated between all channels (if they are from the same source).
 - Nuisance parameters on the data-driven background estimation are
 separate since different methods are used.
 
+- Decorrelate parton shower systematics for ttbar between lephad and
+hadhad
+
 
 \subsubsection{Model validation}
 
@@ -322,33 +325,41 @@ uncertainties.
 \subsection{Results of the search for non-resonant production of SM $HH$}
 \label{sec:results_nonres}
 
-The results of the unblinded search for non-resonant production of SM
-\HH are presented in the following for the combination of the \hadhad
-and \lephad channels. Additionally, results are presented prior to the
-combination of the \hadhad and \lephad channels to illustrate the
-signal sensitivity of different channels and the differences in impact
-of systematic uncertainties between channels.
+\todo[inline]{Grouped impact? / Breakdown?}
+
+The results of the search for non-resonant production of SM \HH are
+presented in the following for the combination of all
+channels. Additionally, results are presented prior to the combination
+of the \hadhad and \lephad channels to illustrate the signal
+sensitivity of the individual channels and the differences in impact
+of systematic uncertainties.
+
+All results are obtained from the model using the signal strength as
+the POI unless otherwise noted. Further merging of physics processes
+is performed for the illustration only. The contributions from top
+quark pair and single top production are combined into the ``top
+quark'' background. Contributions from minor backgrounds are combined
+into the ``other'' background category which combines the processes
+$Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$ and
+$Z \to \mu^{+}\mu^{-}$ (inclusive in the jet flavour label), \Wjets,
+diboson, and $\ttbar V$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ATLAS_norm_Zhf      1.4021e+00 +/-  1.11e-01 %
 % ATLAS_norm_ttbar    9.7030e-01 +/-  3.76e-02 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The normalisation factors of \ttbar and \ZHF are estimated using a
-likelihood fit of the background-only model to be \num{0.97 +- 0.04}
-and \num{1.40 +- 0.11}, respectively, which are consistent with the
-result obtained from fits of the control region only.
+The normalisation factors of \ttbar and \ZHF estimated using a
+likelihood fit of the background-only model are \num{0.97 +- 0.04} and
+\num{1.40 +- 0.11}, respectively, which are consistent with the result
+obtained from fits of the control region only.
 
 In~\Cref{fig:mvascores_postfit} the MVA score distributions predicted
 by the background-only model are compared to data in the \hadhad,
 \lephad SLT, and \lephad LTT channels after the maximum likelihood fit
-to data combining all signal and control regions.
-
-\todo[inline]{Merging for illustration:
-  Top-quark = ttbar and single top production,
-  other = ???
-  SM Higgs = Combination of all single Higgs boson backgrounds
-  \faketauhadvis backgrounds in the \hadhad channel distinguished between multi-jet (MJ) and top pair production (\ttbar)
-}
+combining all signal and control regions. After the fit the
+background-model provides a good description of the observed data in
+the signal regions. The post-fit event yields corresponding to these
+regions are depicted in~\Cref{tab:postfit_yields_smhh}.
 
 \begin{figure}[htbp]
   \centering
@@ -383,11 +394,42 @@ to data combining all signal and control regions.
     (b), and \hadhad (c) channel after the background-only fit of all
     signal and control regions. The signal overlay is scaled to the
     expected upper limit on the signal strength of $3.9$ from the
-    combination of all channels.}%
+    combination of all channels. The \faketauhadvis background in the
+    \hadhad channel is shown separately for \faketauhadvis from
+    multi-jet (MJ) and \ttbar.}%
   \label{fig:mvascores_postfit}
 \end{figure}
 
-\todo[inline]{Post-fit yield table...}
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/smhh_postfit_yield_incl}
+
+  \caption{Expected event yields in the three signal regions after the
+    background-only fit to the observed data. The category ``other
+    backgrounds'' combines minor contributions from
+    $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$,
+    $Z \to \mu^{+}\mu^{-}$, \Wjets, diboson and $\ttbar V$. The
+    expected SM \HH signal yield is shown with a signal strength of 1
+    and nuisance parameters determined by the fit. Nuisance parameters
+    only affecting the SM \HH signal are at their pre-fit values.}
+  \label{tab:postfit_yields_smhh}
+
+  \todo[inline]{It looks like the error propagation effectively
+    symmetrises the error (HH should be asymmetric).}
+
+  \todo[inline]{Have this pre-fit in appendix?}
+\end{table}
+
+The choice of an analysis strategy based on using multivariate
+discriminants to extract the signal of interest from loosely
+preselected events limits the conclusions that can be drawn regarding
+the backgrounds that are relevant to the signal extraction
+process. Therefore, in \Cref{tab:postfit_yields_smhh_signallike} the
+expected event yields are shown for the two most signal-like bins of
+the MVA discriminants to illustrate the signal sensitivity and
+background composition in a phase space most similar to the signal
+process.
 
 \begin{table}[htbp]
   \centering
@@ -395,13 +437,16 @@ to data combining all signal and control regions.
   \input{tables/smhh_postfit_yield_lastbins}
 
   \caption{Expected event yields in the two most signal-like bins of
-    the BDT (\hadhad) and NN (\lephad) after the background-only
-    fit. The category ``Other'' combines multiple smaller backgrounds:
+    the BDT (\hadhad) and NN (\lephad) discriminants after the
+    background-only fit to the observed data. The category ``other
+    backgrounds'' combines minor contributions from
     $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$,
     $Z \to \mu^{+}\mu^{-}$, \Wjets, diboson, and $\ttbar V$.}
 
   \todo[inline]{It looks like the error propagation effectively
     symmetrises the error (HH should be asymmetric).}
+
+  \todo[inline]{Have this pre-fit in appendix?}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % self.setBkgOthers = {"Zhf", "Zlf", "Zttlf",     %
@@ -410,8 +455,37 @@ to data combining all signal and control regions.
   %                            "DY", "DYtt",        %
   %                            "ttW", "ttZ"}        %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \label{tab:postfit_signallike_smhh}
+  \label{tab:postfit_yields_smhh_signallike}
 \end{table}
+
+% Top quark: 3(ttbar):1(stop)
+The dominant background in the two most signal-like bins of the SM \HH
+BDT in the \hadhad channel is the production of \ZHF with an
+expectation of about 8 events. The top quark, single Higgs boson, and
+\faketauhadvis backgrounds contribute with approximately 4 expected
+events each. The signal selection efficiency of the two most
+signal-like bins is close to \SI{50}{\percent}.\todo{Point out the
+  large uncertainty on \ZHF and single Higgs?}
+
+% Top quark (SLT): 50(ttbar):50(stop)
+% Top quark (LTT): 5(ttbar):1(stop)
+In the \lephad channels the dominant backgrounds are originating from
+top quark and \ZHF processes. Compared to the \hadhad channel, top
+quark backgrounds are more abundant\footnote{The targeted
+  $\ell + \tauhad$ final state in the \lephad channel does not
+  distinguish between prompt production of electrons and muons and
+  non-prompt production via leptonic \taulepton decays.}  with a large
+contribution of about \SI{50}{\percent} from single top production in
+the SLT channel.
+
+% Large amount of ttbar in lephad (a lephad-like final state is about
+% 7 times more likely in ttbar than a hadhad one - ignoring fakes)
+%
+% Signal yield: larger in hadhad
+%
+% Difficulties in lephad: Huge ttbar contribution
+%                         More difficult mass reconstruction for MMC and mHH
+
 
 \begin{figure}[htbp]
   \centering
@@ -441,8 +515,6 @@ to data combining all signal and control regions.
     times~$\xsecggfvbf^{\text{SM}}$.}
 \end{figure}
 
-
-
 % q0 (obs): 0.357911
 % sig (obs): 0.598257
 % pval (obs): 0.274834
@@ -459,14 +531,6 @@ $p$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
 dataset). Therefore, the background-only hypothesis cannot be rejected
 and thus upper limits on the SM \HH signal strength and cross sections
 are placed using the \CLs method.
-
-
-\todo[inline]{Postfit MVA input plots (hadhad)}
-\todo[inline]{Postfit yields: inclusively and in the last (last two) bin(s)?}
-\todo[inline]{Postfit norm factors?}
-
-\todo[inline]{Postfit ranking: combined, hadhad, lephad}
-\todo[inline]{Grouped impact? / Breakdown?}
 
 \begin{table}[htbp]
   \centering
@@ -507,6 +571,15 @@ are placed using the \CLs method.
 
   \caption{Rankings}
 \end{sidewaysfigure}
+
+
+
+\todo[inline]{Discussion:}
+
+\begin{itemize}
+\item Why is hadhad more sensitive?
+\item How do these results compare to other channels / CMS at the end of Run 2?
+\end{itemize}
 
 
 \subsection{Results of the search for resonant production of $HH$}
