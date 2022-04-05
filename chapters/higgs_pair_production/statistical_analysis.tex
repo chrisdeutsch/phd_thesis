@@ -329,15 +329,15 @@ uncertainties.
 
 The results of the search for non-resonant production of SM \HH are
 presented in the following for the combination of all
-channels. Additionally, results are presented prior to the combination
-of the \hadhad and \lephad channels to illustrate the signal
-sensitivity of the individual channels and the differences in impact
-of systematic uncertainties.
+channels. Results are also presented prior to the combination of the
+\hadhad and \lephad channels to illustrate the signal sensitivity of
+individual channels and differences in the impact of systematic
+uncertainties.
 
-All results are obtained from the model using the signal strength as
-the POI unless otherwise noted. Further merging of physics processes
-is performed for the illustration only. The contributions from top
-quark pair and single top production are combined into the ``top
+All results are obtained from the model using the SM \HH signal
+strength as the POI unless otherwise noted. Further merging of physics
+processes is performed for illustration only. The contributions from
+top quark pair and single top production are combined into the ``top
 quark'' background. Contributions from minor backgrounds are combined
 into the ``other'' background category which combines the processes
 $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$ and
@@ -351,15 +351,17 @@ label), \Wjets, diboson, and $\ttbar V$.
 The normalisation factors of \ttbar and \ZHF estimated using a
 likelihood fit of the background-only model are \num{0.97 +- 0.04} and
 \num{1.40 +- 0.11}, respectively, which are consistent with the result
-obtained from fits of the control region only.
+obtained from fits of the control region only (cf.\
+\Cref{sec:bkg_zjets}).
 
 In~\Cref{fig:mvascores_postfit} the MVA score distributions predicted
 by the background-only model are compared to data in the \hadhad,
 \lephad SLT, and \lephad LTT channels after the maximum likelihood fit
-combining all signal and control regions. After the fit the
-background-model provides a good description of the observed data in
-the signal regions. The post-fit event yields corresponding to these
-regions are summarised in~\Cref{tab:postfit_yields_smhh}.
+combining all signal and control regions. After performing the fit,
+the background-model provides a good description of the observed data
+in the signal regions. The post-fit expected event yields
+corresponding to these regions are summarised
+in~\Cref{tab:postfit_yields_smhh}.
 
 \begin{figure}[htbp]
   \centering
@@ -408,7 +410,7 @@ regions are summarised in~\Cref{tab:postfit_yields_smhh}.
 
     \input{tables/smhh_postfit_yield_incl}
 
-    \subcaption{Inclusive event yields in the signal regions}
+    \subcaption{Expected event yields in the signal regions (post-fit)}
     \label{tab:postfit_yields_smhh}
   \end{subtable}
 
@@ -419,8 +421,8 @@ regions are summarised in~\Cref{tab:postfit_yields_smhh}.
 
     \input{tables/smhh_postfit_yield_lastbins}
 
-    \subcaption{Event yields in the two most signal-like bins of the
-      BDT (\hadhad) and NN (\lephad) discriminants}
+    \subcaption{Expected event yields in the two most signal-like bins
+      of the BDT (\hadhad) and NN (\lephad) discriminants (post-fit)}
     \label{tab:postfit_yields_smhh_signallike}
   \end{subtable}
 
@@ -462,43 +464,46 @@ process.
 % Top quark: 3(ttbar):1(stop)
 The dominant background in the two most signal-like bins of the SM \HH
 BDT in the \hadhad channel is the production of \ZHF with an
-expectation of about 8 events. The top quark, single Higgs boson, and
-\faketauhadvis backgrounds contribute with approximately 4 expected
-events each. The signal selection efficiency of the two most
-signal-like bins with respect to the pre-selection is close to
-\SI{50}{\percent} yielding the largest signal-to-background ratio of
-any individual channel.\todo{Mention uncertainties on \ZHF and SM Higgs?}
+expectation of about 8 events. The contribution of top quark, single
+Higgs boson, and \faketauhadvis backgrounds is similar with an
+expectation of about 4 events for each process. The signal efficiency
+of selecting the two most signal-like bins is close to
+\SI{50}{\percent} with respect to the signal yield after
+pre-selection, yielding the largest signal-to-background ratio of any
+individual channel.\todo{Mention uncertainties on \ZHF and SM Higgs?}
 
 % Top quark (SLT): 1(ttbar):1(stop)
 % Top quark (LTT): 5(ttbar):1(stop)
 In the \lephad channels the dominant backgrounds are originating from
-top quark and \ZHF processes. Compared to the \hadhad channel, top
-quark backgrounds have higher abundance\footnote{The targeted
+the production of top quarks and \ZHF. Compared to the \hadhad
+channel, top quark backgrounds are more abundant\footnote{The targeted
   $\ell + \tauhad$ final state does not distinguish between prompt
   production of electrons and muons and non-prompt production via
   leptonic \taulepton decays, thus both $W \to \taulep \nu_{\tau}$ and
-  $W \to \ell \nu_{\ell}$ ($\ell = e$ or $\mu$) are considered as the
+  $W \to \ell \nu_{\ell}$ ($\ell = e$ or $\mu$) are considered as
   \taulepvis candidates. Backgrounds from \ttbar or $tW$ production
   would be about seven times more abundant in the \lephad channel
   compared to the \hadhad channel, based on $W$ boson and \taulepton
   branching ratios from Ref.~\cite{pdg2020}, prior to any
   reconstruction and selection, and disregarding possible
   \faketauhadvis contributions.}  with a large contribution of about
-\SI{50}{\percent} from single top production in the SLT channel. The
-signal selection efficiency is considerably smaller than that of the
-\hadhad channels which results from the more abundant top backgrounds
-(combined with the re-binning) and a worse $H \to \tautau$ mass
-reconstruction performance in the \lephad channel.
+\SI{50}{\percent} from single top production in the SLT channel (ca.\
+\SI{15}{\percent} in LTT). The selection of the two most signal-like
+bins yields smaller signal efficiencies while having background rates
+that are comparable between the three channels. This is due to the
+abundance of top quark backgrounds (in conjunction with the re-binning
+algorithms) but also because of higher difficulty of reconstructing
+the $H \to \tautau$ candidate in \lephad decay modes which degrades
+the resolution of the $\tautau$ and \HH mass reconstruction.
 
 The modelling of the MVA input variables in the \hadhad channel can be
-further inspected in~\Cref{fig:postfit_mva_inputs}, which shows the
-variables after the background-only fit of the MVA discriminants
-combining all channels of the analysis. The post-fit background model
-describes the observed data well with some minor discrepancies in the
-angular observables. For example at low values of \dRtautau the
-background model tends to overestimate the observed data by about
+inspected in~\Cref{fig:postfit_mva_inputs}, which shows the variables
+after the background-only fit of the MVA discriminants combining all
+channels of the analysis. The post-fit background model describes the
+observed data well with some minor discrepancies in the angular
+observables. For example at low values of \dRtautau the background
+model tends to overestimate the observed data by about
 \SI{10}{\percent} which is not fully covered by uncertainties.
-
 
 \begin{figure}[htbp]
   \centering
@@ -529,24 +534,24 @@ background model tends to overestimate the observed data by about
   \label{fig:postfit_mva_inputs}
 \end{figure}
 
-A post hoc analysis\todo{Put in appendix} of the feature observed at
-low \dRtautau is performed by inspecting the dependency of the
-measured \ZHF normalisation factor as a function of the transverse
-momentum of the $Z$ boson by performing a simplified normalisation
-measurement in the \ZHF control region in bins of~$\pT(Z)$
-reconstructed from the lepton transverse momenta. This cross-check
-shows a trend of decreasing \ZHF normalisation factors with increasing
-$\pT(Z)$ which can lead to differences of about
-\SIrange{5}{10}{\percent} at typical values of $\pT(Z)$ after the
-\hadhad pre-selection ($\SI{100}{\GeV} < \pT(Z) < \SI{200}{\GeV}$)
-when comparing to the $\pT(Z)$-inclusive normalisation factor. Due to
-the anticorrelation between $\pT(Z)$ and \dRtautau, this effect will
-be further enhanced in regions of low \dRtautau. The acceptance
-uncertainties on the \ZHF background, which are derived based on
-simulation, might not fully account for this effect that is observed
-in control region data. In the future it could be beneficial to
-control for such differential effects when measuring the \ZHF
-background in the control region.
+A post hoc analysis of the mismodelling observed at low \dRtautau is
+performed by inspecting the dependency of the measured \ZHF
+normalisation factor as a function of the transverse momentum of the
+$Z$ boson by performing a simplified normalisation measurement in the
+control region in bins of~$\pT(Z)$ reconstructed from the lepton
+transverse momenta. This cross-check shows a trend of decreasing \ZHF
+normalisation factors with increasing $\pT(Z)$ which can lead to
+differences of about \SIrange{5}{10}{\percent} at typical values of
+$\pT(Z)$ after the \hadhad pre-selection (approx.\
+$\SI{100}{\GeV} < \pT(Z) < \SI{200}{\GeV}$) when comparing to the
+$\pT(Z)$-inclusive normalisation factor. Due to the anticorrelation
+between $\pT(Z)$ and \dRtautau, this effect can be further enhanced in
+regions of low \dRtautau. The acceptance uncertainties on the \ZHF
+background, which are derived purely based on simulation, might not
+fully account for the effect as it is observed in control region
+data. In the future analyses it could be beneficial to control for
+such differential effects when performing auxiliary measurements of
+the \ZHF background.\todo{Put a plot in appendix?}
 
 % q0 (obs): 0.357911
 % sig (obs): 0.598257
@@ -555,7 +560,6 @@ background in the control region.
 % SM (Asimov mu = 1)
 % Median significance: 0.667530
 % Median pValue: 0.252217
-
 The background-only hypothesis is compared to the alternative of the
 background in addition to a positive SM \HH signal with
 strength~$\mu$. The likelihood ratio test comparing both hypotheses
@@ -564,6 +568,11 @@ $p$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
 dataset). Therefore, the background-only hypothesis cannot be rejected
 and thus upper limits on the SM \HH signal strength and cross sections
 are placed using the \CLs method.
+
+The best-fit signal strength is $0.9\,\numpmerr{+1.8}{-1.5}$,
+$0.7\,\numpmerr{+1.9}{-1.6}$, $1.9\,\numpmerr{+3.7}{-3.2}$ for the
+combined, \hadhad, and \lephad fit, respectively.
+
 
 \begin{table}[htbp]
   \centering
@@ -589,20 +598,39 @@ are placed using the \CLs method.
   \begin{subfigure}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_combined}
-    \subcaption{Combination}
+    \subcaption{Combination of all channels}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_hadhad}
-    \subcaption{\hadhad-only}
+    \subcaption{\hadhad channel and \ZHF CR}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_lephad}
-    \subcaption{\lephad-only}
+    \subcaption{\lephad channels (SLT \& LTT) and \ZHF CR}
   \end{subfigure}
 
-  \caption{Rankings}
+  \caption{Ranking of the post-fit impact of nuisance parameters on
+    $\mu$ as measured by the change in the estimated signal strength
+    ($\Delta \mu$) when performing the fit after fixing a nuisance
+    parameter~$\theta$ to $\hat{\theta} \pm \Delta \hat{\theta}$,
+    where $\hat{\theta}$ is the MLE and $\Delta \hat{\theta}$ the
+    post-fit uncertainty on the nuisance parameter. The impact on
+    $\mu$ is shown on the top axis in descending order of the mean
+    $|\Delta \mu|$ of the $+\Delta \hat{\theta}$ and
+    $-\Delta \hat{\theta}$ variation. The bottom axis shows the MLE of
+    the nuisance parameters including their post-fit uncertainty, with
+    marker colors indiciating the type of nuisance parameter: NP with
+    Gaussian constraint ($\alpha$ / black markers), NP with Poisson
+    constraint related to the statistical precision of the background
+    estimate ($\gamma$ / green markers), and unconstrained
+    normalisation factors (red markers). NP rankings and MLE are
+    obtained from fits of the signal-plus-background model to the
+    observed data in all regions (a), in the \hadhad signal region and
+    the \ZHF CR (b), in the \lephad signal regions and the \ZHF CR
+    (c).}
+  \todo[inline]{Technically the uncertainties are asymmetric (MINOS).}
 \end{sidewaysfigure}
 
 
