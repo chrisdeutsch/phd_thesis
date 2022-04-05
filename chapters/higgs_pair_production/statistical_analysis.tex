@@ -500,7 +500,7 @@ The modelling of the MVA input variables in the \hadhad channel can be
 inspected in~\Cref{fig:postfit_mva_inputs}, which shows the variables
 after the background-only fit of the MVA discriminants combining all
 channels of the analysis. The post-fit background model describes the
-observed data well with some minor discrepancies in the angular
+observed data well with minor discrepancies in the angular
 observables. For example at low values of \dRtautau the background
 model tends to overestimate the observed data by about
 \SI{10}{\percent} which is not fully covered by uncertainties.
@@ -553,44 +553,9 @@ data. In the future analyses it could be beneficial to control for
 such differential effects when performing auxiliary measurements of
 the \ZHF background.\todo{Put a plot in appendix?}
 
-% q0 (obs): 0.357911
-% sig (obs): 0.598257
-% pval (obs): 0.274834
-
-% SM (Asimov mu = 1)
-% Median significance: 0.667530
-% Median pValue: 0.252217
-The background-only hypothesis is compared to the alternative of the
-background in addition to a positive SM \HH signal with
-strength~$\mu$. The likelihood ratio test comparing both hypotheses
-yields an observed $p$-value of \SI{27.5}{\percent} (expected
-$p$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
-dataset). Therefore, the background-only hypothesis cannot be rejected
-and thus upper limits on the SM \HH signal strength and cross sections
-are placed using the \CLs method.
-
-The best-fit signal strength is $0.9\,\numpmerr{+1.8}{-1.5}$,
-$0.7\,\numpmerr{+1.9}{-1.6}$, $1.9\,\numpmerr{+3.7}{-3.2}$ for the
-combined, \hadhad, and \lephad fit, respectively.
-
-
-\begin{table}[htbp]
-  \centering
-
-  % Workspaces: comb_2022_01_29
-  \input{tables/non_res_limits}
-
-  \caption{Upper limits on the total cross section of Higgs pair
-    production via ggF and VBF as well as the signal
-    strength~$\mu = \sigma_\text{ggF+VBF} /
-    \sigma_\text{ggF+VBF}^\text{SM}$ at 95\% $\text{CL}_\text{s}$.}
-  \todo[inline]{Make a note somewhere that the cross section upper
-    limits are using a different workspace which removes cross section
-    uncertainties.}
-  \label{tab:limits_non_resonant}
-\end{table}
-
-
+\todo[inline]{Rankings here... \Cref{fig:nonres_np_rankings}. Need
+  breakdown comparing impact of data statistics to say that this is
+  the limiting source currently.}
 
 \begin{sidewaysfigure}[p]
   \centering
@@ -629,10 +594,57 @@ combined, \hadhad, and \lephad fit, respectively.
     obtained from fits of the signal-plus-background model to the
     observed data in all regions (a), in the \hadhad signal region and
     the \ZHF CR (b), in the \lephad signal regions and the \ZHF CR
-    (c).}
+    (c).}%
+  \label{fig:nonres_np_rankings}
   \todo[inline]{Technically the uncertainties are asymmetric (MINOS).}
 \end{sidewaysfigure}
 
+
+% q0 (obs): 0.357911
+% sig (obs): 0.598257
+% pval (obs): 0.274834
+
+% SM (Asimov mu = 1)
+% Median significance: 0.667530
+% Median pValue: 0.252217
+The background-only hypothesis is compared to the alternative
+including the SM \HH signal with non-negative signal strength. The
+likelihood ratio test comparing both hypotheses yields an observed
+$p_0$-value of \SI{27.5}{\percent}
+% (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov dataset)
+under the asymptotic approximation. The test is not significant at the
+levels for discovery commonly used in HEP and thus the background-only
+hypothesis cannot be rejected. The best-fit signal strength is
+$\hat{\mu} = 0.9\,\numpmerr{+1.8}{-1.5}$ for the combination of all
+channels\footnote{The best-fit signal strength of the fit combining
+  \hadhad channel and CR is $\hat{\mu} = 0.7\,\numpmerr{+1.9}{-1.6}$
+  and for \lephad channels and CR,
+  $\hat{\mu} = 1.9\,\numpmerr{+3.7}{-3.2}$.}.
+
+Upper limits are set on the SM \HH (ggF + VBF) signal strength and
+cross section using the \CLs method~\cite{Read:2002hq} at
+\SI{95}{\percent} confidence level (cf.\
+\Cref{sec:hypothesis_testing}). In~\Cref{tab:limits_non_resonant} the
+limits...
+
+\begin{table}[htbp]
+  \centering
+
+  % Workspaces: comb_2022_01_29
+  \input{tables/non_res_limits}
+
+  \caption{Upper limits on the total cross section of Higgs pair
+    production via ggF and VBF as well as the signal
+    strength~$\mu = \sigma_\text{ggF+VBF} /
+    \sigma_\text{ggF+VBF}^\text{SM}$ at 95\% $\text{CL}_\text{s}$.
+    The expected limits are determined under the assumption that
+    $\mu = 0$.}%
+  \label{tab:limits_non_resonant}
+
+  \todo[inline]{Make a note somewhere that the cross section upper
+    limits are using a different workspace which removes cross section
+    uncertainties.}
+\end{table}
 
 
 \todo[inline]{Discussion:}
