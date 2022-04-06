@@ -356,10 +356,10 @@ obtained from fits of the control region only (cf.\
 \Cref{sec:bkg_zjets}).
 
 In~\Cref{fig:mvascores_postfit} the MVA score distributions predicted
-by the background-only model are compared to data in the \hadhad,
+by the background model are compared to data in the \hadhad,
 \lephad SLT, and \lephad LTT channels after the maximum likelihood fit
 combining all signal and control regions. After performing the fit,
-the background-model provides a good description of the observed data
+the background model provides a good description of the observed data
 in the signal regions. The post-fit expected event yields
 corresponding to these regions are summarised
 in~\Cref{tab:postfit_yields_smhh}.
@@ -607,17 +607,31 @@ backgrounds.
 \end{table}
 
 The effect of uncertainties on \muhat is inspected on the level of
-individual nuisance parameters in~\Cref{fig:nonres_np_rankings}. The
-figure shows a ranking of the 15 nuisance parameters with the largest
-impact on the signal strength estimation and their MLE, including
-\SI{68}{\percent} confidence intervals, from the fit of the
-signal-plus-background model to observed data.
+individual nuisance parameters in~\Cref{fig:nonres_np_rankings}. A
+ranking of the 15 nuisance parameters with the largest impact on the
+signal strength estimation is shown, including the MLE of the nuisance
+parameter and its confidence interval from the unconditional fit to
+observed data.
 
+Observations:
 
+- Highly ranked nuisance parameters tend to agree with their pre-fit values
 
+- Constraints on highly ranked nuisance parameters primarily originate
+from the lephad channels, for example ttbar parton shower
+(decorrelated from hadhad) and rQCD (intended to be
+conservative). There is also the MadGraph uncertainty in hadhad that
+is sort of constrained (low stats two-sample comparison)
 
+- Bkg. prediction statistical uncertainties rank highly due to MVA
+strategy
 
+- stopWt interference uncertainty is particularly high in lephad and combination
 
+- Single Higgs heavy flavour uncertainty is very large and
+particularly relevant for hadhad
+
+- Maybe mention the HH cross section (and the downward asymmetry)
 
 
 The effect of uncertainties is similar to the previous Run~2
