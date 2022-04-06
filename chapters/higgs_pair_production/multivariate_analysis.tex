@@ -296,14 +296,14 @@ leptons ($\ell$).
 \begin{table}[htbp]
   \centering
 
-  \input{tables/mva_variables}
-
   \caption{Discriminating variables used by the multivariate
     classifiers distinguishing between events originating from signal
     and background processes in all three analysis categories. The
     same input variables are used for the search in the non-resonant
-    and resonant production modes.}
+    and resonant production modes.}%
   \label{tab:mva_inputvar}
+
+  \input{tables/mva_variables}
 \end{table}
 
 The \pTmiss $\phi$ centrality, previously used in the \hadhad
@@ -423,9 +423,14 @@ TMVA~v4.2.1~(ROOT~6.16/00).
 
 \begin{table}[htbp]
   \centering
-  \input{tables/hyperparameters_bdt}
-  \caption{Hyperparameter values considered for the random grid search optimising the performance of the BDT used to select the non-resonant \HH signal. The underlined values show the final configuration after optimisation.}
+
+  \caption{Hyperparameter values considered for the random grid search
+    optimising the performance of the BDT used to select the
+    non-resonant \HH signal. The underlined values show the final
+    configuration after optimisation.}%
   \label{tab:hyperparameter_grid_bdt}
+
+  \input{tables/hyperparameters_bdt}
 \end{table}
 
 The metric used for optimisation is the area under the \emph{receiver
@@ -587,14 +592,14 @@ the \mHH spectra between signal and background
 \begin{table}[htbp]
   \centering
 
-  \input{tables/permutation_importance/bdt}
-
   \caption{Importance of the input variables in the BDT measured as
     the change in ROC-AUC when permuting the values of a single
     variable over all events. The mean $\Delta\text{ROC-AUC}$ over 10
     permutations is displayed. The statistical uncertainty is below
-    0.001 and therefore omitted.}
+    0.001 and therefore omitted.}%
   \label{tab:variable_importance_bdt}
+
+  \input{tables/permutation_importance/bdt}
 \end{table}
 
 
@@ -685,14 +690,16 @@ same.
 
 \begin{table}[htbp]
   \centering
-  \input{tables/hyperparameters_pnn}
-  \caption{Parameter values used to defined the grid of
+
+  \caption{Parameter values used to def ined the grid of
     hyperparameters considered for the optimisation of the PNN
     configuration. Parameters marked with $*$ and $\dagger$ are only
     applicable when the number of hidden layers is larger than 1 and
     2, respectively. The underlined values show the final PNN
-    configuration after hyperparameter optimisation.}
+    configuration after hyperparameter optimisation.}%
   \label{tab:hyperparameter_grid_pnn}
+
+  \input{tables/hyperparameters_pnn}
 \end{table}
 
 No clear choice of optimisation metric exists to evaluate a continuum
@@ -865,13 +872,13 @@ interest.
 \begin{table}[htbp]
   \centering
 
-  \input{tables/pnn_width}
-
   \caption{Intervals of the PNN mass parameter where a hypothesis test
     of a signal with a given resonance mass in the PNN score
     distribution would yield \SI{75}{\percent} (\SI{50}{\percent}) of
-    the expected significance at the maximum.}
+    the expected significance at the maximum.}%
   \label{tab:pnn_width}
+
+  \input{tables/pnn_width}
 \end{table}
 
 % Example
@@ -919,20 +926,30 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 \begin{table}[htbp]
   \centering
 
+  \caption{Permutation importance of the input variables to the PNN
+    measured as the change in ROC-AUC (for the binary classification
+    task between a signal with mass \mX and total background) when
+    permuting the values of a single variable over all events. The
+    mean $\Delta\text{ROC-AUC}$ over 10 permutations is displayed. The
+    statistical uncertainty is below 0.002 for (a) and 0.001 for (b)
+    and (c) and thus omitted.  Variables are ordered in in descending
+    importance.}%
+  \label{tab:pnn_ranking}
+
   \begin{subtable}[t]{.33\textwidth}
     \centering
-    \input{tables/permutation_importance/pnn_300}
     \subcaption{$\mX = \SI{300}{\GeV}$}
+    \input{tables/permutation_importance/pnn_300}
   \end{subtable}%
   \begin{subtable}[t]{.33\textwidth}
     \centering
-    \input{tables/permutation_importance/pnn_500}
     \subcaption{$\mX = \SI{500}{\GeV}$}
+    \input{tables/permutation_importance/pnn_500}
   \end{subtable}%
   \begin{subtable}[t]{.33\textwidth}
     \centering
-    \input{tables/permutation_importance/pnn_1000}
     \subcaption{$\mX = \SI{1000}{\GeV}$}
+    \input{tables/permutation_importance/pnn_1000}
   \end{subtable}
 
   % \begin{subtable}[t]{.33\textwidth}
@@ -950,16 +967,6 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
   % 2,-0.09039,0.00037
   % 3,-0.09391,0.00056
   % 4,-0.18373,0.00103
-
-  \caption{Permutation importance of the input variables to the PNN
-    measured as the change in ROC-AUC (for the binary classification
-    task between a signal with mass \mX and total background) when
-    permuting the values of a single variable over all events. The
-    mean $\Delta\text{ROC-AUC}$ over 10 permutations is displayed. The
-    statistical uncertainty is below 0.002 for (a) and 0.001 for (b)
-    and (c) and thus omitted.  Variables are ordered in in descending
-    importance.}
-  \label{tab:pnn_ranking}
 \end{table}
 
 

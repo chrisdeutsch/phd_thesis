@@ -106,30 +106,30 @@ The majority of \ZHF events originate from $Z + bb$ accounting for
 \SI{90}{\percent} of the inclusive sample.
 
 \begin{table}[htbp]
-  \begin{subtable}{0.5\textwidth}
-    \centering
-
-    \input{tables/zcr_prefit_yields}
-
-    \subcaption{Pre-fit}
-    \label{tab:zcr_prefit_yields}
-  \end{subtable}
-  \begin{subtable}{0.5\textwidth}
-    \centering
-
-    \input{tables/zcr_postfit_yields}
-
-    \subcaption{Post-fit (\ZHF control region only)}
-    \label{tab:zcr_postfit_yields}
-  \end{subtable}
-
   \caption{Event yields in the \ZHF control region before (a) and
     after (b) the likelihood fit restricted to the control region. The
     \emph{Other} category summarises smaller backgrounds and is
     largely dominated by events originating from di-boson
     processes. The uncertainties on the event yield include all
-    experimental and systematic uncertainties.}
+    experimental and systematic uncertainties.}%
   \label{tab:zcr_yields}
+
+  \begin{subtable}{0.5\textwidth}
+    \centering
+
+    \subcaption{Pre-fit}%
+    \label{tab:zcr_prefit_yields}
+
+    \input{tables/zcr_prefit_yields}
+  \end{subtable}
+  \begin{subtable}{0.5\textwidth}
+    \centering
+
+    \subcaption{Post-fit (\ZHF control region only)}%
+    \label{tab:zcr_postfit_yields}
+
+    \input{tables/zcr_postfit_yields}
+  \end{subtable}
 \end{table}
 
 The \ZHF control region selects many events originating from

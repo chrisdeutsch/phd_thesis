@@ -16,6 +16,13 @@ models for the SM and BSM search.
 
 \begin{table}[htbp]
   \centering
+  \caption{Summary of the types of discriminants used in the binned
+    likelihood fits in the three signal regions and the control
+    region. The search for resonant production of Higgs boson pairs
+    uses the PNN distribution evaluated with a mass parameter equal to
+    the resonance mass to be probed.}%
+  \label{tab:fitted_variable}
+
   \begin{tabular}{lccccc}
     \toprule
     & \multicolumn{4}{c}{Discriminant used in channel} \\
@@ -26,12 +33,6 @@ models for the SM and BSM search.
     Resonant $X \to \HH$ & PNN (\mX) & PNN (\mX) & PNN (\mX) & \mll \\
     \bottomrule
   \end{tabular}
-  \caption{Summary of the types of discriminants used in the binned
-    likelihood fits in the three signal regions and the control
-    region. The search for resonant production of Higgs boson pairs
-    uses the PNN distribution evaluated with a mass parameter equal to
-    the resonance mass to be probed.}
-  \label{tab:fitted_variable}
 \end{table}
 
 The parameters of interest (POI) for the search for non-resonant SM
@@ -405,27 +406,6 @@ in~\Cref{tab:postfit_yields_smhh}.
 \begin{table}[htbp]
   \centering
 
-  \begin{subtable}{\textwidth}
-    \centering
-
-    \input{tables/smhh_postfit_yield_incl}
-
-    \subcaption{Expected event yields in the signal regions (post-fit)}
-    \label{tab:postfit_yields_smhh}
-  \end{subtable}
-
-  \vspace{1em}
-
-  \begin{subtable}{\textwidth}
-    \centering
-
-    \input{tables/smhh_postfit_yield_lastbins}
-
-    \subcaption{Expected event yields in the two most signal-like bins
-      of the BDT (\hadhad) and NN (\lephad) discriminants (post-fit)}
-    \label{tab:postfit_yields_smhh_signallike}
-  \end{subtable}
-
   \caption{Expected event yields in the three signal regions (a) and
     in the two most signal-like bins of the MVA discriminants (b)
     after the background-only fit to the observed data in all
@@ -436,6 +416,25 @@ in~\Cref{tab:postfit_yields_smhh}.
     signal strength of 1 and nuisance parameters determined by the
     fit. Nuisance parameters only affecting the SM \HH signal are at
     their pre-fit values.}
+
+  \begin{subtable}{\textwidth}
+    \centering
+    \subcaption{Expected event yields in the signal regions (post-fit)}%
+    \label{tab:postfit_yields_smhh}
+
+    \input{tables/smhh_postfit_yield_incl}
+  \end{subtable}
+
+  \vspace{10pt}
+
+  \begin{subtable}{\textwidth}
+    \centering
+    \subcaption{Expected event yields in the two most signal-like bins
+      of the BDT (\hadhad) and NN (\lephad) discriminants (post-fit)}%
+    \label{tab:postfit_yields_smhh_signallike}
+
+    \input{tables/smhh_postfit_yield_lastbins}
+  \end{subtable}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % self.setBkgOthers = {"Zhf", "Zlf", "Zttlf",     %
@@ -553,9 +552,37 @@ data. In the future analyses it could be beneficial to control for
 such differential effects when performing auxiliary measurements of
 the \ZHF background.\todo{Put a plot in appendix?}
 
+
+
+MLE \Cref{tab:breakdown}
+
+nuisance parameters and impact of nuisance parameters on the POI
+
 \todo[inline]{Rankings here... \Cref{fig:nonres_np_rankings}. Need
   breakdown comparing impact of data statistics to say that this is
   the limiting source currently.}
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Decomposition of the variance of $\hat{\mu}$ into
+    categories of uncertainty sources. The fraction of the variance on
+    $\hat{\mu}$ originating from a category is estimated using
+    $(\Delta\hat{\mu}^2_{\text{tot}} - \Delta\hat{\mu}^2_{\text{w/o
+        cat}}) / \Delta \hat{\mu}^2_{\text{tot}}$, where
+    $\Delta\hat{\mu}^2_{\text{tot}}$ is the estimate of the total
+    variance of $\hat{\mu}$ (all NPs are allowed to vary) and
+    $\Delta\hat{\mu}^2_{\text{w/o cat}}$ the variance after fixing the
+    nuisance parameters in a given category to their best-fit value.
+    For the data statistical uncertainty it is determined directly by
+    fixing all NPs to their best-fit value. The fractions of
+    sub-categories do not necessarily sum to the parent category due
+    to correlations between nuisance parameters.}
+
+  \input{tables/breakdown_nonres}
+
+  \label{tab:breakdown}
+\end{table}
 
 \begin{sidewaysfigure}[p]
   \centering
@@ -630,9 +657,6 @@ limits...
 \begin{table}[htbp]
   \centering
 
-  % Workspaces: comb_2022_01_29
-  \input{tables/non_res_limits}
-
   \caption{Upper limits on the total cross section of Higgs pair
     production via ggF and VBF as well as the signal
     strength~$\mu = \sigma_\text{ggF+VBF} /
@@ -640,6 +664,9 @@ limits...
     The expected limits are determined under the assumption that
     $\mu = 0$.}%
   \label{tab:limits_non_resonant}
+
+  % Workspaces: comb_2022_01_29
+  \input{tables/non_res_limits}
 
   \todo[inline]{Make a note somewhere that the cross section upper
     limits are using a different workspace which removes cross section

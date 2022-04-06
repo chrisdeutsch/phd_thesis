@@ -72,10 +72,10 @@
 \begin{table}[htbp]
   \centering
 
-  \input{tables/uncertainties_experimental}
+  \caption{Table of CP uncertainties}%
+  \label{tab:experimental_uncertainties}
 
-  \caption{Table of CP uncertainties}
-  \label{tab:bla}
+  \input{tables/uncertainties_experimental}
 \end{table}
 
 \todo[inline]{Where applicable, dedicated calibrations for ATLAS fast
@@ -281,30 +281,30 @@ regions is given in~\Cref{tab:uncertainties_ttbar_extrapol}.
 \begin{table}[htbp]
   \centering
 
-  \begin{subtable}[t]{0.95\textwidth}
-    \centering
-
-    \input{tables/uncertainties_zhf_extrapol}
-    \subcaption{\ZHF ($Z+bb$, $Z+bc$, $Z+cc$) background}
-    \label{tab:uncertainties_zhf_extrapol}
-  \end{subtable}
-
-  \vspace{0.5em}
-
-  \begin{subtable}[t]{0.95\textwidth}
-    \centering
-
-    \input{tables/uncertainties_ttbar_extrapol}
-    \subcaption{\ttbar background}
-    \label{tab:uncertainties_ttbar_extrapol}
-  \end{subtable}
-
   \caption{Relative acceptance uncertainties on the \ZHF (a) and
     \ttbar background (b) in the three signal regions. The relative
     sign of the effect of variations between the signal regions is
     indicated by the ``$\pm$'' and ``$\mp$'' prefixes. The total
     uncertainty is given for illustration of the size of the
     uncertainties only.}
+
+  \begin{subtable}[t]{0.95\textwidth}
+    \centering
+    \subcaption{\ZHF ($Z+bb$, $Z+bc$, $Z+cc$) background}%
+    \label{tab:uncertainties_zhf_extrapol}
+
+    \input{tables/uncertainties_zhf_extrapol}
+  \end{subtable}
+
+  \vspace{10pt}
+
+  \begin{subtable}[t]{0.95\textwidth}
+    \centering
+    \subcaption{\ttbar background}%
+    \label{tab:uncertainties_ttbar_extrapol}
+
+    \input{tables/uncertainties_ttbar_extrapol}
+  \end{subtable}
 \end{table}
 
 Relative acceptance uncertainties are implemented as uncertainties on
@@ -500,12 +500,12 @@ implemented as a shape uncertainty for later statistical evaluation.
 \begin{table}[htbp]
   \centering
 
-  \input{tables/theory_uncertainty_signal}
-
   \caption{Theory uncertainties on the acceptance of non-resonant SM
     $HH$ signals in the three signal regions. Uncertainties marked as
-    ``--'' are negligible.}
+    ``--'' are negligible.}%
   \label{tab:theory_uncertainty_signal}
+
+  \input{tables/theory_uncertainty_signal}
 \end{table}
 
 \todo[inline]{Acceptance uncertainties are assumed to be fully

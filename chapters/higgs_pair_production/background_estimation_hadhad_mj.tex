@@ -135,19 +135,6 @@ measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
 \begin{table}[htbp]
   \centering
 
-  \begin{subtable}[t]{\textwidth}
-    \centering
-    \input{tables/mjfakes_yield_table_1tag}
-    \subcaption{1 $b$-tag regions}
-    \label{tab:mjfakes_yields_1tag}
-  \end{subtable}
-
-  \begin{subtable}[t]{\textwidth}
-    \centering
-    \input{tables/mjfakes_yield_table_2tag}
-    \subcaption{2 $b$-tag regions}
-  \end{subtable}
-
   \caption{Number of multi-jet events in regions defined by the
     electric charge of the \tauhadvis pair (OS, SS) and \tauhadvis
     identification (ID, Anti-ID). The number of multi-jet events,
@@ -157,8 +144,27 @@ measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
     breakdown is shown after the 1 $b$-tag requirement in (a); after
     the 2 $b$-tag requirement in (b). The signal region (2 $b$-tag OS
     ID) is omitted. Uncertainties are from data and MC statistical
-    sources only.}
+    sources only.}%
   \label{tab:mjfakes_yields}
+
+  \begin{subtable}[t]{\textwidth}
+    \centering
+
+    \subcaption{1 $b$-tag regions}
+    \label{tab:mjfakes_yields_1tag}
+
+    \input{tables/mjfakes_yield_table_1tag}
+  \end{subtable}
+
+  \vspace{10pt}
+
+  \begin{subtable}[t]{\textwidth}
+    \centering
+
+    \subcaption{2 $b$-tag regions}
+
+    \input{tables/mjfakes_yield_table_2tag}
+  \end{subtable}
 \end{table}
 
 \begin{figure}[htbp]
@@ -880,8 +886,6 @@ $b$-tag regions.
 \begin{table}[htbp]
   \centering
 
-  \input{tables/multi_jet_uncertainties}
-
   \caption{The effect of uncertainties on the multi-jet prediction on
     the normalisation of the estimate in the \hadhad signal
     region. Effects on the shape of distributions in the signal region
@@ -890,8 +894,10 @@ $b$-tag regions.
     uncertainties are grouped by their source and seperately specified
     for the relevant nuisance parameters. The statistical
     uncertainties ($\dagger$) are combined for all backgrounds thus no
-    dedicated nuisance parameters exist for the multi-jet prediction.}
+    dedicated nuisance parameters exist for the multi-jet prediction.}%
   \label{tab:multi_jet_uncertainties}
+
+  \input{tables/multi_jet_uncertainties}
 \end{table}
 
 % Yield table / plots of regions
