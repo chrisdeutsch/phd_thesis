@@ -552,36 +552,50 @@ data. In the future analyses it could be beneficial to control for
 such differential effects when performing auxiliary measurements of
 the \ZHF background.\todo{Put a plot in appendix?}
 
+The dominant uncertainties affecting the measurement of the SM \HH
+signal strength are summarised in~\Cref{tab:breakdown_nonres} for the
+combination of all channels. The measurement is mainly limited by the
+statistical uncertainty originating from the small number of events
+observed at high values of the MVA discriminants, explaining about
+$\frac{2}{3}$ of the variance on \muhat. Systematic uncertainties play
+a sub-leading role, explaining a third of the variance on \muhat,
+largely dominated by uncertainties on the modelling of the SM
+backgrounds.
 
+The effect of uncertainties is similar to the previous Run~2
+analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of
+$pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
+\SI{36.1}{\per\femto\barn} integrated luminosity.\todo{Impact of data
+  statistical uncertainties is about the same -> Speaks for
+  improvements in CP and the analysis. Instrumental decreased in full
+  Run~2. Huge improvements in calibration measurements.}
 
-MLE \Cref{tab:breakdown}
+The effects of uncertainties on the level of individual nuisance
+parameters is shown in~\Cref{fig:nonres_np_rankings}.
 
-nuisance parameters and impact of nuisance parameters on the POI
-
-\todo[inline]{Rankings here... \Cref{fig:nonres_np_rankings}. Need
-  breakdown comparing impact of data statistics to say that this is
-  the limiting source currently.}
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Decomposition of the variance of $\hat{\mu}$ into
-    categories of uncertainty sources. The fraction of the variance on
-    $\hat{\mu}$ originating from a category is estimated using
+  \caption{Decomposition of the variance of $\hat{\mu}$ by uncertainty
+    category for the maximum likelihood fit to the observed data in
+    all regions. The fraction of the variance on $\hat{\mu}$ from a
+    category is approximated using
     $(\Delta\hat{\mu}^2_{\text{tot}} - \Delta\hat{\mu}^2_{\text{w/o
         cat}}) / \Delta \hat{\mu}^2_{\text{tot}}$, where
     $\Delta\hat{\mu}^2_{\text{tot}}$ is the estimate of the total
-    variance of $\hat{\mu}$ (all NPs are allowed to vary) and
-    $\Delta\hat{\mu}^2_{\text{w/o cat}}$ the variance after fixing the
-    nuisance parameters in a given category to their best-fit value.
-    For the data statistical uncertainty it is determined directly by
-    fixing all NPs to their best-fit value. The fractions of
-    sub-categories do not necessarily sum to the parent category due
-    to correlations between nuisance parameters.}
+    variance of the MLE of $\mu$ and
+    $\Delta\hat{\mu}^2_{\text{w/o cat}}$ its variance after fixing the
+    nuisance parameters of a category to their best-fit value. The
+    variance of $\hat{\mu}$ from data statistical uncertainties is
+    determined directly from the model with all nuisance parameters
+    fixed to their best-fit values. The fractions of subcategories do
+    not necessarily sum to the fraction of the parent category due to
+    correlations between nuisance parameters.}
 
   \input{tables/breakdown_nonres}
 
-  \label{tab:breakdown}
+  \label{tab:breakdown_nonres}
 \end{table}
 
 \begin{sidewaysfigure}[p]
