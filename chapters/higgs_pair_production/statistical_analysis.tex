@@ -552,6 +552,26 @@ data. In the future analyses it could be beneficial to control for
 such differential effects when performing auxiliary measurements of
 the \ZHF background.\todo{Put a plot in appendix?}
 
+% q0 (obs): 0.357911
+% sig (obs): 0.598257
+% pval (obs): 0.274834
+
+% SM (Asimov mu = 1)
+% Median significance: 0.667530
+% Median pValue: 0.252217
+The background-only hypothesis is compared to the alternative
+including the SM \HH signal with non-negative signal strength. The
+likelihood ratio test comparing both hypotheses yields an observed
+$p_0$-value of \SI{27.5}{\percent}
+% (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov dataset)
+under the asymptotic approximation. The test is not significant and
+thus the background-only hypothesis cannot be rejected. The best-fit
+signal strength is $\hat{\mu} = 0.9\,\numpmerr{+1.8}{-1.5}$ for the
+combination of all channels\footnote{The best-fit signal strength of
+  the fit combining \hadhad channel and CR is
+  $\hat{\mu} = 0.7\,\numpmerr{+1.9}{-1.6}$ and for \lephad channels
+  and CR, $\hat{\mu} = 1.9\,\numpmerr{+3.7}{-3.2}$.}.
+
 The dominant uncertainties affecting the measurement of the SM \HH
 signal strength are summarised in~\Cref{tab:breakdown_nonres} for the
 combination of all channels. The measurement is mainly limited by the
@@ -561,18 +581,6 @@ $\frac{2}{3}$ of the variance on \muhat. Systematic uncertainties play
 a sub-leading role, explaining a third of the variance on \muhat,
 largely dominated by uncertainties on the modelling of the SM
 backgrounds.
-
-The effect of uncertainties is similar to the previous Run~2
-analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of
-$pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
-\SI{36.1}{\per\femto\barn} integrated luminosity.\todo{Impact of data
-  statistical uncertainties is about the same -> Speaks for
-  improvements in CP and the analysis. Instrumental decreased in full
-  Run~2. Huge improvements in calibration measurements.}
-
-The effects of uncertainties on the level of individual nuisance
-parameters is shown in~\Cref{fig:nonres_np_rankings}.
-
 
 \begin{table}[htbp]
   \centering
@@ -597,6 +605,29 @@ parameters is shown in~\Cref{fig:nonres_np_rankings}.
 
   \label{tab:breakdown_nonres}
 \end{table}
+
+The effect of uncertainties on \muhat is inspected on the level of
+individual nuisance parameters in~\Cref{fig:nonres_np_rankings}. The
+figure shows a ranking of the 15 nuisance parameters with the largest
+impact on the signal strength estimation and their MLE, including
+\SI{68}{\percent} confidence intervals, from the fit of the
+signal-plus-background model to observed data.
+
+
+
+
+
+
+
+
+The effect of uncertainties is similar to the previous Run~2
+analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of
+$pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
+\SI{36.1}{\per\femto\barn} integrated luminosity.\todo{Impact of data
+  statistical uncertainties is about the same -> Speaks for
+  improvements in CP and the analysis. Instrumental decreased in full
+  Run~2. Huge improvements in calibration measurements.}
+
 
 \begin{sidewaysfigure}[p]
   \centering
@@ -641,26 +672,7 @@ parameters is shown in~\Cref{fig:nonres_np_rankings}.
 \end{sidewaysfigure}
 
 
-% q0 (obs): 0.357911
-% sig (obs): 0.598257
-% pval (obs): 0.274834
 
-% SM (Asimov mu = 1)
-% Median significance: 0.667530
-% Median pValue: 0.252217
-The background-only hypothesis is compared to the alternative
-including the SM \HH signal with non-negative signal strength. The
-likelihood ratio test comparing both hypotheses yields an observed
-$p_0$-value of \SI{27.5}{\percent}
-% (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov dataset)
-under the asymptotic approximation. The test is not significant at the
-levels for discovery commonly used in HEP and thus the background-only
-hypothesis cannot be rejected. The best-fit signal strength is
-$\hat{\mu} = 0.9\,\numpmerr{+1.8}{-1.5}$ for the combination of all
-channels\footnote{The best-fit signal strength of the fit combining
-  \hadhad channel and CR is $\hat{\mu} = 0.7\,\numpmerr{+1.9}{-1.6}$
-  and for \lephad channels and CR,
-  $\hat{\mu} = 1.9\,\numpmerr{+3.7}{-3.2}$.}.
 
 Upper limits are set on the SM \HH (ggF + VBF) signal strength and
 cross section using the \CLs method~\cite{Read:2002hq} at
