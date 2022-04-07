@@ -627,7 +627,8 @@ based) from the unconditional fit to observed data.
   \begin{subfigure}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_hadhad}
-    \subcaption{\hadhad channel and \ZHF CR}
+    \subcaption{\hadhad channel and \ZHF CR}%
+    \label{fig:nonres_np_ranking_hadhad}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.32\textwidth}
     \centering
@@ -714,16 +715,28 @@ highlighted in the following:
   background entails a large subtraction of non-multi-jet events in
   the control region which further degrades the statistical precision
   of the background estimate. As a result, in the \hadhad-only fit the
-  associated nuisance parameter ($\gamma$ of SMBDT bin 13) has the
-  largest impact of any single NP on the extracted signal strength.
+  associated nuisance parameter (cf.\ $\gamma$ NP for SMBDT bin 13
+  in~\Cref{fig:nonres_np_ranking_hadhad}) has the largest impact of
+  any single NP on the extracted signal strength.
+
+\item The $tW$ acceptance uncertainty derived from comparing simulated
+  events with different treatments of the $tW$ and \ttbar interference
+  is the NP with the largest impact on \muhat for both the combined
+  and the \lephad-only fit. It primarily originates from the \lephad
+  SLT channel where the uncertainty on $tW$ can reach up to
+  \SI{80}{\percent} at high NN score. Simultaneously, single top
+  production constitutes about \SI{50}{\percent} of the top background
+  at high NN score, resulting in a large impact of this NP on the
+  signal extraction. This uncertainty is less impactful in the \hadhad
+  and \lephad LTT channel due to the $tW$ fraction and the uncertainty
+  itself being smaller\todo{Technically the LTT uncertainty is about
+    the same}.
+
+\item Single Higgs boson heavy flavour uncertainty
+
+\item HH cross section (and asymmetry)?
+
 \end{itemize}
-
-- stopWt interference uncertainty is particularly high in lephad and combination
-
-- Single Higgs heavy flavour uncertainty is very large and
-particularly relevant for hadhad
-
-- Maybe mention the HH cross section (and the downward asymmetry)
 
 
 The effect of uncertainties is similar to the previous Run~2
