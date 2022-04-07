@@ -616,58 +616,6 @@ estimation is shown, including the MLE of the nuisance parameters and
 their \SI{68}{\percent} confidence intervals (profile likelihood
 based) from the unconditional fit to observed data.
 
-The 15 highly ranking nuisance parameters are generally compatible
-with their expected values prior to the fit. For few nuisance
-parameters the fit provides more stringent constraints than suggested
-by their prior measurement, which is consistent with the results
-obtained from fits to Asimov datasets.
-
-The largest NP constraint observed in the \hadhad channel fit is from
-the \ZHF acceptance uncertainty determined from MC-to-MC comparison of
-\SHERPA and \MGNLOPY. The uncertainty associated with this NP is
-expected to be conservative, since it arises from a comparison of the
-nominal event generation at NLO with a prediction lower order of the
-pertubative expansion (LO).
-
-In the \lephad channel, large constraints are observed on the nuisance
-parameter associated to the uncertainty on $r_{\text{QCD}}$ and the
-\ttbar acceptance uncertainty from the comparison of parton shower
-programs. The uncertainty on $r_{\text{QCD}}$ is derived to be
-conservative, varying the assumed fraction of \faketauhadvis
-originating from multi-jet processes in the anti-\tauhadvis control
-region between 0 and \SI{100}{\percent}, explaining the large
-constraints on this parameter. The constraints on the \ttbar
-acceptance uncertainty based on the parton shower comparison primarily
-originates from the \lephad SLT channel which has high purity of top
-quark backgrounds. Since the constraint is rather large, this
-uncertainty source is de-correlated between channels to avoid
-underestimating the acceptance uncertainty in other channels based on
-the constraints meausred in the \lephad SLT channel\todo{Should
-  mention this earlier?}.
-
-
-Observations:
-
-- Bkg. prediction statistical uncertainties rank highly due to MVA
-strategy
-
-- stopWt interference uncertainty is particularly high in lephad and combination
-
-- Single Higgs heavy flavour uncertainty is very large and
-particularly relevant for hadhad
-
-- Maybe mention the HH cross section (and the downward asymmetry)
-
-
-The effect of uncertainties is similar to the previous Run~2
-analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of
-$pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
-\SI{36.1}{\per\femto\barn} integrated luminosity.\todo{Impact of data
-  statistical uncertainties is about the same -> Speaks for
-  improvements in CP and the analysis. Instrumental decreased in full
-  Run~2. Huge improvements in calibration measurements.}
-
-
 \begin{sidewaysfigure}[p]
   \centering
 
@@ -709,6 +657,85 @@ $pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
   \label{fig:nonres_np_rankings}
   \todo[inline]{Technically the uncertainties are asymmetric (MINOS).}
 \end{sidewaysfigure}
+
+The 15 highly ranking nuisance parameters are generally compatible
+with their expected values prior to the fit. For few nuisance
+parameters the fit provides more stringent constraints than suggested
+by their prior measurement, which is consistent with the results
+obtained from fits to Asimov datasets.
+
+The largest NP constraint observed in the \hadhad channel fit is from
+the \ZHF acceptance uncertainty determined from MC-to-MC comparison of
+\SHERPA and \MGNLOPY. The uncertainty associated with this NP is
+expected to be conservative, since it arises from a comparison of the
+nominal event generation at NLO with a prediction lower order of the
+pertubative expansion (LO).
+
+In the \lephad channel, large constraints are observed on the nuisance
+parameter associated to the uncertainty on $r_{\text{QCD}}$ and the
+\ttbar acceptance uncertainty from the comparison of parton shower
+programs. The uncertainty on $r_{\text{QCD}}$ is derived to be
+conservative, varying the assumed fraction of \faketauhadvis
+originating from multi-jet processes in the anti-\tauhadvis control
+region between 0 and \SI{100}{\percent}, explaining the large
+constraints on this parameter. The constraints on the \ttbar
+acceptance uncertainty based on the parton shower comparison stems
+from the \lephad SLT channel which has high purity of top quark
+backgrounds. Since the constraint is large, this uncertainty source is
+de-correlated between channels to avoid underestimating the acceptance
+uncertainty in other channels based on the measurement in the \lephad
+SLT channel\todo{Should mention this earlier?}.
+
+A few features of the ranking of nuisance parameters / nuisance
+parameter categories, as previously presented in
+\Cref{tab:breakdown_nonres} and \Cref{fig:nonres_np_rankings}, are
+highlighted in the following:
+\begin{itemize}
+\item Statistical uncertainties on the background prediction have a
+  large impact when comparing to other systematic uncertainties. These
+  uncertainties arise from the finite number of simulated events used
+  for the background predictions and the number of control region
+  events used to perform the data-driven \faketauhadvis background
+  estimates.
+
+  The distinct features of Higgs boson pair production in the SM allow
+  to separate the targeted signal well from most background processes
+  when employing multi-variate techniques. Therefore simulation-based
+  background predictions, while generally produced with integrated
+  luminosities exceeding that of the collected data\footnote{The data
+    statistical uncertainties, not the statistical precision of the
+    background prediction, are the primary limitation for the signal
+    extraction as can be seen in~\Cref{tab:breakdown_nonres}.}, do not
+  populate the region of high MVA scores densely, leading to
+  non-negligible statistical uncertainties on the background
+  predictions in the most signal-like bins.
+
+  In the \hadhad channel the data-driven estimate of the multi-jet
+  background entails a large subtraction of non-multi-jet events in
+  the control region which further degrades the statistical precision
+  of the background estimate. As a result, in the \hadhad-only fit the
+  associated nuisance parameter ($\gamma$ of SMBDT bin 13) has the
+  largest impact of any single NP on the extracted signal strength.
+\end{itemize}
+
+- stopWt interference uncertainty is particularly high in lephad and combination
+
+- Single Higgs heavy flavour uncertainty is very large and
+particularly relevant for hadhad
+
+- Maybe mention the HH cross section (and the downward asymmetry)
+
+
+The effect of uncertainties is similar to the previous Run~2
+analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of
+$pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
+\SI{36.1}{\per\femto\barn} integrated luminosity.\todo{Impact of data
+  statistical uncertainties is about the same -> Speaks for
+  improvements in CP and the analysis. Instrumental decreased in full
+  Run~2. Huge improvements in calibration measurements.}
+
+
+
 
 
 
