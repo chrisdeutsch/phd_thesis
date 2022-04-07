@@ -578,9 +578,10 @@ combination of all channels. The measurement is mainly limited by the
 statistical uncertainty originating from the small number of events
 observed at high values of the MVA discriminants, explaining about
 $\frac{2}{3}$ of the variance on \muhat. Systematic uncertainties play
-a sub-leading role, explaining a third of the variance on \muhat,
-largely dominated by uncertainties on the modelling of the SM
-backgrounds.
+a sub-leading role explaining the remaining third of the total
+variance on \muhat. The largest sources of systematic uncertainty are
+originating from the modelling of the SM backgrounds and the
+statistical precision of the background estimate.
 
 \begin{table}[htbp]
   \centering
@@ -606,22 +607,46 @@ backgrounds.
   \label{tab:breakdown_nonres}
 \end{table}
 
-The effect of uncertainties on \muhat is inspected on the level of
-individual nuisance parameters in~\Cref{fig:nonres_np_rankings}. A
-ranking of the 15 nuisance parameters with the largest impact on the
-signal strength estimation is shown, including the MLE of the nuisance
-parameter and its confidence interval from the unconditional fit to
-observed data.
+The effect of uncertainties on \muhat is examined on the level of
+individual nuisance parameters in~\Cref{fig:nonres_np_rankings}
+separately for the combination of all channels and for fits of the
+\hadhad and \lephad channels individually. A ranking of the 15
+nuisance parameters with the largest impact on the signal strength
+estimation is shown, including the MLE of the nuisance parameters and
+their \SI{68}{\percent} confidence intervals (profile likelihood
+based) from the unconditional fit to observed data.
+
+The 15 highly ranking nuisance parameters are generally compatible
+with their expected values prior to the fit. For few nuisance
+parameters the fit provides more stringent constraints than suggested
+by their prior measurement, which is consistent with the results
+obtained from fits to Asimov datasets.
+
+The largest NP constraint observed in the \hadhad channel fit is from
+the \ZHF acceptance uncertainty determined from MC-to-MC comparison of
+\SHERPA and \MGNLOPY. The uncertainty associated with this NP is
+expected to be conservative, since it arises from a comparison of the
+nominal event generation at NLO with a prediction lower order of the
+pertubative expansion (LO).
+
+In the \lephad channel, large constraints are observed on the nuisance
+parameter associated to the uncertainty on $r_{\text{QCD}}$ and the
+\ttbar acceptance uncertainty from the comparison of parton shower
+programs. The uncertainty on $r_{\text{QCD}}$ is derived to be
+conservative, varying the assumed fraction of \faketauhadvis
+originating from multi-jet processes in the anti-\tauhadvis control
+region between 0 and \SI{100}{\percent}, explaining the large
+constraints on this parameter. The constraints on the \ttbar
+acceptance uncertainty based on the parton shower comparison primarily
+originates from the \lephad SLT channel which has high purity of top
+quark backgrounds. Since the constraint is rather large, this
+uncertainty source is de-correlated between channels to avoid
+underestimating the acceptance uncertainty in other channels based on
+the constraints meausred in the \lephad SLT channel\todo{Should
+  mention this earlier?}.
+
 
 Observations:
-
-- Highly ranked nuisance parameters tend to agree with their pre-fit values
-
-- Constraints on highly ranked nuisance parameters primarily originate
-from the lephad channels, for example ttbar parton shower
-(decorrelated from hadhad) and rQCD (intended to be
-conservative). There is also the MadGraph uncertainty in hadhad that
-is sort of constrained (low stats two-sample comparison)
 
 - Bkg. prediction statistical uncertainties rank highly due to MVA
 strategy
