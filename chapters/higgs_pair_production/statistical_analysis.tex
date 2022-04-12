@@ -787,20 +787,47 @@ in~\Cref{sec:result_discussion}.
 \subsection{Results of the search for resonant production of $HH$}
 \label{sec:results_res}
 
-\todo[inline]{Post fit plots of MVAs}
+For this interpretation the absence of SM Higgs boson pair production
+is assumed.
+
 \todo[inline]{Ranking plots: Selected masses combined only}
-\todo[inline]{Pull plots? (+Asimov)}
-
-
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.65\textwidth]{results/resonant_comb_upper_limits}
+  \begin{subfigure}{0.495\textwidth}
+    \centering
 
-  \caption{Upper limits for the resonant search}
-  \label{fig:res_upper_limits}
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN300_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN500_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
+    \subcaption{}
+  \end{subfigure}
+
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN1000_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN1600_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
+    \subcaption{}
+  \end{subfigure}
+
+  \caption{Distribution of the PNN discriminant of the \hadhad channel
+    after the maximum likelihood fit of the background-only model.}%
+  \label{fig:resonant_mva_postfit}
+
+  \todo[inline]{Put lephad equivalents in appendix?}
 \end{figure}
+
 
 \begin{figure}[htbp]
   \centering
@@ -819,6 +846,33 @@ in~\Cref{sec:result_discussion}.
     for~$Z \sim \mathcal{N}(0, \sigma^2)$ and $n = 0, 1, \dots, 4$.}%
   \label{fig:local_pvalues}
 \end{figure}
+
+The best-fit cross section of $pp \to X(\SI{1000}{\GeV}) \to HH$
+is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn}.
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.7\textwidth]{results/resonant_comb_upper_limits}
+
+  \caption{Upper limits for the resonant search}
+  \label{fig:res_upper_limits}
+\end{figure}
+
+
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Breakdown}%
+  \label{tab:breakdown_res}
+
+  \input{tables/breakdown_res}
+\end{table}
+
+
+
+
 
 \subsection{Global significance estimation of the $\mX = \SI{1000}{\GeV}$ excess}
 
