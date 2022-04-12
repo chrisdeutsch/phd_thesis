@@ -36,14 +36,14 @@ models for the SM and BSM search.
 \end{table}
 
 The parameters of interest (POI) for the search for non-resonant SM
-\HH production are the cross section of the combination of the ggF and
+\HH production are the cross section of the combination of the \ggF and
 VBF production modes, \xsecggfvbf, and the signal strength
 \begin{align*}
   \mu = \frac{\xsecggfvbf}{\xsecggfvbf^{\text{SM}}} \,\text{,}
 \end{align*}
 which measures the cross section relative to the Standard Model
 prediction
-of~$\xsecggfvbf^{\text{SM}} = \SI{31.05}{\femto\barn} \text{ (ggF)} +
+of~$\xsecggfvbf^{\text{SM}} = \SI{31.05}{\femto\barn} \text{ (\ggF)} +
 \SI{1.726}{\femto\barn} \text{
   (VBF)}$~\cite{Grazzini:2018bsd,Dreyer:2018qbw}. In the BSM scenario
 of resonant production of Higgs boson pairs via scalar resonances,
@@ -60,6 +60,7 @@ and~\Cref{sec:results_res} the results are presented.
 % competing hypothese.
 
 \todo[inline]{Chapter with validation plots before this one?}
+
 
 \subsection{The signal and background model}%
 \label{sec:sig_bkg_model}
@@ -81,7 +82,7 @@ maximum likelihood fit of binned MVA discriminants.
 
 For every signal hypothesis dedicated models are constructed.
 
-The signal considered for non-resonant SM \HH search are ggF+VBF.
+The signal considered for non-resonant SM \HH search are \ggF+VBF.
 
 \todo[inline]{Simultaneous maximum likelihood fit of binned MVA
   discriminants and control regions to estimate the model parameters.}
@@ -169,7 +170,7 @@ contents, the MVA scores are displayed as equidistant bins.
 The signal and background models are simplified by merging samples
 originating from similar underlying physics processes which are
 subject to equal treatment in the fit model. In the SM \HH search, the
-ggF and VBF samples are merged, defining the total signal contribution
+\ggF and VBF samples are merged, defining the total signal contribution
 from both production modes. The \Zjets samples are combined into
 $Z + (bb,bc,cc)$ and $Z + (bl,cl,ll)$ samples, separately for
 $Z \to \tau\tau$ and $Z \to \ell^+\ell^-$, where $\ell = e,
@@ -340,7 +341,7 @@ top quark pair and single top production are combined into the ``top
 quark'' background. Contributions from minor backgrounds are combined
 into the ``other'' background category which includes the processes
 $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$ and
-$Z \to \mu^{+}\mu^{-}$ inclusively in the flavour label of the $b$-jet
+$Z \to \mu^{+}\mu^{-}$ inclusive in the flavour label of the $b$-jet
 candidates, \Wjets, diboson, and $\ttbar V$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -358,7 +359,7 @@ by the background-only model are compared to data in the \hadhad,
 combining all signal and control regions. After performing the fit,
 the background model provides a good description of the data observed
 in the signal regions. Additionally, the expected event yields per
-physics in these regions after the fit are summarised
+process in these regions after the fit are summarised
 in~\Cref{tab:postfit_yields_smhh}.
 
 \begin{figure}[htbp]
@@ -450,11 +451,11 @@ in~\Cref{tab:postfit_yields_smhh}.
 The choice of analysis strategy of using multivariate discriminants to
 extract the signal of interest from loosely preselected events limits
 the conclusions that can be drawn regarding the background processes
-that are relevant to the signal extraction
-process. Therefore~\Cref{tab:postfit_yields_smhh_signallike} lists the
-expected event yields for the two most signal-like bins of the MVA
-discriminants, illustrating the background composition in a phase
-space comparable to the one occupied by the signal process.
+that are relevant to the signal extraction process. Therefore,
+\Cref{tab:postfit_yields_smhh_signallike} lists the expected event
+yields for the two most signal-like bins of the MVA discriminants,
+illustrating the background composition in a phase space comparable to
+the one occupied by the signal process.
 
 % Top quark: 3(ttbar):1(stop)
 The dominant background in the two most signal-like bins of the SM \HH
@@ -469,26 +470,27 @@ individual channel in this search.
 
 % Top quark (SLT): 1(ttbar):1(stop)
 % Top quark (LTT): 5(ttbar):1(stop)
-In the \lephad channels the dominant backgrounds are originating from
-the production of top quarks and \ZHF. Compared to the \hadhad
-channel, top quark backgrounds are more abundant\footnote{The targeted
-  $\ell + \tauhad$ final state does not distinguish between prompt
-  production of electrons / muons and non-prompt production via
-  leptonic \taulepton decays, thus both $W \to \taulep \nu_{\tau}$ and
-  $W \to \ell \nu_{\ell}$ ($\ell = e$ or $\mu$) are considered as
-  \taulepvis candidates. Backgrounds from \ttbar or $tW$ production
-  would be about seven times more abundant in the \lephad channel
-  compared to the \hadhad channel based on $W$ boson and \taulepton
-  branching ratios (taken from Ref.~\cite{pdg2020}) prior to the event
-  reconstruction, and disregarding \faketauhadvis contributions.}
-with a large contribution of about \SI{50}{\percent} from single top
-production in the SLT channel (ca.\ \SI{15}{\percent} in LTT). The
-selection of the two most signal-like bins yields smaller signal
-efficiencies while having background rates that are comparable between
-the three channels. This is due to the abundance of top quark
-backgrounds and the comparatively larger difficulty of reconstructing
-the $H \to \tautau$ candidate in \lephad decay modes which degrades
-the resolution of the $\tautau$ and \HH mass reconstruction.
+In the \lephad channels the dominant backgrounds in the signal-like
+bins are originating from the production of top quarks and
+\ZHF. Compared to the \hadhad channel, top quark backgrounds are more
+abundant\footnote{The targeted $\ell + \tauhad$ final state does not
+  distinguish between prompt production of electrons / muons and
+  non-prompt production via leptonic \taulepton decays, thus both
+  $W \to \taulep \nu_{\tau}$ and $W \to \ell \nu_{\ell}$ ($\ell = e$
+  or $\mu$) are considered as \taulepvis candidates. Backgrounds from
+  \ttbar or $tW$ production would be about seven times more abundant
+  in the \lephad channel compared to the \hadhad channel based on $W$
+  boson and \taulepton branching ratios (taken from
+  Ref.~\cite{pdg2020}) prior to the event reconstruction, and
+  disregarding \faketauhadvis contributions.}  with a large
+contribution of about \SI{50}{\percent} from single top production in
+the SLT channel (ca.\ \SI{15}{\percent} in LTT). The selection of the
+two most signal-like bins yields smaller signal efficiencies while
+having background rates that are comparable between the three
+channels. This is due to the abundance of top quark backgrounds and
+the larger difficulty of reconstructing the $H \to \tautau$ candidate
+in \lephad decay modes, degrading the resolution of the $\tautau$ and
+\HH mass reconstruction.
 
 The modelling of MVA input variables in the \hadhad channel can be
 inspected in~\Cref{fig:postfit_mva_inputs}, which shows the variables
@@ -543,9 +545,9 @@ between $\pT(Z)$ and \dRtautau, this effect can be further enhanced in
 regions of low \dRtautau. The acceptance uncertainties on the \ZHF
 background, which are derived purely based on simulation, might not
 fully account for the effect as it is observed in control region
-data. In the future analyses it could be beneficial to control for
-such differential effects when performing auxiliary measurements of
-the \ZHF background.\todo{Put a plot in appendix?}
+data. In future analyses it could be beneficial to control for such
+differential effects when performing auxiliary measurements of the
+\ZHF background.\todo{Put a plot in appendix?}
 
 % q0 (obs): 0.357911
 % sig (obs): 0.598257
@@ -569,8 +571,8 @@ channels\footnote{The best-fit signal strength of the fit combining
   \hadhad channel and CR is $\hat{\mu} = 0.7\,\numpmerr{+1.9}{-1.6}$
   and for \lephad channels and CR,
   $\hat{\mu} = 1.9\,\numpmerr{+3.7}{-3.2}$.}, which is compatible with
-both the hypothesised signal strength in the SM but also with the
-absence of Higgs boson pair production.
+the signal strength in the SM but also with the absence of Higgs boson
+pair production.
 
 The dominant uncertainties affecting the measurement of the SM \HH
 signal strength are summarised in~\Cref{tab:breakdown_nonres} for the
@@ -613,8 +615,8 @@ separately for the combination of all channels and for fits of the
 \hadhad and \lephad channels individually. A ranking of the 15
 nuisance parameters with the largest impact on the signal strength
 estimation is shown, including the MLE of the nuisance parameters and
-their \SI{68}{\percent} confidence intervals (profile likelihood
-based) from the unconditional fit to observed data.
+their \SI{68}{\percent} confidence intervals from the unconditional
+fit to observed data.
 
 \begin{sidewaysfigure}[p]
   \centering
@@ -650,20 +652,20 @@ based) from the unconditional fit to observed data.
     Gaussian constraint ($\alpha$ / black markers), NP with Poisson
     constraint related to the statistical precision of the background
     estimate ($\gamma$ / green markers), and unconstrained
-    normalisation factors (red markers). NP rankings and MLE are
+    normalisation factors (red markers). NP rankings and their MLE are
     obtained from fits of the signal-plus-background model to the
     observed data in all regions (a), in the \hadhad signal region and
     the \ZHF CR (b), in the \lephad signal regions and the \ZHF CR
     (c).}%
   \label{fig:nonres_np_rankings}
-  \todo[inline]{Technically the uncertainties are asymmetric (MINOS).}
+  \todo[inline]{The uncertainties are obtained from the likelihood profile - asymmetric.}
 \end{sidewaysfigure}
 
-The 15 highly ranking nuisance parameters are generally compatible
-with their expected values prior to the fit. For few nuisance
-parameters the fit provides more stringent constraints than suggested
-by their prior measurement, which is consistent with the results
-obtained from fits to Asimov datasets.
+The 15 highest ranked nuisance parameters show good compatibility with
+their values prior to the fit. For few nuisance parameters the fit
+provides more stringent constraints than suggested by their prior
+measurement, which is consistent with the results obtained from fits
+to Asimov datasets.
 
 The largest NP constraint observed in the \hadhad channel fit is from
 the \ZHF acceptance uncertainty determined from MC-to-MC comparison of
@@ -701,7 +703,7 @@ highlighted in the following:
 
   The distinct features of Higgs boson pair production in the SM allow
   to separate the targeted signal well from most background processes
-  when employing multi-variate techniques. Therefore simulation-based
+  when employing multivariate techniques. Therefore, simulation-based
   background predictions, while generally produced with integrated
   luminosities exceeding that of the collected data\footnote{The data
     statistical uncertainties, not the statistical precision of the
@@ -711,75 +713,75 @@ highlighted in the following:
   non-negligible statistical uncertainties on the background
   predictions in the most signal-like bins.
 
-  In the \hadhad channel the data-driven estimate of the multi-jet
-  background entails a large subtraction of non-multi-jet events in
-  the control region which further degrades the statistical precision
-  of the background estimate. As a result, in the \hadhad-only fit the
-  associated nuisance parameter (cf.\ $\gamma$ NP for SMBDT bin 13
-  in~\Cref{fig:nonres_np_ranking_hadhad}) has the largest impact of
-  any single NP on the extracted signal strength.
+  Additionally, the data-driven estimate of the multi-jet background
+  in the \hadhad channel includes large subtractions of non-multi-jet
+  events in the control region, further degrading the statistical
+  precision of the background estimate. As a result, in the
+  \hadhad-only fit the associated nuisance parameter has the largest
+  impact of any single NP on the extracted signal strength (cf.\
+  $\gamma$ NP for SMBDT bin 13
+  in~\Cref{fig:nonres_np_ranking_hadhad}).
 
 \item The $tW$ acceptance uncertainty derived from comparing simulated
-  events with different treatments of the $tW$ and \ttbar interference
+  events with different treatment of the $tW$ and \ttbar interference
   is the NP with the largest impact on \muhat for both the combined
   and the \lephad-only fit. It primarily originates from the \lephad
   SLT channel where the uncertainty on $tW$ can reach up to
-  \SI{80}{\percent} at high NN score. Simultaneously, single top
-  production constitutes about \SI{50}{\percent} of the top background
-  at high NN score, resulting in a large impact of this NP on the
-  signal extraction. This uncertainty is less impactful in the \hadhad
-  and \lephad LTT channel due to the $tW$ fraction and the uncertainty
-  itself being smaller\todo{Technically the LTT uncertainty is about
-    the same}.
+  \SI{80}{\percent} at high NN score. Moreover, single top production
+  constitutes about \SI{50}{\percent} of the top background at high NN
+  score in the \lephad SLT channel, resulting in a large impact of
+  this NP on the signal extraction. This uncertainty has less impact
+  in the \hadhad and \lephad LTT channel due to the $tW$ fraction and
+  the uncertainty itself being smaller\todo{Technically the LTT
+    uncertainty is about the same}.
 
-\item The uncertainty on the acceptance of $gg \to H \to \tautau$ in
-  association with heavy flavour quarks has a large impact on
-  \muhat. The most signal-like bins of the BDT discriminant used in
-  the \hadhad channel select a considerable number of single Higgs
-  boson events of which ca.\ X are from ggF leading to large
+\item The uncertainty on the acceptance of $gg \to H \to \tautau$
+  production in association with quarks of heavy flavour has a large
+  impact on \muhat. The most signal-like bins of the BDT discriminant
+  used in the \hadhad channel select a considerable number of single
+  Higgs boson events of which ca.\ X are from \ggF leading to large
   uncertainties (since 100\% is assigned).
 \end{itemize}
 
-The effect of uncertainties is similar to the previous Run~2
-analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of
-$pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
-\SI{36.1}{\per\femto\barn} integrated luminosity.\todo{Impact of data
-  statistical uncertainties is about the same -> Speaks for
-  improvements in CP and the analysis. Instrumental decreased in full
-  Run~2. Huge improvements in calibration measurements.}
+\todo[inline]{Discussion: Impact of data statistical uncertainties is
+  about the same -> Speaks for improvements in CP and the
+  analysis. Instrumental decreased in full Run~2. Huge improvements in
+  calibration measurements.} The effect of uncertainties is similar
+to the previous Run~2 analysis~\cite{HIGG-2016-16-witherratum} using a
+partial dataset of $pp$ collisions at $\sqrt{s} = \SI{13}{\TeV}$ with
+\SI{36.1}{\per\femto\barn} integrated luminosity.
 
-Upper limits are set on the SM \HH (ggF + VBF) signal strength and
-cross section using the \CLs method~\cite{Read:2002hq} at
-\SI{95}{\percent} confidence level (cf.\
-\Cref{sec:hypothesis_testing}). In~\Cref{tab:limits_non_resonant} the
-limits...
+In the absence of statistical evidence for SM \HH production, upper
+limits are set on its signal strength and cross section using the \CLs
+method at \SI{95}{\percent} confidence level (cf.\
+\Cref{sec:hypothesis_testing}). The exclusion limits are summarised
+in~\Cref{tab:limits_non_resonant} separately for the \lephad and
+\hadhad channels, and for the combination of all channels.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Upper limits on the total cross section of Higgs pair
-    production via ggF and VBF as well as the signal
-    strength~$\mu = \sigma_\text{ggF+VBF} /
-    \sigma_\text{ggF+VBF}^\text{SM}$ at 95\% $\text{CL}_\text{s}$.
-    The expected limits are determined under the assumption that
-    $\mu = 0$.}%
+  \caption{Expected and observed upper limits on the the cross section
+    of Higgs boson pair production via \ggF and VBF,
+    $\sigma(pp \to HH)$, and the SM \HH ($gg$F+VBF) signal strength at
+    \SI{95}{\percent} confidence level using the \CLs method. The
+    expected limits are obtained under the assumption of $\mu =
+    0$. Uncertainties on the SM prediction of $\sigma(pp \to \HH)$ are
+    not considered when setting limits on the cross section
+    directly.}%
   \label{tab:limits_non_resonant}
 
   % Workspaces: comb_2022_01_29
   \input{tables/non_res_limits}
-
-  \todo[inline]{Make a note somewhere that the cross section upper
-    limits are using a different workspace which removes cross section
-    uncertainties.}
 \end{table}
 
+The observed limit is $\num{4.7} \times \xsecggfvbf$
 
-\todo[inline]{Discussion:}
+The exclusion is largely driven by the \hadhad channel with an.
 
-\begin{itemize}
-\item Why is hadhad more sensitive?
-\item How do these results compare to other channels / CMS at the end of Run 2?
-\end{itemize}
+
+Further discussion and interpretation of these results will follow
+in~\Cref{sec:result_discussion}.
 
 
 \subsection{Results of the search for resonant production of $HH$}
@@ -805,48 +807,20 @@ limits...
 
   \includegraphics[width=0.65\textwidth]{results/resonant_comb_pvalues}
 
-  \caption{Local pvalue scan}
+  \caption{Observed local $p$-values for the comparison of the
+    background-only (null hypothesis) and the signal-plus-background
+    model as a function of the mass of the scalar resonance. The
+    asymptotic approximation of the sampling distribution of the
+    discovery test statistic under the background-only model is
+    used. Dashed lines indiciate the equivalent right-tailed
+    probabilities in terms of standard deviations of a centered Normal
+    distribution, formally given by the condition
+    $p_0 = \mathbb{P}(Z > n \sigma)$
+    for~$Z \sim \mathcal{N}(0, \sigma^2)$ and $n = 0, 1, \dots, 4$.}%
   \label{fig:local_pvalues}
 \end{figure}
 
 \subsection{Global significance estimation of the $\mX = \SI{1000}{\GeV}$ excess}
-
-\subsection{Discussion}
-
-\todo[inline]{What are the limiting factors? Data statistics /
-  statistical precision of the bkg estimate (could be improved with a
-  better data-driven background estimate).}
-
-\todo[inline]{Systematic uncertainty relatively unimportant at this
-  stage.}
-
-
-\begin{table}[htbp]
-  \centering
-
-  \begin{tabular}{lSS}
-    \toprule
-    & \multicolumn{2}{c}{Expected number of events} \\
-    Process & {Last two bins} & {Last bin} \\
-    \midrule
-    \ZHF & 6.9 & \\
-    Single Higgs boson & 6.9 & \\
-    \ttbar & 4.6 & \\
-    \jettotauhadvis (\ttbar) & 3.4 & \\
-    \jettotauhadvis (multi-jet) & 2.2 & \\
-    Other & 1.8 & \\
-    \midrule
-    Total background & & \\
-    \midrule
-    SM \HH (gluon fusion) & & \\
-    SM \HH (VBF) & & \\
-    \bottomrule
-  \end{tabular}
-
-  \caption{Table of expected yields. The uncertainties are from
-    statistical sources only.}
-  \todo[inline]{Post-fit yields}
-\end{table}
 
 
 %%% Local Variables:
