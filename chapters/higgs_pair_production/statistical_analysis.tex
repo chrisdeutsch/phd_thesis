@@ -26,7 +26,7 @@ models for the SM and BSM search.
   \begin{tabular}{lccccc}
     \toprule
     & \multicolumn{4}{c}{Discriminant used in channel} \\
-    \cline{2-5}
+    \cmidrule{2-5}
     Search & \hadhad & \lephad SLT & \lephad LTT & \ZHF CR \\
     \midrule
     Non-resonant SM \HH & BDT & NN & NN & \mll \\
@@ -834,7 +834,7 @@ are documented in~\Cref{sec:app_additional_figures}.
   \caption{Distribution of the PNN discriminant of the \hadhad channel
     after the maximum likelihood fit of the background-only model in
     all signal and control regions. The signal overlay is scaled to
-    the expected upper limit on $\sigma(pp \to X \to HH)$.}%
+    the expected upper limit on~$\sigma(pp \to X \to HH)$.}%
   \label{fig:resonant_mva_postfit}
 \end{figure}
 
@@ -842,6 +842,26 @@ Low mass: \faketauhadvis and top
 Larger masses: predominantely boosted Z+jets
 
 \todo[inline]{Yield tables}
+
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Expected event yields per physics process in the \hadhad
+    signal region for signal-like bins of the PNN discriminant after
+    the background-only fit to observed data in all regions. The two
+    most signal-like bins are shown for $\mX = \SI{300}{\GeV}$ and
+    \SI{500}{\GeV}. $\dagger$: The large discrimination power between
+    signal and backgrounds of the PNN for large \mX leads to a small
+    number of bins for the statistical interpretation due to the
+    choice of re-binning algorithm. Thus, only the most signal-like
+    bin is shown for $\mX = \SI{1000}{\GeV}$ and \SI{1600}{\GeV}.}%
+  \label{tab:yields_postfit_resonant}
+
+  \resizebox{\textwidth}{!}{%
+    \input{tables/yields_postfit_resonant}
+  }
+\end{table}
 
 
 % Pvalues
@@ -901,6 +921,8 @@ is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn}.
   \input{tables/breakdown_res}
 \end{table}
 
+
+\todo[inline]{Discussion excess: Modelling of collinear taus?}
 
 
 
