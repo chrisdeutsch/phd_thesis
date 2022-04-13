@@ -787,10 +787,20 @@ in~\Cref{sec:result_discussion}.
 \subsection{Results of the search for resonant production of $HH$}
 \label{sec:results_res}
 
-For this interpretation the absence of SM Higgs boson pair production
-is assumed.
+The search for resonant production of Higgs boson pairs via scalar
+resonances is interpreted in terms of the cross section of
+$pp \to X \to HH$. The interpretation is analogous to the approach
+taken for the search for non-resonant SM \HH production, replacing the
+BDT / NN discriminants with PNN discriminants evaluated at the $\mX$
+hypothesis of interest. Moreover, the absence of SM Higgs boson pair
+production is assumed for this interpretation.
 
-\todo[inline]{Ranking plots: Selected masses combined only}
+The PNN discriminants in the signal region of the \hadhad channel are
+shown for four exemplary mass points
+in~\Cref{fig:resonant_mva_postfit} after the fit of the
+background-only model to the observed data in all analysis
+channels. The equivalent figures for the \lephad SLT and LTT channels
+are documented in~\Cref{sec:app_additional_figures}.
 
 \begin{figure}[htbp]
   \centering
@@ -799,40 +809,59 @@ is assumed.
     \centering
 
     \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN300_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
-    \subcaption{}
+    \subcaption{$\mX = \SI{300}{\GeV}$}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.495\textwidth}
     \centering
 
     \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN500_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
-    \subcaption{}
+    \subcaption{$\mX = \SI{500}{\GeV}$}
   \end{subfigure}
 
   \begin{subfigure}{0.495\textwidth}
     \centering
 
     \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN1000_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
-    \subcaption{}
+    \subcaption{$\mX = \SI{1000}{\GeV}$}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.495\textwidth}
     \centering
 
     \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN1600_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
-    \subcaption{}
+    \subcaption{$\mX = \SI{1600}{\GeV}$}
   \end{subfigure}
 
   \caption{Distribution of the PNN discriminant of the \hadhad channel
-    after the maximum likelihood fit of the background-only model.}%
+    after the maximum likelihood fit of the background-only model in
+    all signal and control regions. The signal overlay is scaled to
+    the expected upper limit on $\sigma(pp \to X \to HH)$.}%
   \label{fig:resonant_mva_postfit}
-
-  \todo[inline]{Put lephad equivalents in appendix?}
 \end{figure}
 
+Low mass: \faketauhadvis and top
+Larger masses: predominantely boosted Z+jets
+
+\todo[inline]{Yield tables}
+
+
+% Pvalues
+% Comb: 0.0012948798248544335
+% Hadhad: 0.00233581755310297
+% Lephad: 0.1208430826663971
+%
+% Significances
+% Comb: 3.0126516970870054
+% Hadhad: 2.828844777446568
+% Lephad: 1.1707826205098675
+Excess at 1000 GeV:
+Combination of all channels $p$-value of $\num{1.3e-3}$ ($\num{3.0}\sigma$)
+Hadhad only $p$-value $\num{2.3e-3}$ ($\num{2.8}\sigma$)
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.65\textwidth]{results/resonant_comb_pvalues}
+  % Workspaces: comb_2022_01_29
+  \includegraphics[width=0.65\textwidth]{results_res/resonant_comb_pvalues}
 
   \caption{Observed local $p$-values for the comparison of the
     background-only (null hypothesis) and the signal-plus-background
@@ -859,6 +888,8 @@ is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn}.
   \label{fig:res_upper_limits}
 \end{figure}
 
+
+\todo[inline]{Ranking plots: Selected masses combined only}
 
 
 \begin{table}[htbp]
