@@ -824,7 +824,8 @@ LTT channels are documented in~\Cref{sec:app_additional_figures}.
     \centering
 
     \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_distPNN1000_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{1000}{\GeV}$}
+    \subcaption{$\mX = \SI{1000}{\GeV}$}%
+    \label{fig:pnn1000_postfit}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.495\textwidth}
     \centering
@@ -860,16 +861,19 @@ LTT channels are documented in~\Cref{sec:app_additional_figures}.
   }
 \end{table}
 
+The backgrounds relevant to the signal extraction change with
+increasing \mX. For the search at low mass, the dominant backgrounds
+are top quark production and backgrounds with jets being misidentified
+as \tauhadvis. These background processes become less relevant as
+larger \mX are considered at which point the production of \Zjets
+becomes the dominant background.
 
-Low mass: \faketauhadvis and top
-
-Larger masses: predominantely boosted Z+jets
-
-\todo[inline]{Yield tables}
-
-
-
-
+The comparison of the PNN distributions after the background-only fit
+with the observed data show decent agreement with exception of the PNN
+discriminant for resonances with $\mX = \SI{1000}{\GeV}$ shown
+in~\Cref{fig:resonant_mva_postfit}. In the most signal-like bin of the
+corresponding PNN distribution 14 events are observed, while the
+background-only model predicts a total of \num{6.29 +- 0.88} events.
 
 % Pvalues
 % Comb: 0.0012948798248544335
@@ -880,9 +884,26 @@ Larger masses: predominantely boosted Z+jets
 % Comb: 3.0126516970870054
 % Hadhad: 2.828844777446568
 % Lephad: 1.1707826205098675
-Excess at 1000 GeV:
-Combination of all channels $p$-value of $\num{1.3e-3}$ ($\num{3.0}\sigma$)
-Hadhad only $p$-value $\num{2.3e-3}$ ($\num{2.8}\sigma$)
+The background-only model is compared with the signal-plus-background
+hypothesis using a likelihood ratio test for all considered signal
+hypotheses. The combination of all analysis channels yields an excess
+at $\mX = \SI{1000}{\GeV}$ with a $p$-value of $\num{1.3e-3}$ (under
+the asymptotic approximation) and is therefore significant at a level
+of $\num{3.0}\,\sigma$\footnote{By convention in HEP the discovery
+  significance in is expressed in terms of $\sigma$ given by
+  $\Phi^{-1}(1 - p)$, where $\Phi^{-1}$ is the inverse cumulative
+  distribution function (quantile function) of the Standard Normal
+  distribution and $p$ the $p$-value of the test.}. The excess is
+localised in the \hadhad channel with a significance of
+$\num{2.8}\sigma$ when performing the test only including the \hadhad
+signal region and the \ZHF control region. The $p$-values for all
+considered signal hypotheses are shown in \Cref{fig:local_pvalues}
+separately for the \lephad and \hadhad channels and their
+combination. All significances quoted thus far do not account for
+multiple hypothesis testing and are therefore referred to as local
+significances. These are corrected in \Cref{sec:global_significance}
+to control for the rate of false discovery when performing multiple
+tests.
 
 \begin{figure}[htbp]
   \centering
@@ -932,9 +953,9 @@ is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn}.
 \todo[inline]{Discussion excess: Modelling of collinear taus?}
 
 
-
-
-\subsection{Global significance estimation of the $\mX = \SI{1000}{\GeV}$ excess}
+\subsection{Estimation of the global significance for the excess at
+  $\mX = \SI{1000}{\GeV}$}%
+\label{sec:global_significance}
 
 
 %%% Local Variables:
