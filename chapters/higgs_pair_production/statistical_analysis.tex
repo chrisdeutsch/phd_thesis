@@ -889,7 +889,7 @@ hypothesis using a likelihood ratio test for all considered signal
 hypotheses. The combination of all analysis channels yields an excess
 at $\mX = \SI{1000}{\GeV}$ with a $p$-value of $\num{1.3e-3}$ (under
 the asymptotic approximation) and is therefore significant at a level
-of $\num{3.0}\,\sigma$\footnote{By convention in HEP the discovery
+of $\num{3.0}\sigma$\footnote{By convention in HEP the discovery
   significance in is expressed in terms of $\sigma$ given by
   $\Phi^{-1}(1 - p)$, where $\Phi^{-1}$ is the inverse cumulative
   distribution function (quantile function) of the Standard Normal
@@ -901,9 +901,8 @@ considered signal hypotheses are shown in \Cref{fig:local_pvalues}
 separately for the \lephad and \hadhad channels and their
 combination. All significances quoted thus far do not account for
 multiple hypothesis testing and are therefore referred to as local
-significances. These are corrected in \Cref{sec:global_significance}
-to control for the rate of false discovery when performing multiple
-tests.
+significances. The effect of multiple testing is discussed in
+\Cref{sec:global_significance}.
 
 \begin{figure}[htbp]
   \centering
@@ -916,21 +915,54 @@ tests.
     model as a function of the mass of the scalar resonance. The
     asymptotic approximation of the sampling distribution of the
     discovery test statistic under the background-only model is
-    used. Dashed lines indiciate the equivalent right-tailed
-    probabilities in terms of standard deviations of a centered Normal
-    distribution, formally given by the condition
-    $p_0 = \mathbb{P}(Z > n \sigma)$
-    for~$Z \sim \mathcal{N}(0, \sigma^2)$ and $n = 0, 1, \dots, 4$.}%
+    used. }%
   \label{fig:local_pvalues}
+
+  % Dashed lines indiciate the equivalent right-tailed probabilities in
+  % terms of standard deviations of a centered Normal distribution,
+  % formally given by the condition $p_0 = \mathbb{P}(Z > n \sigma)$
+  % for~$Z \sim \mathcal{N}(0, \sigma^2)$ and $n = 0, 1, \dots, 4$.
+\end{figure}
+
+% Discuss the width of the excess
+A broad excess can be observed in~\Cref{fig:local_pvalues} with tests
+of resonances at masses in the range of \SIrange{800}{1200}{\GeV}
+being significant at the $2\sigma$ level. At these mass scales a broad
+significance response is expected for a true signal due to the
+degradation in the absolute resolution of the $HH$ system mass and the
+lack of specificity of the PNN discriminants in distinguishing between
+different signal hypothesis as previously discussed in
+\Cref{sec:mva_pnn}. This is further illustrated in
+\Cref{fig:local_pvalues_injected} where the observed local
+significances are compared to the expectation with an injected signal
+at the best-fit signal strength. The width of significance response of
+the observed excess is similar to the expectation obtained from the
+injection tests.
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.65\textwidth]{results_res/injection}
+
+  \caption{Expected local $p$-values from Asimov datasets after
+    injecting signals with resonance masses of 900, 1000, and
+    \SI[group-minimum-digits=5]{1100}{\GeV} at their best-fit signal
+    strength from the unconditional fit to observed data. The
+    respective signal is injected in all signal regions and the
+    expected $p$-value resulting from the statistical analysis of the
+    combination of all channels is shown.}
+  \label{fig:local_pvalues_injected}
 \end{figure}
 
 The best-fit cross section of $pp \to X(\SI{1000}{\GeV}) \to HH$
 is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn}.
 
+
+
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.7\textwidth]{results/resonant_comb_upper_limits}
+  \includegraphics[width=0.65\textwidth]{results/resonant_comb_upper_limits}
 
   \caption{Upper limits for the resonant search}
   \label{fig:res_upper_limits}
@@ -956,6 +988,22 @@ is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn}.
 \subsection{Estimation of the global significance for the excess at
   $\mX = \SI{1000}{\GeV}$}%
 \label{sec:global_significance}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.7\textwidth]{global_significance/sig_corr}
+
+  \caption{Linear correlation coefficient between the discovery
+    significances of the 20 hypothesis tests performed for the scalar
+    resonance search under the background-only hypothesis. The
+    coefficients are estimated using 10000 toy experiments drawn from
+    the background-only substitute model. Cells are annotated,
+    omitting the diagonal, if the correlation coefficient is greater
+    than or equal to \SI{5}{\percent}.}%
+  \label{fig:corr_sig}
+\end{figure}
 
 
 %%% Local Variables:
