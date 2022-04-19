@@ -96,6 +96,9 @@ in~\Cref{sec:barlow_beeston}.
 \todo[inline]{Emphasise that there are really many models for each MVA score that is fit.}
 \todo[inline]{Models developed in a blind analysis (blind -> high MVA score region blinded)}
 \todo[inline]{Maybe say something about blinding?}
+\todo[inline]{Except when otherwise noted, all results are obtained
+  using asymptotic approximations for the sampling distributions of
+  likelihood ratio test statistics.}
 
 \subsubsection{Re-binning algorithm}%
 \label{sec:binning_alg}
@@ -834,10 +837,13 @@ LTT channels are documented in~\Cref{sec:app_additional_figures}.
     \subcaption{$\mX = \SI{1600}{\GeV}$}
   \end{subfigure}
 
-  \caption{Distribution of the PNN discriminant of the \hadhad channel
+  \caption{Distribution of the PNN discriminant in the \hadhad channel
     after the maximum likelihood fit of the background-only model in
-    all signal and control regions. The signal overlay is scaled to
-    the expected upper limit on~$\sigma(pp \to X \to HH)$.}%
+    all signal and control regions. The distributions are shown for
+    four different parameter values of the parametrised neural network
+    ranging from \SI{300}{\GeV} to \SI{1600}{\GeV}. The signal overlay
+    is scaled to the expected upper limit on~$\sigma(pp \to X \to HH)$
+    for the resonance mass considered.}%
   \label{fig:resonant_mva_postfit}
 \end{figure}
 
@@ -852,8 +858,9 @@ LTT channels are documented in~\Cref{sec:app_additional_figures}.
     \SI{500}{\GeV}. $\dagger$: The large discrimination power of the
     PNN for large \mX leads to a small number of bins for the
     statistical interpretation due to the choice of re-binning
-    algorithm. Therefore, only the most signal-like bin is shown for
-    $\mX = \SI{1000}{\GeV}$ and \SI{1600}{\GeV}.}%
+    algorithm. Therefore, the expected number of events is shown only
+    for the most signal-like bin for $\mX = \SI{1000}{\GeV}$ and
+    \SI{1600}{\GeV}.}%
   \label{tab:yields_postfit_resonant}
 
   \resizebox{\textwidth}{!}{%
@@ -861,19 +868,22 @@ LTT channels are documented in~\Cref{sec:app_additional_figures}.
   }
 \end{table}
 
-The backgrounds relevant to the signal extraction change with
-increasing \mX. For the search at low mass, the dominant backgrounds
-are top quark production and backgrounds with jets being misidentified
-as \tauhadvis. These background processes become less relevant as
-larger \mX are considered at which point the production of \Zjets
-becomes the dominant background.
+The backgrounds relevant to the signal extraction change when
+considering signal hypothesis of different \mX. For the search of
+scalar resonances at low mass, the dominant background are top quark
+production and backgrounds with jets being misidentified as
+\tauhadvis. These background processes become less relevant as larger
+\mX are considered, with the production of \Zjets becoming the
+dominant contribution at intermediate masses.
 
 The comparison of the PNN distributions after the background-only fit
 with the observed data show decent agreement with exception of the PNN
 discriminant for resonances with $\mX = \SI{1000}{\GeV}$ shown
-in~\Cref{fig:resonant_mva_postfit}. In the most signal-like bin of the
+in~\Cref{fig:pnn1000_postfit}. In the most signal-like bin of the
 corresponding PNN distribution 14 events are observed, while the
-background-only model predicts a total of \num{6.29 +- 0.88} events.
+background-only model predicts a total of \num{6.29 +- 0.88}
+events. This represents a large excess in the number of observed
+events over the expectation.
 
 % Pvalues
 % Comb: 0.0012948798248544335
@@ -884,25 +894,25 @@ background-only model predicts a total of \num{6.29 +- 0.88} events.
 % Comb: 3.0126516970870054
 % Hadhad: 2.828844777446568
 % Lephad: 1.1707826205098675
-The background-only model is compared with the signal-plus-background
-hypothesis using a likelihood ratio test for all considered signal
+The background-only and the signal-plus-background models are compared
+using a likelihood ratio test separately for all considered signal
 hypotheses. The combination of all analysis channels yields an excess
-at $\mX = \SI{1000}{\GeV}$ with a $p$-value of $\num{1.3e-3}$ (under
-the asymptotic approximation) and is therefore significant at a level
-of $\num{3.0}\sigma$\footnote{By convention in HEP the discovery
-  significance in is expressed in terms of $\sigma$ given by
+at $\mX = \SI{1000}{\GeV}$ with an observed $p$-value of
+$\num{1.3e-3}$ and is therefore significant at a level of
+$\num{3.0}\sigma$\footnote{By convention in HEP the discovery
+  significance is expressed in terms of $\sigma$ given by
   $\Phi^{-1}(1 - p)$, where $\Phi^{-1}$ is the inverse cumulative
   distribution function (quantile function) of the Standard Normal
   distribution and $p$ the $p$-value of the test.}. The excess is
 localised in the \hadhad channel with a significance of
-$\num{2.8}\sigma$ when performing the test only including the \hadhad
-signal region and the \ZHF control region. The $p$-values for all
-considered signal hypotheses are shown in \Cref{fig:local_pvalues}
-separately for the \lephad and \hadhad channels and their
-combination. All significances quoted thus far do not account for
-multiple hypothesis testing and are therefore referred to as local
-significances. The effect of multiple testing is discussed in
-\Cref{sec:global_significance}.
+$\num{2.8}\sigma$ when performing the test by only including the
+\hadhad signal region and the \ZHF control region. The $p$-values and
+significances for all considered signal hypotheses are shown in
+\Cref{fig:local_pvalues} separately for the \lephad and \hadhad
+channels and their combination. All significances quoted thus far do
+not account for multiple hypothesis testing and are therefore referred
+to as local significances. The effect of multiple testing is discussed
+in \Cref{sec:global_significance}.
 
 \begin{figure}[htbp]
   \centering
@@ -911,11 +921,10 @@ significances. The effect of multiple testing is discussed in
   \includegraphics[width=0.65\textwidth]{results_res/resonant_comb_pvalues}
 
   \caption{Observed local $p$-values for the comparison of the
-    background-only (null hypothesis) and the signal-plus-background
-    model as a function of the mass of the scalar resonance. The
-    asymptotic approximation of the sampling distribution of the
-    discovery test statistic under the background-only model is
-    used. }%
+    background-only and the signal-plus-background model as a function
+    of the mass of the scalar resonance. The asymptotic approximation
+    of the sampling distribution of the discovery test statistic under
+    the background-only model is used.}%
   \label{fig:local_pvalues}
 
   % Dashed lines indiciate the equivalent right-tailed probabilities in
@@ -927,39 +936,49 @@ significances. The effect of multiple testing is discussed in
 % Discuss the width of the excess
 A broad excess can be observed in~\Cref{fig:local_pvalues} with tests
 of resonances at masses in the range of \SIrange{800}{1200}{\GeV}
-being significant at the $2\sigma$ level. At these mass scales a broad
-significance response is expected for a true signal due to the
-degradation in the absolute resolution of the $HH$ system mass and the
-lack of specificity of the PNN discriminants in distinguishing between
-different signal hypothesis as previously discussed in
-\Cref{sec:mva_pnn}. This is further illustrated in
-\Cref{fig:local_pvalues_injected} where the observed local
-significances are compared to the expectation with an injected signal
-at the best-fit signal strength. The width of significance response of
-the observed excess is similar to the expectation obtained from the
-injection tests.
+being significant at the $2\sigma$ level. At mass scales of
+\SI{1}{\TeV} a broad significance response is expected for a true
+signal contribution due to the degradation in absolute resolution of
+the \HH system mass and the lack of specificity of the PNN
+discriminants in distinguishing between different signal hypotheses as
+previously discussed in \Cref{sec:mva_pnn}. This effect is further
+illustrated in \Cref{fig:local_pvalues_injected} where the observed
+local significances are compared to the expectation after injecting
+signals at their best-fit signal strengths. The width of significance
+response of the observed excess is similar to the expectation obtained
+from these injection tests.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.65\textwidth]{results_res/injection}
 
-  \caption{Expected local $p$-values from Asimov datasets after
-    injecting signals with resonance masses of 900, 1000, and
-    \SI[group-minimum-digits=5]{1100}{\GeV} at their best-fit signal
-    strength from the unconditional fit to observed data. The
-    respective signal is injected in all signal regions and the
-    expected $p$-value resulting from the statistical analysis of the
-    combination of all channels is shown.}
+  \caption{Expected local $p$-values from hypothesis tests performed
+    on Asimov datasets with injected signals with \mX of 900, 1000,
+    and \SI[group-minimum-digits=5]{1100}{\GeV}. The injected signals
+    are normalised to their best-fit signal strength from the
+    unconditional fit to observed data in all channels.  Signals are
+    injected in all signal regions and the expected $p$-value
+    resulting from the statistical interpretation of the combination
+    of all channels is shown. Additionally, the observed $p$-values
+    from the combination of all analysis channels (dashed line) are
+    included for comparison.}
   \label{fig:local_pvalues_injected}
 \end{figure}
 
-The best-fit cross section of $pp \to X(\SI{1000}{\GeV}) \to HH$
-is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn} obtained from the fit of
-the PNN discriminants for $\mX = \SI{1000}{\GeV}$ to observed data in
-all channels.
-
-$4b$: \SI{6.5}{\femto\barn} (exp.\ \SIpmerr{8.15}{+1.17}{-0.77}{\femto\barn})
+The best-fit cross section of $pp \to X(\mX = \SI{1000}{\GeV}) \to HH$
+obtained from the fit of the PNN discriminants for
+$\mX = \SI{1000}{\GeV}$ to observed data in all analysis channels
+is~\SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn}. The compatibility of the
+cross section measurement in the \hadhad and \lephad channels is
+compared under the assumption of negligible correlation between the
+measurements in both channels\footnote{The measurement is limited by
+  the statistical precision of the number of observed events which are
+  un-correlated due to both channels being orthogonal.} yielding a
+significance of about $1\sigma$. Therefore, the measurements in both
+channels, while some tension is observed, are compatible. Further
+discussion of the nature of this excess will be discussed in
+\Cref{sec:global_significance,sec:result_discussion}.
 
 Upper limits are set on $\sigma(pp \to X \to \HH)$ as a function of
 \mX using the \CLs method. The observed and expected limits are shown
@@ -988,6 +1007,7 @@ in \Cref{fig:res_upper_limits}.
 \todo[inline]{Ranking plots: Selected masses combined only}
 \todo[inline]{Discussion excess: Modelling of collinear taus?}
 
+$4b$: \SI{6.5}{\femto\barn} (exp.\ \SIpmerr{8.15}{+1.17}{-0.77}{\femto\barn})
 
 \subsection{Estimation of the global significance for the excess at
   $\mX = \SI{1000}{\GeV}$}%
