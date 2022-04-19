@@ -1041,11 +1041,20 @@ $Z \to \tautau + \text{jets}$ in both channels being
 similar\todo{Cross check this}.
 
 The search for resonant production of Higgs boson pairs via scalar
-resonances is primarily limited by the statistical uncertainty of the
-observed data. This is illustrated in~\Cref{tab:breakdown_res} where
-the variance on the best-fit cross section is decomposed into
-categories of uncertainties for four exemplary signal mass hypotheses.
-
+resonances is primarily limited by the data statistical uncertainty
+particularly for intermediate to high \mX. This is illustrated
+in~\Cref{tab:breakdown_res} where the variance on the best-fit cross
+section from the unconditional fit\footnote{The excess for
+  $\mX = \SI{1000}{\GeV}$ induces shifts in the (observed) variance
+  breakdown depicted in~\Cref{tab:breakdown_res}, slightly inflating
+  data statistical uncertainties while suppressing the impact of most
+  systematic uncertainties (the exception being signal modelling
+  uncertainties) compared to the
+  expectation. In~\Cref{app:breakdown_table}~\Cref{tab:breakdown_res_exp_mu0}
+  the decomposition is performed for the expectation of
+  $\sigma(pp \to X \to HH) = 0$ for comparison.}, $\hat{\sigma}$, is
+decomposed into categories of uncertainties for four exemplary signal
+mass hypotheses.
 
 \begin{table}[htbp]
   \centering
@@ -1067,24 +1076,14 @@ categories of uncertainties for four exemplary signal mass hypotheses.
   % \input{tables/breakdown_res_exp_mu0}
 \end{table}
 
+Systematic uncertainties have a considerable effect on the total
+variance of $\hat{\sigma}$ at low mass. For $\mX = \SI{300}{\GeV}$ the
+effect of systematic uncertainties explains \SI{42}{\percent} of the
+total variance on $\hat{\sigma}$. Instrumental uncertainties from
+jets, \pTmissAbs, and \tauhadvis have a sizable effect only at low \mX
+(low momenta of the objects).
 
-\begin{table}[htbp]
-  \centering
-
-  \caption{Decomposition of the variance on $\hat{\sigma}$, the
-    maximum likelihood estimate of the cross section
-    $\sigma(pp \to X\to HH)$, by uncertainty category for the fit to
-    observed data in all regions. The decomposition is determined
-    analogously to~\Cref{tab:breakdown_nonres}, separately for four
-    exemplary signal mass hypotheses. The fractions of subcategories
-    do not necessarily sum to the fraction of the parent category due
-    to correlations between nuisance parameters.}%
-  \label{tab:breakdown_res_b}
-
-  \input{tables/breakdown_res_exp_mu0}
-\end{table}
-
-\todo[inline]{Ranking plots: Selected masses combined only}
+\todo[inline]{Ranking plots: Selected masses combined only?}
 
 \todo[inline]{Table of lephad yields?}
 
