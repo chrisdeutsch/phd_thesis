@@ -1011,14 +1011,14 @@ combination of all channels, \lephad-only, and \hadhad-only.
 The upper limits on the cross section decrease quickly with increasing
 \mX in the mass range from ca.\ \SIrange{300}{500}{\GeV}. This is a
 consequence of the large positive slope in signal acceptance with
-respect to the mass of the scalar resonance (cf.~CITATION) and the
-increasingly discinct signature of the signal aiding in the
-discrimination between the signal and background
-processes. Particularly the ability to distinguish the signal from the
-top background, which has large contributions for
-$\mX \lesssim \SI{500}{\GeV}$\todo{Yield tables for lephad would be
-  nice}, increases quickly as larger resonance masses are
-considered. The signal acceptance reaches a maximum at
+respect to the mass of the scalar resonance
+(cf.~\Cref{fig:signal_acceptance_resonant}) and the increasingly
+discinct signature of the signal aiding in the discrimination between
+the signal and background processes. Particularly the ability to
+distinguish the signal from the top background, which has large
+contributions for $\mX \lesssim \SI{500}{\GeV}$\todo{Yield tables for
+  lephad would be nice}, increases quickly as larger resonance masses
+are considered. The signal acceptance reaches a maximum at
 $\mX = \SI{1000}{\GeV}$ after which reconstruction effects starts to
 degrade the acceptance due to the inability to resolve the
 constitutents of the $H \to \tautau$ and $H \to \bbbar$
@@ -1026,28 +1026,67 @@ candidates. This leads to a broad plateau of the upper limit and a
 degradation of the exclusion limits at the upper end of the considered
 mass range.
 
-The importance of individual analysis channels to the (expected)
-exclusion limits varies as different resonance masses are
-considered. Except for the smallest \mX considered, the \hadhad
-channel gives the most stringent limits in the range of low to
-intermediate \mX due to the comparatively large abundance of
-irreducible top backgrounds in the \lephad channels. For signal mass
-hypotheses of about \SI{1000}{\GeV} and larger the upper limits of
-both channels start to converge\todo{continue}.
+The importance of individual analysis channels to the expected
+exclusion limit varies as different resonance masses are
+considered. Except for the smallest \mX considered, where the signal
+acceptance of the \hadhad channel is heavily limited by the
+\tauhadvis-triggers, the \hadhad channel gives the most stringent
+limits in the range of low to intermediate \mX due to the
+comparatively large and irreducible top quark background in the
+\lephad channels. For hypotheses of signal masses of about
+\SI{1000}{\GeV} and larger, the upper limits of both channels start to
+converge since \Zjets production becomes the dominant background in
+the most signal-like PNN bins at high \mX and the acceptance of
+$Z \to \tautau + \text{jets}$ in both channels being
+similar\todo{Cross check this}.
+
+The search for resonant production of Higgs boson pairs via scalar
+resonances is primarily limited by the statistical uncertainty of the
+observed data. This is illustrated in~\Cref{tab:breakdown_res} where
+the variance on the best-fit cross section is decomposed into
+categories of uncertainties for four exemplary signal mass hypotheses.
+
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Breakdown}%
+  \caption{Decomposition of the variance on $\hat{\sigma}$, the
+    maximum likelihood estimate of the cross section
+    $\sigma(pp \to X\to HH)$, by uncertainty category for the fit to
+    observed data in all regions. The decomposition is determined
+    analogously to~\Cref{tab:breakdown_nonres}, separately for four
+    exemplary signal mass hypotheses. The fractions of subcategories
+    do not necessarily sum to the fraction of the parent category due
+    to correlations between nuisance parameters.}%
   \label{tab:breakdown_res}
 
+  % Observed breakdown
   \input{tables/breakdown_res}
+
+  % Expected breakdown for Asimov with mu = 0
+  % \input{tables/breakdown_res_exp_mu0}
+\end{table}
+
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Decomposition of the variance on $\hat{\sigma}$, the
+    maximum likelihood estimate of the cross section
+    $\sigma(pp \to X\to HH)$, by uncertainty category for the fit to
+    observed data in all regions. The decomposition is determined
+    analogously to~\Cref{tab:breakdown_nonres}, separately for four
+    exemplary signal mass hypotheses. The fractions of subcategories
+    do not necessarily sum to the fraction of the parent category due
+    to correlations between nuisance parameters.}%
+  \label{tab:breakdown_res_b}
+
+  \input{tables/breakdown_res_exp_mu0}
 \end{table}
 
 \todo[inline]{Ranking plots: Selected masses combined only}
-\todo[inline]{Discussion excess: Modelling of collinear taus?}
 
-$4b$: \SI{6.5}{\femto\barn} (exp.\ \SIpmerr{8.15}{+1.17}{-0.77}{\femto\barn})
+\todo[inline]{Table of lephad yields?}
 
 \subsection{Estimation of the global significance for the excess at
   $\mX = \SI{1000}{\GeV}$}%
