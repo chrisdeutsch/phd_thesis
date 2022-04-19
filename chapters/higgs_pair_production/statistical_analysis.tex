@@ -931,6 +931,7 @@ in \Cref{sec:global_significance}.
   % terms of standard deviations of a centered Normal distribution,
   % formally given by the condition $p_0 = \mathbb{P}(Z > n \sigma)$
   % for~$Z \sim \mathcal{N}(0, \sigma^2)$ and $n = 0, 1, \dots, 4$.
+  \todo[inline]{Discuss what's going on at 251? At around 400?}
 \end{figure}
 
 % Discuss the width of the excess
@@ -974,26 +975,65 @@ cross section measurement in the \hadhad and \lephad channels is
 compared under the assumption of negligible correlation between the
 measurements in both channels\footnote{The measurement is limited by
   the statistical precision of the number of observed events which are
-  un-correlated due to both channels being orthogonal.} yielding a
+  uncorrelated due to both channels being orthogonal.} yielding a
 significance of about $1\sigma$. Therefore, the measurements in both
 channels, while some tension is observed, are compatible. Further
-discussion of the nature of this excess will be discussed in
+discussion of the nature of this excess will given in
 \Cref{sec:global_significance,sec:result_discussion}.
 
 Upper limits are set on $\sigma(pp \to X \to \HH)$ as a function of
-\mX using the \CLs method. The observed and expected limits are shown
-in \Cref{fig:res_upper_limits}.
+the mass of the scalar resonance, \mX, using the \CLs method at
+\SI{95}{\percent} confidence level. The observed and expected
+exclusion limits on the cross section are shown in
+\Cref{fig:res_upper_limits}. Scalar resonances produced with a cross
+sections ranging from \SIrange{20}{900}{\femto\barn} depending on \mX
+are excluded given the data observed in all analysis channels. The
+expected and observed limits are additionally tabulated
+in~\Cref{app:limit_tables} for all \mX and separately for the
+combination of all channels, \lephad-only, and \hadhad-only.
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.65\textwidth]{results/resonant_comb_upper_limits}
+  % Workspaces: comb_2022_01_29
+  \includegraphics[width=0.65\textwidth]{results_res/resonant_upper_limits}
 
-  \caption{Upper limits on $\sigma(pp \to X \to \HH)$ as a function of
-    the mass of the scalar resonance using the \CLs method at
-    \SI{95}{\percent} confidence level.}
+  \caption{Upper limits on $\sigma(pp \to X \to \HH)$ when considering
+    different masses, \mX, of the scaalar resonance. The exclusion
+    limits are obtained using the asymptotic \CLs method at
+    \SI{95}{\percent} confidence level. The expected upper limits
+    obtained from tests of the \lephad and \hadhad channel only
+    (incl.\ the control region) are overlayed to illustrate the
+    sensitivity of individual channels.}%
   \label{fig:res_upper_limits}
 \end{figure}
+
+The upper limits on the cross section decrease quickly with increasing
+\mX in the mass range from ca.\ \SIrange{300}{500}{\GeV}. This is a
+consequence of the large positive slope in signal acceptance with
+respect to the mass of the scalar resonance (cf.~CITATION) and the
+increasingly discinct signature of the signal aiding in the
+discrimination between the signal and background
+processes. Particularly the ability to distinguish the signal from the
+top background, which has large contributions for
+$\mX \lesssim \SI{500}{\GeV}$\todo{Yield tables for lephad would be
+  nice}, increases quickly as larger resonance masses are
+considered. The signal acceptance reaches a maximum at
+$\mX = \SI{1000}{\GeV}$ after which reconstruction effects starts to
+degrade the acceptance due to the inability to resolve the
+constitutents of the $H \to \tautau$ and $H \to \bbbar$
+candidates. This leads to a broad plateau of the upper limit and a
+degradation of the exclusion limits at the upper end of the considered
+mass range.
+
+The importance of individual analysis channels to the (expected)
+exclusion limits varies as different resonance masses are
+considered. Except for the smallest \mX considered, the \hadhad
+channel gives the most stringent limits in the range of low to
+intermediate \mX due to the comparatively large abundance of
+irreducible top backgrounds in the \lephad channels. For signal mass
+hypotheses of about \SI{1000}{\GeV} and larger the upper limits of
+both channels start to converge\todo{continue}.
 
 \begin{table}[htbp]
   \centering
