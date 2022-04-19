@@ -1076,12 +1076,19 @@ mass hypotheses.
   % \input{tables/breakdown_res_exp_mu0}
 \end{table}
 
-Systematic uncertainties have a considerable effect on the total
-variance of $\hat{\sigma}$ at low mass. For $\mX = \SI{300}{\GeV}$ the
-effect of systematic uncertainties explains \SI{42}{\percent} of the
-total variance on $\hat{\sigma}$. Instrumental uncertainties from
-jets, \pTmissAbs, and \tauhadvis have a sizable effect only at low \mX
-(low momenta of the objects).
+Systematic uncertainties have a sizable effect on the total variance
+of $\hat{\sigma}$ only for searches of scalar resonances with low
+mass. Instrumental uncertainties, most significantly uncertainties
+affecting jets / \pTmissAbs and \tauhadvis, have the largest impact on
+the search when the final state objects constituting the Higgs boson
+candidates are produced with low transverse momenta, which is
+typically the case for signals with small \mX. Similarly,
+\faketauhadvis backgrounds and uncertainties related to their
+data-driven estimation, which are partially included in the background
+statistical uncertainties due to the finite number events in the
+control regions (and non-multi-jet subtraction in the case of the
+\hadhad channel), play a more significant role at low \mX.
+
 
 \todo[inline]{Ranking plots: Selected masses combined only?}
 
@@ -1090,6 +1097,40 @@ jets, \pTmissAbs, and \tauhadvis have a sizable effect only at low \mX
 \subsection{Estimation of the global significance for the excess at
   $\mX = \SI{1000}{\GeV}$}%
 \label{sec:global_significance}
+
+Probability to have one or more false discoveries (type II errors)
+over the set (family of 20) of considered hypothesis tests given some
+threshold. This will lead to the definition of the global significance
+when the maximum observed is considered as the threshold. (FWER?)
+
+Can generate toy experiments (from the b-only model that doesn't
+exist) and count the numbers of toy experiments where at least one
+exceeds the threshold. Equivalently can consider the number of toys
+where the maximum local significance exceeds $3\sigma$.
+
+Difficulty (dependencies): earlier have seen (injection tests, MVA
+chapter) that the PNN lacks specificity in distinguishing between
+different signal hypotheses at high mass. This is reflected in an
+overlap in events between the most signal-like bins of high \mX
+discriminants. This effect has to be considered when calculating the
+FWER.
+
+Problem: The hypothesis tests are performed using separate likelihood
+functions defined for the same set of observed data. As a result, the
+generative model used to define the likelihood function cannot be used
+to generate toy experiments as it would neglect dependencies between
+discriminants.
+
+A substitute background-only model is constructed that allows to draw
+toy experiments. Three distinct parts need to be considered:
+\begin{itemize}
+\item Generation of pseudo-data
+\item Generation of auxiliarly
+  \begin{itemize}
+  \item Statistical precision of bkg.\ estimate (BB, $\gamma$)
+  \item Other systematic uncertainties ($\alpha$)
+  \end{itemize}
+\end{itemize}
 
 
 \begin{figure}[htbp]
