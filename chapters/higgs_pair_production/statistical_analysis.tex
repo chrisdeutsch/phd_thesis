@@ -1098,10 +1098,74 @@ control regions (and non-multi-jet subtraction in the case of the
   $\mX = \SI{1000}{\GeV}$}%
 \label{sec:global_significance}
 
-Probability to have one or more false discoveries (type II errors)
-over the set (family of 20) of considered hypothesis tests given some
-threshold. This will lead to the definition of the global significance
-when the maximum observed is considered as the threshold. (FWER?)
+In the search for resonant Higgs boson pair production multiple
+hypothesis tests are performed that probe for 20 different \mX of the
+scalar resonance. The quoted significance of $3.0\sigma$ of the excess
+observed at $\mX = \SI{1000}{\GeV}$ does not account for the effect of
+multiple hypothesis testing and was therefore referred to as the local
+significance. Under the background-only hypothesis, any of the 20
+tests could yield a statistically significant result by chance,
+possibly leading to a false discovery\footnote{This concept is usually
+  referred to as the look-elsewhere effect in HEP.}.
+
+Formally, the effect of multiple testing can be accounted for by
+considering the probability to make one or more false discoveries
+(type II errors) when considering an entire family of hypothesis
+tests.
+% and the associated critical thresholds on the test statistics.
+This probability, which is referred to as the family-wise error rate
+(FWER), can be controlled by setting the critical thresholds of the
+tests appropriately. When accounting for the effect of multiple
+testing in searches for new physics, all hypothesis tests are usually
+treated equally resulting in the same thresholds being applied in all
+tests. By convention in HEP, the critical thresholds are not adjusted
+explicitly to control the FWER but rather the FWER corresponding to
+the threshold equal to the observed test statistic of the most
+significant test is given directly. In this case the FWER is
+\begin{align*}
+  \text{FWER}(\zmaxlocal)
+  = \mathbb{P}(\Zmaxlocal > \zmaxlocal \vert H_0) \,\text{,}
+\end{align*}
+where \zmaxlocal is the observed maximum of the local significance and
+\Zmaxlocal the random variable describing the maximum local
+significance under the background-only hypothesis ($H_0$). In both
+cases the maximum is taken over the family of hypothesis tests
+considered for the statistical interpretation.
+
+This formulation of the FWER is equivalent to the $p$-value of a
+hypothesis test that employs the maximum local significance over a
+family of tests as a test statistic and observing
+$\Zmaxlocal = \zmaxlocal$, and is thus called the global $p$-value or
+\pglobal for brevity. This global $p$-value is subsequently translated
+into the global significance, analogously to the treatment of local
+$p$-values and significances, according to
+\begin{align*}
+  z_{\text{global}} = \Phi^{-1}(1 - \pglobal) \,\text{,}
+\end{align*}
+where $\Phi^{-1}$ is the quantile function of the Standard Normal
+distribution and \pglobal the global $p$-value.
+
+In practice, the global significance can be determined using
+simulation provided a generative model for $H_0$ is available. A
+number of $N$ toy experiments can be drawn from $H_0$, subsequently
+performing the set of hypothesis tests on all experiments and noting,
+separately for every toy experiment, the maximum local significance
+over all tests, \zmaxlocal. The global $p$-value is then estimated as
+the fraction of toy experiments with \zmaxlocal exceeding the observed
+value
+\begin{align*}
+  \pglobal \approx \frac{ \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} }
+                        { N } \,\text{,}
+  %= \mathbb{E} ( \mathbf{1}_{[z, \infty)}(\zmaxlocal) \vert H_0 )
+  %\approx \frac{1}{N} \sum_{i = 1}^N \mathbf{1}_{[z, \infty)}\left( \zmaxlocal_{, i} \right)
+\end{align*}
+where $z_{\text{local, obs}}^{\text{max}}$ specifically refers to the
+maximum local significance obtained from the tests using observed
+data. Other methods~\cite{Gross:2010qma} exist to determine the global
+significance but are not used here\todo{Note that this method is also
+  affected by the main problem.}.
+
+
 
 Can generate toy experiments (from the b-only model that doesn't
 exist) and count the numbers of toy experiments where at least one
@@ -1117,9 +1181,14 @@ FWER.
 
 Problem: The hypothesis tests are performed using separate likelihood
 functions defined for the same set of observed data. As a result, the
-generative model used to define the likelihood function cannot be used
+generative model used to define the likelihood function(s) cannot be used
 to generate toy experiments as it would neglect dependencies between
 discriminants.
+
+Another problem: Since we fit different hypotheses, the MLE of NPs are
+generally slightly different for every fit. Since the models only
+agree pre-fit, we go with this but set approximate normalisation
+factors for \ttbar and \ZHF.
 
 A substitute background-only model is constructed that allows to draw
 toy experiments. Three distinct parts need to be considered:
@@ -1132,6 +1201,50 @@ toy experiments. Three distinct parts need to be considered:
   \end{itemize}
 \end{itemize}
 
+Driven by data statistics. But MC background statistical uncertainties
+are non-negligible.
+
+
+\subsubsection{Observables}
+
+Determine the covariance / correlation between the observables of a
+pair of bins entering the analysis from simulation / control region
+data. Expect vanishing correlation between bins of the same PNN
+distribution; generally non-vanishing between bins of different PNN
+distributions.
+
+Independent:
+\begin{align*}
+  X_{i} \sim \pois(\lambda_i) \qquad \text{for} \qquad  i = 1, 2, 3
+\end{align*}
+and
+\begin{align*}
+  X &= X_1 + X_3 \sim \pois(\lambda_1 + \lambda_3) \\
+  Y &= X_1 + X_3 \sim \pois(\lambda_2 + \lambda_3)
+\end{align*}
+
+\begin{align*}
+  \rho_{XY} = \frac{\cov(X, Y)}{\sqrt{\var(X)\var(Y)}}
+  = \frac{\lambda_3}{\sqrt{(\lambda_1 + \lambda_3) \cdot (\lambda_2 + \lambda_3)}}
+\end{align*}
+
+
+\subsubsection{Global observables}
+
+All systematic uncertainties are assumed to be fully correlated.
+
+\subsubsection{Global significance determination}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  % \includegraphics[width=0.65\textwidth]{}
+  \missingfigure[figwidth=0.65\textwidth]{$Z_{\text{local}}^{\text{max}}$.}
+
+  \caption{Distribution of the maximum local significance. Kernel smoothing applied.}
+  \label{fig:zmax_toys}
+\end{figure}
 
 \begin{figure}[htbp]
   \centering
