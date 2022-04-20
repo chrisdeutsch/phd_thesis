@@ -6,13 +6,13 @@ framework presented in~\Cref{sec:statistical_methods} to search for
 non-resonant production of SM \HH and production via scalar resonances
 with masses ranging from \SIrange{251}{1600}{\GeV}.
 
-A probabilistic model is constructed targeting the signal hypothesis
-to be probed that simultaneously describes the data in bins of the MVA
-descriminants in the signal regions and \mll in the \ZHF control
-region using the signal and background estimates and their
-uncertainties described in earlier sections. The discriminants are
-summarised in~\Cref{tab:fitted_variable} for all regions entering the
-models for the SM and BSM search.
+A probabilistic model is constructed, separately for every signal
+hypothesis to be probed, that simultaneously describes the data in
+bins of the MVA descriminants in the signal regions and \mll in the
+\ZHF control region using the signal and background estimates and
+their uncertainties described in earlier sections. The discriminants
+are summarised in~\Cref{tab:fitted_variable} for all regions entering
+the models for the SM and BSM search.
 
 \begin{table}[htbp]
   \centering
@@ -1143,10 +1143,10 @@ $p$-values and significances, according to
   z_{\text{global}} = \Phi^{-1}(1 - \pglobal) \,\text{,}
 \end{align*}
 where $\Phi^{-1}$ is the quantile function of the Standard Normal
-distribution and \pglobal the global $p$-value.
+distribution.
 
 In practice, the global significance can be determined using
-simulation provided a generative model for $H_0$ is available. A
+simulation provided a probabilistic model of $H_0$ is available. A
 number of $N$ toy experiments can be drawn from $H_0$, subsequently
 performing the set of hypothesis tests on all experiments and noting,
 separately for every toy experiment, the maximum local significance
@@ -1159,36 +1159,37 @@ value
   %= \mathbb{E} ( \mathbf{1}_{[z, \infty)}(\zmaxlocal) \vert H_0 )
   %\approx \frac{1}{N} \sum_{i = 1}^N \mathbf{1}_{[z, \infty)}\left( \zmaxlocal_{, i} \right)
 \end{align*}
-where $z_{\text{local, obs}}^{\text{max}}$ specifically refers to the
-maximum local significance obtained from the tests using observed
-data. Other methods~\cite{Gross:2010qma} exist to determine the global
-significance but are not used here\todo{Note that this method is also
-  affected by the main problem.}.
+where $z_{\text{local, obs}}^{\text{max}}$ refers to the observed
+maximum local significance in data. Other methods for calculating
+global significances exist, see for example Ref.~\cite{Gross:2010qma},
+that also rely on being able to draw toy experiments from $H_0$.
 
+The primary difficulty in estimating the global significance of the
+excess at $\mX = \SI{1000}{\GeV}$ lies in the generation of toy
+experiments from the background-only hypothesis. While the likelihood
+functions used for the statistical interpretation contain a model of
+the binned PNN discriminants, these models only provide a description
+of a single discriminant at a time, not accounting for dependencies
+between observables of different discriminants. The estimation of the
+global significance, however, requires a background model jointly
+describing all binned discriminants used in the search, which is not
+readily available.
 
+The need for such a model was already indicated by the large width of
+the significance response in the signal injection tests for large \mX
+in~\Cref{fig:local_pvalues_injected}, which is caused by a partial
+overlap of events in the most signal-like bins of PNN discriminants
+for adjacent mass points. This overlap is expected to extend to
+background events\todo{TODO} and thus will have an effect on the
+estimated global significance which has to be quantified.
 
-Can generate toy experiments (from the b-only model that doesn't
-exist) and count the numbers of toy experiments where at least one
-exceeds the threshold. Equivalently can consider the number of toys
-where the maximum local significance exceeds $3\sigma$.
-
-Difficulty (dependencies): earlier have seen (injection tests, MVA
-chapter) that the PNN lacks specificity in distinguishing between
-different signal hypotheses at high mass. This is reflected in an
-overlap in events between the most signal-like bins of high \mX
-discriminants. This effect has to be considered when calculating the
-FWER.
-
-Problem: The hypothesis tests are performed using separate likelihood
-functions defined for the same set of observed data. As a result, the
-generative model used to define the likelihood function(s) cannot be used
-to generate toy experiments as it would neglect dependencies between
-discriminants.
-
-Another problem: Since we fit different hypotheses, the MLE of NPs are
-generally slightly different for every fit. Since the models only
-agree pre-fit, we go with this but set approximate normalisation
-factors for \ttbar and \ZHF.
+A substitute background model is constructed accounting for
+correlations between all observables entering the statistical
+interpretation that can be used to generate toy experiments for the
+global significance estimation. It is built from the pre-fit
+expectation except for the normalisation factors for \ttbar and \ZHF,
+which are set to approximate post-fit values of 0.97 and 1.35
+respectively.
 
 A substitute background-only model is constructed that allows to draw
 toy experiments. Three distinct parts need to be considered:
