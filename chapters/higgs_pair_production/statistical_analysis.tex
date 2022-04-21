@@ -1271,14 +1271,75 @@ observables.
 An approximation of the correlation coefficient for all pair-wise
 combinations of bins in an analysis channel can be obtained by
 replacing the rate parameters $\lambda_i$ by the rates from the
-background estimate.
+background estimate. Excerpts of the correlation matrix obtained in
+the \hadhad channel is shown
+in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from
+the \hadhad channel enter the statistical interpretation leading to a
+matrix of dimension $144 \times 144$. Similar matrices are derived in
+the \lephad SLT and LTT signal regions with dimension $193 \times 193$
+and $182 \times 182$, respectively.
 
 \begin{figure}[htbp]
   \centering
 
-  \caption{Correlation matrix}
+  \begin{subfigure}{\textwidth}
+    \centering
+
+    \includegraphics[scale=0.8]{global_significance/observable_correlations/corr_hadhad_medium}
+    \subcaption{Submatrix for observables of
+      $\mX = 500, 600, 700\,\si{\GeV}$ discriminants}%
+    \label{fig:correlation_matrix_observables_medium}
+  \end{subfigure}
+
+  \begin{subfigure}{\textwidth}
+    \centering
+
+    \includegraphics[scale=0.8]{global_significance/observable_correlations/corr_hadhad_high}
+    \subcaption{Submatrix for observables of
+      $\mX = 1000, 1100, 1200, 1400, 1600\,\si{\GeV}$ discriminants}%
+    \label{fig:correlation_matrix_observables_high}
+  \end{subfigure}
+
+  \caption{Estimate of the correlation matrix between observables of
+    \hadhad channel. Two submatrices of the full matrix
+    ($144 \times 144$) are shown. Bins are enumerated in ascending
+    order of the signal probability according to the PNN discriminants
+    (i.e.\ bins numbered with 1 contain the most background-like
+    events for a given classification problem).  Cells are annotated
+    if the correlation coefficient is larger than or equal to
+    \SI{5}{\percent}. Off-diagonal elements with a correlation
+    coefficient of \SI{100}{\percent} are due to rounding only.}%
   \label{fig:correlation_matrix_observables}
 \end{figure}
+
+\Cref{fig:correlation_matrix_observables_medium} shows estimated
+correlation coefficients between observables of discriminants used to
+select signals from resonances in the intermediate mass range in the
+\hadhad channel. This correlation matrix has a few noteworthy
+features:
+\begin{itemize}
+\item Off-diagonal elements of submatrices for fixed \mX of the PNN
+  discriminant are zero due to the bins being disjoint by
+  construction.
+
+\item The most background-like bins (bins numbered 1) feature a large
+  correlation of about \SI{90}{\percent} or larger. This is due to the
+  overlap of events that are easily rejected by the PNN
+  discriminants. An overlap in these bins is expected, independent of
+  the targeted mass, due to the presence of events that are
+  kinematically incompatible with the resonant production of SM Higgs
+  boson pairs. An example are events where both \mMMC and \mBB are far
+  from the mass of the Higgs boson.
+
+\item For the three PNN discriminants considered
+  in~\Cref{fig:correlation_matrix_observables_medium}, the observables
+  of the most signal-like bins are expected to have little
+  correlation.
+  % The signal extraction procedure has sufficient mass
+  % resolution to distinguish between signal hypotheses in the
+  % intermediate mass range.
+\end{itemize}
+
 
 
 \subsubsection{Generation of toy global observables}
