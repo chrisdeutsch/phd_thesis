@@ -1247,7 +1247,7 @@ can be partitioned into three parts with associated observables $X_i$:
 \item The phase space selected by A and not B with observable $X_1$.
 \item The phase space selected by A and B with observable $X_2$.
 \item The phase space selected by B and not A with observable $X_3$.
-\end{itemize}
+\end{itemize} \todo[inline]{Phase space is probably not the right word here...}
 Due to the disjoint subdivision of the phase space, the observables
 $X_i$ are i.i.d.\ $\pois(\lambda_i)$ with rate parameters $\lambda_i$
 for $i = 1, 2, 3$. The observables $A$ and $B$ can thus be written as
@@ -1340,6 +1340,29 @@ features:
   % intermediate mass range.
 \end{itemize}
 
+The expected correlation between observables of the high \mX
+discriminants are shown
+in~\Cref{fig:correlation_matrix_observables_high} for the \hadhad
+channel. As previously noted, the signal extraction method is unable
+to separate the signatures of signal-like events at high \mX,
+partially due to the degradation in the absolute resolution of the
+\mHH reconstruction. This is reflected in the correlation coefficient
+of the observables for the most signal-like bins of adjacent mass
+points reaching values of up to \SI{75}{\percent}. The correlation
+matrices estimated for the \lephad SLT and LTT channels yield similar
+results\todo{Put in appendix?}.
+
+Idea: generate Poisson random variables for every bin, following the
+expected rate encoded in the likelihood function. But also following
+the correlation structure determined by these large correlation
+matrices.\footnote{There is a simple solution for this in cases where
+  there are no negatively weighted events. Namely by resampling: Draw
+  Pois(weight) for every event. This is not feasible here since there
+  is a considerable amount of negatively weighted events.}
+
+This can be done by noting that any joint distribution can be
+expressed by the marginal distributions and 'copula' (Sklar's
+theorem).
 
 
 \subsubsection{Generation of toy global observables}
