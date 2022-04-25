@@ -1125,12 +1125,15 @@ significant test is given directly. In this case the FWER is
 \begin{align*}
   \text{FWER}(\zmaxlocal)
   = \mathbb{P}(\Zmaxlocal > \zmaxlocal \vert H_0)\,\text{,}
-\end{align*}
+\end{align*}\todo{Define directly via the probability to observe an excess larger than the observed one.}
 where \zmaxlocal is the observed maximum of the local significance and
 \Zmaxlocal the random variable describing the maximum local
 significance under the background-only hypothesis ($H_0$). In both
 cases the maximum is taken over the family of hypothesis tests
 considered in the statistical interpretation.
+
+\todo[inline]{Say that in all cases we assume the background-only
+  hypothesis unless otherwise noted.}
 
 This formulation %of the FWER
 is equivalent to the $p$-value of a hypothesis test that employs the
@@ -1237,16 +1240,16 @@ to the likelihood functions is identical for all tests.
 \subsubsection{Generation of toy observables}
 
 For the generation of random toy observables, the correlation between
-observables based on the overlap of events between bins needs to be
-quantified. Let $A$ and $B$ be the (possibly dependent) observables of
-a pair of bins which are marginally distributed according to Poisson
-distributions. The dependence between $A$ and $B$ is given by the
-overlap in phase space selected by both bins. The relevant phase space
-can be partitioned into three parts with associated observables $X_i$:
+observables based on the overlap of bins needs to be quantified. Let
+$A$ and $B$ be observables corresponding to a pair of bins which are
+marginally distributed according to Poisson distributions. The
+dependence between $A$ and $B$ is given by the overlap in phase space
+selected by both bins. The relevant phase space can be partitioned
+into three parts with associated observables $X_i$:
 \begin{itemize}
-\item The phase space selected by A and not B with observable $X_1$.
-\item The phase space selected by A and B with observable $X_2$.
-\item The phase space selected by B and not A with observable $X_3$.
+\item The phase space selected by bin A but not B with observable $X_1$.
+\item The phase space selected by bin A and B with observable $X_2$.
+\item The phase space selected by bin B but not A with observable $X_3$.
 \end{itemize} \todo[inline]{Phase space is probably not the right word here...}
 Due to the disjoint subdivision of the phase space, the observables
 $X_i$ are i.i.d.\ $\pois(\lambda_i)$ with rate parameters $\lambda_i$
@@ -1265,14 +1268,14 @@ as\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) =
   = \frac{\lambda_2}{\sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 + \lambda_3)}} \,\text{,}
 \end{align*}
 which reflects the intuition that the overlap in selected phase space,
-described by $\lambda_2$, induces a correlation between both
+described by the rate $\lambda_2$, induces a correlation between both
 observables.
 
 An approximation of the correlation coefficient for all pair-wise
 combinations of bins in an analysis channel can be obtained by
 replacing the rate parameters $\lambda_i$ by the rates from the
 background estimate. Excerpts of the correlation matrix obtained in
-the \hadhad channel is shown
+the \hadhad channel are shown
 in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from
 the \hadhad channel enter the statistical interpretation leading to a
 matrix of dimension $144 \times 144$. Similar matrices are derived in
@@ -1328,8 +1331,8 @@ features:
   discriminants. An overlap in these bins is expected, independent of
   the targeted mass, due to the presence of events that are
   kinematically incompatible with the resonant production of SM Higgs
-  boson pairs. An example are events where both \mMMC and \mBB are far
-  from the mass of the Higgs boson.
+  boson pairs. An example for such events are the ones where both
+  \mMMC and \mBB are far from the mass of the Higgs boson.
 
 \item For the three PNN discriminants considered
   in~\Cref{fig:correlation_matrix_observables_medium}, the observables
@@ -1344,13 +1347,74 @@ The expected correlation between observables of the high \mX
 discriminants are shown
 in~\Cref{fig:correlation_matrix_observables_high} for the \hadhad
 channel. As previously noted, the signal extraction method is unable
-to separate the signatures of signal-like events at high \mX,
-partially due to the degradation in the absolute resolution of the
-\mHH reconstruction. This is reflected in the correlation coefficient
-of the observables for the most signal-like bins of adjacent mass
-points reaching values of up to \SI{75}{\percent}. The correlation
-matrices estimated for the \lephad SLT and LTT channels yield similar
-results\todo{Put in appendix?}.
+to separate the signatures of signal-like events at high \mX. This is
+reflected in the correlation coefficient of the observables for the
+most signal-like bins of adjacent mass points reaching values of up to
+\SI{75}{\percent}. The correlation matrices estimated for the \lephad
+SLT and LTT channels yield similar results\todo{Put in appendix?}.
+
+Considering these dependencies between observables, the toy generation
+method needs to fulfil certain requirements. First, the model needs to
+accurately reproduce the marginal distributions of the observables,
+i.e.\ Poisson distributions with rates given by the background
+prediction, such that the distribution of test statistics for
+individual tests at fixed \mX can be reproduced. Second, it needs to
+model the dependence structure between observables to account for the
+overlap of phase space selected by the bins entering the
+interpretation.
+
+A multivariate extension of the bivariate Poisson distribution that
+was previously used to determine the correlation coefficients between
+observables would fulfil these requirements, however, such a model
+becomes increasingly intractable due to the large number of
+observables considered and particularly due to the presence of
+negatively weighted events used for the background
+estimate\footnote{In the absence of negatively weighted events, toy
+  experiments could be generated using pseudo-data generated by
+  drawing a random weight from $\pois(w_i)$ for every event with
+  weight $w_i$ used for the background estimate. Subsequently, the set
+  of pseudo-data can be used to determine the values of all
+  observables. Conceptually, this approach would be similar to
+  Bootstrap resampling.}. Instead a model based on the mathematical
+framework provided by Sklar's theorem~\cite{Sklar1959FonctionsDR} is
+adopted, allowing to factorise the marginal distributions from the
+dependency structure of the observables.
+
+Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint
+distribution function $H$ can be decomposed into its marginal
+distribution functions $F_1, \dots, F_n$ and a $n$-dimensional copula
+$\mathcal{C}$. The copula $\mathcal{C}$ is a $n$-dimensional
+distribution function, $\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$,
+with uniform marginal densities that describes the dependencies
+between random variables\footnote{The copula is uniquely identifiable
+  for continuous marginal distributions, however, this is not the case
+  for discrete marginal distributions.}. The joint distribution can be
+expressed as
+\begin{align*}
+  H(x_1, \dots, x_n) = \mathcal{C}(F_1(x_1), \dots, F_n(x_n))
+\end{align*}
+according to the theorem.
+
+
+A copula derived (using the inversion method~\cite{nelsen}) from the
+dependency structure of the multivariate Normal distribution is given
+by
+\begin{align*}
+  \mathcal{C}_{\myvec{R}}(u_1, \dots, u_d) = \Phi_{\myvec{R}}(\Phi^{-1}(u_1), \dots, \Phi^{-1}(u_d))
+\end{align*}
+where $\Phi_{\myvec{R}}$ is the CDF of the multivariate Normal
+distribution with mean $\myvec{0}$ and covariance equal to the
+correlation matrix $\myvec{R}$. Further, $\Phi^{-1}$ is the quantile
+function of the univariate Standard Normal distribution.
+
+
+Simplifying modelling assumption are made. Instead of describing all
+higher-order interactions, the modelling is restricted to pair-wise
+correlations between observables. Further, in the limit of large
+number of observations, the Poisson distribution can be approximated
+by a Normal distributions. Hence it would be intuitive to use the
+multi-variate Normal distribution to describe the pair-wise dependence
+between observables.
 
 Idea: generate Poisson random variables for every bin, following the
 expected rate encoded in the likelihood function. But also following
@@ -1363,6 +1427,8 @@ matrices.\footnote{There is a simple solution for this in cases where
 This can be done by noting that any joint distribution can be
 expressed by the marginal distributions and 'copula' (Sklar's
 theorem).
+
+\cite{10.1002/wics.1398}
 
 
 \subsubsection{Generation of toy global observables}
