@@ -1243,17 +1243,18 @@ For the generation of random toy observables, the correlation between
 observables based on the overlap of bins needs to be quantified. Let
 $A$ and $B$ be observables corresponding to a pair of bins which are
 marginally distributed according to Poisson distributions. The
-dependence between $A$ and $B$ is given by the overlap in phase space
-selected by both bins. The relevant phase space can be partitioned
-into three parts with associated observables $X_i$:
+dependence between $A$ and $B$ is given by the overlap in the
+kinematic region (phase space) selected by both bins. The phase space
+selected by either bin can be partitioned into three parts with
+associated observables $X_i$:
 \begin{itemize}
 \item The phase space selected by bin A but not B with observable $X_1$.
 \item The phase space selected by bin A and B with observable $X_2$.
 \item The phase space selected by bin B but not A with observable $X_3$.
-\end{itemize} \todo[inline]{Phase space is probably not the right word here...}
-Due to the disjoint subdivision of the phase space, the observables
-$X_i$ are i.i.d.\ $\pois(\lambda_i)$ with rate parameters $\lambda_i$
-for $i = 1, 2, 3$. The observables $A$ and $B$ can thus be written as
+\end{itemize}
+Due to the partitioning of the phase space, the observables $X_i$ are
+i.i.d.\ $\pois(\lambda_i)$ with rate parameters $\lambda_i$ for
+$i = 1, 2, 3$. The observables $A$ and $B$ can thus be written as
 \begin{align*}
   A &= X_1 + X_2 \sim \pois(\lambda_1 + \lambda_2) \\
   B &= X_2 + X_3 \sim \pois(\lambda_2 + \lambda_3)
@@ -1269,16 +1270,17 @@ as\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) =
 \end{align*}
 which reflects the intuition that the overlap in selected phase space,
 described by the rate $\lambda_2$, induces a correlation between both
-observables.
+observables. In the following, the model described by $A$ and $B$ will
+be referred to as the bivariate Poisson model.
 
 An approximation of the correlation coefficient for all pair-wise
 combinations of bins in an analysis channel can be obtained by
 replacing the rate parameters $\lambda_i$ by the rates from the
-background estimate. Excerpts of the correlation matrix obtained in
+background estimate. Submatrices of the correlation matrix obtained in
 the \hadhad channel are shown
 in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from
 the \hadhad channel enter the statistical interpretation leading to a
-matrix of dimension $144 \times 144$. Similar matrices are derived in
+matrix of dimension $144 \times 144$. Similar matrices are obtained in
 the \lephad SLT and LTT signal regions with dimension $193 \times 193$
 and $182 \times 182$, respectively.
 
@@ -1318,26 +1320,26 @@ and $182 \times 182$, respectively.
 \Cref{fig:correlation_matrix_observables_medium} shows estimated
 correlation coefficients between observables of discriminants used to
 select signals from resonances in the intermediate mass range in the
-\hadhad channel. This correlation matrix has a few noteworthy
-features:
+\hadhad channel. This correlation matrix has some noteworthy features:
 \begin{itemize}
-\item Off-diagonal elements of submatrices for fixed \mX of the PNN
-  discriminant are zero due to the bins being disjoint by
-  construction.
+\item Off-diagonal elements of submatrices describing the correlation
+  of observables belonging to the same PNN discriminant are zero due
+  to bins being disjoint by construction.
 
-\item The most background-like bins (bins numbered 1) feature a large
-  correlation of about \SI{90}{\percent} or larger. This is due to the
-  overlap of events that are easily rejected by the PNN
-  discriminants. An overlap in these bins is expected, independent of
-  the targeted mass, due to the presence of events that are
-  kinematically incompatible with the resonant production of SM Higgs
-  boson pairs. An example for such events are the ones where both
-  \mMMC and \mBB are far from the mass of the Higgs boson.
+\item The most background-like bins (i.e.\ bins enumerated with 1)
+  have correlation coefficients of about \SI{90}{\percent} or
+  larger. This is due to the presence of events that are easily
+  rejected by the PNN discriminants, which predominately populate the
+  first bins. A correlation in such bins is expected, independent of
+  the targeted \mX, due events being selected that are kinematically
+  incompatible with resonant Higgs boson pair production. An example
+  for such events are the ones where both \mMMC and \mBB are far from
+  \mH.
 
-\item For the three PNN discriminants considered
-  in~\Cref{fig:correlation_matrix_observables_medium}, the observables
-  of the most signal-like bins are expected to have little
-  correlation.
+\item The observables of the most signal-like bins are expected to
+  have little correlation for the three PNN discriminants targeting
+  the intermediate mass range considered
+  in~\Cref{fig:correlation_matrix_observables_medium}.
   % The signal extraction procedure has sufficient mass
   % resolution to distinguish between signal hypotheses in the
   % intermediate mass range.
@@ -1354,24 +1356,23 @@ most signal-like bins of adjacent mass points reaching values of up to
 SLT and LTT channels yield similar results\todo{Put in appendix?}.
 
 Considering these dependencies between observables, the toy generation
-method needs to fulfil certain requirements. First, the model needs to
-accurately reproduce the marginal distributions of the observables,
-i.e.\ Poisson distributions with rates given by the background
-prediction, such that the distribution of test statistics for
-individual tests at fixed \mX can be reproduced. Second, it needs to
-model the dependence structure between observables to account for the
-overlap of phase space selected by the bins entering the statistical
-interpretation.
+for the purpose of estimating the global significance needs to fulfil
+certain requirements. First, the model needs to accurately reproduce
+the marginal distributions of the observables, i.e.\ Poisson
+distributions with rates given by the background estimate, such that
+the distribution of test statistics for individual tests at fixed \mX
+can be reproduced. Second, it needs to model the dependence structure
+between observables to account for the overlap of phase space selected
+by the bins entering the statistical interpretation.
 
-A multivariate extension of the bivariate Poisson distribution that
-was previously used to determine the correlation coefficients between
-observables would fulfil these requirements, however, such a model
-becomes intractable due to the large number of observables considered,
-and in particular due to the presence of negatively weighted events
-used for the background estimate\footnote{In the absence of negatively
-  weighted events, toy experiments could be generated using
-  pseudo-data generated by drawing a random weight from $\pois(w_i)$
-  for every event with weight $w_i$ used for the background
+A multivariate extension of the bivariate Poisson distribution would
+fulfil these requirements, however, such a model becomes intractable
+due to the large number of observables considered, and in particular
+due to the presence of negatively weighted events used for the
+background estimate\footnote{In the absence of negatively weighted
+  events, toy experiments could be generated using pseudo-data
+  generated by drawing a random weight from $\pois(w_i)$ for every
+  event with weight $w_i$ used for the background
   estimate. Subsequently, the set of pseudo-data can be used to
   determine the values of all observables. Conceptually, this approach
   has some parallels to resampling techniques like the Bootstrap
@@ -1382,7 +1383,7 @@ structure of the observables.
 
 Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint
 distribution function $H$ can be decomposed into its marginal
-distribution functions $F_1, \dots, F_n$ and a $n$-dimensional copula
+distribution functions $F_1, \dots, F_n$ and an $n$-dimensional copula
 $\mathcal{C}$. The copula $\mathcal{C}$ is a $n$-dimensional
 distribution function, $\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$,
 with uniform marginal densities that describes the dependencies
@@ -1391,21 +1392,23 @@ between random variables\footnote{The copula is uniquely identifiable
   for discrete marginal distributions.}. The joint distribution can
 thus be expressed as
 \begin{align*}
-  H(x_1, \dots, x_n) = \mathcal{C}(F_1(x_1), \dots, F_n(x_n)) \,\text{.}
+  H(x_1, \dots, x_n) = \mathcal{C}(F_1(x_1), \dots, F_n(x_n))
 \end{align*}
+according to the theorem.
 
-For the task of generating toy experiments, the only missing piece
-that remains is the functional form of the copula, since the marginal
-distributions are assumed to be known. The Poisson distribution can be
-approximated by a Normal distribution provided the expected rate is
-not too small, suggesting that the copula describing the dependence
-structure of a multivariate Normal distribution might be applicable as
-an approximation. This copula, referred to as the Gaussian copula, can
-be derived using the inversion method described in Ref.~\cite{nelsen}
-and is given by
-\begin{align*}
+For the task of generating toy experiments, the only missing piece is
+the functional form of the copula, since the marginal distributions
+are assumed to be known from the background estimate. The Poisson
+distribution can be approximated by a Normal distribution provided the
+expected rate is not too small, suggesting that the copula describing
+the dependence structure of a multivariate Normal distribution might
+be applicable as an approximation. This copula, referred to as the
+Gaussian copula, can be derived using the inversion method described
+in Ref.~\cite{nelsen} and is given by
+\begin{align}
+  \label{eq:gaussian_copula}
   \mathcal{C}_{\myvec{R}}(u_1, \dots, u_n) = \Phi_{\myvec{R}}(\Phi^{-1}(u_1), \dots, \Phi^{-1}(u_n))
-\end{align*}
+\end{align}
 where $\Phi_{\myvec{R}}$ is the CDF of the multivariate Normal
 distribution with zero mean and covariance equal to the correlation
 matrix~$\myvec{R}$, and $\Phi^{-1}$ is the quantile function of the
@@ -1413,39 +1416,39 @@ univariate Standard Normal distribution. Similar approaches of
 modelling multivariate count data using copulas have been explored in
 Refs.~\cite{10.1002/wics.1398}\todo{Add more references}.
 
-The parameters $\myvec{R}$ of the Gaussian copula is estimated using
+The parameters $\myvec{R}$ of the Gaussian copula are estimated using
 the correlation matrices derived with the bivariate Poisson model
 previously shown in~\Cref{fig:correlation_matrix_observables}. The
-modelling assumptions are investigated empirically (in two dimensions)
+modelling assumptions are investigated empirically in two dimensions
 using comparisons of simulated results for the bivariate Poisson model
 and the copula-based model. The dependence of two observables $A$ and
 $B$ is illustrated in \Cref{fig:copula_model_comparison} for both
 models in terms of the conditional mean and variance of $B$ given the
 observation $A = a$. This comparison is performed, instead of a direct
 comparison of joint distribution functions, to better illustrate the
-subtle differences between both models.
+subtle differences between both models. The comparison yields the
+following findings:
 \begin{itemize}
-
-\item The conditional mean of $B$ given $A = a$ between both models
-  agrees well even when considering bin pairs with the lowest rates
-  $\lambda_i$ relevant for the analysis.
+\item The conditional mean of $B$ given $A = a$ agrees well between
+  models even when considering bin pairs with the lowest rates
+  $\lambda_i$ relevant for the analysis. This agreement is not
+  unexpected since the Pearson correlation coefficient used to define
+  the model is linked to the slope of the regression line that
+  predicts $\mathrm{E}(B \vert A = a)$.
 
 \item The conditional variance of $B$ given $A = a$ illustrates that
-  both models are not equivalent. For bin pairs with small expected
-  rates $\lambda_i$, the variance of the distribution of $B$ for fixed
-  $A = a$ differs by up \SI{15}{\percent} to between both models.
+  both models are not equivalent, however. For bin pairs with small
+  expected rates $\lambda_i$, the variance of the distribution of $B$
+  for fixed $A = a$ differs by up \SI{15}{\percent} to between both
+  models. These deviations are assumed to be negligible compared to
+  the linear trend that is properly captured by the model.
 
-  Pair-wise linear correlation
-
-\item In the case of disjoint or fully\todo{Mathematically this is a
-    bit funky since the Gaussian PDF is not defined anymore.}
-  overlapping bins (not shown in the figure) the bivariate Poisson
-  model and copula-based model are identical.
-
+\item In the case of disjoint or fully overlapping\footnote{The case
+    of fully overlapping bins requires special treatment since the
+    correlation matrix would be singular.} bins (not shown in the
+  figure) the bivariate Poisson model and copula-based model are
+  identical.
 \end{itemize}
-
-Why is the conditional variance less important than the conditional
-mean? Important is the mean? Variance averages out?
 
 \begin{figure}[htbp]
   \centering
@@ -1490,31 +1493,46 @@ mean? Important is the mean? Variance averages out?
   \label{fig:copula_model_comparison}
 \end{figure}
 
-Simplifying modelling assumption are made. Instead of describing all
-higher-order interactions, the modelling is restricted to pair-wise
-correlations between observables. Further, in the limit of large
-number of observations, the Poisson distribution can be approximated
-by a Normal distributions. Hence it would be intuitive to use the
-multi-variate Normal distribution to describe the pair-wise dependence
-between observables.
+With these simplifying modelling assumptions, observables can be
+randomly generated using the multivariate copula-based model. The
+following algorithm allows to draw the vector of random variates
+$\myvec{x} = (x_1, \dots, x_n)$ from the joint distribution described
+by the Gaussian copula and marginal distributions:
+\begin{enumerate}
+\item Draw a vector of random variates,
+  $\myvec{u} = (u_1, \dots, u_n)$, from the distribution described by
+  $\mathcal{C}_{\myvec{R}}$.
+
+  The vector $\myvec{u}$ is obtained by generating random variates
+  $\myvec{n} = (n_1, \dots, n_n)$ from the centered multivariate
+  Normal distribution with covariance matrix equal to $\myvec{R}$,
+  followed by an element-wise application of the univariate Standard
+  Normal CDF to $\myvec{n}$, i.e.\ $u_i = \Phi(n_i)$ for every
+  $i = 1, \dots, n$. This procedure follows directly from the form of
+  the Gaussian copula in~\Cref{eq:gaussian_copula}.
+
+  In practice, the matrices $\myvec{R}$ that are considered here are
+  singular due to multicollinearity between observables. This arises
+  from 19 implicit constraints due to the requirement that the sum of
+  observables is the same for all 20 discriminants in a given analysis
+  channel, thus leading to 19 vanishing eigenvalues of
+  $\myvec{R}$. Therefore, multivariate Normal random variates are
+  generated in a lower dimensional space that removes the
+  collinearity, followed by a back-transformation to the
+  $n$-dimensional space. The required transformations are provided by
+  singular value decomposition of $\myvec{R}$.
+
+\item With the marginal distribution functions
+  Given the known marginal distribution functions $F_1$, \dots,
+  $F_n$: Apply the quantile functions $x_i = F_{i}^{-1}(u_i)$ for
+  $i = 1, \dots, n$.
+
+\end{enumerate}
+A graphical illustration of this procedure is given
+in~\Cref{app:graphical_illustration_copula_model}.
 
 
-Idea: generate Poisson random variables for every bin, following the
-expected rate encoded in the likelihood function. But also following
-the correlation structure determined by these large correlation
-matrices.
 
-The algorithm for generating toy observables
-- Singular correlation matrix
-
-Graphical explanation in the bivariate case is in Appendix\todo{Add to appendix}.
-
-\footnote{The matrix $\myvec{R}$ is singular due to multicollinearity
-  between the observables. This is due to 19 implicit constraints from
-  the requirement that the sum of observables is the same for all 20
-  discriminants resulting in 19 singular eigenvalues for
-  $\myvec{R}$. These are removed using singular value
-  decomposition(???) prior to the generation of random variates.}
 
 
 \subsubsection{Generation of toy global observables}
