@@ -1542,6 +1542,46 @@ in~\Cref{app:graphical_illustration_copula_model}.
 
 All systematic uncertainties are assumed to be fully correlated.
 
+\Cref{sec:barlow_beeston}
+
+\cite{barlow1993,conway2011}
+
+
+\begin{align*}
+  \pois(m_{cb} \vert \gamma_{cb} \tau_{cb})
+\end{align*}
+
+$\tau_{cb}$ is the effective number of MC events estimated by
+(omitting channel and bin indices...)
+\begin{align*}
+  \tau = \frac{\left( \sum_i w_i \right)^2}{\sum_i w_i^2}
+\end{align*}
+
+
+Compound Poisson distribution
+\begin{align*}
+  &N \sim \pois(\lambda) \\
+  &W_i \quad \text{i.i.d. and independent of }N \\
+  &X = \sum_i^N W_i \quad \text{(Compound Poisson distribution)} \\
+\end{align*}
+
+Mean and variance are given by (law of total expectation / variance):
+\begin{align*}
+  &\expect(X) = \lambda \expect(W) \\
+  &\var(X) = \lambda \expect(W^2) \\
+\end{align*}
+
+Can be approximated with scaled Poisson distribution:
+\begin{align*}
+  &M \sim \pois(\gamma \tau) \\
+  &\tilde{X} = s \cdot M \\
+  &s = \frac{\expect(W^2)}{\expect(W)} \\
+  &\gamma \tau = \frac{\lambda \expect(W)^2}{\expect(W^2)}
+\end{align*}
+
+
+
+
 \subsubsection{Global significance determination}
 
 
