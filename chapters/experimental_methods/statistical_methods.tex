@@ -178,10 +178,53 @@ $\boldgamma = (\gamma_{cb})$.
   observables'.}
 
 
-\subsection{Barlow-Beeston}%
+\subsection{Treatment of statistical uncertainties on background rate
+  predictions}%
 \label{sec:barlow_beeston}
 
-\cite{barlow1993,conway2011}
+The background rate prediction in a given bin is obtained from finite
+samples of events, e.g.\ from MC simulation, and thus do not directly
+correspond to the true expected background rates. The rate predictions
+are subject to uncertainties which have to be considered when
+performing inference, particularly when only few events are available
+to predict the background.
+
+This uncertainty is included in the likelihood function, employing the
+method proposed by Barlow and Beeston~\cite{barlow1993}, by replacing
+the predicted background rate in the Poisson term of the likelihood
+with the true background rate, i.e.\ by performing the substitution
+$\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$ with the nuisance
+parameters $\gamma_{cb}$ specifying the relative difference between
+predicted and true expected background rate. In Ref.~\cite{barlow1993}
+it is proposed to introduce one such nuisance parameter for every
+background source, however, a simplified version proposed in
+Ref.~\cite{conway2011} is used instead, only accounting for the
+uncertainty on the total background prediction instead.
+
+The $\gamma$ nuisance parameters are constrained by auxiliary
+measurements with terms of the form
+\begin{align*}
+  \pois(m_{cb} | \gamma_{cb} \tau_{cb})
+  \qquad \text{with} \qquad
+  \tau_{cb} = \frac{( \sum_i w_i )^2}{\sum_i w_i^2} = \text{const.}
+\end{align*}
+entering the likelihood function~\cite{cranmer2012}, where $\tau_{cb}$
+is considered constant and the sums go over all events contributing to
+bin $b$ in channel $c$ and the event weights are given by $w_i$. These
+terms correspond to a measurement of the effective number
+(un-weighted) events based on the observed value $m_{cb}$ from the
+sample of events. The observed value of the effective number of events
+is nominally the same as $\tau_{cb}$\footnote{It should be noted that
+  $m_{cb}$ are generally not integer-valued quantities and thus do not
+  agree with the support of the Poisson distribution. Thus the
+  factorial term in the Poisson PMF is replaced by the continuous
+  gamma function to generalise the distribution to $\mathbb{R}^+$.}.
+
+This approach of including the statistical uncertainty on the
+background rate is based on using a \emph{scaled Poisson distribution}
+(SPD) to approximate the \emph{compound Poisson distribution} (CPD)
+that describes the distribution of a sum of a Poisson number of random
+weights~\cite{Bohm:2013gla}.
 
 
 \subsection{Hypothesis Testing}
