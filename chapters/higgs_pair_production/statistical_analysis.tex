@@ -1201,12 +1201,12 @@ backgrounds, except for the normalisation factors of the \ttbar and
 and 1.35, respectively. Two major classes of random variables need to
 be considered when generating toy experiments:
 \begin{enumerate}
-\item Variables describing the observed number of events in a given
+\item Random variables describing the observed number of events in a given
   bin, usually referred to as \emph{observables}.
 
-\item Variables describing the central value of auxiliary measurements
-  that provide the description of systematic uncertainties. These are
-  referred to as \emph{global observables}.
+\item Random variables describing the central value of auxiliary
+  measurements that provide the description of systematic
+  uncertainties. These are referred to as \emph{global observables}.
 \end{enumerate}
 
 \emph{Observables} are expected to be partially correlated due to the
@@ -1360,10 +1360,11 @@ for the purpose of estimating the global significance needs to fulfil
 certain requirements. First, the model needs to accurately reproduce
 the marginal distributions of the observables, i.e.\ Poisson
 distributions with rates given by the background estimate, such that
-the distribution of test statistics for individual tests at fixed \mX
-can be reproduced. Second, it needs to model the dependence structure
-between observables to account for the overlap of phase space selected
-by the bins entering the statistical interpretation.
+the distribution of the discovery test statistic for individual tests
+at fixed \mX can be reproduced. Second, it needs to model the
+dependence structure between observables to account for the overlap of
+phase space selected by the bins entering the statistical
+interpretation.
 
 A multivariate extension of the bivariate Poisson distribution would
 fulfil these requirements, however, such a model becomes intractable
@@ -1376,10 +1377,11 @@ background estimate\footnote{In the absence of negatively weighted
   estimate. Subsequently, the set of pseudo-data can be used to
   determine the values of all observables. Conceptually, this approach
   has some parallels to resampling techniques like the Bootstrap
-  method.}. Instead a model based on the mathematical framework
-provided by Sklar's theorem~\cite{Sklar1959FonctionsDR} is adopted,
-allowing to factorise the marginal distributions from the dependency
-structure of the observables.
+  method~\cite{10.1214/aos/1176344552,efron1994introduction}.}. Instead
+a model based on the mathematical framework provided by Sklar's
+theorem~\cite{Sklar1959FonctionsDR} is adopted, allowing to factorise
+the marginal distributions from the dependency structure of the
+observables.
 
 Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint
 distribution function $H$ can be decomposed into its marginal
@@ -1397,14 +1399,14 @@ expressed as
 according to the theorem.
 
 For the task of generating toy experiments, the only missing piece is
-the functional form of the copula, since the marginal distributions
-are assumed to be known from the background estimate. The Poisson
-distribution can be approximated by a Normal distribution provided the
-expected rate is not too small, suggesting that the copula describing
-the dependence structure of a multivariate Normal distribution might
-be applicable as an approximation. This copula, referred to as the
-Gaussian copula, can be derived using the inversion method described
-in Ref.~\cite{nelsen} and is given by
+the functional form of the copula since the marginal distributions are
+assumed to be known from the nominal background prediction. The
+Poisson distribution can be approximated by a Normal distribution
+provided the expected rate is not too small, suggesting that the
+copula describing the dependence structure of a multivariate Normal
+distribution might be applicable as an approximation. This copula,
+referred to as the Gaussian copula, can be derived using the inversion
+method described in Ref.~\cite{nelsen} and is given by
 \begin{align}
   \label{eq:gaussian_copula}
   \mathcal{C}_{\myvec{R}}(u_1, \dots, u_n) = \Phi_{\myvec{R}}(\Phi^{-1}(u_1), \dots, \Phi^{-1}(u_n))
@@ -1526,8 +1528,8 @@ by the Gaussian copula and marginal distributions:
   $n$ marginal distributions at the values of $\myvec{u}$ from the
   previous step such that $x_i = F_{i}^{-1}(u_i)$ for
   $i = 1, \dots, n$. The marginal distribution functions are given by
-  Poisson distributions with rates corresponding to the background
-  prediction in a given bin.
+  Poisson distributions with expected rates corresponding to the
+  background prediction in a given bin.
 \end{enumerate}
 The multivariate count data generated with this method was inspected
 by generating large samples of size $\mathcal{O}(10^6)$ showing
@@ -1541,15 +1543,15 @@ in~\Cref{app:graphical_illustration_copula_model}.
 \subsubsection{Generation of toy global observables}%
 \label{sec:toys_global_observables}
 
-Global observables also need to be randomly generated for the
-estimation of the global significance. This section will focus on the
+Global observables have to be fluctuated when estimating the global
+significance with toy experiments. This section will focus on the
 generation of the global observables related to the Barlow-Beeston
-method previously described in \Cref{sec:barlow_beeston} that is used
-to include statistical uncertainties on the background rate
-predictions in the likelihood function. Due to the statistical nature
-of these uncertainties they cannot be neglected when estimating the
-global significances, particularly since these are highly ranked in
-the analysis.
+method, previously described in \Cref{sec:barlow_beeston}, that is
+used to include statistical uncertainties on the predicted background
+rates in the likelihood function. Due to the statistical nature of
+these uncertainties they cannot be neglected when estimating the
+global significances, particularly since these uncertainties have a
+large impact on the POI.
 
 Global observables related to all other systematic uncertainties are
 randomly assigned given their constraint terms in the likelihood
@@ -1558,18 +1560,21 @@ detailed discussion of these is omitted since standard procedures are
 used.
 
 Regarding global observables associated to the Barlow-Beeston method,
-similar considerations can be made as for observables discussed in the
-previous section. The phase space selected by pairs of bins can
+similar considerations can be made as for the observables discussed in
+the previous section. The phase space selected by pairs of bins can
 partially overlap, leading to dependencies between the background rate
-predictions (from simulation and CR data) between both bins. The
-generation of these observables is simplified, however, since
+predictions (from simulation and CR data) between bins. The random
+generation of these (global) observables is simplified, however, since
 resampling methods can be used.
 
-The sample of simulated and control region events can be resampled
+The sample of simulated and control region events used to predict the
+background rates in all bins of the discriminants can be resampled
 using non-parametric Bootstrap
-methods~\cite{10.1214/aos/1176344552,efron1994introduction} by
-assigning random bootstrap weights $w_i^{\text{b}}$ to all events. The
-bootstrap weights are drawn from $\pois(1)$ as an approximation to the
+methods~\cite{10.1214/aos/1176344552,efron1994introduction} to obtain
+replicas of the sample that capture the statistical uncertainties and
+correlations between background rate predictions. Every event in the
+original sample is assigned a random bootstrap weight $w_i^{\text{b}}$
+drawn from $\pois(\lambda = 1)$ serving as an approximation to the
 regular non-parametric
 Bootstrap~\cite{google:poisson,ATL-PHYS-PUB-2021-011}. The resulting
 bootstrap replica provides new rate estimates for all bins given
@@ -1577,7 +1582,7 @@ by~$\sum_{i} w_{i}^{\text{b}} w_i$, where $w_i$ is the nominal event
 weight, $w_i^{\text{b}}$ the bootstrap weight, and the sum goes over
 all events falling into bin $b$ of channel $c$. These rate estimates
 can be translated into the observed effective number of events
-$m_{cb}$ (the global observables of the Barlow-Beeston method) using
+$m_{cb}$ (global observables of the Barlow-Beeston method) using
 \begin{align*}
   m_{cb} = \frac{1}{s_{cb}} \sum_{i} w_{i}^{\text{b}} \, w_i
 \end{align*}
@@ -1631,17 +1636,92 @@ weighted events), the agreement between both methods is sufficient.
 \end{figure}
 
 
-
 \subsubsection{Global significance determination}
 
+10000 toys (global) -
+
+Likelihood functions remain unchanged -> just replace observed values
+of observables with the values from toy experiments. In the following
+determine the q0 test statistic from the conditional (POI fixed to 0)
+and unconditional fit (POI left free).
+
+
+The validity of the asymptotic approximation used to determine the
+local significance from the observed value of the $q_0$ test statistic
+($z_{\text{local}} = \sqrt{q_0}$) is examined using a separate set of
+toy experiments generated using standard toy generation
+procedures. This check is performed, separately for all 20 hypothesis
+tests, using \num{100000} toy experiments such that the region close
+to the threshold of interest of $q_0 \approx 9$
+($z_{\text{local}} \approx 3$) is well populated. A representative
+example for the test of the $\mX = \SI{1000}{\GeV}$ signal hypothesis
+is shown in~\Cref{fig:q0_samplingdist}. The figure depicts a
+comparison of the $q_0$ sampling distributions under the
+background-only hypothesis and the resulting relationship between the
+observed value of $q_0$ and the local significance.
 
 \begin{figure}[htbp]
   \centering
 
-  % \includegraphics[width=0.65\textwidth]{}
-  \missingfigure[figwidth=0.65\textwidth]{$Z_{\text{local}}^{\text{max}}$.}
+  \begin{subfigure}{0.485\textwidth}
+    \centering
 
-  \caption{Distribution of the maximum local significance. Kernel smoothing applied.}
+    \includegraphics[width=0.98\textwidth]{global_significance/local_sig_toys/q0_1000}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.485\textwidth}
+    \centering
+    \includegraphics[width=0.98\textwidth]{global_significance/local_sig_toys/q0sig_1000}
+    \subcaption{}%
+    \label{fig:q0_samplingdist_q0sig}
+  \end{subfigure}
+
+  \caption{Comparison of the $q_0$ sampling distribution under the
+    background-only hypothesis (a) for the asymptotic approximation
+    and a toy-based estimate ($N_{\text{toys}} = \num{100000}$). The
+    resulting relationship between the local significance and the
+    observed value of $q_0$ is depicted in (b). Both are shown for the
+    test of the $\mX = \SI{1000}{\GeV}$ hypothesis combining all
+    analysis channels.}%
+  \label{fig:q0_samplingdist}
+\end{figure}
+
+The asymptotic approximation describes the relationship between the
+observed $q_0$ and $z_{\text{local}}$ well for all 20 tests considered
+in this analysis. It tends to underestimate the local significance
+slighlty for most tests, however. For example, the observed excess in
+the test of the $\mX = \SI{1000}{\GeV}$ hypothesis yields an observed
+value of $q_0 = \num{9.08}$ (combination of all channels) resulting in
+the previously quoted local significance of \num{3.01} under the
+asymptotic approximation. The toy-based estimate yields a local
+significance of \num{3.09} instead
+(cf.~\Cref{fig:q0_samplingdist_q0sig}). The following analysis of the
+global significance proceeds by using toy-based estimates of local
+significances\footnote{For the purpose of determining the global
+  significance, the differences between the asymptotic approximation
+  and the toy-based estimate of the $q_0$ sampling distributions have
+  negligible effect on the result and lead to the same conclusions.}.
+
+
+The estimation of the global significance proceeds as follows. For
+every toy experiment:
+- Determine q0 for all 20 hypothesis tests considered
+- Translate the q0 value to a local significance using the set of 100k toys experiments
+- Find the maximum local significance over all 20 tests
+
+This is done for 10k toys and the number of toy experiments exceeding
+the observed maximum of $3.1\sigma$ is counted.
+
+
+Fit failures...
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.62\textwidth]{global_significance/zmax_toys}
+
+  \caption{Distribution of the maximum local significance. Kernel
+    smoothing applied.}%
   \label{fig:zmax_toys}
 \end{figure}
 
