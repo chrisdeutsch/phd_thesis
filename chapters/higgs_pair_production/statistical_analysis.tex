@@ -1123,7 +1123,7 @@ explicitly to control the FWER but rather the FWER corresponding to
 the threshold equal to the observed test statistic of the most
 significant test is given directly. In this case the FWER is
 \begin{align*}
-  \text{FWER}(\zmaxlocal)
+  \pglobal = \text{FWER}(\zmaxlocal)
   = \mathbb{P}(\Zmaxlocal > \zmaxlocal \vert H_0)\,\text{,}
 \end{align*}\todo{Define directly via the probability to observe an excess larger than the observed one.}
 where \zmaxlocal is the observed maximum of the local significance and
@@ -1648,8 +1648,8 @@ and unconditional fit (POI left free).
 
 The validity of the asymptotic approximation used to determine the
 local significance from the observed value of the $q_0$ test statistic
-($z_{\text{local}} = \sqrt{q_0}$) is examined using a separate set of
-toy experiments generated using standard toy generation
+(i.e.\ $z_{\text{local}} = \sqrt{q_0}$) is examined using a separate
+set of toy experiments generated using standard toy generation
 procedures. This check is performed, separately for all 20 hypothesis
 tests, using \num{100000} toy experiments such that the region close
 to the threshold of interest of $q_0 \approx 9$
@@ -1689,13 +1689,13 @@ observed value of $q_0$ and the local significance.
 The asymptotic approximation describes the relationship between the
 observed $q_0$ and $z_{\text{local}}$ well for all 20 tests considered
 in this analysis. It tends to underestimate the local significance
-slighlty for most tests, however. For example, the observed excess in
+slightly for most tests, however. For example the observed excess in
 the test of the $\mX = \SI{1000}{\GeV}$ hypothesis yields an observed
 value of $q_0 = \num{9.08}$ (combination of all channels) resulting in
 the previously quoted local significance of \num{3.01} under the
 asymptotic approximation. The toy-based estimate yields a local
-significance of \num{3.09} instead
-(cf.~\Cref{fig:q0_samplingdist_q0sig}). The following analysis of the
+significance of \num{3.09} which results from the observed $q_0$
+and~\Cref{fig:q0_samplingdist_q0sig}. The following analysis of the
 global significance proceeds by using toy-based estimates of local
 significances\footnote{For the purpose of determining the global
   significance, the differences between the asymptotic approximation
@@ -1703,27 +1703,76 @@ significances\footnote{For the purpose of determining the global
   negligible effect on the result and lead to the same conclusions.}.
 
 
-The estimation of the global significance proceeds as follows. For
-every toy experiment:
-- Determine q0 for all 20 hypothesis tests considered
-- Translate the q0 value to a local significance using the set of 100k toys experiments
-- Find the maximum local significance over all 20 tests
+The estimation of the global significance proceeds using the toy
+generation procedure outlined in the previous sections to account for
+dependencies between hypothesis tests. The following steps performed
+separately for every toy experiment:
+\begin{enumerate}
 
-This is done for 10k toys and the number of toy experiments exceeding
-the observed maximum of $3.1\sigma$ is counted.
+\item The values of the $q_0$ test statistic are determined for all 20
+  hypothesis tests considered in the analysis. This step involves
+  performing a conditional ($\sigma = 0$) and an unconditional maximum
+  likelihood fit of the model parameters after replacing observables
+  and global observables in the likelihood functions with values of
+  the toy experiment.
 
+\item The observed values of $q_0$ are translated to local
+  significances using the relationships between $z_{\text{local}}$ and
+  $q_0$.
 
-Fit failures...
+\item The maximum of the local significances over all 20 tests is
+  determined.
+
+\end{enumerate}
+These steps are performed for \num{10000} toy experiments yielding an
+estimate of the distribution of the maximum local significance (over
+all 20 tests) under the background-only hypothesis.
+
+The results of the toy experiments are shown in~\Cref{fig:zmax_toys}
+illustrating the effect of multiple testing leading to an expectation
+of \Zmaxlocal of about \num{1.8} even in the absence of a real
+signal. Considering this effect, the global $p$-value is calculated as
+the fraction of toy experiments exceeding the
+observed~$z_{\text{local}}^{\text{max}}$ in data yielding
+\begin{align*}
+  \pglobal = \num{0.0222}\numerrt{0.0015}{toy stat.}
+\end{align*}
+and an equivalent global significance of
+\begin{align*}
+  z_{\text{global}} = \num{2.01}\numerrt{0.03}{toy stat.} \,\text{,}
+\end{align*}
+where only statistical uncertainties from the finite number of toy
+experiments for the global significance determination are
+considered.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.62\textwidth]{global_significance/zmax_toys}
 
-  \caption{Distribution of the maximum local significance. Kernel
-    smoothing applied.}%
+  \caption{Estimate of the distribution of the maximum local
+    significance over the 20 hypothesis tests considered under the
+    background-only hypothesis using toy experiments. The local
+    significance of the excess observed in data is indicated in
+    orange.}%
   \label{fig:zmax_toys}
 \end{figure}
+
+The uncertainty on $z_{\text{global}}$ from the finite number of toy
+experiments used to determine the relationships between $q_0$ and
+$z_{\text{local}}$ is estimated using the Bootstrap method. The
+resulting uncertainty on $z_{\text{global}}$ is \num{0.04} yielding
+the final result of
+\begin{align*}
+  z_{\text{global}} = \num{2.01}\numerrt{0.05}{total} \,\text{.}
+\end{align*}
+Uncertainties based on modelling assumptions are not included.
+
+
+Additional checks: Global toys are compared to local toys showing good
+agreement.
+
+Fit failures...
 
 \begin{figure}[htbp]
   \centering
