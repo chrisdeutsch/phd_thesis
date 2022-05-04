@@ -1638,22 +1638,26 @@ weighted events), the agreement between both methods is sufficient.
 
 \subsubsection{Global significance determination}
 
+In the following the determination of the global significance is
+discussed using toy experiments drawn from the background-only model
+introduced in the previous sections. The likelihood functions used to
+perform the discovery tests are structurally identical to the ones
+used to obtain the primary results (cf.\
+\Cref{sec:statistical_analysis}) only replacing the values of
+observables and global observables with the ones drawn from the model.
 
-10000 toys (global) -
-
-Likelihood functions remain unchanged -> just replace observed values
-of observables with the values from toy experiments. In the following
-determine the q0 test statistic from the conditional (POI fixed to 0)
-and unconditional fit (POI left free).
-
-
-The validity of the asymptotic approximation used to determine the
-local significance from the observed value of the $q_0$ test statistic
-(i.e.\ $z_{\text{local}} = \sqrt{q_0}$) is examined using a separate
-set of toy experiments generated using standard toy generation
-procedures. This check is performed, separately for all 20 hypothesis
-tests, using \num{100000} toy experiments such that the region close
-to the threshold of interest of $q_0 \approx 9$
+Before proceeding with the estimation of the global significance, the
+validity of the asymptotic approximation used to determine the local
+significances from the observed values of the $q_0$ test statistic
+(i.e.\ $z_{\text{local}} = \sqrt{q_0}$) is examined. For this purpose
+separate sets of toy experiments are generated using standard toy
+generation methods. Standard methods can be used because the modelling
+of dependencies between tests is not required when determining the
+sampling distribution of the test statistic at the level of an
+individual hypothesis test. The quality of the approximation is
+investigated, separately for all 20 hypothesis tests, using
+\num{100000} toy experiments per test such that the region close to
+the threshold of interest of $q_0 \approx 9$
 ($z_{\text{local}} \approx 3$) is well populated. A representative
 example for the test of the $\mX = \SI{1000}{\GeV}$ signal hypothesis
 is shown in~\Cref{fig:q0_samplingdist}. The figure depicts a
@@ -1685,54 +1689,72 @@ observed value of $q_0$ and the local significance.
     test of the $\mX = \SI{1000}{\GeV}$ hypothesis combining all
     analysis channels.}%
   \label{fig:q0_samplingdist}
-  \todo[inline]{Remove kernel smoothing or mention in caption.}
 \end{figure}
 
 The asymptotic approximation describes the relationship between the
 observed $q_0$ and $z_{\text{local}}$ well for all 20 tests considered
 in this analysis. It tends to underestimate the local significance
-slightly for most tests, however. For example the observed excess in
-the test of the $\mX = \SI{1000}{\GeV}$ hypothesis yields an observed
-value of $q_0 = \num{9.08}$ (combination of all channels) resulting in
-the previously quoted local significance of \num{3.01} under the
-asymptotic approximation. The toy-based estimate yields a local
-significance of \num{3.09} which results from the observed $q_0$
-and~\Cref{fig:q0_samplingdist_q0sig}. The following analysis of the
-global significance proceeds by using toy-based estimates of local
+slightly for most tests, however. For example, the excess observed in
+data for the test of the $\mX = \SI{1000}{\GeV}$ hypothesis yields a
+value of $q_0 = \num{9.08}$ (combination of all analysis channels)
+resulting in the previously quoted local significance of \num{3.01}
+under the asymptotic approximation. The toy-based estimate yields a
+local significance of \num{3.09 +- 0.03} which results from the
+observed $q_0$ and the result depicted
+in~\Cref{fig:q0_samplingdist_q0sig}. The following analysis of the
+global significance proceeds using toy-based estimates of local
 significances\footnote{For the purpose of determining the global
   significance, the differences between the asymptotic approximation
   and the toy-based estimate of the $q_0$ sampling distributions have
   negligible effect on the result and lead to the same conclusions.}.
 
+A total of \num{10000} toy experiments are performed to ensure that
+the global significance can be estimated with a statistical
+uncertainty below \num{0.1}. This choice is based on the expectation
+of the global significance being close to $2\,\sigma$, which is
+obtained from analytical calculations under the assumption that the 20
+tests are mutually independent.
+% The estimation of the global significance proceeds using the toy
+% generation procedure outlined in the previous sections to account for
+% dependencies between hypothesis tests.
 
-The estimation of the global significance proceeds using the toy
-generation procedure outlined in the previous sections to account for
-dependencies between hypothesis tests. The following steps performed
-separately for every toy experiment:
+The following steps performed separately for every toy experiment:
 \begin{enumerate}
 
 \item The values of the $q_0$ test statistic are determined for all 20
   hypothesis tests considered in the analysis. This step involves
   performing a conditional ($\sigma = 0$) and an unconditional maximum
   likelihood fit of the model parameters after replacing observables
-  and global observables in the likelihood functions with values of
+  and global observables in the likelihood functions with values from
   the toy experiment.
 
 \item The observed values of $q_0$ are translated to local
   significances using the relationships between $z_{\text{local}}$ and
   $q_0$.
 
-\item The maximum of the local significances over all 20 tests is
-  determined.
+\item The maximum local significance over all 20 tests is determined.
 
 \end{enumerate}
-These steps are performed for \num{10000} toy experiments yielding an
-estimate of the distribution of the maximum local significance (over
-all 20 tests) under the background-only hypothesis.
+Performing these steps for all toy experiments yields an estimate of
+the distribution of the maximum local significance (over the 20 tests)
+under the background-only hypothesis.
 
-The results of the toy experiments are shown in~\Cref{fig:zmax_toys}
+The maximum likelihood fits required to obtain the test statistic do
+not always succeed. A total of \num{74} fits\footnote{Out of
+  \num{400000} fits, i.e.\
+  $20\,\text{(number of tests)} \times 2\,\text{(conditional \&
+    unconditional fit)} \times \num{10000}\,\text{(number of toys)}$.}
+did not converge even after retrying the fits with altered optimiser
+settings. These failures do not occur randomly but systematically,
+being restricted to failures of unconditional fits for cases where a
+large deficit is observed in the toy data of a bin with large signal
+sensitivity. Since a deficit does not constitute a discovery in this
+search, the value of $q_0$ is set to 0 in these cases and the toy
+experiment is kept.
+
+The result of the toy experiments is shown in~\Cref{fig:zmax_toys}
 illustrating the effect of multiple testing leading to an expectation
-of \Zmaxlocal of about \num{1.8} even in the absence of a real
+of \Zmaxlocal of about \num{1.8} even in the absence of a
 signal. Considering this effect, the global $p$-value is calculated as
 the fraction of toy experiments exceeding the
 observed~$z_{\text{local}}^{\text{max}}$ in data yielding
@@ -1758,6 +1780,7 @@ considered.
     significance of the excess observed in data is indicated in
     orange.}%
   \label{fig:zmax_toys}
+  \todo[inline]{Remove kernel smoothing or mention in caption.}
 \end{figure}
 
 The uncertainty on $z_{\text{global}}$ from the finite number of toy
@@ -1770,30 +1793,59 @@ the final result of
 \end{align*}
 Uncertainties based on modelling assumptions are not included.
 
+\todo[inline]{State that the toy experiments were compared to the
+  'standard method' yielding compatible results?}
 
-Additional checks: Global toys are compared to local toys showing good
-agreement.
-
-Fit failures...
+The set of toy experiments for the global significance determination
+can be used to estimate the joint distribution of the 20 test
+statisics under the background-only hypothesis. For this purpose the
+signed local significance defined
+as~$z_{\text{local}}^{\text{signed}} = \sgn(\hat{\sigma}) \sqrt{q_0}$
+(using the asymptotic approximation) is considered as the test
+statistic, with $\sgn(\hat{\sigma})$ being the sign of the best-fit
+cross-section. Local significances defined in this way are marginally
+distributed according to a Standard Normal distribution under the
+background-only hypothesis. In \Cref{fig:corr_sig} the correlation
+matrix of the 20 test statistics is determined using the toy
+experiments thus providing an illustration of the dependencies between
+all hypothesis tests.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.7\textwidth]{global_significance/sig_corr}
 
-  \caption{Linear correlation coefficient between the discovery
+  \caption{Linear correlation coefficient between signed local
     significances of the 20 hypothesis tests performed for the scalar
     resonance search under the background-only hypothesis. The
-    coefficients are estimated using 10000 toy experiments drawn from
-    the background-only substitute model. Cells are annotated,
+    coefficients are estimated using \num{10000} toy experiments drawn
+    from the background-only substitute model. Cells are annotated,
     omitting the diagonal, if the correlation coefficient is greater
     than or equal to \SI{5}{\percent}.}%
   \label{fig:corr_sig}
-
-  \todo[inline]{Note that this uses
-    $z_{\text{local}} = \mathrm{sign}(\hat{\mu}) \sqrt{q_0}$.}
 \end{figure}
 
+An interesting observation can be made by comparing the global
+signficance result based on toys, i.e.\
+$z_{\text{global}} = \num{2.01 +- 0.05}$, with the approximation
+assuming 20 mutually independent tests which yields \num{2.06 +- 0.04}
+(using a toy-based maximum local significance of \num{3.09 +-
+  0.03}). The independence assumption is naively expected to be a
+lower bound, however, both are compatible. This might seem
+counterintuitive given~\Cref{fig:corr_sig}, particularly with large
+correlations between the test statistics for large \mX. However, one
+can convince themselves by approximating the joint distribution of
+$Z_{\text{local}}$ for the 20 tests by a multivariate normal
+distribution with a covariance matrix given by the figure. In this
+case one can simulate many experiments and compare with the assumption
+of independen tests. The difference of between both (estimated global
+significances) is about 0.02. Thus the test seem to be ``independent
+enough'' such that this approximation is reasonably valid.
+
+
+The excess observed at $\mX = \SI{1000}{\GeV}$ with a local
+significance of $3.1\,\sigma$ corresponds to a global significance of
+$2.0\,\sigma$.
 
 %%% Local Variables:
 %%% mode: latex
