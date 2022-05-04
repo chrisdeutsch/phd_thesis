@@ -1791,24 +1791,30 @@ the final result of
 \begin{align*}
   z_{\text{global}} = \num{2.01}\numerrt{0.05}{total} \,\text{.}
 \end{align*}
-Uncertainties based on modelling assumptions are not included.
+% Uncertainties based on modelling assumptions are not included.
 
 \todo[inline]{State that the toy experiments were compared to the
   'standard method' yielding compatible results?}
 
-The set of toy experiments for the global significance determination
-can be used to estimate the joint distribution of the 20 test
-statisics under the background-only hypothesis. For this purpose the
-signed local significance defined
-as~$z_{\text{local}}^{\text{signed}} = \sgn(\hat{\sigma}) \sqrt{q_0}$
-(using the asymptotic approximation) is considered as the test
-statistic, with $\sgn(\hat{\sigma})$ being the sign of the best-fit
-cross-section. Local significances defined in this way are marginally
-distributed according to a Standard Normal distribution under the
-background-only hypothesis. In \Cref{fig:corr_sig} the correlation
-matrix of the 20 test statistics is determined using the toy
-experiments thus providing an illustration of the dependencies between
-all hypothesis tests.
+Furthermore, the toy experiments can be used to estimate the joint
+distribution of test statistics for all hypothesis tests under the
+background-only assumption to illustrate the dependencies between
+tests directly. For this purpose, the signed definition of the
+discovery significance given
+by~$z_{\text{local}}^{\text{signed}} = \sgn(\hat{\sigma}) \sqrt{q_0}$
+is used, with $\sgn(\hat{\sigma})$ being the sign of the best-fit
+cross-section and assuming the asymptotic approximation. This choice
+is made because signed significances are marginally distributed
+following the Standard Normal distribution under the background-only
+hypothesis, lending itself for easier interpretation.
+
+
+In \Cref{fig:corr_sig} the matrix of
+linear correlation coefficients of the test statistics is shown,
+determined using the toy experiments.
+
+thus providing an illustration of
+the dependencies between all hypothesis tests.
 
 \begin{figure}[htbp]
   \centering
