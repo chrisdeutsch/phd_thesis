@@ -1098,6 +1098,9 @@ control regions (and non-multi-jet subtraction in the case of the
   $\mX = \SI{1000}{\GeV}$}%
 \label{sec:global_significance}
 
+\todo[inline]{Note that this focusses on the combination of all
+  channels.}
+
 In the search for resonant Higgs boson pair production multiple
 hypothesis tests are performed that probe for 20 different \mX of the
 scalar resonance. The previously quoted significance of $3.0\sigma$ of
@@ -1711,9 +1714,9 @@ significances\footnote{For the purpose of determining the global
 A total of \num{10000} toy experiments are performed to ensure that
 the global significance can be estimated with a statistical
 uncertainty below \num{0.1}. This choice is based on the expectation
-of the global significance being close to $2\,\sigma$, which is
-obtained from analytical calculations under the assumption that the 20
-tests are mutually independent.
+of the global significance being close to $2\sigma$, which is obtained
+from analytical calculations under the assumption that the 20 tests
+are mutually independent.
 % The estimation of the global significance proceeds using the toy
 % generation procedure outlined in the previous sections to account for
 % dependencies between hypothesis tests.
@@ -1778,9 +1781,10 @@ considered.
     significance over the 20 hypothesis tests considered under the
     background-only hypothesis using toy experiments. The local
     significance of the excess observed in data is indicated in
-    orange.}%
+    orange. The estimate after kernel smoothing is overlayed in red
+    (for illustration only). The quoted uncertainties are from the
+    finite number of toy experiments only.}%
   \label{fig:zmax_toys}
-  \todo[inline]{Remove kernel smoothing or mention in caption.}
 \end{figure}
 
 The uncertainty on $z_{\text{global}}$ from the finite number of toy
@@ -1804,17 +1808,15 @@ discovery significance given
 by~$z_{\text{local}}^{\text{signed}} = \sgn(\hat{\sigma}) \sqrt{q_0}$
 is used, with $\sgn(\hat{\sigma})$ being the sign of the best-fit
 cross-section and assuming the asymptotic approximation. This choice
-is made because signed significances are marginally distributed
-following the Standard Normal distribution under the background-only
-hypothesis, lending itself for easier interpretation.
+is made because signed significances have Standard Normal marginal
+distributions under the background-only hypothesis, lending itself for
+easier interpretation.
 
-
-In \Cref{fig:corr_sig} the matrix of
-linear correlation coefficients of the test statistics is shown,
-determined using the toy experiments.
-
-thus providing an illustration of
-the dependencies between all hypothesis tests.
+\Cref{fig:corr_sig} shows the matrix of linear correlation
+coefficients between the signed discovery significances for all 20
+tests determined using toy experiments. It illustrates the linear
+dependencies between test statistics, particularly highlighting the
+increasing dependency between tests for large \mX.
 
 \begin{figure}[htbp]
   \centering
@@ -1831,23 +1833,29 @@ the dependencies between all hypothesis tests.
   \label{fig:corr_sig}
 \end{figure}
 
-An interesting observation can be made by comparing the global
-signficance result based on toys, i.e.\
-$z_{\text{global}} = \num{2.01 +- 0.05}$, with the approximation
-assuming 20 mutually independent tests which yields \num{2.06 +- 0.04}
-(using a toy-based maximum local significance of \num{3.09 +-
-  0.03}). The independence assumption is naively expected to be a
-lower bound, however, both are compatible. This might seem
-counterintuitive given~\Cref{fig:corr_sig}, particularly with large
-correlations between the test statistics for large \mX. However, one
-can convince themselves by approximating the joint distribution of
-$Z_{\text{local}}$ for the 20 tests by a multivariate normal
-distribution with a covariance matrix given by the figure. In this
-case one can simulate many experiments and compare with the assumption
-of independen tests. The difference of between both (estimated global
-significances) is about 0.02. Thus the test seem to be ``independent
-enough'' such that this approximation is reasonably valid.
+Finally, the result of the toy-based estimation of the global
+significance yielding $z_{\text{global}} = \num{2.01 +- 0.05}$ is
+compared to case assuming that the hypothesis tests can be seen as
+mutually independent. With this simplification the global significance
+is analytically estimated to be \num{2.06 +- 0.04}, using the observed
+maximum local significance of \num{3.09 +- 0.03}, which is compatible
+with the result based on toy experiments. This result might seem
+surprising given the large correlation between tests at high \mX shown
+in~\Cref{fig:corr_sig}, however, this finding is supported by
+simulation. Assuming the joint distribution of signed local
+significances is multivariate Normal with zero mean and covariance
+matrix given by~\Cref{fig:corr_sig}, the global significance can be
+estimated from simulation with negligible statistical precision and
+compared to the result assuming independence. The difference in global
+significance estimates between both methods amounts to \num{0.02},
+concluding that the precision of the toy-based estimate is not
+sufficient to differentiate between the cases assuming independence
+and linear dependence according to~\Cref{fig:corr_sig}. For practical
+purposes, the dependencies between tests performed as part of this
+search are weak enough such that the assumption of independence yields
+acceptable estimates for the global significance.
 
+In conclusion,
 
 The excess observed at $\mX = \SI{1000}{\GeV}$ with a local
 significance of $3.1\,\sigma$ corresponds to a global significance of
