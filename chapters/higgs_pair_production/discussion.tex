@@ -18,8 +18,8 @@ Thus the largest improvements are expected from increases in the
 integrated luminosity expected for Run~3 of the LHC and beyond. The
 prospects of searches for Higgs boson pairs for Run~4 (high luminosity
 LHC) studied by the ATLAS collaboration
-in~\cite{ATL-PHYS-PUB-2022-005} are briefly discussed providing an
-outlook for future searches.
+in~\cite{ATL-PHYS-PUB-2021-044,ATL-PHYS-PUB-2022-005} are briefly
+discussed providing an outlook for future searches.
 
 % Or by further relaxing the selection requirements yielding larger
 % signal acceptance. Although this would also increase the background
@@ -27,15 +27,23 @@ outlook for future searches.
 
 \subsection{Search for non-resonant production of Higgs boson pairs}
 
+The search presented in this work provides the most stringent expected
+upper limits on the signal strength SM \HH production via \ggF and VBF
+from direct searches of Higgs boson pair production. A summary of past
+and present results by the ATLAS collaboration is given
+in~\Cref{fig:atlas_run2_hh_results} and results from the analysis of
+the Run~2 $pp$ dataset of the LHC by the CMS collaboration
+in~\Cref{tab:cms_nonresonant}.
+
 \begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}{0.53\textwidth}
+  \begin{subfigure}[b]{0.53\textwidth}
     \includegraphics[width=\textwidth]{discussion/results_36ifb}
     \subcaption{Partial Run~2 dataset with an integrated luminosity of \num{27.5} -
       \SI{36.1}{\per\femto\barn}~\cite{HDBS-2018-58}}
   \end{subfigure}\hfill%
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}[b]{0.46\textwidth}
     \includegraphics[width=\textwidth]{discussion/results_139ifb}
     \subcaption[margin=5em]{Full Run~2 dataset with an integrated luminosity
       of~\SI{139}{\per\femto\barn}~\cite{ATLAS-CONF-2021-052}}
@@ -55,6 +63,47 @@ outlook for future searches.
   \todo[inline]{Make my own plot / table for RHS including bbWW and
     possibly 4b? 4b obs.\ 5.4 (exp.\ 8.1)}
 \end{figure}
+
+\begin{table}[htbp]
+  \centering
+
+  \input{tables/cms_nonresonant.tex}
+
+  \caption{Table of CMS results of searches for non-resonant
+    production of Higgs boson pairs with an integrated luminosity of
+    \SI{138}{\per\femto\barn}. Upper limits are shown at
+    \SI{95}{\percent} CL on the signal strength of the combination of
+    the \ggF and VBF production modes.}
+  \label{tab:cms_nonresonant}
+\end{table}
+
+At the current stage, the $\bbbar\tau^{+}\tau^{-}$ channel provides
+large sensitivity to the non-resonant SM \HH production due to the .
+
+The \bbtautau channel achieves a trade-off between the competing
+$\bbbar\gamma\gamma$ and $\bbbar\bbbar$ channels. The
+$\bbbar\gamma\gamma$ channel provides access to events with low \mHH
+due the ability to trigger on the signature of photons with low
+momentum thresholds and very high background rejection due to the
+excellent $\gamma\gamma$ mass resolution, however, at the cost of very
+small branching ratio. On the other hand, the $\bbbar\bbbar$ channel
+provides the largest branching ratio of any final state resulting from
+decays of Higgs boson pairs.
+
+(fully hadronic final state -> difficulty triggering / multi-jet
+background / combinatorial issues with b-jet pairing)
+
+
+
+is promising to measure SM \HH
+production due to the
+
+Why is bbtautau promising?
+- SM HH production is sufficiently hard that taus become feasible.
+- Larger branching ratio than bbyy
+- Higher background rejection than 4b
+
+
 
 Comparison of early with full Run~2 results. Expectation from
 luminosity scaling. Comparison with extrapolations from early Run~2
@@ -84,18 +133,7 @@ The upper limit at \SI{95}{\percent}
 
 Comparison with CMS results.
 
-\begin{table}[htbp]
-  \centering
 
-  \input{tables/cms_nonresonant.tex}
-
-  \caption{Table of CMS results of searches for non-resonant
-    production of Higgs boson pairs with an integrated luminosity of
-    \SI{138}{\per\femto\barn}. Upper limits are shown at
-    \SI{95}{\percent} CL on the signal strength of the combination of
-    the \ggF and VBF production modes.}
-  \label{tab:cms_nonresonant}
-\end{table}
 
 
 \begin{itemize}
@@ -105,7 +143,7 @@ Comparison with CMS results.
 \todo[inline]{This analysis yields the best expected sensitivity to
   the SM Higgs boson pair production.}
 
-
+Something about H+HH searches?
 
 Previous extrapolation~\cite{ATL-PHYS-PUB-2018-053}
 
