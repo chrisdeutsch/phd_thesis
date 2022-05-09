@@ -1,6 +1,8 @@
 \section{Discussion and outlook}%
 \label{sec:result_discussion}
 
+\todo[inline]{Make this a separate chapter and include \klambda discussions?}
+
 The results obtained as part of the searches for non-resonant SM \HH
 production and resonant production via narrow width scalar bosons are
 discussed in the following.
@@ -14,10 +16,10 @@ search for low mass scalar resonances uncertainties from systematic
 sources are comparable to data statistical uncertainties, however,
 they do not solely limit the final result.
 
-Thus the largest improvements are expected from increases in the
-integrated luminosity expected for Run~3 of the LHC and beyond. The
-prospects of searches for Higgs boson pairs for Run~4 (high luminosity
-LHC) studied by the ATLAS collaboration
+The largest improvements are expected from increases in the integrated
+luminosity expected for Run~3 of the LHC and beyond. The prospects of
+searches for Higgs boson pairs for Run~4 (high luminosity LHC) studied
+by the ATLAS collaboration
 in~\cite{ATL-PHYS-PUB-2021-044,ATL-PHYS-PUB-2022-005} are briefly
 discussed providing an outlook for future searches.
 
@@ -28,25 +30,30 @@ discussed providing an outlook for future searches.
 \subsection{Search for non-resonant production of Higgs boson pairs}
 
 The search presented in this work provides the most stringent expected
-upper limits on the signal strength SM \HH production via \ggF and VBF
-from direct searches of Higgs boson pair production. A summary of past
-and present results by the ATLAS collaboration is given
-in~\Cref{fig:atlas_run2_hh_results} and results from the analysis of
-the Run~2 $pp$ dataset of the LHC by the CMS collaboration
-in~\Cref{tab:cms_nonresonant}.
+upper limits on the signal strength of SM \HH production via \ggF and
+VBF for analysis targeting a single final state. This result is put
+into context by summarising past and present results of direct SM \HH
+searches by the ATLAS collaboration
+in~\Cref{fig:atlas_run2_hh_results} and with the results of the CMS
+collaboration in~\Cref{tab:cms_nonresonant} for analyses of the Run~2
+dataset of $pp$-collisons.
 
-\begin{figure}[htbp]
+\begin{figure}[tbp]
   \centering
 
   \begin{subfigure}[b]{0.53\textwidth}
     \includegraphics[width=\textwidth]{discussion/results_36ifb}
+
     \subcaption{Partial Run~2 dataset with an integrated luminosity of \num{27.5} -
-      \SI{36.1}{\per\femto\barn}~\cite{HDBS-2018-58}}
+      \SI{36.1}{\per\femto\barn}~\cite{HDBS-2018-58}}%
+    \label{fig:atlas_run2_36ifb}
   \end{subfigure}\hfill%
   \begin{subfigure}[b]{0.46\textwidth}
     \includegraphics[width=\textwidth]{discussion/results_139ifb}
+
     \subcaption[margin=5em]{Full Run~2 dataset with an integrated luminosity
-      of~\SI{139}{\per\femto\barn}~\cite{ATLAS-CONF-2021-052}}
+      of~\SI{139}{\per\femto\barn}~\cite{ATLAS-CONF-2021-052}}%
+    \label{fig:atlas_run2_139ifb}
   \end{subfigure}
 
   \caption{Comparison of ATLAS results for searches for non-resonant
@@ -64,77 +71,128 @@ in~\Cref{tab:cms_nonresonant}.
     possibly 4b? 4b obs.\ 5.4 (exp.\ 8.1)}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[tbp]
   \centering
 
-  \input{tables/cms_nonresonant.tex}
+  \todo[inline]{Mark preliminary results?}
 
   \caption{Table of CMS results of searches for non-resonant
     production of Higgs boson pairs with an integrated luminosity of
     \SI{138}{\per\femto\barn}. Upper limits are shown at
     \SI{95}{\percent} CL on the signal strength of the combination of
-    the \ggF and VBF production modes.}
+    the \ggF and VBF production modes.}%
   \label{tab:cms_nonresonant}
+
+  \input{tables/cms_nonresonant.tex}
 \end{table}
 
-At the current stage, the $\bbbar\tau^{+}\tau^{-}$ channel provides
-large sensitivity to the non-resonant SM \HH production due to the .
+With the currently available dataset and experimental constraints (due
+to triggers, reconstruction, identification / isolation) of the ATLAS
+experiment for Run~2 of the LHC, the \bbtautau channel achieves a
+trade-off between the competing \bbyy and \bbbb channels regarding the
+search for SM \HH production. While the \bbyy channel provides access
+to events with low \mHH due to the ability to trigger on the signature
+of photons with low momentum thresholds (this is particularly
+advantageous when considering anomalous values of the Higgs boson
+self-couplings, cf.~REFERENCE) and a large background rejection due to
+the excellent $\gamma\gamma$ mass resolution, it is subject to the
+very small $\PHiggs \to \gamma\gamma$ branching ratio. In contrast,
+the largest fraction of SM \HH events are expected in the \bbbb final
+state, however, the measurement of SM \HH production in this channel
+is challenging due to the fully hadronic final state being subject to
+large multi-jet backgrounds and difficulties in selecting signal
+candidate events at trigger-level\footnote{There are also
+  combinatorial difficulties in reconstructing $\PHiggs \to \bbbar$
+  candidates in the \bbbb channel where it can be ambiguous
+  (particularly at low \mHH) how $b$-jets are paired into Higgs boson
+  candidates. However, SM \HH production is produced at sufficiently
+  high \mHH such that this is not really a huge issue.}. The \bbtautau
+final state, particulary in the \hadhad channel due to less prevalence
+of \ttbar backgrounds compared to the \lephad channel, is very
+sensitive to SM \HH production as signal events can be efficiently
+selected using \tauhadvis triggers due to their hard \mHH
+spectrum. The presence of \tauhadvis (and electrons / muons) provides
+large rejection power against multi-jet backgrounds compared to the
+\bbbb channel. Moreover, the fraction of SM \HH events decaying into
+\bbtautau final states is significantly larger than that of \bbyy.
 
-The \bbtautau channel achieves a trade-off between the competing
-$\bbbar\gamma\gamma$ and $\bbbar\bbbar$ channels. The
-$\bbbar\gamma\gamma$ channel provides access to events with low \mHH
-due the ability to trigger on the signature of photons with low
-momentum thresholds and very high background rejection due to the
-excellent $\gamma\gamma$ mass resolution, however, at the cost of very
-small branching ratio. On the other hand, the $\bbbar\bbbar$ channel
-provides the largest branching ratio of any final state resulting from
-decays of Higgs boson pairs.
+In~\Cref{fig:atlas_run2_36ifb,fig:atlas_run2_139ifb} a comparison
+between searches for SM \HH production using the partial and full
+Run~2 $pp$-collision dataset collected with the ATLAS detector is
+given. The search for SM \HH production in the \bbtautau final state
+using data collected at the beginning of Run~2 of the LHC
+(\SI{36.1}{\per\femto\barn}) yielded an expected upper limit on
+$\mu_{\ggF}$ of 14.8~\cite{HIGG-2016-16-witherratum}. While upper
+limits are set on a different parameter and different theory cross
+sections for the signal are assumed, the results can still be compared
+to the one obtained using the full Run~2 $pp$-collision dataset
+(\SI{139}{\per\femto\barn}) since the change cross section is small
+and the contribution of the VBF production mode can be neglected for
+the purpose of this comparison. The analysis of the full Run~2
+$pp$-collision dataset presented in this work yields an expected upper
+limit on $\mu_{\ggF+\text{VBF}}$ of 3.9, far exceeding the expectation
+from a naive scaling of the previous result according to the increase
+in integrated luminosity which would yield an expected upper limit of
+about~7.\footnote{Assuming a purely statistically limited measurement
+  that scales with integrated luminosity like a Poisson counting
+  experiment. The change in the upper limit depends on the expected
+  number of background events and thus cannot be soley described by
+  the change in integrated luminosity. Depending on the scenario, the
+  extrapolation of the upper limit of \num{14.8} from
+  \SI{36.1}{\per\femto\barn} to \SI{139}{\per\femto\barn} ranges
+  between \num{6.5} and \num{7.5}.}  This improvement is primarily due
+to two reasons:
+\begin{itemize}
 
-(fully hadronic final state -> difficulty triggering / multi-jet
-background / combinatorial issues with b-jet pairing)
+\item Large improvements in the signal acceptance due to improvements
+  in $b$-tagging, \tauhadvis reconstruction and identification which
+  allowed to relax identification requirements while maintaining
+  background rates comparable to the previous analysis.
 
+  The signal acceptance in the \hadhad channel improved by a factor of
+  2 (1.2) in the \hadhad (\lephad) channel.
 
+\item Increase in data (and available MC) allowing to select more
+  extreme phase-spaces while mainting the limits of the re-binning
+  algorithms. Thus yielding bins with higher signal sensitivity.
 
-is promising to measure SM \HH
-production due to the
+\end{itemize}
 
-Why is bbtautau promising?
-- SM HH production is sufficiently hard that taus become feasible.
-- Larger branching ratio than bbyy
-- Higher background rejection than 4b
+% compare the results
+% of direct searches for SM \HH production between the partial and full
+% Run~2 $pp$ dataset collected with the ATLAS detector.
+% \begin{itemize}
 
+% \item Large improvements in $b$-tagging, \tauhadvis reconstruction and
+%   identification. Leading to ca.\ \SI{100}{\percent} improvement in
+%   signal acceptance at background rates comparable to the previous
+%   analysis.
 
+% \item More data populating signal-like phase spaces. Aka rebinning improvements.
 
-Comparison of early with full Run~2 results. Expectation from
-luminosity scaling. Comparison with extrapolations from early Run~2
-data.
+% \end{itemize}
 
-The improvement in the analysis can be seen when performing an
-approximate extrapolation of the ATLAS result with
-\SI{36.1}{\per\femto\barn} integrated luminosity and an expected upper
-limit on $\mu$, assuming that the result is limited by the data
-statistical sources, to the integrated luminosity of the $pp$ dataset
-at the end of Run~2. Extrapolating the expected upper limit to the
-integrated luminosity of \SI{139}{\per\femto\barn} yields a limit of
-the signal strength of about 7
+% Comparison of early with full Run~2 results. Expectation from
+% luminosity scaling. Comparison with extrapolations from early Run~2
+% data.
+
+% The improvement in the analysis can be seen when performing an
+% approximate extrapolation of the ATLAS result with
+% \SI{36.1}{\per\femto\barn} integrated luminosity and an expected upper
+% limit on $\mu$, assuming that the result is limited by the data
+% statistical sources, to the integrated luminosity of the $pp$ dataset
+% at the end of Run~2. Extrapolating the expected upper limit to the
+% integrated luminosity of \SI{139}{\per\femto\barn} yields a limit of
+% the signal strength of about 7
 
 % \footnote{A pessimistic bound on the
 %   relative change of \SI{95}{\percent} CL upper limits is given by
 %   $\sqrt{\mathcal{L}_1 / \mathcal{L}_2$.}.
 
-
-The upper limit at \SI{95}{\percent}
-
-\todo[inline]{Improvements with respect to the previous
-  analysis. Outscaling lumi...}
-
 \todo[inline]{Major improvements from: Improvements in b-tagging, tau
   reconstruction and tau-id.}
 
-Comparison with CMS results.
-
-
-
+Comparison with CMS results??? Why is ATLAS better?
 
 \begin{itemize}
 \item Why is hadhad more sensitive?
