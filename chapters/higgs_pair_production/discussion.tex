@@ -224,15 +224,20 @@ hold.
 
 \subsection{Search for resonant production of Higgs boson pairs}
 
-For the search of resonant production of Higgs boson pairs via narrow
-scalar resonances, the \bbtautau search channel is complementary to
-the \bbyy and \bbbb channels. A comparison of the upper limits on
-$\sigma(X \to \HH)$ from the three channels as well as their
-statistical combination is given
-in~\Cref{fig:resonant_hh_comb_limits}. The \bbtautau channel provides
-the largest signal sensitivity for intermediate \mX ranging from
-\SIrange{400}{800}{\GeV}, while for smaller (larger) resonance masses
-the sensitivity is driven by the \bbyy (\bbbb) channel.
+The sensitivity of the \bbtautau search channel to resonant production
+of Higgs boson pairs via narrow scalar resonances is complementary to
+the \bbyy and \bbbb channels. \Cref{fig:resonant_hh_comb_limits} shows
+a comparison of upper limits on $\sigma(X \to \HH)$ for all three
+channels as well as their statistical combination. The \bbtautau
+channel provides the largest signal sensitivity for intermediate \mX
+ranging from \SIrange{400}{800}{\GeV}. The sensitivity for smaller
+(larger) resonance masses is driven by the \bbyy (\bbbb) channel
+instead. This behaviour is analogous to the discussion of the previous
+section where \bbyy is advantageous in accessing low masses due to the
+use of photon triggers and \bbbb at high mass due to the large
+$H \to \bbbar$ branching ratio and the large Lorentz boost of the
+Higgs bosons resolving the combinatorial ambiguities in constructing
+the Higgs boson candidates.
 
 \begin{figure}[htbp]
   \centering
@@ -240,49 +245,106 @@ the sensitivity is driven by the \bbyy (\bbbb) channel.
   \includegraphics[width=0.55\textwidth]{discussion/limits_resonant_combination}
 
   \caption{Expected and observed upper limits on $\sigma(X \to \HH)$
-    for a narrow width scalar resonance $X$ at \SI{95}{\percent}
+    for narrow width scalar resonances $X$ at \SI{95}{\percent}
     \CLs. Upper limits are shown separately for searches in the \bbbb,
     \bbtautau, and \bbyy channels performed with
     \SIrange{126}{139}{\per\femto\barn} of $pp$-collision data taken
     during Run~2 of the LHC. The statistical combination of the three
-    measurements is shown in black including its 1 and $2\,\sigma$
-    uncertainty band. The figure is adopted from
+    measurements is shown in black including its $\pm 1$ and
+    $\pm 2\,\sigma$ uncertainty band. The figure is adopted from
     Ref.~\cite{ATLAS-CONF-2021-052}.}
   \label{fig:resonant_hh_comb_limits}
 \end{figure}
 
-Should say something regarding the combination... Most stringent
-limits to date???
+\todo[inline]{Paragraph about the combination?}
 
-How does the excess fit into other results?
+The excess observed for $\mX = \SI{1000}{\GeV}$ in the \bbtautau
+channel is compared to the results obtained by the \bbbb analysis to
+check the consistency of the results. The best-fit cross section,
+expressed in terms of $\sigma(X \to \HH)$, obtained from the \bbtautau
+channel measurement is \SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn} for a
+signal with a mass of \SI{1000}{\GeV}. This can be compared to the
+observed (expected) upper limit of \SI{6.5}{\femto\barn}
+(\SI{8.2}{\femto\barn}) at $\mX = \SI{1000}{\GeV}$ set by the search
+in the \bbbb channel~\cite{HDBS-2018-41,hepdata.111124}. The cross
+section measured in the \bbtautau channel is therefore excluded at
+\SI{95}{\percent} CL by the search in the \bbbb final state. This lack
+of compatibility is futher illustrated in
+\Cref{fig:resonant_hh_comb_pvalues} showing the local discovery
+significances of the three channels and their combination. While the
+incompatibility between the \bbtautau and \bbbb results at
+$\mX = \SI{1000}{\GeV}$ reduces the local significance of the
+combination, a small excess is observed in the \bbbb channel for
+$\mX = \SI{1100}{\GeV}$ which, in combination with the \bbtautau
+result, shifts the most significant excess of the combination to
+\SI{1100}{\GeV} with a local significance of about
+$3.2\,\sigma$~\cite{ATLAS-CONF-2021-052}.
 
-$4b$: \SI{6.5}{\femto\barn} (exp.\ \SIpmerr{8.15}{+1.17}{-0.77}{\femto\barn}) \cite{hepdata.111124}
-
+% 4b exclusion (\SIpmerr{8.2}{+1.2}{-0.8}{\femto\barn})
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.55\textwidth]{discussion/pvalues_resonant_combination.pdf}
 
-  \caption{Resonant results \cite{ATLAS-CONF-2021-052}}
+  \caption{Observed values of the local $p$-values / local
+    significances for the \bbbb, \bbtautau, and \bbyy channel and
+    their statistical combination for the search for narrow width
+    scalar resonances produced via \ggF. The figure is adopted from
+    Ref.~\cite{ATLAS-CONF-2021-052}.}
   \label{fig:resonant_hh_comb_pvalues}
 \end{figure}
 
+Another comparison is provided by a search for resonant production of
+Higgs boson pairs with high momenta targeting final states with
+$b$-quarks and one or two light leptons (primarily $\bbbar W^+ W^-$
+and $\bbbar \tau^+ \tau^-$) performed by the CMS collaboration in
+Ref.~\cite{CMS-B2G-20-007}. This analysis provides very stringent
+limits on the production of generic scalar resonances with narrow
+width and masses ranging from \SIrange{0.8}{4.5}{\TeV}. Observed
+(expected) upper limits on $\sigma(X \to \HH)$ are set at
+\SI{4.8}{\femto\barn} and \SI{3.4}{\femto\barn} (\SI{9.6}{\femto\barn}
+and \SI{7.1}{\femto\barn}) for resonance masses of \num{1000} and
+\SI{1100}{\GeV},
+respectively~\cite{CMS-B2G-20-007,hepdata.115024}. This analysis
+observes a deficit in data compared to the background prediction for
+masses close to \SI{1000}{\GeV}, suggesting that the features observed
+by the ATLAS collaboration occurred by coincidence.
 
 
-CMS results:
 
-https://arxiv.org/pdf/2112.03161.pdf bb+leptons (excludes the excess observed)
 
-https://cds.cern.ch/record/2777083/files/B2G-20-004-pas.pdf (4b boosted: slight excess at 1 TeV)
-
-https://cds.cern.ch/record/2799151/files/HIG-21-002-pas.pdf (multi-lepton -> also a slight excess at 1 TeV but not competitive)
+Further scrutinisation of the background estimates, particularly
+\Zjets at high transverse momenta.
 
 
 
-
-
-
+% CMS resonant results:
+%
+% HH -> bbWW / bbtautau / bbZZ (boosted bb+l / ll final states)
+% https://arxiv.org/pdf/2112.03161.pdf (published JHEP)
+%                Obs.             Exp.
+% 1000 GeV:      4.8 fb           9.6 fb
+% 1100 GeV:      3.4 fb           7.1 fb
+%
+% - Too good to be true??? Probably fine
+%
+% HH -> 4b (boosted)
+% https://cds.cern.ch/record/2777083/files/B2G-20-004-pas.pdf (preliminary)
+%                Obs.             Exp.
+% 1000 GeV:      28 fb            15 fb
+% 1100 GeV:      9.9 fb           9.4 fb
+%
+% - Also an excess at 1 TeV (2 sigma ish)
+% - None at 1.1 TeV
+%
+%
+% HH -> WWWW, WWtautau, 4tau (multi-lepton)
+% https://cds.cern.ch/record/2799151/files/HIG-21-002-pas.pdf (preliminary)
+%                Obs.             Exp.
+% 1000 GeV:      200-300 fb       100 fb
+%
+% - 2ish sigma excess but not competitive
 
 
 \todo[inline]{Discussion excess: Modelling of collinear taus?}
