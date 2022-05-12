@@ -1,0 +1,23 @@
+\begin{tabular}{lll}
+    \toprule
+    Reject & Accept & Condition \\
+    \midrule
+    $e_1$ & $e_2$ & $e_1$ and $e_2$ share the charged particle track and $\pT(e_1) < \pT(e_2)$. \\[0.5em]
+    \tauhadvis & $e$ & $\dRy < 0.2$ and $e$ passes the loose likelihood-based electron identification. \\[0.5em]
+    \tauhadvis & $\mu$ & $\dRy < 0.2$ and either: \\
+               &       & \tauhadvis $\pT \leq \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$ and muon passes combined reconstruction. \\
+               &       & \tauhadvis $\pT > \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$. \\[0.5em]
+
+    $\mu$ & $e$ & Calorimeter muon with shared inner detector track. \\[0.5em]
+    $e$   & $\mu$ & Shared inner detector track. \\[0.5em]
+    jet   & $e$ & $\dRy < 0.2$ and: not \btagged or \btagged and $\pT(e) > \SI{100}{\GeV}$ \\[0.5em]
+    $e$   & jet & $\dRy < 0.4$ \\[0.5em]
+    jet   & $\mu$ & $\dRy < 0.2$ and not \btagged \\[0.5em]
+    $\mu$ & jet & $\dRy < 0.4$ \\[0.5em]
+    \bottomrule
+\end{tabular}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis"
+%%% End:
