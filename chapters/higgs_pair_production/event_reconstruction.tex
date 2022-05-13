@@ -84,6 +84,8 @@ magnitude being \MET by convention.
 
 \subsection{Short Object Selection}
 
+Say that this is the pre-selection that take part in the OLR and
+vetoes? Tighter requirements are applied at the event-selection stage.
 
 \begin{description}
 
@@ -112,18 +114,44 @@ magnitude being \MET by convention.
   $p_{\text{T}}^{\text{varcone20}}/ \pT < 0.15$ as described in
   Ref.~\cite{EGAM-2018-01}). The electron selection efficiency of the
   isolation requirement exceeds \SI{95}{\percent} for electrons with
-  $\pT > \SI{20}{\GeV}$, quickly approaching close to
-  \SI{100}{\percent} efficiency at larger transverse
+  $\pT > \SI{20}{\GeV}$, quickly approaching efficiencies close to
+  \SI{100}{\percent} at larger transverse
   momenta~\cite{EGAM-2018-01}. This requirement is inverted as part of
   the \faketauhadvis background estimation in the \lephad channel to
   provide a control region enhanced in multi-jet events.
+
+  % Energy calibration???
 
   % Post-selection:
   % Medium LH
   % pT > 18 GeV
 
-\item[Muons] %are required to have $\pT > \SI{7}{\GeV}$
+\item[Muons] are required to have $\pT > \SI{7}{\GeV}$ and pass the
+  loose identification working point. Muons passing the loose working
+  point are a superset of medium muons which are defined according to
+  Ref.~\cite{MUON-2018-03} as: muons passing either the
+  \emph{combined} or \emph{inside-out combined} reconstruction in
+  $|\eta| < 2.5$; muons passing either the \emph{muon-spectrometer
+    extrapolated} or \emph{silicon-associated forward} reconstruction
+  in $2.5 < |\eta| < 2.7$. Various requirements are set on the muon
+  reconstruction quality and matching between ID and MS tracks which
+  depend on the muon reconstruction type and detector region. The
+  loose identification working point additionally allows for
+  \emph{calorimeter-tagged} and \emph{segment-tagged} muons in
+  $|\eta| < 0.1$, a region insufficiently covered by the MS, to
+  improve the muon selection efficiency.
+
+  Muons are required to be isolated ...  Similar to the electron
+  isolation requirement, the muon isolation is inverted as part of the
+  \faketauhadvis background estimation in the \lephad channel to
+  provide a multi-jet control region.
+
   % isPflowLoose_VarRadIso
+  %
+
+  % Post-selection
+  % pT > 17 GeV
+  % Medium muon
 
 \item[\tauhadvis]
 \item[Anti-\tauhadvis]
