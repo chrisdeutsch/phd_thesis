@@ -209,13 +209,27 @@ vetoes? Tighter requirements are applied at the event-selection stage.
   backgrounds containing \faketauhadvis using the fake factor method.
 
 
-\item[Jets]
+\item[Jets] are reconstructed using the anti-\kt
+  algorithm~\cite{Cacciari:2008gp} with a radius parameter
+  of~$R = 0.4$. The inputs to the jet algorithm are provided by a
+  particle flow reconstruction algorithm, described in
+  Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploiting the superior
+  momentum resolution of the tracking system for charged particles
+  with low transverse momenta by replacing the calorimetric
+  measurement of their energy with a tracking-based momentum
+  measurement, necessitating the subtraction of energy deposits by
+  charged particles in the calorimeter. The particle flow algorithm
+  provides an improved jet energy and angular resolution as well as
+  pile-up stability compared to jets constructed based on topological
+  clusters in the calorimeters only~\cite{JETM-2018-05}.
+
   $|\pT| > \SI{20}{\GeV}$
 
-  Only central jets $|\eta| < 2.5$ are considered.
+  Tight JVT~\cite{PERF-2014-03} on central jets loose
+  fJVT~\cite{PERF-2016-06-witherratum,ATL-PHYS-PUB-2019-026} on
+  forward jets.
 
-  JVT
-
+  Only central jets $|\eta| < 2.5$ are considered as signal jets.
 
 \item[Missing transverse momentum]
 
