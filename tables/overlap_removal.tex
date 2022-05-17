@@ -1,20 +1,44 @@
 \begin{tabular}{lll}
-    \toprule
-    Reject & Accept & Condition \\
-    \midrule
-    $e_1$ & $e_2$ & $e_1$ and $e_2$ share the charged particle track and $\pT(e_1) < \pT(e_2)$. \\[0.5em]
-    \tauhadvis & $e$ & $\dRy < 0.2$ and $e$ passes the loose likelihood-based electron identification. \\[0.5em]
-    \tauhadvis & $\mu$ & $\dRy < 0.2$ and either: \\
-               &       & \tauhadvis $\pT \leq \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$ and muon passes combined reconstruction. \\
-               &       & \tauhadvis $\pT > \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$. \\[0.5em]
+  \toprule
+  Reject & Accept & Condition \\
+  \midrule
 
-    $\mu$ & $e$ & Calorimeter muon with shared inner detector track. \\[0.5em]
-    $e$   & $\mu$ & Shared inner detector track. \\[0.5em]
-    jet   & $e$ & $\dRy < 0.2$ and: not \btagged or \btagged and $\pT(e) > \SI{100}{\GeV}$ \\[0.5em]
-    $e$   & jet & $\dRy < 0.4$ \\[0.5em]
-    jet   & $\mu$ & $\dRy < 0.2$ and not \btagged \\[0.5em]
-    $\mu$ & jet & $\dRy < 0.4$ \\[0.5em]
-    \bottomrule
+  % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleEleOverlapTool.cxx
+  $e_1$ & $e_2$ & $e_1$ and $e_2$ share the charged particle track and $\pT(e_1) < \pT(e_2)$. \\[0.5em]
+
+  % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseEleOverlapTool.cxx
+  \tauhadvis & $e$ & $\dRy < 0.2$ and $e$ passes the loose likelihood-based electron identification. \\[0.5em]
+
+  % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseMuOverlapTool.cxx
+  \tauhadvis & $\mu$ & $\dRy < 0.2$ and either: \\
+         && \hspace{0.5em}-\, \tauhadvis $\pT \leq \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$ \\
+         && \hspace{0.5em}-\, \tauhadvis $\pT > \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$ and $\mu$ passes combined muon reconstruction. \\[0.5em]
+
+  % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleMuSharedTrkOverlapTool.cxx
+  $\mu$ & $e$ & $\mu$ is calorimeter-tagged and shares inner detector track with $e$. \\[0.5em]
+  $e$   & $\mu$ & Both share the inner detector track. \\[0.5em]
+
+  % Note: We do not use heavy flavour aware OLR
+
+  % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleJetOverlapTool.cxx
+  jet   & $e$ & $\dRy < 0.2$ \\[0.5em]
+  $e$   & jet & $\dRy < 0.4$ \\[0.5em]
+
+  % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/MuJetOverlapTool.cxx
+  jet   & $\mu$ & The ID track of the muon is ghost-associated$^\dagger$ to the jet and the jet has fewer than three \\
+         && ghost-associated ID tracks with $\pT > \SI{500}{\MeV}$. \\[0.5em]
+         % && \hspace{0.5em}-\, The jet has fewer than three ghost-associated ID tracks with $\pT > \SI{500}{\MeV}$ \\
+         % && \hspace{0.5em}-\, $\pT(\mu) / \pT(\text{jet}) > 0.5$ and $\pT(\mu) / \sum \pT(\text{track}) > 0.7$, where the sum goes over \\
+
+  $\mu$ & jet & $\dRy < 0.4$ \\
+
+  %jet - 𝜇: Reject jet if 𝑁track < 3 (𝑝 T, track > 500 MeV), and Δ𝑅 𝑦 < 0.2
+
+  \midrule
+  jet & \tauhadvis & ... \\[0.5em]
+  anti-\tauhadvis & jet & ... \\[0.5em]
+  jet & anti-\tauhadvis & ... \\
+  \bottomrule
 \end{tabular}
 
 %%% Local Variables:

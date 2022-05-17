@@ -1,24 +1,27 @@
 \section{Object reconstruction and selection}
 \label{sec:object_reconstruction}
 
-The reconstruction and selection of physics objects (i.e.\ electrons,
-muons, \tauhadvis, jets, $b$-tagged jets, missing transverse momentum)
-proceeds by exploiting their signatures in the detector. The same
-algorithms are used to reconstruct and identify these objects in
-simulation and data recorded with the ATLAS detector. Differences
-between the performance of object reconstruction and selection in
-simulation and the observed data are accounted for by dedicated
-calibration measurements of efficiencies, energy \& momentum scales
-and resolutions. Uncertainties on these measurements are propagated to
-the final results by performing variations of these properties in
-simulation.
+The reconstruction and selection of physics objects, i.e.\ objects
+representing the signature of particles produced in the
+$pp$-collision, is described in the following. The most relevant
+objects in this search are electrons, muons, \tauhadvis, jets,
+$b$-tagged jets, and the missing transverse momentum. These objects
+are reconstructed and identified using different algorithms targeting
+their distinct signature in the ATLAS detector. The same algorithms
+are used to reconstruct and identify objects in simulation and in data
+recorded with the detector.  Differences between the performance of
+the reconstruction and selection in simulation and data are accounted
+for by dedicated calibration measurements of efficiencies, energy /
+momentum scales and resolutions. Uncertainties on these measurements
+are propagated to the final results by performing variations of these
+properties in simulation.
 
 The following introduces the reconstruction and selection of physics
 objects relevant to this analysis. A discussion of objects not
 directly used in this analysis is omitted.
 
 
-\subsection{Track reconstruction and primary vertex selection}
+%\subsection{Track reconstruction and primary vertex selection}
 
 The trajectories of charged particles...
 
@@ -43,12 +46,7 @@ chosen as the primary vertex.
 \cite{PERF-2015-08}
 
 
-
-
-
-
-
-\subsection{Short Object Selection}
+%\subsection{Short Object Selection}
 
 Say that this is the pre-selection that take part in the OLR and
 vetoes? Tighter requirements are applied at the event-selection stage.
@@ -250,64 +248,47 @@ largest $\pT^2$...
 \subsection{Overlap Removal}
 \label{sec:overlap_removal}
 
-% https://gitlab.cern.ch/atlas/athena/tree/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/
-% Harmonization note: https://cds.cern.ch/record/1743654/files/ATL-COM-PHYS-2014-451.pdf
+The reconstruction and selection of physics objects described
+previously does not ensure that any detector signature can be
+unambiguously assigned to exactly one reconstructed object. This
+ambiguity is resolved by performing an overlap removal procedure which
+rejects objects that can be associated, either geometrically or by
+shared charged particle tracks, with an object of higher priority. In
+the case of geometric matching the association is performed on the
+basis of the angular distance
+\begin{align*}
+  \dRy = \sqrt{\Delta y^2 + \Delta \phi^2} \,\text{,}
+\end{align*}
+where $\Delta y$ and $\Delta \phi$ refers to the differences in
+rapidity and polar angle of two objects, respectively.
 
-After the event is reconstructed a overlap-removal procedure is applied to
-resolve ambiguities when a physical object is reconstructed as multiple
-particles in the ATLAS detector. The angular distance $\dRy =
-\sqrt{\Delta y^2 + \Delta \phi^2}$ is used to measure the overlap of two
-reconstructed objects. \todo{Why rapidity instead of pseudorapidity?}
-
-The following step-by-step procedure is used to resolve ambiguities in
-the reconstructed objects:\todo{This would be nicer as a table}
-\begin{itemize}
-  % https://indico.cern.ch/event/807799/contributions/3362328/attachments/1818680/2973610/Presentation.pdf
-  % https://indico.cern.ch/event/814156/contributions/3396841/attachments/1830226/2997072/Presentation.pdf
-%\item jet - $\mu$: Reject jet if not \btagged, $N_\text{tracks} < 4$ and $\dRy
-%  < 0.4$
-
-% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleEleOverlapTool.cxx
-\item $e_1$ - $e_2$: Reject $e_1$ if both electrons share the track and ${\pT}_1
-  < {\pT}_2$
-
-% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseEleOverlapTool.cxx
-\item \tauhadvis - $e$: Reject \tauhadvis if $\dRy < 0.2$ and $e$ passes \verb|DFCommonElectronsLHLoose|
-
-% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseMuOverlapTool.cxx
-\item \tauhadvis - $\mu$: Reject \tauhadvis if $\dRy < 0.2$:\\
-  Case 1 ($\tauhadvis \pT > \SI{50}{\GeV}$): $p_{\text{T}, \mu} > \SI{2}{\GeV}$
-  and combined muon\\
-  Case 2 ($\tauhadvis \pT \leq \SI{50}{\GeV}$): $p_{\text{T}, \mu} > \SI{2}{\GeV}$
-
-% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleMuSharedTrkOverlapTool.cxx
-\item $\mu$ - $e$: Reject $\mu$ if calo-muon and shared ID track
-\item $e$ - $\mu$: Reject $e$ if shared ID track
-
-% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleJetOverlapTool.cxx
-\item jet - $e$: Reject jet if $\dRy < 0.2$, not \btagged or \btagged and
-  ${\pT}_{e} > \SI{100}{\GeV}$
-\item $e$ - jet: Reject $e$ if $\dRy < 0.4$
-
-% https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/MuJetOverlapTool.cxx
-\item jet - $\mu$: Reject jet if not \btagged, $N_\text{track} < 3$ ($p_\text{T,
-  track} > \SI{500}{\MeV}$), and $\dRy < 0.2$
-\item $\mu$ - jet: Reject $\mu$ if $\dRy < 0.4$
-\end{itemize}
-Due to a bug in the PFlow jet reconstruction, an additional OLR step removing
-prompt muons being reconstructed as fake jets is implemented in the official ASG
-OLR tool.
+A sequential procedure is used to resolve the overlaps of
+reconstructed physics objects. The procedure is summarised
+in~\Cref{tab:overlap_removal} following the recommendations developed
+by the ATLAS collaboration. The overlap removal between jets and
+\tauhadvis
 
 \begin{table}[htbp]
   \centering
 
+  % https://gitlab.cern.ch/atlas/athena/tree/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/
+  % Harmonization note: https://cds.cern.ch/record/1743654/files/ATL-COM-PHYS-2014-451.pdf
+
+  \caption{Summary of the sequential overlap removal algorithm with
+    rows representing steps of the procedure. Steps are executed from
+    top to bottom, rejecting objects in the ``Reject'' column in
+    favour of objects in the ``Accept'' column if the condition is
+    fulfilled, until all ambiguities are resolved.}%
+  \label{tab:overlap_removal}
+
   \resizebox{\textwidth}{!}{%
     \input{tables/overlap_removal}
   }
-
-  \caption{Overlap removal algorithm. In all cases $\dRy$ refers to
-    the angular distance of }
 \end{table}
+
+Due to a bug in the PFlow jet reconstruction, an additional OLR step removing
+prompt muons being reconstructed as fake jets is implemented in the official ASG
+OLR tool.
 
 Additionally, an analysis-specific overlap-removal procedure for \tauhadvis,
 anti-\tauhadvis and jets is implemented:
