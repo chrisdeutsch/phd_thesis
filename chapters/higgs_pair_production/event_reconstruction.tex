@@ -221,26 +221,32 @@ vetoes? Tighter requirements are applied at the event-selection stage.
   charged particles in the calorimeter. The particle flow algorithm
   provides an improved jet energy and angular resolution as well as
   pile-up stability compared to jets constructed based on topological
-  clusters in the calorimeters only~\cite{PERF-2015-09,JETM-2018-05}.
+  clusters in the calorimeters (at EM scale)
+  only~\cite{PERF-2015-09,JETM-2018-05}.
 
   Jets in the central region defined by $|\eta| < 2.5$ are required to
   fulfill $\pT > \SI{20}{\GeV}$; jets in the forward regions defined
   by $2.5 < |\eta| < 4.5$ are required to fulfill
-  $\pT > \SI{30}{\GeV}$.
+  $\pT > \SI{30}{\GeV}$. Jets originating from pile-up are suppressed
+  by ensuring that jets pass jet-vertex-tagger (JVT)
+  requirements. Jets in the central region are required to pass the
+  tight working point of the JVT~\cite{PERF-2014-03}. Jets in the
+  forward region, which lack tracking system coverage, are requried to
+  fulfill the loose working point of a dedicated jet-vertex-tagger for
+  forward jets~\cite{PERF-2016-06-witherratum,ATL-PHYS-PUB-2019-026}.
 
-  Jet cleaning???
-
-  Jets originating from pile-up are suppressed by ensuring that jets
-  pass jet-vertex-tagger (JVT) requirements. Jets in the central
-  region are required to pass the tight working point of the
-  JVT~\cite{PERF-2014-03}. Jets in the forward region, which lack
-  tracking system coverage, are requried to fulfill the loose working
-  point of a dedicated jet-vertex-tagger for forward
-  jets~\cite{PERF-2016-06-witherratum,ATL-PHYS-PUB-2019-026}.
-
-  A multivariate $b$-tagging algorithm,
-  DL1r~\cite{FTAG-2018-01,ATL-PHYS-PUB-2017-013}, with
-  \SI{77}{\percent} efficiency in \ttbar.
+  A multivariate $b$-tagging algorithm is applied to all jets in the
+  central region to identify jets originating from $b$-quarks,
+  distinguishing them from jets initiated by gluons or quarks of
+  light- or charm-flavour. The \textsc{DL1r}
+  algorithm~\cite{FTAG-2018-01,ATL-PHYS-PUB-2017-013} is used which
+  combines the scores of several low-level taggers that exploit the
+  signature of displaced decays of $b$-hadrons using information on
+  the track impact parameters (\textsc{IP2D}, \textsc{IP3D} \&
+  \textsc{RNNIP}) and secondary vertices (\textsc{SV1} \&
+  \textsc{JetFitter}). A $b$-tagging working point with an efficiency
+  of \SI{77}{\percent} of correctly tagging $b$-jets in \ttbar is
+  used.
 
 \item[Missing transverse momentum]
 

@@ -1,6 +1,13 @@
 \section{Event Selection}
 \label{sec:event_selection}
 
+% if ((eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::Tile) == xAOD::EventInfo::Error)
+% || (eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::LAr) == xAOD::EventInfo::Error)
+% || (eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::SCT) == xAOD::EventInfo::Error)
+% || (eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18))) {
+
+% Event cleaning / jet cleaning: Reject events with one or more badly measured jets
+
 An event selection is applied to select events consistent with a \bbtthh final
 state. Due to the chosen MVA analysis strategy, the selection does not aim to
 reduce backgrounds significantly.
