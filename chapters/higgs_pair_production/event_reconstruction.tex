@@ -43,57 +43,26 @@ chosen as the primary vertex.
 \cite{PERF-2015-08}
 
 
-\subsection{Electrons}
-
-Use likelihood-based electron identification algorithm with loose
-working point.
-
-\cite{EGAM-2018-01}
 
 
 
-\todo[inline]{electrons: reco \& ID / isolation}
 
-
-\subsection{Muons}
-
-\todo[inline]{muons: reco \& ID / isolation}
-
-
-\subsection{\tauhadvis}
-
-\todo[inline]{taus: seeding; energy scale (LC \& BRT); track selection;
-  acceptance; Tau-ID (jet \& e)}
-
-\subsection{Anti-\tauhadvis}
-
-
-\subsection{Jets}
-\todo[inline]{Jet building from clusters; calibration; bad jet veto; JVT;
-  b-tagging}
-
-\todo[inline]{Particle flow}
-
-
-\subsection{Missing Transverse Momentum}
-
-The missing transverse momentum is denoted as \pTmiss with its
-magnitude being \MET by convention.
-
-\todo[inline]{\MET: negative vector sum of reconstructed objects; soft term}
 
 \subsection{Short Object Selection}
 
 Say that this is the pre-selection that take part in the OLR and
 vetoes? Tighter requirements are applied at the event-selection stage.
 
+Primary vertex selection: at least two tracks and vertex with the
+largest $\pT^2$...
+
 \begin{description}
 
 \item[Electrons] are required to have $\pT > \SI{7}{\GeV}$ and to be
   reconstructed within the acceptance of the tracking detectors
   $|\eta| < \num{2.47}$. Electrons in the transition region between
-  the barrel and endcaps of the ATLAS detectors,
-  $1.37 < |\eta| < 1.52$, are rejected. A likelihood-based
+  the barrel and endcap electromagnetic calorimeters of the ATLAS
+  detector, $1.37 < |\eta| < 1.52$, are rejected. A likelihood-based
   discriminant is used for electron identification to reject electron
   candidates originating from jets and non-prompt electrons (e.g.\
   from photon conversions or decays of hadrons) by exploiting
@@ -195,6 +164,10 @@ vetoes? Tighter requirements are applied at the event-selection stage.
   particle flow algorithm~\cite{PERF-2014-06} in boosted regression
   trees.
 
+  % \todo[inline]{taus: seeding; energy scale (LC \& BRT); track selection;
+  %   acceptance; Tau-ID (jet \& e)}
+
+
 \item[Anti-\tauhadvis] adhere to the same selection criteria as
   \tauhadvis except for the \tauhadvis identification requirement
   which is partially inverted. \tauhadvis candidates are considered to
@@ -248,12 +221,34 @@ vetoes? Tighter requirements are applied at the event-selection stage.
   of \SI{77}{\percent} of correctly tagging $b$-jets in \ttbar is
   used.
 
-\item[Missing transverse momentum]
+\item[Missing transverse momentum (\pTmiss)] is used to reconstruct
+  the total transverse momentum of (undetected) weakly-interacting
+  particles produced in the hard interaction. In this search it is
+  used to reconstruct the signatures of neutrinos produced in decays
+  of \tauleptons and semi-leptonic decays of hadrons.
 
+  An object-based definition of the missing transverse
+  momentum~\cite{PERF-2016-07} is adopted that uses reconstructed and
+  calibrated objects, i.e.\ electrons, muons, \tauhadvis, and jets as
+  defined previously after an ambiguity resolution step introduced
+  in~\Cref{sec:overlap_removal}, as inputs to the \pTmiss
+  reconstruction. Soft charged particle radiation that is not part of
+  any reconstructed object is accounted for by the so-called track
+  soft term. The track soft term is defined as the vectorial sum of
+  charged particle track $\myvec{\pT}$ over all tracks passing track
+  quality criteria that are associated to the primary vertex of the
+  hard interaction but not any reconstructed object. The object-based
+  \pTmiss is subsequently reconstructed as the negative vectorial sum
+  of transverse momenta of calibrated objects and the track soft term.
+
+  The vector of the missing transverse momentum in the transverse
+  plane is denoted as \pTmiss and its magnitude as \pTmissAbs,
+  hereafter.
 \end{description}
 
 
 \subsection{Overlap Removal}
+\label{sec:overlap_removal}
 
 % https://gitlab.cern.ch/atlas/athena/tree/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/
 % Harmonization note: https://cds.cern.ch/record/1743654/files/ATL-COM-PHYS-2014-451.pdf
