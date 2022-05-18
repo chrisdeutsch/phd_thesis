@@ -309,17 +309,38 @@ maximising the signal acceptance.
 % prompt muons being reconstructed as fake jets is implemented in the official ASG
 % OLR tool.
 
-\todo[inline]{Special treatment of lepton OLR for b-jet corrections}
-
 \todo[inline]{Truth labelling of jets in simulation cf.\ VHbb evidence paper}
-
 \todo[inline]{Truth labelling of fake taus in simulation}
-
-
 
 \subsection{$b$-jet momentum corrections}
 \label{sec:bjet_momentum_corrections}
 
+Only applied to $b$-tagged jets.
+
+Muon-in-jet correction: Accounting for small calorimeter energy
+deposition of muons produced in semi-leptonic $b$-hadron decays
+contained within .
+
+Average pt correction (PtReco): Correct pT
+
+neutrinos produced in semi-leptonic $b$-hadron decays.
+
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.65\textwidth]{reconstruction/bjet_corrections}
+
+  \caption{Impact of $b$-jet momentum corrections on the reconstructed
+    \mBB. On reconstructed Higgs boson candidates in \ggF SM \HH. A
+    fit of a Bukin function is performed \cite{Bukin:2007zha} and the
+    peak position and width of the Gaussian core is given.}
+  \label{fig:bjet_momentum_corr_mbb}
+\end{figure}
+
+
+\todo[inline]{Special treatment of lepton OLR for b-jet corrections}
 
 %%% Local Variables:
 %%% mode: latex
