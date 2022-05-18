@@ -21,23 +21,21 @@
   % Note: We do not use heavy flavour aware OLR
 
   % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/EleJetOverlapTool.cxx
-  jet   & $e$ & $\dRy < 0.2$ \\[0.5em]
-  $e$   & jet & $\dRy < 0.4$ \\[0.5em]
+  jet   & $e$ & $\dRy < 0.2$. \\[0.5em]
+  $e$   & jet & $\dRy < 0.4$. \\[0.5em]
 
   % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/MuJetOverlapTool.cxx
-  jet   & $\mu$ & The ID track of the muon is ghost-associated$^\dagger$ to the jet and the jet has fewer than three \\
-         && ghost-associated ID tracks with $\pT > \SI{500}{\MeV}$. \\[0.5em]
+  jet   & $\mu$ & The ID track of the muon is ghost-associated~\cite{Cacciari:2007fd,Cacciari:2008gn} to the jet and the jet has fewer \\
+         && than three ghost-associated ID tracks with $\pT > \SI{500}{\MeV}$. \\[0.5em]
          % && \hspace{0.5em}-\, The jet has fewer than three ghost-associated ID tracks with $\pT > \SI{500}{\MeV}$ \\
          % && \hspace{0.5em}-\, $\pT(\mu) / \pT(\text{jet}) > 0.5$ and $\pT(\mu) / \sum \pT(\text{track}) > 0.7$, where the sum goes over \\
 
-  $\mu$ & jet & $\dRy < 0.4$ \\
+  $\mu$ & jet & $\dRy < 0.4$. \\[0.5em]
 
-  %jet - 𝜇: Reject jet if 𝑁track < 3 (𝑝 T, track > 500 MeV), and Δ𝑅 𝑦 < 0.2
-
+  jet & \tauhadvis & $\dRy < 0.2$. \\
   \midrule
-  jet & \tauhadvis & ... \\[0.5em]
-  anti-\tauhadvis & jet & ... \\[0.5em]
-  jet & anti-\tauhadvis & ... \\
+  anti-\tauhadvis & jet & $\dRy < 0.2$ and jet is $b$-tagged. \\[0.5em]
+  jet & anti-\tauhadvis & $\dRy < 0.2$. \\
   \bottomrule
 \end{tabular}
 
