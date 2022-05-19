@@ -312,10 +312,43 @@ maximising the signal acceptance.
 \todo[inline]{Truth labelling of jets in simulation cf.\ VHbb evidence paper}
 \todo[inline]{Truth labelling of fake taus in simulation}
 
-\subsection{$b$-jet momentum corrections}
+\subsection{Momentum corrections for $b$-tagged jets}
 \label{sec:bjet_momentum_corrections}
 
-Only applied to $b$-tagged jets.
+Corrections are applied to $b$-tagged jets in the central region in
+order to improve their momentum scale and resolution. In this search
+the invariant mass of the $H \to \bbbar$ candidate constituting of two
+$b$-tagged jets, \mBB, is an important variable to distinguish signals
+from backgrounds. Consequently, improvements in the momentum scale and
+resolution of $b$-tagged jets translate to the scale and resolution of
+the reconstructed \mBB.
+
+The corrections are applied in addition to the standard jet
+calibration~\cite{JETM-2018-05}, targeting the effects of
+semi-leptonic $b$- or $c$-hadron decays inside of the $b$-jet,
+particularly muonic decays, on the reconstructed jet
+four-momentum\todo{And?}. Two separate corrections, which were
+previously used by the ATLAS collaboration in
+Refs.~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}, are applied:
+\begin{description}
+
+\item[Muon-in-jet correction] Muons produced in decays of $b$- or
+  $c$-hadrons in $b$-jets deposit little energy in the calorimeters
+  leading to an underestimation of the jet four-momentum. The
+  muon-in-jet correction is applied when a muon passing the
+  \emph{medium} selection working point can be found within a variable
+  size cone (shrinking with increasing \pT of the muon) centered on
+  the jet axis. No requirements are made on the isolation of such
+  muons. In case one or more muons are found, the four-momentum of the
+  muon closest to the jet axis, after correcting for the energy it
+  deposited in the calorimeters, is added to the four-momentum of the
+  jet.
+
+\item[\pTreco correction] $p_{\text{T}}^{\text{truth}} / \pTreco$
+  (determined as a function of \pTreco) where
+  $p_{\text{T}}^{\text{truth}}$ is the transverse momentum of the jet
+  at particle-level in simulbated \ttbar events.
+\end{description}
 
 Muon-in-jet correction: Accounting for small calorimeter energy
 deposition of muons produced in semi-leptonic $b$-hadron decays
@@ -325,22 +358,39 @@ Average pt correction (PtReco): Correct pT
 
 neutrinos produced in semi-leptonic $b$-hadron decays.
 
+\todo[inline]{Special treatment of lepton OLR for b-jet corrections}
 
+
+The effect of these corrections on the reconstructed \mBB for
+simulated SM \HH events produced via \ggF in the \hadhad channel is
+depicted in~\Cref{fig:bjet_momentum_corr_mbb}. The improvement in the
+$b$-jet momentum scale and resolution from the muon-in-jet correction
+and the \pTreco correction lead to a relative reduction of the width
+of the Higgs boson mass peak in \mBB of \SI{13}{\percent}, as measured
+by the full width at half maximum.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.65\textwidth]{reconstruction/bjet_corrections}
 
-  \caption{Impact of $b$-jet momentum corrections on the reconstructed
-    \mBB. On reconstructed Higgs boson candidates in \ggF SM \HH. A
-    fit of a Bukin function is performed \cite{Bukin:2007zha} and the
-    peak position and width of the Gaussian core is given.}
+  \caption{Effects of different $b$-jet momentum corrections on the
+    reconstructed \mBB of $H \to \bbbar$ candidates from simulated SM
+    \HH events in the \hadhad channel. Bukin
+    functions~\cite{Bukin:2007zha}\todo[inline]{Check me} are fit to binned distributions
+    obtained from simulation. The location of the peak maximum is
+    given by $x_{\text{p}}$ and the full width at half maximum divided
+    by $2\sqrt{2 \ln 2}$ is given by $\sigma_{\text{p}}$ (yielding
+    width scales comparable to the standard deviation of a Normal
+    distribution). The uncorrected distribution is obtained using the
+    standard jet calibration without further corrections for
+    $b$-jets.}%
   \label{fig:bjet_momentum_corr_mbb}
 \end{figure}
 
+These corrections are primarily used to calculate discriminanting
+variables such as \mBB and \dRtautau.
 
-\todo[inline]{Special treatment of lepton OLR for b-jet corrections}
 
 %%% Local Variables:
 %%% mode: latex
