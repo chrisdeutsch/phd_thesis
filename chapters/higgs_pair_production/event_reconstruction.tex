@@ -315,51 +315,50 @@ maximising the signal acceptance.
 \subsection{Momentum corrections for $b$-tagged jets}
 \label{sec:bjet_momentum_corrections}
 
-Corrections are applied to $b$-tagged jets in the central region in
-order to improve their momentum scale and resolution. In this search
-the invariant mass of the $H \to \bbbar$ candidate constituting of two
-$b$-tagged jets, \mBB, is an important variable to distinguish signals
-from backgrounds. Consequently, improvements in the momentum scale and
+Corrections are applied to $b$-tagged jets in order to improve their
+momentum scale and resolution. In this search the invariant mass of
+the $H \to \bbbar$ candidate constituting of two $b$-tagged jets,
+\mBB, is an important variable to distinguish signals from
+backgrounds. Consequently, improvements in the momentum scale and
 resolution of $b$-tagged jets translate to the scale and resolution of
 the reconstructed \mBB.
 
 The corrections are applied in addition to the standard jet
-calibration~\cite{JETM-2018-05}, targeting the effects of
-semi-leptonic $b$- or $c$-hadron decays inside of the $b$-jet,
-particularly muonic decays, on the reconstructed jet
-four-momentum\todo{And?}. Two separate corrections, which were
-previously used by the ATLAS collaboration in
+calibration~\cite{JETM-2018-05}, targeting the effects of out-of-cone
+radiation and semi-muonic $b$- or $c$-hadron decays inside of the
+$b$-jet on the reconstructed jet four-momentum. Two separate
+corrections, which were previously used by the ATLAS collaboration in
 Refs.~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}, are applied:
 \begin{description}
 
 \item[Muon-in-jet correction] Muons produced in decays of $b$- or
   $c$-hadrons in $b$-jets deposit little energy in the calorimeters
   leading to an underestimation of the jet four-momentum. The
-  muon-in-jet correction is applied when a muon passing the
-  \emph{medium} selection working point can be found within a variable
-  size cone (shrinking with increasing \pT of the muon) centered on
-  the jet axis. No requirements are made on the isolation of such
-  muons. In case one or more muons are found, the four-momentum of the
-  muon closest to the jet axis, after correcting for the energy it
-  deposited in the calorimeters, is added to the four-momentum of the
-  jet.
+  muon-in-jet correction is applied when a muon with
+  $\pT > \SI{4}{\GeV}$ passing the \emph{medium} selection working
+  point can be found within a variable size cone (shrinking with
+  increasing \pT of the muon) centered on the jet axis. No
+  requirements on the isolation of muons for the muon-in-jet
+  corrections are made. In case one or more muons fulfilling the
+  criteria are selected, the four-momentum of the muon closest to the
+  jet axis, after correcting for the energy it deposited in the
+  calorimeters, is added to the four-momentum of the jet.
 
-\item[\pTreco correction] $p_{\text{T}}^{\text{truth}} / \pTreco$
-  (determined as a function of \pTreco) where
-  $p_{\text{T}}^{\text{truth}}$ is the transverse momentum of the jet
-  at particle-level in simulbated \ttbar events.
+\item[\pTreco correction] The \pTreco correction aims to correct for
+  out-of-cone radiation as well as momentum carried away by neutrinos
+  produced in semi-muonic decays of hadrons in the jet. It is derived
+  from $b$-tagged jets in simulated \ttbar events as a function of the
+  \pT of the reconstructed jets, \pTreco, and separately for jets
+  containing a muon and jets that do not contain a muon following the
+  approach used for the muon-in-jet correction. The correction is
+  applied as a multiplicative factor on the jet momentum scale and is
+  derived as the ratio $p_{\text{T}}^{\text{truth}} / \pTreco$ in bins
+  of \pTreco, where $p_{\text{T}}^{\text{truth}}$ is the transverse
+  momentum of the truth jet, a jet constructed from generator-level
+  particles, that is geometrically matched to the jet at
+  reconstruction-level.
+
 \end{description}
-
-Muon-in-jet correction: Accounting for small calorimeter energy
-deposition of muons produced in semi-leptonic $b$-hadron decays
-contained within .
-
-Average pt correction (PtReco): Correct pT
-
-neutrinos produced in semi-leptonic $b$-hadron decays.
-
-\todo[inline]{Special treatment of lepton OLR for b-jet corrections}
-
 
 The effect of these corrections on the reconstructed \mBB for
 simulated SM \HH events produced via \ggF in the \hadhad channel is
