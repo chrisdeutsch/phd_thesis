@@ -1,23 +1,46 @@
 \section{Event Selection}
 \label{sec:event_selection}
 
-% if ((eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::Tile) == xAOD::EventInfo::Error)
-% || (eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::LAr) == xAOD::EventInfo::Error)
-% || (eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::SCT) == xAOD::EventInfo::Error)
-% || (eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18))) {
+The event selection aims at selecting events consistent with
+$\bbbar\lephad$ or $\bbbar\hadhad$ final states. The selection
+criteria applied to events are kept as loose as possible given the
+limitations imposed by the trigger selection. Distinguishing between
+signal and background events based on object- and event-level
+observables is not the goal of the event selection but rather of a
+multivariate analysis that will be introduced at a later stage (in
+\Cref{sec:multivariate_analysis}). In addition, suitable control and
+validation regions are defined for the purpose of estimating
+background processes or validating background estimates using data
+recorded by the ATLAS detector.
 
-% Event cleaning / jet cleaning: Reject events with one or more badly measured jets
+% GRL + basic checks
 
-An event selection is applied to select events consistent with a \bbtthh final
-state. Due to the chosen MVA analysis strategy, the selection does not aim to
-reduce backgrounds significantly.
+% eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::Tile) == xAOD::EventInfo::Error
+% Problems in tile calorimeter (``tile corrupted events''')
+%
+% eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::LAr) == xAOD::EventInfo::Error
+% LAr noise bursts
+%
+% eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::SCT) == xAOD::EventInfo::Error
+% SCT corrupted events (``recovery period after single event upset''')
+%
+% eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18
+% Event info missing after TTC restart
 
-\todo[inline]{Reconstruction of Hbb and Htautau candidates incl.\ MMC
-  and $b$-jet energy corrections.}
+All events considered in the analysis are required to fulfil the data
+quality criteria by the ATLAS collaboration~\cite{DAPR-2018-01}
+requiring stable beams at the LHC and a fully operational detector.
 
-\subsection{Event Cleaning}
+% Has vertex
+Event has a primary vertex.
 
-\todo[inline]{Primary vertex requirements \& jet cleaning}
+% No fake jets
+% DFCommonJets_eventClean_LooseBad
+Events containing one or more jets that are classified as originating
+from non-collision backgrounds or calorimeter noise according to a
+\emph{loose} jet cleaning~\cite{ATLAS-CONF-2015-029} working point are
+rejected.
+
 
 \todo[inline]{Muon cleaning / muons from cosmics? Are we applying this?}
 
@@ -27,8 +50,6 @@ reduce backgrounds significantly.
   \SI{60}{\GeV}$ to reduce DY}
 
 \todo[inline]{SR selection (not really applicable -- maybe talk about PNN)??? Anti-Tau CR}
-
-\todo[inline]{b-jet energy correction}
 
 \todo[inline]{Observables used to reduce backgrounds: dRTauTau, dRBB, mtautau,
   mbb, mHH}
@@ -122,8 +143,6 @@ recommendation is to use a logical OR between the old
 \label{sec:reconstruction_of_higgs_candidates}
 
 
-
-
 \subsubsection{Preselection}
 
 Trigger selection follows \cref{sec:trigger}
@@ -206,6 +225,9 @@ Orthogonality between the L1Topo and the 4J12 DTT is ensured by offline cuts on
 \todo[inline]{Di-Tau Mass Reconstruction}
 
 \todo[inline]{B-Jet Corrections}
+
+\todo[inline]{Reconstruction of Hbb and Htautau candidates incl.\ MMC
+  and $b$-jet energy corrections.}
 
 
 %%% Local Variables:
