@@ -21,29 +21,23 @@ objects relevant to this analysis. A discussion of objects not
 directly used in this analysis is omitted.
 
 
-%\subsection{Track reconstruction and primary vertex selection}
 
-The trajectories of charged particles...
+% The trajectories of charged particles...
 
 Charged particle tracks are reconstructed from their signature in the
 inner tracking detectors of the ATLAS detector. They are a fundamental
 input to other reconstruction and identification algorithms where they
 are used at different levels of reconstruction quality.
 
-Say a thing about track fitting?
-
 The baseline selection for charged particle tracks requires
-$\pT > \SI{400}{\MeV}$??? 500?  and $|\eta| < \num{2.5}$ in addition
-to several requirements on the number of hits, the number of missing
-hits (holes), and the number of hits shared between multiple tracks in
-the silicon-based tracking detectors.
+$\pT > \SI{500}{\MeV}$ and $|\eta| < \num{2.5}$ in addition to several
+requirements on the number of hits, the number of missing hits
+(holes), and the number of hits shared between multiple tracks in the
+silicon-based tracking detectors.
 
 And impact parameter requirements.
 
 \cite{PERF-2015-08}
-
-Say that this is the pre-selection that take part in the OLR and
-vetoes? Tighter requirements are applied at the event-selection stage.
 
 Tracks measured in the inner detector are used to determine the $pp$
 interaction vertices, which are the points in the ATLAS detector where
@@ -54,6 +48,9 @@ $\pT > \SI{500}{\MeV}$ is considered as the primary vertex of the
 event. Other vertices with at least two tracks are considered as
 vertices originating from pile-up~\cite{PERF-2015-01}.
 
+The selection of objects directly used in this search is described in
+the following. More restrictive selections on these objects will be
+applied as part of the signal region event selection.
 \begin{description}
 
 \item[Electrons] are required to have $\pT > \SI{7}{\GeV}$ and to be
@@ -165,7 +162,6 @@ vertices originating from pile-up~\cite{PERF-2015-01}.
   % \todo[inline]{taus: seeding; energy scale (LC \& BRT); track selection;
   %   acceptance; Tau-ID (jet \& e)}
 
-
 \item[Anti-\tauhadvis] adhere to the same selection criteria as
   \tauhadvis except for the \tauhadvis identification requirement
   which is partially inverted. \tauhadvis candidates are considered to
@@ -179,6 +175,7 @@ vertices originating from pile-up~\cite{PERF-2015-01}.
   control regions that are used perform data-driven estimates of
   backgrounds containing \faketauhadvis using the fake factor method.
 
+  \todo[inline]{Anti-\tauhadvis selection? Random???}
 
 \item[Jets] are reconstructed using the anti-\kt
   algorithm~\cite{Cacciari:2008gp} with a radius parameter

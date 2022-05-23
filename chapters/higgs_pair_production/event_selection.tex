@@ -13,33 +13,84 @@ validation regions are defined for the purpose of estimating
 background processes or validating background estimates using data
 recorded by the ATLAS detector.
 
-% GRL + basic checks
+Events considered for further analysis are required to fulfil basic
+quality criteria:
+\begin{itemize}
+  % GRL + basic checks
 
-% eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::Tile) == xAOD::EventInfo::Error
-% Problems in tile calorimeter (``tile corrupted events''')
-%
-% eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::LAr) == xAOD::EventInfo::Error
-% LAr noise bursts
-%
-% eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::SCT) == xAOD::EventInfo::Error
-% SCT corrupted events (``recovery period after single event upset''')
-%
-% eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18
-% Event info missing after TTC restart
+  % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::Tile) == xAOD::EventInfo::Error
+  % Problems in tile calorimeter (``tile corrupted events''')
+  %
+  % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::LAr) == xAOD::EventInfo::Error
+  % LAr noise bursts
+  %
+  % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::SCT) == xAOD::EventInfo::Error
+  % SCT corrupted events (``recovery period after single event upset''')
+  %
+  % eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18
+  % Event info missing after TTC restart
+\item All events considered in the analysis are required to fulfil the
+  data quality criteria by the ATLAS collaboration~\cite{DAPR-2018-01}
+  requiring stable beams at the LHC and a fully operational detector.
 
-All events considered in the analysis are required to fulfil the data
-quality criteria by the ATLAS collaboration~\cite{DAPR-2018-01}
-requiring stable beams at the LHC and a fully operational detector.
+  % Has vertex
+\item The event is required to have a primary vertex.
 
-% Has vertex
-Event has a primary vertex.
+  % No fake jets
+  % DFCommonJets_eventClean_LooseBad
+\item Events containing one or more jets that are classified as originating
+  from non-collision backgrounds or calorimeter noise according to a
+  \emph{loose} jet cleaning~\cite{ATLAS-CONF-2015-029} working point are
+  rejected.
+\end{itemize}
 
-% No fake jets
-% DFCommonJets_eventClean_LooseBad
-Events containing one or more jets that are classified as originating
-from non-collision backgrounds or calorimeter noise according to a
-\emph{loose} jet cleaning~\cite{ATLAS-CONF-2015-029} working point are
-rejected.
+\begin{table}[htbp]
+  \centering
+
+  \caption{Event selection. Exact \pT thresholds vary with the
+    triggers (the range is given). For taus in hadhad and jets thresholds are }%
+  \label{tab:event_selection}
+
+  {
+    \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+    \small
+
+    \begin{tabular}{C{0.22\textwidth}C{0.22\textwidth}C{0.22\textwidth}C{0.22\textwidth}}
+      \toprule
+      \multicolumn{2}{c}{\textbf{\hadhad channel}} & \multicolumn{2}{c}{\textbf{\lephad channels}} \\[0.5em]
+      \textbf{STT} & \textbf{DTT} & \textbf{SLT} & \textbf{LTT} \\
+      \midrule
+      \multicolumn{4}{c}{\textbf{$e$ and $\mu$ selection}} \\
+      \midrule
+      \multicolumn{2}{c}{No loose $e$ or $\mu$} & \multicolumn{2}{c}{Exactly one loose $e$ or one loose $\mu$} \\[0.5em]
+                                                   && \multicolumn{2}{c}{$e$ passes tight ID} \\
+                                                   && \multicolumn{2}{c}{or} \\
+                                                   && \multicolumn{2}{c}{$\mu$ passes medium ID and $|\eta| < 2.5$} \\[0.5em]
+                                                   && $\pT(e) > 25\text{-}\SI{27}{\GeV}$ & $\pT(e) > \SI{18}{\GeV}$ \\
+                                                   && $\pT(\mu) > 21\text{-}\SI{27}{\GeV}$ & $\pT(\mu) > \SI{15}{\GeV}$ \\[0.5em]
+                                                   &&& Lepton \pT below SLT threshold \\
+      \midrule
+      \multicolumn{4}{c}{\textbf{\tauhadvis selection}} \\
+      \midrule
+      \multicolumn{2}{c}{Exactly two \tauhadvis} & \multicolumn{2}{c}{Exactly one \tauhadvis} \\[0.5em]
+                                                   && \multicolumn{2}{c}{$|\eta| < 2.3$} \\[0.5em]
+      $\pT > 100\text{-}180 \, (25)\,\si{\GeV}$ & $\pT > 40 \, (30)\,\si{\GeV}$ & & \\
+      \midrule
+      \multicolumn{4}{c}{\textbf{Jet selection}} \\
+      \midrule
+      \multicolumn{4}{c}{$\geq 2$ jets with $|\eta| < 2.5$}\\[0.5em]
+      $\geq 1$ jet with $\pT > \SI{45}{\GeV}$ & trigger-dependent$^\dagger$ & $\geq 1$ jet with $\pT > \SI{45}{\GeV}$ & trigger-dependent \\
+      \midrule
+      \multicolumn{4}{c}{\textbf{Event-level selection}} \\
+      \midrule
+      \multicolumn{4}{c}{$\mMMC > \SI{60}{\GeV}$} \\
+                                                   && \multicolumn{2}{c}{$\mBB < \SI{150}{\GeV}$} \\
+                                                   % OS
+                                                   % 2 b-tags
+      \bottomrule
+    \end{tabular}
+  }
+\end{table}
 
 
 \todo[inline]{Muon cleaning / muons from cosmics? Are we applying this?}
