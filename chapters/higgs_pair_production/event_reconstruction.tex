@@ -316,21 +316,36 @@ maximising the signal acceptance.
 \todo[inline]{Truth labelling of jets in simulation cf.\ VHbb evidence paper}
 \todo[inline]{Truth labelling of fake taus in simulation}
 
-\subsection{Momentum corrections for $b$-tagged jets}
+\subsection{$H \to \bbbar$ candidate reconstruction and momentum
+  corrections for $b$-tagged jets}%
+\label{sec:hbb_reco}%
 \label{sec:bjet_momentum_corrections}
 
-Corrections are applied to $b$-tagged jets in order to improve their
-momentum scale and resolution. In this search the invariant mass of
-the $H \to \bbbar$ candidate constituting of two $b$-tagged jets,
-\mBB, is an important variable to distinguish signals from
-backgrounds. Consequently, improvements in the momentum scale and
-resolution of $b$-tagged jets translate to the scale and resolution of
-the reconstructed \mBB.
+The Higgs boson candidate decaying into a pair of $b$-quarks is
+reconstructed using jets in the central region of the detector
+($|\eta| < 2.5$). In regions requiring two $b$-tagged jets, the
+four-momentum of the Higgs boson candidate is reconstructed by summing
+the four-momenta of both $b$-tagged jets. The Higgs boson candidate
+four-momentum in regions with fewer than two $b$-tagged jets, which
+are used as control and validation regions, is reconstructed from the
+sum of four momenta of either the $b$-tagged jet and the \pT-leading
+un-tagged jet (1 $b$-tag regions) or the sum of the two \pT-leading
+un-tagged jets (0 $b$-tag regions). Regions with more than two
+$b$-tagged jets are not considered in this search. The reconstructed
+Higgs boson candidate is used to calculate the invariant mass of the
+$\bbbar$-system, \mBB, which is an important variable to distinguish
+signals from backgrounds.
 
-The corrections are applied in addition to the standard jet
-calibration~\cite{JETM-2018-05}, targeting the effects of out-of-cone
-radiation and semi-muonic $b$- or $c$-hadron decays inside of the
-$b$-jet on the reconstructed jet four-momentum. Two separate
+Corrections are applied to $b$-tagged jets in order to improve the
+scale and resolution of the $b$-jet momentum reconstruction,
+consequently improving the scale and resolution fo the reconstructed
+\mBB and thus its discrimination power between signals and
+backgrounds.
+
+The $b$-jet momentum corrections are applied in addition to the
+standard jet calibration~\cite{JETM-2018-05}, targeting the effects of
+out-of-cone radiation and semi-muonic $b$- or $c$-hadron decays inside
+of the $b$-jet on the reconstructed jet four-momentum. Two separate
 corrections, which were previously used by the ATLAS collaboration in
 Refs.~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}, are applied:
 \begin{description}
@@ -363,13 +378,15 @@ Refs.~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}, are applied:
   reconstruction-level.
 
 \end{description}
+Both corrections are performed at the level of individual jets and do
+not explicitly include information about the remainder of the event.
 
-The effect of these corrections on the reconstructed \mBB for
-simulated SM \HH events produced via \ggF in the \hadhad channel is
-depicted in~\Cref{fig:bjet_momentum_corr_mbb}. The improvement in the
-$b$-jet momentum scale and resolution from the muon-in-jet correction
-and the \pTreco correction lead to a relative reduction of the width
-of the Higgs boson mass peak in \mBB of \SI{13}{\percent}, as measured
+The effect of the corrections on the reconstructed \mBB for simulated
+SM \HH events produced via \ggF in the \hadhad channel is depicted
+in~\Cref{fig:bjet_momentum_corr_mbb}. The improvement in the $b$-jet
+momentum scale and resolution from the muon-in-jet correction and the
+\pTreco correction lead to a relative reduction of the width of the
+Higgs boson mass peak in \mBB of about \SI{13}{\percent}, as measured
 by the full width at half maximum.
 
 \begin{figure}[htbp]
@@ -380,19 +397,65 @@ by the full width at half maximum.
   \caption{Effects of different $b$-jet momentum corrections on the
     reconstructed \mBB of $H \to \bbbar$ candidates from simulated SM
     \HH events in the \hadhad channel. Bukin
-    functions~\cite{Bukin:2007zha}\todo[inline]{Check me} are fit to binned distributions
-    obtained from simulation. The location of the peak maximum is
-    given by $x_{\text{p}}$ and the full width at half maximum divided
-    by $2\sqrt{2 \ln 2}$ is given by $\sigma_{\text{p}}$ (yielding
-    width scales comparable to the standard deviation of a Normal
-    distribution). The uncorrected distribution is obtained using the
-    standard jet calibration without further corrections for
-    $b$-jets.}%
+    functions~\cite{Bukin:2007zha}\todo[inline]{Check me} are fitted
+    to binned distributions obtained from simulation. The location of
+    the peak maximum is given by $x_{\text{p}}$ and the full width at
+    half maximum divided by $2\sqrt{2 \ln 2}$ is given by
+    $\sigma_{\text{p}}$ (yielding width scales comparable to the
+    standard deviation of a Normal distribution). The uncorrected
+    distribution is obtained using the standard jet calibration
+    without further corrections for $b$-jets.}%
   \label{fig:bjet_momentum_corr_mbb}
 \end{figure}
 
-These corrections are primarily used to calculate discriminanting
-variables such as \mBB and \dRtautau.
+
+\subsection{$H \to \tau^{+}\tau^{-}$ candidate reconstruction}%
+\label{sec:htautau_reco}
+
+Reconstruction of $H \to \tau^{+}\tau^{-}$ candidates in signal events
+is challenging due to the presence of at least two neutrinos
+originating from decays of \tauleptons that cannot be reconstructed
+directly. The starting point of the reconstruction of the
+$H \to \tau^{+}\tau^{-}$ candidates are the visible decay products
+from \taulepton decays. In the \hadhad channel these are given by the
+two \tauhadvis candidates, while in \lephad the visible decay products
+are one \tauhadvis candidate and either an electron or a muon. To
+obtain the four-momentum of the $H \to \tau^{+}\tau^{-}$ candidate,
+including the four-momenta of visible and invisible particles,
+additional information on the neutrinos produced from the \taulepton
+decay is needed. Possible configurations of the \taulepton decays can
+be limited by exploiting constraints originating from the known mass
+of the \taulepton and from the measured \pTmiss under the assumption
+that it soley originates from neutrinos produced in decays of
+\tauleptons. However, even with these constraints the system is
+underdetermined requiring a probabilistic description of the remaining
+degrees of freedom.
+
+The Missing Mass Calculator (MMC) technique~\cite{Elagin:2010aw} is
+used
+
+Multiple neutrinos -> only measure sum of transverse momenta
+(underdetermined system of kinematic equations)
+
+The Missing Mass Calculator (MMC)
+
+Uses tauhadvis 4-momentum, lepton 4-momentum, etmiss, and overall
+event activity $\sum E_{\text{T}}$, jet multiplicity
+
+Assumes etmiss is from tau lepton decays only
+
+
+Likelihood-based parametrisation of tau decay to resolve
+underdetermined system of kinematic equations.
+
+mlnu3p (most likely neutrino 3 momentum)
+
+
+%
+% \pTmiss
+
+
+
 
 
 %%% Local Variables:

@@ -6,15 +6,15 @@ $\bbbar\lephad$ or $\bbbar\hadhad$ final states. The selection
 criteria applied to events are kept as loose as possible given the
 limitations imposed by the trigger selection. Distinguishing between
 signal and background events based on object- and event-level
-observables is not the goal of the event selection but rather of a
-multivariate analysis that will be introduced at a later stage (in
-\Cref{sec:multivariate_analysis}). In addition, suitable control and
-validation regions are defined for the purpose of estimating
+observables is not the primary goal of the event selection but rather
+of a multivariate analysis that will be introduced at a later stage
+(in \Cref{sec:multivariate_analysis}). In addition, suitable control
+and validation regions are defined for the purpose of estimating
 background processes or validating background estimates using data
 recorded by the ATLAS detector.
 
 Events considered for further analysis are required to fulfil basic
-quality criteria:
+quality criteria independent of the analysis channel:
 \begin{itemize}
   % GRL + basic checks
 
@@ -44,14 +44,34 @@ quality criteria:
   rejected.
 \end{itemize}
 
+
+
+
+Single tau trigger (STT), Di-\tauhadvis trigger (DTT)
+
+Single lepton triggers (SLT), lepton-plus-\tauhadvis triggers (LTT)
+
+An overview of the signal region event selection for all channels is
+given in~\Cref{tab:event_selection}.
+
+$H \to \bbbar$ candidate reconstruction
+
+$H \to \tau\tau$ candidate reconstruction
+
+
+
+\Cref{sec:trigger}
+
 \begin{table}[htbp]
   \centering
 
-  \caption{Event selection. Exact \pT thresholds vary with the
-    triggers (the range is given). For taus in hadhad and jets
-    thresholds are trigger-dependent. Forward jets are not used to
-    select events (only to calculate MET). Requirements applied as
-    part of the object selection are not repeated here.}%
+  \caption{Overview of the signal region event selection in the \hadhad channel, and the \lephad SLT and LTT channels.
+
+    Exact \pT thresholds vary with the triggers (the range is
+    given). For taus in hadhad and jets thresholds are
+    trigger-dependent. Forward jets are not used to select events
+    (only to calculate MET). Requirements applied as part of the
+    object selection are not repeated here.}%
   \label{tab:event_selection}
 
   \resizebox{\textwidth}{!}{
@@ -69,7 +89,7 @@ quality criteria:
 \todo[inline]{Observables used to reduce backgrounds: dRTauTau, dRBB, mtautau,
   mbb, mHH}
 
-\subsection{Trigger}
+\subsection{Trigger selection in the \hadhad channel}
 \label{sec:trigger}
 
 \todo[inline]{Trigger \& trigger evolution}
