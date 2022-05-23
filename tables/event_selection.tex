@@ -1,0 +1,43 @@
+{
+  \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+  \small
+
+  \begin{tabular}{C{0.225\textwidth}C{0.225\textwidth}C{0.225\textwidth}C{0.225\textwidth}}
+    \toprule
+    \multicolumn{2}{c}{\textbf{\hadhad channel}} & \multicolumn{2}{c}{\textbf{\lephad channels}} \\[0.5em]
+    \textbf{STT} & \textbf{DTT} & \textbf{SLT} & \textbf{LTT} \\
+    \midrule
+    \multicolumn{4}{c}{\textbf{$e$ and $\mu$ selection}} \\
+    \midrule
+    \multicolumn{2}{c}{No loose $e$ or $\mu$} & \multicolumn{2}{c}{Exactly one loose $e$ or one loose $\mu$} \\[0.5em]
+                                                 && \multicolumn{2}{c}{$e$ passes tight ID or} \\
+                                                 && \multicolumn{2}{c}{$\mu$ passes medium ID and $|\eta| < 2.5$} \\[0.5em]
+                                                 && $\pT(e) > 25\text{--}\SI{27}{\GeV}$ & $\pT(e) > \SI{18}{\GeV}$ \\
+                                                 && $\pT(\mu) > 21\text{--}\SI{27}{\GeV}$ & $\pT(\mu) > \SI{15}{\GeV}$ \\[0.5em]
+                                                 &&& Lepton \pT below SLT threshold \\
+    \midrule
+    \multicolumn{4}{c}{\textbf{\tauhadvis selection}} \\
+    \midrule
+    \multicolumn{2}{c}{Exactly two \tauhadvis} & \multicolumn{2}{c}{Exactly one \tauhadvis} \\[0.5em]
+                                                 && \multicolumn{2}{c}{$|\eta| < 2.3$} \\[0.5em]
+    $\pT > 100\text{--}180 \, (25)\,\si{\GeV}$ & $\pT > 40 \, (30)\,\si{\GeV}$ & & \\
+    \midrule
+    \multicolumn{4}{c}{\textbf{Central jet selection ($|\eta| < 2.5$)}} \\
+    \midrule
+    \multicolumn{4}{c}{$\geq 2$ jets}\\[0.5em]
+    $\geq 1$ jet with $\pT > \SI{45}{\GeV}$ & Trigger-dependent$^\dagger$ & $\geq 1$ jet with $\pT > \SI{45}{\GeV}$ & Trigger-dependent \\
+    \midrule
+    \multicolumn{4}{c}{\textbf{Event-level selection}} \\
+    \midrule
+    \multicolumn{4}{c}{Exactly 2 $b$-tagged jets} \\[0.25em]
+    \multicolumn{4}{c}{Opposite sign electric charge between \tauhadvis and $e$ / $\mu$ / \tauhadvis} \\[0.25em]
+    \multicolumn{4}{c}{$\mMMC > \SI{60}{\GeV}$} \\[0.25em]
+                                                 && \multicolumn{2}{c}{$\mBB < \SI{150}{\GeV}$} \\
+    \bottomrule
+  \end{tabular}
+}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis"
+%%% End:
