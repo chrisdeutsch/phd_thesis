@@ -7,10 +7,10 @@
   $e_1$ & $e_2$ & $e_1$ and $e_2$ share the charged particle track and $\pT(e_1) < \pT(e_2)$. \\[0.5em]
 
   % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseEleOverlapTool.cxx
-  \tauhadvis & $e$ & $\dRy < 0.2$ and $e$ passes the loose likelihood-based electron identification. \\[0.5em]
+  (anti-)\tauhadvis & $e$ & $\dRy < 0.2$ and $e$ passes the loose likelihood-based electron identification. \\[0.5em]
 
   % https://gitlab.cern.ch/atlas/athena/-/blob/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/Root/TauLooseMuOverlapTool.cxx
-  \tauhadvis & $\mu$ & $\dRy < 0.2$ and either: \\
+  (anti-)\tauhadvis & $\mu$ & $\dRy < 0.2$ and either: \\
          && \hspace{0.5em}-\, \tauhadvis $\pT \leq \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$ \\
          && \hspace{0.5em}-\, \tauhadvis $\pT > \SI{50}{\GeV}$: $\pT(\mu) > \SI{2}{\GeV}$ and $\mu$ passes combined muon reconstruction. \\[0.5em]
 
@@ -35,7 +35,8 @@
   jet & \tauhadvis & $\dRy < 0.2$. \\
   \midrule
   anti-\tauhadvis & jet & $\dRy < 0.2$ and jet is $b$-tagged. \\[0.5em]
-  jet & anti-\tauhadvis & $\dRy < 0.2$. \\
+  jet & anti-\tauhadvis & $\dRy < 0.2$ and the anti-\tauhadvis is selected by the random anti-\tauhadvis selection. \\[0.5em]
+  anti-\tauhadvis & jet & $\dRy < 0.2$. \\
   \bottomrule
 \end{tabular}
 

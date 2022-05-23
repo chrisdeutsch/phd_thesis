@@ -171,11 +171,18 @@ applied as part of the signal region event selection.
   which corresponds to a true \tauhadvis selection efficiency of about
   \SI{99}{\percent} in simulated $\gamma^* \to \tauhad\tauhad$.
 
-  All search channels use the presence of anti-\tauhadvis to define
-  control regions that are used perform data-driven estimates of
-  backgrounds containing \faketauhadvis using the fake factor method.
+  Anti-\tauhadvis are only considered when events have fewer than two
+  (one) \tauhadvis passing the selection criteria of the \hadhad
+  (\lephad) channel. In this case, anti-\tauhadvis are randomly
+  selected until the required number of (anti-)\tauhadvis candidates,
+  two in the \hadhad and one in the \lephad channel, is
+  achieved. Anti-\tauhadvis that are not selected by the random
+  anti-\tauhadvis selection are treated as jets and will later be
+  removed as part of the overlap removal procedure.
 
-  \todo[inline]{Anti-\tauhadvis selection? Random???}
+  All search channels use the presence of a selected anti-\tauhadvis
+  to define control regions used to derive data-driven estimates of
+  backgrounds containing \faketauhadvis using the fake factor method.
 
 \item[Jets] are reconstructed using the anti-\kt
   algorithm~\cite{Cacciari:2008gp} with a radius parameter
@@ -276,7 +283,7 @@ signal selection efficiency in this search.
     rows representing steps of the procedure. Steps are executed from
     top to bottom, rejecting objects in the \emph{Reject} column in
     favour of objects in the \emph{Accept} column if the condition is
-    fulfilled.}%
+    fulfilled. The last three steps }%
   \label{tab:overlap_removal}
 
   \resizebox{\textwidth}{!}{%
@@ -285,7 +292,7 @@ signal selection efficiency in this search.
 \end{table}
 
 The overlap removal establishes the following priority between jets,
-\tauhadvis, and anti-\tauhadvis:
+\tauhadvis, and selected anti-\tauhadvis:
 \begin{center}
   \tauhadvis > \btagged jet > anti-\tauhadvis > un-tagged jet.
 \end{center}
