@@ -412,15 +412,14 @@ by the full width at half maximum.
 \subsection{$H \to \tau^{+}\tau^{-}$ candidate reconstruction}%
 \label{sec:htautau_reco}
 
-Reconstruction of $H \to \tau^{+}\tau^{-}$ candidates in signal events
-is challenging due to the presence of at least two neutrinos
-originating from decays of \tauleptons that cannot be reconstructed
-directly. The starting point of the reconstruction of the
-$H \to \tau^{+}\tau^{-}$ candidates are the visible decay products
-from \taulepton decays. In the \hadhad channel these are given by the
-two \tauhadvis candidates, while in the \lephad channel the visible
-decay products are the \tauhadvis candidate and either an electron or
-a muon. To obtain the four-momentum of the
+Reconstruction of the four-momentum of the $H \to \tau^{+}\tau^{-}$
+candidate in signal events is challenging due to the presence of at
+least two neutrinos originating from decays of \tauleptons that cannot
+be measured directly. The starting point of the reconstruction are the
+visible decay products from \taulepton decays. In the \hadhad channel
+these are given by the two \tauhadvis candidates, while in the \lephad
+channel the visible decay products are the \tauhadvis candidate and
+either an electron or a muon. To obtain the four-momentum of the
 di-$\tau$ system, %
 % consisting of visible and invisible decay products
 additional information on the neutrinos produced from the \taulepton
@@ -434,62 +433,54 @@ neutrinos.
 
 The Missing Mass Calculator (MMC) technique~\cite{Elagin:2010aw} is
 used to estimate the four-momentum of the di-$\tau$ system and thus
-its invariant mass, subsequently referred to as \mMMC. The MMC uses
-the fact that not all kinematic configurations of neutrinos are
-equally likely by constructing a combined likelihood for both
-\taulepton decays parametrised in the decay mode of the \taulepton and
-properties of its visible decay products. Moreover, the constraints on
-the total neutrino transverse momentum given by \pTmiss is relaxed to
-allow for measurement errors. These are parametrised by the event
-activity, the scalar sum of transverse momenta of all hard objects and
-the track soft term, and jet multiplicity.
+its invariant mass, referred to as \mMMC hereafter. The MMC uses the
+fact that not all configurations of neutrinos are equally likely,
+assigning a probability density for every configuration conditional on
+the \taulepton decay mode and other properties of the visible decay
+products. In addition, the constraints on the total neutrino
+transverse momentum from the \pTmiss measurement are relaxed to allow
+for measurement errors within the experimental resolution, the
+resolution being parametrised as a function of the event
+activity\footnote{The event activitiy, also referred to as $\sum \ET$,
+  is the scalar sum of transverse momenta of all hard objects produced
+  in an event and the track soft term.} and jet multiplicity. The
+probability density functions used by the MMC are derived from
+simulation of resonant production of \taulepton pairs.
 
-to predict the most likely neutrino momenta given the
-observed
+For any single event the MMC estimates the conditional
+distribution\footnote{The distribution is conditional on the observed
+  properties of the event such as the reconstructed four-momenta of
+  the visible \taulepton decay products, the \taulepton decay mode,
+  \pTmiss, $\sum \ET$, and the jet multiplicity.} of an observable of
+interest that depends on unobserved neutrino properties, for example
+the mass of the di-$\tau$ system, using simulation. %
+% The distribution of an observable of interest that depends on
+% unobserved neutrino properties given, for example the mass of the
+% di-$\tau$ system, can be estimated using simulation.
+A sequence of kinematically allowed neutrino configurations is
+generated using Markov Chain Monte Carlo according to the
+(conditional) probability density describing the distribution of
+neutrino configurations. For every configuration the value of the
+observable of interest is calculated and filled into a histogram,
+which serves as a binned approximation of the observable's conditional
+distribution. Finally, the most probable value of the observable is
+used as the estimator for the event.
 
-probability conditional on tau decay mode, tau pt,
+Frequently, the most probable di-$\tau$ mass is used as the estimator
+when the di-$\tau$ invariant mass is of primary interest such as in
+measurements of $H \to \tau^{+}\tau^{-}$~\cite{HIGG-2019-09}. However,
+in searches for Higgs boson pair production it is desirable to
+estimate the entire four-momentum of the di-$\tau$ system as it allows
+to calculate the invariant mass of the $HH$-system, \mHH, when
+combined with the four-momentum of the $H \to \bbbar$
+candidate. Instead of the most probable mass estimator, an estimator
+based on the most probable neutrino momenta is used, allowing to
+reconstruct the four-vector of the di-$\tau$ system.
 
-It uses the kinematics of \taulepton decays from simulation to assign
-
-The MMC exploits
-
-
-that
-certain \taulepton decay configurations are more likely than others,
-allowing
-
-Angular distance of missing 3-momentum from visible part and in case
-of leptonic decays the mass of the $\nu_\tau\nu_\ell$-system.
-
-In addition, additional degrees of freedom are introduced to account
-for the finite resolution of the reconstructed \pTmiss when providing
-constraints on the total transverse momentum carried by neutrinos from
-the \taulepton decay.
-
-Multiple neutrinos -> only measure sum of transverse momenta
-(underdetermined system of kinematic equations)
-
-The Missing Mass Calculator (MMC)
-
-Uses tauhadvis 4-momentum, lepton 4-momentum, etmiss, and overall
-event activity $\sum E_{\text{T}}$, jet multiplicity
-
-Assumes etmiss is from tau lepton decays only
-
-
-Likelihood-based parametrisation of tau decay to resolve
-underdetermined system of kinematic equations.
-
-mlnu3p (most likely neutrino 3 momentum)
-
-
-
-%
-% \pTmiss
-
-
-
-
+A description of the technical implementation of the MMC used by the
+ATLAS collaboration is given in Ref.~\cite{huebner} which is the basis
+for the four-momentum reconstruction of the $H \to \tau^{+}\tau^{-}$
+candidate in this search.
 
 %%% Local Variables:
 %%% mode: latex
