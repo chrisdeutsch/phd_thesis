@@ -7,72 +7,83 @@
 % https://link.springer.com/content/pdf/10.1007/JHEP07(2020)044.pdf
 
 The production of \PZ bosons in association with jets is estimated
-using events simulated by \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}
+using events simulated with \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}
 interfaced to the matrix element generators
 \OPENLOOPS~\cite{Buccioni:2019sur,Cascioli:2011va,Denner:2016kdg} and
 Comix~\cite{Gleisberg:2008fv} (cf.\
-\Cref{sec:data_and_simulation}). The matrix elements are provided at
-NLO for final states with up to two partons and at LO for final states
-with up to four partons. The inclusive cross section is normalised to
-NNLO~\cite{Anastasiou:2003ds}.
+\Cref{sec:data_and_simulation}). Hard-scatter matrix elements are
+provided at NLO for final states with up to final state two partons
+and at LO for up to four partons. The multi-parton matrix element
+generation is matched to \SHERPA for parton showering. The inclusive
+cross section is normalised to NNLO~\cite{Anastasiou:2003ds}.
 
 % Why IS HF difficult?
-The requirement of two \btagged jets in the signal regions of this
-analysis leads to an enhancement of \PZ bosons produced in association
-with quarks of heavy flavour (HF). Modelling of this background using
-simulation is difficult due to its sensitivity to the flavour
-structure of the proton and the modelling of gluons splitting to
-bottom or charm quarks.
+% Theory context here: https://arxiv.org/pdf/2204.12355.pdf
+The signal region requirement of having two \btagged jets applied in
+this search leads to an enhancement of \PZ bosons produced in
+association with quarks of heavy flavour (HF). The modelling of this
+background, hereafter referred to as the \ZHF background, using
+simulation is theoretically difficult due to its sensitivity to the
+flavour structure of the proton and to gluons splitting to bottom or
+charm
+quarks~\cite{Maltoni:2012pa,Napoletano:2018euk,Napoletano:2019tla}.
 
-The nominal prediction of the \SHERPA[2.2.1] configuration used for
-event generation, which employs a 5 flavour number scheme for the
-treatment of $b$-quarks in the proton, is known to underestimate the
-cross section of $\PZ + b$-jets by \SIrange{10}{30}{\percent}
-depending on the considered phase
-space~\cite{STDM-2017-38}. Therefore, the normalisation of the
-background originating from the production of \PZ bosons in
-association with heavy flavour quarks, herafter referred to as \ZHF,
-is measured in a dedicated control region targeting $Z + b$-jets and
+The nominal \ZHF prediction of \SHERPA, which employs a five flavour
+number scheme for the treatment of $b$-quarks in the proton, is known
+to underestimate its normalisation by \SIrange{10}{30}{\percent}
+depending on the selected phase space~\cite{STDM-2017-38}. Instead of
+relying on the normalisation predicted by simulation, the
+normalisation of the \ZHF background is measured in a dedicated
+control region targeting $Z + bb$ production which is then
 extrapolated to the signal regions.
 
-The approach of estimating the \ZHF background, which is described in
-the following, is adopted with few modifications from the previous
-publication in this channel~\cite{HIGG-2016-16-witherratum} which
-built on the findings of searches for $VH$
-($\PHiggs \to \bbbar$)~\cite{HIGG-2016-29}.\todo{Cite Petar's thesis
-  here.}
+The approach of estimating the \ZHF background described in the
+following is adopted with few modifications~\cite{bokan} from the
+previous publication in this channel~\cite{HIGG-2016-16-witherratum}
+which built on findings from searches of $VH$ ($\PHiggs \to \bbbar$)
+production~\cite{HIGG-2016-29}.
 
 % Control region definition
 A dedicated control region is defined targeting the production of
 $\PZ \ra \Plp\Plm$ ($\ell = e , \mu$) in association with jets
-originating from heavy flavour quarks. The definitions of
-reconstructed objects used in the control region follow the
-description in~\Cref{sec:object_reconstruction}.
+originating from quarks of heavy flavour. The definitions of selected
+objects used in the control region and requirements on event quality
+criteria remain the same as previously described
+in~\Cref{sec:object_reconstruction,sec:event_selection} for
+consistency with the signal region selection.
 
 Events are recorded using single-lepton triggers and di-lepton
-triggers selecting same flavour lepton pairs. Thresholds are applied
-to the \pT of electrons and muons after offline reconstruction,
-ensuring that the triggers are fully efficient. Depending on the run
-conditions of the LHC, the offline thresholds on the \pT-leading
-object range from \SIrange{25}{27}{\GeV} for single-electron and
-\SIrange{21}{28}{\GeV} for single-muon triggers. Events selected by
-di-electron triggers need to pass symmetric \pT thresholds on both the
-leading and sub-leading electron ranging from
-\SIrange{13}{25}{\GeV}. Di-muon triggers use asymmetric thresholds of
+triggers that select same flavour lepton pairs. Lower thresholds are
+applied to the \pT of electrons and muons after offline
+reconstruction, ensuring that the triggers are fully
+efficient. Depending on the run conditions of the LHC, the \pT
+thresholds on the \pT-leading object range from \SIrange{25}{27}{\GeV}
+for single-electron and \SIrange{21}{28}{\GeV} for single-muon
+triggers. Events selected by di-electron triggers need to pass
+symmetric \pT thresholds on both the leading and sub-leading electron
+ranging from \SIrange{13}{25}{\GeV}. Events selected by di-muon
+triggers are required to pass asymmetric thresholds of
 \SIrange{19}{24}{\GeV} on the leading and \SI{10}{\GeV} on the
 sub-leading muon.
 
 All events are required to be consistent with the decay of a \PZ boson
-into electrons or muons in association with $b$-tagged jets. Leptons
-are required to be of same flavour with opposite electric charges and
-the di-lepton invariant mass needs to
-fulfil~$\SI{75}{\GeV} < \mll < \SI{110}{\GeV}$. Exactly two \btagged
-jets are required with invariant di-$b$-jet mass
-fulfilling~$\mBB \not\in [\SI{40}{\GeV}, \SI{210}{\GeV}]$. The
+into electrons or muons in association with jets originating from
+$b$-quarks. Leptons are required to be of same flavour with opposite
+electric charges and a di-lepton invariant mass between \SI{75}{\GeV}
+and \SI{110}{\GeV}. Exactly two \btagged jets are required with the
+invariant mass between both jets
+fulfilling~$\mBB \not\in [\SI{40}{\GeV}, \SI{210}{\GeV}]$. This
 requirement on \mBB had to be introduced to ensure orthogonality with
-the signal regions of searches for Higgs boson pair production in
-final states with $\bbbar\Plp\Plm + \pTmissAbs$. After the \ZHF
-control region selection, the electron and muon channels are combined.
+signal regions of searches for Higgs boson pair production in final
+states with $\bbbar\Plp\Plm + \pTmissAbs$.\footnote{For future
+  iterations of this search it would be justifiable, based on
+  arguments of the larger SM \HH sensitivity of the
+  $\bbbar\tau^{+}\tau^{-}$ channel, to forgo the orthogonality
+  requirement thus allowing the use a \ZHF control region selection
+  more similar to the selections applied for the signal regions of the
+  $\bbbar\tau^{+}\tau^{-}$ channel.} After the \ZHF control region
+selection, the electron and muon channels are combined for further
+analysis.
 
 % Labeling and fit
 % https://twiki.cern.ch/twiki/bin/view/AtlasProtected/FlavourTaggingLabeling
@@ -80,7 +91,7 @@ Simulated \Zjets events entering the \ZHF control region are
 categorised according to a generator-level flavour label assigned to
 the \btagged jets. Reconstructed jets are labeled as either $b$, $c$,
 or \emph{light} ($l$) according to the presence of hadrons within a
-cone of $\Delta R < 0.3$ centered on the jet axis. If a $b$- or
+cone of $\Delta R < 0.3$ around the jet axis. If a $b$- or
 $c$-flavoured hadron with a transverse momentum of at least
 \SI{5}{\GeV} is found within the cone, the jet is labeled $b$ or $c$,
 respectively. When a hadron matches multiple jets the ambiguity is
@@ -88,14 +99,14 @@ resolved by giving precedence to the closest jet in $\Delta R$. Jets
 that are not matched to any $b$- or $c$-flavoured hadrons are labeled
 as \emph{light}.
 
-\Zjets events can be partitioned according to the flavour label of the
-two \btagged jets into six categories: $Z + bb$, $Z + bc$, $Z + cc$,
-$Z + bl$, $Z + cl$, and $Z + ll$. Contributions from $Z + bb$,
-$Z + bc$, and $Z + cc$, where both $b$-jet candidates are matched to
-hadrons of heavy flavour at generator-level, are combined and
-collectively referred to as \ZHF. The remaining \Zjets events with at
-least one \emph{light}-jet are combined into a sample referred to as
-\ZLF.
+\Zjets events from simulation are partitioned according to the flavour
+labels of both \btagged jets into six categories: $Z + bb$, $Z + bc$,
+$Z + cc$, $Z + bl$, $Z + cl$, and $Z + ll$. Contributions from
+$Z + bb$, $Z + bc$, and $Z + cc$, where both $b$-jet candidates are
+matched to hadrons of heavy flavour at generator-level, are combined
+and collectively referred to as \ZHF. The remaining \Zjets events with
+at least one \emph{light}-jet are combined into a sample referred to
+as \ZLF.
 
 The pre-fit event yield in the \ZHF control region is given
 in~\Cref{tab:zcr_prefit_yields} employing the previously introduced
@@ -103,15 +114,15 @@ categorisation of \Zjets events. Events entering the control region
 predominately originate from \ZHF or top quark pair production.
 % Only about 3% of top quark is single top
 The majority of \ZHF events originate from $Z + bb$ accounting for
-\SI{90}{\percent} of the inclusive sample.
+\SI{90}{\percent} of events in the inclusive \ZHF sample.
 
 \begin{table}[htbp]
   \caption{Event yields in the \ZHF control region before (a) and
-    after (b) the likelihood fit restricted to the control region. The
-    \emph{Other} category summarises smaller backgrounds and is
-    largely dominated by events originating from di-boson
-    processes. The uncertainties on the event yield include all
-    experimental and systematic uncertainties.}%
+    after (b) the binned maximum likelihood fit of the \mll
+    distribution in the control region. The \emph{Other} category
+    summarises smaller backgrounds and largely consists of events from
+    di-boson processes. The uncertainties on the event yield include
+    all experimental and systematic uncertainties.}%
   \label{tab:zcr_yields}
 
   \begin{subtable}{0.5\textwidth}
@@ -132,14 +143,15 @@ The majority of \ZHF events originate from $Z + bb$ accounting for
   \end{subtable}
 \end{table}
 
-The \ZHF control region selects many events originating from
-di-leptonic \ttbar. Since the normalisations of both \ttbar and \ZHF
-are extracted from a fit to data, a discriminant distinguishing
-between both components is required. The invariant di-lepton mass,
-\mll, which is shown prior to the likelihood fit
-in~\Cref{fig:zcr_mll_prefit}, is used for this purpose. A discrepancy
-attributable to the normalisation of the \ZHF background can be
-observed when comparing the pre-fit prediction with the observed data.
+Besides the \ZHF background of interest, the control region also
+selects an abundance of \ttbar events in the di-leptonic decay
+mode. Since the normalisations of \ttbar and \ZHF are extracted from a
+fit to data, a discriminant distinguishing between both components is
+required. The invariant di-lepton mass, \mll, which is shown prior to
+the fit in~\Cref{fig:zcr_mll_prefit}, is used for this purpose. A
+discrepancy in the normalisation of the \ZHF background can be seen
+when comparing the pre-fit prediction with the data observed in the
+control region.
 
 \begin{figure}[htbp]
   \centering
@@ -162,24 +174,27 @@ observed when comparing the pre-fit prediction with the observed data.
     the control region. The contribution of \Zjets is sub-divided into
     cases where both $b$-jet candidates are matched to heavy flavour
     quarks ($b$ or $c$) and cases where at most one candidate is
-    matched to heavy flavour quarks at generator-level. The
-    uncertainty includes all statistical and systematic
-    uncertainties.}
+    matched to heavy flavour quarks at generator-level. Prior to the
+    fit the \Zjets background is normalised to cross section
+    predictions at NNLO~\cite{Anastasiou:2003ds}. The uncertainty
+    includes all statistical and systematic uncertainties.}
 \end{figure}
 
 % ATLAS_norm_Zhf    1.3856e+00 +/-  1.19e-01
 % ATLAS_norm_ttbar    9.7290e-01 +/-  3.92e-02
 % Included in the SR fits: Systematic uncertainties are introduced at a later stage...
-The \ZHF control region is later included in the likelihood fits that
-are used to extract the \HH signals. Systematic uncertainties and the
-combined fit model will be discussed in detail
-in~\Cref{sec:uncertainties,sec:statistical_analysis}. Perform fits of
-the control region only, the normalisation factors of \ZHF
-are~\num{1.39 \pm 0.12} and for \ttbar~\num{0.97 \pm 0.04}. The
-abundance of di-leptonic \ttbar in the control region provides
-stringent constraints on the normalisation of the \ttbar background in
-addition to constraining \ZHF. The post-fit event yields and \mll
-distribution is shown in~\Cref{tab:zcr_postfit_yields}
+The \ZHF control region is included in simultaneous fits of signal and
+control regions to provide constraints on the normalisation of the
+\ZHF background in the signal regions. Systematic uncertainties and
+the fit model will be discussed in detail
+in~\Cref{sec:uncertainties,sec:statistical_analysis}. When performing
+the likelihood fit in the control region only, the estimated
+normalisation factors are~\num{1.39 \pm 0.12} for the \ZHF
+and~\num{0.97 \pm 0.04} for the \ttbar background. The abundance of
+\ttbar events in the control region provides stringent constraints on
+the normalisation of the \ttbar background in addition to constraining
+the normalisation of the \ZHF background. The post-fit event yields
+and \mll distribution is shown in~\Cref{tab:zcr_postfit_yields}
 and~\Cref{fig:zcr_mll_postfit}, respectively.
 
 %%% Local Variables:
