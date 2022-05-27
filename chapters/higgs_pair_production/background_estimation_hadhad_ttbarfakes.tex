@@ -38,12 +38,12 @@ backgrounds:
   exists that allows to separate \faketauhadvis backgrounds from
   \ttbar and multi-jet while maintaining sufficient statistical
   precision for the background estimation. This necessitates defining
-  a \ttbar control region in the \lephad channel where the multi-jet
-  contribution is negligible.
+  a top control region in a $\ell + \tauhadvis$~($\ell = e, \mu$)
+  final state where the multi-jet contribution is negligible.
 \end{itemize}
 
 The \ttbarFakes background is estimated using simulation after
-including data-driven corrections measured in a \ttbar control
+including data-driven corrections measured in a top control
 region. In general, the modelling quality of \faketauhadvis in
 simulation is unknown and \jettotauhadvis misidentification
 efficiencies are not centrally calibrated due to their process
@@ -60,10 +60,10 @@ isolate the effect of differences in misidentification efficiencies
 between simulation and data. Corrections are defined as multiplicative
 scale factors (SF) applied to \faketauhadvis passing \tauid in
 simulation and measured as a functions of \faketauhadvis properties
-using a maximum likelihood fit in the control region.  In the \hadhad
-signal region, the measured scale factors are applied to simulated
-\ttbarFakes events to obtain the background prediction and the
-associated uncertainties.
+using a maximum likelihood fit of a discriminating distribution in the
+control region.  In the \hadhad signal region, the measured scale
+factors are applied to simulated \ttbarFakes events to obtain the
+background prediction and the associated uncertainties.
 
 % The correction is defined as multiplicative \emph{scale factors} (SF)
 % that are applicable to \faketauhadvis after \tauid, calibrating the
@@ -73,37 +73,59 @@ associated uncertainties.
 % corrections are applied in the \hadhad SR to obtain an estimate of the
 % \ttbarFakes background and the associated uncertainties.
 
+\subsubsection{Control region definition}
 
-\subsubsection{Measurement region}
+The top control region for the scale factor measurement (SF-CR)
+targets final states with a reconstructed electron or muon and a
+\tauhadvis. The region definition is based on the selection applied in
+the \lephad channel where a similar control region is used for
+\faketauhadvis background estimation. Minor changes are applied to the
+definition of the control region to ensure consistency with the signal
+region selection of the \hadhad channel.
 
-A top control region (SF-CR) is defined in the $\Plepton + \tauhadvis$
-reconstructed final state with \Plepton being either an electron or a muon. The
-region is similar to the top control region used in the \lephad channel where it
-is used to calculate fake factors for \tauhadvis mimicked by jets produced in
-\ttbar (c.f.\ [reference]). Minor alterations are applied to the region
-definition to ensure a consistent \tauhadvis selection with the \hadhad SR.
+The control region is defined using the object selection previously
+introduced in~\Cref{sec:object_reconstruction} and the event selection
+of the \lephad channel summarised in~\Cref{sec:event_selection}
+and~\Cref{tab:event_selection}. The most important selection criteria
+are briefly summarised:
+\begin{itemize}
 
-The region is defined by requiring exactly one \tauhadvis passing
-loose identification, exactly one electron or muon passing isolation
-and identification criteria\todo{reference}, and exactly two \btagged
-jets. Only events passing single lepton trigger selection are
-considered. The \tauhadvis selection is adapted to more closely follow
-the selection of the \hadhad channel by requiring \tauhadvis
-candidates to fulfil $\pT > \SI{25}{\GeV}$ and $|\eta| < 2.5$ (instead
-of $\pT > \SI{20}{\GeV}$ and $|\eta| < \num{2.3}$ in the \lephad
-channel).
+\item Events are required to have exactly one \tauhadvis passing
+  identification, exactly one electron or one muon passing their
+  respective isolation and identification criteria
+  (cf.~\Cref{tab:event_selection}), and exactly two \btagged jets.
 
-Electron / muon and \tauhadvis candidate are required to be
-reconstructed with electric charges of opposite sign. This requirement
-ensures that charge correlations between $\ell$ and \faketauhadvis,
-which are present in semi-leptonic \ttbar, are similar to the ones
-between \tauhadvis candidates in the \hadhad SR for the dominant
-contribution of \ttbar with a single \faketauhadvis. This effect was
-first observed in the context of searches for $\HH \to \bbtautau$
-in~\cite{bokan}.
+  The \tauhadvis selection is adapted to follow the selection of the
+  \hadhad channel more closely by selecting \tauhadvis candidates with
+  $\pT > \SI{25}{\GeV}$ and $|\eta| < \num{2.5}$ (instead of
+  $\pT > \SI{20}{\GeV}$ and $|\eta| < \num{2.3}$ in the \lephad
+  channel).
 
-Orthogonality between the SF-CR and the signal region of the \lephad
-channel is ensured by requiring $\mBB > \SI{150}{\GeV}$.
+\item Only events passing the single lepton trigger (SLT) selection
+  are considered.
+
+\item The electron / muon and the \tauhadvis candidate are required to
+  be reconstructed with opposite electric charge. This requirement
+  ensures that the charge correlations between light lepton and
+  \faketauhadvis from semi-leptonic decays of \ttbar are similar to
+  the charge correlation between \tauhadvis candidates from
+  \ttbarFakes in the \hadhad signal region. The effect of charge
+  correlation on \ttbarFakes estimation was previously studied in
+  Ref.~\cite{bokan}.
+
+\item Orthogonality between the SF-CR and the signal region of the
+  \lephad channel is ensured by requiring $\mBB > \SI{150}{\GeV}$.
+
+\end{itemize}
+
+% Electron / muon and \tauhadvis candidate are required to be
+% reconstructed with electric charges of opposite sign. This requirement
+% ensures that charge correlations between $\ell$ and \faketauhadvis,
+% which are present in semi-leptonic \ttbar, are similar to the ones
+% between \tauhadvis candidates in the \hadhad SR for the dominant
+% contribution of \ttbar with a single \faketauhadvis. This effect was
+% first observed in the context of searches for $\HH \to \bbtautau$
+% in~\cite{bokan}.
 
 % \footnote{Leptons $\ell$ and true \tauhadvis are have high
 % probability to be reconstructed with the correct electric charge in
@@ -112,20 +134,21 @@ channel is ensured by requiring $\mBB > \SI{150}{\GeV}$.
 % region the quark/gluon composition of jets is likely different which
 % also affects the fake rates.}.
 
-
 The control region selects \ttbar with high purity of approximately
-\SI{94}{\percent} (pre-fit). The largest part, with a purity of
-\SI{66}{\percent}, is \ttbar with a final state containing
-$\ell + \tau$ where $\ell$ is either an electron or muon and the
-\taulepton decays hadronically. This contribution will be subsequently
-referred to as di-leptonic \ttbar. The production of \ttbar with
-\tauhadvis originating from quark or gluon jets, which is the process
-of interest for this measurement, constitutes a purity
-of~\SI{28}{\percent}.  Minor backgrounds in this region are single top
-(\SI{4}{\percent}) and vector boson production in association with
-jets (\SI{2}{\percent}). The contribution of \multijet background is
-assumed to be negligible.\todo{Why is this negligible? Based on the
-  assumptions made by lephad?}
+\SI{94}{\percent} prior to the fit. About \SI{66}{\percent} of
+selected events are from di-leptonic decay channels of \ttbar yielding
+$\ell + \tauhad$ final states, where $\ell$ is either an electron or
+muon. For the purpose of this discussion, this contribution will be
+referred to as di-leptonic \ttbar. The production of \ttbar events
+with \tauhadvis originating from quark- or gluon-jets, which is the
+process of interest for this measurement, constitutes
+\SI{28}{\percent} of all selected events. Minor backgrounds in this
+region are single top (\SI{4}{\percent}) and $\Vjets$ production
+(\SI{2}{\percent}). The contribution of \multijet background is
+negligible based on studies performed as part of the \faketauhadvis
+estimation in the \lephad channel. The distribution of transverse
+momenta and pseudorapidity of \tauhadvis candidates in the SF-CR prior
+to the fit is shown in~\Cref{fig:ttbarSF_prefit_pt}.
 
 \begin{figure}[htbp]
   \centering
@@ -134,13 +157,12 @@ assumed to be negligible.\todo{Why is this negligible? Based on the
   \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/ETAVR}
 
   \caption{Distribution of \tauhadvis \pT and $\eta$ in the scale
-    factor control region (SF-CR) prior to the maximum likelihood
-    fit. Events with \tauhadvis \pT larger than \SI{200}{\GeV} are
-    merged into the last bin. The uncertainty contains all statistical
-    and systematic uncertainties except for normalisation
-    uncertainties on \ttbar arising from its modelling in
-    simulation. Modelling uncertainties affecting the shape of the
-    distributions are included.}
+    factor control region prior to the maximum likelihood fit. Events
+    with \tauhadvis \pT larger than \SI{200}{\GeV} are merged into the
+    last bin. The uncertainty contains all statistical and systematic
+    uncertainties except for normalisation uncertainties on \ttbar
+    arising from its modelling in simulation. Modelling uncertainties
+    affecting the shape of the distributions are included.}%
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
@@ -229,10 +251,6 @@ scale factor measurements are performed in these regions. These are defined
 by ensuring that the resurrected triggers select the event and that
 the reconstructed \tauhadvis candidate is geometrically matched to the
 \tauhadvis candidate at the HLT.
-
-\todo[inline]{Talk about offline reconstructed taus and their identification}
-
-\todo[inline]{Plots of \faketauhadvis \pT at least.}
 
 
 \subsubsection{Fit model}
