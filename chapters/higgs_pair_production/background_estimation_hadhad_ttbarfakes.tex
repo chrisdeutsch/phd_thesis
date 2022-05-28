@@ -166,37 +166,40 @@ to the fit is shown in~\Cref{fig:ttbarSF_prefit_pt}.
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
-The misidentification efficiencies of jets as \tauhadvis depend on the
-identification requirements placed on \tauhadvis candidates during
-offline event reconstruction. In this analysis the loose working point
-of the RNN \tauhadvis~identification algorithm serves as the baseline
-selection. In the \hadhad channel events are selected with single- and
-di-\tauhadvis triggers which use isolation and identification criteria
-to reduce trigger-rates in various stages of the ATLAS trigger
-system. Calorimeter-based isolation requirements are applied to
-\tauhadvis candidates at L1, while at the HLT more sophisticated
-\tauhadvis~identification algorithms are used.  The HLT algorithms
-were developed to be similar to their counterparts of the offline
-\tauhadvis reconstruction. However, divergences between the
-identification algorithms used at the HLT and in offline \tauhadvis
-reconstruction are expected due to limitations in detector read-out
-and time budget at the HLT. New developments in offline \tauhadvis
-reconstruction and identification during Run~2 data-taking cannot be
-retroactively applied leading to additional differences between the
-algorithms.
+\Jettotauhadvis misidentification efficiencies depend on the
+identification requirements that are applied to \tauhadvis
+candidates. In this search, all \tauhadvis candidates from the offline
+event reconstruction have to pass the loose RNN \tauid working
+point. In addition, events in the \hadhad channel are selected using
+\tauhadvis triggers which apply their own isolation and identification
+requirements to trigger-level \tauhadvis in order to reduce the
+trigger-rates in various stages of the ATLAS trigger
+system. Calorimeter-based isolation cuts are applied to \tauhadvis
+candidates at the Level-1 trigger, while at the HLT more sophisticated
+\tauid algorithms, similar to their counterparts from the offline
+reconstruction, are used. Some differences in the selection applied at
+trigger-level and during offline event reconstruction are expected due
+to limitations in detector read-out and time budget in the trigger
+system. % New developments introduced into offline \tauhadvis
+% reconstruction during Run~2 of the LHC, such as the RNN \tauid, can
+% lead to additional differences as they cannot be applied retroactively
+% to past data-taking periods.
 
 The effect of this two-stage selection of \tauhadvis based on
 identification criteria, first at trigger-level and then during
-offline event reconstruction, needs to be taken into account when
-measuring corrections to the \jettotauhadvis misidentification
-efficiencies. Thus one needs to differentiate between both trigger
-categories in the \hadhad channel. In events selected by
-single-\tauhadvis triggers it is sufficient for a single \tauhadvis to
-pass reconstruction and identification at the HLT. For di-\tauhadvis
-triggers both candidates need to fulfil the requirements at the HLT.
-Events in the SF-CR, which are selected using single electron and muon
-triggers, allows the direct estimation of corrections for \tauhadvis
-without any requirements at the HLT.
+offline event reconstruction, is taken into account when measuring
+corrections to the \jettotauhadvis misidentification efficiencies. All
+combinations of \tauhadvis identification requirements relevant for
+the signal region selection of the \hadhad channel are considered. The
+offline \tauhadvis identification is the same for all events, however,
+the trigger-level requirements vary. In events selected by
+single-\tauhadvis triggers one \tauhadvis candidate has to pass the
+trigger-level selection while no additional requirements are placed on
+the other \tauhadvis candidate. For di-\tauhadvis triggers both
+candidates have to fulfil the trigger requirements. The scale factor
+measurement for \tauhadvis candidates without trigger requirements can
+proceed using SF-CR events directly as single electron and single muon
+triggers are used to select events.
 
 The selection at the HLT can be emulated by requiring that events in
 the SF-CR also pass an appropriately chosen single-\tauhadvis trigger.
