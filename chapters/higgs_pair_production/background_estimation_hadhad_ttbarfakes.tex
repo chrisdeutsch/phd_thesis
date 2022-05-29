@@ -10,8 +10,8 @@ $\ttbar(\ra \Pbottom \PWp \APbottom \PWm)$ with one leptonic decay of
 a \PW boson into a \taulepton, which subsequently decays hadronically;
 one \PW boson decaying hadronically, producing jets that mimic the
 signature of a \tauhadvis in the detector. The \faketauhadvis
-background resulting from this decay mode of \ttbar consists of a
-single \faketauhadvis and is the dominant source of \faketauhadvis
+background resulting from this decay mode of \ttbar consists of only
+one \faketauhadvis and is the dominant source of \faketauhadvis
 backgrounds from \ttbar in the \hadhad signal region. In contrast, the
 fraction of \ttbarFakes events where both \tauhadvis candidates
 originate from misidentified jets is about \SI{15}{\percent} and
@@ -53,7 +53,7 @@ agreement between data and simulation as well as measurement-driven
 uncertainty estimates for the background prediction.
 
 The measurement is performed in a control region by comparing the
-simulation-based prediction of \ttbarFakes with observed data. The
+prediction of \ttbarFakes from simulation with observed data. The
 control region should have high \ttbar purity with a measurable
 contribution of \ttbarFakes and exacty one \tauhadvis candidate to
 isolate the effect of differences in misidentification efficiencies
@@ -87,13 +87,13 @@ The control region is defined using the object selection previously
 introduced in~\Cref{sec:object_reconstruction} and the event selection
 of the \lephad channel summarised in~\Cref{sec:event_selection}
 and~\Cref{tab:event_selection}. The most important selection criteria
-are briefly summarised:
+and differences are briefly summarised:
 \begin{itemize}
 
 \item Events are required to have exactly one \tauhadvis passing
   identification, exactly one electron or one muon passing their
-  respective isolation and identification criteria
-  (cf.~\Cref{tab:event_selection}), and exactly two \btagged jets.
+  respective isolation and identification criteria, and exactly two
+  \btagged jets.
 
   The \tauhadvis selection is adapted to follow the selection of the
   \hadhad channel more closely by selecting \tauhadvis candidates with
@@ -134,7 +134,7 @@ are briefly summarised:
 % region the quark/gluon composition of jets is likely different which
 % also affects the fake rates.}.
 
-The control region selects \ttbar with high purity of approximately
+The control region selects \ttbar with high purity of
 \SI{94}{\percent} prior to the fit. About \SI{66}{\percent} of
 selected events are from di-leptonic decay channels of \ttbar yielding
 $\ell + \tauhad$ final states, where $\ell$ is either an electron or
@@ -167,25 +167,25 @@ to the fit is shown in~\Cref{fig:ttbarSF_prefit_pt}.
 \end{figure}
 
 \Jettotauhadvis misidentification efficiencies depend on the
-identification requirements that are applied to \tauhadvis
-candidates. In this search, all \tauhadvis candidates from the offline
-event reconstruction have to pass the loose RNN \tauid working
-point. In addition, events in the \hadhad channel are selected using
-\tauhadvis triggers which apply their own isolation and identification
-requirements to trigger-level \tauhadvis in order to reduce the
-trigger-rates in various stages of the ATLAS trigger
-system. Calorimeter-based isolation cuts are applied to \tauhadvis
-candidates at the Level-1 trigger, while at the HLT more sophisticated
-\tauid algorithms, similar to their counterparts from the offline
-reconstruction, are used. Some differences in the selection applied at
-trigger-level and during offline event reconstruction are expected due
-to limitations in detector read-out and time budget in the trigger
+identification requirements applied to \tauhadvis candidates. In this
+search, all \tauhadvis candidates from the offline reconstruction have
+to pass the loose RNN \tauid working point. In addition, events in the
+\hadhad channel are selected using \tauhadvis triggers which apply
+their own isolation and identification requirements to trigger-level
+\tauhadvis in order to reduce the trigger-rates in various stages of
+the ATLAS trigger system. Calorimeter-based isolation cuts are applied
+to \tauhadvis candidates at the Level-1 trigger, while at the HLT more
+sophisticated \tauid algorithms, similar to their counterparts from
+the offline reconstruction, are used. Some differences in the
+selection applied at trigger-level and during offline event
+reconstruction are expected due to limitations in detector read-out
+and time budget in the trigger
 system. % New developments introduced into offline \tauhadvis
 % reconstruction during Run~2 of the LHC, such as the RNN \tauid, can
 % lead to additional differences as they cannot be applied retroactively
 % to past data-taking periods.
 
-The effect of this two-stage selection of \tauhadvis based on
+The effect of the two-stage selection of \tauhadvis based on
 identification criteria, first at trigger-level and then during
 offline event reconstruction, is taken into account when measuring
 corrections to the \jettotauhadvis misidentification efficiencies. All
@@ -198,32 +198,35 @@ trigger-level selection while no additional requirements are placed on
 the other \tauhadvis candidate. For di-\tauhadvis triggers both
 candidates have to fulfil the trigger requirements. The scale factor
 measurement for \tauhadvis candidates without trigger requirements can
-proceed using SF-CR events directly as single electron and single muon
+proceed using SF-CR events directly as single-electron and single-muon
 triggers are used to select events.
 
-The selection at the HLT can be emulated by requiring that events in
-the SF-CR also pass an appropriately chosen single-\tauhadvis trigger.
-In addition, \tauhadvis candidates of the offline \tauhadvis
-reconstruction are required to be geometrically matched to a
-reconstructed and identified \tauhadvis candidate at the HLT. For this
-matching procedure the chain of algorithms employed by the HLT
-\tauhadvis reconstruction is chosen to reflect the trigger selection
-employed in the \hadhad SR previously described in
-\Cref{sec:exp_trigger}.
+The trigger-level \tauhadvis selection can be emulated by requiring
+that events in the SF-CR also pass an appropriately chosen
+single-\tauhadvis trigger. Moreover, \tauhadvis candidates from the
+offline event reconstruction are required to be geometrically matched
+($\Delta R < 0.2$) to a reconstructed and identified \tauhadvis
+candidate at the HLT. The \tauhadvis triggers used for this procedure
+are chosen to reflect the trigger selection of the \hadhad channel,
+previously described in \Cref{sec:exp_trigger}.
 
-The lowest transverse momentum threshold on \tauhadvis at HLT-level
-relevant for the analysis is $\pTHLT > \SI{25}{\GeV}$, which
-corresponds to the threshold applied to \tauhadvis sub-leading in \pT
-selected by di-\tauhadvis triggers. Generally, only prescaled versions
-of these triggers were available during data-taking in Run~2 of the
-LHC. However, the events were already recorded using single lepton
-triggers which allows the HLT algorithms to be re-run such that the
-trigger decisions can be \textit{resurrected} without the application
-of a prescale. The relevant single-\tauhadvis triggers are listed in
-the following:%
+The lowest transverse momentum threshold on \tauhadvis at the HLT
+relevant to this search is $\pTHLT > \SI{25}{\GeV}$. This threshold
+applies to the sub-leading \tauhadvis candidate in events selected by
+di-\tauhadvis triggers. Single-\tauhadvis triggers with a
+\SI{25}{\GeV} transverse momentum threshold are only available with
+the application of a prescale\footnote{A trigger with a prescale value
+  of $n$ accepts events satisfying the trigger conditions with a
+  probability of $1 / n$ \cite{TRIG-2019-04}.} to limit their
+trigger-rates. However, all events entering the SF-CR were already
+recorded using single lepton triggers, allowing to re-run the trigger
+algorithms such that the trigger decisions of the single-\tauhadvis
+triggers can be \textit{resurrected} without applying the
+prescale. The single-\tauhadvis triggers relevant to this search are
+listed in the following:%
 \begin{itemize}
-\item \verb|HLT_tau25_medium1_tracktwo|: Primary trigger chain used
-  for data-taking from 2015 to 2017. Resurrected trigger decisions are
+\item \verb|HLT_tau25_medium1_tracktwo|: Trigger chain used for
+  data-taking from 2015 to 2017. Resurrected trigger decisions are
   available for the entirety of the Run~2 dataset corresponding to
   \SI{139}{\ifb} of integrated luminosity.
 
@@ -233,27 +236,31 @@ the following:%
   of \SI{58}{\ifb}.
 
 \item \verb|HLT_tau25_mediumRNN_tracktwoMVA|: Supplementary trigger
-  chain introduced starting with period K in 2018. The available
-  dataset corresponds to \SI{37}{\ifb} of integrated luminosity.  This
-  trigger chain is recommended to be used in conjunction with the
-  previous item. Hereafter, when referring to
+  chain introduced during data-taking in 2018 (period K). Resurrected
+  trigger decisions are available for a partial 2018 dataset
+  corresponding to \SI{37}{\ifb} of integrated luminosity. This
+  trigger chain is to be used in conjunction with the previous
+  item. Hereafter, when referring to
   \verb|HLT_tau25_mediumRNN_tracktwoMVA| a ``logical or'' with
   \verb|HLT_tau25_medium1_tracktwoEF| is implied.
+
 \end{itemize}
 
 In total four configurations of \tauhadvis selection need to be
 considered when measuring corrections to the \jettotauhadvis
-misidentification efficiencies in \ttbar. In case of no additional HLT
-requirements, these can be determined from the SF-CR directly. Three
-non-disjoint subregions of the SF-CR are defined for cases where
-requirements are imposed on \tauhadvis at the HLT. Events entering
-these regions are required to be selected by the resurrected trigger
-and the reconstructed \tauhadvis candidate needs to be geometrically
-matched to an identified \tauhadvis candidate at the HLT. Separate
-scale factor measurements are performed in these regions. These are defined
-by ensuring that the resurrected triggers select the event and that
-the reconstructed \tauhadvis candidate is geometrically matched to the
-\tauhadvis candidate at the HLT.
+misidentification efficiencies in \ttbar. In case of no additional
+trigger requirements, these can be determined from the SF-CR
+directly. Three non-disjoint subregions of the SF-CR are defined for
+cases where requirements are imposed on \tauhadvis at
+trigger-level. Events entering these regions are required to be
+selected by the respective resurrected trigger and the reconstructed
+\tauhadvis candidate needs to be geometrically matched to an
+identified \tauhadvis candidate at the HLT. Separate scale factor
+measurements are performed in these regions.
+
+% These are defined by ensuring that the resurrected triggers select the
+% event and that the reconstructed \tauhadvis candidate is geometrically
+% matched to the \tauhadvis candidate at the HLT.
 
 
 \subsubsection{Fit model}
