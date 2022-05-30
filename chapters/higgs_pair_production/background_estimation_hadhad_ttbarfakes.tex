@@ -43,14 +43,14 @@ backgrounds:
 \end{itemize}
 
 The \ttbarFakes background is estimated using simulation after
-including data-driven corrections measured in a top control
-region. In general, the modelling quality of \faketauhadvis in
-simulation is unknown and \jettotauhadvis misidentification
-efficiencies are not centrally calibrated due to their process
-dependency. Therefore, a dedicated measurement of the \ttbarFakes
-background is performed, providing information about the level of
-agreement between data and simulation as well as measurement-driven
-uncertainty estimates for the background prediction.
+including data-driven corrections measured in a top control region. In
+general, the modelling of \faketauhadvis in simulation is of unknown
+quality and \jettotauhadvis misidentification efficiencies are not
+centrally calibrated due to their process dependency. Therefore, a
+dedicated measurement of the \ttbarFakes background is performed,
+providing information about the level of agreement between data and
+simulation as well as measurement-driven uncertainty estimates for the
+background prediction.
 
 The measurement is performed in a control region by comparing the
 prediction of \ttbarFakes from simulation with observed data. The
@@ -83,11 +83,11 @@ the \lephad channel where a similar control region is used for
 definition of the control region to ensure consistency with the signal
 region selection of the \hadhad channel.
 
-The control region is defined using the object selection previously
-introduced in~\Cref{sec:object_reconstruction} and the event selection
-of the \lephad channel summarised in~\Cref{sec:event_selection}
-and~\Cref{tab:event_selection}. The most important selection criteria
-and differences are briefly summarised:
+The control region definition is based on the object selection
+previously introduced in~\Cref{sec:object_reconstruction} and the
+event selection of the \lephad channel summarised
+in~\Cref{sec:event_selection} and~\Cref{tab:event_selection}. The most
+important selection criteria and differences are briefly summarised:
 \begin{itemize}
 
 \item Events are required to have exactly one \tauhadvis passing
@@ -104,14 +104,14 @@ and differences are briefly summarised:
 \item Only events passing the single lepton trigger (SLT) selection
   are considered.
 
-\item The electron / muon and the \tauhadvis candidate are required to
-  be reconstructed with opposite electric charge. This requirement
-  ensures that the charge correlations between light lepton and
-  \faketauhadvis from semi-leptonic decays of \ttbar are similar to
-  the charge correlation between \tauhadvis candidates from
-  \ttbarFakes in the \hadhad signal region. The effect of charge
-  correlation on \ttbarFakes estimation was previously studied in
-  Ref.~\cite{bokan}.
+\item The electron or muon and the \tauhadvis candidate are required
+  to be reconstructed with electric charges of opposite sign. This
+  requirement ensures that the charge correlations between light
+  lepton and \faketauhadvis from semi-leptonic decays of \ttbar are
+  similar to the correlation between \tauhadvis candidates from
+  \ttbarFakes in the \hadhad signal region for cases where only one
+  candidate is a \faketauhadvis. The effect of charge correlation on
+  \ttbarFakes estimation was previously studied in Ref.~\cite{bokan}.
 
 \item Orthogonality between the SF-CR and the signal region of the
   \lephad channel is ensured by requiring $\mBB > \SI{150}{\GeV}$.
@@ -172,7 +172,7 @@ search, all \tauhadvis candidates from the offline reconstruction have
 to pass the loose RNN \tauid working point. In addition, events in the
 \hadhad channel are selected using \tauhadvis triggers which apply
 their own isolation and identification requirements to trigger-level
-\tauhadvis in order to reduce the trigger-rates in various stages of
+\tauhadvis in order to reduce the trigger-rates at various stages of
 the ATLAS trigger system. Calorimeter-based isolation cuts are applied
 to \tauhadvis candidates at the Level-1 trigger, while at the HLT more
 sophisticated \tauid algorithms, similar to their counterparts from
@@ -236,26 +236,26 @@ listed in the following:%
   of \SI{58}{\ifb}.
 
 \item \verb|HLT_tau25_mediumRNN_tracktwoMVA|: Supplementary trigger
-  chain introduced during data-taking in 2018 (period K). Resurrected
-  trigger decisions are available for a partial 2018 dataset
-  corresponding to \SI{37}{\ifb} of integrated luminosity. This
-  trigger chain is to be used in conjunction with the previous
-  item. Hereafter, when referring to
+  chain introduced during data-taking in 2018 (from
+  period~K). Resurrected trigger decisions are available for a partial
+  2018 dataset corresponding to \SI{37}{\ifb} of integrated
+  luminosity. This trigger chain is to be used in conjunction with the
+  previous item. Hereafter, when referring to
   \verb|HLT_tau25_mediumRNN_tracktwoMVA| a ``logical or'' with
   \verb|HLT_tau25_medium1_tracktwoEF| is implied.
 
 \end{itemize}
 
-In total four configurations of \tauhadvis selection need to be
-considered when measuring corrections to the \jettotauhadvis
-misidentification efficiencies in \ttbar. In case of no additional
-trigger requirements, these can be determined from the SF-CR
-directly. Three non-disjoint subregions of the SF-CR are defined for
-cases where requirements are imposed on \tauhadvis at
-trigger-level. Events entering these regions are required to be
-selected by the respective resurrected trigger and the reconstructed
-\tauhadvis candidate needs to be geometrically matched to an
-identified \tauhadvis candidate at the HLT. Separate scale factor
+Four combinations of \tauhadvis selections need to be considered when
+measuring corrections to the \jettotauhadvis misidentification
+efficiencies in \ttbar. When no additional trigger requirements are
+applied the scale factors can be measured in the SF-CR directly. Three
+subregions of the SF-CR, each corresponding to one of the trigger
+chains, are defined for cases where requirements are imposed on
+\tauhadvis at trigger-level. Events entering these regions are
+required to be selected by the respective resurrected trigger and the
+reconstructed \tauhadvis candidate has to be geometrically matched to
+an identified \tauhadvis candidate at the HLT. Separate scale factor
 measurements are performed in these regions.
 
 % These are defined by ensuring that the resurrected triggers select the
@@ -263,17 +263,16 @@ measurements are performed in these regions.
 % matched to the \tauhadvis candidate at the HLT.
 
 
-\subsubsection{Fit model}
+\subsubsection{Measurement and fit model}
 
 The \jettotauhadvis misidentification efficiencies strongly depend on
 the charged particle multiplicity and visible transverse momentum of
-the reconstructed \tauhadvis candidate (c.f.\ \Cref{sec:tauid}). This
-might also be reflected in corrections to the \jettotauhadvis
-misidentification efficiency in simulation. Therefore, the correction
-factor measurement is performed in dependence of the reconstructed
-decay mode (1- or 3-prong) and \tauhadvis~\pT. This is achieved by
-performing a scale factor measurement in disjoint subregions defined
-as follows:
+reconstructed \tauhadvis candidates. This can be also reflected in
+corrections to the \jettotauhadvis misidentification efficiency in
+simulation. Therefore, the scale factor measurement is performed in
+bins of the reconstructed \tauhadvis decay mode (1- or 3-prong) and
+\tauhadvis~\pT. This is achieved by performing the scale factor
+measurement simultaneously in several disjoint subregions defined as:
 \begin{itemize}
 
 \item 1-prong \tauhadvis with $\pT / \si{\GeV}$: $[25, 30)$, $[30, 35)$,
@@ -283,14 +282,14 @@ as follows:
   $[40, 50)$, $[50, 70)$, $[70, \infty)$.
 
 \end{itemize}
-These regions are chosen such that their size allows for a
-determination of the corrections with limited impact of statistical
-uncertainties while allowing to extract potential \pT dependencies of
-the correction factors. In cases where trigger-matching is applied the
-\tauhadvis \pT interval from 25 to \SI{30}{\GeV} is omitted due to the
-trigger not being fully efficient in this regime. This is analogous to
-the selection applied for the \hadhad signal region. An exemplary
-summary of the measurement regions is shown
+The regions are chosen such that their size allows for a determination
+of the corrections with limited impact of statistical uncertainties
+while allowing to extract potential \pT dependencies of the correction
+factors. In cases where trigger-matching is applied, the \tauhadvis
+\pT interval from 25 to \SI{30}{\GeV} is omitted due to the triggers
+not being fully efficient in this region. This is analogous to the
+selection applied for the \hadhad signal region. Exemplary summaries
+of event yields in the measurement regions are shown
 in~\Cref{fig:ttbarsf_region_summary_prefit}.
 
 \begin{figure}[htbp]
@@ -298,114 +297,90 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
 
   \begin{subfigure}[t]{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_offl}
-    \caption{Top control region for events passing the loose
-      \tauhadvis identification criteria without trigger-matching.}
+    \caption{Top control region for events passing the loose working
+      point of the offline \tauid without application of
+      trigger-matching.}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_tau25}
     \caption{Top control region for events passing the resurrected
-      \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and requiring
-      matching between the reconstructed \tauhadvis at HLT and after
-      offline \tauhadvis reconstruction.}
+      \texttt{HLT\_tau25\_medium1\_tracktwo} trigger,
+      trigger-matching, and the loose working point of the offline
+      \tauid.}
   \end{subfigure}
 
-  \caption{Summary of regions used for determination of the
-    \jettotauhadvis misidentification efficiency corrections. The
-    $x$-axis shows the regions separated according to the
-    reconstructed decay mode into either 1-prong (1P) and 3-prong (3P)
-    \tauhadvis as well as the \tauhadvis $\pT /\si{\GeV}$ bin
-    interval. The figures are shown with the pre-fit background
-    model.}
+  \caption{Summary of event yields in regions used for determination
+    of the \jettotauhadvis misidentification efficiency
+    corrections. The $x$-axis shows the measurement regions separated
+    by the reconstructed decay mode into either 1-prong (1P) and
+    3-prong (3P) \tauhadvis and the \tauhadvis $\pT /\si{\GeV}$ bin
+    interval. The pre-fit background model is shown.}%
   \label{fig:ttbarsf_region_summary_prefit}
 \end{figure}
 
-The top control region has a large contamination of \ttbar with a
+The top control region has large contributions of \ttbar with a
 di-lepton final state where the \tauhadvis candidate originates from a
 \tauhad decay. This contribution is not sensitive to the
 \jettotauhadvis misidentification efficiency but has to be estimated
 when extracting correction factors. To distinguish between di-leptonic
-\ttbar with true \tauhadvis and primarily semi-leptonic \ttbar with
+\ttbar with true \tauhadvis and semi-leptonic \ttbar with
 \faketauhadvis, an estimate of the transverse mass between the lepton
 $\ell$ and \pTmissAbs given by
 \begin{align*}
   \mTW = \sqrt{2 | \myvec{p}_{\text{T}}^{\ell} | | \pTmiss | \left( 1 - \cos \Delta\phi \right)}
 \end{align*}
-is used,\footnote{Under the assumption of massless daughter particles
-  in a two-body decay.} where $\Delta \phi$ is the angle between the
-lepton transverse momentum~$\myvec{p}_{\text{T}}^{\ell}$ and the
-missing transverse momentum~\pTmiss.
+is used, where $\Delta \phi$ is the angle between the lepton
+transverse momentum~$\myvec{p}_{\text{T}}^{\ell}$ and the missing
+transverse momentum~\pTmiss.
 
-The distribution of \mTW for \ttbar with di- and semi-leptonic final
-states is shown in~\Cref{fig:ttbarsf_mtw_pdf} for the considered
-control region.
-% inclusive in reconstructed \tauhadvis decay mode and transverse momentum.
-The primary source of events containing a \faketauhadvis is
-semi-leptonic \ttbar with an electron or muon and additional jets from
-the hadronic decay of a \PW boson. This contribution features a quick
-reduction in event rate for transverse masses beyond the mass of the
-\PW boson. In contrast, di-leptonic \ttbar final states show a
-comparatively heavy tail towards large values of \mTW due to the
-presence of an additional neutrino.  The \mTW distribution of
-semi-leptonic \ttbar remains stable with respect to changes in the
-considered momentum range for the reconstructed \tauhadvis
-candidate. This is not the case for the di-lepton contribution where
-the tail towards high \mTW is further enhanced with increasing \pT of
-the \tauhadvis candidate\todo{Show?}.
+The distribution of \mTW in the SF-CR is shown
+in~\Cref{fig:ttbarsf_mtw_pdf} separately for di- and semi-leptonic
+decay modes of \ttbar. For semi-leptonic \ttbar, the primary source of
+\faketauhadvis, the event rate diminishes quickly for transverse
+masses beyond the mass of the \PW boson. In contrast, di-leptonic
+\ttbar final states show a comparatively heavy tail towards large
+values of \mTW due to the presence of an additional neutrino. The \mTW
+distribution of semi-leptonic \ttbar remains stable with respect to
+changes in the considered momentum range for the reconstructed
+\tauhadvis candidate. This is not the case for the di-lepton
+contribution where the tail towards high \mTW is further enhanced with
+increasing \pT of the \tauhadvis candidate\todo{Show?}.
 
-% The main idea is to distinguish between semi-leptonic and di-leptonic
-% \ttbar since two true taus would be expected in di-leptonic and jets
-% faking taus in semi-leptonic. The all-hadronic mode is negligible due
-% to the presence of one electron or muon.
-
-% For semi-leptonic \ttbar the mTW distribution is relatively
-% insensitive to the momentum of the tauhadvis candidate. Which is not
-% the case for di-leptonic \ttbar.
-
-% For semi-leptonic \ttbar the event rate drops
-% significantly beyond \SI{100}{\GeV} while for di-leptonic \ttbar, due
-% to the presence of additional neutrinos, the transverse mass extends
-% to larger values.
+% The primary source of events containing a \faketauhadvis is
+% semi-leptonic \ttbar with an electron or muon and additional jets from
+% the hadronic decay of a \PW boson. This contribution features a quick
+% reduction in event rate for transverse masses beyond the mass of the
+% \PW boson.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.45\textwidth]{ttbarSF/mtw_pdf}
 
-  \caption{Transverse mass distribution between lepton and \pTmiss in
-    \ttbar simulation. Inclusive in \tauhadvis transverse momentum and
-    decay mode. Without applying HLT requirements.}
-  \todo[inline]{Missing neutrino for \tauhad?}
+  \caption{Distribution of the transverse mass between the light
+    lepton and \pTmiss in simulated \ttbar events entering the
+    SF-CR. Events are shown inclusive in the \tauhadvis transverse
+    momentum and decay mode without requirements on the
+    trigger-matching.}%
   \label{fig:ttbarsf_mtw_pdf}
 \end{figure}
 
-
-% Fit model
-
-% - Top control region (possibly after HLT matching) split um in decay
-% mode and \tauhadvis pt bins
-% - 5 bins in mTW (40 GeV width) are used to separate the contributions
-% - In every bin freely float the fake tauhadvis contribution
-% - Globally float the ttbar cross section (affecting both the true and fake tau components)
-% -> This is done because at low momenta the separation by mTW
-
-The regions entering the fit model are determined by the charged
-particle multiplicity of the reconstructed \tauhadvis candidate and
-the reconstructed \tauhadvis \pT. For the measurement after HLT
-\tauhadvis identification the events entering the fit are also
-required to pass trigger matching to the resurrected trigger of
-interest. Each measurement region enters the fit with five bins in
-\mTW to distinguish between \ttbar with \faketauhadvis and real
-\tauhadvis. In~\Cref{fig:ttbarsf_mtw_examples_prefit} the \mTW
+All subregions of the SF-CR defined by the reconstructed \tauhadvis
+decay mode and \pT are included in a simultaneous fit of the scale
+factors. When performing the measurement for events after the
+\tauhadvis trigger selection, events are required to pass the
+corresponding resurrected trigger and trigger-matching. Each subregion
+enters the fit with five \mTW bins to distinguish between \ttbar with
+\faketauhadvis and \tauhadvis from hadronic \taulepton
+decays. In~\Cref{fig:ttbarsf_mtw_examples_prefit} the \mTW
 distribution is shown prior to the fit for two exemplary regions after
-requiring trigger-matching.  The normalisation of \ttbar with
-\faketauhadvis is allowed to vary freely in every measurement region
-separately. The total \ttbar cross-section is extracted from the fit
-to data. This is accomplished by allowing the inclusive normalisation
-of \ttbar, i.e.\ independent of the presence of \faketauhadvis, to
-vary freely. The associated normalisation factor is fully correlated
-between all measurement regions. This approach is taken as opposed to
-leaving the \ttbar normalisation free in every subregion separately
-due to the weak discrimination power of \mTW for small \tauhadvis \pT.
+the trigger-matching requirement.
+
+% The regions entering the fit are determined by the charged particle
+% multiplicity of the reconstructed \tauhadvis candidate and the
+% reconstructed \tauhadvis \pT. For the measurement after HLT \tauhadvis
+% identification the events entering the fit are also required to pass
+% trigger matching to the resurrected trigger of interest.
 
 \begin{figure}[htbp]
   \centering
@@ -413,20 +388,34 @@ due to the weak discrimination power of \mTW for small \tauhadvis \pT.
   \begin{subfigure}{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3035_1P}
     \caption{1-prong \tauhadvis candidates with
-      $\SI{30}{\GeV} \leq \pTvis < \SI{35}{\GeV}$.}
+      $\SI{30}{\GeV} \leq \pT < \SI{35}{\GeV}$.}
   \end{subfigure}\hfill%
   \begin{subfigure}{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3040_3P}
     \caption{3-prong \tauhadvis candidates with
-      $\SI{30}{\GeV} \leq \pTvis < \SI{40}{\GeV}$.}
+      $\SI{30}{\GeV} \leq \pT < \SI{40}{\GeV}$.}
   \end{subfigure}
 
-  \caption{Two examples of \mTW distributions as they enter the
-    maximum likelihood estimation procedure. Events with
+  \caption{Two exemplary binned \mTW distributions as they enter the
+    maximum likelihood estimation procedure to determine the
+    \faketauhadvis scale factors. All events are required to pass the
+    resurrected trigger decision and trigger-matching of the
+    \texttt{HLT\_tau25\_medium1\_tracktwo} chain. Events with
     $\mTW > \SI{200}{\GeV}$ are merged into the last bin of the
-    histogram.}
+    histograms.}%
   \label{fig:ttbarsf_mtw_examples_prefit}
 \end{figure}
+
+The normalisation of \ttbar with \faketauhadvis is allowed to vary
+freely in every measurement region. The associated normalisation
+factors correspond to the \faketauhadvis scale factors of
+interest. The \ttbar cross-section is extracted from the fit to data
+by allowing the overall normalisation of \ttbar (including \ttbar with
+and without \faketauhadvis) to vary freely. The \ttbar normalisation
+factor is fully correlated between all subregions entering the
+measurement. This approach is taken, as opposed to leaving the \ttbar
+normalisation freely floating in every subregion separately, due to
+the weak discrimination power of \mTW for small \tauhadvis \pT.
 
 
 \subsubsection{Uncertainties}
