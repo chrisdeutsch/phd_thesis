@@ -420,145 +420,171 @@ the weak discrimination power of \mTW for small \tauhadvis \pT.
 
 \subsubsection{Uncertainties}
 
-The expected number of events in bins entering the statistical
-analysis are subject to statistical, experimental and theoretical
+The predicted number of events in bins entering the measurement are
+subject to statistical, experimental, and theoretical
 uncertainties. These uncertainties can affect the shape and
-normalisation of the predictions and the relative acceptance between
-different measurement regions. As a result, systematic uncertainties
-affecting the modelling of \ttbar with true and fake-\tauhadvis are of
-primary concern due to their ability to alter the extracted scale
-factors. In the following, a description of the uncertainties is given
-with a focus of theoretical modelling uncertainties dedicated to this
-measurement. Experimental uncertainties are only briefly summarised
-due to their overlap with the uncertainties in the model used to
-extract the \HH signal. A more detailed discussion on experimental
-uncertainties will follow when discussing this fit model
-in~\Cref{sec:uncertainties}.
+normalisation of the \mTW distribution in the measurement regions and
+the relative acceptance between regions for a given physics
+process. Systematic uncertainties affecting the modelling of \ttbar
+with true and fake-\tauhadvis in simulation are of primary concern due
+to their ability to alter the extracted scale factors. In the
+following, a description of the uncertainties is given with a focus of
+theoretical modelling uncertainties derived for this
+measurement. Detector-related experimental uncertainties are only
+briefly summarised, a detailed description following
+in~\Cref{sec:uncertainties} when introducing the fit model of the
+search for Higgs boson pair production.
 
-Statistical uncertainties arising from the finite size of the
-simulation used to estimate the physics processes entering this
-measurement. These uncertainties are encoded in the likelihood model
-using the Barlow-Beeston method~\cite{barlow1993,conway2011}.
+Statistical uncertainties arise from the finite size of the simulation
+samples used to estimate the physics processes entering this
+measurement. These are included in the likelihood function using the
+method by Barlow and Beeston~\cite{barlow1993,conway2011} introduced
+in \Cref{sec:barlow_beeston}.
 
 Major detector-related experimental uncertainties originate from the
 reconstruction and selection of electrons, muons, \tauhadvis and jets.
-These uncertainties affect the reconstructed momenta in scale,
-resolution and direction as well as the selection efficiencies of
-reconstructed objects and events, e.g.~due to isolation requirements
-or the trigger selection. When requiring events to pass the
-resurrected trigger decision of single-\tauhadvis triggers,
-calibrations of trigger selection efficiencies and their associated
-uncertainties are applied to \tauhadvis that are geometrically matched
-to \tauhad. Uncertainties in the reconstruction of the missing
-transverse momentum are accounting for changes in momentum scale and
-resolution. The uncertainty on efficiencies for \bjets passing \btag
-and mis-tag rates of jets originating from light and charm quarks are
-propagated from dedicated calibration measurements performed by the
-ATLAS collaboration. Other experimental uncertainties originating from
-trigger efficiencies of single lepton triggers, efficiency of jet
-vertex tagging, reweighting of pile-up conditions in simulation to
-match the Run~2 conditions, and the luminosity used to normalise the
-simulated datasets are included.
+These uncertainties can affect the reconstructed momenta in scale,
+resolution, and direction as well as selection efficiencies of physics
+objects for example due to isolation and identification
+requirements. When requiring events to pass the resurrected trigger
+decision of single-\tauhadvis triggers, calibrations of trigger
+selection efficiencies and their associated uncertainties are applied
+to \tauhadvis that are matched to a generator-level \tauhad (true
+\tauhadvis). Uncertainties on the missing transverse momentum account
+for changes in momentum scale and resolution. The uncertainties on
+\btag efficiencies and mis-tag rates are obtained from dedicated
+calibration measurements performed by the ATLAS collaboration and are
+considered in the fit model. Other experimental uncertainties
+originating from trigger efficiencies of single lepton triggers,
+efficiencies of jet vertex tagging, reweighting of pile-up conditions
+in simulation to match the conditions in Run~2 data, and the
+integrated luminosity used to normalise the simulated datasets are
+included in the fit.
 
 % https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
 Theoretical uncertainties on the acceptance of \ttbar in simulation,
 which uses \POWHEGBOX[v2]~\cite{Frixione:2007nw} as a matrix element
 (ME) generator interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea}
-for the parton shower (PS), need to be estimated. The total cross-section
-of \ttbar is allowed to vary freely in the fit model, thus
-uncertainties affecting only the normalisation of \ttbar are
+for the parton shower (PS), need to be estimated. The cross-section of
+\ttbar is allowed to vary freely in the fit model, therefore
+uncertainties only affecting the normalisation of \ttbar are
 omitted. However, uncertainties changing the relative acceptance
-between regions entering the simultaneous fit and effects changing the
-shape of the \mTW discriminant need to be estimated. The following
-sources of uncertainties are considered:
-\begin{itemize}
+between regions (i.e.\ uncertainties depending on \tauhadvis \pT or
+decay mode) entering the fit and effects changing the shape of the
+\mTW discriminant need to be estimated. The following sources of
+uncertainties are considered:
+\begin{description}
 
-\item Hard scatter and NLO+PS matching: The uncertainty on the
-  modelling due to the choice of generator describing the hard scatter
-  process is estimated by comparing the nominal simulation of \ttbar
-  with an alternative setup replacing \POWHEGBOX[v2] with \MGNLO as
-  the ME generator. This comparison serves to probe the effect of
-  different matching schemes between the NLO matrix element and parton
-  shower employed by both generators (\POWHEG
-  method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} / MC@NLO
-  method~\cite{Frixione:2002ik}).
+\item[Hard scatter simulation and NLO+PS matching] The uncertainty on
+  the modelling due to the choice of generator describing the hard
+  scatter process is estimated by comparing the nominal simulation of
+  \ttbar with an alternative setup replacing \POWHEGBOX[v2] with
+  \MGNLO as the ME generator. This comparison serves to probe the
+  effect of different matching schemes between the NLO matrix element
+  and parton shower employed by both
+  generators.\footnote{\POWHEGBOX[v2] uses the \POWHEG
+    method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} and
+    \MGNLO the MC@NLO method~\cite{Frixione:2002ik} for NLO+PS
+    matching.}
 
-\item Parton shower and hadronisation model: The uncertainty of the
+\item[Parton shower and hadronisation model] The uncertainty of the
   modelling of the parton shower and non-perturbative effects is
   estimated by replacing \PYTHIA[8] with \HERWIG[7.0.4] as the PS
   generator.
 
-\item Missing higher order contributions: The renormalisation
-  scale~\muR and factorisation scale~\muF is doubled and halved to
+\item[Missing higher order contributions] The renormalisation
+  scale~(\muR) and factorisation scale~(\muF) is doubled (halved) to
   probe the effect of truncating the perturbative expansion in \alphas
-  in the simulation of the hard scatter. Perturbative QCD calculations
-  at sufficiently high orders should be approximately independent of
-  the scales.
+  when simulating the hard scatter process. Perturbative QCD
+  calculations to sufficiently high order should be approximately
+  independent of the choice of scale.
 
-\item Initial and final state radiation (ISR \& FSR): An uncertainty
-  on the emission of ISR is estimated by varying $\alphas^\text{ISR}$
-  in the A14 set of tuned parameters for
+\item[Initial and final state radiation (ISR / FSR)] An uncertainty on
+  the emission of ISR is estimated by varying $\alphas^\text{ISR}$ in
+  the A14 set of tuned parameters for
   \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021}.
   % Tune of the MPI, ISR, FSR parameters in Pythia8
-  An estimate of the uncertainty from the modelling of FSR is
-  estimated by doubling / halving the renormalisation scale used for
-  FSR branchings in \PYTHIA[8].
+  An estimate of the uncertainty from the modelling of FSR emissions
+  is estimated by doubling (halving) the renormalisation scale used
+  for FSR branchings in
+  \PYTHIA[8]~\cite{Sjostrand:2014zea,Mrenna:2016sih,pythia-variations-online}.
   % https://pythia.org/latest-manual/Variations.html
 
-\item Damping factor for first emission: The damping parameter~\hdamp
-  in \POWHEGBOX[v2] is increased to $3 m_\text{top}$ (from
-  $1.5 m_\text{top}$) and compared with the nominal simulation
-  setup. The \hdamp parameter effectively controls the modelling of
-  the first emission beyond Born-level in the NLO+PS \POWHEG-method.
-\end{itemize}
+\item[Damping factor for additional emissions] The damping
+  parameter~\hdamp in \POWHEGBOX[v2] is increased to $3 m_\text{top}$
+  (from $1.5 m_\text{top}$) and compared with the nominal simulation
+  setup. The \hdamp parameter controls the transverse momentum of
+  additional radiation when matching \POWHEGBOX[v2] to \PYTHIA[8]
+  using the
+  \POWHEG-method~\cite{ATL-PHYS-PUB-2016-020,ATL-PHYS-PUB-2020-023}.
+
+\end{description}
 % PDF uncertainties were neglected.
 The prescriptions to calculate the \ttbar modelling uncertainties are
-a revised version of the methodology outlined
-in~\cite{ATL-PHYS-PUB-2020-023} for analyses targeting the full Run~2
-dataset collected at the ATLAS experiment.
+a revised version of the methodology outlined in
+Ref.~\cite{ATL-PHYS-PUB-2020-023} for analyses targeting the
+$pp$-collision dataset collected with the ATLAS detector during Run~2
+of the LHC.
 
 Variations of the renormalisation and factorisation scales used for
 the ME generation are provided by internal reweighting in
 \POWHEGBOX[v2]. Similarly, \PYTHIA[8] provides variations of initial
 and final state emissions by varying the renormalisation scales in the
-PS by reweighting~\cite{Mrenna:2016sih}. This approach allows estimating
-uncertainties without changing the particle-level predictions
-of the simulation program.
+PS by reweighting~\cite{Mrenna:2016sih,pythia-variations-online}. This
+approach allows to estimate uncertainties without changing the
+particle-level predictions of the simulation program, thus avoiding
+the need to re-run the detector simulation.
 
-Uncertainties estimated by performing a two-sample comparison (NLO+PS
+Uncertainties derived by performing a two-sample comparison (NLO+PS
 matching, PS, \hdamp) are parametrised in \tauhadvis \pT,
-reconstructed \tauhadvis decay mode and \mTW separately for \ttbar
+reconstructed \tauhadvis decay mode, and \mTW, separately for \ttbar
 with true and \faketauhadvis. A smooth functional dependence of these
-uncertainties is obtained by performing polynomial regression of the
-relative change in yield comparing the alternative with the nominal
-sample in bins of \tauhadvis \pT and \mTW. This approach is taken to
-avoid spurious pulls and constraints of the associated nuisance
-parameters in the maximum likelihood fit originating from statistical
-fluctuations of the derived uncertainties.
+uncertainties is obtained using least squares fits of polynomials to
+the relative change in event yields comparing the alternative with the
+nominal sample in bins of \tauhadvis \pT and \mTW. This approach
+limits spurious pulls and constraints of the associated nuisance
+parameters in the maximum likelihood fit due to statistical
+fluctuations of the derived uncertainties. The degree of the fitted
+polynomials is determined by leave-one-out cross-validation yielding a
+low expected value and variance of the $\chi^2$ statistic.
 
-In every category, i.e.\ 1-prong / 3-prong \tauhadvis and true- /
-\faketauhadvis, ordinary least squares regression is performed for all
-three sources of uncertainty. The degree of the fitted polynomials is
-determined by leave-one-out cross-validation yielding the lowest
-$\chi^2$ with small variance of the $\chi^2$ statistic. As a first
-step, the effect of the uncertainty on \tauhadvis \pT is estimated. An
-example of this is shown
-in~\Cref{fig:ttbarSF_uncertainty_ps_1p_pt,fig:ttbarSF_uncertainty_ps_3p_pt}
-for the PS variation.
+Dependencies of the uncertainties on \tauhadvis \pT and \mTW are
+factorised. First, the effect of the uncertainties on \tauhadvis \pT
+is determined by performing the regression on the relative difference
+in event yields between both samples binned in \tauhadvis \pT. An
+example for the PS variation for true \tauhadvis in 1- and 3-prong
+decay modes is shown
+in~\Cref{fig:ttbarSF_uncertainty_ps_1p_pt,fig:ttbarSF_uncertainty_ps_3p_pt}. Subsequently,
+the nominal event sample is reweighted using the estimated
+\pT-dependency of the uncertainty and the residual non-closure in \mTW
+with respect to the variation sample is examined. Generally, the
+non-closure is small after taking the \tauhadvis \pT effect of the
+variations into account. Minor shape differences are only observed for
+the ME and PS generator variations for true \tauhadvis. The
+non-closure is parametrised similarly, where non-negligible, and
+assigned as an uncertainty fully correlated with the \pT-dependent
+effect. Examples of the residual non-closure in \mTW after
+\pT-reweighting is shown
+in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}. Variations
+of the damping parameter, $\hdamp$, show no significant effect on the
+shape of the \tauhadvis \pT or \mTW distributions, thus uncertainties
+are only assigned on the relative normalisation between categories
+defined by \tauhadvis decay mode and truth-matching to generator-level
+\tauhad.
 
-Subsequently, the nominal sample is reweighted using the estimated
-\pT-dependency and the residual non-closure in \mTW is examined. The
-non-closure in \mTW is small after taking the \tauhadvis \pT effect of
-the variation into account. Minor shape differences are only observed
-for the ME and PS generation variations for true \tauhadvis. An
-example is shown
-in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}
-for the PS variation. The non-closure is assigned as an uncertainty
-fully correlated with the \pT effect. The variations of the damping
-parameter related to the NLO+PS matching in \POWHEG show no
-statistically significant effect depending on \tauhadvis \pT or
-\mTW. Thus only an uncertainty on the relative normalisation between
-categories is assigned.
+% Subsequently, the nominal sample is reweighted using the estimated
+% \pT-dependency and the residual non-closure in \mTW is examined. The
+% non-closure in \mTW is small after taking the \tauhadvis \pT effect of
+% the variation into account. Minor shape differences are only observed
+% for the ME and PS generation variations for true \tauhadvis. An
+% example is shown
+% in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}
+% for the PS variation. The non-closure is assigned as an uncertainty
+% fully correlated with the \pT effect. The variations of the damping
+% parameter related to the NLO+PS matching in \POWHEG show no
+% statistically significant effect depending on \tauhadvis \pT or
+% \mTW. Thus only an uncertainty on the relative normalisation between
+% categories is assigned.
 
 \begin{figure}[htbp]
   \centering
@@ -591,18 +617,19 @@ categories is assigned.
     \label{fig:ttbarSF_uncertainty_ps_3p_mtw}
   \end{subfigure}
 
-  \caption{Parton shower and hadronisation model uncertainties from
-    the two-sample comparison of the nominal sample (\POWHEGBOX[v2] +
-    \PYTHIA[8]) with the variation (\POWHEGBOX[v2] +
-    \HERWIG[7]). Shown are the uncertainty for 1-prong (a,b) and
-    3-prong (c,d) \tauhadvis matched to true \tauhad. The lower
-    threshold on \tauhadvis \pT was relaxed to \SI{20}{\GeV} (from
-    \SI{25}{\GeV}) compared to the top control region.}
+  \caption{The effect of the parton shower and hadronisation model
+    uncertainty on the relative difference in event yield, defined as
+    $N_{\text{syst.}} / N_{\text{nom.}} - 1$ with $N_{\text{syst.}}$
+    and $N_{\text{nom.}}$ being the event yield in a given bin for the
+    systematic variation and nominal event sample, derived from a
+    two-sample comparison of \POWHEGBOX[v2]+~\PYTHIA[8] (nominal) and
+    \POWHEGBOX[v2]+~\HERWIG[7] (variation). Shown are the uncertainty
+    for 1-prong (a,b) and 3-prong (c,d) \tauhadvis matched to \tauhad
+    at generator-level (true \tauhadvis). The lower threshold on
+    \tauhadvis \pT was relaxed to \SI{20}{\GeV} (from \SI{25}{\GeV})
+    compared to the top control region.}%
   \label{fig:ttbarSF_uncertainty_ps}
 \end{figure}
-
-\todo{Maybe discuss later that polynomial regression is not so
-  well-defined theoretically.}
 
 % The alternative parton shower has the largest effect on the
 % modelling of \faketauhadvis.
@@ -612,29 +639,28 @@ shape-only uncertainties in all measurement regions since the
 normalisation of this component is extracted in the likelihood fit.
 In contrast, the normalisation of \ttbar with true \tauhadvis is not
 extracted in each measurement region separately. Therefore, both the
-normalisation and the shape effect of the \ttbar acceptance
-uncertainties are propagated to the fit for the true \tauhadvis
-contribution.
+normalisation and the shape effect of the acceptance uncertainties are
+propagated to the fit for \ttbar with true \tauhadvis.
 
-A reduced set of the minor background contributions is considered. For
-the production of single top-quarks the uncertainties on the cross-section
-are applied in the fit. Due to the known normalisation
-discrepancy in \Vjets in the presence of jets originating from heavy
-flavour, an uncertainty of \SI{30}{\percent} is applied to the overall
-normalisation of the process.
+A reduced set of theory uncertainties for minor backgrounds is
+considered. For the production of single top-quarks, the uncertainties
+on the cross-section are included in the fit model. Due to the known
+normalisation discrepancy in \Vjets in the presence of jets
+originating from heavy flavour, an uncertainty of \SI{30}{\percent} is
+applied to the overall normalisation of the process.
 
 The effect of uncertainties on the predicted rates are parametrised by
 nuisance parameters that enter the maximum likelihood fit with
 Gaussian constraint terms. Uncertainties arising from the same source
-are assumed to be fully correlated across all regions and bins.
-
-\todo[inline]{Additional uncertainties are discussed later?}
+are assumed to be fully correlated across all regions and
+bins. Uncertainties derived from two-sample comparisons are
+symmetrised.
 
 
 \subsubsection{Measurement results}
 
 The measured corrections for \faketauhadvis in \ttbar simulation using
-\POWHEGBOX[v2]~+~\PYTHIA[8] are shown in
+\POWHEGBOX[v2]+~\PYTHIA[8] are shown in
 \Cref{fig:ttbarSF_postfit_SF}. The measurement shows varying agreement
 between the nominal prediction in simulation and the data-driven
 method depending on \tauhadvis~\pT and identification criteria applied
