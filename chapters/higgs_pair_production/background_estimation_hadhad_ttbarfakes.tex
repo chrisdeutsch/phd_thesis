@@ -659,13 +659,12 @@ symmetrised.
 
 \subsubsection{Measurement results}
 
-The measured corrections for \faketauhadvis in \ttbar simulation using
-\POWHEGBOX[v2]+~\PYTHIA[8] are shown in
-\Cref{fig:ttbarSF_postfit_SF}. The measurement shows varying agreement
-between the nominal prediction in simulation and the data-driven
-method depending on \tauhadvis~\pT and identification criteria applied
-to \tauhadvis candidates. The size of the extracted correction can
-reach up to \SI{50}{\percent} at high \tauhadvis \pT where the
+The measured scale factors for \faketauhadvis in \ttbar simulation are
+shown in \Cref{fig:ttbarSF_postfit_SF}. The measurement shows varying
+agreement between the nominal prediction from simulation and the
+data-driven method that depends on the \tauhadvis transverse momentum
+and the applied \tauid criteria. The size of the extracted correction
+can reach up to \SI{50}{\percent} at high \tauhadvis \pT where
 simulation overestimates the contribution of \faketauhadvis in \ttbar.
 
 \begin{figure}[htbp]
@@ -693,70 +692,82 @@ simulation overestimates the contribution of \faketauhadvis in \ttbar.
     \label{fig:ttbarSF_postfit_SF_d}
   \end{subfigure}
 
-  \caption{Measured \faketauhadvis scale factors in \ttbar
-    (\POWHEGBOX[v2] + \PYTHIA[8]) for all relevant \tauhadvis
-    identification criteria used in the analysis. A comparison of
-    \faketauhadvis scale factors between loose identification and
-    loose~+~HLT~identification is shown in (a) and (b) for 1- and
-    3-prong, respectively. Figures (c) and (d) compare the effect of
-    different HLT identification algorithms on the extracted scale
-    factors. In all cases the last bin summarises events with
-    \tauhadvis~$\pT \geq \SI{70}{\GeV}$.  The markers are shifted from
-    the geometrical bin center for illustration purposes.}
+  \caption{Measured \faketauhadvis scale factors for simulated \ttbar
+    (\POWHEGBOX[v2] + \PYTHIA[8]) separated by \tauhadvis
+    identification criteria applied in this analysis. A comparison of
+    \faketauhadvis scale factors measured with loose offline \tauid
+    only and with both loose offline and HLT \tauid is shown in (a)
+    and (b) for 1- and 3-prong \tauhadvis candidates, respectively.
+    Figures (c) and (d) compare the effect of different HLT
+    identification algorithms on the extracted scale factors. In all
+    cases, the last bin summarises the scale factors for \tauhadvis
+    with $\pT \geq \SI{70}{\GeV}$.  The markers are shifted from the
+    geometrical bin center for illustration purposes only.}%
   \label{fig:ttbarSF_postfit_SF}
 \end{figure}
 
 For \faketauhadvis reconstructed as 1-prong \tauhadvis candidates,
 depicted in~\Cref{fig:ttbarSF_postfit_SF_a,fig:ttbarSF_postfit_SF_c},
-the corrections are of the order of \SI{20}{\percent} in the low and
-intermediate transverse momentum regime ($\pTvis < \SI{70}{\GeV}$).
-The dependency of the extracted scale factors shows no strong
-systematic dependence regarding the \tauhadvis identification applied
-at the HLT, and differences in identification algorithms.
+the scale factor corrections are of the order of \SI{20}{\percent} in
+the low and intermediate transverse momentum regime
+($\pT < \SI{70}{\GeV}$). The extracted scale factors show no strong
+dependence on whether candidates pass the selections applied by
+\tauhadvis triggers or the particular trigger chain used.
 
 In~\Cref{fig:ttbarSF_postfit_SF_b,fig:ttbarSF_postfit_SF_d} the
 measured scale factors for \faketauhadvis reconstructed as 3-prong
-candidates are shown. For 3-prong candidates the abundance of
-\faketauhadvis is underestimated in simulation in the low and
-intermediate \tauhadvis~\pT region requiring corrections of
-approximately \num{20} to \SI{30}{\percent}. The contribution of
-\faketauhadvis in simulation at high momenta tends to be overestimated
-although with large measurement uncertainties due to the small
-expected contribution of \faketauhadvis. This is further magnified for
-the \texttt{medium1\_tracktwoEF} and \texttt{mediumMVA\_tracktwoRNN}
-trigger chains where only partial datasets are available for the
-measurements.\todo{\ttbar normalisation?}
+candidates are shown. In this case, the contribution of \faketauhadvis
+in the low and intermediate \tauhadvis~\pT region is underestimated by
+simulation, requiring corrections of about
+\SIrange{20}{40}{\percent}. At high transverse momenta simulation
+tends to overestimate the \faketauhadvis contribution, although with
+large uncertainties from the scale factor measurement. The
+uncertainties are magnified for the \texttt{medium1\_tracktwoEF} and
+\texttt{mediumMVA\_tracktwoRNN} chains since only partial datasets
+containing the resurrected trigger decision are available.
 
 Pulls and constraints of nuisance parameters are examined for all
-measurements\todo{Appendix?}. The measured nuisance parameters agree
-within uncertainties with the central values of their auxiliary
-measurements. Few instances are observed where the scale factor
-measurement puts more stringent constraints on nuisance parameters
-compared to the prior measurement of the parameter. In all cases the
-post-fit uncertainty is not smaller than \SI{70}{\percent} of the
-prior uncertainty.
+scale factor measurements\todo{Appendix?}. The nuisance parameter
+estimates agree within uncertainties with the central values of their
+auxiliary measurements. Few instances are observed where the scale
+factor measurement puts more stringent constraints on nuisance
+parameters than expected from the prior estimation of the associated
+uncertainty. All constrained parameters have post-fit uncertainties
+larger than \SI{70}{\percent} with respect to the uncertainty prior to
+the fit, indicating only mild constraints.
 
-The largest parameter constraints, in the following given as
-$\sigma_\text{post-fit} / \sigma_\text{pre-fit}$, are observed for the
+The largest nuisance parameter constraints, in the following given as
+the ratio of post- to pre-fit uncertainty, are observed for the
 \pTmissAbs scale uncertainty~(\SI{70}{\percent}), the ME / PS
-uncertainties on \ttbar~(\SI{75}{\percent}), and \tauhadvis energy
-scale uncertainty~(\SI{80}{\percent}). The \mTW discriminant used for
-the scale factor measurement is sensitive to the modelling of the
-\pTmissAbs, thus some constraints on associated parameters are
-expected. Similarly, the abundance of \ttbar and high statistical
-precision\todo{fill}. The \tauhadvis energy scale measurements are
-performed in $Z \ra \tau_{\mu} \tauhad$ tag-and-probe\todo{citation?}
-which cannot access \tauhadvis momenta relevant for measurements in
-\ttbar.  It cannot be fully excluded, however, that these constraints
-arise from a lack of flexibility of the fit model.
+modelling uncertainties on \ttbar~(\SI{75}{\percent}), and \tauhadvis
+energy scale uncertainty~(\SI{80}{\percent}). The \mTW discriminant is
+sensitive to the modelling of \pTmissAbs, thus some power to constrain
+nuisance parameters related to the modelling of \pTmissAbs in
+simulation is expected. Similarly, the SF-CR selects a large number of
+\ttbar events with high purity, consequently allowing to constrain the
+modelling uncertainties that are derived from two-sample
+comparisons. Finally, the measurements providing uncertainties on the
+\tauhadvis energy scale are performed in $Z \ra \tau_{\mu} \tauhad$
+tag-and-probe~\cite{ATLAS-CONF-2017-029} which provides probe
+\tauhadvis with a softer transverse momentum spectrum compared to
+\tauhadvis produced in \ttbar events. With the binning of the
+measurement in \tauhadvis \pT, it is expected that the uncertainties
+on the \tauhadvis energy scale, particularly at high \tauhadvis~\pT,
+can be constrained by this measurement. % It cannot be fully excluded,
+% however, that these constraints arise from a lack of flexibility of
+% the fit model.
 
-\Cref{fig:ttbarSF_postfit_ptmtw} shows the inclusive SF-CR after the
-maximum likelihood fit\todo{interpretation}.
+The \tauhadvis \pT and \mTW distributions are shown in
+\Cref{fig:ttbarSF_postfit_ptmtw} after the fit in the SF-CR with the
+additional trigger-matching requirement to the
+\texttt{HLT\_tau25\_medium1\_tracktwo} single-\tauhadvis
+trigger. Decent agreement is observed between the background
+prediction and the observed data.
 
-\todo[inline]{This measurement can provide a correction as well as a
-  measurement-driven estimate of the uncertainties of
-  \faketauhadvis. Although the uncertainties seem large at high
-  momenta, the abundance of events where this is relevant is small.}
+% \todo[inline]{This measurement can provide a correction as well as a
+%   measurement-driven estimate of the uncertainties of
+%   \faketauhadvis. Although the uncertainties seem large at high
+%   momenta, the abundance of events where this is relevant is small.}
 
 \begin{figure}[htbp]
   \centering
@@ -764,26 +775,18 @@ maximum likelihood fit\todo{interpretation}.
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/PTVR_postFit}
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/MTWVR_postFit}
 
-  \caption{Distribution of \tauhadvis \pT and \mTW in the scale factor
-    control region (SF-CR) after the maximum likelihood fit. Events
-    with \tauhadvis \pT (\mTW) larger than \SI{200}{\GeV}
-    (\SI{250}{\GeV}) are merged into the last bin. The uncertainty
-    contains all statistical and systematic uncertainties, including
-    the post-fit uncertainties on scale factors.}
+  \caption{Post-fit distribution of \tauhadvis \pT and \mTW in the
+    scale factor control region after requiring the \tauhadvis to be
+    matched to the \texttt{HLT\_tau25\_medium1\_tracktwo}
+    trigger. Events with \tauhadvis \pT (\mTW) larger than
+    \SI{200}{\GeV} (\SI{250}{\GeV}) are merged into the last bin. The
+    uncertainty band contains all statistical and systematic
+    uncertainties, including post-fit uncertainties on \faketauhadvis
+    scale factors and the \ttbar normalisation factor.}
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
 
-
-% Distribution of \tauhadvis \pT and $\eta$ in the scale
-%     factor control region (SF-CR) prior to the maximum likelihood
-%     fit. Events with \tauhadvis \pT larger than \SI{200}{\GeV} are
-%     merged into the last bin. The uncertainty contains all statistical
-%     and systematic uncertainties except for normalisation
-%     uncertainties on \ttbar arising from its modelling in
-%     simulation. Modelling uncertainties affecting the shape of the
-%     distributions are included.
-
-The fit model introduces large anti-correlations between the global
+The fit model introduces large anti-correlations between the overall
 \ttbar normalisation and the extracted scale factors for \ttbar with
 \faketauhadvis. An exemplary correlation matrix for one measurement is
 shown in~\Cref{fig:ttbarSF_corr_matrix} showing the most relevant
@@ -791,61 +794,67 @@ correlations between parameters of interest and nuisance parameters.
 The anti-correlations are a result of the limited discrimination power
 of \mTW in distinguishing between \ttbar with true- and
 \faketauhadvis, which is especially poor for low \tauhadvis transverse
-momenta. Thus a change in the global \ttbar normalisation, affecting
+momenta. Thus a change in the overall \ttbar normalisation, affecting
 both \ttbar with true and \faketauhadvis, can be partially compensated
-by an increase in the \faketauhadvis scale factors. The coupling
-between scale factors and global \ttbar normalisation introduces large
-positive correlations also between the scale factors themselves.
+by an increase in the \faketauhadvis scale factors. This coupling
+between \faketauhadvis scale factors and \ttbar normalisation
+introduces large positive correlations also between the scale factors
+themselves.
 
 \begin{figure}[htbp]
   \centering
+
   \includegraphics[scale=0.88]{ttbarSF/correlation_matrix}
 
-  \caption{Correlation matrix at the maximum likelihood estimate of
-    the fit model for the scale factor measurement of the
+  \caption{Post-fit correlation matrix between selected parameters of
+    the fit model for the \faketauhadvis scale factor measurement
+    after matching \tauhadvis to the
     \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. A reduced number
-    of parameters is shown for illustration purposes. Nuisance
-    parameters are included if the absolute value of its correlation
-    coefficient exceeds \SI{30}{\percent} with at least one parameter
-    of interest.}
+    of nuisance parameters is shown for illustration
+    purposes. Nuisance parameters are included if the absolute value
+    of its correlation coefficient exceeds \SI{30}{\percent} with at
+    least one parameter of interest.}%
   \label{fig:ttbarSF_corr_matrix}
 \end{figure}
 
 Correlations between the extracted scale factors need to be taken into
 account when propagating the measurement uncertainties to the estimate
-of \ttbar with \faketauhadvis in the \hadhad signal region. A
-convenient method to achieve this is by providing decorrelated
-variations of the measurement that jointly explain the total
-uncertainty of all scale factors. These sets of scale factor
-variations can be used to propagate the uncertainties without having
-to account for correlations.
+of \ttbar with \faketauhadvis in the \hadhad signal region. A way to
+achieve this is by providing decorrelated variations of the
+measurement that jointly explain the total uncertainty of all scale
+factors. These sets of scale factor variations can be used to
+propagate the uncertainties without having to account for
+correlations.
 
 A decorrelated set of variations can be obtained by a linear
-transformation procedure of the $N$~original scale factors. The
-necessary transformation is obtained by diagonalising the post-fit
-covariance matrix resulting in a set of eigenvectors and
+transformation procedure of the $N$ measured scale factors. The
+transformation is obtained by diagonalising the post-fit scale factor
+covariance matrix, resulting in a set of eigenvectors and
 eigenvalues. The eigenvectors provide an alternative basis in which
-the measurement is described by $N$~linear combinations of SFs. The
-covariance between two different linear combinations is zero by
-construction and the eigenvalues describe the variance of individual
-linear combinations. This decomposition is used to construct
-decorrelated variations of the SF measurement by performing
-$\pm 1 \sigma$ variations in the frame with diagonal covariance
-matrix, followed by a transformation to the original frame (with
-non-diagonal covariance matrix). This procedure yields $N$ variations
+the measurement is described by $N$~linear combinations of scale
+factors with diagonal covariance matrix. The eigenvalues correspond to
+the variance explained by certain linear combinations of scale
+factors. %
+% The covariance between two different linear combinations is
+% zero by construction and the eigenvalues describe the variance of
+% individual linear combinations.
+In the frame with diagonal covariance matrix, the scale factor
+measurement is varied by performing $\pm 1 \sigma$ variations, then
+transforming the resulting variations back to the original, physically
+interpretable frame. This procedure yields $N$ systematic variations
 of the scale factor measurement each with an up- and
-down-variation.\footnote{The notion of up- and down-variations is
-  merely mathematical, i.e.\ according to the variation in the
-  diagonal frame, and does not have a concrete physical meaning.} The
-variations are ordered in descending variance in the diagonal frame
-and thus the effect size of the variation on the background estimate
-is also expected to roughly follow a descending order\todo{Maybe
-  clarify why it is only approximate.}. An example of this
-decomposition is shown in~\Cref{fig:ttbarSF_eigenvariations}. The
-effect of large correlations between scale factors can be seen in the
-leading variation (\texttt{EIGEN0}) as a systematic shift of the SF
-variation in the same direction with respect to the nominal scale
-factors.
+down-variation.\footnote{In this context, calling a variation ``up''
+  or ``down'' has no concrete physical meaning.} The variations are
+ordered by descending variance in the diagonal frame, yielding
+variations that are roughly decreasing in their impact on the total
+\ttbarFakes background estimate. An example of this decorrelation
+approach is shown in~\Cref{fig:ttbarSF_eigenvariations}. The effect of
+large correlations between scale factors can be seen in the leading
+variation (\texttt{EIGEN0}) as a systematic shift of the variation in
+all bins with respect to the nominal result. In contrast, the
+variation explaining the least variance (\texttt{EIGEN9}) only alters
+the scale factors for 1-prong \faketauhadvis with low transverse
+momenta.
 
 \begin{figure}[htbp]
   \centering
@@ -861,14 +870,14 @@ factors.
     \label{fig:ttbarSF_eigenvariations_3p}
   \end{subfigure}
 
-  \caption{Variations resulting from the decorrelation procedure for
-    the scale factor measurement of \tauhadvis passing matching to the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. Shown are the two
-    variations explaining most of the variance, \texttt{EIGEN0} and
-    \texttt{EIGEN1}, and the variation explaining the least variance,
-    \texttt{EIGEN9}. Adding the deviations of all SF variations
-    (\texttt{EIGEN0} - \texttt{EIGEN9}) from the nominal result in
-    quadrature recovers the total systematic error.}
+  \caption{Variations resulting from the decorrelation procedure
+    applied to the \faketauhadvis scale factor measurement for the
+    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. Two variations
+    explaining most of the variance (\texttt{EIGEN0/1}) and the
+    variation explaining least of the variance of the measurement
+    (\texttt{EIGEN9}) are shown. Adding the deviations of all
+    variations from the nominal result in quadrature recovers the
+    total systematic error.}
   \label{fig:ttbarSF_eigenvariations}
 \end{figure}
 
