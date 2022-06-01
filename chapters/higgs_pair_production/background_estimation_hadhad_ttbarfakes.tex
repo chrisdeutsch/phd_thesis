@@ -877,66 +877,68 @@ momenta.
     variation explaining least of the variance of the measurement
     (\texttt{EIGEN9}) are shown. Adding the deviations of all
     variations from the nominal result in quadrature recovers the
-    total systematic error.}
+    total systematic error.}%
   \label{fig:ttbarSF_eigenvariations}
 \end{figure}
 
 
-\subsubsection{Application}
+\subsubsection{Application of \faketauhadvis scale factors in the
+  \hadhad channel}
 
-An estimate of the \ttbar background with \faketauhadvis in the SR of
-the \hadhad channel can be obtained by applying suitable scale factors
-to events containing at least one \faketauhadvis in \ttbar simulation.
-These events are required to pass the signal region selection criteria
-of the \hadhad channel. This includes the event being selected by a
-trigger according to the selection strategy outlined
-in~\Cref{sec:trigger} and the reconstructed \tauhadvis candidates
-being matched to \tauhadvis at the HLT accordingly.
+The \ttbarFakes background in the signal region of the \hadhad channel
+is estimated by applying \faketauhadvis scale factors to \ttbar events
+from simulation with at least one \faketauhadvis. These events are
+required to pass the signal region selection criteria of the \hadhad
+channel, including events being selected by a trigger according to the
+selection strategy described in~\Cref{sec:trigger} and reconstructed
+\tauhadvis candidates being matched to \tauhadvis at the HLT.
 
-The scale factors are chosen depending on the trigger category and
-whether the \faketauhadvis is the \tauhadvis candidate leading in \pT,
-sub-leading in \pT, or whether both candidates are originating from
-quark- or gluon-jets. In cases where both \tauhadvis faked by jets,
-the correction is assumed to factorise and the product of scale
-factors is assigned as the event weight.
+The scale factors are chosen depending on the trigger category (STT or
+DTT) and whether the \faketauhadvis is the \tauhadvis candidate
+leading in \pT, sub-leading in \pT, or whether both selected
+candidates are \faketauhadvis. When both \tauhadvis candidates are
+originating from quark- or gluon-jets, the scale factor correction is
+assumed to factorise and the product of scale factors is assigned as
+an event-level weight.
 
-In events selected by di-\tauhadvis triggers both \tauhadvis
-candidates have to pass identification requirements at the HLT. In
-this case the scale factor measurement is chosen according to the
-active trigger chain, independent on which \tauhadvis candidate is
-originating from a jet. In events selected by single-\tauhadvis
-triggers at least one \tauhadvis candidate is required to pass the
-HLT \tauhadvis identification requirement. A simplification is made
-assuming that the \tauhadvis candidate leading in \pT passed the HLT
-\tauhadvis identification, causing the event to be selected by the
-trigger. This assumption is valid for more than \SI{99}{\percent} of
+In events selected by di-\tauhadvis triggers, both \tauhadvis
+candidates have to fulfil the trigger-level isolation and
+identification requirements. In this case, the set of scale factors is
+chosen according to the trigger chain that selected the event,
+independently of which candididate is a \faketauhadvis. In contrast,
+only one \tauhadvis candidate has to fulfil the trigger-level
+requirements in the single-\tauhadvis trigger category. A
+simplification is made assuming that the \tauhadvis candidate leading
+in \pT satisfies the trigger conditions, causing the event to be
+selected. This assumption is valid for more than \SI{99}{\percent}
 \ttbar events containing \faketauhadvis in the STT
-category. Therefore, scale factors with HLT identification are applied
-when the leading \tauhadvis is faked by a jet; scale factors without
-HLT identification are applied when the sub-leading \tauhadvis is faked
-by a jet. Similar to the di-\tauhadvis trigger case, the set of scale
-factors for the candidate passing HLT identification is chosen
-according to the active trigger chain. The event weight calculation is
-summarised in~\Cref{tab:ttbarSF_application_rule}.
+category. Therefore, scale factors measured for \faketauhadvis after
+trigger-matching are applied when the leading \tauhadvis is faked by a
+jet; scale factors derived without trigger-matching are applied when
+the sub-leading \tauhadvis is faked by a jet. Similar to the DTT case,
+if the \faketauhadvis is the \tauhadvis candidate leading in \pT then
+the set of scale factors is used that corresponds to the trigger chain
+that selected the event. The calculation of the multiplicative event
+weight for \ttbarFakes events from simulation is summarised
+in~\Cref{tab:ttbarSF_application_rule}.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Construction of the multiplicative event weight for
-    data-driven correction of \ttbar with \faketauhadvis in
-    simulation. Events are distinguished whether the leading
-    \tauhadvis candidate ($\tau_{\text{lead.}}$), the sub-leading
-    \tauhadvis candidate ($\tau_{\text{subl.}}$), or both are faked by
-    a jet.  Scale factors for \faketauhadvis without HLT trigger
-    identification, i.e.\ only with loose offline \tauhadvis
-    identification, are denoted as $\text{SF}_{\text{loose}}$;
-    scale factors with HLT trigger identification as
-    $\text{SF}_\text{HLT}$. The set of scale factors after HLT
-    \tauhadvis identification is chosen according to the trigger
-    algorithm used during the run where the event occurred.}%
+  \caption{Multiplicative event weights for the data-driven correction
+    of \ttbar with \faketauhadvis from simulation. Events are
+    distinguished by whether the leading \tauhadvis candidate
+    ($\tau_{\text{lead}}$), the sub-leading \tauhadvis candidate
+    ($\tau_{\text{subl}}$), or both are faked by a quark- or
+    gluon-jet. Scale factors for \faketauhadvis without trigger
+    requirements are denoted as $\text{SF}_{\text{loose}}$; scale
+    factors with isolation and identification requirements at
+    trigger-level by $\text{SF}_\text{loose+trig.}$.}%
   \label{tab:ttbarSF_application_rule}
 
-  \input{tables/ttbarSF_application_rule}
+  \resizebox{\textwidth}{!}{
+    \input{tables/ttbarSF_application_rule}
+  }
 \end{table}
 
 % When applying the scale factors to events in the 𝜏 had 𝜏 had -channel,
