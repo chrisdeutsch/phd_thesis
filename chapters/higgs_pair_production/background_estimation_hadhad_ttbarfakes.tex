@@ -963,72 +963,78 @@ in~\Cref{tab:ttbarSF_application_rule}.
 
 \subsubsection{Systematic uncertainties}
 
-\todo[inline]{How does STT play into this? The momentum thresholds are
-  unrealistically high so that it can barely be measured with this
-  approach.}
+% \todo[inline]{How does STT play into this? The momentum thresholds are
+%   unrealistically high so that it can barely be measured with this
+%   approach.}
 
-A systematic uncertainty measuring the effect of different transverse
-momentum thresholds on \tauhadvis at the HLT is derived.  Events
-selected by di-\tauhadvis triggers have \tauhadvis exceeding
-\pTHLT~thresholds of \SI{35}{\GeV} and \SI{25}{\GeV} for the leading
-and sub-leading candidate, respectively. These triggers only differ in
-the \pTHLT~threshold with isolation and identification requirements
-remaining the same.
+\todo[inline]{Intro sentence? In addition to the measurement-based
+  uncertainties, other systematic uncertainties are introduced...}
 
-The estimate of the \ttbarFakes background where the \faketauhadvis is
-required to pass trigger-matching employs scale factors measured for
-triggers with $\pTHLT > \SI{25}{\GeV}$, primarily targeting the effect
-of isolation and identification requirements, thus neglecting
-differences due to the \pTHLT~selection. This is an approximation for
-cases where the leading \tauhadvis candidate in the DTT category is
-mimicked by a jet and is motivated by the large overlap in events
-selected by both triggers beyond the $\pTvis > \SI{40}{\GeV}$
-threshold applied to the leading \tauhadvis in the DTT category at
-offline reconstruction-level.
+A systematic uncertainty on the scale factors is derived for the
+effect of different \tauhadvis transverse momentum (energy) thresholds
+at the HLT (L1 trigger). Events selected by di-\tauhadvis triggers
+require \tauhadvis candidates to pass thresholds on the transverse
+momentum (energy) of \SI{35}{\GeV} and \SI{25}{\GeV} at the HLT
+(\SI{20}{\GeV} and \SI{12}{\GeV} at the L1 trigger) for the leading
+and sub-leading \tauhadvis candidate, respectively. When estimating
+the \ttbarFakes background where the \faketauhadvis is required to
+pass trigger-matching, scale factors measured for single-\tauhadvis
+triggers with thresholds of $\pTHLT > \SI{25}{\GeV}$ and
+$E_{\text{T}}^{\text{L1}} > \SI{12}{\GeV}$ are applied, primarily
+targeting the effect of isolation and identification requirements and
+neglecting differences due to the \pT- and \ET-thresholds at
+trigger-level. This is an approximation for cases where the leading
+\tauhadvis candidate is mimicked by a quark- or gluon-jet, the
+approximation being motivated by the large overlap in events selected
+by both the lower and higher threshold trigger beyond the
+$\pT > \SI{40}{\GeV}$ cut applied to the leading \tauhadvis candidate
+during offline event selection.
 
 The overlap is studied in simulated \ttbar with at least one
-\faketauhadvis in the top control region by examining the
-conditional probability of an event passing the
-$\pTHLT > \SI{35}{\GeV}$~trigger provided the event passes
-$\pTHLT > \SI{25}{\GeV}$, depending on \pTvis after offline \tauhadvis
-reconstruction. Over the \pTvis threshold of \SI{40}{\GeV}, the
-overlap between both triggers is \SI{95}{\percent} for \faketauhadvis
-reconstructed as 1-prong candidates; \SI{85}{\percent} for
-\faketauhadvis reconstructed as 3-prong candidates\todo{Overlap plot
-  from INT? Worse for 3-prong due to poorer energy resolution.}.  With
-increasing \pTvis the overlap further increases reaching close to full
-overlap for $\pTvis > \SI{50}{\GeV}$ for 1-prong, and
-$\pTvis > \SI{60}{\GeV}$ for 3-prong candidates. No uncertainty is
-applied beyond this point due to negligible differences between
+\faketauhadvis in the SF-CR by examining the fraction of \tauhadvis
+candidates passing the $\pTHLT > \SI{35}{\GeV}$~trigger given they
+pass the $\pTHLT > \SI{25}{\GeV}$~trigger. For \faketauhadvis with
+$\pT > \SI{40}{\GeV}$ the overlap between triggers is
+\SI{95}{\percent} for \faketauhadvis reconstructed as 1-prong
+candidates; \SI{85}{\percent} for \faketauhadvis reconstructed as
+3-prong candidates. %
+% The difference between 1- and 3-prong candidates is caused by a
+% slower increase in trigger efficiency with increasing \tauhadvis \pT
+% for 3-prong candidates~\cite{ATLAS-CONF-2017-061}.
+Both triggers reach near \SI{100}{\percent} overlap for 1-prong
+candidates with $\pT > \SI{50}{\GeV}$ and 3-prong candidates with
+$\pT > \SI{60}{\GeV}$.\todo{Plot?} No uncertainty is introduced for
+larger transverse momenta due to negligible differences between both
 triggers.
 
-The scale factor measurement is repeated after requiring matching to
-single-\tauhadvis triggers with \SI{35}{\GeV} thresholds on $\pTHLT$
-and compared with the nominal result in the region of non-negligible
-overlap, i.e.\ $\SI{40}{\GeV} \leq \pTvis < \SI{50}{\GeV}$ for 1-prong
-and $\SI{40}{\GeV} \leq \pTvis < \SI{60}{\GeV}$ for 3-prong
-candidates. The central value of the extracted scale factors agrees
-within \SI{10}{\percent} with the measurement of the
-$\pTHLT > \SI{25}{\GeV}$~triggers. The deviation of the central value
-is assigned as an additional uncertainty when the leading \tauhadvis
-candidates originates from a
-jet. \Cref{tab:ttbarSF_tau25_35_uncertainty} shows the resulting
-uncertainty in the \hadhad signal region\todo{for relevant
-  events}. This uncertainty has a sub-percent impact on the overall
-normalisation of \ttbar in the signal region where the leading
-\tauhadvis is fake due to a low probability to select events where the
-leading \tauhadvis is close to the trigger thresholds.
-
-% The shape impact of these uncertainties are propagated to the fit.
+The scale factor measurement is repeated for the single-\tauhadvis
+triggers with higher thresholds and compared to the nominal result in
+the \faketauhadvis \pT region from \SI{40}{\GeV} up to \SI{50}{\GeV}
+or \SI{60}{\GeV} for 1- and 3-prong candidates, respectively. The
+scale factors measured for the higher threshold triggers agree within
+\SI{10}{\percent} with the nominal result. The deviation from the
+nominal measurement is assigned as an additional uncertainty when the
+leading \tauhadvis candidate originates from a quark- or
+gluon-jet. The size of the uncertainties are summarised
+in~\Cref{tab:ttbarSF_tau25_35_uncertainty}. These uncertainties have a
+sub-percent impact on the overall normalisation of the \ttbarFakes
+background with the \pT-leading \tauhadvis candidate being a
+\faketauhadvis in the \hadhad signal region. This is due the
+transverse momentum of the leading \tauhadvis typically exceeding the
+trigger threshold with a sufficiently large margin such that the
+uncertainties do not apply. This source of uncertainty is small
+compared to uncertainties from the scale factor measurement, however,
+it is still considered for later statistical analysis.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Uncertainty based on the comparison of scale factors
-    measured for triggers with $\pTHLT > \SI{25}{\GeV}$ and
-    $\pTHLT > \SI{35}{\GeV}$. The impact on the normalisation of
-    \ttbar with a leading \tauhadvis candidate originating from jets
-    and \pTvis close to the threshold of \SI{40}{\GeV} is shown.}%
+  \caption{Size of the uncertainty comparing scale factors measured
+    for triggers with $\pTHLT > \SI{25}{\GeV}$ and
+    $\pTHLT > \SI{35}{\GeV}$ thresholds. The uncertainty is given
+    relative to all events from \ttbar in the \hadhad channel signal
+    region where the leading \tauhadvis is a \faketauhadvis with \pT
+    close to the \SI{40}{\GeV} threshold.}%
   \label{tab:ttbarSF_tau25_35_uncertainty}
 
   \input{tables/ttbarSF_tau25_35_uncertainty}
@@ -1042,12 +1048,7 @@ region, effectively serving as an extrapolation uncertainty. This
 uncertainty is determined by performing variations of the \ttbar
 modelling in simulation and estimating the change in relative
 acceptance between both regions, i.e.\ the ratio of the acceptance in
-the application region and the measurement region.\footnote{This method
-  of estimating will be further discussed in ...
-  \begin{align*}
-    \frac{N_\text{A}^\text{Var.} / N_\text{B}^\text{Var.}}{N_\text{A}^\text{Nom.} / N_\text{B}^\text{Nom.}} - 1
-  \end{align*}
-}
+the application region and the measurement region.
 
 The estimation of extrapolation uncertainties between SF-CR and
 \hadhad SR considers the same sources of \ttbar modelling variations
