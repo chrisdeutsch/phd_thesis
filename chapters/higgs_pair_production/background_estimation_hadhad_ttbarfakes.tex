@@ -967,8 +967,10 @@ in~\Cref{tab:ttbarSF_application_rule}.
 %   unrealistically high so that it can barely be measured with this
 %   approach.}
 
-\todo[inline]{Intro sentence? In addition to the measurement-based
-  uncertainties, other systematic uncertainties are introduced...}
+In addition to the measurement-based uncertainties, two other sources
+of uncertainies are considered. These target the effect of thresholds
+applied to \tauhadvis at the HLT and L1 trigger, and the extrapolation
+of the scale factors from $\ell + \tauhad$ to \hadhad final states.
 
 A systematic uncertainty on the scale factors is derived for the
 effect of different \tauhadvis transverse momentum (energy) thresholds
@@ -1040,15 +1042,16 @@ it is still considered for later statistical analysis.
   \input{tables/ttbarSF_tau25_35_uncertainty}
 \end{table}
 
-The measurement of the scale factors is performed in a region (\lephad
-SF-CR) different from where they are applied (\hadhad SR). Thus, an
-uncertainty is assigned on the relative difference in the acceptance
-of \ttbarFakes between the measurement region and the application
-region, effectively serving as an extrapolation uncertainty. This
-uncertainty is determined by performing variations of the \ttbar
-modelling in simulation and estimating the change in relative
-acceptance between both regions, i.e.\ the ratio of the acceptance in
-the application region and the measurement region.
+The measurement of the scale factors is performed in a region
+($\ell+\tauhad$ SF-CR) different from where they are applied (\hadhad
+SR). An uncertainty is assigned on the relative difference in the
+acceptance of \ttbarFakes between the measurement region and the
+application region, effectively serving as an extrapolation
+uncertainty. This uncertainty is determined by performing variations
+of the \ttbar modelling in simulation and estimating the change in
+relative acceptance between both regions, the relative acceptance
+being the ratio of the acceptance in the application region and the
+measurement region.
 
 The estimation of extrapolation uncertainties between SF-CR and
 \hadhad SR considers the same sources of \ttbar modelling variations
@@ -1059,15 +1062,14 @@ are derived for \ttbar with a single \faketauhadvis and two
 For \ttbar events with a single \faketauhadvis in the \hadhad SR the
 extrapolation uncertainty is examined in dependence on \pT of the
 \faketauhadvis, separately for 1- and 3-prong candidates. Except for
-the parton shower variation, no \pT-dependent effect on the
+the parton shower variation, no \tauhadvis \pT-dependent effect of the
 uncertainty is observed.  The comparison of alternative parton shower
 programs, comparing \PYTHIA[8] and \HERWIG[7], results in a
 shape-dependence of the extrapolation uncertainty as a function of
 \tauhadvis \pT which is shown in~\Cref{fig:ttbarSF_extrapol_shape}.
 Similar to the modelling uncertainties for the measurement, a
-polynomial is fitted to smoothly interpolate the extrapolation
-uncertainty over a range of \tauhadvis \pT. \todo{Interpretation. What
-  if pT > 150?}
+polynomial is fitted to smoothly interpolate the uncertainty over a
+range of \tauhadvis \pT. %\todo{Interpretation. What if pT > 150?}
 
 \begin{figure}[htbp]
   \centering
@@ -1087,7 +1089,7 @@ uncertainty over a range of \tauhadvis \pT. \todo{Interpretation. What
     the SF-CR to the \hadhad SR based on parton shower comparisons
     (\PYTHIA[8] and \HERWIG[7]). The uncertainty is shown for 1-prong
     (a) and 3-prong \faketauhadvis (b) including a fit of polynomials
-    to the binned estimate of the uncertainty. }
+    to the binned estimate of the uncertainty.}
   \label{fig:ttbarSF_extrapol_shape}
 \end{figure}
 
@@ -1095,10 +1097,10 @@ A different approach is taken for the extrapolation uncertainty
 between SF-CR and \hadhad SR for cases where both \tauhadvis
 candidates are faked by a quark- or gluon-jet. Only a normalisation
 uncertainty is assigned due to the ambiguous matching of \tauhadvis
-candidates between the \lephad (1 \faketauhadvis) and the \hadhad
-region (2 \faketauhadvis). This approximation is made to avoid this
-ambiguity and is further motivated by it being a subdominant component
-relative to the total \ttbarFakes background.
+candidates between the \lephad (one \faketauhadvis) and the \hadhad
+region (two \faketauhadvis). This approximation is made to avoid this
+ambiguity and is further motivated by events with two \faketauhadvis
+being a subdominant contribution to the total \ttbarFakes background.
 
 The extrapolation uncertainties are summarised
 in~\Cref{tab:ttbarSF_acceptance_uncertainty}. The parton shower
@@ -1124,11 +1126,10 @@ between the SF-CR and the SR, ranging from \SIrange{20}{40}{\percent}.
 
 The determination of the \ttbarFakes background in the \hadhad signal
 region using the scale factor method described in this section
-provides a principled way to estimate this background and its
-uncertainty based on a measurement-driven
-approach. In~\Cref{tab:ttbarSF_yields} the event yield of \ttbarFakes
-in the \hadhad signal region is shown and compared to \ttbar
-simulation without corrections.
+provides a way to estimate this background and its uncertainty based
+on a measurement-driven approach. In~\Cref{tab:ttbarSF_yields} the
+event yield of \ttbarFakes in the \hadhad signal region is shown and
+compared to \ttbar simulation without corrections.
 
 \begin{table}[htbp]
   \centering
@@ -1137,24 +1138,28 @@ simulation without corrections.
     in the \hadhad SR before and after correction using the measured
     scale factors. The uncorrected event yield is shown with MC
     statistical uncertainties only; the corrected event yield with MC
-    statistical and systematic uncertainties of the scale factor method.}%
+    statistical and systematic uncertainties of the scale factor
+    method. The \ttbarFakes background is partitioned into cases where
+    the \pT sub-leading \tauhadvis candidate is fake (TF), the leading
+    candidate is fake (FT), and both candidates are fake (FF).}%
   \label{tab:ttbarSF_yields}
 
   \input{tables/ttbarSF_yields}
 \end{table}
 
 The total \ttbarFakes event yield in the \hadhad SR is determined with
-a relative precision of \SI{13}{\percent}, agreeing with the
+a relative uncertainty of \SI{13}{\percent}, agreeing with the
 uncorrected estimate of the total yield within uncertainties. The
 expected number of \ttbarFakes events is slightly smaller after
 correction since the measured scale factors for high \pT
-\faketauhadvis tend to be smaller than unity. Moreover, this is
-reflected in the larger relative change of the FT-component, which on
-average contains \faketauhadvis with \pT of about \SI{65}{\GeV}.
+\faketauhadvis tend to be smaller than unity. This is also reflected
+in the larger relative change of the the FT-component (the leading
+\tauhadvis candidate is a \faketauhadvis), for which the
+\faketauhadvis has an average \pT of \SI{65}{\GeV}.
 
-The total uncertainty on the \ttbarFakes yield in the SR can be
-separated into categories to understand the relative importances of
-the sources of uncertainty:
+The uncertainty on the total \ttbarFakes yield in the \hadhad SR can
+be separated by category to give the relative importances of different
+sources of uncertainty:
 \begin{align*}
   \sigma_\text{total}^{\ttbarFakes} = \valuesep\numerrt{22}{stat.}%
   \valuesep\numerrt{210}{meas.}%
@@ -1163,13 +1168,13 @@ the sources of uncertainty:
 \end{align*}
 The uncertainties originating from the SF measurement in the SF-CR
 (meas.) and the extrapolation uncertainties (extrapol.) have
-contributions of similar size to the uncertainty. The extrapolation
-uncertainty is dominated by the comparison of different parton shower
-programs. The \faketauhadvis \pT-dependent PS uncertainty, affecting
-the TF- and FT-components of the background, has a particularly large
-impact on the TF contribution. This is due to the large uncertainty
-for 1-prong \faketauhadvis candidates, making up $\frac{3}{4}$ of
-\faketauhadvis in \ttbar, at low transverse momenta as shown
+uncertainties of similar size. The extrapolation uncertainty is
+dominated by the comparison of different parton shower programs. The
+\faketauhadvis \pT-dependent PS uncertainty, affecting the TF- and
+FT-components of the background, has a particularly large impact on
+the TF contribution. This is due to the large uncertainty for 1-prong
+\faketauhadvis candidates, making up $\frac{3}{4}$ of \faketauhadvis
+in \ttbar, at low transverse momenta as shown
 in~\Cref{fig:ttbarSF_extrapol_shape_a}. Due to the momentum ordering,
 the average \faketauhadvis \pT in \ttbarFakes (TF) is approximately
 \SI{40}{\GeV}.
@@ -1179,57 +1184,59 @@ Statistical uncertainties from the finite number of simulated events
 trigger thresholds (trigger threshold) have negligible impact on the
 total yield in the \hadhad SR.
 
-% Measurement uncertainties on total yield are highly correlated: ca. 90%
-% PS uncertainty for 1-prong taus is anti-correlated due to sign-change of uncertainty
+% Measurement uncertainties on total yield are highly correlated:
+% ca. 90%
+% PS uncertainty for 1-prong taus is anti-correlated due to
+% sign-change of uncertainty
 
-\todo[inline]{More comparison of fake estimates?}
-
-\todo[inline]{There need to be some validation checks here...}
+\todo[inline]{More comparison of fake estimates? Some validation plots?}
 
 
-\subsubsection{Estimation of \ttbarFakes subtraction in FF-method}
+\subsubsection{Estimation of \faketauhadvis scale factors for the
+  Anti-ID region}
 
-The estimation of the \multijet background in the \hadhad SR,
-previously described in \Cref{sec:hadhad_multijet}, necessitates a
-large subtraction of \ttbarFakes in the 2 $b$-tag \antiid region with
-opposite sign \tauhadvis charge. The concept of estimating the
-\ttbarFakes background using the scale factor method is extended to
-the \antiid region to provide corrections and uncertainties on the
-subtraction performed during \multijet estimation.
+The estimation of the \multijet background in the \hadhad SR, to be
+described in~\Cref{sec:bkg_hadhad_ff}, requires a large subtraction of
+\ttbarFakes events in the 2 $b$-tag \antiid region for \tauhadvis with
+electric charge of opposite sign. The scale factor method for
+estimating the \ttbarFakes background is extended to the \antiid
+region to provide uncertainties on the subtraction performed as part
+of the \multijet estimation.
 
 The scale factor measurement is repeated using the same SF-CR
-definitions except for inverting the offline \tauhadvis identification
+definition except for inverting the offline \tauhadvis identification
 requirement. Instead of \tauhadvis passing loose offline \tauid,
-\tauhadvis are required to fail the loose working point but having a
-RNN \tauid score exceeding \num{0.01}. The same requirements from the
-ID-region measurement regarding the reconstruction and identification
-of \tauhadvis at the HLT are imposed.\todo{Lower cut prohibits
-  relating ID-region to anti-ID region SFs.}
+\tauhadvis are required to fail the loose working point but exceed a
+RNN \tauid score threshold of \num{0.01}. The same requirements from
+the ID-region measurement regarding the reconstruction and
+identification of \tauhadvis at the HLT are imposed.
 
-The inversion of the \tauid requirement rejects most \ttbar with
-\tauhadvis originating from hadronic decays of \tauleptons, yielding a
-region with high purity, \SI{82}{\percent}, of \ttbarFakes. Matching
-offline reconstructed \tauhadvis to \tauhadvis at the HLT reduces the
-total \ttbarFakes yield by ca.\ \SI{80}{\percent}, the purity staying
-largely unchanged with \SI{78}{\percent} of \ttbarFakes populating the
-\antiid region.
+The inversion of the \tauid requirement rejects most \ttbar events
+with \tauhadvis originating from hadronic decays of \tauleptons,
+yielding a region with high purity of \ttbarFakes
+(ca.~\SI{80}{\percent}). Matching anti-\tauhadvis from the offline
+reconstruction to \tauhadvis at the HLT reduces the total \ttbarFakes
+yield by about \SI{80}{\percent} due to the trigger-level
+identification requirements, the \ttbarFakes purity staying largely
+unchanged, however.
 
 A reduced set of experimental uncertainties is used for this
 measurement due to practical limitiations in the dataset preparation
-for the \lephad \antiid region. Uncertainties varying the
+for the $\ell + \tauhad$ \antiid region. Uncertainties varying the
 four-momentum of reconstructed objects are omitted except
 uncertainties on the \tauhadvis energy scale. Other uncertainties that
 can be expressed by alternative event weights, for example
-uncertainties on tagging efficiencies, are kept. Due to this
-constraint the total deviation of the central value of the scale
+uncertainties on tagging efficiencies, are considered. Due to this
+constraint, the total deviation of the central value of the scale
 factors measured in the \antiid region from unity is assigned as an
-additional uncertainty when propagating the uncertainty to the
-\multijet estimate in the \hadhad SR.
+additional uncertainty and propagated to the \multijet estimate in the
+\hadhad SR.
 
 The scale factors measured in the Anti-ID region are shown
-in~\Cref{fig:ttbarSF_antiid_SF}. The efficiency of selecting a quark-
-or gluon-jet as an \antitau are well predicted in simulation of
-\ttbar.
+in~\Cref{fig:ttbarSF_antiid_SF}. The contribution of \faketauhadvis
+reconstructed as 1-prong candidates predicted by simulation agrees
+well with the data-driven measurement. For 3-prong candidates,
+deviations of up to \SI{20}{\percent} from simulation are observed.
 
 \begin{figure}[htbp]
   \centering
@@ -1256,35 +1263,34 @@ or gluon-jet as an \antitau are well predicted in simulation of
     \label{fig:ttbarSF_antiid_SF_d}
   \end{subfigure}
 
-  \caption{Anti-ID region scale factors for \faketauhadvis in \ttbar
-    simulation (\POWHEGBOX[v2] + \PYTHIA[8]) for all relevant \tauid
-    criteria used in the analysis. Figures (a) and (b) compare the
-    scale factors after loose and loose~+~ HLT \tauid for 1- and
-    3-prong, respectively. The effect of different HLT identification
-    algorithms is shown in (c) and (d). The last bin summarises events
-    with \tauhadvis~$\pT \geq \SI{70}{\GeV}$. The markers are shifted from
-    the geometrical bin center for illustration purposes.}
+  \caption{Scale factors for \faketauhadvis from \ttbar simulation in
+    the Anti-ID region separated \tauhadvis identification criteria
+    applied at trigger-level. Figures (a) and (b) compare the scale
+    factors with and without \tauid at the HLT. The effect of
+    different \tauhadvis trigger chains on the extracted scale factors
+    is shown in (c) and (d). The last bin summarises events with
+    \tauhadvis~$\pT \geq \SI{70}{\GeV}$. The markers are shifted from
+    the geometrical bin center for illustration purposes.}%
   \label{fig:ttbarSF_antiid_SF}
 \end{figure}
 
-The same decomposition of the scale factors is used to provide
-decorrelation variations of the measurement. Only the leading
-variations are used to define the subtraction uncertainty.
+The same decorrelation technique is used to propagate the measurement
+uncertainties when applying the scale factors in the Anti-ID region of
+the \hadhad channel. The rules for applying scale factors remain
+unchanged with respect to the scale factor application in the
+ID-region. The context and impact of the scale factors for the Anti-ID
+region on the \multijet estimate will be further discussed in the
+following section.
 
-Scale factors are applied in \hadhad following the same application
-rule.
+% Only the leading
+% variations are used to define the subtraction uncertainty.
 
-\todo[inline]{Possibly include the SS region (in addition to OS) to
-  get better constraints on ttbar and ttbarFakes. Possibly can float
-  both true and fake \ttbar in every region reducing the correlation
-  between the resulting NFs. One would have to account for possible
-  biases from charge correlations.}
+% \todo[inline]{Possibly include the SS region (in addition to OS) to
+% get better constraints on ttbar and ttbarFakes. Possibly can float
+% both true and fake \ttbar in every region reducing the correlation
+% between the resulting NFs. One would have to account for possible
+% biases from charge correlations.}
 
-
-\todo[inline]{Fitting polynomials to the uncertainties is not well
-  justified. A more general set of smooth functions should be
-  considered for example by using Gaussian process regression
-  instead.}
 
 %%% Local Variables:
 %%% mode: latex
