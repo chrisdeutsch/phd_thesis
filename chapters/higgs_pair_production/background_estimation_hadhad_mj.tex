@@ -11,19 +11,18 @@ the dominant \ttbarFakes contribution.
 
 \subsubsection{The fake factor method}
 
-The multi-jet background is estimated with the fake factor method
-which is a data-driven method for background estimation. It is
-applicable in cases where two event observables exist that are
-statistically independent for the background process to be estimated,
-while also being strong discriminators between the background and
-other processes (signal and non-multi-jet processes). Four disjoint
-regions can be defined, three background-enriched control regions and
-a signal-like region, by categorising events based on both
-observables. The assumption of statistical independence allows to
-relate the expected number of events for the background process
-between control regions and the signal-like region, allowing to
-estimate the background in the signal-like region using data observed
-in the control regions.
+The multi-jet background is estimated with the fake factor method, a
+data-driven method for background estimation. It is applicable in
+cases where two observables exist that are statistically independent
+for the background process to be estimated, while also being strong
+discriminators between the background and other processes (signal and
+non-multi-jet processes). Four disjoint regions can be defined, three
+background-enriched control regions and a signal-like region, by
+categorising events based on both observables. The assumption of
+statistical independence allows to relate the expected number of
+events for the background process between control regions and the
+signal-like region, allowing to estimate the background in the
+signal-like region using data observed in the control regions.
 
 In the \hadhad channel, two observables that allow to define control
 regions enriched in multi-jet events are the \tauid requirements
@@ -52,8 +51,8 @@ hold.
 
 The electric charge of \tauhadvis candidates produced in signal or
 backgrounds processes with two \tauhadvis from hadronic decays of
-\tauleptons ($\PZ \to \tautau$, $\PHiggs \to \tautau$, \ttbar) are
-expected to be reconstructed with opposite-sign (OS). The OS
+\tauleptons (e.g.\ $\PZ \to \tautau$, $\PHiggs \to \tautau$, \ttbar)
+are expected to be reconstructed with opposite-sign (OS). The OS
 requirement is inverted yielding regions with \tauhadvis candidates of
 same-sign (SS) electric charge, depleting the region of processes
 where both \tauhadvis orginate from hadronic \taulepton decays. In
@@ -96,13 +95,12 @@ The probability of misidentifying a quark- or gluon-initiated jet as a
 \tauhadvis depends on the properties of the reconstructed \tauhadvis
 candidate. Particularly, the reconstructed decay mode and visible
 transverse momentum affect the probability of a jet reconstructed as a
-\tauhadvis to pass \tauid (cf.\ \Cref{sec:tauid}). To control for this
-effect, fake factors are derived in bins of \tauhadvis candidate
-properties.
+\tauhadvis to pass \tauid. To control for this effect, fake factors
+are derived in bins of \tauhadvis candidate properties.
 
 In~\Cref{tab:mjfakes_yields} the expected multi-jet and non-multi-jet
-yields in the regions relevant for the \faketauhadvis estimation are
-summarised. The 2 $b$-tag region, while most similar to the signal
+event yields in the regions relevant for the \faketauhadvis estimation
+are summarised. The 2 $b$-tag region, while most similar to the signal
 region, is not well suited to estimate fake factors:
 \begin{itemize}
 
@@ -124,27 +122,27 @@ region, is not well suited to estimate fake factors:
   % Resultingly, the statistical independence of the charge sign and ID
   % observables employed by the FF method cannot be verified.
 \end{itemize}
-These issues are addressed by performing the fake factor measurement
-in the 1 $b$-tag region instead, which has a higher abundance and
-purity of multi-jet events, and extrapolating the measurement into the
-2 $b$-tag region to obtain a multi-jet background estimate in the
-signal region. Distributions of the \pT of the leading and sub-leading
-\tauhadvis candidates in the regions relevant to the fake factor
-measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
+These issues are partially addressed by performing the fake factor
+measurement in the 1 $b$-tag region instead, which has a higher
+abundance and purity of multi-jet events, and extrapolating the
+measurement into the 2 $b$-tag region to obtain a multi-jet background
+estimate in the signal region. Distributions of the \pT of the leading
+and sub-leading \tauhadvis candidates in the regions relevant to the
+fake factor measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
 
 \begin{table}[htbp]
   \centering
 
   \caption{Expected number of multi-jet events in regions defined by
-    the electric charge of the \tauhadvis pair (OS / SS) and
-    \tauhadvis identification (ID / Anti-ID). The expected number of
-    multi-jet events, $N_\text{multi-jet}$, is estimated by
-    subtracting the expected number of non-multi-jet events,
-    $N_\text{non-multi-jet}$, from the observed number of events in a
-    given region. The breakdown is shown after the 1 $b$-tag
-    requirement in (a); after the 2 $b$-tag requirement in (b). The
-    signal region (2 $b$-tag OS ID) is omitted. Only statistical
-    uncertainties on the expected event yields are shown.}%
+    the electric charge of the \tauhadvis pair (OS/SS) and \tauhadvis
+    identification (ID/Anti-ID). The expected number of multi-jet
+    events, $N_\text{multi-jet}$, is estimated by subtracting the
+    expected number of non-multi-jet events, $N_\text{non-multi-jet}$,
+    from the observed number of events in a given region. The
+    breakdown is shown after the 1 $b$-tag requirement in (a); after
+    the 2 $b$-tag requirement in (b). The signal region (2 $b$-tag OS
+    ID) is omitted. Only statistical uncertainties on the expected
+    event yields are shown.}%
   \label{tab:mjfakes_yields}
 
   \begin{subtable}[t]{\textwidth}
@@ -156,7 +154,7 @@ measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
     \input{tables/mjfakes_yield_table_1tag}
   \end{subtable}
 
-  \vspace{10pt}
+  \vspace{11pt}
 
   \begin{subtable}[t]{\textwidth}
     \centering
@@ -189,15 +187,15 @@ measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
   \end{subfigure}
 
   \caption{Distribution of leading and sub-leading \tauhadvis \pT for
-    observed data and non-multi-jet backgrounds in regions entering
+    observed data and non-multi-jet backgrounds in regions used for
     the fake factor measurement. The 1 $b$-tag SS ID region is shown
     in (a,b) and the 1 $b$-tag SS Anti-ID region in (c,d). Coloured
     histograms depict the contributions of non-multi-jet processes
     that are subtracted when estimating the fake factors. The
     difference between the observed data and the non-multi-jet
     background estimate is attributed to the missing multi-jet
-    background. All regions are shown at pre-selection level
-    corresponding to the SS region yields and multi-jet purities
+    background. All regions are shown after the pre-selection, the SS
+    region yields and multi-jet purities corresponding to the values
     listed in~\Cref{tab:mjfakes_yields_1tag}.}%
   \label{fig:mjfakes_1tag_ss_plots}
 \end{figure}
@@ -234,9 +232,9 @@ extrapolation.
 The 1 $b$-tag OS ID region serves as a validation region to check the
 agreement of the total background prediction with the observed
 data. Any non-closure observed in this region indicates either a
-violation of the assumptions of the fake factor method, or a
-parametrisation of the fake factors that is insufficient for the
-modelling of the multi-jet background.
+violation of the assumptions of the fake factor method, or
+dependencies that are not captured by the parametrisation of the fake
+factors.
 
 % % verify the independence of the observables related to \tauid and
 % % electric charge of the \tauhadvis pair.
@@ -352,29 +350,29 @@ sub-leading \tauhadvis~candidates.
   expressed by an alternative set of fake factors that do not
   distinguish in whether the anti-\tauhadvis is the leading or
   sub-leading \tauhadvis candidate, thus acting on the entirety of the
-  Anti-ID region and not on a single partition thereof. This inclusive
-  fake factor is given by
+  Anti-ID region instead of a sub-region thereof. This inclusive fake
+  factor is given by
   \begin{align*}
     \FF_\text{incl.}\ffargs = \frac{1}{2} \left[ f_0\ffargs \cdot \FF_0\ffargs
     + f_1\ffargs \cdot \FF_1\ffargs \right] \,\text{,}
   \end{align*}
-  with $f_i\ffargs$ being the fraction of Anti-ID events where
-  $\tau_i$ is the anti-\tauhadvis for a given bin $\myvec{x}_\tau$ of
-  the anti-\tauhadvis:
+  with $f_i\ffargs$ being the fraction of anti-\tauhadvis in the bin
+  given by $\myvec{x}_\tau$ that are leading ($i = 0$) or sub-leading
+  ($i = 1$) in \pT, formally given by
   \begin{align*}
     f_i\ffargs = \frac{\NmjAntiID{SS}{i}\ffargs}
                       {\NmjAntiID{SS}{0}\ffargs + \NmjAntiID{SS}{1}\ffargs} \,\text{.}
   \end{align*}
-  The inclusive fake factor can be measured directly according to
+  The inclusive fake factor can be measured directly using the
+  following relationship
   \begin{align}
     \FF_\text{incl.}\ffargs
     = \frac{1}{2} \frac{ \NmjID{SS}{0}\ffargs + \NmjID{SS}{1}\ffargs }
                        { \NmjAntiID{SS}{0}\ffargs + \NmjAntiID{SS}{1}\ffargs } \,\text{,}
     \label{eq:inclusive_fake_factor}
   \end{align}
-  which can subsequently be applied to events in the inclusive Anti-ID
-  region to obtain the multi-jet estimate in the ID region.
-
+  which can be applied to events in the inclusive Anti-ID region to
+  obtain the multi-jet estimate in the ID region.
 
   % and the multi-jet estimate in the OS region obtained by\todo{Should there be a $\sum_{x_\tau}$ here?}
   % \begin{align*}
@@ -387,18 +385,18 @@ sub-leading \tauhadvis~candidates.
   % Prior the agreement of the background estimates obtained with FF0
   % and FF1 were confirmed.
 
-  The motivation of using inclusive fake factors is two-fold. First,
-  it allows to use all events entering the Anti-ID region, independent
-  of whether the anti-\tauhadvis is leading or sub-leading in \pT,
-  thus improving the statistical precision of the background
-  estimate. Second, the fake factors can be parametrised in the
-  properties of the anti-\tauhadvis directly, allowing to target the
-  key differences between the ID and Anti-ID regions. This represents
-  a change with respect to the previous
+  The motivation of using the approach of defining inclusive fake
+  factors is two-fold. First, it allows to use all events entering the
+  Anti-ID region, independent of whether the anti-\tauhadvis is
+  leading or sub-leading in \pT, thus improving the statistical
+  precision of the background estimate. Second, the fake factors can
+  be parametrised in properties of the anti-\tauhadvis directly,
+  allowing to target the key differences between the ID and Anti-ID
+  regions. This represents a change with respect to the previous
   publication~\cite{HIGG-2016-16-witherratum} where fake factors were
-  parametrised jointly in the properties of both \tauhadvis
-  candidates, thus limiting the statistical precision of the fake
-  factor measurement due to large dimensionality of the
+  parametrised jointly in the properties of both \tauhadvis candidates
+  simultaneously, thus limiting %the statistical precision of
+  the fake factor measurement due to high dimensionality of the
   parametrisation.}
 
 The inclusive fake factors for events selected by di-\tauhadvis
@@ -409,12 +407,12 @@ multi-jet events is obtained by subtracting the expected number of
 non-multi-jet events estimated using simulation from the number of
 observed events in data.
 
-The result of the fake factor measurement is summarised
-in~\Cref{fig:mjfakes_fake_factors}. Qualitatively, the behaviour of
-the fake factors with respect to the \tauhadvis properties is the same
-between all data collection periods. Minor differences exist when
-comparing different data-taking periods. No attempt was made to
-combine the measurements of certain periods as the statistical
+The result of the fake factor measurement for di-\tauhadvis triggers
+is summarised in~\Cref{fig:mjfakes_fake_factors}. Qualitatively, the
+behaviour of the fake factors with respect to \tauhadvis properties is
+the same between data collection periods. Minor differences can be
+observed when comparing fake factors between years. No attempt was
+made to combine the measurements of certain periods as the statistical
 precision of the fake factor measurement is not a limiting factor in
 the analysis.
 
@@ -423,7 +421,7 @@ the analysis.
 
   \begin{subfigure}{0.495\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_1516}
-    \subcaption{2015-2016 data collection period}
+    \subcaption{2015--2016 data collection period}
   \end{subfigure}
   \begin{subfigure}{0.495\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_17}
@@ -435,23 +433,23 @@ the analysis.
     \subcaption{2018 data collection period}
   \end{subfigure}
 
-  \caption{Inclusive fake factors for events selected by di-\tauhadvis
-    triggers measured in the 1 $b$-tag SS region. The measurement is
-    performed separately for the three major data collection periods
-    (a-c), 1- and 3-prong \tauhadvis candidates (upper / lower
-    panels), and for \tauhadvis in the barrel (red) and endcap regions
-    (blue) of the ATLAS detector. Events with (anti-)\tauhadvis
-    $\pT > \SI{150}{\GeV}$ are included in the last fake factor
-    bin. Uncertainties are from statistical sources only. Systematic
-    uncertainties originating from the non-multi-jet subtraction are
-    assumed to be negligible due to the small size of the subtraction
-    in the 1 $b$-tag SS region.}
+  \caption{Di-\tauhadvis trigger fake factors measured in the 1
+    $b$-tag SS region. The measurement is performed separately for the
+    three major data collection periods (a-c), 1- and 3-prong
+    \tauhadvis candidates (upper/lower panels), and for \tauhadvis in
+    the barrel (red) and endcap regions (blue) of the ATLAS
+    detector. Events with (anti-)\tauhadvis $\pT > \SI{150}{\GeV}$ are
+    included in the last fake factor bin. Uncertainties are from
+    statistical sources only. Systematic uncertainties originating
+    from the non-multi-jet subtraction are assumed to be negligible
+    due to the small size of the subtraction in the 1 $b$-tag SS
+    region.}%
   \label{fig:mjfakes_fake_factors}
 \end{figure}
 
 
-\subsubsection{Measurement of fake factors: single-\tauhadvis
-  triggers}
+\subsubsection{Measurement of fake factors for events selected by
+  single-\tauhadvis triggers}
 
 The measurement of fake factors for events selected by
 single-\tauhadvis triggers proceeds differently from the di-\tauhadvis
@@ -502,7 +500,7 @@ $N_{\text{tracks}}$ and whether the anti-\tauhadvis is leading
     \pT ($\tau_1$).}%
   \label{fig:mjfakes_stt_ffs}
   % \todo[inline]{Largest deviation for leading 1-prong tau possibly
-  % due to looser pT threshold.}
+  % due to looser pT threshold. But why not for 3-prong?}
 \end{figure}
 
 
@@ -511,8 +509,8 @@ $N_{\text{tracks}}$ and whether the anti-\tauhadvis is leading
 An independent validation of the background estimate can be performed
 in the 1 $b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}).
 % , which is not part of the fake factor measurement.
-At pre-selection level this region has a multi-jet purity of ca.\
-\SI{50}{\percent} with the dominant non-multi-jet contributions
+After the event pre-selection, this region has a multi-jet purity of
+about \SI{50}{\percent} with the dominant non-multi-jet contributions
 originating from \Zjets and \ttbar. The multi-jet purity is enhanced
 for validation purposes by requiring events to fulfil
 % https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MetSignificance
@@ -528,16 +526,16 @@ within the expected measurement errors, to the alternative hypothesis
 of \pTmissAbs primarily originating from undetected weakly interacting
 particles.
 
-The variables used to define the multi-jet validation region are shown
-in~\Cref{fig:fake_factor_OSVR_cutvars} after pre-selection. The
-contribution of \Zjets is reduced by rejecting events with
-di-$\tauhad$ masses close to the \PZ boson mass.  Multi-jet events are
-expected to have little real \pTmissAbs, thus events with a
-significant \pTmissAbs measurement are rejected to reduce the \ttbar
-contribution in this region. The selection increases the multi-jet
-purity in the validation region to \SI{75}{\percent} with a multi-jet
-selection efficiency of about \SI{50}{\percent} with respect to the
-pre-selection.
+The distributions of the variables used to define the multi-jet
+validation region are shown in~\Cref{fig:fake_factor_OSVR_cutvars}
+after pre-selection. The contribution of \Zjets is reduced by
+rejecting events with di-$\tauhad$ masses close to the \PZ boson mass.
+Multi-jet events are expected to have little real \pTmissAbs, thus
+events with a significant \pTmissAbs measurement are rejected to
+reduce the \ttbar contribution in this region. The selection increases
+the multi-jet purity in the validation region to \SI{75}{\percent}
+with a multi-jet selection efficiency of about \SI{50}{\percent} with
+respect to the pre-selection.
 
 \begin{figure}[htbp]
   \centering
@@ -615,19 +613,33 @@ with fake factors obtained from a measurement in the 1 $b$-tag OS
 multi-jet VR. Under the assumptions of the fake factor method, both OS
 and SS fake factors are expected to agree. Possible differences
 between both sets of fake factors can originate from a violation of
-the assumptions or from errors in the non-multi-jet subtraction.
+the assumptions or from a mismodelling of the subtracted non-multi-jet
+backgrounds.
 
-The comparison of OS and SS fake factors is shown
-in~\Cref{fig:fake_factor_OSSS} exemplary for di-\tauhadvis trigger
-fake factors for the 2018 period and for all single-\tauhadvis trigger
-fake factors. The fake factors are compared using $\chi^2$-tests
-showing good agreement with one exception. A relative deviation of
-\SI{50}{\percent} is observed for a single fake factor
-bin\footnote{3-prong \tauhadvis with \pT from \SIrange{50}{65}{\GeV}
-  in the endcap regions.} for di-\tauhadvis triggers in 2015-2016. To
-account for the non-closure, the full difference between the central
-values of OS and SS fake factors is assigned as a systematic
-uncertainty and propagated to the multi-jet estimate.
+Comparisons of fake factors measured in the OS and SS regions are
+shown in~\Cref{fig:fake_factor_OSSS} for di-\tauhadvis and
+single-\tauhadvis triggers. A comparison of the all sets di-\tauhadvis
+trigger fake factors using $\chi^2$-tests is given
+in~\Cref{tab:fake_factor_osss_chi2test} showing good agreement with
+one exception. %
+% All sets of fake factors are compared using $\chi^2$-tests,
+% the results for di-\tauhadvis triggers are summarised
+% in~\Cref{tab:fake_factor_osss_chi2test}, showing good agreement with
+% one exception.
+A relative deviation of about \SI{50}{\percent} between OS and SS fake
+factor is observed for a single fake factor bin for di-\tauhadvis
+triggers in 2015--2016.\footnote{The bin corresponds to 3-prong
+  \tauhadvis with \pT from \SIrange{50}{65}{\GeV} in the endcap of the
+  detector. The OS fake factor for this bin is \num{0.09 +- 0.02} and
+  the SS fake factor \num{0.21 +- 0.03}.} Except for this bin, no
+large systematic differences between OS and SS fake factors are
+observed, however the power of this test is limited by the
+uncertainties of the fake factor measurement in the OS region. To
+account for non-closure between the OS and SS fake factors, the full
+difference between both sets of fake factors is assigned as an
+additional systematic uncertainty and propagated to the multi-jet
+estimate.
+
 
 \begin{figure}[htbp]
   \centering
@@ -659,6 +671,20 @@ uncertainty and propagated to the multi-jet estimate.
     are shown.}
   \label{fig:fake_factor_OSSS}
 \end{figure}
+
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Comparison of OS and SS fake factors for di-\tauhadvis
+    triggers using $\chi^2$-tests to summarise the statistical
+    compatibility of both sets of fake factors over all \tauhadvis \pT
+    bins. The barrel and endcap detector regions correspond to
+    \tauhadvis $|\eta| < 1.37$ and $|\eta| \geq 1.52$, respectively.}%
+  \label{tab:fake_factor_osss_chi2test}
+
+  \input{tables/mjfakes_osss_chisq.tex}
+\end{table}
 
 
 \subsubsection{Estimation of multi-jet backgrounds in the signal region}
