@@ -697,56 +697,62 @@ factors are multiplied by a 1 to 2 $b$-tag transfer factor to account
 for possible differences between fake factors for 1 and 2 $b$-tag
 regions (cf.\ \Cref{fig:fakefactor_regions}). The change in \btag
 requirement is not expected to affect the measured fake factors, such
-that the transfer factors mainly serve to provide a measurement-driven
-estimate of the uncertainty on the extrapolation.
+that the transfer factors mainly serve to provide an estimate of the
+uncertainty on the extrapolation.
 
-The transfer factor is determined by comparing fake factors measured
+The transfer factors are determined by comparing fake factors measured
 in the 2 $b$-tag SS region to ones extracted in the 1 $b$-tag SS
 region. Due to the large multi-jet rejection of the 2 $b$-tag
-requirement, the fake factors are measured inclusively in the trigger
-category, \tauhadvis \pT and \tauhadvis $\eta$. The 1 to 2 $b$-tag
-transfer factor is defined as the ratio
+requirement, the comparison is performed using fake factors measured
+inclusively in the trigger category, \tauhadvis \pT and \tauhadvis
+$\eta$ but separately for 1- and 3-prong \tauhadvis candidates, for
+cases where the anti-\tauhadvis is leading and sub-leading in \pT, and
+for the three major data-taking periods. The 1 to 2 $b$-tag transfer
+factor is defined as the ratio
 \begin{align*}
   \text{TF}_{1 \ra 2\,b\text{-tag}} = \frac{\FF_{\text{SS}}^{2\,b\text{-tag}}}{\FF_{\text{SS}}^{1\,b\text{-tag}}} \,\text{.}
 \end{align*}
 
-In~\Cref{fig:mjfakes_transfer_factor} the measured transfer factors
-are shown. No statistically significant deviations between 1 and 2 $b$
--tag fake factors is observed. The statistical uncertainties on the
-transfer factors are propagated to the multi-jet estimate in 2 $b$-tag
-regions providing an extrapolation uncertainty.
-
-%   - Large uncertainties indicate that we have little sensitivity to
-%   the differences between 1- and 2-tag regions.
+The measured transfer factors are shown
+in~\Cref{fig:mjfakes_transfer_factor} showing no statistically
+significant difference between fake factors derived in the 1 and 2
+$b$-tag regions. The power of this comparison is limited by
+uncertainties on the fake factor estimate in the 2 $b$-tag region thus
+extrapolation uncertainties based on the uncertainties of the transfer
+factor measurement will still be assigned.
+% Extrapolation uncertainties are defined by varying the transfer
+% factors within their uncertainty, separately for every transfer
+% factor bin, propagating the effect to the multi-jet estimate in the
+% 2 $b$-tag region.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.495\textwidth]{fakefactors/transfer_factors}
 
-  \caption{Transfer factors describing the ratio of fake factors
-    measured in the 2 and 1 $b$-tag regions. The transfer factors are
-    applied as multiplicative factors to 1 $b$-tag fake factors when
-    they are applied in 2 $b$-tag regions. The statistical
-    uncertainties are shown.}
+  \caption{Transfer factors describing the extrapolation of fake
+    factors measured in 1 $b$-tag regions to 2 $b$-tag regions. The
+    transfer factors are shown separately for 1- and 3-prong
+    \tauhadvis, for cases where the anti-\tauhadvis is leading
+    ($\tau_0$) and sub-leading ($\tau_1$) in \pT, and for the three
+    major data-taking periods.  The statistical uncertainties on the
+    transfer factors are shown.}%
   \label{fig:mjfakes_transfer_factor}
 \end{figure}
 
 A disadvantage of applying the fake factor method in the 2 $b$-tag
-region is the low multi-jet purity of ca.\ \SI{50}{\percent} in the 2
+region is the low multi-jet purity of about \SI{50}{\percent} in the 2
 $b$-tag OS Anti-ID region (cf.\
-\Cref{tab:mjfakes_yields}). Resultingly, a large subtraction of
+\Cref{tab:mjfakes_yields}). Consequently, a large subtraction of
 non-multi-jet processes has to be performed when applying fake factors
 to obtain the multi-jet prediction in the signal region.  The size of
 the subtraction in the 2 $b$-tag OS Anti-ID is illustrated
-in~\Cref{fig:mjfakes_2tag_os_antiid}, showing that the dominant source
-non-multi-jet events is \ttbarFakes. Due to the large relative size of
-the subtracted non-multi-jet component, any uncertainties affecting
-the subtracted components will have a large impact on the multi-jet
-estimate in the ID region. This is the main limitation of the
-multi-jet estimation method used in this analysis.
-
-\todo[inline]{Refer to \Cref{sec:bkg_hadhad_ttbarfakes}.}
+in~\Cref{fig:mjfakes_2tag_os_antiid}, showing that \ttbarFakes is the
+dominant source of non-multi-jet events in this region. Due to the
+large relative size of the subtracted non-multi-jet component, any
+uncertainties affecting the subtracted components will have a large
+impact on the multi-jet estimate in the ID region. This is the main
+limitation of the multi-jet estimation method used in this analysis.
 
 \begin{figure}[htbp]
   \centering
@@ -765,9 +771,8 @@ multi-jet estimation method used in this analysis.
     backgrounds are display as coloured histograms and include the
     statistical uncertainty of the prediction. The difference between
     the observed data and the non-multi-jet background prediction is
-    attributed to the missing multi-jet estimate.}
+    attributed to the missing multi-jet estimate.}%
   \label{fig:mjfakes_2tag_os_antiid}
-  \todo[inline]{This is without ttbar fakes corrections. Should it be changed?}
 \end{figure}
 
 
@@ -789,7 +794,7 @@ The following systematic uncertainties are considered and propagated
 to the multi-jet estimate in the \hadhad signal region:
 \begin{itemize}
 
-\item Statistical uncertainties on the fake factor measurement.
+\item Statistical uncertainties on the fake factors.
 
 \item Non-closure uncertainty between fake factors estimated in 1
   $b$-tag OS and SS regions.
@@ -806,11 +811,11 @@ to the multi-jet estimate in the \hadhad signal region:
 % FF measurement statistical uncertainty (1.4%)
 The effect of statistical uncertainties of the fake factor measurement
 on the multi-jet estimate in the signal region is estimated by
-performing $\pm 1 \sigma$ variations of individual bins of the
-measurement. The discriminants used in this analysis are largely
-insensitive to variations of individual fake factors and thus their
-effect is combined into an overall normalisation uncertainty on the
-multi-jet estimate to reduce the number of free parameters of the
+performing $\pm 1 \sigma$ variations of fake factors separately for
+all bins of the measurement. The discriminants used in this analysis
+are insensitive to variations of individual fake factors and therefore
+the variations are combined into an normalisation uncertainty on the
+multi-jet estimate, reducing the number of free parameters in the
 background model. The resulting normalisation uncertainty on the
 multi-jet prediction in the signal region is \SI{1.4}{\percent}.
 
