@@ -29,9 +29,9 @@ quality criteria independent of the analysis channel:
   %
   % eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18
   % Event info missing after TTC restart
-\item All events considered in the analysis are required to fulfil the
-  data quality criteria by the ATLAS collaboration~\cite{DAPR-2018-01}
-  requiring stable beams at the LHC and a fully operational detector.
+\item All events are required to fulfil the data quality criteria by
+  the ATLAS collaboration~\cite{DAPR-2018-01} requiring stable beams
+  at the LHC and a fully operational detector.
 
   % Has vertex
 \item The event is required to have a primary vertex.
@@ -44,15 +44,53 @@ quality criteria independent of the analysis channel:
   rejected.
 \end{itemize}
 
+The search is divided into several analysis channels depending on the
+decay mode of the \taulepton pair and the type of trigger that is used
+to select the events. The \lephad channel targets semi-leptonic decay
+modes using single-lepton triggers (SLT) and lepton-plus-\tauhadvis
+triggers (LTT). Each trigger category defines a corresponding
+sub-channel, which are referred to as the \lephad SLT and \lephad LTT
+channels. The \hadhad channel selects events with two \tauhadvis using
+single-\tauhadvis triggers (STT) and di-\tauhadvis triggers
+(DTT). While different types of triggers are used in the \hadhad
+channel, the statistical analysis performed to extract the \HH signals
+does not distinguish between events selected by STT and DTT, thus the
+\hadhad final state is treated as a single analysis channel. In some
+cases it will be required to distinguish between both trigger
+categories. Cases where this applies will be indicated explicitly.
 
-Single tau trigger (STT), Di-\tauhadvis trigger (DTT)
+Orthogonality between the \lephad and \hadhad channels is ensured by
+the electron, muon, and \tauhadvis selection. In the \hadhad channel,
+events are required to have exactly two \tauhadvis, vetoing events
+with loosely identified electrons or muons. Events in the \lephad
+channels are required to have exactly one \tauhadvis, and exactly one
+electron or muon passing the respective loose identification working
+point. Additionally, electrons (muons) are required to pass the tight
+(medium) identification working point to reduce the backgrounds from
+jets misidentified as electrons (muons).
 
-Single lepton triggers (SLT), lepton-plus-\tauhadvis triggers (LTT)
+Electrons, muons, and \tauhadvis have to be geometrically matched to
+corresponding objects at the HLT according to the trigger that
+selected the event. Trigger-dependent transverse momentum thresholds
+are applied to electrons, muons, and \tauhadvis to ensure that
+triggers operate close to their trigger-efficiency plateau. The
+thresholds applied in events selected by STT or SLT increased with
+increasing instantaneous luminosity of the LHC during Run~2. In
+contrast, lower \pT-thresholds on electrons, muons, and \tauhadvis
+remained constant for DTT and LTT\todo{Is this really true?},
+trigger-rates instead being limited by requiring additional jets and
+specific event topologies at the L1 trigger. The inclusion of the
+\lephad LTT channel allows to select events containing electrons or
+muons with transverse momenta below the SLT \pT-threshold by requiring
+an additional \tauhadvis at trigger-level. Orthogonality between the
+\lephad SLT and LTT channel is ensured by only considering events with
+lepton \pT below the SLT \pT-threshold for the LTT channel.
+
+A more detailed descrption of the trigger selection for the \hadhad
+channel will be given in \Cref{sec:hadhad_trigger_selection}.
 
 An overview of the signal region event selection for all channels is
 given in~\Cref{tab:event_selection}.
-
-\Cref{sec:trigger}
 
 \begin{table}[htbp]
   \centering
@@ -63,7 +101,8 @@ given in~\Cref{tab:event_selection}.
     in hadhad and jets thresholds are trigger-dependent. Forward jets
     are not used to select events (only to calculate
     MET). Requirements applied as part of the object selection are not
-    repeated here.}%
+    repeated here. All transverse momentum thresholds refer to
+    transverse momenta after offline event reconstruction.}%
   \label{tab:event_selection}
 
   \resizebox{\textwidth}{!}{
@@ -81,8 +120,9 @@ given in~\Cref{tab:event_selection}.
 \todo[inline]{Observables used to reduce backgrounds: dRTauTau, dRBB, mtautau,
   mbb, mHH}
 
-\subsection{Trigger selection in the \hadhad channel}
-\label{sec:trigger}
+\subsection{Trigger selection in the \hadhad channel}%
+\label{sec:trigger}%
+\label{sec:hadhad_trigger_selection}
 
 \todo[inline]{Trigger \& trigger evolution}
 
@@ -172,6 +212,10 @@ During TS1 new \tauhadvis triggers employing RNN-based \tauhad identification
 and MVA-based energy calibration were deployed. Starting from Period K, the
 recommendation is to use a logical OR between the old
 (\verb|medium1_tracktwoEF|) and new triggers (\verb|mediumRNN_tracktwoMVA|).
+
+
+\subsection{Signal and control region event selection}
+
 
 
 \subsection{Selection of $\pp \ra hh \ra \bbbar\tauhad\tauhad$ Events}
