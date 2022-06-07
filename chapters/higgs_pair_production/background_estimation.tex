@@ -1,63 +1,64 @@
 \section{Background Estimation}
 
-The dominant backgrounds in this analysis are \ttbar, \Zjets\todo{In
-  particular Ztautau + HF} and backgrounds containing \faketauhad that
-predominately originate from multi-jet, \Wjets, and \ttbar
-processes. Minor contributions arise from \Wjets, single-\Ptop,
-$\ttbar+\PVB$, diboson (\WW, \WZ, \ZZ), and processes containing a
-single Higgs boson decaying into $\APtauon\Ptauon$ (\ggF, VBF, \VH,
-\ttH) and \bbbar (\VH, \ttH).
+The dominant background processes for the search for Higgs boson pair
+production in the $\bbtautau$ final state are \ttbar, \Zjets, and
+backgrounds with \tauhadvis candidates from misidentified quark- or
+gluon-initiated jets, hereafter referred to as
+\faketauhadvis. Backgrounds with \faketauhadvis primarily orginate
+from multi-jet, \Wjets, and \ttbar processes. Minor contributions
+arise from single-top, $\ttbar+V$, diboson, and production of single
+Higgs bosons decaying into $\tautau$ or \bbbar. The single Higgs boson
+production modes considered in this search are \ggF, VBF, \VH and \ttH
+for $H \to \tautau$; $\VH$ and $\ttH$ for $H \to \bbbar$. While single
+Higgs boson production is classified as a minor background here, it
+has relevance to the extraction of \HH signals due to their similar
+signatures.
 
-The regions (SLT and \ZHF CR) entering the fit provide the ability to
-constrain the normalisation of the \ttbar and \ZHF backgrounds with
-sufficient precision. The \ZHF control region provides constraints on
-\ZHF as well as \ttbar, while the \lephad SLT signal region provides
-constraints on \ttbar. Therefore, the templates of these backgrouds
-are estimated using simulation with the overall normalisation being
-left free in the likelihood fit such that it can be extracted from
-data.
+The \Zjets and \ttbar backgrounds are estimated using templates
+obtained from simulation with their normalisations being determined in
+a simultaneous likelihood fit to observed data in signal and control
+regions. A control region enriched in $Z$ boson production in
+association with jets from quarks of heavy flavour (\ZHF) is defined
+in \Cref{sec:bkg_zjets} providing constraints on the normalisation of
+this background. The signal region of the \lephad SLT channel serves
+to constrain the normalisation of the \ttbar background as it selects
+\ttbar with high purity.
 
 Major backgrounds containing at least one \faketauhad are estimated
-using data-driven methods. In the \lephad channel the contribution
-\faketauhad from multi-jet, \Wjets, and \ttbar processes is estimated
-jointly using a \textit{Combined Fake Factor method} which is
-described in~\Cref{sec:bkg_lephad_combined_ff}. In the \hadhad
-channel, the estimation is separated into \faketauhad originating from
-multi-jet processes and \faketauhad in \ttbar. The multi-jet
-contribution, where both reconstructed \tauhadvis are faked, is
-estimated using a fully data-driven \textit{Fake Factor method} in
-\Cref{sec:bkg_hadhad_ff}. In contrast, for \ttbar with \faketauhad the
-\hadhad channel the number of \faketauhad can be either 1 or 2. Due to
-the absence of a good \ttbar control region the \faketauhad background
-in \ttbar is estimated using simulation after correcting the
-misidentification efficiencies measured in a dedicated control region.
+using (semi-)data-driven methods. In the \hadhad channel, the primary
+sources of \faketauhadvis are \ttbar and multi-jet production for
+which separate estimation techniques are used. The \faketauhadvis
+background from \ttbar (\ttbarFakes), where events contain either one
+or two \faketauhadvis, is estimated by applying scale factors to
+\faketauhadvis in simulated \ttbar events that correct the
+\jettotauhadvis misidentification efficiencies in simulation using
+scale factors measured in a top control region. This method will be
+described in \Cref{sec:bkg_hadhad_ttbarfakes}. In contrast, the
+multi-jet background, where both \tauhadvis are \faketauhadvis, is
+estimated using a fully data-driven \emph{Fake Factor method} that
+will be introduced in \Cref{sec:bkg_hadhad_ff}.  The estimation of the
+\faketauhadvis backgrounds in the \lephad channels uses a
+\emph{Combined Fake Factor method} that jointly estimates the
+multi-jet, \Wjets, and \ttbar backgrounds with at least one
+\faketauhadvis. This method will be briefly summarised
+in~\Cref{sec:bkg_lephad_combined_ff}.
 
-The minor background contributions are estimated using Monte Carlo
-simulation normalised to the integrated luminosity of data using the
-highest order inclusive cross-section predictions available.
+The minor background contributions are estimated using simulation and
+are normalised to the integrated luminosity of the collected data
+using the highest order cross-section predictions available. These
+backgrounds are not discussed in detail in this section, however,
+theoretical uncertainties from the modelling of these processes using
+simulation are discussed at a later stage in
+\Cref{sec:modelling_uncertainties}.
 
-\todo[inline]{Should mention the floating backgrounds (\ttbar, \ZHF).}
-
-\todo[inline]{Validation regions? Do we use any? Maybe 2-tag SS}
-
-\todo[inline]{\ttbar split in TT, TF,FT, FF; no such distinction for b's since
-  there is a small contribution of mis-tagged b's in the SR}
-
-\todo[inline]{Small yields in hadhad: use lephad as top CR for TT and
-  TF/FT and dedicated Z-CR; overall larger yields due to dropping of
-  tauhad branching ratio and higher reconstruction and ID efficiency
-  for electrons and muons}
-
-\todo[inline]{Extrapolation uncertainty: Replacing \tauhad with electrons /
-  muons changes event kinematics and selection efficiency which needs to be
-  accounted for.}
+\todo[inline]{Validation regions?}
 
 \todo[inline]{Discuss the lack of pure validation regions particularly
-  for \ttbar fakes.}
+  for \ttbar fakes?}
 
-\todo[inline]{Maybe say something about tau fakes being a rather small
-  very non-signal like background thus not being super sensitive to
-  large uncertainties on it.}
+\todo[inline]{Maybe say something about \faketauhadvis backgrounds
+  being rather small and very non-signal-like, thus we are not very
+  sensitive to large uncertainties on these backgrounds.}
 
 \subsection{Associated production of $\PZ \to \ell\ell$ with quarks of heavy flavour}
 \label{sec:bkg_zjets}
