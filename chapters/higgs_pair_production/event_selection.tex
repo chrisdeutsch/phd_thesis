@@ -1,17 +1,17 @@
 \section{Event Selection}
 \label{sec:event_selection}
 
-The event selection aims at selecting events consistent with
+The event selection focuses on selecting events consistent with
 $\bbbar\lephad$ or $\bbbar\hadhad$ final states. The selection
-criteria applied to events are kept as loose as possible given the
-limitations imposed by the trigger selection. Distinguishing between
-signal and background events based on object- and event-level
-observables is not the primary goal of the event selection but rather
-of a multivariate analysis that will be introduced at a later stage
-(in \Cref{sec:multivariate_analysis}). In addition, suitable control
-and validation regions are defined for the purpose of estimating
-background processes or validating background estimates using data
-recorded by the ATLAS detector.
+criteria applied to events are kept as loose as possible\todo{It could
+  be looser...} given the limitations imposed by the trigger
+selection. Distinguishing between signal and background events based
+on object- and event-level observables is not the primary goal of the
+event selection but rather of a multivariate analysis that will be
+introduced at a later stage (in \Cref{sec:multivariate_analysis}). In
+addition, suitable control and validation regions are defined for the
+purpose of estimating background processes or validating background
+estimates using data recorded by the ATLAS detector.
 
 Events considered for further analysis are required to fulfil basic
 quality criteria independent of the analysis channel:
@@ -44,65 +44,71 @@ quality criteria independent of the analysis channel:
   rejected.
 \end{itemize}
 
-The search is divided into several analysis channels depending on the
-decay mode of the \taulepton pair and the type of trigger that is used
-to select the events. The \lephad channel targets semi-leptonic decay
+The search is divided into several analysis channels given by the
+decay mode of the \taulepton pair and the type of trigger that
+selected the event. The \lephad channel targets semi-leptonic decay
 modes using single-lepton triggers (SLT) and lepton-plus-\tauhadvis
 triggers (LTT). Each trigger category defines a corresponding
 sub-channel, which are referred to as the \lephad SLT and \lephad LTT
 channels. The \hadhad channel selects events with two \tauhadvis using
 single-\tauhadvis triggers (STT) and di-\tauhadvis triggers
 (DTT). While different types of triggers are used in the \hadhad
-channel, the statistical analysis performed to extract the \HH signals
-does not distinguish between events selected by STT and DTT, thus the
-\hadhad final state is treated as a single analysis channel. In some
-cases it will be required to distinguish between both trigger
-categories. Cases where this applies will be indicated explicitly.
+channel, the statistical analysis performed at a later stage will not
+distinguish between events selected by STT and DTT, thus the \hadhad
+final state is treated as a single analysis channel. In some cases,
+for example for the background estimation, it will be required to
+distinguish between both trigger categories. Cases where this applies
+will be indicated explicitly.
 
 Orthogonality between the \lephad and \hadhad channels is ensured by
-the electron, muon, and \tauhadvis selection. In the \hadhad channel,
+the electron, muon, and \tauhadvis selections. In the \hadhad channel,
 events are required to have exactly two \tauhadvis, vetoing events
-with loosely identified electrons or muons. Events in the \lephad
-channels are required to have exactly one \tauhadvis, and exactly one
-electron or muon passing the respective loose identification working
-point. Additionally, electrons (muons) are required to pass the tight
-(medium) identification working point to reduce the backgrounds from
-jets misidentified as electrons (muons).
+with electrons or muons passing loose identification. Events in the
+\lephad channels are required to have exactly one \tauhadvis and
+exactly one electron or muon passing their respective loose
+identification working point. Additionally, electrons (muons) are
+required to pass the tight (medium) identification working point to
+reduce backgrounds from jets being misidentified as electrons (muons).
 
 Electrons, muons, and \tauhadvis have to be geometrically matched to
-corresponding objects at the HLT according to the trigger that
+their corresponding objects at the HLT according to the trigger that
 selected the event. Trigger-dependent transverse momentum thresholds
 are applied to electrons, muons, and \tauhadvis to ensure that
 triggers operate close to their trigger-efficiency plateau. The
 thresholds applied in events selected by STT or SLT increased with
 increasing instantaneous luminosity of the LHC during Run~2. In
 contrast, lower \pT-thresholds on electrons, muons, and \tauhadvis
-remained constant for DTT and LTT\todo{Is this really true?},
-trigger-rates instead being limited by requiring additional jets and
-specific event topologies at the L1 trigger. The inclusion of the
-\lephad LTT channel allows to select events containing electrons or
-muons with transverse momenta below the SLT \pT-threshold by requiring
-an additional \tauhadvis at trigger-level. Orthogonality between the
-\lephad SLT and LTT channel is ensured by only considering events with
-lepton \pT below the SLT \pT-threshold for the LTT channel.
+remained constant for DTT and LTT, trigger-rates instead being limited
+by requiring additional jets and specific event topologies at the L1
+trigger. The inclusion of the \lephad LTT channel allows to select
+events with electrons or muons with transverse momenta below the SLT
+\pT-threshold by requiring an additional \tauhadvis at
+trigger-level. Orthogonality between the \lephad SLT and LTT channel
+is ensured by only considering events with lepton \pT below the SLT
+\pT-threshold for the LTT channel.
 
-A more detailed descrption of the trigger selection for the \hadhad
-channel will be given in \Cref{sec:hadhad_trigger_selection}.
-
-An overview of the signal region event selection for all channels is
-given in~\Cref{tab:event_selection}.
+An overview of the signal region event selection for all search
+channels is given in \Cref{tab:event_selection}. A more detailed
+description of the \hadhad channel trigger selection will be given in
+\Cref{sec:hadhad_trigger_selection}. Further selections applied at
+event-level to define signal and control region will be summarised in
+\Cref{sec:sr_and_cr_selection}.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Overview of the signal region event selection in the
-    \hadhad channel, and the \lephad SLT and LTT channels. Exact \pT
-    thresholds vary with the triggers (the range is given). For taus
-    in hadhad and jets thresholds are trigger-dependent. Forward jets
-    are not used to select events (only to calculate
-    MET). Requirements applied as part of the object selection are not
-    repeated here. All transverse momentum thresholds refer to
-    transverse momenta after offline event reconstruction.}%
+  \caption{Summary of the signal region event selections for the
+    \hadhad, \lephad SLT, and \lephad LTT channel. Trigger-dependent
+    thresholds are applied to the transverse momentum of electrons,
+    muons, and \tauhadvis. Where applicable, the range of these
+    thresholds is listed.  Requirements on jets in the central region
+    for the DTT or LTT category are trigger-dependent and thus not
+    summarised in this table. For the \hadhad channel, the
+    requirements resulting from the choice of triggers will be
+    described in \Cref{sec:hadhad_trigger_selection}. Jets in the
+    forward region are not used for event selection
+    purposes. Requirements of the object selection introduced in
+    \Cref{sec:object_reconstruction} are assumed to apply.}%
   \label{tab:event_selection}
 
   \resizebox{\textwidth}{!}{
@@ -214,7 +220,8 @@ recommendation is to use a logical OR between the old
 (\verb|medium1_tracktwoEF|) and new triggers (\verb|mediumRNN_tracktwoMVA|).
 
 
-\subsection{Signal and control region event selection}
+\subsection{Signal and control region event selection}%
+\label{sec:sr_and_cr_selection}
 
 
 
