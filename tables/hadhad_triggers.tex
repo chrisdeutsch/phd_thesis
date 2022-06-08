@@ -1,0 +1,30 @@
+\begin{tabular}{lllll}
+  \toprule
+  \textbf{HLT thresholds} & \textbf{HLT chain} & \textbf{L1 trigger} & \textbf{Offline requirements} & \textbf{Period} \\
+  \midrule
+  \multicolumn{5}{l}{Single-\tauhadvis triggers} \\
+  \midrule
+  \texttt{tau80} & \texttt{medium1\_tracktwo} & \texttt{TAU60} & $\pT(\tau_0) > \SI{100}{\GeV}$ & 15--16 A \\
+  \texttt{tau125} & \texttt{medium1\_tracktwo} & \texttt{TAU60} & $\pT(\tau_0) > \SI{140}{\GeV}$ & 16 B--16 D3\\
+  \texttt{tau160} & \texttt{medium1\_tracktwo} & \texttt{TAU60} & $\pT(\tau_0) > \SI{180}{\GeV}$ & 16 D4--17 B4\\
+  \texttt{tau160} & \texttt{medium1\_tracktwo} & \texttt{TAU100} & $\pT(\tau_0) > \SI{180}{\GeV}$ & 17 B5--17 end\\
+  \texttt{tau160} & \texttt{medium1\_tracktwoEF} & \texttt{TAU100} & $\pT(\tau_0) > \SI{180}{\GeV}$ & 18-- \\
+  \texttt{tau160} & \texttt{mediumRNN\_tracktwoMVA} & \texttt{TAU100} & $\pT(\tau_0) > \SI{180}{\GeV}$ & 18 K-- \\
+  \midrule
+  \multicolumn{5}{l}{Di-\tauhadvis triggers} \\
+  \midrule
+  \texttt{tau35} + \texttt{tau25} & \texttt{medium1\_tracktwo} & \texttt{TAU20IM\_2TAU12IM} & $\pT(\text{j}_0) > \SI{80}{\GeV}$ & 15--15 end \\
+  \texttt{tau35} + \texttt{tau25} & \texttt{medium1\_tracktwo} & \texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} & $\pT(\text{j}_0) > \SI{80}{\GeV}$ & 16--17 B4 \\
+  \texttt{tau35} + \texttt{tau25} & \texttt{medium1\_tracktwo} & \texttt{TAU20IM\_2TAU12IM\_4J12} & $\pT(\text{j}_1) > \SI{45}{\GeV}$ & 17--17 end \\
+  \texttt{tau35} + \texttt{tau25} & \texttt{medium1\_tracktwo} & \texttt{DR-TAU20ITAU12I-J25} & $\pT(\text{j}_0) > \SI{80}{\GeV}$ + $\Delta R(\tau_0, \tau_1) < 2.5$ & 17 B5--17 end$^\dagger$ \\
+  \texttt{tau35} + \texttt{tau25} & \texttt{medium1\_tracktwoEF} & \texttt{TAU20IM\_2TAU12IM\_4J12.0ETA23} & $\pT(\text{j}_1) > \SI{45}{\GeV}$ & 18-- \\
+  \texttt{tau35} + \texttt{tau25} & \texttt{medium1\_tracktwoEF} & \texttt{DR-TAU20ITAU12I-J25} & $\pT(\text{j}_0) > \SI{80}{\GeV}$ + $\Delta R(\tau_0, \tau_1) < 2.5$ & 18-- \\
+  \texttt{tau35} + \texttt{tau25} & \texttt{mediumRNN\_tracktwoMVA} & \texttt{TAU20IM\_2TAU12IM\_4J12.0ETA23} & $\pT(\text{j}_1) > \SI{45}{\GeV}$ & 18 K-- \\
+  \texttt{tau35} + \texttt{tau25} & \texttt{mediumRNN\_tracktwoMVA} & \texttt{DR-TAU20ITAU12I-J25} & $\pT(\text{j}_0) > \SI{80}{\GeV}$ + $\Delta R(\tau_0, \tau_1) < 2.5$ & 18 K-- \\
+  \bottomrule
+\end{tabular}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis"
+%%% End:

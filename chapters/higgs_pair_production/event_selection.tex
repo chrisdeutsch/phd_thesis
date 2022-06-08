@@ -116,8 +116,6 @@ event-level to define signal and control region will be summarised in
   }
 \end{table}
 
-\todo[inline]{Analysis specific object counts \& thresholds from trigger}
-
 \todo[inline]{Cuts aiming to reduce backgrounds, e.g.\ $m_{\tau\tau} >
   \SI{60}{\GeV}$ to reduce DY}
 
@@ -129,6 +127,7 @@ event-level to define signal and control region will be summarised in
 \subsection{Trigger selection in the \hadhad channel}%
 \label{sec:trigger}%
 \label{sec:hadhad_trigger_selection}
+
 
 \todo[inline]{Trigger \& trigger evolution}
 
@@ -180,9 +179,56 @@ triggers (DTT). The list of triggers used can be found in \cref{tab:triggers_had
     \bottomrule
   \end{tabular}
 
-  \caption{Triggers used for data taking in the \tauhad\tauhad channel.}
-  \label{tab:triggers_hadhad}
+  \caption{List of single- and di-\tauhadvis triggers used to record
+    data in the \hadhad channel.  For DTT, the leading tau / leading
+    jet Triggers used for data taking in the \tauhad\tauhad channel.}%
+
 \end{table}
+
+\begin{sidewaystable}[p]
+  \centering
+
+  \caption{List of single- and di-\tauhadvis triggers used in the
+    \hadhad channel. The trigger naming conventions of the ATLAS
+    collaboration are used and are summarised in the following. The
+    \pT-thresholds on \tauhadvis at the HLT are denoted by
+    \texttt{tauX}, where \texttt{X} is the threshold in
+    \si{\GeV}. Three different \tauhadvis HLT chains are used
+    (\texttt{medium1\_tracktwo}, \texttt{medium1\_tracktwoEF},
+    \texttt{mediumRNN\_tracktwoMVA}) that differ in \tauhadvis track
+    finding and selection, \tauhadvis identification, and \tauhadvis
+    momentum calibration. \ET and isolation requirements for
+    \tauhadvis at the L1 trigger are denoted by
+    \texttt{XTAUY}(\texttt{I}/\texttt{IM}) with \texttt{Y} referring
+    to the \ET-threshold in \si{\GeV}, \texttt{I}/\texttt{IM} the
+    isolation requirements, and \texttt{X} the number of \tauhadvis
+    fulfilling these criteria. Jets at the L1 trigger are similarly
+    denoted by \texttt{XJY}(\texttt{.0ETA23}), where \texttt{Y} refers
+    to the jet \ET-threshold in \si{\GeV}, the suffix \texttt{.0ETA23}
+    refering to a requirement of $|\eta| < 2.3$ on jets, and
+    \texttt{X} the number of jets fulfilling these conditions. Unless
+    a trigger is based on the L1 topological (L1Topo) trigger
+    system~\cite{TRIG-2019-02}, here chains using the
+    \texttt{DR-TAU20ITAU12I-J25} seed, no disambiguation between
+    objects at L1 is performed such that one \texttt{TAU20IM} will
+    also ensure at least one count of \texttt{TAU12IM}, \texttt{J20},
+    and \texttt{J12}. For chains based on L1Topo, disambiguation is
+    performed and \tauhadvis at L1 are required to fulfil
+    $\Delta R(\tau_0^{\text{L1}}, \tau_1^{\text{L1}}) \leq 2.8$.
+    Requirements on \tauhadvis and jets from offline event
+    reconstruction (offline requirements) are imposed. These
+    requirements are specified in terms of the leading or sub-leading
+    \tauhadvis ($\tau_0$ or $\tau_1$) or the leading or sub-leading
+    central jet ($\text{j}_0$ or $\text{j}_1$). For all events
+    selected by DTT, \tauhadvis have to fulfil
+    $\pT(\tau_0) > \SI{40}{\GeV}$ and $\pT(\tau_1) > \SI{30}{\GeV}$.}%
+  \label{tab:triggers_hadhad}
+
+  \resizebox{\textwidth}{!}{
+    \input{tables/hadhad_triggers}
+  }
+\end{sidewaystable}
+
 
 Priority is given to STT events if the reconstructed \tauhad fulfil the
 \pT-threshold of the trigger (\SI{100}{\GeV} for \verb|tau80|, \SI{140}{\GeV}
