@@ -128,8 +128,134 @@ event-level to define signal and control region will be summarised in
 \label{sec:trigger}%
 \label{sec:hadhad_trigger_selection}
 
+The triggers used to collect data for the \hadhad channel are
+summarised in \Cref{tab:triggers_hadhad}. The choice of triggers
+depends on the data-taking period and will be motivated in the
+following.
 
-\todo[inline]{Trigger \& trigger evolution}
+As Run~2 of the LHC progressed, several improvements were made to the
+HLT algorithms for \tauhadvis triggers. In total three different HLT
+chains are used:
+\begin{description}
+
+\item[\texttt{medium1\_tracktwo}] This chain is the primary HLT chain
+  for \tauhadvis triggers from
+  2015--2017~\cite{ATL-DAQ-PUB-2016-001,ATL-DAQ-PUB-2017-001,ATL-DAQ-PUB-2018-002}. A
+  brief summary, derived from Ref.~\cite{ATLAS-CONF-2017-061}, is
+  given here.
+
+  First, a purely calorimeter-based reconstruction of the \tauhadvis
+  candidate is performed in the region of interest (ROI) provided by
+  the L1 trigger. The topo-cluster algorithm is applied to cells of
+  energy in the calorimeters, the resulting clusters calibrated using
+  a scheme accounting for the different response of the calorimeter to
+  $e^\pm$/$\gamma$ and hadrons. The energy of \tauhadvis candidates is
+  determined from clusters in a core region ($\Delta R < 0.2$) around
+  the barycentre of cluster energies in the ROI, subsequently applying
+  a \tauhadvis-specific calibration which is a function of \tauhadvis
+  candidate \pT, $\eta$, and pile-up conditions. HLT thresholds on the
+  transverse momentum of \tauhadvis candidates are applied after these
+  steps.
+
+  Second, a two-stage tracking approach~\cite{TRIG-2016-01} using
+  \emph{fast tracking}, instead of the ``offline reconstruction''-like
+  \emph{precision tracking}, is employed. As a first stage, fast
+  tracking is performed in a narrow region surrounding the \tauhadvis
+  ROI centre but extended over the entire beamline. The \pT-leading
+  track resulting from this procedure is used to narrow down the
+  search space by only considering tracks within
+  $|\Delta z| < \SI{10}{\milli\metre}$ of this track, thus allowing to
+  widen the region surrounding the ROI centre for the second
+  stage. The second stage of fast tracking is performed in the volume
+  defined by the leading track from the first stage, subsequently
+  defining the multiplicities of core ($\Delta R < 0.2$) and isolation
+  tracks ($0.2 < \Delta R < 0.4$). After the two-stage tracking
+  procedure, track multiplicity requirements are applied. A \tauhadvis
+  at HLT must have one to three tracks in the core region and at most
+  one track in the isolation region.
+
+  As a final step, a \tauhadvis selection similar to the offline
+  \tauhadvis selection is performed. The tracks resulting from the
+  two-stage tracking are used as seeds for precision tracking. The
+  precision tracks are used to calculate discriminating variables used
+  for \tauid. Finally, a BDT-based \tauid algorithm, similar to its
+  counterpart from the offline \tauhadvis reconstruction, is applied
+  requiring \tauhadvis to pass a medium efficiency working
+  point.\footnote{The working points of the trigger-level \tauid do
+    not correspond to the efficiencies of the \tauid of the offline
+    reconstruction. The medium working point at trigger-level applies
+    less stringent selections than the loose working point of offline
+    \tauid.}
+
+\item[\texttt{medium1\_tracktwoEF}]
+  % The precision tracks are also called EF tracks, while fast tracks
+  % are called FTF tracks.
+  This chain was introduced for data-taking in
+  2018~\cite{ATL-DAQ-PUB-2019-001} and differs from the previous one
+  by delaying the track multiplicity selections to a later stage of
+  the HLT chain. Instead of counting tracks from the two-stage fast
+  track finding, the track multiplicities are defined using precision
+  tracks. This change circumvented a reduction in efficiency for
+  3-prong \tauhadvis in high pile-up conditions due to the fast track
+  finding being more susceptible to fake
+  tracks~\cite{ATL-DAQ-PUB-2019-001}.
+
+\item[\texttt{mediumRNN\_tracktwoMVA}] This chain started operation
+  with period K during 2018 data-taking~\cite{ATL-DAQ-PUB-2019-001},
+  corresponding to an integrated luminosity until the end of Run~2 of
+  about \SI{37}{\per\femto\barn}. Several changes were implemented on
+  top of the previous chain.
+
+  First, the \tauhadvis energy calibrations as part of the
+  calorimeter-based \tauhadvis reconstruction are replaced by
+  multivariate methods, namely Boosted Regression Trees. Second, the
+  trigger-level \tauid is replaced by a RNN-based identification
+  algorithm, adopting the approach taken for offline \tauid, which
+  offers improved rejection of \tauhadvis originating from quark- or
+  gluon-jets at the HLT. The improved background rejection allows to
+  relax the track multiplicity cuts from 1--3 precision tracks to 0--3
+  precision tracks in the core region. Allowing \tauhadvis without
+  associated precision tracks at the HLT recovers cases where the fast
+  track finding, which seeds the precision tracking, does not find any
+  tracks in the core region. After the offline event reconstruction a
+  fraction of these cases can be correctly reconstructed, thus
+  improving the selection efficiency of the trigger.
+\end{description}
+
+- Trigger chains: Brief explanation of changes?
+  - Mention the use of a logical ``OR'' from 18 K
+
+- STT \& DTT -> If selected by both precedence is given to STT triggers
+
+- STT
+  - Increasing thresholds as instantaneous luminosity increases
+  - Offl. cut on \tauhadvis \pT exceeding the HLT threshold by 15 to 20 \si{\GeV} to ensure trigger is on efficiency plateau
+
+- DTT
+  - Di-tau triggers changed a lot during Run~2 data-taking to limit trigger-rates as the instantaneous luminosity increased
+  - In 2015: No additional jets at L1 but still applying jet cut due to negligible integrated luminosity collected in 2015. Tau thresholds
+  - In 2016: L1 requires at least one jet with high \ET, the requirement is $\ET > \SI{25}{\GeV}$ at L1 provided none of the \tauhadvis are already fulfil $\ET > \SI{25}{\GeV}$ at L1.
+  - In 2017: Two new triggers are introduced to cope with the rates. 4J12 and L1Topo.
+    - L1Topo uses the the L1 topological trigger to diambiguate between \tauhadvis and jet ROIs. An additional jet with $\ET > \SI{25}{\GeV}$ is required which cannot be fulfilled by the tau ROIs anymore. Thus the L1Topo applies a tighter selection than the non-L1Topo based triggers with J25\_2J20\_3J12. L1Topo also introduces a \dRtautau cut of 2.8 on \tauhadvis ROIs at L1.
+    - 4J12 requires two additional jets with $\ET > \SI{12}{\GeV}$.
+
+ Why use 4J12 and L1Topo in 2017--?
+ - Mostly relevant is L1Topo for intermediate to high resonances masses and SM \HH
+ - Signal acceptance at low \mHH is limited by the jet \pT cut and the \dRtautau requirement. The 4J12 trigger improves the signal acceptance at low \mHH.
+ - 4J12 serves as a backup trigger
+
+ Inefficiency due to the 4J12 eta requirement:
+ - ???
+
+ L1Topo firmware issues for three runs
+ -> Use backup trigger
+
+
+Trigger selection flow chart...
+ What events are considered STT, what events are considered L1Topo / 4J12?
+
+Some trigger efficiency plot would be nice???
+
 
 \todo[inline]{Trigger matching requirements}
 
@@ -143,54 +269,12 @@ event-level to define signal and control region will be summarised in
 In the \tauhad\tauhad channel, events are selected using single (STT) and di-\tauhad
 triggers (DTT). The list of triggers used can be found in \cref{tab:triggers_hadhad}.
 
-\begin{table}[h]
-  \centering
-
-  \scriptsize
-
-  \begin{tabular}{ll}
-    \toprule
-    Trigger & Period \\
-
-    \midrule
-    \multicolumn{2}{c}{Single \tauhad triggers (STT)} \\
-    \midrule
-
-    HLT\_tau80\_medium1\_tracktwo\_L1TAU60 & 15 -- 16 A \\
-    HLT\_tau125\_medium1\_tracktwo & 16 B -- 16 D3 \\
-    HLT\_tau160\_medium1\_tracktwo & 16 D4 -- 17 B4 \\
-    HLT\_tau160\_medium1\_tracktwo\_L1TAU100 & 17 B5 -- 17 end \\
-    HLT\_tau160\_medium1\_tracktwoEF\_L1TAU100 & 18 -- \\
-    HLT\_tau160\_mediumRNN\_tracktwoMVA\_L1TAU100 & 18 K -- \\
-
-    \midrule
-    \multicolumn{2}{c}{Di-\tauhad triggers (DTT)} \\
-    \midrule
-
-    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo\_L1TAU20IM\_2TAU12IM & 15 \\
-    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo & 16 -- 17 B4 \\
-    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo\_L1TAU20IM\_2TAU12IM\_4J12 & 17 \\
-    HLT\_tau35\_medium1\_tracktwo\_tau25\_medium1\_tracktwo\_L1DR-TAU20ITAU12I-J25 & 17 B5 -- 17 end \\
-    HLT\_tau35\_medium1\_tracktwoEF\_tau25\_medium1\_tracktwoEF\_L1TAU20IM\_2TAU12IM\_4J12.0ETA23 & 18 -- \\
-    HLT\_tau35\_medium1\_tracktwoEF\_tau25\_medium1\_tracktwoEF\_L1DR-TAU20ITAU12I-J25 & 18 -- \\
-    HLT\_tau35\_mediumRNN\_tracktwoMVA\_tau25\_mediumRNN\_tracktwoMVA\_L1TAU20IM\_2TAU12IM\_4J12.0ETA23 & 18 K -- \\
-    HLT\_tau35\_mediumRNN\_tracktwoMVA\_tau25\_mediumRNN\_tracktwoMVA\_L1DR-TAU20ITAU12I-J25 & 18 K -- \\
-
-    \bottomrule
-  \end{tabular}
-
-  \caption{List of single- and di-\tauhadvis triggers used to record
-    data in the \hadhad channel.  For DTT, the leading tau / leading
-    jet Triggers used for data taking in the \tauhad\tauhad channel.}%
-
-\end{table}
-
 \begin{sidewaystable}[p]
   \centering
 
   \caption{List of single- and di-\tauhadvis triggers used in the
     \hadhad channel. The trigger naming conventions of the ATLAS
-    collaboration are used and are summarised in the following. The
+    collaboration are used and summarised in the following. The
     \pT-thresholds on \tauhadvis at the HLT are denoted by
     \texttt{tauX}, where \texttt{X} is the threshold in
     \si{\GeV}. Three different \tauhadvis HLT chains are used
@@ -205,15 +289,15 @@ triggers (DTT). The list of triggers used can be found in \cref{tab:triggers_had
     fulfilling these criteria. Jets at the L1 trigger are similarly
     denoted by \texttt{XJY}(\texttt{.0ETA23}), where \texttt{Y} refers
     to the jet \ET-threshold in \si{\GeV}, the suffix \texttt{.0ETA23}
-    refering to a requirement of $|\eta| < 2.3$ on jets, and
+    referring to a requirement of $|\eta| < 2.3$ on jets, and
     \texttt{X} the number of jets fulfilling these conditions. Unless
-    a trigger is based on the L1 topological (L1Topo) trigger
-    system~\cite{TRIG-2019-02}, here chains using the
+    a trigger is based on the L1 topological trigger
+    system~\cite{TRIG-2019-02} (L1Topo), here chains using the
     \texttt{DR-TAU20ITAU12I-J25} seed, no disambiguation between
-    objects at L1 is performed such that one \texttt{TAU20IM} will
-    also ensure at least one count of \texttt{TAU12IM}, \texttt{J20},
-    and \texttt{J12}. For chains based on L1Topo, disambiguation is
-    performed and \tauhadvis at L1 are required to fulfil
+    objects at L1 is performed such that one \texttt{TAU20IM} also
+    ensures at least one count of \texttt{TAU12IM}, \texttt{J20}, and
+    \texttt{J12}. For chains based on L1Topo, disambiguation is
+    performed and additionally \tauhadvis at L1 are required to fulfil
     $\Delta R(\tau_0^{\text{L1}}, \tau_1^{\text{L1}}) \leq 2.8$.
     Requirements on \tauhadvis and jets from offline event
     reconstruction (offline requirements) are imposed. These
@@ -221,7 +305,9 @@ triggers (DTT). The list of triggers used can be found in \cref{tab:triggers_had
     \tauhadvis ($\tau_0$ or $\tau_1$) or the leading or sub-leading
     central jet ($\text{j}_0$ or $\text{j}_1$). For all events
     selected by DTT, \tauhadvis have to fulfil
-    $\pT(\tau_0) > \SI{40}{\GeV}$ and $\pT(\tau_1) > \SI{30}{\GeV}$.}%
+    $\pT(\tau_0) > \SI{40}{\GeV}$ and $\pT(\tau_1) >
+    \SI{30}{\GeV}$. The data-taking periods where triggers were used
+    are given in the last column.}%
   \label{tab:triggers_hadhad}
 
   \resizebox{\textwidth}{!}{
