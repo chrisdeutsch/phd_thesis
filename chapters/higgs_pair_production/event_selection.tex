@@ -335,7 +335,22 @@ In 2017, two new L1 seeds were introduced, one specifically developed
 for this analysis (\texttt{TAU20IM\_2TAU12IM\_4J12}), and one a
 continuation of the previous trigger chain with additional
 requirements to cope with the increase in instantaneous luminosity
-(\texttt{DR-TAU20ITAU12I-J25}). \LOneTopo \FourJTwelve
+(\texttt{DR-TAU20ITAU12I-J25}). Both trigger chains are used for this
+search, which one is used depends on the phase space of the analysis.
+If the transverse momentum of the sub-leading central jet from the
+offline reconstruction exceeds \SI{45}{\GeV}, the trigger chain based
+on the \texttt{TAU20IM\_2TAU12IM\_4J12} seed is used which requires to
+additional jets with $\ET > \SI{12}{\GeV}$ at L1. The requirement on
+the sub-leading central jet ensures that the L1 trigger seed is close
+to its efficiency plateau. This type of trigger will be referred to as
+\FourJTwelve hereafter. If the condition for the \FourJTwelve trigger
+is not fulfilled, but the event has a leading central jet from offline
+reconstruction with $\pT > \SI{80}{\GeV}$ and $\dRtautau < 2.5$ then
+the DTT with the \texttt{DR-TAU20ITAU12I-J25} seed is considered. This
+trigger is based on the L1 topological trigger
+system~\cite{TRIG-2019-02} which allows
+
+\LOneTopo \FourJTwelve
 
 - DTT
   - In 2017: Two new triggers are introduced to cope with the rates. 4J12 and L1Topo.
@@ -360,6 +375,12 @@ What events are considered STT, what events are considered L1Topo / 4J12?
 Some trigger efficiency plot would be nice???
 
 STT selects only few events, predominately targeting regions of high resonance mass / high mHH.
+
+
+Possible plots to add:
+J25 turn-on???
+dRtautau for L1Topo turn-on???
+J12 turn-on???
 
 
 \todo[inline]{Trigger matching requirements}
