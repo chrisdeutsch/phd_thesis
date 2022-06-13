@@ -128,14 +128,13 @@ event-level to define signal and control region will be summarised in
 \label{sec:trigger}%
 \label{sec:hadhad_trigger_selection}
 
-The triggers used to collect data for the \hadhad channel are
-summarised in \Cref{tab:triggers_hadhad}. The choice of triggers
+The triggers used to select events of interest for the \hadhad channel
+are summarised in \Cref{tab:triggers_hadhad}. The choice of triggers
 depends on the data-taking period and will be motivated in the
-following. Descriptions of reconstruction or selections applied at the
-level of the full event reconstruction will be qualified by
-\emph{offline} (e.g.\ offline reconstruction, offline requirements) to
-distinguish it from trigger-level (\emph{online}) reconstruction or
-selections.
+following. Reconstruction or selections applied at the level of the
+full event reconstruction will be qualified by \emph{offline} (e.g.\
+offline reconstruction, offline selection/requirements) to distinguish
+them from trigger-level (\emph{online}) reconstruction or selections.
 
 \begin{sidewaystable}[p]
   \centering
@@ -205,30 +204,30 @@ HLT algorithms for \tauhadvis triggers. In total three different
   transverse momentum of \tauhadvis candidates are applied after these
   steps.
 
-  Second, a two-stage tracking approach~\cite{TRIG-2016-01} using
-  \emph{fast tracking}, instead of the ``offline reconstruction''-like
-  \emph{precision tracking}, is employed. As a first stage, fast
-  tracking is performed in a narrow region surrounding the \tauhadvis
-  ROI centre but extended over the entire beamline. The \pT-leading
-  track resulting from this procedure is used to narrow down the
-  search space by only considering tracks within
-  $|\Delta z| < \SI{10}{\milli\metre}$ of this track, thus allowing to
-  widen the region surrounding the ROI centre for the second
-  stage. The second stage of fast tracking is performed in the volume
-  defined by the leading track from the first stage, subsequently
-  defining the multiplicities of core ($\Delta R < 0.2$) and isolation
-  tracks ($0.2 < \Delta R < 0.4$). After the two-stage tracking
-  procedure, track multiplicity requirements are applied. A \tauhadvis
-  at HLT must have one to three tracks in the core region and at most
-  one track in the isolation region.
+  Second, a two-stage tracking
+  approach~\cite{TRIG-2016-01,ATLAS-CONF-2017-061} using \emph{fast
+    tracking}, instead of the more time-consuming \emph{precision
+    tracking}, is employed. As a first stage, fast tracking is
+  performed in a narrow region surrounding the \tauhadvis ROI centre
+  but extended over a large section of the beamline. The \pT-leading
+  track resulting from the first stage is used to narrow down the
+  search space along the beamline by only considering tracks within
+  $|\Delta z| < \SI{10}{\milli\metre}$ of this track, allowing to
+  widen the search region around the ROI centre for the second
+  stage. After the second stage of fast tracking, multiplicities of
+  core ($\Delta R < 0.2$) and isolation tracks
+  ($0.2 < \Delta R < 0.4$) are defined. Track multiplicity
+  requirements are applied by selecting \tauhadvis candidates at the
+  HLT with one to three tracks in the core and at most one track in
+  the isolation region.
 
   As a final step, a \tauhadvis selection similar to the offline
   \tauhadvis selection is performed. The tracks resulting from the
   two-stage tracking are used as seeds for precision tracking. The
-  precision tracks are used to calculate discriminating variables used
-  for \tauid. Finally, a BDT-based \tauid algorithm, similar to its
-  counterpart from the offline \tauhadvis reconstruction, is applied
-  requiring \tauhadvis to pass a medium efficiency working
+  precision tracks are then used to calculate discriminating variables
+  used for \tauid. Finally, a BDT-based \tauid algorithm, similar to
+  its counterpart from the offline \tauhadvis reconstruction, is
+  applied requiring \tauhadvis to pass a medium efficiency working
   point.\footnote{The working points of the trigger-level \tauid do
     not correspond to the efficiencies of the \tauid of the offline
     reconstruction. The medium working point at trigger-level applies
@@ -252,60 +251,60 @@ HLT algorithms for \tauhadvis triggers. In total three different
   period K of 2018 data-taking~\cite{ATL-DAQ-PUB-2019-001}. The
   integrated luminosity from period K to the end of Run~2 corresponds
   to about \SI{37}{\per\femto\barn}. Several changes were implemented
-  on top of the previous chains.
+  on top of the previous chain.
 
   First, the \tauhadvis energy calibrations as part of the
   calorimeter-based \tauhadvis reconstruction are replaced by
   multivariate methods, namely Boosted Regression Trees. Second, the
-  trigger-level \tauid is replaced by a RNN-based identification
-  algorithm, adopting the approach taken for offline \tauid, which
-  offers improved rejection of \tauhadvis originating from quark- or
+  trigger-level \tauid is replaced by an identification algorithm
+  based on RNN, adopting the approach taken for offline \tauid,
+  offering improved rejection of \tauhadvis originating from quark- or
   gluon-jets at the HLT. The improved background rejection allows to
   relax the track multiplicity cuts from 1--3 precision tracks to 0--3
   precision tracks in the core region. Allowing \tauhadvis candidates
-  without associated precision tracks at the HLT recovers cases where
-  the fast track finding, which seeds the precision tracking, does not
-  find any tracks in the core region. After the offline event
-  reconstruction, a fraction of these cases can be correctly
-  reconstructed, thus improving the selection efficiency of the
-  trigger.
+  without precision tracks in the core region recovers cases where the
+  fast track finding does not yield good quality seeds for the
+  precision tracking.  After the offline event reconstruction, a
+  fraction of these events can be correctly reconstructed, thus
+  improving the selection efficiency of the trigger.
 \end{description}
-From period K in 2018 onwards, it is recommended to use a logical
-\emph{or} of the \texttt{medium1\_tracktwoEF} and
-\texttt{mediumRNN\_tracktwoMVA} chains. This recommendation is
+From period K in 2018 onwards, the use of a logical \emph{or} between
+the \texttt{medium1\_tracktwoEF} and \texttt{mediumRNN\_tracktwoMVA}
+chains is recommended, calibrations for this combination being
+centrally provided by the ATLAS collaboration. This recommendation is
 followed in the trigger selection employed in this search.
 
 In the \hadhad channel, single- and di-\tauhadvis triggers are used to
 select events of interest. When an event fulfills both the STT and DTT
-criteria, which will be discussed in the following, precedence is
-given to the STT category.
+criteria, the criteria being discussed in the following, precedence is
+given to STT.
 
-The STT used during Run~2 data-taking varied in the \pT-threshold
+The STT used during Run~2 data-taking had changing \pT-thresholds
 applied to \tauhadvis at trigger-level. At the HLT, these threshold
-ranged from \SI{80}{\GeV} at the beginning of Run~2 up to
-\SI{160}{\GeV} at the end. To ensure that the triggers operate close
-to their trigger-efficiency plateau, it is required that one
-\tauhadvis from the offline reconstruction can be geometrically
-matched to the \tauhadvis at the HLT ($\Delta R < 0.2$) and that the
-offline \tauhadvis transverse momentum exceeds the HLT threshold by
-\SIrange{15}{20}{\GeV}. The exact requirements on \tauhadvis are
-listed in~\Cref{tab:triggers_hadhad}.
+ranged from \SI{80}{\GeV} up to \SI{160}{\GeV}. To ensure that the
+triggers operate close to their trigger-efficiency plateau, it is
+required that one \tauhadvis from the offline reconstruction can be
+geometrically matched to the \tauhadvis at the HLT ($\Delta R < 0.2$)
+and that the offline \tauhadvis transverse momentum exceeds the HLT
+threshold by \SIrange{15}{20}{\GeV}. The exact requirements on
+\tauhadvis are listed in~\Cref{tab:triggers_hadhad}.
 
 At the HLT, the requirements imposed on \tauhadvis transverse momenta
-by DTT remain constant throughout Run~2, requiring the leading and
-sub-leading \tauhadvis to exceed transverse momenta of \SI{35}{\GeV}
-and \SI{25}{\GeV}, respectively. To ensure that the triggers are close
-to fully efficient, two \tauhadvis from offline reconstruction are
-required to be geometrically matched to \tauhadvis at the HLT and
-exceed the corresponding HLT threshold by at least \SI{5}{\GeV}. The
-primary limitations of di-\tauhadvis triggers arise at the L1 trigger,
-necessitating changes in the L1 seeds used for these triggers as the
-instantaneous luminosity of the LHC increased during Run~2.
+by DTT remain unchanged throughout Run~2 of the LHC, requiring the
+leading and sub-leading \tauhadvis to exceed transverse momenta of
+\SI{35}{\GeV} and \SI{25}{\GeV}, respectively. To ensure that the
+triggers are close to fully efficient, two \tauhadvis from offline
+reconstruction are required to be geometrically matched to \tauhadvis
+at the HLT and exceed the corresponding HLT threshold by at least
+\SI{5}{\GeV}. The primary limitations of di-\tauhadvis triggers arise
+at the L1 trigger, necessitating changes in the L1 seeds used for
+these triggers as the instantaneous luminosity of the LHC increased
+during Run~2.
 
-In 2015, the DTT had no additional requirements beyond the two
-isolated \tauhadvis at the L1 trigger. However, an offline requirement
-on the leading jet \pT is imposed, requiring $\pT >
-\SI{80}{\GeV}$. This selection is not strictly necessary and is
+In 2015, the DTT had no additional requirements beyond two isolated
+\tauhadvis at the L1 trigger. However, an offline requirement on the
+\pT-leading jet in the central region is imposed, requiring
+$\pT > \SI{80}{\GeV}$. This selection is not strictly necessary and is
 applied to harmonise the selection with the one applied for triggers
 used for the remainder of Run~2.\footnote{The integrated luminosity
   collected in 2015 is small (\SI{3.2}{\per\femto\barn}) compared to
@@ -313,49 +312,52 @@ used for the remainder of Run~2.\footnote{The integrated luminosity
   cut that is tighter than necessary in favour of harmonising the
   selection between data-taking periods.}
 
-In 2016, requirements of additional jets at the L1 trigger were added
-to DTT with the goal of limiting the rate at which events are
-accepted. Three additional jets are required, however, these jets
-overlap with \tauhadvis ROIs at L1 since no disambiguation is
-performed, thus effectively requiring only one jet in addition to two
-\tauhadvis.\footnote{At the L1 trigger, a \tauhadvis candidate with
+In 2016, requirements of additional jets were added to L1 seeds of DTT
+to limit the rate at which events were accepted. Three jets were
+required, two of which overlapping with \tauhadvis ROIs since no
+disambiguation is performed between \tauhadvis and jets at the L1
+trigger.\footnote{At the L1 trigger, a \tauhadvis candidate with
   transverse energy of $\ET^\tau$ is also reconstructed as a jet ROI
-  with $\ET^{\text{jet}} \geq \ET^\tau$.}  The \ET-threshold applied
+  with $\ET^{\text{jet}} \geq \ET^\tau$.}  The \ET-thresholds applied
 to the three jets are \SI{25}{\GeV}, \SI{20}{\GeV}, and \SI{12}{\GeV},
-the two lowest thresholds are necessarily fulfilled due to the
-\tauhadvis requirement at L1 (cf.\ \Cref{tab:triggers_hadhad}). While
-the \ET-threshold applied to the additional jet can be effecively
-lower than \SI{25}{\GeV} when a \tauhadvis candidate exists with
-sufficiently high \ET, the offline requirement on the leading jet in
-the central region, $\pT > \SI{80}{\GeV}$, is still chosen such that
-the L1 trigger with $\ET > \SI{25}{\GeV}$ is at its plateau in trigger
-efficiency.
+the two lowest thresholds ensured to be fulfilled due to the
+\tauhadvis requirements at the L1 trigger (cf.\
+\Cref{tab:triggers_hadhad}). The \ET-threshold applied to the jet not
+overlapping with a \tauhadvis ROI can be lower than \SI{25}{\GeV}
+provided a \tauhadvis candidate exists that is also reconstructed as a
+jet with $\ET > \SI{25}{\GeV}$. However, an offline requirement of
+$\pT > \SI{80}{\GeV}$ is still applied to the leading jet in the
+central region, which corresponds to the trigger efficiency plateau of
+the L1 jet trigger with a threshold of $\ET > \SI{25}{\GeV}$.
 
-In 2017, two new L1 seeds were introduced, one specifically developed
-for this analysis (\texttt{TAU20IM\_2TAU12IM\_4J12}), and one a
-continuation of the previous trigger chain with additional
-requirements to cope with the increase in instantaneous luminosity
-(\texttt{DR-TAU20ITAU12I-J25}). Both trigger chains are used for this
-search, which one is used depends on the phase space of the analysis.
-If the transverse momentum of the sub-leading central jet from the
-offline reconstruction exceeds \SI{45}{\GeV}, the trigger chain based
-on the \texttt{TAU20IM\_2TAU12IM\_4J12} seed is used which requires to
-additional jets with $\ET > \SI{12}{\GeV}$ at L1. The requirement on
-the sub-leading central jet ensures that the L1 trigger seed is close
-to its efficiency plateau. This type of trigger will be referred to as
-\FourJTwelve hereafter. If the condition for the \FourJTwelve trigger
-is not fulfilled, but the event has a leading central jet from offline
+In 2017, DTT based on two new L1 seeds were introduced, one
+specifically developed for this search
+(\texttt{TAU20IM\_2TAU12IM\_4J12}), and one a continuation of the DTT
+used in 2016 with additional requirements at L1 to cope with the
+increase in instantaneous luminosity
+(\texttt{DR-TAU20ITAU12I-J25}). Both trigger chains are used in this
+search, the trigger being chosen depending on the phase space selected
+in the search. If the transverse momentum of the sub-leading central
+jet from the offline event reconstruction exceeds \SI{45}{\GeV} the
+trigger chain based on the \texttt{TAU20IM\_2TAU12IM\_4J12} seed is
+used. This chain requires two additional jets with
+$\ET > \SI{12}{\GeV}$ at L1, the offline requirement on the
+sub-leading jet \pT ensuring that the trigger operates close to its
+efficiency plateau. This type of DTT will be referred to as
+\FourJTwelve. If the condition for the \FourJTwelve trigger is not
+fulfilled but the event has a leading central jet from offline
 reconstruction with $\pT > \SI{80}{\GeV}$ and $\dRtautau < 2.5$ then
 the DTT with the \texttt{DR-TAU20ITAU12I-J25} seed is considered. This
 trigger is based on the L1 topological trigger
-system~\cite{TRIG-2019-02} which allows
-
-\LOneTopo \FourJTwelve
-
-- DTT
-  - In 2017: Two new triggers are introduced to cope with the rates. 4J12 and L1Topo.
-    - L1Topo uses the the L1 topological trigger to diambiguate between \tauhadvis and jet ROIs. An additional jet with $\ET > \SI{25}{\GeV}$ is required which cannot be fulfilled by the tau ROIs anymore. Thus the L1Topo applies a tighter selection than the non-L1Topo based triggers with J25\_2J20\_3J12. L1Topo also introduces a \dRtautau cut of 2.8 on \tauhadvis ROIs at L1.
-    - 4J12 requires two additional jets with $\ET > \SI{12}{\GeV}$.
+system~\cite{TRIG-2019-02} that allows to disambiguate between jet and
+\tauhadvis ROIs and to apply other topological requirements at the L1
+trigger. As a result of the disambiguation, the jet requirement at L1
+is stricter compared to the DTT used in 2016. Additionally, only
+events with a $\Delta R \leq \num{2.8}$ between \tauhadvis ROIs at L1
+are considered. The phase space where this trigger is employed is
+chosen such that the L1 requirements are fully efficient. Due to the
+use of the L1 topological trigger system, this type of trigger will be
+referred to as \LOneTopo in the following.
 
  Why use 4J12 and L1Topo in 2017--?
  - Mostly relevant is L1Topo for intermediate to high resonances masses and SM \HH
