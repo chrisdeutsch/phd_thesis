@@ -359,16 +359,39 @@ chosen such that the L1 requirements are fully efficient. Due to the
 use of the L1 topological trigger system, this type of trigger will be
 referred to as \LOneTopo in the following.
 
- Why use 4J12 and L1Topo in 2017--?
- - Mostly relevant is L1Topo for intermediate to high resonances masses and SM \HH
- - Signal acceptance at low \mHH is limited by the jet \pT cut and the \dRtautau requirement. The 4J12 trigger improves the signal acceptance at low \mHH.
- - 4J12 serves as a backup trigger
+The \FourJTwelve trigger was introduced to enhance the acceptance of
+signals from scalar resonances with low mass and the acceptance of
+non-resonant \HH production with low invariant masses of the
+\HH-system (\mHH). The \LOneTopo trigger limits the acceptance of
+signals in this phase space due to the high \pT-threshold on the
+leading jet and the \dRtautau requirement. For resonances with masses
+beyond \SI{325}{\GeV} and SM \HH production, which has a sufficiently
+hard \mHH spectrum, the signal acceptance improvement of using both
+\FourJTwelve and \LOneTopo triggers is negligible over just using the
+\LOneTopo trigger.
 
- Inefficiency due to the 4J12 eta requirement:
- - ???
-
- L1Topo firmware issues for three runs
- -> Use backup trigger
+In 2018, new \tauhadvis HLT algorithms were introduced, updating the
+existing \LOneTopo- and \FourJTwelve-based trigger chains. Changes
+were made to the selections applied by the \FourJTwelve L1 seed for
+DTT, requiring at least four jets with $\ET > \SI{12}{\GeV}$ and
+$|\eta| < 2.3$ instead. This change introduced a mismatch in the
+pseudorapidity selection for \tauhadvis ($|\eta| < 2.5$) and jet ROIs
+($|\eta| < 2.3$) at the L1 trigger, such that the L1 jet multiplicity
+requirement was not specified as intended. This was problematic when
+one or more \tauhadvis at L1 are close to the boundary of the
+acceptance in pseudorapidity such that they do not count towards the
+number of jets in $|\eta| < 2.3$. Moreover, the pseudorapdity
+requirement on jets does not align with the offline event selection
+where jets can be \btagged up to $|\eta| < 2.5$. This mismatch caused
+an inefficiency in the trigger selection for signal processes,
+cancelling the efficiency improvements obtained at the HLT from to the
+$\texttt{medium1\_tracktwoEF}$ chains, such that the trigger
+efficiency remained at the level of the \FourJTwelve trigger used in
+2017. The relative reduction in trigger efficiency for signal
+processes compared to the \FourJTwelve trigger without the
+$|\eta| < 2.3$ requirement is approximately \SI{5}{\percent}. This
+issue is resolved in the trigger menu to be used for Run~3 of the LHC
+by extending the pseudorapidity range for the jets at L1.
 
 
 Trigger selection flow chart...
