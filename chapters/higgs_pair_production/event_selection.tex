@@ -406,9 +406,9 @@ also applying the $\dRtautau < 2.5$ selection necessary for
 system was disabled due to problems with the trigger firmware. For
 these runs the DTT chain based on
 \texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} was used as a backup. This
-chain was almost unprescaled during these runs, resulting in a loss of
-integrated luminosity of about \SI{60}{\per\pico\barn} for the
-\LOneTopo category as a result of the prescale.
+chain was almost unprescaled during these runs, losing about
+\SI{60}{\per\pico\barn} of integrated luminosity in the \LOneTopo
+category as a result of the prescale.
 
 \begin{figure}[htbp]
   \centering
@@ -422,6 +422,7 @@ integrated luminosity of about \SI{60}{\per\pico\barn} for the
   \label{fig:trigger_selection_flowchart}
 \end{figure}
 
+After applying the
 
 Some trigger efficiency plot would be nice???
 
@@ -435,16 +436,158 @@ J12 turn-on???
 \subsection{Signal and control region event selection}%
 \label{sec:sr_and_cr_selection}
 
-\subsection{Selection of $\pp \ra hh \ra \bbbar\tauhad\tauhad$ Events}
-% TODO
-\label{sec:reconstruction_of_higgs_candidates}
+The signal regions
+
+Selected by trigger and trigger requirements are fulfilled.
+
+Exactly 2 \btagged jets.
+1 $b$-tag regions have relatively low signal purities and are thus not
+
+Opposite sign charge
+
+Reject events where di-tau-mass reconstruction failed and \mMMC > 60
+GeV. Reject low mass DY.
+
+Lephad only: \mBB < 150 GeV for SR to define a top control region..
 
 
-\subsubsection{Preselection}
+The acceptance times efficiency, \AccTimesEff, of the SM \HH signal in
+the signal regions of all three channels is summarised
+in~\Cref{tab:nonres_acc_times_eff} and compared to the \AccTimesEff of
+the previously published result in this channel. Compared to the
+previous search, the search presented here improves the SM \HH
+\AccTimesEff by a factor exceeding 2 (1.5) for the \hadhad (\lephad
+channels). The majority of this increase in \AccTimesEff for SM \HH is
+due to changes in \tauhadvis reconstruction, identification, and
+$b$-tagging:
+\begin{description}
 
-Trigger selection follows \cref{sec:trigger}
+\item[Improvements in track selection for \tauhadvis] The introduction
+  of a multivariate method for \tauhadvis track selection lead to an
+  improvement in the \tauhadvis reconstruction efficiency. The new
+  method, introduced in Ref.~\cite{duschinger}, supersedes a cut-based
+  track selection method, leading to a relative improvement in 1-prong
+  (3-prong) \tauhadvis reconstruction efficiency of \SI{6}{\percent}
+  (\SI{10}{\percent}).
 
-\subsubsection{Signal Region}
+\item[Improvements in \tauhadvis identification] The increased
+  background rejection of the RNN \tauid compared to the BDT ID
+  allowed to switch from the medium working point that was used
+  previously to the loose working point while maintaining similar
+  background rates. This lead to a relative improvement in \tauhadvis
+  tagging efficiency of \SI{13}{\percent} (\SI{25}{\percent}) for
+  1-prong (3-prong) \tauhadvis.
+
+  The likelihood-based electron veto algorithm was replaced by an
+  algorithm based on a BDT discriminant, relative increase in tagging
+  efficiency of \SIrange{4}{5}{\percent} for 1-prong \tauhadvis. No
+  electron veto is applied for 3-prong \tauhadvis candidates.
+
+\item[Improvements in $b$-tagging]
+
+  The increased light and charm jet rejection of the \textsc{DL1r}
+  tagger~\cite{ATL-PHYS-PUB-2017-013}.
+
+  The previous analysis used \textsc{MV2c10}
+  tagger~\cite{ATL-PHYS-PUB-2016-012} with target tagging efficiency
+  for true $b$-jets in \ttbar of \SI{70}{\percent}.
+
+  \SI{10}{\percent} relative improvement
+\end{description}
+The object-level efficiency improvements compound due to the
+requirement of 2 $b$-tagged jets and two (one) \tauhadvis in the
+\hadhad (\lephad) signal regions explaining the large improvement in
+\AccTimesEff for SM \HH with respect to the previous
+search.\todo{Should make a note of the backgrounds here.}
+
+The acceptance times efficiency, \AccTimesEff, of the SM \HH
+production and resonant production of \HH is shown
+in~\Cref{tab:nonres_acc_times_eff} and
+\Cref{fig:signal_acceptance_resonant}, respectively.
+
+Signal acceptance non-res HH (ggf / VBF)
+
+Signal acceptance improvement compared to previous analysis.
+
+Two-fold improvement with respect to the previous analysis. Reasons:
+- Switch from 70\% efficiency MV2c10 tagger to 77\% DL1r tagger
+- Improved \tauhadvis track counting leading to 6\% relative efficiency improvement for 1-prong \tauhadvis reconstruction and \SI{10}{\percent} 3-prong \tauhadvis reconstruction
+- Improved electron-Veto algorithm improving 1-prong \tauhadvis efficiency from ca.\ \SI{92}{\percent} to \SI{96}{\percent}
+- Switch from medium BDT ID (75 / 60) to loose RNN ID (85 / 75)
+
+Accounting for these efficiency improvements leads to a two-fold improvement in signal acceptance in the \hadhad channel.
+
+
+
+
+\cite{duschinger}
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Acceptance times efficiency of the SM \HH signal for the
+    signal region selection of all three channels. The acceptance
+    times efficiency is given with respect to all generated
+    $pp \to \HH \to \bbbar\hadhad$ ($pp \to \HH \to \bbbar\lephad$)
+    events for the \hadhad channel (\lephad channels). A comparison
+    with the signal acceptance of the previous iteration of the
+    analysis is given in the last row, the values taken from
+    Ref.~\cite{HIGG-2016-16-witherratum}. $\dagger$:~The SM \HH
+    acceptance times efficiency is given for the combination of
+    \lephad SLT and LTT channel.}%
+  \label{tab:nonres_acc_times_eff}
+
+  \input{tables/signal_acceptance}
+\end{table}
+
+
+
+
+
+
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.6\textwidth]{selection/acceptance_resonant}
+
+  \caption{Acceptance times efficiency for scalar resonances of narrow
+    width decaying into \HH in the signal regions of all three
+    analysis channels and the combination of the \lephad SLT and LTT
+    channels. The acceptance times efficiency is given with respect to
+    all generated $X \to \HH \to \bbbar\hadhad$
+    ($X \to \HH \to \bbbar\lephad$) events for the \hadhad channel
+    (\lephad channels). The figure is taken from
+    Ref.~\cite{ATLAS-CONF-2021-030}.}%
+  \label{fig:signal_acceptance_resonant}
+
+  \todo[inline]{Update to paper version}
+\end{figure}
+
+Control region definitions briefly listed with references to the
+chapters where they are used:
+\begin{description}
+
+\item[$Z$+$bb$ control region ($Z \to e^+e^-$/$\mu^+\mu^-$)] Z+bb
+  control region in $e^+e^-$ and $\mu^+\mu^-$ final state with two
+  \btagged jets.
+
+\item[Top control region (\lephad)] $\mBB > \SI{150}{\GeV}$
+
+\item[Anti-ID and same-sign control regions (\hadhad)] Multi-jet (1
+  $b$-tag) or multi-jet and \ttbar (2 $b$-tag)
+
+\item[]
+
+\end{description}
+
+
+
+
+
+
+
 
 The SR selection is as follows:
 \begin{itemize}
