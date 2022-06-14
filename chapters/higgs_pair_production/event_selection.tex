@@ -393,74 +393,47 @@ $|\eta| < 2.3$ requirement is approximately \SI{5}{\percent}. This
 issue is resolved in the trigger menu to be used for Run~3 of the LHC
 by extending the pseudorapidity range for the jets at L1.
 
+A flowchart summarising the trigger selection is shown
+in~\Cref{fig:trigger_selection_flowchart}. Two features of the trigger
+selection are not explicitly illustrated in the figure. First, the
+\LOneTopo trigger only started operation with period B5 in 2017 while
+the \FourJTwelve was available from the start of 2017 data-taking. In
+the intermittent period where \LOneTopo was not available, the
+unprescaled \tauhadvis trigger chain based on
+\texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} is used instead, however,
+also applying the $\dRtautau < 2.5$ selection necessary for
+\LOneTopo. Second, for three runs in 2017 the L1 topological trigger
+system was disabled due to problems with the trigger firmware. For
+these runs the DTT chain based on
+\texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} was used as a backup. This
+chain was almost unprescaled during these runs, resulting in a loss of
+integrated luminosity of about \SI{60}{\per\pico\barn} for the
+\LOneTopo category as a result of the prescale.
 
-Trigger selection flow chart...
-What events are considered STT, what events are considered L1Topo / 4J12?
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=\textwidth]{selection/trigger_flowchart}
+
+  \caption{Flowchart of the \hadhad channel trigger selection. The
+    leading and sub-leading \tauhadvis candidate (jet) from the
+    offline event reconstruction are abbreviated as $\tau_0$ and
+    $\tau_1$ ($\text{j}_0$ and $\text{j}_1$), respectively.}%
+  \label{fig:trigger_selection_flowchart}
+\end{figure}
+
 
 Some trigger efficiency plot would be nice???
 
 STT selects only few events, predominately targeting regions of high resonance mass / high mHH.
-
 
 Possible plots to add:
 J25 turn-on???
 dRtautau for L1Topo turn-on???
 J12 turn-on???
 
-
-\todo[inline]{Trigger matching requirements}
-
-\todo[inline]{Say that we sometimes differentiate between STT and DTT
-  categories but in the end all STT and DTT events are combined for
-  the analysis.}
-
-\todo[inline]{Introduce what is meant with ``online'' and
-  ``offline''.}
-
-
-
-
-
-Priority is given to STT events if the reconstructed \tauhad fulfil the
-\pT-threshold of the trigger (\SI{100}{\GeV} for \verb|tau80|, \SI{140}{\GeV}
-for \verb|tau125| and \SI{180}{\GeV} for \verb|tau160|) and are geometrically
-matched to the HLT object that fired the trigger.
-
-If the event does not fulfil the STT criteria, then the DTT is checked. The
-\pT-thresholds for \tauhadvis is \SI{40}{\GeV} (\SI{30}{\GeV}) for the leading
-(subleading) \tauhadvis candidate.
-
-For three runs (336506, 336548, 336567) during 2017 data taking, L1Topo-based
-triggers were mistakenly disabled in the trigger firmware also affecting the
-\verb|L1DR-TAU20ITAU12I-J25| trigger. As a backup the almost unprescaled
-\verb|HLT_tau35_medium1_tracktwo_tau25_medium1_tracktwo| trigger was used.
-
-In 2017 / 2018 two different di-\tauhad triggers with different L1 seeds are
-used. The L1 seeds are \verb|L1TAU20IM_2TAU12IM_4J12| and
-\verb|L1TAU20IM_2TAU12IM_4J12.0ETA23| (4J12) and \verb|L1DR-TAU20ITAU12I-J25|
-(L1Topo) and differ in the requirements on \tauhadvis and additional jets.
-
-The 4J12 trigger requires two\footnote{Two \tauhadvis already satisfy 2J12}
-additional jets at L1 with $\ET > \SI{12}{\GeV}$. Additionally, in 2018 the jets
-are required to be in $|\eta| < 2.3$. The L1Topo trigger uses the ATLAS
-topological trigger introduced in 2017 to require a $\Delta R(\tauhad, \tauhad)
-< 2.8$ on both \tauhad as well as one additional jet with $\ET > \SI{25}{\GeV}$
-at L1.
-
-Orthogonality (and being on plateau of the trigger turn-on) between the 4J12 and
-L1Topo trigger channel is ensured by offline cuts discussed in
-Section.%~\ref{subsec:selhh_hadhad}.
-
-During TS1 new \tauhadvis triggers employing RNN-based \tauhad identification
-and MVA-based energy calibration were deployed. Starting from Period K, the
-recommendation is to use a logical OR between the old
-(\verb|medium1_tracktwoEF|) and new triggers (\verb|mediumRNN_tracktwoMVA|).
-
-
 \subsection{Signal and control region event selection}%
 \label{sec:sr_and_cr_selection}
-
-
 
 \subsection{Selection of $\pp \ra hh \ra \bbbar\tauhad\tauhad$ Events}
 % TODO
