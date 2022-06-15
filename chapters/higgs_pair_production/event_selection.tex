@@ -458,16 +458,15 @@ are rejected by requiring $\mMMC > \SI{60}{\GeV}$.
 In the \lephad channels, the signal regions only consider events with
 $\mBB < \SI{150}{\GeV}$. The purpose of this selection is to allow the
 definition of a \ttbar control region depleted of signal events by
-inverting the selection. This control region
-($\mBB \geq \SI{150}{\GeV}$) is used for measurements related to the
-\faketauhadvis background estimation in the \lephad and \hadhad
-channels.
+inverting by inverting the cut on \mBB. This region is used for
+measurements related to the \faketauhadvis background estimation in
+the \lephad and \hadhad channels.
 
 The expected event yields after the signal region selection of all
 three channels is summarised in~\Cref{tab:smhh_prefit_yields}. The
 bulk of events entering the signal regions are from top quark
 backgrounds, \Zjets, and backgrounds where a quark- or gluon-initiated
-jet mimics a \tauhadvis (\jettotauhadvis).
+jet mimics the signature of a \tauhadvis (\jettotauhadvis).
 
 \begin{table}[htbp]
   \centering
@@ -486,7 +485,8 @@ jet mimics a \tauhadvis (\jettotauhadvis).
     in~\Cref{sec:background_estimation,sec:uncertainties}. The SM \HH
     event yields are given for a signal strength according to the SM
     expectation.}%
-  \label{tab:smhh_prefit_yields}
+  \label{tab:smhh_prefit_yields}%
+  \label{tab:hadhad_presel_yields}
 
   \resizebox{\textwidth}{!}{
     \input{tables/smhh_prefit_yield_incl}
@@ -497,13 +497,50 @@ jet mimics a \tauhadvis (\jettotauhadvis).
 % to generally looser object identification criteria for taus and
 % b-jets.
 
-The acceptance times efficiency, \AccTimesEff, of the SM \HH signal in
-the signal regions of all three channels is summarised
-in~\Cref{tab:nonres_acc_times_eff} and compared to the \AccTimesEff of
-the previously published result in this channel. Compared to the
-previous search, the search presented here improves the SM \HH
-\AccTimesEff by a factor exceeding 2 (1.5) for the \hadhad (\lephad
-channels). The majority of this increase in \AccTimesEff for SM \HH is
+The acceptance times efficiency, \AccTimesEff, of the signal region
+selection for the SM \HH signal is summarised
+in~\Cref{tab:nonres_acc_times_eff}. Compared to the previously
+published result in this channel~\cite{HIGG-2016-16-witherratum}, this
+search selects SM \HH with improvements in the \AccTimesEff by a
+factor exceeding 2 (1.5) for the \hadhad channel (\lephad
+channels). This increase is an effect of improved \tauhadvis
+reconstruction techniques and loosened object selection requirements
+for \tauhadvis and \btagged jets compared to the previously published
+result. The reason for using a loosened object selection is
+two-fold. First, the \tauhadvis identification and \btagging
+algorithms were significantly improved for analyses of the
+\SI{139}{\per\femto\barn} $pp$-collision dataset, yielding reduced
+mistag rates at working points with tagging efficiencies similar to
+the algorithms that were previously used. This allows the use of
+looser object selection criteria while maintaining background rates
+similar to the taggers used previously. Second, when using further
+selections exploiting the distinct features of Higgs boson pair
+production to isolate events of interest (e.g.\ using multivariate
+methods), then the sensitivity of this search is expected to be
+limited by statistical uncertainties. A looser object selection can
+thus serve to improve the signal sensitivity, provided the increase in
+rate of backgrounds arising from events with mistagged objects remains
+under control.
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Acceptance times efficiency of the SM \HH signal for the
+    signal region selection of all three channels. The acceptance
+    times efficiency is given with respect to all generated
+    $pp \to \HH \to \bbbar\hadhad$ ($pp \to \HH \to \bbbar\lephad$)
+    events for the \hadhad channel (\lephad channels). A comparison
+    with the signal acceptance of the previous iteration of the
+    analysis is given in the last row, the values taken from
+    Ref.~\cite{HIGG-2016-16-witherratum}. $\dagger$:~The SM \HH
+    acceptance times efficiency is given for the combination of
+    \lephad SLT and LTT channel.}%
+  \label{tab:nonres_acc_times_eff}
+
+  \input{tables/signal_acceptance}
+\end{table}
+
+The majority of this increase in \AccTimesEff for SM \HH is
 due to changes in \tauhadvis reconstruction, identification, and
 $b$-tagging:
 \begin{description}
@@ -566,35 +603,12 @@ Two-fold improvement with respect to the previous analysis. Reasons:
 
 Accounting for these efficiency improvements leads to a two-fold improvement in signal acceptance in the \hadhad channel.
 
-
-\todo[inline]{Cuts aiming to reduce backgrounds, e.g.\ $m_{\tau\tau} >
-  \SI{60}{\GeV}$ to reduce DY}
-
 \todo[inline]{SR selection (not really applicable -- maybe talk about PNN)??? Anti-Tau CR}
 
 \todo[inline]{Observables used to reduce backgrounds: dRTauTau, dRBB, mtautau,
   mbb, mHH}
 
 
-\cite{duschinger}
-
-\begin{table}[htbp]
-  \centering
-
-  \caption{Acceptance times efficiency of the SM \HH signal for the
-    signal region selection of all three channels. The acceptance
-    times efficiency is given with respect to all generated
-    $pp \to \HH \to \bbbar\hadhad$ ($pp \to \HH \to \bbbar\lephad$)
-    events for the \hadhad channel (\lephad channels). A comparison
-    with the signal acceptance of the previous iteration of the
-    analysis is given in the last row, the values taken from
-    Ref.~\cite{HIGG-2016-16-witherratum}. $\dagger$:~The SM \HH
-    acceptance times efficiency is given for the combination of
-    \lephad SLT and LTT channel.}%
-  \label{tab:nonres_acc_times_eff}
-
-  \input{tables/signal_acceptance}
-\end{table}
 
 
 
@@ -637,12 +651,6 @@ chapters where they are used:
 \item[]
 
 \end{description}
-
-
-
-
-
-
 
 
 The SR selection is as follows:
@@ -695,28 +703,6 @@ Orthogonality between the L1Topo and the 4J12 DTT is ensured by offline cuts on
     that the additional J25 and \dRtautau requirement at L1 are fulfilled.
   \end{itemize}
 \end{itemize}
-
-
-\begin{table}[htbp]
-  \centering
-  \missingfigure{Yield table for hadhad}
-  \caption{Yield table in the \hadhad preselection region}
-  \label{tab:hadhad_presel_yields}
-\end{table}
-
-\begin{figure}[htbp]
-  \centering
-
-  \missingfigure{Acceptance x Efficiency}
-
-  \caption{Acceptance (times efficiency) of the resonant production of narrow scalar resonances.}
-  \label{fig:signal_acceptance_resonant}
-\end{figure}
-
-\todo[inline]{There is a \SI{23}{\GeV} subleading \tauhadvis \pT cut at
-  derivation level which will affect STT events.}
-
-\todo[inline]{Acceptance times efficiency plot for resonant analysis.}
 
 
 %%% Local Variables:
