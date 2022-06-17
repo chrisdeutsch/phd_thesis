@@ -546,9 +546,9 @@ can be explained by changes in \tauhadvis reconstruction,
 identification and $b$-tagging:
 \begin{description}
 
-\item[Improvements in track selection for \tauhadvis] The introduction
-  of a multivariate method for \tauhadvis track selection, superseding
-  a cut-based method, lead to an improvement in the \tauhadvis
+\item[Track selection for \tauhadvis] The introduction of a
+  multivariate method for \tauhadvis track selection, superseding a
+  cut-based method, lead to an improvement in the \tauhadvis
   reconstruction efficiency. The method, first introduced in
   Ref.~\cite{duschinger}, improves the 1-prong \tauhadvis
   reconstruction efficiency by \SIrange{20}{30}{\percent} in the
@@ -557,10 +557,10 @@ identification and $b$-tagging:
   efficiency remains largely unchanged with respect to the cut-based
   method.
 
-\item[Improvements in \tauhadvis identification] With the introduction
-  of the RNN-based \tauid (cf.~\Cref{sec:tauid}) the rejection of
-  \tauhadvis originating from quark- or gluon-initiated jets increased
-  by \SIrange{50}{100}{\percent} compared to the BDT-based
+\item[\Tauid] With the introduction of the RNN-based \tauid
+  (cf.~\Cref{sec:tauid}) the rejection of \tauhadvis originating from
+  quark- or gluon-initiated jets increased by
+  \SIrange{50}{100}{\percent} compared to the BDT-based
   identification. This allowed to change the identification working
   point from the \emph{medium BDT} to the \emph{loose RNN} working
   point while maintaining similar rates of \faketauhadvis
@@ -575,23 +575,35 @@ identification and $b$-tagging:
   an electron candidate geometrically matched to the \tauhadvis,
   leading to a relative improvement in the tagging efficiency of
   \SIrange{4}{5}{\percent} for 1-prong \tauhadvis. No electron veto is
-  applied on 3-prong \tauhadvis candidates.
+  applied to 3-prong \tauhadvis candidates.
 
-\item[Improvements in $b$-tagging]
-  The increased light and charm jet rejection of the \textsc{DL1r}
-  tagger~\cite{ATL-PHYS-PUB-2017-013}.
+\item[$b$-tagging] Improved $b$-tagging algorithms became available
+  for this iteration of the search, allowing to use a working point
+  with larger $b$-jet tagging efficiency without incurring a large
+  increase in backgrounds from mistagged jets. Previously, the
+  \textsc{MV2c10} tagger~\cite{ATL-PHYS-PUB-2016-012} with a target
+  efficiency of \SI{70}{\percent} for true $b$-jets from \ttbar was
+  used. A new high-level tagger (\textsc{DL1r}) based on deep
+  learning~\cite{ATL-PHYS-PUB-2017-013,guth} is adopted in this search
+  that includes an impact parameter based low-level tagger
+  (\textsc{RNNIP}) as an input~\cite{ATL-PHYS-PUB-2017-003}.
 
-  The previous analysis used \textsc{MV2c10}
-  tagger~\cite{ATL-PHYS-PUB-2016-012} with target tagging efficiency
-  for true $b$-jets in \ttbar of \SI{70}{\percent}.
-
-  \SI{10}{\percent} relative improvement
+  At a fixed $b$-jet efficiency working point applicable to this
+  analysis, \textsc{DL1r} improves the $c$-jet and \emph{light}-jet
+  rejection by \SIrange{80}{100}{\percent} and
+  \SIrange{10}{30}{\percent}, respectively, over
+  \textsc{MV2c10}~\cite{guth}. Thus, a \textsc{DL1r} working point
+  with \SI{77}{\percent} $b$-jet tagging efficiency is used instead,
+  replacing the \SI{70}{\percent} efficiency of the \textsc{MV2c10}
+  tagger. Consequently, a \SI{10}{\percent} relative improvement in
+  $b$-jet tagging efficiency is expected.
 \end{description}
-The object-level efficiency improvements compound due to the
-requirement of 2 $b$-tagged jets and two (one) \tauhadvis in the
-\hadhad (\lephad) signal regions explaining the large improvement in
-\AccTimesEff for SM \HH with respect to the previous
-search.\todo{Should make a note of the backgrounds here.}
+These object-level efficiency improvements compound when considering
+the efficiencies at event-level due to the requirement of two
+$b$-tagged jets and two (one) reconstructed and identified \tauhadvis
+in the \hadhad (\lephad) signal regions. These changes explain the
+majority of the increase in \AccTimesEff for SM \HH with respect to
+the previous search by the ATLAS collaboration in this channel.
 
 The acceptance times efficiency, \AccTimesEff, of the SM \HH
 production and resonant production of \HH is shown
