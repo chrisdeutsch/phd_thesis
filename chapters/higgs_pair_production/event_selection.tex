@@ -547,31 +547,37 @@ identification and $b$-tagging:
 \begin{description}
 
 \item[Improvements in track selection for \tauhadvis] The introduction
-  of a multivariate method for \tauhadvis track selection lead to an
-  improvement in the \tauhadvis reconstruction efficiency. The new
-  method, introduced in Ref.~\cite{duschinger}, supersedes a cut-based
-  track selection method, leading to a relative improvement in 1-prong
-  (3-prong) \tauhadvis reconstruction efficiency of \SI{6}{\percent}
-  (\SI{10}{\percent}).
+  of a multivariate method for \tauhadvis track selection, superseding
+  a cut-based method, lead to an improvement in the \tauhadvis
+  reconstruction efficiency. The method, first introduced in
+  Ref.~\cite{duschinger}, improves the 1-prong \tauhadvis
+  reconstruction efficiency by \SIrange{20}{30}{\percent} in the
+  \tauhadvis transverse momentum range relevant for the SM \HH
+  search. In this range, the 3-prong \tauhadvis reconstruction
+  efficiency remains largely unchanged with respect to the cut-based
+  method.
 
-\item[Improvements in \tauhadvis identification]
-  The increased background rejection of the RNN \tauid compared to the
-  BDT ID allowed to switch from the medium working point that was used
-  previously to the loose working point while maintaining similar
-  background rates. This lead to a relative improvement in \tauhadvis
-  tagging efficiency of \SI{13}{\percent} (\SI{25}{\percent}) for
-  1-prong (3-prong) \tauhadvis.
+\item[Improvements in \tauhadvis identification] With the introduction
+  of the RNN-based \tauid (cf.~\Cref{sec:tauid}) the rejection of
+  \tauhadvis originating from quark- or gluon-initiated jets increased
+  by \SIrange{50}{100}{\percent} compared to the BDT-based
+  identification. This allowed to change the identification working
+  point from the \emph{medium BDT} to the \emph{loose RNN} working
+  point while maintaining similar rates of \faketauhadvis
+  backgrounds. As a result, a relative increase in \tauhadvis tagging
+  efficiency of about \SI{13}{\percent} (\SI{25}{\percent}) is
+  achieved for 1-prong (3-prong) \tauhadvis.
 
-  The likelihood-based electron veto algorithm was replaced by an
-  algorithm based on a BDT discriminant.
-
-
-  relative increase in tagging
-  efficiency of \SIrange{4}{5}{\percent} for 1-prong \tauhadvis. No
-  electron veto is applied for 3-prong \tauhadvis candidates.
+  Additionally, an improved algorithm to reject 1-prong \tauhadvis
+  candidates originating from electrons based on a BDT discriminant
+  (electron veto) is used in this search. The algorithm replaced a
+  method using the likelihood-based electron identification score of
+  an electron candidate geometrically matched to the \tauhadvis,
+  leading to a relative improvement in the tagging efficiency of
+  \SIrange{4}{5}{\percent} for 1-prong \tauhadvis. No electron veto is
+  applied on 3-prong \tauhadvis candidates.
 
 \item[Improvements in $b$-tagging]
-
   The increased light and charm jet rejection of the \textsc{DL1r}
   tagger~\cite{ATL-PHYS-PUB-2017-013}.
 
@@ -608,15 +614,6 @@ Accounting for these efficiency improvements leads to a two-fold improvement in 
 
 \todo[inline]{Observables used to reduce backgrounds: dRTauTau, dRBB, mtautau,
   mbb, mHH}
-
-
-
-
-
-
-
-
-
 
 \begin{figure}[htbp]
   \centering
@@ -656,55 +653,8 @@ chapters where they are used:
 
 The SR selection is as follows:
 \begin{itemize}
-\item Exactly two reconstructed \tauhadvis passing \textit{loose} identification
-  (RNN)
-
-\item Unit electric charge of \tauhadvis candidate with opposite sign as
-  reconstructed from the tracks associated to the \tauhadvis candidates
-
-\item Two or more jets
-
-\item Exactly two \btagged jets with the \SI{77}{\percent} working point of the
-  DL1r tagger
-
-\item No reconstructed and identified electrons and muons in the event
-
-\item Passing the trigger selection described in \cref{sec:trigger}
-
-\item The \tauhadvis are geometrically matched to objects that fired either the
-  STT or the DTT trigger.
-
-\item \mMMC > \SI{60}{\GeV}
-
 \item At least one \bjet with \pT > \SI{45}{\GeV} \todo{Can we drop this?}
 \end{itemize}
-
-
-Orthogonality between the L1Topo and the 4J12 DTT is ensured by offline cuts on
-\tauhadvis and jet \pT:
-\begin{itemize}
-\item STT events: \tauhadvis are required to pass a trigger-dependent \pT
-  threshold as described in \cref{sec:trigger}. STT events are prioritised over
-  DTT events.
-
-\item DTT events in 2015-2016: The leading jet is required to have \pT >
-  \SI{80}{\GeV} due to the additional jet requirement (J25) at L1 in 2016. This
-  ensures that the L1 trigger is close to its efficiency plateau, minimizing the
-  impact of a mismatch in trigger efficiency in data / MC.
-
-\item DTT events in 2017-2018: Are categorised into two categories depending on
-  the triggers to be checked:\todo{Chris: need to check treatment of non-L1Topo
-    trigger at the beginning of 2017}
-  \begin{itemize}
-  \item If leading and subleading jet $\pT > \SI{45}{\GeV}$: Event is considered a
-    4J12 event. This cut ensures that the additional jet requirement at L1 (J12)
-    is fulfilled.
-  \item Else if leading jet $\pT > \SI{80}{\GeV}$ and $\dRtautau \leq 2.5$:
-    Event is considered a L1Topo event. The jet \pT and \dRtautau cut ensure
-    that the additional J25 and \dRtautau requirement at L1 are fulfilled.
-  \end{itemize}
-\end{itemize}
-
 
 \begin{sidewaystable}[p]
   \centering
