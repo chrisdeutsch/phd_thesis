@@ -2,16 +2,16 @@
 \label{sec:event_selection}
 
 The event selection focuses on selecting events consistent with
-$\bbbar\lephad$ or $\bbbar\hadhad$ final states. The selection
-criteria applied to events are kept as loose as possible\todo{It could
-  be looser...} given the limitations imposed by the trigger
-selection. Distinguishing between signal and background events based
-on object- and event-level observables is not the primary goal of the
-event selection but rather of a multivariate analysis that will be
-introduced at a later stage (in \Cref{sec:multivariate_analysis}). In
-addition, suitable control and validation regions are defined for the
-purpose of estimating background processes or validating background
-estimates using data recorded by the ATLAS detector.
+$\bbbar\lephad$ or $\bbbar\hadhad$ final states. A loose selection is
+applied to events that is largely determined by the trigger selection
+adopted in the search. Distinguishing between signal and background
+events based on object- and event-level observables is not the primary
+goal of the event selection but rather of a multivariate analysis that
+will be introduced at a later stage (in
+\Cref{sec:multivariate_analysis}). In addition, suitable control and
+validation regions are defined for the purpose of estimating
+background processes or validating background estimates using data
+recorded by the ATLAS detector.
 
 Events considered for further analysis are required to fulfil basic
 quality criteria independent of the analysis channel:
@@ -47,18 +47,18 @@ quality criteria independent of the analysis channel:
 The search is divided into several analysis channels given by the
 decay mode of the \taulepton pair and the type of trigger that
 selected the event. The \lephad channel targets semi-leptonic decay
-modes using single-lepton triggers (SLT) and lepton-plus-\tauhadvis
-triggers (LTT). Each trigger category defines a corresponding
-sub-channel, which are referred to as the \lephad SLT and \lephad LTT
-channels. The \hadhad channel selects events with two \tauhadvis using
-single-\tauhadvis triggers (STT) and di-\tauhadvis triggers
-(DTT). While different types of triggers are used in the \hadhad
-channel, the statistical analysis performed at a later stage will not
-distinguish between events selected by STT and DTT, thus the \hadhad
-final state is treated as a single analysis channel. In some cases,
-for example for the background estimation, it will be required to
-distinguish between both trigger categories. Cases where this applies
-will be indicated explicitly.
+modes using single-lepton triggers (SLTs) and lepton-plus-\tauhadvis
+triggers (LTTs). Each trigger category defines a corresponding
+sub-channel, referred to as the \lephad SLT and \lephad LTT channels,
+respectively. The \hadhad channel selects events with two \tauhadvis
+candidates using single-\tauhadvis triggers (STTs) and di-\tauhadvis
+triggers (DTTs). While different types of triggers are used in this
+channel, the later statistical analysis will not distinguish between
+events selected by STTs and DTTs, thus the \hadhad final state is
+treated as a single analysis channel. In some cases, for example for
+the background estimation, it will be required to distinguish between
+both trigger categories. Cases where this applies will be indicated
+explicitly.
 
 Orthogonality between the \lephad and \hadhad channels is ensured by
 the electron, muon, and \tauhadvis selections. In the \hadhad channel,
@@ -75,11 +75,11 @@ their corresponding objects at the HLT according to the trigger that
 selected the event. Trigger-dependent transverse momentum thresholds
 are applied to electrons, muons, and \tauhadvis to ensure that
 triggers operate close to their trigger-efficiency plateau. The
-thresholds applied in events selected by STT or SLT increased with
+thresholds applied in events selected by STTs or SLTs increased with
 increasing instantaneous luminosity of the LHC during Run~2. In
-contrast, lower \pT-thresholds on electrons, muons, and \tauhadvis
-remained constant for DTT and LTT, trigger-rates instead being limited
-by requiring additional jets and specific event topologies at the L1
+contrast, \pT-thresholds on electrons, muons, and \tauhadvis remained
+constant for DTTs and LTTs, trigger-rates instead being limited by
+requiring additional jets and specific event topologies at the L1
 trigger. The inclusion of the \lephad LTT channel allows to select
 events with electrons or muons with transverse momenta below the SLT
 \pT-threshold by requiring an additional \tauhadvis at
@@ -107,7 +107,7 @@ event-level to define signal and control regions will be summarised in
     requirements resulting from the choice of triggers will be
     described in \Cref{sec:hadhad_trigger_selection}. Jets in the
     forward region are not used for event selection
-    purposes. Requirements of the object selection introduced in
+    purposes. Requirements from the object selection introduced in
     \Cref{sec:object_reconstruction} are assumed to apply.}%
   \label{tab:event_selection}
 
@@ -181,8 +181,8 @@ HLT algorithms for \tauhadvis triggers. In total three different
 \item[\texttt{medium1\_tracktwo}] This chain is the primary HLT chain
   for \tauhadvis triggers from
   2015--2017~\cite{ATL-DAQ-PUB-2016-001,ATL-DAQ-PUB-2017-001,ATL-DAQ-PUB-2018-002}. A
-  brief summary, derived from Ref.~\cite{ATLAS-CONF-2017-061}, is
-  given here.
+  brief summary derived from Ref.~\cite{ATLAS-CONF-2017-061} is given
+  here.
 
   First, a purely calorimeter-based reconstruction of the \tauhadvis
   candidate is performed in the region of interest (ROI) provided by
@@ -220,11 +220,11 @@ HLT algorithms for \tauhadvis triggers. In total three different
   precision tracks are then used to calculate discriminating variables
   used for \tauid. Finally, a BDT-based \tauid algorithm, similar to
   its counterpart from the offline \tauhadvis reconstruction, is
-  applied requiring \tauhadvis to pass a medium efficiency working
-  point.\footnote{The working points of the trigger-level \tauid do
-    not correspond to the efficiencies of the \tauid of the offline
-    reconstruction. The medium working point at trigger-level applies
-    less stringent selections than the loose working point of offline
+  applied and \tauhadvis are required to pass the \emph{medium}
+  working point.\footnote{The working points of the \tauid applied at
+    trigger-level do not correspond to working points of the offline
+    \tauid. The medium working point of the online \tauid applies less
+    stringent requirements than the loose working point of the offline
     \tauid.}
 
 \item[\texttt{medium1\_tracktwoEF}]
@@ -252,51 +252,50 @@ HLT algorithms for \tauhadvis triggers. In total three different
   trigger-level \tauid is replaced by an identification algorithm
   based on RNN, adopting the approach taken for offline \tauid,
   offering improved rejection of \tauhadvis originating from quark- or
-  gluon-jets at the HLT. The improved background rejection allows to
-  relax the track multiplicity cuts from 1--3 precision tracks to 0--3
-  precision tracks in the core region. Allowing \tauhadvis candidates
-  without precision tracks in the core region recovers cases where the
-  fast track finding does not yield good quality seeds for the
-  precision tracking.  After the offline event reconstruction, a
-  fraction of these events can be correctly reconstructed, thus
-  improving the selection efficiency of the trigger.
+  gluon-initiated jets at the HLT. The improved background rejection
+  allows to relax the track multiplicity cuts from 1--3 precision
+  tracks to 0--3 precision tracks in the core region. Allowing
+  \tauhadvis candidates without precision tracks in the core region
+  recovers cases where the fast track finding does not yield good
+  quality seeds for the precision tracking.  After the offline event
+  reconstruction, a fraction of these events can be correctly
+  reconstructed, thus improving the selection efficiency of the
+  trigger.
 \end{description}
 From period K in 2018 onwards, the use of a logical \emph{or} between
 the \texttt{medium1\_tracktwoEF} and \texttt{mediumRNN\_tracktwoMVA}
 chains is recommended, calibrations for this combination being
 centrally provided by the ATLAS collaboration. This recommendation is
-followed in the trigger selection employed in this search.
+adopted for the trigger selection of this search.
 
-In the \hadhad channel, single- and di-\tauhadvis triggers are used to
-select events of interest. When an event fulfills both the STT and DTT
-criteria, the criteria being discussed in the following, precedence is
-given to STT.
+Both single- and di-\tauhadvis triggers are used to select events of
+interest for the \hadhad channel. When an event fulfills both the STT
+and DTT criteria, precedence is given to the STT.
 
-The STT used during Run~2 data-taking had changing \pT-thresholds
-applied to \tauhadvis at trigger-level. At the HLT, these threshold
-ranged from \SI{80}{\GeV} up to \SI{160}{\GeV}. To ensure that the
-triggers operate close to their trigger-efficiency plateau, it is
-required that one \tauhadvis from the offline reconstruction can be
-geometrically matched to the \tauhadvis at the HLT ($\Delta R < 0.2$)
-and that the offline \tauhadvis transverse momentum exceeds the HLT
-threshold by \SIrange{15}{20}{\GeV}. The exact requirements on
-\tauhadvis are listed in~\Cref{tab:triggers_hadhad}.
+The STTs used during Run~2 of the LHC had changing \pT-thresholds that
+were applied to \tauhadvis at trigger-level. At the HLT, these
+thresholds ranged from \SI{80}{\GeV} up to \SI{160}{\GeV}. To ensure
+that the triggers operate close to their trigger-efficiency plateau,
+it is required that one \tauhadvis from the offline reconstruction can
+be geometrically matched to the \tauhadvis at the HLT
+($\Delta R < 0.2$) and that the offline \tauhadvis transverse momentum
+exceeds the HLT threshold by \SIrange{15}{20}{\GeV}. The exact
+requirements on \tauhadvis are listed in~\Cref{tab:triggers_hadhad}.
 
-At the HLT, the requirements imposed on \tauhadvis transverse momenta
-by DTT remain unchanged throughout Run~2 of the LHC, requiring the
-leading and sub-leading \tauhadvis to exceed transverse momenta of
-\SI{35}{\GeV} and \SI{25}{\GeV}, respectively. To ensure that the
-triggers are close to fully efficient, two \tauhadvis from offline
-reconstruction are required to be geometrically matched to \tauhadvis
-at the HLT and exceed the corresponding HLT threshold by at least
-\SI{5}{\GeV}. The primary limitations of di-\tauhadvis triggers arise
-at the L1 trigger, necessitating changes in the L1 seeds used for
-these triggers as the instantaneous luminosity of the LHC increased
-during Run~2.
+The \tauhadvis \pT requirements applied by DTTs at the HLT remain
+unchanged throughout Run~2 of the LHC, requiring the leading and
+sub-leading \tauhadvis candidate \pT to exceed \SI{35}{\GeV} and
+\SI{25}{\GeV}, respectively. To ensure that the triggers are close to
+fully efficient, two \tauhadvis from offline reconstruction are
+required to be matched to \tauhadvis at the HLT and exceed the
+corresponding HLT \pT-threshold by at least \SI{5}{\GeV}. The primary
+limitations of DTTs arise at the L1 trigger, necessitating changes in
+the L1 seeds used for these triggers as the instantaneous luminosity
+of the LHC increased during Run~2.
 
-In 2015, the DTT had no additional requirements beyond two isolated
-\tauhadvis at the L1 trigger. However, an offline requirement on the
-\pT-leading jet in the central region is imposed, requiring
+In 2015, the chosen DTT had no additional requirements beyond two
+isolated \tauhadvis at the L1 trigger. However, an offline requirement
+on the \pT-leading jet in the central region is imposed, requiring
 $\pT > \SI{80}{\GeV}$. This selection is not strictly necessary and is
 applied to harmonise the selection with the one applied for triggers
 used for the remainder of Run~2.\footnote{The integrated luminosity
@@ -305,75 +304,73 @@ used for the remainder of Run~2.\footnote{The integrated luminosity
   cut that is tighter than necessary in favour of harmonising the
   selection between data-taking periods.}
 
-In 2016, requirements of additional jets were added to L1 seeds of DTT
-to limit the rate at which events were accepted. Three jets were
+In 2016, requirements of additional jets were included in L1 seeds
+used for DTTs to limit the trigger rate of DTTs. Three jets were
 required, two of which overlapping with \tauhadvis ROIs since no
 disambiguation is performed between \tauhadvis and jets at the L1
 trigger.\footnote{At the L1 trigger, a \tauhadvis candidate with
   transverse energy of $\ET^\tau$ is also reconstructed as a jet ROI
   with $\ET^{\text{jet}} \geq \ET^\tau$.}  The \ET-thresholds applied
 to the three jets are \SI{25}{\GeV}, \SI{20}{\GeV}, and \SI{12}{\GeV},
-the two lowest thresholds ensured to be fulfilled due to the
-\tauhadvis requirements at the L1 trigger (cf.\
-\Cref{tab:triggers_hadhad}). The \ET-threshold applied to the jet not
-overlapping with a \tauhadvis ROI can be lower than \SI{25}{\GeV}
-provided a \tauhadvis candidate exists that is also reconstructed as a
-jet with $\ET > \SI{25}{\GeV}$. However, an offline requirement of
+the two lower thresholds matching the \tauhadvis requirements at the
+L1 trigger (cf.\ \Cref{tab:triggers_hadhad}). The effective
+\ET-threshold applied to the jet not overlapping with the \tauhadvis
+ROIs can be lower than \SI{25}{\GeV} when a \tauhadvis candidate
+exists that is also reconstructed as a jet with $\ET >
+\SI{25}{\GeV}$. However, an offline requirement of
 $\pT > \SI{80}{\GeV}$ is still applied to the leading jet in the
-central region, which corresponds to the trigger efficiency plateau of
+central region, which corresponds to the trigger-efficiency plateau of
 the L1 jet trigger with a threshold of $\ET > \SI{25}{\GeV}$.
 
-In 2017, DTT based on two new L1 seeds were introduced, one
-specifically developed for this search
-(\texttt{TAU20IM\_2TAU12IM\_4J12}), and one a continuation of the DTT
-used in 2016 with additional requirements at L1 to cope with the
-increase in instantaneous luminosity
+In 2017, DTTs based on two new L1 seeds were introduced, one
+specifically for this search (\texttt{TAU20IM\_2TAU12IM\_4J12}), and
+one a continuation of the DTT used in 2016 with altered requirements
+to cope with the increase in instantaneous luminosity
 (\texttt{DR-TAU20ITAU12I-J25}). Both trigger chains are used in this
-search, the trigger being chosen depending on the phase space selected
-in the search. If the transverse momentum of the sub-leading central
-jet from the offline event reconstruction exceeds \SI{45}{\GeV} the
-trigger chain based on the \texttt{TAU20IM\_2TAU12IM\_4J12} seed is
-used. This chain requires two additional jets with
-$\ET > \SI{12}{\GeV}$ at L1, the offline requirement on the
-sub-leading jet \pT ensuring that the trigger operates close to its
-efficiency plateau. This type of DTT will be referred to as
-\FourJTwelve. If the condition for the \FourJTwelve trigger is not
-fulfilled but the event has a leading central jet from offline
-reconstruction with $\pT > \SI{80}{\GeV}$ and $\dRtautau < 2.5$ then
-the DTT with the \texttt{DR-TAU20ITAU12I-J25} seed is considered. This
-trigger is based on the L1 topological trigger
-system~\cite{TRIG-2019-02} that allows to disambiguate between jet and
-\tauhadvis ROIs and to apply other topological requirements at the L1
-trigger. As a result of the disambiguation, the jet requirement at L1
-is stricter compared to the DTT used in 2016. Additionally, only
-events with a $\Delta R \leq \num{2.8}$ between \tauhadvis ROIs at L1
-are considered. The phase space where this trigger is employed is
+search, the trigger being chosen depending on the selected phase
+space. If the transverse momentum of the sub-leading central jet from
+the offline event reconstruction exceeds \SI{45}{\GeV}, the trigger
+chain based on the \texttt{TAU20IM\_2TAU12IM\_4J12} seed is used. This
+chain requires two additional jets with $\ET > \SI{12}{\GeV}$ at L1,
+the offline requirement on the sub-leading jet \pT ensuring that the
+trigger operates close to its efficiency plateau. This type of DTT
+will be referred to as \FourJTwelve. If the condition for the
+\FourJTwelve trigger is not fulfilled but the event has a central jet
+with $\pT > \SI{80}{\GeV}$ and $\dRtautau < 2.5$, then the DTT with
+the \texttt{DR-TAU20ITAU12I-J25} seed is considered. This trigger is
+based on the L1 topological trigger system~\cite{TRIG-2019-02} that
+allows to disambiguate between jet and \tauhadvis ROIs and to apply
+other topological requirements at L1. As a result of the
+disambiguation, the jet requirement at L1 is stricter compared to the
+DTT used in 2016. Additionally, only events with a distance of
+$\Delta R \leq \num{2.8}$ between \tauhadvis ROIs at L1 are selected
+by the trigger. The phase space where this trigger is employed is
 chosen such that the L1 requirements are fully efficient. Due to the
 use of the L1 topological trigger system, this type of trigger will be
 referred to as \LOneTopo in the following.
 
-The \FourJTwelve trigger was introduced to enhance the acceptance of
-signals from scalar resonances with low mass and the acceptance of
-non-resonant \HH production with low invariant masses of the
-\HH-system (\mHH). The \LOneTopo trigger limits the acceptance of
-signals in this phase space due to the high \pT-threshold on the
-leading jet and the \dRtautau requirement. For resonances with masses
-beyond \SI{325}{\GeV} and SM \HH production, which has a sufficiently
-hard \mHH spectrum, the signal acceptance improvement of using both
-\FourJTwelve and \LOneTopo triggers is negligible over just using the
-\LOneTopo trigger.
+The \FourJTwelve trigger enhances the acceptance of events with low
+invariant masses of the \HH-system~(\mHH) such as events originating
+from resonant \HH production for resonances with low mass. The
+\LOneTopo trigger limits the acceptance of such events due to the high
+\pT-threshold on the leading jet and the \dRtautau requirement. For
+resonances with masses larger than \SI{325}{\GeV} and for SM \HH
+production, which has sufficiently hard \mHH spectrum, the signal
+acceptance improvement of using both \FourJTwelve and \LOneTopo
+triggers has little benefit over the \LOneTopo trigger only.
 
-In 2018, new \tauhadvis HLT algorithms were introduced, updating the
-existing \LOneTopo- and \FourJTwelve-based trigger chains. Changes
+In 2018, new \tauhadvis HLT algorithms were introduced that updated
+the existing \LOneTopo- and \FourJTwelve-based trigger chains. Changes
 were made to the selections applied by the \FourJTwelve L1 seed for
 DTT, requiring at least four jets with $\ET > \SI{12}{\GeV}$ and
-$|\eta| < 2.3$ instead. This change introduced a mismatch in the
+$|\eta| < 2.3$ instead. This change lead to a mismatch in the
 pseudorapidity selection for \tauhadvis ($|\eta| < 2.5$) and jet ROIs
 ($|\eta| < 2.3$) at the L1 trigger, such that the L1 jet multiplicity
-requirement was not specified as intended. This was problematic when
-one or more \tauhadvis at L1 are close to the boundary of the
-acceptance in pseudorapidity such that they do not count towards the
-number of jets in $|\eta| < 2.3$. Moreover, the pseudorapdity
+requirement was not specified as intended. This is problematic when
+one or more \tauhadvis ROIs at L1 are reconstructed in the region
+$2.3 \lesssim |\eta| \lesssim 2.5$ such that they are not
+reconstructed as jet ROIs within $|\eta| < 2.3$ and thus not
+contribute to the jet multiplicity. Moreover, the pseudorapdity
 requirement on jets does not align with the offline event selection
 where jets can be \btagged up to $|\eta| < 2.5$. This mismatch caused
 an inefficiency in the trigger selection for signal processes,
@@ -415,7 +412,23 @@ category as a result of the prescale.
   \label{fig:trigger_selection_flowchart}
 \end{figure}
 
-After applying the
+The efficiency of selecting the signal processes using this trigger
+selection varies with the considered signal hypothesis. After a event
+pre-selection,\footnote{Derivation skim, lepton veto, \tauhadvis
+  pre-selection.} the efficiency of a signal event to be selected by
+the trigger, the \tauhadvis candidates being trigger-matched and
+passing their trigger-dependent \pT thresholds is about
+\SI{40}{\percent} for SM \HH production. For the resonant production
+of $pp \to X \to \HH$, the efficiency of this selection ranges from
+\SI{30}{\percent} for $\mX = \SI{300}{\GeV}$ up to \SI{75}{\percent}
+for $\mX = \SI{1600}{\GeV}$. The signal selection efficiency of
+offline requirements on transverse momenta of jets and \dRtautau (for
+\LOneTopo) range from \SI{80}{\percent} up to \SI{98}{\percent} for SM
+\HH production and resonant production for intermediate to high
+\mX. These requirements are more limiting for low \mX, e.g.\ at
+$\mX = \SI{300}{\GeV}$ the efficiency is reduced to about
+\SI{56}{\percent}.
+
 
 Some trigger efficiency plot would be nice???
 
@@ -671,12 +684,17 @@ The SR selection is as follows:
 \begin{sidewaystable}[p]
   \centering
 
-  \caption{cutflow}%
+  \caption{Signal region selection cutflow in the \hadhad channel for
+    the SM \HH signals and four exemplary scalar resonance
+    signals. The expected number of events are normalised using the
+    cross sections predicted by the SM for the SM \HH production and
+    using $\sigma(pp \to X \to \HH) = \SI{10}{\femto\barn}$ for the
+    $X \to \HH$ signals.}%
   \label{tab:cutflow}
 
-  %\resizebox{\textwidth}{!}{
+  \resizebox{\textwidth}{!}{
     \input{tables/cutflow}
-  %}
+  }
 \end{sidewaystable}
 
 

@@ -1,31 +1,35 @@
-\begin{tabular}{lS[table-format=4.1]S[table-format=3.2]S[table-format=4.2]S[table-format=4.2]S[table-format=4.1]S[table-format=4.1]}
+\begin{tabular}{lS[table-format=4.1]S[table-format=3.3]S[table-format=4.3]S[table-format=4.2]S[table-format=4.1]S[table-format=4.1]}
   \toprule
   & \multicolumn{6}{c}{Expected number of events} \\
   \cmidrule{2-7}
   Selection step & {SM \HH (\ggF)} & {SM \HH (VBF)} & {$X(\SI{300}{\GeV})$} & {$X(\SI{500}{\GeV})$} & {$X(\SI{1000}{\GeV})$} & {$X(\SI{1600}{\GeV})$} \\
   \midrule
-  \HH                            & 4310 & 240   & 1390 & 1390 & 1390 & 1390 \\
-  $\HH \to \bbtautau$            & 315  & 17.5  & 102  & 102  & 102  & 102  \\
-  $\HH \to \bbbar\tauhad\tauhad$ & 132  & 7.36  & 42.6 & 42.6 & 42.6 & 42.6 \\
+  \HH                                                     & 4310 & 240   & 1390 & 1390 & 1390 & 1390 \\
+  $\HH \to \bbtautau$                                     & 315  & 17.5  & 102  & 102  & 102  & 102  \\
+  $\HH \to \bbbar\tauhad\tauhad$                          & 132  & 7.36  & 42.6 & 42.6 & 42.6 & 42.6 \\
   \midrule
-  Generator filters              & 103  & 5.0   & 26.5 & 32.6 & 37.5 & 39.5 \\
-  Derivation skim                & 88.3 & 4.24  & 21.7 & 28.4 & 33.3 & 23.6 \\
-  $e$ / $\mu$ selection (veto)   & 84.4 & 4.03  & 20.9 & 27.5 & 31.8 & 22.0 \\
-  Initial \tauhadvis selection   & 40.4 & 1.89  & 9.25 & 13.6 & 17.5 & 10.2 \\
-  Trigger selection              & 17.3 & 0.744 & 2.79 & 6.56 & 12.4 & 7.70 \\
-  2nd \tauhadvis selection       & 17.3 & 0.741 & 2.78 & 6.55 & 12.4 & 7.66 \\
-  Jet selection                  & 16.0 & 0.641 & 2.52 & 6.17 & 12.1 & 7.35 \\
+  Generator filters$^\dagger$                              & 103  & 5.00   & 26.5 & 32.6 & 37.5 & 39.5 \\
+  Derivation skim$^*$                                     & 88.3 & 4.24  & 21.7 & 28.4 & 33.3 & 23.6 \\
+  Electron and muon veto                                  & 84.4 & 4.03  & 20.9 & 27.5 & 31.8 & 22.0 \\
+  \tauhadvis candidate pre-selection$^\ddag$               & 40.4 & 1.89  & 9.25 & 13.6 & 17.5 & 10.2 \\
+  Trigger, trigger-matching, and \tauhadvis \pT cuts      & 17.3 & 0.744 & 2.79 & 6.56 & 12.4 & 7.70 \\
+  % 2nd \tauhadvis selection       & 17.3 & 0.741 & 2.78 & 6.55 & 12.4 & 7.66 \\
+  $\geq 2$ central jets                                   & 16.0 & 0.641 & 2.52 & 6.17 & 12.1 & 7.35 \\
   \midrule
-  Two $b$-tagged jets                   & 7.47 & 0.265 & 1.04  & 2.79 & 5.96 & 2.30 \\
-  Two loose \tauhadvis                  & 6.26 & 0.221 & 0.833 & 2.37 & 4.85 & 1.75 \\
-  \tauhadvis with OS charge             & 6.18 & 0.217 & 0.822 & 2.34 & 4.76 & 1.71 \\
-  Sub-leading \tauhadvis $\pT > \SI{25}{\GeV}$ & 6.11 & 0.215 & 0.822 & 2.31 & 4.61 & 1.64 \\
-  $\mMMC > \SI{60}{\GeV}$               & 5.98 & 0.210 & 0.814 & 2.27 & 4.44 & 1.55 \\
-  Jet \pT and \dRtautau cuts (triggers) & 5.45 & 0.170 & 0.471 & 2.18 & 4.38 & 1.52 \\
-  One jet with $\pT > \SI{45}{\GeV}$    & 5.40 & 0.167 & 0.459 & 2.17 & 4.37 & 1.52 \\
+  2 $b$-tagged jets                                       & 7.47 & 0.265 & 1.04  & 2.79 & 5.96 & 2.30 \\
+  2 \tauhadvis candidates passing loose ID                & 6.26 & 0.221 & 0.833 & 2.37 & 4.85 & 1.75 \\
+  OS \tauhadvis electric charge                           & 6.18 & 0.217 & 0.822 & 2.34 & 4.76 & 1.71 \\
+  Sub-leading \tauhadvis $\pT > \SI{25}{\GeV}$            & 6.11 & 0.215 & 0.822 & 2.31 & 4.61 & 1.64 \\
+  $\mMMC > \SI{60}{\GeV}$                                 & 5.98 & 0.210 & 0.814 & 2.27 & 4.44 & 1.55 \\
+  %Jet \pT and \dRtautau cuts (triggers)                  & 5.45 & 0.170 & 0.471 & 2.18 & 4.38 & 1.52 \\
+  %One jet with $\pT > \SI{45}{\GeV}$                     & 5.40 & 0.167 & 0.459 & 2.17 & 4.37 & 1.52 \\
+  Jet \pT and \dRtautau offl.\ cuts for triggers          & 5.40 & 0.167 & 0.459 & 2.17 & 4.37 & 1.52 \\
+  \midrule
+  \multicolumn{7}{l}{\footnotesize $\dagger$: Two \tauhadvis with $\pT > \SI{35}{\GeV}$ (\SI{15}{\GeV}) in $|\eta| < \num{3.0}$. For SM \HH (VBF) the \tauhadvis \pT thresholds are \SI{25}{\GeV} (\SI{15}{\GeV}).} \\
+  \multicolumn{7}{l}{\footnotesize $*$: At least two \tauhadvis candidates  with $\pT > \SI{33}{\GeV}$ (\SI{23}{\GeV}), $1 \leq \Ntracks + \Ntracks^{\text{iso.}} \leq 8$, and one or more \tauhadvis passing loose identification.} \\
+  \multicolumn{7}{l}{\footnotesize $\ddag$: $\geq 2$ (anti-)\tauhadvis candidates passing the \tauhadvis selection (cf.~\Cref{sec:object_reconstruction}) with a relaxed \tauid requirement of $\rnnscore > 0.01$.}\\
   \bottomrule
 \end{tabular}
-
 
 %%% Local Variables:
 %%% mode: latex
