@@ -1,0 +1,45 @@
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabular}{clcc}
+  \toprule
+  & Observable & 1-prong & 3-prong \\
+  \midrule
+  \parbox[t]{2mm}{\multirow{9}{*}{\rotatebox[origin=c]{90}{Track inputs}}} &
+     $p_\text{T}^\text{seed jet}$ & \checkmark & \checkmark \\
+   & $p_\text{T}^\text{track}$    & \checkmark & \checkmark \\
+   & $\Delta\eta^\text{track}$    & \checkmark & \checkmark \\
+   & $\Delta\phi^\text{track}$    & \checkmark & \checkmark \\
+   & $|d_0^\text{track}|$         & \checkmark & \checkmark \\
+   & $|z_0^\text{track} \sin\theta|$ & \checkmark & \checkmark \\
+   & $N_\text{IBL hits}$   & \checkmark & \checkmark \\
+   & $N_\text{Pixel hits}$ & \checkmark & \checkmark \\
+   & $N_\text{SCT hits}$   & \checkmark & \checkmark \\
+   \midrule
+   \parbox[t]{2mm}{\multirow{7}{*}{\rotatebox[origin=c]{90}{Cluster inputs}}} &
+     $p_\text{T}^\text{jet seed}$ & \checkmark & \checkmark \\
+   & $E_\text{T}^\text{cluster}$ & \checkmark & \checkmark \\
+   & $\Delta\eta^\text{cluster}$      & \checkmark & \checkmark \\
+   & $\Delta\phi^\text{cluster}$      & \checkmark & \checkmark \\
+   & $\lambda_\mathrm{cluster}$             & \checkmark & \checkmark \\
+   & $\langle \lambda_\mathrm{cluster}^2\rangle$             & \checkmark & \checkmark \\
+   & $\langle r_\mathrm{cluster}^2\rangle$             & \checkmark & \checkmark \\
+  \midrule
+  \parbox[t]{2mm}{\multirow{11}{*}{\rotatebox[origin=c]{90}{High-level inputs}}} &
+     $p_\text{T}^\text{uncalibrated}$ & \checkmark & \checkmark \\
+   & $f_\text{cent}$                & \checkmark & \checkmark \\
+   & $f_\text{leadtrack}^{-1}$      & \checkmark & \checkmark \\
+   & $\Delta R_\text{max}$          & \checkmark & \checkmark \\
+   & $|S_\text{leadtrack}|$         & \checkmark &          \\
+   & $S_\text{T}^\text{flight}$     &           & \checkmark \\
+   & $f_\text{iso}^\text{track}$    & \checkmark & \checkmark \\
+   & $f_\text{track}^\text{EM}$     & \checkmark & \checkmark \\
+   & $p_\text{T}^\text{EM+track}/\pT$ & \checkmark & \checkmark \\
+   & $m^\text{EM+track}$            & \checkmark & \checkmark \\
+   & $m^\text{track}$               &           & \checkmark \\
+  \bottomrule
+\end{tabular}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../phd_thesis"
+%%% End:

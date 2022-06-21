@@ -1,33 +1,84 @@
-Masterthesis: \cite{cdeutsch-master}
+What is tau identification:
+- Process of taking reconstructed \tauhadvis candidates and distinguishing their originate
+- Predominately sources of \faketauhadvis are quark- or gluon-initiated jets and electrons.
+- Here focus on the first source of \faketauhadvis
 
-RNN Tau-ID PubNote: \cite{ATL-PHYS-PUB-2019-033}
+(Recurrent) neural network-based method:
+- Previously boosted decision tree using high-level variables
+- Using neural networks to combine high-level information with
+low-level information in the form of sequences of tracks and clusters
+associated to \tauhadvis candidates.
 
-RNNIP: \cite{ATL-PHYS-PUB-2017-003}
+The identification method is a continuation of the method proposed in
+Ref.~\cite{cdeutsch-master} and was published as
+Ref.~\cite{ATL-PHYS-PUB-2019-033} with the ATLAS collaboration.
 
-Things I have to explain:
-\begin{itemize}
-\item Features of hadronic \tauhad decays and how they compare to \tauhad faked by jets
-\item BDT approach and input variables
-\item Training setup, i.e.\ samples (dijet \& $\gamma^*$)
-\item Keras Tensorflow lwtnn \cite{lwtnn,keras,tensorflow2015-whitepaper,lstm}
-\item Input variables
-\item Reweighting of (fake) \tauhad \pT
-\item Working point extraction
-\item Tau lepton triggers in 2018 \cite{ATL-DAQ-PUB-2019-001}
-\end{itemize}
+The method described in this chapter is adopted by the ATLAS
+collaboration as the recommended \tauid algorithm for analyses using
+the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded with the
+ATLAS detector during Run~2 of the LHC.
+
+Sections
 
 
+\section{Introduction}
+
+Tau lepton
+
+Features of hadronic \tauhad decays and how they compare to \tauhad faked by jets
+
+BDT approach and input variables
+
+
+Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}
+
+
+\section{Simulated Event Samples}
+
+Training setup, i.e.\ samples (dijet \& $\gamma^*$)
+
+Use as source of \tauhadvis candidates.
+
+Reweighting of (fake) \tauhad \pT
+
+
+\section{Tau Reconstruction and Identification}
+
+\section{Tau Identification with Recurrent Neural Networks}
+
+\subsection{Input Variables}
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Input variables. Adopted from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
+  \label{tab:tauid_input_variables}
+
+  \input{tables/tauid_inputs}
+\end{table}
+
+\subsection{Network Architecture}
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.9\textwidth]{tauid/pubnote/rnn_network_architecture}
+  \includegraphics[width=0.95\textwidth]{tauid/pubnote/rnn_network_architecture}
 
   \caption{Network Architecture of the RNN \tauhad-identification
     algorithm \cite{ATL-PHYS-PUB-2019-033}}
   \label{fig:tauid_network_architecture}
 \end{figure}
 
+\subsection{Training and evaluation}
+
+Keras Tensorflow lwtnn \cite{lwtnn,keras,tensorflow2015-whitepaper,lstm}
+
+
+\subsection{Working Point Definition}
+
+
+\section{Tau Identification Performance}
 
 \begin{figure}[htbp]
   \centering
@@ -38,6 +89,7 @@ Things I have to explain:
     \tauhad-identification algorithm \cite{ATL-PHYS-PUB-2019-033}}
   \label{fig:tauid_rnn_bdt_roc_comparison}
 \end{figure}
+
 
 \begin{table}
   \centering
@@ -60,6 +112,17 @@ Things I have to explain:
     \bottomrule
   \end{tabular}
 \end{table}
+
+\subsection{Use at the HLT?}
+
+\cite{ATL-DAQ-PUB-2019-001}
+
+
+\section{Conclusion and Outlook}
+
+To be replaced by ``deep sets'' (permutation invariance). Based on the
+same idea and same expected performance but significantly improved
+training and prediction time.
 
 %%% Local Variables:
 %%% mode: latex
