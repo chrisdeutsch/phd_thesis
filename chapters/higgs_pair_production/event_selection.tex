@@ -446,40 +446,41 @@ $\mX = \SI{300}{\GeV}$ the efficiency is reduced to about
 \label{sec:sr_and_cr_selection}
 
 % Make a note here that the basic object multiplicities need to be fulfilled?
-The signal regions are defined for all events passing the trigger
-selection and the associated cuts on \tauhadvis and jets from the
-offline event selection. Only regions with exactly two \btagged jets
-(2 $b$-tag regions) are considered as signal regions, regions with
-fewer \btagged jets being largely dominated by backgrounds do not
-contribute significantly to the signal sensitivity. Regions with fewer
-than two \btagged jet (0 and 1 $b$-tag regions) are used as
-control/validation regions for the background estimation instead.
+Events passing the trigger selection and the associated cuts on
+electrons, muons, \tauhadvis, and jets from the offline event
+reconstruction are considered for the signal region definitions.  Only
+regions with exactly two \btagged jets (2 $b$-tag regions) are
+considered as signal regions. Regions with fewer \btagged jets, being
+largely dominated by background processes, would not contribute to the
+signal sensitivity in a relevant way. Instead, the 0 and 1 $b$-tag
+regions are used as control and validation regions for the background
+estimation.
 
 The electric charge of the electron, muon, or \tauhadvis candidate has
 to be reconstructed with opposite-sign (OS) with respect to the charge
 of the other \tauhadvis candidate in the event. Events from processes
-producing \tauleptons such as the signal processes, \Zjets,
-$H \to \tautau$, \ttbar are expected to be reconstructed with OS
-charges. Events with same-sign (SS) electric charge of the
-$H \to \tautau$ candidate objects are predominantely originating from
-events containing \tauhadvis mimicked by quark- or gluon-initiated
-jets. Therefore, the SS region is used in the \hadhad channel for the
-estimation of the multi-jet background.
+producing pairs of \tauleptons, such as the signal processes, \Zjets,
+$H \to \tautau$, \ttbar, are expected to be reconstructed with OS
+charge. Events with same-sign (SS) electric charge of the visible
+$H \to \tautau$ candidate objects predominantely originate from events
+with \tauhadvis mimicked by quark- or gluon-initiated jets. Therefore,
+the SS region is used in the \hadhad channel for the estimation of the
+multi-jet background.
 
 All events considered in this search are required to successfully pass
-the di-$\tau$ mass reconstruction using the MMC. Additionally,
-Drell-Yan processes producing \taulepton pairs with low invariant mass
-are rejected by requiring $\mMMC > \SI{60}{\GeV}$.
+the di-$\tau$ mass reconstruction using the MMC. Drell-Yan processes
+producing \taulepton pairs with low invariant mass are rejected by
+requiring $\mMMC > \SI{60}{\GeV}$.
 
-In the \lephad channels, the signal regions only consider events with
-$\mBB < \SI{150}{\GeV}$. The purpose of this selection is to allow the
-definition of a \ttbar control region depleted of signal events by
-inverting by inverting the cut on \mBB. This region is used for
-measurements related to the \faketauhadvis background estimation in
-the \lephad and \hadhad channels.
+The signal regions of the \lephad channels only consider events
+fulfilling $\mBB < \SI{150}{\GeV}$. This selection allows to define an
+orthogonal \ttbar control region depleted of signal events by
+inverting the cut on \mBB. This region is used for measurements
+related to the \faketauhadvis background estimation in the \lephad and
+\hadhad channels.
 
 The expected event yields after the signal region selection of all
-three channels is summarised in~\Cref{tab:smhh_prefit_yields}. The
+three channels are summarised in~\Cref{tab:smhh_prefit_yields}. The
 bulk of events entering the signal regions are from top quark
 backgrounds, \Zjets, and backgrounds where a quark- or gluon-initiated
 jet mimics the signature of a \tauhadvis (\jettotauhadvis).
@@ -509,10 +510,6 @@ jet mimics the signature of a \tauhadvis (\jettotauhadvis).
   }
 \end{table}
 
-% Maybe say that the analysis is statistically limited thus the changes
-% to generally looser object identification criteria for taus and
-% b-jets.
-
 The acceptance times efficiency, \AccTimesEff, of the signal region
 selection for the SM \HH signal is summarised
 in~\Cref{tab:nonres_acc_times_eff}. Compared to the previously
@@ -527,16 +524,16 @@ two-fold. First, the \tauhadvis identification and $b$-tagging
 algorithms were significantly improved for analyses of the
 \SI{139}{\per\femto\barn} $pp$-collision dataset, yielding reduced
 mistag rates at working points with tagging efficiencies similar to
-the algorithms that were previously used. This allows the use of
-looser object selection criteria while maintaining background rates
-similar to the taggers used previously. Second, when using further
-selections exploiting the distinct features of Higgs boson pair
-production to isolate events of interest (e.g.\ using multivariate
-methods), then the sensitivity of this search is expected to be
-limited by statistical uncertainties. A looser object selection can
-thus serve to improve the signal sensitivity, provided the increase in
-rate of backgrounds arising from events with mistagged objects remains
-under control.
+the previously used working points. This allows the adoption of looser
+object selection criteria while maintaining background rates similar
+to the ones of the previous generation of taggers. Second, when using
+further selections exploiting the distinct features of Higgs boson
+pair production to isolate events of interest (e.g.\ using
+multivariate methods), then the sensitivity of this search is expected
+to be limited by statistical uncertainties. A looser object selection
+can thus serve to improve the signal sensitivity, provided the
+increase in rate of backgrounds arising from events with mistagged
+objects remains under control.
 
 \begin{table}[htbp]
   \centering
@@ -546,8 +543,8 @@ under control.
     times efficiency is given with respect to all generated
     $pp \to \HH \to \bbbar\hadhad$ ($pp \to \HH \to \bbbar\lephad$)
     events for the \hadhad channel (\lephad channels). A comparison
-    with the signal acceptance of the previous iteration of the
-    analysis is given in the last row, the values taken from
+    with the signal acceptance of the previous iteration of this
+    search is given in the last row, the values are taken from
     Ref.~\cite{HIGG-2016-16-witherratum}. $\dagger$:~The SM \HH
     acceptance times efficiency is given for the combination of
     \lephad SLT and LTT channel.}%
@@ -558,20 +555,23 @@ under control.
 
 The majority of the increase in the SM \HH \AccTimesEff of the signal
 region selections with respect to Ref.~\cite{HIGG-2016-16-witherratum}
-can be explained by changes in \tauhadvis reconstruction,
-identification and $b$-tagging:
+can be explained by the following changes:
 \begin{description}
 
-\item[Track selection for \tauhadvis] The introduction of a
-  multivariate method for \tauhadvis track selection, superseding a
-  cut-based method, lead to an improvement in the \tauhadvis
-  reconstruction efficiency. The method, first introduced in
-  Ref.~\cite{duschinger}, improves the 1-prong \tauhadvis
-  reconstruction efficiency by \SIrange{20}{30}{\percent} in the
-  \tauhadvis transverse momentum range relevant for the SM \HH
-  search. In this range, the 3-prong \tauhadvis reconstruction
-  efficiency remains largely unchanged with respect to the cut-based
-  method.
+\item[\tauhadvis track association] The introduction of a multivariate
+  method for \tauhadvis track association in Ref.~\cite{duschinger},
+  superseding a cut-based method, lead to an overall improvement in
+  the \tauhadvis selection efficiency due to the
+  $\Ntracks \in \{1, 3\}$ requirement on \tauhadvis. The relative
+  improvement in efficiency with respect to the cut-based method is
+  \SIrange{20}{30}{\percent} for 1-prong \tauhadvis in the \tauhadvis
+  \pT range relevant for the SM \HH search.\footnote{More than
+    \SI{80}{\percent} of SM \HH events have a leading \tauhadvis
+    candidate with \pT less than \SI{150}{\GeV}.} The efficiency for
+  3-prong \tauhadvis remains largely unchanged for \tauhadvis \pT
+  below \SI{100}{\GeV} compared to the cut-based method. For 3-prong
+  \tauhadvis with $\pT > \SI{100}{\GeV}$, the track association
+  efficiency is reduced by up to \SI{10}{\percent}.
 
 \item[\Tauid] With the introduction of the RNN-based \tauid
   (cf.~\Cref{sec:tauid}) the rejection of \tauhadvis originating from
@@ -598,21 +598,22 @@ identification and $b$-tagging:
   with larger $b$-jet tagging efficiency without incurring a large
   increase in backgrounds from mistagged jets. Previously, the
   \textsc{MV2c10} tagger~\cite{ATL-PHYS-PUB-2016-012} with a target
-  efficiency of \SI{70}{\percent} for true $b$-jets from \ttbar was
-  used. A new high-level tagger (\textsc{DL1r}) based on deep
+  efficiency of \SI{70}{\percent} for $b$-jets from \ttbar was used. A
+  new high-level tagger (\textsc{DL1r}) based on deep
   learning~\cite{ATL-PHYS-PUB-2017-013,guth} is adopted in this search
-  that includes an impact parameter based low-level tagger
+  that includes an impact parameter based low-level tagger using RNN
   (\textsc{RNNIP}) as an input~\cite{ATL-PHYS-PUB-2017-003}.
 
-  At a fixed $b$-jet efficiency working point applicable to this
-  analysis, \textsc{DL1r} improves the $c$-jet and \emph{light}-jet
-  rejection by \SIrange{80}{100}{\percent} and
-  \SIrange{10}{30}{\percent}, respectively, over
-  \textsc{MV2c10}~\cite{guth}. Thus, a \textsc{DL1r} working point
-  with \SI{77}{\percent} $b$-jet tagging efficiency is used instead,
-  replacing the \SI{70}{\percent} efficiency of the \textsc{MV2c10}
-  tagger. Consequently, a \SI{10}{\percent} relative improvement in
-  $b$-jet tagging efficiency is expected.
+  Comparing working points of both taggers at the similar $b$-jet
+  tagging efficiencies (\SIrange{70}{77}{\percent}), \textsc{DL1r}
+  improves the $c$-jet and \emph{light}-jet rejection by
+  \SIrange{80}{100}{\percent} and \SIrange{10}{30}{\percent},
+  respectively, over \textsc{MV2c10}~\cite{guth}. Therefore, the
+  \textsc{DL1r} working point with \SI{77}{\percent} $b$-jet tagging
+  efficiency is used, replacing the \SI{70}{\percent} efficiency
+  working point of the \textsc{MV2c10} tagger. Consequently, a
+  \SI{10}{\percent} relative improvement in $b$-jet tagging efficiency
+  is expected.
 \end{description}
 These object-level efficiency improvements compound when considering
 the efficiencies at event-level due to the requirement of two
