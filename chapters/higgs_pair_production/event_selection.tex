@@ -361,27 +361,27 @@ triggers has little benefit over the \LOneTopo trigger only.
 
 In 2018, new \tauhadvis HLT algorithms were introduced that updated
 the existing \LOneTopo- and \FourJTwelve-based trigger chains. Changes
-were made to the selections applied by the \FourJTwelve L1 seed for
-DTT, requiring at least four jets with $\ET > \SI{12}{\GeV}$ and
-$|\eta| < 2.3$ instead. This change lead to a mismatch in the
-pseudorapidity selection for \tauhadvis ($|\eta| < 2.5$) and jet ROIs
-($|\eta| < 2.3$) at the L1 trigger, such that the L1 jet multiplicity
-requirement was not specified as intended. This is problematic when
-one or more \tauhadvis ROIs at L1 are reconstructed in the region
-$2.3 \lesssim |\eta| \lesssim 2.5$ such that they are not
-reconstructed as jet ROIs within $|\eta| < 2.3$ and thus not
-contribute to the jet multiplicity. Moreover, the pseudorapdity
-requirement on jets does not align with the offline event selection
-where jets can be \btagged up to $|\eta| < 2.5$. This mismatch caused
-an inefficiency in the trigger selection for signal processes,
-cancelling the efficiency improvements obtained at the HLT from to the
-$\texttt{medium1\_tracktwoEF}$ chains, such that the trigger
-efficiency remained at the level of the \FourJTwelve trigger used in
-2017. The relative reduction in trigger efficiency for signal
-processes compared to the \FourJTwelve trigger without the
+were made to the L1 seeds used by the \FourJTwelve DTT, requiring at
+least four jets with $\ET > \SI{12}{\GeV}$ in $|\eta| < 2.3$
+instead. This change lead to a mismatch in the pseudorapidity
+selection for \tauhadvis ($|\eta| < 2.5$) and jet ROIs
+($|\eta| < 2.3$) at the L1 trigger such that the L1 jet multiplicity
+requirement was not specified as intended.\footnote{A \tauhadvis ROI
+  in the region $2.3 \lesssim |\eta| \lesssim 2.5$ might be
+  reconstructed as a jet ROI with $|\eta| > 2.3$ and will therefore
+  not contribute towards the number of jets within $|\eta| < 2.3$.}
+Moreover, the pseudorapdity requirement on jets does not align with
+the offline event selection where jets can be \btagged up to
+$|\eta| < 2.5$. This mismatch caused an inefficiency in the trigger
+selection for signal processes, cancelling the efficiency improvements
+obtained at the HLT from to the $\texttt{medium1\_tracktwoEF}$ chains,
+leaving the trigger efficiency at the level of the \FourJTwelve
+trigger used in 2017. The relative reduction in trigger efficiency for
+signal processes compared to the \FourJTwelve trigger without the
 $|\eta| < 2.3$ requirement is approximately \SI{5}{\percent}. This
-issue is resolved in the trigger menu to be used for Run~3 of the LHC
-by extending the pseudorapidity range for the jets at L1.
+issue is resolved in the trigger menu used for Run~3 of the LHC by
+extending the pseudorapidity range for jets in the L1 seed used by
+\FourJTwelve triggers.
 
 A flowchart summarising the trigger selection is shown
 in~\Cref{fig:trigger_selection_flowchart}. Two features of the trigger
@@ -390,15 +390,16 @@ selection are not explicitly illustrated in the figure. First, the
 the \FourJTwelve was available from the start of 2017 data-taking. In
 the intermittent period where \LOneTopo was not available, the
 unprescaled \tauhadvis trigger chain based on
-\texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} is used instead, however,
-also applying the $\dRtautau < 2.5$ selection necessary for
-\LOneTopo. Second, for three runs in 2017 the L1 topological trigger
-system was disabled due to problems with the trigger firmware. For
-these runs the DTT chain based on
+\texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} is used instead. The
+$\dRtautau < 2.5$ selection necessary for the \LOneTopo trigger is
+still applied in this case to avoid changes in the selection during
+the 2017 data-taking period. Second, for three runs in 2017 the L1
+topological trigger system was disabled due to issues with the trigger
+firmware. For these runs the DTT chain based on
 \texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} was used as a backup. This
-chain was almost unprescaled during these runs, losing about
-\SI{60}{\per\pico\barn} of integrated luminosity in the \LOneTopo
-category as a result of the prescale.
+chain was almost unprescaled during the affected runs, leading to a
+loss of about \SI{60}{\per\pico\barn} of integrated luminosity in the
+\LOneTopo category due to the prescale.
 
 \begin{figure}[htbp]
   \centering
@@ -413,31 +414,33 @@ category as a result of the prescale.
 \end{figure}
 
 The efficiency of selecting the signal processes using this trigger
-selection varies with the considered signal hypothesis. After a event
-pre-selection,\footnote{Derivation skim, lepton veto, \tauhadvis
-  pre-selection.} the efficiency of a signal event to be selected by
-the trigger, the \tauhadvis candidates being trigger-matched and
-passing their trigger-dependent \pT thresholds is about
-\SI{40}{\percent} for SM \HH production. For the resonant production
-of $pp \to X \to \HH$, the efficiency of this selection ranges from
-\SI{30}{\percent} for $\mX = \SI{300}{\GeV}$ up to \SI{75}{\percent}
-for $\mX = \SI{1600}{\GeV}$. The signal selection efficiency of
-offline requirements on transverse momenta of jets and \dRtautau (for
-\LOneTopo) range from \SI{80}{\percent} up to \SI{98}{\percent} for SM
+selection varies with the considered signal hypothesis. After an event
+pre-selection,\footnote{After electron and muon veto and a \tauhadvis
+  candidate pre-selection step. More context for these selections will
+  be given in~\Cref{tab:cutflow}.} the efficiency of a signal event to
+be selected by the trigger, the \tauhadvis candidates being
+trigger-matched and passing their trigger-dependent \pT thresholds is
+about \SI{40}{\percent} for SM \HH production. For the resonant
+production of $pp \to X \to \HH$, the efficiency of this selection
+ranges from \SI{30}{\percent} for $\mX = \SI{300}{\GeV}$ up to
+\SI{75}{\percent} for $\mX = \SI{1600}{\GeV}$. The signal selection
+efficiency of offline requirements on transverse momenta of jets and
+\dRtautau range from \SI{80}{\percent} up to \SI{98}{\percent} for SM
 \HH production and resonant production for intermediate to high
 \mX. These requirements are more limiting for low \mX, e.g.\ at
 $\mX = \SI{300}{\GeV}$ the efficiency is reduced to about
 \SI{56}{\percent}.
 
+\todo[inline]{Add some plots?}
 
-Some trigger efficiency plot would be nice???
+% Some trigger efficiency plot would be nice???
 
-STT selects only few events, predominately targeting regions of high resonance mass / high mHH.
+% STT selects only few events, predominately targeting regions of high resonance mass / high mHH.
 
-Possible plots to add:
-J25 turn-on???
-dRtautau for L1Topo turn-on???
-J12 turn-on???
+% Possible plots to add:
+% J25 turn-on???
+% dRtautau for L1Topo turn-on???
+% J12 turn-on???
 
 \subsection{Signal and control region event selection}%
 \label{sec:sr_and_cr_selection}
