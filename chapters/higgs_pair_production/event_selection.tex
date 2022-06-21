@@ -622,32 +622,25 @@ in the \hadhad (\lephad) signal regions. These changes explain the
 majority of the increase in \AccTimesEff for SM \HH with respect to
 the previous search by the ATLAS collaboration in this channel.
 
-The acceptance times efficiency, \AccTimesEff, of the SM \HH
-production and resonant production of \HH is shown
-in~\Cref{tab:nonres_acc_times_eff} and
-\Cref{fig:signal_acceptance_resonant}, respectively.
-
-Signal acceptance non-res HH (ggf / VBF)
-
-Signal acceptance improvement compared to previous analysis.
-
-Two-fold improvement with respect to the previous analysis. Reasons:
-- Switch from 70\% efficiency MV2c10 tagger to 77\% DL1r tagger
-- Improved \tauhadvis track counting leading to 6\% relative efficiency improvement for 1-prong \tauhadvis reconstruction and \SI{10}{\percent} 3-prong \tauhadvis reconstruction
-- Improved electron-Veto algorithm improving 1-prong \tauhadvis efficiency from ca.\ \SI{92}{\percent} to \SI{96}{\percent}
-- Switch from medium BDT ID (75 / 60) to loose RNN ID (85 / 75)
-
-Accounting for these efficiency improvements leads to a two-fold improvement in signal acceptance in the \hadhad channel.
-
-\todo[inline]{SR selection (not really applicable -- maybe talk about PNN)??? Anti-Tau CR}
-
-\todo[inline]{Observables used to reduce backgrounds: dRTauTau, dRBB, mtautau,
-  mbb, mHH}
+The \AccTimesEff of the resonant \HH signals after the signal region
+selections are shown in \Cref{fig:signal_acceptance_resonant}. In the
+\hadhad channel, the acceptance of signals with low resonance masses
+is limited by the trigger selection. The efficiency of this selection
+increases quickly with increasing \mX, the \AccTimesEff of
+$pp \to X \to \bbbar\hadhad$ reaching a maximum of about
+\SI{10}{\percent} at \SI{1000}{\GeV}. For resonances with masses
+larger than \SI{1000}{\GeV}, the Higgs bosons are produced with large
+transverse momentum such that their decay products cannot be resolved
+using the object reconstruction techniques employed in this
+search. Dedicated searches for scalar resonances with masses up to
+\SI{3}{\TeV} decaying to \HH have been performed by the ATLAS
+collaboration in the $\bbbar\hadhad$ final state using special
+reconstruction techniques in Ref.~\cite{HDBS-2019-22}.
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{selection/acceptance_resonant}
+  \includegraphics[width=0.65\textwidth]{selection/acceptance_resonant}
 
   \caption{Acceptance times efficiency for scalar resonances of narrow
     width decaying into \HH in the signal regions of all three
@@ -662,28 +655,11 @@ Accounting for these efficiency improvements leads to a two-fold improvement in 
   \todo[inline]{Update to paper version}
 \end{figure}
 
-Control region definitions briefly listed with references to the
-chapters where they are used:
-\begin{description}
-
-\item[$Z$+$bb$ control region ($Z \to e^+e^-$/$\mu^+\mu^-$)] Z+bb
-  control region in $e^+e^-$ and $\mu^+\mu^-$ final state with two
-  \btagged jets.
-
-\item[Top control region (\lephad)] $\mBB > \SI{150}{\GeV}$
-
-\item[Anti-ID and same-sign control regions (\hadhad)] Multi-jet (1
-  $b$-tag) or multi-jet and \ttbar (2 $b$-tag)
-
-\item[]
-
-\end{description}
-
-
-The SR selection is as follows:
-\begin{itemize}
-\item At least one \bjet with \pT > \SI{45}{\GeV} \todo{Can we drop this?}
-\end{itemize}
+A cutflow of the signal region event selection of the \hadhad channel
+is shown in~\Cref{tab:cutflow}. Due to the loose pre-selection, most
+events are rejected due to the trigger selection, \tauhadvis candidate
+selection, or the requirement of two \btagged jets in the signal
+region.
 
 \begin{sidewaystable}[p]
   \centering
@@ -700,6 +676,40 @@ The SR selection is as follows:
     \input{tables/cutflow}
   }
 \end{sidewaystable}
+
+A number of control and validation regions are used in this
+analysis. These regions are summarised in the following, a detailed
+description following in the referenced sections:
+\begin{description}
+
+\item[$Z \ra \ell^{+}\ell^{-}$ ($\ell = e, \mu$) control region] A
+  control region targeting the production of $Z$ bosons in association
+  with quarks of heavy flavour in a di-lepton final state and two
+  \btagged jets. This region is used for background estimation in
+  \Cref{sec:bkg_zjets}.
+
+\item[\ttbar control regions] Control regions defined in the \lephad
+  channel by inverting the $\mBB$ selection of the signal region. This
+  region targets the production of \ttbar with a final state
+  containing $\ell + \tauhadvis$ and is used for the estimation of
+  \faketauhadvis backgrounds from \ttbar production in the
+  \hadhad~(\Cref{sec:bkg_hadhad_ttbarfakes}) and \lephad
+  channels~(\Cref{sec:bkg_lephad_combined_ff}).
+
+\item[Anti-ID and SS control / validation regions (\hadhad channel)]
+  Multiple control and validation regions are defined by relaxing the
+  \tauid requirements, by considering events with SS \tauhadvis
+  candidate charges, and by considering regions with 1 and 2 \btagged
+  jets. These regions are enhanced in backgrounds containing
+  \faketauhadvis and are used for the estimation of the multi-jet
+  background in \Cref{sec:bkg_hadhad_ff}.
+
+\item[Multi-jet / W+jets CR? Anti-Isolation? (\lephad channels)]
+  \Cref{sec:bkg_lephad_combined_ff}
+
+\item[Validation regions] \todo[inline]{Put text here...}
+
+\end{description}
 
 
 %%% Local Variables:
