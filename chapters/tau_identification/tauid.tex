@@ -1,7 +1,77 @@
-What is tau identification:
-- Process of taking reconstructed \tauhadvis candidates and distinguishing their originate
-- Predominately sources of \faketauhadvis are quark- or gluon-initiated jets and electrons.
-- Here focus on the first source of \faketauhadvis
+The main goal of the \tauhadvis reconstruction employed at the ATLAS
+experiment is to reconstruct \tauhadvis candidates that originate from
+hadronic decays of \tauleptons (\truetauhadvis) with high
+efficiency. As a result of this approach, objects from sources other
+than \tauhad are frequently reconstructed as \tauhadvis candidates
+(\faketauhadvis). Tau identification aims to distinguish between
+\tauhadvis candidates from \tauhad and other sources.
+
+The primary source of \faketauhadvis are quark- or gluon-initiated
+jets due to the purely hadronic and jet-like signature of \tauhadvis
+at the ATLAS experiment. Electrons can be another, less abundant,
+source of \faketauhadvis which have to be distinguished from
+\truetauhadvis using a dedicated algorithm. In the following, the
+former classification task is referred to as \tauid while the latter
+is referred to as \emph{electron veto}. Consequently, this chapter is
+concerned with classifying the origin of \tauhadvis candidates as
+either originating from \tauhad or from quark- or gluon-initiated
+jets.
+
+A number of features can be exploited to distinguish between
+\tauhadvis candidates originating from \tauhad and quark- or
+gluon-initiated jets:
+\begin{description}
+
+\item[\taulepton mass] The \taulepton has a mass of
+  \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore sufficiently
+  massive to decay hadronically while still having a small mass
+  compared to the energy scales of processes studied at the ATLAS
+  experiment.
+
+  The \taulepton mass can be used directly as a feature by considering
+  the invariant mass of the reconstructed secondary particles
+  associated to a \tauhadvis candidate. Ignoring reconstruction
+  effects, the invariant mass of the visible decay products of \tauhad
+  is bounded by the \taulepton mass. This is not the case for
+  \tauhadvis candidates originating from quark- or gluon-initiated
+  jets which do not have a strict bound.
+
+  The other features, described hereafter, are consequences of, or
+  closely related to the mass of the \taulepton.
+
+\item[Particle multiplicity] Hadronic decays of \tauleptons produce
+  few (visible) daughter particles. Most decays produce one or three
+  charged hadrons (most frequently $\pi^{\pm}$) and zero to two
+  neutral pions.
+  % Ellis, Stirling, Webber: 6.4 Quark and gluon jet differences
+  In contrast, the average multiplicity of charged and neutral
+  particles inside of jets originating from the fragmentation of
+  partons produced in hard scattering interactions is large and
+  increases with the momentum of the
+  jet~\cite{Ellis:1996mzs,STDM-2015-12}. Therefore, requirements on
+  (charged) particle multiplicties are effective at rejecting
+  \tauhadvis candidates originating from quark- or gluon-initiated
+  jets.\footnote{Gluon-initiated jets have, on average, a larger
+    particle multiplicity and a broader angular distribution of
+    particles compared to quark-initiated jets due to the larger
+    effective colour charge of
+    gluons~\cite{Ellis:1996mzs}. Consequently, quark-initiated jets
+    are more likely to be reconstructed and identified as \tauhadvis
+    candidates.}
+
+\item[Collimated daughter particles] Analyses typically consider
+  \tauhadvis candidates with transverse momenta exceeding
+  \SI{20}{\GeV}. At these momentum scales the decay products of
+  \tauleptons are collimated due to the Lorentz boost of the lepton,
+  leading to the characteristic signature of a narrow jet with few
+  visible particles. Requirements on the isolation of \tauhadvis
+  candidates allow to reject candidates originating from quark- or
+  gluon-initiated jets which have wider angular distribution of
+  hadrons.
+
+\item[Lifetime]
+
+\end{description}
 
 (Recurrent) neural network-based method:
 - Previously boosted decision tree using high-level variables
@@ -13,36 +83,72 @@ The identification method is a continuation of the method proposed in
 Ref.~\cite{cdeutsch-master} and was published as
 Ref.~\cite{ATL-PHYS-PUB-2019-033} with the ATLAS collaboration.
 
+
+
+
+
+
+
+
+BDT approach and input variables
+
+Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}
+
+
+
 The method described in this chapter is adopted by the ATLAS
 collaboration as the recommended \tauid algorithm for analyses using
 the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded with the
 ATLAS detector during Run~2 of the LHC.
 
-Sections
+Sections???
 
 
-\section{Introduction}
-
-Tau lepton
-
-Features of hadronic \tauhad decays and how they compare to \tauhad faked by jets
-
-BDT approach and input variables
-
-
-Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}
+\todo[inline]{Mention somewhere what the differences between quark and
+  gluon jets are.}
 
 
 \section{Simulated Event Samples}
+
+The studies presented in this chapter
 
 Training setup, i.e.\ samples (dijet \& $\gamma^*$)
 
 Use as source of \tauhadvis candidates.
 
+Tauhad Truth matching???
+
 Reweighting of (fake) \tauhad \pT
 
 
 \section{Tau Reconstruction and Identification}
+
+
+\subsection{Seed Jet}
+
+Seeded with AntiKt 0.4 jets on TopoClusters at the LC scale.
+
+
+\subsection{Tau Vertex Association}
+
+TJVA
+
+
+\subsection{Track Association}
+
+\cite{duschinger}
+
+
+\subsection{Energy Calibration}
+
+MVA TES
+
+
+\subsection{Electron Veto}
+
+\subsection{Tau Identification}
+
+
 
 \section{Tau Identification with Recurrent Neural Networks}
 
@@ -57,6 +163,11 @@ Reweighting of (fake) \tauhad \pT
 
   \input{tables/tauid_inputs}
 \end{table}
+
+Plots of high-level variables
+
+Plots of (some) low-level variables???
+
 
 \subsection{Network Architecture}
 
@@ -74,8 +185,13 @@ Reweighting of (fake) \tauhad \pT
 
 Keras Tensorflow lwtnn \cite{lwtnn,keras,tensorflow2015-whitepaper,lstm}
 
+Used in the software suite
+\textsc{Athena}~\cite{ATL-SOFT-PUB-2021-001}.
 
 \subsection{Working Point Definition}
+
+
+\subsection{Calibration}
 
 
 \section{Tau Identification Performance}
@@ -119,6 +235,7 @@ Keras Tensorflow lwtnn \cite{lwtnn,keras,tensorflow2015-whitepaper,lstm}
 
 
 \section{Conclusion and Outlook}
+
 
 To be replaced by ``deep sets'' (permutation invariance). Based on the
 same idea and same expected performance but significantly improved
