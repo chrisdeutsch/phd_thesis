@@ -56,8 +56,8 @@ gluon-initiated jets:
     particles compared to quark-initiated jets due to the larger
     effective colour charge of
     gluons~\cite{Ellis:1996mzs}. Consequently, quark-initiated jets
-    are more likely to be reconstructed and identified as \tauhadvis
-    candidates.}
+    are more likely to be reconstructed and mis-identified as
+    \tauhadvis candidates.}
 
 \item[Collimated daughter particles] Analyses typically consider
   \tauhadvis candidates with transverse momenta exceeding
@@ -69,46 +69,68 @@ gluon-initiated jets:
   gluon-initiated jets which have wider angular distribution of
   hadrons.
 
-\item[Lifetime]
+  % Mean flight path of a p = 20 GeV tau is
+  % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
+\item[\taulepton lifetime] The \taulepton has a proper lifetime of
+  \SI{2.9e-13}{\second}~\cite{pdg2020}
+  ($c \tau = \SI{87}{\micro\metre}$) and can thus travel for a few
+  millimetres before decaying. The macroscopic distance traversed by
+  the \taulepton before decaying produces a decay vertex that is
+  displaced from the primary vertex (PV) of the hard interaction. For
+  \taulepton decay modes with three charged hadrons, this secondary
+  vertex can be reconstructed to determine its displacement from the
+  PV. The secondary vertex cannot be reconstructed for decay modes
+  with only one charged hadron. However, the longitudinal and
+  transverse impact parameters of the track of the charged hadron can
+  be used to gauge to incompatibility of the track with the PV, thus
+  being sensitive to displaced decays of \tauleptons.
 
+  Features related to the lifetime of the \taulepton can be used to
+  distingush them from \tauhadvis candidates from quarks- or
+  gluon-initiated jets as the hadrons constituting a jet are produced
+  promptly at the PV of the interaction.
 \end{description}
+Prior to the method introduced in this chapter, the ATLAS
+collaboration used BDTs as binary classifiers using high-level
+discriminating variables as inputs to perform \tauid.
 
-(Recurrent) neural network-based method:
-- Previously boosted decision tree using high-level variables
-- Using neural networks to combine high-level information with
-low-level information in the form of sequences of tracks and clusters
-associated to \tauhadvis candidates.
+This chapter introduces a novel method of performing \tauid using
+neural networks that combines the information of high-level
+discriminating variables with information from sequences of
+reconstructed charged-particle tracks and sequences of topological
+clusters in the calorimeters associated to \tauhadvis candidates. A
+characteristic feature of this method is the use of a recurrent neural
+network (RNN) architecture which enables the processing of sequences
+of arbitrary length such....
 
-The identification method is a continuation of the method proposed in
-Ref.~\cite{cdeutsch-master} and was published as
-Ref.~\cite{ATL-PHYS-PUB-2019-033} with the ATLAS collaboration.
-
-
-
-
-
-
-
-
-BDT approach and input variables
-
-Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}
-
-
-
-The method described in this chapter is adopted by the ATLAS
-collaboration as the recommended \tauid algorithm for analyses using
-the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded with the
+The method described in this chapter was initially proposed in
+Ref.~\cite{cdeutsch-master} and subsequently implemented in the
+software suite used by the ATLAS
+collaboration~\cite{ATL-SOFT-PUB-2021-001}. The results of this work
+are also published in Ref.~\cite{ATL-PHYS-PUB-2019-033} by the ATLAS
+collaboration. The method was adopted by the ATLAS collaboration as
+the recommended \tauid algorithm for analysis using the
+\SI{139}{\per\femto\barn} $pp$-collision dataset recorded with the
 ATLAS detector during Run~2 of the LHC.
 
-Sections???
+This chapter is structured as follows. First,
+
+\Cref{sec:tauid_mc}
+
+\Cref{sec:tauid_reco_and_id}
+
+\Cref{sec:tauid_rnn}
+
+\Cref{sec:tauid_perf}
+
+\Cref{sec:tauid_conclusion}
 
 
-\todo[inline]{Mention somewhere what the differences between quark and
-  gluon jets are.}
+\todo[inline]{Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}}
 
 
 \section{Simulated Event Samples}
+\label{sec:tauid_mc}
 
 The studies presented in this chapter
 
@@ -120,8 +142,12 @@ Tauhad Truth matching???
 
 Reweighting of (fake) \tauhad \pT
 
+Biased phase space sampling to artificially enhance the events with
+high $m_{\tau\tau}$ yielding high momentum taus.
+
 
 \section{Tau Reconstruction and Identification}
+\label{sec:tauid_reco_and_id}
 
 
 \subsection{Seed Jet}
@@ -151,6 +177,7 @@ MVA TES
 
 
 \section{Tau Identification with Recurrent Neural Networks}
+\label{sec:tauid_rnn}
 
 \subsection{Input Variables}
 
@@ -195,6 +222,7 @@ Used in the software suite
 
 
 \section{Tau Identification Performance}
+\label{sec:tauid_perf}
 
 \begin{figure}[htbp]
   \centering
@@ -235,6 +263,7 @@ Used in the software suite
 
 
 \section{Conclusion and Outlook}
+\label{sec:tauid_conclusion}
 
 
 To be replaced by ``deep sets'' (permutation invariance). Based on the
