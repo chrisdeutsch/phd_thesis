@@ -391,49 +391,48 @@ Ref.~\cite{ATLAS-CONF-2021-030}.
 \end{figure}
 
 
-\subsection{Extraction of the non-resonant \HH production using
-  Boosted Decision Trees in the \hadhad channel}
+\subsection{Extraction of the non-resonant \HH signal using BDT in the
+  \hadhad channel}%
 \label{sec:mva_smbdt}
 
-The extraction of the non-resonant \HH signal is performed by training
-BDT to perform binary classification distinguishing the SM \HH signal
-from background. Events in the 2~$b$-tag pre-selection region of the
-\hadhad channel are used to train the BDT. The training uses
-simulation of the non-resonant \HH production via gluon fusion as the
-\emph{signal class}; the combination of all backgrounds considered in
-the analysis as the \emph{background class}.  The individual
-background processes, which are estimated from simulation or data
-(multi-jet), are weighted according to their relative
-cross-sections. The SM \HH production via vector boson fusion is not
-included due to the its low cross-section compared to the gluon fusion
-production mode. The implementation of the BDT algorithm in the
+The extraction of SM \HH signal events uses BDT for binary
+classification, distinguishing signal from background events. Events
+in passing the signal region selection (2~$b$-tag region) of the
+\hadhad channel are used to train BDT. The training uses simulation of
+the non-resonant \HH production via \ggF as the \emph{signal class};
+the combination of all backgrounds considered in the analysis as the
+\emph{background class}. The individual background processes, which
+are estimated from simulation or data (multi-jet background), are
+weighted according to their relative cross-sections. The SM \HH
+production via VBF is not included due to the its low cross-section
+compared to the \ggF production mode. The BDT implementation of the
 \emph{Toolkit for Multivariate Data Analysis}
 (TMVA)~\cite{Hocker:2007ht} is used.
 
 
 \subsubsection{Hyperparameter optimisation}
 
-The configuration of the BDT is optimised using a random search on a
-grid of parameter values. For every hyperparameter of the algorithm a
-set of parameter values to test is defined. All possible combinations
-define a grid from which configurations are drawn randomly. The
-expected performance of the configuration is evaluated using 5-fold
-cross validation separately on even- and odd-numbered events.
+The BDT configuration is optimised using a random search over a grid
+of parameter values. For every hyperparameter a set of values to test
+is defined. All possible combinations of hyperparameter values define
+a grid from which configurations are drawn randomly. The performance
+of the model configuration is estimated using 5-fold cross validation
+separately on even- and odd-numbered events.
 
 The hyperparameter values considered for the optimisation are listed
 in~\Cref{tab:hyperparameter_grid_bdt}. The total weight of signal and
 background events in the BDT training are ensured to be equal by
 rescaling of the event weights prior to training. The decision tree
-algorithm uses the Gini index as the splitting criterion, testing 400
-different thresholds on input variables for every branching of the
-tree. Other settings remain at the default values of
-TMVA~v4.2.1~(ROOT~6.16/00).
+algorithm uses the Gini index as the splitting criterion. For every
+tree branching 400 cut values on input variables are considered. Other
+settings remain at their default
+values.\footnote{TMVA~v4.2.1~(ROOT~6.16/00)}
 
 \begin{table}[htbp]
   \centering
 
   \caption{Hyperparameter values considered for the random grid search
-    optimising the performance of the BDT used to select the
+    used to optimise the performance of the BDT extracting the
     non-resonant \HH signal. The underlined values show the final
     configuration after optimisation.}%
   \label{tab:hyperparameter_grid_bdt}
@@ -442,7 +441,7 @@ TMVA~v4.2.1~(ROOT~6.16/00).
 \end{table}
 
 The metric used for optimisation is the area under the \emph{receiver
-  operating characteristic} curve (ROC-AUC). The ROC curve can be
+  operating characteristic curve} (ROC-AUC). The ROC curve can be
 defined
 % \footnote{The ROC curve relates the true positive rate
 %   ($\varepsilon_\text{s}$) and false positive rate
@@ -451,24 +450,23 @@ defined
 %   commonly used in HEP to express this relationship.}
 as the parametric curve given by
 $(x, y) = \left( \varepsilon_{\text{s}}(t), 1 -
-  \varepsilon_{\text{b}}(t) \right)$, where $t$ is a lower threshold
-applied on the score of a classifier, and $\varepsilon_\text{s}$ /
+  \varepsilon_{\text{b}}(t) \right)$, where $t$ is a threshold applied
+on the score of a classifier, and $\varepsilon_\text{s}$ /
 $\varepsilon_\text{b}$ the signal and background efficiency of this
-selection, respectively. A value of the ROC-AUC of $1$ indicates
-perfect classification, while a value of $1/2$ corresponds to an
-uninformative classifier. The ROC-AUC is chosen as the metric to be
-optimised as it summarises the classifier's performance over all
-possible working points, i.e.~choices of thresholds on the classifier
+selection. A value of the ROC-AUC of $1$ indicates perfect
+classification, while a value of $1/2$ corresponds to an uninformative
+classifier. The ROC-AUC is chosen as the metric to be optimised as it
+summarises the classifier's performance over all possible working
+points, i.e.~choices of thresholds on the classifier
 output~\cite{james13}.
 
-In total, approximately 1600 unique BDT configurations are tested
-during the model selection process. The steps described in the
-following are applied on the datasets containing even- and
-odd-numbered events separately. The 5-fold CV approach described
-in~\Cref{sec:mva_crossvalidation} is used to evaluate the performance
-of a given hyperparameter configuration. For a fixed configuration the
-ROC-AUC average and standard deviation is calculated over all
-iterations of the CV.
+About 1600 unique BDT configurations are tested during the model
+selection process. The steps described in the following are applied on
+the datasets containing even- and odd-numbered events separately. The
+5-fold CV approach described in~\Cref{sec:mva_crossvalidation} is used
+to evaluate the performance of a given hyperparameter
+configuration. For a fixed configuration the ROC-AUC average and
+standard deviation is calculated over the iterations of the CV.
 
 Out of all evaluated configurations, the ROC-AUC of the 200 best
 performing model configurations are statistically indistinguishable
@@ -611,8 +609,8 @@ the \mHH spectra between signal and background
 \end{table}
 
 
-\subsection{Extraction of resonant \HH production with Parametric
-  Neural Networks}
+\subsection{Extraction of signals from resonant \HH production with
+  PNNs in the \hadhad channel}%
 \label{sec:mva_pnn}
 
 The search for \HH production via narrow-width scalar resonances
