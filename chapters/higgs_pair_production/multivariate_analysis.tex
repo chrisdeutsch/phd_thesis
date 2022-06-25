@@ -17,10 +17,9 @@ The final state particles from non-resonant and resonant production of
 Higgs boson pairs have distinct kinematic properties that can be used
 to reject backgrounds in the signal region. An example, largely
 independent of the \HH production mode, are the reconstructed
-invariant masses of the $H \to \bbbar$ or $H \to \tautau$ candidate
-objects. A number of reconstructed quantities can be defined that
-offer discrimination power between the various signals and
-backgrounds.
+invariant mass of the $H \to \bbbar$ or $H \to \tautau$ candidate. A
+number of reconstructed quantities can be defined that offer
+discrimination power between the various signals and backgrounds.
 
 Multivariate methods are used to exploit the discrimination power of
 multiple reconstructed quantities and their correlations, classifying
@@ -42,8 +41,8 @@ physical or theoretical parameter, for example the assumed mass of a
 resonance, can be performed by \emph{Parametric Neural Networks}
 (PNNs) which were first introduced to HEP in
 Ref.~\cite{Baldi:2016fzo}. PNNs provide a single classifier that is
-able to handle multiple classification tasks described by one or more
-parameters, while being able to smoothly interpolate to parameter
+able to handle sets of classification tasks described by one or more
+parameters while being able to smoothly interpolate to parameter
 values not seen during training of the network.
 
 The scores provided by these multivariate classification methods,
@@ -80,55 +79,49 @@ further increasing the capacity of the model~\cite{hastie09}.
 
 When using multivariate methods in searches for new physics, it has to
 be ensured that the methods are evaluated on datasets that were not
-used for training or model selection (the process of choosing the
-model to fit), thus providing an estimate of the generalised
-performance. In this analysis, events are categorised according to
-their event number into even- and odd-numbered events. This two-fold
-split of events yields an even- and odd-fold, respectively. The
-training and model selection can proceed by using one of the two folds
-withholding the remaining fold for later evaluation. This procedure is
-applied twice by using each fold for training once.
+used for training or model selection (the process of choosing a
+model), thus providing an estimate of the generalised performance. In
+this analysis, events are categorised according to their event number
+into even- and odd-numbered events. This two-fold split of events
+yields an even- and odd-fold, respectively. The training and model
+selection can proceed by using one of the two folds withholding the
+remaining fold for later evaluation. This procedure is applied twice
+by using each fold for training / model selection once.
 
-After model selection and training, the models are evaluated by
-applying the model trained on the even-fold on odd-numbered events and
-the model trained on the odd-fold on even-numbered events. This
-approach, which is called 2-fold \emph{cross
-  validation}~\cite{hastie09,bishop06}, provides an unbiased
+The models are evaluated by applying the model trained on the
+even-fold on odd-numbered events and the model trained on the odd-fold
+on even-numbered events. This approach, which is called 2-fold
+\emph{cross validation}~\cite{hastie09,bishop06}, provides an unbiased
 evaluation of the MVA scores using the entirety of the available
 dataset. The same evaluation method is applied to signal region data
-recorded by the ATLAS detector, which is not part of the training
-procedure.
+recorded by the ATLAS detector.
 
 Similar to the biased predictions obtained when evaluating
 multivariate methods on datasets used for training, the process of
 model selection needs to be performed on a dataset that is independent
-of the one used for final evaluation of the
-method~\cite{cawley10}. Model selection is the process of choosing a
-particular configuration of an algorithm (or between different
-algorithms), for example input variables and other hyperparameters,
-based on a metric indicating the performance of the model. Making this
-choice based on the performance on the withheld dataset meant for
-later evaluation will introduce a selection bias and represents a form
-of overfitting.
+of the one used for final evaluation~\cite{cawley10}. Here, model
+selection is used to choose the input variables and hyperparameters of
+the model based on a performance metric. Making this choice dependent
+on the performance on the withheld dataset will introduce a selection
+bias and represents a form of overfitting.
 
-In this search the model selection is performed using 5-fold cross
-validation (CV), which is a generalisation of the 2-fold approach
-described previously to a larger number of subdivisions, separately on
-even- and odd-numbered events. This approach effectively nests
-5-fold CV inside of 2-fold CV and is therefore called
-\emph{nested cross validation}~\cite{cawley10,stone74}.
+In this search, model selection is performed using 5-fold cross
+validation (CV), a generalisation of the 2-fold approach to a larger
+number of subdivisions, separately on even- and odd-numbered
+events. This approach effectively nests 5-fold CV inside of 2-fold CV
+and is therefore called \emph{nested cross
+  validation}~\cite{cawley10,stone74}.
 
 \Cref{fig:cross_validation} shows a schematic description of one
 iteration of the nested cross validation approach. The inner, 5-fold
-CV randomly splits events into five disjoint subsets (folds). For
-every choice of fold used to evaluate the model, the model is trained
-on the remaining four folds, subsequently evaluating the trained model
-on the evaluation-fold. A decision between two competing models can be
-made by comparing the average and standard deviation of a evaluation
-metric over the five iterations of the inner CV. Only after the
-best-performing model is selected, usually after re-fitting the model
-on the combination of all five folds, it is evaluated on the hold-out
-dataset.
+CV randomly partitions events into five folds. For every choice of
+evaluation-fold, the model is trained on the remaining four folds and
+subsequently evaluated on the evaluation-fold. A decision between two
+competing models can be made by comparing the average and standard
+deviation of a evaluation metric over the five iterations of the inner
+CV. Only after the best-performing model is selected, usually after
+re-fitting the model on the combination of all five folds, it is
+evaluated on the hold-out dataset.
 
 \begin{figure}[htbp]
   \centering
@@ -139,7 +132,7 @@ dataset.
     even-numbered events. The separation of events into disjoint
     subsets (folds) is indicated by rectangles. The purpose of the
     subset is denoted below. A single step out of a total of five, the
-    number of possible assignments of the evaluation fold, is
+    number of possible assignments of the evaluation-fold, is
     shown. The hold-out dataset is not used for model selection.}
   \label{fig:cross_validation}
 \end{figure}
@@ -148,56 +141,71 @@ dataset.
 \subsection{Discriminating variables}%
 \label{sec:mva_discriminating variables}
 
-The set of variables provided to multivariate classification methods
-is critical to its performance in distinguishing between classes. The
-initial choice of variables considered in this search is based on the
-previous publication in the same analysis channel by the ATLAS
-collaboration using a $pp$-collision dataset with an integrated
-luminosity of \SI{36.1}{\ifb} recorded at the beginning of Run~2 of
-the LHC~\cite{HIGG-2016-16-witherratum}. Only minor changes to the
-variable choice are performed for this search.
+The set of variables provided to the multivariate classification
+methods is critical to their performance in distinguishing between
+classes. The initial choice of variables considered in this search is
+based on the previous publication by the ATLAS collaboration in the
+same analysis channel~\cite{HIGG-2016-16-witherratum}. Only minor
+changes to the variable choice are performed for this search.
 
 The distinct kinematic properties of Higgs boson pair production allow
 to distinguish the signal processes from the main backgrounds in the
 \bbtautau search channel. The four-momenta of
 $\PHiggs \ra \Pbottom\APbottom$ and $\PHiggs \ra \tautau$ candidates
-are reconstructed (cf.~\Cref{sec:hbb_reco,sec:htautau_reco}) and are
-used to define discriminating variables. Among the most important
-variables distinguishing between signal and background processes are
-\PHiggs- and \HH-system invariant masses.
+are reconstructed\footnote{The fraction of events with a
+  misreconstructed $H \to \bbbar$ or $H \to \tautau$ candidate, i.e.\
+  the \btagged jets / \tauhadvis not being matched to Higgs boson
+  decay products at generator-level, are about \SI{2}{\percent} and
+  \SI{0.2}{\percent} in signal region of the \hadhad channel,
+  respectively.}  and are used to define discriminating variables.
+Among the most important variables are \PHiggs- and \HH-system
+invariant masses:
+\begin{description}
 
-The invariant mass of the $\PHiggs \ra \Pbottom\APbottom$ candidate,
-consisting of two \btagged jets, is reconstructed using the
-four-momenta of both jets after $b$-jet momentum correction
-(cf.~\Cref{sec:bjet_momentum_corrections}). For the considered signal
-processes the Higgs boson mass can be reconstructed with a resolution
-of \SIrange{13}{18}{\GeV}.
+\item[\mBB] The invariant mass of the $H \to \bbbar$ candidate. It is
+  reconstructed using the four-momenta of both \btagged jets in the
+  signal regions after $b$-jet momentum corrections. The Higgs boson
+  mass is reconstructed with a resolution of \SIrange{13}{18}{\GeV}
+  for the signal processes considered in this search.
 
-The MMC, introduced in~\Cref{sec:htautau_reco}, is used to reconstruct
-the four-momentum of the Higgs boson candidate decaying into pairs of
-\tauleptons, thus providing an estimate of the $\tau\tau$-system mass,
-\mMMC. In the \hadhad channel, the mass resolution of the MMC ranges
-from \SIrange{15}{18}{\GeV} for signal processes depending on the
-momentum of the Higgs boson.\footnote{The presence of an additional
-  neutrino in the \lephad channels makes mass reconstruction of the
-  $\tau\tau$-system more difficult degrading the mass resolution of
-  the MMC.}
+\item[\mMMC] The invariant mass of the $H \to \tautau$ candidate
+  reconstructed by the MMC. In the \hadhad channel, the mass
+  resolution of the MMC ranges from \SIrange{15}{18}{\GeV} depending
+  on the signal process.
 
-In the signal region of the \hadhad channel, the $H \to \tautau$
-candidate is reconstructed correctly for most events from signal
-processes. The fraction of events where this candidate is
-misreconstructed is on the level of one to two per mille. The fraction
-of signal events with a misreconstructed $H \to \bbbar$ candidate is
-about \SI{2}{\percent} and increases to a maximum of \SI{5}{\percent}
-for signal events from scalar resonances with $\mX = \SI{1600}{\GeV}$.
+\item[\mHH] The invariant mass of the pair of Higgs bosons in signal
+  events. It is determined from the sum of four-momenta of \btagged
+  jets after momentum corrections and the $\tautau$-system
+  four-momentum reconstructed using the MMC. In signal events the
+  relative mass resolution is \SIrange{8}{10}{\percent}.
 
-The performance of the \PHiggs candidate mass reconstruction is
-summarised in~\Cref{fig:mass_reconstruction_H} for the resonant
-production of \HH as a function of the resonance mass. The Higgs boson
-mass peaks in the \mMMC and \mBB spectra allow to select signals with
-high efficiency while providing large rejection power against most SM
-backgrounds. Both \PHiggs-system masses are used as inputs to the MVAs
-in all analysis categories.
+\end{description}
+The performance of the \PHiggs and \HH mass reconstruction is
+summarised in~\Cref{fig:mass_reconstruction} for resonant \HH
+production as a function of the resonance mass. The three invariant
+masses are used as inputs to the MVAs in the \hadhad and \lephad
+channels.
+
+% The performance of the \PHiggs candidate mass reconstruction is
+% summarised in~\Cref{fig:mass_reconstruction_H} for the resonant
+% production of \HH as a function of the resonance mass. The Higgs boson
+% mass peaks in the \mMMC and \mBB spectra allow to select signals with
+% high efficiency while providing large rejection power against most SM
+% backgrounds. Both \PHiggs-system masses are used as inputs to the MVAs
+% in all analysis channels.
+
+% mHH:
+% It provides an important discriminant in the search for resonant \HH
+% production at high \mX.
+
+% In the signal region of the \hadhad channel, the $H \to \tautau$
+% candidate is reconstructed correctly for most signal events. The
+% fraction of events where the candidate is misreconstructed is about
+% \SIrange{0.1}{0.2}{\percent}. The fraction of signal events with a
+% misreconstructed $H \to \bbbar$ candidate is about \SI{2}{\percent}
+% and increases to a maximum of \SI{5}{\percent} for events from scalar
+% resonances with $\mX = \SI{1600}{\GeV}$.\todo{Move to somewhere else?}
+
 
 \begin{figure}[htbp]
   \centering
@@ -219,46 +227,34 @@ in all analysis categories.
     \PHiggs-system mass (a) and the \HH-system mass (b) in the \hadhad
     signal region estimated using simulation of
     $\PX \ra \HH \ra \bbtautau$ processes. The top panels show the
-    bias of the mass predictions, here defined as the The top panels
-    show the...  median mass prediction, $P_{50}^{m}$, of the
-    respective method, illustrating possible biases in mass
-    reconstruction.  The bottom panels show half the difference
-    between the 84th and 16th percentile as an estimate of the
-    resolution. For the \HH-system reconstruction, these quantities
-    are shown relative to the mass of the resonance.}
-  \todo[inline]{Should say sth.\ about the bias and behaviour.}
+    bias of the mass prediction given in terms of deviation of the
+    median mass prediction from the true mass value. The bottom panels
+    show the mass resolution estimate as half of the length of the
+    central interval containing \SI{68}{\percent} of all mass
+    predictions. For the \HH-system mass reconstruction shown in (b),
+    the bias and resolution is given relative to the mass of the
+    resonance.}%
   \label{fig:mass_reconstruction}
 \end{figure}
 
-The invariant mass of the decay products of both Higgs bosons, \mHH,
-provides another discriminant used in all analysis categories. It is
-determined from the sum of four-momenta of the
-$\Ptauon\APtauon$-system, reconstructed using the MMC, and
-$\bbbar$-system, calculated as the sum of $b$-jet candidate
-four-momenta after $b$-jet momentum correction. With a typical mass
-resolution of \SIrange{8}{10}{\percent} relative to the mass of the
-resonance and the prevalence of most backgrounds at low values of
-\mHH, it provides an important discriminant in the search for \HH in
-the resonant production mode.
-
 Higgs bosons originating from signal processes are typically produced
-with large momenta in the \HH rest frame, the exception being \HH
-production via resonances with masses close to the \HH production
-threshold, leading to a small angular separation of the (visible)
-\PHiggs decay products. The distances \dRtautau and \dRbb between the
-visible decay products of the \taulepton and $b$-jet candidate pair,
-respecively, provide discrimination power against multi-jet and top
-pair production where \taulepton and $b$-jet candidates are less
-collimated.
-% , except for \dRbb in \lephad LTT,
+with large momenta in the \HH rest frame, the exception being resonant
+\HH production \mX close to the \HH production threshold, thus leading
+to a small separation of the (visible) \PHiggs decay products. The
+distances \dRtautau and \dRbb between the visible decay products of
+the \tauleptons and $b$-jet candidates, respectively, provide
+discrimination power against multi-jet and top quark pair production
+where \tauleptons and $b$-jet candidates are less collimated. Both
+variables are used as inputs to the MVAs in the \hadhad and \lephad
+SLT channel.
 
-In a given analysis category the multivariate methods use the same
-input variables to extract \HH signal in the resonant and non-resonant
-production modes. The choice of variables differs between categories
-and is summarised in~\Cref{tab:mva_inputvar}. A brief description of
-variables used in the \lephad channel is given in the following.
-Reconstructed electrons and muons are collectively referred to as
-leptons ($\ell$).
+For a given analysis channel the same input variables are used for the
+non-resonant and resonant \HH search. The choice of variables between
+channels differs and is summarised in~\Cref{tab:mva_inputvar}. A
+description of variables used in the \lephad channels is given in the
+following.  Reconstructed electrons and muons are collectively
+referred to as leptons ($\ell$).\todo{Move lephad variables to
+  appendix?}
 \begin{description}
 
 \item[$\Delta \pT(\ell, \tauhadvis)$] The transverse momentum
@@ -270,10 +266,12 @@ leptons ($\ell$).
 
 \item[\pTmiss $\phi$ centrality] A measure of the relative angular
   position of \pTmiss and visible \taulepton decay products
-  (electrons, muons, or \tauhadvis) in the transverse plane. The
-  measurement is relative to the line bisecting the azimuthal angle
-  between the pair of visible \taulepton decay products and can be
+  (electrons, muons, or \tauhadvis) in the transverse plane. It is
   defined as~\cite{HIGG-2013-32, HIGG-2016-16-witherratum}:
+  % The
+  % measurement is relative to the line bisecting the azimuthal angle
+  % between the pair of visible \taulepton decay products and is defined
+  % as~\cite{HIGG-2013-32, HIGG-2016-16-witherratum}:
   \begin{align*}
     \pTmiss\text{ }\phi\text{ centrality} = \frac{A + B}{\sqrt{A^2 + B^2}} \text{,}
   \end{align*}
@@ -285,12 +283,13 @@ leptons ($\ell$).
   the azimuthal angle of \pTmiss and visible \taulepton decay
   products, respectively.
 
-  The \pTmiss $\phi$ centrality reaches a maximum of $\sqrt{2}$
-  (minimum of $-\sqrt{2}$) when \pTmiss is aligned with the bisecting
-  line, pointing into the smaller (larger) angle spanned by the pair
-  of visible \taulepton decay products. In configurations where
-  \pTmiss is collinear with one of the visible \taulepton decay
-  products it takes a value of 1.
+  The \pTmiss $\phi$ centrality is defined relative to the line
+  bisecting the azimuthal angle spanned by the visible \taulepton
+  decay products. It reaches a maximum of $\sqrt{2}$ (minimum of
+  $-\sqrt{2}$) when \pTmiss is aligned with the bisecting line and
+  pointing into the smaller (larger) angle defined by the decay
+  products. In configurations where \pTmiss is collinear with one of
+  the visible \taulepton decay products it takes a value of 1.
 
 \item[$\Delta\phi(\ell\tauhadvis, bb)$] Azimuthal angle between the
   $\ell + \tauhadvis$ system and the system consisting of the two
@@ -314,25 +313,23 @@ leptons ($\ell$).
     classifiers distinguishing between events originating from signal
     and background processes in all three analysis categories. The
     same input variables are used for the search in the non-resonant
-    and resonant production modes.}%
+    and resonant production modes. Adopted from
+    Ref.~\cite{ATLAS-CONF-2021-030}.}%
   \label{tab:mva_inputvar}
 
   \input{tables/mva_variables}
 \end{table}
 
-The \pTmiss $\phi$ centrality, previously used in the \hadhad
-channel~\cite{HIGG-2016-16-witherratum}, was not found to contribute
-to the classification performance when comparing models with cross
-validation in the \hadhad channel. It is therefore removed as an input
-to the multivariate analysis of the \hadhad channel.
+% The \pTmiss $\phi$ centrality, previously used in the \hadhad
+% channel~\cite{HIGG-2016-16-witherratum}, was not found to contribute
+% to the classification performance when comparing models with cross
+% validation in the \hadhad channel. It is therefore removed as an
+% input to the multivariate discriminants of the \hadhad channel.
 
-All five discriminating variables used in the \hadhad channel are
+The five discriminating variables used in the \hadhad channel are
 shown in~\Cref{fig:mva_inputs}. A selection of variables used in the
-\lephad SLT and LTT channels are documented
-in~\cite{ATLAS-CONF-2021-030}.
-
-
-% \Cref{fig:mva_input_correlations}
+\lephad SLT and LTT channels are documented in
+Ref.~\cite{ATLAS-CONF-2021-030}.
 
 \begin{figure}[htbp]
   \centering
@@ -390,10 +387,7 @@ in~\cite{ATLAS-CONF-2021-030}.
     \HH signal and the three largest background contributions (b) -
     (d) in the \hadhad SR.}
   \label{fig:mva_input_correlations}
-  \todo[inline]{Cite in text and interpret (or move
-    appendix). Different 'correlation patterns' between these
-    backgrounds can be used in multivariate methods to better classify
-    signal from background.}
+  \todo[inline]{Will move to appendix (or remove completely).}
 \end{figure}
 
 
