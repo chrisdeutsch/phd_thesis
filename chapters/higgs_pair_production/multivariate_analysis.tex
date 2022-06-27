@@ -358,37 +358,8 @@ Ref.~\cite{ATLAS-CONF-2021-030}.
     uncertainty bands include all statistical and systematic
     uncertainties of the background model. The resonant and
     non-resonant \HH signals are scaled by arbitrary factors for
-    visibility.}
+    visibility.}%
   \label{fig:mva_inputs}
-\end{figure}
-
-
-\begin{figure}[htbp]
-  \centering
-
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/NonResHH_pearson}
-    \subcaption{SM \HH (gluon fusion)}
-  \end{subfigure}\hfill %
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/ttbar_pearson}
-    \subcaption{\ttbar}
-  \end{subfigure}
-
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/Ztautau_pearson}
-    \subcaption{$Z \rightarrow \tautau + \text{jets}$}
-  \end{subfigure}\hfill %
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/Fake_pearson}
-    \subcaption{Multi-jet}
-  \end{subfigure}
-
-  \caption{Correlation matrices of the MVA input variables for the SM
-    \HH signal and the three largest background contributions (b) -
-    (d) in the \hadhad SR.}
-  \label{fig:mva_input_correlations}
-  \todo[inline]{Will move to appendix (or remove completely).}
 \end{figure}
 
 
@@ -505,7 +476,7 @@ providing the final classifiers to extract the SM \HH signal.
 % use the BDT for the final analysis.
 
 
-\subsubsection{Predictive performance and variable importance}%
+\subsubsection{Evaluation and variable importance}%
 \label{sec:bdt_performance}
 
 In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDT,
@@ -739,11 +710,11 @@ odd-numbered events.\footnote{On the dataset with odd-numbered events
 then re-fit on all five folds of the inner CV separately for even- and
 odd-numbered events.
 
-\subsubsection{Performance evaluation}
+\subsubsection{Evaluation and variable importance}
 
-In~\Cref{fig:pnn_score_prefit} the PNN score is shown after evaluation
-with three different values of the mass parameter on withheld data in
-the signal region of the \hadhad channel. In each case the signal of
+\Cref{fig:pnn_score_prefit} shows the PNN score after evaluation on
+withheld data in the signal region of the \hadhad channel for three
+different values of the mass parameter. In each case the signal of
 interest, resonant \HH production with \mX equal to the PNN mass
 parameter, is populating the high PNN score bins.
 
@@ -771,12 +742,12 @@ parameter, is populating the high PNN score bins.
 
   \caption{Distribution of the PNN score evaluated with PNN mass
     parameters set to \SI{300}{\GeV} (a), \SI{500}{\GeV} (b), and
-    \SI{1000}{\GeV} (c) prior to the maximum likelihood fit.  The
-    signal overlay is normalised to a cross-section of
-    $\Pproton\Pproton \to \PX \to \HH$ of \SI{1}{\pico\barn}. The
-    choice of binning and excess of data in the most signal-like bin
-    of the PNN ($\mX = \SI{1000}{\GeV}$) score will be discussed in a
-    later sections (REFERENCE).}
+    \SI{1000}{\GeV} (c) prior to the fit.  The signal overlay is
+    normalised to
+    $\sigma(\Pproton\Pproton \to \PX \to \HH) =
+    \SI{1}{\pico\barn}$. The choice of binning and excess of data in
+    the most signal-like bin of the PNN ($\mX = \SI{1000}{\GeV}$)
+    score will be discussed in \Cref{sec:statistical_analysis}.}%
   \label{fig:pnn_score_prefit}
 \end{figure}
 
@@ -784,11 +755,11 @@ The background processes contributing to the most signal-like bins
 depend on the classification task that is solved by the PNN. At low
 mass (approx.\ \SI{300}{\GeV}) the dominant background is \ttbar with
 both true and \faketauhadvis constituting about \SI{80}{\percent} of
-the total background with a minor contribution from multi-jet.  The
+the total background with a small contribution from multi-jet.  The
 background composition in the intermediate mass range (approx.\
 \SI{500}{\GeV}) is similar to the case of non-resonant \HH production
-in the SM which has a mean reconstructed \mHH of \SI{500}{\GeV} after
-the signal region selection. For high mass resonances, the most
+in the SM which has a mean reconstructed \mHH of about \SI{500}{\GeV}
+after the signal region selection. For high mass resonances, the most
 relevant backgrounds are the production of $\PZ \to \tautau$ in
 association with jets from quarks of heavy flavour ($b$ and $c$
 quarks).
@@ -818,21 +789,21 @@ quadrature.
 
 % Ability to handle multiple classification tasks
 The combined signal significance is used in~\Cref{fig:pnn_detuning} to
-inspect the change in sensitivity of the PNN for a given benchmark
-signal as the mass parameter is varied. The largest expected
-significance is obtained when the mass parameter of the PNN is close
-to the resonance mass of the signal hypothesis.
+inspect the change in signal sensitivity for a given benchmark signal
+as the PNN mass parameter is varied. The largest expected significance
+is obtained when the mass parameter is set close to the resonance mass
+of the signal hypothesis.
 
 % Ability to interpolate
-In~\Cref{fig:pnn_interpolation} the ability of PNN to interpolate to
+In~\Cref{fig:pnn_interpolation} the ability of PNNs to interpolate to
 classification tasks that were not part of the training is shown. The
-signal significance obtained using an interpolating PNN that excluded
-a certain signal mass point in training is similar to a PNN that
-included the point when the mass parameter is set to \mX of the
-benchmark signal. This property motivates the use of PNN also for
-resonance masses that were not part of the training, and was used to
-include an additional mass point at $\mX = \SI{375}{\GeV}$ without
-retraining of the PNN. % Why was it added? -> potential gap in
+signal significance is compared between a PNN excluding and including
+a given signal hypothesis in training. The comparison shows similar
+performance in both cases. This property motivates the use of PNNs
+also for resonance masses that were not part of the training, and was
+exploited to include an additional $\mX = \SI{375}{\GeV}$ signal
+without retraining of the PNNs. % Why was it added? -> potential gap
+in
 % sensitivity
 
 \begin{figure}[htbp]
@@ -858,11 +829,10 @@ retraining of the PNN. % Why was it added? -> potential gap in
     is estimated by binning the PNN score for a given value of the
     parameter and adding the Asimov significance of all bins in
     quadrature. Only statistical uncertainties are considered. The
-    binning is determined by an algorithm that will be described
-    in~\Cref{sec:binning_alg}. The curves are scaled such that the
-    significance is 1 when the PNN mass parameter is equal to \mX of
-    the hypothesis under test. Dashed lines correspond to signal mass
-    hypotheses that were not included in the PNN training.}
+    curves are normalised such that the significance is 1 when the PNN
+    mass parameter is equal to \mX of the hypothesis under
+    test. Dashed lines correspond to signal mass hypotheses not
+    included in the PNN training.}
   \label{fig:pnn_properties}
 \end{figure}
 
@@ -951,16 +921,19 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
   \begin{subtable}[t]{.33\textwidth}
     \centering
     \subcaption{$\mX = \SI{300}{\GeV}$}
+    \renewcommand{\arraystretch}{1.12}
     \input{tables/permutation_importance/pnn_300}
   \end{subtable}%
   \begin{subtable}[t]{.33\textwidth}
     \centering
     \subcaption{$\mX = \SI{500}{\GeV}$}
+    \renewcommand{\arraystretch}{1.12}
     \input{tables/permutation_importance/pnn_500}
   \end{subtable}%
   \begin{subtable}[t]{.33\textwidth}
     \centering
     \subcaption{$\mX = \SI{1000}{\GeV}$}
+    \renewcommand{\arraystretch}{1.12}
     \input{tables/permutation_importance/pnn_1000}
   \end{subtable}
 
@@ -969,16 +942,6 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
   %   %\input{tables/permutation_importance/pnn_700}
   %   \subcaption{$\mX = \SI{700}{\GeV}$}
   % \end{subtable}
-
-
-  % # PNN600
-  % Bootstrap original: 0.99702 +- 0.00011
-  % # ['dRTauTau', 'dRBB', 'mMMC', 'mBB', 'mHH']
-  % 0,-0.01050,0.00020
-  % 1,-0.00400,0.00007
-  % 2,-0.09039,0.00037
-  % 3,-0.09391,0.00056
-  % 4,-0.18373,0.00103
 \end{table}
 
 \todo[inline]{Have some rejection power vs mass plots?}
