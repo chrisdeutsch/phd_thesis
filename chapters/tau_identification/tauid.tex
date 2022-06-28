@@ -72,18 +72,19 @@ gluon-initiated jets:
   % Mean flight path of a p = 20 GeV tau is
   % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
 \item[\taulepton lifetime] The \taulepton has a proper lifetime of
-  \SI{2.9e-13}{\second}~\cite{pdg2020}
-  ($c \tau = \SI{87}{\micro\metre}$) and can thus travel for a few
-  millimetres before decaying. The macroscopic distance traversed by
-  the \taulepton before decaying produces a decay vertex that is
-  displaced from the primary vertex (PV) of the hard interaction. For
-  \taulepton decay modes with three charged hadrons, this secondary
-  vertex can be reconstructed to determine its displacement from the
-  PV. The secondary vertex cannot be reconstructed for decay modes
-  with only one charged hadron. However, the longitudinal and
-  transverse impact parameters of the track of the charged hadron can
-  be used to gauge to incompatibility of the track with the PV, thus
-  being sensitive to displaced decays of \tauleptons.
+  \SI{2.9e-13}{\second}
+  ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020} and can thus
+  travel for a few millimetres before decaying. The macroscopic
+  distance traversed by the \taulepton before decaying produces a
+  decay vertex that is displaced from the primary vertex (PV) of the
+  hard interaction. For \taulepton decay modes with three charged
+  hadrons, this secondary vertex can be reconstructed to determine its
+  displacement from the PV. The secondary vertex cannot be
+  reconstructed for decay modes with only one charged hadron. However,
+  the longitudinal and transverse impact parameters of the track of
+  the charged hadron can be used to gauge to incompatibility of the
+  track with the PV, thus being sensitive to displaced decays of
+  \tauleptons.
 
   Features related to the lifetime of the \taulepton can be used to
   distingush them from \tauhadvis candidates from quarks- or
@@ -117,8 +118,6 @@ This chapter is structured as follows. First,
 
 \Cref{sec:tauid_mc}
 
-\Cref{sec:tauid_reco_and_id}
-
 \Cref{sec:tauid_rnn}
 
 \Cref{sec:tauid_perf}
@@ -126,11 +125,37 @@ This chapter is structured as follows. First,
 \Cref{sec:tauid_conclusion}
 
 
-\todo[inline]{Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}}
-
-
-\section{Simulated Event Samples}
+\section{Simulated Event Samples}%
 \label{sec:tauid_mc}
+
+The tau reconstruction and identification algorithms employed at the
+ATLAS experiment for Run~2 of the LHC were developed using simulated
+events that provide samples of \tauhadvis candidates. For the \tauid
+algorithms, simulated $\gammastar \to \tautau$ and di-jet events are
+used to yield samples of true- and \faketauhadvis, respectively.
+
+% y->tautau:
+% https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID425xxx/MC15.425200.Pythia8EvtGen_A14NNPDF23LO_Gammatautau_MassWeight.py
+An artifical $\gammastar \to \tautau$ event sample was generated using
+\PYTHIA[8.212]~\cite{Sjostrand:2014zea} for the matrix element
+calculation at leading order and parton showering. The contribution of
+the $Z$ boson propagator to the hard scattering process was disabled
+to provide an unpolarised sample of \tauleptons. In addition, the
+cross-section of the process was modified at generator-level to
+enhance the number of events with high invariant $\tautau$ masses to
+increase the number of \tauhadvis candidates with high transverse
+momenta. Finally, both \tauleptons are enforced to decay hadronically
+to maximise statistical precision of the \truetauhadvis sample for
+\tauid developments.
+
+% Di-jet samples: JZ1W up to JZ6W
+% https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID361xxx/MC15.361021.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ1W.py
+
+Decays of hadrons containing $b$- or $c$-quarks are simulated using
+\EVTGEN[v1.2.0]. Both samples use the A14 set of tuned parameters for
+\PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021} and the
+\NNPDF[2.3lo]~\cite{Ball:2012cx} set of parton distribution functions.
+
 
 The studies presented in this chapter
 
@@ -145,39 +170,13 @@ Reweighting of (fake) \tauhad \pT
 Biased phase space sampling to artificially enhance the events with
 high $m_{\tau\tau}$ yielding high momentum taus.
 
-
-\section{Tau Reconstruction and Identification}
-\label{sec:tauid_reco_and_id}
-
-
-\subsection{Seed Jet}
-
-Seeded with AntiKt 0.4 jets on TopoClusters at the LC scale.
-
-
-\subsection{Tau Vertex Association}
-
-TJVA
-
-
-\subsection{Track Association}
-
-\cite{duschinger}
-
-
-\subsection{Energy Calibration}
-
-MVA TES
-
-
-\subsection{Electron Veto}
-
-\subsection{Tau Identification}
-
+Cuts applied to \tauhadvis candidates.
 
 
 \section{Tau Identification with Recurrent Neural Networks}
 \label{sec:tauid_rnn}
+
+\todo[inline]{Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}}
 
 \subsection{Input Variables}
 
