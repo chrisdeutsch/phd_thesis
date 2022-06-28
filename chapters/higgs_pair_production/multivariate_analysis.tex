@@ -15,23 +15,31 @@ discrimination.
 
 The final state particles from non-resonant and resonant production of
 Higgs boson pairs have distinct kinematic properties that can be used
-to reject backgrounds in the signal region. An example, largely
-independent of the \HH production mode, are the reconstructed
-invariant mass of the $H \to \bbbar$ or $H \to \tautau$ candidate. A
-number of reconstructed quantities can be defined that offer
-discrimination power between the various signals and backgrounds.
+to reject backgrounds in the signal region.
+% An example, largely independent of the \HH production mode, is the
+% reconstructed invariant mass of the $H \to \bbbar$ or
+% $H \to \tautau$ candidate.
+A number of reconstructed quantities can be defined that offer
+discrimination power. These are exploited using multivariate methods
+to classify events regarding their similarity to the signal process of
+interest.
+% Multivariate methods are then used to exploit these
+% quantities and their correlations, classifying events regarding their
+% similarity to the signal processes of interest.
+Depending on the \HH production mode and analysis category, different
+methods are used.
 
-Multivariate methods are used to exploit the discrimination power of
-multiple reconstructed quantities and their correlations, classifying
-events regarding their similarity to the signal and background
-processes. Depending on the \HH production mode and analysis category
-different methods are used.
+% Multivariate methods are used to exploit the discrimination power of
+% multiple reconstructed quantities and their correlations, classifying
+% events regarding their similarity to the signal and background
+% processes. Depending on the \HH production mode and analysis category
+% different methods are used.
 
 The search for SM \HH production uses Boosted Decision Trees and
 Neural Networks to distinguish signal from background events in the
-\hadhad and \lephad channel, respectively. When searching for resonant
-\HH production in BSM scenarios, multiple mass hypotheses for the
-scalar resonance decaying into Higgs boson pairs are considered. The
+\hadhad and \lephad channels, respectively. When searching for
+resonant \HH production, multiple mass hypotheses for the scalar
+resonance decaying into Higgs boson pairs are considered. The
 kinematic properties of final state particles in signal events depend
 on the mass of the resonance, \mX, and as a result the classification
 task varies continuously with \mX. This is in contrast to the former
@@ -61,27 +69,29 @@ the choice of discriminating variables used to classify signal and
 background events will be motivated. Afterwards, the training and
 optimisation of the classifiers used to extract SM \HH signal is
 described in~\Cref{sec:mva_smbdt}. Finally, \Cref{sec:mva_pnn}
-describes the event classification using PNNs, including a discussion
-of their properties, used for the search for resonant production of
-\HH.
+describes the event classification using PNNs for the search for
+resonant production of \HH, including a brief discussion of their
+properties.
 
 
 \subsection{Cross validation method}
 \label{sec:mva_crossvalidation}
 
-Many machine learning algorithms, due to their ability to approximate
-large classes of functions, are susceptible to fitting statistical
-fluctuations in the data that are used to train a model. As a result,
-predictions of performance characteristics of the model based on the
-training data might not generalise to previously unseen data. In
-extreme cases, frequently called overfitting, the performance of the
-model evaluated on an independent dataset starts to degrade when
-further increasing the capacity of the model~\cite{hastie09}.
+Many machine learning algorithms
+% , due to their ability to approximate large classes of functions,
+are susceptible to fitting statistical fluctuations in the data that
+are used to train a model. As a result, predictions of performance
+characteristics of the model based on the training data might not
+generalise to previously unseen data. In extreme cases, frequently
+called overfitting, the performance of the model evaluated on an
+independent dataset starts to degrade when further increasing the
+capacity of the model~\cite{hastie09}.
 
 When using multivariate methods in searches for new physics, it has to
 be ensured that the methods are evaluated on datasets that were not
-used for training or model selection (the process of choosing a
-model), thus providing an estimate of the generalised performance. In
+used for training or model selection,
+% (the process of choosing a model),
+thus providing an estimate of the generalised performance. In
 this analysis, events are categorised according to their event number
 into even- and odd-numbered events. This two-fold split of events
 yields an even- and odd-fold, respectively. The training and model
@@ -181,7 +191,7 @@ invariant masses:
   relative mass resolution is \SIrange{8}{10}{\percent}.
 
 \end{description}
-The performance of the \PHiggs and \HH mass reconstruction is
+The bias and resolution of the \PHiggs and \HH mass reconstruction is
 summarised in~\Cref{fig:mass_reconstruction} for resonant \HH
 production as a function of the resonance mass. The three invariant
 masses are used as inputs to the MVAs in the \hadhad and \lephad
@@ -250,8 +260,8 @@ variables are used as inputs to the MVAs in the \hadhad and \lephad
 SLT channel.
 
 For a given analysis channel the same set of input variables is used
-for the non-resonant and resonant \HH search. The choice of variables
-between channels differs and is summarised
+for the search for non-resonant and resonant \HH production. The
+choice of variables between channels differs and is summarised
 in~\Cref{tab:mva_inputvar}. A description of variables used in the
 \lephad channels is given in the following.  Reconstructed electrons
 and muons are collectively referred to as leptons ($\ell$).\todo{Move
@@ -313,8 +323,8 @@ and muons are collectively referred to as leptons ($\ell$).\todo{Move
   \caption{Discriminating variables used by the multivariate
     classifiers distinguishing between events originating from signal
     and background processes in all three analysis categories. The
-    same input variables are used for the search in the non-resonant
-    and resonant production modes. Adopted from
+    same input variables are used for the search for SM \HH and
+    resonant \HH production. Adopted from
     Ref.~\cite{ATLAS-CONF-2021-030}.}%
   \label{tab:mva_inputvar}
 
@@ -353,12 +363,11 @@ Ref.~\cite{ATLAS-CONF-2021-030}.
     \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distmHH_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
   \end{subfigure}
 
-  \caption{Distributions of the MVA input variables in the SR of the
-    \hadhad channel prior to the maximum likelhood fit. The
-    uncertainty bands include all statistical and systematic
-    uncertainties of the background model. The resonant and
-    non-resonant \HH signals are scaled by arbitrary factors for
-    visibility.}%
+  \caption{Distributions of the MVA input variables in the signal
+    region of the \hadhad channel prior to the maximum likelhood
+    fit. The uncertainty bands include all statistical and systematic
+    uncertainties of the background model. The normalisation of the
+    resonant and non-resonant \HH signals are scaled for visibility.}%
   \label{fig:mva_inputs}
 \end{figure}
 
@@ -375,7 +384,7 @@ as the \emph{signal class}; the combination of all backgrounds as the
 \emph{background class}. The individual background processes, which
 are estimated from simulation or data (multi-jet background), are
 weighted according to their relative cross-sections. SM \HH production
-via VBF is not included in training.
+via VBF is not included in the training.
 % due to its low cross-section compared to the \ggF production mode.
 The BDT implementation of the \emph{Toolkit for Multivariate Data
   Analysis} (TMVA)~\cite{Hocker:2007ht} is used.
@@ -395,25 +404,24 @@ in~\Cref{tab:hyperparameter_grid_bdt}. The total weight of signal and
 background events in the BDT training are ensured to be equal by
 rescaling of the event weights prior to training. The decision tree
 algorithm uses the Gini index as the splitting criterion. For every
-tree branching 400 cut values on input variables are considered. Other
-settings remain at their default
+tree branching, 400 possible cuts on input variables are
+considered. Other parameters remain at their default
 values.\footnote{TMVA~v4.2.1~(ROOT~6.16/00)}
 
 \begin{table}[htbp]
   \centering
 
   \caption{Hyperparameter values considered for the random grid search
-    used to optimise the performance of the BDT extracting the
-    non-resonant \HH signal. The underlined values show the final
-    configuration after optimisation.}%
+    used to optimise the performance of the BDT extracting the SM \HH
+    signal. The underlined values show the final configuration after
+    optimisation.}%
   \label{tab:hyperparameter_grid_bdt}
 
   \input{tables/hyperparameters_bdt}
 \end{table}
 
 The metric used for optimisation is the area under the \emph{receiver
-  operating characteristic curve} (ROC-AUC). The ROC curve can be
-defined
+  operating characteristic curve} (ROC-AUC). The ROC curve is defined
 % \footnote{The ROC curve relates the true positive rate
 %   ($\varepsilon_\text{s}$) and false positive rate
 %   ($\varepsilon_\text{b}$) given varying thresholds on the output of a
@@ -485,8 +493,8 @@ selection, is shown in the signal region of the \hadhad channel. The
 BDT score provides good separation power between the SM \HH signal and
 most background processes. The ROC-AUC of the final evaluation is
 \num{0.9772 +- 0.0004} (\num{0.9781 +- 0.0004}) when including
-(excluding) the SM \HH production via vector boson fusion, similar to
-the estimates from cross validation during model selection.
+(excluding) the SM \HH production via VBF, similar to the estimates
+from cross validation during model selection.
 
 \begin{figure}[htbp]
   \centering
@@ -494,12 +502,12 @@ the estimates from cross validation during model selection.
   \includegraphics[width=0.6\textwidth]{mva/prefit/Region_BMin0_incJet1_distSMBDT_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefitlog}
 
   \caption{Distribution of the BDT score used to select the SM \HH
-    signal in the SR of the \hadhad channel prior to the maximum
-    likelihood fit. The uncertainty bands include all statistical and
-    systematic uncertainties of the background model. The
-    normalisation of the SM \HH signal is scaled by 10 for
-    illustration purposes. The choice of binning for the histograms
-    will be discussed in~\Cref{sec:binning_alg}.}
+    signal in the signal region of the \hadhad channel prior to the
+    maximum likelihood fit. The uncertainty bands include all
+    statistical and systematic uncertainties of the background
+    model. The normalisation of the SM \HH signal is scaled by a
+    factor of 10 for illustration purposes. The choice of binning for
+    the histograms will be discussed in~\Cref{sec:binning_alg}.}
   \label{fig:mva_smbdt_prefit}
 \end{figure}
 
@@ -770,8 +778,9 @@ ability to interpolate to values of \mX not seen during training, are
 investigated. For this, a performance metric is defined by binning the
 PNN score for a given value of the mass parameter using an algorithm
 that optimises the signal sensitivity while obeying certain
-constraints. The algorithm will be formally introduced
-in~\Cref{sec:binning_alg}.
+constraints. The binning algorithm will be formally introduced
+in~\Cref{sec:binning_alg} for the statistical analysis of the results
+of the search.
 % The performance of the PNN is evaluated by binning its
 % output score for a given value of the parameter using the algorithm
 % also used for the statistical interpretation of the final results. The
@@ -781,14 +790,13 @@ in~\Cref{sec:binning_alg}.
 % estimate and the expected number of events in each bin.
 The expected signal significance is approximated, assuming independent
 Poisson counting experiments without uncertainties on the background
-prediction, as~$\nu_\text{s} / \sqrt{\nu_\text{b}}$ for every bin,
+predictions, as~$\nu_\text{s} / \sqrt{\nu_\text{b}}$ for every bin,
 where $\nu_\text{s}$ and $\nu_\text{b}$ is the expected number of
-signal and background events, respectively. A combined signal
-significance is obtained by adding the bin-wise significances in
-quadrature.
+signal and background events, respectively. A combined significance is
+obtained by adding the bin-wise significances in quadrature.
 
 % Ability to handle multiple classification tasks
-The combined signal significance is used in~\Cref{fig:pnn_detuning} to
+The combined significance is used in~\Cref{fig:pnn_detuning} to
 inspect the change in signal sensitivity for a given benchmark signal
 as the PNN mass parameter is varied. The largest expected significance
 is obtained when the mass parameter is set close to the resonance mass
@@ -801,10 +809,9 @@ signal significance is compared between a PNN excluding and including
 a given signal hypothesis in training. The comparison shows similar
 performance in both cases. This property motivates the use of PNNs
 also for resonance masses that were not part of the training, and was
-exploited to include an additional $\mX = \SI{375}{\GeV}$ signal
+exploited to include an additional signal with $\mX = \SI{375}{\GeV}$
 without retraining of the PNNs. % Why was it added? -> potential gap
-in
-% sensitivity
+% in sensitivity
 
 \begin{figure}[htbp]
   \centering
@@ -836,72 +843,12 @@ in
   \label{fig:pnn_properties}
 \end{figure}
 
-% Multiple classification tasks + interpolate -> can use detuning as
-% an estimate of the mass sensitivity
-The width of the significance response of the PNN as the mass
-parameter is varied can serve to understand the sensitivity and
-specificity of the signal extraction method in distinguishing between
-different signal hypotheses. The response, previously shown
-in~\Cref{fig:pnn_detuning}, exhibits peaks of increasing width as the
-tested signal hypothesis increases in \mX. This is illustrated
-in~\Cref{tab:pnn_width} where intervals of the PNN parameter are given
-that yield signal significances exceeding \SI{75}{\percent} and
-\SI{50}{\percent} of the maximum for a given hypothesis. At very high
-masses of the resonance, the signal extraction method, while being
-highly sensitive, loses specificity to the signal hypothesis of
-interest.
-
-\begin{table}[htbp]
-  \centering
-
-  \caption{Intervals of the PNN mass parameter where a hypothesis test
-    of a signal with a given resonance mass in the PNN score
-    distribution would yield \SI{75}{\percent} (\SI{50}{\percent}) of
-    the expected significance at the maximum.}%
-  \label{tab:pnn_width}
-
-  \input{tables/pnn_width}
-\end{table}
-
-% Example
-This effect can be illustrated by considering the hypothesis of a
-signal with $\mX = \SI{1000}{\GeV}$. The score of the PNN evaluated
-with a mass parameter of \SI{1000}{\GeV} will yield a hypothesis test
-with an expected significance close to the maximum. However, tests
-performed using PNN mass parameter values of \num{900}, \num{1100},
-and \SI{1200}{\GeV}, are expected to be significant at a level of
-\SI{75}{\percent} of the maximum.
-
-% Explanation
-The reason for the reduced specificity in selecting signals with high
-\mX primarily originates from two sources. Firstly, the experimental
-mass resolution presents a bound in distinguishing between competeting
-signal hypotheses. Secondly and more pertinent to the choice of
-analysis strategy, the approach of using binary classification, even
-when parametrised in \mX, does not guarantee optimal discrimination
-between signal hypotheses. A resulting side-effect is that the
-intervals presented~\Cref{tab:pnn_width} show an asymmetry towards
-larger values of the mass parameter, which originates from the
-exponentially falling background density\footnote{Neural networks
-  approximate probabilistic classification based on the ratio of
-  signal and background densities. An univariate example is the
-  presence of a symmetric signal peak on a falling background
-  spectrum. A classification rule based on the density ratio will be
-  asymmetric with respect to the centre of symmetry of the signal
-  density.} in \mHH\todo{Strong statement given this is MVA.}. The
-approach of using binary classification in this search is primiarily
-optimised for discovery as opposed to the measurement of the
-properties of the resonance.
-
-% Better than \mHH resolution at low mass? Why?
-% Lower side about what one would expect from the mHH resolution
-
 A ranking of the variable importance is provided
 in~\Cref{tab:pnn_ranking} following the permutation importance
-approach introduced in~\Cref{sec:bdt_performance}. The \PHiggs-system
-masses continue being important discriminants to reject backgrounds
-relevant for searches of resonances in the low to intermediate mass
-range. The reconstructed mass of the \HH-system provides an important
+approach introduced previously. The \PHiggs-system masses continue
+being important discriminants to reject backgrounds relevant for
+searches of resonances in the low to intermediate mass range. The
+reconstructed mass of the \HH-system provides an important
 discriminant over the entire range of considered resonance masses,
 becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 
@@ -944,7 +891,80 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
   % \end{subtable}
 \end{table}
 
-\todo[inline]{Have some rejection power vs mass plots?}
+The sensitivity of the signal extraction method to the mass of the
+resonance decreases with increasing \mX, as is indicated by the width
+of the curves in \Cref{fig:pnn_detuning}. This decrease in mass
+sensitivity has two primary sources. First, the mass resolution of the
+reconstructed \mHH increases approximately linearly with \mX. Second,
+the PNN has high separation power between events from background
+processes and resonant \HH production at high mass. Due to the large
+separation power, the mass sensitivity in the high mass regime is
+limited by the width of bins in the high PNN score region, the bin
+width being driven by constraints imposed on the binning algorithm. In
+these cases, the signal extraction method employed in this search
+shows worse mass sensitivity than suggested by the resolution of the
+\mHH reconstruction itself. Consequently, the approach of using the
+score of a multivariate classifier as a final discriminant in this
+search is optimised for the discovery of a signal as opposed to
+perform a measurement of the resonance mass.
+
+% The width of the significance response of the PNN as the mass
+% parameter is varied can serve to understand the sensitivity and
+% specificity of the signal extraction method in distinguishing between
+% different signal hypotheses. The response, previously shown
+% in~\Cref{fig:pnn_detuning}, exhibits peaks of increasing width as the
+% tested signal hypothesis increases in \mX. This is illustrated
+% in~\Cref{tab:pnn_width} where intervals of the PNN parameter are given
+% that yield signal significances exceeding \SI{75}{\percent} and
+% \SI{50}{\percent} of the maximum for a given hypothesis. At very high
+% masses of the resonance, the signal extraction method, while being
+% highly sensitive, loses specificity to the signal hypothesis of
+% interest.
+
+
+% \begin{table}[htbp]
+%   \centering
+
+%   \caption{Intervals of the PNN mass parameter where a hypothesis test
+%     of a signal with a given resonance mass in the PNN score
+%     distribution would yield \SI{75}{\percent} (\SI{50}{\percent}) of
+%     the expected significance at the maximum.}%
+%   \label{tab:pnn_width}
+
+%   \input{tables/pnn_width}
+% \end{table}
+
+% % Example
+% This effect can be illustrated by considering the hypothesis of a
+% signal with $\mX = \SI{1000}{\GeV}$. The score of the PNN evaluated
+% with a mass parameter of \SI{1000}{\GeV} will yield a hypothesis test
+% with an expected significance close to the maximum. However, tests
+% performed using PNN mass parameter values of \num{900}, \num{1100},
+% and \SI{1200}{\GeV}, are expected to be significant at a level of
+% \SI{75}{\percent} of the maximum.
+
+% Explanation
+% The reason for the reduced specificity in selecting signals with high
+% \mX primarily originates from two sources. Firstly, the experimental
+% mass resolution presents a bound in distinguishing between competeting
+% signal hypotheses. Secondly and more pertinent to the choice of
+% analysis strategy, the approach of using binary classification, even
+% when parametrised in \mX, does not guarantee optimal discrimination
+% between signal hypotheses. A resulting side-effect is that the
+% intervals presented~\Cref{tab:pnn_width} show an asymmetry towards
+% larger values of the mass parameter, which originates from the
+% exponentially falling background density\footnote{Neural networks
+%   approximate probabilistic classification based on the ratio of
+%   signal and background densities. An univariate example is the
+%   presence of a symmetric signal peak on a falling background
+%   spectrum. A classification rule based on the density ratio will be
+%   asymmetric with respect to the centre of symmetry of the signal
+%   density.} in \mHH\todo{Strong statement given this is MVA.}. The
+% approach of using binary classification in this search is primiarily
+% optimised for discovery as opposed to the measurement of the
+% properties of the resonance.
+
+\todo[inline]{Include a rejection power (ROC-AUC?) vs mass plots?}
 
 %%% Local Variables:
 %%% mode: latex
