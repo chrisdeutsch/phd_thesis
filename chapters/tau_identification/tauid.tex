@@ -136,39 +136,79 @@ used to yield samples of true- and \faketauhadvis, respectively.
 
 % y->tautau:
 % https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID425xxx/MC15.425200.Pythia8EvtGen_A14NNPDF23LO_Gammatautau_MassWeight.py
-An artifical $\gammastar \to \tautau$ event sample was generated using
-\PYTHIA[8.212]~\cite{Sjostrand:2014zea} for the matrix element
-calculation at leading order and parton showering. The contribution of
-the $Z$ boson propagator to the hard scattering process was disabled
-to provide an unpolarised sample of \tauleptons. In addition, the
-cross-section of the process was modified at generator-level to
-enhance the number of events with high invariant $\tautau$ masses to
-increase the number of \tauhadvis candidates with high transverse
-momenta. Finally, both \tauleptons are enforced to decay hadronically
-to maximise statistical precision of the \truetauhadvis sample for
-\tauid developments.
+An artificial $\gammastar \to \tautau$ event sample was generated
+using \PYTHIA[8.212]~\cite{Sjostrand:2014zea} for the matrix element
+calculation at leading order (LO), parton showering, and
+hadronisation. The contribution of the $Z$ boson propagator to the
+hard scattering process was disabled to provide an unpolarised sample
+of \tauleptons. In addition, the cross-section of the process was
+modified at generator-level to enhance the number of events with high
+invariant $\tautau$ masses to increase the number of \tauhadvis
+candidates with high transverse momenta. Finally, both \tauleptons are
+enforced to decay hadronically to maximise statistical precision of
+the \truetauhadvis sample for \tauid developments.
 
 % Di-jet samples: JZ1W up to JZ6W
 % https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID361xxx/MC15.361021.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ1W.py
+Di-jet events are generated using
+\PYTHIA[8.186]~\cite{Sjostrand:2014zea} for the matrix element
+calculation at LO, parton showering, and hadronisation. The generation
+is performed in slices of \pT of the leading jet (anti-\kt with
+$R = 0.6$) constructed from generator-level particles. The slices with
+large jet transverse momenta are oversampled to increase the number of
+events with high transverse momentum jets (\faketauhadvis).
 
-Decays of hadrons containing $b$- or $c$-quarks are simulated using
-\EVTGEN[v1.2.0]. Both samples use the A14 set of tuned parameters for
-\PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021} and the
+The $\gammastar \to \tautau$ and di-jet samples use the A14 set of
+tuned parameters for \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021} and the
 \NNPDF[2.3lo]~\cite{Ball:2012cx} set of parton distribution functions.
+Decays of hadrons containing $b$- or $c$-quarks are simulated using
+\EVTGEN[v1.2.0]. The contamination of the hard scattering interaction
+with soft, inelastic proton--proton collision events (pile-up) is
+accounted for by overlaying the event with additional minimum-bias
+events. The response of the ATLAS detector is simulated for all
+events~\cite{SOFT-2010-01} which are then reconstructed using the
+\textsc{Athena} software suite~\cite{ATL-SOFT-PUB-2021-001}.
 
 
-The studies presented in this chapter
+\subsection{\tauhadvis candidate selection}
 
-Training setup, i.e.\ samples (dijet \& $\gamma^*$)
+The simulated events are used to construct large samples of
+reconstructed \tauhadvis candidates that are used for the development
+\tauid algorithms and performance evaluation. Only \tauhadvis
+candidates passing the tau reconstruction are considered and
+additional requirements are applied:
+\begin{itemize}
 
-Use as source of \tauhadvis candidates.
+\item The number of charged particle tracks associated to the
+  \tauhadvis candidate, \Ntracks, is either 1 or 3.
 
-Tauhad Truth matching???
+\item The (visible) transverse momentum of the candidate needs to
+  fulfil $\pT > \SI{20}{\GeV}$.
+
+\item The \tauhadvis candidate needs to be within $|\eta| < 2.5$ but
+  outside of the transition region between between the barrel and
+  endcap electromagnetic calorimeters given by $1.37 < |\eta| < 1.52$.
+
+\end{itemize}
+In addition, reconstructed \tauhadvis candidates from
+$\gammastar \to \tautau$ events are required to be geometrically
+matched to a \tauhad at generator-level within a cone of
+$\Delta R < 0.2$.
+
+
+Any \truetauhadvis efficiencies or \faketauhadvis rejections given in
+the following do not include the selection efficiency of this baseline
+selection.
+
+And the reco cuts are required to be fulfilled at truth-level.
+
+
+
+
+
+
 
 Reweighting of (fake) \tauhad \pT
-
-Biased phase space sampling to artificially enhance the events with
-high $m_{\tau\tau}$ yielding high momentum taus.
 
 Cuts applied to \tauhadvis candidates.
 
