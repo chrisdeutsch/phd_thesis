@@ -1,8 +1,8 @@
 The main goal of the \tauhadvis reconstruction employed at the ATLAS
 experiment is to reconstruct \tauhadvis candidates that originate from
 hadronic decays of \tauleptons (\truetauhadvis) with high
-efficiency. As a result of this approach, objects from sources other
-than \tauhad are frequently reconstructed as \tauhadvis candidates
+efficiency. Therefore, objects from sources other than \tauhad are
+frequently reconstructed as \tauhadvis candidates
 (\faketauhadvis). Tau identification aims to distinguish between
 \tauhadvis candidates from \tauhad and other sources.
 
@@ -91,28 +91,32 @@ gluon-initiated jets:
   gluon-initiated jets as the hadrons constituting a jet are produced
   promptly at the PV of the interaction.
 \end{description}
-Prior to the method introduced in this chapter, the ATLAS
-collaboration used BDTs as binary classifiers using high-level
-discriminating variables as inputs to perform \tauid.
+Prior to the introduction of the method described in this chapter, the
+ATLAS collaboration used BDTs as binary classifiers using high-level
+discriminating variables, i.e.\ variables purposefully constructed for
+the classification task, as inputs.
 
-This chapter introduces a novel method of performing \tauid using
-neural networks that combines the information of high-level
-discriminating variables with information from sequences of
-reconstructed charged-particle tracks and sequences of topological
-clusters in the calorimeters associated to \tauhadvis candidates. A
-characteristic feature of this method is the use of a recurrent neural
-network (RNN) architecture which enables the processing of sequences
-of arbitrary length such....
+This chapter introduces a method of performing \tauid using neural
+networks that combines the information of high-level discriminating
+variables with information from reconstructed charged-particle tracks
+and clusters of energy in the calorimeters associated to \tauhadvis
+candidates. The number of associated tracks and clusters varies
+between candidates requiring the use of neural network architectures
+able to process sequences of varying length. This is achieved by
+employing a recurrent neural network (RNN) architecture, consequently
+the method introduced here will be referred to as RNN \tauid.
 
-The method described in this chapter was initially proposed in
-Ref.~\cite{cdeutsch-master} and subsequently implemented in the
-software suite used by the ATLAS
-collaboration~\cite{ATL-SOFT-PUB-2021-001}. The results of this work
-are also published in Ref.~\cite{ATL-PHYS-PUB-2019-033} by the ATLAS
-collaboration. The method was adopted by the ATLAS collaboration as
-the recommended \tauid algorithm for analysis using the
-\SI{139}{\per\femto\barn} $pp$-collision dataset recorded with the
-ATLAS detector during Run~2 of the LHC.
+The RNN \tauid algorithm described in this chapter was initially
+proposed in Ref.~\cite{cdeutsch-master} motivated by a similar
+approach developed for track impact parameter based
+$b$-tagging~\cite{ATL-PHYS-PUB-2017-003}. The algorithm was
+implemented in the reconstruction software of the ATLAS
+collaboration~\cite{ATL-SOFT-PUB-2021-001} and the results presented
+in this chapter were partially published in
+Ref.~\cite{ATL-PHYS-PUB-2019-033}. The RNN \tauid was adopted by the
+ATLAS collaboration as the recommended \tauid algorithm for analyses
+using the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded
+with the ATLAS detector during Run~2 of the LHC.
 
 This chapter is structured as follows. First,
 
@@ -154,7 +158,7 @@ Di-jet events are generated using
 \PYTHIA[8.186]~\cite{Sjostrand:2014zea} for the matrix element
 calculation at LO, parton showering, and hadronisation. The generation
 is performed in slices of \pT of the leading jet (anti-\kt with
-$R = 0.6$) constructed from generator-level particles. The slices with
+$R = 0.6$) constructed from generator-level particles. Slices with
 large jet transverse momenta are oversampled to increase the number of
 events with high transverse momentum jets (\faketauhadvis).
 
@@ -162,63 +166,162 @@ The $\gammastar \to \tautau$ and di-jet samples use the A14 set of
 tuned parameters for \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021} and the
 \NNPDF[2.3lo]~\cite{Ball:2012cx} set of parton distribution functions.
 Decays of hadrons containing $b$- or $c$-quarks are simulated using
-\EVTGEN[v1.2.0]. The contamination of the hard scattering interaction
-with soft, inelastic proton--proton collision events (pile-up) is
-accounted for by overlaying the event with additional minimum-bias
-events. The response of the ATLAS detector is simulated for all
-events~\cite{SOFT-2010-01} which are then reconstructed using the
-\textsc{Athena} software suite~\cite{ATL-SOFT-PUB-2021-001}.
+\EVTGEN[v1.2.0]~\cite{Lange:2001uf}. The contamination of the hard
+scattering interaction with soft, inelastic proton--proton collision
+events (pile-up) is accounted for by overlaying the event with
+additional minimum-bias events. The response of the ATLAS detector is
+simulated for all events~\cite{SOFT-2010-01} which are then
+reconstructed using the \textsc{Athena} software
+suite~\cite{ATL-SOFT-PUB-2021-001}.
 
 
 \subsection{\tauhadvis candidate selection}
 
-The simulated events are used to construct large samples of
-reconstructed \tauhadvis candidates that are used for the development
-\tauid algorithms and performance evaluation. Only \tauhadvis
-candidates passing the tau reconstruction are considered and
-additional requirements are applied:
+The simulated events are used to construct large samples of \tauhadvis
+candidates for the development \tauid algorithms and performance
+evaluation. Only \tauhadvis candidates passing the reconstruction are
+considered and the following selections are applied:
 \begin{itemize}
 
 \item The number of charged particle tracks associated to the
-  \tauhadvis candidate, \Ntracks, is either 1 or 3.
+  \tauhadvis candidate, \Ntracks, is either 1 or 3. Candidates with
+  one or three associated tracks are referred to as 1- and 3-prong
+  \tauhadvis candidates, respectively.
 
 \item The (visible) transverse momentum of the candidate needs to
   fulfil $\pT > \SI{20}{\GeV}$.
 
 \item The \tauhadvis candidate needs to be within $|\eta| < 2.5$ but
-  outside of the transition region between between the barrel and
-  endcap electromagnetic calorimeters given by $1.37 < |\eta| < 1.52$.
+  outside of $1.37 < |\eta| < 1.52$, which is the transition region
+  between between the barrel and endcap electromagnetic calorimeters.
 
 \end{itemize}
 In addition, reconstructed \tauhadvis candidates from
 $\gammastar \to \tautau$ events are required to be geometrically
 matched to a \tauhad at generator-level within a cone of
 $\Delta R < 0.2$.
+% And the reco cuts are required to be fulfilled at truth-level.
+All efficiencies and rejection rates given in the remainder of this
+chapter do not include the effect of these selections.
+
+The $\gammastar \to \tautau$ and di-jet events provide samples of
+true- and \faketauhadvis with a size of 20 million and 46 million
+candidates, respectively. The distributions of \tauhadvis candidate
+\pT is shown for both samples and separately for 1- and 3-prong
+candidates in~\Cref{fig:tauid_candidate_pt}. The difference in \pT
+spectra between 1- and 3-prong \truetauhadvis in
+\Cref{fig:tauid_candidate_pt_gammastar} result from a reduction in
+track association efficiency for 3-prong \tauhadvis candidates with
+increasing candidate \pT due to the decrease in angular separation of
+charged hadrons from the \taulepton decay. In contrast, the \pT
+spectrum of 3-prong \tauhadvis candidates from di-jet events, depicted
+in \Cref{fig:tauid_candidate_pt_dijet}, shows a comparatively heavier
+tail towards large \pT due to the increase in the average charged
+particle multiplicity in jets with increasing jet \pT. For the
+development of \tauid algorithms, the sample of \faketauhadvis
+candidates is re-weighted, separately for 1- and 3-prong candidates,
+to match the \pT spectrum of \truetauhadvis from
+$\gammastar \to \tautau$.
+
+\begin{figure}[htbp]
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/taupt_gammastar}
+    \subcaption{True-\tauhadvis from $\gammastar \to \tautau$ events}%
+    \label{fig:tauid_candidate_pt_gammastar}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/taupt_dijet}
+    \subcaption{Fake-\tauhadvis from di-jet events}%
+    \label{fig:tauid_candidate_pt_dijet}
+  \end{subfigure}
+
+  \caption{Transverse momentum of 1- and 3-prong \tauhadvis candidates
+    in $\gammastar \to \tautau$ (a) and di-jet events (b). Statistical
+    uncertainties are shown as coloured bands surrounding the central
+    value. Figures taken from Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
+  \label{fig:tauid_candidate_pt}
+\end{figure}
 
 
-Any \truetauhadvis efficiencies or \faketauhadvis rejections given in
-the following do not include the selection efficiency of this baseline
-selection.
-
-And the reco cuts are required to be fulfilled at truth-level.
-
-
-
-
-
-
-
-Reweighting of (fake) \tauhad \pT
-
-Cuts applied to \tauhadvis candidates.
-
-
-\section{Tau Identification with Recurrent Neural Networks}
+\section{Tau Identification with Recurrent Neural Networks}%
 \label{sec:tauid_rnn}
 
-\todo[inline]{Motivated by RNNIP: \cite{ATL-PHYS-PUB-2017-003}}
+The RNN \tauid exploits the discrimination power of both high- and
+low-level inputs to distinguish \tauhad from quark- or gluon-initiated
+jets. This approach avoids a possible loss of information relevant to
+\tauid when manually constructing high-level variables from low-level
+inputs. Specifically, charged-particle tracks and clusters of energy
+in the calorimeters, hereafter abbreviated as tracks and clusters, are
+included as low-level inputs to the algorithm. The inclusion of tracks
+and clusters targets the differences in charged and neutral particle
+multiplicities and track- and calorimeter-based isolation between
+true- and \faketauhadvis.
+
+Tau identification is performed separately for 1- and 3-prong
+\tauhadvis candidates due to their distinct signatures.
+
+- Indiciations of large rejection power from track information (while
+the information of tracks classified as ``isolation'' are used) ->
+More reliant on track classification performance
+
+- How are tracks / clusters associated? How many are used? How are they ordered?
+
 
 \subsection{Input Variables}
+
+High-level variables
+
+\Cref{fig:tauid_high_level_vars}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+
+    \includegraphics[width=0.85\textwidth]{tauid/invars/invars_sumpttrkfrac_1P}
+    \subcaption{}
+  \end{subfigure}%
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+
+    \includegraphics[width=0.85\textwidth]{tauid/invars/invars_absipsigleadtrk_1P}
+    \subcaption{}
+  \end{subfigure}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+
+    \includegraphics[width=0.85\textwidth]{tauid/invars/invars_masstrksys_3P}
+    \subcaption{}
+  \end{subfigure}%
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+
+    \includegraphics[width=0.85\textwidth]{tauid/invars/invars_trflightpathsig_3P}
+    \subcaption{}
+  \end{subfigure}
+
+  \caption{Selected high-level input variables}%
+  \label{fig:tauid_high_level_vars}
+\end{figure}
+
+
+Tracks: How associated.
+
+All reconstructed tracks within $\Delta R < 0.4$ of the \tauhadvis
+candidate axis with $\pT > \SI{500}{\MeV}$ are considered as inputs to
+the to the RNN \tauid. The tracks associated to \tauhadvis candidates
+include
+
+Clusters: How associated.
+
+Clusters are considered if they are
+constituents of the jet that seeded the \tauhadvis reconstruction.
+
+
+
 
 \begin{table}[htbp]
   \centering
@@ -230,9 +333,14 @@ Cuts applied to \tauhadvis candidates.
   \input{tables/tauid_inputs}
 \end{table}
 
+What are the most important variables?
+
 Plots of high-level variables
 
 Plots of (some) low-level variables???
+
+Uncalibrated transverse momenta to be less dependent on upstream
+algorithms.
 
 
 \subsection{Network Architecture}
@@ -249,6 +357,10 @@ Plots of (some) low-level variables???
 
 \subsection{Training and evaluation}
 
+These samples are partitioned into a
+training (\SI{40}{\percent}), validation (\SI{10}{\percent}), and
+testing dataset (\SI{50}{\percent}).
+
 Keras Tensorflow lwtnn \cite{lwtnn,keras,tensorflow2015-whitepaper,lstm}
 
 Used in the software suite
@@ -256,8 +368,13 @@ Used in the software suite
 
 \subsection{Working Point Definition}
 
+\subsubsection{Calibration}
 
-\subsection{Calibration}
+The efficiencies of the loose, medium, and tight working point for
+\truetauhadvis were calibrated by the ATLAS collaboration using
+$Z \to \tau_\mu \tauhad$ tag-and-probe showing agreement (within X
+percent) between the predicted efficiency by simuation and the
+efficiencies measured using collision data.
 
 
 \section{Tau Identification Performance}
@@ -266,10 +383,11 @@ Used in the software suite
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{tauid/pubnote/rnn_bdt_roc}
+  % \includegraphics[width=0.55\textwidth]{tauid/pubnote/rnn_bdt_roc}
+  \includegraphics[width=0.55\textwidth]{tauid/roc_incl_witherrors}
 
   \caption{Receiver operating characteristic of the RNN
-    \tauhad-identification algorithm \cite{ATL-PHYS-PUB-2019-033}}
+    \tauhad-identification algorithm \cite{ATL-PHYS-PUB-2019-033}}%
   \label{fig:tauid_rnn_bdt_roc_comparison}
 \end{figure}
 
@@ -283,18 +401,47 @@ Used in the software suite
     and RNN classifiers. Adapted from~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{tab:rnn_wps}
 
-  \begin{tabular}{lcccccc}
-    \toprule
-                  & \multicolumn{2}{c}{Signal efficiency} & \multicolumn{2}{c}{Background rejection (BDT)} & \multicolumn{2}{c}{Background rejection (RNN)} \\
-    Working point  & 1-prong & 3-prong & 1-prong & 3-prong & 1-prong & 3-prong \\
-    \midrule
-    Tight          & 60\%    & 45\%    & 40      & 400  & 70   & 700 \\
-    Medium         & 75\%    & 60\%    & 20      & 150  & 35   & 240 \\
-    Loose          & 85\%    & 75\%    & 12      & 61   & 21   & 90  \\
-    Very loose     & 95\%    & 95\%    & 5.3     & 11.2 & 9.9  & 16  \\
-    \bottomrule
-  \end{tabular}
+  \input{tables/tauid_working_points}
 \end{table}
+
+
+\begin{figure}[htbp]
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_pt_1p}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_pt_3p}
+    \subcaption{}
+  \end{subfigure}
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_eta_1p}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_eta_3p}
+    \subcaption{}
+  \end{subfigure}
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_mu_1p}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_mu_3p}
+    \subcaption{}
+  \end{subfigure}
+
+  \caption{Eff. Figures are taken from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}
+  \label{fig:tauid_truetau_eff}
+\end{figure}
+
+
+
+
 
 \subsection{Use at the HLT?}
 
