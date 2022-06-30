@@ -280,26 +280,26 @@ High-level variables
   \begin{subfigure}{0.48\textwidth}
     \centering
 
-    \includegraphics[width=0.8\textwidth]{tauid/invars/invars_sumpttrkfrac_1P}
+    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_sumpttrkfrac_1P}
     \subcaption{}
   \end{subfigure}%
   \begin{subfigure}{0.48\textwidth}
     \centering
 
-    \includegraphics[width=0.8\textwidth]{tauid/invars/invars_absipsigleadtrk_1P}
+    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_absipsigleadtrk_1P}
     \subcaption{}
   \end{subfigure}
 
   \begin{subfigure}{0.48\textwidth}
     \centering
 
-    \includegraphics[width=0.8\textwidth]{tauid/invars/invars_masstrksys_3P}
+    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_masstrksys_3P}
     \subcaption{}
   \end{subfigure}%
   \begin{subfigure}{0.48\textwidth}
     \centering
 
-    \includegraphics[width=0.8\textwidth]{tauid/invars/invars_trflightpathsig_3P}
+    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_trflightpathsig_3P}
     \subcaption{}
   \end{subfigure}
 
@@ -313,7 +313,110 @@ Tracks: How associated.
 All reconstructed tracks within $\Delta R < 0.4$ of the \tauhadvis
 candidate axis with $\pT > \SI{500}{\MeV}$ are considered as inputs to
 the to the RNN \tauid. The tracks associated to \tauhadvis candidates
-include
+include fake tracks and pile-up tracks. Have to include impact
+parameters and track quality criteria.
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_trk0relpt_1P}
+    \subcaption{}
+  \end{subfigure}%
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_trk1relpt_1P}
+    \subcaption{}
+  \end{subfigure}%
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_trk2relpt_1P}
+    \subcaption{}
+  \end{subfigure}
+
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_cls0relet_3P}
+    \subcaption{}
+  \end{subfigure}%
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_cls1relet_3P}
+    \subcaption{}
+  \end{subfigure}%
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_cls2relet_3P}
+    \subcaption{}
+  \end{subfigure}
+
+  \caption{Sequence variables}%
+  \label{fig:tauid_low_level_variables}
+\end{figure}
+
+
+% \begin{figure}[htbp]
+%   \centering
+
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk0relpt_1P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk1relpt_1P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk2relpt_1P}
+%     \subcaption{}
+%   \end{subfigure}
+
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk0relpt_3P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk1relpt_3P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk2relpt_3P}
+%     \subcaption{}
+%   \end{subfigure}
+
+%   \caption{Sequence variables}%
+%   \label{fig:tauid_low_level_variables}
+% \end{figure}
+
+% \begin{figure}[htbp]
+%   \centering
+
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls0relet_1P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls1relet_1P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls2relet_1P}
+%     \subcaption{}
+%   \end{subfigure}
+
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls0relet_3P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls1relet_3P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.33\textwidth}
+%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls2relet_3P}
+%     \subcaption{}
+%   \end{subfigure}
+
+%   \caption{Sequence variables}%
+%   \label{fig:tauid_low_level_variables_2}
+% \end{figure}
+
 
 Clusters: How associated.
 
