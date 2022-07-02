@@ -103,12 +103,12 @@ and clusters of energy in the calorimeters associated to \tauhadvis
 candidates. The number of associated tracks and clusters varies
 between candidates requiring the use of neural network architectures
 able to process sequences of varying length. This is achieved by
-employing a recurrent neural network (RNN) architecture, consequently
-the method introduced here will be referred to as RNN \tauid.
+employing a recurrent neural network (RNN) architecture. The method
+will be referred to as RNN \tauid hereafter.
 
-The RNN \tauid algorithm described in this chapter was initially
-proposed in Ref.~\cite{cdeutsch-master} motivated by a similar
-approach developed for track impact parameter based
+The RNN \tauid algorithm was initially proposed in
+Ref.~\cite{cdeutsch-master} motivated by a similar approach developed
+for track impact parameter based
 $b$-tagging~\cite{ATL-PHYS-PUB-2017-003}. The algorithm was
 implemented in the reconstruction software of the ATLAS
 collaboration~\cite{ATL-SOFT-PUB-2021-001} and the results presented
@@ -134,20 +134,20 @@ This chapter is structured as follows. First,
 
 The tau reconstruction and identification algorithms employed at the
 ATLAS experiment for Run~2 of the LHC were developed using simulated
-events that provide samples of \tauhadvis candidates. For the \tauid
-algorithms, simulated $\gammastar \to \tautau$ and di-jet events are
-used to yield samples of true- and \faketauhadvis, respectively.
+events that provide samples of \tauhadvis candidates. For \tauid,
+simulated $\gammastar \to \tautau$ and di-jet events are used to yield
+samples of true- and \faketauhadvis, respectively.
 
 % y->tautau:
 % https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID425xxx/MC15.425200.Pythia8EvtGen_A14NNPDF23LO_Gammatautau_MassWeight.py
 An artificial $\gammastar \to \tautau$ event sample was generated
 using \PYTHIA[8.212]~\cite{Sjostrand:2014zea} for the matrix element
-calculation at leading order (LO), parton showering, and
-hadronisation. The contribution of the $Z$ boson propagator to the
-hard scattering process was disabled to provide an unpolarised sample
-of \tauleptons. In addition, the cross-section of the process was
-modified at generator-level to enhance the number of events with high
-invariant $\tautau$ masses to increase the number of \tauhadvis
+calculation at leading order (LO), parton showering, hadronisation,
+and \taulepton decays. The contribution of the $Z$ boson propagator to
+the hard scattering process was removed to provide an unpolarised
+sample of \tauleptons. In addition, the cross-section of the process
+was modified at generator-level to enhance the number of events with
+high invariant $\tautau$ masses to increase the number of \tauhadvis
 candidates with high transverse momenta. Finally, both \tauleptons are
 enforced to decay hadronically to maximise statistical precision of
 the \truetauhadvis sample for \tauid developments.
@@ -175,7 +175,7 @@ reconstructed using the \textsc{Athena} software
 suite~\cite{ATL-SOFT-PUB-2021-001}.
 
 
-\subsection{\tauhadvis candidate selection}
+\subsection{\tauhadvis Candidate Selection}
 
 The simulated events are used to construct large samples of \tauhadvis
 candidates for the development \tauid algorithms and performance
@@ -253,69 +253,141 @@ jets. This approach avoids a possible loss of information relevant to
 inputs. Specifically, charged-particle tracks and clusters of energy
 in the calorimeters, hereafter abbreviated as tracks and clusters, are
 included as low-level inputs to the algorithm. The inclusion of tracks
-and clusters targets the differences in charged and neutral particle
+and clusters targets the differences in charged and neutral hadron
 multiplicities and track- and calorimeter-based isolation between
-true- and \faketauhadvis.
-
-Tau identification is performed separately for 1- and 3-prong
-\tauhadvis candidates due to their distinct signatures.
-
-- Indiciations of large rejection power from track information (while
-the information of tracks classified as ``isolation'' are used) ->
-More reliant on track classification performance
-
-- How are tracks / clusters associated? How many are used? How are they ordered?
+true- and \faketauhadvis. Tau identification is performed separately
+for 1- and 3-prong \tauhadvis candidates due to their distinct
+signatures.
 
 
 \subsection{Input Variables}
 
-High-level variables
+The input variables included in the RNN \tauid algorithm are
+summarised in~\Cref{tab:tauid_input_variables}. Three distinct
+categories of inputs are considered. High-level inputs correspond to
+observables directly associated to \tauhadvis candidates. Track and
+cluster inputs refer to observables of tracks and clusters that are
+associated to a \tauhadvis candidate. In the following, a description
+of the input variable selection and track/cluster association is
+given.
 
-\Cref{fig:tauid_high_level_vars}
+\begin{table}[htbp]
+  \centering
+
+  \caption{Summary of input variables used for 1- and 3-prong RNN
+    \tauid. The table is adapted from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}. Definitions of geometrical
+    TopoCluster moments ($\lambda$, $\langle \lambda^2 \rangle$,
+    $\langle r^2 \rangle$) are given in Ref.~\cite{PERF-2014-07}. The
+    local hadronic calibration~\cite{PERF-2014-07} is used to
+    calibrate jets, clusters, and \tauhadvis candidates unless
+    otherwise noted. Variables using cell-level calorimeter
+    information only consider cells that are part of TopoClusters for
+    noise suppression. $\dagger$:~Energy depositions in the
+    pre-sampler and first two layers of the electromagnetic
+    calorimeters that are part of TopoClusters are abbreviated as ``EM
+    clusters''.}%
+  \label{tab:tauid_input_variables}
+
+  \resizebox{0.99\textwidth}{!}{
+    \input{tables/tauid_inputs}
+  }
+\end{table}
+
+\subsubsection{High-Level Input Variables}
+
+and three exemplary distributions are shown
+in~\Cref{fig:tauid_high_level_vars} The selection of high-level input
+variables is based on previous \tauid algorithms developed by the
+ATLAS collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
+Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction
+algorithms deployed during Run~2 of the LHC.
+
+The BDT-based \tauid algorithm
+
+
+
+Exemplary distributions of high-level input variables important for
+\tauid are shown in~\Cref{fig:tauid_high_level_vars}.
 
 
 \begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}{0.48\textwidth}
-    \centering
-
-    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_sumpttrkfrac_1P}
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_sumpttrkfrac_1P}
     \subcaption{}
-  \end{subfigure}%
-  \begin{subfigure}{0.48\textwidth}
-    \centering
-
-    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_absipsigleadtrk_1P}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_ptratioeflowapprox_1P}
     \subcaption{}
-  \end{subfigure}
-
-  \begin{subfigure}{0.48\textwidth}
-    \centering
-
-    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_masstrksys_3P}
-    \subcaption{}
-  \end{subfigure}%
-  \begin{subfigure}{0.48\textwidth}
-    \centering
-
-    \includegraphics[width=0.67\textwidth]{tauid/invars/invars_trflightpathsig_3P}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.33\textwidth}
+    \includegraphics[width=\textwidth]{tauid/invars/invars_masstrksys_3P}
     \subcaption{}
   \end{subfigure}
 
-  \caption{Selected high-level input variables}%
+  \caption{Distributions of exemplary high-level input variables used
+    for \tauid. (a):~The ratio of the scalar sum of \pT of tracks
+    classified as \emph{isolation} with respect to tracks classified
+    as \emph{core} or \emph{isolation}. (b):~The ratio of \tauhadvis
+    candidate \pT estimated using a simplified particle flow approach
+    and the purely calorimeter-based measurement
+    (cf.~\Cref{tab:tauid_input_variables}). (c):~The mass of the
+    system of \emph{core} tracks for 3-prong \tauhadvis candidates.}%
   \label{fig:tauid_high_level_vars}
 \end{figure}
 
 
-Tracks: How associated.
+% \begin{figure}[htbp]
+%   \centering
 
-All reconstructed tracks within $\Delta R < 0.4$ of the \tauhadvis
+%   \begin{subfigure}{0.48\textwidth}
+%     \centering
+
+%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_sumpttrkfrac_1P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.48\textwidth}
+%     \centering
+
+%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_absipsigleadtrk_1P}
+%     \subcaption{}
+%   \end{subfigure}
+
+%   \begin{subfigure}{0.48\textwidth}
+%     \centering
+
+%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_masstrksys_3P}
+%     \subcaption{}
+%   \end{subfigure}%
+%   \begin{subfigure}{0.48\textwidth}
+%     \centering
+
+%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_trflightpathsig_3P}
+%     \subcaption{}
+%   \end{subfigure}
+
+%   \caption{Selected high-level input variables}%
+%   \label{fig:tauid_high_level_vars}
+% \end{figure}
+
+\subsubsection{Track Input Variables}
+
+Reconstructed tracks within $\Delta R < 0.4$ of the \tauhadvis
 candidate axis with $\pT > \SI{500}{\MeV}$ are considered as inputs to
-the to the RNN \tauid. The tracks associated to \tauhadvis candidates
-include fake tracks and pile-up tracks. Have to include impact
-parameters and track quality criteria.
+the RNN \tauid. The tracks associated to \tauhadvis canididates
+include fake tracks and tracks from pile-up since no selections on the
+track quality or track impact parameters are applied. Track quality
+criteria ($N_{\text{IBL hits}}$, $N_{\text{Pixel hits}}$,
+$N_{\text{SCT hits}}$) and track impact parameters
+($|d_0^{\text{track}}|$, $|z_0^{\text{track}} \sin\theta|$) are
+instead included as observables of tracks used in the RNN \tauid
+algorithm (cf.~\Cref{tab:tauid_input_variables}).
 
+
+Only the ten \pT-leading tracks are found to contribute to \tauid,
+thus the sequence of input tracks is truncated at this point.
 
 \begin{figure}[htbp]
   \centering
@@ -350,73 +422,7 @@ parameters and track quality criteria.
   \label{fig:tauid_low_level_variables}
 \end{figure}
 
-
-% \begin{figure}[htbp]
-%   \centering
-
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk0relpt_1P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk1relpt_1P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk2relpt_1P}
-%     \subcaption{}
-%   \end{subfigure}
-
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk0relpt_3P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk1relpt_3P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_trk2relpt_3P}
-%     \subcaption{}
-%   \end{subfigure}
-
-%   \caption{Sequence variables}%
-%   \label{fig:tauid_low_level_variables}
-% \end{figure}
-
-% \begin{figure}[htbp]
-%   \centering
-
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls0relet_1P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls1relet_1P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls2relet_1P}
-%     \subcaption{}
-%   \end{subfigure}
-
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls0relet_3P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls1relet_3P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.33\textwidth}
-%     \includegraphics[width=\textwidth]{tauid/invars/invars_cls2relet_3P}
-%     \subcaption{}
-%   \end{subfigure}
-
-%   \caption{Sequence variables}%
-%   \label{fig:tauid_low_level_variables_2}
-% \end{figure}
-
+\subsubsection{Cluster Input Variables}
 
 Clusters: How associated.
 
@@ -426,15 +432,6 @@ constituents of the jet that seeded the \tauhadvis reconstruction.
 
 
 
-\begin{table}[htbp]
-  \centering
-
-  \caption{Input variables. Adopted from
-    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
-  \label{tab:tauid_input_variables}
-
-  \input{tables/tauid_inputs}
-\end{table}
 
 What are the most important variables?
 
