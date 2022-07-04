@@ -468,21 +468,22 @@ and will be discussed in more detail in the following.
 \end{figure}
 
 The branch of the network processing high-level input variables
-consists of three fully-connected (\emph{dense}) layers with 128, 128, and 16
-neurons each. All layers include trainable bias vectors and use the
-ReLU activation function.
+consists of three fully-connected (\emph{dense}) layers with 128, 128,
+and 16 neurons each. All layers include trainable bias vectors and use
+the ReLU~\cite{nair:relu} activation function.
 
 Tracks and clusters are provided as sequences of vectors of
 observables to the network. The sequences of tracks and clusters are
 ordered by descending $p_{\text{T}}^{\text{track}}$ and
 $E_{T}^{\text{cluster}}$, respectively. The configuration of the
 branches processing tracks and clusters are identical. First,
-sequences of tracks and clusters are processed by two fully-connected
-layers with shared weights (\emph{shared dense}) with 32 neurons each,
-trainable bias vectors, and using ReLU activation
-functions. \emph{Shared dense} layers map sequences of input vectors,
-$(\myvec{x}_i)_{i=1}^{n}$, to sequences of output vectors of the same
-length, $(\myvec{y}_i)_{i=1}^{n}$, using a transformation of the form
+sequences of tracks and clusters are passed through two
+fully-connected layers with shared weights (\emph{shared dense}), 32
+neurons each, trainable bias vectors, and using ReLU~\cite{nair:relu}
+activation functions. \emph{Shared dense} layers map sequences of
+input vectors, $(\myvec{x}_i)_{i=1}^{n}$, to sequences of output
+vectors of the same length, $(\myvec{y}_i)_{i=1}^{n}$, using a
+transformation of the form
 \begin{align*}
   \myvec{y}_i = \myvec{\phi}(\myvec{W} \myvec{x}_i + \myvec{b}) \,\text{,}
 \end{align*}
@@ -490,14 +491,28 @@ where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and
 bias vectors, respectively, and $\myvec{\phi}$ is the activation
 function.  Notably, the weights and biases do not depend on the
 sequence index $i$, i.e.~both are shared across all elements of the
-sequence. As a result, the \emph{shared dense} layers produce
-intermediate presentations of the sequences of tracks and clusters
-which are subsequently passed to recurrent layers.
+sequence. The \emph{shared dense} layers produce intermediate
+representations of the sequences of tracks and clusters for further
+processing.
 
+The transformed sequences of tracks and clusters are further processed
+by two recurrent layers based on the \emph{long short-term memory}
+(LSTM) architecture~\cite{lstm}. The first LSTM layer maps the input
+sequence to an output sequence of the same length. In contrast to
+\emph{shared dense} layers which perform a similar mapping, LSTM
+layers have an internal state that is updated as elements of the
+sequence are processed. As a result, information on elements occuring
+earlier in the sequence is used when processing later elements. The
+second LSTM layer repeats the process, however, all except the last
+element of the output sequence are discarded. This effectively encodes
+the input sequence into a vector of fixed size. The size of the
+internal state and the outputs of the LSTM are chosen to be the same
+and correspond to 32 neurons for the first and 24 neurons for the
+second LSTM layer.
 
-32 (LSTM), 24 (LSTM)
-- Clusters: \^
-- Merge -> 64, 32, 1
+Finally, the results from the three branches are concatenated
+(\emph{Merge}) and passed through three fully-connected layers with
+64, 32, and 1 neurons.
 
 All ReLU except for LSTM.  Bias vectors used everywhere. Model
 consists of approximately 56000 trainable parameters.
