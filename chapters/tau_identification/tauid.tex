@@ -447,14 +447,16 @@ six \ET-leading clusters, thus the sequence of input clusters is
 truncated at this point.
 
 
-\subsection{Network Architecture and Training}
+\subsection{Network Architecture}
 
-The network architecture used for the RNN \tauid is motivated by the
-choice of inputs. The three types of inputs are processed
-independently at first, resulting in a three branch structure, and
-later combined yielding a classification score. A schematic depiction
-of the architecture is given in~\Cref{fig:tauid_network_architecture}
-and will be discussed in more detail in the following.
+The network architecture adopted for the RNN \tauid is shown
+schematically in~\Cref{fig:tauid_network_architecture}. The network
+consists of three branches, one branch dedicated to each type of
+input. The high-level variables, track, and cluster inputs are first
+processed independently in their respective branches. These branches
+are then merged and reduced to a single output probability that is
+used to define the \tauid working points. A detailed description of
+the architecture is given in the following.
 
 \begin{figure}[htbp]
   \centering
@@ -462,7 +464,8 @@ and will be discussed in more detail in the following.
   \includegraphics[width=0.95\textwidth]{tauid/pubnote/rnn_network_architecture}
 
   \caption{Schematic depiction of the architecture used for the RNN
-    \tauid algorithm. The figure is taken from
+    \tauid algorithm. Individual layers of the network are indicated
+    as rectangles. The figure is taken from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_network_architecture}
 \end{figure}
@@ -472,18 +475,18 @@ consists of three fully-connected (\emph{dense}) layers with 128, 128,
 and 16 neurons each. All layers include trainable bias vectors and use
 the ReLU~\cite{nair:relu} activation function.
 
-Tracks and clusters are provided as sequences of vectors of
-observables to the network. The sequences of tracks and clusters are
-ordered by descending $p_{\text{T}}^{\text{track}}$ and
-$E_{T}^{\text{cluster}}$, respectively. The configuration of the
-branches processing tracks and clusters are identical. First,
-sequences of tracks and clusters are passed through two
-fully-connected layers with shared weights (\emph{shared dense}), 32
-neurons each, trainable bias vectors, and using ReLU~\cite{nair:relu}
-activation functions. \emph{Shared dense} layers map sequences of
-input vectors, $(\myvec{x}_i)_{i=1}^{n}$, to sequences of output
-vectors of the same length, $(\myvec{y}_i)_{i=1}^{n}$, using a
-transformation of the form
+Tracks and clusters are provided as sequences of vectors to the
+network, each vector consisting of input variables for a given
+object. The sequences of tracks and clusters are given in descending
+$p_{\text{T}}^{\text{track}}$ and $E_{T}^{\text{cluster}}$ order,
+respectively. The architecture of the branches processing track and
+cluster inputs are identical. First, sequences of tracks and clusters
+are passed through two fully-connected layers with shared weights
+(\emph{shared dense}). These layers have 32 neurons each, trainable
+bias vectors, and use ReLU~\cite{nair:relu} as the activation
+function. \emph{Shared dense} layers map sequences of input vectors,
+$(\myvec{x}_i)_{i=1}^{n}$, to sequences of output vectors of the same
+length, $(\myvec{y}_i)_{i=1}^{n}$, using a transformations of the form
 \begin{align*}
   \myvec{y}_i = \myvec{\phi}(\myvec{W} \myvec{x}_i + \myvec{b}) \,\text{,}
 \end{align*}
@@ -495,48 +498,37 @@ sequence. The \emph{shared dense} layers produce intermediate
 representations of the sequences of tracks and clusters for further
 processing.
 
-The transformed sequences of tracks and clusters are further processed
-by two recurrent layers based on the \emph{long short-term memory}
-(LSTM) architecture~\cite{lstm}. The first LSTM layer maps the input
-sequence to an output sequence of the same length. In contrast to
-\emph{shared dense} layers which perform a similar mapping, LSTM
-layers have an internal state that is updated as elements of the
-sequence are processed. As a result, information on elements occuring
-earlier in the sequence is used when processing later elements. The
-second LSTM layer repeats the process, however, all except the last
-element of the output sequence are discarded. This effectively encodes
-the input sequence into a vector of fixed size. The size of the
-internal state and the outputs of the LSTM are chosen to be the same
-and correspond to 32 neurons for the first and 24 neurons for the
-second LSTM layer.
+The transformed sequences of tracks and clusters pass through two
+recurrent layers based on the \emph{long short-term memory} (LSTM)
+architecture~\cite{lstm}. The first LSTM layer maps the input sequence
+to an output sequence of the same length. In contrast to \emph{shared
+  dense} layers which perform a similar mapping, LSTM layers have an
+internal state that is updated as elements of the sequence are
+processed. As a result, information on elements occuring earlier in
+the sequence is used when processing later elements. The second LSTM
+layer repeats the process, however, all except the last element of the
+output sequence are discarded. This encodes the input sequence into a
+vector of fixed size. The size of the internal state and the outputs
+of the LSTM are chosen to be the same and correspond to 32 neurons for
+the first and 24 neurons for the second LSTM layer.
 
-Finally, the results from the three branches are concatenated
+Finally, the outputs of the three branches are concatenated
 (\emph{Merge}) and passed through three fully-connected layers with
-64, 32, and 1 neurons.
+sizes of 64, 32, and 1 neurons and ReLU activation.
+
+
 
 All ReLU except for LSTM.  Bias vectors used everywhere. Model
 consists of approximately 56000 trainable parameters.
 
+\textsc{Keras}~\cite{keras} with the
+\textsc{TensorFlow}~\cite{tensorflow2015-whitepaper} backend. Trained
+networks are evaluated in the ATLAS event reconstruction framework
+using \textsc{lwtnn}~\cite{lwtnn}.
 
 - High-level variables are supplied at the level of individual tau
 leptons thus a simple densely connected architecture is chosen for the
 processing of these inputs.
-
-- Tracks and clusters can be seen as a sequence of objects on which a
-physically motivated ordering is imposed.
-
-- Recurrent neural network architecture to process sequences of length
-varying from event to event.
-
- % Layers of the network are indicated by boxes.
-
- %    Layers are represented as boxes with \emph{dense} (\emph{shared
- %      dense}) layers corresponding densely connected layers (with
- %    shared weights). The recurrent neural network architecture
- %    processing sequences of tracks and clusters is established by long
- %    short-term memory (LSTM) layers. A merge operation combines the
- %    three branches of the network by concatenating their outputs.
-
 
 \subsection{Training and evaluation}
 
