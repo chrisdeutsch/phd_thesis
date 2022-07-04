@@ -296,8 +296,8 @@ given.
 
 \subsubsection{High-Level Input Variables}
 
-The selection of high-level input variables is based on a previous
-BDT-based \tauid algorithm developed by the ATLAS
+The selection of high-level input variables is based on a BDT-based
+\tauid algorithm developed by the ATLAS
 collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
 Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
 deployed during Run~2 of the LHC. The BDT \tauid uses the high-level
@@ -343,121 +343,185 @@ exemplary distributions are shown in~\Cref{fig:tauid_high_level_vars}.
 \end{figure}
 
 
-% \begin{figure}[htbp]
-%   \centering
-
-%   \begin{subfigure}{0.48\textwidth}
-%     \centering
-
-%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_sumpttrkfrac_1P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.48\textwidth}
-%     \centering
-
-%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_absipsigleadtrk_1P}
-%     \subcaption{}
-%   \end{subfigure}
-
-%   \begin{subfigure}{0.48\textwidth}
-%     \centering
-
-%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_masstrksys_3P}
-%     \subcaption{}
-%   \end{subfigure}%
-%   \begin{subfigure}{0.48\textwidth}
-%     \centering
-
-%     \includegraphics[width=0.67\textwidth]{tauid/invars/invars_trflightpathsig_3P}
-%     \subcaption{}
-%   \end{subfigure}
-
-%   \caption{Selected high-level input variables}%
-%   \label{fig:tauid_high_level_vars}
-% \end{figure}
-
 \subsubsection{Track Input Variables}
 
 Reconstructed tracks within $\Delta R < 0.4$ of the \tauhadvis
 candidate axis with $\pT > \SI{500}{\MeV}$ are considered as inputs to
-the RNN \tauid. The tracks associated to \tauhadvis canididates
-include fake tracks and tracks from pile-up since no selections on the
-track quality or track impact parameters are applied. Track quality
+the RNN \tauid. No selections are applied on the quality of
+reconstructed tracks or track impact parameters, thus the input tracks
+include fake tracks and tracks from pile-up. Instead, track quality
 criteria ($N_{\text{IBL hits}}$, $N_{\text{Pixel hits}}$,
 $N_{\text{SCT hits}}$) and track impact parameters
 ($|d_0^{\text{track}}|$, $|z_0^{\text{track}} \sin\theta|$) are
-instead included as observables of tracks used in the RNN \tauid
-algorithm (cf.~\Cref{tab:tauid_input_variables}).
+included as observables of tracks used in the RNN \tauid algorithm
+directly.
 
-
-Only the ten \pT-leading tracks are found to contribute to \tauid,
-thus the sequence of input tracks is truncated at this point.
+The transverse momenta of tracks ($p_{\text{T}}^{\text{track}}$) and
+their angular separation from the axis of the \tauhadvis candidate
+($\Delta \eta^{\text{track}}$, $\Delta \phi^{\text{track}}$) are
+included to probe the isolation properties of \tauhadvis. A special
+case is represented by the $p_{\text{T}}^{\text{seed jet}}$ variable,
+the \pT of the jet seeding the \tauhadvis candidate, which is included
+as an observable with every track. This input variable provides an
+approximate \pT-scale of the underlying jet (or \tauhadvis) already
+when processing the input tracks. Exemplary distributions of the
+transverse momenta of the three \pT-leading tracks for 1-prong
+\tauhadvis candidates are shown
+in~\Cref{fig:tauid_low_level_variables_track0,fig:tauid_low_level_variables_track1,fig:tauid_low_level_variables_track2}.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth]{tauid/invars/invars_trk0relpt_1P}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_low_level_variables_track0}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth]{tauid/invars/invars_trk1relpt_1P}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_low_level_variables_track1}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth]{tauid/invars/invars_trk2relpt_1P}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_low_level_variables_track2}
   \end{subfigure}
 
   \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth]{tauid/invars/invars_cls0relet_3P}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_low_level_variables_cluster0}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth]{tauid/invars/invars_cls1relet_3P}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_low_level_variables_cluster1}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth]{tauid/invars/invars_cls2relet_3P}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_low_level_variables_cluster2}
   \end{subfigure}
 
-  \caption{Sequence variables}%
+  \caption{Transverse momentum of the three \pT-leading tracks
+    associated to 1-prong \tauhadvis candidates (a-c). Transverse
+    energy of the three \ET-leading clusters associated to 3-prong
+    \tauhadvis candidates (d-f). For illustration purposes, the track
+    \pT and cluster \ET are normalised to the \pT of the jet seeding
+    the \tauhadvis reconstruction.}%
   \label{fig:tauid_low_level_variables}
 \end{figure}
 
+The discrimination power of the RNN \tauid saturates after including
+the ten tracks leading in \pT. Therefore, the sequence of tracks is
+truncated at this point due to practical considerations.
+
+
 \subsubsection{Cluster Input Variables}
 
-Clusters: How associated.
+Topological clusters of energy in the calorimeters are considered as
+inputs to the RNN \tauid if they are constitutents of the jet seeding
+the \tauhadvis reconstruction. All clusters are calibrated using the
+local hadronic calibration~\cite{PERF-2014-07}.
 
-Clusters are considered if they are
-constituents of the jet that seeded the \tauhadvis reconstruction.
+The inclusion of the $E_{\text{T}}^{\text{cluster}}$,
+$\Delta \eta^{\text{cluster}}$, $\Delta \phi^{\text{cluster}}$, and
+$p_{\text{T}}^{\text{jet seed}}$ observables
+(cf.~\Cref{tab:tauid_input_variables}) follow from considerations
+similar to those for charged-particle tracks. In addition, information
+on the position and shape of showers in the calorimeters is included
+in the form of cluster moments~\cite{PERF-2014-07}, targeting the
+differences between electromagnetic and hadronic showers. These
+cluster moments include the longitudinal location of the cluster
+barycentre, $\lambda_{\text{cluster}}$, and the lateral and
+longitudinal extension of the cluster,
+$\langle r^2 \rangle_{\text{cluster}}$ and
+$\langle \lambda^2 \rangle_{\text{cluster}}$, respectively. The \ET of
+the three \ET-leading clusters is shown
+in~\Cref{fig:tauid_low_level_variables_cluster0,fig:tauid_low_level_variables_cluster1,fig:tauid_low_level_variables_cluster2}
+for 3-prong \tauhadvis candidates.
+
+The performance of the RNN \tauid saturates after the inclusion of the
+six \ET-leading clusters, thus the sequence of input clusters is
+truncated at this point.
 
 
+\subsection{Network Architecture and Training}
 
-
-
-What are the most important variables?
-
-Plots of high-level variables
-
-Plots of (some) low-level variables???
-
-Uncalibrated transverse momenta to be less dependent on upstream
-algorithms.
-
-
-\subsection{Network Architecture}
+The network architecture used for the RNN \tauid is motivated by the
+choice of inputs. The three types of inputs are processed
+independently at first, resulting in a three branch structure, and
+later combined yielding a classification score. A schematic depiction
+of the architecture is given in~\Cref{fig:tauid_network_architecture}
+and will be discussed in more detail in the following.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.95\textwidth]{tauid/pubnote/rnn_network_architecture}
 
-  \caption{Network Architecture of the RNN \tauhad-identification
-    algorithm \cite{ATL-PHYS-PUB-2019-033}}
+  \caption{Schematic depiction of the architecture used for the RNN
+    \tauid algorithm. The figure is taken from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_network_architecture}
 \end{figure}
+
+The branch of the network processing high-level input variables
+consists of three fully-connected (\emph{dense}) layers with 128, 128, and 16
+neurons each. All layers include trainable bias vectors and use the
+ReLU activation function.
+
+Tracks and clusters are provided as sequences of vectors of
+observables to the network. The sequences of tracks and clusters are
+ordered by descending $p_{\text{T}}^{\text{track}}$ and
+$E_{T}^{\text{cluster}}$, respectively. The configuration of the
+branches processing tracks and clusters are identical. First,
+sequences of tracks and clusters are processed by two fully-connected
+layers with shared weights (\emph{shared dense}) with 32 neurons each,
+trainable bias vectors, and using ReLU activation
+functions. \emph{Shared dense} layers map sequences of input vectors,
+$(\myvec{x}_i)_{i=1}^{n}$, to sequences of output vectors of the same
+length, $(\myvec{y}_i)_{i=1}^{n}$, using a transformation of the form
+\begin{align*}
+  \myvec{y}_i = \myvec{\phi}(\myvec{W} \myvec{x}_i + \myvec{b}) \,\text{,}
+\end{align*}
+where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and
+bias vectors, respectively, and $\myvec{\phi}$ is the activation
+function.  Notably, the weights and biases do not depend on the
+sequence index $i$, i.e.~both are shared across all elements of the
+sequence. As a result, the \emph{shared dense} layers produce
+intermediate presentations of the sequences of tracks and clusters
+which are subsequently passed to recurrent layers.
+
+
+32 (LSTM), 24 (LSTM)
+- Clusters: \^
+- Merge -> 64, 32, 1
+
+All ReLU except for LSTM.  Bias vectors used everywhere. Model
+consists of approximately 56000 trainable parameters.
+
+
+- High-level variables are supplied at the level of individual tau
+leptons thus a simple densely connected architecture is chosen for the
+processing of these inputs.
+
+- Tracks and clusters can be seen as a sequence of objects on which a
+physically motivated ordering is imposed.
+
+- Recurrent neural network architecture to process sequences of length
+varying from event to event.
+
+ % Layers of the network are indicated by boxes.
+
+ %    Layers are represented as boxes with \emph{dense} (\emph{shared
+ %      dense}) layers corresponding densely connected layers (with
+ %    shared weights). The recurrent neural network architecture
+ %    processing sequences of tracks and clusters is established by long
+ %    short-term memory (LSTM) layers. A merge operation combines the
+ %    three branches of the network by concatenating their outputs.
+
 
 \subsection{Training and evaluation}
 
