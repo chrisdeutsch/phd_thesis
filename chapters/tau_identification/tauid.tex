@@ -296,19 +296,23 @@ given.
 
 \subsubsection{High-Level Input Variables}
 
-and three exemplary distributions are shown
-in~\Cref{fig:tauid_high_level_vars} The selection of high-level input
-variables is based on previous \tauid algorithms developed by the
-ATLAS collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
-Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction
-algorithms deployed during Run~2 of the LHC.
+The selection of high-level input variables is based on a previous
+BDT-based \tauid algorithm developed by the ATLAS
+collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
+Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
+deployed during Run~2 of the LHC. The BDT \tauid uses the high-level
+variables summarised in~\Cref{tab:tauid_input_variables} as inputs and
+serves as a baseline for comparison with the RNN-based algorithm.
 
-The BDT-based \tauid algorithm
-
-
-
-Exemplary distributions of high-level input variables important for
-\tauid are shown in~\Cref{fig:tauid_high_level_vars}.
+Variables sensitive to the lifetime and mass of the \taulepton
+($|S_{\text{T}}^{\text{flight}}|$, $|S_{\text{leadtrack}}|$,
+$m^{\text{track}}$), the isolation of \tauhadvis in the tracking
+system ($f_{\text{iso}}^{\text{track}}$) and the calorimeters
+($f_{\text{cent}}$), and combinations of track- and calorimeter-based
+isolation ($f_{\text{track}}^{\text{EM}}$,
+$p_{\text{T}}^{\text{EM+track}} / \pT$) are among the most important
+high-level variables included in the \tauid algorithms. Three
+exemplary distributions are shown in~\Cref{fig:tauid_high_level_vars}.
 
 
 \begin{figure}[htbp]

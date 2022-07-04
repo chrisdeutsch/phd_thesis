@@ -4,6 +4,40 @@
   \toprule
   & Observable & 1-prong & 3-prong & Description \\
   \midrule
+  \parbox[t]{2mm}{\multirow{11}{*}{\rotatebox[origin=c]{90}{High-level inputs}}}
+  & $p_\text{T}$ & \checkmark & \checkmark
+  & Calorimeter-based estimate of \tauhadvis candidate \pT. \\
+
+  & $f_\text{cent}$                & \checkmark & \checkmark
+  & Ratio of \ET deposited in calorimeter cells (at EM scale) in cones of $\Delta R < 0.1$ and $\Delta R < 0.2$ about the \tauhadvis axis. \\
+
+  & $f_\text{leadtrack}^{-1}$      & \checkmark & \checkmark
+  & Ratio of \ET deposited in calorimeter cells (at EM scale) in a cone of $\Delta R < 0.2$ about the \tauhadvis axis and the \pT of the \pT-leading \emph{core} track. \\
+
+  & $\Delta R_\text{max}$          & \checkmark & \checkmark
+  & Maximum $\Delta R$ between core tracks and the \tauhadvis axis. \\
+
+  & $|S_\text{leadtrack}|$         & \checkmark &
+  & Transverse impact parameter significance of the \pT-leading track. \\
+
+  & $S_\text{T}^\text{flight}$     &           & \checkmark
+  & Transverse flight path significance. \\
+
+  & $f_\text{iso}^\text{track}$    & \checkmark & \checkmark
+  & Ratio of scalar sum of \pT of \emph{isolation} tracks and scalar sum of \pT of \emph{core} and \emph{isolation} tracks. \\
+
+  & $f_\text{track}^\text{EM}$     & \checkmark & \checkmark
+  & Ratio of the energy in EM clusters$^\dagger$ and the scalar sum of momenta of \emph{core} tracks. \\
+
+  & $p_\text{T}^\text{EM+track}/\pT$ & \checkmark & \checkmark
+  & \pT of the \tauhadvis estimated from the momenta of \emph{core} tracks and the two most energetic EM clusters$^\dagger$ divided by the \pT of the calorimetric measurement. \\
+
+  & $m^\text{EM+track}$            & \checkmark & \checkmark
+  & Invariant mass of the system of \emph{core} tracks and the two most energetic EM clusters$^\dagger$. \\
+
+  & $m^\text{track}$               &           & \checkmark
+  & Invariant mass of the system of \emph{core} tracks. \\
+  \midrule
   \parbox[t]{2mm}{\multirow{9}{*}{\rotatebox[origin=c]{90}{Track inputs}}}
   & $p_\text{T}^\text{seed jet}$ & \checkmark & \checkmark
   & \pT of the jet seeding the \tauhadvis candidate. \\
@@ -54,41 +88,6 @@
 
   & $\langle r_\mathrm{cluster}^2\rangle$             & \checkmark & \checkmark
   & Second radial cluster moment. \\
-
-  \midrule
-  \parbox[t]{2mm}{\multirow{11}{*}{\rotatebox[origin=c]{90}{High-level inputs}}}
-  & $p_\text{T}$ & \checkmark & \checkmark
-  & Calorimeter-based estimate of \tauhadvis candidate \pT. \\
-
-  & $f_\text{cent}$                & \checkmark & \checkmark
-  & Ratio of \ET deposited in calorimeter cells (at EM scale) in cones of $\Delta R < 0.1$ and $\Delta R < 0.2$ about the \tauhadvis axis. \\
-
-  & $f_\text{leadtrack}^{-1}$      & \checkmark & \checkmark
-  & Ratio of \ET deposited in calorimeter cells (at EM scale) in a cone of $\Delta R < 0.2$ about the \tauhadvis axis and the \pT of the \pT-leading \emph{core} track. \\
-
-  & $\Delta R_\text{max}$          & \checkmark & \checkmark
-  & Maximum $\Delta R$ between core tracks and the \tauhadvis axis. \\
-
-  & $|S_\text{leadtrack}|$         & \checkmark &
-  & Transverse impact parameter significance of the \pT-leading track. \\
-
-  & $S_\text{T}^\text{flight}$     &           & \checkmark
-  & Transverse flight path significance. \\
-
-  & $f_\text{iso}^\text{track}$    & \checkmark & \checkmark
-  & Ratio of scalar sum of \pT of \emph{isolation} tracks and scalar sum of \pT of \emph{core} and \emph{isolation} tracks. \\
-
-  & $f_\text{track}^\text{EM}$     & \checkmark & \checkmark
-  & Ratio of the energy in EM clusters$^\dagger$ and the scalar sum of momenta of \emph{core} tracks. \\
-
-  & $p_\text{T}^\text{EM+track}/\pT$ & \checkmark & \checkmark
-  & \pT of the \tauhadvis estimated from the momenta of \emph{core} tracks and the two most energetic EM clusters$^\dagger$ divided by the \pT of the calorimetric measurement. \\
-
-  & $m^\text{EM+track}$            & \checkmark & \checkmark
-  & Invariant mass of the system of \emph{core} tracks and the two most energetic EM clusters$^\dagger$. \\
-
-  & $m^\text{track}$               &           & \checkmark
-  & Invariant mass of the system of \emph{core} tracks. \\
   \bottomrule
 \end{tabular}
 
