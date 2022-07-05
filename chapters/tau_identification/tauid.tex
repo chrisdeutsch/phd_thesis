@@ -437,8 +437,8 @@ cluster moments include the longitudinal location of the cluster
 barycentre, $\lambda_{\text{cluster}}$, and the lateral and
 longitudinal extension of the cluster,
 $\langle r^2 \rangle_{\text{cluster}}$ and
-$\langle \lambda^2 \rangle_{\text{cluster}}$, respectively. The \ET of
-the three \ET-leading clusters is shown
+$\langle \lambda^2 \rangle_{\text{cluster}}$, respectively. For
+illustration, the \ET of the three \ET-leading clusters is shown
 in~\Cref{fig:tauid_low_level_variables_cluster0,fig:tauid_low_level_variables_cluster1,fig:tauid_low_level_variables_cluster2}
 for 3-prong \tauhadvis candidates.
 
@@ -451,12 +451,18 @@ truncated at this point.
 
 The network architecture adopted for the RNN \tauid is shown
 schematically in~\Cref{fig:tauid_network_architecture}. The network
-consists of three branches, one branch dedicated to each type of
-input. The high-level variables, track, and cluster inputs are first
-processed independently in their respective branches. These branches
-are then merged and reduced to a single output probability that is
-used to define the \tauid working points. A detailed description of
-the architecture is given in the following.
+consists of three branches, each one dedicated to one type of
+input. The high-level variables, track inputs, and cluster inputs are
+first processed independently in their respective branches. These
+branches are then merged and reduced to a single output node that is
+used to define the \tauid working points. The network is implemented
+using the \textsc{Keras} library~\cite{keras} with the
+\textsc{TensorFlow}
+backend~\cite{tensorflow2015-whitepaper}.\footnote{\textsc{Keras}
+  v2.2.0 and \textsc{TensorFlow} v1.8.0 are used.} Layers use the
+\textsc{Keras} default configurations unless stated otherwise. A
+detailed description of the network architecture is given in the
+following.
 
 \begin{figure}[htbp]
   \centering
@@ -470,78 +476,86 @@ the architecture is given in the following.
   \label{fig:tauid_network_architecture}
 \end{figure}
 
-The branch of the network processing high-level input variables
+The branch of the network operating on high-level input variables
 consists of three fully-connected (\emph{dense}) layers with 128, 128,
-and 16 neurons each. All layers include trainable bias vectors and use
-the ReLU~\cite{nair:relu} activation function.
+and 16 units each. The \ReLU activation function~\cite{nair:relu} is
+used in all layers.
 
-Tracks and clusters are provided as sequences of vectors to the
-network, each vector consisting of input variables for a given
-object. The sequences of tracks and clusters are given in descending
-$p_{\text{T}}^{\text{track}}$ and $E_{T}^{\text{cluster}}$ order,
-respectively. The architecture of the branches processing track and
-cluster inputs are identical. First, sequences of tracks and clusters
-are passed through two fully-connected layers with shared weights
-(\emph{shared dense}). These layers have 32 neurons each, trainable
-bias vectors, and use ReLU~\cite{nair:relu} as the activation
-function. \emph{Shared dense} layers map sequences of input vectors,
-$(\myvec{x}_i)_{i=1}^{n}$, to sequences of output vectors of the same
-length, $(\myvec{y}_i)_{i=1}^{n}$, using a transformations of the form
+The branches operating on track and cluster inputs are
+identical. Tracks and clusters are passed to the network as sequences
+of vectors from $\mathbb{R}^m$, each vector consisting of the values
+of $m$ input variables (cf.~\Cref{tab:tauid_input_variables}). The
+sequences of tracks and clusters are ordered by descending
+$p_{\text{T}}^{\text{track}}$ and $E_{T}^{\text{cluster}}$,
+respectively. First, the sequences are passed through two
+fully-connected layers with shared weights (\emph{shared dense}).
+These layers have 32 units each and use the \ReLU activation
+function~\cite{nair:relu}. \emph{Shared dense} layers map input
+sequences, $(\myvec{x}_i)_{i=1}^{n}$, to output sequences of the same
+length, $(\myvec{y}_i)_{i=1}^{n}$, using transformations of the form
 \begin{align*}
   \myvec{y}_i = \myvec{\phi}(\myvec{W} \myvec{x}_i + \myvec{b}) \,\text{,}
 \end{align*}
 where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and
 bias vectors, respectively, and $\myvec{\phi}$ is the activation
 function.  Notably, the weights and biases do not depend on the
-sequence index $i$, i.e.~both are shared across all elements of the
-sequence. The \emph{shared dense} layers produce intermediate
-representations of the sequences of tracks and clusters for further
-processing.
+index~$i$, meaning the weights (and biases) are shared between
+elements of the sequence. The \emph{shared dense} layers produce
+intermediate representations of the track and cluster sequences for
+further computation.
 
 The transformed sequences of tracks and clusters pass through two
 recurrent layers based on the \emph{long short-term memory} (LSTM)
 architecture~\cite{lstm}. The first LSTM layer maps the input sequence
 to an output sequence of the same length. In contrast to \emph{shared
-  dense} layers which perform a similar mapping, LSTM layers have an
-internal state that is updated as elements of the sequence are
-processed. As a result, information on elements occuring earlier in
-the sequence is used when processing later elements. The second LSTM
-layer repeats the process, however, all except the last element of the
-output sequence are discarded. This encodes the input sequence into a
-vector of fixed size. The size of the internal state and the outputs
-of the LSTM are chosen to be the same and correspond to 32 neurons for
-the first and 24 neurons for the second LSTM layer.
+  dense} layers, LSTM layers have an internal state that is updated as
+elements of the sequence are processed. Therefore, information about
+elements occuring in the sequence can be exploited when processing
+subsequent elements. The second LSTM layer repeats the process,
+however, all except the last element of the output sequence are
+discarded, thereby encoding the input sequence into a single output of
+fixed size. The size of the internal state and output space of the
+LSTM layers are chosen to be the same and correspond to 32 units for
+the first and 24 units for the second LSTM layer.
 
 Finally, the outputs of the three branches are concatenated
 (\emph{Merge}) and passed through three fully-connected layers with
-sizes of 64, 32, and 1 neurons and ReLU activation.
+sizes of 64, 32, and 1 units. The \ReLU (sigmoid) activation function
+is used for the hidden layers (output layer). The entire model
+consists of approximately \num{56000} trainable parameters.
 
 
+\subsection{Network Training}
 
-All ReLU except for LSTM.  Bias vectors used everywhere. Model
-consists of approximately 56000 trainable parameters.
+Two separate networks are trained for the classification of 1- and
+3-prong \tauhadvis candidates. The samples of 1- and 3-prong
+\tauhadvis candidates are partitioned into a training
+(\SI{40}{\percent}), validation (\SI{10}{\percent}), and testing
+datasets (\SI{50}{\percent}). The trainable parameters of the networks
+are determined by minimising the binary cross-entropy loss on the
+training dataset. The loss of the network is monitored on the
+validation datasets and is used to steer the training procedure.
 
-\textsc{Keras}~\cite{keras} with the
-\textsc{TensorFlow}~\cite{tensorflow2015-whitepaper} backend. Trained
-networks are evaluated in the ATLAS event reconstruction framework
+Stochastic gradient descent with momentum is used for loss
+minimisation. Prior to the training, transformations are applied to
+input variables for better conditioning of the minimisation
+problem. The learning rate of the optimiser is reduced when the
+validation loss did not improve for four successive training
+epochs. Similarly, the training is stopped after ten epochs without
+improvements of the validation loss in which case the model parameters
+resulting in the best validation loss are restored.
+
+In the ATLAS reconstruction framework the RNN \tauid is evaluated
 using \textsc{lwtnn}~\cite{lwtnn}.
-
-- High-level variables are supplied at the level of individual tau
-leptons thus a simple densely connected architecture is chosen for the
-processing of these inputs.
-
-\subsection{Training and evaluation}
-
-These samples are partitioned into a
-training (\SI{40}{\percent}), validation (\SI{10}{\percent}), and
-testing dataset (\SI{50}{\percent}).
-
-Keras Tensorflow lwtnn \cite{lwtnn,keras,tensorflow2015-whitepaper,lstm}
 
 Used in the software suite
 \textsc{Athena}~\cite{ATL-SOFT-PUB-2021-001}.
 
+
 \subsection{Working Point Definition}
+
+\truetauhadvis efficiency flattening w.r.t.\ pT and mu.
+
 
 \subsubsection{Calibration}
 
