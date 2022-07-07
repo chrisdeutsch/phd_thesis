@@ -62,12 +62,12 @@ gluon-initiated jets:
 \item[Collimated daughter particles] Analyses typically consider
   \tauhadvis candidates with transverse momenta exceeding
   \SI{20}{\GeV}. At these momentum scales the decay products of
-  \tauleptons are collimated due to the Lorentz boost of the lepton,
-  leading to the characteristic signature of a narrow jet with few
-  visible particles. Requirements on the isolation of \tauhadvis
-  candidates allow to reject candidates originating from quark- or
-  gluon-initiated jets which have wider angular distribution of
-  hadrons.
+  \tauleptons are collimated due to the Lorentz boost of the
+  lepton. This leads to the characteristic signature of a narrow jet
+  with few visible particles. Requirements on the isolation of
+  \tauhadvis candidates allow to reject candidates originating from
+  quark- or gluon-initiated jets which have wider angular distribution
+  of hadrons.
 
   % Mean flight path of a p = 20 GeV tau is
   % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
@@ -118,15 +118,13 @@ ATLAS collaboration as the recommended \tauid algorithm for analyses
 using the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded
 with the ATLAS detector during Run~2 of the LHC.
 
-This chapter is structured as follows. First,
-
-\Cref{sec:tauid_mc}
-
-\Cref{sec:tauid_rnn}
-
-\Cref{sec:tauid_perf}
-
-\Cref{sec:tauid_conclusion}
+This chapter is structured as follows. The simulated events used for
+the development and performance evaluation of \tauid are introduced in
+\Cref{sec:tauid_mc}. The identification method based on RNN is
+described in \Cref{sec:tauid_rnn}. Its performance is estimated based
+on simulation and compared to the BDT-based approach in
+\Cref{sec:tauid_perf}.  \Cref{sec:tauid_conclusion} concludes and
+gives an outlook.
 
 
 \section{Simulated Event Samples}%
@@ -149,8 +147,8 @@ sample of \tauleptons. In addition, the cross-section of the process
 was modified at generator-level to enhance the number of events with
 high invariant $\tautau$ masses to increase the number of \tauhadvis
 candidates with high transverse momenta. Finally, both \tauleptons are
-enforced to decay hadronically to maximise statistical precision of
-the \truetauhadvis sample for \tauid developments.
+enforced to decay hadronically to minimise the statistical
+uncertainties from the size of the \truetauhadvis sample.
 
 % Di-jet samples: JZ1W up to JZ6W
 % https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID361xxx/MC15.361021.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ1W.py
@@ -160,7 +158,7 @@ calculation at LO, parton showering, and hadronisation. The generation
 is performed in slices of \pT of the leading jet (anti-\kt with
 $R = 0.6$) constructed from generator-level particles. Slices with
 large jet transverse momenta are oversampled to increase the number of
-events with high transverse momentum jets (\faketauhadvis).
+events with jets (\faketauhadvis) of large transverse momentum.
 
 The $\gammastar \to \tautau$ and di-jet samples use the A14 set of
 tuned parameters for \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021} and the
@@ -560,8 +558,8 @@ applying a threshold on the score. Moreover, the transformation is
 derived in bins of \tauhadvis \pT (calorimeter-based \pT estimate at
 LC scale) and the average number of interactions per bunch crossing,
 $\mu$, to ensure that the \truetauhadvis efficiencies of working
-points remains approximately constant as \tauhadvis \pT or pile-up
-conditions change. The same procedure is applied for the BDT-based
+points remains approximately constant with changing \tauhadvis \pT or
+pile-up conditions. The same procedure is applied for the BDT-based
 \tauid algorithm.
 
 \begin{figure}[htbp]
@@ -579,12 +577,13 @@ conditions change. The same procedure is applied for the BDT-based
   \caption{The distribution of the RNN score for 1-prong (a) and
     3-prong \tauhadvis candidates (b). The RNN score is shown after a
     transformation in bins of \tauhadvis \pT and the average number of
-    pile-up interactions ($\mu$).}%
+    pile-up interactions ($\mu$). The figure is adapted from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:flattened_rnnscore}
 \end{figure}
 
 
-\section{Performance of the RNN Tau Identification}%
+\section{Expected Performance of the RNN Tau Identification}%
 \label{sec:tauid_perf}
 
 Thresholds on the RNN scores of 1- and 3-prong \tauhadvis candidates
@@ -602,13 +601,15 @@ increasing \faketauhadvis rejection: \emph{very loose}, \emph{loose},
 
 The targeted \truetauhadvis efficiencies of the working points are
 summarised in \Cref{tab:rnn_wps}. The rejection of \faketauhadvis from
-di-jet events is compared between the BDT- and RNN-based \tauid
-algorithms for working points targeting the same \truetauhadvis
+simulated di-jet events is compared between the BDT- and RNN-based
+\tauid algorithms for working points targeting the same \truetauhadvis
 efficiencies. The RNN \tauid improves the \faketauhadvis rejection by
 about \SI{80}{\percent} for 1-prong and between
 \SIrange{40}{80}{\percent} for 3-prong \tauhadvis candidates over the
-algorithm based on BDT. The receiver operating characteristic curves
-of both algorithms are shown in
+BDT-based method. The majority of this improvements stems from the
+inclusion of charge-particle track information in addition to the
+high-level variables also used in the BDT. The receiver operating
+characteristic curves of both algorithms are shown in
 \Cref{fig:tauid_rnn_bdt_roc_comparison}.
 
 \begin{table}[htbp]
@@ -618,9 +619,9 @@ of both algorithms are shown in
     \tauid. Only the targeted \truetauhadvis efficiency (target
     \truetauhadvis eff.) of the working points is given which can
     deviate by ca.\ \SI{1}{\percent} from the actual efficiency
-    observed in $\gammastar \to \tautau$ events. The \faketauhadvis
-    rejection is evaluated using the \tauhadvis candidate sample from
-    di-jet events. The table is adapted from
+    observed in simulated $\gammastar \to \tautau$ events. The
+    \faketauhadvis rejection is evaluated using the \tauhadvis
+    candidate sample from di-jet events. The table is adapted from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{tab:rnn_wps}
 
@@ -644,27 +645,32 @@ of both algorithms are shown in
 
 The \truetauhadvis selection efficiencies estimated using \tauhadvis
 from simulated $\gammastar \to \tautau$ events is shown in
-\Cref{fig:tauid_truetau_eff} as a function of \tauhadvis \pT,
-\tauhadvis $|\eta|$, and the average interactions per bunch crossing,
-$\mu$. By construction of the working points, the efficiency remains
-approximately constant in \tauhadvis \pT and $\mu$. An exception is
+\Cref{fig:tauid_truetau_eff} for the four working points in bins of
+\tauhadvis \pT, \tauhadvis $|\eta|$, and the average interactions per
+bunch crossing, $\mu$. The efficiency remains approximately constant
+as \tauhadvis \pT and $\mu$ is varied due to the definition of the
+working points via the transformed output of the RNN. An exception is
 the first \tauhadvis \pT bin which does not meet the target
 efficiency. This is an effect of different \tauhadvis momentum
-calibrations being used for the transformation of the neural network
-output and for the evaluation of the performance. The transformation
-was derived using a purely calorimeter-based \tauhadvis \pT estimate
-(at LC scale) which was superseded by a multivariate method combining
-calorimeter and tracking information to determine \tauhadvis momenta.
+calibrations being used for the transformation of the RNN output and
+for the performance evaluation shown in
+\Cref{fig:tauid_truetau_eff_a,fig:tauid_truetau_eff_b}. The
+transformation was derived using the calorimeter-based \tauhadvis \pT
+estimate at LC scale which is now superseded by a multivariate method
+combining information from the calorimeters and tracking systems
+(shown in the figures).
 
 \begin{figure}[htbp]
 
   \begin{subfigure}{0.498\textwidth}
     \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_pt_1p}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_truetau_eff_a}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.498\textwidth}
     \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_pt_3p}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_truetau_eff_b}
   \end{subfigure}
 
   \begin{subfigure}{0.498\textwidth}
@@ -688,54 +694,74 @@ calorimeter and tracking information to determine \tauhadvis momenta.
   \caption{True-\tauhadvis efficiencies of the four working points of
     the RNN \tauid. The efficiencies are estimated using \tauhadvis
     candidates from simulated $\gammastar \to \tautau$ events
-    separately for 1- (left) and 3-prong \tauhadvis
-    (right). Efficiencies are shown in bins of \tauhadvis \pT (a,b),
-    \tauhadvis $|\eta|$ (c,d), and the average interactions per bunch
-    crossing (e,f). All figures are taken from
+    separately for 1- (left) and 3-prong (right)
+    \tauhadvis. Efficiencies are shown in bins of \tauhadvis \pT
+    (top), \tauhadvis $|\eta|$ (middle), and the average interactions
+    per bunch crossing (bottom). All figures are taken from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_truetau_eff}
 \end{figure}
 
-Data-driven measurements of the \truetauhadvis efficiencies of the RNN
-\tauid working points (\emph{loose}, \emph{medium}, and \emph{tight})
-were performed by the ATLAS collaboration. These measurements have
-provided calibrations of the \truetauhadvis efficiency in simulation
-using the tag-and-probe method in $Z \to \tau_\mu \tauhad$ events. A
-relative agreement within \SI{5}{\percent} between the efficiency
-predicted by simulation and the data-driven measurement is observed.
+In addition, data-driven measurements of the \truetauhadvis
+efficiencies of selected RNN \tauid working points (\emph{loose},
+\emph{medium}, and \emph{tight}) were performed by the ATLAS
+collaboration. These measurements have provided calibrations of the
+\truetauhadvis efficiency in simulation using the tag-and-probe method
+in $Z \to \tau_\mu \tauhad$ events. A relative agreement within
+\SI{5}{\percent} between the efficiency predicted by simulation and
+the data-driven measurement is observed.
 
 The rejection of \faketauhadvis from simulated di-jet events by the
-\tauid is compared in~\Cref{fig:tauid_faketau_rej} for the
-\emph{medium} working points of the BDT and RNN-based algorithm. The
-comparison is performed separately for 1- and 3-prong \tauhadvis
-candidates and in bins of \tauhadvis \pT, \tauhadvis $|\eta|$, and
-$\mu$. In general, the \faketauhadvis rejection of \tauid is analysis
-dependent and thus the comparison mainly serves as a benchmark of the
+\emph{medium} \tauid working points of the BDT- and RNN-based methods
+is compared in~\Cref{fig:tauid_faketau_rej}. The comparison is
+performed separately for 1- and 3-prong \tauhadvis candidates and in
+bins of \tauhadvis \pT, \tauhadvis $|\eta|$, and $\mu$. In general,
+the \faketauhadvis rejection of \tauid is analysis and process
+dependent\footnote{The ratio of quark- to gluon-initiated jets in a
+  selected final state impacts the \faketauhadvis rejection since
+  gluon-initiated jets are more easily rejected by
+  \tauid. Additionally, the rejection depends on the \pT and \Ntracks
+  of \faketauhadvis and thus on the selections applied by analyses.}
+and thus the comparison mainly serves as a benchmark of the
 identification algorithms.
 
+The \faketauhadvis rejection of \tauid increases with \tauhadvis
+candidate \pT as is shown in
+\Cref{fig:tauid_faketau_rej_a,fig:tauid_faketau_rej_b}. This trend is
+partially explained by the increasing discrimination power of
+variables sensitive to the isolation of \tauhadvis candidates as
+larger momentum scales are considered. This is a consequence of the
+increasing collimation of \truetauhadvis due to the Lorentz boost of
+the \taulepton while \faketauhadvis become less isolated due to the
+increase in average charged and neutral hadron multiplicity in jets.
 
-- Increases quickly with \tauhadvis pT -> due to increasing boost /
-collimation the isolation criteria can be tightened.
+% Improved discrimination power is also expected for variables
+% sensitive to the \taulepton lifetime for 3-prong \tauhadvis where
+% the secondary vertex will, on average, have a larger displacement
+% from the PV.
 
-- Improvement in rejection about doubles for high-ish \tauhadvis \pT
-at around \SI{100}{\GeV}
-
-- Eta:
-
-- Pile-up stability: 1-prong is pretty stable. 3-prong RNN is more
-susceptible to pile-up, featuring decreasing rejection power with
-increasing pile-up.
-
+The RNN \tauid improves the \faketauhadvis rejection by a factor of
+two for 1- and 3-prong \tauhadvis candidates with
+$\pT > \SI{70}{\GeV}$ over the BDT-based approach at comparable
+working points. Similar behaviour of the \faketauhadvis rejection is
+observed for both methods with respect to the pseudorapidity of
+\tauhadvis candidates. However, the RNN \tauid is more susceptible to
+pile-up compared to the BDT-based method. This is depicted
+in~\Cref{fig:tauid_faketau_rej_e,fig:tauid_faketau_rej_f} showing a
+degradation in \faketauhadvis rejection as the average number of
+interactions per bunch crossing increases.
 
 \begin{figure}[htbp]
 
   \begin{subfigure}{0.498\textwidth}
     \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_pt_1p}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_a}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.498\textwidth}
     \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_pt_3p}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_b}
   \end{subfigure}
 
   \begin{subfigure}{0.498\textwidth}
@@ -749,34 +775,69 @@ increasing pile-up.
 
   \begin{subfigure}{0.498\textwidth}
     \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_mu_1p}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_e}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.498\textwidth}
     \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_mu_3p}
-    \subcaption{}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_f}
   \end{subfigure}
 
-  \caption{Rejection of \faketauhadvis. Figures are taken from
+  \caption{Fake-\tauhadvis rejection of the \emph{medium} RNN (red)
+    and BDT (blue) \tauid working points. The rejection is shown
+    separately for 1-prong (left) and 3-prong (right) \tauhadvis
+    candidates in bins of \pT (top), $|\eta|$ (middle) of \tauhadvis
+    candidates and the average number of interactions per bunch
+    crossing, $\mu$, for the event (bottom). The rejection is
+    estimated using a sample of \tauhadvis candidates from simulated
+    di-jet events. All figures are taken from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_faketau_rej}
 \end{figure}
 
 
-
-\subsection{Use at the HLT?}
-
-\cite{ATL-DAQ-PUB-2019-001}
-
-
-\section{Conclusion and Outlook}
+\section{Conclusion and Outlook}%
 \label{sec:tauid_conclusion}
 
+- Novel \tauid algorithm used in ATLAS
 
-To be replaced by ``deep sets'' (permutation invariance). Based on the
-same idea and same expected performance but significantly improved
-training and prediction time.
+- Majority of the improvement comes from the detailed tracking
+information (calorimeter clusters improve the classification
+performance comparatively little).
 
-Tau track classification.
+- Based on learning on sequences
+
+- Large improvements allow to choose looser working points with fairly
+minimal (if at all) increases in background rejection.
+
+- Trigger improvements \cite{ATL-DAQ-PUB-2019-001}
+
+- Tau track classification~\cite{Maerker:2021hro}.
+
+- Both the improved triggers and the offline ID are used in chapter
+X. Allowing to significantly improve the selection efficiency of
+signal events.
+
+
+A similar transition in \tauid algorithms was performed by the CMS
+collaboration. A BDT-based discriminant based on high-level
+features~\cite{CMS-TAU-16-003} was replaced by a deep neural network
+that combines high-level information with information from all
+detected particles in the vicinity of the \tauhadvis
+axis~\cite{CMS-TAU-20-001}. Similarly, the CMS collaboration observed
+a large reduction in the \faketauhadvis misidentification efficiency
+by factors exceeding 1.8~\cite{CMS-TAU-20-001} compared to the
+previous approach.  While the concept is similar to the approach
+presented here, the technical implementation adopted by the CMS
+collaboration differs by exploiting particle-level information in the
+vicinity of \tauhadvis candidates using convolutional layers instead.
+
+- In the future: To be replaced by ``deep sets'' (permutation
+invariance). Based on the same idea and same expected performance but
+significantly improved training and prediction time.
+
+\cite{NIPS2017_f22e4747}
 
 
 %%% Local Variables:
