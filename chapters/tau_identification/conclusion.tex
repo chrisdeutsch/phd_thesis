@@ -1,0 +1,50 @@
+\section{Conclusion and Outlook}%
+\label{sec:tauid_conclusion}
+
+- Novel \tauid algorithm used in ATLAS
+
+- Special feature is the recurrent architecture that allow sequences
+of objects.
+
+- Majority of the improvement comes from the detailed tracking
+information (calorimeter clusters improve the classification
+performance comparatively little).
+
+- Based on learning on sequences
+
+- Large improvements allow to choose looser working points with fairly
+minimal (if at all) increases in background rejection.
+
+- Trigger improvements \cite{ATL-DAQ-PUB-2019-001}
+
+- Tau track classification~\cite{Maerker:2021hro}.
+
+- Both the improved triggers and the offline ID are used in chapter
+X. Allowing to significantly improve the selection efficiency of
+signal events.
+
+
+A similar transition in \tauid algorithms was performed by the CMS
+collaboration. A BDT-based discriminant based on high-level
+features~\cite{CMS-TAU-16-003} was replaced by a deep neural network
+that combines high-level information with information from all
+detected particles in the vicinity of the \tauhadvis
+axis~\cite{CMS-TAU-20-001}. Similarly, the CMS collaboration observed
+a large reduction in the \faketauhadvis misidentification efficiency
+by factors exceeding 1.8~\cite{CMS-TAU-20-001} compared to the
+previous approach.  While the concept is similar to the approach
+presented here, the technical implementation adopted by the CMS
+collaboration differs by exploiting particle-level information in the
+vicinity of \tauhadvis candidates using convolutional layers instead.
+
+- In the future: To be replaced by ``deep sets'' (permutation
+invariance). Based on the same idea and same expected performance but
+significantly improved training and prediction time.
+
+\cite{NIPS2017_f22e4747}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:

@@ -1,0 +1,132 @@
+The main goal of the \tauhadvis reconstruction employed at the ATLAS
+experiment is to reconstruct \tauhadvis candidates that originate from
+hadronic decays of \tauleptons (\truetauhadvis) with high
+efficiency. Therefore, objects from sources other than \tauhad are
+frequently reconstructed as \tauhadvis candidates
+(\faketauhadvis). Tau identification aims to distinguish between
+\tauhadvis candidates from \tauhad and other sources.
+
+The primary source of \faketauhadvis are quark- or gluon-initiated
+jets due to the purely hadronic and jet-like signature of \tauhadvis
+at the ATLAS experiment. Electrons can be another, less abundant,
+source of \faketauhadvis which have to be distinguished from
+\truetauhadvis using a dedicated algorithm. In the following, the
+former classification task is referred to as \tauid while the latter
+is referred to as \emph{electron veto}. Consequently, this chapter is
+concerned with classifying the origin of \tauhadvis candidates as
+either originating from \tauhad or from quark- or gluon-initiated
+jets.
+
+A number of features can be exploited to distinguish between
+\tauhadvis candidates originating from \tauhad and quark- or
+gluon-initiated jets:
+\begin{description}
+
+\item[\taulepton mass] The \taulepton has a mass of
+  \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore sufficiently
+  massive to decay hadronically while still having a small mass
+  compared to the energy scales of processes studied at the ATLAS
+  experiment.
+
+  The \taulepton mass can be used directly as a feature by considering
+  the invariant mass of the reconstructed secondary particles
+  associated to a \tauhadvis candidate. Ignoring reconstruction
+  effects, the invariant mass of the visible decay products of \tauhad
+  is bounded by the \taulepton mass. This is not the case for
+  \tauhadvis candidates originating from quark- or gluon-initiated
+  jets which do not have a strict bound.
+
+  The other features, described hereafter, are consequences of, or
+  closely related to the mass of the \taulepton.
+
+\item[Particle multiplicity] Hadronic decays of \tauleptons produce
+  few (visible) daughter particles. Most decays produce one or three
+  charged hadrons (most frequently $\pi^{\pm}$) and zero to two
+  neutral pions.
+  % Ellis, Stirling, Webber: 6.4 Quark and gluon jet differences
+  In contrast, the average multiplicity of charged and neutral
+  particles inside of jets originating from the fragmentation of
+  partons produced in hard scattering interactions is large and
+  increases with the momentum of the
+  jet~\cite{Ellis:1996mzs,STDM-2015-12}. Therefore, requirements on
+  (charged) particle multiplicties are effective at rejecting
+  \tauhadvis candidates originating from quark- or gluon-initiated
+  jets.\footnote{Gluon-initiated jets have, on average, a larger
+    particle multiplicity and a broader angular distribution of
+    particles compared to quark-initiated jets due to the larger
+    effective colour charge of
+    gluons~\cite{Ellis:1996mzs}. Consequently, quark-initiated jets
+    are more likely to be reconstructed and mis-identified as
+    \tauhadvis candidates.}
+
+\item[Collimated daughter particles] Analyses typically consider
+  \tauhadvis candidates with transverse momenta exceeding
+  \SI{20}{\GeV}. At these momentum scales the decay products of
+  \tauleptons are collimated due to the Lorentz boost of the
+  lepton. This leads to the characteristic signature of a narrow jet
+  with few visible particles. Requirements on the isolation of
+  \tauhadvis candidates allow to reject candidates originating from
+  quark- or gluon-initiated jets which have wider angular distribution
+  of hadrons.
+
+  % Mean flight path of a p = 20 GeV tau is
+  % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
+\item[\taulepton lifetime] The \taulepton has a proper lifetime of
+  \SI{2.9e-13}{\second}
+  ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020} and can thus
+  travel for a few millimetres before decaying. The macroscopic
+  distance traversed by the \taulepton before decaying produces a
+  decay vertex that is displaced from the primary vertex (PV) of the
+  hard interaction. For \taulepton decay modes with three charged
+  hadrons, this secondary vertex can be reconstructed to determine its
+  displacement from the PV. The secondary vertex cannot be
+  reconstructed for decay modes with only one charged hadron. However,
+  the longitudinal and transverse impact parameters of the track of
+  the charged hadron can be used to gauge to incompatibility of the
+  track with the PV, thus being sensitive to displaced decays of
+  \tauleptons.
+
+  Features related to the lifetime of the \taulepton can be used to
+  distingush them from \tauhadvis candidates from quarks- or
+  gluon-initiated jets as the hadrons constituting a jet are produced
+  promptly at the PV of the interaction.
+\end{description}
+Prior to the introduction of the method described in this chapter, the
+ATLAS collaboration used BDTs as binary classifiers using high-level
+discriminating variables, i.e.\ variables purposefully constructed for
+the classification task, as inputs.
+
+This chapter introduces a method of performing \tauid using neural
+networks that combines the information of high-level discriminating
+variables with information from reconstructed charged-particle tracks
+and clusters of energy in the calorimeters associated to \tauhadvis
+candidates. The number of associated tracks and clusters varies
+between candidates requiring the use of neural network architectures
+able to process sequences of varying length. This is achieved by
+employing a recurrent neural network (RNN) architecture. The method
+will be referred to as RNN \tauid hereafter.
+
+The RNN \tauid algorithm was initially proposed in
+Ref.~\cite{cdeutsch-master} motivated by a similar approach developed
+for track impact parameter based
+$b$-tagging~\cite{ATL-PHYS-PUB-2017-003}. The algorithm was
+implemented in the reconstruction software of the ATLAS
+collaboration~\cite{ATL-SOFT-PUB-2021-001} and the results presented
+in this chapter were partially published in
+Ref.~\cite{ATL-PHYS-PUB-2019-033}. The RNN \tauid was adopted by the
+ATLAS collaboration as the recommended \tauid algorithm for analyses
+using the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded
+with the ATLAS detector during Run~2 of the LHC.
+
+This chapter is structured as follows. The simulated events used for
+the development and performance evaluation of \tauid are introduced in
+\Cref{sec:tauid_mc}. The identification method based on RNN is
+described in \Cref{sec:tauid_rnn}. Its performance is estimated based
+on simulation and compared to the BDT-based approach in
+\Cref{sec:tauid_perf}.  \Cref{sec:tauid_conclusion} concludes and
+gives an outlook.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:

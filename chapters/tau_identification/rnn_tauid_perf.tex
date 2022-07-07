@@ -1,0 +1,218 @@
+\section{Expected Performance of the RNN Tau Identification}%
+\label{sec:tauid_perf}
+
+Thresholds on the RNN scores of 1- and 3-prong \tauhadvis candidates
+define working points of varying \tauhadvis identification
+efficiencies and \faketauhadvis rejection factors.\footnote{The
+  \truetauhadvis (\faketauhadvis) identification efficiency is the
+  fraction of \tauhadvis candidates from $\gammastar \to \tautau$
+  (di-jet) events passing a given working point. The \faketauhadvis
+  identification efficiency is typically given in terms of a rejection
+  factor, the reciprocal of the identification efficiency.} Four named
+working points are defined to cover the needs of most physics analyses
+at the ATLAS experiment. These working points are, in order of
+increasing \faketauhadvis rejection: \emph{very loose}, \emph{loose},
+\emph{medium}, and \emph{tight}.
+
+The targeted \truetauhadvis efficiencies of the working points are
+summarised in \Cref{tab:rnn_wps}. The rejection of \faketauhadvis from
+simulated di-jet events is compared between the BDT- and RNN-based
+\tauid algorithms for working points targeting the same \truetauhadvis
+efficiencies. The RNN \tauid improves the \faketauhadvis rejection by
+about \SI{80}{\percent} for 1-prong and between
+\SIrange{40}{80}{\percent} for 3-prong \tauhadvis candidates over the
+BDT-based method. The majority of this improvements stems from the
+inclusion of charge-particle track information in addition to the
+high-level variables also used in the BDT. The receiver operating
+characteristic curves of both algorithms are shown in
+\Cref{fig:tauid_rnn_bdt_roc_comparison}.
+
+\begin{table}[htbp]
+  \centering
+
+  \caption{Summary of working points defined for the BDT and RNN-based
+    \tauid. Only the targeted \truetauhadvis efficiency (target
+    \truetauhadvis eff.) of the working points is given which can
+    deviate by ca.\ \SI{1}{\percent} from the actual efficiency
+    observed in simulated $\gammastar \to \tautau$ events. The
+    \faketauhadvis rejection is evaluated using the \tauhadvis
+    candidate sample from di-jet events. The table is adapted from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
+  \label{tab:rnn_wps}
+
+  \input{tables/tauid_working_points}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.55\textwidth]{tauid/roc_incl_witherrors}
+
+  \caption{Receiver operating characteristic curve of the \tauid
+    algorithms based on RNN (solid) and BDT (dashed) shown separately
+    for 1- (red) and 3-prong candidates (blue). The true- and
+    \faketauhadvis efficiencies are evaluated using samples of
+    \tauhadvis candidates from $\gammastar \to \tautau$ and di-jet
+    events, respectively.  The figure is adapted from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
+  \label{fig:tauid_rnn_bdt_roc_comparison}
+\end{figure}
+
+The \truetauhadvis selection efficiencies estimated using \tauhadvis
+from simulated $\gammastar \to \tautau$ events is shown in
+\Cref{fig:tauid_truetau_eff} for the four working points in bins of
+\tauhadvis \pT, \tauhadvis $|\eta|$, and the average interactions per
+bunch crossing, $\mu$. The efficiency remains approximately constant
+as \tauhadvis \pT and $\mu$ is varied due to the definition of the
+working points via the transformed output of the RNN. An exception is
+the first \tauhadvis \pT bin which does not meet the target
+efficiency. This is an effect of different \tauhadvis momentum
+calibrations being used for the transformation of the RNN output and
+for the performance evaluation shown in
+\Cref{fig:tauid_truetau_eff_a,fig:tauid_truetau_eff_b}. The
+transformation was derived using the calorimeter-based \tauhadvis \pT
+estimate at LC scale which is now superseded by a multivariate method
+combining information from the calorimeters and tracking systems
+(shown in the figures).
+
+\begin{figure}[htbp]
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_pt_1p}
+    \subcaption{}%
+    \label{fig:tauid_truetau_eff_a}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_pt_3p}
+    \subcaption{}%
+    \label{fig:tauid_truetau_eff_b}
+  \end{subfigure}
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_eta_1p}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_eta_3p}
+    \subcaption{}
+  \end{subfigure}
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_mu_1p}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/eff_vs_mu_3p}
+    \subcaption{}
+  \end{subfigure}
+
+  \caption{True-\tauhadvis efficiencies of the four working points of
+    the RNN \tauid. The efficiencies are estimated using \tauhadvis
+    candidates from simulated $\gammastar \to \tautau$ events
+    separately for 1- (left) and 3-prong (right)
+    \tauhadvis. Efficiencies are shown in bins of \tauhadvis \pT
+    (top), \tauhadvis $|\eta|$ (middle), and the average interactions
+    per bunch crossing (bottom). All figures are taken from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
+  \label{fig:tauid_truetau_eff}
+\end{figure}
+
+In addition, data-driven measurements of the \truetauhadvis
+efficiencies of selected RNN \tauid working points (\emph{loose},
+\emph{medium}, and \emph{tight}) were performed by the ATLAS
+collaboration. These measurements have provided calibrations of the
+\truetauhadvis efficiency in simulation using the tag-and-probe method
+in $Z \to \tau_\mu \tauhad$ events. A relative agreement within
+\SI{5}{\percent} between the efficiency predicted by simulation and
+the data-driven measurement is observed.
+
+The rejection of \faketauhadvis from simulated di-jet events by the
+\emph{medium} \tauid working points of the BDT- and RNN-based methods
+is compared in~\Cref{fig:tauid_faketau_rej}. The comparison is
+performed separately for 1- and 3-prong \tauhadvis candidates and in
+bins of \tauhadvis \pT, \tauhadvis $|\eta|$, and $\mu$. In general,
+the \faketauhadvis rejection of \tauid is analysis and process
+dependent\footnote{The ratio of quark- to gluon-initiated jets in a
+  selected final state impacts the \faketauhadvis rejection since
+  gluon-initiated jets are more easily rejected by
+  \tauid. Additionally, the rejection depends on the \pT and \Ntracks
+  of \faketauhadvis and thus on the selections applied by analyses.}
+and thus the comparison mainly serves as a benchmark of the
+identification algorithms.
+
+The \faketauhadvis rejection of \tauid increases with \tauhadvis
+candidate \pT as is shown in
+\Cref{fig:tauid_faketau_rej_a,fig:tauid_faketau_rej_b}. This trend is
+partially explained by the increasing discrimination power of
+variables sensitive to the isolation of \tauhadvis candidates as
+larger momentum scales are considered. This is a consequence of the
+increasing collimation of \truetauhadvis due to the Lorentz boost of
+the \taulepton while \faketauhadvis become less isolated due to the
+increase in average charged and neutral hadron multiplicity in jets.
+
+% Improved discrimination power is also expected for variables
+% sensitive to the \taulepton lifetime for 3-prong \tauhadvis where
+% the secondary vertex will, on average, have a larger displacement
+% from the PV.
+
+The RNN \tauid improves the \faketauhadvis rejection by a factor of
+two for 1- and 3-prong \tauhadvis candidates with
+$\pT > \SI{70}{\GeV}$ over the BDT-based approach at comparable
+working points. Similar behaviour of the \faketauhadvis rejection is
+observed for both methods with respect to the pseudorapidity of
+\tauhadvis candidates. However, the RNN \tauid is more susceptible to
+pile-up compared to the BDT-based method. This is depicted
+in~\Cref{fig:tauid_faketau_rej_e,fig:tauid_faketau_rej_f} showing a
+degradation in \faketauhadvis rejection as the average number of
+interactions per bunch crossing increases.
+
+\begin{figure}[htbp]
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_pt_1p}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_a}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_pt_3p}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_b}
+  \end{subfigure}
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_eta_1p}
+    \subcaption{}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_eta_3p}
+    \subcaption{}
+  \end{subfigure}
+
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_mu_1p}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_e}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.498\textwidth}
+    \includegraphics[width=\textwidth]{tauid/pubnote/rej_vs_mu_3p}
+    \subcaption{}%
+    \label{fig:tauid_faketau_rej_f}
+  \end{subfigure}
+
+  \caption{Fake-\tauhadvis rejection of the \emph{medium} RNN (red)
+    and BDT (blue) \tauid working points. The rejection is shown
+    separately for 1-prong (left) and 3-prong (right) \tauhadvis
+    candidates in bins of \pT (top), $|\eta|$ (middle) of \tauhadvis
+    candidates and the average number of interactions per bunch
+    crossing, $\mu$, for the event (bottom). The rejection is
+    estimated using a sample of \tauhadvis candidates from simulated
+    di-jet events. All figures are taken from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
+  \label{fig:tauid_faketau_rej}
+\end{figure}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:
