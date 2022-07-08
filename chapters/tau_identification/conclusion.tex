@@ -1,31 +1,32 @@
 \section{Conclusion and Outlook}%
 \label{sec:tauid_conclusion}
 
-This chapter introduced the a novel \tauid algorithm exploiting the
+This chapter introduced a novel \tauid algorithm exploiting the
 discrimination power of high-level input variables in conjuction with
 low-level detector signatures of charged and neutral particles in the
-vicinity of \tauhadvis candidates. A main feature of the algorithm is
-the use of a recurrent neural network architecture that allows to
+vicinity of \tauhadvis candidates. The main feature of the algorithm
+is the use of a recurrent neural network architecture that allows to
 operate on sequences of charged-particle tracks and clusters of energy
 in the calorimeters.
 
-The RNN \tauid improves the rejection of 1- and 3-prong \faketauhadvis
-by about \SI{80}{\percent} and \SIrange{40}{80}{\percent},
-respectively, compared to the method previously employed at the ATLAS
-experiment. For \tauhadvis candidates with large transverse momenta
-($\pT > \SI{70}{\GeV}$) the improvement in \faketauhadvis rejection
-exceeds \SI{100}{\percent}. This improvement is largely driven by the
-inclusion of charged-particle tracks.
+The new algorithm improves the rejection of 1- and 3-prong
+\faketauhadvis by about \SI{80}{\percent} and
+\SIrange{40}{80}{\percent}, respectively, compared to the BDT-based
+method previously employed at the ATLAS experiment. For \tauhadvis
+candidates with large transverse momenta ($\pT > \SI{70}{\GeV}$) the
+improvement in \faketauhadvis rejection exceeds
+\SI{100}{\percent}. This improvement is mostly driven by the inclusion
+of charged-particle tracks in the network to exploit the track-based
+isolation of \tauhadvis.
 
-The \tauid algorithm introduced in this chapter is considered by the
-ATLAS collaboration as the recommended algorithm for analyses using
-the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded during
-Run~2 of the LHC. In addition, the algorithm was adopted by the
-collaboration for \tauid at the high-level trigger in
-2018~\cite{ATL-DAQ-PUB-2019-001}. The superior background rejection of
-the RNN \tauid allowed to improve the efficiency of \tauhadvis
-triggers while staying within the allocated trigger
-bandwidth~\cite{ATL-DAQ-PUB-2019-001}.
+The method is considered by the ATLAS collaboration as the recommended
+\tauid algorithm for analyses of the \SI{139}{\per\femto\barn}
+$pp$-collision dataset recorded during Run~2 of the LHC. In addition,
+the approach was adopted by the collaboration for \tauid at the
+high-level trigger in 2018~\cite{ATL-DAQ-PUB-2019-001}. The superior
+background rejection of the RNN \tauid allowed to improve the
+efficiency of \tauhadvis triggers while staying within the allocated
+trigger bandwidth~\cite{ATL-DAQ-PUB-2019-001}.
 
 The improvements in \tauid, both at the high-level trigger and during
 offline event reconstruction, are utilised in~\Cref{sec:dihiggs} for
@@ -43,21 +44,41 @@ with information from reconstructed particles in the vicinity of the
 \tauhadvis~\cite{CMS-TAU-20-001}. Similarly, the CMS collaboration
 observed a large reduction in the \faketauhadvis misidentification
 efficiency by factors exceeding 1.8~\cite{CMS-TAU-20-001} compared to
-the previous method only relying on high-level features. While the
-concept is similar to the approach presented here, the technical
+the previous method which only relied on high-level features. While
+the concept is similar to the approach presented here, the technical
 implementation adopted by the CMS collaboration differs and is
 documented in Ref.~\cite{CMS-TAU-20-001}.
 % exploiting particle-level information in the vicinity of \tauhadvis
 % candidates using convolutional layers instead.
 
+% https://atlas-glance.cern.ch/atlas/analysis/analyses/details.php?id=7262
+% https://atlas-glance.cern.ch/atlas/analysis/pubnotes/details.php?id=6503
+The RNN-based \tauid continues to be used by the ATLAS experiment at
+the beginning of Run~3 of the LHC for identification at the high-level
+trigger and for offline event reconstruction.\todo{Cite TauCP Run2/3
+  pubnote once available.} In the long term, changes to the \tauid
+strategy are expected. A new RNN-based \tauhadvis track classification
+algorithm~\cite{Maerker:2021hro} was deployed for \tauhadvis
+reconstruction in Run~3\todo{Cite pub}. This algorithm can be
+integrated into or combined with the \tauid procedure to provide
+isolation information directly. Such an approach is motivated by the
+large overlap in track observables used by both algorithms and the
+inherent connection between \tauhadvis track selection and
+\tauid. Second, other types of networks operating on variable size
+collections of inputs (e.g.\ tracks and clusters) are explored by the
+collaboration. For \tauid, \deepsets~\cite{NIPS2017_f22e4747} are an
+alternative to the RNN-based approach. \deepsets operate on unordered
+sets of inputs and therefore, unlike RNN, do not require a specific
+ordering of the inputs. Preliminary results show that \tauid based on
+\deepsets yields results that are competitive with the implementation
+using RNN while requiring significantly less time for training and
+prediction.\footnote{Similar findings were obtained for
+  \deepsets-based $b$-tagging algorithms in
+  Ref.~\cite{ATL-PHYS-PUB-2020-014}.}
 
-- Tau track classification~\cite{Maerker:2021hro}.
-
-- In the future: To be replaced by ``deep sets'' (permutation
-invariance). Based on the same idea and same expected performance but
-significantly improved training and prediction time.
-
-\cite{NIPS2017_f22e4747}
+% Write something about the reduction in time between iterations
+% allowing for more thorough optimisation of input variables, and
+% other hyperparameters of the algorithm.
 
 
 %%% Local Variables:
