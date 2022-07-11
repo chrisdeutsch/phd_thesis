@@ -36,10 +36,10 @@ given.
     the location and shape of clusters ($\lambda$,
     $\langle \lambda^2 \rangle$, $\langle r^2 \rangle$) are given in
     Ref.~\cite{PERF-2014-07}. Variables using cell-level calorimeter
-    information only consider cells that are part of TopoClusters for
+    information only consider cells that are part of topo-clusters for
     noise suppression. $\dagger$:~Energy depositions in the
     pre-sampler and first two layers of the electromagnetic
-    calorimeters that are part of TopoClusters are abbreviated as ``EM
+    calorimeters that are part of topo-clusters are abbreviated as ``EM
     clusters''. The table is adapted from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{tab:tauid_input_variables}
@@ -51,7 +51,7 @@ given.
 
 \subsubsection{High-Level Input Variables}
 
-The selection of high-level input variables is based on th BDT-based
+The selection of high-level input variables is based on the BDT-based
 \tauid algorithm developed by the ATLAS
 collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
 Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
@@ -110,18 +110,22 @@ $N_{\text{SCT hits}}$) and track impact parameters
 ($|d_0^{\text{track}}|$, $|z_0^{\text{track}} \sin\theta|$) are
 included as observables of tracks used in the RNN \tauid algorithm.
 
-The transverse momenta of tracks ($p_{\text{T}}^{\text{track}}$) and
-their angular separation from the axis of the \tauhadvis candidate
-($\Delta \eta^{\text{track}}$, $\Delta \phi^{\text{track}}$) are
-included to probe the isolation properties of \tauhadvis. A special
-case is represented by the $p_{\text{T}}^{\text{seed jet}}$ variable,
-the \pT of the jet seeding the \tauhadvis candidate, which is included
-as an observable with every track. This input variable provides an
-approximate \pT-scale of the underlying jet (or \tauhadvis) already
-when processing the input tracks. Exemplary distributions of the
-transverse momenta of the three \pT-leading tracks for 1-prong
-\tauhadvis candidates are shown
-in~\Cref{fig:tauid_low_level_variables_track0,fig:tauid_low_level_variables_track1,fig:tauid_low_level_variables_track2}.
+In addition, several other track-level observables, summarised
+in~\Cref{fig:tauid_low_level_variables_track}, are included. Among the
+most important variables are the transverse momenta of reconstructed
+tracks ($p_{\text{T}}^{\text{track}}$) and their angular separation
+from the \tauhadvis candidate axis ($\Delta \eta^{\text{track}}$,
+$\Delta \phi^{\text{track}}$). These variables are included to probe
+the isolation properties of \tauhadvis candidates. A special case is
+the $p_{\text{T}}^{\text{jet seed}}$ variable, the \pT of the jet
+seeding the \tauhadvis candidate, which is not a track property but is
+still included as an observable for every track. This is done to
+provide an approximate \pT-scale of the jet already at the level of
+individual input tracks. Exemplary distributions of the transverse
+momenta of the three \pT-leading tracks normalised to
+$p_{\text{T}}^{\text{jet seed}}$ are shown
+in~\Cref{fig:tauid_low_level_variables_track} for 1-prong \tauhadvis
+candidates.
 
 \begin{figure}[htbp]
   \centering
@@ -142,6 +146,50 @@ in~\Cref{fig:tauid_low_level_variables_track0,fig:tauid_low_level_variables_trac
     \label{fig:tauid_low_level_variables_track2}
   \end{subfigure}
 
+  \caption{Distributions of the transverse momentum of the three
+    \pT-leading tracks associated to 1-prong \tauhadvis
+    candidates. For illustration purposes, the track \pT are
+    normalised to the \pT of the jet seeding the \tauhadvis
+    candidate.}%
+  \label{fig:tauid_low_level_variables_track}
+\end{figure}
+
+The discrimination power of the RNN \tauid saturates after including
+the ten \pT-leading tracks. Therefore, the sequence of tracks is
+truncated at this point to reduce the required computational resources
+for training and evaluation of the networks.
+
+
+\subsubsection{Cluster Input Variables}
+
+Topological clusters of energy in the calorimeters~\cite{PERF-2014-07}
+are considered as inputs to the RNN \tauid if they are constituents
+of the jet seeding the \tauhadvis reconstruction. All clusters are
+calibrated using the local hadronic calibration to account for the
+non-compensating nature of the calorimeters, energy deposition in
+calorimeter cells not part of the cluster, and energy loss in inactive
+material~\cite{PERF-2014-07}.
+
+The inclusion of the $E_{\text{T}}^{\text{cluster}}$,
+$\Delta \eta^{\text{cluster}}$, $\Delta \phi^{\text{cluster}}$, and
+$p_{\text{T}}^{\text{jet seed}}$ observables
+(cf.~\Cref{tab:tauid_input_variables}) follow from considerations
+similar to those for charged-particle tracks. In addition, information
+on the position and shape of showers in the calorimeters is included
+in the form of cluster moments~\cite{PERF-2014-07}, targeting the
+differences between electromagnetic and hadronic showers. These
+cluster moments include the longitudinal location of the cluster
+barycentre, $\lambda_{\text{cluster}}$, and the lateral and
+longitudinal extension of the cluster,
+$\langle r^2 \rangle_{\text{cluster}}$ and
+$\langle \lambda^2 \rangle_{\text{cluster}}$, respectively. For
+illustration, the \ET of the three \ET-leading clusters is shown
+in~\Cref{fig:tauid_low_level_variables_cluster} for 3-prong \tauhadvis
+candidates.
+
+\begin{figure}[htbp]
+  \centering
+
   \begin{subfigure}{0.33\textwidth}
     \includegraphics[width=\textwidth]{tauid/invars/invars_cls0relet_3P}
     \subcaption{}%
@@ -158,47 +206,17 @@ in~\Cref{fig:tauid_low_level_variables_track0,fig:tauid_low_level_variables_trac
     \label{fig:tauid_low_level_variables_cluster2}
   \end{subfigure}
 
-  \caption{Transverse momentum of the three \pT-leading tracks
-    associated to 1-prong \tauhadvis candidates (a-c). Transverse
-    energy of the three \ET-leading clusters associated to 3-prong
-    \tauhadvis candidates (d-f). For illustration purposes, the track
-    \pT and cluster \ET are normalised to the \pT of the jet seeding
-    the \tauhadvis reconstruction.}%
-  \label{fig:tauid_low_level_variables}
+  \caption{Distributions of the transverse energy of the three
+    \ET-leading clusters associated to 3-prong \tauhadvis
+    candidates. For illustration purposes, the cluster \ET are
+    normalised to the \pT of the jet seeding the \tauhadvis
+    candidate.}%
+  \label{fig:tauid_low_level_variables_cluster}
 \end{figure}
 
-The discrimination power of the RNN \tauid saturates after including
-the ten tracks leading in \pT. Therefore, the sequence of tracks is
-truncated at this point due to practical considerations.
-
-
-\subsubsection{Cluster Input Variables}
-
-Topological clusters of energy in the calorimeters are considered as
-inputs to the RNN \tauid if they are constitutents of the jet seeding
-the \tauhadvis reconstruction. All clusters are calibrated using the
-local hadronic calibration~\cite{PERF-2014-07}.
-
-The inclusion of the $E_{\text{T}}^{\text{cluster}}$,
-$\Delta \eta^{\text{cluster}}$, $\Delta \phi^{\text{cluster}}$, and
-$p_{\text{T}}^{\text{jet seed}}$ observables
-(cf.~\Cref{tab:tauid_input_variables}) follow from considerations
-similar to those for charged-particle tracks. In addition, information
-on the position and shape of showers in the calorimeters is included
-in the form of cluster moments~\cite{PERF-2014-07}, targeting the
-differences between electromagnetic and hadronic showers. These
-cluster moments include the longitudinal location of the cluster
-barycentre, $\lambda_{\text{cluster}}$, and the lateral and
-longitudinal extension of the cluster,
-$\langle r^2 \rangle_{\text{cluster}}$ and
-$\langle \lambda^2 \rangle_{\text{cluster}}$, respectively. For
-illustration, the \ET of the three \ET-leading clusters is shown
-in~\Cref{fig:tauid_low_level_variables_cluster0,fig:tauid_low_level_variables_cluster1,fig:tauid_low_level_variables_cluster2}
-for 3-prong \tauhadvis candidates.
-
-The performance of the RNN \tauid saturates after the inclusion of the
-six \ET-leading clusters, thus the sequence of input clusters is
-truncated at this point.
+The classification performance of the RNN \tauid saturates after the
+inclusion of the six \ET-leading clusters, thus the sequence of input
+clusters is truncated at this point.
 
 
 \subsection{Network Architecture}
@@ -214,9 +232,8 @@ using the \textsc{Keras} library~\cite{keras} with the
 \textsc{TensorFlow}
 backend~\cite{tensorflow2015-whitepaper}.\footnote{\textsc{Keras}
   v2.2.0 and \textsc{TensorFlow} v1.8.0 are used.} Layers use the
-\textsc{Keras} default configurations unless stated otherwise. A
-detailed description of the network architecture is given in the
-following.
+default configurations of \textsc{Keras} unless indicated otherwise. A
+description of the network architecture is given in the following.
 
 \begin{figure}[htbp]
   \centering
@@ -224,27 +241,26 @@ following.
   \includegraphics[width=0.95\textwidth]{tauid/pubnote/rnn_network_architecture}
 
   \caption{Schematic depiction of the architecture used for the RNN
-    \tauid algorithm. Individual layers of the network are indicated
-    as rectangles. The figure is taken from
+    \tauid algorithm. Individual layers of the network are depicted as
+    rectangles. The figure is taken from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_network_architecture}
 \end{figure}
 
 The branch of the network operating on high-level input variables
 consists of three fully-connected (\emph{dense}) layers with 128, 128,
-and 16 units each. The \ReLU activation function~\cite{nair:relu} is
+and 16 units each. The \ReLU~\cite{nair:relu} activation function is
 used in all layers.
 
-The branches operating on track and cluster inputs are
-identical. Tracks and clusters are passed to the network as sequences
-of vectors from $\mathbb{R}^m$, each vector consisting of the values
-of $m$ input variables (cf.~\Cref{tab:tauid_input_variables}). The
-sequences of tracks and clusters are ordered by descending
-$p_{\text{T}}^{\text{track}}$ and $E_{T}^{\text{cluster}}$,
-respectively. First, the sequences are passed through two
-fully-connected layers with shared weights (\emph{shared dense}).
-These layers have 32 units each and use the \ReLU activation
-function~\cite{nair:relu}. \emph{Shared dense} layers map input
+The branches operating on track and cluster inputs are structured
+identically. Tracks (clusters) are provided to the network as
+sequences of vectors, each vector consisting of the values of the
+input variables for a given track (cluster). The track and cluster
+sequences are given in descending $p_{\text{T}}^{\text{track}}$ and
+$E_{T}^{\text{cluster}}$ order, respectively. First, the sequences are
+passed through two fully-connected layers with shared weights
+(\emph{shared dense}).  These layers have 32 units each and use the
+\ReLU activation function. \emph{Shared dense} layers map input
 sequences, $(\myvec{x}_i)_{i=1}^{n}$, to output sequences of the same
 length, $(\myvec{y}_i)_{i=1}^{n}$, using transformations of the form
 \begin{align*}
@@ -253,24 +269,25 @@ length, $(\myvec{y}_i)_{i=1}^{n}$, using transformations of the form
 where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and
 bias vectors, respectively, and $\myvec{\phi}$ is the activation
 function.  Notably, the weights and biases do not depend on the
-index~$i$, meaning the weights (and biases) are shared between
-elements of the sequence. The \emph{shared dense} layers produce
-intermediate representations of the track and cluster sequences for
-further computation.
+index~$i$, meaning the weights and biases are the same (i.e.\ shared)
+for all elements of the sequence. The \emph{shared dense} layers
+produce intermediate representations of the track and cluster
+sequences for further computation.
 
 The transformed sequences of tracks and clusters pass through two
 recurrent layers based on the \emph{long short-term memory} (LSTM)
-architecture~\cite{lstm}. The first LSTM layer maps the input sequence
-to an output sequence of the same length. In contrast to \emph{shared
-  dense} layers, LSTM layers have an internal state that is updated as
-elements of the sequence are processed. Therefore, information about
-elements occuring in the sequence can be exploited when processing
-subsequent elements. The second LSTM layer repeats the process,
-however, all except the last element of the output sequence are
-discarded, thereby encoding the input sequence into a single output of
-fixed size. The size of the internal state and output space of the
-LSTM layers are chosen to be the same and correspond to 32 units for
-the first and 24 units for the second LSTM layer.
+architecture~\cite{lstm} (cf.\ \Cref{sec:rnn}). The first LSTM layer
+maps the input sequence to an output sequence of the same length. In
+contrast to \emph{shared dense} layers, LSTM layers have an internal
+state that is updated as elements of the sequence are
+processed. Therefore, information about elements occurring in the
+sequence can be exploited when processing subsequent elements. The
+second LSTM layer repeats the process, however, all except the last
+element of the output sequence are discarded, thereby encoding the
+input sequence into a single output of fixed size. The size of the
+internal state and output space of the LSTM layers are chosen to be
+the same and correspond to 32 units for the first and 24 units for the
+second LSTM layer.
 
 Finally, the outputs of the three branches are concatenated
 (\emph{Merge}) and passed through three fully-connected layers with
@@ -282,13 +299,13 @@ consists of approximately \num{56000} trainable parameters.
 \subsection{Network Training and Evaluation}
 
 Two separate networks are trained for the classification of 1- and
-3-prong \tauhadvis candidates. The samples of 1- and 3-prong
-\tauhadvis candidates are partitioned into a training
-(\SI{40}{\percent}), validation (\SI{10}{\percent}), and testing
-datasets (\SI{50}{\percent}). The trainable parameters of the networks
-are determined by minimising the binary cross-entropy loss on the
-training dataset. The loss of the network is monitored on the
-validation datasets and is used to steer the training procedure.
+3-prong \tauhadvis candidates. The samples of \tauhadvis candidates
+are partitioned into a training (\SI{40}{\percent}), validation
+(\SI{10}{\percent}), and testing datasets (\SI{50}{\percent}). The
+trainable parameters of the networks are determined by minimising the
+binary cross-entropy loss on the training dataset. The loss of the
+network is monitored on the validation datasets and is used to steer
+the training procedure.
 
 Stochastic gradient descent with momentum is used for loss
 minimisation. Prior to the training, transformations are applied to
@@ -330,9 +347,9 @@ pile-up conditions. The same procedure is applied for the BDT-based
   \end{subfigure}
 
   \caption{The distribution of the RNN score for 1-prong (a) and
-    3-prong \tauhadvis candidates (b). The RNN score is shown after a
-    transformation in bins of \tauhadvis \pT and the average number of
-    pile-up interactions ($\mu$). The figure is adapted from
+    3-prong (b) \tauhadvis candidates. The RNN scores are shown after
+    transformations that ensure that the scores of \truetauhadvis are
+    approximately uniformly distributed. The figures are adapted from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:flattened_rnnscore}
 \end{figure}

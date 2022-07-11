@@ -2,22 +2,22 @@
 \label{sec:tauid_conclusion}
 
 This chapter introduced a novel \tauid algorithm exploiting the
-discrimination power of high-level input variables in conjuction with
+discrimination power of high-level input variables in conjunction with
 low-level detector signatures of charged and neutral particles in the
 vicinity of \tauhadvis candidates. The main feature of the algorithm
 is the use of a recurrent neural network architecture that allows to
 operate on sequences of charged-particle tracks and clusters of energy
 in the calorimeters.
 
-The new algorithm improves the rejection of 1- and 3-prong
-\faketauhadvis by about \SI{80}{\percent} and
-\SIrange{40}{80}{\percent}, respectively, compared to the BDT-based
-method previously employed at the ATLAS experiment. For \tauhadvis
-candidates with large transverse momenta ($\pT > \SI{70}{\GeV}$) the
-improvement in \faketauhadvis rejection exceeds
-\SI{100}{\percent}. This improvement is mostly driven by the inclusion
-of charged-particle tracks in the network to exploit the track-based
-isolation of \tauhadvis.
+The new algorithm improves the rejection of \faketauhadvis
+reconstructed as 1- and 3-prong \tauhadvis candidates by about
+\SI{80}{\percent} and \SIrange{40}{80}{\percent}, respectively,
+compared to the BDT-based method previously employed at the ATLAS
+experiment. For \tauhadvis candidates with large transverse momenta
+($\pT > \SI{70}{\GeV}$) the improvement in \faketauhadvis rejection
+exceeds \SI{100}{\percent}. This improvement is mostly driven by the
+inclusion of charged-particle tracks in the network to exploit the
+track-based isolation of \tauhadvis.
 
 The method is considered by the ATLAS collaboration as the recommended
 \tauid algorithm for analyses of the \SI{139}{\per\femto\barn}
@@ -59,7 +59,7 @@ trigger and for offline event reconstruction.\todo{Cite TauCP Run2/3
   pubnote once available.} In the long term, changes to the \tauid
 strategy are expected. A new RNN-based \tauhadvis track classification
 algorithm~\cite{Maerker:2021hro} was deployed for \tauhadvis
-reconstruction in Run~3\todo{Cite pub}. This algorithm can be
+reconstruction in Run~3\todo{Cite pub}. This algorithm could be
 integrated into or combined with the \tauid procedure to provide
 isolation information directly. Such an approach is motivated by the
 large overlap in track observables used by both algorithms and the
@@ -80,6 +80,8 @@ prediction.\footnote{Similar findings were obtained for
 % allowing for more thorough optimisation of input variables, and
 % other hyperparameters of the algorithm.
 
+\todo[inline]{It would be nice to have 2D plots of leading track \pT
+  vs sub-leading track \pT in the appendix. Same for cluster \ET.}
 
 %%% Local Variables:
 %%% mode: latex
