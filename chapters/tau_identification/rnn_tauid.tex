@@ -3,16 +3,16 @@
 
 The RNN \tauid exploits the discrimination power of both high- and
 low-level inputs to distinguish \tauhad from quark- or gluon-initiated
-jets. This approach avoids a possible loss of information relevant to
-\tauid when manually constructing high-level variables from low-level
-inputs. Specifically, charged-particle tracks and clusters of energy
-in the calorimeters, hereafter abbreviated as tracks and clusters, are
-included as low-level inputs to the algorithm. The inclusion of tracks
-and clusters targets the differences in charged and neutral hadron
-multiplicities and track- and calorimeter-based isolation between
-true- and \faketauhadvis. Tau identification is performed separately
-for 1- and 3-prong \tauhadvis candidates due to their distinct
-signatures.
+jets. This approach aims to avoid a possible loss of information
+relevant to \tauid when manually constructing high-level variables
+from low-level inputs. Specifically, charged-particle tracks and
+clusters of energy in the calorimeters, hereafter abbreviated as
+tracks and clusters, are included as low-level inputs to the
+algorithm. Their inclusion targets the differences in charged and
+neutral hadron multiplicities and track- and calorimeter-based
+isolation between true- and \faketauhadvis. Tau identification is
+performed separately for 1- and 3-prong \tauhadvis candidates due to
+their characteristic signatures.
 
 
 \subsection{Input Variables}
@@ -29,29 +29,29 @@ given.
 \begin{table}[htbp]
   \centering
 
-  \caption{Summary of input variables used for 1- and 3-prong RNN
-    \tauid. The table is adapted from
-    Ref.~\cite{ATL-PHYS-PUB-2019-033}. Definitions of geometrical
-    TopoCluster moments ($\lambda$, $\langle \lambda^2 \rangle$,
-    $\langle r^2 \rangle$) are given in Ref.~\cite{PERF-2014-07}. The
-    local hadronic calibration~\cite{PERF-2014-07} is used to
-    calibrate jets, clusters, and \tauhadvis candidates unless
-    otherwise noted. Variables using cell-level calorimeter
+  \caption{Summary of input variables used for RNN \tauid. The local
+    hadronic calibration~\cite{PERF-2014-07} is used to calibrate
+    jets, clusters, and \tauhadvis candidates unless otherwise
+    noted. Definitions of geometrical TopoCluster moments measuring
+    the location and shape of clusters ($\lambda$,
+    $\langle \lambda^2 \rangle$, $\langle r^2 \rangle$) are given in
+    Ref.~\cite{PERF-2014-07}. Variables using cell-level calorimeter
     information only consider cells that are part of TopoClusters for
     noise suppression. $\dagger$:~Energy depositions in the
     pre-sampler and first two layers of the electromagnetic
     calorimeters that are part of TopoClusters are abbreviated as ``EM
-    clusters''.}%
+    clusters''. The table is adapted from
+    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{tab:tauid_input_variables}
 
   \resizebox{0.99\textwidth}{!}{
-    \input{tables/tauid_inputs}
+    \input{tables/tauid_inputs_slim}
   }
 \end{table}
 
 \subsubsection{High-Level Input Variables}
 
-The selection of high-level input variables is based on a BDT-based
+The selection of high-level input variables is based on th BDT-based
 \tauid algorithm developed by the ATLAS
 collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
 Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
@@ -100,16 +100,15 @@ exemplary distributions are shown in~\Cref{fig:tauid_high_level_vars}.
 
 \subsubsection{Track Input Variables}
 
-Reconstructed tracks within $\Delta R < 0.4$ of the \tauhadvis
-candidate axis with $\pT > \SI{500}{\MeV}$ are considered as inputs to
-the RNN \tauid. No selections are applied on the quality of
-reconstructed tracks or track impact parameters, thus the input tracks
-include fake tracks and tracks from pile-up. Instead, track quality
+Reconstructed tracks with $\pT > \SI{500}{\MeV}$ and within a cone of
+$\Delta R < 0.4$ about the \tauhadvis candidate axis are considered as
+inputs to the RNN \tauid. No selections are applied on the quality and
+impact parameters of reconstructed tracks, thus the inputs include
+fake tracks and tracks from pile-up events. Instead, track quality
 criteria ($N_{\text{IBL hits}}$, $N_{\text{Pixel hits}}$,
 $N_{\text{SCT hits}}$) and track impact parameters
 ($|d_0^{\text{track}}|$, $|z_0^{\text{track}} \sin\theta|$) are
-included as observables of tracks used in the RNN \tauid algorithm
-directly.
+included as observables of tracks used in the RNN \tauid algorithm.
 
 The transverse momenta of tracks ($p_{\text{T}}^{\text{track}}$) and
 their angular separation from the axis of the \tauhadvis candidate

@@ -1,92 +1,92 @@
-\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraystretch}{1.3}
 
-\begin{tabular}{clccp{10.5cm}}
+\begin{tabular}{clp{13.5cm}}
   \toprule
-  & Observable & 1-prong & 3-prong & Description \\
+  & Variable & Description \\
   \midrule
-  \parbox[t]{2mm}{\multirow{11}{*}{\rotatebox[origin=c]{90}{High-level inputs}}}
-  & $p_\text{T}$ & \checkmark & \checkmark
+  \parbox[t]{2mm}{\multirow{11}{*}{\rotatebox[origin=c]{90}{High-level inputs\hspace*{65pt}}}}
+  & $p_\text{T}$
   & Calorimeter-based estimate of \tauhadvis candidate \pT. \\
 
-  & $f_\text{cent}$                & \checkmark & \checkmark
+  & $f_\text{cent}$
   & Ratio of \ET deposited in calorimeter cells (at EM scale) in cones of $\Delta R < 0.1$ and $\Delta R < 0.2$ about the \tauhadvis axis. \\
 
-  & $f_\text{leadtrack}^{-1}$      & \checkmark & \checkmark
+  & $f_\text{leadtrack}^{-1}$
   & Ratio of \ET deposited in calorimeter cells (at EM scale) in a cone of $\Delta R < 0.2$ about the \tauhadvis axis and the \pT of the \pT-leading \emph{core} track. \\
 
-  & $\Delta R_\text{max}$          & \checkmark & \checkmark
+  & $\Delta R_\text{max}$
   & Maximum $\Delta R$ between \emph{core} tracks and the \tauhadvis axis. \\
 
-  & $|S_\text{leadtrack}|$         & \checkmark &
-  & Transverse impact parameter significance of the \pT-leading track. \\
+  & $|S_\text{leadtrack}|$
+  & Transverse impact parameter significance of the \pT-leading track. Only considered for 1-prong \tauhadvis candidates.\\
 
-  & $S_\text{T}^\text{flight}$     &           & \checkmark
-  & Transverse flight path significance. \\
+  & $S_\text{T}^\text{flight}$
+  & Transverse flight path significance. Only considered for 3-prong \tauhadvis candidates. \\
 
-  & $f_\text{iso}^\text{track}$    & \checkmark & \checkmark
+  & $f_\text{iso}^\text{track}$
   & Ratio of the scalar sum of \pT of \emph{isolation} tracks and the scalar sum of \pT of \emph{core} and \emph{isolation} tracks. \\
 
-  & $f_\text{track}^\text{EM}$     & \checkmark & \checkmark
+  & $f_\text{track}^\text{EM}$
   & Ratio of the energy in EM clusters$^\dagger$ and the scalar sum of momenta of \emph{core} tracks. \\
 
-  & $p_\text{T}^\text{EM+track}/\pT$ & \checkmark & \checkmark
+  & $p_\text{T}^\text{EM+track}/\pT$
   & \pT of the \tauhadvis estimated from the momenta of \emph{core} tracks and the two most energetic EM clusters$^\dagger$ divided by the \pT of the calorimetric measurement. \\
 
-  & $m^\text{EM+track}$            & \checkmark & \checkmark
+  & $m^\text{EM+track}$
   & Invariant mass of the system of \emph{core} tracks and the two most energetic EM clusters$^\dagger$. \\
 
-  & $m^\text{track}$               &           & \checkmark
-  & Invariant mass of the system of \emph{core} tracks. \\
+  & $m^\text{track}$
+  & Invariant mass of the system of \emph{core} tracks. Only considered for 3-prong \tauhadvis candidates. \\
   \midrule
-  \parbox[t]{2mm}{\multirow{9}{*}{\rotatebox[origin=c]{90}{Track inputs}}}
-  & $p_\text{T}^\text{jet seed}$ & \checkmark & \checkmark
+  \parbox[t]{2mm}{\multirow{9}{*}{\rotatebox[origin=c]{90}{Track inputs\hspace*{10pt}}}}
+  & $p_\text{T}^\text{jet seed}$
   & \pT of the jet seeding the \tauhadvis candidate. \\
 
-  & $p_\text{T}^\text{track}$    & \checkmark & \checkmark
+  & $p_\text{T}^\text{track}$
   & \pT of the track. \\
 
-  & $\Delta\eta^\text{track}$    & \checkmark & \checkmark
+  & $\Delta\eta^\text{track}$
   & Difference in $\eta$ between track and \tauhadvis axis. \\
 
-  & $\Delta\phi^\text{track}$    & \checkmark & \checkmark
+  & $\Delta\phi^\text{track}$
   & Angle between track and \tauhadvis axis in the transverse plane. \\
 
-  & $|d_0^\text{track}|$         & \checkmark & \checkmark
+  & $|d_0^\text{track}|$
   & Absolute value of the transverse track impact parameter. \\
 
-  & $|z_0^\text{track} \sin\theta|$ & \checkmark & \checkmark
+  & $|z_0^\text{track} \sin\theta|$
   & Absolute value of the product of longitudinal track impact parameter and the sine of the polar angle of the track. \\
 
-  & $N_\text{IBL hits}$   & \checkmark & \checkmark
+  & $N_\text{IBL hits}$
   & Number of hits on the track in the IBL. \\
 
-  & $N_\text{Pixel hits}$ & \checkmark & \checkmark
+  & $N_\text{Pixel hits}$
   & Number of hits on the track in pixel detector layers. \\
 
-  & $N_\text{SCT hits}$   & \checkmark & \checkmark
+  & $N_\text{SCT hits}$
   & Number of hits on the track in SCT layers. \\
 
   \midrule
   \parbox[t]{2mm}{\multirow{7}{*}{\rotatebox[origin=c]{90}{Cluster inputs}}}
-  & $p_\text{T}^\text{jet seed}$ & \checkmark & \checkmark
+  & $p_\text{T}^\text{jet seed}$
   & \pT of the jet seeding the \tauhadvis candidate. \\
 
-  & $E_\text{T}^\text{cluster}$ & \checkmark & \checkmark
+  & $E_\text{T}^\text{cluster}$
   & \ET of the cluster. \\
 
-  & $\Delta\eta^\text{cluster}$      & \checkmark & \checkmark
+  & $\Delta\eta^\text{cluster}$
   & Difference in $\eta$ between cluster and \tauhadvis axis. \\
 
-  & $\Delta\phi^\text{cluster}$      & \checkmark & \checkmark
+  & $\Delta\phi^\text{cluster}$
   & Angle between cluster and \tauhadvis axis in the transverse plane. \\
 
-  & $\lambda_\mathrm{cluster}$             & \checkmark & \checkmark
+  & $\lambda_\mathrm{cluster}$
   & Longitudinal distance of the cluster barycentre from the calorimeter front face. \\
 
-  & $\langle \lambda^2\rangle_{\text{cluster}}$ & \checkmark & \checkmark
+  & $\langle \lambda^2\rangle_{\text{cluster}}$
   & Second longitudinal cluster moment. \\
 
-  & $\langle r^2\rangle_{\text{cluster}}$       & \checkmark & \checkmark
+  & $\langle r^2\rangle_{\text{cluster}}$
   & Second radial cluster moment. \\
   \bottomrule
 \end{tabular}
