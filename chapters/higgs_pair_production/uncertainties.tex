@@ -31,7 +31,7 @@
   \SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This uncertainty is
   assigned to all processes estimated using simulation that are
   normalised using theoretical cross section. Additionally, an
-  uncertainty on the reweighting of the instantaneous luminosity
+  uncertainty on the re-weighting of the instantaneous luminosity
   distribution used for the pile-up overlay in simulation to match the
   conditions of the $pp$ dataset is assigned to all simulated
   processes.
@@ -194,7 +194,7 @@ developed by the ATLAS collaboration:
 
 \item[Factorisation and renormalisation scales] Six variations of the
   factorisation and renormalisation scales are performed using
-  internal reweighting implemented in
+  internal re-weighting implemented in
   \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}, altering the scales by
   factors of $\frac{1}{2}$ and $2$. The following variations are
   considered:
@@ -208,7 +208,7 @@ developed by the ATLAS collaboration:
 \item[Resummation scale] The scale of the resummation of soft gluon
   emissions in the \SHERPA parton shower is varied by factors of
   $\frac{1}{2}$ and 2. Variations of the resummation scale are
-  provided in parametrised form with respect to the default \SHERPA
+  provided in parameterised form with respect to the default \SHERPA
   configuration in Ref.~\cite{anders:2017}.
 
 \item[Multi-jet merging scale] The simulation of \Zjets events with
@@ -220,14 +220,14 @@ developed by the ATLAS collaboration:
   algorithm is varied from its nominal value of
   $Q_{\text{cut}} = \SI{20}{\GeV}$ to \SI{15}{\GeV} and
   \SI{30}{\GeV}~\cite{anders:2017}. These variations are provided,
-  following the approach for the resummation scale, in parametrised
+  following the approach for the resummation scale, in parameterised
   form in Ref.~\cite{anders:2017}.
   %\cite{ATLAS:2021yza}
 
 \item[PDF+\alphas and PDF choice] Uncertainties on the \NNPDF[3.0nnlo]
   set of PDFs~\cite{Ball:2014uwa} are evaluated using 100 replica sets
   provided through the \textsc{LHAPDF6} library~\cite{Buckley:2014ana}
-  and implemented using internal reweighting in \SHERPA. The
+  and implemented using internal re-weighting in \SHERPA. The
   uncertainty on \alphas propagated by comparing \NNPDF[3.0nnlo] PDF
   sets with $\alphas(\mZ^2) = 0.117$ and $0.119$ with the nominal set
   using a value of $0.118$. Finally, an uncertainty on the choice of
@@ -264,7 +264,7 @@ uncertainties on the nominal prediction obtained from simulation with
 \POWHEGBOX[v2]+\PYTHIA[8]. A revised version of these prescriptions
 was previously presented in~\Cref{sec:bkg_hadhad_ttbarfakes} as part
 of the \ttbarFakes scale factor measurement. In the following, the
-prescriptions are summarsied, highlighting the differences with
+prescriptions are summarised, highlighting the differences with
 respect to the previous description.
 
 The uncertainty of the modelling of the hard interaction (parton
@@ -274,7 +274,7 @@ generation. Explicit variations of the scales, and \PYTHIA[8] damping
 parameter, $\hdamp$, are omitted. Instead they are included in the
 variations of the initial-state radiation. The uncertainties on the
 amount of final-state radiation and the PDF+\alphas uncertainties are
-estimated using internal reweighting in \PYTHIA[8]. The relative
+estimated using internal re-weighting in \PYTHIA[8]. The relative
 acceptance uncertainty for \ttbar backgrounds in the three signal
 regions is given in~\Cref{tab:uncertainties_ttbar_extrapol}.
 
@@ -382,7 +382,7 @@ of the uncertainties on minor backgrounds is given in the following:
   estimated separately by comparison with alternative simulation
   setups using \MGNLO[2.6.2] and \HERWIG[7],
   respectively. Uncertainties on PDF+\alphas and the amount of
-  initial- and final-state radiation are obtained by reweighting of
+  initial- and final-state radiation are obtained by re-weighting of
   the nominal simulation result. Finally, an uncertainty on the
   treatment of the removal of interference\todo{What happens to the
     interference? Neglected?  Included in \ttbar?} between $tW$ at NLO
@@ -395,7 +395,7 @@ of the uncertainties on minor backgrounds is given in the following:
   \hadhad, \lephad SLT, and \lephad LTT signal region,
   respectively. The shape effect of the FSR and $tW$-$\ttbar$
   interference uncertainties on the MVA discriminants are propagated
-  using suitable parametrisations.
+  using suitable parameterisation.
 
 \item[Single SM $H$ production] Uncertainties on the total cross
   section of the SM $H$ production modes considered as backgrounds are
@@ -467,13 +467,13 @@ The uncertainty on the choice of the parton shower program is
 estimated by comparing the nominal signal generation using
 \PYTHIA[8.244] for parton showering with an alternative using
 \HERWIG[7.1.6]. An uncertainty from the effect of missing higher
-orders in the pertubative expansion is estimated by performing six
+orders in the perturbative expansion is estimated by performing six
 variations of the factorisation and renormalisation scales using
-internal reweighting of the generator. Uncertainties on the PDF sets
+internal re-weighting of the generator. Uncertainties on the PDF sets
 are estimated using the prescriptions for the
 \PDFforLHC[15nlo]~\cite{Butterworth:2015oua} and
 \NNPDF[3.0nlo]~\cite{Ball:2014uwa} PDF sets for ggF and VBF,
-respecively. The PDF uncertainties are provided in the form of 30
+respectively. The PDF uncertainties are provided in the form of 30
 eigenvariations for \PDFforLHC[15nlo] and 100 replica sets for
 \NNPDF[3.0nlo]. Finally, the value of $\alphas(\mZ^2)$ is varied up
 and down by 0.0015 (0.001) about the central value of $0.118$ in the

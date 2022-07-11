@@ -313,7 +313,7 @@ and muons are collectively referred to as leptons ($\ell$).\todo{Move
   $\tau\tau$-system, reconstructed using the MMC, and \pTmiss.
 
 \item[$s_{\text{T}}$] The effective mass of the event defined as the
-  scalar sum of tranverse momenta of all selected jets, \tauhadvis,
+  scalar sum of transverse momenta of all selected jets, \tauhadvis,
   leptons, and \pTmissAbs.
 \end{description}
 
@@ -364,7 +364,7 @@ Ref.~\cite{ATLAS-CONF-2021-030}.
   \end{subfigure}
 
   \caption{Distributions of the MVA input variables in the signal
-    region of the \hadhad channel prior to the maximum likelhood
+    region of the \hadhad channel prior to the maximum likelihood
     fit. The uncertainty bands include all statistical and systematic
     uncertainties of the background model. The normalisation of the
     resonant and non-resonant \HH signals are scaled for visibility.}%
@@ -614,7 +614,7 @@ approach multiple classification tasks are solved in isolation,
 ignoring the more general classification problem. This was previously
 explored in Ref.~\cite{HIGG-2016-16-witherratum} using BDT.
 
-An alternative approach is provided by parametrised classifiers where
+An alternative approach is provided by parameterised classifiers where
 the dependency of the prediction problem is incorporated during
 training, thus solving it in a broader context. In particular,
 Parametric Neural Networks~\cite{Baldi:2016fzo} are used due to the
@@ -629,7 +629,7 @@ value specifying the classification task is provided as an input to
 the network. During training, the value of the parameter is assigned
 to be the generator-level \mX for signal events and random,
 uninformative values for background events. Otherwise, PNNs are
-amenable to the methods commonly employed to train non-parametrised
+amenable to the methods commonly employed to train non-parameterised
 feedforward neural networks. At evaluation time the parameter value is
 held fixed according to the classification problem to be solved.
 
@@ -653,7 +653,7 @@ for model selection.
 The training proceeds by minimising the binary cross-entropy loss
 using stochastic gradient descent with momentum and exponential
 learning rate decay. As part of the training process, the
-discriminating variables are centered and scaled by subtracting the
+discriminating variables are centred and scaled by subtracting the
 median and dividing by the interquartile range of the variable for
 better conditioning of the loss minimisation. Similarly, the values of
 the mass parameter are (linearly) transformed into $[0, 1]$. The
@@ -773,7 +773,7 @@ association with jets from quarks of heavy flavour ($b$ and $c$
 quarks).
 
 The previously highlighted properties of PNN, the ability to solve a
-continuously varying classification task parametrised by \mX and the
+continuously varying classification task parameterised by \mX and the
 ability to interpolate to values of \mX not seen during training, are
 investigated. For this, a performance metric is defined by binning the
 PNN score for a given value of the mass parameter using an algorithm

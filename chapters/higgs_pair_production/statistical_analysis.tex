@@ -8,7 +8,7 @@ with masses ranging from \SIrange{251}{1600}{\GeV}.
 
 A probabilistic model is constructed, separately for every signal
 hypothesis to be probed, that simultaneously describes the data in
-bins of the MVA descriminants in the signal regions and \mll in the
+bins of the MVA discriminants in the signal regions and \mll in the
 \ZHF control region using the signal and background estimates and
 their uncertainties described in earlier sections. The discriminants
 are summarised in~\Cref{tab:fitted_variable} for all regions entering
@@ -130,7 +130,7 @@ The re-binning algorithm is provided with MVA score histograms with
 fine, equidistant binning ($N_\text{bins} = 1000$) of the signal and
 total background expectation at the nominal values of all nuisance
 parameters. It proceeds by iteratively merging bins, starting from the
-most-signal like MVA score bins, until the bin fulfills a set of
+most-signal like MVA score bins, until the bin fulfils a set of
 requirements:
 \begin{enumerate}
 
@@ -150,7 +150,7 @@ requirements:
 When a bin fulfilling all requirements is found, the process is
 repeated starting from the next bin that is not yet merged. The
 algorithm terminates with a final bin at low MVA score. If the final
-bin does not fulfil the criteria, it is merged with the preceeding
+bin does not fulfil the criteria, it is merged with the preceding
 bin.
 
 The size of bins resulting from the re-binning procedure can vary by
@@ -217,12 +217,12 @@ uncertainty on the nominal prediction.
 \subsubsection{Inter- and extrapolation of systematic uncertainties}
 
 To define a (continuous) likelihood function, the signal and
-background predictions have to be parametrised as continuous functions
+background predictions have to be parameterised as continuous functions
 of the nuisance parameters. Conventionally, uncertainties on the
 normalisation or the normalisation and shape of a prediction in a
 given analysis region are determined only for two values of the
-nuisance parameters correponding to $\pm 1\sigma$ ($\alpha = \pm 1$)
-variations in addition to the nominal prediction. The parametrised
+nuisance parameters corresponding to $\pm 1\sigma$ ($\alpha = \pm 1$)
+variations in addition to the nominal prediction. The parameterised
 predictions needed for the definition of the likelihood function are
 obtained using interpolation ($\vert \alpha \vert \leq 1$) and
 extrapolation methods ($\vert \alpha \vert > 1$) provided by
@@ -231,12 +231,12 @@ extrapolation methods ($\vert \alpha \vert > 1$) provided by
 All uncertainties are decomposed into two correlated components
 employing different inter- and extrapolation methods. The first
 component are uncertainties on the sample normalisations in a given
-region which are parametrised using multiplicative normalisation
+region which are parameterised using multiplicative normalisation
 factors determined from 6th order polynomial interpolation and
 exponential extrapolation in $\alpha$. Exponential extrapolation is
 used to prevent the normalisation factors from becoming negative. The
 second component are shape variations of the discriminant in a given
-region that leave the normalisation invariant. The parametrised shape
+region that leave the normalisation invariant. The parameterised shape
 variations are obtained using 6th order polynomial interpolation and
 linear extrapolation. In both cases the resulting functions are
 required to be continuous and have continuous first and second
@@ -259,7 +259,7 @@ derived from MC-to-MC comparisons or from variations that change the
 four-momentum of final state particles. In these cases a smoothing
 procedure is applied to the templates describing the uncertainties on
 the shape of the discriminant. Shape uncertainties that are based on
-the reweighting of the nominal prediction are less sensitive to
+the re-weighting of the nominal prediction are less sensitive to
 statistical fluctuations, unless the weight distribution has high
 variance, and thus no smoothing is applied by default. Exceptions are
 made in some cases for example for the weight-based FSR uncertainties
@@ -651,7 +651,7 @@ fit to observed data.
     $|\Delta \mu|$ of the $+\Delta \hat{\theta}$ and
     $-\Delta \hat{\theta}$ variation. The bottom axis shows the MLE of
     the nuisance parameters including their post-fit uncertainty, with
-    marker colors indiciating the type of nuisance parameter: NP with
+    marker colours indicating the type of nuisance parameter: NP with
     Gaussian constraint ($\alpha$ / black markers), NP with Poisson
     constraint related to the statistical precision of the background
     estimate ($\gamma$ / green markers), and unconstrained
@@ -675,7 +675,7 @@ the \ZHF acceptance uncertainty determined from MC-to-MC comparison of
 \SHERPA and \MGNLOPY. The uncertainty associated with this NP is
 expected to be conservative, since it arises from a comparison of the
 nominal event generation at NLO with a prediction lower order of the
-pertubative expansion (LO).
+perturbative expansion (LO).
 
 In the \lephad channel, large constraints are observed on the nuisance
 parameter associated to the uncertainty on $r_{\text{QCD}}$ and the
@@ -840,7 +840,7 @@ LTT channels are documented in~\Cref{sec:app_additional_figures}.
   \caption{Distribution of the PNN discriminant in the \hadhad channel
     after the maximum likelihood fit of the background-only model in
     all signal and control regions. The distributions are shown for
-    four different parameter values of the parametrised neural network
+    four different parameter values of the parameterised neural network
     ranging from \SI{300}{\GeV} to \SI{1600}{\GeV}. The signal overlay
     is scaled to the expected upper limit on~$\sigma(pp \to X \to HH)$
     for the resonance mass considered.}%
@@ -999,7 +999,7 @@ combination of all channels, \lephad-only, and \hadhad-only.
   \includegraphics[width=0.65\textwidth]{results_res/resonant_upper_limits}
 
   \caption{Upper limits on $\sigma(pp \to X \to \HH)$ when considering
-    different masses, \mX, of the scaalar resonance. The exclusion
+    different masses, \mX, of the scalar resonance. The exclusion
     limits are obtained using the asymptotic \CLs method at
     \SI{95}{\percent} confidence level. The expected upper limits
     obtained from tests of the \lephad and \hadhad channel only
@@ -1013,7 +1013,7 @@ The upper limits on the cross section decrease quickly with increasing
 consequence of the large positive slope in signal acceptance with
 respect to the mass of the scalar resonance
 (cf.~\Cref{fig:signal_acceptance_resonant}) and the increasingly
-discinct signature of the signal aiding in the discrimination between
+distinct signature of the signal aiding in the discrimination between
 the signal and background processes. Particularly the ability to
 distinguish the signal from the top background, which has large
 contributions for $\mX \lesssim \SI{500}{\GeV}$\todo{Yield tables for
@@ -1021,7 +1021,7 @@ contributions for $\mX \lesssim \SI{500}{\GeV}$\todo{Yield tables for
 are considered. The signal acceptance reaches a maximum at
 $\mX = \SI{1000}{\GeV}$ after which reconstruction effects starts to
 degrade the acceptance due to the inability to resolve the
-constitutents of the $H \to \tautau$ and $H \to \bbbar$
+constituents of the $H \to \tautau$ and $H \to \bbbar$
 candidates. This leads to a broad plateau of the upper limit and a
 degradation of the exclusion limits at the upper end of the considered
 mass range.
@@ -1076,7 +1076,7 @@ mass hypotheses.
   % \input{tables/breakdown_res_exp_mu0}
 \end{table}
 
-Systematic uncertainties have a sizable effect on the total variance
+Systematic uncertainties have a sizeable effect on the total variance
 of $\hat{\sigma}$ only for searches of scalar resonances with low
 mass. Instrumental uncertainties, most significantly uncertainties
 affecting jets / \pTmissAbs and \tauhadvis, have the largest impact on
@@ -1098,7 +1098,7 @@ control regions (and non-multi-jet subtraction in the case of the
   $\mX = \SI{1000}{\GeV}$}%
 \label{sec:global_significance}
 
-\todo[inline]{Note that this focusses on the combination of all
+\todo[inline]{Note that this focuses on the combination of all
   channels.}
 
 In the search for resonant Higgs boson pair production multiple
@@ -1509,7 +1509,7 @@ by the Gaussian copula and marginal distributions:
   $\mathcal{C}_{\myvec{R}}$.
 
   The vector $\myvec{u}$ is obtained by generating random variates
-  $\myvec{n} = (n_1, \dots, n_n)$ from the centered multivariate
+  $\myvec{n} = (n_1, \dots, n_n)$ from the centred multivariate
   Normal distribution with covariance matrix equal to $\myvec{R}$,
   followed by an element-wise application of the univariate Standard
   Normal CDF to $\myvec{n}$, i.e.\ $u_i = \Phi(n_i)$ for every
@@ -1631,7 +1631,7 @@ weighted events), the agreement between both methods is sufficient.
     from the Barlow-Beeston method. The red markers show the Poisson
     distribution used to define the constraints on the $\gamma_{cb}$
     nuisance parameters ($\gamma_{cb} = 1$ is assumed) in the
-    liklihood function. The grey histogram shows the distribution of
+    likelihood function. The grey histogram shows the distribution of
     the global observable following the Bootstrap approach that
     accounts for correlations of $m_{cb}$ between bins. Statistical
     uncertainties on the Bootstrap histogram are negligible.}
