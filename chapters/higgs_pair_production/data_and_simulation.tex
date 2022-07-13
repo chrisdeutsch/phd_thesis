@@ -37,8 +37,8 @@ the pile-up conditions match those observed in data.
 
 In the following, a description of the simulated event samples used in
 this analysis is given with a focus on the simulation of signal
-processes. Simulated background processes are summarised
-in~\Cref{tab:monte_carlo}.
+processes. The Monte Carlo event generation setups for background
+processes are summarised in~\Cref{tab:monte_carlo}.
 
 \begin{sidewaystable}[p]
   \centering
@@ -53,50 +53,60 @@ in~\Cref{tab:monte_carlo}.
   \resizebox{\textwidth}{!}{\input{tables/monte_carlo}}
 \end{sidewaystable}
 
-The non-resonant production of Higgs boson pairs via \ggF is simulated
-using \POWHEGBOX[v2]~\cite{Alioli:2010xd} at NLO (QCD) and accounts
-for the finite top-quark mass\footnote{As opposed to calculations in
-  the $m_{t} \to \infty$ limit, e.g.\ performed in
+Non-resonant production of SM \HH via \ggF is simulated using
+\POWHEGBOX[v2]~\cite{Alioli:2010xd} at NLO (QCD) accounting for the
+effects of the finite top-quark mass on real and virtual
+corrections~\cite{Borowka:2016ehy,Baglio:2018lrj,Heinrich:2017kxx}.\footnote{As
+  opposed to earlier calculations in the $m_{t} \to \infty$ limit
+  using effective field theory approximations simplifying top-quark
+  loops to effective couplings. See for example
   Refs.~\cite{Dawson:1998py} (NLO) and \cite{deFlorian:2013jea}
-  (NNLO).} in heavy-quark loops and real
-emissions~\cite{Borowka:2016ehy,Baglio:2018lrj}. The generator uses
-the \PDFforLHC[15nlo]~\cite{Butterworth:2015oua} set of PDFs and is
+  (NNLO).} The generator uses the
+\PDFforLHC[15nlo]~\cite{Butterworth:2015oua} set of PDFs and is
 interfaced to \PYTHIA[8]~\cite{Sjostrand:2014zea} with the A14 set of
 tuned parameters~\cite{ATL-PHYS-PUB-2014-021} for the parton shower
-and hadronisation. Decays of hadrons containing $b$ or $c$ quarks are
-simulated using \EVTGEN[1.7.0]~\cite{Lange:2001uf}. The sample of
-simulated events is normalised using a theory cross section of
-\SI{31.05}{\femto\barn} at
-$\text{NNLO}_{\text{FTapprox}}$~\cite{Grazzini:2018bsd}\todo{Should
-  explain what this is.} with a cross section uncertainties of
-$^{+6\,\%}_{-23\,\%}$ from scale variations and the top-quark mass
-scheme~\cite{Baglio:2020wgt} and $\pm\SI{3}{\percent}$ from PDFs and
-$\alphas$~\cite{LHCHWGHH}.
+and hadronisation. The sample of simulated events is normalised using
+an inclusive $gg \to \HH$ cross section of \SI{31.05}{\femto\barn} at
+$\text{NNLO}_{\text{FTapprox}}$~\cite{Grazzini:2018bsd}, which is a
+combination of the full-theory prediction at NLO with additional NNLO
+corrections derived in the heavy top-quark mass limit. The theoretical
+uncertainties on the prediction is $^{+6\,\%}_{-23\,\%}$ from scale
+variations and the top-quark mass scheme~\cite{Baglio:2020wgt} and
+$\pm\SI{3}{\percent}$ from PDFs and $\alphas$~\cite{LHCHWGHH}.
 
-The production of SM \HH via VBF
-
+Non-resonant production of SM \HH via VBF is simulated using
+\MGNLO~\cite{Alwall:2014hca} % [2.7.3]
+at LO (QCD) %~\cite{Bishara:2016kjn}
+using the \NNPDF[3.0nlo] set of PDFs~\cite{Ball:2014uwa}. The matrix
+element generator is interfaced to \PYTHIA[8] with the A14 tune for
+parton showering and hadronisation. An inclusive cross section of
+\SI{1.726}{\femto\barn}
+at~$\text{N}^3\text{LO}$~\cite{Dreyer:2018qbw,LHCHWGHH} is used to
+normalise the sample of generated events with theoretical
+uncertainties of $^{+0.03\,\%}_{-0.04\,\%}$ from scale variations and
+$\pm\SI{2.1}{\percent}$ from PDFs and $\alphas$~\cite{LHCHWGHH}.
 
 % https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID450xxx/MC15.450149.MadGraphHerwig7EvtGen_PDF23LO_X300tohh_bbtautau_hadhad.py
-The resonant di-Higgs production in a 2HDM model $\pp \ra X \ra hh$ in
-ggF was generated using \MADGRAPH for the matrix element at LO
-interfaced to \HERWIG{7.1.0.3} LO for the parton shower. An
-alternative sample replacing \HERWIG with \PYTHIA{8} for the parton
-shower. Using narrow width approximation where the heavy scalar is
-assumed to have a decay width of $\Gamma_X =
-\SI{10}{\MeV}$. \todo{Which masses are available?} The cross-section
-for the resonant production is set to
-$\sigma(\pp \ra X \ra hh) = \SI{1}{\pb}$.
+Resonant production of Higgs boson pairs via massive scalar
+resonances, $X$, produced in \ggF is simulated using \MGNLO at LO
+(QCD) using the \NNPDF[2.3lo] set of PDFs~\cite{Ball:2012cx}. Twenty
+generic benchmark signals are generated with resonance masses, \mX,
+ranging from \SIrange{251}{1600}{\GeV} and with narrow widths of the
+resonances ($\Gamma_{X} = \SI{10}{\MeV}$ in the event
+generation). The interference with non-resonant SM \HH production is
+neglected. The matrix element generator is interfaced to
+\HERWIG[7.1]~\cite{Gieseke:2012ft,Bellm:2017jjp} with the default tune
+for parton shower and hadronisation.
+% Why narrow width? -> Broad resonances are very model dependent
 
-
-\todo[inline]{Say that the resonances are narrow width. Why narrow
-  width? -> Broad resonances are more model dependent.}
-
-
-The production of single Higgs bosons is considered as a background.
-
-Other backgrounds are briefly summarised in~\Cref{tab:monte_carlo}.
-
-
+Decays of hadrons containing $b$ and $c$ quarks are simulated using
+\EVTGEN~\cite{Lange:2001uf} for all signal, top quark, and single
+Higgs boson processes (cf.~\Cref{tab:monte_carlo}). By default,
+\emph{full simulation} of the ATLAS detector is used for all processes
+except for resonant \HH production with $\mX \leq \SI{1000}{\GeV}$ or
+for samples generated with alternative generator setups for the
+derivation of modelling uncertainties. In these cases \emph{fast
+  simulation} is used instead.
 
 %%% Local Variables:
 %%% mode: latex
