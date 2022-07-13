@@ -43,19 +43,23 @@ processes are summarised in~\Cref{tab:monte_carlo}.
 \begin{sidewaystable}[p]
   \centering
 
-  \caption{Table of Monte Carlo samples.\\
-    $\dagger$: V+0,1,2j@NLO+3,4j@LO \\
-    $*$: 0,1j@NLO + 2,3j@LO\\
-    $\ddag$: gluon loop induced ZH
-  }%
+  \caption{Summary of generators used to simulate signal and
+    background processes relevant to the search for Higgs boson pair
+    production. $\dagger$:~The $V+\text{jets}$ event generation with
+    \SHERPA[2.2.1] merges matrix elements with NLO accuracy for up to
+    two and LO accuracy for up to four final state partons.
+    $*$:~Diboson event generation with \SHERPA[2.2.1] merges matrix
+    elements with NLO accuracy for up to one and LO accuracy for up to
+    three final state partons. $\ddag$: gluon loop induced ZH }%
   \label{tab:monte_carlo}
 
   \resizebox{\textwidth}{!}{\input{tables/monte_carlo}}
 \end{sidewaystable}
 
 Non-resonant production of SM \HH via \ggF is simulated using
-\POWHEGBOX[v2]~\cite{Alioli:2010xd} at NLO (QCD) accounting for the
-effects of the finite top-quark mass on real and virtual
+\POWHEGBOX[v2]~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} at
+NLO (QCD) accounting for the effects of the finite top-quark mass on
+real and virtual
 corrections~\cite{Borowka:2016ehy,Baglio:2018lrj,Heinrich:2017kxx}.\footnote{As
   opposed to earlier calculations in the $m_{t} \to \infty$ limit
   using effective field theory approximations simplifying top-quark

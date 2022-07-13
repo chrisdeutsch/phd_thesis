@@ -18,40 +18,40 @@
 
 \begin{tabular}{lllllll}
   \toprule
-  Process                             & ME Generator    & ME PDF         & ME Order & PS and Hadronisation & Tune & Cross-Section Order \\
+  Process                             & Generator    & PDF set     & Order (QCD) & PS and hadronisation & Tune & Cross section order \\
   \midrule
   \multicolumn{7}{l}{\textbf{Signals}} \\
   \midrule
-  Non-resonant $\Pgluon\Pgluon \ra \PHiggs\PHiggs$ & \POWHEGBOX[v2] & \PDFforLHC[15nlo]~\cite{Butterworth:2015oua} & NLO & \PYTHIA[8.244] & A14 & NNLO FTapprox.~\cite{Grazzini:2018bsd} \\
-  Non-resonant $\Pquark\Pquark \ra \Pquark\Pquark\PHiggs\PHiggs$ & \MGNLO[2.7.3] & \NNPDF[3.0nlo] & LO & \PYTHIA[8.244] & A14 & N$^3$LO (QCD)~\cite{Dreyer:2018qbw} \\
-  Resonant $\Pgluon\Pgluon \ra \PX \ra \PHiggs\PHiggs$ & \MGNLO[2.6.1] & \NNPDF[2.3lo] & LO & \HERWIG[7.1.3] & H7.1-Default & -- \\
+  $\Pgluon\Pgluon \ra \PHiggs\PHiggs$ (\ggF) & \POWHEGBOX[v2]~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} & \PDFforLHC[15nlo]~\cite{Butterworth:2015oua} & NLO & \PYTHIA[8.244]~\cite{Sjostrand:2014zea} & A14~\cite{ATL-PHYS-PUB-2014-021} & $\text{NNLO}_{\text{FTapprox}}$~\cite{Grazzini:2018bsd} \\
+  $\Pquark\Pquark \ra \Pquark\Pquark\PHiggs\PHiggs$ (VBF) & \MGNLO[2.7.3]~\cite{Alwall:2014hca} & \NNPDF[3.0nlo]~\cite{Ball:2014uwa} & LO & \PYTHIA[8.244] & A14 & N$^3$LO~\cite{Dreyer:2018qbw} \\
+  $\Pgluon\Pgluon \ra \PX \ra \PHiggs\PHiggs$ & \MGNLO[2.6.1] & \NNPDF[2.3lo]~\cite{Ball:2012cx} & LO & \HERWIG[7.1.3]~\cite{Gieseke:2012ft,Bellm:2017jjp} & H7.1-Default & -- \\
   \midrule
   \multicolumn{7}{l}{\textbf{Top quark}} \\
   \midrule
-  \ttbar & \POWHEGBOX[v2]~\cite{Frixione:2007nw,Nason:2004rx,Frixione:2007vw,Alioli:2010xd} & \NNPDF[3.0nlo]~\cite{Ball:2014uwa} & NLO & \PYTHIA[8.230]~\cite{Sjostrand:2014zea} & A14~\cite{ATL-PHYS-PUB-2014-021} & NNLO+NNLL~\cite{Beneke:2011mq,Cacciari:2011hy,Baernreuther:2012ws,Czakon:2012zr,Czakon:2012pz,Czakon:2013goa,Czakon:2011xx} \\
-  Single top & \POWHEGBOX[v2] & \NNPDF[3.0nlo] & NLO & \PYTHIA[8.230] & A14 & NLO~\cite{stopxsec} \\
-  $tW$ & \POWHEGBOX[v2] & \NNPDF[3.0nlo] & NLO & \PYTHIA[8.230] & A14 & NNLO approx.~\cite{stopxsec,Kidonakis:2010ux,Kidonakis:2013zqa} \\
-  $\ttbar\PZ$ & \SHERPA[2.2.1] & \NNPDF[3.0nnlo] & NLO & \SHERPA[2.2.1] & \SHERPA & NLO (NLO EWK)~\cite{deFlorian:2016spz} \\
-  $\ttbar\PW$ & \SHERPA[2.2.8] & \NNPDF[3.0nnlo] & NLO & \SHERPA[2.2.8] & \SHERPA & NLO (Generator) \\
+  \ttbar & \POWHEGBOX[v2]~\cite{Frixione:2007nw} & \NNPDF[3.0nlo] & NLO & \PYTHIA[8.230] & A14 & NNLO+NNLL~\cite{Beneke:2011mq,Cacciari:2011hy,Baernreuther:2012ws,Czakon:2012zr,Czakon:2012pz,Czakon:2013goa,Czakon:2011xx} \\
+  Single top & \POWHEGBOX[v2]~\cite{Frederix:2012dh,Alioli:2009je} & \NNPDF[3.0nlo] & NLO & \PYTHIA[8.230] & A14 & NLO~\cite{stopxsec} \\
+  $tW$ & \POWHEGBOX[v2]~\cite{Re:2010bp} & \NNPDF[3.0nlo] & NLO & \PYTHIA[8.230] & A14 & NNLO (approx.)~\cite{stopxsec,Kidonakis:2010ux,Kidonakis:2013zqa} \\
+  $\ttbar\PZ$ & \SHERPA[2.2.1]~\cite{Bothmann:2019yzt} & \NNPDF[3.0nnlo] & NLO & \SHERPA[2.2.1]~\cite{Schumann:2007mg} & \SHERPA & NLO (NLO EW)~\cite{deFlorian:2016spz} \\
+  $\ttbar\PW$ & \SHERPA[2.2.8] & \NNPDF[3.0nnlo] & NLO & \SHERPA[2.2.8] & \SHERPA & NLO \\
   \midrule
   \multicolumn{7}{l}{\textbf{Vector boson + jets}} \\
   \midrule
-  $\PW \ra \Plepton \Pnu$          & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}~\cite{Schumann:2007mg} & \SHERPA & NNLO~\cite{ATL-PHYS-PUB-2017-006,Anastasiou:2003ds} \\
-  $\PZ / \Pphoton^{*} \ra \ell\ell$ & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^\dagger$ & \SHERPA{2.2.1}~\cite{Schumann:2007mg} & \SHERPA & NNLO~\cite{ATL-PHYS-PUB-2017-006,Anastasiou:2003ds} \\
+  $\PW \ra \Plepton \Pnu$          & \multirow{2}{*}{\SHERPA{2.2.1}} & \multirow{2}{*}{\NNPDF[3.0nnlo]} & \multirow{2}{*}{NLO$^\dagger$} & \multirow{2}{*}{\SHERPA{2.2.1}} & \multirow{2}{*}{\SHERPA} & \multirow{2}{*}{NNLO~\cite{ATL-PHYS-PUB-2017-006,Anastasiou:2003ds}} \\
+  $\PZ / \Pphoton^{*} \ra \ell\ell$ &                                &                                  &                                &                                 &                         & \\
   \midrule
   \multicolumn{7}{l}{\textbf{Diboson}} \\
   \midrule
-  $\PW\PW$, $\PW\PZ$, $\PZ\PZ$ & \SHERPA{2.2.1} & \NNPDF[3.0nnlo]~\cite{Ball:2014uwa} & NLO$^*$ & \SHERPA{2.2.1} & \SHERPA & NLO$^*$ (Generator) \\
+  $\PW\PW$, $\PW\PZ$, $\PZ\PZ$ & \SHERPA{2.2.1} & \NNPDF[3.0nnlo] & NLO$^*$ & \SHERPA{2.2.1} & \SHERPA & NLO$^*$ \\
   \midrule
   \multicolumn{7}{l}{\textbf{Single Higgs boson}} \\
   \midrule
-  $H \to \tautau$ (ggF) & \POWHEGBOX[v2] & \NNPDF[30nnlo] & NNLO & \PYTHIA[8.212] & \AZNLO & N$^3$LO (NLO EWK) \\
-  $H \to \tautau$ (VBF) & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO & \PYTHIA[8.230]  & \AZNLO & NNLO approx.\ (NLO EWK) \\
-  $H \to \tautau$ ($qq \to VH$)  & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO (+1jet)  (LO$^\ddag$)& \PYTHIA[8.212] (8.244$^\ddag$) & \AZNLO & NNLO (NLO EWK) \\
+  $H \to \tautau$ (ggF) & \POWHEGBOX[v2] & \NNPDF[30nnlo] & NNLO & \PYTHIA[8.212] & \AZNLO~\cite{STDM-2012-23} & N$^3$LO (NLO EW) \\
+  $H \to \tautau$ (VBF) & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO & \PYTHIA[8.230]  & \AZNLO & NNLO approx.\ (NLO EW) \\
+  $H \to \tautau$ ($qq \to VH$)  & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO (+1jet)  (LO$^\ddag$)& \PYTHIA[8.212] (8.244$^\ddag$) & \AZNLO & NNLO (NLO EW) \\
   $H \to \tautau$ ($gg \to ZH$) & \POWHEGBOX[v2] & \NNPDF[30nlo] & LO & \PYTHIA[8.244] & \AZNLO & \\
   $H \to \bbbar$ ($qq \to VH$)   & \POWHEGBOX[v2] & \NNPDF[30nlo] & & \PYTHIA[8.212]  & \AZNLO & \\
   $H \to \bbbar$ ($gg \to ZH$)  & \POWHEGBOX[v2] & \NNPDF[30nlo] & LO & \PYTHIA[8.212]  & \AZNLO & \\
-  $\ttbar H$ ($H \to \text{any}$)    & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO & \PYTHIA[8.230]  & A14 & NLO (NLO EWK) \\
+  $\ttbar H$ ($H \to \tau\tau / \bbbar$)    & \POWHEGBOX[v2] & \NNPDF[30nlo] & NLO & \PYTHIA[8.230]  & A14 & NLO (NLO EW) \\
   \bottomrule
 \end{tabular}
 
