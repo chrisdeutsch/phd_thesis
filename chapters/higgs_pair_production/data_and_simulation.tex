@@ -45,12 +45,17 @@ processes are summarised in~\Cref{tab:monte_carlo}.
 
   \caption{Summary of generators used to simulate signal and
     background processes relevant to the search for Higgs boson pair
-    production. $\dagger$:~The $V+\text{jets}$ event generation with
-    \SHERPA[2.2.1] merges matrix elements with NLO accuracy for up to
-    two and LO accuracy for up to four final state partons.
-    $*$:~Diboson event generation with \SHERPA[2.2.1] merges matrix
-    elements with NLO accuracy for up to one and LO accuracy for up to
-    three final state partons. $\ddag$: gluon loop induced ZH }%
+    production. The order of the perturbative expansion in $\alphas$
+    is given unless qualified by ``EW'' indicating higher order
+    electroweak corrections. $*$:~$V+\text{jets}$ (diboson) event
+    generation with \SHERPA[2.2.1] merges matrix elements with NLO
+    accuracy for up to two (one) and LO accuracy for up to four
+    (three) final state partons. $\dagger$: $q\bar{q} / qg$ induced
+    production of $ZH$ is normalised using the total $pp \to ZH$ cross
+    section (NNLO+NLO EW) and subtracting the $gg \to ZH$ cross
+    section (NLO+NLL) using predictions from
+    Ref.~\cite{deFlorian:2016spz}. The table is adapted
+    from~\cite{ATLAS-CONF-2021-030}.}%
   \label{tab:monte_carlo}
 
   \resizebox{\textwidth}{!}{\input{tables/monte_carlo}}
