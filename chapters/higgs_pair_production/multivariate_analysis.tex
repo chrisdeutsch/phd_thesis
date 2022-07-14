@@ -119,8 +119,8 @@ bias and represents a form of overfitting.
 In this search, model selection is performed using 5-fold cross
 validation (CV), a generalisation of the 2-fold approach to a larger
 number of subdivisions, separately on even- and odd-numbered
-events. This approach effectively nests 5-fold CV inside of 2-fold CV
-and is therefore called \emph{nested cross
+events. This approach effectively nests 5-fold CV inside 2-fold CV and
+is therefore called \emph{nested cross
   validation}~\cite{cawley10,stone74}.
 
 \Cref{fig:cross_validation} shows a schematic description of one
@@ -129,7 +129,7 @@ CV randomly partitions events into five folds. For every choice of
 evaluation-fold, the model is trained on the remaining four folds and
 subsequently evaluated on the evaluation-fold. A decision between two
 competing models can be made by comparing the average and standard
-deviation of a evaluation metric over the five iterations of the inner
+deviation of an evaluation metric over the five iterations of the inner
 CV. Only after the best-performing model is selected, usually after
 re-fitting the model on the combination of all five folds, it is
 evaluated on the hold-out dataset.
@@ -436,7 +436,7 @@ selection. A value of the ROC-AUC of $1$ indicates perfect
 classification, while a value of $1/2$ corresponds to an uninformative
 classifier. The ROC-AUC is chosen as the metric to be optimised as it
 summarises the classifier's performance over all possible working
-points, i.e.~choices of thresholds on the classifier
+points, i.e.\ choices of thresholds on the classifier
 output~\cite{james13}.
 
 About 1600 unique BDT configurations are tested during the model
@@ -451,7 +451,7 @@ Out of all evaluated configurations, the ROC-AUC of the 200 best
 performing model configurations are statistically indistinguishable
 based on the CV results. In the absence of a clearly preferred
 configuration, the highest ranking configuration with the smallest
-maximum tree depth is chosen. A smaller tree depth, effectively
+maximum tree depth is selected. A smaller tree depth, effectively
 limiting the number variable interactions used in the
 classifier~\cite{hastie09}, is chosen to be less reliant on the
 quality of the modelling of higher order variable interactions in the
@@ -549,7 +549,7 @@ in~\Cref{sec:statistical_analysis}.
 The importance of input variables in the BDT can be estimated using
 the \emph{permutation importance} technique. It is a method to inspect
 the importance of input variables for predictions of a black box
-estimator, derived from a importance measure introduced in
+estimator, derived from an importance measure introduced in
 Ref.~\cite{breiman01} for random forests. To inspect the importance of
 a feature in a given model, the feature's values are permuted over all
 events and classes, breaking the relationship between the feature,
