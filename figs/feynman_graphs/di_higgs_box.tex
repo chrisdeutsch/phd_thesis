@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage[usenames,dvipsnames]{color}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{fmffile}{di_higgs_box_fmf}
+  \begin{fmfgraph*}(120,45)
+    \fmfstraight
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+
+    % gluons
+    \fmf{gluon}{i1,t1}
+    \fmf{gluon}{t2,i2}
+    \fmf{phantom,tension=0.92}{t1,t4}
+    \fmf{phantom,tension=0.92}{t2,t3}
+
+    % Higgs boson
+    \fmf{dashes,tension=1.1}{t4,o1}
+    \fmf{dashes,tension=1.1}{t3,o2}
+
+    % top loop
+    \fmf{fermion,tension=0}{t1,t2,t3,t4,t1}
+    
+    % labels
+    \fmflabel{$g$}{i1}
+    \fmflabel{$g$}{i2}
+    \fmflabel{$H$}{o1}
+    \fmflabel{$H$}{o2}
+
+    \fmfdot{t4}
+    \fmflabel{$\kappa_t$}{t4}
+    \fmfdot{t3}
+    \fmflabel{$\kappa_t$}{t3}
+
+  \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}
