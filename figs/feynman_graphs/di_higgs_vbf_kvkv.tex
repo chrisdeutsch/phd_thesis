@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage[usenames,dvipsnames]{color}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{fmffile}{di_higgs_vbf_kvkv_fmf}
+  \begin{fmfgraph*}(120,90)
+    %\fmfstraight
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2,o3,o4}
+
+    % Upper quark line
+    \fmf{fermion,tension=2.5}{i1,t1}
+    \fmf{fermion}{t1,o1}
+
+    % Lower quark line
+    \fmf{fermion, tension=2.5}{i2,t2}
+    \fmf{fermion}{t2,o4}
+
+    % V fusion
+    \fmf{boson, tension=1.5}{t1,u1}
+    \fmf{boson, tension=1.5}{t2,u2}
+    \fmf{boson}{u2,u1}
+
+    \fmf{dashes}{u1,o2}
+    \fmf{dashes}{u2,o3}
+
+    % Labels
+    \fmflabel{$q$}{i1}
+    \fmflabel{$q$}{i2}
+    \fmflabel{$q$}{o1}
+    \fmflabel{$q$}{o4}
+
+    \fmflabel{$H$}{o2}
+    \fmflabel{$H$}{o3}
+
+    % Couplings
+    \fmfdot{u1}
+    \fmfv{label=$\kappa_{V}$, label.angle=180}{u1}
+
+    \fmfdot{u2}
+    \fmfv{label=$\kappa_{V}$, label.angle=180}{u2}
+  \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}
