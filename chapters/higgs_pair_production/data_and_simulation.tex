@@ -65,7 +65,7 @@ Non-resonant production of SM \HH via \ggF is simulated using
 \POWHEGBOX[v2]~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} at
 NLO (QCD) accounting for the effects of the finite top-quark mass on
 real and virtual
-corrections~\cite{Borowka:2016ehy,Baglio:2018lrj,Heinrich:2017kxx}.\footnote{As
+corrections~\cite{Borowka:2016ehy,Baglio:2018lrj,Heinrich:2017kxx,Heinrich:2019bkc,Heinrich:2020ckp}.\footnote{As
   opposed to earlier calculations in the $m_{t} \to \infty$ limit
   using effective field theory approximations simplifying top-quark
   loops to effective couplings. See for example
@@ -73,9 +73,10 @@ corrections~\cite{Borowka:2016ehy,Baglio:2018lrj,Heinrich:2017kxx}.\footnote{As
   (NNLO).} The generator uses the
 \PDFforLHC[15nlo]~\cite{Butterworth:2015oua} set of PDFs and is
 interfaced to \PYTHIA[8]~\cite{Sjostrand:2014zea} with the A14 set of
-tuned parameters~\cite{ATL-PHYS-PUB-2014-021} for the parton shower
-and hadronisation. The sample of simulated events is normalised using
-an inclusive $gg \to \HH$ cross section of \SI{31.05}{\femto\barn} at
+tuned parameters~\cite{ATL-PHYS-PUB-2014-021} for parton showering,
+hadronisation, and the underlying event. The sample of simulated
+events is normalised using an inclusive $gg \to \HH$ cross section of
+\SI{31.05}{\femto\barn} at
 $\text{NNLO}_{\text{FTapprox}}$~\cite{Grazzini:2018bsd}, which is a
 combination of the full-theory prediction at NLO with additional NNLO
 corrections derived in the heavy top-quark mass limit. The theoretical
@@ -88,8 +89,8 @@ Non-resonant production of SM \HH via VBF is simulated using
 at LO (QCD) %~\cite{Bishara:2016kjn}
 using the \NNPDF[3.0nlo] set of PDFs~\cite{Ball:2014uwa}. The matrix
 element generator is interfaced to \PYTHIA[8] with the A14 tune for
-parton showering and hadronisation. An inclusive cross section of
-\SI{1.726}{\femto\barn}
+parton showering, hadronisation, and the underlying event. An
+inclusive cross section of \SI{1.726}{\femto\barn}
 at~$\text{N}^3\text{LO}$~\cite{Dreyer:2018qbw,LHCHWGHH} is used to
 normalise the sample of generated events with theoretical
 uncertainties of $^{+0.03\,\%}_{-0.04\,\%}$ from scale variations and
@@ -101,11 +102,11 @@ resonances, $X$, produced in \ggF is simulated using \MGNLO at LO
 (QCD) using the \NNPDF[2.3lo] set of PDFs~\cite{Ball:2012cx}. Twenty
 generic benchmark signals are generated with resonance masses, \mX,
 ranging from \SIrange{251}{1600}{\GeV} and with narrow widths of the
-resonances ($\Gamma_{X} = \SI{10}{\MeV}$ in the event
-generation). The interference with non-resonant SM \HH production is
-neglected. The matrix element generator is interfaced to
+resonances ($\Gamma_{X} = \SI{10}{\MeV}$ in the event generation). The
+interference with non-resonant SM \HH production is neglected. The
+matrix element generator is interfaced to
 \HERWIG[7.1]~\cite{Gieseke:2012ft,Bellm:2017jjp} with the default tune
-for parton shower and hadronisation.
+for parton shower, hadronisation, and the underlying event.
 % Why narrow width? -> Broad resonances are very model dependent
 
 Decays of hadrons containing $b$ and $c$ quarks are simulated using
