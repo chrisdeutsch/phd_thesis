@@ -1,5 +1,5 @@
 % Motivation paragraph
-\Cref{sec:hh_motivation}
+Theoretical motivation in~\Cref{sec:hh_motivation}.
 
 In the current experimental environment of HEP, direct searches for
 non-resonant Higgs boson pair production are the most sensitive probes
@@ -20,55 +20,71 @@ the destructive interference between the box and triangle diagram
 becomes maximal for $\klambda \approx 2.3$ at which point the cross
 section is at a minimum of about \SI{13}{\femto\barn}. Similar
 behaviour is expected for the VBF production mode although involving
-different diagrams (cf.\ \Cref{fig:hh_feynmans}) and yielding the
-cross section minimum just below $\klambda = 2$.
+different diagrams (cf.\ \Cref{fig:hh_feynmans}) and yielding a cross
+section minimum below $\klambda = 2$.
 
-Anomalous values of the Higgs boson self-coupling constant also change
-the differential \HH production cross section, primarily affecting the
-distribution of the Higgs boson pair invariant mass, \mHH. The effect
-of anomalous \klambda on the shape XXXXX is shown
-in~\Cref{fig:hh_xsec_mhh} for the \ggF production mode.
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.55\textwidth]{self_coupling/hh_xsec}
+
+  \caption{Total \HH production cross section via \ggF and VBF as a
+    function of \klambda for $\mH = \SI{125.0}{\GeV}$ in
+    \pp-collisions at $\sqrt{s} = \SI{13}{\GeV}$. The production cross
+    section via \ggF is given at $\text{NNLO}_{\text{NLO-i}}$ rescaled
+    to $\text{NNLO}_{\text{FTapprox}}$ in the $\klambda = 1$
+    limit~\cite{Amoroso:2020lgh,Baglio:2020wgt,LHCHWGHH,Grazzini:2018bsd}. The
+    production cross section via VBF is obtained from simulation with
+    \MGNLO at LO after applying an $\text{N}^3\text{LO}$ $k$-factor
+    derived for the SM case~\cite{Dreyer:2018qbw,LHCHWGHH}. The cross
+    sections are parameterised as quadratic functions of
+    \klambda. Theoretical uncertainties are shown as coloured bands.}%
+  \label{fig:hh_xsec_incl}
+\end{figure}
+
+In addition to the change in total cross section, anomalous values of
+\klambda alter the differential \HH production cross section
+(primarily) in terms of the invariant mass of the Higgs boson
+pair. This is shown in \Cref{fig:hh_xsec_mhh} for the dominant \ggF
+production mode and for five exemplary values of \klambda. The \mHH
+spectra for different values of \klambda show large differences in
+their \emph{hardness} as measured by the median of the \mHH
+distribution in~\Cref{fig:hh_median_mhh}. For \klambda values just
+below or at the point of maximum destructive interference between the
+box and triangle diagram the \mHH spectra are moderately hard and have
+a pronounced double peak structure (shown in
+\Cref{fig:hh_xsec_mhh}). For other values of \klambda, particularly
+for $\klambda \approx 3$, the cross section at low \mHH is enhanced
+leading to softer \mHH spectra.
 
 \begin{figure}[htbp]
   \begin{subfigure}[t]{0.485\textwidth}
-    \includegraphics[width=\textwidth]{self_coupling/hh_xsec}
-    \subcaption{Total \HH production cross section via \ggF and VBF as
-      a function of \klambda. The production cross section via \ggF is
-      given at $\text{NNLO}_{\text{NLO-i}}$ rescaled to
-      $\text{NNLO}_{\text{FTapprox}}$ in the $\klambda = 1$
-      limit~\cite{Amoroso:2020lgh,Baglio:2020wgt,LHCHWGHH,Grazzini:2018bsd}. The
-      production cross section via VBF is obtained from simulation
-      with \MGNLO at LO after applying an $\text{N}^3\text{LO}$
-      $k$-factor derived for the SM
-      case~\cite{Dreyer:2018qbw,LHCHWGHH}. The cross sections are
-      parameterised as quadratic functions of \klambda. Theoretical
-      uncertainties are shown as coloured bands.}%
-    \label{fig:hh_xsec_incl}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[t]{0.485\textwidth}
     \includegraphics[width=\textwidth]{self_coupling/hh_mhh_vs_klam}
     \subcaption{Differential \HH production cross section with respect
-      to \mHH at generator-level for the \ggF production mode and
-      selected values of \klambda. The cross sections are obtained
-      from simulation with \POWHEGBOX[v2] at NLO including the
-      top-quark mass
-      dependence~\cite{Heinrich:2019bkc,Heinrich:2020ckp} for
-      $\klambda = 0, 1, 10$. For $\klambda = -5, 2$, the differential
-      cross sections are estimated using morphing techniques derived
-      at LO~\cite{ATL-PHYS-PUB-2019-007}. The differential cross
-      sections are normalised by dividing by the total cross
-      section. Only statistical uncertainties from the finite number
-      of generated events are shown.}%
+      to \mHH for the \ggF production mode and selected values of
+      \klambda. The differential cross sections are normalised by
+      dividing by the total cross section. Only statistical
+      uncertainties from the finite number of generated events are
+      shown.}%
     \label{fig:hh_xsec_mhh}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[t]{0.485\textwidth}
+    \includegraphics[width=\textwidth]{self_coupling/hh_median_mhh_vs_klam}
+    \subcaption{Median value of \mHH for \HH events produced via \ggF
+      as a function of \klambda.}%
+    \label{fig:hh_median_mhh}
   \end{subfigure}
 
-  \caption{Variation of the total (a) and differential (b) Higgs boson
-    pair production cross section with \klambda for
-    $\mH = \SI{125.0}{\GeV}$ in $pp$-collisions at
-    $\sqrt{s} = \SI{13}{\TeV}$. A description of the total cross
-    section and morphing techniques used to obtain differential
-    predictions for arbitrary \klambda is given in~\Cref{TODO}.}%
-  \label{fig:hh_xsec_vs_klam}
+  \caption{Differential cross section of Higgs boson pair production
+    via \ggF for selected values of \klambda (a) and the corresponding
+    median value of \mHH as a function of \klambda (b). Both are shown
+    for \pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$ and assuming
+    $\mH= \SI{125.0}{\GeV}$. The cross sections are obtained from
+    simulation with \POWHEGBOX[v2] at NLO including the top-quark mass
+    dependence~\cite{Heinrich:2019bkc,Heinrich:2020ckp} for
+    $\klambda = 0, 1, 10$. Differential cross sections for other
+    values of \klambda are estimated using morphing techniques derived
+    at LO~\cite{ATL-PHYS-PUB-2019-007}.}
 \end{figure}
 
 The results from the search for non-resonant Higgs bosons pair
@@ -77,6 +93,8 @@ ATLAS collaboration in the context of possible variations of the Higgs
 boson self-coupling constant \lambdahhh in
 Ref.~\cite{ATLAS-CONF-2021-052}.
 
+Should say that bbtautau is only good because the SM is already pretty
+hard. -> acceptance vs mHH in \hadhad.
 
 The total Higgs boson pair production cross section with anomalous
 couplings. Following recommendations by the LHC Higgs Working
