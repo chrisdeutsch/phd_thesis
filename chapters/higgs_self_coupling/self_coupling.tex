@@ -101,19 +101,75 @@ results presented in this chapter are based on
 Ref.~\cite{ATLAS-CONF-2021-052} published by the ATLAS collaboration.
 
 
-\section{Reinterpretation of the Search for SM \HH Production}
+\section{Reinterpretation of the Search for SM \HH Production}%
+\label{sec:reinterpretation}
 
-\subsection{Signal Cross Sections and Signal Templates}
+The reinterpretation of the search for SM \HH production
+($\klambda = 1$) in terms of anomalous values of \klambda is performed
+based on the statistical model developed in
+\Cref{sec:statistical_analysis}. With respect to the SM \HH search
+presented previously, only the signal model used for the statistical
+interpretation is altered. The discriminants entering the fit and
+their binning remain at the configuration optimised for the SM \HH
+signal.
 
-\subsection{Assumptions}
+The SM \HH signal model used for the statistical interpretation is
+replaced by a model of non-resonant \HH production with arbitrary but
+fixed \klambda. This signal is normalised according to a cross section
+of $\sigma_{HH}^{\klambda}$ which is considered as a POI in the
+statistical analysis. Upper limits are set on $\sigma_{HH}^{\klambda}$
+as a function of \klambda and compare to the theoretical cross section
+for a given value of \klambda. Intervals of \klambda are excluded if
+the cross section predicted by theory is larger than the
+experimentally determined upper limit.
 
-\section{Results}
+This reinterpretation makes the assumption that the background model
+remains unchanged for different assumed values of \klambda. However,
+this is not the case since single Higgs boson production is a
+non-negligible background in this analysis and both the production
+cross sections and the branching ratios of the Higgs boson decay
+depend on \klambda.
 
-\section{Conclusion and Outlook}
+\todo[inline]{Should say that this re-interpretation was generally
+  considered while developing the analysis outlined in the previous
+  chapter.}
 
+
+\subsection{Signal Model}
+
+\Cref{sec:data_and_simulation}
+
+ggF: Re-weighting
+
+VBF: Linear combination
+
+
+\todo[inline]{Hadhad channel: Acceptance times efficiency vs mHH.}
+
+\todo[inline]{Hadhad channel: Acceptance times efficiency vs kLambda.}
 
 Should say that bbtautau is only good because the SM is already pretty
 hard. -> acceptance vs mHH in \hadhad.
+
+
+\section{Results}%
+\label{sec:reinterpretation_results}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.6\textwidth]{self_coupling/klam_scan_result}
+
+  \caption{Klambda scan. The figure is taken from
+    Ref.~\cite{ATLAS-CONF-2021-052}.}%
+  \label{fig:klambda_scan}
+\end{figure}
+
+
+\section{Conclusion and Outlook}%
+\label{sec:reinterpretation_conclusion}
+
 
 The total Higgs boson pair production cross section with anomalous
 couplings. Following recommendations by the LHC Higgs Working
@@ -143,35 +199,11 @@ Group~\cite{LHCHWGHH}:
 
 \end{description}
 
-\todo[inline]{Should say that this re-interpretation was generally
-  considered while developing the analysis outlined in the previous
-  chapter.}
-
-anomalous couplings
-
-Self-coupling modifier~$\klambda = \lambdahhh / \lambdahhh^{\text{SM}}$.
 
 \todo[inline]{Read YR about Higgs cross section predictions:
   \url{https://cds.cern.ch/record/2227475/files/CERN-2017-002-M.pdf}}
 
 Sample combination method:~\cite{ATL-PHYS-PUB-2019-007}
-
-
-
-\todo[inline]{Hadhad channel: Acceptance times efficiency vs mHH.}
-
-\todo[inline]{Hadhad channel: Acceptance times efficiency vs kLambda.}
-
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[width=0.6\textwidth]{self_coupling/klam_scan_result}
-
-  \caption{Klambda scan. The figure is taken from
-    Ref.~\cite{ATLAS-CONF-2021-052}.}%
-  \label{fig:klambda_scan}
-\end{figure}
 
 
 \todo{Updated result from H+HH
