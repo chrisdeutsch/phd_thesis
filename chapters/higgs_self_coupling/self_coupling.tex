@@ -86,8 +86,8 @@ resulting in comparatively soft \mHH spectra.
     simulation with \POWHEGBOX[v2] at NLO including the top-quark mass
     dependence~\cite{Heinrich:2019bkc,Heinrich:2020ckp} for
     $\klambda = 0, 1, 10$. Differential cross sections for other
-    values of \klambda are estimated using morphing techniques derived
-    at LO~\cite{ATL-PHYS-PUB-2019-007}.}
+    values of \klambda are estimated using morphing
+    techniques~\cite{ATL-PHYS-PUB-2019-007}.}
 \end{figure}
 
 This chapter presents a reinterpretation of the search for SM \HH
@@ -110,7 +110,9 @@ of $-5.0 < \klambda < 12.0$ at \SI{95}{\percent}
 CL~\cite{HDBS-2018-58}. The result presented in this chapter is based
 on Ref.~\cite{ATLAS-CONF-2021-052} and focuses on the reinterpretation
 of the result obtained in \Cref{sec:dihiggs} in the $\bbbar\tautau$
-channel with \SI{139}{\per\femto\barn} of \pp-collision data.
+channel with \SI{139}{\per\femto\barn} of \pp-collision data. The
+methodology adopted for the reinterpretation is a continuation of an
+earlier result in Ref.~\cite{HDBS-2018-58} by the ATLAS collaboration.
 
 This chapter is structured as follows. \Cref{sec:reinterpretation}
 describes the statistical model used for the reinterpretation
@@ -175,10 +177,42 @@ ATLAS collaboration in Ref.~\cite{ATL-HDBS-2022-03-002} dropping some
 of the assumptions made in this chapter.
 
 
-\subsection{Signal Model}%
+\subsection{Signal Model for Anomalous Higgs Boson Self-Coupling
+  Strengths}%
 \label{sec:self_coupling_signals}
 
-\Cref{sec:data_and_simulation}
+Templates of the contribution of a signal with anomalous values of
+\klambda in all three signal regions are required to construct the
+signal model. These are obtained using morphing and re-weighting
+techniques that will be explained hereafter. An ingredient for both
+are simulated event samples for different assumed values of
+\klambda. The event simulation proceeds using the same generator setup
+described previously in \Cref{sec:data_and_simulation}. Non-resonant
+\HH events are generated for $\klambda = 1, 10$ for the \ggF
+production mode and $\klambda = 0, 1, 10, 20$ for the VBF production
+mode. Additionally, large samples of events from non-resonant \HH
+production via \ggF are generated for $\klambda = 0, 1, 10, 20$
+without simulation of the ATLAS detector. These event samples are
+normalised using the cross sections previously shown in
+\Cref{fig:hh_xsec_incl}.
+
+% Based on: (?)
+% https://link.springer.com/content/pdf/10.1007/JHEP06(2019)066.pdf
+At LO in \klambda the amplitudes involved in Higgs boson pair
+production can be written as $\klambda \mathcal{A} + \mathcal{B}$
+where $\mathcal{A}$ is the amplitude of diagrams involving the Higgs
+boson self-coupling and $\mathcal{B}$ summarises all other
+contributing diagrams. Squaring the amplitude results in a term from
+the diagram involving the Higgs boson self-coupling proportional to
+$\klambda^2$, an interference term proportional to $\klambda$, and the
+term originating from diagrams without Higgs boson
+self-coupling. These considerations are applicable both to the \ggF
+and the VBF production modes.
+
+- Re-weighting
+
+- Uncertainties
+
 
 ggF: Re-weighting
 
