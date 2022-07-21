@@ -107,17 +107,10 @@ using up to \SI{36.1}{\per\femto\barn} of \pp-collision data taken
 during Run~2 of the LHC by combining the results of six searches for
 non-resonant \HH production. This combination yielded an allowed range
 of $-5.0 < \klambda < 12.0$ at \SI{95}{\percent}
-CL~\cite{HDBS-2018-58}. The results presented in this chapter are
-based on Ref.~\cite{ATLAS-CONF-2021-052} and focuses on the
-reinterpretation of the result obtained in \Cref{sec:dihiggs} in the
-$\bbbar\tautau$ channel with \SI{139}{\per\femto\barn} of
-\pp-collision data.
-
-% These results were superseded by a combination of the most sensitive
-% search channels for non-resonant \HH and single Higgs boson
-% production by the ATLAS collaboration in
-% Ref.~\cite{ATLAS-CONF-2022-050}, which is not discussed in detail in
-% this chapter.
+CL~\cite{HDBS-2018-58}. The result presented in this chapter is based
+on Ref.~\cite{ATLAS-CONF-2021-052} and focuses on the reinterpretation
+of the result obtained in \Cref{sec:dihiggs} in the $\bbbar\tautau$
+channel with \SI{139}{\per\femto\barn} of \pp-collision data.
 
 This chapter is structured as follows. \Cref{sec:reinterpretation}
 describes the statistical model used for the reinterpretation
@@ -130,50 +123,60 @@ in~\Cref{sec:reinterpretation_conclusion} with an outlook.
 \section{Reinterpretation of the Search for SM \HH Production}%
 \label{sec:reinterpretation}
 
-The reinterpretation of the search for SM \HH production
-($\klambda = 1$) in terms of anomalous values of \klambda is performed
-based on the statistical model developed in
-\Cref{sec:statistical_analysis}. With respect to the SM \HH search
-presented previously, only the signal model used for the statistical
-interpretation is altered. The discriminants entering the fit and
-their binning remain at the configuration optimised for the SM \HH
-signal.
+The SM \HH search from \Cref{sec:dihiggs} is reinterpreted to set
+upper limits on the cross section of non-resonant \HH production as a
+function of the assumed valued of \klambda. These upper limits allow,
+by comparison with the theoretical cross section predictions
+(cf.~\Cref{fig:hh_xsec_incl}), to exclude regions of \klambda that are
+incompatible with the observations made in the SM \HH search. The
+reinterpretation adopts the statistical framework presented in
+\Cref{sec:statistical_analysis} with few modifications. These
+modifications are restricted to the signal model used in the
+statistical interpretation. The background model and final
+discriminants, including their binning, remain identical to those in
+the SM \HH search.
 
-The SM \HH signal model used for the statistical interpretation is
-replaced by a model of non-resonant \HH production with arbitrary but
-fixed \klambda. Both the \ggF and the VBF production mode are
-considered. This signal is normalised according to a cross section of
-$\sigma_{HH}^{\klambda}$ which is considered as a POI in the
-statistical analysis. Upper limits are set on $\sigma_{HH}^{\klambda}$
-as a function of \klambda and compare to the theoretical cross section
-for a given value of \klambda. Intervals of \klambda are excluded if
-the cross section predicted by theory is larger than the
-experimentally determined upper limit.
+The signal model used for the statistical interpretation is obtained
+by replacing the SM \HH ($\klambda = 1$) signal with signals from
+non-resonant \HH production with arbitrary but fixed \klambda. Similar
+to the SM \HH search, the combination of the \ggF and VBF production
+modes is considered as the signal. The cross section of the signal
+process, $\sigma_{\text{ggF+VBF}}$, is considered as the parameter of
+interest and is allowed to vary freely in the model. The methods for
+obtaining signal templates in the signal regions will be described in
+\Cref{sec:self_coupling_signals}.
 
-This reinterpretation makes the assumption that the background model
-remains unchanged for different assumed values of \klambda. However,
-this is not the case since single Higgs boson production is a small
-but non-negligible background and both the production cross sections
-and the branching ratios of the Higgs boson decay depend on \klambda.
+The adopted method of reinterpretation makes assumptions that are
+given in the following. First, except for \klambda, all coupling
+strengths are assumed to adhere to the SM predictions. Second, the
+single Higgs boson production cross sections and branching ratios are
+fixed at their SM values and are thus assumed to be independent of
+\klambda. This is generally not the case, however, since variations of
+\klambda affect both the production cross sections and branching
+ratios due to higher-order electroweak corrections. These effects and
+their sensitivity to \klambda are discussed in
+Refs.~\cite{ATL-PHYS-PUB-2019-009,Degrassi:2016wml,Maltoni:2017ims}.
+Since backgrounds from single Higgs boson production are
+non-negligible in the SM \HH search, it is instructive to gauge the
+crudeness of this approximation over the allowed interval of
+$-5.0 < \klambda < 12.0$ from previous results of the ATLAS
+collaboration~\cite{HDBS-2018-58}. In the considered \klambda
+interval, the single Higgs boson production cross sections deviate
+from the SM prediction by up to \SI{12}{\percent} (\SI{25}{\percent})
+for the \ggF, VBF, and $VH$ production modes ($\ttbar H$ production
+mode)~\cite{ATL-PHYS-PUB-2019-009}. The Higgs boson branching ratios
+to fermions show small (relative) deviations of up to \SI{3}{\percent}
+from the SM over the relevant \klambda
+range~\cite{ATL-PHYS-PUB-2019-009}. For the purpose of this
+reinterpretation, signal processes were generated assuming SM Higgs
+boson branching ratios for consistency with the treatment of single
+Higgs boson backgrounds. A follow-up analysis was performed by the
+ATLAS collaboration in Ref.~\cite{ATL-HDBS-2022-03-002} dropping some
+of the assumptions made in this chapter.
 
-References on H sensitivity to
-\klambda~\cite{ATL-PHYS-PUB-2019-009,Degrassi:2016wml,Maltoni:2017ims}.
 
-In the \klambda range (-3 to 12 based on old results) relevant for
-this search change in H->bb or H->tautau branching ratio is below
-5\%. This is also not considered for the Higgs decay in signal
-processes.
-
-Production cross sections for all except ttH below 10\%. ttH can
-change up to 15\%.
-
-- Assuming all other couplings are at their SM value.
-
-- Single Higgs boson production is affected by \klambda only from
-higher order EW corrections
-
-
-\subsection{Signal Model}
+\subsection{Signal Model}%
+\label{sec:self_coupling_signals}
 
 \Cref{sec:data_and_simulation}
 
@@ -224,6 +227,12 @@ Signal modelling uncertainties:
   \label{fig:klambda_scan}
 \end{figure}
 
+Upper limits are set on $\sigma_{HH}^{\klambda}$ as a function of
+\klambda and compare to the theoretical cross section for a given
+value of \klambda. Intervals of \klambda are excluded if the cross
+section predicted by theory is larger than the experimentally
+determined upper limit.
+
 
 \section{Conclusion and Outlook}%
 \label{sec:reinterpretation_conclusion}
@@ -266,6 +275,11 @@ Sample combination method:~\cite{ATL-PHYS-PUB-2019-007}
 
 \todo{Updated result from H+HH
   combination~\cite{ATLAS-CONF-2022-050}.}
+
+These results were superseded by a combination of the most sensitive
+search channels for non-resonant \HH and single Higgs boson production
+by the ATLAS collaboration in Ref.~\cite{ATLAS-CONF-2022-050}, which
+is not discussed in detail in this chapter.
 
 
 %%% Local Variables:
