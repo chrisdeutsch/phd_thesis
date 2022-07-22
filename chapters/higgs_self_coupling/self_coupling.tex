@@ -174,49 +174,70 @@ reinterpretation, signal processes were generated assuming SM Higgs
 boson branching ratios for consistency with the treatment of single
 Higgs boson backgrounds. A follow-up analysis was performed by the
 ATLAS collaboration in Ref.~\cite{ATL-HDBS-2022-03-002} dropping some
-of the assumptions made in this chapter.
+assumptions made in this chapter.
 
 
-\subsection{Signal Model for Anomalous Higgs Boson Self-Coupling
-  Strengths}%
+\subsection{Signal Model for Anomalous Higgs Boson Self-Coupling Strengths}%
 \label{sec:self_coupling_signals}
 
 Templates of the contribution of a signal with anomalous values of
-\klambda in all three signal regions are required to construct the
-signal model. These are obtained using morphing and re-weighting
-techniques that will be explained hereafter. An ingredient for both
-are simulated event samples for different assumed values of
-\klambda. The event simulation proceeds using the same generator setup
-described previously in \Cref{sec:data_and_simulation}. Non-resonant
-\HH events are generated for $\klambda = 1, 10$ for the \ggF
-production mode and $\klambda = 0, 1, 10, 20$ for the VBF production
-mode. Additionally, large samples of events from non-resonant \HH
-production via \ggF are generated for $\klambda = 0, 1, 10, 20$
-without simulation of the ATLAS detector. These event samples are
-normalised using the cross sections previously shown in
-\Cref{fig:hh_xsec_incl}.
+\klambda in all three signal regions are required for the
+reinterpretation. These are obtained using morphing and re-weighting
+techniques developed by the ATLAS collaboration that will be explained
+hereafter. An ingredient for both are simulated event samples for
+different assumed values of \klambda. The event simulation proceeds
+using the same generator setup described in
+\Cref{sec:data_and_simulation}. Non-resonant \HH events are generated
+for $\klambda = 1, 10$ for the \ggF production mode and
+$\klambda = 0, 1, 10, 20$ for the VBF production mode. Additionally,
+large samples of events from non-resonant \HH production via \ggF are
+generated for $\klambda = 0, 1, 10, 20$ without simulation of the
+ATLAS detector. These event samples are normalised using the cross
+sections previously shown in \Cref{fig:hh_xsec_incl}.
 
-% Based on: (?)
-% https://link.springer.com/content/pdf/10.1007/JHEP06(2019)066.pdf
-At LO in \klambda the amplitudes involved in Higgs boson pair
-production can be written as $\klambda \mathcal{A} + \mathcal{B}$
+Established morphing techniques~\cite{ATL-PHYS-PUB-2015-047} are used
+to obtain signal templates for arbitrary \klambda by linearly
+combining a set of basis templates with fixed \klambda. This approach
+is motivated by considering the squared matrix element of non-resonant
+\HH production for either the \ggF or VBF production mode at leading
+order in \klambda. The squared matrix element can be written as
+\begin{align*}
+  |\mathcal{M}|^2 = \klambda^2 |\mathcal{A}|^2 + 2 \klambda \operatorname{Re}(\mathcal{A} \mathcal{B}^*) + |\mathcal{B}|^2 \,\text{,}
+\end{align*}
 where $\mathcal{A}$ is the amplitude of diagrams involving the Higgs
-boson self-coupling and $\mathcal{B}$ summarises all other
-contributing diagrams. Squaring the amplitude results in a term from
-the diagram involving the Higgs boson self-coupling proportional to
-$\klambda^2$, an interference term proportional to $\klambda$, and the
-term originating from diagrams without Higgs boson
-self-coupling. These considerations are applicable both to the \ggF
-and the VBF production modes.
+boson-self coupling after factoring out the value of the anomalous
+self-coupling constant, and $\mathcal{B}$ is the amplitude of diagrams
+not involving any Higgs boson self-interactions. Therefore, knowing
+$|\mathcal{M}|^2$ at three suitably chosen values of \klambda one can
+obtain the matrix element for any value of \klambda by solving for the
+squared amplitudes of $\mathcal{A}$ and $\mathcal{B}$, and the
+interference term. The same considerations apply to predictions of
+differential cross sections such that the differential cross section
+at any \klambda can be obtained by linearly combining the predictions
+at $\klambda = a, b$ and $c$ according to
+\begin{align*}
+  \frac{\mathrm{d}\sigma}{\mathrm{d}\myvec{x}}(\klambda)
+  = w_1(\klambda) \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\myvec{x}} \right|_{\klambda = a}
+  + w_2(\klambda) \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\myvec{x}} \right|_{\klambda = b}
+  + w_3(\klambda) \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\myvec{x}} \right|_{\klambda = c} \,\text{,}
+\end{align*}
+where the coefficients $w_i(\klambda)$ are second degree polynomials
+in \klambda.
 
-- Re-weighting
+For the \ggF production mode, this morphing technique is only used
+indirectly. Differential cross section predictions at generator-level
+are obtained by linearly combining the $\klambda = 0, 1, 20$ event
+samples without detector simulation. These predictions are used to
+derive a re-weighting in the generator-level \mHH for the
+$\klambda = 1$ event sample to obtain any \klambda. This re-weighting
+is then applied to the $\klambda = 1$ sample with full detector
+simulation. For the VBF production mode, the morphing technique is
+used directly by combining the $\klambda = 1, 2, 10$ samples. All
+other generated event samples not used for the morphing or
+re-weighting are used for validation purposes.
 
-- Uncertainties
 
 
-ggF: Re-weighting
-
-VBF: Linear combination
 
 \todo[inline]{Hadhad channel: Acceptance times efficiency vs mHH.}
 
