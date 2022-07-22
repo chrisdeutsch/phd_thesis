@@ -3,6 +3,10 @@ Theoretical motivation
 in~\Cref{sec:hh_motivation}.\todo[inline]{Should say something that
   new physics could alter the self-coupling constant.}
 
+\todo[inline]{Should maybe be less specific concerning saying that we
+  set constraints on \klambda since this is statistically not so well
+  founded. Rather cross section limits.}
+
 In the current experimental environment of HEP, direct searches for
 non-resonant Higgs boson pair production are the most sensitive probes
 of the Higgs boson self-coupling constant, \lambdahhh, due to the
@@ -204,13 +208,13 @@ order in \klambda. The squared matrix element can be written as
 \begin{align*}
   |\mathcal{M}|^2 = \klambda^2 |\mathcal{A}|^2 + 2 \klambda \operatorname{Re}(\mathcal{A} \mathcal{B}^*) + |\mathcal{B}|^2 \,\text{,}
 \end{align*}
-where $\mathcal{A}$ is the amplitude of diagrams involving the Higgs
-boson-self coupling after factoring out the value of the anomalous
-self-coupling constant, and $\mathcal{B}$ is the amplitude of diagrams
-not involving any Higgs boson self-interactions. Therefore, knowing
-$|\mathcal{M}|^2$ at three suitably chosen values of \klambda one can
-obtain the matrix element for any value of \klambda by solving for the
-squared amplitudes of $\mathcal{A}$ and $\mathcal{B}$, and the
+where $\mathcal{A}$ is the (complex) amplitude of diagrams involving
+the Higgs boson-self coupling after factoring out the value of the
+anomalous self-coupling constant, and $\mathcal{B}$ the amplitude of
+diagrams not involving any Higgs boson self-interactions. Therefore,
+knowing $|\mathcal{M}|^2$ at three suitably chosen values of \klambda
+one can obtain the matrix element for any value of \klambda by solving
+for the squared amplitudes of $\mathcal{A}$ and $\mathcal{B}$, and the
 interference term. The same considerations apply to predictions of
 differential cross sections such that the differential cross section
 at any \klambda can be obtained by linearly combining the predictions
@@ -242,43 +246,83 @@ Variations of the $H \to \tautau$ and $H \to \bbbar$ branching ratios,
 the parton shower program, the renormalisation and factorisation
 scales, and the PDFs and $\alphas$ are considered. Additionally, the
 statistical uncertainties of the \klambda re-weighting factors are
-considered in the statistical interpretation.
+accounted for.
 
 
-\subsection{Limitations}%
+\subsection{Sensitivity of the $\bbbar\tauhad\tauhad$ and
+  $\bbbar\taulep\tauhad$ Channels to the Higgs Boson Self-Coupling}%
 \label{sec:self_coupling_bbtt_limitations}
 
-\todo[inline]{Hadhad channel: Acceptance times efficiency vs mHH.}
-
-\todo[inline]{Hadhad channel: Acceptance times efficiency vs kLambda.}
-
-Should say that bbtautau is only good because the SM is already pretty
-hard. -> acceptance vs mHH in \hadhad.
-
-
-Signal modelling uncertainties:
-- Uncertainties from the re-weighting procedure are included
-- The signal modelling uncertainties are included
+The sensitivity of the $\bbbar\tauhad\tauhad$ and
+$\bbbar\taulep\tauhad$ channels to \klambda can be understood
+qualitatively by inspecting the acceptance times efficiency
+(\AccTimesEff) of the signal region selections for events from
+non-resonant \HH production. This is depicted in
+\Cref{fig:acceptance_vs_klambda}, showing the largest \AccTimesEff for
+signals with $\klambda \approx 2$ which is the value of the
+self-coupling where the median \mHH of the Higgs boson pairs produced
+in \ggF is largest. Generally, the sensitivity to non-resonant \HH
+production with soft \mHH spectra is limited due to the strict trigger
+thresholds applied to \tauhadvis, leptons, and jets. This is
+illustrated in \Cref{fig:acceptance_vs_mhh} exemplary for the dominant
+\ggF production mode, showing a large reduction in \AccTimesEff for
+events with low \mHH. The degradation in \AccTimesEff is more severe
+for the \hadhad channel selection due to the difficulties in
+triggering on fully hadronic final states while maintaining low
+trigger thresholds.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}[t]{0.485\textwidth}
     \includegraphics[width=\textwidth]{self_coupling/acc_vs_klam}
-    \subcaption{}
+    \subcaption{\AccTimesEff of signal events produced via \ggF and
+      VBF as a function of \klambda. The combination of all channels
+      is shown in black.}%
+    \label{fig:acceptance_vs_klambda}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{0.485\textwidth}
     \includegraphics[width=\textwidth]{self_coupling/acc_vs_mhh}
-    \subcaption{}
+    \subcaption{\AccTimesEff of signal events produced via \ggF in
+      bins of generator-level \mHH.}%
+    \label{fig:acceptance_vs_mhh}
   \end{subfigure}
 
-  \caption{}%
-  \label{fig:acceptance_vs_klambda}
+  \caption{Acceptance times efficiency (\AccTimesEff) of events from
+    non-resonant \HH production in the \hadhad, \lephad SLT, and
+    \lephad LTT channel. The \AccTimesEff is calculated as the
+    fraction of events with $\bbbar\tauhad\tauhad$ or
+    $\bbbar\taulep\tauhad$ final states passing the signal region
+    selections.}%
+  \label{fig:acceptance_vs_klambda_vs_mhh}
 \end{figure}
+
+Say \klambda with enhanced low \mHH might perform worse than
+\AccTimesEff suggests since the BDT is trained for a rather hard \mHH
+spectrum AND there is more overlap with background there.
 
 
 \section{Results}%
 \label{sec:reinterpretation_results}
+
+\todo[inline]{Should note that the intersection approach is a bit
+  sketchy from a statistical point of view.}
+
+The results were obtained by the ATLAS collaboration...
+
+Say that when going from the $\HH \to \bbbar\tautau$ measurement in
+\lephad and \hadhad to $pp \to HH$ assumes SM branching ratios of $H$.
+
+Upper limits are set on $\sigma_{HH}^{\klambda}$ as a function of
+\klambda and compare to the theoretical cross section for a given
+value of \klambda. Intervals of \klambda are excluded if the cross
+section predicted by theory is larger than the experimentally
+determined upper limit.
+
+Comparing the observed upper limits with the theoretical cross section
+prediction shows that \klambda outside of the interval
+$-2.4 \leq \klambda \leq 9.2$ would be incompatible with the exclusion
+limits.
 
 
 \begin{figure}[htbp]
@@ -286,16 +330,15 @@ Signal modelling uncertainties:
 
   \includegraphics[width=0.6\textwidth]{self_coupling/klam_scan_result}
 
-  \caption{Klambda scan. The figure is taken from
-    Ref.~\cite{ATLAS-CONF-2021-052}.}%
+  \caption{Upper limits on the Higgs boson pair production cross
+    section via \ggF and VBF, $\sigma_{\text{ggF+VBF}}$, at
+    \SI{95}{\percent} \CLs as a function the Higgs boson self-coupling
+    modifier, \klambda. The theory prediction previously described in
+    \Cref{fig:hh_xsec_incl} is overlaid. The expected upper limits
+    assume the absence of non-resonant \HH production. The figure is
+    taken from Ref.~\cite{ATLAS-CONF-2021-052}.}%
   \label{fig:klambda_scan}
 \end{figure}
-
-Upper limits are set on $\sigma_{HH}^{\klambda}$ as a function of
-\klambda and compare to the theoretical cross section for a given
-value of \klambda. Intervals of \klambda are excluded if the cross
-section predicted by theory is larger than the experimentally
-determined upper limit.
 
 
 \section{Conclusion and Outlook}%
@@ -334,9 +377,6 @@ Group~\cite{LHCHWGHH}:
 \todo[inline]{Read YR about Higgs cross section predictions:
   \url{https://cds.cern.ch/record/2227475/files/CERN-2017-002-M.pdf}}
 
-Sample combination method:~\cite{ATL-PHYS-PUB-2019-007}
-
-
 \todo{Updated result from H+HH
   combination~\cite{ATLAS-CONF-2022-050}.}
 
@@ -345,6 +385,8 @@ search channels for non-resonant \HH and single Higgs boson production
 by the ATLAS collaboration in Ref.~\cite{ATLAS-CONF-2022-050}, which
 is not discussed in detail in this chapter.
 
+\todo[inline]{Should mention H+HH combinations that help to improve
+  self-coupling measurements.}
 
 %%% Local Variables:
 %%% mode: latex
