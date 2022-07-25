@@ -1,7 +1,7 @@
 % Motivation paragraph
-Theoretical motivation
-in~\Cref{sec:hh_motivation}.\todo[inline]{Should say something that
-  new physics could alter the self-coupling constant.}
+Theoretical motivation in~\Cref{sec:hh_motivation}.
+
+\todo[inline]{New physics could alter the self-coupling constant.}
 
 \todo[inline]{Should maybe be less specific concerning saying that we
   set constraints on \klambda since this is statistically not so well
@@ -16,33 +16,83 @@ the self-coupling constant is given in terms of the modifier
 $\klambda = \lambdahhh / \lambdahhh^{\text{SM}}$ relating an assumed
 value of the self-coupling constant to the value predicted by the SM.
 
+
+This chapter presents a reinterpretation of the search for SM \HH
+production (i.e.\ $\klambda = 1$) presented in~\Cref{sec:dihiggs} in
+terms of non-resonant \HH production with anomalous values of the
+Higgs boson self-coupling constant. The reinterpretation allows to set
+upper limits on the non-resonant production cross section of Higgs
+boson pairs as a function of \klambda and by comparison with the
+theory cross section predictions exclude \klambda intervals that are
+incompatible with the observations of the SM \HH search.
+
+% yields
+% constraints on the allowed values of \klambda as the expected number
+% of signal events in the signal regions is sensitive to the value of
+% the self-coupling constant.
+
+% This sensitivity is due to the \klambda
+% dependency of both the non-resonant \HH production cross section, and
+% of the signal acceptance of the selections applied in the analysis
+% which is closely tied to the characteristic \mHH spectrum of a given
+% \klambda hypothesis.
+
+Previous constraints on \klambda were set by the ATLAS collaboration
+using up to \SI{36.1}{\per\femto\barn} of \pp-collision data taken
+during Run~2 of the LHC. This combination yielded an allowed range of
+$-5.0 < \klambda < 12.0$ at \SI{95}{\percent} CL by combining the
+results of six searches for non-resonant \HH
+production~\cite{HDBS-2018-58}. The methods used for the
+reinterpretation performed in this chapter are largely adopted from
+the earlier result published in Ref.~\cite{HDBS-2018-58}. The
+following focuses on the reinterpretation of the search in the
+$\bbbar\tautau$ channel with \SI{139}{\per\femto\barn} of
+\pp-collision data. The results of this chapter were partially
+published by the ATLAS collaboration in
+Ref.~\cite{ATLAS-CONF-2021-052}.
+
+This chapter is structured as follows. \Cref{sec:self_coupling_pheno}
+describes the phenomenology of a non-resonantly produced \HH signal
+with anomalous values of \klambda. The reinterpretation of the SM \HH
+search including the statistical model, assumptions, and limitations
+is disussed in \Cref{sec:reinterpretation}. The upper limits on the
+cross section and the excluded intervals of \klambda are presented in
+\Cref{sec:reinterpretation_results}. A conclusion and outlook is given
+in \Cref{sec:reinterpretation_conclusion}.
+
+
+\section{Phenomenology of Higgs Boson Pair Production with Anomalous
+  Higgs Boson Self-Coupling Strength}%
+\label{sec:self_coupling_pheno}
+
+Before describing the reinterpretation of the SM \HH search, the
+experimental signature of non-resonant \HH production with anomalous
+values of \klambda is discussed. The aim is to understand the
+sensitivity of direct searches for \HH production, and of the
+individual search channels.
+
 The non-resonant \HH production cross section via \ggF and VBF is
-shown in \Cref{fig:hh_xsec_incl} as a function of \klambda. The
-production via \ggF is the dominant contribution to the total
-non-resonant \HH production cross section throughout the considered
-\klambda range.
-% exceeding cross section of the VBF production mode by at elast a
-% factor of about five (18 for SM \HH production).
-For the \ggF production mode, the destructive interference between the
-box and triangle diagram becomes maximal at about $\klambda = 2.3$ at
-which point the cross section reaches a minimum of approximately
+shown in \Cref{fig:hh_xsec_incl} as a function of \klambda. The \ggF
+production mode is the dominant contribution to Higgs boson pair
+production throughout the considered \klambda range. For this
+production mode, the destructive interference between the box and
+triangle diagram becomes maximal at about $\klambda = 2.3$ at which
+point the cross section reaches a minimum of approximately
 \SI{13}{\femto\barn}. Similar behaviour is shown for the VBF
 production mode, although involving different diagrams (cf.\
-\Cref{fig:hh_feynmans}) and yielding a minimum in cross section below
-$\klambda = 2$.
+\Cref{fig:hh_feynmans}).
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.55\textwidth]{self_coupling/hh_xsec}
 
-  \caption{\HH production cross section via \ggF and VBF as a function
-    of \klambda for $\mH = \SI{125.0}{\GeV}$ in \pp-collisions at
-    $\sqrt{s} = \SI{13}{\GeV}$. The production cross section via \ggF
-    is given at $\text{NNLO}_{\text{NLO-i}}$ rescaled to
-    $\text{NNLO}_{\text{FTapprox}}$ in the $\klambda = 1$
+  \caption{Higgs boson pair production cross section via the \ggF and
+    VBF production modes as a function of \klambda. The production
+    cross section for \ggF is given at $\text{NNLO}_{\text{NLO-i}}$
+    rescaled to $\text{NNLO}_{\text{FTapprox}}$ in the $\klambda = 1$
     limit~\cite{Amoroso:2020lgh,Baglio:2020wgt,LHCHWGHH,Grazzini:2018bsd}. The
-    production cross section via VBF is obtained from simulation with
+    production cross section for VBF is obtained from simulation with
     \MGNLO at LO after applying an $\text{N}^3\text{LO}$ $k$-factor
     derived for the SM case~\cite{Dreyer:2018qbw,LHCHWGHH}. The cross
     sections are parameterised as quadratic functions of
@@ -51,79 +101,64 @@ $\klambda = 2$.
 \end{figure}
 
 In addition to the change in total cross section, anomalous values of
-\klambda alter the differential \HH production cross section primarily
-in terms of the invariant mass of the pair of Higgs bosons. This is
-shown in \Cref{fig:hh_xsec_mhh} for the dominant \ggF production mode
-and for five exemplary values of \klambda. The \mHH spectra for
-different values of \klambda show large differences in their
-\emph{hardness} as measured by the median of the \mHH distribution
+\klambda alter the differential \HH production cross section in terms
+of the invariant mass of the pair of Higgs bosons. This is shown in
+\Cref{fig:hh_xsec_mhh} for the dominant \ggF production mode and for
+five exemplary values of \klambda. The \mHH spectra for different
+values of \klambda show large differences in their \emph{hardness} as
+measured by the median of the \mHH distribution
 in~\Cref{fig:hh_median_mhh}. For \klambda values just below or at the
 point of maximum destructive interference between the box and triangle
 diagram, the \mHH spectra are moderately hard and have a pronounced
 double peak structure. For other values of \klambda, particularly for
 $\klambda \approx 3$, the cross section at low \mHH is enhanced
-resulting in comparatively soft \mHH spectra.
+resulting in softer \mHH spectra.
 
 \begin{figure}[htbp]
   \begin{subfigure}[t]{0.485\textwidth}
     \includegraphics[width=\textwidth]{self_coupling/hh_mhh_vs_klam}
-    \subcaption{Differential \HH production cross section with respect
-      to \mHH for the \ggF production mode and selected values of
-      \klambda. The differential cross sections are normalised by
-      dividing by the total cross section. Only statistical
-      uncertainties from the finite number of generated events are
-      shown.}%
+    \subcaption{%Differential \HH production cross section with respect
+      %to \mHH for the \ggF production mode and selected values of
+      %\klambda.
+      % Differential cross sections are normalised by dividing by the
+      % total cross section. Only statistical uncertainties from the
+      % finite number of generated events are shown.
+    }%
     \label{fig:hh_xsec_mhh}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{0.485\textwidth}
     \includegraphics[width=\textwidth]{self_coupling/hh_median_mhh_vs_klam}
-    \subcaption{Median value of \mHH for Higgs boson pairs produced
-      via \ggF as a function of \klambda.}%
+    \subcaption{%Median value of \mHH for Higgs boson pairs produced
+      % via \ggF as a function of \klambda
+    }%
     \label{fig:hh_median_mhh}
   \end{subfigure}
 
   \caption{Differential cross section of Higgs boson pair production
-    via \ggF for selected values of \klambda (a) and the corresponding
-    median value of \mHH as a function of \klambda (b). Both are shown
-    for \pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$ and assuming
-    $\mH= \SI{125.0}{\GeV}$. The cross sections are obtained from
-    simulation with \POWHEGBOX[v2] at NLO including the top-quark mass
+    with respect to \mHH for the \ggF production mode and selected
+    values of \klambda (a) and the median value of \mHH as a function
+    of \klambda (b). Both are given for \pp-collisions at
+    $\sqrt{s} = \SI{13}{\TeV}$ and assuming $\mH =
+    \SI{125.0}{\GeV}$. The cross sections are obtained from simulation
+    with \POWHEGBOX[v2] at NLO including the top-quark mass
     dependence~\cite{Heinrich:2019bkc,Heinrich:2020ckp} for
     $\klambda = 0, 1, 10$. Differential cross sections for other
-    values of \klambda are estimated using morphing
-    techniques~\cite{ATL-PHYS-PUB-2019-007}.}
+    values of \klambda are estimated using morphing techniques that
+    are discussed in \Cref{sec:self_coupling_signals}.}
 \end{figure}
 
-This chapter presents a reinterpretation of the search for SM \HH
-production ($\klambda = 1$) presented in~\Cref{sec:dihiggs} in terms
-of non-resonant \HH production with anomalous values of the Higgs
-boson self-coupling constant. A reinterpretation of this search yields
-constraints on the allowed values of \klambda as the expected number
-of signal events in the signal regions is sensitive to the value of
-the self-coupling constant. This sensitivity is due to the \klambda
-dependency of both the non-resonant \HH production cross section, and
-of the signal acceptance of the selections applied in the analysis
-which is closely tied to the characteristic \mHH spectrum of a given
-\klambda hypothesis.
-
-Previous constraints on \klambda were set by the ATLAS collaboration
-using up to \SI{36.1}{\per\femto\barn} of \pp-collision data taken
-during Run~2 of the LHC by combining the results of six searches for
-non-resonant \HH production. This combination yielded an allowed range
-of $-5.0 < \klambda < 12.0$ at \SI{95}{\percent}
-CL~\cite{HDBS-2018-58}. The result presented in this chapter is based
-on Ref.~\cite{ATLAS-CONF-2021-052} and focuses on the reinterpretation
-of the result obtained in \Cref{sec:dihiggs} in the $\bbbar\tautau$
-channel with \SI{139}{\per\femto\barn} of \pp-collision data. The
-methodology adopted for the reinterpretation is a continuation of an
-earlier result in Ref.~\cite{HDBS-2018-58} by the ATLAS collaboration.
-
-This chapter is structured as follows. \Cref{sec:reinterpretation}
-describes the statistical model used for the reinterpretation
-including its assumptions and limitations. The resulting constraints
-on \klambda are presented in \Cref{sec:reinterpretation_results} and
-discussed. The chapter concludes
-in~\Cref{sec:reinterpretation_conclusion} with an outlook.
+The \klambda-dependency of $\mathrm{d}\sigma / \mathrm{d}\mHH$ is an
+important factor affecting the sensitivity of searches to signals with
+anomalous \klambda. This is due to limitations in the signal
+acceptance at low \mHH of most search channels due to \pT-thresholds
+applied to objects at trigger-level. Particularly searches targeting
+(visible) hadronic final states such as $\bbbar\hadhad$ and \bbbb are
+affected. While these channels yield stringent cross section limits
+for the SM case, scenarios where the cross section at low \mHH is
+enhanced are less favourable due to the high thresholds of $b$-jet and
+\tauhadvis triggers. In these cases, the \bbyy channel, due to its use
+of di-photon triggers, yields larger signal acceptance and the most
+stringent exclusion limits of a single channel.
 
 
 \section{Reinterpretation of the Search for SM \HH Production}%
