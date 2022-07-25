@@ -337,73 +337,106 @@ abundance of background events with low \mHH.
 \section{Results}%
 \label{sec:reinterpretation_results}
 
-\todo[inline]{Should note that the intersection approach is a bit
-  sketchy from a statistical point of view.}
-
-The results were obtained by the ATLAS collaboration...
-
-Say that when going from the $\HH \to \bbbar\tautau$ measurement in
-\lephad and \hadhad to $pp \to HH$ assumes SM branching ratios of $H$.
-
-Upper limits are set on $\sigma_{HH}^{\klambda}$ as a function of
-\klambda and compare to the theoretical cross section for a given
-value of \klambda. Intervals of \klambda are excluded if the cross
-section predicted by theory is larger than the experimentally
-determined upper limit.
-
-Comparing the observed upper limits with the theoretical cross section
-prediction shows that \klambda outside of the interval
-$-2.4 \leq \klambda \leq 9.2$ would be incompatible with the exclusion
-limits.
-
+Upper limits are set on \xsecggfvbf at \SI{95}{\percent}
+\CLs~\cite{Read:2002hq} by combining the \hadhad, \lephad SLT, and
+\lephad LTT channels. The exclusion limits obtained by the ATLAS
+collaboration are shown in~\Cref{fig:klambda_scan} as a function of
+\klambda. They are compared to the prediction of the combined
+non-resonant \HH production cross section via \ggF and VBF, previously
+shown separately in~\Cref{fig:hh_xsec_incl}, from theory.  The most
+stringent limits are set for $\klambda \approx 2$ which follows from
+signal acceptance considerations discussed previously.
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{self_coupling/klam_scan_result}
+  \includegraphics[width=0.58\textwidth]{self_coupling/klam_scan_result}
 
   \caption{Upper limits on the Higgs boson pair production cross
-    section via \ggF and VBF, $\sigma_{\text{ggF+VBF}}$, at
-    \SI{95}{\percent} \CLs as a function the Higgs boson self-coupling
-    modifier, \klambda. The theory prediction previously described in
-    \Cref{fig:hh_xsec_incl} is overlaid. The expected upper limits
-    assume the absence of non-resonant \HH production. The figure is
-    taken from Ref.~\cite{ATLAS-CONF-2021-052}.}%
+    section via \ggF and VBF, \xsecggfvbf, for the combination of the
+    \hadhad, \lephad SLT, and \lephad LTT channels at
+    \SI{95}{\percent} CL as a function of \klambda. The theory
+    prediction previously described in \Cref{fig:hh_xsec_incl} is
+    overlaid. The expected upper limits assume the absence of
+    non-resonant \HH production~($\xsecggfvbf = 0$). The \klambda
+    intervals defined by the intersection of the theory prediction
+    with the observed/expected limits are given in the lower left of
+    the figure. The figure is taken from
+    Ref.~\cite{ATLAS-CONF-2021-052}.}%
   \label{fig:klambda_scan}
 \end{figure}
+
+The cross section predicted by theory exceeds the observed upper limit
+outside of an allowed \klambda interval of $[-2.4, 9.2]$.\footnote{The
+  allowed \klambda interval is not a confidence interval with
+  well-defined coverage properties. Such an interval would require a
+  more rigorous treatment that includes \klambda as a parameter in the
+  statistical model directly.} This result represents a significant
+improvement from the previous result of $-5.0 < \klambda < 12.0$
+($-7.4 < \klambda < 15.7$) for the combination of the most sensitive
+channels (\bbtautau only).
+
+bbyy: [-1.5, 6.7]~\cite{HDBS-2018-34}
+
+% https://cds.cern.ch/record/2811390
+bbbb: [-3.9, 11.1]~\cite{ATLAS-CONF-2022-035}
+
+CMS?
+
+
+% Upper limits are set on $\sigma_{HH}^{\klambda}$ as a function of
+% \klambda and compare to the theoretical cross section for a given
+% value of \klambda. Intervals of \klambda are excluded if the cross
+% section predicted by theory is larger than the experimentally
+% determined upper limit.
 
 
 \section{Conclusion and Outlook}%
 \label{sec:reinterpretation_conclusion}
 
+% H+HH Paper
+% https://cds.cern.ch/record/2815513/files/HDBS-2022-03-002.pdf
 
-The total Higgs boson pair production cross section with anomalous
-couplings. Following recommendations by the LHC Higgs Working
-Group~\cite{LHCHWGHH}:
-\begin{description}
+H+HH combination of \bbbb, \bbtautau, \bbyy with proper treatment of
+Higgs production cross sections and branching ratios yields a
+confidence interval of $-0.6 < \klambda < 6.6$ at \SI{95}{\percent}
+CL.
 
-\item[\ggF production mode] The cross sections of \HH production with
-  anomalous self-couplings were calculated in
-  Ref.~\cite{Amoroso:2020lgh} at $\text{NNLO}_{\text{NLO-i}}$
-  (NLO-improved). This prediction is obtained from combining the
-  result with the full top-quark mass dependence at
-  NLO~\cite{Buchalla:2018yce}
+After including single Higgs boson production yielding
+$-0.4 < \klambda < 6.3$.
+
+Most stringent limits on \klambda.
 
 
-  with NNLO corrections in the $m_{t} \to \infty$
-  limit~\cite{deFlorian:2017qfk}.
 
-  Additionally, the prediction is rescaled such that it coincides with
-  the SM \HH cross section at $\text{NNLO}_{\text{FTapprox}}$ at
-  $\klambda = 1$.
 
-  The total \HH production cross section via \ggF was found to depend
-  quadratically on \klambda and is thus parameterised
-  accordingly~\cite{LHCHWGHH}.
+% The total Higgs boson pair production cross section with anomalous
+% couplings. Following recommendations by the LHC Higgs Working
+% Group~\cite{LHCHWGHH}:
+% \begin{description}
 
-\item[VBF production mode]
+% \item[\ggF production mode] The cross sections of \HH production with
+%   anomalous self-couplings were calculated in
+%   Ref.~\cite{Amoroso:2020lgh} at $\text{NNLO}_{\text{NLO-i}}$
+%   (NLO-improved). This prediction is obtained from combining the
+%   result with the full top-quark mass dependence at
+%   NLO~\cite{Buchalla:2018yce}
 
-\end{description}
+
+%   with NNLO corrections in the $m_{t} \to \infty$
+%   limit~\cite{deFlorian:2017qfk}.
+
+%   Additionally, the prediction is rescaled such that it coincides with
+%   the SM \HH cross section at $\text{NNLO}_{\text{FTapprox}}$ at
+%   $\klambda = 1$.
+
+%   The total \HH production cross section via \ggF was found to depend
+%   quadratically on \klambda and is thus parameterised
+%   accordingly~\cite{LHCHWGHH}.
+
+% \item[VBF production mode]
+
+% \end{description}
 
 
 \todo[inline]{Read YR about Higgs cross section predictions:
