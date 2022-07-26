@@ -345,14 +345,13 @@ in~\Cref{fig:hh_xsec_incl}. The most stringent limits are set for
 $\klambda \approx 2$ which follows from signal acceptance
 considerations discussed previously. The theory prediction of the
 non-resonant \HH production cross section exceeds the observed upper
-limit outside of the allowed interval of
-\mbox{$\klambda \in [-2.4, 9.2]$}, thus excluding non-resonant \HH
-production with \mbox{$\klambda \notin [-2.4, 9.2]$} based on the
-upper limits on the cross sections.\footnote{The allowed \klambda
-  interval is not a confidence interval with well-defined coverage
-  properties. Such an interval would require a more rigorous treatment
-  that includes \klambda as a parameter in the statistical model
-  directly.}
+limit outside of the interval of \mbox{$\klambda \in [-2.4, 9.2]$},
+thus excluding non-resonant \HH production with
+\mbox{$\klambda \notin [-2.4, 9.2]$} based on the upper limits on the
+cross sections.\footnote{The allowed \klambda interval is not a
+  confidence interval with well-defined coverage properties. Such an
+  interval would require a more rigorous treatment that includes
+  \klambda as a parameter in the statistical model directly.}
 
 \begin{figure}[htbp]
   \centering
@@ -391,8 +390,9 @@ of signal events with low \mHH, the \bbtautau channel provides a lower
 bound that is competitive with the result of the \bbyy channel.
 % At the current stage of searches for non-resonant \HH production
 % with anomalous \klambda, the \bbbb channel
-The allowed \klambda intervals obtained by the CMS collaboration are
-summarised in~\Cref{tab:cms_klambda} in the appendix.
+\Cref{tab:cms_klambda} in the appendix summarises the results obtained
+by the CMS collaboration showing similar findings to those presented
+in \Cref{tab:allowed_klambda}.
 
 \begin{table}[htbp]
   \centering
@@ -402,7 +402,9 @@ summarised in~\Cref{tab:cms_klambda} in the appendix.
     \bbyy channels by the ATLAS collaboration using up to
     \SI{139}{\per\femto\barn} of \pp-collision data taken during Run~2
     of the LHC. The quoted results are obtained under the same
-    assumptions discussed in this chapter.}%
+    assumptions discussed in this chapter. The expectation is derived
+    from the upper limits obtained from Asimov datasets with
+    $\xsecggfvbf = 0$.}%
   \label{tab:allowed_klambda}
 
   \begin{tabular}{lccc}
@@ -422,25 +424,45 @@ summarised in~\Cref{tab:cms_klambda} in the appendix.
 \section{Conclusion and Outlook}%
 \label{sec:reinterpretation_conclusion}
 
-% H+HH Paper
-% https://cds.cern.ch/record/2815513/files/HDBS-2022-03-002.pdf
+An interpretation of the search for non-resonant \HH production in the
+\bbtautau channel (cf.~\Cref{sec:dihiggs}) in terms of anomalous Higgs
+boson self-coupling strengths was presented. Upper limits at
+\SI{95}{\percent} CL were set on the total cross section of Higgs
+boson pair production via \ggF and VBF as a function of the
+self-coupling constant. An allowed range of $\klambda \in [-2.4, 9.2]$
+was obtained by comparing the cross section exclusion limits with
+cross section predictions from theory. The results are based
+assumptions that other coupling constants are as predicted by the SM
+and neglecting changes in single Higgs boson production cross sections
+and Higgs boson branching ratios with \klambda due to electroweak
+corrections.
 
-H+HH combination of \bbbb, \bbtautau, \bbyy with proper treatment of
-Higgs production cross sections and branching ratios yields a
-confidence interval of $-0.6 < \klambda < 6.6$ at \SI{95}{\percent}
-CL.
+A follow-up analysis was performed by the ATLAS collaboration in
+Ref.~\cite{ATL-HDBS-2022-03-002} combining the three most sensitive
+channels to non-resonant \HH production, namely the \bbtautau, \bbbb,
+and \bbyy channels. In contrast to the method presented in this
+chapter, the statistical model is constructed using \klambda as a
+parameter of interest which allows to obtain confidence intervals on
+\klambda using likelihood-ratio tests. Moreover, the
+\klambda-dependency of single Higgs boson production and the Higgs
+boson decay were accounted for. The combination yields an observed
+confidence interval of $\klambda \in [-0.6, 6.6]$ (expectation of
+$\klambda \in [-2.1, 7.8]$ for the $\klambda = 1$ hypothesis) computed
+at \SI{95}{\percent} CL~\cite{ATL-HDBS-2022-03-002}. The \klambda
+confidence intervalbased on the \bbtautau search only is
+$\klambda \in [-2.7, 9.5]$ at \SI{95}{\percent} CL showing reasonable
+agreement with the result obtained in this chapter using simplifying
+assumptions.
 
-After including single Higgs boson production yielding
-$-0.4 < \klambda < 6.3$.
+Prospects for \klambda constraints at the HL-LHC were
 
-Most stringent limits on \klambda.
 
+\cite{ATL-PHYS-PUB-2021-044,ATL-PHYS-PUB-2022-001,ATL-PHYS-PUB-2022-005}
 
 Prospects for HL-LHC \SI{95}{\percent} CL\\
 Baseline (bbtautau): [-0.3, 7.4]\\
 Baseline (bbyy): [-0.2, 4.6]\\
 Baseline (bbyy + bbtautau): [0.0, 2.7]
-
 
 
 % The total Higgs boson pair production cross section with anomalous
@@ -471,20 +493,9 @@ Baseline (bbyy + bbtautau): [0.0, 2.7]
 
 % \end{description}
 
+% \todo[inline]{Read YR about Higgs cross section predictions:
+%   \url{https://cds.cern.ch/record/2227475/files/CERN-2017-002-M.pdf}}
 
-\todo[inline]{Read YR about Higgs cross section predictions:
-  \url{https://cds.cern.ch/record/2227475/files/CERN-2017-002-M.pdf}}
-
-\todo{Updated result from H+HH
-  combination~\cite{ATLAS-CONF-2022-050}.}
-
-These results were superseded by a combination of the most sensitive
-search channels for non-resonant \HH and single Higgs boson production
-by the ATLAS collaboration in Ref.~\cite{ATLAS-CONF-2022-050}, which
-is not discussed in detail in this chapter.
-
-\todo[inline]{Should mention H+HH combinations that help to improve
-  self-coupling measurements.}
 
 %%% Local Variables:
 %%% mode: latex
