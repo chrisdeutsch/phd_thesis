@@ -30,10 +30,10 @@ Previous constraints on \klambda were set by the ATLAS collaboration
 using up to \SI{36.1}{\per\femto\barn} of \pp-collision data taken
 during Run~2 of the LHC. This combination yielded an allowed range of
 $-5.0 < \klambda < 12.0$ at \SI{95}{\percent} CL by combining the
-results of six searches for non-resonant \HH
-production~\cite{HDBS-2018-58}. The methods used for the
-reinterpretation performed in this chapter are largely adopted from
-the earlier result published in Ref.~\cite{HDBS-2018-58}. The
+results of searches for non-resonant \HH production in the \bbtautau,
+\bbbb, and \bbyy channels~\cite{HDBS-2018-58}. The methods used for
+the reinterpretation performed in this chapter are largely adopted
+from the earlier result published in Ref.~\cite{HDBS-2018-58}. The
 following focuses on the reinterpretation of the search in the
 $\bbbar\tautau$ channel with \SI{139}{\per\femto\barn} of
 \pp-collision data. The results of this chapter were partially
@@ -209,8 +209,7 @@ analysis performed as part of Ref.~\cite{ATL-HDBS-2022-03-002} by the
 ATLAS collaboration, which is not discussed here, however.
 
 
-\subsection{Signal Templates and Uncertainties for Non-Resonant \HH
-  Production with Anomalous \klambda}%
+\subsection{Signal Templates and Uncertainties}%
 \label{sec:self_coupling_signals}
 
 Templates of the contribution of a signal with anomalous values of
@@ -278,8 +277,7 @@ statistical uncertainties of the \klambda re-weighting factors are
 accounted for.
 
 
-\subsection{Acceptance of Non-Resonant \HH Production with Anomalous
-  \klambda in the \bbtautau Channel}%
+\subsection{Signal Acceptance in the \bbtautau Channel}%
 \label{sec:self_coupling_bbtt_limitations}
 
 The sensitivity of the $\bbbar\hadhad$ and $\bbbar\lephad$ SLT/LTT
@@ -337,15 +335,24 @@ abundance of background events with low \mHH.
 \section{Results}%
 \label{sec:reinterpretation_results}
 
-Upper limits are set on \xsecggfvbf at \SI{95}{\percent}
-\CLs~\cite{Read:2002hq} by combining the \hadhad, \lephad SLT, and
-\lephad LTT channels. The exclusion limits obtained by the ATLAS
-collaboration are shown in~\Cref{fig:klambda_scan} as a function of
-\klambda. They are compared to the prediction of the combined
-non-resonant \HH production cross section via \ggF and VBF, previously
-shown separately in~\Cref{fig:hh_xsec_incl}, from theory.  The most
-stringent limits are set for $\klambda \approx 2$ which follows from
-signal acceptance considerations discussed previously.
+Upper limits are set on \xsecggfvbf at \SI{95}{\percent} CL by
+combining the \hadhad, \lephad SLT, and \lephad LTT channels. The
+exclusion limits obtained by the ATLAS collaboration are shown
+in~\Cref{fig:klambda_scan} as a function of \klambda. They are
+compared to the prediction of the combined non-resonant \HH production
+cross section via \ggF and VBF from theory, previously shown
+in~\Cref{fig:hh_xsec_incl}. The most stringent limits are set for
+$\klambda \approx 2$ which follows from signal acceptance
+considerations discussed previously. The theory prediction of the
+non-resonant \HH production cross section exceeds the observed upper
+limit outside of the allowed interval of
+\mbox{$\klambda \in [-2.4, 9.2]$}, thus excluding non-resonant \HH
+production with \mbox{$\klambda \notin [-2.4, 9.2]$} based on the
+upper limits on the cross sections.\footnote{The allowed \klambda
+  interval is not a confidence interval with well-defined coverage
+  properties. Such an interval would require a more rigorous treatment
+  that includes \klambda as a parameter in the statistical model
+  directly.}
 
 \begin{figure}[htbp]
   \centering
@@ -366,29 +373,50 @@ signal acceptance considerations discussed previously.
   \label{fig:klambda_scan}
 \end{figure}
 
-The cross section predicted by theory exceeds the observed upper limit
-outside of an allowed \klambda interval of $[-2.4, 9.2]$.\footnote{The
-  allowed \klambda interval is not a confidence interval with
-  well-defined coverage properties. Such an interval would require a
-  more rigorous treatment that includes \klambda as a parameter in the
-  statistical model directly.} This result represents a significant
-improvement from the previous result of $-5.0 < \klambda < 12.0$
-($-7.4 < \klambda < 15.7$) for the combination of the most sensitive
-channels (\bbtautau only).
+The result represents an improvement over earlier searches by the
+ATLAS collaboration using \SI{36}{\per\femto\barn} of \pp-collision
+data taken at the beginning of Run~2 of the LHC. These yielded allowed
+intervals of \mbox{$\klambda \in [-7.4, 15.7]$} and
+\mbox{$\klambda \in [-5.0, 12.0]$} for the \bbtautau channel and the
+combination of the \bbtautau, \bbbb, and \bbyy channels,
+respectively~\cite{HDBS-2018-58}.
 
-bbyy: [-1.5, 6.7]~\cite{HDBS-2018-34}
+A comparison between the allowed \klambda intervals of searches in the
+\bbtautau, \bbbb, and \bbyy channels performed at the end of Run~2 by
+the ATLAS collaboration is given in \Cref{tab:allowed_klambda}. The
+results of searches in the \bbtautau and \bbyy channels are
+complementary. While the \bbyy channel sets more stringent upper
+bounds on the allowed \klambda interval due to its superior acceptance
+of signal events with low \mHH, the \bbtautau channel provides a lower
+bound that is competitive with the result of the \bbyy channel.
+% At the current stage of searches for non-resonant \HH production
+% with anomalous \klambda, the \bbbb channel
+The allowed \klambda intervals obtained by the CMS collaboration are
+summarised in~\Cref{tab:cms_klambda} in the appendix.
 
-% https://cds.cern.ch/record/2811390
-bbbb: [-3.9, 11.1]~\cite{ATLAS-CONF-2022-035}
+\begin{table}[htbp]
+  \centering
 
-CMS?
+  \caption{Summary of allowed \klambda intervals obtained from
+    searches for non-resonant \HH production in \bbtautau, \bbbb, and
+    \bbyy channels by the ATLAS collaboration using up to
+    \SI{139}{\per\femto\barn} of \pp-collision data taken during Run~2
+    of the LHC. The quoted results are obtained under the same
+    assumptions discussed in this chapter.}%
+  \label{tab:allowed_klambda}
 
-
-% Upper limits are set on $\sigma_{HH}^{\klambda}$ as a function of
-% \klambda and compare to the theoretical cross section for a given
-% value of \klambda. Intervals of \klambda are excluded if the cross
-% section predicted by theory is larger than the experimentally
-% determined upper limit.
+  \begin{tabular}{lccc}
+    \toprule
+    & \multicolumn{3}{c}{Allowed \klambda interval} \\
+    \cmidrule{2-4}
+    Search channel & Observed & Expected & Reference  \\
+    \midrule
+    \bbtautau & $[-2.4, \phantom{0}9.2]$ & $[-2.0, \phantom{0}9.0]$ & \cite{ATLAS-CONF-2021-052} \\
+    \bbbb     & $[-3.9, 11.1]$           & $[-4.6, 10.8]$           & \cite{ATLAS-CONF-2022-035} \\
+    \bbyy     & $[-1.5, \phantom{0}6.7]$ & $[-2.4, \phantom{0}7.7]$ & \cite{HDBS-2018-34} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 
 \section{Conclusion and Outlook}%
@@ -407,6 +435,11 @@ $-0.4 < \klambda < 6.3$.
 
 Most stringent limits on \klambda.
 
+
+Prospects for HL-LHC \SI{95}{\percent} CL\\
+Baseline (bbtautau): [-0.3, 7.4]\\
+Baseline (bbyy): [-0.2, 4.6]\\
+Baseline (bbyy + bbtautau): [0.0, 2.7]
 
 
 
