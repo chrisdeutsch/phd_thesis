@@ -1,12 +1,3 @@
-% Motivation paragraph
-Theoretical motivation in~\Cref{sec:hh_motivation}.
-
-\todo[inline]{New physics could alter the self-coupling constant.}
-
-\todo[inline]{Should maybe be less specific concerning saying that we
-  set constraints on \klambda since this is statistically not so well
-  founded. Rather cross section limits.}
-
 In the current experimental environment of HEP, direct searches for
 non-resonant Higgs boson pair production are the most sensitive probes
 of the Higgs boson self-coupling constant, \lambdahhh, due to the
@@ -14,26 +5,30 @@ large sensitivity of the total and differential non-resonant \HH
 production cross section to anomalous values of \lambdahhh. Hereafter,
 the self-coupling constant is given in terms of the modifier
 $\klambda = \lambdahhh / \lambdahhh^{\text{SM}}$ relating an assumed
-value of the self-coupling constant to the value predicted by the SM.
+value of the self-coupling constant to the value predicted by the
+SM. Accessing the Higgs boson self-coupling is compelling to test the
+predictions of the SM and to search for deviations that can originate
+from BSM phenomena appearing at large energy scales and thus manifest
+as changes in the (effective) Higgs boson self-coupling constant.
 
 This chapter presents a reinterpretation of the search for SM \HH
-production (i.e.\ $\klambda = 1$) presented in~\Cref{sec:dihiggs} in
-terms of non-resonant \HH production with anomalous values of the
-Higgs boson self-coupling constant. The reinterpretation allows to set
-upper limits on the non-resonant production cross section of Higgs
-boson pairs as a function of \klambda. These upper limits allow, by
+production (i.e.\ $\klambda = 1$) from~\Cref{sec:dihiggs} in terms of
+non-resonant \HH production with anomalous values of the Higgs boson
+self-coupling constant. The reinterpretation allows to set upper
+limits on the non-resonant production cross section of Higgs boson
+pairs as a function of \klambda. These upper limits allow, by
 comparison with the theoretical cross section predictions, to exclude
 regions of \klambda that are incompatible with the observations made
 in the SM \HH search.
 
 Previous constraints on \klambda were set by the ATLAS collaboration
 using up to \SI{36.1}{\per\femto\barn} of \pp-collision data taken
-during Run~2 of the LHC. This combination yielded an allowed range of
-$-5.0 < \klambda < 12.0$ at \SI{95}{\percent} CL by combining the
-results of searches for non-resonant \HH production in the \bbtautau,
-\bbbb, and \bbyy channels~\cite{HDBS-2018-58}. The methods used for
-the reinterpretation performed in this chapter are largely adopted
-from the earlier result published in Ref.~\cite{HDBS-2018-58}. The
+during Run~2 of the LHC. An allowed range of $-5.0 < \klambda < 12.0$
+at \SI{95}{\percent} CL was obtained by combining the results of
+searches for non-resonant \HH production in the \bbtautau, \bbbb, and
+\bbyy channels~\cite{HDBS-2018-58}. The methods used for the
+reinterpretation performed in this chapter are largely adopted from
+the earlier result published in Ref.~\cite{HDBS-2018-58}. The
 following focuses on the reinterpretation of the search in the
 $\bbbar\tautau$ channel with \SI{139}{\per\femto\barn} of
 \pp-collision data. The results of this chapter were partially
@@ -43,7 +38,7 @@ Ref.~\cite{ATLAS-CONF-2021-052}.
 This chapter is structured as follows. \Cref{sec:self_coupling_pheno}
 describes the phenomenology of a non-resonantly produced \HH signal
 with anomalous values of \klambda. The reinterpretation of the SM \HH
-search including the statistical model, assumptions, and limitations
+search, including the statistical model, assumptions, and limitations,
 is discussed in \Cref{sec:reinterpretation}. The upper limits on the
 cross section and the excluded intervals of \klambda are presented in
 \Cref{sec:reinterpretation_results}. A conclusion and outlook is given
@@ -57,8 +52,8 @@ in \Cref{sec:reinterpretation_conclusion}.
 Before describing the reinterpretation of the SM \HH search, the
 experimental signature of non-resonant \HH production with anomalous
 values of \klambda is discussed. The aim is to understand the
-sensitivity of direct searches for \HH production, and of the
-individual search channels.
+sensitivity of direct searches for non-resonant \HH production, and of
+the individual search channels.
 
 The non-resonant \HH production cross section via \ggF and VBF is
 shown in \Cref{fig:hh_xsec_incl} as a function of \klambda. The \ggF
@@ -79,8 +74,10 @@ production mode, although involving different diagrams (cf.\
   \caption{Higgs boson pair production cross section via the \ggF and
     VBF production modes as a function of \klambda. The production
     cross section for \ggF is given at $\text{NNLO}_{\text{NLO-i}}$
-    rescaled to $\text{NNLO}_{\text{FTapprox}}$ in the $\klambda = 1$
-    limit~\cite{Amoroso:2020lgh,Baglio:2020wgt,LHCHWGHH,Grazzini:2018bsd}. The
+    rescaled to
+    $\text{NNLO}_{\text{FTapprox}}$~\cite{Grazzini:2018bsd} in the
+    $\klambda = 1$
+    limit~\cite{Amoroso:2020lgh,Baglio:2020wgt,LHCHWGHH}. The
     production cross section for VBF is obtained from simulation with
     \MGNLO at LO after applying an $\text{N}^3\text{LO}$ $k$-factor
     derived for the SM case~\cite{Dreyer:2018qbw,LHCHWGHH}. The cross
@@ -187,8 +184,8 @@ single Higgs boson production cross sections and branching ratios are
 fixed to their SM values and are thus assumed to be independent of
 \klambda. This is generally not the case since variations of \klambda
 affect both the production cross sections and branching ratios due to
-higher-order electroweak corrections. These effects and their
-sensitivity to \klambda are discussed in
+electroweak corrections. These effects and their sensitivity to
+\klambda are discussed in
 Refs.~\cite{ATL-PHYS-PUB-2019-009,Degrassi:2016wml,Maltoni:2017ims}.
 Since backgrounds from single Higgs boson production are
 non-negligible in the SM \HH search, it is instructive to gauge the
@@ -206,7 +203,8 @@ reinterpretation, signal processes were generated assuming SM Higgs
 boson branching ratios for consistency with the treatment of single
 Higgs boson backgrounds. These assumptions were dropped in a follow-up
 analysis performed as part of Ref.~\cite{ATL-HDBS-2022-03-002} by the
-ATLAS collaboration, which is not discussed here, however.
+ATLAS collaboration which is briefly discussed in the conclusion of
+this chapter.
 
 
 \subsection{Signal Templates and Uncertainties}%
@@ -216,9 +214,9 @@ Templates of the contribution of a signal with anomalous values of
 \klambda in all three signal regions are required for the
 reinterpretation. These are obtained using morphing and re-weighting
 techniques developed by the ATLAS collaboration that will be explained
-hereafter. An ingredient for both are simulated event samples for
-different assumed values of \klambda. The event simulation proceeds
-using the same generator setup described in
+hereafter. An ingredient for both methods are simulated event samples
+for different assumed values of \klambda. The event simulation
+proceeds using the same generator setup described in
 \Cref{sec:data_and_simulation}. Non-resonant \HH events are generated
 for $\klambda = 1, 10$ for the \ggF production mode and
 $\klambda = 0, 1, 10, 20$ for the VBF production mode. Additionally,
@@ -326,10 +324,10 @@ largest.
 
 The signal acceptance is not the only factor determining the
 sensitivity of the reinterpretation. Signals with enhanced cross
-sections at low \mHH have larger overlap with background events. This
-is a consequence of using multivariate discriminants trained to
-distinguish SM \HH events from backgrounds and the naturally greater
-abundance of background events with low \mHH.
+sections at low \mHH have larger overlap with background
+processes. This is a consequence of using multivariate discriminants
+trained to distinguish SM \HH events from backgrounds and the
+naturally greater abundance of background events with low \mHH.
 
 
 \section{Results}%
@@ -403,7 +401,7 @@ in \Cref{tab:allowed_klambda}.
     \SI{139}{\per\femto\barn} of \pp-collision data taken during Run~2
     of the LHC. The quoted results are obtained under the same
     assumptions discussed in this chapter. The expectation is derived
-    from the upper limits obtained from Asimov datasets with
+    from the upper limits using Asimov datasets with
     $\xsecggfvbf = 0$.}%
   \label{tab:allowed_klambda}
 
@@ -425,45 +423,55 @@ in \Cref{tab:allowed_klambda}.
 \label{sec:reinterpretation_conclusion}
 
 An interpretation of the search for non-resonant \HH production in the
-\bbtautau channel (cf.~\Cref{sec:dihiggs}) in terms of anomalous Higgs
-boson self-coupling strengths was presented. Upper limits at
-\SI{95}{\percent} CL were set on the total cross section of Higgs
-boson pair production via \ggF and VBF as a function of the
-self-coupling constant. An allowed range of $\klambda \in [-2.4, 9.2]$
-was obtained by comparing the cross section exclusion limits with
-cross section predictions from theory. The results are based
-assumptions that other coupling constants are as predicted by the SM
-and neglecting changes in single Higgs boson production cross sections
-and Higgs boson branching ratios with \klambda due to electroweak
-corrections.
+\bbtautau channel in terms of anomalous Higgs boson self-coupling
+strengths was presented. Upper limits at \SI{95}{\percent} CL were set
+on the total cross section of Higgs boson pair production via \ggF and
+VBF as a function of the self-coupling constant. An allowed range of
+$\klambda \in [-2.4, 9.2]$ was obtained by comparing the cross section
+exclusion limits with cross section predictions from theory. The
+results are based on assumptions that other coupling constants are as
+predicted by the SM and neglecting changes in single Higgs boson
+production cross sections and Higgs boson branching ratios with
+\klambda due to electroweak corrections.
 
 A follow-up analysis was performed by the ATLAS collaboration in
-Ref.~\cite{ATL-HDBS-2022-03-002} combining the three most sensitive
-channels to non-resonant \HH production, namely the \bbtautau, \bbbb,
+Ref.~\cite{ATL-HDBS-2022-03-002} combining the three channels most
+sensitive to non-resonant \HH production, namely the \bbtautau, \bbbb,
 and \bbyy channels. In contrast to the method presented in this
 chapter, the statistical model is constructed using \klambda as a
-parameter of interest which allows to obtain confidence intervals on
-\klambda using likelihood-ratio tests. Moreover, the
-\klambda-dependency of single Higgs boson production and the Higgs
-boson decay were accounted for. The combination yields an observed
-confidence interval of $\klambda \in [-0.6, 6.6]$ (expectation of
-$\klambda \in [-2.1, 7.8]$ for the $\klambda = 1$ hypothesis) computed
-at \SI{95}{\percent} CL~\cite{ATL-HDBS-2022-03-002}. The \klambda
-confidence intervalbased on the \bbtautau search only is
-$\klambda \in [-2.7, 9.5]$ at \SI{95}{\percent} CL showing reasonable
-agreement with the result obtained in this chapter using simplifying
-assumptions.
+parameter of interest, allowing to obtain confidence intervals using
+likelihood-ratio tests directly. Moreover, the \klambda-dependency of
+single Higgs boson production and the Higgs boson decay was accounted
+for. The confidence intervals (\SI{95}{\percent} CL) resulting from
+the combination are $\klambda \in [-0.6, 6.6]$ for the observed data
+with an expectation of $\klambda \in [-2.1, 7.8]$ under the
+$\klambda = 1$ hypothesis~\cite{ATL-HDBS-2022-03-002}. The \klambda
+confidence interval based on the \bbtautau search only is
+$\klambda \in [-2.7, 9.5]$ at \SI{95}{\percent}
+CL~\cite{ATL-HDBS-2022-03-002} showing reasonable agreement with the
+result obtained in this chapter that used simplifying assumptions.
 
-Prospects for \klambda constraints at the HL-LHC were
+Probing the nature of the Higgs boson self-coupling is an important
+physics goal of the HL-LHC. Prospects of the sensitivity to the
+self-coupling constant with \SI{3000}{\per\femto\barn} \pp-collision
+data at $\sqrt{s} = \SI{14}{\GeV}$ were derived in
+Ref.~\cite{ATL-PHYS-PUB-2021-044} by projecting the results of the SM
+\HH search in the \bbtautau channel. This extrapolation yields an
+expected confidence interval of $\klambda \in [-0.3, 7.4]$ at
+\SI{95}{\percent} CL assuming the SM
+hypothesis~\cite{ATL-PHYS-PUB-2021-044}. By combining with projections
+in the \bbyy channel~\cite{ATL-PHYS-PUB-2022-001}, first exclusion of
+the $\klambda = 0$ hypothesis at \SI{95}{\percent} CL could be
+achieved using the dataset collected at the
+HL-LHC~\cite{ATL-PHYS-PUB-2022-005}. This would represent a first
+milestone in experimentally supporting the Higgs boson
+self-interaction predicted by the SM, showing that a model without
+Higgs boson self-coupling would be disfavoured.
 
-
-\cite{ATL-PHYS-PUB-2021-044,ATL-PHYS-PUB-2022-001,ATL-PHYS-PUB-2022-005}
-
-Prospects for HL-LHC \SI{95}{\percent} CL\\
-Baseline (bbtautau): [-0.3, 7.4]\\
-Baseline (bbyy): [-0.2, 4.6]\\
-Baseline (bbyy + bbtautau): [0.0, 2.7]
-
+% Prospects for HL-LHC \SI{95}{\percent} CL\\
+% Baseline (bbtautau): [-0.3, 7.4]\\
+% Baseline (bbyy): [-0.2, 4.6]\\
+% Baseline (bbyy + bbtautau): [0.0, 2.7]
 
 % The total Higgs boson pair production cross section with anomalous
 % couplings. Following recommendations by the LHC Higgs Working
