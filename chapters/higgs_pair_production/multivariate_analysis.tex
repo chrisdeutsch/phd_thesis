@@ -1,4 +1,4 @@
-\section{Multivariate analysis}%
+\section{Multivariate Analysis}%
 \label{sec:multivariate_analysis}
 
 The event selection described in~\Cref{sec:event_selection} serves as
@@ -74,7 +74,7 @@ resonant production of \HH, including a brief discussion of their
 properties.
 
 
-\subsection{Cross validation method}
+\subsection{Cross Validation Method}
 \label{sec:mva_crossvalidation}
 
 Many machine learning algorithms
@@ -149,7 +149,7 @@ evaluated on the hold-out dataset.
 \end{figure}
 
 
-\subsection{Discriminating variables}%
+\subsection{Discriminating Variables}%
 \label{sec:mva_discriminating variables}
 
 The set of variables provided to the multivariate classification
@@ -372,8 +372,8 @@ Ref.~\cite{ATLAS-CONF-2021-030}.
 \end{figure}
 
 
-\subsection{Extraction of the non-resonant \HH signal using BDT in the
-  \hadhad channel}%
+\subsection{Extraction of the Non-Resonant \HH Signal using BDT in the
+  \hadhad Channel}%
 \label{sec:mva_smbdt}
 
 The extraction of SM \HH signal events in the \hadhad channel uses BDT
@@ -390,7 +390,7 @@ The BDT implementation of the \emph{Toolkit for Multivariate Data
   Analysis} (TMVA)~\cite{Hocker:2007ht} is used.
 
 
-\subsubsection{Hyperparameter optimisation}
+\subsubsection{Hyperparameter Optimisation}
 
 The BDT configuration is optimised using a random search over a grid
 of parameter values. For every hyperparameter a set of values to test
@@ -484,7 +484,7 @@ providing the final classifiers to extract the SM \HH signal.
 % use the BDT for the final analysis.
 
 
-\subsubsection{Evaluation and variable importance}%
+\subsubsection{Evaluation and Variable Importance}%
 \label{sec:bdt_performance}
 
 In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDT,
@@ -591,8 +591,8 @@ performance of \mMMC and \mBB. For the non-resonant SM \HH search, the
 \end{table}
 
 
-\subsection{Extraction of signals from resonant \HH production with
-  PNNs in the \hadhad channel}%
+\subsection{Extraction of Signals from Resonant \HH Production with
+  PNNs in the \hadhad Channel}%
 \label{sec:mva_pnn}
 
 The search for resonant \HH production considers scalar resonances
@@ -634,7 +634,7 @@ feedforward neural networks. At evaluation time the parameter value is
 held fixed according to the classification problem to be solved.
 
 
-\subsubsection{Implementation and hyperparameter optimisation}
+\subsubsection{Implementation and Hyperparameter Optimisation}
 
 The PNNs are trained using simulated signal events of 19 different
 mass hypotheses of the scalar resonance. An additional point at
@@ -718,7 +718,7 @@ odd-numbered events.\footnote{On the dataset with odd-numbered events
 then re-fit on all five folds of the inner CV separately for even- and
 odd-numbered events.
 
-\subsubsection{Evaluation and variable importance}
+\subsubsection{Evaluation and Variable Importance}
 
 \Cref{fig:pnn_score_prefit} shows the PNN score after evaluation on
 withheld data in the signal region of the \hadhad channel for three

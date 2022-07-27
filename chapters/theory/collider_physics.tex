@@ -1,0 +1,40 @@
+\section{Probing the Standard Model at Hadron Colliders}
+
+Description of the hard scatter event in pp collisions:
+\begin{itemize}
+\item Collisions of constitutents (partons) of the protons with
+  various fractions of momentum of the parent proton.
+
+\item Factorisation approach? Factorise long-distance (soft and
+  non-perturbative) and short-distance (hard and perturbative) physics
+  at the factorisation scale $\mu_\text{F}$. Long-distance effects are
+  factored out into the PDFs while the partonic cross section only
+  contains short-distance interactions allowing for perturbative
+  expansion in \alphas. The factorisation scale separates partons
+  described by the PDF (soft) and the hard scatter process. The
+  calculation becomes less dependent on the scale the higher the order
+  of the calculation (thus frequently used to estimate uncertainties
+  on missing higher orders).
+
+\item The partonic cross section is calculated in a perturbative
+  expansion in \alphas up to some order.
+\end{itemize}
+
+\begin{align*}
+  \sigma_{\Pproton\Pproton \ra \PX}() = \sum_{i,j} \int \mathrm{d}x_1 \mathrm{d}x_2 \, f_i(x_1, \muF^2) f_j(x_1, \muF^2) \, \hat{\sigma}_{i j \ra \PX}(x_1, x_2, \alphas, Q^2 / \muF^2)
+\end{align*}
+(Ellis, Stirling, Webber)
+
+The inclusive cross section of proton-proton going to \PX is (factorisation approach)
+\begin{align*}
+  \frac{\mathrm{d}\sigma_{\Pproton\Pproton \ra \PX}}{\mathrm{d}\Omega} = \sum_{i,j} \int \mathrm{d}x_1 \mathrm{d}x_2 \int f_i(x_1) f_j(x_2) \, \mathrm{d}\hat{\sigma}_{i j \ra \PX}(x_1, x_2, \hat{s})
+\end{align*}
+where $i, j$ indicates the species of parton (i.e.\ gluons, quarks and
+anti-quarks), $f_i(x)$ are the corresponding parton density functions,
+and $\mathrm{d}\hat{\sigma}(i\,j \ra \PX)$ is the partonic cross
+section at a c.m. of $\hat{s} = x_1 x_2 s$.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:
