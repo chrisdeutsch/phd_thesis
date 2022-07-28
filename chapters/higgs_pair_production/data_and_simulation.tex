@@ -22,18 +22,19 @@ Events recorded by the ATLAS detector are reconstructed using the
 % 2018 (OflLumi-13TeV-010): 58450.1 ipb
 
 Monte Carlo event generators are used to estimate the contributions of
-signal and (most) background processes in regions entering this
-search. The response of the ATLAS detector to generated events is
-obtained either from a \emph{full simulation} of the
-detector~\cite{SOFT-2010-01} based on \GEANT~\cite{Agostinelli:2002hh}
-or from a hybrid approach relying on a parametric description of
-calorimeter response~\cite{SOFT-2010-01} (\emph{fast simulation}). All
-generated events are reconstructed from the detector response using
-the same reconstruction algorithms used for \pp-collision data. The
-effect of pile-up is accounted for by overlaying events with
-additional inelastic \pp-collisions obtained from
-simulation. Additionally, simulated events are re-weighted such that
-the pile-up conditions match those observed in data.
+signal and (most) background processes in this search. The response of
+the ATLAS detector to these events is obtained either from a
+\emph{full simulation} of the detector~\cite{SOFT-2010-01} based on
+\GEANT~\cite{Agostinelli:2002hh} or from a hybrid approach that
+replaces the simulation of the calorimeter response with a parametric
+description thereof~\cite{SOFT-2010-01} (\emph{fast
+  simulation}). Events are reconstructed from the simulated detector
+response using the same algorithms used to reconstruct collision
+events recorded by the ATLAS detector. The effect of pile-up is
+accounted for by overlaying events with additional inelastic
+\pp-collisions obtained from simulation. Additionally, simulated
+events are re-weighted such that the pile-up conditions match those of
+the recorded data.
 
 In the following, a description of the simulated event samples used in
 this analysis is given with a focus on the simulation of signal
@@ -54,8 +55,8 @@ processes are summarised in~\Cref{tab:monte_carlo}.
     production of $ZH$ is normalised using the total $pp \to ZH$ cross
     section (NNLO+NLO EW) and subtracting the $gg \to ZH$ cross
     section (NLO+NLL) using predictions from
-    Ref.~\cite{deFlorian:2016spz}. The table is adapted
-    from~\cite{ATLAS-CONF-2021-030}.}%
+    Ref.~\cite{deFlorian:2016spz}. The table is adapted from
+    Ref.~\cite{ATLAS-CONF-2021-030}.}%
   \label{tab:monte_carlo}
 
   \resizebox{\textwidth}{!}{\input{tables/monte_carlo}}
@@ -67,16 +68,16 @@ NLO (QCD) accounting for the effects of the finite top-quark mass on
 real and virtual
 corrections~\cite{Borowka:2016ehy,Baglio:2018lrj,Heinrich:2017kxx,Heinrich:2019bkc,Heinrich:2020ckp}.\footnote{As
   opposed to earlier calculations in the $m_{t} \to \infty$ limit
-  using effective field theory approximations simplifying top-quark
+  using effective field theory approximations to simplify top-quark
   loops to effective couplings. See for example
   Refs.~\cite{Dawson:1998py} (NLO) and \cite{deFlorian:2013jea}
   (NNLO).} The generator uses the
 \PDFforLHC[15nlo]~\cite{Butterworth:2015oua} set of PDFs and is
 interfaced to \PYTHIA[8]~\cite{Sjostrand:2014zea} with the A14 set of
 tuned parameters~\cite{ATL-PHYS-PUB-2014-021} for parton showering,
-hadronisation, and the underlying event. The sample of simulated
-events is normalised using an inclusive $gg \to \HH$ cross section of
-\SI{31.05}{\femto\barn} at
+hadronisation, and simulation of the underlying event. The sample of
+simulated events is normalised using an inclusive $gg \to \HH$ cross
+section of \SI{31.05}{\femto\barn} at
 $\text{NNLO}_{\text{FTapprox}}$~\cite{Grazzini:2018bsd}, which is a
 combination of the full-theory prediction at NLO with additional NNLO
 corrections derived in the heavy top-quark mass limit. The theoretical
@@ -89,8 +90,8 @@ Non-resonant production of SM \HH via VBF is simulated using
 at LO (QCD) %~\cite{Bishara:2016kjn}
 using the \NNPDF[3.0nlo] set of PDFs~\cite{Ball:2014uwa}. The matrix
 element generator is interfaced to \PYTHIA[8] with the A14 tune for
-parton showering, hadronisation, and the underlying event. An
-inclusive cross section of \SI{1.726}{\femto\barn}
+parton showering, hadronisation, and simulation of the underlying
+event. An inclusive cross section of \SI{1.726}{\femto\barn}
 at~$\text{N}^3\text{LO}$~\cite{Dreyer:2018qbw,LHCHWGHH} is used to
 normalise the sample of generated events with theoretical
 uncertainties of $^{+0.03\,\%}_{-0.04\,\%}$ from scale variations and
@@ -101,21 +102,22 @@ Resonant production of Higgs boson pairs via massive scalar
 resonances, $X$, produced in \ggF is simulated using \MGNLO at LO
 (QCD) using the \NNPDF[2.3lo] set of PDFs~\cite{Ball:2012cx}. Twenty
 generic benchmark signals are generated with resonance masses, \mX,
-ranging from \SIrange{251}{1600}{\GeV} and with narrow widths of the
-resonances ($\Gamma_{X} = \SI{10}{\MeV}$ in the event generation). The
-interference with non-resonant SM \HH production is neglected. The
-matrix element generator is interfaced to
+ranging from \SIrange{251}{1600}{\GeV} and negligible width compared
+to the experimental mass resolution ($\Gamma_{X} = \SI{10}{\MeV}$ in
+the event generation). Any interference with non-resonant SM \HH
+production is neglected. The matrix element generator is interfaced to
 \HERWIG[7.1]~\cite{Gieseke:2012ft,Bellm:2017jjp} with the default tune
-for parton shower, hadronisation, and the underlying event.
+for parton shower, hadronisation, and simulation of the underlying
+event.
 % Why narrow width? -> Broad resonances are very model dependent
 
 Decays of hadrons containing $b$ and $c$ quarks are simulated using
 \EVTGEN~\cite{Lange:2001uf} for all signal, top quark, and single
 Higgs boson processes (cf.~\Cref{tab:monte_carlo}). By default,
 \emph{full simulation} of the ATLAS detector is used for all processes
-except for resonant \HH production with $\mX \leq \SI{1000}{\GeV}$ or
-for samples generated with alternative generator setups for the
-derivation of modelling uncertainties. In these cases \emph{fast
+except for resonant \HH production with $\mX \leq \SI{1000}{\GeV}$ and
+some selected samples produced with alternative generator setups for
+the derivation of systematic uncertainties. In these cases \emph{fast
   simulation} is used instead.
 
 %%% Local Variables:
