@@ -1,4 +1,77 @@
-Put background estimation in lephad here.
+The estimation of \jettotauhadvis backgrounds in the \lephad channels
+is outlined in the following. A data-driven background estimation
+method is adopted that yields a combined estimate of the multi-jet and
+\ttbar background with a \faketauhadvis. The method is an extension of
+the fake factor method, previously introduced in
+\Cref{sec:hadhad_multijet}, to account for multiple sources of
+\faketauhadvis that can differ in their process-specific fake factors.
+
+Events in the \lephad channel where the selected \tauhadvis candidate
+is an \antitau define the Anti-ID region used for the fake factor
+method. Two control regions are defined that are enhanced in multi-jet
+and \ttbar events, respectively, each with a corresponding ID and
+Anti-ID region which are orthogonal to the signal regions. These
+control regions are used to calculate fake factors specifically for
+\faketauhadvis from multi-jet and \ttbar events. They are calculated
+as follows:
+\begin{description}
+
+\item[Multi-jet fake factors] are determined in a region defined by
+  requiring that the electron/muon fails the loose isolation working
+  point. Otherwise, the selection is identical to the \lephad signal
+  region selection. This control region has high multi-jet purity and
+  is therefore ued to calculate multi-jet fake factors, \FFqcd, as the
+  ratio of multi-jet events in ID and Anti-ID region. The number of
+  multi-jet events is estimated by subtracting the number of
+  non-multi-jet events estimated using simulation from the observed
+  number of events in ID and Anti-ID region.
+
+\item[\ttbar fake factors] are determined in a region defined by
+  requiring $\mBB > \SI{150}{\GeV}$ while keeping other selections
+  identical to the ones of the \lephad signal regions. This control
+  region has high \ttbar purity but is not pure in \ttbarFakes events
+  that are used for the fake factor calculation. Similar to the
+  multi-jet fake factors, the \ttbar fake factor, \FFttbar, is
+  calculated as the ratio of \ttbarFakes events in ID and Anti-ID
+  regions. The number of \ttbarFakes events are estimated, assuming
+  negligible contribution of multi-jet events, by subtracting the
+  number of non-\ttbarFakes events (excl.\ multi-jet events) estimated
+  using simulation from the observed number of events in ID and
+  Anti-ID region.
+\end{description}
+
+Both sets of fake factors, \FFqcd and \FFttbar, can be combined
+according to the expected fraction of \faketauhadvis events in the Ant
+
+
+The Anti-ID region corresponding to the signal region selection
+consists of a mixture of multi-jet and \ttbar events,
+however. Therefore, one perform a weighted combination of \FFqcd and
+\FFttbar to define the combined fake factor \FFcomb.
+
+\begin{align*}
+  \FFcomb = \rqcd \, \FFqcd + (1 - \rqcd) \, \FFttbar
+\end{align*}
+
+For the most part $\rqcd = 0$ since the \lephad channel is dominated
+by \faketauhadvis from \ttbar.
+
+
+\rqcd is calculated in the Anti-ID region corresponding to the signal region selection:
+\begin{align*}
+  \rqcd = \frac
+  {N_{\text{data}} - N(\text{non-multi-jet})}
+  {N_{\text{data}} - N(\text{non-multi-jet or non-ttbar-fake})}
+\end{align*}
+
+\todo[inline]{Why can't we do this in the \hadhad channel?}
+
+Why this is not so easy in the \hadhad channel:
+\begin{itemize}
+\item In \hadhad there are two \tauhadvis
+\item There is no \ttbar control region accessible in a \hadhad final
+  state thus one has to go to \lephad
+\end{itemize}
 
 %%% Local Variables:
 %%% mode: latex
