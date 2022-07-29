@@ -1,94 +1,120 @@
 \section{Systematic Uncertainties}%
 \label{sec:uncertainties}
 
-\todo[inline]{Say that the effect of systematic uncertainties on the
-  result is very small since the analysis is for the most part
-  statistically limited.}
+The sources of systematic uncertainties affecting the search for
+non-resonant and resonant Higgs boson pair production are discussed in
+the following. Experimental uncertainties are described in
+\Cref{sec:experimental_uncertainties} but exclude uncertainties
+related to the \jettotauhadvis estimation in the \hadhad channel which
+were previously described in
+\Cref{sec:bkg_hadhad_ttbarfakes,sec:bkg_hadhad_ff}. Theory
+uncertainties are described in~\Cref{sec:theory_uncertainties} and
+include uncertainties on the modelling of physics processes with Monte
+Carlo simulations.
 
-\todo[inline]{Really shorten this section.}
+The searches presented in this chapter are largely limited by
+statistical uncertainties due to the finite number of events observed
+in the signal regions. Theoretical uncertainties play a sub-leading
+role and instrumental uncertainties are only relevant for the searches
+for scalar resonances with low masses ($\mX \lesssim
+\SI{300}{\GeV}$). The impact of uncertainties on the results will be
+discussed during the statistical interpretation in
+\Cref{sec:statistical_analysis}.
 
-% In \Cref{sec:experimental_uncertainties}
-%
-% - Detector related uncertainties
-% - Uncertainties related to the data-driven background estimates
 
-% In \Cref{sec:theory_uncertainties}
-% - Cross section uncertainties
-% - Relative acceptance uncertainties
-% - Acceptance uncertainties
-
-% Uncertainties are tightly connected to the fit model thus here only
-% give the 'definitions' of the uncertainties
-
-% Additional post-processing (smoothing and pruning) steps will be
-% described with the fit model in~\Cref{sec:}.
-
-% The correlation scheme between uncertainties is further discussed
-% with the fit model.
-
-\subsection{Experimental Uncertainties}
+\subsection{Experimental Uncertainties}%
 \label{sec:experimental_uncertainties}
 
-\begin{description}
-\item[Integrated luminosity and pile-up] The integrated luminosity of
-  the $pp$ collision dataset collected with the ATLAS detector in the
-  period from 2015 to 2018 (\SI{139}{\per\femto\barn}) is measured
-  with an uncertainty of
-  \SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This uncertainty is
-  assigned to all processes estimated using simulation that are
-  normalised using theoretical cross section. Additionally, an
-  uncertainty on the re-weighting of the instantaneous luminosity
-  distribution used for the pile-up overlay in simulation to match the
-  conditions of the $pp$ dataset is assigned to all simulated
-  processes.
+Experimental uncertainties affecting this search arise from the
+measurement of the integrated luminosity, the re-weighting of the
+pile-up conditions in simulation, the reconstruction of physics
+objects, and the efficiencies of selections applied to these
+objects. Unless otherwise noted, the uncertainties described in the
+following are applicable to all signal and background processes
+estimated using simulation.
 
-\item[Electrons] Uncertainties on electrons in simulation are obtained
-  from dedicated calibration
-  measurements~\cite{EGAM-2018-01,TRIG-2018-05} updated for the
-  \SI{139}{\per\femto\barn} Run~2 dataset. The electron energy scale
-  and resolution is measured in $Z \to e^+e^-$ events and propagated
-  to predictions by shifting and smearing momenta of electrons in
-  simulation. Uncertainties on the calibration of electron
-  reconstruction, identification, isolation, and trigger efficiencies
-  in simulation are obtained from measurements in~$J/\psi \to e^+e^-$
-  and $Z \to e^+e^-$ events and applied as alternative weights to
-  electrons in simulation.
+The integrated luminosity of the \pp-collision dataset recorded with
+the ATLAS detector during Run~2 of the LHC is measured with an
+uncertainty of \SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This
+uncertainty is assigned to all predictions normalised using
+theoretical cross section predictions.  Moreover, an uncertainty is
+assigned on the re-weighting used to match the instantaneous
+luminosity distribution used to generate the pile-up overlay with the
+conditions of the recorded \pp-collision dataset.
 
-  $e$-Veto efficiency.
+Dedicated calibration measurements performed for
+electrons~\cite{EGAM-2018-01,TRIG-2018-05}, muons~\cite{MUON-2018-03},
+\tauhadvis~\cite{ATLAS-CONF-2017-029}, jets~\cite{JETM-2018-05},
+flavour-tagging~\cite{FTAG-2018-01,FTAG-2020-08,FTAG-2021-002}, and
+the \pTmissAbs reconstruction~\cite{ATLAS-CONF-2018-023} by the ATLAS
+collaboration.\footnote{In some cases publications of the calibrations
+  measurements used in this search are not available at the time of
+  writing. In these cases earlier, representative measurements are
+  referenced.} These measurements provide calibrations of, where
+applicable, the momentum scales and resolutions, and efficiencies of
+various selection steps such as the identification and isolation
+requirements. The six major instrumental uncertainties affecting
+reconstructed physics objects are summarised in
+\Cref{tab:experimental_uncertainties_2}.
 
-\item[Muons]
-  Muons... \cite{MUON-2018-03} \\
-  Scale, (Sagitta) , (ID? MS?) \\
-  Efficiencies: Reconstruction, Isolation, Trigger
+Where applicable, dedicated calibrations and uncertainties are used
+for simulated event samples using \emph{fast simulation} of the ATLAS
+detector.
 
-\item[Taus]
-  Taus... \\
-  Scale \\
-  Efficiencies: Reconstruction, Identification, eVeto (taus and
-  electrons reconstructed as taus), Trigger
+\todo[inline]{Experimental: MET -- all momentum / energy uncertainties are
+  propagated to MET, additionally uncertainties related to the soft term}
 
-\item[Jets] Jets... (JVT, JES, JER) -- JES/JER \cite{JETM-2018-05}
 
-\item[\pTmissAbs] MET
+Except for the luminosity uncertainty, any instrumental uncertainty
+can affect the normalisation and shape of the distribution of signals
+and backgrounds in the final discriminant. These are propagated and
 
-\item[Flavour tagging] Flavour tagging... \cite{FTAG-2018-01}
-
-\end{description}
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Table of CP uncertainties}%
-  \label{tab:experimental_uncertainties}
+  \caption{Summary of instrumental uncertainties. The number of
+    degrees of freedom of the uncertainties is given as
+    $N_{\text{d.o.f.}}$ in the right-most column. $\dagger$:~Due to
+    the use of the object-based \pTmissAbs definition, uncertainties
+    affecting reconstructed objects entering the \pTmissAbs estimation
+    are also propagated as uncertainties to \pTmissAbs.}%
+  \label{tab:experimental_uncertainties_2}
 
-  \input{tables/uncertainties_experimental}
+  \renewcommand{\arraystretch}{1.25}
+  \input{tables/detector_uncertainties}
 \end{table}
 
-\todo[inline]{Where applicable, dedicated calibrations for ATLAS fast
-  simulation are used.}
+% \begin{description}
+% \item[Integrated luminosity and pile-up] The integrated luminosity
+%   of the $pp$ collision dataset collected with the ATLAS detector in
+%   the period from 2015 to 2018 (\SI{139}{\per\femto\barn}) is
+%   measured with an uncertainty of
+%   \SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This uncertainty is
+%   assigned to all processes estimated using simulation that are
+%   normalised using theoretical cross section.
 
-\todo[inline]{Experimental: MET -- all momentum / energy uncertainties are
-  propagated to MET, additionally uncertainties related to the soft term}
+% \item[Electrons] Uncertainties on electrons in simulation are
+%   obtained from dedicated calibration
+%   measurements~\cite{EGAM-2018-01,TRIG-2018-05} updated for the
+%   \SI{139}{\per\femto\barn} Run~2 dataset. The electron energy scale
+%   and resolution is measured in $Z \to e^+e^-$ events and propagated
+%   to predictions by shifting and smearing momenta of electrons in
+%   simulation. Uncertainties on the calibration of electron
+%   reconstruction, identification, isolation, and trigger
+%   efficiencies in simulation are obtained from measurements
+%   in~$J/\psi \to e^+e^-$ and $Z \to e^+e^-$ events and applied as
+%   alternative weights to electrons in simulation.
+% \end{description}
+
+% \begin{table}[htbp]
+%   \centering
+%   \caption{Table of CP uncertainties}%
+%   \label{tab:experimental_uncertainties}
+%   \input{tables/uncertainties_experimental}
+% \end{table}
+
+Uncertainties of the \faketauhadvis estimation in \lephad.
 
 
 \subsection{Theory Uncertainties}%
