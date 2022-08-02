@@ -1,18 +1,35 @@
 \section{Statistical Interpretation}%
 \label{sec:statistical_analysis}
 
-The statistical interpretation of the results proceeds using the frequentist
-framework presented in~\Cref{sec:statistical_methods} to search for
-non-resonant production of SM \HH and production via scalar resonances
-with masses ranging from \SIrange{251}{1600}{\GeV}.
+The statistical interpretation of the results uses the frequentist
+framework presented in \Cref{sec:statistical_methods} to perform
+searches for resonant and non-resonant Higgs boson pair production. In
+the absence of a statistically significant signal, the main results of
+the statistical interpretation are upper limits on the strength and
+cross section of SM \HH production via \ggF and VBF, and upper limits
+on the cross section of resonant production of \HH via scalar, narrow
+width resonances with masses ranging from \SIrange{251}{1600}{\GeV}
+produced in \ggF.
 
-A probabilistic model is constructed, separately for every signal
-hypothesis to be probed, that simultaneously describes the data in
-bins of the MVA discriminants in the signal regions and \mll in the
-\ZHF control region using the signal and background estimates and
-their uncertainties described in earlier sections. The discriminants
-are summarised in~\Cref{tab:fitted_variable} for all regions entering
-the models for the SM and BSM search.
+This section is structured as follows. In \Cref{sec:sig_bkg_model} the
+models used for the statistical interpretation are described. The
+results of the search for SM \HH and resonant \HH production are
+presented in \Cref{sec:results_nonres} and \Cref{sec:results_res},
+respectively. The section concludes with
+\Cref{sec:global_significance} with the global significance estimation
+of the largest excess in the search for resonant \HH production.
+
+
+\subsection{Statistical Models}%
+\label{sec:sig_bkg_model}
+
+A probabilistic model is constructed for every signal hypothesis to be
+probed that simultaneously describes expected number of events in bins
+of the MVA discriminants in the signal regions and \mll in the \ZHF
+control region using the signal and background estimates and their
+uncertainties described in earlier sections. The discriminants are
+summarised in~\Cref{tab:fitted_variable} for all regions entering the
+searches for SM \HH and resonant \HH production.
 
 \begin{table}[htbp]
   \centering
@@ -29,74 +46,64 @@ the models for the SM and BSM search.
     \cmidrule{2-5}
     Search & \hadhad & \lephad SLT & \lephad LTT & \ZHF CR \\
     \midrule
-    Non-resonant SM \HH & BDT & NN & NN & \mll \\
-    Resonant $X \to \HH$ & PNN (\mX) & PNN (\mX) & PNN (\mX) & \mll \\
+    SM \HH & BDT & NN & NN & \mll \\
+    $X \to \HH$ & PNN(\mX) & PNN(\mX) & PNN(\mX) & \mll \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-The parameters of interest (POI) for the search for non-resonant SM
-\HH production are the cross section of the combination of the \ggF and
-VBF production modes, \xsecggfvbf, and the signal strength
+The parameters of interest (POI) of the SM \HH search are the total SM
+\HH production cross section via \ggF and VBF, \xsecggfvbf, and the
+signal strength
 \begin{align*}
-  \mu = \frac{\xsecggfvbf}{\xsecggfvbf^{\text{SM}}} \,\text{,}
+  \mu = \frac{\xsecggfvbf}{\xsecggfvbf^{\text{SM}}}
+  \qquad \text{with} \qquad
+  \xsecggfvbf^{\text{SM}} = \SI{32.78}{\femto\barn}
+  \,\text{,}
 \end{align*}
-which measures the cross section relative to the Standard Model
-prediction
-of~$\xsecggfvbf^{\text{SM}} = \SI{31.05}{\femto\barn} \text{ (\ggF)} +
-\SI{1.726}{\femto\barn} \text{
-  (VBF)}$~\cite{Grazzini:2018bsd,Dreyer:2018qbw}. In the BSM scenario
-of resonant production of Higgs boson pairs via scalar resonances,
-only the total cross section of $\sigma(pp \to X \to HH)$ is
-considered as the POI. Moreover, the non-resonant production of SM \HH
-is not considered as a background in the search for scalar resonances
-as there is no experimental evidence for its existence yet.
+which measures the cross section relative to the SM prediction from
+Refs.~\cite{Grazzini:2018bsd,Dreyer:2018qbw}. For the search for
+resonant \HH production, the total cross section
+$\sigma(pp \to X \to HH)$ is considered as the POI. The cross sections
+are inclusive in the decay modes of the Higgs bosons and are
+determined from the measurement in the \bbtautau channel assuming
+Higgs boson branching ratios as predicted by the SM. The non-resonant
+production of \HH is not considered as a background to the search for
+resonant \HH production.
 
-In the following, the details of the signal and background model are
-described in~\Cref{sec:sig_bkg_model}. In~\Cref{sec:results_nonres}
-and~\Cref{sec:results_res} the results are presented.
-% after performing model parameter estimation using the maximum
-% likelihood method and performing likelihood ratio tests to compare
-% competing hypothese.
+Additional nuisance parameters are introduced into the model. First,
+two free normalisation factors are included that vary the
+normalisation of the \ZHF and \ttbar backgrounds in all
+regions. Second, for every independent source of systematic
+uncertainty a nuisance parameter is introduced that is constrained by
+an auxiliary measurement. In general, these parameters can act on both
+the normalisation and shape of the distributions predicted by the
+model. Finally, statistical uncertainties on background rate estimates
+using finite samples of simulated or control region events are
+implemented according to the simplified Barlow-Beeston method
+introduced in \Cref{sec:barlow_beeston}. This method introduces one
+nuisance parameter for every bin entering the model.
 
+The parameters of the models are inferred by maximising the
+corresponding likelihood function for the observed data or Asimov
+dataset. Likelihood-ratio tests are performed to test hypothesised
+values of the POI. Unless otherwise noted, asymptotic approximations
+are used for the sampling distributions of the likelihood-ratio test
+statistic.
 
-\subsection{The Signal and Background Model}%
-\label{sec:sig_bkg_model}
+The statistical model was checked during its development by performing
+fits to Asimov datasets, control region data, control region and
+signal region data but blinding the high MVA score regions, and
+finally fits to observed data in all regions. Alternative models that
+exclude certain signal regions were also investigated to understand
+the effect of individual channels on the statistical model.  At every
+step, the maximum likelihood estimates of the model parameters and
+their confidence intervals were inspected to ensure that the model
+behaves as expected. At the early stages of the model development,
+these checks informed the construction of the model. After unblinding
+the signal regions, the statistical model was considered as fixed to
+prevent the introduction of biases.
 
-The signal and background model describes the expected number of
-events in bins .
-
-The sensitivity to a given signal depends due to the use of MVA
-discriminants (cf.\ \Cref{tab:fitted_variable})
-
-The use of MVA discriminants in the statistical analysis .
-
-The binning of data in the \ZHF control region is the same in all
-cases (cf.\ REFERENCE).
-
-
-The model described in the following is to be used in a simultaneous
-maximum likelihood fit of binned MVA discriminants.
-
-For every signal hypothesis dedicated models are constructed.
-
-The signal considered for non-resonant SM \HH search are \ggF+VBF.
-
-\todo[inline]{Simultaneous maximum likelihood fit of binned MVA
-  discriminants and control regions to estimate the model parameters.}
-
-The statistical uncertainties on the background prediction using
-simulation and control region data are implemented in the likelihood
-model according to the simplified Barlow-Beeston method introduced
-in~\Cref{sec:barlow_beeston}.
-
-\todo[inline]{Reminder of freely floating backgrounds}
-\todo[inline]{Emphasise that there are really many models for each MVA score that is fit.}
-\todo[inline]{Models developed in a blind analysis (blind -> high MVA score region blinded)}
-\todo[inline]{Maybe say something about blinding?}
-\todo[inline]{Except when otherwise noted, all results are obtained
-  using asymptotic approximations for the sampling distributions of
-  likelihood ratio test statistics.}
 
 \subsubsection{Re-Binning Algorithm}%
 \label{sec:binning_alg}
@@ -304,25 +311,6 @@ separate since different methods are used.
 
 - Decorrelate parton shower systematics for ttbar between lephad and
 hadhad
-
-
-\subsubsection{Model Validation}
-
-The model is developed and validated by performing:
-
-1. Fits of Asimov datasets
-
-2. Fits of data in control regions
-
-3. Fits of data in control regions and MVA discriminants with only
-\hadhad / \lephad signal regions.
-
-4. Fits of data control regions and MVA discriminants blinding the
-high MVA score regions.
-
-Based on these studies decisions where made on decorrelation of
-uncertainties (PS) and symmetrisation / smoothing applied to
-uncertainties.
 
 
 \subsection{Results of the Search for Non-Resonant Production of SM $HH$}
