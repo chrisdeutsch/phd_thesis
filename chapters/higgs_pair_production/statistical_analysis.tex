@@ -104,6 +104,10 @@ these checks informed the construction of the model. After unblinding
 the signal regions, the statistical model was considered as fixed to
 prevent the introduction of biases.
 
+\todo[inline]{Maybe a short introductory sentence to say that details
+  of the fit model are discussed hereafter. Also could briefly mention
+  that we omit ``merging'' since this has little practical relevance.}
+
 
 \subsubsection{Binning Algorithm for MVA Discriminants}%
 \label{sec:binning_alg}
@@ -186,23 +190,31 @@ contents, the MVA scores are displayed as equidistant bins.
 
 \subsubsection{Symmetrisation of Systematic Uncertainties}
 
-Uncertainties arising from MC-to-MC comparisons, for example for
-alternative generator configurations (e.g.\ variations of the ME or PS
-generation), provide only a single systematic variation and thus
-cannot be readily incorporated into the likelihood function using a
-Gaussian constraint term for the associated uncertainty. These
-\emph{one-sided uncertainties} are therefore symmetrised by mirroring
-their effect with respect to the nominal prediction. This procedure is
-used for all uncertainties resulting from a comparison with a single
-alternative prediction.
+Uncertainties arising from comparisons of a nominal with an
+alternative prediction only provide a single systematic variation
+which cannot be readily incorporated in the statistical model. These
+\emph{one-sided uncertainties} occur when, for example, estimating
+modelling uncertainties by comparing different generator
+configurations. In these cases, variations are symmetrised by
+mirroring their effect with respect to the nominal prediction. This
+procedure is used for all uncertainties resulting from a comparison
+with a single alternative prediction.
 
-For some uncertainties the $+1\sigma$ and the $-1\sigma$ variation
-changes the prediction in one or multiple bins in the same direction
-with respect to the nominal prediction. For such cases, examples being
-jet-related uncertainties affecting the four-momenta of reconstructed
-jets, the uncertainties are symmetrised by assigning half of the
-difference between the up and down variations as a symmetric
-uncertainty on the nominal prediction.
+Uncertainties with up- and down-variations that change the prediction
+in one or multiple bins in the same direction are also subject to
+symmetrisation. These cases typically result from small statistical
+fluctuations which can cause artificial over- or underconstraints of
+the associated nuisance parameters after the
+fit.\footnote{Overconstrained (underconstrained) nuisance parameters
+  are parameters with post-fit uncertainties that are smaller (larger)
+  than the pre-fit uncertainty of the parameter. They are referred to
+  as ``artificial'' since they arise from a mis-specification of the
+  model as opposed to physical reasons.} These uncertainties are
+symmetrised by assigning half of the difference between the up- and
+down-variation as a symmetric uncertainty on the nominal
+prediction. This symmetrisation method is selectively applied to
+affected uncertainties (e.g.\ uncertainties on the jet energy scale
+and resolution).
 
 
 \subsubsection{Inter- and Extrapolation of Systematic Uncertainties}
