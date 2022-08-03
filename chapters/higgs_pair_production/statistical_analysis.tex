@@ -24,30 +24,30 @@ of the largest excess in the search for resonant \HH production.
 \label{sec:sig_bkg_model}
 
 A probabilistic model is constructed for every signal hypothesis to be
-probed that simultaneously describes expected number of events in bins
-of the MVA discriminants in the signal regions and \mll in the \ZHF
-control region using the signal and background estimates and their
+probed that describes the distribution of event counts in bins of the
+MVA discriminants in the SRs and \mll in the \ZHF CR. This model is
+constructed using the signal and background estimates and their
 uncertainties described in earlier sections. The discriminants are
 summarised in~\Cref{tab:fitted_variable} for all regions entering the
 searches for SM \HH and resonant \HH production.
 
 \begin{table}[htbp]
   \centering
-  \caption{Summary of the types of discriminants used in the binned
-    likelihood fits in the three signal regions and the control
-    region. The search for resonant production of Higgs boson pairs
-    uses the PNN distribution evaluated with a mass parameter equal to
-    the resonance mass to be probed.}%
+  \caption{Summary of the discriminants used for the statistical
+    interpretation in the three SRs and the \ZHF CR. The search for
+    resonant production of Higgs boson pairs uses the PNN distribution
+    evaluated with a mass parameter equal to the resonance mass to be
+    probed.}%
   \label{tab:fitted_variable}
 
-  \begin{tabular}{lccccc}
+  \begin{tabular}{l@{\hskip 25pt}ccccc}
     \toprule
     & \multicolumn{4}{c}{Discriminant used in channel} \\
     \cmidrule{2-5}
-    Search & \hadhad & \lephad SLT & \lephad LTT & \ZHF CR \\
+    Search                  & \hadhad & \lephad SLT & \lephad LTT & \ZHF CR \\
     \midrule
-    SM \HH & BDT & NN & NN & \mll \\
-    $X \to \HH$ & PNN(\mX) & PNN(\mX) & PNN(\mX) & \mll \\
+    SM \HH production       & BDT & NN & NN & \mll \\
+    Resonant \HH production & PNN(\mX) & PNN(\mX) & PNN(\mX) & \mll \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -67,29 +67,29 @@ resonant \HH production, the total cross section
 $\sigma(pp \to X \to HH)$ is considered as the POI. The cross sections
 are inclusive in the decay modes of the Higgs bosons and are
 determined from the measurement in the \bbtautau channel assuming
-Higgs boson branching ratios as predicted by the SM. The non-resonant
+Higgs boson branching ratios as predicted by the SM. Non-resonant
 production of \HH is not considered as a background to the search for
 resonant \HH production.
 
-Additional nuisance parameters are introduced into the model. First,
-two free normalisation factors are included that vary the
-normalisation of the \ZHF and \ttbar backgrounds in all
-regions. Second, for every independent source of systematic
-uncertainty a nuisance parameter is introduced that is constrained by
-an auxiliary measurement. In general, these parameters can act on both
-the normalisation and shape of the distributions predicted by the
-model. Finally, statistical uncertainties on background rate estimates
-using finite samples of simulated or control region events are
-implemented according to the simplified Barlow-Beeston method
-introduced in \Cref{sec:barlow_beeston}. This method introduces one
-nuisance parameter for every bin entering the model.
+The models include unconstrained normalisation factors that scale the
+contribution of the \ZHF and \ttbar backgrounds in all regions. An
+additional nuisance parameter is introduced for every independent
+source of systematic uncertainty. In contrast to the normalisation
+factors, these nuisance parameters are constrained by auxiliary
+measurements and can act on both the normalisation and shape of the
+distributions predicted by the model. Finally, statistical
+uncertainties on background rate estimates obtained using finite
+samples of simulated or control region\footnote{Anti-ID CR events are
+  used to obtain data-driven estimates of the \faketauhadvis
+  backgrounds in the SRs.} events are implemented according to the
+simplified Barlow-Beeston method introduced in
+\Cref{sec:barlow_beeston}.
 
-The parameters of the models are inferred by maximising the
-corresponding likelihood function for the observed data or Asimov
-dataset. Likelihood-ratio tests are performed to test hypothesised
-values of the POI. Unless otherwise noted, asymptotic approximations
-are used for the sampling distributions of the likelihood-ratio test
-statistic.
+The parameters of the models are inferred by maximising their
+likelihood functions for an observed or Asimov dataset. The main
+results are based on likelihood-ratio tests of hypothesised values of
+the POIs. Unless otherwise noted, asymptotic approximations are used
+for the sampling distributions of the likelihood-ratio test statistic.
 
 The statistical model was checked during its development by performing
 fits to Asimov datasets, control region data, control region and
@@ -105,38 +105,35 @@ the signal regions, the statistical model was considered as fixed to
 prevent the introduction of biases.
 
 
-\subsubsection{Re-Binning Algorithm}%
+\subsubsection{Binning Algorithm for MVA Discriminants}%
 \label{sec:binning_alg}
 
-The signal sensitivity of likelihood-ratio tests using binned MVA
-score distributions depends on the choice of binning used for the
-discriminant. The purity of signal increases with increasing MVA
-score, with most signal (background) being concentrated at the highest
-(lowest) scores. For good expected signal sensitivity, the binning has
-to be chosen such that regions in MVA score with low
-signal-to-background ratio are separated from regions with high
-signal-to-background ratio.
+The signal sensitivity of the searches depends on the binning used for
+the MVA discriminants in the statistical interpretation. The binning
+has to be chosen such that it separates regions with high
+signal-to-background ratio (high MVA score) from regions with low
+signal-to-background ratio (low MVA score).
 
-In this analysis an iterative re-binning algorithm is used to
-determine the binning of MVA discriminants used to construct the
-likelihood functions. The aim of the algorithm is to provide large
-expected signal sensitivity while ensuring that the background
-prediction obeys predefined constraints on the statistical uncertainty
+An iterative re-binning algorithm is used to determine the binning of
+the MVA discriminants. The aim of the algorithm is to maximise the
+expected sensitivity to a given signal while ensuring that the
+background prediction obeys constraints on the statistical uncertainty
 and expected number of events in each bin. The constraints are
-intended to stabilise the fits and ensure validity of asymptotic
-approximations of the sampling distributions of the test statistics
-used in the analysis. The algorithm described in the
-following was previously used in Ref.~\cite{HIGG-2016-16-witherratum}
-and is continued to be used in the \hadhad channel of this search. A
-different algorithm, while conceptually similar, is used in the
-\lephad channels and is described in Ref.~\cite{ATLAS-CONF-2021-030}.
+intended to stabilise the fits and ensure that the asymptotic
+approximations used for the statistical interpretation are applicable.
+% of the sampling distributions of test statistics used in this
+% analysis are applicable.
+The algorithm described in the following was previously used in
+Ref.~\cite{HIGG-2016-16-witherratum} and is continued to be used in
+the \hadhad channel of this search. A different algorithm, while
+conceptually similar, is used in the \lephad channels and is described
+in Ref.~\cite{ATLAS-CONF-2021-030}.
 
-The re-binning algorithm is provided with MVA score histograms with
-fine, equidistant binning ($N_\text{bins} = 1000$) of the signal and
-total background expectation at the nominal values of all nuisance
-parameters. It proceeds by iteratively merging bins, starting from the
-most-signal like MVA score bins, until the bin fulfils a set of
-requirements:
+The algorithm is provided with MVA score histograms with fine,
+equidistant binning of the signal and total background expectation at
+the nominal values of all nuisance parameters. It proceeds by
+iteratively merging bins, starting from the most-signal like MVA score
+bins, until the bin fulfils a set of requirements:
 \begin{enumerate}
 
 \item The relative statistical uncertainty of the background
@@ -155,22 +152,11 @@ requirements:
 When a bin fulfilling all requirements is found, the process is
 repeated starting from the next bin that is not yet merged. The
 algorithm terminates with a final bin at low MVA score. If the final
-bin does not fulfil the criteria, it is merged with the preceding
-bin.
+bin does not fulfil the criteria, it is merged with the preceding bin.
 
 The size of bins resulting from the re-binning procedure can vary by
 multiple orders of magnitude. For better visualisation of the bin
 contents, the MVA scores are displayed as equidistant bins.
-
-% The algorithm provides a binning that improves the analysis
-% sensitivity while fulfilling criteria on the background model:
-% I.e. that it has reasonable statistical precision, and that one
-% expects at least 5 events so that asymptotic approximations of the
-% test statistics can be used.
-
-% Motivation of terms: 1\% have some bins in background dominated
-% region signal fraction weighted 50\% to have relatively fine bins in
-% the most signal-like regions
 
 
 \subsubsection{Merging of Physics Processes}
@@ -178,12 +164,12 @@ contents, the MVA scores are displayed as equidistant bins.
 The signal and background models are simplified by merging samples
 originating from similar underlying physics processes which are
 subject to equal treatment in the fit model. In the SM \HH search, the
-\ggF and VBF samples are merged, defining the total signal contribution
-from both production modes. The \Zjets samples are combined into
-$Z + (bb,bc,cc)$ and $Z + (bl,cl,ll)$ samples, separately for
-$Z \to \tau\tau$ and $Z \to \ell^+\ell^-$, where $\ell = e,
-\mu$. Further, contributions from diboson and single top production
-(including $tW$) are merged into two separate samples.
+\ggF and VBF samples are merged, defining the total signal
+contribution from both production modes. The \Zjets samples are
+combined into $Z + (bb,bc,cc)$ and $Z + (bl,cl,ll)$ samples,
+separately for $Z \to \tau\tau$ and $Z \to \ell^+\ell^-$, where
+$\ell = e, \mu$. Further, contributions from diboson and single top
+production (including $tW$) are merged into two separate samples.
 
 The treatment merging for \faketauhadvis backgrounds differs between
 the \hadhad and \lephad channels. In the \hadhad channel two separate
@@ -272,7 +258,7 @@ for the production of top quarks for which smoothing is applied due to
 the large variance of the associated weight distribution.
 
 The smoothing procedure, adopted from Ref.~\cite{HIGG-2013-23}, uses
-iterative rebinning of the histogram-based templates describing the
+iterative re-binning of the histogram-based templates describing the
 shape uncertainties, merging bins starting with bins that are most
 compatible until the statistical uncertainty in all bins is below
 \SI{5}{\percent} and the shape template has a monotonic
