@@ -104,9 +104,15 @@ these checks informed the construction of the model. After unblinding
 the signal regions, the statistical model was considered as fixed to
 prevent the introduction of biases.
 
+
 \todo[inline]{Maybe a short introductory sentence to say that details
   of the fit model are discussed hereafter. Also could briefly mention
-  that we omit ``merging'' since this has little practical relevance.}
+  that we omit ``merging'' since this has little practical
+  relevance. Also omit the discussion of inter- and extrapolation of
+  uncertainties.}
+
+A few detailed aspects of the statistical model are given in the
+following.
 
 
 \subsubsection{Binning Algorithm for MVA Discriminants}%
@@ -217,36 +223,55 @@ affected uncertainties (e.g.\ uncertainties on the jet energy scale
 and resolution).
 
 
-\subsubsection{Inter- and Extrapolation of Systematic Uncertainties}
+% \subsubsection{Inter- and Extrapolation of Systematic Uncertainties}
 
-To define a (continuous) likelihood function, the signal and
-background predictions have to be parameterised as continuous functions
-of the nuisance parameters. Conventionally, uncertainties on the
-normalisation or the normalisation and shape of a prediction in a
-given analysis region are determined only for two values of the
-nuisance parameters corresponding to $\pm 1\sigma$ ($\alpha = \pm 1$)
-variations in addition to the nominal prediction. The parameterised
-predictions needed for the definition of the likelihood function are
-obtained using interpolation ($\vert \alpha \vert \leq 1$) and
-extrapolation methods ($\vert \alpha \vert > 1$) provided by
-\textsc{HistFactory}~\cite{cranmer2012}.
+% To define a continuous likelihood function, the effects of nuisance
+% parameters on the signal and background expectations have to be
+% parameterised as continuous functions of the
+% parameters. Uncertainties are typically defined by an up- and
+% down-variation and the nominal prediction which correspond to
+% nuisance parameter values of $\alpha = \pm 1$ and $\alpha = 0$,
+% respectively.
 
-All uncertainties are decomposed into two correlated components
-employing different inter- and extrapolation methods. The first
-component are uncertainties on the sample normalisations in a given
-region which are parameterised using multiplicative normalisation
-factors determined from 6th order polynomial interpolation and
-exponential extrapolation in $\alpha$. Exponential extrapolation is
-used to prevent the normalisation factors from becoming negative. The
-second component are shape variations of the discriminant in a given
-region that leave the normalisation invariant. The parameterised shape
-variations are obtained using 6th order polynomial interpolation and
-linear extrapolation. In both cases the resulting functions are
-required to be continuous and have continuous first and second
-derivatives at the boundaries.
+% The parametrisation is obtained by interpolation
+% ($\vert \alpha \vert \leq 1$) and extrapolation
+% ($\vert \alpha \vert > 1$) methods provided by
+% \textsc{HistFactory}~\cite{cranmer2012}.
+
+% All uncertainties are split into uncertainties only affecting the
+% normalisation and uncertainties only affecting the shape of
+% distributions. Both components are considered as fully correlated in
+% the model. Different inter- and extrapolation methods are used for
+% normalisation and shape uncertainties.
+
+% All uncertainties are decomposed into two correlated components
+% employing different inter- and extrapolation methods. The first
+% component are uncertainties on the sample normalisations in a given
+% region which are parameterised using multiplicative normalisation
+% factors determined from 6th order polynomial interpolation and
+% exponential extrapolation in $\alpha$. Exponential extrapolation is
+% used to prevent the normalisation factors from becoming negative. The
+% second component are shape variations of the discriminant in a given
+% region that leave the normalisation invariant. The parameterised shape
+% variations are obtained using 6th order polynomial interpolation and
+% linear extrapolation. In both cases the resulting functions are
+% required to be continuous and have continuous first and second
+% derivatives at the boundaries.
+
+% Normalisation uncertainties use 'FlexibleInterpVar' in HistFactory
+% with code 4 (polynomial interpol and exponential extrapol).
+%
+% Shape uncertainties use 'PiecewiseInterpolation' in HistFactory with
+% code 4 (polynomial interpolation and linear extrapolation)
 
 
 \subsubsection{Smoothing and Pruning of Systematic Uncertainties}
+
+All uncertainties are split into uncertainties only affecting the
+normalisation and uncertainties only affecting the shape of
+distributions. Both components are considered as fully correlated in
+the model. Different inter- and extrapolation methods are used for
+normalisation and shape uncertainties.
 
 % https://indico.cern.ch/event/736395/contributions/3040869/attachments/1671620/2684026/SmoothingPruning.pdf
 % https://cds.cern.ch/record/2692202/files/CERN-THESIS-2018-447.pdf
