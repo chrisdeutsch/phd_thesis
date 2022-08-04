@@ -269,34 +269,47 @@ called overfitting, the performance of the model evaluated on an
 independent dataset starts to degrade when further increasing the
 capacity of the model~\cite{hastie09}.
 
-When using multivariate methods in searches for new physics, it has to
-be ensured that the methods are evaluated on datasets that were not
-used for training or model selection,
-% (the process of choosing a model),
-thus providing an estimate of the generalised performance. In
-this analysis, events are categorised according to their event number
-into even- and odd-numbered events. This two-fold split of events
-yields an even- and odd-fold, respectively. The training and model
-selection can proceed by using one of the two folds withholding the
-remaining fold for later evaluation. This procedure is applied twice
-by using each fold for training / model selection once.
+When using machine learning methods in searches for new physics, it
+has to be ensured that the methods are evaluated on datasets that were
+not used for training or model selection,\footnote{Model selection
+  refers to the process of choosing a model from a set of models based
+  on an evaluation metric.} thus providing an estimate of the
+generalised performance. In this analysis, events are categorised
+according to their event number into even- and odd-numbered
+events. This two-fold split of events yields an even- and odd-fold,
+respectively. The training and model selection can proceed by using
+one of the two folds withholding the remaining fold for later
+evaluation. This procedure is applied twice by using each fold for
+training and model selection once.
 
-The models are evaluated by applying the model trained on the
-even-fold on odd-numbered events and the model trained on the odd-fold
-on even-numbered events. This approach, which is called 2-fold
-\emph{cross-validation}~\cite{hastie09,bishop06}, provides an unbiased
-evaluation of the MVA scores using the entirety of the available
-dataset. The same evaluation method is applied to signal region data
-recorded by the ATLAS detector.
+Predictions of the MVA scores are obtained by evaluating the model
+trained on the even- on odd-numbered events and the model trained on
+the odd- on even-numbered events. This approach, which is called
+2-fold \emph{cross-validation}~\cite{hastie09,bishop06}, provides
+unbiased predictions of the MVA scores for the entirety of the
+available dataset. The same evaluation method is applied to signal
+region data recorded by the ATLAS detector. After assigning MVA scores
+to all events, no distinction is made between even- and odd-numbered
+events for the remainder of the analysis.
 
-Similar to the biased predictions obtained when evaluating
-multivariate methods on datasets used for training, the process of
-model selection needs to be performed on a dataset that is independent
-of the one used for final evaluation~\cite{cawley10}. Here, model
-selection is used to choose the input variables and hyperparameters of
-the model based on a performance metric. Making this choice dependent
-on the performance on the withheld dataset will introduce a selection
-bias and represents a form of overfitting.
+% The models are evaluated by applying the model trained on the
+% even-fold on odd-numbered events and the model trained on the odd-fold
+% on even-numbered events. This approach, which is called 2-fold
+% \emph{cross-validation}~\cite{hastie09,bishop06}, provides an unbiased
+% evaluation of the MVA scores using the entirety of the available
+% dataset. The same evaluation method, including the separate treatment
+% of even- and odd-numbered events, is applied to signal region data
+% recorded by the ATLAS detector.
+
+Similar to the biased predictions obtained when evaluating machine
+learning methods on datasets used for training, the process of model
+selection needs to be performed on a dataset that is independent of
+the one used for final evaluation~\cite{cawley10}. In the case of this
+analysis, model selection primarily applies to the determination of
+the hyperparameters of the classification algorithms based on a
+performance metric. Making this choice dependent on the performance on
+the withheld dataset can introduce a selection bias when using the
+same dataset for the statistical interpretation.
 
 In this search, model selection is performed using 5-fold
 cross-validation (CV), a generalisation of the 2-fold approach to a
@@ -327,7 +340,8 @@ evaluated on the hold-out dataset.
     subset is denoted below. A single step out of a total of five, the
     number of possible assignments of the evaluation-fold, is
     shown. The hold-out dataset consisting of odd-numbered events is
-    not used when performing model selection on even-numbered events.}%
+    not used when performing model selection on even-numbered
+    events.}%
   \label{fig:cross_validation}
 \end{figure}
 
