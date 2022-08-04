@@ -45,13 +45,13 @@ on the mass of the resonance, \mX, and as a result the classification
 task varies continuously with \mX. This contrasts the former case in
 which the kinematic properties of signal events follow from a fixed
 distribution predicted by the SM. Classification tasks that vary as a
-function of a parameter, for example the assumed mass of a resonance,
-can be performed by \emph{Parametric Neural Networks} (PNNs) which
-were first introduced to HEP in Ref.~\cite{Baldi:2016fzo}. PNNs
-provide a single classifier that is able to handle sets of
-classification tasks described by one or more parameters. Therefore,
-they are used as discriminants in the search for resonant \HH
-production in the \hadhad and \lephad channels.
+function of a parameter, for example the mass of a resonance, can be
+performed by \emph{Parametric Neural Networks} (PNNs) which were first
+introduced to HEP in Ref.~\cite{Baldi:2016fzo}. PNNs provide a single
+classifier that is able to handle sets of classification tasks
+described by one or more parameters. Therefore, they are used as
+discriminants in the search for resonant \HH production in the \hadhad
+and \lephad channels.
 % while being able to smoothly interpolate to parameter values not
 % seen during training of the network.
 
@@ -70,7 +70,7 @@ is motivated. \Cref{sec:mva_crossvalidation} introduces a method used
 to train, optimise, and evaluate classifiers that ensures that the
 predicted MVA scores are unbiased and can be used in the statistical
 interpretation of the search results. This method is employed in
-\Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn} to obtain the BDT- and
+\Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn} to obtain BDT- and
 PNN-based classifiers used to extract signal events in the \hadhad
 channel.
 
@@ -124,8 +124,9 @@ invariant masses:
 \item[\mHH] The invariant mass of the pair of Higgs bosons in signal
   events. It is determined from the sum of four-momenta of the $b$-jet
   candidates after momentum corrections and the $\tautau$-system
-  four-momentum reconstructed using the MMC. In signal events the
-  relative mass resolution is \SIrange{8}{10}{\percent}.
+  four-momentum reconstructed using the MMC. For signal events in the
+  \hadhad channel the relative mass resolution is
+  \SIrange{8}{10}{\percent}.
 
 \end{description}
 The bias and resolution of the \PHiggs and \HH mass reconstruction is
@@ -196,22 +197,26 @@ where \tauleptons and $b$-jet candidates are less collimated. Both
 variables are used as inputs to the MVAs in the \hadhad and \lephad
 SLT channel.
 
-For a given analysis channel the same set of input variables is used
+In a given analysis channel, the same set of input variables is used
 for the search for non-resonant and resonant \HH production. The
 choice of variables between channels differs and is summarised
-in~\Cref{tab:mva_inputvar}.
+in~\Cref{tab:mva_inputvar}. The five discriminating variables used in
+the \hadhad channel are shown in~\Cref{fig:mva_inputs}.
+% A selection of variables used in the \lephad SLT and LTT channels
+% are documented in Ref.~\cite{ATLAS-CONF-2021-030}.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Discriminating variables used by the multivariate
-    classifiers distinguishing between events originating from signal
-    and background processes in all three analysis categories. The
-    same input variables are used for the search for SM \HH and
-    resonant \HH production. Adopted from
+  \caption{Input variables of the multivariate classifiers used in the
+    \hadhad and \lephad channels. The same variables are used for the
+    search for SM \HH and resonant \HH production. Definitions of the
+    input variables used in the \lephad channels are given in
+    \Cref{app:lephad_mva_variables}. The table is adapted from
     Ref.~\cite{ATLAS-CONF-2021-030}.}%
   \label{tab:mva_inputvar}
 
+  \renewcommand{\arraystretch}{1.1}%
   \input{tables/mva_variables}
 \end{table}
 
@@ -220,11 +225,6 @@ in~\Cref{tab:mva_inputvar}.
 % to the classification performance when comparing models with cross
 % validation in the \hadhad channel. It is therefore removed as an
 % input to the multivariate discriminants of the \hadhad channel.
-
-The five discriminating variables used in the \hadhad channel are
-shown in~\Cref{fig:mva_inputs}. A selection of variables used in the
-\lephad SLT and LTT channels are documented in
-Ref.~\cite{ATLAS-CONF-2021-030}.
 
 \begin{figure}[htbp]
   \centering
