@@ -326,22 +326,26 @@ down-variations in all bins of a given channel is less than
 
 \subsubsection{Nuisance Parameter Correlation Scheme}
 
-- All norm factors ( affecting signal, Z+(bb,bc,cc),
-ttbar/ttbarFakes(in hadhad) ) are fully correlated between all
-channels. Uncertainties on the relative acceptance are correlated when
-they are from the same source with the exception of the.
+All normalisation factors are correlated between channels. Nuisance
+parameters related to instrumental uncertainties are correlated
+between all channels and physics processes. Theory uncertainties on
+cross sections and acceptances for a given process are assumed to be
+correlated between channels provided they originate from the same
+source. Nuisance parameters related to the \faketauhadvis background
+estimation are not correlated between the \hadhad and \lephad channels
+since different estimation methods are used. However, they are
+correlated between the \lephad SLT and LTT channel which use the same
+estimation techniques.
 
-- All event and object reconstruction (and lumi) related uncertainties
-are fully correlated between all channels.
+An exception to this scheme are the parton shower uncertainties for
+\ttbar which were decorrelated between the \hadhad, \lephad SLT, and
+\lephad LTT channel. This decision was based on observed tensions
+between the best-fit nuisance parameter values when performing fits of
+the individual channels.
 
-- Theoretical uncertainties on cross sections and acceptances are
-correlated between all channels (if they are from the same source).
-
-- Nuisance parameters on the data-driven background estimation are
-separate since different methods are used.
-
-- Decorrelate parton shower systematics for ttbar between lephad and
-hadhad
+% Hadhad: No pull, slight overconstraint
+% Lephad SLT: Large overconstraint
+% Lephad LTT: Pull and overconstraint
 
 
 \subsection{Results of the Search for Non-Resonant Production of SM $HH$}
