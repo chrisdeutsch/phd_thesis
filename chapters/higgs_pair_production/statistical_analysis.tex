@@ -267,53 +267,61 @@ and resolution).
 
 \subsubsection{Smoothing and Pruning of Systematic Uncertainties}
 
-All uncertainties are split into uncertainties only affecting the
-normalisation and uncertainties only affecting the shape of
-distributions. Both components are considered as fully correlated in
-the model. Different inter- and extrapolation methods are used for
-normalisation and shape uncertainties.
-
 % https://indico.cern.ch/event/736395/contributions/3040869/attachments/1671620/2684026/SmoothingPruning.pdf
 % https://cds.cern.ch/record/2692202/files/CERN-THESIS-2018-447.pdf
-The derivation of shape uncertainties are susceptible to statistical
-fluctuations\footnote{This is can also be the case for normalisation
-  uncertainties which are not the subject of the smoothing
-  algorithm. In this case the user is responsible to ensure that
-  normalisation uncertainties are determined with sufficient
-  precision.} which can introduce spurious pulls and constraints on
-nuisance parameters when performing maximum likelihood fits of the
-model. Frequently this is the case when shape uncertainties are
-derived from MC-to-MC comparisons or from variations that change the
-four-momentum of final state particles. In these cases a smoothing
-procedure is applied to the templates describing the uncertainties on
-the shape of the discriminant. Shape uncertainties that are based on
-the re-weighting of the nominal prediction are less sensitive to
-statistical fluctuations, unless the weight distribution has high
-variance, and thus no smoothing is applied by default. Exceptions are
-made in some cases for example for the weight-based FSR uncertainties
-for the production of top quarks for which smoothing is applied due to
-the large variance of the associated weight distribution.
+All uncertainties are split into separate normalisation and shape
+uncertainties that are treated as being fully correlated. The
+templates used to define shape uncertainties are susceptible to
+statistical fluctuation which can lead to artificial pulls and
+constraints when fitting the model. This typically occurs when shape
+uncertainties are derived from the comparison of two Monte Carlo
+samples or from variations that change the four-momentum of
+reconstructed physics objects. In these cases, a smoothing procedure
+is applied to the templates which is adopted from
+Ref.~\cite{HIGG-2013-23}. Shape uncertainties that are based on a
+re-weighting of the nominal prediction are less susceptible to
+statistical fluctuations in which case no smoothing is applied by
+default. Exceptions are made for selected uncertainties such as the
+FSR uncertainties for single top and \ttbar production which introduce
+large weights that degrade the statistical precision of the templates.
 
-The smoothing procedure, adopted from Ref.~\cite{HIGG-2013-23}, uses
-iterative re-binning of the histogram-based templates describing the
-shape uncertainties, merging bins starting with bins that are most
-compatible until the statistical uncertainty in all bins is below
-\SI{5}{\percent} and the shape template has a monotonic
-dependency\todo{Why?} on the (MVA) discriminant. This procedure is
-applied, when configured for a given uncertainty, separately for all
-analysis regions and samples after merging.
+% The derivation of shape uncertainties are susceptible to statistical
+% fluctuations\footnote{This is can also be the case for normalisation
+%   uncertainties which are not the subject of the smoothing
+%   algorithm. In this case the user is responsible to ensure that
+%   normalisation uncertainties are determined with sufficient
+%   precision.} which can introduce spurious pulls and constraints on
+% nuisance parameters when performing maximum likelihood fits of the
+% model. Frequently this is the case when shape uncertainties are
+% derived from MC-to-MC comparisons or from variations that change the
+% four-momentum of final state particles. In these cases a smoothing
+% procedure is applied to the templates describing the uncertainties on
+% the shape of the discriminant. Shape uncertainties that are based on
+% the re-weighting of the nominal prediction are less sensitive to
+% statistical fluctuations, unless the weight distribution has high
+% variance, and thus no smoothing is applied by default. Exceptions are
+% made in some cases for example for the weight-based FSR uncertainties
+% for the production of top quarks for which smoothing is applied due to
+% the large variance of the associated weight distribution.
 
-The signal and background model is further simplified by removing
-small systematic variations. This pruning procedure is applied
-separately for all samples and analysis regions after merging,
-symmetrisation, and smoothing. Additionally, uncertainties on the
-normalisation and shape are pruned separately. The normalisation
-component of an uncertainty for a given sample and analysis category
-is removed if both the $+1\sigma$ and $-1\sigma$ variations are within
-\SI{0.5}{\percent} with respect to the nominal prediction. The shape
-component of an uncertainty is removed if both the $+1\sigma$ and
-$-1\sigma$ variations results in changes within \SI{0.5}{\percent} of
-the nominal prediction in all bins in the analysis region.
+% The smoothing procedure, adopted from Ref.~\cite{HIGG-2013-23}, uses
+% iterative re-binning of the histogram-based templates describing the
+% shape uncertainties, merging bins starting with bins that are most
+% compatible until the statistical uncertainty in all bins is below
+% \SI{5}{\percent} and the shape template has a monotonic
+% dependency\todo{Why?} on the (MVA) discriminant. This procedure is
+% applied, when configured for a given uncertainty, separately for all
+% analysis regions and samples after merging.
+
+The model is simplified by pruning small systematic
+uncertainties. This procedure is applied separately to all samples and
+channels after symmetrisation and smoothing, and separately for
+normalisation and shape uncertainties. The normalisation component of
+an uncertainty is removed if both the up- and down-variation change
+the normalisation by less than \SI{0.5}{\percent}. The shape component
+of an uncertainty is removed if the relative change of the up- and
+down-variations in all bins of a given channel is less than
+\SI{0.5}{\percent}.
 
 
 \subsubsection{Nuisance Parameter Correlation Scheme}
