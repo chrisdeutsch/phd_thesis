@@ -9,212 +9,27 @@
 \todo[inline]{Add plots for basic kinematic variables in the \hadhad
   signal region.}
 
-%------------------------------------------------------------------------------
-\chapter{Additional figures}
-\label{sec:app_additional_figures}
-% ------------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------
+\chapter{Additional Information on the Search for Higgs Boson Pair
+  Production}
+% -----------------------------------------------------------------------------
+
+\input{chapters/appendix/mva}
+
+\input{chapters/appendix/uncertainties}
+
+\input{chapters/appendix/statistical_interpretation}
+
+\input{chapters/appendix/add_plots}
 
 
-\begin{figure}[htbp]
-  \centering
+% -----------------------------------------------------------------------------
+\chapter{Additional Information on Constraining the Strength of the
+  Higgs Boson Self-Coupling}
+% -----------------------------------------------------------------------------
 
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/NonResHH_pearson}
-    \subcaption{SM \HH (gluon fusion)}
-  \end{subfigure}\hfill %
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/ttbar_pearson}
-    \subcaption{\ttbar}
-  \end{subfigure}
-
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/Ztautau_pearson}
-    \subcaption{$Z \rightarrow \tautau + \text{jets}$}
-  \end{subfigure}\hfill %
-  \begin{subfigure}[t]{.49\textwidth}
-    \includegraphics[width=\textwidth]{mva/correlations/Fake_pearson}
-    \subcaption{Multi-jet}
-  \end{subfigure}
-
-  \caption{Correlation matrices of the MVA input variables for the SM
-    \HH signal and the three largest background contributions (b) -
-    (d) in the \hadhad SR.}
-  \label{fig:mva_input_correlations}
-  \todo[inline]{Will move to appendix (or remove completely).}
-\end{figure}
-
-
-\begin{figure}[htbp]
-  \centering
-
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist300_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{300}{\GeV}$}
-  \end{subfigure}\hfill%
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist500_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{500}{\GeV}$}
-  \end{subfigure}
-
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1000_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{1000}{\GeV}$}
-  \end{subfigure}\hfill%
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1600_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{1600}{\GeV}$}
-  \end{subfigure}
-
-  \caption{Distribution of the PNN discriminant of the \lephad SLT
-    channel after the maximum likelihood fit of the background-only
-    model in all signal and control regions. The signal overlay is
-    scaled to the expected upper limit on $\sigma(pp \to X \to HH)$.}
-\end{figure}
-
-
-\begin{figure}[htbp]
-  \centering
-
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist300_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{300}{\GeV}$}
-  \end{subfigure}\hfill%
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist500_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{500}{\GeV}$}
-  \end{subfigure}
-
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1000_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{1000}{\GeV}$}
-  \end{subfigure}\hfill%
-  \begin{subfigure}{0.495\textwidth}
-    \centering
-
-    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1600_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
-    \subcaption{$\mX = \SI{1600}{\GeV}$}
-  \end{subfigure}
-
-  \caption{Distribution of the PNN discriminant of the \lephad LTT
-    channel after the maximum likelihood fit of the background-only
-    model in all signal and control regions. The signal overlay is
-    scaled to the expected upper limit on $\sigma(pp \to X \to HH)$.}
-\end{figure}
-
-
-\label{app:limit_tables}
-
-\begin{table}[htbp]
-  \centering
-
-  % Workspaces: comb_2022_01_29
-  \input{tables/res_comb_limits}
-  \caption{$\text{CL}_\text{s}$ upper limits on the cross section of
-    $\PX \ra \PHiggs \PHiggs \ra \bbtautau$ from the combined fit of
-    all channels. Limits are in fb.}%
-  \label{tab:comb_limits_resonant}
-\end{table}
-
-
-\begin{table}[htbp]
-  \centering
-
-  % Workspaces: comb_2022_01_29
-  \input{tables/res_hadhad_limits}
-  \caption{$\text{CL}_\text{s}$ upper limits on the cross section of
-    $\PX \ra \PHiggs \PHiggs \ra \bbtautau$ from the \hadhad-only
-    fit. Limits are in fb.}
-  \label{tab:hadhad_limits_resonant}
-\end{table}
-
-
-\begin{table}[htbp]
-  \centering
-
-  % Workspaces: comb_2022_01_29
-  \input{tables/res_lephad_limits}
-  \caption{$\text{CL}_\text{s}$ upper limits on the cross section of
-    $\PX \ra \PHiggs \PHiggs \ra \bbtautau$ from the \lephad-only
-    fit. Limits are in fb.}
-  \label{tab:lephad_limits_resonant}
-\end{table}
-
-
-\label{app:breakdown_table}
-
-\begin{table}[htbp]
-  \centering
-
-  \caption{Decomposition of the variance on $\hat{\sigma}$, the
-    maximum likelihood estimate of the cross section
-    $\sigma(pp \to X\to HH)$, by uncertainty category for the fit to
-    Asimov data with $\mu = 0$ in all regions. The decomposition is
-    determined analogously to~\Cref{tab:breakdown_nonres}, separately
-    for four exemplary signal mass hypotheses. The fractions of
-    subcategories do not necessarily sum to the fraction of the parent
-    category due to correlations between nuisance parameters.}%
-  \label{tab:breakdown_res_exp_mu0}
-
-  \input{tables/breakdown_res_exp_mu0}
-\end{table}
-
-\begin{table}[htbp]
-  \centering
-
-  \caption{Summary of allowed \klambda intervals obtained from
-    searches for non-resonant \HH production by the CMS collaboration
-    using \SI{138}{\per\femto\barn} of \pp-collision data taken during
-    Run~2 of the LHC.}%
-  \label{tab:cms_klambda}
-
-  \begin{tabular}{lccc}
-    \toprule
-    & \multicolumn{3}{c}{Allowed \klambda interval} \\
-    \cmidrule{2-4}
-    Search channel & Observed & Expected & Reference  \\
-    \midrule
-    \bbtautau & $[-1.7, 8.7]$ & $[-2.9, \phantom{0}9.8]$  & \cite{CMS-HIG-20-010} \\
-    \bbbb     & $[-2.3, 9.4]$ & $[-5.0, 12.0]$            & \cite{CMS-HIG-20-005} \\
-    \bbyy     & $[-3.3, 8.5]$ & $[-2.5, \phantom{0}8.2]$  & \cite{CMS-HIG-19-018} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-
-%------------------------------------------------------------------------------
-\chapter{Control and validation regions plots}
-\label{app:control_and_validation_regions}
-% ------------------------------------------------------------------------------
-
-\todo[inline]{Should add more validation region plots with all
-  uncertainties.}
-
-\section{Multi-Jet Validation Region}
-
-\section{Z+Jets Validation Region}
-
-\section{2-tag SS 'Control Region'}
-
-
-%------------------------------------------------------------------------------
-\chapter{Graphical illustration of the copula-based toy generation}
-\label{app:graphical_illustration_copula_model}
-% ------------------------------------------------------------------------------
-
+\input{chapters/appendix/self_coupling}
 
 
 %%% Local Variables:
