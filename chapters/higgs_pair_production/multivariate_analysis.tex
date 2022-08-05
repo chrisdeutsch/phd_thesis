@@ -347,19 +347,19 @@ evaluated on the hold-out dataset.
 
 
 
-\subsection{Extraction of the Non-Resonant \HH Signal using BDT in the
-  \hadhad Channel}%
+\subsection{Extraction of Signals from SM \HH Production with BDTs in
+  the \hadhad Channel}%
 \label{sec:mva_smbdt}
 
-The extraction of SM \HH signal events in the \hadhad channel uses BDT
-for signal-background classification. Events passing the signal region
-selection (2~$b$-tag region) of the \hadhad channel are used to train
-BDT. The training considers the non-resonant \HH production via \ggF
-as the \emph{signal class}; the combination of all backgrounds as the
-\emph{background class}. The individual background processes, which
-are estimated from simulation or data (multi-jet background), are
-weighted according to their relative cross-sections. SM \HH production
-via VBF is not included in the training.
+The search for SM \HH production in the \hadhad channel uses BDTs to
+separate signal from background events. Events passing the signal
+region selection (2~$b$-tag region) of the \hadhad channel are used to
+train BDT. The training considers the non-resonant \HH production via
+\ggF as the \emph{signal class}; the combination of all backgrounds as
+the \emph{background class}. The individual background processes,
+which are estimated from simulation or data (multi-jet background),
+are weighted according to their relative cross-sections. SM \HH
+production via VBF is not included in the training.
 % due to its low cross-section compared to the \ggF production mode.
 The BDT implementation of the \emph{Toolkit for Multivariate Data
   Analysis} (TMVA)~\cite{Hocker:2007ht} is used.
@@ -408,7 +408,7 @@ $(x, y) = \left( \varepsilon_{\text{s}}(t), 1 -
 on the score of a classifier, and $\varepsilon_\text{s}$ /
 $\varepsilon_\text{b}$ the signal and background efficiency of this
 selection. A value of the ROC-AUC of $1$ indicates perfect
-classification, while a value of $1/2$ corresponds to an uninformative
+classification, while a value of $0.5$ corresponds to an uninformative
 classifier. The ROC-AUC is chosen as the metric to be optimised as it
 summarises the classifier's performance over all possible working
 points, i.e.\ choices of thresholds on the classifier
@@ -462,7 +462,7 @@ providing the final classifiers to extract the SM \HH signal.
 \subsubsection{Evaluation and Variable Importance}%
 \label{sec:bdt_performance}
 
-In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDT,
+In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDTs,
 which are evaluated on events withheld from training and model
 selection, is shown in the signal region of the \hadhad channel. The
 BDT score provides good separation power between the SM \HH signal and
@@ -497,12 +497,10 @@ of the signal events.
 The single largest background in the last two BDT score bins, with an
 expectation of 6.9 events, is associated production of
 $\PZ \rightarrow \tautau$ with jets originating from heavy-flavour
-quarks.
-
-The production of single Higgs bosons represents the second most
-abundant background in the signal-like bins of the final
+quarks. The production of single Higgs bosons represents the second
+most abundant background in the signal-like bins of the final
 discriminant. The primary source being~$\PHiggs \rightarrow \tautau$
-with about equal contribution from the gluon fusion, $\PZ\PHiggs$, and
+with approximately equal contribution from the \ggF, $\PZ\PHiggs$, and
 $\ttbar\PHiggs$ production modes. A small fraction of
 \SI{15}{\percent} is originating from $\PHiggs \rightarrow \bbbar$ in
 associated production with a \PZ boson. The kinematic properties of
@@ -511,14 +509,12 @@ similar to the non-resonant \HH signal and largely limited by the
 \PHiggs-system mass reconstruction performance such that about 1 in 15
 single Higgs boson events in the signal region are selected into one
 of the two most signal-like bins, yielding an expectation of 4.8
-events.
-
-Other backgrounds populating the two most signal-like bins in BDT
-score are originating from \ttbar (true \tauhadvis) with an
-expectation of 4.6 events and \jettotauhadvis from multi-jet and
-\ttbar production with 2.2 and 3.4 expected events, respectively. The
-signal and background yields including all experimental and
-theoretical uncertainties will be summarised
+events. Other backgrounds populating the two most signal-like bins in
+BDT score are originating from \ttbar (with \truetauhadvis in the
+decay) with an expectation of 4.6 events and \jettotauhadvis from
+multi-jet and \ttbar production with 2.2 and 3.4 expected events,
+respectively. The signal and background yields including all
+experimental and theoretical uncertainties will be summarised
 in~\Cref{sec:statistical_analysis}.
 
 The importance of input variables in the BDT can be estimated using
@@ -732,7 +728,6 @@ parameter, is populating the high PNN score bins.
     the most signal-like bin of the PNN ($\mX = \SI{1000}{\GeV}$)
     score will be discussed in \Cref{sec:statistical_analysis}.}%
   \label{fig:pnn_score_prefit}
-  \todo[inline]{Make the binning categorical.}
 \end{figure}
 
 The background processes contributing to the most signal-like bins
