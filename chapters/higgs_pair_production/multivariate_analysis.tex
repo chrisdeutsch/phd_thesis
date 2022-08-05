@@ -634,16 +634,15 @@ better conditioning of the loss minimisation. Similarly, the values of
 the mass parameter are (linearly) transformed into $[0, 1]$. The
 values of the mass parameter for background events is sampled from the
 \mX distribution in the combined signal sample and is re-sampled after
-every training epoch.
-
-The neural networks consist of multiple fully-connected layers with
-ReLU activation~\cite{nair:relu}, except for the final layer which
-uses sigmoid activation. The training is implemented in
-\textsc{Keras}~\cite{keras} using the
+every training epoch. The neural networks consist of multiple
+fully-connected layers with ReLU activation~\cite{nair:relu}, except
+for the final layer which uses sigmoid activation. The training is
+implemented in \textsc{Keras}~\cite{keras} using the
 \textsc{TensorFlow}~\cite{tensorflow2015-whitepaper} backend. Trained
 PNN are evaluated using \textsc{lwtnn}~\cite{lwtnn}.
 
-The PNN hyperparameters are optimised using a random grid search with
+The PNN hyperparameters are optimised, following the approach
+previously employed for the BDT, using a random grid search with
 nested cross-validation. The parameter grid is defined
 in~\Cref{tab:hyperparameter_grid_pnn}. To reduce the dimensionality of
 the hyperparameter space, the number of nodes in the hidden layers
@@ -667,15 +666,15 @@ same.
 No clear choice of optimisation metric exists to evaluate a continuum
 of related classification task. For simplicity, the ROC-AUC of the PNN
 when performing binary classification of a resonant signal with
-$\mX = \SI{325}{\GeV}$ against background is chosen. This choice is
-motivated by the strength of the $\PX \to \HH \to \bbtautau$ search
+$\mX = \SI{325}{\GeV}$ against the background is chosen. This choice
+is motivated by the strength of the $\PX \to \HH \to \bbtautau$ search
 channel in an intermediate mass range of the scalar resonance from
-approximately \SI{300}{\GeV} to \SI{600}{\GeV} compared to the
-$\bbbar\gamma\gamma$ and $\bbbar\bbbar$ channels which are expected
-dominate the low/high \mX signal sensitivity. The similarity of \HH
-signals from resonant production with the bulk of the background is
-largest at low resonance masses, thus a lower value of \mX in the
-considered range is selected.
+approximately \SI{300}{\GeV} to \SI{600}{\GeV} compared to the \bbyy
+and \bbbb channels which are expected dominate the low and high \mX
+signal sensitivity, respectively. In the \hadhad channel, background
+events with \mHH around \SI{325}{\GeV} are most abundant
+(cf.~\Cref{fig:mva_inputs}) and therefore a value of \mX at the lower
+end of the range is selected for optimisation.
 
 About 1600 unique configurations of the PNN are tested, the 400
 highest ranking ones in ROC-AUC showing compatible performance in
