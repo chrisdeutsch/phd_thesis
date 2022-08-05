@@ -46,7 +46,7 @@ task varies continuously with \mX. This contrasts the former case in
 which the kinematic properties of signal events follow from a fixed
 distribution predicted by the SM. Classification tasks that vary as a
 function of a parameter, for example the mass of a resonance, can be
-performed by \emph{Parametric Neural Networks} (PNNs) which were first
+performed by \emph{Parameterised Neural Networks} (PNNs) which were first
 introduced to HEP in Ref.~\cite{Baldi:2016fzo}. PNNs provide a single
 classifier that is able to handle sets of classification tasks
 described by one or more parameters. Therefore, they are used as
@@ -583,16 +583,20 @@ method of incorporating the \mX dependency of the classification
 problem is to train a classifier for every signal hypothesis. In this
 approach multiple classification tasks are solved in isolation,
 ignoring the more general classification problem. This was previously
-explored in Ref.~\cite{HIGG-2016-16-witherratum} using BDT.
+explored in Ref.~\cite{HIGG-2016-16-witherratum} using BDTs.
 
 An alternative approach is provided by parameterised classifiers where
 the dependency of the prediction problem is incorporated during
 training, thus solving it in a broader context. In particular,
-Parametric Neural Networks~\cite{Baldi:2016fzo} are used due to the
-ability of neural networks to smoothly approximate large classes of
-continuous functions. As a result of these properties, it is shown in
-Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate the
-classification task to parameter values not seen in training.
+Parameterised Neural Networks are used due to the ability of neural
+networks to smoothly approximate large classes of continuous
+functions~\cite{Baldi:2016fzo}. As a result of these properties, it is
+shown in Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate
+the classification task to parameter values not seen in training. It
+is also suggested that parameterised classifiers may outperform
+approaches using one classifier per parameter value due to their
+ability to solve the more general, parameter-dependent classification
+problem.
 
 In this search PNNs are implemented as feedforward neural networks
 where, in addition to the five discriminating variables, the parameter
