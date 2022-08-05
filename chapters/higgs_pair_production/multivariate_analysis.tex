@@ -736,7 +736,7 @@ parameter, is populating the high PNN score bins.
 The background processes contributing to the most signal-like bins
 depend on the classification task that is solved by the PNN. At low
 mass (approx.\ \SI{300}{\GeV}) the dominant background is \ttbar with
-both true and \faketauhadvis constituting about \SI{80}{\percent} of
+both true- and \faketauhadvis constituting about \SI{80}{\percent} of
 the total background with a small contribution from multi-jet.  The
 background composition in the intermediate mass range (approx.\
 \SI{500}{\GeV}) is similar to the case of non-resonant \HH production
@@ -871,16 +871,19 @@ of the curves in \Cref{fig:pnn_detuning}. This decrease in mass
 sensitivity has two primary sources. First, the mass resolution of the
 reconstructed \mHH increases approximately linearly with \mX. Second,
 the PNN has high separation power between events from background
-processes and resonant \HH production at high mass. Due to the large
-separation power, the mass sensitivity in the high mass regime is
-limited by the width of bins in the high PNN score region, the bin
-width being driven by constraints imposed on the binning algorithm. In
-these cases, the signal extraction method employed in this search
-shows worse mass sensitivity than suggested by the resolution of the
-\mHH reconstruction itself. Consequently, the approach of using the
-score of a multivariate classifier as a final discriminant in this
-search is optimised for the discovery of a signal as opposed to
-perform a measurement of the resonance mass.
+processes and resonant \HH production at high mass.\footnote{A figure
+  showing the discrimination power of the PNN as a function of the \mX
+  of the signal hypothesis is shown in \Cref{fig:pnn_rocauc_vs_mx} in
+  the appendix.}  Due to the large separation power, the mass
+sensitivity in the high mass regime is limited by the width of bins in
+the high PNN score region, the bin width being driven by constraints
+imposed on the binning algorithm. In these cases, the signal
+extraction method employed in this search shows worse mass sensitivity
+than suggested by the resolution of the \mHH reconstruction
+itself. Consequently, the approach of using the score of a
+multivariate classifier as a final discriminant in this search is
+optimised for the discovery of a signal as opposed to perform a
+measurement of the resonance mass.
 
 % The width of the significance response of the PNN as the mass
 % parameter is varied can serve to understand the sensitivity and
@@ -938,7 +941,6 @@ perform a measurement of the resonance mass.
 % optimised for discovery as opposed to the measurement of the
 % properties of the resonance.
 
-\todo[inline]{Include a rejection power (ROC-AUC?) vs mass plots?}
 
 %%% Local Variables:
 %%% mode: latex
