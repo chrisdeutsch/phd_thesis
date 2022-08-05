@@ -698,7 +698,18 @@ odd-numbered events.
 withheld data in the signal region of the \hadhad channel for three
 different values of the mass parameter. In each case the signal of
 interest, resonant \HH production with \mX equal to the PNN mass
-parameter, is populating the high PNN score bins.
+parameter, is populating the high PNN score bins. The background
+processes contributing to the most signal-like bins depend on the
+classification task that is solved by the PNN. At low mass
+($\mX \approx {300}{\GeV}$) the dominant background is \ttbar with
+both true- and \faketauhadvis constituting about \SI{80}{\percent} of
+the total background with a small contribution from multi-jet.  The
+background composition in the intermediate mass range
+($\mX \approx \SI{500}{\GeV}$) is similar to the case of non-resonant
+\HH production in the SM which has a mean reconstructed \mHH of about
+\SI{500}{\GeV} after the signal region selection. For high mass
+resonances, the most relevant backgrounds are the production of
+$\PZ \to \tautau$ in association with jets from $b$- or $c$-quarks.
 
 \begin{figure}[htbp]
   \centering
@@ -733,20 +744,7 @@ parameter, is populating the high PNN score bins.
   \label{fig:pnn_score_prefit}
 \end{figure}
 
-The background processes contributing to the most signal-like bins
-depend on the classification task that is solved by the PNN. At low
-mass (approx.\ \SI{300}{\GeV}) the dominant background is \ttbar with
-both true- and \faketauhadvis constituting about \SI{80}{\percent} of
-the total background with a small contribution from multi-jet.  The
-background composition in the intermediate mass range (approx.\
-\SI{500}{\GeV}) is similar to the case of non-resonant \HH production
-in the SM which has a mean reconstructed \mHH of about \SI{500}{\GeV}
-after the signal region selection. For high mass resonances, the most
-relevant backgrounds are the production of $\PZ \to \tautau$ in
-association with jets from quarks of heavy flavour ($b$ and $c$
-quarks).
-
-The previously highlighted properties of PNN, the ability to solve a
+The previously discussed properties of PNN, the ability to solve a
 continuously varying classification task parameterised by \mX and the
 ability to interpolate to values of \mX not seen during training, are
 investigated. For this, a performance metric is defined by binning the
@@ -754,7 +752,7 @@ PNN score for a given value of the mass parameter using an algorithm
 that optimises the signal sensitivity while obeying certain
 constraints. The binning algorithm will be formally introduced
 in~\Cref{sec:binning_alg} for the statistical analysis of the results
-of the search.
+of this search.
 % The performance of the PNN is evaluated by binning its
 % output score for a given value of the parameter using the algorithm
 % also used for the statistical interpretation of the final results. The
@@ -775,7 +773,6 @@ inspect the change in signal sensitivity for a given benchmark signal
 as the PNN mass parameter is varied. The largest expected significance
 is obtained when the mass parameter is set close to the resonance mass
 of the signal hypothesis.
-
 % Ability to interpolate
 In~\Cref{fig:pnn_interpolation} the ability of PNNs to interpolate to
 classification tasks that were not part of the training is shown. The
@@ -871,19 +868,18 @@ of the curves in \Cref{fig:pnn_detuning}. This decrease in mass
 sensitivity has two primary sources. First, the mass resolution of the
 reconstructed \mHH increases approximately linearly with \mX. Second,
 the PNN has high separation power between events from background
-processes and resonant \HH production at high mass.\footnote{A figure
-  showing the discrimination power of the PNN as a function of the \mX
-  of the signal hypothesis is shown in \Cref{fig:pnn_rocauc_vs_mx} in
-  the appendix.}  Due to the large separation power, the mass
-sensitivity in the high mass regime is limited by the width of bins in
-the high PNN score region, the bin width being driven by constraints
-imposed on the binning algorithm. In these cases, the signal
-extraction method employed in this search shows worse mass sensitivity
-than suggested by the resolution of the \mHH reconstruction
-itself. Consequently, the approach of using the score of a
-multivariate classifier as a final discriminant in this search is
-optimised for the discovery of a signal as opposed to perform a
-measurement of the resonance mass.
+processes and resonant \HH production at high mass.\footnote{The
+  discrimination power of the PNN as a function of the \mX of the
+  signal hypothesis is shown in \Cref{fig:pnn_rocauc_vs_mx} in the
+  appendix.}  Due to the large separation power, the mass sensitivity
+in the high mass regime is limited by the width of bins in the high
+PNN score region, the bin width being driven by constraints imposed on
+the binning algorithm. In these cases, the signal extraction method
+employed in this search shows worse mass sensitivity than suggested by
+the resolution of the \mHH reconstruction itself. Consequently, the
+approach of using the score of a multivariate classifier as a final
+discriminant in this search is optimised for the discovery of a signal
+as opposed to perform a measurement of the resonance mass.
 
 % The width of the significance response of the PNN as the mass
 % parameter is varied can serve to understand the sensitivity and
