@@ -433,15 +433,16 @@ quality of the modelling of higher order variable interactions in the
 training data.
 
 The selected configuration, shown underlined
-in~\Cref{tab:hyperparameter_grid_bdt}, is the 5th and 7th highest
-ranking one with a ROC-AUC of \num{0.9803 +- 0.0008} and \num{0.9787
-  +- 0.0012} in CV on even- and odd-numbered events, respectively. In
-both cases the same configuration ranks highest among models with a
-maximum tree depth of 2.\footnote{Model optimisation using the nested
-  cross-validation method outlined in the text typically yields two
-  different hyperparameter configurations. One configuration for the
-  even- and one for the odd-fold.} After choosing the configuration,
-the classifiers are re-trained on all five folds of the inner CV,
+in~\Cref{tab:hyperparameter_grid_bdt}, is the 5\textsuperscript{th}
+and 7\textsuperscript{th} highest ranking one with a ROC-AUC of
+\num{0.9803 +- 0.0008} and \num{0.9787 +- 0.0012} in CV on even- and
+odd-numbered events, respectively. In both cases the same
+configuration ranks highest among models with a maximum tree depth of
+2.\footnote{Model optimisation using the nested cross-validation
+  method outlined in the text typically yields two different
+  hyperparameter configurations. One configuration for the even- and
+  one for the odd-fold.} After choosing the configuration, the
+classifiers are re-trained on all five folds of the inner CV,
 providing the final classifiers to extract the SM \HH signal.
 
 % It should be noted that the model selection should be done
@@ -685,12 +686,12 @@ odd-numbered events. The chosen configuration, underlined
 in~\Cref{tab:hyperparameter_grid_pnn}, has a ROC-AUC in 5-fold CV of
 \num{0.9764 +- 0.0009} on even- and \num{0.9754 +- 0.0009} on
 odd-numbered events.\footnote{On the dataset with odd-numbered events
-  the chosen configuration is the 54th highest ranking one in terms of
-  the ROC-AUC. For comparison, the highest ranking model on
-  odd-numbered event has a ROC-AUC of \num{0.9761 +- 0.0020}, showing
-  compatible performance with the chosen configuration.} The PNN are
-then re-fit on all five folds of the inner CV separately for even- and
-odd-numbered events.
+  the chosen configuration is the 54\textsuperscript{th} highest
+  ranking one in terms of the ROC-AUC. For comparison, the highest
+  ranking model on odd-numbered event has a ROC-AUC of \num{0.9761 +-
+    0.0020}, showing compatible performance with the chosen
+  configuration.} The PNN are then re-fit on all five folds of the
+inner CV separately for even- and odd-numbered events.
 
 \subsubsection{Evaluation and Variable Importance}
 
@@ -783,6 +784,14 @@ also for resonance masses that were not part of the training, and was
 exploited to include an additional signal with $\mX = \SI{375}{\GeV}$
 without retraining of the PNNs. % Why was it added? -> potential gap
 % in sensitivity
+Finally, the performance of the PNNs is compared to a strategy of
+using dedicated BDTs for every signal mass hypothesis. The comparison
+is performed for resonance masses of \num{300}, \num{500}, and
+\SI{1000}{\GeV} using BDTs that are optimised following the approach
+used for the BDTs in the SM \HH search. For these three values of \mX,
+the use of PNNs improves the expected signal significance by
+\SI{22}{\percent}, \SI{9}{\percent}, \SI{4}{\percent}, respectively,
+over an approach of using dedicated classifiers.
 
 \begin{figure}[htbp]
   \centering
