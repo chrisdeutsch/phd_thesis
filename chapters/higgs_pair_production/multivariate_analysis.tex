@@ -70,7 +70,7 @@ is motivated. \Cref{sec:mva_crossvalidation} introduces a method used
 to train, optimise, and evaluate classifiers that ensures that the
 predicted MVA scores are unbiased and can be used in the statistical
 interpretation of the search results. This method is employed in
-\Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn} to obtain BDT- and
+\Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn} to obtain the BDT- and
 PNN-based classifiers used to extract signal events in the \hadhad
 channel.
 
@@ -102,8 +102,8 @@ to distinguish the signal processes from the main backgrounds in the
 $\PHiggs \ra \Pbottom\APbottom$ and $\PHiggs \ra \tautau$ candidates
 are reconstructed\footnote{The fraction of events with a
   misreconstructed $H \to \bbbar$ or $H \to \tautau$ candidate, i.e.\
-  \btagged jets / \tauhadvis not being matched to Higgs boson decay
-  products at generator-level, are about \SI{2}{\percent} and
+  $b$-jet candidates or \tauhadvis not being matched to Higgs boson
+  decay products at generator-level, are about \SI{2}{\percent} and
   \SI{0.2}{\percent} in signal region of the \hadhad channel,
   respectively.}  and are used to define discriminating variables.
 Among the most important variables are \PHiggs- and \HH-system
@@ -315,8 +315,8 @@ In this search, model selection is performed using 5-fold
 cross-validation (CV), a generalisation of the 2-fold approach to a
 larger number of subdivisions, separately on even- and odd-numbered
 events. This approach effectively nests 5-fold CV inside 2-fold CV and
-is therefore called \emph{nested cross
-  validation}~\cite{cawley10,stone74}.
+is therefore called \emph{nested
+  cross-validation}~\cite{cawley10,stone74}.
 
 \Cref{fig:cross_validation} shows a schematic description of one
 iteration of the nested cross-validation approach. The inner, 5-fold
@@ -677,7 +677,7 @@ events with \mHH around \SI{325}{\GeV} are most abundant
 (cf.~\Cref{fig:mva_inputs}) and therefore a value of \mX at the lower
 end of the range is selected for optimisation.
 
-About 1600 unique configurations of the PNN are tested, the 400
+About 1600 unique configurations of the PNNs are tested, the 400
 highest ranking ones in ROC-AUC showing compatible performance in
 terms of the performance estimate obtained from CV. A single
 configuration is obtained by choosing the best performing parameter
@@ -690,7 +690,7 @@ odd-numbered events.\footnote{On the dataset with odd-numbered events
   ranking one in terms of the ROC-AUC. For comparison, the highest
   ranking model on odd-numbered event has a ROC-AUC of \num{0.9761 +-
     0.0020}, showing compatible performance with the chosen
-  configuration.} The PNN are then re-fit on all five folds of the
+  configuration.} The PNNs are then re-fit on all five folds of the
 inner CV separately for even- and odd-numbered events.
 
 \subsubsection{Evaluation and Variable Importance}
@@ -702,7 +702,7 @@ interest, resonant \HH production with \mX equal to the PNN mass
 parameter, is populating the high PNN score bins. The background
 processes contributing to the most signal-like bins depend on the
 classification task that is solved by the PNN. At low mass
-($\mX \approx {300}{\GeV}$) the dominant background is \ttbar with
+($\mX \approx \SI{300}{\GeV}$) the dominant background is \ttbar with
 both true- and \faketauhadvis constituting about \SI{80}{\percent} of
 the total background with a small contribution from multi-jet.  The
 background composition in the intermediate mass range
@@ -791,7 +791,7 @@ is performed for resonance masses of \num{300}, \num{500}, and
 used for the BDTs in the SM \HH search. For these three values of \mX,
 the use of PNNs improves the expected signal significance by
 \SI{22}{\percent}, \SI{9}{\percent}, \SI{4}{\percent}, respectively,
-over an approach of using dedicated classifiers.
+over the approach of using dedicated classifiers.
 
 \begin{figure}[htbp]
   \centering
