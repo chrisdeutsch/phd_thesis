@@ -42,16 +42,18 @@ resonant \HH production, multiple mass hypotheses for the scalar
 resonance decaying into Higgs boson pairs are considered. The
 kinematic properties of final state particles in signal events depend
 on the mass of the resonance, \mX, and as a result the classification
-task varies continuously with \mX. This is in contrast to the former
-case where the kinematic properties of signal events follow from a
-fixed distribution. Classification tasks that vary as a function of a
-physical or theoretical parameter, for example the assumed mass of a
-resonance, can be performed by \emph{Parametric Neural Networks}
-(PNNs) which were first introduced to HEP in
-Ref.~\cite{Baldi:2016fzo}. PNNs provide a single classifier that is
-able to handle sets of classification tasks described by one or more
-parameters while being able to smoothly interpolate to parameter
-values not seen during training of the network.
+task varies continuously with \mX. This contrasts the former case in
+which the kinematic properties of signal events follow from a fixed
+distribution predicted by the SM. Classification tasks that vary as a
+function of a parameter, for example the mass of a resonance, can be
+performed by \emph{Parameterised Neural Networks} (PNNs) which were first
+introduced to HEP in Ref.~\cite{Baldi:2016fzo}. PNNs provide a single
+classifier that is able to handle sets of classification tasks
+described by one or more parameters. Therefore, they are used as
+discriminants in the search for resonant \HH production in the \hadhad
+and \lephad channels.
+% while being able to smoothly interpolate to parameter values not
+% seen during training of the network.
 
 The scores provided by these multivariate classification methods,
 hereafter called MVA scores, are later used as a discriminant in
@@ -62,91 +64,26 @@ procedure such that the pre-selection regions are also signal regions
 of the respective channels. During the development of the analysis,
 regions at high MVA scores were blinded to avoid selection biases.
 
-\Cref{sec:mva_crossvalidation} begins by describing the cross
-validation method used to ensure that model selection and MVA
-predictions are unbiased.  In~\Cref{sec:mva_discriminating variables}
-the choice of discriminating variables used to classify signal and
-background events will be motivated. Afterwards, the training and
-optimisation of the classifiers used to extract SM \HH signal is
-described in~\Cref{sec:mva_smbdt}. Finally, \Cref{sec:mva_pnn}
-describes the event classification using PNNs for the search for
-resonant production of \HH, including a brief discussion of their
-properties.
+In \Cref{sec:mva_discriminating variables} the choice of
+discriminating variables used to classify signal and background events
+is motivated. \Cref{sec:mva_crossvalidation} introduces a method used
+to train, optimise, and evaluate classifiers that ensures that the
+predicted MVA scores are unbiased and can be used in the statistical
+interpretation of the search results. This method is employed in
+\Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn} to obtain the BDT- and
+PNN-based classifiers used to extract signal events in the \hadhad
+channel.
 
-
-\subsection{Cross Validation Method}
-\label{sec:mva_crossvalidation}
-
-Many machine learning algorithms
-% , due to their ability to approximate large classes of functions,
-are susceptible to fitting statistical fluctuations in the data that
-are used to train a model. As a result, predictions of performance
-characteristics of the model based on the training data might not
-generalise to previously unseen data. In extreme cases, frequently
-called overfitting, the performance of the model evaluated on an
-independent dataset starts to degrade when further increasing the
-capacity of the model~\cite{hastie09}.
-
-When using multivariate methods in searches for new physics, it has to
-be ensured that the methods are evaluated on datasets that were not
-used for training or model selection,
-% (the process of choosing a model),
-thus providing an estimate of the generalised performance. In
-this analysis, events are categorised according to their event number
-into even- and odd-numbered events. This two-fold split of events
-yields an even- and odd-fold, respectively. The training and model
-selection can proceed by using one of the two folds withholding the
-remaining fold for later evaluation. This procedure is applied twice
-by using each fold for training / model selection once.
-
-The models are evaluated by applying the model trained on the
-even-fold on odd-numbered events and the model trained on the odd-fold
-on even-numbered events. This approach, which is called 2-fold
-\emph{cross validation}~\cite{hastie09,bishop06}, provides an unbiased
-evaluation of the MVA scores using the entirety of the available
-dataset. The same evaluation method is applied to signal region data
-recorded by the ATLAS detector.
-
-Similar to the biased predictions obtained when evaluating
-multivariate methods on datasets used for training, the process of
-model selection needs to be performed on a dataset that is independent
-of the one used for final evaluation~\cite{cawley10}. Here, model
-selection is used to choose the input variables and hyperparameters of
-the model based on a performance metric. Making this choice dependent
-on the performance on the withheld dataset will introduce a selection
-bias and represents a form of overfitting.
-
-In this search, model selection is performed using 5-fold cross
-validation (CV), a generalisation of the 2-fold approach to a larger
-number of subdivisions, separately on even- and odd-numbered
-events. This approach effectively nests 5-fold CV inside 2-fold CV and
-is therefore called \emph{nested cross
-  validation}~\cite{cawley10,stone74}.
-
-\Cref{fig:cross_validation} shows a schematic description of one
-iteration of the nested cross validation approach. The inner, 5-fold
-CV randomly partitions events into five folds. For every choice of
-evaluation-fold, the model is trained on the remaining four folds and
-subsequently evaluated on the evaluation-fold. A decision between two
-competing models can be made by comparing the average and standard
-deviation of an evaluation metric over the five iterations of the inner
-CV. Only after the best-performing model is selected, usually after
-re-fitting the model on the combination of all five folds, it is
-evaluated on the hold-out dataset.
-
-\begin{figure}[htbp]
-  \centering
-
-  \includegraphics[scale=1]{mva/kfold}
-
-  \caption{5-fold cross validation approach for model selection on
-    even-numbered events. The separation of events into disjoint
-    subsets (folds) is indicated by rectangles. The purpose of the
-    subset is denoted below. A single step out of a total of five, the
-    number of possible assignments of the evaluation-fold, is
-    shown. The hold-out dataset is not used for model selection.}
-  \label{fig:cross_validation}
-\end{figure}
+% \Cref{sec:mva_crossvalidation} begins by describing the
+% cross-validation method used to ensure that model selection and MVA
+% predictions are unbiased. In~\Cref{sec:mva_discriminating variables}
+% the choice of discriminating variables used to classify signal and
+% background events will be motivated. Afterwards, the training and
+% optimisation of the classifiers used to extract SM \HH signal is
+% described in~\Cref{sec:mva_smbdt}. Finally, \Cref{sec:mva_pnn}
+% describes the event classification using PNNs for the search for
+% resonant production of \HH, including a brief discussion of their
+% properties.
 
 
 \subsection{Discriminating Variables}%
@@ -165,8 +102,8 @@ to distinguish the signal processes from the main backgrounds in the
 $\PHiggs \ra \Pbottom\APbottom$ and $\PHiggs \ra \tautau$ candidates
 are reconstructed\footnote{The fraction of events with a
   misreconstructed $H \to \bbbar$ or $H \to \tautau$ candidate, i.e.\
-  \btagged jets / \tauhadvis not being matched to Higgs boson decay
-  products at generator-level, are about \SI{2}{\percent} and
+  $b$-jet candidates or \tauhadvis not being matched to Higgs boson
+  decay products at generator-level, are about \SI{2}{\percent} and
   \SI{0.2}{\percent} in signal region of the \hadhad channel,
   respectively.}  and are used to define discriminating variables.
 Among the most important variables are \PHiggs- and \HH-system
@@ -185,10 +122,11 @@ invariant masses:
   on the signal process.
 
 \item[\mHH] The invariant mass of the pair of Higgs bosons in signal
-  events. It is determined from the sum of four-momenta of \btagged
-  jets after momentum corrections and the $\tautau$-system
-  four-momentum reconstructed using the MMC. In signal events the
-  relative mass resolution is \SIrange{8}{10}{\percent}.
+  events. It is determined from the sum of four-momenta of the $b$-jet
+  candidates after momentum corrections and the $\tautau$-system
+  four-momentum reconstructed using the MMC. For signal events in the
+  \hadhad channel the relative mass resolution is
+  \SIrange{8}{10}{\percent}.
 
 \end{description}
 The bias and resolution of the \PHiggs and \HH mass reconstruction is
@@ -259,75 +197,26 @@ where \tauleptons and $b$-jet candidates are less collimated. Both
 variables are used as inputs to the MVAs in the \hadhad and \lephad
 SLT channel.
 
-For a given analysis channel the same set of input variables is used
+In a given analysis channel, the same set of input variables is used
 for the search for non-resonant and resonant \HH production. The
 choice of variables between channels differs and is summarised
-in~\Cref{tab:mva_inputvar}. A description of variables used in the
-\lephad channels is given in the following.  Reconstructed electrons
-and muons are collectively referred to as leptons ($\ell$).\todo{Move
-  lephad variables to appendix?}
-\begin{description}
-
-\item[$\Delta \pT(\ell, \tauhadvis)$] The transverse momentum
-  difference between lepton and \tauhadvis.
-
-\item[\mTW] Transverse mass of the \PW boson for processes where
-  \pTmiss solely originates from the decay $\PW \ra \ell \nu_\ell$ defined as:
-  $\mTW = \sqrt{2 |\pT^{\ell}| |\pTmiss| \cos(1 - \Delta\phi)}$.
-
-\item[\pTmiss $\phi$ centrality] A measure of the relative angular
-  position of \pTmiss and visible \taulepton decay products
-  (electrons, muons, or \tauhadvis) in the transverse plane. It is
-  defined as~\cite{HIGG-2013-32, HIGG-2016-16-witherratum}:
-  % The
-  % measurement is relative to the line bisecting the azimuthal angle
-  % between the pair of visible \taulepton decay products and is defined
-  % as~\cite{HIGG-2013-32, HIGG-2016-16-witherratum}:
-  \begin{align*}
-    \pTmiss\text{ }\phi\text{ centrality} = \frac{A + B}{\sqrt{A^2 + B^2}} \text{,}
-  \end{align*}
-  where
-  \begin{align*}
-    A = \frac{\sin(\phi_{\pTmiss} - \phi_{\tau_1})}{\sin(\phi_{\tau_2} - \phi_{\tau_1})} \qquad B = \frac{\sin(\phi_{\tau_2} - \phi_{\pTmiss})}{\sin(\phi_{\tau_2} - \phi_{\tau_1})} \text{,}
-  \end{align*}
-  with $\phi_{\pTmiss}$ and $\phi_{\tau_1}$ / $\phi_{\tau_2}$ denoting
-  the azimuthal angle of \pTmiss and visible \taulepton decay
-  products, respectively.
-
-  The \pTmiss $\phi$ centrality is defined relative to the line
-  bisecting the azimuthal angle spanned by the visible \taulepton
-  decay products. It reaches a maximum of $\sqrt{2}$ (minimum of
-  $-\sqrt{2}$) when \pTmiss is aligned with the bisecting line and
-  pointing into the smaller (larger) angle defined by the decay
-  products. In configurations where \pTmiss is collinear with one of
-  the visible \taulepton decay products it takes a value of 1.
-
-\item[$\Delta\phi(\ell\tauhadvis, bb)$] Azimuthal angle between the
-  $\ell + \tauhadvis$ system and the system consisting of the two
-  \bjet candidates.
-
-\item[$\Delta\phi(\ell, \pTmiss)$] Azimuthal angle between the lepton
-  and \pTmiss.
-
-\item[$\Delta\phi(\pTauTau, \pTmiss)$] Azimuthal angle between
-  $\tau\tau$-system, reconstructed using the MMC, and \pTmiss.
-
-\item[$s_{\text{T}}$] The effective mass of the event defined as the
-  scalar sum of transverse momenta of all selected jets, \tauhadvis,
-  leptons, and \pTmissAbs.
-\end{description}
+in~\Cref{tab:mva_inputvar}. The five discriminating variables used in
+the \hadhad channel are shown in~\Cref{fig:mva_inputs}.
+% A selection of variables used in the \lephad SLT and LTT channels
+% are documented in Ref.~\cite{ATLAS-CONF-2021-030}.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Discriminating variables used by the multivariate
-    classifiers distinguishing between events originating from signal
-    and background processes in all three analysis categories. The
-    same input variables are used for the search for SM \HH and
-    resonant \HH production. Adopted from
+  \caption{Input variables of the multivariate classifiers used in the
+    \hadhad and \lephad channels. The same variables are used for the
+    search for SM \HH and resonant \HH production. Definitions of the
+    input variables used in the \lephad channels are given in
+    \Cref{app:lephad_mva_variables}. The table is adapted from
     Ref.~\cite{ATLAS-CONF-2021-030}.}%
   \label{tab:mva_inputvar}
 
+  \renewcommand{\arraystretch}{1.1}%
   \input{tables/mva_variables}
 \end{table}
 
@@ -336,11 +225,6 @@ and muons are collectively referred to as leptons ($\ell$).\todo{Move
 % to the classification performance when comparing models with cross
 % validation in the \hadhad channel. It is therefore removed as an
 % input to the multivariate discriminants of the \hadhad channel.
-
-The five discriminating variables used in the \hadhad channel are
-shown in~\Cref{fig:mva_inputs}. A selection of variables used in the
-\lephad SLT and LTT channels are documented in
-Ref.~\cite{ATLAS-CONF-2021-030}.
 
 \begin{figure}[htbp]
   \centering
@@ -372,19 +256,110 @@ Ref.~\cite{ATLAS-CONF-2021-030}.
 \end{figure}
 
 
-\subsection{Extraction of the Non-Resonant \HH Signal using BDT in the
-  \hadhad Channel}%
+\subsection{Cross-Validation Method}
+\label{sec:mva_crossvalidation}
+
+Many machine learning algorithms
+% , due to their ability to approximate large classes of functions,
+are susceptible to fitting statistical fluctuations in the data that
+are used to train a model. As a result, predictions of performance
+characteristics of the model based on the training data might not
+generalise to previously unseen data. In extreme cases, frequently
+called overfitting, the performance of the model evaluated on an
+independent dataset starts to degrade when further increasing the
+capacity of the model~\cite{hastie09}.
+
+When using machine learning methods in searches for new physics, it
+has to be ensured that the methods are evaluated on datasets that were
+not used for training or model selection,\footnote{Model selection
+  refers to the process of choosing a model from a set of models based
+  on an evaluation metric.} thus providing an estimate of the
+generalised performance. In this analysis, events are categorised
+according to their event number into even- and odd-numbered
+events. This two-fold split of events yields an even- and odd-fold,
+respectively. The training and model selection can proceed by using
+one of the two folds withholding the remaining fold for later
+evaluation. This procedure is applied twice by using each fold for
+training and model selection once.
+
+Predictions of the MVA scores are obtained by evaluating the model
+trained on the even- on odd-numbered events and the model trained on
+the odd- on even-numbered events. This approach, which is called
+2-fold \emph{cross-validation}~\cite{hastie09,bishop06}, provides
+unbiased predictions of the MVA scores for the entirety of the
+available dataset. The same evaluation method is applied to signal
+region data recorded by the ATLAS detector. After assigning MVA scores
+to all events, no distinction is made between even- and odd-numbered
+events for the remainder of the analysis.
+
+% The models are evaluated by applying the model trained on the
+% even-fold on odd-numbered events and the model trained on the odd-fold
+% on even-numbered events. This approach, which is called 2-fold
+% \emph{cross-validation}~\cite{hastie09,bishop06}, provides an unbiased
+% evaluation of the MVA scores using the entirety of the available
+% dataset. The same evaluation method, including the separate treatment
+% of even- and odd-numbered events, is applied to signal region data
+% recorded by the ATLAS detector.
+
+Similar to the biased predictions obtained when evaluating machine
+learning methods on datasets used for training, the process of model
+selection needs to be performed on a dataset that is independent of
+the one used for final evaluation~\cite{cawley10}. In the case of this
+analysis, model selection primarily applies to the determination of
+the hyperparameters of the classification algorithms based on a
+performance metric. Making this choice dependent on the performance on
+the withheld dataset can introduce a selection bias when using the
+same dataset for the statistical interpretation.
+
+In this search, model selection is performed using 5-fold
+cross-validation (CV), a generalisation of the 2-fold approach to a
+larger number of subdivisions, separately on even- and odd-numbered
+events. This approach effectively nests 5-fold CV inside 2-fold CV and
+is therefore called \emph{nested
+  cross-validation}~\cite{cawley10,stone74}.
+
+\Cref{fig:cross_validation} shows a schematic description of one
+iteration of the nested cross-validation approach. The inner, 5-fold
+CV randomly partitions events into five folds. For every choice of
+evaluation-fold, the model is trained on the remaining four folds and
+subsequently evaluated on the evaluation-fold. A decision between two
+competing models can be made by comparing the average and standard
+deviation of an evaluation metric over the five iterations of the inner
+CV. Only after the best-performing model is selected, usually after
+re-fitting the model on the combination of all five folds, it is
+evaluated on the hold-out dataset.
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[scale=1]{mva/kfold}
+
+  \caption{5-fold cross-validation approach for model selection on
+    even-numbered events. The separation of events into disjoint
+    subsets (folds) is indicated by rectangles. The purpose of the
+    subset is denoted below. A single step out of a total of five, the
+    number of possible assignments of the evaluation-fold, is
+    shown. The hold-out dataset consisting of odd-numbered events is
+    not used when performing model selection on even-numbered
+    events.}%
+  \label{fig:cross_validation}
+\end{figure}
+
+
+
+\subsection{Extraction of Signals from SM \HH Production with BDTs in
+  the \hadhad Channel}%
 \label{sec:mva_smbdt}
 
-The extraction of SM \HH signal events in the \hadhad channel uses BDT
-for signal-background classification. Events passing the signal region
-selection (2~$b$-tag region) of the \hadhad channel are used to train
-BDT. The training considers the non-resonant \HH production via \ggF
-as the \emph{signal class}; the combination of all backgrounds as the
-\emph{background class}. The individual background processes, which
-are estimated from simulation or data (multi-jet background), are
-weighted according to their relative cross-sections. SM \HH production
-via VBF is not included in the training.
+The search for SM \HH production in the \hadhad channel uses BDTs to
+separate signal from background events. Events passing the signal
+region selection (2~$b$-tag region) of the \hadhad channel are used to
+train BDT. The training considers the non-resonant \HH production via
+\ggF as the \emph{signal class}; the combination of all backgrounds as
+the \emph{background class}. The individual background processes,
+which are estimated from simulation or data (multi-jet background),
+are weighted according to their relative cross-sections. SM \HH
+production via VBF is not included in the training.
 % due to its low cross-section compared to the \ggF production mode.
 The BDT implementation of the \emph{Toolkit for Multivariate Data
   Analysis} (TMVA)~\cite{Hocker:2007ht} is used.
@@ -396,7 +371,7 @@ The BDT configuration is optimised using a random search over a grid
 of parameter values. For every hyperparameter a set of values to test
 is defined. All possible combinations of hyperparameter values define
 a grid from which configurations are drawn randomly. The performance
-of the model configuration is estimated using 5-fold cross validation
+of the model configuration is estimated using 5-fold cross-validation
 separately on even- and odd-numbered events.
 
 The hyperparameter values considered for the optimisation are listed
@@ -433,7 +408,7 @@ $(x, y) = \left( \varepsilon_{\text{s}}(t), 1 -
 on the score of a classifier, and $\varepsilon_\text{s}$ /
 $\varepsilon_\text{b}$ the signal and background efficiency of this
 selection. A value of the ROC-AUC of $1$ indicates perfect
-classification, while a value of $1/2$ corresponds to an uninformative
+classification, while a value of $0.5$ corresponds to an uninformative
 classifier. The ROC-AUC is chosen as the metric to be optimised as it
 summarises the classifier's performance over all possible working
 points, i.e.\ choices of thresholds on the classifier
@@ -458,15 +433,16 @@ quality of the modelling of higher order variable interactions in the
 training data.
 
 The selected configuration, shown underlined
-in~\Cref{tab:hyperparameter_grid_bdt}, is the 5th and 7th highest
-ranking one with a ROC-AUC of \num{0.9803 +- 0.0008} and \num{0.9787
-  +- 0.0012} in CV on even- and odd-numbered events, respectively. In
-both cases the same configuration ranks highest among models with a
-maximum tree depth of 2.\footnote{Model optimisation using the nested
-  cross validation method outlined in the text typically yields two
-  different hyperparameter configurations. One configuration for the
-  even- and one for the odd-fold.} After choosing the configuration,
-the classifiers are re-trained on all five folds of the inner CV,
+in~\Cref{tab:hyperparameter_grid_bdt}, is the 5\textsuperscript{th}
+and 7\textsuperscript{th} highest ranking one with a ROC-AUC of
+\num{0.9803 +- 0.0008} and \num{0.9787 +- 0.0012} in CV on even- and
+odd-numbered events, respectively. In both cases the same
+configuration ranks highest among models with a maximum tree depth of
+2.\footnote{Model optimisation using the nested cross-validation
+  method outlined in the text typically yields two different
+  hyperparameter configurations. One configuration for the even- and
+  one for the odd-fold.} After choosing the configuration, the
+classifiers are re-trained on all five folds of the inner CV,
 providing the final classifiers to extract the SM \HH signal.
 
 % It should be noted that the model selection should be done
@@ -487,14 +463,14 @@ providing the final classifiers to extract the SM \HH signal.
 \subsubsection{Evaluation and Variable Importance}%
 \label{sec:bdt_performance}
 
-In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDT,
+In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDTs,
 which are evaluated on events withheld from training and model
 selection, is shown in the signal region of the \hadhad channel. The
 BDT score provides good separation power between the SM \HH signal and
 most background processes. The ROC-AUC of the final evaluation is
 \num{0.9772 +- 0.0004} (\num{0.9781 +- 0.0004}) when including
 (excluding) the SM \HH production via VBF, similar to the estimates
-from cross validation during model selection.
+from cross-validation during model selection.
 
 \begin{figure}[htbp]
   \centering
@@ -522,12 +498,10 @@ of the signal events.
 The single largest background in the last two BDT score bins, with an
 expectation of 6.9 events, is associated production of
 $\PZ \rightarrow \tautau$ with jets originating from heavy-flavour
-quarks.
-
-The production of single Higgs bosons represents the second most
-abundant background in the signal-like bins of the final
+quarks. The production of single Higgs bosons represents the second
+most abundant background in the signal-like bins of the final
 discriminant. The primary source being~$\PHiggs \rightarrow \tautau$
-with about equal contribution from the gluon fusion, $\PZ\PHiggs$, and
+with approximately equal contribution from the \ggF, $\PZ\PHiggs$, and
 $\ttbar\PHiggs$ production modes. A small fraction of
 \SI{15}{\percent} is originating from $\PHiggs \rightarrow \bbbar$ in
 associated production with a \PZ boson. The kinematic properties of
@@ -536,14 +510,12 @@ similar to the non-resonant \HH signal and largely limited by the
 \PHiggs-system mass reconstruction performance such that about 1 in 15
 single Higgs boson events in the signal region are selected into one
 of the two most signal-like bins, yielding an expectation of 4.8
-events.
-
-Other backgrounds populating the two most signal-like bins in BDT
-score are originating from \ttbar (true \tauhadvis) with an
-expectation of 4.6 events and \jettotauhadvis from multi-jet and
-\ttbar production with 2.2 and 3.4 expected events, respectively. The
-signal and background yields including all experimental and
-theoretical uncertainties will be summarised
+events. Other backgrounds populating the two most signal-like bins in
+BDT score are originating from \ttbar (with \truetauhadvis in the
+decay) with an expectation of 4.6 events and \jettotauhadvis from
+multi-jet and \ttbar production with 2.2 and 3.4 expected events,
+respectively. The signal and background yields including all
+experimental and theoretical uncertainties will be summarised
 in~\Cref{sec:statistical_analysis}.
 
 The importance of input variables in the BDT can be estimated using
@@ -567,13 +539,13 @@ effect needs to be considered when interpreting rankings based on the
 permutation importance.
 
 In~\Cref{tab:variable_importance_bdt} a ranking of the input variables
-to the BDT for the SM \HH signal is shown based the change in ROC-AUC
-according to the permutation importance approach. The \PHiggs-system
-masses are the most important inputs to the BDT, contributing with
-approximately equal importance due to similar mass reconstruction
-performance of \mMMC and \mBB. For the non-resonant SM \HH search, the
-\HH-system mass is of lesser importance due to the similarities of the
-\mHH spectra between signal and background
+to the BDT for the SM \HH signal is shown based on the change in
+ROC-AUC according to the permutation importance approach. The
+\PHiggs-system masses are the most important inputs to the BDT,
+contributing with approximately equal importance due to similar mass
+reconstruction performance of \mMMC and \mBB. For the non-resonant SM
+\HH search, the \HH-system mass is of lesser importance due to the
+similarities of the \mHH spectra between signal and background
 (cf.~\Cref{fig:mva_inputs}).
 
 \begin{table}[htbp]
@@ -612,16 +584,20 @@ method of incorporating the \mX dependency of the classification
 problem is to train a classifier for every signal hypothesis. In this
 approach multiple classification tasks are solved in isolation,
 ignoring the more general classification problem. This was previously
-explored in Ref.~\cite{HIGG-2016-16-witherratum} using BDT.
+explored in Ref.~\cite{HIGG-2016-16-witherratum} using BDTs.
 
 An alternative approach is provided by parameterised classifiers where
 the dependency of the prediction problem is incorporated during
 training, thus solving it in a broader context. In particular,
-Parametric Neural Networks~\cite{Baldi:2016fzo} are used due to the
-ability of neural networks to smoothly approximate large classes of
-continuous functions. As a result of these properties, it is shown in
-Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate the
-classification task to parameter values not seen in training.
+Parameterised Neural Networks are used due to the ability of neural
+networks to smoothly approximate large classes of continuous
+functions~\cite{Baldi:2016fzo}. As a result of these properties, it is
+shown in Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate
+the classification task to parameter values not seen in training. It
+is also suggested that parameterised classifiers may outperform
+approaches using one classifier per parameter value due to their
+ability to solve the more general, parameter-dependent classification
+problem.
 
 In this search PNNs are implemented as feedforward neural networks
 where, in addition to the five discriminating variables, the parameter
@@ -659,17 +635,16 @@ better conditioning of the loss minimisation. Similarly, the values of
 the mass parameter are (linearly) transformed into $[0, 1]$. The
 values of the mass parameter for background events is sampled from the
 \mX distribution in the combined signal sample and is re-sampled after
-every training epoch.
-
-The neural networks consist of multiple fully-connected layers with
-ReLU activation~\cite{nair:relu}, except for the final layer which
-uses sigmoid activation. The training is implemented in
-\textsc{Keras}~\cite{keras} using the
+every training epoch. The neural networks consist of multiple
+fully-connected layers with ReLU activation~\cite{nair:relu}, except
+for the final layer which uses sigmoid activation. The training is
+implemented in \textsc{Keras}~\cite{keras} using the
 \textsc{TensorFlow}~\cite{tensorflow2015-whitepaper} backend. Trained
 PNN are evaluated using \textsc{lwtnn}~\cite{lwtnn}.
 
-The PNN hyperparameters are optimised using a random grid search with
-nested cross validation. The parameter grid is defined
+The PNN hyperparameters are optimised, following the approach
+previously employed for the BDT, using a random grid search with
+nested cross-validation. The parameter grid is defined
 in~\Cref{tab:hyperparameter_grid_pnn}. To reduce the dimensionality of
 the hyperparameter space, the number of nodes in the hidden layers
 except for the first and last hidden layers are required to be the
@@ -692,17 +667,17 @@ same.
 No clear choice of optimisation metric exists to evaluate a continuum
 of related classification task. For simplicity, the ROC-AUC of the PNN
 when performing binary classification of a resonant signal with
-$\mX = \SI{325}{\GeV}$ against background is chosen. This choice is
-motivated by the strength of the $\PX \to \HH \to \bbtautau$ search
+$\mX = \SI{325}{\GeV}$ against the background is chosen. This choice
+is motivated by the strength of the $\PX \to \HH \to \bbtautau$ search
 channel in an intermediate mass range of the scalar resonance from
-approximately \SI{300}{\GeV} to \SI{600}{\GeV} compared to the
-$\bbbar\gamma\gamma$ and $\bbbar\bbbar$ channels which are expected
-dominate the low/high \mX signal sensitivity. The similarity of \HH
-signals from resonant production with the bulk of the background is
-largest at low resonance masses, thus a lower value of \mX in the
-considered range is selected.
+approximately \SI{300}{\GeV} to \SI{600}{\GeV} compared to the \bbyy
+and \bbbb channels which are expected dominate the low and high \mX
+signal sensitivity, respectively. In the \hadhad channel, background
+events with \mHH around \SI{325}{\GeV} are most abundant
+(cf.~\Cref{fig:mva_inputs}) and therefore a value of \mX at the lower
+end of the range is selected for optimisation.
 
-About 1600 unique configurations of the PNN are tested, the 400
+About 1600 unique configurations of the PNNs are tested, the 400
 highest ranking ones in ROC-AUC showing compatible performance in
 terms of the performance estimate obtained from CV. A single
 configuration is obtained by choosing the best performing parameter
@@ -711,12 +686,12 @@ odd-numbered events. The chosen configuration, underlined
 in~\Cref{tab:hyperparameter_grid_pnn}, has a ROC-AUC in 5-fold CV of
 \num{0.9764 +- 0.0009} on even- and \num{0.9754 +- 0.0009} on
 odd-numbered events.\footnote{On the dataset with odd-numbered events
-  the chosen configuration is the 54th highest ranking one in terms of
-  the ROC-AUC. For comparison, the highest ranking model on
-  odd-numbered event has a ROC-AUC of \num{0.9761 +- 0.0020}, showing
-  compatible performance with the chosen configuration.} The PNN are
-then re-fit on all five folds of the inner CV separately for even- and
-odd-numbered events.
+  the chosen configuration is the 54\textsuperscript{th} highest
+  ranking one in terms of the ROC-AUC. For comparison, the highest
+  ranking model on odd-numbered event has a ROC-AUC of \num{0.9761 +-
+    0.0020}, showing compatible performance with the chosen
+  configuration.} The PNNs are then re-fit on all five folds of the
+inner CV separately for even- and odd-numbered events.
 
 \subsubsection{Evaluation and Variable Importance}
 
@@ -724,7 +699,18 @@ odd-numbered events.
 withheld data in the signal region of the \hadhad channel for three
 different values of the mass parameter. In each case the signal of
 interest, resonant \HH production with \mX equal to the PNN mass
-parameter, is populating the high PNN score bins.
+parameter, is populating the high PNN score bins. The background
+processes contributing to the most signal-like bins depend on the
+classification task that is solved by the PNN. At low mass
+($\mX \approx \SI{300}{\GeV}$) the dominant background is \ttbar with
+both true- and \faketauhadvis constituting about \SI{80}{\percent} of
+the total background with a small contribution from multi-jet.  The
+background composition in the intermediate mass range
+($\mX \approx \SI{500}{\GeV}$) is similar to the case of non-resonant
+\HH production in the SM which has a mean reconstructed \mHH of about
+\SI{500}{\GeV} after the signal region selection. For high mass
+resonances, the most relevant backgrounds are the production of
+$\PZ \to \tautau$ in association with jets from $b$- or $c$-quarks.
 
 \begin{figure}[htbp]
   \centering
@@ -757,23 +743,9 @@ parameter, is populating the high PNN score bins.
     the most signal-like bin of the PNN ($\mX = \SI{1000}{\GeV}$)
     score will be discussed in \Cref{sec:statistical_analysis}.}%
   \label{fig:pnn_score_prefit}
-  \todo[inline]{Make the binning categorical.}
 \end{figure}
 
-The background processes contributing to the most signal-like bins
-depend on the classification task that is solved by the PNN. At low
-mass (approx.\ \SI{300}{\GeV}) the dominant background is \ttbar with
-both true and \faketauhadvis constituting about \SI{80}{\percent} of
-the total background with a small contribution from multi-jet.  The
-background composition in the intermediate mass range (approx.\
-\SI{500}{\GeV}) is similar to the case of non-resonant \HH production
-in the SM which has a mean reconstructed \mHH of about \SI{500}{\GeV}
-after the signal region selection. For high mass resonances, the most
-relevant backgrounds are the production of $\PZ \to \tautau$ in
-association with jets from quarks of heavy flavour ($b$ and $c$
-quarks).
-
-The previously highlighted properties of PNN, the ability to solve a
+The previously discussed properties of PNN, the ability to solve a
 continuously varying classification task parameterised by \mX and the
 ability to interpolate to values of \mX not seen during training, are
 investigated. For this, a performance metric is defined by binning the
@@ -781,7 +753,7 @@ PNN score for a given value of the mass parameter using an algorithm
 that optimises the signal sensitivity while obeying certain
 constraints. The binning algorithm will be formally introduced
 in~\Cref{sec:binning_alg} for the statistical analysis of the results
-of the search.
+of this search.
 % The performance of the PNN is evaluated by binning its
 % output score for a given value of the parameter using the algorithm
 % also used for the statistical interpretation of the final results. The
@@ -802,7 +774,6 @@ inspect the change in signal sensitivity for a given benchmark signal
 as the PNN mass parameter is varied. The largest expected significance
 is obtained when the mass parameter is set close to the resonance mass
 of the signal hypothesis.
-
 % Ability to interpolate
 In~\Cref{fig:pnn_interpolation} the ability of PNNs to interpolate to
 classification tasks that were not part of the training is shown. The
@@ -813,6 +784,14 @@ also for resonance masses that were not part of the training, and was
 exploited to include an additional signal with $\mX = \SI{375}{\GeV}$
 without retraining of the PNNs. % Why was it added? -> potential gap
 % in sensitivity
+Finally, the performance of the PNNs is compared to a strategy of
+using dedicated BDTs for every signal mass hypothesis. The comparison
+is performed for resonance masses of \num{300}, \num{500}, and
+\SI{1000}{\GeV} using BDTs that are optimised following the approach
+used for the BDTs in the SM \HH search. For these three values of \mX,
+the use of PNNs improves the expected signal significance by
+\SI{22}{\percent}, \SI{9}{\percent}, \SI{4}{\percent}, respectively,
+over the approach of using dedicated classifiers.
 
 \begin{figure}[htbp]
   \centering
@@ -898,16 +877,18 @@ of the curves in \Cref{fig:pnn_detuning}. This decrease in mass
 sensitivity has two primary sources. First, the mass resolution of the
 reconstructed \mHH increases approximately linearly with \mX. Second,
 the PNN has high separation power between events from background
-processes and resonant \HH production at high mass. Due to the large
-separation power, the mass sensitivity in the high mass regime is
-limited by the width of bins in the high PNN score region, the bin
-width being driven by constraints imposed on the binning algorithm. In
-these cases, the signal extraction method employed in this search
-shows worse mass sensitivity than suggested by the resolution of the
-\mHH reconstruction itself. Consequently, the approach of using the
-score of a multivariate classifier as a final discriminant in this
-search is optimised for the discovery of a signal as opposed to
-perform a measurement of the resonance mass.
+processes and resonant \HH production at high mass.\footnote{The
+  discrimination power of the PNN as a function of the \mX of the
+  signal hypothesis is shown in \Cref{fig:pnn_rocauc_vs_mx} in the
+  appendix.}  Due to the large separation power, the mass sensitivity
+in the high mass regime is limited by the width of bins in the high
+PNN score region, the bin width being driven by constraints imposed on
+the binning algorithm. In these cases, the signal extraction method
+employed in this search shows worse mass sensitivity than suggested by
+the resolution of the \mHH reconstruction itself. Consequently, the
+approach of using the score of a multivariate classifier as a final
+discriminant in this search is optimised for the discovery of a signal
+as opposed to perform a measurement of the resonance mass.
 
 % The width of the significance response of the PNN as the mass
 % parameter is varied can serve to understand the sensitivity and
@@ -965,7 +946,6 @@ perform a measurement of the resonance mass.
 % optimised for discovery as opposed to the measurement of the
 % properties of the resonance.
 
-\todo[inline]{Include a rejection power (ROC-AUC?) vs mass plots?}
 
 %%% Local Variables:
 %%% mode: latex
