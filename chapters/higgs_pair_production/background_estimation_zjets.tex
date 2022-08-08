@@ -66,11 +66,11 @@ ranging from \SIrange{13}{25}{\GeV}. Events selected by di-muon
 triggers are required to pass asymmetric thresholds of
 \SIrange{19}{24}{\GeV} on the leading and \SI{10}{\GeV} on the
 sub-leading muon. All events are required to be consistent with the
-decay of a \PZ boson into electrons or muons in association with jets
-originating from $b$-quarks. Leptons are required to be of same
-flavour with opposite electric charges and a di-lepton invariant mass
-between \SI{75}{\GeV} and \SI{110}{\GeV}. Exactly two \btagged jets
-are required with the invariant mass between both jets
+decay of a \PZ boson into electrons or muons in association with
+$b$-jets. Leptons are required to be of same flavour with opposite
+electric charges and a di-lepton invariant mass between \SI{75}{\GeV}
+and \SI{110}{\GeV}. Exactly two \btagged jets are required with the
+invariant mass between both jets
 fulfilling~$\mBB \not\in [\SI{40}{\GeV}, \SI{210}{\GeV}]$. This
 requirement on \mBB had to be introduced to ensure orthogonality with
 signal regions of searches for Higgs boson pair production in final
@@ -88,30 +88,35 @@ analysis.
 % https://twiki.cern.ch/twiki/bin/view/AtlasProtected/FlavourTaggingLabeling
 Simulated \Zjets events entering the \ZHF control region are
 categorised according to a generator-level flavour label assigned to
-the \btagged jets. Reconstructed jets are labelled as either $b$, $c$,
-or \emph{light} ($l$) according to the presence of hadrons within a
-cone of $\Delta R < 0.3$ around the jet axis. If a $b$- or
-$c$-flavoured hadron with a transverse momentum of at least
+the pair of $b$-jet candidates. Reconstructed jets are labelled as
+either $b$, $c$, or \emph{light} ($l$) according to the presence of
+hadrons within a cone of $\Delta R < 0.3$ around the jet axis. If a
+$b$- or $c$-flavoured hadron with a transverse momentum of at least
 \SI{5}{\GeV} is found within the cone, the jet is labelled $b$ or $c$,
 respectively. When a hadron matches multiple jets the ambiguity is
 resolved by giving precedence to the closest jet in $\Delta R$. Jets
 that are not matched to any $b$- or $c$-flavoured hadrons are labelled
-as \emph{light}.
+as \emph{light}. Six categories are defined based on the flavour label
+of the $b$-jet candidate pair:~$Z + bb$, $Z + bc$, $Z + cc$, $Z + bl$,
+$Z + cl$, and $Z + ll$. Contributions from $Z + bb$, $Z + bc$, and
+$Z + cc$ are combined and collectively referred to as \ZHF. The
+remaining \Zjets events with at least one \emph{light}-jet are
+combined into a sample referred to as \ZLF.
 
-\Zjets events from simulation are partitioned according to the flavour
-labels of both \btagged jets into six categories: $Z + bb$, $Z + bc$,
-$Z + cc$, $Z + bl$, $Z + cl$, and $Z + ll$. Contributions from
-$Z + bb$, $Z + bc$, and $Z + cc$, where both $b$-jet candidates are
-matched to hadrons of heavy flavour at generator-level, are combined
-and collectively referred to as \ZHF. The remaining \Zjets events with
-at least one \emph{light}-jet are combined into a sample referred to
-as \ZLF.
+% \Zjets events from simulation are partitioned according to the
+% flavour labels of the $b$-jet candidates into six categories:
+% $Z + bb$, $Z + bc$, $Z + cc$, $Z + bl$, $Z + cl$, and $Z +
+% ll$. Contributions from $Z + bb$, $Z + bc$, and $Z + cc$, where both
+% $b$-jet candidates are matched to hadrons of heavy flavour at
+% generator-level, are combined and collectively referred to as
+% \ZHF. The remaining \Zjets events with at least one \emph{light}-jet
+% are combined into a sample referred to as \ZLF.
 
 The pre-fit event yield in the \ZHF control region is given
 in~\Cref{tab:zcr_yields}. The majority of events in the control region
 originate from \ZHF\footnote{About \SI{90}{\percent} of events in the
-  inclusive \ZHF sample are from $Z + bb$ production.} or top quark
-pair production.
+  inclusive \ZHF sample are $Z + bb$ events.} or top quark pair
+production.
 % Only about
 % 3% of top quark is single top The production of $Z + bb$ accounts for \SI{90}{\percent} of events in the inclusive \ZHF sample.
 To distinguish between the \ZHF and \ttbar contributions in the
