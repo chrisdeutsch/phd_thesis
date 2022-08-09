@@ -3,84 +3,73 @@ originating from a misidentified quark- or gluon-initiated jet is the
 second largest background in the \hadhad channel. A large fraction of
 \SI{85}{\percent} of this background stems from semi-leptonic decay
 modes of \ttbar where the selected \tauhadvis candidates consist of
-one true- and one \faketauhadvis. In contrast, the fraction of
-\ttbarFakes events where both candidates are \faketauhadvis is about
-\SI{15}{\percent} and therefore comparatively small.
+one true- and one \faketauhadvis. The fraction of \ttbarFakes events
+where both candidates are \faketauhadvis is about \SI{15}{\percent}
+and therefore comparatively small. The \ttbarFakes background is
+estimated using simulation after applying data-driven corrections in
+the form of \faketauhadvis scale factors (SFs) measured in a control
+region enriched in \ttbar events. The SFs correct the \jettotauhadvis
+misidentification efficiencies predicted by simulation which are, in
+general, not centrally calibrated by the ATLAS collaboration due to
+their process dependency.
 
-% This background, referred to as \ttbarFakes hereafter, is frequently
-% produced in $\ttbar(\ra \Pbottom \PWp \APbottom \PWm)$ with one
-% leptonic decay of a \PW boson into a \taulepton, which subsequently
-% decays hadronically; one \PW boson decaying hadronically, producing
-% jets that mimic the signature of a \tauhadvis in the detector.  The
-% \faketauhadvis background resulting from this decay mode of \ttbar
-% consists of only one \faketauhadvis and is the dominant source of
-% \faketauhadvis backgrounds from \ttbar in the \hadhad signal
-% region. In contrast, the fraction of \ttbarFakes events where both
-% \tauhadvis candidates originate from misidentified jets is about
-% \SI{15}{\percent} and therefore comparatively small.
-
-The \ttbarFakes background has distinct features differentiating it
-from the \faketauhadvis background from multi-jet events (to be
-discussed in~\Cref{sec:hadhad_multijet}) motivating the use of
-separate estimation techniques for both backgrounds in the \hadhad
-channel:
+Before proceeding with the description of the method, differences
+between \faketauhadvis backgrounds from multi-jet and \ttbar are
+highlighted that motivate the use of different background estimation
+techniques:
 \begin{itemize}
-\item The majority of \ttbarFakes background events consist of only
-  one \faketauhadvis while in multi-jet events both \tauhadvis
-  candidates are originating from misidentified quark- or
-  gluon-initiated jets.
 
-\item The probability of quark- or gluon-initiated jets reconstructed as
-  \tauhadvis to pass \tauid, the so-called fake rate, depends on the
-  type of parton that initiated the jet. \Faketauhadvis from \ttbar
-  predominately originate from jets produced in hadronic decays of
-  $W$~bosons which have larger fake rates than the ones originating
-  from gluon-initiated jets.
+\item The majority of \ttbarFakes background events consist of only
+  one \faketauhadvis while in multi-jet events both candidates are
+  \faketauhadvis.
+
+\item The probability of quark- or gluon-initiated jets reconstructed
+  as \tauhadvis to pass \tauid, the so-called fake rate, depends on
+  the type of parton that initiated the jet. \Faketauhadvis from
+  \ttbar predominately originate from jets produced in hadronic decays
+  of $W$~bosons which have larger fake rates than jets originating
+  from gluons.
 
 \item In the \hadhad channel, no suitable \ttbarFakes control region
-  exists that allows to separate \faketauhadvis backgrounds from
-  \ttbar and multi-jet while maintaining sufficient statistical
-  precision for the background estimation. This necessitates defining
-  a top control region in a $\ell + \tauhadvis$~($\ell = e, \mu$)
-  final state where the multi-jet contribution is negligible.
+  can be defined that allows to separate \faketauhadvis backgrounds
+  from \ttbar and multi-jet while maintaining sufficient statistical
+  precision for background estimation. This necessitates defining a
+  control region in $\ell + \tauhadvis$ ($\ell = e, \mu$) final states
+  where the multi-jet contribution is negligible.
+
 \end{itemize}
+The main disadvantage of separately estimating the \faketauhadvis
+background from \ttbar and multi-jet is the inflation of systematic
+uncertainties on the total \faketauhadvis background compared to a
+combined approach.\footnote{A concrete example is the combined fake
+  factor method employed in the \lephad channel that is discussed
+  in~\Cref{sec:bkg_lephad_combined_ff}.} However, these inflated
+uncertainties have little effect of the signal sensitivity. This is
+because the targeted signal processes have distinct kinematic
+properties that differentiate them from \faketauhadvis backgrounds,
+and the search being limited by statistical uncertainties as opposed
+to systematic ones.
 
-The \ttbarFakes background is estimated using simulation after
-including data-driven corrections measured in a top control region. In
-general, the modelling of \faketauhadvis in simulation is of unknown
-quality and \jettotauhadvis misidentification efficiencies are not
-centrally calibrated due to their process dependency. Therefore, a
-dedicated measurement of the \ttbarFakes background is performed,
-providing information about the level of agreement between data and
-simulation as well as measurement-driven uncertainty estimates for the
-background prediction.
-
-The measurement is performed in a control region by comparing the
-prediction of \ttbarFakes from simulation with observed data. The
-control region should have high \ttbar purity with a measurable
-contribution of \ttbarFakes and exactly one \tauhadvis candidate to
-isolate the effect of differences in misidentification efficiencies
-between simulation and data. Corrections are defined as multiplicative
-scale factors (SF) applied to \faketauhadvis passing \tauid in
-simulation and measured as a functions of \faketauhadvis properties
-using a maximum likelihood fit of a discriminating distribution in the
-control region.  In the \hadhad signal region, the measured scale
-factors are applied to simulated \ttbarFakes events to obtain the
-background prediction and the associated uncertainties.
-
-% The correction is defined as multiplicative \emph{scale factors} (SF)
-% that are applicable to \faketauhadvis after \tauid, calibrating the
-% \jettotauhadvis misidentification efficiencies in simulation. The
-% scale factors are determined as a function of \faketauhadvis
-% properties using a maximum likelihood fit in a top control region. The
-% corrections are applied in the \hadhad SR to obtain an estimate of the
-% \ttbarFakes background and the associated uncertainties.
 
 \subsubsection{Control Region Definition}
 
+% The measurement is performed in a control region by comparing the
+% prediction of \ttbarFakes from simulation with observed data. The
+% control region should have high \ttbar purity with a measurable
+% contribution of \ttbarFakes and exactly one \tauhadvis candidate to
+% isolate the effect of differences in misidentification efficiencies
+% between simulation and data. Corrections are defined as
+% multiplicative scale factors (SF) applied to \faketauhadvis passing
+% \tauid in simulation and measured as a functions of \faketauhadvis
+% properties using a maximum likelihood fit of a discriminating
+% distribution in the control region.  In the \hadhad signal region,
+% the measured scale factors are applied to simulated \ttbarFakes
+% events to obtain the background prediction and the associated
+% uncertainties.
+
 The top control region for the scale factor measurement (SF-CR)
-targets final states with a reconstructed electron or muon and a
-\tauhadvis. The region definition is based on the selection applied in
+targets final states with an electron or muon and a \tauhadvis
+candidate. The region definition is based on the selection applied in
 the \lephad channel where a similar control region is used for
 \faketauhadvis background estimation. Minor changes are applied to the
 definition of the control region to ensure consistency with the signal
