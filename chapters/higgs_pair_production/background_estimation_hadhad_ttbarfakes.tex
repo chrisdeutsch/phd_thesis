@@ -5,16 +5,16 @@ second largest background in the \hadhad channel. A large fraction of
 modes of \ttbar where the selected \tauhadvis candidates consist of
 one true- and one \faketauhadvis. The fraction of \ttbarFakes events
 where both candidates are \faketauhadvis is about \SI{15}{\percent}
-and therefore comparatively small. The \ttbarFakes background is
-estimated using simulation after applying data-driven corrections in
-the form of \faketauhadvis scale factors (SFs) measured in a control
-region enriched in \ttbar events. The SFs correct the \jettotauhadvis
+and thus comparatively small. The \ttbarFakes background is estimated
+using simulation after applying data-driven corrections in the form of
+\faketauhadvis scale factors (SFs) measured in a control region
+enriched in \ttbar events. The SFs correct the \jettotauhadvis
 misidentification efficiencies predicted by simulation which are, in
 general, not centrally calibrated by the ATLAS collaboration due to
 their process dependency.
 
 Before proceeding with the description of the method, differences
-between \faketauhadvis backgrounds from multi-jet and \ttbar are
+between \faketauhadvis backgrounds from \ttbar and multi-jet are
 highlighted that motivate the use of different background estimation
 techniques:
 \begin{itemize}
@@ -110,14 +110,14 @@ briefly summarised:
 % region the quark/gluon composition of jets is likely different which
 % also affects the fake rates.}.
 
-The control region selects \ttbar with high purity of
+The control region selects \ttbar events with a purity of
 \SI{94}{\percent} prior to the fit. About \SI{66}{\percent} of
-selected events are from di-leptonic decay channels of \ttbar yielding
+selected events are from di-leptonic decay modes of \ttbar yielding
 $\ell + \tauhad$ final states, where $\ell$ is either an electron or
-muon. The production of \ttbar events with \tauhadvis originating from
-quark- or gluon-initiated jets, which is the process of interest for
-this measurement, constitutes \SI{28}{\percent} of all selected
-events. Minor backgrounds in this region are single top
+muon. The production of \ttbar events with \tauhadvis candidates
+originating from quark- or gluon-initiated jets, which is the process
+of interest for this measurement, constitutes \SI{28}{\percent} of all
+selected events. Minor backgrounds in this region are single top
 (\SI{4}{\percent}) and $\Vjets$ production (\SI{2}{\percent}). The
 contribution of \multijet background is negligible based on studies
 performed as part of the \faketauhadvis estimation in the \lephad
@@ -143,38 +143,31 @@ in~\Cref{fig:ttbarSF_prefit_pt}.
 
 \Jettotauhadvis misidentification efficiencies depend on the
 identification requirements applied to \tauhadvis candidates. In this
-search, all \tauhadvis candidates from the offline reconstruction have
-to pass the loose RNN \tauid working point. In addition, events in the
-\hadhad channel are selected using \tauhadvis triggers which apply
-their own isolation and identification requirements to trigger-level
-\tauhadvis in order to reduce the trigger-rates at various stages of
-the ATLAS trigger system. Calorimeter-based isolation cuts are applied
-to \tauhadvis candidates at the Level-1 trigger, while at the HLT more
-sophisticated \tauid algorithms, similar to their counterparts from
-the offline reconstruction, are used. Some differences in the
-selection applied at trigger-level and during offline event
-reconstruction are expected due to limitations in detector read-out
-and time budget in the trigger
-system. % New developments introduced into offline \tauhadvis
-% reconstruction during Run~2 of the LHC, such as the RNN \tauid, can
-% lead to additional differences as they cannot be applied retroactively
-% to past data-taking periods.
+search, such requirements are imposed on \tauhadvis candidates during
+offline event reconstruction and at trigger-level. This two-stage
+selection of \tauhadvis candidates is taken into account by measuring
+separate sets of SFs for every relevant combination of identification
+requirements. One set of SFs is measured for \faketauhadvis after
+loose RNN \tauid but without requirements at trigger-level. This set
+is required for events selected by single-\tauhadvis triggers in cases
+where the \faketauhadvis did not cause the trigger to select the
+event. Three sets of SFs are measured to account for identification
+requirements of the three \tauhadvis-trigger chains used in the
+\hadhad channel (cf.~\Cref{sec:hadhad_trigger_selection}) which are
+applied in addition to offline \tauid.
 
-The effect of the two-stage selection of \tauhadvis based on
-identification criteria, first at trigger-level and then during
-offline event reconstruction, is taken into account when measuring
-corrections to the \jettotauhadvis misidentification efficiencies. All
-combinations of \tauhadvis identification requirements relevant for
-the signal region selection of the \hadhad channel are considered. The
-offline \tauhadvis identification is the same for all events, however,
-the trigger-level requirements vary. In events selected by
-single-\tauhadvis triggers one \tauhadvis candidate has to pass the
-trigger-level selection while no additional requirements are placed on
-the other \tauhadvis candidate. For di-\tauhadvis triggers both
-candidates have to fulfil the trigger requirements. The scale factor
-measurement for \tauhadvis candidates without trigger requirements can
-proceed using SF-CR events directly as single-electron and single-muon
-triggers are used to select events.
+% In events selected by single-\tauhadvis triggers one \tauhadvis
+% candidate has to pass the trigger-level selection while no
+% additional requirements are placed on the other \tauhadvis
+% candidate. For di-\tauhadvis triggers both candidates have to fulfil
+% the trigger requirements. The scale factor measurement for
+% \tauhadvis candidates without trigger requirements can proceed using
+% SF-CR events directly as single-electron and single-muon triggers
+% are used to select events.
+
+The measurement of scale factors without requirements at trigger-level
+can proceed using events in the SF-CR as defined previously.
+
 
 The trigger-level \tauhadvis selection can be emulated by requiring
 that events in the SF-CR also pass an appropriately chosen
@@ -338,8 +331,6 @@ increasing \pT of the \tauhadvis candidate\todo{Show?}.
     momentum and decay mode without requirements on the
     trigger-matching.}%
   \label{fig:ttbarsf_mtw_pdf}
-
-  \todo[inline]{Y-axis should be per GeV.}
 \end{figure}
 
 All subregions of the SF-CR defined by the reconstructed \tauhadvis
