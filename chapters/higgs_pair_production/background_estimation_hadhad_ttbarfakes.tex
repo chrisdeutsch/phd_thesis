@@ -143,8 +143,8 @@ in~\Cref{fig:ttbarSF_prefit_pt}.
 
 \Jettotauhadvis misidentification efficiencies depend on the
 identification requirements applied to \tauhadvis candidates. In this
-search, such requirements are imposed on \tauhadvis candidates during
-offline event reconstruction and at trigger-level. This two-stage
+search, such requirements are imposed on \tauhadvis candidates at
+trigger-level and during offline event reconstruction. This two-stage
 selection of \tauhadvis candidates is taken into account by measuring
 separate sets of SFs for every relevant combination of identification
 requirements. One set of SFs is measured for \faketauhadvis after
@@ -152,9 +152,9 @@ loose RNN \tauid but without requirements at trigger-level. This set
 is required for events selected by single-\tauhadvis triggers in cases
 where the \faketauhadvis did not cause the trigger to select the
 event. Three sets of SFs are measured to account for identification
-requirements of the three \tauhadvis-trigger chains used in the
-\hadhad channel (cf.~\Cref{sec:hadhad_trigger_selection}) which are
-applied in addition to offline \tauid.
+requirements of the three different \tauhadvis-trigger chains used in
+the \hadhad channel (cf.~\Cref{sec:hadhad_trigger_selection}) which
+are applied in addition to offline \tauid.
 
 % In events selected by single-\tauhadvis triggers one \tauhadvis
 % candidate has to pass the trigger-level selection while no
@@ -165,33 +165,37 @@ applied in addition to offline \tauid.
 % SF-CR events directly as single-electron and single-muon triggers
 % are used to select events.
 
-The measurement of scale factors without requirements at trigger-level
-can proceed using events in the SF-CR as defined previously.
+The measurement of SFs without requirements at trigger-level can
+proceed using events in the SF-CR directly. For the measurement of SFs
+that include trigger-level identification requirements, the selections
+applied by \tauhadvis-triggers need to be emulated. This is achieved
+by requiring that events in the SF-CR pass appropriately chosen
+single-\tauhadvis triggers. In addition, the reconstructed \tauhadvis
+candidate is required to be geometrically matched ($\Delta R < 0.2$)
+to a reconstructed and identified \tauhadvis candidate at the HLT.
+The lowest threshold single-\tauhadvis triggers are used for this
+emulation procedure which employ \pT-thresholds of \SI{25}{\GeV} on
+\tauhadvis at the HLT.
 
-
-The trigger-level \tauhadvis selection can be emulated by requiring
-that events in the SF-CR also pass an appropriately chosen
-single-\tauhadvis trigger. Moreover, \tauhadvis candidates from the
-offline event reconstruction are required to be geometrically matched
-($\Delta R < 0.2$) to a reconstructed and identified \tauhadvis
-candidate at the HLT. The \tauhadvis triggers used for this procedure
-are chosen to reflect the trigger selection of the \hadhad channel,
-previously described in \Cref{sec:exp_trigger}.
-
-The lowest transverse momentum threshold on \tauhadvis at the HLT
-relevant to this search is $\pTHLT > \SI{25}{\GeV}$. This threshold
-applies to the sub-leading \tauhadvis candidate in events selected by
-di-\tauhadvis triggers. Single-\tauhadvis triggers with a
-\SI{25}{\GeV} transverse momentum threshold are only available with
-the application of a prescale\footnote{A trigger with a prescale value
-  of $n$ accepts events satisfying the trigger conditions with a
+Such triggers are only available with the
+application of a prescale\footnote{A trigger with a prescale value of
+  $n$ accepts events satisfying the trigger conditions with a
   probability of $1 / n$ \cite{TRIG-2019-04}.} to limit their
 trigger-rates. However, all events entering the SF-CR were already
-recorded using single lepton triggers, allowing to re-run the trigger
-algorithms such that the trigger decisions of the single-\tauhadvis
-triggers can be \textit{resurrected} without applying the
-prescale. The single-\tauhadvis triggers relevant to this search are
-listed in the following:%
+recorded using single-lepton triggers which allows to re-run the
+trigger algorithms
+
+
+to obtain the trigger decisions of the
+single-\tauhadvis triggers without the application of a prescale.
+
+such that the trigger decisions of the
+single-\tauhadvis triggers can be \emph{resurrected} without the
+application of a prescale.
+
+
+The single-\tauhadvis triggers relevant to this search are listed in
+the following:%
 \begin{itemize}
 \item \verb|HLT_tau25_medium1_tracktwo|: Trigger chain used for
   data-taking from 2015 to 2017. Resurrected trigger decisions are
