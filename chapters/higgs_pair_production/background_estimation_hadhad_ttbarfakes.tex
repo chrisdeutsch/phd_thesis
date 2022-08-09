@@ -141,82 +141,33 @@ in~\Cref{fig:ttbarSF_prefit_pt}.
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
-\Jettotauhadvis misidentification efficiencies depend on the
-identification requirements applied to \tauhadvis candidates. In this
-search, such requirements are imposed on \tauhadvis candidates at
-trigger-level and during offline event reconstruction. This two-stage
-selection of \tauhadvis candidates is taken into account by measuring
-separate sets of SFs for every relevant combination of identification
-requirements. One set of SFs is measured for \faketauhadvis after
-loose RNN \tauid but without requirements at trigger-level. This set
-is required for events selected by single-\tauhadvis triggers in cases
-where the \faketauhadvis did not cause the trigger to select the
-event. Three sets of SFs are measured to account for identification
-requirements of the three different \tauhadvis-trigger chains used in
-the \hadhad channel (cf.~\Cref{sec:hadhad_trigger_selection}) which
-are applied in addition to offline \tauid.
-
-% In events selected by single-\tauhadvis triggers one \tauhadvis
-% candidate has to pass the trigger-level selection while no
-% additional requirements are placed on the other \tauhadvis
-% candidate. For di-\tauhadvis triggers both candidates have to fulfil
-% the trigger requirements. The scale factor measurement for
-% \tauhadvis candidates without trigger requirements can proceed using
-% SF-CR events directly as single-electron and single-muon triggers
-% are used to select events.
-
 The measurement of SFs without requirements at trigger-level can
 proceed using events in the SF-CR directly. For the measurement of SFs
 that include trigger-level identification requirements, the selections
 applied by \tauhadvis-triggers need to be emulated. This is achieved
-by requiring that events in the SF-CR pass appropriately chosen
+by requiring that events in the SF-CR also pass appropriately chosen
 single-\tauhadvis triggers. In addition, the reconstructed \tauhadvis
 candidate is required to be geometrically matched ($\Delta R < 0.2$)
-to a reconstructed and identified \tauhadvis candidate at the HLT.
-The lowest threshold single-\tauhadvis triggers are used for this
-emulation procedure which employ \pT-thresholds of \SI{25}{\GeV} on
-\tauhadvis at the HLT.
-
-Such triggers are only available with the
-application of a prescale\footnote{A trigger with a prescale value of
-  $n$ accepts events satisfying the trigger conditions with a
-  probability of $1 / n$ \cite{TRIG-2019-04}.} to limit their
-trigger-rates. However, all events entering the SF-CR were already
-recorded using single-lepton triggers which allows to re-run the
-trigger algorithms
-
-
-to obtain the trigger decisions of the
-single-\tauhadvis triggers without the application of a prescale.
-
-such that the trigger decisions of the
-single-\tauhadvis triggers can be \emph{resurrected} without the
-application of a prescale.
-
-
-The single-\tauhadvis triggers relevant to this search are listed in
-the following:%
+to a reconstructed and identified \tauhadvis candidate at the HLT. The
+SF measurement is performed for the following three single-\tauhadvis
+triggers:
 \begin{itemize}
-\item \verb|HLT_tau25_medium1_tracktwo|: Trigger chain used for
-  data-taking from 2015 to 2017. Resurrected trigger decisions are
-  available for the entirety of the Run~2 dataset corresponding to
-  \SI{139}{\ifb} of integrated luminosity.
-
-\item \verb|HLT_tau25_medium1_tracktwoEF|: Primary trigger chain used
-  for data-taking in 2018. Resurrected trigger decisions are only
-  available for runs in 2018 corresponding to an integrated luminosity
-  of \SI{58}{\ifb}.
-
-\item \verb|HLT_tau25_mediumRNN_tracktwoMVA|: Supplementary trigger
-  chain introduced during data-taking in 2018 (from
-  period~K). Resurrected trigger decisions are available for a partial
-  2018 dataset corresponding to \SI{37}{\ifb} of integrated
-  luminosity. This trigger chain is to be used in conjunction with the
-  previous item. Hereafter, when referring to
-  \verb|HLT_tau25_mediumRNN_tracktwoMVA| a ``logical or'' with
-  \verb|HLT_tau25_medium1_tracktwoEF| is implied.
-
+\item \verb|HLT_tau25_medium1_tracktwo| %(\SI{139}{\ifb})
+\item \verb|HLT_tau25_medium1_tracktwoEF| %(\SI{58}{\ifb})
+\item \verb|HLT_tau25_mediumRNN_tracktwoMVA| %(\SI{37}{\ifb})
 \end{itemize}
+During Run~2 data-taking these triggers had to be prescaled\footnote{A
+  trigger with a prescale value of $n$ accepts events satisfying the
+  trigger conditions with a probability of $1 / n$
+  \cite{TRIG-2019-04}.} to limit their trigger rates. However, events
+entering the SF-CR were already recorded using single-lepton triggers
+which allows to re-run the single-\tauhadvis triggers during offline
+event reconstruction without application of a prescale.
+
+% Talk about luminosities
+% Talk about logical or of medium1_tracktwoEF and mediumRNN_tracktwoMVA
+
+
 
 Four combinations of \tauhadvis selections need to be considered when
 measuring corrections to the \jettotauhadvis misidentification
@@ -229,10 +180,6 @@ required to be selected by the respective resurrected trigger and the
 reconstructed \tauhadvis candidate has to be geometrically matched to
 an identified \tauhadvis candidate at the HLT. Separate scale factor
 measurements are performed in these regions.
-
-% These are defined by ensuring that the resurrected triggers select the
-% event and that the reconstructed \tauhadvis candidate is geometrically
-% matched to the \tauhadvis candidate at the HLT.
 
 
 \subsubsection{Measurement and Fit Model}
