@@ -19,9 +19,8 @@ highlighted that motivate the use of different background estimation
 techniques:
 \begin{itemize}
 
-\item The majority of \ttbarFakes background events consist of only
-  one \faketauhadvis while in multi-jet events both candidates are
-  \faketauhadvis.
+\item The majority of \ttbarFakes background events consist of only one
+  \faketauhadvis, while in multi-jet events both candidates are \faketauhadvis.
 
 \item The probability of quark- or gluon-initiated jets reconstructed
   as \tauhadvis to pass \tauid, the so-called fake rate, depends on
@@ -182,49 +181,44 @@ and \verb|HLT_tau25_mediumRNN_tracktwoMVA| are available for partial datasets
 with integrated luminosities of \SI{58}{\ifb} and \SI{37}{\ifb}, respectively.
 
 
-\subsubsection{Measurement and Fit Model}
+\subsubsection{Scale Factor Measurement}
 
-The \jettotauhadvis misidentification efficiencies strongly depend on
-the charged particle multiplicity and visible transverse momentum of
-reconstructed \tauhadvis candidates. This can be also reflected in
-corrections to the \jettotauhadvis misidentification efficiency in
-simulation. Therefore, the scale factor measurement is performed in
-bins of the reconstructed \tauhadvis decay mode (1- or 3-prong) and
-\tauhadvis~\pT. This is achieved by performing the scale factor
-measurement simultaneously in several disjoint subregions defined as:
+The \jettotauhadvis misidentification efficiencies strongly depend on the
+charged particle multiplicity and visible transverse momentum of reconstructed
+\tauhadvis candidates. This can also be reflected in corrections to the
+\jettotauhadvis misidentification efficiency in simulation. Therefore, the scale
+factor measurement is performed in bins of the reconstructed \tauhadvis decay
+mode (1- or 3-prong) and \tauhadvis~\pT:
 \begin{itemize}
 
-\item 1-prong \tauhadvis with $\pT / \si{\GeV}$: $[25, 30)$, $[30, 35)$,
-  $[35, 40)$, $[40, 45)$, $[45, 55)$, $[55, 70)$, $[70, \infty)$.
+\item 1-prong \tauhadvis candidates with $\pT / \si{\GeV}$: $[25, 30)$,
+  $[30, 35)$, $[35, 40)$, $[40, 45)$, $[45, 55)$, $[55, 70)$, $[70, \infty)$.
 
-\item 3-prong \tauhadvis with $\pT / \si{\GeV}$: $[25, 30)$, $[30, 40)$,
-  $[40, 50)$, $[50, 70)$, $[70, \infty)$.
+\item 3-prong \tauhadvis candidates with $\pT / \si{\GeV}$: $[25, 30)$,
+  $[30, 40)$, $[40, 50)$, $[50, 70)$, $[70, \infty)$.
 
 \end{itemize}
-The regions are chosen such that their size allows for a determination
-of the corrections with limited impact of statistical uncertainties
-while allowing to extract potential \pT dependencies of the correction
-factors. In cases where trigger-matching is applied, the \tauhadvis
-\pT interval from 25 to \SI{30}{\GeV} is omitted due to the triggers
-not being fully efficient in this region. This is analogous to the
-selection applied for the \hadhad signal region. Exemplary summaries
-of event yields in the measurement regions are shown
-in~\Cref{fig:ttbarsf_region_summary_prefit}.
+The bins are chosen such that their size allows for a determination of the
+corrections with limited impact of statistical uncertainties while allowing to
+extract potential \pT-dependencies of the correction factors. In cases where
+events are required to pass single-\tauhadvis triggers, the \tauhadvis \pT
+interval from 25 to \SI{30}{\GeV} is omitted due to the triggers not being fully
+efficient in this region. This is analogous to the selections applied in the
+\hadhad signal region. Exemplary summaries of event yields in the measurement
+regions are shown in~\Cref{fig:ttbarsf_region_summary_prefit}.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}[t]{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_offl}
-    \caption{Top control region for events passing the loose working
-      point of the offline \tauid without application of
-      trigger-matching.}
+    \caption{SF-CR for events passing the loose working point of the offline
+      \tauid without application of trigger-matching.}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_tau25}
-    \caption{Top control region for events passing the resurrected
-      \texttt{HLT\_tau25\_medium1\_tracktwo} trigger,
-      trigger-matching, and the loose working point of the offline
+    \caption{SF-CR for events passing the \texttt{HLT\_tau25\_medium1\_tracktwo}
+      trigger, trigger-matching, and the loose working point of the offline
       \tauid.}
   \end{subfigure}
 
@@ -233,43 +227,39 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
     corrections. The $x$-axis shows the measurement regions separated
     by the reconstructed decay mode into either 1-prong (1P) and
     3-prong (3P) \tauhadvis and the \tauhadvis $\pT /\si{\GeV}$ bin
-    interval. The pre-fit background model is shown.}%
+    interval. The background model prior to the fit is shown.}%
   \label{fig:ttbarsf_region_summary_prefit}
 \end{figure}
 
-The top control region has large contributions of \ttbar with a
-di-lepton final state where the \tauhadvis candidate originates from a
-\tauhad decay. This contribution is not sensitive to the
-\jettotauhadvis misidentification efficiency but has to be estimated
-when extracting correction factors. To distinguish between di-leptonic
-\ttbar with true \tauhadvis and semi-leptonic \ttbar with
-\faketauhadvis, an estimate of the transverse mass between the lepton
-$\ell$ and \pTmissAbs given by
+A discriminant is required to distinguish between contributions of \ttbar with
+and without \faketauhadvis in the SF measurement, since only the former is
+sensitive to \jettotauhadvis misidentification efficiencies. The transverse mass
+of the lepton and \pTmissAbs is used for this purpose, which is defined as
 \begin{align*}
-  \mTW = \sqrt{2 | \myvec{p}_{\text{T}}^{\ell} | | \pTmiss | \left( 1 - \cos \Delta\phi \right)}
+  \mTW = \sqrt{2 | \myvec{p}_{\text{T}}^{\ell} | | \pTmiss | \left( 1 - \cos \Delta\phi \right)} \,\text{,}
 \end{align*}
-is used, where $\Delta \phi$ is the angle between the lepton
-transverse momentum~$\myvec{p}_{\text{T}}^{\ell}$ and the missing
-transverse momentum~\pTmiss.
+where $\Delta \phi$ is the angle between the lepton transverse momentum,
+$\myvec{p}_{\text{T}}^{\ell}$, and the missing transverse momentum, \pTmiss. The
+\mTW discriminant targets the differences between di- and semi-leptonic decay
+modes of \ttbar which are the primary sources of SF-CR events with true- and
+\faketauhadvis, respectively. The differences are illustrated
+in~\Cref{fig:ttbarsf_mtw_pdf} with di-leptonic decay modes of \ttbar showing a
+heavy tail towards large \mTW due to the presence of an additional neutrino,
+while semi-leptonic decay modes have a pronounced peak close to the $W$~boson
+mass.
 
-The distribution of \mTW in the SF-CR is shown
-in~\Cref{fig:ttbarsf_mtw_pdf} separately for di- and semi-leptonic
-decay modes of \ttbar. For semi-leptonic \ttbar, the primary source of
-\faketauhadvis, the event rate diminishes quickly for transverse
-masses beyond the mass of the \PW boson. In contrast, di-leptonic
-\ttbar final states show a comparatively heavy tail towards large
-values of \mTW due to the presence of an additional neutrino. The \mTW
-distribution of semi-leptonic \ttbar remains stable with respect to
-changes in the considered momentum range for the reconstructed
-\tauhadvis candidate. This is not the case for the di-lepton
-contribution where the tail towards high \mTW is further enhanced with
-increasing \pT of the \tauhadvis candidate\todo{Show?}.
-
-% The primary source of events containing a \faketauhadvis is
-% semi-leptonic \ttbar with an electron or muon and additional jets from
-% the hadronic decay of a \PW boson. This contribution features a quick
-% reduction in event rate for transverse masses beyond the mass of the
-% \PW boson.
+% The distribution of \mTW in the SF-CR is shown
+% in~\Cref{fig:ttbarsf_mtw_pdf} separately for di- and semi-leptonic
+% decay modes of \ttbar. For semi-leptonic \ttbar, the primary source of
+% \faketauhadvis, the event rate diminishes quickly for transverse
+% masses beyond the mass of the \PW boson. In contrast, di-leptonic
+% \ttbar final states show a comparatively heavy tail towards large
+% values of \mTW due to the presence of an additional neutrino. The \mTW
+% distribution of semi-leptonic \ttbar remains stable with respect to
+% changes in the considered momentum range for the reconstructed
+% \tauhadvis candidate. This is not the case for the di-lepton
+% contribution where the tail towards high \mTW is further enhanced with
+% increasing \pT of the \tauhadvis candidate\todo{Show?}.
 
 \begin{figure}[htbp]
   \centering
