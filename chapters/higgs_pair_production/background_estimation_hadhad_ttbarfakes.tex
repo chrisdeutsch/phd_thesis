@@ -272,57 +272,31 @@ category. These \faketauhadvis scale factors are considered the parameters of
 interest of the measurement.
 
 The pre-fit expectation of the model in two exemplary categories is shown
-in~\Cref{fig:ttbarsf_mtw_examples_prefit} for the SF measurement for the
-\verb|HLT_tau25_medium1_tracktwo| trigger.
-
-
-
-%All subregions of the SF-CR defined by the reconstructed \tauhadvis decay mode
-%and \pT are included in a simultaneous fit of the scale factors. When performing
-%the measurement for events after the \tauhadvis trigger selection, events are
-%required to pass the corresponding resurrected trigger and
-%trigger-matching.
-Each subregion enters the fit with five \mTW bins %to
-%distinguish between \ttbar with \faketauhadvis and \tauhadvis from hadronic
-%\taulepton decays.
-In~\Cref{fig:ttbarsf_mtw_examples_prefit} the \mTW distribution is shown prior
-to the fit for two exemplary regions after the trigger-matching requirement.
-
-%The normalisation of \ttbar with \faketauhadvis is allowed to vary freely in
-%every measurement region.
-
-%The associated normalisation factors correspond to the
-%\faketauhadvis scale factors of interest.
-%The \ttbar cross-section is extracted
-%from the fit to data by allowing the overall normalisation of \ttbar (including
-%\ttbar with and without \faketauhadvis) to vary freely.
-%The \ttbar normalisation
-%factor is fully correlated between all subregions entering the measurement. This
-%approach is taken, as opposed to leaving the \ttbar normalisation freely
-%floating in every subregion separately, due to the weak discrimination power of
-%\mTW for small \tauhadvis \pT.
+in~\Cref{fig:ttbarsf_mtw_examples_prefit} for SF-CR events passing the
+\verb|HLT_tau25_medium1_tracktwo| trigger and trigger-matching of the \tauhadvis
+candidate. The binning of the \mTW discriminants, as shown in the figure, is the
+same in all \tauhadvis candidate \pT and \Ntracks categories.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3035_1P}
-    \caption{1-prong \tauhadvis candidates with
+    \caption{\tauhadvis candidates with $\Ntracks = 1$ and
       $\SI{30}{\GeV} \leq \pT < \SI{35}{\GeV}$.}
   \end{subfigure}\hfill%
   \begin{subfigure}{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3040_3P}
-    \caption{3-prong \tauhadvis candidates with
+    \caption{\tauhadvis candidates with $\Ntracks = 3$ and
       $\SI{30}{\GeV} \leq \pT < \SI{40}{\GeV}$.}
   \end{subfigure}
 
-  \caption{Two exemplary binned \mTW distributions as they enter the
-    maximum likelihood estimation procedure to determine the
-    \faketauhadvis scale factors. All events are required to pass the
-    resurrected trigger decision and trigger-matching of the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} chain. Events with
-    $\mTW > \SI{200}{\GeV}$ are merged into the last bin of the
-    histograms.}%
+  \caption{Histograms of the \mTW distributions in two exemplary \tauhadvis
+    candidate \pT and \Ntracks categories.  Two exemplary \mTW distributions as
+    they enter the likelihood fit determining the \faketauhadvis scale
+    factors. Only SF-CR events passing the \verb|HLT\_tau25\_medium1\_tracktwo|
+    trigger and \tauhadvis trigger-matching are considered. Events with
+    $\mTW > \SI{200}{\GeV}$ are merged into the last bin of the histogram.}%
   \label{fig:ttbarsf_mtw_examples_prefit}
 \end{figure}
 
