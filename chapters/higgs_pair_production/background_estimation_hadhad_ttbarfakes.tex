@@ -52,20 +52,6 @@ to systematic ones.
 
 \subsubsection{Control Region Definition}
 
-% The measurement is performed in a control region by comparing the
-% prediction of \ttbarFakes from simulation with observed data. The
-% control region should have high \ttbar purity with a measurable
-% contribution of \ttbarFakes and exactly one \tauhadvis candidate to
-% isolate the effect of differences in misidentification efficiencies
-% between simulation and data. Corrections are defined as
-% multiplicative scale factors (SF) applied to \faketauhadvis passing
-% \tauid in simulation and measured as a functions of \faketauhadvis
-% properties using a maximum likelihood fit of a discriminating
-% distribution in the control region.  In the \hadhad signal region,
-% the measured scale factors are applied to simulated \ttbarFakes
-% events to obtain the background prediction and the associated
-% uncertainties.
-
 The control region for the scale factor measurement (SF-CR) targets
 final states with an electron or muon and a \tauhadvis candidate. The
 region definition is based on the selections applied in the \lephad
@@ -146,10 +132,10 @@ are imposed on \tauhadvis candidates at trigger-level and during offline event
 reconstruction. This two-stage selection of \tauhadvis candidates is taken into
 account by measuring separate sets of SFs for every relevant combination of
 identification requirements. One set of SFs is measured for \faketauhadvis after
-loose RNN \tauid but without requirements at trigger-level. This set is required
-for events selected by single-\tauhadvis triggers in cases where the
-\faketauhadvis did not cause the trigger to select the event. Three sets of SFs
-are measured to account for identification requirements of the three different
+loose RNN \tauid but without requirements at trigger-level. These SFs are
+required for STT events in the \hadhad channel in cases where the \faketauhadvis
+did not cause the trigger to select the event. Three sets of SFs are measured to
+account for identification requirements of the three different
 \tauhadvis-trigger chains used in the \hadhad channel
 (cf.~\Cref{sec:hadhad_trigger_selection}) which are applied in addition to
 offline \tauid.
@@ -187,8 +173,8 @@ The \jettotauhadvis misidentification efficiencies strongly depend on the
 charged particle multiplicity and visible transverse momentum of reconstructed
 \tauhadvis candidates. This can also be reflected in corrections to the
 \jettotauhadvis misidentification efficiency in simulation. Therefore, the scale
-factor measurement is performed in bins of the reconstructed \tauhadvis decay
-mode (1- or 3-prong) and \tauhadvis~\pT:
+factor measurement is performed in bins of \Ntracks and \pT of the \tauhadvis
+candidate:
 \begin{itemize}
 
 \item 1-prong \tauhadvis candidates with $\pT / \si{\GeV}$: $[25, 30)$,
@@ -231,17 +217,17 @@ regions are shown in~\Cref{fig:ttbarsf_region_summary_prefit}.
   \label{fig:ttbarsf_region_summary_prefit}
 \end{figure}
 
-A discriminant is required to distinguish between contributions of \ttbar with
-and without \faketauhadvis in the SF measurement, since only the former is
-sensitive to \jettotauhadvis misidentification efficiencies. The transverse mass
-of the lepton and \pTmissAbs is used for this purpose, which is defined as
+A discriminant is required to distinguish contributions of \ttbar with and
+without \faketauhadvis in the SF measurement, since only the former is sensitive
+to \jettotauhadvis misidentification efficiencies. The transverse mass of the
+lepton and \pTmissAbs is used for this purpose, which is defined as
 \begin{align*}
   \mTW = \sqrt{2 | \myvec{p}_{\text{T}}^{\ell} | | \pTmiss | \left( 1 - \cos \Delta\phi \right)} \,\text{,}
 \end{align*}
 where $\Delta \phi$ is the angle between the lepton transverse momentum,
 $\myvec{p}_{\text{T}}^{\ell}$, and the missing transverse momentum, \pTmiss. The
 \mTW discriminant targets the differences between di- and semi-leptonic decay
-modes of \ttbar which are the primary sources of SF-CR events with true- and
+modes of \ttbar which are the primary sources of events with true- and
 \faketauhadvis, respectively. The differences are illustrated
 in~\Cref{fig:ttbarsf_mtw_pdf} with di-leptonic decay modes of \ttbar showing a
 heavy tail towards large \mTW due to the presence of an additional neutrino,
@@ -266,30 +252,55 @@ mass.
 
   \includegraphics[width=0.45\textwidth]{ttbarSF/mtw_pdf}
 
-  \caption{Distribution of the transverse mass between the light
-    lepton and \pTmiss in simulated \ttbar events entering the
-    SF-CR. Events are shown inclusive in the \tauhadvis transverse
-    momentum and decay mode without requirements on the
+  \caption{Transverse mass distribution of the lepton and \pTmiss in simulated
+    \ttbar events entering the SF-CR. The distributions are inclusive in the
+    \tauhadvis candidate \pT and \Ntracks without requiring \tauhadvis
     trigger-matching.}%
   \label{fig:ttbarsf_mtw_pdf}
 \end{figure}
 
-All subregions of the SF-CR defined by the reconstructed \tauhadvis
-decay mode and \pT are included in a simultaneous fit of the scale
-factors. When performing the measurement for events after the
-\tauhadvis trigger selection, events are required to pass the
-corresponding resurrected trigger and trigger-matching. Each subregion
-enters the fit with five \mTW bins to distinguish between \ttbar with
-\faketauhadvis and \tauhadvis from hadronic \taulepton
-decays. In~\Cref{fig:ttbarsf_mtw_examples_prefit} the \mTW
-distribution is shown prior to the fit for two exemplary regions after
-the trigger-matching requirement.
+The \faketauhadvis SFs are measured using a simultaneous likelihood fit of the
+binned \mTW discriminants in all \tauhadvis candidate \pT and \Ntracks
+categories. The fit model is constructed from \mTW distributions predicted using
+simulated \ttbar, single top, and \Vjets events. The sample of \ttbar events is
+split by whether the reconstructed is a \faketauhadvis or not. The overall
+normalisation of the \ttbar background, irrespective of whether events contain a
+\faketauhadvis, is allowed to vary freely in the model. In every \tauhadvis
+candidate \pT and \Ntracks category, an unconstrained scale factor is introduced
+that changes the normalisation of the \ttbarFakes background in this
+category. These \faketauhadvis scale factors are considered the parameters of
+interest of the measurement.
 
-% The regions entering the fit are determined by the charged particle
-% multiplicity of the reconstructed \tauhadvis candidate and the
-% reconstructed \tauhadvis \pT. For the measurement after HLT \tauhadvis
-% identification the events entering the fit are also required to pass
-% trigger matching to the resurrected trigger of interest.
+The pre-fit expectation of the model in two exemplary categories is shown
+in~\Cref{fig:ttbarsf_mtw_examples_prefit} for the SF measurement for the
+\verb|HLT_tau25_medium1_tracktwo| trigger.
+
+
+
+%All subregions of the SF-CR defined by the reconstructed \tauhadvis decay mode
+%and \pT are included in a simultaneous fit of the scale factors. When performing
+%the measurement for events after the \tauhadvis trigger selection, events are
+%required to pass the corresponding resurrected trigger and
+%trigger-matching.
+Each subregion enters the fit with five \mTW bins %to
+%distinguish between \ttbar with \faketauhadvis and \tauhadvis from hadronic
+%\taulepton decays.
+In~\Cref{fig:ttbarsf_mtw_examples_prefit} the \mTW distribution is shown prior
+to the fit for two exemplary regions after the trigger-matching requirement.
+
+%The normalisation of \ttbar with \faketauhadvis is allowed to vary freely in
+%every measurement region.
+
+%The associated normalisation factors correspond to the
+%\faketauhadvis scale factors of interest.
+%The \ttbar cross-section is extracted
+%from the fit to data by allowing the overall normalisation of \ttbar (including
+%\ttbar with and without \faketauhadvis) to vary freely.
+%The \ttbar normalisation
+%factor is fully correlated between all subregions entering the measurement. This
+%approach is taken, as opposed to leaving the \ttbar normalisation freely
+%floating in every subregion separately, due to the weak discrimination power of
+%\mTW for small \tauhadvis \pT.
 
 \begin{figure}[htbp]
   \centering
@@ -314,17 +325,6 @@ the trigger-matching requirement.
     histograms.}%
   \label{fig:ttbarsf_mtw_examples_prefit}
 \end{figure}
-
-The normalisation of \ttbar with \faketauhadvis is allowed to vary
-freely in every measurement region. The associated normalisation
-factors correspond to the \faketauhadvis scale factors of
-interest. The \ttbar cross-section is extracted from the fit to data
-by allowing the overall normalisation of \ttbar (including \ttbar with
-and without \faketauhadvis) to vary freely. The \ttbar normalisation
-factor is fully correlated between all subregions entering the
-measurement. This approach is taken, as opposed to leaving the \ttbar
-normalisation freely floating in every subregion separately, due to
-the weak discrimination power of \mTW for small \tauhadvis \pT.
 
 
 \subsubsection{Uncertainties}
