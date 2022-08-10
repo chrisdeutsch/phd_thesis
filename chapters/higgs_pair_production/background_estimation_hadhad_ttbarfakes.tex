@@ -68,20 +68,18 @@ briefly summarised:
   $\pT > \SI{20}{\GeV}$ and $|\eta| < \num{2.3}$ in the \lephad
   channels).
 
-\item All events are required to have exactly one \tauhadvis passing
-  identification, exactly one electron or one muon passing their
-  respective isolation and identification criteria, and exactly two
-  \btagged jets. In addition, only events selected by single-lepton
-  triggers are considered.
+\item All events are required to have exactly one \tauhadvis candidate passing
+  \tauid, exactly one electron or one muon passing their respective isolation
+  and identification criteria, and exactly two \btagged jets. In addition, only
+  events selected by single-lepton triggers are considered.
 
-\item The electron or muon and the \tauhadvis candidate are required
-  to be reconstructed with electric charges of opposite sign. This
-  requirement ensures that the charge correlations between light
-  lepton and \faketauhadvis from semi-leptonic decays of \ttbar are
-  similar to the correlation between \tauhadvis candidates from
-  \ttbarFakes in the \hadhad signal region for cases where only one
-  candidate is a \faketauhadvis. The effect of charge correlation on
-  \ttbarFakes estimation was previously studied in Ref.~\cite{bokan}.
+\item The electron/muon and the \tauhadvis candidate are required to be
+  reconstructed with electric charges of opposite sign. This requirement ensures
+  that the charge correlations between light lepton and \faketauhadvis from
+  semi-leptonic decays of \ttbar are similar to the correlation between
+  \tauhadvis candidates from \ttbarFakes in the \hadhad signal region for cases
+  where only one candidate is a \faketauhadvis. The effect of charge correlation
+  on \ttbarFakes estimation was previously studied in Ref.~\cite{bokan}.
 
 \item Orthogonality between the SF-CR and the signal region of the
   \lephad SLT channel is ensured by requiring $\mBB > \SI{150}{\GeV}$.
@@ -95,20 +93,16 @@ briefly summarised:
 % region the quark/gluon composition of jets is likely different which
 % also affects the fake rates.}.
 
-The control region selects \ttbar events with a purity of
-\SI{94}{\percent} prior to the fit. About \SI{66}{\percent} of
-selected events are from di-leptonic decay modes of \ttbar yielding
-$\ell + \tauhad$ final states, where $\ell$ is either an electron or
-muon. The production of \ttbar events with \tauhadvis candidates
-originating from quark- or gluon-initiated jets, which is the process
-of interest for this measurement, constitutes \SI{28}{\percent} of all
-selected events. Minor backgrounds in this region are single top
-(\SI{4}{\percent}) and $\Vjets$ production (\SI{2}{\percent}). The
-contribution of \multijet background is negligible based on studies
-performed as part of the \faketauhadvis estimation in the \lephad
-channel. The distribution of transverse momenta and pseudorapidity of
-\tauhadvis candidates in the SF-CR prior to the fit is shown
-in~\Cref{fig:ttbarSF_prefit_pt}.
+The SF-CR selects \ttbar events with a purity of \SI{94}{\percent}. About
+\SI{66}{\percent} of events are from di-leptonic decay modes of \ttbar that
+yield an electron/muon and a \tauhadvis in the final state. The production of
+\ttbar events with \tauhadvis candidates originating from quark- or
+gluon-initiated jets, which is the process of interest for this measurement,
+constitutes \SI{28}{\percent} of selected events. Minor backgrounds in this
+region are single top (\SI{4}{\percent}) and $\Vjets$ (\SI{2}{\percent})
+production. The \multijet background is assumed to be negligible. The
+distribution of transverse momenta and pseudorapidity of \tauhadvis candidates
+in the SF-CR prior to the fit is shown in~\Cref{fig:ttbarSF_prefit_pt}.
 
 \begin{figure}[htbp]
   \centering
@@ -134,8 +128,8 @@ account by measuring separate sets of SFs for every relevant combination of
 identification requirements. One set of SFs is measured for \faketauhadvis after
 loose RNN \tauid but without requirements at trigger-level. These SFs are
 required for STT events in the \hadhad channel in cases where the \faketauhadvis
-did not cause the trigger to select the event. Three sets of SFs are measured to
-account for identification requirements of the three different
+was not the candidate causing the trigger to select the event. Three sets of SFs
+are measured to account for identification requirements of the three different
 \tauhadvis-trigger chains used in the \hadhad channel
 (cf.~\Cref{sec:hadhad_trigger_selection}) which are applied in addition to
 offline \tauid.
@@ -145,7 +139,7 @@ events in the SF-CR without additional selections. For measurements of SFs that
 include trigger-level identification requirements, the selections applied by
 \tauhadvis-triggers need to be emulated. This is achieved by requiring that
 events in the SF-CR are also selected by appropriately chosen single-\tauhadvis
-triggers. In addition, the reconstructed \tauhadvis candidate is required to be
+triggers. In addition, the reconstructed \tauhadvis candidate has to be
 geometrically matched ($\Delta R < 0.2$) to a \tauhadvis candidate at the HLT
 that fulfilled the trigger conditions. The SF measurement is performed for three
 trigger setups:
@@ -159,12 +153,13 @@ During Run~2 data-taking these triggers had to be prescaled\footnote{A trigger
   with a prescale value of $n$ accepts events satisfying the trigger conditions
   with a probability of $1 / n$ \cite{TRIG-2019-04}.} to limit their trigger
 rates. However, events entering the SF-CR were already recorded using
-unprescaled single-lepton triggers allowing single-\tauhadvis triggers to be
-re-run during offline event reconstruction without application of a prescale.
-Only the \verb|HLT_tau25_medium1_tracktwo| trigger was active for the entirety
-of Run~2 data-taking. Trigger decisions of \verb|HLT_tau25_medium1_tracktwoEF|
-and \verb|HLT_tau25_mediumRNN_tracktwoMVA| are available for partial datasets
-with integrated luminosities of \SI{58}{\ifb} and \SI{37}{\ifb}, respectively.
+unprescaled single-lepton triggers. This allows single-\tauhadvis triggers to be
+re-run during offline event reconstruction without application of a prescale,
+which is used for the SF measurement.  Only the
+\verb|HLT_tau25_medium1_tracktwo| trigger was active for the entirety of Run~2
+data-taking. Trigger decisions of \verb|HLT_tau25_medium1_tracktwoEF| and
+\verb|HLT_tau25_mediumRNN_tracktwoMVA| are available for partial datasets with
+integrated luminosities of \SI{58}{\ifb} and \SI{37}{\ifb}, respectively.
 
 
 \subsubsection{Scale Factor Measurement}
