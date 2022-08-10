@@ -163,11 +163,12 @@ events in the SF-CR are also selected by appropriately chosen single-\tauhadvis
 triggers. In addition, the reconstructed \tauhadvis candidate is required to be
 geometrically matched ($\Delta R < 0.2$) to a \tauhadvis candidate at the HLT
 that fulfilled the trigger conditions. The SF measurement is performed for three
-single-\tauhadvis triggers:
+trigger setups:
 \begin{itemize}
 \item \verb|HLT_tau25_medium1_tracktwo| %(\SI{139}{\ifb})
 \item \verb|HLT_tau25_medium1_tracktwoEF| %(\SI{58}{\ifb})
-\item \verb|HLT_tau25_mediumRNN_tracktwoMVA| %(\SI{37}{\ifb})
+\item \verb|HLT_tau25_medium1_tracktwoEF| \emph{or}
+  \verb|HLT_tau25_mediumRNN_tracktwoMVA| %(\SI{37}{\ifb})
 \end{itemize}
 During Run~2 data-taking these triggers had to be prescaled\footnote{A trigger
   with a prescale value of $n$ accepts events satisfying the trigger conditions
@@ -175,24 +176,10 @@ During Run~2 data-taking these triggers had to be prescaled\footnote{A trigger
 rates. However, events entering the SF-CR were already recorded using
 unprescaled single-lepton triggers allowing single-\tauhadvis triggers to be
 re-run during offline event reconstruction without application of a prescale.
-Only the \verb|HLT_tau25_medium1_tracktwo| trigger ran for the entirety of Run~2
-data-taking. The \verb|HLT_tau25_medium1_tracktwoEF| and
-\verb|HLT_tau25_mediumRNN_tracktwoMVA| triggers are available for partial
-datasets with integrated luminosities of \SI{58}{\ifb} and \SI{37}{\ifb},
-respectively.
-
-% Talk about logical or of medium1_tracktwoEF and mediumRNN_tracktwoMVA
-
-Four combinations of \tauhadvis selections need to be considered when measuring
-corrections to the \jettotauhadvis misidentification efficiencies in
-\ttbar. When no additional trigger requirements are applied the scale factors
-can be measured in the SF-CR directly. Three subregions of the SF-CR, each
-corresponding to one of the trigger chains, are defined for cases where
-requirements are imposed on \tauhadvis at trigger-level. Events entering these
-regions are required to be selected by the respective resurrected trigger and
-the reconstructed \tauhadvis candidate has to be geometrically matched to an
-identified \tauhadvis candidate at the HLT. Separate scale factor measurements
-are performed in these regions.
+Only the \verb|HLT_tau25_medium1_tracktwo| trigger was active for the entirety
+of Run~2 data-taking. Trigger decisions of \verb|HLT_tau25_medium1_tracktwoEF|
+and \verb|HLT_tau25_mediumRNN_tracktwoMVA| are available for partial datasets
+with integrated luminosities of \SI{58}{\ifb} and \SI{37}{\ifb}, respectively.
 
 
 \subsubsection{Measurement and Fit Model}
