@@ -3,6 +3,141 @@
 \section{Systematic Uncertainties}
 % ------------------------------------------------------------------------------
 
+The recommendations for the derivation of uncertainties on the modelling of
+selected physics processes by the ATLAS collaboration are summarised in the
+following. Modelling uncertainties for \ttbar and single top-quark processes are
+summarised in \Cref{app:top_uncertainties}. Uncertainties on the modelling of
+\Zjets processes are summarised in \Cref{app:zjets_uncertainties}.
+
+\todo[inline]{Make this more generic.}
+
+
+\subsection{Uncertainties on the Modelling of \ttbar and Single Top Production
+  in Simulation}%
+\label{app:top_uncertainties}
+
+% https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
+Theoretical uncertainties on the acceptance of \ttbar in simulation, which uses
+\POWHEGBOX[v2]~\cite{Frixione:2007nw} as a matrix element (ME) generator
+interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea} for the parton shower
+(PS), need to be estimated. The cross-section of \ttbar is allowed to vary
+freely in the fit model, therefore uncertainties only affecting the
+normalisation of \ttbar are omitted. However, uncertainties changing the
+relative acceptance between regions (i.e.\ uncertainties depending on \tauhadvis
+\pT or decay mode) entering the fit and effects changing the shape of the \mTW
+discriminant need to be estimated. The following sources of uncertainties are
+considered:
+\begin{description}
+
+\item[Hard scatter simulation and NLO+PS matching] The uncertainty on the
+  modelling due to the choice of generator describing the hard scatter process
+  is estimated by comparing the nominal simulation of \ttbar with an alternative
+  setup replacing \POWHEGBOX[v2] with \MGNLO as the ME generator. This
+  comparison serves to probe the effect of different matching schemes between
+  the NLO matrix element and parton shower employed by both
+  generators.\footnote{\POWHEGBOX[v2] uses the \POWHEG
+    method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} and \MGNLO the
+    MC@NLO method~\cite{Frixione:2002ik} for NLO+PS matching.}
+
+\item[Parton shower and hadronisation model] The uncertainty of the modelling of
+  the parton shower and non-perturbative effects is estimated by replacing
+  \PYTHIA[8] with \HERWIG[7.0.4] as the PS generator.
+
+\item[Missing higher order contributions] The renormalisation scale~(\muR) and
+  factorisation scale~(\muF) is doubled (halved) to probe the effect of
+  truncating the perturbative expansion in \alphas when simulating the hard
+  scatter process. Perturbative QCD calculations to sufficiently high order
+  should be approximately independent of the choice of scale.
+
+\item[Initial and final state radiation (ISR / FSR)] An uncertainty on the
+  emission of ISR is estimated by varying $\alphas^\text{ISR}$ in the A14 set of
+  tuned parameters for \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021}.
+  % Tune of the MPI, ISR, FSR parameters in Pythia8
+  An estimate of the uncertainty from the modelling of FSR emissions is
+  estimated by doubling (halving) the renormalisation scale used for FSR
+  branchings in
+  \PYTHIA[8]~\cite{Sjostrand:2014zea,Mrenna:2016sih,pythia-variations-online}.
+  % https://pythia.org/latest-manual/Variations.html
+
+\item[Damping factor for additional emissions] The damping parameter~\hdamp in
+  \POWHEGBOX[v2] is increased to $3 m_\text{top}$ (from $1.5 m_\text{top}$) and
+  compared with the nominal simulation setup. The \hdamp parameter controls the
+  transverse momentum of additional radiation when matching \POWHEGBOX[v2] to
+  \PYTHIA[8] using the
+  \POWHEG-method~\cite{ATL-PHYS-PUB-2016-020,ATL-PHYS-PUB-2020-023}.
+
+\end{description}
+% PDF uncertainties were neglected.
+The prescriptions to calculate the \ttbar modelling uncertainties are a revised
+version of the methodology outlined in Ref.~\cite{ATL-PHYS-PUB-2020-023} for
+analyses targeting the $pp$-collision dataset collected with the ATLAS detector
+during Run~2 of the LHC.
+
+\todo[inline]{PDF + \alphas ?}
+
+
+\subsection{Uncertainties on the Modelling of \Zjets production in Simulation}%
+\label{app:zjets_uncertainties}
+
+The relative acceptance uncertainties originating from the modelling of the \ZHF
+background in simulation are estimated by performing variations of the event
+generation process. A brief description of the variations is given in the
+following, reproducing the prescriptions developed by the ATLAS
+collaboration:\todo{Move to appendix}
+\begin{description}
+
+\item[Factorisation and renormalisation scales] Six variations of the
+  factorisation and renormalisation scales are performed using internal
+  re-weighting implemented in \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}, altering
+  the scales by factors of $\frac{1}{2}$ and $2$. The following variations are
+  considered:
+  \begin{align*}
+    \left( \frac{\muF}{\muF^{\text{nom.}}}, \frac{\muR}{\muR^{\text{nom.}}} \right) \in
+    \left\{ (\tfrac{1}{2}, \tfrac{1}{2}), (\tfrac{1}{2}, 1), (1, \tfrac{1}{2}), (1, 2), (2, 1), (2, 2) \right\} \,\text{,}
+  \end{align*}
+  where $\muF^{\text{nom.}}$ and $\muR^{\text{nom.}}$ are the nominal values of
+  the scales.
+
+\item[Resummation scale] The scale of the resummation of soft gluon emissions in
+  the \SHERPA parton shower is varied by factors of $\frac{1}{2}$ and
+  2. Variations of the resummation scale are provided in parameterised form with
+  respect to the default \SHERPA configuration in Ref.~\cite{anders:2017}.
+
+\item[Multi-jet merging scale] The simulation of \Zjets events with
+  \SHERPA[2.2.1] uses matrix elements of NLO accuracy for up to two and LO for
+  up to four partons. These multi-parton matrix elements are merged with the
+  parton shower using an extension of the CKKW
+  algorithm~\cite{Catani:2001cc,Hoeche:2009rj,Hoeche:2012yf}. The characteristic
+  scale~$Q_{\text{cut}}$ of the multi-jet merging algorithm is varied from its
+  nominal value of $Q_{\text{cut}} = \SI{20}{\GeV}$ to \SI{15}{\GeV} and
+  \SI{30}{\GeV}~\cite{anders:2017}. These variations are provided, following the
+  approach for the resummation scale, in parameterised form in
+  Ref.~\cite{anders:2017}.
+  %\cite{ATLAS:2021yza}
+
+\item[PDF+\alphas and PDF choice] Uncertainties on the \NNPDF[3.0nnlo] set of
+  PDFs~\cite{Ball:2014uwa} are evaluated using 100 replica sets provided through
+  the \textsc{LHAPDF6} library~\cite{Buckley:2014ana} and implemented using
+  internal re-weighting in \SHERPA. The uncertainty on \alphas propagated by
+  comparing \NNPDF[3.0nnlo] PDF sets with $\alphas(\mZ^2) = 0.117$ and $0.119$
+  with the nominal set using a value of $0.118$. Finally, an uncertainty on the
+  choice of PDF set is estimated by comparing with two alternative PDF sets
+  \MMHT[nnlo68cl]~\cite{Harland-Lang:2014zoa} and
+  \CT[14nnlo]~\cite{Dulat:2015mca}.
+
+\item[Alternative generator and parton shower] The prediction of \Zjets with the
+  default configuration of \SHERPA[2.2.1] is compared to an alternative setup
+  using~\MGNLO[2.2.2]~\cite{Alwall:2014hca} for the calculation of the hard
+  interaction at LO interfaced to~\PYTHIA[8.186]~\cite{Sjostrand:2007gs} for
+  parton showering.
+
+\end{description}
+Relative acceptance uncertainties on the \ZHF background are derived using these
+variations according to~\Cref{eq:relative_acceptance_uncertainty} for the three
+signal regions. The uncertainties are summarised
+in~\Cref{tab:uncertainties_zhf_extrapol} separately for all sources of
+uncertainty.
+
 
 %%% Local Variables:
 %%% mode: latex
