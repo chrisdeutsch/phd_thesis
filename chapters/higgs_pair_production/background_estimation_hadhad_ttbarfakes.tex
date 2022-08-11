@@ -292,13 +292,13 @@ same in all \tauhadvis candidate \pT and \Ntracks regions.
 \subsubsection{Uncertainties in the Scale Factor Measurement}
 
 Several experimental and theoretical uncertainties are considered in the fits
-measuring the \faketauhadvis SFs. Generally, these uncertainties can affect the
-normalisation and shape of the expected \mTW distribution for a given process in
-all regions entering the fit. The uncertainties included in the SF measurement
-and their treatment closely follows the approach taken in
+measuring the SFs. In general, these uncertainties can affect the normalisation
+and shape of the expected \mTW distribution for a given process in all regions
+entering the fit. The uncertainties included in the SF measurement and their
+treatment closely follows the approach taken in
 \Cref{sec:uncertainties,sec:statistical_analysis} to interpret the results of
-the search for Higgs boson pair production. The main sources of uncertainty in
-the SF measurement are therefore only briefly summarised.
+the search for Higgs boson pair production. Therefore, the uncertainties
+included in the SF measurement are only briefly summarised.
 
 Experimental uncertainties affecting the reconstruction and selection
 efficiencies of electrons, muons, \tauhadvis, and jets are considered in the SF
@@ -307,110 +307,124 @@ $b$-tagging. Uncertainties on the reconstructed \pTmissAbs are propagated to the
 \mTW distributions in all regions. Trigger efficiency uncertainties are
 considered for single-lepton and single-\tauhadvis
 triggers.\footnote{Uncertainties on single-\tauhadvis trigger efficiencies are
-  only considered in SF measurements for events after trigger-level \tauid.}
+  only considered for SF measurements taking into account trigger-level \tauid
+  requirements.}  Uncertainties on the re-weighting of the pile-up conditions in
+simulation and the integrated luminosity used to normalise simulated event
+samples are included in the measurement. Finally, statistical uncertainties from
+the finite size of the simulation samples used to construct the fit model are
+included according to the method by Barlow and
+Beeston~\cite{barlow1993,conway2011} introduced in \Cref{sec:barlow_beeston}.
 
+Theory uncertainties on the modelling of \ttbar production using simulation are
+derived for this measurement according to prescriptions developed by the ATLAS
+collaboration, which are documented in \Cref{app:top_uncertainties}. An
+uncertainty on the simulation of the hard interaction and matching to the parton
+shower is derived by comparison with an alternative matrix element generator and
+matching scheme. Uncertainties on the modelling of the parton shower,
+hadronisation, and underlying event are determined by comparison with an
+alternative parton shower program. The effect of missing higher orders in the
+(truncated) perturbative expansion in \alphas is probed by performing variations
+of renormalisation and factorisation scales. Finally, uncertainties on the
+modelling of additional emissions are derived by performing variations of the
+simulated initial- and final-state radiation. Modelling uncertainties are
+derived separately for \ttbar events with and without \faketauhadvis, but are
+correlated in the fit model if they originate from the same source. Effects of
+the \ttbar modelling uncertainties on the shape of the \mTW discriminants and
+the expected number of events in the different \tauhadvis candidate \Ntracks and
+\pT regions are implemented in the fit model.
 
-% PRW & LUMI
+Reduced sets of theory uncertainties are considered for minor backgrounds in the
+SF measurement. Uncertainties on the cross-sections of single-top and \Vjets
+production are included in the model. Due to the known normalisation discrepancy
+of \Vjets production in the presence of jets originating from heavy flavour
+quarks, a normalisation uncertainty of \SI{30}{\percent} is applied to the minor
+\Vjets background.
 
-Statistical uncertainties from the finite size of the simulation samples used to
-construct the background templates are considered and implemented in the
-likelihood fit using a simplified Barlow-Beeston
-method~\cite{barlow1993,conway2011}.
-
-
-
-
-
-% Major detector-related uncertainties
-% Statistical uncertainties of the finite size of the simulated samples
-
-% Theory uncertainties on ttbar
-% - Modelling of the hard scattering interaction and the matching of NLO matrix element generator with parton shower
-% - Variation of the parton shower, hadronisation model, and underlying event modelling by using alternatiev parton shower generator
-% - Missing higher order in the perturbative expansion by performing scale variations
-% - The modelling of additional radiation
+% A reduced set of theory uncertainties for minor backgrounds is considered. For
+% the production of single top-quarks, the uncertainties on the cross-section are
+% included in the fit model. Due to the known normalisation discrepancy in \Vjets
+% in the presence of jets originating from heavy flavour, an uncertainty of
+% \SI{30}{\percent} is applied to the overall normalisation of the process.
 
 % Theory uncertainties on minor backgrounds
 
-The predicted number of events in bins entering the measurement are
-subject to statistical, experimental, and theoretical
-uncertainties. These uncertainties can affect the shape and
-normalisation of the \mTW distribution in the measurement regions and
-the relative acceptance between regions for a given physics
-process. Systematic uncertainties affecting the modelling of \ttbar
-with true and fake-\tauhadvis in simulation are of primary concern due
-to their ability to alter the extracted scale factors. In the
-following, a description of the uncertainties is given with a focus of
-theoretical modelling uncertainties derived for this
-measurement. Detector-related experimental uncertainties are only
-briefly summarised, a detailed description following
-in~\Cref{sec:uncertainties} when introducing the fit model of the
-search for Higgs boson pair production.
+% The predicted number of events in bins entering the measurement are
+% subject to statistical, experimental, and theoretical
+% uncertainties. These uncertainties can affect the shape and
+% normalisation of the \mTW distribution in the measurement regions and
+% the relative acceptance between regions for a given physics
+% process. Systematic uncertainties affecting the modelling of \ttbar
+% with true and fake-\tauhadvis in simulation are of primary concern due
+% to their ability to alter the extracted scale factors. In the
+% following, a description of the uncertainties is given with a focus of
+% theoretical modelling uncertainties derived for this
+% measurement. Detector-related experimental uncertainties are only
+% briefly summarised, a detailed description following
+% in~\Cref{sec:uncertainties} when introducing the fit model of the
+% search for Higgs boson pair production.
 
-Statistical uncertainties arise from the finite size of the simulation
-samples used to estimate the physics processes entering this
-measurement. These are included in the likelihood function using the
-method by Barlow and Beeston~\cite{barlow1993,conway2011} introduced
-in \Cref{sec:barlow_beeston}.
+% Statistical uncertainties arise from the finite size of the simulation
+% samples used to estimate the physics processes entering this
+% measurement. These are included in the likelihood function using the
+% method by Barlow and Beeston~\cite{barlow1993,conway2011} introduced
+% in \Cref{sec:barlow_beeston}.
 
-Major detector-related experimental uncertainties originate from the
-reconstruction and selection of electrons, muons, \tauhadvis and jets.
-These uncertainties can affect the reconstructed momenta in scale,
-resolution, and direction as well as selection efficiencies of physics
-objects for example due to isolation and identification
-requirements. When requiring events to pass the resurrected trigger
-decision of single-\tauhadvis triggers, calibrations of trigger
-selection efficiencies and their associated uncertainties are applied
-to \tauhadvis that are matched to a generator-level \tauhad (true
-\tauhadvis). Uncertainties on the missing transverse momentum account
-for changes in momentum scale and resolution. The uncertainties on
-\btag efficiencies and mis-tag rates are obtained from dedicated
-calibration measurements performed by the ATLAS collaboration and are
-considered in the fit model. Other experimental uncertainties
-originating from trigger efficiencies of single lepton triggers,
-efficiencies of jet vertex tagging, re-weighting of pile-up conditions
-in simulation to match the conditions in Run~2 data, and the
-integrated luminosity used to normalise the simulated datasets are
-included in the fit.
+% Major detector-related experimental uncertainties originate from the
+% reconstruction and selection of electrons, muons, \tauhadvis and jets.
+% These uncertainties can affect the reconstructed momenta in scale,
+% resolution, and direction as well as selection efficiencies of physics
+% objects for example due to isolation and identification
+% requirements. When requiring events to pass the resurrected trigger
+% decision of single-\tauhadvis triggers, calibrations of trigger
+% selection efficiencies and their associated uncertainties are applied
+% to \tauhadvis that are matched to a generator-level \tauhad (true
+% \tauhadvis). Uncertainties on the missing transverse momentum account
+% for changes in momentum scale and resolution. The uncertainties on
+% \btag efficiencies and mis-tag rates are obtained from dedicated
+% calibration measurements performed by the ATLAS collaboration and are
+% considered in the fit model. Other experimental uncertainties
+% originating from trigger efficiencies of single lepton triggers,
+% efficiencies of jet vertex tagging, re-weighting of pile-up conditions
+% in simulation to match the conditions in Run~2 data, and the
+% integrated luminosity used to normalise the simulated datasets are
+% included in the fit.
 
-Top modelling uncertainties: \Cref{app:top_uncertainties}.
+% Uncertainties derived by performing a two-sample comparison (NLO+PS
+% matching, PS, \hdamp) are parameterised in \tauhadvis \pT,
+% reconstructed \tauhadvis decay mode, and \mTW, separately for \ttbar
+% with true and \faketauhadvis. A smooth functional dependence of these
+% uncertainties is obtained using least squares fits of polynomials to
+% the relative change in event yields comparing the alternative with the
+% nominal sample in bins of \tauhadvis \pT and \mTW. This approach
+% limits spurious pulls and constraints of the associated nuisance
+% parameters in the maximum likelihood fit due to statistical
+% fluctuations of the derived uncertainties. The degree of the fitted
+% polynomials is determined by leave-one-out cross-validation yielding a
+% low expected value and variance of the $\chi^2$ statistic.
 
-Uncertainties derived by performing a two-sample comparison (NLO+PS
-matching, PS, \hdamp) are parameterised in \tauhadvis \pT,
-reconstructed \tauhadvis decay mode, and \mTW, separately for \ttbar
-with true and \faketauhadvis. A smooth functional dependence of these
-uncertainties is obtained using least squares fits of polynomials to
-the relative change in event yields comparing the alternative with the
-nominal sample in bins of \tauhadvis \pT and \mTW. This approach
-limits spurious pulls and constraints of the associated nuisance
-parameters in the maximum likelihood fit due to statistical
-fluctuations of the derived uncertainties. The degree of the fitted
-polynomials is determined by leave-one-out cross-validation yielding a
-low expected value and variance of the $\chi^2$ statistic.
-
-Dependencies of the uncertainties on \tauhadvis \pT and \mTW are
-factorised. First, the effect of the uncertainties on \tauhadvis \pT
-is determined by performing the regression on the relative difference
-in event yields between both samples binned in \tauhadvis \pT. An
-example for the PS variation for true \tauhadvis in 1- and 3-prong
-decay modes is shown
-in~\Cref{fig:ttbarSF_uncertainty_ps_1p_pt,fig:ttbarSF_uncertainty_ps_3p_pt}. Subsequently,
-the nominal event sample is re-weighted using the estimated
-\pT-dependency of the uncertainty and the residual non-closure in \mTW
-with respect to the variation sample is examined. Generally, the
-non-closure is small after taking the \tauhadvis \pT effect of the
-variations into account. Minor shape differences are only observed for
-the ME and PS generator variations for true \tauhadvis. The
-non-closure is parameterised similarly, where non-negligible, and
-assigned as an uncertainty fully correlated with the \pT-dependent
-effect. Examples of the residual non-closure in \mTW after
-\pT-re-weighting is shown
-in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}. Variations
-of the damping parameter, $\hdamp$, show no significant effect on the
-shape of the \tauhadvis \pT or \mTW distributions, thus uncertainties
-are only assigned on the relative normalisation between categories
-defined by \tauhadvis decay mode and truth-matching to generator-level
-\tauhad.
+% Dependencies of the uncertainties on \tauhadvis \pT and \mTW are
+% factorised. First, the effect of the uncertainties on \tauhadvis \pT
+% is determined by performing the regression on the relative difference
+% in event yields between both samples binned in \tauhadvis \pT. An
+% example for the PS variation for true \tauhadvis in 1- and 3-prong
+% decay modes is shown
+% in~\Cref{fig:ttbarSF_uncertainty_ps_1p_pt,fig:ttbarSF_uncertainty_ps_3p_pt}. Subsequently,
+% the nominal event sample is re-weighted using the estimated
+% \pT-dependency of the uncertainty and the residual non-closure in \mTW
+% with respect to the variation sample is examined. Generally, the
+% non-closure is small after taking the \tauhadvis \pT effect of the
+% variations into account. Minor shape differences are only observed for
+% the ME and PS generator variations for true \tauhadvis. The
+% non-closure is parameterised similarly, where non-negligible, and
+% assigned as an uncertainty fully correlated with the \pT-dependent
+% effect. Examples of the residual non-closure in \mTW after
+% \pT-re-weighting is shown
+% in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}. Variations
+% of the damping parameter, $\hdamp$, show no significant effect on the
+% shape of the \tauhadvis \pT or \mTW distributions, thus uncertainties
+% are only assigned on the relative normalisation between categories
+% defined by \tauhadvis decay mode and truth-matching to generator-level
+% \tauhad.
 
 % Subsequently, the nominal sample is reweighted using the estimated
 % \pT-dependency and the residual non-closure in \mTW is examined. The
@@ -474,27 +488,21 @@ defined by \tauhadvis decay mode and truth-matching to generator-level
 % The alternative parton shower has the largest effect on the
 % modelling of \faketauhadvis.
 
-Acceptance uncertainties on \ttbar with \faketauhadvis are assigned as
-shape-only uncertainties in all measurement regions since the
-normalisation of this component is extracted in the likelihood fit.
-In contrast, the normalisation of \ttbar with true \tauhadvis is not
-extracted in each measurement region separately. Therefore, both the
-normalisation and the shape effect of the acceptance uncertainties are
-propagated to the fit for \ttbar with true \tauhadvis.
+% Acceptance uncertainties on \ttbar with \faketauhadvis are assigned as
+% shape-only uncertainties in all measurement regions since the
+% normalisation of this component is extracted in the likelihood fit.
+% In contrast, the normalisation of \ttbar with true \tauhadvis is not
+% extracted in each measurement region separately. Therefore, both the
+% normalisation and the shape effect of the acceptance uncertainties are
+% propagated to the fit for \ttbar with true \tauhadvis.
 
-A reduced set of theory uncertainties for minor backgrounds is
-considered. For the production of single top-quarks, the uncertainties
-on the cross-section are included in the fit model. Due to the known
-normalisation discrepancy in \Vjets in the presence of jets
-originating from heavy flavour, an uncertainty of \SI{30}{\percent} is
-applied to the overall normalisation of the process.
 
-The effect of uncertainties on the predicted rates are parameterised by
-nuisance parameters that enter the maximum likelihood fit with
-Gaussian constraint terms. Uncertainties arising from the same source
-are assumed to be fully correlated across all regions and
-bins. Uncertainties derived from two-sample comparisons are
-symmetrised.
+% The effect of uncertainties on the predicted rates are parameterised by
+% nuisance parameters that enter the maximum likelihood fit with
+% Gaussian constraint terms. Uncertainties arising from the same source
+% are assumed to be fully correlated across all regions and
+% bins. Uncertainties derived from two-sample comparisons are
+% symmetrised.
 
 
 \subsubsection{Measurement Results}
