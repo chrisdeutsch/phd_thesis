@@ -336,70 +336,71 @@ in simulation to match the conditions in Run~2 data, and the
 integrated luminosity used to normalise the simulated datasets are
 included in the fit.
 
-% https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
-Theoretical uncertainties on the acceptance of \ttbar in simulation,
-which uses \POWHEGBOX[v2]~\cite{Frixione:2007nw} as a matrix element
-(ME) generator interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea}
-for the parton shower (PS), need to be estimated. The cross-section of
-\ttbar is allowed to vary freely in the fit model, therefore
-uncertainties only affecting the normalisation of \ttbar are
-omitted. However, uncertainties changing the relative acceptance
-between regions (i.e.\ uncertainties depending on \tauhadvis \pT or
-decay mode) entering the fit and effects changing the shape of the
-\mTW discriminant need to be estimated. The following sources of
-uncertainties are considered:
-\begin{description}
+Top modelling uncertainties: \Cref{app:top_uncertainties}.
+% % https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
+% Theoretical uncertainties on the acceptance of \ttbar in simulation,
+% which uses \POWHEGBOX[v2]~\cite{Frixione:2007nw} as a matrix element
+% (ME) generator interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea}
+% for the parton shower (PS), need to be estimated. The cross-section of
+% \ttbar is allowed to vary freely in the fit model, therefore
+% uncertainties only affecting the normalisation of \ttbar are
+% omitted. However, uncertainties changing the relative acceptance
+% between regions (i.e.\ uncertainties depending on \tauhadvis \pT or
+% decay mode) entering the fit and effects changing the shape of the
+% \mTW discriminant need to be estimated. The following sources of
+% uncertainties are considered:
+% \begin{description}
 
-\item[Hard scatter simulation and NLO+PS matching] The uncertainty on
-  the modelling due to the choice of generator describing the hard
-  scatter process is estimated by comparing the nominal simulation of
-  \ttbar with an alternative setup replacing \POWHEGBOX[v2] with
-  \MGNLO as the ME generator. This comparison serves to probe the
-  effect of different matching schemes between the NLO matrix element
-  and parton shower employed by both
-  generators.\footnote{\POWHEGBOX[v2] uses the \POWHEG
-    method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} and
-    \MGNLO the MC@NLO method~\cite{Frixione:2002ik} for NLO+PS
-    matching.}
+% \item[Hard scatter simulation and NLO+PS matching] The uncertainty on
+%   the modelling due to the choice of generator describing the hard
+%   scatter process is estimated by comparing the nominal simulation of
+%   \ttbar with an alternative setup replacing \POWHEGBOX[v2] with
+%   \MGNLO as the ME generator. This comparison serves to probe the
+%   effect of different matching schemes between the NLO matrix element
+%   and parton shower employed by both
+%   generators.\footnote{\POWHEGBOX[v2] uses the \POWHEG
+%     method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} and
+%     \MGNLO the MC@NLO method~\cite{Frixione:2002ik} for NLO+PS
+%     matching.}
 
-\item[Parton shower and hadronisation model] The uncertainty of the
-  modelling of the parton shower and non-perturbative effects is
-  estimated by replacing \PYTHIA[8] with \HERWIG[7.0.4] as the PS
-  generator.
+% \item[Parton shower and hadronisation model] The uncertainty of the
+%   modelling of the parton shower and non-perturbative effects is
+%   estimated by replacing \PYTHIA[8] with \HERWIG[7.0.4] as the PS
+%   generator.
 
-\item[Missing higher order contributions] The renormalisation
-  scale~(\muR) and factorisation scale~(\muF) is doubled (halved) to
-  probe the effect of truncating the perturbative expansion in \alphas
-  when simulating the hard scatter process. Perturbative QCD
-  calculations to sufficiently high order should be approximately
-  independent of the choice of scale.
+% \item[Missing higher order contributions] The renormalisation
+%   scale~(\muR) and factorisation scale~(\muF) is doubled (halved) to
+%   probe the effect of truncating the perturbative expansion in \alphas
+%   when simulating the hard scatter process. Perturbative QCD
+%   calculations to sufficiently high order should be approximately
+%   independent of the choice of scale.
 
-\item[Initial and final state radiation (ISR / FSR)] An uncertainty on
-  the emission of ISR is estimated by varying $\alphas^\text{ISR}$ in
-  the A14 set of tuned parameters for
-  \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021}.
-  % Tune of the MPI, ISR, FSR parameters in Pythia8
-  An estimate of the uncertainty from the modelling of FSR emissions
-  is estimated by doubling (halving) the renormalisation scale used
-  for FSR branchings in
-  \PYTHIA[8]~\cite{Sjostrand:2014zea,Mrenna:2016sih,pythia-variations-online}.
-  % https://pythia.org/latest-manual/Variations.html
+% \item[Initial and final state radiation (ISR / FSR)] An uncertainty on
+%   the emission of ISR is estimated by varying $\alphas^\text{ISR}$ in
+%   the A14 set of tuned parameters for
+%   \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021}.
+%   % Tune of the MPI, ISR, FSR parameters in Pythia8
+%   An estimate of the uncertainty from the modelling of FSR emissions
+%   is estimated by doubling (halving) the renormalisation scale used
+%   for FSR branchings in
+%   \PYTHIA[8]~\cite{Sjostrand:2014zea,Mrenna:2016sih,pythia-variations-online}.
+%   % https://pythia.org/latest-manual/Variations.html
 
-\item[Damping factor for additional emissions] The damping
-  parameter~\hdamp in \POWHEGBOX[v2] is increased to $3 m_\text{top}$
-  (from $1.5 m_\text{top}$) and compared with the nominal simulation
-  setup. The \hdamp parameter controls the transverse momentum of
-  additional radiation when matching \POWHEGBOX[v2] to \PYTHIA[8]
-  using the
-  \POWHEG-method~\cite{ATL-PHYS-PUB-2016-020,ATL-PHYS-PUB-2020-023}.
+% \item[Damping factor for additional emissions] The damping
+%   parameter~\hdamp in \POWHEGBOX[v2] is increased to $3 m_\text{top}$
+%   (from $1.5 m_\text{top}$) and compared with the nominal simulation
+%   setup. The \hdamp parameter controls the transverse momentum of
+%   additional radiation when matching \POWHEGBOX[v2] to \PYTHIA[8]
+%   using the
+%   \POWHEG-method~\cite{ATL-PHYS-PUB-2016-020,ATL-PHYS-PUB-2020-023}.
 
-\end{description}
-% PDF uncertainties were neglected.
-The prescriptions to calculate the \ttbar modelling uncertainties are
-a revised version of the methodology outlined in
-Ref.~\cite{ATL-PHYS-PUB-2020-023} for analyses targeting the
-$pp$-collision dataset collected with the ATLAS detector during Run~2
-of the LHC.
+% \end{description}
+% % PDF uncertainties were neglected.
+% The prescriptions to calculate the \ttbar modelling uncertainties are
+% a revised version of the methodology outlined in
+% Ref.~\cite{ATL-PHYS-PUB-2020-023} for analyses targeting the
+% $pp$-collision dataset collected with the ATLAS detector during Run~2
+% of the LHC.
 
 Variations of the renormalisation and factorisation scales used for
 the ME generation are provided by internal re-weighting in
