@@ -69,9 +69,9 @@ briefly summarised:
   channels).
 
 \item All events are required to have exactly one \tauhadvis candidate passing
-  \tauid, exactly one electron or one muon passing their respective isolation
-  and identification criteria, and exactly two \btagged jets. In addition, only
-  events selected by single-lepton triggers are considered.
+  \tauid, exactly one electron or muon passing their respective isolation and
+  identification criteria, and exactly two \btagged jets. In addition, only
+  events passing the single-lepton trigger selection are considered.
 
 \item The electron/muon and the \tauhadvis candidate are required to be
   reconstructed with electric charges of opposite sign. This requirement ensures
@@ -93,16 +93,17 @@ briefly summarised:
 % region the quark/gluon composition of jets is likely different which
 % also affects the fake rates.}.
 
-The SF-CR selects \ttbar events with a purity of \SI{94}{\percent}. About
-\SI{66}{\percent} of events are from di-leptonic decay modes of \ttbar that
-yield an electron/muon and a \tauhadvis in the final state. The production of
-\ttbar events with \tauhadvis candidates originating from quark- or
-gluon-initiated jets, which is the process of interest for this measurement,
-constitutes \SI{28}{\percent} of selected events. Minor backgrounds in this
-region are single top (\SI{4}{\percent}) and $\Vjets$ (\SI{2}{\percent})
-production. The \multijet background is assumed to be negligible. The
-distribution of transverse momenta and pseudorapidity of \tauhadvis candidates
-in the SF-CR prior to the fit is shown in~\Cref{fig:ttbarSF_prefit_pt}.
+The dominant process in the SF-CR is \ttbar production which is selected with a
+purity of \SI{94}{\percent}. About \SI{66}{\percent} of SF-CR events are from
+di-leptonic decay modes of \ttbar that yield an electron/muon and a \tauhadvis
+in the final state. The production of \ttbar events with \tauhadvis candidates
+originating from quark- or gluon-initiated jets, which is the process of
+interest for this measurement, constitutes \SI{28}{\percent} of selected
+events. Minor backgrounds in this region are single top (\SI{4}{\percent}) and
+$\Vjets$ (\SI{2}{\percent}) production. The \multijet background is assumed to
+be negligible. The distribution of transverse momenta and pseudorapidity of
+\tauhadvis candidates in the SF-CR prior to the fit is shown
+in~\Cref{fig:ttbarSF_prefit_pt}.
 
 \begin{figure}[htbp]
   \centering
@@ -120,16 +121,16 @@ in the SF-CR prior to the fit is shown in~\Cref{fig:ttbarSF_prefit_pt}.
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
-\Jettotauhadvis misidentification efficiencies depend on the identification
+The \jettotauhadvis misidentification efficiencies depend on the identification
 requirements applied to \tauhadvis candidates. In this search, such requirements
 are imposed on \tauhadvis candidates at trigger-level and during offline event
 reconstruction. This two-stage selection of \tauhadvis candidates is taken into
 account by measuring separate sets of SFs for every relevant combination of
-identification requirements. One set of SFs is measured for \faketauhadvis after
-loose RNN \tauid but without requirements at trigger-level. These SFs are
-required for STT events in the \hadhad channel in cases where the \faketauhadvis
-was not the candidate causing the trigger to select the event. Three sets of SFs
-are measured to account for identification requirements of the three different
+\tauid requirements. One set of SFs is measured for \faketauhadvis after offline
+\tauid but without requirements at trigger-level. These SFs are required for STT
+events in the \hadhad channel in cases where the \faketauhadvis was not the
+candidate causing the trigger to select the event. Three sets of SFs are
+measured to account for the identification requirements of the
 \tauhadvis-trigger chains used in the \hadhad channel
 (cf.~\Cref{sec:hadhad_trigger_selection}) which are applied in addition to
 offline \tauid.
@@ -153,13 +154,13 @@ During Run~2 data-taking these triggers had to be prescaled\footnote{A trigger
   with a prescale value of $n$ accepts events satisfying the trigger conditions
   with a probability of $1 / n$ \cite{TRIG-2019-04}.} to limit their trigger
 rates. However, events entering the SF-CR were already recorded using
-unprescaled single-lepton triggers. This allows single-\tauhadvis triggers to be
-re-run during offline event reconstruction without application of a prescale,
-which is used for the SF measurement.  Only the
-\verb|HLT_tau25_medium1_tracktwo| trigger was active for the entirety of Run~2
-data-taking. Trigger decisions of \verb|HLT_tau25_medium1_tracktwoEF| and
-\verb|HLT_tau25_mediumRNN_tracktwoMVA| are available for partial datasets with
-integrated luminosities of \SI{58}{\ifb} and \SI{37}{\ifb}, respectively.
+unprescaled single-lepton triggers. This allows to re-run the single-\tauhadvis
+triggers used in this measurement during offline event reconstruction without
+application of a prescale. Only the \verb|HLT_tau25_medium1_tracktwo| trigger
+was active for the entirety of Run~2 data-taking. Trigger decisions of
+\verb|HLT_tau25_medium1_tracktwoEF| and \verb|HLT_tau25_mediumRNN_tracktwoMVA|
+are available for partial datasets with integrated luminosities of \SI{58}{\ifb}
+  and \SI{37}{\ifb}, respectively.
 
 
 \subsubsection{Scale Factor Measurement}
@@ -168,47 +169,45 @@ The \jettotauhadvis misidentification efficiencies strongly depend on the
 charged particle multiplicity and visible transverse momentum of reconstructed
 \tauhadvis candidates. This can also be reflected in corrections to the
 \jettotauhadvis misidentification efficiency in simulation. Therefore, the scale
-factor measurement is performed in bins of \Ntracks and \pT of the \tauhadvis
-candidate:
+factor measurement is performed in bins/categories of \Ntracks and \pT of the
+\tauhadvis candidate given by:
 \begin{itemize}
 
-\item 1-prong \tauhadvis candidates with $\pT / \si{\GeV}$: $[25, 30)$,
-  $[30, 35)$, $[35, 40)$, $[40, 45)$, $[45, 55)$, $[55, 70)$, $[70, \infty)$.
+\item $\Ntracks = 1$ and $\pT / \si{\GeV}$: $[25, 30)$, $[30, 35)$, $[35, 40)$,
+  $[40, 45)$, $[45, 55)$, $[55, 70)$, $[70, \infty)$.
 
-\item 3-prong \tauhadvis candidates with $\pT / \si{\GeV}$: $[25, 30)$,
-  $[30, 40)$, $[40, 50)$, $[50, 70)$, $[70, \infty)$.
+\item $\Ntracks = 3$ and $\pT / \si{\GeV}$: $[25, 30)$, $[30, 40)$, $[40, 50)$,
+  $[50, 70)$, $[70, \infty)$.
 
 \end{itemize}
 The bins are chosen such that their size allows for a determination of the
 corrections with limited impact of statistical uncertainties while allowing to
 extract potential \pT-dependencies of the correction factors. In cases where
-events are required to pass single-\tauhadvis triggers, the \tauhadvis \pT
-interval from 25 to \SI{30}{\GeV} is omitted due to the triggers not being fully
+events are required to pass single-\tauhadvis triggers, the \pT intervals from
+25 to \SI{30}{\GeV} are omitted due to the \tauhadvis-triggers not being fully
 efficient in this region. This is analogous to the selections applied in the
-\hadhad signal region. Exemplary summaries of event yields in the measurement
-regions are shown in~\Cref{fig:ttbarsf_region_summary_prefit}.
+signal region of the \hadhad channel. Examples of the event yields in the
+categories are shown in~\Cref{fig:ttbarsf_region_summary_prefit}.\todo{Remove
+  ``ATLAS Internal'' label.}
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}[t]{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_offl}
-    \caption{SF-CR for events passing the loose working point of the offline
-      \tauid without application of trigger-matching.}
+    \caption{SF-CR events without requirements on \tauhadvis candidates at
+      trigger-level.}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.485\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_tau25}
-    \caption{SF-CR for events passing the \texttt{HLT\_tau25\_medium1\_tracktwo}
-      trigger, trigger-matching, and the loose working point of the offline
-      \tauid.}
+    \caption{SF-CR events with \tauhadvis candidates passing the
+      \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.}
   \end{subfigure}
 
-  \caption{Summary of event yields in regions used for determination
-    of the \jettotauhadvis misidentification efficiency
-    corrections. The $x$-axis shows the measurement regions separated
-    by the reconstructed decay mode into either 1-prong (1P) and
-    3-prong (3P) \tauhadvis and the \tauhadvis $\pT /\si{\GeV}$ bin
-    interval. The background model prior to the fit is shown.}%
+  \caption{Expected event yields in the SF-CR in bins of \tauhadvis candidate
+    \Ntracks and \pT. The bins are labelled as 1P and 3P for $\Ntracks = 1$ and
+    $3$, respectively, and the \pT intervals are given in units of
+    \si{\GeV}. The background model is shown prior to the fit.}%
   \label{fig:ttbarsf_region_summary_prefit}
 \end{figure}
 
