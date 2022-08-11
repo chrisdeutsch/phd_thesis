@@ -1,17 +1,15 @@
-Top quark pair production with at least one \tauhadvis candidate
-originating from a misidentified quark- or gluon-initiated jet is the
-second largest background in the \hadhad channel. A large fraction of
-\SI{85}{\percent} of this background stems from semi-leptonic decay
-modes of \ttbar where the selected \tauhadvis candidates consist of
-one true- and one \faketauhadvis. The fraction of \ttbarFakes events
-where both candidates are \faketauhadvis is about \SI{15}{\percent}
-and thus comparatively small. The \ttbarFakes background is estimated
-using simulation after applying data-driven corrections in the form of
-\faketauhadvis scale factors (SFs) measured in a control region
-enriched in \ttbar events. The SFs correct the \jettotauhadvis
-misidentification efficiencies predicted by simulation which are, in
-general, not centrally calibrated by the ATLAS collaboration due to
-their process dependency.
+Top quark pair production with at least one \tauhadvis candidate originating
+from a misidentified quark- or gluon-initiated jet is the second largest
+background in the \hadhad channel. A large fraction of \SI{85}{\percent} of this
+background stems from semi-leptonic decay modes of \ttbar where the selected
+\tauhadvis candidates consist of one true- and one \faketauhadvis. The fraction
+of \ttbarFakes events with both candidates being \faketauhadvis is about
+\SI{15}{\percent} and thus comparatively small. The \ttbarFakes background is
+estimated using simulation after applying data-driven corrections in the form of
+\faketauhadvis scale factors (SFs) measured in a CR enriched in \ttbar
+events. The SFs correct the \jettotauhadvis misidentification efficiencies
+predicted by simulation which are, in general, not centrally calibrated by the
+ATLAS collaboration due to their process dependency.
 
 Before proceeding with the description of the method, differences
 between \faketauhadvis backgrounds from \ttbar and multi-jet are
@@ -29,12 +27,11 @@ techniques:
   of $W$~bosons which have larger fake rates than jets originating
   from gluons.
 
-\item In the \hadhad channel, no suitable \ttbarFakes control region
-  can be defined that allows to separate \faketauhadvis backgrounds
-  from \ttbar and multi-jet while maintaining sufficient statistical
-  precision for background estimation. This necessitates defining a
-  control region in $\ell + \tauhadvis$ ($\ell = e, \mu$) final states
-  where the multi-jet contribution is negligible.
+\item In the \hadhad channel, no suitable \ttbarFakes CR can be defined that
+  allows to separate \faketauhadvis backgrounds from \ttbar and multi-jet while
+  maintaining sufficient statistical precision for background estimation. This
+  necessitates defining a CR in $\ell + \tauhadvis$ ($\ell = e, \mu$) final
+  states where the multi-jet contribution is negligible.
 
 \end{itemize}
 The main disadvantage of separately estimating the \faketauhadvis
@@ -52,14 +49,13 @@ to systematic ones.
 
 \subsubsection{Control Region Definition}
 
-The control region for the scale factor measurement (SF-CR) targets
-final states with an electron or muon and a \tauhadvis candidate. The
-region definition is based on the selections applied in the \lephad
-channels where a similar control region is used for \faketauhadvis
-background estimation. Minor changes are applied to its definition to
-ensure consistency with the signal region selection of the \hadhad
-channel. The most important selection criteria and differences are
-briefly summarised:
+The CR for the scale factor measurement (SF-CR) targets final states with an
+electron or muon and a \tauhadvis candidate. The region definition is based on
+the selections applied in the \lephad channels where a similar CR is used for
+\faketauhadvis background estimation. Minor changes are applied to its
+definition to ensure consistency with the SR selection of the \hadhad
+channel. The most important selection criteria and differences are briefly
+summarised:
 \begin{itemize}
 
 \item The \tauhadvis selection is adapted to follow the selection of
@@ -77,12 +73,12 @@ briefly summarised:
   reconstructed with electric charges of opposite sign. This requirement ensures
   that the charge correlations between light lepton and \faketauhadvis from
   semi-leptonic decays of \ttbar are similar to the correlation between
-  \tauhadvis candidates from \ttbarFakes in the \hadhad signal region for cases
-  where only one candidate is a \faketauhadvis. The effect of charge correlation
-  on \ttbarFakes estimation was previously studied in Ref.~\cite{bokan}.
+  \tauhadvis candidates from \ttbarFakes in the \hadhad SR for cases where only
+  one candidate is a \faketauhadvis. The effect of charge correlation on
+  \ttbarFakes estimation was previously studied in Ref.~\cite{bokan}.
 
-\item Orthogonality between the SF-CR and the signal region of the
-  \lephad SLT channel is ensured by requiring $\mBB > \SI{150}{\GeV}$.
+\item Orthogonality between the SF-CR and the SR of the \lephad SLT channel is
+  ensured by requiring $\mBB > \SI{150}{\GeV}$.
 
 \end{itemize}
 
@@ -111,13 +107,12 @@ in~\Cref{fig:ttbarSF_prefit_pt}.
   \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/PTVR}%
   \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/ETAVR}
 
-  \caption{Distribution of \tauhadvis \pT and $\eta$ in the scale
-    factor control region prior to the maximum likelihood fit. Events
-    with \tauhadvis \pT larger than \SI{200}{\GeV} are merged into the
-    last bin. The uncertainty contains all statistical and systematic
-    uncertainties except for normalisation uncertainties on \ttbar
-    arising from its modelling in simulation. Modelling uncertainties
-    affecting the shape of the distributions are included.}%
+  \caption{Distribution of \tauhadvis \pT and $\eta$ in the SF-CR prior to the
+    maximum likelihood fit. Events with \tauhadvis \pT larger than
+    \SI{200}{\GeV} are merged into the last bin. The uncertainty contains all
+    statistical and systematic uncertainties except for normalisation
+    uncertainties on \ttbar arising from its modelling in simulation. Modelling
+    uncertainties affecting the shape of the distributions are included.}%
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
@@ -166,10 +161,10 @@ are available for partial datasets with integrated luminosities of \SI{58}{\ifb}
 \subsubsection{Scale Factor Measurement}
 
 The \jettotauhadvis misidentification efficiencies strongly depend on the
-charged particle multiplicity and visible transverse momentum of reconstructed
-\tauhadvis candidates. This can also be reflected in corrections to the
-\jettotauhadvis misidentification efficiency in simulation. Therefore, the scale
-factor measurement is performed in bins/categories of \Ntracks and \pT of the
+charged particle multiplicity and transverse momentum of reconstructed
+\tauhadvis candidates. This might also reflect in the corrections to
+\jettotauhadvis misidentification efficiencies in simulation. Therefore, the
+scale factor measurement is performed in bins/regions of \Ntracks and \pT of the
 \tauhadvis candidate given by:
 \begin{itemize}
 
@@ -180,15 +175,16 @@ factor measurement is performed in bins/categories of \Ntracks and \pT of the
   $[50, 70)$, $[70, \infty)$.
 
 \end{itemize}
-The bins are chosen such that their size allows for a determination of the
+These regions are chosen such that their size allows for a determination of the
 corrections with limited impact of statistical uncertainties while allowing to
 extract potential \pT-dependencies of the correction factors. In cases where
 events are required to pass single-\tauhadvis triggers, the \pT intervals from
-25 to \SI{30}{\GeV} are omitted due to the \tauhadvis-triggers not being fully
-efficient in this region. This is analogous to the selections applied in the
-signal region of the \hadhad channel. Examples of the event yields in the
-categories are shown in~\Cref{fig:ttbarsf_region_summary_prefit}.\todo{Remove
-  ``ATLAS Internal'' label.}
+25 to \SI{30}{\GeV} are omitted to ensure that the \tauhadvis-triggers operate
+close to their trigger efficiency plateau. This is analogous to the selections
+applied in the SR of the \hadhad channel. Examples of event yields in the
+regions entering the SF measurement are shown
+in~\Cref{fig:ttbarsf_region_summary_prefit}.\todo{Remove ``ATLAS Internal''
+  label.}
 
 \begin{figure}[htbp]
   \centering
@@ -247,28 +243,28 @@ mass.
   \includegraphics[width=0.45\textwidth]{ttbarSF/mtw_pdf}
 
   \caption{Transverse mass distribution of the lepton and \pTmiss in simulated
-    \ttbar events entering the SF-CR. The distributions are inclusive in the
-    \tauhadvis candidate \pT and \Ntracks.}%
+    \ttbar events entering the SF-CR. The distributions are inclusive in \pT and
+    \Ntracks of the \tauhadvis candidate.}%
   \label{fig:ttbarsf_mtw_pdf}
 \end{figure}
 
 The \faketauhadvis SFs are measured using a simultaneous likelihood fit of the
-binned \mTW discriminants in all \tauhadvis candidate \pT and \Ntracks
-categories. The fit model is constructed from \mTW distributions predicted using
+binned \mTW discriminants in all regions of \tauhadvis candidate \pT and
+\Ntracks. The fit model is constructed from \mTW distributions predicted using
 simulated \ttbar, single top, and \Vjets events. The sample of \ttbar events is
 split by whether the reconstructed \tauhadvis candidate is a \faketauhadvis or
 not. The overall normalisation of the \ttbar background, irrespective of whether
-events contain a \faketauhadvis, is allowed to vary freely in the model. In
-every \tauhadvis candidate \pT and \Ntracks category, an unconstrained scale
-factor is introduced that changes the normalisation of the \ttbarFakes
-background in this category. These \faketauhadvis scale factors are considered
-the parameters of interest of the measurement.
+events contain a \faketauhadvis, is allowed to vary freely in the model.  In
+every region of \tauhadvis candidate \Ntracks and \pT, an unconstrained SF is
+introduced that changes the normalisation of the \ttbarFakes background in this
+region. These \faketauhadvis SFs are considered the parameters of interest of
+the measurement.
 
-The pre-fit expectation of the model in two exemplary categories is shown
+The pre-fit expectation of the model in two exemplary regions is shown
 in~\Cref{fig:ttbarsf_mtw_examples_prefit} for SF-CR events passing the
 \verb|HLT_tau25_medium1_tracktwo| trigger and trigger-matching of the \tauhadvis
 candidate. The binning of the \mTW discriminants, as shown in the figure, is the
-same in all \tauhadvis candidate \pT and \Ntracks categories.
+same in all \tauhadvis candidate \pT and \Ntracks regions.
 
 \begin{figure}[htbp]
   \centering
@@ -283,7 +279,7 @@ same in all \tauhadvis candidate \pT and \Ntracks categories.
   \end{subfigure}
 
   \caption{Histograms of the \mTW distributions in two exemplary \tauhadvis
-    candidate \Ntracks and \pT categories. Two exemplary \mTW distributions as
+    candidate \Ntracks and \pT regions. Two exemplary \mTW distributions as
     they enter the likelihood fit determining the \faketauhadvis scale
     factors. Only SF-CR events passing the
     \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and \tauhadvis
@@ -293,7 +289,48 @@ same in all \tauhadvis candidate \pT and \Ntracks categories.
 \end{figure}
 
 
-\subsubsection{Uncertainties of the Scale Factor Measurement}
+\subsubsection{Uncertainties in the Scale Factor Measurement}
+
+Several experimental and theoretical uncertainties are considered in the fits
+measuring the \faketauhadvis SFs. Generally, these uncertainties can affect the
+normalisation and shape of the expected \mTW distribution for a given process in
+all regions entering the fit. The uncertainties included in the SF measurement
+and their treatment closely follows the approach taken in
+\Cref{sec:uncertainties,sec:statistical_analysis} to interpret the results of
+the search for Higgs boson pair production. The main sources of uncertainty in
+the SF measurement are therefore only briefly summarised.
+
+Experimental uncertainties affecting the reconstruction and selection
+efficiencies of electrons, muons, \tauhadvis, and jets are considered in the SF
+measurement, including uncertainties on the efficiencies and mis-tag rates of
+$b$-tagging. Uncertainties on the reconstructed \pTmissAbs are propagated to the
+\mTW distributions in all regions. Trigger efficiency uncertainties are
+considered for single-lepton and single-\tauhadvis
+triggers.\footnote{Uncertainties on single-\tauhadvis trigger efficiencies are
+  only considered in SF measurements for events after trigger-level \tauid.}
+
+
+% PRW & LUMI
+
+Statistical uncertainties from the finite size of the simulation samples used to
+construct the background templates are considered and implemented in the
+likelihood fit using a simplified Barlow-Beeston
+method~\cite{barlow1993,conway2011}.
+
+
+
+
+
+% Major detector-related uncertainties
+% Statistical uncertainties of the finite size of the simulated samples
+
+% Theory uncertainties on ttbar
+% - Modelling of the hard scattering interaction and the matching of NLO matrix element generator with parton shower
+% - Variation of the parton shower, hadronisation model, and underlying event modelling by using alternatiev parton shower generator
+% - Missing higher order in the perturbative expansion by performing scale variations
+% - The modelling of additional radiation
+
+% Theory uncertainties on minor backgrounds
 
 The predicted number of events in bins entering the measurement are
 subject to statistical, experimental, and theoretical
@@ -337,79 +374,6 @@ integrated luminosity used to normalise the simulated datasets are
 included in the fit.
 
 Top modelling uncertainties: \Cref{app:top_uncertainties}.
-% % https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
-% Theoretical uncertainties on the acceptance of \ttbar in simulation,
-% which uses \POWHEGBOX[v2]~\cite{Frixione:2007nw} as a matrix element
-% (ME) generator interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea}
-% for the parton shower (PS), need to be estimated. The cross-section of
-% \ttbar is allowed to vary freely in the fit model, therefore
-% uncertainties only affecting the normalisation of \ttbar are
-% omitted. However, uncertainties changing the relative acceptance
-% between regions (i.e.\ uncertainties depending on \tauhadvis \pT or
-% decay mode) entering the fit and effects changing the shape of the
-% \mTW discriminant need to be estimated. The following sources of
-% uncertainties are considered:
-% \begin{description}
-
-% \item[Hard scatter simulation and NLO+PS matching] The uncertainty on
-%   the modelling due to the choice of generator describing the hard
-%   scatter process is estimated by comparing the nominal simulation of
-%   \ttbar with an alternative setup replacing \POWHEGBOX[v2] with
-%   \MGNLO as the ME generator. This comparison serves to probe the
-%   effect of different matching schemes between the NLO matrix element
-%   and parton shower employed by both
-%   generators.\footnote{\POWHEGBOX[v2] uses the \POWHEG
-%     method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} and
-%     \MGNLO the MC@NLO method~\cite{Frixione:2002ik} for NLO+PS
-%     matching.}
-
-% \item[Parton shower and hadronisation model] The uncertainty of the
-%   modelling of the parton shower and non-perturbative effects is
-%   estimated by replacing \PYTHIA[8] with \HERWIG[7.0.4] as the PS
-%   generator.
-
-% \item[Missing higher order contributions] The renormalisation
-%   scale~(\muR) and factorisation scale~(\muF) is doubled (halved) to
-%   probe the effect of truncating the perturbative expansion in \alphas
-%   when simulating the hard scatter process. Perturbative QCD
-%   calculations to sufficiently high order should be approximately
-%   independent of the choice of scale.
-
-% \item[Initial and final state radiation (ISR / FSR)] An uncertainty on
-%   the emission of ISR is estimated by varying $\alphas^\text{ISR}$ in
-%   the A14 set of tuned parameters for
-%   \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021}.
-%   % Tune of the MPI, ISR, FSR parameters in Pythia8
-%   An estimate of the uncertainty from the modelling of FSR emissions
-%   is estimated by doubling (halving) the renormalisation scale used
-%   for FSR branchings in
-%   \PYTHIA[8]~\cite{Sjostrand:2014zea,Mrenna:2016sih,pythia-variations-online}.
-%   % https://pythia.org/latest-manual/Variations.html
-
-% \item[Damping factor for additional emissions] The damping
-%   parameter~\hdamp in \POWHEGBOX[v2] is increased to $3 m_\text{top}$
-%   (from $1.5 m_\text{top}$) and compared with the nominal simulation
-%   setup. The \hdamp parameter controls the transverse momentum of
-%   additional radiation when matching \POWHEGBOX[v2] to \PYTHIA[8]
-%   using the
-%   \POWHEG-method~\cite{ATL-PHYS-PUB-2016-020,ATL-PHYS-PUB-2020-023}.
-
-% \end{description}
-% % PDF uncertainties were neglected.
-% The prescriptions to calculate the \ttbar modelling uncertainties are
-% a revised version of the methodology outlined in
-% Ref.~\cite{ATL-PHYS-PUB-2020-023} for analyses targeting the
-% $pp$-collision dataset collected with the ATLAS detector during Run~2
-% of the LHC.
-
-Variations of the renormalisation and factorisation scales used for
-the ME generation are provided by internal re-weighting in
-\POWHEGBOX[v2]. Similarly, \PYTHIA[8] provides variations of initial
-and final state emissions by varying the renormalisation scales in the
-PS by re-weighting~\cite{Mrenna:2016sih,pythia-variations-online}. This
-approach allows to estimate uncertainties without changing the
-particle-level predictions of the simulation program, thus avoiding
-the need to re-run the detector simulation.
 
 Uncertainties derived by performing a two-sample comparison (NLO+PS
 matching, PS, \hdamp) are parameterised in \tauhadvis \pT,
@@ -462,50 +426,50 @@ defined by \tauhadvis decay mode and truth-matching to generator-level
 % \mTW. Thus only an uncertainty on the relative normalisation between
 % categories is assigned.
 
-\begin{figure}[htbp]
-  \centering
+% \begin{figure}[htbp]
+%   \centering
 
-  \begin{subfigure}[t]{.48\textwidth}
-    \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_1p_pt}
-    \caption{Impact of the PS variation on \tauhadvis \pT for 1-prong
-      \tauhadvis.}
-    \label{fig:ttbarSF_uncertainty_ps_1p_pt}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[t]{.48\textwidth}
-    \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_1p_mtw}
-    \caption{Non-closure in \mTW of the PS variation for 1-prong
-      \tauhadvis after re-weighting the nominal simulation sample.}
-    \label{fig:ttbarSF_uncertainty_ps_1p_mtw}
-  \end{subfigure}
+%   \begin{subfigure}[t]{.48\textwidth}
+%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_1p_pt}
+%     \caption{Impact of the PS variation on \tauhadvis \pT for 1-prong
+%       \tauhadvis.}
+%     \label{fig:ttbarSF_uncertainty_ps_1p_pt}
+%   \end{subfigure}\hfill%
+%   \begin{subfigure}[t]{.48\textwidth}
+%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_1p_mtw}
+%     \caption{Non-closure in \mTW of the PS variation for 1-prong
+%       \tauhadvis after re-weighting the nominal simulation sample.}
+%     \label{fig:ttbarSF_uncertainty_ps_1p_mtw}
+%   \end{subfigure}
 
-  \vspace{0.5em}
+%   \vspace{0.5em}
 
-  \begin{subfigure}[t]{.48\textwidth}
-    \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_3p_pt}
-    \caption{Impact of the PS variation on \tauhadvis \pT for 3-prong
-      \tauhadvis.}
-    \label{fig:ttbarSF_uncertainty_ps_3p_pt}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[t]{.48\textwidth}
-    \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_3p_mtw}
-    \caption{Non-closure in \mTW of the PS variation for 3-prong
-      \tauhadvis after re-weighting the nominal simulation sample.}
-    \label{fig:ttbarSF_uncertainty_ps_3p_mtw}
-  \end{subfigure}
+%   \begin{subfigure}[t]{.48\textwidth}
+%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_3p_pt}
+%     \caption{Impact of the PS variation on \tauhadvis \pT for 3-prong
+%       \tauhadvis.}
+%     \label{fig:ttbarSF_uncertainty_ps_3p_pt}
+%   \end{subfigure}\hfill%
+%   \begin{subfigure}[t]{.48\textwidth}
+%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_3p_mtw}
+%     \caption{Non-closure in \mTW of the PS variation for 3-prong
+%       \tauhadvis after re-weighting the nominal simulation sample.}
+%     \label{fig:ttbarSF_uncertainty_ps_3p_mtw}
+%   \end{subfigure}
 
-  \caption{The effect of the parton shower and hadronisation model
-    uncertainty on the relative difference in event yield, defined as
-    $N_{\text{syst.}} / N_{\text{nom.}} - 1$ with $N_{\text{syst.}}$
-    and $N_{\text{nom.}}$ being the event yield in a given bin for the
-    systematic variation and nominal event sample, derived from a
-    two-sample comparison of \POWHEGBOX[v2]+~\PYTHIA[8] (nominal) and
-    \POWHEGBOX[v2]+~\HERWIG[7] (variation). Shown are the uncertainty
-    for 1-prong (a,b) and 3-prong (c,d) \tauhadvis matched to \tauhad
-    at generator-level (true \tauhadvis). The lower threshold on
-    \tauhadvis \pT was relaxed to \SI{20}{\GeV} (from \SI{25}{\GeV})
-    compared to the top control region.}%
-  \label{fig:ttbarSF_uncertainty_ps}
-\end{figure}
+%   \caption{The effect of the parton shower and hadronisation model
+%     uncertainty on the relative difference in event yield, defined as
+%     $N_{\text{syst.}} / N_{\text{nom.}} - 1$ with $N_{\text{syst.}}$
+%     and $N_{\text{nom.}}$ being the event yield in a given bin for the
+%     systematic variation and nominal event sample, derived from a
+%     two-sample comparison of \POWHEGBOX[v2]+~\PYTHIA[8] (nominal) and
+%     \POWHEGBOX[v2]+~\HERWIG[7] (variation). Shown are the uncertainty
+%     for 1-prong (a,b) and 3-prong (c,d) \tauhadvis matched to \tauhad
+%     at generator-level (true \tauhadvis). The lower threshold on
+%     \tauhadvis \pT was relaxed to \SI{20}{\GeV} (from \SI{25}{\GeV})
+%     compared to the top control region.}%
+%   \label{fig:ttbarSF_uncertainty_ps}
+% \end{figure}
 
 % The alternative parton shower has the largest effect on the
 % modelling of \faketauhadvis.
@@ -651,14 +615,13 @@ prediction and the observed data.
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/PTVR_postFit}
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/MTWVR_postFit}
 
-  \caption{Post-fit distribution of \tauhadvis \pT and \mTW in the
-    scale factor control region after requiring the \tauhadvis to be
-    matched to the \texttt{HLT\_tau25\_medium1\_tracktwo}
-    trigger. Events with \tauhadvis \pT (\mTW) larger than
-    \SI{200}{\GeV} (\SI{250}{\GeV}) are merged into the last bin. The
-    uncertainty band contains all statistical and systematic
-    uncertainties, including post-fit uncertainties on \faketauhadvis
-    scale factors and the \ttbar normalisation factor.}
+  \caption{Post-fit distribution of \tauhadvis \pT and \mTW in the SF-CR after
+    requiring the \tauhadvis to be matched to the
+    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. Events with \tauhadvis \pT
+    (\mTW) larger than \SI{200}{\GeV} (\SI{250}{\GeV}) are merged into the last
+    bin. The uncertainty band contains all statistical and systematic
+    uncertainties, including post-fit uncertainties on \faketauhadvis scale
+    factors and the \ttbar normalisation factor.}
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
 
@@ -693,14 +656,12 @@ themselves.
   \label{fig:ttbarSF_corr_matrix}
 \end{figure}
 
-Correlations between the extracted scale factors need to be taken into
-account when propagating the measurement uncertainties to the estimate
-of \ttbar with \faketauhadvis in the \hadhad signal region. A way to
-achieve this is by providing decorrelated variations of the
-measurement that jointly explain the total uncertainty of all scale
-factors. These sets of scale factor variations can be used to
-propagate the uncertainties without having to account for
-correlations.
+Correlations between the extracted scale factors need to be taken into account
+when propagating the measurement uncertainties to the estimate of \ttbar with
+\faketauhadvis in the \hadhad SR. A way to achieve this is by providing
+decorrelated variations of the measurement that jointly explain the total
+uncertainty of all scale factors. These sets of scale factor variations can be
+used to propagate the uncertainties without having to account for correlations.
 
 A decorrelated set of variations can be obtained by a linear
 transformation procedure of the $N$ measured scale factors. The
@@ -761,13 +722,12 @@ momenta.
 \subsubsection{Application of \faketauhadvis Scale Factors in the
   \hadhad Channel}
 
-The \ttbarFakes background in the signal region of the \hadhad channel
-is estimated by applying \faketauhadvis scale factors to \ttbar events
-from simulation with at least one \faketauhadvis. These events are
-required to pass the signal region selection criteria of the \hadhad
-channel, including events being selected by a trigger according to the
-selection strategy described in~\Cref{sec:trigger} and reconstructed
-\tauhadvis candidates being matched to \tauhadvis at the HLT.
+The \ttbarFakes background in the SR of the \hadhad channel is estimated by
+applying \faketauhadvis scale factors to \ttbar events from simulation with at
+least one \faketauhadvis. These events are required to pass the SR selection
+criteria of the \hadhad channel, including events being selected by a trigger
+according to the selection strategy described in~\Cref{sec:trigger} and
+reconstructed \tauhadvis candidates being matched to \tauhadvis at the HLT.
 
 The scale factors are chosen depending on the trigger category (STT or
 DTT) and whether the \faketauhadvis is the \tauhadvis candidate
@@ -885,24 +845,22 @@ $\pT > \SI{60}{\GeV}$.\todo{Plot?} No uncertainty is introduced for
 larger transverse momenta due to negligible differences between both
 triggers.
 
-The scale factor measurement is repeated for the single-\tauhadvis
-triggers with higher thresholds and compared to the nominal result in
-the \faketauhadvis \pT region from \SI{40}{\GeV} up to \SI{50}{\GeV}
-or \SI{60}{\GeV} for 1- and 3-prong candidates, respectively. The
-scale factors measured for the higher threshold triggers agree within
-\SI{10}{\percent} with the nominal result. The deviation from the
-nominal measurement is assigned as an additional uncertainty when the
-leading \tauhadvis candidate originates from a quark- or
-gluon-jet. The size of the uncertainties are summarised
+The scale factor measurement is repeated for the single-\tauhadvis triggers with
+higher thresholds and compared to the nominal result in the \faketauhadvis \pT
+region from \SI{40}{\GeV} up to \SI{50}{\GeV} or \SI{60}{\GeV} for 1- and
+3-prong candidates, respectively. The scale factors measured for the higher
+threshold triggers agree within \SI{10}{\percent} with the nominal result. The
+deviation from the nominal measurement is assigned as an additional uncertainty
+when the leading \tauhadvis candidate originates from a quark- or gluon-jet. The
+size of the uncertainties are summarised
 in~\Cref{tab:ttbarSF_tau25_35_uncertainty}. These uncertainties have a
-sub-percent impact on the overall normalisation of the \ttbarFakes
-background with the \pT-leading \tauhadvis candidate being a
-\faketauhadvis in the \hadhad signal region. This is due the
-transverse momentum of the leading \tauhadvis typically exceeding the
-trigger threshold with a sufficiently large margin such that the
-uncertainties do not apply. This source of uncertainty is small
-compared to uncertainties from the scale factor measurement, however,
-it is still considered for later statistical analysis.
+sub-percent impact on the overall normalisation of the \ttbarFakes background
+with the \pT-leading \tauhadvis candidate being a \faketauhadvis in the \hadhad
+SR. This is due the transverse momentum of the leading \tauhadvis typically
+exceeding the trigger threshold with a sufficiently large margin such that the
+uncertainties do not apply. This source of uncertainty is small compared to
+uncertainties from the scale factor measurement, however, it is still considered
+for later statistical analysis.
 
 \begin{table}[htbp]
   \centering
@@ -1000,12 +958,11 @@ between the SF-CR and the SR, ranging from \SIrange{20}{40}{\percent}.
 
 \subsubsection{Discussion}
 
-The determination of the \ttbarFakes background in the \hadhad signal
-region using the scale factor method described in this section
-provides a way to estimate this background and its uncertainty based
-on a measurement-driven approach. In~\Cref{tab:ttbarSF_yields} the
-event yield of \ttbarFakes in the \hadhad signal region is shown and
-compared to \ttbar simulation without corrections.
+The determination of the \ttbarFakes background in the \hadhad signal region
+using the scale factor method described in this section provides a way to
+estimate this background and its uncertainty based on a measurement-driven
+approach. In~\Cref{tab:ttbarSF_yields} the event yield of \ttbarFakes in the
+\hadhad SR is shown and compared to \ttbar simulation without corrections.
 
 \begin{table}[htbp]
   \centering
