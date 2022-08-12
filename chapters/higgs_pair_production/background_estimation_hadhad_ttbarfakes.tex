@@ -149,9 +149,12 @@ During Run~2 data-taking these triggers had to be prescaled\footnote{A trigger
   with a prescale value of $n$ accepts events satisfying the trigger conditions
   with a probability of $1 / n$ \cite{TRIG-2019-04}.} to limit their trigger
 rates. However, events entering the SF-CR were already recorded using
-unprescaled single-lepton triggers. This allows to re-run the single-\tauhadvis
-triggers used in this measurement during offline event reconstruction without
-application of a prescale. Only the \verb|HLT_tau25_medium1_tracktwo| trigger
+unprescaled single-lepton triggers. Therefore, the single-\tauhadvis triggers
+used in this measurement can be re-run during offline event reconstruction
+without application of a prescale.
+% This allows to re-run the single-\tauhadvis triggers used in this measurement
+% during offline event reconstruction without application of a prescale.
+Only the \verb|HLT_tau25_medium1_tracktwo| trigger
 was active for the entirety of Run~2 data-taking. Trigger decisions of
 \verb|HLT_tau25_medium1_tracktwoEF| and \verb|HLT_tau25_mediumRNN_tracktwoMVA|
 are available for partial datasets with integrated luminosities of \SI{58}{\ifb}
@@ -220,9 +223,8 @@ $\myvec{p}_{\text{T}}^{\ell}$, and the missing transverse momentum, \pTmiss. The
 modes of \ttbar which are the primary sources of events with true- and
 \faketauhadvis, respectively. The differences are illustrated
 in~\Cref{fig:ttbarsf_mtw_pdf} with di-leptonic decay modes of \ttbar showing a
-heavy tail towards large \mTW due to the presence of an additional neutrino,
-while semi-leptonic decay modes have a pronounced peak close to the $W$~boson
-mass.
+heavy tail towards large \mTW due to the presence of additional neutrinos, while
+semi-leptonic decay modes have a pronounced peak close to the $W$~boson mass.
 
 % The distribution of \mTW in the SF-CR is shown
 % in~\Cref{fig:ttbarsf_mtw_pdf} separately for di- and semi-leptonic
@@ -250,21 +252,20 @@ mass.
 
 The \faketauhadvis SFs are measured using a simultaneous likelihood fit of the
 binned \mTW discriminants in all regions of \tauhadvis candidate \pT and
-\Ntracks. The fit model is constructed from \mTW distributions predicted using
-simulated \ttbar, single top, and \Vjets events. The sample of \ttbar events is
-split by whether the reconstructed \tauhadvis candidate is a \faketauhadvis or
-not. The overall normalisation of the \ttbar background, irrespective of whether
-events contain a \faketauhadvis, is allowed to vary freely in the model.  In
-every region of \tauhadvis candidate \Ntracks and \pT, an unconstrained SF is
-introduced that changes the normalisation of the \ttbarFakes background in this
-region. These \faketauhadvis SFs are considered the parameters of interest of
-the measurement.
+\Ntracks. The fit model is constructed using simulated \ttbar, single top, and
+\Vjets events. The sample of \ttbar events is split by whether the reconstructeds
+\tauhadvis candidate is a \faketauhadvis or not. The overall normalisation of
+the \ttbar background, irrespective of whether events contain a \faketauhadvis,
+is allowed to vary freely in the model.  In every region of \tauhadvis candidate
+\Ntracks and \pT, an unconstrained SF is introduced that changes the
+normalisation of the \ttbarFakes background in this region. These \faketauhadvis
+SFs are considered the parameters of interest of the measurement.
 
 The pre-fit expectation of the model in two exemplary regions is shown
 in~\Cref{fig:ttbarsf_mtw_examples_prefit} for SF-CR events passing the
-\verb|HLT_tau25_medium1_tracktwo| trigger and trigger-matching of the \tauhadvis
-candidate. The binning of the \mTW discriminants, as shown in the figure, is the
-same in all \tauhadvis candidate \pT and \Ntracks regions.
+\verb|HLT_tau25_medium1_tracktwo| trigger and trigger-matching. The binning of
+the \mTW discriminants, as shown in the figure, is the same in all \tauhadvis
+candidate \pT and \Ntracks regions.
 
 \begin{figure}[htbp]
   \centering
@@ -278,13 +279,11 @@ same in all \tauhadvis candidate \pT and \Ntracks regions.
     \caption{$\Ntracks = 3$ and $\SI{30}{\GeV} \leq \pT < \SI{40}{\GeV}$.}
   \end{subfigure}
 
-  \caption{Histograms of the \mTW distributions in two exemplary \tauhadvis
-    candidate \Ntracks and \pT regions. Two exemplary \mTW distributions as
-    they enter the likelihood fit determining the \faketauhadvis scale
-    factors. Only SF-CR events passing the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and \tauhadvis
-    trigger-matching are considered. Events with $\mTW > \SI{200}{\GeV}$ are
-    merged into the last bin of the histogram.}%
+  \caption{Pre-fit \mTW distributions in two exemplary \tauhadvis candidate
+    \Ntracks and \pT regions of the SF measurement after requiring events to
+    pass the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and
+    trigger-matching. Events with $\mTW > \SI{200}{\GeV}$ are merged into the
+    last bin of the histograms.}%
   \label{fig:ttbarsf_mtw_examples_prefit}
 \end{figure}
 
@@ -301,8 +300,8 @@ the search for Higgs boson pair production. Therefore, the uncertainties
 included in the SF measurement are only briefly summarised.
 
 Experimental uncertainties affecting the reconstruction and selection
-efficiencies of electrons, muons, \tauhadvis, and jets are considered in the SF
-measurement, including uncertainties on the efficiencies and mis-tag rates of
+efficiencies of electrons, muons, \tauhadvis, and jets are accounted for in the
+SF measurement, including uncertainties on the efficiencies and mis-tag rates of
 $b$-tagging. Uncertainties on the reconstructed \pTmissAbs are propagated to the
 \mTW distributions in all regions. Trigger efficiency uncertainties are
 considered for single-lepton and single-\tauhadvis
@@ -311,13 +310,13 @@ triggers.\footnote{Uncertainties on single-\tauhadvis trigger efficiencies are
   requirements.}  Uncertainties on the re-weighting of the pile-up conditions in
 simulation and the integrated luminosity used to normalise simulated event
 samples are included in the measurement. Finally, statistical uncertainties from
-the finite size of the simulation samples used to construct the fit model are
-included according to the method by Barlow and
-Beeston~\cite{barlow1993,conway2011} introduced in \Cref{sec:barlow_beeston}.
+the finite size of the simulation samples are included in the fit model
+according to the method by Barlow and Beeston~\cite{barlow1993,conway2011}
+introduced in \Cref{sec:barlow_beeston}.
 
 Theory uncertainties on the modelling of \ttbar production using simulation are
-derived for this measurement according to prescriptions developed by the ATLAS
-collaboration, which are documented in \Cref{app:top_uncertainties}. An
+derived for this measurement according to prescriptions, which are summarised in
+\Cref{app:top_uncertainties}, developed by the ATLAS collaboration. An
 uncertainty on the simulation of the hard interaction and matching to the parton
 shower is derived by comparison with an alternative matrix element generator and
 matching scheme. Uncertainties on the modelling of the parton shower,
@@ -328,17 +327,17 @@ of renormalisation and factorisation scales. Finally, uncertainties on the
 modelling of additional emissions are derived by performing variations of the
 simulated initial- and final-state radiation. Modelling uncertainties are
 derived separately for \ttbar events with and without \faketauhadvis, but are
-correlated in the fit model if they originate from the same source. Effects of
-the \ttbar modelling uncertainties on the shape of the \mTW discriminants and
-the expected number of events in the different \tauhadvis candidate \Ntracks and
-\pT regions are implemented in the fit model.
+regarded as correlated in the fit model if they originate from the same
+source. Effects of the \ttbar modelling uncertainties on the shape of the \mTW
+discriminants and the expected number of events in the different \tauhadvis
+candidate \Ntracks and \pT regions considered in the fit model.
 
 Reduced sets of theory uncertainties are considered for minor backgrounds in the
 SF measurement. Uncertainties on the cross-sections of single-top and \Vjets
 production are included in the model. Due to the known normalisation discrepancy
 of \Vjets production in the presence of jets originating from heavy flavour
-quarks, a normalisation uncertainty of \SI{30}{\percent} is applied to the minor
-\Vjets background.
+quarks, an additional normalisation uncertainty of \SI{30}{\percent} is assigned
+to the \Vjets background.
 
 % A reduced set of theory uncertainties for minor backgrounds is considered. For
 % the production of single top-quarks, the uncertainties on the cross-section are
