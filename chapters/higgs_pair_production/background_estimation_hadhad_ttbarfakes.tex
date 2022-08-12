@@ -253,13 +253,14 @@ semi-leptonic decay modes have a pronounced peak close to the $W$~boson mass.
 The \faketauhadvis SFs are measured using a simultaneous likelihood fit of the
 binned \mTW discriminants in all regions of \tauhadvis candidate \pT and
 \Ntracks. The fit model is constructed using simulated \ttbar, single top, and
-\Vjets events. The sample of \ttbar events is split by whether the reconstructeds
-\tauhadvis candidate is a \faketauhadvis or not. The overall normalisation of
-the \ttbar background, irrespective of whether events contain a \faketauhadvis,
-is allowed to vary freely in the model.  In every region of \tauhadvis candidate
-\Ntracks and \pT, an unconstrained SF is introduced that changes the
-normalisation of the \ttbarFakes background in this region. These \faketauhadvis
-SFs are considered the parameters of interest of the measurement.
+\Vjets events. The sample of \ttbar events is split by whether the
+reconstructeds \tauhadvis candidate is a \faketauhadvis or not. The overall
+normalisation of the \ttbar background, irrespective of whether events contain a
+\faketauhadvis, is allowed to vary freely in the model.  In every region of
+\tauhadvis candidate \Ntracks and \pT, an unconstrained SF is introduced that
+changes the normalisation of the \ttbarFakes background in this region. These
+\faketauhadvis SFs are considered the parameters of interest (POIs) of the
+measurement.
 
 The pre-fit expectation of the model in two exemplary regions is shown
 in~\Cref{fig:ttbarsf_mtw_examples_prefit} for SF-CR events passing the
@@ -504,15 +505,17 @@ to the \Vjets background.
 % symmetrised.
 
 
-\subsubsection{Measurement Results}
+\subsubsection{Results of the Scale Factor Measurement}
 
-The measured scale factors for \faketauhadvis in \ttbar simulation are
-shown in \Cref{fig:ttbarSF_postfit_SF}. The measurement shows varying
-agreement between the nominal prediction from simulation and the
-data-driven method that depends on the \tauhadvis transverse momentum
-and the applied \tauid criteria. The size of the extracted correction
-can reach up to \SI{50}{\percent} at high \tauhadvis \pT where
-simulation overestimates the contribution of \faketauhadvis in \ttbar.
+The measured \faketauhadvis SFs are shown in \Cref{fig:ttbarSF_postfit_SF} for
+all relevant \tauid criteria. The size of the corrections described by the SFs
+can reach up to \SI{55}{\percent} for \faketauhadvis of high \pT where
+simulation overestimates the contribution of \faketauhadvis in \ttbar. SFs for
+\faketauhadvis reconstructed as 1-prong (3-prong) candidates with
+$\pT < \SI{70}{\GeV}$ are generally within \SI{20}{\percent} (\SI{40}{\percent})
+of unity. Only small differences are observed between SFs measured for different
+\tauid requirements at trigger-level as is shown
+in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
 
 \begin{figure}[htbp]
   \centering
@@ -539,82 +542,73 @@ simulation overestimates the contribution of \faketauhadvis in \ttbar.
     \label{fig:ttbarSF_postfit_SF_d}
   \end{subfigure}
 
-  \caption{Measured \faketauhadvis scale factors for simulated \ttbar
-    (\POWHEGBOX[v2] + \PYTHIA[8]) separated by \tauhadvis
-    identification criteria applied in this analysis. A comparison of
-    \faketauhadvis scale factors measured with loose offline \tauid
-    only and with both loose offline and HLT \tauid is shown in (a)
-    and (b) for 1- and 3-prong \tauhadvis candidates, respectively.
-    Figures (c) and (d) compare the effect of different HLT
-    identification algorithms on the extracted scale factors. In all
-    cases, the last bin summarises the scale factors for \tauhadvis
-    with $\pT \geq \SI{70}{\GeV}$.  The markers are shifted from the
-    geometrical bin centre for illustration purposes only.}%
+  \caption{\Faketauhadvis SFs measured in \ttbar events for different \tauid
+    criteria relevant to the search for Higgs boson pair production. A
+    comparison of \faketauhadvis SFs for offline \tauid only, and with offline
+    and trigger-level \tauid is shown in (a) and (b) for 1- and 3-prong
+    \tauhadvis candidates, respectively. Figures (c) and (d) compare the effect
+    of different \tauhadvis-trigger chains at the HLT on the extracted SFs. In
+    all cases, the last bin summarises the SFs for \tauhadvis candidate with
+    $\pT \geq \SI{70}{\GeV}$. The markers are shifted from their geometrical bin
+    centres for illustration purposes only.}%
   \label{fig:ttbarSF_postfit_SF}
 \end{figure}
 
-For \faketauhadvis reconstructed as 1-prong \tauhadvis candidates,
-depicted in~\Cref{fig:ttbarSF_postfit_SF_a,fig:ttbarSF_postfit_SF_c},
-the scale factor corrections are of the order of \SI{20}{\percent} in
-the low and intermediate transverse momentum regime
-($\pT < \SI{70}{\GeV}$). The extracted scale factors show no strong
-dependence on whether candidates pass the selections applied by
-\tauhadvis triggers or the particular trigger chain used.
+The fit model and the corresponding fit results are checked by comparing the
+post-fit predictions of the model with the observed data in all regions. In
+addition, pulls and constraints of nuisance parameters, and correlations between
+nuisance parameters and the POIs are inspected. Exemplary post-fit predictions
+of the model are shown in \Cref{fig:ttbarSF_postfit_ptmtw} in terms of the \pT
+of \tauhadvis candidates and \mTW in the SF-CR after requiring events to pass
+the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and
+trigger-matching.\todo{Some concluding sentence would be nice.}
 
-In~\Cref{fig:ttbarSF_postfit_SF_b,fig:ttbarSF_postfit_SF_d} the
-measured scale factors for \faketauhadvis reconstructed as 3-prong
-candidates are shown. In this case, the contribution of \faketauhadvis
-in the low and intermediate \tauhadvis~\pT region is underestimated by
-simulation, requiring corrections of about
-\SIrange{20}{40}{\percent}. At high transverse momenta simulation
-tends to overestimate the \faketauhadvis contribution, although with
-large uncertainties from the scale factor measurement. The
-uncertainties are magnified for the \texttt{medium1\_tracktwoEF} and
-\texttt{mediumMVA\_tracktwoRNN} chains since only partial datasets
-containing the resurrected trigger decision are available.
+The post- and pre-fit values of all nuisance parameters agree within their
+uncertainties. Few instances are observed where the SF measurement puts more
+stringent constraints on the values of nuisance parameters than expected from
+the prior estimation of the associated uncertainty. These cases are the
+\pTmissAbs scale uncertainty, \ttbar modelling uncertainties resulting from
+comparison with alternative ME/PS generators, and \tauhadvis energy scale
+uncertainty. The constraints on these parameters tend to be moderate with ratios
+of post- to pre-fit uncertainties above \SI{70}{\percent}. Due to the
+sensitivity of the \mTW discriminant to the modelling of \pTmissAbs and the
+abundance of \ttbar events in the SF-CR, the fit is expected to have some power
+to constrain the associated nuisance parameters. Furthermore, the \tauhadvis
+energy scale uncertainties are derived from $Z \ra \tau_{\mu} \tauhad$
+tag-and-probe measurements~\cite{ATLAS-CONF-2017-029} which provide probe
+\tauhadvis with (typically) lower transverse momenta than the ones produced in
+\ttbar events. With the SF measurement being performed in bins of \tauhadvis
+candidate \Ntracks and \pT and primarily targeting \ttbar events, mild
+constraints on the \tauhadvis energy scale from the SF measurement are expected.
 
-Pulls and constraints of nuisance parameters are examined for all
-scale factor measurements\todo{Appendix?}. The nuisance parameter
-estimates agree within uncertainties with the central values of their
-auxiliary measurements. Few instances are observed where the scale
-factor measurement puts more stringent constraints on nuisance
-parameters than expected from the prior estimation of the associated
-uncertainty. All constrained parameters have post-fit uncertainties
-larger than \SI{70}{\percent} with respect to the uncertainty prior to
-the fit, indicating only mild constraints.
+% Pulls and constraints of nuisance parameters are examined for all scale factor
+% measurements. The nuisance parameter estimates agree within uncertainties with
+% the central values of their auxiliary measurements. Few instances are observed
+% where the scale factor measurement puts more stringent constraints on nuisance
+% parameters than expected from the prior estimation of the associated
+% uncertainty. All constrained parameters have post-fit uncertainties larger than
+% \SI{70}{\percent} with respect to the uncertainty prior to the fit, indicating
+% only mild constraints.
 
-The largest nuisance parameter constraints, in the following given as
-the ratio of post- to pre-fit uncertainty, are observed for the
-\pTmissAbs scale uncertainty~(\SI{70}{\percent}), the ME / PS
-modelling uncertainties on \ttbar~(\SI{75}{\percent}), and \tauhadvis
-energy scale uncertainty~(\SI{80}{\percent}). The \mTW discriminant is
-sensitive to the modelling of \pTmissAbs, thus some power to constrain
-nuisance parameters related to the modelling of \pTmissAbs in
-simulation is expected. Similarly, the SF-CR selects a large number of
-\ttbar events with high purity, consequently allowing to constrain the
-modelling uncertainties that are derived from two-sample
-comparisons. Finally, the measurements providing uncertainties on the
-\tauhadvis energy scale are performed in $Z \ra \tau_{\mu} \tauhad$
-tag-and-probe~\cite{ATLAS-CONF-2017-029} which provides probe
-\tauhadvis with a softer transverse momentum spectrum compared to
-\tauhadvis produced in \ttbar events. With the binning of the
-measurement in \tauhadvis \pT, it is expected that the uncertainties
-on the \tauhadvis energy scale, particularly at high \tauhadvis~\pT,
-can be constrained by this measurement. % It cannot be fully excluded,
-% however, that these constraints arise from a lack of flexibility of
-% the fit model.
+% The largest nuisance parameter constraints, in the following given as the ratio
+% of post- to pre-fit uncertainty, are observed for the \pTmissAbs scale
+% uncertainty~(\SI{70}{\percent}), the ME / PS modelling uncertainties on
+% \ttbar~(\SI{75}{\percent}), and \tauhadvis energy scale
+% uncertainty~(\SI{80}{\percent}).
+% The \mTW discriminant is sensitive to the modelling of \pTmissAbs, thus some
+% power to constrain nuisance parameters related to the modelling of \pTmissAbs in
+% simulation is expected. Similarly, the SF-CR selects a large number of \ttbar
+% events with high purity, consequently allowing to constrain the modelling
+% uncertainties that are derived from two-sample comparisons. Finally, the
+% measurements providing uncertainties on the \tauhadvis energy scale are
+% performed in $Z \ra \tau_{\mu} \tauhad$ tag-and-probe~\cite{ATLAS-CONF-2017-029}
+% which provides probe \tauhadvis with a softer transverse momentum spectrum
+% compared to \tauhadvis produced in \ttbar events. With the binning of the
+% measurement in \tauhadvis \pT, it is expected that the uncertainties on the
+% \tauhadvis energy scale, particularly at high \tauhadvis~\pT, can be constrained
+% by this measurement.
 
-The \tauhadvis \pT and \mTW distributions are shown in
-\Cref{fig:ttbarSF_postfit_ptmtw} after the fit in the SF-CR with the
-additional trigger-matching requirement to the
-\texttt{HLT\_tau25\_medium1\_tracktwo} single-\tauhadvis
-trigger. Decent agreement is observed between the background
-prediction and the observed data.
 
-% \todo[inline]{This measurement can provide a correction as well as a
-%   measurement-driven estimate of the uncertainties of
-%   \faketauhadvis. Although the uncertainties seem large at high
-%   momenta, the abundance of events where this is relevant is small.}
 
 \begin{figure}[htbp]
   \centering
@@ -622,13 +616,14 @@ prediction and the observed data.
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/PTVR_postFit}
   \includegraphics[width=0.49\textwidth]{ttbarSF/postfit_sfcr/MTWVR_postFit}
 
-  \caption{Post-fit distribution of \tauhadvis \pT and \mTW in the SF-CR after
-    requiring the \tauhadvis to be matched to the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. Events with \tauhadvis \pT
+  \caption{Post-fit distributions of \tauhadvis candidate \pT and \mTW in the
+    SF-CR for events passing the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger
+    and trigger-matching. Both distributions are shown inclusively in the
+    \Ntracks and \pT of the \tauhadvis candidats. Events with \tauhadvis \pT
     (\mTW) larger than \SI{200}{\GeV} (\SI{250}{\GeV}) are merged into the last
     bin. The uncertainty band contains all statistical and systematic
-    uncertainties, including post-fit uncertainties on \faketauhadvis scale
-    factors and the \ttbar normalisation factor.}
+    uncertainties, including post-fit uncertainties on \faketauhadvis SFs and
+    the overall \ttbar normalisation factor.}%
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
 
