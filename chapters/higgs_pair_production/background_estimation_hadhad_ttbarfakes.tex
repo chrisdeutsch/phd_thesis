@@ -563,53 +563,6 @@ of \tauhadvis candidates and \mTW in the SF-CR after requiring events to pass
 the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and
 trigger-matching.\todo{Some concluding sentence would be nice.}
 
-The post- and pre-fit values of all nuisance parameters agree within their
-uncertainties. Few instances are observed where the SF measurement puts more
-stringent constraints on the values of nuisance parameters than expected from
-the prior estimation of the associated uncertainty. These cases are the
-\pTmissAbs scale uncertainty, \ttbar modelling uncertainties resulting from
-comparison with alternative ME/PS generators, and \tauhadvis energy scale
-uncertainty. The constraints on these parameters tend to be moderate with ratios
-of post- to pre-fit uncertainties above \SI{70}{\percent}. Due to the
-sensitivity of the \mTW discriminant to the modelling of \pTmissAbs and the
-abundance of \ttbar events in the SF-CR, the fit is expected to have some power
-to constrain the associated nuisance parameters. Furthermore, the \tauhadvis
-energy scale uncertainties are derived from $Z \ra \tau_{\mu} \tauhad$
-tag-and-probe measurements~\cite{ATLAS-CONF-2017-029} which provide probe
-\tauhadvis with (typically) lower transverse momenta than the ones produced in
-\ttbar events. With the SF measurement being performed in bins of \tauhadvis
-candidate \Ntracks and \pT and primarily targeting \ttbar events, mild
-constraints on the \tauhadvis energy scale from the SF measurement are expected.
-
-% Pulls and constraints of nuisance parameters are examined for all scale factor
-% measurements. The nuisance parameter estimates agree within uncertainties with
-% the central values of their auxiliary measurements. Few instances are observed
-% where the scale factor measurement puts more stringent constraints on nuisance
-% parameters than expected from the prior estimation of the associated
-% uncertainty. All constrained parameters have post-fit uncertainties larger than
-% \SI{70}{\percent} with respect to the uncertainty prior to the fit, indicating
-% only mild constraints.
-
-% The largest nuisance parameter constraints, in the following given as the ratio
-% of post- to pre-fit uncertainty, are observed for the \pTmissAbs scale
-% uncertainty~(\SI{70}{\percent}), the ME / PS modelling uncertainties on
-% \ttbar~(\SI{75}{\percent}), and \tauhadvis energy scale
-% uncertainty~(\SI{80}{\percent}).
-% The \mTW discriminant is sensitive to the modelling of \pTmissAbs, thus some
-% power to constrain nuisance parameters related to the modelling of \pTmissAbs in
-% simulation is expected. Similarly, the SF-CR selects a large number of \ttbar
-% events with high purity, consequently allowing to constrain the modelling
-% uncertainties that are derived from two-sample comparisons. Finally, the
-% measurements providing uncertainties on the \tauhadvis energy scale are
-% performed in $Z \ra \tau_{\mu} \tauhad$ tag-and-probe~\cite{ATLAS-CONF-2017-029}
-% which provides probe \tauhadvis with a softer transverse momentum spectrum
-% compared to \tauhadvis produced in \ttbar events. With the binning of the
-% measurement in \tauhadvis \pT, it is expected that the uncertainties on the
-% \tauhadvis energy scale, particularly at high \tauhadvis~\pT, can be constrained
-% by this measurement.
-
-
-
 \begin{figure}[htbp]
   \centering
 
@@ -627,20 +580,73 @@ constraints on the \tauhadvis energy scale from the SF measurement are expected.
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
 
-The fit model introduces large anti-correlations between the overall
-\ttbar normalisation and the extracted scale factors for \ttbar with
-\faketauhadvis. An exemplary correlation matrix for one measurement is
-shown in~\Cref{fig:ttbarSF_corr_matrix} showing the most relevant
-correlations between parameters of interest and nuisance parameters.
-The anti-correlations are a result of the limited discrimination power
-of \mTW in distinguishing between \ttbar with true- and
-\faketauhadvis, which is especially poor for low \tauhadvis transverse
-momenta. Thus a change in the overall \ttbar normalisation, affecting
-both \ttbar with true and \faketauhadvis, can be partially compensated
-by an increase in the \faketauhadvis scale factors. This coupling
-between \faketauhadvis scale factors and \ttbar normalisation
-introduces large positive correlations also between the scale factors
-themselves.
+The post- and pre-fit values of all nuisance parameters agree within their
+uncertainties. Few instances are observed where the SF measurement puts more
+stringent constraints on the values of nuisance parameters than expected from
+the prior estimation of the associated uncertainty. These cases are the
+\pTmissAbs scale uncertainty, \ttbar modelling uncertainties resulting from
+comparison with alternative ME/PS generators, and \tauhadvis energy scale
+uncertainty. The constraints on these parameters tend to be moderate with ratios
+of post- to pre-fit uncertainties above \SI{70}{\percent}. Due to the
+sensitivity of the \mTW discriminant to the modelling of \pTmissAbs and the
+abundance of \ttbar events in the SF-CR, the fit is expected to have some power
+to constrain the associated nuisance parameters. Furthermore, the \tauhadvis
+energy scale uncertainties are derived from $Z \ra \tau_{\mu} \tauhad$
+tag-and-probe measurements~\cite{ATLAS-CONF-2017-029} which provide probe
+\tauhadvis with (typically) lower transverse momenta than the ones produced in
+\ttbar events. With the SF measurement being performed in bins of \tauhadvis
+candidate \Ntracks and \pT and targeting \ttbar events, constraints on the
+\tauhadvis energy scale in the SF measurement are expected.
+
+% Pulls and constraints of nuisance parameters are examined for all scale factor
+% measurements. The nuisance parameter estimates agree within uncertainties with
+% the central values of their auxiliary measurements. Few instances are observed
+% where the scale factor measurement puts more stringent constraints on nuisance
+% parameters than expected from the prior estimation of the associated
+% uncertainty. All constrained parameters have post-fit uncertainties larger
+% than \SI{70}{\percent} with respect to the uncertainty prior to the fit,
+% indicating only mild constraints.
+
+% The largest nuisance parameter constraints, in the following given as the
+% ratio of post- to pre-fit uncertainty, are observed for the \pTmissAbs scale
+% uncertainty~(\SI{70}{\percent}), the ME / PS modelling uncertainties on
+% \ttbar~(\SI{75}{\percent}), and \tauhadvis energy scale
+% uncertainty~(\SI{80}{\percent}).  The \mTW discriminant is sensitive to the
+% modelling of \pTmissAbs, thus some power to constrain nuisance parameters
+% related to the modelling of \pTmissAbs in simulation is expected. Similarly,
+% the SF-CR selects a large number of \ttbar events with high purity,
+% consequently allowing to constrain the modelling uncertainties that are
+% derived from two-sample comparisons. Finally, the measurements providing
+% uncertainties on the \tauhadvis energy scale are performed in
+% $Z \ra \tau_{\mu} \tauhad$ tag-and-probe~\cite{ATLAS-CONF-2017-029} which
+% provides probe \tauhadvis with a softer transverse momentum spectrum compared
+% to \tauhadvis produced in \ttbar events. With the binning of the measurement
+% in \tauhadvis \pT, it is expected that the uncertainties on the \tauhadvis
+% energy scale, particularly at high \tauhadvis~\pT, can be constrained by this
+% measurement.
+
+The limited discrimination power of \mTW in distinguishing \ttbar events with
+and without \faketauhadvis leads to large anti-correlations of the
+\faketauhadvis SFs and the overall \ttbar normalisation factor. This is
+illustrated in the correlation matrix depicted in \Cref{fig:ttbarSF_corr_matrix}
+for an exemplary SF measurement. In addition, the anti-correlation between SFs
+and the overall \ttbar normalisation factor also induces a correlation between
+SFs themselves, leading to positive correlation coefficients between SFs of
+different \tauhadvis \Ntracks and \pT bins.
+
+% The fit model introduces large anti-correlations between the overall \ttbar
+% normalisation and the extracted scale factors for \ttbar with \faketauhadvis. An
+% exemplary correlation matrix for one measurement is shown
+% in~\Cref{fig:ttbarSF_corr_matrix} showing the most relevant correlations between
+% parameters of interest and nuisance parameters.  The anti-correlations are a
+% result of the limited discrimination power of \mTW in distinguishing between
+% \ttbar with true- and \faketauhadvis, which is especially poor for low
+% \tauhadvis transverse momenta. Thus a change in the overall \ttbar
+% normalisation, affecting both \ttbar with true and \faketauhadvis, can be
+% partially compensated by an increase in the \faketauhadvis scale factors. This
+% coupling between \faketauhadvis scale factors and \ttbar normalisation
+% introduces large positive correlations also between the scale factors
+% themselves.
 
 \begin{figure}[htbp]
   \centering
