@@ -35,21 +35,20 @@ with proton energies of \SI{450}{\GeV}~\cite{Evans:2008zzb}. The protons are
 further accelerated in the LHC until the target energy is reached. At this
 point, the beams are brought into collision at four points, the interaction
 points (IPs), along the ring. Four large experiments are situated at these IPs
-to observe and record particle collision events at the LHC:
-ATLAS~\cite{PERF-2007-01}, CMS~\cite{CMS-CMS-00-001},
-ALICE~\cite{ALICE:2008ngc}, and LHCb~\cite{LHCb:2008vvz}. The ATLAS and CMS
-experiments are particle detector experiments targeting largely overlapping,
-extensive physics programmes, while the ALICE and LHCb are more specialised
-experiments. The ALICE experiment studies the production of the quark-gluon
-plasma, a state of matter with asymptotically free quarks and gluons occurring
-at temperatures similar to those right after the Big Bang, in heavy-ion
-collisions. The LHCb experiment investigates the nature the matter-antimatter
-asymmetry in the universe by studying CP violation in decays of hadrons
-containing $b$-quarks. Several smaller experiments are installed at the LHC to
-study physics processes at small angles with respect to the beamline of the LHC
-or exotic particles. These experiments are LHCf~\cite{LHCf:2008lfy},
-TOTEM~\cite{TOTEM:2008lue}, and
-MoEDAL~\cite{MoEDAL:2009jwa}.\footnote{FASER~\cite{FASER:2019aik} and SND\@LHC.}
+to observe and record particle collision events: ATLAS~\cite{PERF-2007-01},
+CMS~\cite{CMS-CMS-00-001}, ALICE~\cite{ALICE:2008ngc}, and
+LHCb~\cite{LHCb:2008vvz}. The ATLAS and CMS experiments are particle detector
+experiments targeting largely overlapping, extensive physics programmes, while
+the ALICE and LHCb are more specialised experiments. The ALICE experiment
+studies the production of the quark-gluon plasma, a state of matter with
+asymptotically free quarks and gluons occurring at temperatures similar to those
+right after the Big Bang, in heavy-ion collisions. The LHCb experiment
+investigates the nature the matter-antimatter asymmetry in the universe by
+studying CP violation in decays of hadrons containing $b$-quarks. Several
+smaller experiments are installed at the LHC to study physics processes at small
+angles with respect to the LHC beamline or exotic particles. These experiments
+are LHCf~\cite{LHCf:2008lfy}, TOTEM~\cite{TOTEM:2008lue}, and
+MoEDAL~\cite{MoEDAL:2009jwa}.\footnote{FASER~\cite{FASER:2019aik} and SND@LHC.}
 
 \begin{figure}[htbp]
   \centering
@@ -74,36 +73,35 @@ $\sqrt{s} = \SI{13.6}{\TeV}$. At present, Run~3 is forseen to last until the end
 of 2025.
 
 An important parameter of a particle collider is the instantaneous luminosity,
-$L$, at a given IP as it directly relates the expected rate of collision events
-from a process with its cross-section, $\sigma$, according to
+$L$, at a given IP as it relates the expected rate of collision events from a
+process with its cross-section, $\sigma$, according to
 \begin{align*}
   \frac{\mathrm{d}N}{\mathrm{d}t} = L \sigma \,\text{.}
 \end{align*}
-Consequently, the expected number of events observed over a time interval is
+Consequently, the expected number of events produced over a time interval is
 given by $N = L_{\text{int}} \, \sigma$, where
 $L_{\text{int}} = \int \mathrm{d}t \, L(t)$ is the integrated
-luminosity.\footnote{Assuming the cross-sections are time-independent.}
-
-
-
-When searching for rare processes, it is generally desirable to achieve the
-largest possible instantaneous luminosities .
-
-However, difficulties arise in the form of inelastic \pp-collisions
-
-
-The peak instantaneous luminosity at the IP of the ATLAS experiment ranged from
-\SIrange{0.5}{1.9}{\per\centi\metre\squared\per\second} during Run~2 of the
-LHC~\cite{ATLAS-CONF-2019-021}.
-
-
-$\sigma_{\text{inelastic}}$ of \pp at $\sqrt{s} = \SI{13}{\TeV}$ is
-\SI{80}{\milli\barn}~\cite{STDM-2015-05}
-
-\Cref{fig:atlas_mu}
-
-\Cref{fig:atlas_int_lumi_vs_time}
-
+luminosity.\footnote{Assuming the cross-sections are time-independent.} A
+quantity related to the instantaneous luminosity is the mean number of inelastic
+\pp interactions in a single bunch crossing, $\mu$. Due to the large
+cross-section of inelastic \pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$ of about
+\SI{80}{\milli\barn}~\cite{STDM-2015-05}, multiple interactions typically occur
+in a single crossing of the proton bunches. These events are referred to as
+pile-up and make the interpretation of collision events more challenging.
+% A large instantaneous luminosity is usually desirable when searching for rare
+% physics processes.
+% , as it increases the expected number of collision events of interest
+% over a fixed time interval.
+During Run~2 of the LHC, the peak instantaneous luminosity at the IP of the
+ATLAS experiment ranged from
+\SIrange{0.5}{1.9}{\per\centi\metre\squared\per\second}~\cite{ATLAS-CONF-2019-021}.
+In \Cref{fig:atlas_mu} $\mu$ is shown as a measure of the pile-up conditions
+during Run~2 of the LHC.
+% cross-section (ca.\ \SI{80}{\milli\barn} at
+% $\sqrt{s} = \SI{13}{\TeV}$~\cite{STDM-2015-05}) is multiple orders of magnitude
+% larger than the cross-section of processes of interest.
+The integrated luminosity delivered by the LHC to the ATLAS experiment during
+Run~2 is shown in \Cref{fig:atlas_int_lumi_vs_time}.
 
 % Luminosity or pile-up plots?
 % https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResultsRun2
@@ -112,14 +110,14 @@ $\sigma_{\text{inelastic}}$ of \pp at $\sqrt{s} = \SI{13}{\TeV}$ is
   \centering
 
   \begin{subfigure}{0.47\textwidth}
-    \includegraphics[width=\textwidth]{lhc/int_lumi_vs_time}
-    \subcaption{}%
-    \label{fig:atlas_int_lumi_vs_time}
-  \end{subfigure}\hspace*{0.02\textwidth}%
-  \begin{subfigure}{0.47\textwidth}
     \includegraphics[width=\textwidth]{lhc/mu_2015_2018}
     \subcaption{}%
     \label{fig:atlas_mu}
+  \end{subfigure}\hspace*{0.02\textwidth}%
+  \begin{subfigure}{0.47\textwidth}
+    \includegraphics[width=\textwidth]{lhc/int_lumi_vs_time}
+    \subcaption{}%
+    \label{fig:atlas_int_lumi_vs_time}
   \end{subfigure}
 
   \caption{The integrated luminosity as a function of time (a) and the
@@ -139,9 +137,6 @@ $\sigma_{\text{inelastic}}$ of \pp at $\sqrt{s} = \SI{13}{\TeV}$ is
 % upgrade ~\cite{hl_lhc}.
 This thesis is mostly concerned with the \pp-collision during Run~2 of the LHC.
 
-
-Centre-of-mass energy and instantaneous / integrated luminosity.
-
 % - Energy to produce Higgs boson pairs can, at present, not be achieved with
 %   electron positron colliders -> VHH production which would require CMS in excess of 300 GeV
 
@@ -159,21 +154,11 @@ Centre-of-mass energy and instantaneous / integrated luminosity.
   \begin{itemize}
   \item Bunches \& Bunch spacing: 2556 (\SI{25}{\nano\second}) -- but 2808 RF<
     buckets (not all filled)
-  \item Luminosity: \SI{2.1e34}{\per\centi\metre\squared\per\second} (design:
-    \SI{1.0e34}{\per\centi\metre\squared\per\second})
-  \item $\sqrt{s} = \SI{13}{\TeV}$
-  \item Pile-up?
+
   \item Delivered integrated luminosity: about \SI{160}{\ifb}
     \end{itemize}
 
-\item How is the luminosity of a collider calculated?
-
-\item How does Luminosity relate to event rate / pile-up?
-  \begin{align*}
-    \frac{\mathrm{d}N}{\mathrm{d}t} = L \sigma
-  \end{align*}
-  Inelastic \pp cross-section at $\sqrt{s} = \SI{13}{\TeV}$ ca.\
-  \SI{80}{\milli\barn}~\cite{STDM-2015-05}.
+  \item How is the luminosity of a collider calculated?
 
 \end{itemize}
 
