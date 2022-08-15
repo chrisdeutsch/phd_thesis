@@ -46,11 +46,10 @@ at temperatures similar to those right after the Big Bang, in heavy-ion
 collisions. The LHCb experiment investigates the nature the matter-antimatter
 asymmetry in the universe by studying CP violation in decays of hadrons
 containing $b$-quarks. Several smaller experiments are installed at the LHC to
-study physics processes at small angles with respect to the beamline of the LHC,
-or exotic, possibly long-lived, particles. Such experiments are, for example,
-LHCf~\cite{LHCf:2008lfy}, TOTEM~\cite{TOTEM:2008lue},
-MoEDAL~\cite{MoEDAL:2009jwa}, or FASER~\cite{FASER:2019aik}.\todo{Mention
-  SND\@LHC?}
+study physics processes at small angles with respect to the beamline of the LHC
+or exotic particles. These experiments are LHCf~\cite{LHCf:2008lfy},
+TOTEM~\cite{TOTEM:2008lue}, and
+MoEDAL~\cite{MoEDAL:2009jwa}.\footnote{FASER~\cite{FASER:2019aik} and SND\@LHC.}
 
 \begin{figure}[htbp]
   \centering
@@ -63,24 +62,82 @@ MoEDAL~\cite{MoEDAL:2009jwa}, or FASER~\cite{FASER:2019aik}.\todo{Mention
   \label{fig:cern_accelerator_complex}
 \end{figure}
 
-First \pp-collisions to be used in the physics programmes of the experiments
-were collected in 2010--2011 at $\sqrt{s} = \SI{7}{\TeV}$, and in 2012 at
-$\sqrt{s} = \SI{8}{\TeV}$. This period is referred to as \emph{Run~1} of the
-LHC. After extensive upgrades of the LHC and the detectors, the LHC restarted
-operation with \pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$ in \emph{Run~2}
-which took place from 2015--2018. After another extensive shutdown, data-taking
+LHC operation for the main physics programmes of the experiments started in 2010
+with \pp-collisions at $\sqrt{s} = \SI{7}{\TeV}$. In 2012, the centre-of-mass
+energy was increased to \SI{8}{\TeV}. The data-taking period from 2010--2012 is
+referred to as \emph{Run~1} of the LHC. After extensive upgrades of the LHC and
+the detectors, the LHC restarted operation with \pp-collisions at
+$\sqrt{s} = \SI{13}{\TeV}$ in \emph{Run~2} which took place from
+2015--2018. After another shutdown of LHC and experiments, data-taking
 recommenced in 2022 with Run~3, reaching unprecedented energy scales of
-$\sqrt{s} = \SI{13.6}{\TeV}$. At present, Run~3 is forseen to last until 2026.
+$\sqrt{s} = \SI{13.6}{\TeV}$. At present, Run~3 is forseen to last until the end
+of 2025.
+
+An important parameter of a particle collider is the instantaneous luminosity,
+$L$, at a given IP as it directly relates the expected rate of collision events
+from a process with its cross-section, $\sigma$, according to
+\begin{align*}
+  \frac{\mathrm{d}N}{\mathrm{d}t} = L \sigma \,\text{.}
+\end{align*}
+Consequently, the expected number of events observed over a time interval is
+given by $N = L_{\text{int}} \, \sigma$, where
+$L_{\text{int}} = \int \mathrm{d}t \, L(t)$ is the integrated
+luminosity.\footnote{Assuming the cross-sections are time-independent.}
 
 
-The physics programme of the LHC is currently planned to conlcude in the 2040s
-with LHC Run~4
+
+When searching for rare processes, it is generally desirable to achieve the
+largest possible instantaneous luminosities .
+
+However, difficulties arise in the form of inelastic \pp-collisions
 
 
-the LHC Run~4 or the High-Luminosity LHC (HL-LHC).
+The peak instantaneous luminosity at the IP of the ATLAS experiment ranged from
+\SIrange{0.5}{1.9}{\per\centi\metre\squared\per\second} during Run~2 of the
+LHC~\cite{ATLAS-CONF-2019-021}.
 
-2040s
 
+$\sigma_{\text{inelastic}}$ of \pp at $\sqrt{s} = \SI{13}{\TeV}$ is
+\SI{80}{\milli\barn}~\cite{STDM-2015-05}
+
+\Cref{fig:atlas_mu}
+
+\Cref{fig:atlas_int_lumi_vs_time}
+
+
+% Luminosity or pile-up plots?
+% https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResultsRun2
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.47\textwidth}
+    \includegraphics[width=\textwidth]{lhc/int_lumi_vs_time}
+    \subcaption{}%
+    \label{fig:atlas_int_lumi_vs_time}
+  \end{subfigure}\hspace*{0.02\textwidth}%
+  \begin{subfigure}{0.47\textwidth}
+    \includegraphics[width=\textwidth]{lhc/mu_2015_2018}
+    \subcaption{}%
+    \label{fig:atlas_mu}
+  \end{subfigure}
+
+  \caption{The integrated luminosity as a function of time (a) and the
+    luminosity-weighted mean number of interactions per bunch-crossing (b) of
+    the LHC in \pp operation mode during Run~2. In figure (a), the integrated
+    luminosity delivered by the LHC (green), recorded by the ATLAS detector
+    (yellow), and the integrated luminosity of the \pp-collision dataset passing
+    the data-qualtiy criteria~\cite{DAPR-2018-01} of the ATLAS collaboration
+    (blue) is shown. The mean number of interactions per bunch-crossing, $\mu$,
+    is calculated from the instantaneous luminosity assuming an inelastic \pp
+    cross-section at $\sqrt{s} = \SI{13}{\TeV}$ of \SI{80}{\milli\barn}. The
+    figures are taken from~\cite{atlas_luminosity_summary_plots}.}%
+  \label{fig:lumi_and_pu}
+\end{figure}
+
+% The physics programme of the LHC is planned to conclude by ca.\ 2040 after an
+% upgrade ~\cite{hl_lhc}.
+This thesis is mostly concerned with the \pp-collision during Run~2 of the LHC.
 
 
 Centre-of-mass energy and instantaneous / integrated luminosity.
@@ -120,33 +177,6 @@ Centre-of-mass energy and instantaneous / integrated luminosity.
 
 \end{itemize}
 
-% Luminosity or pile-up plots?
-% https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResultsRun2
-
-\begin{figure}[htbp]
-  \centering
-
-  \begin{subfigure}{0.47\textwidth}
-    \includegraphics[width=\textwidth]{lhc/int_lumi_vs_time}
-    \subcaption{}
-  \end{subfigure}\hspace*{0.02\textwidth}%
-  \begin{subfigure}{0.47\textwidth}
-    \includegraphics[width=\textwidth]{lhc/mu_2015_2018}
-    \subcaption{}
-  \end{subfigure}
-
-  \caption{The integrated luminosity as a function of time (a) and the
-    luminosity-weighted mean number of interactions per bunch-crossing (b) of
-    LHC in \pp operation mode during Run~2. In figure (a), the integrated
-    luminosity delivered by the LHC (green), recorded by the ATLAS detector
-    (yellow), and the integrated luminosity of the \pp-collision dataset passing
-    the data-qualtiy criteria~\cite{DAPR-2018-01} of the ATLAS collaboration
-    (blue) is shown. The mean number of interactions per bunch-crossing, $\mu$,
-    is calculated from the instantaneous luminosity assuming an inelastic \pp
-    cross-section at $\sqrt{s} = \SI{13}{\TeV}$ of \SI{80}{\milli\barn}. The
-    figures are taken from~\cite{atlas_luminosity_summary_plots}.}%
-  \label{fig:lumi_and_pu}
-\end{figure}
 
 %%% Local Variables:
 %%% mode: latex
