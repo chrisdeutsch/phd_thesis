@@ -42,7 +42,7 @@ Similarly, the angular separation between two particles is defined as
 \begin{align*}
   \Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2} = \sqrt{(\eta_2 - \eta_1)^2 +
   (\phi_2 - \phi_1)^2} \,\text{,}
-\end{align*}
+\end{align*}\todo{hold up. $\Delta \phi$ is not correct.}
 where $\eta_1$ and $\eta_2$ are the pseudorapidities and $\phi_1$ and $\phi_2$
 the azimuthal angle of both particles, respectively.
 
@@ -51,23 +51,33 @@ The main components of the ATLAS detector, going from the IP outwards, are the
 particles, the \emph{Calorimeters} used to destructively measure the energy of
 most charged and neutral particles, and the \emph{Muon Spectrometer} (MS) used
 to measure the trajectories of muons that can pass the calorimeters. Particles
-in the ID are bent in the transverse plane due to a magnetic field pointing
-along the $z$-axis that is produced by a superconducting solenoid surrounding
-the ID.  The MS is surrounded by a superconducting toroid magnets that bend the
-trajectories of muons in or against the $z$-direction. The bending of charged
-particle trajectories in the ID and MS allows to determine the momenta of the
+in the ID are bent in the transverse plane due to a magnetic
+field\todo{\SI{2}{\tesla}} pointing along the $z$-axis that is produced by a
+superconducting solenoid surrounding the ID.  The MS is surrounded by a
+superconducting toroid magnets that bend the trajectories of muons in or against
+the $z$-direction. The bending of charged particle trajectories in the ID and MS
+allows to determine the sign of the electric charge and momentum of
 particles. The following sections summarise the most important parts of the
 ATLAS detector.
 
 
 \subsection{The Inner Detector}
 
-The ID, shown in~\Cref{fig:atlas_inner_detector},
-
-non-destructive measurements of charged particle trajectories of up to
-$|\eta| < 2.5$.
-
-Different detector technologies are used due to the increasing particle flux closest to
+The ID, depicted in \Cref{fig:atlas_inner_detector}, is the innermost part of
+the ATLAS detector. It performs non-destructive measurements of the trajectories
+of charged particles within $|\eta| < 2.5$ by measuring the points where charged
+particles cross active detector layers. The measurment of several points on the
+trajectory, and the known magnetic field in the ID, allows to reconstruct the
+trajectory of the particle. The reconstructed trajectory is referred to as the
+\emph{charged particle track} and sometimes abbreviated as \emph{track}. The
+precise measurement of charged particle tracks is important to reconstruct the
+primary vertex (PV) of the hard interaction with high spatial resolution,
+allowing to remove tracks from pile-up which are typically displaced from the PV
+along the $z$-axis. Moreover, the accurate reconstruction of secondary vertices,
+i.e.\ displaced vertices originating from decays of unstable particles produced
+in the hard interaction, is crucial to identify jets originating from
+$b$-quarks.% which hinges on the precision of the track
+% reconstruction in the ID.
 
 \begin{figure}[htbp]
 
@@ -76,18 +86,72 @@ Different detector technologies are used due to the increasing particle flux clo
     \subcaption{}
   \end{subfigure}\hfill%
   \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth, trim=0 2.5cm 0 2cm, clip]{atlas/atlas_indet_2}%
-    \subcaption{}
+    \includegraphics[width=\textwidth, trim=0 2.5cm 0 1cm,
+    clip]{atlas/atlas_indet_2}%
+    \subcaption{}%
+    \label{fig:indet_barrel}
   \end{subfigure}
 
-  \caption{Schematic view of the Inner Detector including the two endcaps (b). A
-    zoomed in view of the barrel region is given in (b). The Insertable B-Layer
-    (IBL), which was introduced into the ATLAS detector after Run~1 of the LHC,
-    is not displayed. The IBL is located closest to the beampipe at a radius of
-    $r = \SI{33.5}{\milli\metre}$~\cite{PIX-2018-001}. Images taken from
-    Ref.~\cite{Pequenao:1095926}.}%
+  \caption{Schematic view of the ID including the two endcaps (a). A zoomed in
+    view of the barrel region of the ID (b). The Insertable B-Layer (IBL), which
+    was introduced into the ATLAS detector after Run~1 of the LHC, is not
+    displayed. The IBL is located closest to the beampipe at a radius of
+    $r = \SI{33.5}{\milli\metre}$~\cite{ATLAS-TDR-19,PIX-2018-001}. Images taken
+    from Ref.~\cite{Pequenao:1095926}.}%
   \label{fig:atlas_inner_detector}
 \end{figure}
+
+The requirements on the tracking system vary with the distance from the IP.
+Closest to the IP, tracking detectors with high-granularity are required for the
+reconstruction of primary and secondary vertices that can operate in a
+high-radiation environment. At larger distances, the particle flux is
+significantly reduced and the requirements on the spatial resolution relaxed.
+Therefore, different detector technologies are used to cover the needs of the
+tracking system in a cost-effective manner.
+
+% Pixel
+The ID subsystem closest to the beampipe are the pixel detectors located at
+distances of \SIrange{33.5}{122.5}{\milli\metre} from the beamline in the barrel
+region of the ATLAS detector (cf.\ \Cref{fig:atlas_inner_detector}). The pixel
+detectors are based on semiconductor technology with an active detector area
+that is segmented into a grid of rectangular elements, referred to as
+pixels. These pixels have size of \SI{50}{\micro\metre} in the transverse
+direction and \SIrange{250}{400}{\micro\metre} along the
+beamline~\cite{PERF-2007-01,PIX-2018-001}. A charged particle traversing the
+pixel detector ionises the active detector material leading to the deposition of
+electric charge in nearby pixels. The charged deposited in individual pixels can
+be read out to determine the point where the particle crossed the detector
+layer. The pixel detectors are arranged in four layers concentric with the
+beamline in the barrel region and three disks per endcap region. Particles
+produced at the IP typically traverse four layers of pixel detectors within the
+acceptance of $|\eta| < 2.5$ of the tracking system.
+
+% SCT
+The pixel detector is surrounded by the \emph{Semiconductor Tracker} (SCT)
+covering radii of \SIrange{299}{514}{\milli\metre} from the beamline in the
+barrel region (cf.\ \Cref{fig:atlas_inner_detector}). Similar to the pixel
+detector, the SCT is based on semiconductor detector technology, however, the
+active detector area is segmented in long but thin strips (microstrips) with a
+pitch between strips of about \SI{80}{\micro\metre}~\cite{PERF-2007-01}. A
+single microstrip detector layer only provides an accurate position measurement
+in the plane perpendicular to the strips. Therefore, SCT modules consist of two
+layers of microstrips which are tilted by a small angle to resolve the ambiguity
+in the direction parallel to the strips. The SCT is arranged in four layers in
+the barrel and nine disks in the endcap region, yielding at least four
+measurements for tracks within the acceptance of the tracking
+system~\cite{PERF-2007-01}.
+
+% TRT
+The \emph{Transition Radiation Tracker} (TRT) is the final layer of the ID
+covering radii of \SIrange{554}{1082}{\milli\metre} (cf.\
+\Cref{fig:atlas_inner_detector}), however, with reduced acceptance of
+$|\eta| < 2.0$ compared to the semiconductor-based trackers.
+
+The TRT consists of drift tube
+
+
+Gaseous tracking detector TRT ($|\eta| < 2.0$) and electron identification
+information.
 
 
 \subsection{Calorimeters}
