@@ -7,10 +7,10 @@ surrounding the LHC beamline at one of the IPs. The detector covers most of the
 solid angle around the IP to ensure that all detectible particles from
 collisions can be observed. The central part of the ATLAS detector is referred
 to as the \emph{barrel}, while the two sections covering solid angles close to
-the LHC beamline are referred to as the \emph{endcaps}. Going from the IP
-outwards, different layers of detector technologies are used to detect and
-identify different types of particles, enabling an almost full interpretation of
-collision events.
+the LHC beamline are referred to as the \emph{endcaps}. Different layers of
+detector technologies are concentrically arranged around the IP that, in
+conjunction, allow to detect and identify different types of particles, enabling
+an almost full interpretation of collision events.
 
 \begin{figure}[htbp]
   \centering
@@ -34,7 +34,7 @@ $x$-axis, and the polar angle, $\theta$, being the angle with respect to the
 $z$-axis. With these coordinate systems, transverse momenta and energies are
 defined as $\pT = \sqrt{p_x^2 + p_y^2} = p \sin\theta$ and $\ET = E \sin\theta$,
 respectively. At hadron colliders, the polar angle is frequently given in terms
-of the pseudorapidity \eta, which is defined as
+of the pseudorapidity $\eta$, which is defined as
 \begin{align*}
   \eta = - \ln\tan\left( \frac{\theta}{2} \right) \,\text{.}
 \end{align*}
@@ -46,12 +46,28 @@ Similarly, the angular separation between two particles is defined as
 where $\eta_1$ and $\eta_2$ are the pseudorapidities and $\phi_1$ and $\phi_2$
 the azimuthal angle of both particles, respectively.
 
-First, non-destructive measurements of electrically charged particles are
-performed in the \emph{Inner Detector}, allowing to reconstruct the trajectories
-of these particles.
+The main components of the ATLAS detector, going from the IP outwards, are the
+\emph{Inner Detector} (ID) used for measuring the trajectories of charged
+particles, the \emph{Calorimeters} used to destructively measure the energy of
+most charged and neutral particles, and the \emph{Muon Spectrometer} (MS) used
+to measure the trajectories of muons that can pass the calorimeters. Particles
+in the ID are bent in the transverse plane due to a magnetic field pointing
+along the $z$-axis that is produced by a superconducting solenoid surrounding
+the ID.  The MS is surrounded by a superconducting toroid magnets that bend the
+trajectories of muons in or against the $z$-direction. The bending of charged
+particle trajectories in the ID and MS allows to determine the momenta of the
+particles. The following sections summarise the most important parts of the
+ATLAS detector.
 
 
 \subsection{The Inner Detector}
+
+The ID, shown in~\Cref{fig:atlas_inner_detector},
+
+non-destructive measurements of charged particle trajectories of up to
+$|\eta| < 2.5$.
+
+Different detector technologies are used due to the increasing particle flux closest to
 
 \begin{figure}[htbp]
 
@@ -60,15 +76,16 @@ of these particles.
     \subcaption{}
   \end{subfigure}\hfill%
   \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth, trim=0 2.5cm 0 2cm]{atlas/atlas_indet_2}%
+    \includegraphics[width=\textwidth, trim=0 2.5cm 0 2cm, clip]{atlas/atlas_indet_2}%
     \subcaption{}
-
-    %[trim={5cm 0 0 0},clip]
   \end{subfigure}
 
-  \caption{Inner detector. Images taken from
-    Ref.~\cite{Pequenao:1095926}. IBL~\cite{PIX-2018-001} at
-    $r = \SI{33.5}{\milli\metre}$ not displayed.}
+  \caption{Schematic view of the Inner Detector including the two endcaps (b). A
+    zoomed in view of the barrel region is given in (b). The Insertable B-Layer
+    (IBL), which was introduced into the ATLAS detector after Run~1 of the LHC,
+    is not displayed. The IBL is located closest to the beampipe at a radius of
+    $r = \SI{33.5}{\milli\metre}$~\cite{PIX-2018-001}. Images taken from
+    Ref.~\cite{Pequenao:1095926}.}%
   \label{fig:atlas_inner_detector}
 \end{figure}
 
@@ -97,8 +114,6 @@ of these particles.
 
   \todo[inline]{Is this really needed?}
 \end{figure}
-
-\subsection{Magnet System}
 
 \subsection{The ATLAS Trigger System}
 
