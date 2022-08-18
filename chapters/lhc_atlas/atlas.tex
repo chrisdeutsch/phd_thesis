@@ -6,8 +6,8 @@ The ATLAS detector~\cite{PERF-2007-01}, shown in
 surrounding the LHC beamline at one of the IPs. The detector covers most of the
 solid angle around the IP to ensure that all detectible particles from
 collisions can be observed. The central part of the ATLAS detector is referred
-to as the \emph{barrel}, while the two sections covering solid angles close to
-the LHC beamline are referred to as the \emph{endcaps}. Different layers of
+to as the \emph{barrel}, while the two sections covering the solid angle close
+to the LHC beamline are referred to as the \emph{end-caps}. Different layers of
 detector technologies are concentrically arranged around the IP that, in
 conjunction, allow to detect and identify different types of particles, enabling
 an almost full interpretation of collision events.
@@ -17,7 +17,7 @@ an almost full interpretation of collision events.
 
   \includegraphics[width=0.76\textwidth]{atlas/atlas_overview}
 
-  \caption{Overview of the ATLAS detector. Image taken from
+  \caption{Overview of the ATLAS detector. The image is taken from
     Ref.~\cite{PERF-2007-01}.}%
   \label{fig:atlas_detector_overview}
 \end{figure}
@@ -40,25 +40,23 @@ of the pseudorapidity $\eta$, which is defined as
 \end{align*}
 Similarly, the angular separation between two particles is defined as
 \begin{align*}
-  \Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2} = \sqrt{(\eta_2 - \eta_1)^2 +
-  (\phi_2 - \phi_1)^2} \,\text{,}
-\end{align*}\todo{hold up. $\Delta \phi$ is not correct.}
-where $\eta_1$ and $\eta_2$ are the pseudorapidities and $\phi_1$ and $\phi_2$
-the azimuthal angle of both particles, respectively.
+  \Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2} \,\text{,}
+\end{align*}
+where $\Delta \eta$ is the difference in pseudorapidity and $\Delta \phi$ the
+smallest azimuthal separation between the particle momenta.
 
 The main components of the ATLAS detector, going from the IP outwards, are the
 \emph{Inner Detector} (ID) used for measuring the trajectories of charged
 particles, the \emph{Calorimeters} used to destructively measure the energy of
 most charged and neutral particles, and the \emph{Muon Spectrometer} (MS) used
 to measure the trajectories of muons that can pass the calorimeters. Particles
-in the ID are bent in the transverse plane due to a magnetic
-field\todo{\SI{2}{\tesla}} pointing along the $z$-axis that is produced by a
+in the ID are bent in the transverse plane due to a magnetic field of
+\SI{2}{\tesla} field strength pointing along the $z$-axis that is produced by a
 superconducting solenoid surrounding the ID.  The MS is contains superconducting
-toroid magnets that bend the trajectories of muons in or against the
-$z$-direction. The bending of charged particle trajectories in the ID and MS
-allows to determine the sign of the electric charge and momentum of
-particles. The following sections summarise the most important parts of the
-ATLAS detector.
+toroid magnets that bend the trajectories of muons in the $\eta$-plane. The
+bending of charged particle trajectories in the ID and MS allows to determine
+the sign of the electric charge and momentum of particles. The following
+sections summarise the most important parts of the ATLAS detector.
 
 
 \subsection{The Inner Detector}
@@ -92,12 +90,12 @@ originating from $b$-quarks.% which hinges on the precision of the track
     \label{fig:indet_barrel}
   \end{subfigure}
 
-  \caption{Schematic view of the ID including the two endcaps (a). A zoomed in
+  \caption{Schematic view of the ID including the two end-caps (a). A zoomed in
     view of the barrel region of the ID (b). The Insertable B-Layer (IBL), which
     was introduced into the ATLAS detector after Run~1 of the LHC, is not
     displayed. The IBL is located closest to the beampipe at a radius of
-    $r = \SI{33.5}{\milli\metre}$~\cite{ATLAS-TDR-19,PIX-2018-001}. Images taken
-    from Ref.~\cite{PERF-2007-01}.}%
+    $r = \SI{33.5}{\milli\metre}$~\cite{ATLAS-TDR-19,PIX-2018-001}. The images
+    are taken from Ref.~\cite{PERF-2007-01}.}%
   \label{fig:atlas_inner_detector}
 \end{figure}
 
@@ -110,7 +108,7 @@ Therefore, different detector technologies are used to cover the needs of the
 tracking system in a cost-effective manner.
 
 % Pixel
-The ID subsystem closest to the beampipe are the pixel detectors located at
+The ID sub-system closest to the beampipe are the pixel detectors located at
 distances of \SIrange{33.5}{122.5}{\milli\metre} from the beamline in the barrel
 region of the ATLAS detector (cf.\ \Cref{fig:atlas_inner_detector}). The pixel
 detectors are based on semiconductor technology with an active detector area
@@ -122,7 +120,7 @@ pixel detector ionises the active detector material leading to the deposition of
 electric charge in nearby pixels. The charged deposited in individual pixels can
 be read out to determine the point where the particle crossed the detector
 layer. The pixel detectors are arranged in four layers concentric with the
-beamline in the barrel region and three disks per endcap region. Particles
+beamline in the barrel region and three disks per end-cap region. Particles
 produced at the IP typically traverse four layers of pixel detectors within the
 acceptance of $|\eta| < 2.5$ of the tracking system.
 
@@ -137,7 +135,7 @@ single microstrip detector layer only provides an accurate position measurement
 in the plane perpendicular to the strips. Therefore, SCT modules consist of two
 layers of microstrips which are tilted by a small angle to resolve the ambiguity
 in the direction parallel to the strips. The SCT is arranged in four layers in
-the barrel and nine disks in the endcap region, yielding at least four
+the barrel and nine disks in the end-cap region, yielding at least four
 measurements for tracks within the acceptance of the tracking
 system~\cite{PERF-2007-01}.
 
@@ -148,7 +146,7 @@ covering radii of \SIrange{554}{1082}{\milli\metre} (cf.\
 $|\eta| < 2.0$ compared to the semiconductor-based trackers. The TRT consists of
 about \num{300000} straw-tube chambers, which are gaseous ionisation detectors,
 with a diameter of \SI{4}{\milli\metre} arranged in up to 73 layers in the
-barrel region and 160 planes in the endcaps~\cite{PERF-2007-01}. The straw-tube
+barrel region and 160 planes in the end-caps~\cite{PERF-2007-01}. The straw-tube
 chambers determine the radius at which an ionising particle passed through the
 tube, however, no position information parallel to the straw-tubes is obtained.
 % The straw-tube chambers consist of gas-filled, electrically conductive tubes
@@ -156,16 +154,18 @@ tube, however, no position information parallel to the straw-tubes is obtained.
 % tubes. Charged particles passing through the tubes ionise the gas, the
 % resulting electrons/ions being accelerated towards the anode/cathode.
 The straw-tubes of the TRT are interleaved with polypropylene fibres (foils) in
-the barrel (endcap) region~\cite{PERF-2007-01}. These fibres/foils provide
+the barrel (end-cap) region~\cite{PERF-2007-01}. These fibres/foils provide
 interfaces between different dielectric media at which ultrarelativistic
 particles can emit transition radiation in the form of
 X-rays~\cite{Grupen:2008zz}. At the energies of particles produced at the ATLAS
 experiment, the emission of transition radiation is only relevant for electrons
 and positrons. The X-rays emitted by electrons/positrons at the interfaces are
-absorbed in the xenon-based gas-mixture\footnote{argon?} inside the straw-tubes,
-leading to measurably higher ionisation compared to the ionisation of a charged
-particle passing through the tube. This sensitivity of the TRT to transition
-radiation is used to identifiy electrons and positrons.
+absorbed in the xenon-based gas-mixture\footnote{Selected drift tubes affected
+  by gas leaks are operated using a cheaper, argon-based gas
+  mixture~\cite{IDET-2015-01}.} inside the straw-tubes, leading to measurably
+higher ionisation compared to a charged particle passing through the drift
+tube. This sensitivity of the TRT to transition radiation is used to identifiy
+electrons and positrons.
 % Proportional to the Lorentz factor and thus most relevant for light particles.
 
 \subsection{The Calorimeter System}
@@ -177,7 +177,7 @@ the particles predicted by the SM, only muons and neutrinos can traverse the
 ATLAS calorimeter system without being absorbed. The calorimeter system covers a
 pseudorapidity range of $|\eta| < 4.9$, thus instrumenting almost the full solid
 angle surrounding the IP. This is important to prevent detectible particles from
-avoiding detection, which consequently allows to determine the transverse
+avoiding detection, which consequently allows to determine the sum of transverse
 momentum carried away by indetectible particles such as neutrinos or non- or
 only weakly-interacting particles from BSM theories, the so-called missing
 transverse momentum (\Cref{sec:atlas_met}).
@@ -190,7 +190,7 @@ transverse momentum (\Cref{sec:atlas_met}).
 
   \includegraphics[width=0.65\textwidth]{atlas/atlas_calo}
 
-  \caption{Overview of the ATLAS calorimeter system. Image taken from
+  \caption{Overview of the ATLAS calorimeter system. The image is taken from
     Ref.~\cite{PERF-2007-01}.}%
   \label{fig:atlas_calorimeters}
 \end{figure}
@@ -214,11 +214,12 @@ and photons. The interactions of hadrons with the calorimeter material are
 driven by nuclear interactions which also result in cascades of secondary
 particles. A variety of processes are relevant for the evolution of these
 so-called \emph{hadronic showers}, for example: inelastic scattering of hadrons
-at nuclei, spallation, fission, or neutron capture\todo{citation?}. Moreover,
-electromagnetic showers are an important sub-component of hadronic showers
-which, for example, originate from photons produced in $\pi^0$ decays. The
-length scales of hadronic showers are larger, both laterally and longitudinally,
-than the ones of electromagnetic showers.
+at nuclei, spallation, fission, or neutron
+capture~\cite{Kolanoski:2016gyf}. Moreover, electromagnetic showers are an
+important sub-component of hadronic showers which, for example, originate from
+photons produced in $\pi^0$ decays. The length scales of hadronic showers are
+larger, both laterally and longitudinally, than the ones of electromagnetic
+showers.
 % Moreover, hadronic showers show localised fluctuations distinguishing them from
 % the homogenous electromagnetic showers.
 This is reflected in the design of the ATLAS calorimeter system with the
@@ -237,9 +238,9 @@ to photomultiplier tubes.
 
 The electromagnetic calorimeter of the ATLAS detector (cf.\
 \Cref{fig:atlas_calorimeters}) is divided into a barrel ($|\eta| < 1.475$),
-endcap ($1.375 < |\eta| < 3.2$), and forward ($3.1 < |\eta| < 4.9$)
+end-cap ($1.375 < |\eta| < 3.2$), and forward ($3.1 < |\eta| < 4.9$)
 region~\cite{PERF-2007-01}. The electromagnetic calorimeters in the barrel and
-endcap region consist of lead absorbers with LAr-filled gaps that are
+end-cap region consist of lead absorbers with LAr-filled gaps that are
 instrumented with electrodes to form ionisation chambers. The calorimeter is
 segmented both laterally and longitudinally, with varying granularity, to
 provide information on the location and shape of showers in the calorimeter. The
@@ -253,12 +254,12 @@ longitudinal layer instead.
 \subsubsection{Hadronic Calorimeters}
 
 The hadronic calorimeter (cf.\ \Cref{fig:atlas_calorimeters}) is divided into a
-barrel ($|\eta| < 1.0$), extended barrel ($0.8 < |\eta| < 1.7$), endcap
+barrel ($|\eta| < 1.0$), extended barrel ($0.8 < |\eta| < 1.7$), end-cap
 ($1.5 < |\eta| < 3.2$), and forward ($3.1 < |\eta| < 4.9$)
 region~\cite{PERF-2007-01}.  The barrel and extended barrel calorimeter consists
 of alternating steel plates and plastic scintillator tiles. The scintillators
 are connected via optical fibres to photomultiplier tubes for readout. The
-hadronic endcap calorimeter (HEC) and forward calorimeter consist of LAr-filled
+hadronic end-cap calorimeter (HEC) and forward calorimeter consist of LAr-filled
 ionisation chambers with copper and tungsten absorbers, respectively. The
 hadronic calorimeter is also segmented laterally and longitudinally, although
 with reduced granularity compared to the electromagnetic calorimeter.
@@ -270,34 +271,34 @@ The MS, shown in \Cref{fig:atlas_muon_system}, is the outermost and largest part
 of the ATLAS detector. It is a tracking detector providing independent momentum
 measurements of muons that pass the calorimeters. The active detector elements
 of the MS are based on gaseous ionisation detectors for cost-effective
-instrumentation of a large areas. The MS provides a coverage of $|\eta| < 2.7$
-for precision tracking and $|\eta| < 2.4$ for triggering on muons.
+instrumentation of large areas. The MS provides a coverage of $|\eta| < 2.7$ for
+precision tracking and $|\eta| < 2.4$ for triggering on muons.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.6\textwidth]{atlas/atlas_muon}
 
-  \caption{Overview of the ATLAS muon spectrometer. Image taken from
+  \caption{Overview of the ATLAS muon spectrometer. The image is taken from
     Ref.~\cite{PERF-2007-01}.}%
   \label{fig:atlas_muon_system}
 \end{figure}
 
-The ATLAS detector uses multiple layers monitored drift tube chambers
-\footnote{Deformations of the muon chambers are actively monitored using an
-  optical alignment system built into the frame of the chambers.} (MDTs) for
+The ATLAS detector uses multiple layers monitored drift tube
+chambers\footnote{Deformations of the muon chambers are actively monitored using
+  an optical alignment system built into the frame of the chambers.} (MDTs) for
 precision tracking in $|\eta| < 2.7$. To cope with the large rate of incident
 particles in the forward region, the innermost layer in $2.0 < |\eta| < 2.7$ is
 replaced by cathode strip chambers (CSCs). The MS is complemented with resistive
 plate chambers (RPCs) and thin gap chambers (TGCs) in the barrel
-($|\eta| < 1.05$) and endcap ($1.05 < |\eta| < 2.7$) region, respectively,
+($|\eta| < 1.05$) and end-cap ($1.05 < |\eta| < 2.7$) region, respectively,
 providing the necessary timing information to identify the bunch crossing a muon
 originates from. The MS is arranged, as depicted
 in~\Cref{fig:atlas_muon_system}, in three cylindrical layers surrounding the LHC
-beamline in the barrel region. The endcap region is instrumented by muon
+beamline in the barrel region. The end-cap region is instrumented by muon
 chambers in the form of three wheels perpendicular to the beampipe. A
-\emph{small wheel} is located in front of the endcap toroid, and two \emph{big
-  wheels} are located behind the endcap toroid. Every layer/wheel consists of
+\emph{small wheel} is located in front of the end-cap toroid, and two \emph{big
+  wheels} are located behind the end-cap toroid. Every layer/wheel consists of
 multiple tracking planes.
 
 
@@ -318,10 +319,10 @@ magnitude less frequent than the production of $Z$ and $W$ bosons.
 The task of the ATLAS trigger system~\cite{TRIG-2019-04} is to reduce the rate
 at which events are recorded by performing an event pre-selection already during
 data-taking (\emph{online}). This is achieved by monitoring the ATLAS detector
-for signatures of rare physics processes, such as the presence of charged
-leptons with large transverse momenta. A multitude of different event
+for signatures of rare physics processes, for example indicated by the presence
+of charged leptons with large transverse momenta. A multitude of different event
 selections, usually referred to as \emph{triggers}, are implemented in the ATLAS
-trigger system, targeting signatures of different physics processes. The
+trigger system to target the signatures of different physics processes. The
 implementation of these triggers are heavily constrained due to the limited
 detector read-out and strict latency and bandwidth constraints. Due to the
 increasing instantaneous luminosity during Run~2 of the LHC, the triggers
@@ -329,15 +330,15 @@ employed by the ATLAS experiment had to evolve to meet the bandwidth
 requirements. Therefore, the exact selections of triggers targeting particular
 signatures changed as Run~2 progressed. During Run~2, the ATLAS trigger system
 reduced the rate of selected events to about
-\SI{1.2}{\kilo\hertz}~\cite{TRIG-2019-04} which could be recorded for later
-analysis (\emph{offline}).
+\SI{1.2}{\kilo\hertz}~\cite{TRIG-2019-04} which could be recorded for
+(\emph{offline}) analysis.
 
 The ATLAS trigger system consists of two stages. The first stage, called the
 Level-1 (L1) trigger, implements the event selection in hardware using custom
 electronic circuits. At the L1 trigger, only calorimeter and MS information with
 reduced granularity can be used for selection. The rate of accepted events is
-reduced down to \SI{100}{\kilo\hertz}~\cite{TRIG-2019-04} by the L1 trigger. If
-an event is accepted, all sub-detectors of the ATLAS experiment are read-out and
+reduced to \SI{100}{\kilo\hertz}~\cite{TRIG-2019-04} by the L1 trigger. If an
+event is accepted, all sub-detectors of the ATLAS experiment are read-out and
 the data are sent to the second stage of the trigger system, the so-called
 High-Level Trigger (HLT). The HLT is software-based and runs reconstruction
 algorithms similar to those applied during offline event reconstruction.  Event

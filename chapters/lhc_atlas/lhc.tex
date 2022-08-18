@@ -28,27 +28,30 @@ in time of \SI{25}{\nano\second}~\cite{Evans:2008zzb}.
 To reach proton energies necessary for the injection into the LHC, the
 infrastructure of the CERN accelerator complex is used, which is schematically
 depicted in~\Cref{fig:cern_accelerator_complex}. Protons are first accelerated
-in LINAC 2\footnote{Short for \textbf{lin}ear \textbf{ac}celerator.}, the Proton
-Synchrotron Booster (BOOSTER), the Proton Synchrotron (PS), and finally in the
-Super Proton Synchrotron (SPS) after which the beams are injected into the LHC
-with proton energies of \SI{450}{\GeV}~\cite{Evans:2008zzb}. The protons are
-further accelerated in the LHC until the target energy is reached. Then, the
-beams are brought into collision at four points, the interaction points (IPs),
-along the ring. Four large experiments are situated at these IPs to observe and
-record particle collision events: ATLAS~\cite{PERF-2007-01},
-CMS~\cite{CMS-CMS-00-001}, ALICE~\cite{ALICE:2008ngc}, and
-LHCb~\cite{LHCb:2008vvz}. The ATLAS and CMS experiments are particle detector
-experiments targeting largely overlapping, extensive physics programmes, while
-the ALICE and LHCb follow specialised programmes. The ALICE experiment studies
-the production of the quark-gluon plasma, a state of matter with asymptotically
-free quarks and gluons occurring at temperatures similar to those right after
-the Big Bang, in heavy-ion collisions. The LHCb experiment investigates the
-nature the matter-antimatter asymmetry in the universe by studying CP violation
-in decays of hadrons containing $b$-quarks. Several smaller experiments are
-installed at the LHC to study physics processes at small angles with respect to
-the LHC beamline or exotic particles. These experiments are
-LHCf~\cite{LHCf:2008lfy}, TOTEM~\cite{TOTEM:2008lue}, and
-MoEDAL~\cite{MoEDAL:2009jwa}.\footnote{FASER~\cite{FASER:2019aik} and SND@LHC.}
+in LINAC 2,\footnote{Short for linear accelerator.} the Proton Synchrotron
+Booster (BOOSTER), the Proton Synchrotron (PS), and finally in the Super Proton
+Synchrotron (SPS) after which the beams are injected into the LHC with proton
+energies of \SI{450}{\GeV}~\cite{Evans:2008zzb}. The protons are further
+accelerated in the LHC until the target energy is reached. Then, the beams are
+brought into collision at four points, the interaction points (IPs), along the
+ring. Four large experiments are situated at these IPs to observe and record
+particle collision events: ATLAS~\cite{PERF-2007-01}, CMS~\cite{CMS-CMS-00-001},
+ALICE~\cite{ALICE:2008ngc}, and LHCb~\cite{LHCb:2008vvz}. The ATLAS and CMS
+experiments are particle detector experiments targeting largely overlapping,
+extensive physics programmes, while the ALICE and LHCb adopt more specialised
+programmes. The ALICE experiment studies the production of the quark-gluon
+plasma, a state of matter with asymptotically free quarks and gluons occurring
+at temperatures similar to those right after the Big Bang, in heavy-ion
+collisions. The LHCb experiment investigates the nature the matter-antimatter
+asymmetry in the universe by studying CP violation in decays of hadrons
+containing $b$-quarks. Several smaller experiments are installed at the LHC to
+study physics processes at small angles with respect to the LHC beamline or
+search for exotic particles. These experiments are LHCf~\cite{LHCf:2008lfy},
+TOTEM~\cite{TOTEM:2008lue}, and MoEDAL~\cite{MoEDAL:2009jwa}.\footnote{For the
+  data-taking period starting in 2022, two additional experiments called
+  FASER~\cite{FASER:2019aik} and SND@LHC~\cite{Boyarsky:2021moj} were
+  comissioned.}
+
 
 \begin{figure}[htbp]
   \centering
@@ -71,7 +74,7 @@ the LHC restarted operation with \pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$ in
 \emph{Run~2} which took place from 2015--2018. After another shutdown of LHC and
 experiments, data-taking recommenced in 2022 with \emph{Run~3}, reaching
 unprecedented energy scales of $\sqrt{s} = \SI{13.6}{\TeV}$. At present, Run~3
-is foreseen to last until the end of 2025.
+is foreseen to last until the end of 2025~\cite{lhc_schedule}.
 
 The instantaneous luminosity, $L$, of collisions at a IP is an important
 parameter of a collider experiment. It relates the expected rate of collision
@@ -79,15 +82,16 @@ events from a process with its cross-section, $\sigma$, according to:
 \begin{align*}
   \frac{\mathrm{d}N}{\mathrm{d}t} = L \sigma \,\text{.}
 \end{align*}
-As a result, the expected number of events produced over a time interval is
-given by $N = L_{\text{int}} \, \sigma$, where
-$L_{\text{int}} = \int \mathrm{d}t \, L(t)$ is the integrated luminosity. The
-integrated luminosity delivered to the ATLAS experiment by the LHC during Run~2
-is shown in \Cref{fig:atlas_int_lumi_vs_time}. In this data-taking period, the
-LHC delivered a \pp-collisions with an integrated luminosity of about
-\SI{156}{\per\femto\barn} of which \SI{139}{\per\femto\barn} pass the
-data-quality requirements of the ATLAS experiment~\cite{ATLAS-CONF-2019-021}.
-The peak instantaneous luminosity at the IP of the ATLAS experiment ranged from
+As a result, the expected number of events produced over a time interval,
+assuming constant cross-section, is given by $N = L_{\text{int}} \, \sigma$,
+where $L_{\text{int}} = \int \mathrm{d}t \, L(t)$ is the integrated
+luminosity. The integrated luminosity delivered to the ATLAS experiment by the
+LHC during Run~2 is shown in \Cref{fig:atlas_int_lumi_vs_time}. In this
+data-taking period, the LHC delivered a \pp-collisions with an integrated
+luminosity of about \SI{156}{\per\femto\barn} of which \SI{139}{\per\femto\barn}
+pass the data-quality requirements of the ATLAS
+experiment~\cite{ATLAS-CONF-2019-021}.  The peak instantaneous luminosity at the
+IP of the ATLAS experiment ranged from
 \SI{0.5e-34}{\per\centi\metre\squared\per\second} at the beginning, to
 \SI{1.9e-34}{\per\centi\metre\squared\per\second} at the end of the
 Run~2~\cite{ATLAS-CONF-2019-021}. A quantity related to the instantaneous
@@ -119,15 +123,15 @@ the combined Run~2 \pp-collision dataset.
   \end{subfigure}
 
   \caption{The integrated luminosity as a function of time (a) and the
-    luminosity-weighted mean number of interactions per bunch-crossing (b) of
+    luminosity-weighted mean number of interactions per bunch crossing (b) of
     the LHC in \pp operation mode during Run~2. In Figure (a), the integrated
     luminosity delivered by the LHC (green), recorded by the ATLAS detector
-    (yellow), and the integrated luminosity of the \pp-collision dataset passing
-    the data-quality criteria~\cite{DAPR-2018-01} of the ATLAS collaboration
-    (blue) is shown. The mean number of interactions per bunch-crossing, $\mu$,
-    is calculated from the instantaneous luminosity assuming an inelastic \pp
-    cross-section at $\sqrt{s} = \SI{13}{\TeV}$ of \SI{80}{\milli\barn}. The
-    figures are taken from~\cite{atlas_luminosity_summary_plots}.}%
+    (yellow), and passing the data-quality criteria~\cite{DAPR-2018-01} of the
+    ATLAS collaboration (blue) is shown. In Figure (b), the mean number of
+    interactions per bunch crossing, $\mu$, is calculated from the instantaneous
+    luminosity assuming an inelastic \pp cross-section at
+    $\sqrt{s} = \SI{13}{\TeV}$ of \SI{80}{\milli\barn}. The figures are taken
+    from Ref.~\cite{atlas_luminosity_summary_plots}.}%
   \label{fig:lumi_and_pu}
 \end{figure}
 
