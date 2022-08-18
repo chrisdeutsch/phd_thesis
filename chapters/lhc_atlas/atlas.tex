@@ -304,6 +304,52 @@ multiple tracking planes.
 \subsection{The ATLAS Trigger System}%
 \label{sec:atlas_trigger}
 
+With a peak bunch crossing rate of \SI{40}{\mega\hertz} and an expected number
+of inelastic \pp-collisions in a single bunch crossing of around \num{30} (cf.\
+\Cref{fig:lumi_and_pu}), it is not possible to record every collision event due
+to limitations in the detector read-out and data storage. However, most
+collision events are not of particular interest to the physics programme of the
+ATLAS experiment. For example, events containing a weak vector boson decaying
+into leptons are expected to occur about once every $10^6$ inelastic
+\pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$~\cite{STDM-2015-03}. Other
+processes, such as the production of Higgs bosons, are multiple orders of
+magnitude less frequent than the production of $Z$ and $W$ bosons.
+
+The task of the ATLAS trigger system is to reduce the rate at which events are
+recorded by performing a pre-selection already during data-taking. This is
+achieved by monitoring the ATLAS detector for signatures of rare physics
+processes, such as the presence of charged leptons with large transverse
+momenta.
+
+-> Heavily constrainted due to the limited detector read-out and latency and
+bandwidth constraints on the algorithms running at trigger-level.
+
+During Run~2, the trigger system reduced the rate of recorded events to about
+\SI{1000}{\hertz} which
+
+
+~\cite{TRIG-2019-04}
+
+
+
+
+
+
+
+\begin{itemize}
+
+
+\item Triggers are very much limited by the maximum allowed latency and
+  bandwidth (trigger rate).
+
+\item The ATLAS trigger system is divided into two stages. The first stage is
+  the Level-1 (L1) trigger. -> target \SI{100}{\kilo\hertz}
+
+\item The second stage is the High-Level trigger (HLT) -> target: \SI{200}{\hertz}
+
+\end{itemize}
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../phd_thesis"
