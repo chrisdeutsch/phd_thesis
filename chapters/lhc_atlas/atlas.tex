@@ -53,9 +53,9 @@ most charged and neutral particles, and the \emph{Muon Spectrometer} (MS) used
 to measure the trajectories of muons that can pass the calorimeters. Particles
 in the ID are bent in the transverse plane due to a magnetic
 field\todo{\SI{2}{\tesla}} pointing along the $z$-axis that is produced by a
-superconducting solenoid surrounding the ID.  The MS is surrounded by a
-superconducting toroid magnets that bend the trajectories of muons in or against
-the $z$-direction. The bending of charged particle trajectories in the ID and MS
+superconducting solenoid surrounding the ID.  The MS is contains superconducting
+toroid magnets that bend the trajectories of muons in or against the
+$z$-direction. The bending of charged particle trajectories in the ID and MS
 allows to determine the sign of the electric charge and momentum of
 particles. The following sections summarise the most important parts of the
 ATLAS detector.
@@ -266,33 +266,12 @@ with reduced granularity compared to the electromagnetic calorimeter.
 
 \subsection{The Muon Spectrometer}
 
-The MS, schematically depicted in \Cref{fig:atlas_muon_system}, is the outermost
-and largest part of the ATLAS detector.
-
-
-It is a tracking detector used to
-provide an independent momentum measurement of muons that can pass the
-calorimeters
-
-\begin{itemize}
-\item Outermost and largest
-\item Tracking detector
-\item Independent momentum measurement for muons (can pass calorimeters)
-\item Different techologies: gaseous ionisation detectors which allow to cover
-  large areas while being relatively cheap.
-  \begin{itemize}
-  \item RPC (resistive plate chambers): Very fast -> triggers
-  \item CSC (cathode strip chambers): crossed cathode strips and anode wires
-  \item TGC (thin-gap chambers):
-  \item MDT (monitored drift tubes):
-  \end{itemize}
-\end{itemize}
-
-
-
-
-Principally it is a tracking detector measuring
-
+The MS, shown in \Cref{fig:atlas_muon_system}, is the outermost and largest part
+of the ATLAS detector. It is a tracking detector providing independent momentum
+measurements of muons that pass the calorimeters. The active detector elements
+of the MS are based on gaseous ionisation detectors for cost-effective
+instrumentation of a large areas. The MS provides a coverage of $|\eta| < 2.7$
+for precision tracking and $|\eta| < 2.4$ for triggering on muons.
 
 \begin{figure}[htbp]
   \centering
@@ -304,8 +283,26 @@ Principally it is a tracking detector measuring
   \label{fig:atlas_muon_system}
 \end{figure}
 
+The ATLAS detector uses multiple layers monitored drift tube chambers
+\footnote{Deformations of the muon chambers are actively monitored using an
+  optical alignment system built into the frame of the chambers.} (MDTs) for
+precision tracking in $|\eta| < 2.7$. To cope with the large rate of incident
+particles in the forward region, the innermost layer in $2.0 < |\eta| < 2.7$ is
+replaced by cathode strip chambers (CSCs). The MS is complemented with resistive
+plate chambers (RPCs) and thin gap chambers (TGCs) in the barrel
+($|\eta| < 1.05$) and endcap ($1.05 < |\eta| < 2.7$) region, respectively,
+providing the necessary timing information to identify the bunch crossing a muon
+originates from. The MS is arranged, as depicted
+in~\Cref{fig:atlas_muon_system}, in three cylindrical layers surrounding the LHC
+beamline in the barrel region. The endcap region is instrumented by muon
+chambers in the form of three wheels perpendicular to the beampipe. A
+\emph{small wheel} is located in front of the endcap toroid, and two \emph{big
+  wheels} are located behind the endcap toroid. Every layer/wheel consists of
+multiple tracking planes.
 
-\subsection{The ATLAS Trigger System}
+
+\subsection{The ATLAS Trigger System}%
+\label{sec:atlas_trigger}
 
 %%% Local Variables:
 %%% mode: latex
