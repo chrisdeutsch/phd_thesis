@@ -20,9 +20,9 @@ space-points and drift circles that are compatible with the hypothesis of a
 charged particle in the axial magnetic field of the ID. Least-squares fits are
 performed, using selected space-points and drift circles, to determine the
 parameters characterising the track at a reference point. This reference point
-is the point of closest approach (perigee) to the nominal beamspot
+is typically the point of closest approach (perigee) to the nominal beamspot
 position.\footnote{Once the PV is reconstructed, the perigee with respect to the
-  PV is often used.} Five parameters are sufficient to describe the track at the
+  PV is used.} Five parameters are sufficient to describe the track at the
 perigee. The transverse (longitudinal) distance of the perigee from the
 reference point given by $d_0$ ($z_0$), also referred to as the transverse
 (longitudinal) impact parameter of the track. The azimuthal and polar angle of
@@ -37,10 +37,24 @@ inside-out algorithm starts by reconstructing tracks in the pixel and SCT
 detector only, which are optionally extended to the TRT. The outside-in
 algorithm starts with reconstructing track segments in the TRT which are then
 combined with space-points from the pixel and SCT detectors. The outside-in
-algorithm is meant to recover tracks from secondary charged particles such as
-decay products of $b$-hadrons.
+algorithm is used to recover tracks from secondary particles, such as decay
+products of $b$-hadrons, for which the inside-out algorithm fails to reconstruct
+a track.
+
+
+
+
 
 Vertex reconstruction~\cite{PERF-2015-01}
+
+% Tracks measured in the inner detector are used to determine the $pp$
+% interaction vertices, which are the points in the ATLAS detector where
+% a scatter interaction between protons took place. For a given event
+% recorded by the detector, the vertex with the largest sum of $\pT^2$
+% of associated tracks and at least two associated tracks with
+% $\pT > \SI{500}{\MeV}$ is considered as the primary vertex of the
+% event. Other vertices with at least two tracks are considered as
+% vertices originating from pile-up~\cite{PERF-2015-01}.
 
 
 % Two main tracking algorithms are used by the ATLAS
