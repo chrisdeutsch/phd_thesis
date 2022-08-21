@@ -12,8 +12,8 @@ the ATLAS detector are \emph{space-points} from the pixel and SCT detector, and
 \emph{drift circles} from the TRT. Space-points are measurements of location in
 three-dimensional space obtained by clustering the charge signals of adjacent
 segments in the pixel and SCT detectors. Drift circles are measurements of
-distance from the anode wires of individual straw-tubes in the TRT obtained from
-measured electron drift times in the straw-tubes.
+distance from the anode wires of individual straw-tubes in the TRT derived from
+electron drift times in the straw-tubes.
 
 Track reconstruction employs pattern recognition techniques to select
 space-points and drift circles that are compatible with the hypothesis of a
@@ -21,9 +21,9 @@ charged particle in the axial magnetic field of the ID. Least-squares fits are
 performed, using selected space-points and drift circles, to determine the
 parameters characterising the track at a reference point. This reference point
 is typically the point of closest approach (perigee) to the nominal beamspot
-position.\footnote{Once the PV is reconstructed, the perigee with respect to the
-  PV is used.} Five parameters are sufficient to describe the track at the
-perigee. The transverse (longitudinal) distance of the perigee from the
+position in the transverse plane.\footnote{Once the PV is reconstructed, the
+  perigee with respect to the PV is used.} Five parameters describe the track at
+the perigee. The transverse (longitudinal) distance of the perigee from the
 reference point given by $d_0$ ($z_0$), also referred to as the transverse
 (longitudinal) impact parameter of the track. The azimuthal and polar angle of
 the track at the perigee given by $\phi$ and $\theta$, respectively. Finally,
@@ -34,16 +34,13 @@ At the ATLAS experiment, two primary tracking algorithms are used which are
 referred to as the \emph{inside-out} and \emph{outside-in}
 algorithms~\cite{Cornelissen:2007vba,Salzburger:2015sgq,PERF-2015-08}. The
 inside-out algorithm starts by reconstructing tracks in the pixel and SCT
-detector only, which are optionally extended to the TRT. The outside-in
-algorithm starts with reconstructing track segments in the TRT which are then
-combined with space-points from the pixel and SCT detectors. The outside-in
-algorithm is used to recover tracks from secondary particles, such as decay
-products of $b$-hadrons, for which the inside-out algorithm fails to reconstruct
-a track.
-
-
-
-
+detector only, then extending the track using measurements in the TRT. In
+contrast, the outside-in algorithm starts with the reconstruction of track
+segments in the TRT which are them combined with space-points from the pixel and
+SCT detectors. The outside-in algorithm is used to improve the reconstruction
+efficiency for tracks from secondary particles, such as electrons produced in
+conversions of photons in the detector material, for which the inside-out
+algorithm can fail to reconstruct a track.
 
 Vertex reconstruction~\cite{PERF-2015-01}
 
@@ -71,32 +68,10 @@ Vertex reconstruction~\cite{PERF-2015-01}
 %   see for example Ref.~\cite{PERF-2015-08}, is applied on all track candidates
 %   to remove tracks from combinations of unrelated space-points and track
 %   duplicates.
-
-%   Moreover, a precision fit is performed...  \todo[inline]{TRT extension?}
-
-% \item[Outside-in algorithm] The outside-in algorithm is used to recover
-%   efficiencies for non-promptly produced charged particles (e.g.\ secondary
-%   particles from $b$-hadron decays) which might not have a corresponding track
-%   seed.
-
 % \end{description}
 
 
-% https://cds.cern.ch/record/2018442/files/pdf.pdf
 
-% - formation of localised clusters of charge depositions in the silicon detectors
-% -> three-dimensional space-points
-
-% - drift circles for the TRT
-
-% - inside-out:
-% 1. Seeding from three space points
-% 2. Combinatorial Kalman filter builds first track candidates
-% 3. Resolution of ambiguities and application of quality cuts
-% 4. Track fit:
-
-% - outside-in:
-% -> If no track seed exists (e.g. tracks from secondary vertices) -> start in the TRT and go inwards
 
 
 
