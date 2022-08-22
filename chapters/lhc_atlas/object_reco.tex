@@ -103,29 +103,31 @@ discussed in \Cref{sec:jet_rec,sec:tau_rec}.
 The reconstruction of electrons (and positrons) in the ATLAS detector exploits
 their characteristic signature of a charged particle track pointing towards a
 narrow cluster of energy in the electromagnetic calorimeter. The reconstruction
-of electrons in the region of $|\eta| < 2.47$ is described in the following.
+of electrons in the region of $|\eta| < 2.47$ based on
+Refs.~\cite{ATL-PHYS-PUB-2017-022,EGAM-2018-01} is described in the following.
 
-Electron reconstruction~\cite{EGAM-2018-01} is seeded by topo-clusters with more
-than \SI{50}{\percent} of the topo-cluster energy being located in cells of the
-electromagnetic calorimeter. If the cluster cannot be geometrically matched to a
-track in the ID but it has a longitudinal and lateral shape similar to the
-signature of an electron, a second pass of tracking is performed in a region
-surrounding the cluster. The second pass allows for up to \SI{30}{\percent} of
-energy loss in the detector material due to the emission of
-Bremsstrahlung. After an ambiguity resolution scheme in case multiple tracks
-match the cluster, the cluster is required to be geometrically matched to a
-single track. Topo-clusters with matched tracks are considered as seeds for a
-\emph{supercluster} reconstruction algorithm if the cluster fulfils
-$\ET > \SI{1}{\GeV}$ and the matched track passes reconstruction quality
-criteria. The supercluster reconstruction includes \emph{satellite clusters}, ,
-to account for splitting of the electron topo-clusters and additional clusters
-originating from the emission of Bremsstrahlung.
+Electron reconstruction is seeded by topo-clusters that have more than
+\SI{50}{\percent} of their energy located in cells of the electromagnetic
+calorimeter (EM topo-clusters). In addition, topo-clusters are only considered
+if the transverse energy in the electromagnetic part of the calorimeter,
+$\ET^{\text{EM}}$, exceeds \SI{400}{\MeV}. A first attempt of geometrically
+matching the EM topo-cluster to an ID track is made. If the EM topo-cluster
+cannot be matched to a well-reconstructed track but has a longitudinal and
+lateral shower shape similar to the signature of an electron, then a second pass
+of tracking is performed in a region surrounding the cluster. The second pass
+allows for up to \SI{30}{\percent} of energy loss at each intersection with
+detector material due to the emission of bremsstrahlung. After an ambiguity
+resolution scheme in case multiple tracks match the cluster, the cluster is
+required to be geometrically matched to a single track. EM topo-clusters with
+matched tracks are considered as seeds for a \emph{supercluster} reconstruction
+algorithm if the cluster fulfils $\ET^{\text{EM}} > \SI{1}{\GeV}$ and the
+matched track passes reconstruction quality criteria. \emph{Satellite clusters},
+which are EM topo-clusters in the vicinity of the supercluster seed, are
+included in the supercluster to account for splitting of the electromagnetic
+shower into multiple topo-clusters or the formation of additional clusters from
+electrons emitting bremsstrahlung.
 
-
-
-A supercluster is constructed from this seed cluster with a
-matched track.
-
+Initial calibrations are applied to superclusters
 
 Calibration
 
