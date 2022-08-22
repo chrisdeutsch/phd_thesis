@@ -3,6 +3,8 @@
 
 \todo[inline]{Introductory sentence}
 
+Omissions: Photons, special reconstruction techniques for certain analyses
+
 
 \subsection{Tracking and Vertexing}
 
@@ -97,6 +99,42 @@ discussed in \Cref{sec:jet_rec,sec:tau_rec}.
 
 \subsection{Electrons}%
 \label{sec:ele_rec}
+
+The reconstruction of electrons (and positrons) in the ATLAS detector exploits
+their characteristic signature of a charged particle track pointing towards a
+narrow cluster of energy in the electromagnetic calorimeter. The reconstruction
+of electrons in the region of $|\eta| < 2.47$ is described in the following.
+
+Electron reconstruction~\cite{EGAM-2018-01} is seeded by topo-clusters with more
+than \SI{50}{\percent} of the topo-cluster energy being located in cells of the
+electromagnetic calorimeter. If the cluster cannot be geometrically matched to a
+track in the ID but it has a longitudinal and lateral shape similar to the
+signature of an electron, a second pass of tracking is performed in a region
+surrounding the cluster. The second pass allows for up to \SI{30}{\percent} of
+energy loss in the detector material due to the emission of
+Bremsstrahlung. After an ambiguity resolution scheme in case multiple tracks
+match the cluster, the cluster is required to be geometrically matched to a
+single track. Topo-clusters with matched tracks are considered as seeds for a
+\emph{supercluster} reconstruction algorithm if the cluster fulfils
+$\ET > \SI{1}{\GeV}$ and the matched track passes reconstruction quality
+criteria. The supercluster reconstruction includes \emph{satellite clusters}, ,
+to account for splitting of the electron topo-clusters and additional clusters
+originating from the emission of Bremsstrahlung.
+
+
+
+A supercluster is constructed from this seed cluster with a
+matched track.
+
+
+Calibration
+
+Identification
+
+Isolation
+
+
+
 
 \subsection{Muons}%
 \label{sec:muon_rec}
