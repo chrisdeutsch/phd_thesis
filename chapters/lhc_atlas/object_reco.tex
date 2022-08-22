@@ -70,12 +70,12 @@ hadronic showers. These showers typically extend over multiple cells in the
 calorimeter, thus requiring the combination of several cells to fully
 reconstruct a shower. The ATLAS experiment uses a \emph{topological calorimeter
   cell clustering algorithm}~\cite{PERF-2014-07} to combine the signals of
-locally connected cells passing certain signal thresholds to suppress noise from
-the calorimeter electronics and pile-up. These clusters of calorimeter cells,
-referred to as topo-clusters, are used in the reconstruction electromagnetic and
-hadronic showers in the calorimeters. Due to fluctuations in the shower
-development, multiple topoclusters are typically required to fully reconstruct
-the calorimeter response to a single particle.
+locally connected cells passing certain signal thresholds, thereby suppressing
+noise from the calorimeter electronics and pile-up. These clusters of
+calorimeter cells, referred to as topo-clusters, are used to reconstruction
+electromagnetic and hadronic showers in the calorimeters. Due to fluctuations in
+the shower development, multiple topoclusters are typically required to fully
+reconstruct the calorimeter response to a single particle.
 
 The ATLAS calorimeter has a different response to electromagnetic and hadronic
 showers, i.e.\ the calorimeter is \emph{non-compensating}. By default, the
@@ -89,22 +89,20 @@ electromagnetic and hadronic calibrations that are weighted accordingly. The
 energy scale of topoclusters after the local hadronic calibration is referred to
 as the LC scale.
 
-
-Particle flow....
-
-
-
-Inputs to reconstruction of physics objects
+Topoclusters are used as inputs for the reconstruction of higher-level physics
+objects in the ATLAS detector. For example, topoclusters at EM and LC scale are
+used in the reconstruction of jets and \tauhadvis, respectively, which is
+discussed in \Cref{sec:jet_rec,sec:tau_rec}.
 
 
+\subsection{Electrons}%
+\label{sec:ele_rec}
 
+\subsection{Muons}%
+\label{sec:muon_rec}
 
-
-\subsection{Electrons}
-
-\subsection{Muons}
-
-\subsection{Jets and $b$-tagging}
+\subsection{Jets and $b$-tagging}%
+\label{sec:jet_rec}
 
 \subsection{Hadronic Decays of Tau Leptons}%
 \label{sec:tau_rec}
