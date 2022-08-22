@@ -41,8 +41,6 @@ efficiency for tracks from secondary particles, such as electrons produced in
 conversions of photons in the detector material, for which the inside-out
 algorithm can fail to reconstruct a track.
 
-\todo[inline]{Cuts?}
-
 Reconstructed tracks are used to determine the locations of inelastic scattering
 interactions between protons in the ATLAS detector. These locations are marked
 by multiple charged particle tracks originating from the same point in the
@@ -66,13 +64,51 @@ pile-up~\cite{PERF-2015-01}.
 
 \subsection{Topological Clustering of Energy in Calorimeter Cells}
 
+The segementation of the calorimeters in lateral and longitudinal direction
+allows to reconstruct the three-dimensional shape of electromagnetic and
+hadronic showers. These showers typically extend over multiple cells in the
+calorimeter, thus requiring the combination of several cells to fully
+reconstruct a shower. The ATLAS experiment uses a \emph{topological calorimeter
+  cell clustering algorithm}~\cite{PERF-2014-07} to combine the signals of
+locally connected cells passing certain signal thresholds to suppress noise from
+the calorimeter electronics and pile-up. These clusters of calorimeter cells,
+referred to as topo-clusters, are used in the reconstruction electromagnetic and
+hadronic showers in the calorimeters. Due to fluctuations in the shower
+development, multiple topoclusters are typically required to fully reconstruct
+the calorimeter response to a single particle.
+
+The ATLAS calorimeter has a different response to electromagnetic and hadronic
+showers, i.e.\ the calorimeter is \emph{non-compensating}. By default, the
+energies of topoclusters are calibrated assuming the response originates from an
+electromagnetic shower (EM scale). However, the development of electromagnetic
+and hadronic showers leads to differences in their shower shapes, as previously
+discussed in \Cref{sec:atlas_calorimeters}. This is exploited by the \emph{local
+  hadronic calibration}~\cite{PERF-2014-07} which uses shape information of
+individual topoclusters to determine their likely origin and apply
+electromagnetic and hadronic calibrations that are weighted accordingly. The
+energy scale of topoclusters after the local hadronic calibration is referred to
+as the LC scale.
+
+
+Particle flow....
+
+
+
+Inputs to reconstruction of physics objects
+
+
+
+
+
 \subsection{Electrons}
 
 \subsection{Muons}
 
 \subsection{Jets and $b$-tagging}
 
-\subsection{Hadronic Decays of Tau Leptons}
+\subsection{Hadronic Decays of Tau Leptons}%
+\label{sec:tau_rec}
+
 
 \begin{figure}[htb]
   \begin{subfigure}[b]{0.47\textwidth}
