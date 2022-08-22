@@ -21,13 +21,12 @@ charged particle in the axial magnetic field of the ID. Least-squares fits are
 performed, using selected space-points and drift circles, to determine the
 parameters characterising the track at a reference point. This reference point
 is typically the point of closest approach (perigee) to the nominal beamspot
-position in the transverse plane.\footnote{Once the PV is reconstructed, the
-  perigee with respect to the PV is used.} Five parameters describe the track at
-the perigee. The transverse (longitudinal) distance of the perigee from the
+position in the transverse plane. Five parameters describe the track at the
+perigee. The transverse (longitudinal) distance of the perigee from the
 reference point given by $d_0$ ($z_0$), also referred to as the transverse
 (longitudinal) impact parameter of the track. The azimuthal and polar angle of
 the track at the perigee given by $\phi$ and $\theta$, respectively. Finally,
-the ratio of electric charge and transverse momentum, $q / \pT$, a measure of
+the ratio of electric charge and transverse momentum, $q / \pT$, parameterises
 the curvature of the track.
 
 At the ATLAS experiment, two primary tracking algorithms are used which are
@@ -42,38 +41,27 @@ efficiency for tracks from secondary particles, such as electrons produced in
 conversions of photons in the detector material, for which the inside-out
 algorithm can fail to reconstruct a track.
 
-Vertex reconstruction~\cite{PERF-2015-01}
+\todo[inline]{Cuts?}
 
-% Tracks measured in the inner detector are used to determine the $pp$
-% interaction vertices, which are the points in the ATLAS detector where
-% a scatter interaction between protons took place. For a given event
-% recorded by the detector, the vertex with the largest sum of $\pT^2$
-% of associated tracks and at least two associated tracks with
-% $\pT > \SI{500}{\MeV}$ is considered as the primary vertex of the
-% event. Other vertices with at least two tracks are considered as
-% vertices originating from pile-up~\cite{PERF-2015-01}.
-
-
-% Two main tracking algorithms are used by the ATLAS
-% experiment, \emph{inside-out} and \emph{outside-in}
-% algorithm~\cite{Cornelissen:2007vba,Salzburger:2015sgq,PERF-2015-08}:
-% \begin{description}
-
-% \item[Inside-out algorithm] The inside-out algorithm starts by finding track
-%   seeds in the pixel and SCT detector. Track seeds are short track candidate
-%   segments constructed from three space-points in the ID. These track seeds are
-%   used as a starting point for an iterative track fit using a Kalman
-%   filter~\cite{Fruhwirth:1987fm} extending the track candidates with
-%   space-points of increasing radius (inside-out). An ambiguity resolution step,
-%   see for example Ref.~\cite{PERF-2015-08}, is applied on all track candidates
-%   to remove tracks from combinations of unrelated space-points and track
-%   duplicates.
-% \end{description}
-
-
-
-
-
+Reconstructed tracks are used to determine the locations of inelastic scattering
+interactions between protons in the ATLAS detector. These locations are marked
+by multiple charged particle tracks originating from the same point in the
+detector and are referred to as primary vertices (PVs). Consequently, the vertex
+of the hard scattering interaction of interest and the associated particles can
+be identified, allowing to reject reconstructed objects originating from
+pile-up. The ATLAS primary vertex reconstruction~\cite{PERF-2015-01} finds and
+reconstructs PVs using an iterative fitting procedure. The PV reconstruction
+starts by reconstructing a vertex at the location of highest track density in
+$z_0$ with respect to the beamspot position. An adaptive vertex
+fitter~\cite{Fruhwirth:2007hz} is used to iteratively determine the vertex
+position while weighting reconstructed tracks according to their compatibility
+with the vertex position. After the fit, tracks that are incompatible with the
+vertex position are considered as unassociated and the process is repeated on
+all unassociated tracks. Finally, the PV with the largest sum of $\pT^2$ of
+associated tracks that has at least two tracks with $\pT > \SI{500}{\MeV}$ is
+selected as the PV of the hard scattering interaction of primary interest. Other
+vertices with at least two associated tracks are considered as originating from
+pile-up~\cite{PERF-2015-01}.
 
 
 \subsection{Topological Clustering of Energy in Calorimeter Cells}
