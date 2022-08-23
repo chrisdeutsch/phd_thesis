@@ -109,8 +109,8 @@ transition regions between the barrel and end-caps, $1.37 < |\eta| < 1.52$, is
 described in the following based on
 Refs.~\cite{ATL-PHYS-PUB-2017-022,EGAM-2018-01}.
 
-Electron reconstruction is seeded by topo-clusters that have more than
-\SI{50}{\percent} of their energy located in cells of the electromagnetic
+Electron reconstruction is seeded by topo-clusters (EM scale) that have more
+than \SI{50}{\percent} of their energy located in cells of the electromagnetic
 calorimeter, which are referred to as EM topo-clusters. In addition,
 topo-clusters are only considered if the transverse energy in the
 electromagnetic part of the calorimeter, $\ET^{\text{EM}}$, exceeds
@@ -151,12 +151,83 @@ activity is expected in the vicinity of promptly produced electrons. Therefore,
 isolation variables are defined that quantify the activity in area surrounding
 the electron candidate using reconstructed tracks and topo-clusters in the
 calorimeters~\cite{EGAM-2018-01}. Selections are applied on these isolation
-variables to further reject backgrounds originating from non-prompt electrons
-and jets.
+variables to further reject backgrounds originating from jets and non-prompt
+electrons.
 
 
 \subsection{Muons}%
 \label{sec:muon_rec}
+
+The reconstruction of muons in the ATLAS experiment primarily targets the
+signature of a particle that leaves a track in the ID and MS with only minimal
+energy deposition in the calorimeters due to ionisation. The instrumentation of
+the MS (cf.~\Cref{sec:atlas_ms}) allows for the reconstruction of muons up to
+$|\eta| < 2.7$. The following description of the muon reconstruction is based on
+Ref.~\cite{MUON-2018-03}.
+
+A stand-alone reconstruction of tracks in the MS is attempted by first
+reconstructing straight-line segments in individual layers of the MS. Track
+candidates are constructed from multiple track segments compatible with the
+signature of the trajectory of a muon produced at the interaction point. These
+candidates seed a precision fit to obtain the full muon trajectory and the
+associated parameters in the MS.
+
+Different reconstruction techniques are employed yielding five different types
+of reconstructed muons~\cite{MUON-2018-03}:
+\begin{description}
+
+\item[Combined muons] are reconstructed by matching a track in the MS to a track
+  in the ID. A combined fit of the ID and MS track is performed, accounting for
+  the ionisation energy loss of muons in the calorimeters, to reconstruct the
+  muon trajectory. Outside of the ID tracking acceptance of $|\eta| < 2.5$,
+  combined muons may be reconstructed using short segments of ID tracks instead
+  of fully reconstructed ID tracks.
+
+\item[Inside-out muons] are reconstructed by extending a track in the ID with
+  additional hits in the MS, the additional hits being used for a combined fit
+  of the muon trajectory in the ID and MS. The inside-out strategy aims to
+  recover cases where the stand-alone track reconstruction in the MS fails to
+  find a track.
+
+\item[MS extrapolated muons] are reconstructed by extrapolating a stand-alone MS
+  track to the beamline in cases where no matching ID track is found. This
+  strategy improves the reconstruction efficiency of muons outside of the ID
+  tracking acceptance of $|\eta| < 2.5$.
+
+\item[Segment-tagged muons] are reconstructed by matching an ID track
+  extrapolated to the MS to one or more short track segments in the MS. The muon
+  four-momentum is reconstructed using the parameters of the ID track.
+
+\item[Calorimeter-tagged muons] are reconstructed from ID tracks leaving a
+  calorimeter signature similar to a minimum ionising particle. The ID track
+  defines the four-momentum of calorimeter-tagged muons.
+
+\end{description}
+Several muon identification working points are defined using these muon types
+and additional requirements on the quality of the ID and MS tracks, and their
+compatibility in terms of their reconstructed charges and track momenta. In this
+thesis, the \emph{loose} and \emph{medium} working points are used which are
+summarised hereafter. The medium working point has the most stringent
+requirements on the quality of reconstructed muons.
+
+% \item[Muons] are required to have $\pT > \SI{7}{\GeV}$ and pass the
+%   loose identification working point. Muons passing the loose working
+%   point are a superset of medium muons which are defined according to
+%   Ref.~\cite{MUON-2018-03} as: muons passing either the
+%   \emph{combined} or \emph{inside-out combined} reconstruction in
+%   $|\eta| < 2.5$; muons passing either the \emph{muon-spectrometer
+%     extrapolated} or \emph{silicon-associated forward} reconstruction
+%   in $2.5 < |\eta| < 2.7$. Various requirements are set on the muon
+%   reconstruction quality and matching between ID and MS tracks which
+%   depend on the muon reconstruction type and detector region. The
+%   loose identification working point additionally allows for
+%   \emph{calorimeter-tagged} and \emph{segment-tagged} muons in
+%   $|\eta| < 0.1$, a region insufficiently covered by the MS, to
+%   improve the muon selection efficiency.
+
+Isolation...
+
+
 
 \subsection{Jets and $b$-tagging}%
 \label{sec:jet_rec}
