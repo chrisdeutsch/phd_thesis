@@ -94,8 +94,8 @@ calibration is referred to as the LC scale.
 
 Topo-clusters are used as inputs for the reconstruction of higher-level physics
 objects in the ATLAS detector. For example, topo-clusters at EM and LC scale are
-used in the reconstruction of jets and \tauhadvis, respectively, which is
-discussed in \Cref{sec:jet_rec,sec:tau_rec}.
+used in the reconstruction of electrons and \tauhadvis, respectively, which is
+discussed in \Cref{sec:ele_rec,sec:tau_rec}.
 
 
 \subsection{Electrons}%
@@ -219,6 +219,9 @@ track quality requirements applied to inside-out muons. Muons passing the
 \emph{loose} working point are a superset of muons passing the \emph{medium}
 working point.
 
+\todo[inline]{Cosmic muons and TTVA? Muon momentum corrections measured in
+  data~\cite{PERF-2015-10}.}
+
 Isolation requirements are applied to reconstructed muon candidates to
 distinguish prompt from non-prompt muons. A similar approach to the one adopted
 for electrons, previously discussed in \Cref{sec:ele_rec}, is used.
@@ -227,11 +230,31 @@ for electrons, previously discussed in \Cref{sec:ele_rec}, is used.
 \subsection{Jets and $b$-tagging}%
 \label{sec:jet_rec}
 
-- Particle Flow
+The production of quarks and gluons in hard scattering interactions leads to the
+development of collimated showers of particles which are referred to as
+jets. Jets are produced as a result of the colour confinement in QCD, leading to
+a fragmentation of the initial quark/gluon until the energy of the resulting
+fragments is sufficiently small to bind into colourless hadrons. The primary
+constitutents of jets are charged/neutral hadrons and photons from hadron
+decays. To reconstruct the kinematic properties of the quark/gluon that
+initiated the jet, the four-momenta of all particles from the
+fragmentation/hadronisation process have to be collected. This task is addressed
+by jet algorithms which combine particles, or other objects with well-defined
+four-momenta, into clusters for the reconstruction of jets. In the ATLAS
+experiment, the anti-\kt jet clustering algorithm~\cite{Cacciari:2008gp} is most
+frequently used.
 
-- anti-\kt $R = 0.4$
 
--
+\subsubsection{The Anti-\kt Jet Clustering Algorithm}
+
+\cite{Cacciari:2008gp}
+
+
+\subsubsection{Jet Reconstruction with Particle Flow}
+
+
+\subsubsection{$b$-tagging}
+
 
 
 % \item[Jets] are reconstructed using the anti-\kt
