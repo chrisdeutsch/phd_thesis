@@ -59,7 +59,7 @@ with the vertex position. After the fit, tracks that are incompatible with the
 vertex position are considered as unassociated and the process is repeated on
 all unassociated tracks. Finally, the PV with the largest sum of $\pT^2$ of
 associated tracks that has at least two tracks with $\pT > \SI{500}{\MeV}$ is
-selected as the PV of the hard scattering interaction of primary interest. Other
+selected as the PV of the hard scattering interaction of interest. Other
 vertices with at least two associated tracks are considered as originating from
 pile-up~\cite{PERF-2015-01}.
 
@@ -76,23 +76,24 @@ locally connected cells passing certain signal thresholds, thereby suppressing
 noise from the calorimeter electronics and pile-up. These clusters of
 calorimeter cells, referred to as topo-clusters, are used to reconstruction
 electromagnetic and hadronic showers in the calorimeters. Due to fluctuations in
-the shower development, multiple topoclusters are typically required to fully
-reconstruct the calorimeter response to a single particle.
+the shower development and calorimeter noise, multiple topo-clusters are
+typically required to fully reconstruct the calorimeter response to a single
+particle.
 
 The ATLAS calorimeter has a different response to electromagnetic and hadronic
 showers, i.e.\ the calorimeter is \emph{non-compensating}. By default, the
-energies of topoclusters are calibrated assuming the response originates from an
-electromagnetic shower (EM scale). However, the development of electromagnetic
-and hadronic showers leads to differences in their shower shapes, as previously
-discussed in \Cref{sec:atlas_calorimeters}. This is exploited by the \emph{local
-  hadronic calibration}~\cite{PERF-2014-07} which uses shape information of
-individual topoclusters to determine their likely origin and apply
-electromagnetic and hadronic calibrations that are weighted accordingly. The
-energy scale of topoclusters after the local hadronic calibration is referred to
-as the LC scale.
+energies of topo-clusters are calibrated assuming the response originates from
+an electromagnetic shower (EM scale). However, the development of
+electromagnetic and hadronic showers leads to differences in their shower
+shapes, as previously discussed in \Cref{sec:atlas_calorimeters}. This is
+exploited by the \emph{local hadronic calibration}~\cite{PERF-2014-07} which
+uses shower shape information of individual topo-clusters to determine their
+likely origin and apply electromagnetic and hadronic calibrations that are
+weighted accordingly. The energy scale of topo-clusters after the local hadronic
+calibration is referred to as the LC scale.
 
-Topoclusters are used as inputs for the reconstruction of higher-level physics
-objects in the ATLAS detector. For example, topoclusters at EM and LC scale are
+Topo-clusters are used as inputs for the reconstruction of higher-level physics
+objects in the ATLAS detector. For example, topo-clusters at EM and LC scale are
 used in the reconstruction of jets and \tauhadvis, respectively, which is
 discussed in \Cref{sec:jet_rec,sec:tau_rec}.
 
@@ -101,41 +102,57 @@ discussed in \Cref{sec:jet_rec,sec:tau_rec}.
 \label{sec:ele_rec}
 
 The reconstruction of electrons (and positrons) in the ATLAS detector exploits
-their characteristic signature of a charged particle track pointing towards a
-narrow cluster of energy in the electromagnetic calorimeter. The reconstruction
-of electrons in the region of $|\eta| < 2.47$ based on
-Refs.~\cite{ATL-PHYS-PUB-2017-022,EGAM-2018-01} is described in the following.
+their characteristic signature of a charged particle track in the ID pointing
+towards a narrow cluster of energy in the electromagnetic calorimeter. The
+reconstruction of electrons in the region of $|\eta| < 2.47$ and excluding the
+transition regions between the barrel and end-caps, $1.37 < |\eta| < 1.52$, is
+described in the following based on
+Refs.~\cite{ATL-PHYS-PUB-2017-022,EGAM-2018-01}.
 
 Electron reconstruction is seeded by topo-clusters that have more than
 \SI{50}{\percent} of their energy located in cells of the electromagnetic
-calorimeter (EM topo-clusters). In addition, topo-clusters are only considered
-if the transverse energy in the electromagnetic part of the calorimeter,
-$\ET^{\text{EM}}$, exceeds \SI{400}{\MeV}. A first attempt of geometrically
-matching the EM topo-cluster to an ID track is made. If the EM topo-cluster
-cannot be matched to a well-reconstructed track but has a longitudinal and
-lateral shower shape similar to the signature of an electron, then a second pass
-of tracking is performed in a region surrounding the cluster. The second pass
-allows for up to \SI{30}{\percent} of energy loss at each intersection with
-detector material due to the emission of bremsstrahlung. After an ambiguity
-resolution scheme in case multiple tracks match the cluster, the cluster is
-required to be geometrically matched to a single track. EM topo-clusters with
-matched tracks are considered as seeds for a \emph{supercluster} reconstruction
-algorithm if the cluster fulfils $\ET^{\text{EM}} > \SI{1}{\GeV}$ and the
-matched track passes reconstruction quality criteria. \emph{Satellite clusters},
-which are EM topo-clusters in the vicinity of the supercluster seed, are
-included in the supercluster to account for splitting of the electromagnetic
-shower into multiple topo-clusters or the formation of additional clusters from
-electrons emitting bremsstrahlung. After applying initial calibrations and
-corrections to supercluster, the track matching is repeated using the
-supercluster barycentre instead of the barycentre of the EM topo-cluster seed.
+calorimeter, which are referred to as EM topo-clusters. In addition,
+topo-clusters are only considered if the transverse energy in the
+electromagnetic part of the calorimeter, $\ET^{\text{EM}}$, exceeds
+\SI{400}{\MeV}. A first attempt of geometrically matching the EM topo-cluster to
+an ID track is made. If the EM topo-cluster cannot be matched to a
+well-reconstructed track but has a longitudinal and lateral shower shape similar
+to the signature of an electron, then a second pass of tracking is performed in
+a region surrounding the cluster. The second pass allows for up to
+\SI{30}{\percent} of energy loss at each intersection with detector material due
+to the emission of bremsstrahlung. After an ambiguity resolution scheme in case
+multiple tracks match the cluster, the cluster is required to be geometrically
+matched to a single track. EM topo-clusters with matched tracks are considered
+as seeds for a \emph{supercluster} reconstruction algorithm if the cluster
+fulfils $\ET^{\text{EM}} > \SI{1}{\GeV}$ and the matched track passes
+reconstruction quality criteria. \emph{Satellite clusters}, which are EM
+topo-clusters in the vicinity of the supercluster seed, are included in the
+supercluster to account for electromagnetic showers being reconstructed as
+multiple topo-clusters or the formation of additional clusters from electrons
+emitting bremsstrahlung. After applying initial calibrations and corrections to
+supercluster, the track matching is repeated using the supercluster barycentre
+instead of the barycentre of the EM topo-cluster seed. Finally, multivariate
+calibrations of the electron energy and corrections from comparisons of
+reconstructed electrons in data and simulation are
+applied~\cite{PERF-2017-03,EGAM-2018-01}.
 
-Calibration
-
-Identification
-
-Isolation
-
-
+Electrons that are promptly produced in the hard scattering reaction are often
+of primary interest for physics analyses. Other sources of reconstructed
+electron candidates are quark- or gluon-initiated jets that mimic the signature
+of an electron, or electrons from secondary sources such as hadron decays or
+photon conversions. Dedicated \emph{identification} and \emph{isolation}
+requirements can be applied to select promptly produced electrons and reject
+electron candidates from other sources. Electron identification is performed
+using a likelihood-based classifier exploiting variables sensitive to the shower
+shape, reconstruction quality of the matched track, information about transition
+radiation emission in the TRT, and spatial and momentum matching between the
+track and the supercluster~\cite{EGAM-2018-01}. In addition, little detector
+activity is expected in the vicinity of promptly produced electrons. Therefore,
+isolation variables are defined that quantify the activity in area surrounding
+the electron candidate using reconstructed tracks and topo-clusters in the
+calorimeters~\cite{EGAM-2018-01}. Selections are applied on these isolation
+variables to further reject backgrounds originating from non-prompt electrons
+and jets.
 
 
 \subsection{Muons}%
