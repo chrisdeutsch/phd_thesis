@@ -179,9 +179,9 @@ of reconstructed muons~\cite{MUON-2018-03}:
 \item[Combined muons] are reconstructed by matching a track in the MS to a track
   in the ID. A combined fit of the ID and MS track is performed, accounting for
   the ionisation energy loss of muons in the calorimeters, to reconstruct the
-  muon trajectory. Outside of the ID tracking acceptance of $|\eta| < 2.5$,
-  combined muons may be reconstructed using short segments of ID tracks instead
-  of fully reconstructed ID tracks.
+  muon trajectory. Within $2.5 < |\eta| < 2.7$, combined muons may be
+  reconstructed using short segments of ID tracks instead of fully reconstructed
+  ID tracks.
 
 \item[Inside-out muons] are reconstructed by extending a track in the ID with
   additional hits in the MS, the additional hits being used for a combined fit
@@ -192,7 +192,7 @@ of reconstructed muons~\cite{MUON-2018-03}:
 \item[MS extrapolated muons] are reconstructed by extrapolating a stand-alone MS
   track to the beamline in cases where no matching ID track is found. This
   strategy improves the reconstruction efficiency of muons outside of the ID
-  tracking acceptance of $|\eta| < 2.5$.
+  tracking acceptance, i.e.\ $2.5 < |\eta| < 2.7$.
 
 \item[Segment-tagged muons] are reconstructed by matching an ID track
   extrapolated to the MS to one or more short track segments in the MS. The muon
@@ -204,29 +204,25 @@ of reconstructed muons~\cite{MUON-2018-03}:
 
 \end{description}
 Several muon identification working points are defined using these muon types
-and additional requirements on the quality of the ID and MS tracks, and their
-compatibility in terms of their reconstructed charges and track momenta. In this
-thesis, the \emph{loose} and \emph{medium} working points are used which are
-summarised hereafter. The medium working point has the most stringent
-requirements on the quality of reconstructed muons.
+and additional requirements on the quality of the ID and MS tracks, a
+compatibility of ID and MS tracks in terms of charge and momentum. In this
+thesis, the \emph{loose} and \emph{medium} working points are used and
+summarised hereafter. Of these working points, the medium working point has the
+most stringent requirements on the quality of reconstructed muons. It requires
+muons to be reconstructed as combined or inside-out muons or, alternatively, MS
+extrapolated muons in $2.5 < |\eta| < 2.7$ to improve the reconstruction
+efficiency outside of the acceptance of ID track reconstruction. The
+\emph{loose} working point augments the medium working point by additionally
+allowing segment- and calorimeter-tagged muons in $|\eta| < 0.1$, a region with
+a gap in the MS instrumentation (cf.~\Cref{sec:atlas_ms}), and relaxing the MS
+track quality requirements applied to inside-out muons. Muons passing the
+\emph{loose} working point are a superset of muons passing the \emph{medium}
+working point.
 
-% \item[Muons] are required to have $\pT > \SI{7}{\GeV}$ and pass the
-%   loose identification working point. Muons passing the loose working
-%   point are a superset of medium muons which are defined according to
-%   Ref.~\cite{MUON-2018-03} as: muons passing either the
-%   \emph{combined} or \emph{inside-out combined} reconstruction in
-%   $|\eta| < 2.5$; muons passing either the \emph{muon-spectrometer
-%     extrapolated} or \emph{silicon-associated forward} reconstruction
-%   in $2.5 < |\eta| < 2.7$. Various requirements are set on the muon
-%   reconstruction quality and matching between ID and MS tracks which
-%   depend on the muon reconstruction type and detector region. The
-%   loose identification working point additionally allows for
-%   \emph{calorimeter-tagged} and \emph{segment-tagged} muons in
-%   $|\eta| < 0.1$, a region insufficiently covered by the MS, to
-%   improve the muon selection efficiency.
 
-Isolation...
 
+Isolation requirements are applied to reject fake and non-prompt muons, similar
+to the approach adopted for electrons in \Cref{sec:ele_rec}.
 
 
 \subsection{Jets and $b$-tagging}%
