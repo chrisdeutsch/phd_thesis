@@ -253,8 +253,29 @@ frequently used.
 \subsubsection{Jet Reconstruction with Particle Flow}
 
 
+Briefly mention JVT
+
 \subsubsection{$b$-tagging}
 
+Features of $b$-jets:
+\begin{itemize}
+\item Secondary vertices of heavy flavour decays -> tracks with large
+  longitudinal / transverse impact parameters.
+
+\end{itemize}
+
+\textsc{DL1r} algorithm combines the output of serval low-level taggers:
+\begin{description}
+\item[\textsc{IP2D}/\textsc{IP3D}] Likelihood-ratio classifiers based on the
+  distribution of $d_0$ (\textsc{IP2D}) and the joint distribution of $d_0$ and
+  $z_0$ (\textsc{IP3D}) for tracks in $b$-, $c$-, and \emph{light}-jets.
+
+\item[\textsc{SV1}] Reconstruct a displaced secondary vertex
+
+\item[\textsc{JetFitter}] Reconstruct the b- to c-hadron decay chain
+
+\item[\textsc{RNNIP}] Impact parameter tagger
+\end{description}
 
 
 % \item[Jets] are reconstructed using the anti-\kt
