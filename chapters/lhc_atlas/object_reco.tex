@@ -239,15 +239,55 @@ constitutents of jets are charged/neutral hadrons and photons from hadron
 decays. To reconstruct the kinematic properties of the quark/gluon that
 initiated the jet, the four-momenta of all particles from the
 fragmentation/hadronisation process have to be collected. This task is addressed
-by jet algorithms which combine particles, or other objects with a defined
-four-momentum, into clusters to reconstruct jets. In the ATLAS experiment, the
-anti-\kt jet clustering algorithm~\cite{Cacciari:2008gp} is most frequently
-used.
+by jet algorithms which combine particles, or other entities, into clusters to
+reconstruct jets. In the ATLAS experiment, the anti-\kt jet clustering
+algorithm~\cite{Cacciari:2008gp} is most frequently used.
 
 
 \subsubsection{The Anti-\kt Jet Clustering Algorithm}
 
-\cite{Cacciari:2008gp}
+The anti-\kt jet clustering algorithm operates on collections of entities with
+defined four-momenta (e.g.\ topo-clusters in the calorimeters). Any set of one
+or more entities can be viewed as a pseudo-jet with a four-momentum given by the
+sum of the constituent four-momenta. Pseudo-jets are sequentially combined if
+they are close according to a distance metric. The distance between the
+pseudo-jets $i$ and $j$ is defined by the anti-\kt algorithm
+as~\cite{Cacciari:2008gp}
+\begin{align*}
+  d_{ij} &= \min\bigl( \pT_{i}^{-2}, \pT_{j}^{-2} \bigr)
+           \frac{ \dRy(i, j)^2 }{ R^2 } \,\text{,}
+\end{align*}
+where $\pT$ refers to pseudo-jet transverse momentum,
+$\dRy = \sqrt{\Delta y^2 + \Delta \phi^2}$ is the distance of two pseudo-jets in
+the $y\phi$-plane, with $y$ being the rapidity of the pseudo-jet,\footnote{The
+  rapidity is defined as
+  $y = \frac{1}{2} \ln \left( \frac{E + p_z}{E - p_z} \right)$, where $E$ is
+  then energy of a particle and $p_z$ the momentum component along the
+  beamline. In the ultrarelativistic limit the rapidity is equivalent to the
+  pseudo-rapidity.} and $R$ is the jet-radius parameter of the algorithm. A
+stopping criterion for the clustering algorithm is provided by the distance
+$d_{i\text{B}} = \pT_{i}^{-2}$ by proceeding as follows~\cite{Cacciari:2008gp}:
+\begin{enumerate}
+\item Find the minimum distance $d_{ij}$ for all pairs of pseudo-jets and the
+  minimum distance $d_{i\text{B}}$ for all pseudo-jets.
+
+\item If $\min_{i,j}(d_{ij}) < \min_{i}(d_{i\text{B}})$: Combine the pair of
+  pseudo-jets that corresponds to the minimum to form a new pseudo-jet. \\
+
+\item If $\min_{i,j}(d_{ij}) \geq \min_{i}(d_{i\text{B}})$: The pseudo-jet
+  yielding the minimum $d_{i\text{B}}$ is declared as a jet and removed from the
+  procedure.
+\end{enumerate}
+These steps are repeated until no more pseudo-jets are left.
+
+The anti-\kt algorithm produces conical jets with a typical radius of $\dRy = R$
+provided no high-\pT emissions are located in the vicinity of the jet. The
+algorithm has desirable theoretical properties, such as reconstructed jets being
+insensitive to soft or collinear emissions, thus making it the choice of the
+default jet clustering algorithm in the ATLAS experiment. In this thesis, the
+jet clustering uses the anti-\kt algorithm with a jet-radius parameter of
+$R = 0.4$. The implementation of the \textsc{FastJet} library~\cite{Fastjet} is
+used.
 
 
 \subsubsection{Jet Reconstruction with Particle Flow}
@@ -266,15 +306,16 @@ Features of $b$-jets:
 
 \textsc{DL1r} algorithm combines the output of serval low-level taggers:
 \begin{description}
+
 \item[\textsc{IP2D}/\textsc{IP3D}] Likelihood-ratio classifiers based on the
   distribution of $d_0$ (\textsc{IP2D}) and the joint distribution of $d_0$ and
   $z_0$ (\textsc{IP3D}) for tracks in $b$-, $c$-, and \emph{light}-jets.
 
+\item[\textsc{RNNIP}] Impact parameter tagger
+
 \item[\textsc{SV1}] Reconstruct a displaced secondary vertex
 
 \item[\textsc{JetFitter}] Reconstruct the b- to c-hadron decay chain
-
-\item[\textsc{RNNIP}] Impact parameter tagger
 
 \end{description}
 
