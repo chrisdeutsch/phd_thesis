@@ -293,6 +293,57 @@ used.
 
 \subsubsection{Jet Reconstruction with Particle Flow}
 
+% The inputs to the jet algorithm are provided by a particle flow reconstruction
+% algorithm, described in Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploiting the
+% superior momentum resolution of the tracking system for charged particles with
+% low transverse momenta by replacing the calorimetric measurement of their
+% energy with a tracking-based momentum measurement, necessitating the
+% subtraction of energy deposits by charged particles in the calorimeter. The
+% particle flow algorithm provides an improved jet energy and angular resolution
+% as well as pile-up stability compared to jets constructed based on topological
+% clusters in the calorimeters (at EM scale)
+% only~\cite{PERF-2015-09,JETM-2018-05}.
+
+
+Idea: Use trackers to determine the momenta of charged hadrons in jets due to
+superior momentum resolution of the tracking system at low transverse
+momenta. Neutrals are estimated from the calorimeter. To avoid double-counting
+of the energy of charged hadrons, the contribution of charged hadrons to the
+calorimeter energy has to be subtracted.
+
+Can access charged particles of lower momenta which would not pass the noise
+threshold of the topo-cluster algorithm.
+
+Better angular resolution of the tracker.
+
+Tracks can also be matched to the PV allowing to subtract the contribution of
+pile-up to the energy of reconstructed jets.
+
+\begin{align*}
+  \frac{\sigma(E)}{E} = \frac{a}{\sqrt{E}} \oplus \frac{b}{E} \oplus c
+\end{align*}
+
+\begin{align*}
+  \frac{\sigma(1 / \pT)}{1 / \pT} = a \cdot \pT \oplus b
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\cite{PERF-2015-09,JETM-2018-05}
+
+
 
 Briefly mention JVT
 
@@ -321,20 +372,8 @@ Features of $b$-jets:
 \end{description}
 
 
-% \item[Jets] are reconstructed using the anti-\kt
-%   algorithm~\cite{Cacciari:2008gp} with a radius parameter
-%   of~$R = 0.4$. The inputs to the jet algorithm are provided by a
-%   particle flow reconstruction algorithm, described in
-%   Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploiting the superior
-%   momentum resolution of the tracking system for charged particles
-%   with low transverse momenta by replacing the calorimetric
-%   measurement of their energy with a tracking-based momentum
-%   measurement, necessitating the subtraction of energy deposits by
-%   charged particles in the calorimeter. The particle flow algorithm
-%   provides an improved jet energy and angular resolution as well as
-%   pile-up stability compared to jets constructed based on topological
-%   clusters in the calorimeters (at EM scale)
-%   only~\cite{PERF-2015-09,JETM-2018-05}.
+
+
 
 %   Jets in the central region defined by $|\eta| < 2.5$ are required to
 %   fulfil $\pT > \SI{20}{\GeV}$; jets in the forward regions defined
