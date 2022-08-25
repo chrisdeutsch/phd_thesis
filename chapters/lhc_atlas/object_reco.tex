@@ -346,31 +346,60 @@ associated to the PV of the hard interaction using the reconstructed tracks.
 \subsubsection{$b$-tagging}
 
 The production of $b$-quarks is an important signature of rare physics processes
-in \pp-collisions at the LHC. Similar to other quarks except the top quark, a
-$b$-quark produced in a hard scattering interaction leads to the formation of a
-jet, referred to as a $b$-jet. A distinct feature of $b$-jets is the presence of
-a $b$-hadron with a mass exceeding \SI{5}{\GeV}~\cite{pdg2020}. The $b$-hadrons
-are short-lived and will, after traversing a short but measurable distance in
-the ATLAS detector, decay via the weak interaction. Decays of $b$-hadrons
-predominately produce final states containing a $c$-hadron, which decay
-similarly to $b$-hadrons but on a shorter timescale.
+produced at the LHC. Similar to other quarks except the top quark, a $b$-quark
+produced in a hard interaction leads to the formation of a jet, referred to as a
+$b$-jet. A distinct feature of $b$-jets is the presence of a $b$-hadron with a
+mass exceeding \SI{5}{\GeV}~\cite{pdg2020} in the jet. These $b$-hadrons are
+short-lived and will, after traversing a short but measurable distance in the
+ATLAS detector, decay via the weak interaction. For example, the lightest
+$B$-mesons, the $B^0$ and $B^\pm$, have proper lifetimes of about
+\SI{1.5e-12}{\seconds}~\cite{pdg2020} and thus, assuming a $B$ meson momentum of
+\SI{10}{\GeV}, a mean flight path of approximately \SI{1}{\milli\metre} before
+decaying. Decays of $b$-hadrons frequently produce final states containing
+$c$-hadrons, which also decay after traversing a short distance in the detector.
 
-The task of identifying $b$-jets is called $b$-tagging. The main feature
-exploited by $b$-tagging is the decay of the
+The task of identifying $b$-jets is referred to as $b$-tagging. Features
+resulting from displaced decays of $b$- and $c$-hadrons can be exploited for the
+purpose of $b$-tagging. The $b$-tagging algorithms used as part of this thesis
+use two categories of features:
+\begin{description}
 
-displaced decay of a heavy hadron
+\item[Track impact parameter based:] Due to the relatively large mass of
+  $b$-hadrons, the daughter particles of displaced $b$-hadron decays are
+  produced at an angle with respect to the initial flight direction of the
+  $b$-hadron. Consequently, the tracks of the daughter particles tend to have
+  larger longitudinal and transverse track impact parameters with respect to the
+  PV of the hard interaction compared to promptly produced charged particles.
+
+\item[Secondary vertex based:] The secondary vertices resulting from the
+  daughter particles of $b$- and $c$-hadron decays can be reconstructed using
+  charged particle tracks measured in the ID. Among others, the displacement of
+  the reconstructed secondary vertex from the PV of the hard interaction or the
+  invariant mass of the charged particles associated to the vertex can be used
+  as features in $b$-tagging.
+
+\end{description}
+
+The $b$-tagging algorithms used at the ATLAS experiment are based on the
+combination of multiple low-level $b$-taggers. In this thesis, the \textsc{DL1r}
+$b$-tagging algorithm is used that uses neural networks to combine the outputs
+of five low-level $b$-taggers:
+\begin{description}
+
+\item[IP2D \& IP3D]
+
+\item[RNNIP]
+
+\item[SV1]
+
+\item[JetFitter]
+
+\end{description}
 
 
 
 
 
-
-Features of $b$-jets:
-\begin{itemize}
-\item Secondary vertices of heavy flavour decays -> tracks with large
-  longitudinal / transverse impact parameters.
-
-\end{itemize}
 
 \textsc{DL1r} algorithm combines the output of serval low-level taggers:
 \begin{description}
