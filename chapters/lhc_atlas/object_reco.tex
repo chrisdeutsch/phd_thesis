@@ -369,7 +369,10 @@ use two categories of features:
   produced at an angle with respect to the initial flight direction of the
   $b$-hadron. Consequently, the tracks of the daughter particles tend to have
   larger longitudinal and transverse track impact parameters with respect to the
-  PV of the hard interaction compared to promptly produced charged particles.
+  PV of the hard interaction compared to promptly produced charged
+  particles. The deviations of an impact parameter from zero is quantified in
+  terms of the \emph{impact parameter significance} by dividing the impact
+  parameter by its uncertainty.
 
 \item[Secondary vertex based:] The secondary vertices resulting from the
   daughter particles of $b$- and $c$-hadron decays can be reconstructed using
@@ -386,50 +389,31 @@ $b$-tagging algorithm is used that uses neural networks to combine the outputs
 of five low-level $b$-taggers:
 \begin{description}
 
-\item[IP2D \& IP3D]
+\item[IP2D \& IP3D] The \textsc{IP2D} and \textsc{IP3D}
+  $b$-taggers~\cite{ATL-PHYS-PUB-2017-013} use likelihood-ratio classifiers
+  constructed from the distribution of impact parameter significances in $b$-,
+  $c-$, and \emph{light}-jets.  The \textsc{IP2D} tagger only considers the
+  distribution of the transverse impact parameter significance, while
+  \textsc{IP3D} considers the joint distribution of transverse and longitudinal
+  impact parameter significances. In both cases, the likelihoods of all tracks
+  in the jet are combined by neglecting any dependencies between tracks.
 
-\item[RNNIP]
+\item[RNNIP] The \textsc{RNNIP} algorithm~\cite{ATL-PHYS-PUB-2017-003} extends
+  the idea of \textsc{IP2D} and \textsc{IP3D} by also considering correlations
+  of impact parameter significances between tracks. This is accomplished by
+  using a recurrent neural network taking all tracks of a jet and as
+  inputs. Track properties such as the impact parameter significances are passed
+  to the network with every track.
 
 \item[SV1]
 
 \item[JetFitter]
 
-\end{description}
 
 
+% \item[\textsc{SV1}] Reconstruct a displaced secondary vertex
 
-
-
-
-\textsc{DL1r} algorithm combines the output of serval low-level taggers:
-\begin{description}
-
-\item[\textsc{IP2D}/\textsc{IP3D}] Likelihood-ratio classifiers based on the
-  distribution of $d_0$ (\textsc{IP2D}) and the joint distribution of $d_0$ and
-  $z_0$ (\textsc{IP3D}) for tracks in $b$-, $c$-, and \emph{light}-jets.
-
-\item[\textsc{RNNIP}] Impact parameter tagger
-
-\item[\textsc{SV1}] Reconstruct a displaced secondary vertex
-
-\item[\textsc{JetFitter}] Reconstruct the b- to c-hadron decay chain
-
-\end{description}
-
-
-
-
-
-%   Jets in the central region defined by $|\eta| < 2.5$ are required to
-%   fulfil $\pT > \SI{20}{\GeV}$; jets in the forward regions defined
-%   by $2.5 < |\eta| < 4.5$ are required to fulfil
-%   $\pT > \SI{30}{\GeV}$. Jets originating from pile-up are suppressed
-%   by ensuring that jets pass jet-vertex-tagger (JVT)
-%   requirements. Jets in the central region are required to pass the
-%   tight working point of the JVT~\cite{PERF-2014-03}. Jets in the
-%   forward region, which lack tracking system coverage, are required to
-%   fulfil the loose working point of a dedicated jet-vertex-tagger for
-%   forward jets~\cite{PERF-2016-06-witherratum,ATL-PHYS-PUB-2019-026}.
+% \item[\textsc{JetFitter}] Reconstruct the b- to c-hadron decay chain
 
 %   A multivariate $b$-tagging algorithm is applied to all jets in the
 %   central region to identify jets originating from $b$-quarks,
