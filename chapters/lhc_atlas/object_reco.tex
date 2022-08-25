@@ -231,7 +231,7 @@ for electrons, previously discussed in \Cref{sec:ele_rec}, is used.
 \label{sec:jet_rec}
 
 The production of quarks and gluons in hard scattering interactions leads to the
-development of collimated showers of particles which are referred to as
+development of collimated sprays of particles which are referred to as
 jets. Jets are produced as a result of the colour confinement in QCD, leading to
 a fragmentation of the initial quark/gluon until the energy of the resulting
 fragments is sufficiently small to bind into colourless hadrons. The primary
@@ -247,10 +247,10 @@ algorithm~\cite{Cacciari:2008gp} is most frequently used.
 \subsubsection{The Anti-\kt Jet Clustering Algorithm}
 
 The anti-\kt jet clustering algorithm operates on collections of entities with
-defined four-momenta (e.g.\ topo-clusters in the calorimeters). Any set of one
-or more entities can be viewed as a pseudo-jet with a four-momentum given by the
-sum of the constituent four-momenta. Pseudo-jets are sequentially combined if
-they are close according to a distance metric. The distance between the
+well-defined four-momenta (e.g.\ topo-clusters in the calorimeters). Any set of
+one or more entities can be viewed as a pseudo-jet with a four-momentum given by
+the sum of the constituent four-momenta. Pseudo-jets are sequentially combined
+if they are close according to a distance metric. The distance between the
 pseudo-jets $i$ and $j$ is defined by the anti-\kt algorithm
 as~\cite{Cacciari:2008gp}
 \begin{align*}
@@ -279,7 +279,7 @@ follows~\cite{Cacciari:2008gp}:
   yielding the minimum $d_{i\text{B}}$ is declared as a jet and removed from the
   procedure.
 \end{enumerate}
-These steps are repeated until no more pseudo-jets are left.
+These steps are repeated until no pseudo-jets are left.
 
 The anti-\kt algorithm produces conical jets with a typical radius of $\dRy = R$
 provided no high-\pT emissions are located in the vicinity of the jet. The
@@ -291,7 +291,7 @@ $R = 0.4$. The implementation of the \textsc{FastJet} library~\cite{Fastjet} is
 used.
 
 
-\subsubsection{Jet Reconstruction with Particle Flow}
+\subsubsection{Jet Reconstruction using Particle Flow}
 
 % The inputs to the jet algorithm are provided by a particle flow reconstruction
 % algorithm, described in Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploiting the
@@ -304,48 +304,44 @@ used.
 % clusters in the calorimeters (at EM scale)
 % only~\cite{PERF-2015-09,JETM-2018-05}.
 
+Earlier analyses performed by the ATLAS collaboration used jets reconstructed by
+applying the anti-\kt algorithm to topo-clusters in the calorimeters,
+disregarding any information about charged particles from the tracking
+system. New techniques combining information from tracking and calorimetry are
+adopted by the ATLAS experiment for the reconstruction of jets. These are based
+on a reconstruction algorithm referred to as \emph{particle
+  flow} that attempts to reconstruct individual
+charged and neutral particles from their detector signatures.
 
-Idea: Use trackers to determine the momenta of charged hadrons in jets due to
-superior momentum resolution of the tracking system at low transverse
-momenta. Neutrals are estimated from the calorimeter. To avoid double-counting
-of the energy of charged hadrons, the contribution of charged hadrons to the
-calorimeter energy has to be subtracted.
+Jet reconstruction based on particle flow, described in
+Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploits the superior energy and angular
+resolution of reconstructing low-\pT charged hadrons using their track in the ID
+compared to a calorimetric measurement.\footnote{The charged pion mass is
+  assumed for the relationship between the momentum and energy of charged
+  particles in the tracker.} Neutral particles have to be reconstructed from
+topo-clusters in the calorimeter, making it necessary to subtract the energy
+deposited by charged hadrons to prevent double-counting. This subtraction is
+performed by the particle flow algorithm to reconstruct neutral particles in the
+form of \emph{neutral particle flow objects}. Similarly, charged hadrons
+reconstructed from their track in the ID are referred to as \emph{charged
+  particle flow objects}.  Charged and neutral particle flow objects are used as
+inputs to the anti-\kt jet clustering algorithm to reconstruct jets used for
+physics analyses.
 
-Can access charged particles of lower momenta which would not pass the noise
-threshold of the topo-cluster algorithm.
+Jet reconstruction using particle flow has several advantages compared to a
+calorimeter-based approach, as detailed in Ref.~\cite{PERF-2015-09}. The energy
+resolution for jets at low transverse momenta
+($\pT^{\text{jet}} \lesssim \SI{50}{\GeV}$, see Ref.~\cite{JETM-2018-05}) is
+improved due to the inclusion of tracking information. In part, this is due to
+the ability to account for charged hadrons with transverse momenta down to
+\SI{500}{\MeV} in the reconstruction of jets. In comparison, calorimeter-based
+jet reconstruction has shortcomings in accounting for low-\pT charged hadrons
+due to charged hadrons being bent out of the jet clustering cone, or their
+calorimeter signals being suppressed by the topo-cluster algorithm. Moreover,
+jets reconstructed using particle flow are less susceptible to pile-up since
+charged particle flow objects can be associated to the PV of the hard
+interaction using the reconstructed track of the object.
 
-Better angular resolution of the tracker.
-
-Tracks can also be matched to the PV allowing to subtract the contribution of
-pile-up to the energy of reconstructed jets.
-
-\begin{align*}
-  \frac{\sigma(E)}{E} = \frac{a}{\sqrt{E}} \oplus \frac{b}{E} \oplus c
-\end{align*}
-
-\begin{align*}
-  \frac{\sigma(1 / \pT)}{1 / \pT} = a \cdot \pT \oplus b
-\end{align*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\cite{PERF-2015-09,JETM-2018-05}
-
-
-
-Briefly mention JVT
 
 \subsubsection{$b$-tagging}
 
