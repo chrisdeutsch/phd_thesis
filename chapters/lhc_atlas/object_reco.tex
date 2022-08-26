@@ -370,52 +370,57 @@ use two categories of features:
   $b$-hadron. Consequently, the tracks of the daughter particles tend to have
   larger longitudinal and transverse track impact parameters with respect to the
   PV of the hard interaction compared to promptly produced charged
-  particles. The deviations of an impact parameter from zero is quantified in
+  particles. The deviation of an impact parameter from zero is quantified in
   terms of the \emph{impact parameter significance} by dividing the impact
   parameter by its uncertainty.
 
-\item[Secondary vertex based:] The secondary vertices resulting from the
-  daughter particles of $b$- and $c$-hadron decays can be reconstructed using
-  charged particle tracks measured in the ID. Among others, the displacement of
-  the reconstructed secondary vertex from the PV of the hard interaction or the
+\item[Secondary vertex based:] Secondary vertices resulting from the daughter
+  particles of $b$- and $c$-hadron decays can be reconstructed using charged
+  particle tracks measured in the ID. Among others, the displacement of the
+  reconstructed secondary vertex from the PV of the hard interaction or the
   invariant mass of the charged particles associated to the vertex can be used
   as features in $b$-tagging.
 
 \end{description}
 
-The $b$-tagging algorithms used at the ATLAS experiment are based on the
-combination of multiple low-level $b$-taggers. In this thesis, the \textsc{DL1r}
-$b$-tagging algorithm is used that uses neural networks to combine the outputs
-of five low-level $b$-taggers:
+The $b$-tagging algorithms used at the ATLAS experiment combine discriminants
+provided by multiple low-level algorithms. In this thesis, the \textsc{DL1r}
+$b$-tagging algorithm~\cite{FTAG-2019-07-001} is used that combines the outputs
+of five algorithms using neural networks:
 \begin{description}
 
 \item[IP2D \& IP3D] The \textsc{IP2D} and \textsc{IP3D}
-  $b$-taggers~\cite{ATL-PHYS-PUB-2017-013} use likelihood-ratio classifiers
-  constructed from the distribution of impact parameter significances in $b$-,
-  $c-$, and \emph{light}-jets.  The \textsc{IP2D} tagger only considers the
-  distribution of the transverse impact parameter significance, while
-  \textsc{IP3D} considers the joint distribution of transverse and longitudinal
-  impact parameter significances. In both cases, the likelihoods of all tracks
-  in the jet are combined by neglecting any dependencies between tracks.
+  algorithms~\cite{ATL-PHYS-PUB-2017-013} provide $b$-tagging discriminants
+  based on likelihood-ratio classifiers constructed from the distribution of
+  impact parameter significances in $b$-, $c-$, and \emph{light}-jets. While
+  \textsc{IP2D} only considers the distribution of the transverse impact
+  parameter significance of tracks, \textsc{IP3D} considers the joint
+  distribution of transverse and longitudinal impact parameter significances.
+  In both cases, the likelihoods of all tracks in the jet are combined by
+  neglecting any dependencies of the impact parameters between tracks.
 
 \item[RNNIP] The \textsc{RNNIP} algorithm~\cite{ATL-PHYS-PUB-2017-003} extends
-  the idea of \textsc{IP2D} and \textsc{IP3D} by also considering correlations
-  of impact parameter significances between tracks. This is accomplished by
-  using a recurrent neural network taking all tracks of a jet and as
-  inputs. Track properties such as the impact parameter significances are passed
-  to the network with every track.
+  the idea of \textsc{IP2D} and \textsc{IP3D} by also considering dependencies
+  of impact parameter significances between tracks associated to a jet. This is
+  accomplished with a recurrent neural network taking tracks of the jet as
+  inputs. Track properties, such as the impact parameter signficances, are
+  passed to the network with every track. Based on these inputs, \textsc{RNNIP}
+  estimates the probability of the jet being a $b$-, $c$-, or \emph{light}-jet.
 
-\item[SV1]
-
-\item[JetFitter]
+\item[SV1 \& JetFitter] The \textsc{SV1}~\cite{ATL-PHYS-PUB-2017-011} and
+  \textsc{JetFitter}~\cite{ATL-PHYS-PUB-2018-025} algorithms reconstruct the
+  secondary vertices resulting from the displaced decays of $b$- and
+  $c$-hadrons. While \textsc{SV1} reconstructs a single secondary vertex,
+  \textsc{JetFitter} attempts to reconstruct the cascade of $b$- and $c$-hadron
+  decays with two secondary vertices. The secondary vertices determined by both
+  algorithms are used to define discriminating variables that are provided to
+  the high-level $b$-tagging algorithms. Examples of these variables are the
+  invariant mass of the tracks associated to the vertices or the significance of
+  the distance between the secondary vertex and the PV of the hard interaction.
 
 \end{description}
-
-
-
-% \item[\textsc{SV1}] Reconstruct a displaced secondary vertex
-
-% \item[\textsc{JetFitter}] Reconstruct the b- to c-hadron decay chain
+The \textsc{DL1r} $b$-tagging algorithm combines the discriminants provided by
+these algorithms and basic kinematic properties of jets...
 
 %   A multivariate $b$-tagging algorithm is applied to all jets in the
 %   central region to identify jets originating from $b$-quarks,
