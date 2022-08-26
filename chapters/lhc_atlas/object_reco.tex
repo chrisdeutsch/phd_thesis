@@ -45,7 +45,7 @@ algorithm can fail to reconstruct a track.
 
 Reconstructed tracks are used to determine the locations of inelastic scattering
 interactions between protons in the ATLAS detector. These locations are marked
-by multiple charged particle tracks originating from the same point in the
+by multiple charged-particle tracks originating from the same point in the
 detector and are referred to as primary vertices (PVs). Consequently, the vertex
 of the hard scattering interaction of interest and the associated particles can
 be identified, allowing to reject reconstructed objects originating from
@@ -102,7 +102,7 @@ discussed in \Cref{sec:ele_rec,sec:tau_rec}.
 \label{sec:ele_rec}
 
 The reconstruction of electrons (and positrons) in the ATLAS detector exploits
-their characteristic signature of a charged particle track in the ID pointing
+their characteristic signature of a charged-particle track in the ID pointing
 towards a narrow cluster of energy in the electromagnetic calorimeter. The
 reconstruction of electrons in the region of $|\eta| < 2.47$ and excluding the
 transition regions between the barrel and end-caps, $1.37 < |\eta| < 1.52$, is
@@ -424,12 +424,25 @@ kinematic properties of the jet to yield a high-level $b$-tagging discriminant.
 Selections on this discriminant define several $b$-tagging working points with
 different probabilities of correctly identifying a $b$-jet, referred to as the
 $b$-tagging efficiency.
-
 % \SI{60}{\percent}, \SI{70}{\percent}, \SI{77}{\percent} and \SI{85}{\percent}
 
 
 \subsection{Tau Leptons}%
 \label{sec:tau_rec}
+
+The \taulepton has a mass of \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore
+sufficiently massive to decay into final states with charged leptons or
+hadrons. These decay modes are referred to as leptonic and hadronic decay modes,
+respectively.
+
+\todo[inline]{Come back to this once I know what has to be introduced here.}
+
+The \taulepton decay and branching ratios are illustrated in
+\Cref{fig:tau_branching_ratios}.
+
+% - What is \taulep and \tauhad
+% - How are \taulep reconstructed?
+% - What is the difference between \tauhad and \tauhadvis
 
 
 \begin{figure}[htb]
@@ -463,14 +476,49 @@ $b$-tagging efficiency.
     lepton. Charge-conjugate decay modes are omitted.}
 \end{figure}
 
+At the ATLAS experiment, \taulepton decays are reconstructed based on the
+signature of the visible decay products, neglecting the neutrinos produced in
+the decay. Leptonic \taulepton decays are reconstructed from the signature of
+the charged lepton using the electron and muon reconstruction techniques
+previously introduced in~\Cref{sec:ele_rec,sec:muon_rec}. The remainder of this
+section will instead focus on the reconstruction of the visible decay products
+of hadronic \taulepton decays, referred to as \tauhadvis, for which dedicated
+reconstruction techniques are employed.
 
-\subsubsection{Seed Jet}
+% Should say something about the signature of a tau jet here
+The reconstruction of \tauhadvis is seeded by jets reconstructed using the
+anti-\kt algorithm with $R = 0.4$ applied to topo-clusters at LC scale. Only
+jets with $\pT > \SI{10}{\GeV}$ and within $|\eta| < 2.5$ are considered as
+seeds for \tauhadvis reconstruction.
 
-Seeded with AntiKt 0.4 jets on TopoClusters at the LC scale.
+A PV is associated to the jet seeding the \tauhadvis candidate by considering
+all charged-particle tracks in the ID that are matched to the jet via
+ghost-association~\cite{Cacciari:2008gn}. Additionally, tracks have to be within
+$\dR < 0.2$ of the jet axis and pass $\pT > \SI{1}{\GeV}$ and track quality
+criteria based on the minimum number of hits in the pixel and SCT detector are
+selected.
 
-\subsubsection{Tau Vertex Association}
 
-TJVA
+
+
+
+
+The PV maximising the scalar sum of \pT of tracks associated to the vertex and passing the previously mentioned
+
+
+
+
+is associated to the jet.
+
+
+
+
+For \tauhadvis the TJVA and the regular primary vertex selection agree most of
+the time. For backgrounds with real \tauhadvis different vertices are selected
+on a sub-percent level. For backgrounds with \faketauhadvis the selected PV of
+the hard interaction and the tau vertex disagree in ca. \SI{20}{\percent} of all
+cases.
+
 
 \subsubsection{Track Association}
 
@@ -484,7 +532,12 @@ TJVA
 MVA TES
 
 \subsubsection{Electron Veto}
+
 \subsubsection{Tau Identification}
+
+
+
+
 
 \subsection{Missing Transverse Energy}%
 \label{sec:atlas_met}
