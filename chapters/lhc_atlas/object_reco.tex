@@ -431,9 +431,9 @@ $b$-tagging efficiency.
 \label{sec:tau_rec}
 
 The \taulepton has a mass of \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore
-sufficiently massive to decay into final states with charged leptons or
-hadrons. These decay modes are referred to as leptonic and hadronic decay modes,
-respectively.
+sufficiently massive to decay into final states with charged leptons or hadrons
+as is illustrated in \Cref{fig:tau_feynman}. These decay modes are referred to
+as leptonic and hadronic decay modes, respectively.
 
 \todo[inline]{Come back to this once I know what has to be introduced here.}
 
@@ -452,7 +452,7 @@ The \taulepton decay and branching ratios are illustrated in
     \includegraphics{figs/tauid/tau_decay_feynman}
 
     \vspace*{3em}
-    \subcaption{a}%
+    \subcaption{}%
     \label{fig:tau_feynman}
   \end{subfigure}\hfill
   \begin{subfigure}[b]{0.47\textwidth}
@@ -477,7 +477,7 @@ The \taulepton decay and branching ratios are illustrated in
 \end{figure}
 
 At the ATLAS experiment, \taulepton decays are reconstructed based on the
-signature of the visible decay products, neglecting the neutrinos produced in
+signature of their visible decay products, neglecting the neutrinos produced in
 the decay. Leptonic \taulepton decays are reconstructed from the signature of
 the charged lepton using the electron and muon reconstruction techniques
 previously introduced in~\Cref{sec:ele_rec,sec:muon_rec}. The remainder of this
@@ -500,65 +500,42 @@ assigned to the PV and pass the track selection is associated to the jet. The
 associated PV is referred to as the \emph{tau vertex}.
 
 An initial estimate of the \tauhadvis candidate four-momentum is derived by
-summing the four-momenta of topo-clusters, which are corrected for the position
-of the tau vertex, in a cone of $\Delta R < 0.2$ about the jet axis. The axis
-defined by the tau vertex and the three-momentum of the \tauhadvis candidate is
-referred to as the \tauhadvis axis.
-
-% For \tauhadvis the TJVA and the regular primary vertex selection agree most of
-% the time. For backgrounds with real \tauhadvis different vertices are selected
-% on a sub-percent level. For backgrounds with \faketauhadvis the selected PV of
-% the hard interaction and the tau vertex disagree in ca. \SI{20}{\percent} of all
-% cases.
-
-Charged-particle tracks in the ID are associated to a \tauhadvis candidate if
-they are within $\Delta R < 0.4$ of the \tauhadvis axis. Boosted decision trees
-are used to select tracks that are likely originating from charged pions of the
-hadronic \taulepton decay. These tracks are referred to as \emph{core} tracks,
-since they are typically within the core region of $\Delta R < 0.2$
-
-
-
-
-
-
-
-
-
+summing the four-momenta of topo-clusters in a cone of $\Delta R < 0.2$ about
+the jet axis. Moreover, the four-momentum is transformed into the coordinate
+system with the tau vertex at its origin. The axis defined by the tau vertex and
+the three-momentum of the \tauhadvis candidate is referred to as the \tauhadvis
+axis.
 
 
 developed in Ref.~\cite{duschinger}
 
+Charged-particle tracks in the ID are associated to a \tauhadvis candidate if
+they are within $\Delta R < 0.4$ of the \tauhadvis axis. Boosted decision trees
+are used to identify tracks originating from charged pions produced in
+\taulepton decays. These tracks are referred to as \emph{core} tracks, since
+they are usually found in the \emph{core region} of $\Delta R < 0.2$ about the
+\tauhadvis axis. The number of \emph{core} tracks associated to a \tauhadvis
+candidate is referred to as \Ntracks. Only candidates with $\Ntracks = 1$ and
+$\Ntracks = 3$ are considered and referred to as 1- and 3-prong \tauhadvis
+candidates, respectively. Tracks not classified as \emph{core} are classified as
+\emph{isolation} tracks if they fulfil
+\begin{align*}
+  & \pT > \SI{1}{\GeV} && |d_{0}| < \SI{1}{\milli\metre} && |z_{0} \sin\theta| < \SI{1.5}{\milli\metre} \\
+  & N_{\text{pixel}} \geq 2 && N_{\text{pixel}} + N_{\text{SCT}} \geq 7 \,\text{,}
+\end{align*}
+where the track parameters are given at the perigee with respect to the... The
+number of hits on the reconstructed track, counting dead sensor modules located
+on the trajectory, is given by $N_{\text{pixel}}$ and $N_{\text{SCT}}$,
+respectively.
 
 
-Tracks within $\Delta R < 0.4$ of the \tauhadvis axis
+
 
 
 The largest change in terms of
 \tauhadvis reconstruction between the beginning and the end of Run~2 was in
 terms of the track association.
 
-A track association procedure is applied
-
-
-
-core tracks -> \Ntracks
-
-
-
-Track association:
-
-
-core, conversion, isolation, fake.
-
-
-
-
-
-
-
-\todo[inline]{Make sure to point out the difference between ``tau tracks'' and
-  all other tracks.}
 
 \subsubsection{Energy Calibration}
 
