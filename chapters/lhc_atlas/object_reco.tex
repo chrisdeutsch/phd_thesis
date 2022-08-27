@@ -433,7 +433,7 @@ $b$-tagging efficiency.
 The \taulepton has a mass of \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore
 sufficiently massive to decay into final states with charged leptons or hadrons
 as is illustrated in \Cref{fig:tau_feynman}. These decay modes are referred to
-as leptonic and hadronic decay modes, respectively.
+as leptonic (\taulep) and hadronic (\tauhad) decay modes, respectively.
 
 \todo[inline]{Come back to this once I know what has to be introduced here.}
 
@@ -476,14 +476,14 @@ The \taulepton decay and branching ratios are illustrated in
     lepton. Charge-conjugate decay modes are omitted.}
 \end{figure}
 
-At the ATLAS experiment, \taulepton decays are reconstructed based on the
-signature of their visible decay products, neglecting the neutrinos produced in
-the decay. Leptonic \taulepton decays are reconstructed from the signature of
-the charged lepton using the electron and muon reconstruction techniques
-previously introduced in~\Cref{sec:ele_rec,sec:muon_rec}. The remainder of this
-section will instead focus on the reconstruction of the visible decay products
-of hadronic \taulepton decays, referred to as \tauhadvis, for which dedicated
-reconstruction techniques are employed.
+At the ATLAS experiment, \tauleptons are reconstructed from the signature of
+their visible decay products, neglecting any neutrinos produced in the
+decay. Leptonic \taulepton decays are reconstructed as electrons or muons using
+the reconstruction techniques previously introduced
+in~\Cref{sec:ele_rec,sec:muon_rec}. The remainder of this section will instead
+focus on the reconstruction of the visible decay products of hadronic \taulepton
+decays, referred to as \tauhadvis, for which dedicated reconstruction techniques
+are employed.
 
 % Should say something about the signature of a tau jet here
 The reconstruction of \tauhadvis is seeded by jets reconstructed using the
@@ -491,13 +491,14 @@ anti-\kt algorithm with $R = 0.4$ applied to topo-clusters at LC scale. Only
 jets with $\pT > \SI{10}{\GeV}$ and within $|\eta| < 2.5$ are considered as
 seeds for \tauhadvis reconstruction.
 
-A PV is associated to the jet seeding the \tauhadvis candidate by considering
-all charged-particle tracks in the ID that are matched to the jet via
-ghost-association~\cite{Cacciari:2008gn}. Additionally, tracks have to be within
-$\Delta R < 0.2$ of the jet axis, fulfil $\pT > \SI{1}{\GeV}$ and further track
-quality criteria. The PV maximising the scalar sum of \pT of all tracks that are
-assigned to the PV and pass the track selection is associated to the jet. The
-associated PV is referred to as the \emph{tau vertex}.
+A PV is associated to the jet seeding the \tauhadvis candidate using information
+from the tracking system. The PV association considers ID tracks that are
+matched to the jet via ghost-association~\cite{Cacciari:2008gn}, are within
+$\Delta R < 0.2$ of the jet axis, and fulfil $\pT > \SI{1}{\GeV}$ and basic
+track quality criteria. For every PV, the scalar sum of \pT of tracks assigned
+to the vertex and passing the selection criteria is determined. The PV
+maximising this sum is associated to the jet and referred to as the \emph{tau
+  vertex}.
 
 An initial estimate of the \tauhadvis candidate four-momentum is derived by
 summing the four-momenta of topo-clusters in a cone of $\Delta R < 0.2$ about
@@ -506,19 +507,16 @@ system with the tau vertex at its origin. The axis defined by the tau vertex and
 the three-momentum of the \tauhadvis candidate is referred to as the \tauhadvis
 axis.
 
-
-developed in Ref.~\cite{duschinger}
-
 Charged-particle tracks in the ID are associated to a \tauhadvis candidate if
-they are within $\Delta R < 0.4$ of the \tauhadvis axis. Boosted decision trees
-are used to identify tracks originating from charged pions produced in
-\taulepton decays. These tracks are referred to as \emph{core} tracks, since
-they are usually found in the \emph{core region} of $\Delta R < 0.2$ about the
-\tauhadvis axis. The number of \emph{core} tracks associated to a \tauhadvis
-candidate is referred to as \Ntracks. Only candidates with $\Ntracks = 1$ and
-$\Ntracks = 3$ are considered and referred to as 1- and 3-prong \tauhadvis
-candidates, respectively. Tracks not classified as \emph{core} are classified as
-\emph{isolation} tracks if they fulfil
+they are within $\Delta R < 0.4$ of the \tauhadvis axis. Tracks originating from
+charged hadrons produced in the \taulepton decay are identified by Boosted
+Decision Trees~\cite{duschinger}. These tracks are referred to as \emph{core}
+tracks, since they are usually found in the \emph{core region} of
+$\Delta R < 0.2$ about the \tauhadvis axis. The number of \emph{core} tracks
+associated to a \tauhadvis candidate is referred to as \Ntracks. Only candidates
+with $\Ntracks = 1$ and $\Ntracks = 3$ are considered and referred to as 1- and
+3-prong \tauhadvis candidates, respectively. Tracks not classified as
+\emph{core} are classified as \emph{isolation} tracks if they fulfil
 \begin{align*}
   & \pT > \SI{1}{\GeV} && |d_{0}| < \SI{1.0}{\milli\metre} && |z_{0} \sin\theta| < \SI{1.5}{\milli\metre} \\
   & N_{\text{pixel}} \geq 2 && N_{\text{pixel}} + N_{\text{SCT}} \geq 7 \,\text{,}
@@ -538,6 +536,8 @@ MVA TES
 \subsubsection{Electron Veto}
 
 \subsubsection{Tau Identification}
+
+
 
 
 
