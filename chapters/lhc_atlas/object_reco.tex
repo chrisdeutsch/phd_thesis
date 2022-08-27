@@ -494,28 +494,71 @@ seeds for \tauhadvis reconstruction.
 A PV is associated to the jet seeding the \tauhadvis candidate by considering
 all charged-particle tracks in the ID that are matched to the jet via
 ghost-association~\cite{Cacciari:2008gn}. Additionally, tracks have to be within
-$\dR < 0.2$ of the jet axis and pass $\pT > \SI{1}{\GeV}$ and track quality
-criteria based on the minimum number of hits in the pixel and SCT detector are
-selected. The PV that maximises the scalar sum of track \pT of all tracks
-associated to the vertex and passing the selections is associated to the jet.
+$\Delta R < 0.2$ of the jet axis, fulfil $\pT > \SI{1}{\GeV}$ and further track
+quality criteria. The PV maximising the scalar sum of \pT of all tracks that are
+assigned to the PV and pass the track selection is associated to the jet. The
+associated PV is referred to as the \emph{tau vertex}.
+
+An initial estimate of the \tauhadvis candidate four-momentum is derived by
+summing the four-momenta of topo-clusters, which are corrected for the position
+of the tau vertex, in a cone of $\Delta R < 0.2$ about the jet axis. The axis
+defined by the tau vertex and the three-momentum of the \tauhadvis candidate is
+referred to as the \tauhadvis axis.
+
+% For \tauhadvis the TJVA and the regular primary vertex selection agree most of
+% the time. For backgrounds with real \tauhadvis different vertices are selected
+% on a sub-percent level. For backgrounds with \faketauhadvis the selected PV of
+% the hard interaction and the tau vertex disagree in ca. \SI{20}{\percent} of all
+% cases.
+
+Charged-particle tracks in the ID are associated to a \tauhadvis candidate if
+they are within $\Delta R < 0.4$ of the \tauhadvis axis. Boosted decision trees
+are used to select tracks that are likely originating from charged pions of the
+hadronic \taulepton decay. These tracks are referred to as \emph{core} tracks,
+since they are typically within the core region of $\Delta R < 0.2$
 
 
 
 
 
-For \tauhadvis the TJVA and the regular primary vertex selection agree most of
-the time. For backgrounds with real \tauhadvis different vertices are selected
-on a sub-percent level. For backgrounds with \faketauhadvis the selected PV of
-the hard interaction and the tau vertex disagree in ca. \SI{20}{\percent} of all
-cases.
 
 
-\subsubsection{Track Association}
 
-\cite{duschinger}
 
-\todo[inline]{Make sure to point out the difference between ``tau
-  tracks'' and all other tracks.}
+
+
+developed in Ref.~\cite{duschinger}
+
+
+
+Tracks within $\Delta R < 0.4$ of the \tauhadvis axis
+
+
+The largest change in terms of
+\tauhadvis reconstruction between the beginning and the end of Run~2 was in
+terms of the track association.
+
+A track association procedure is applied
+
+
+
+core tracks -> \Ntracks
+
+
+
+Track association:
+
+
+core, conversion, isolation, fake.
+
+
+
+
+
+
+
+\todo[inline]{Make sure to point out the difference between ``tau tracks'' and
+  all other tracks.}
 
 \subsubsection{Energy Calibration}
 
