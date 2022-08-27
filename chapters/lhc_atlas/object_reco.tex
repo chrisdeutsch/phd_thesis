@@ -531,7 +531,23 @@ variables sensitive to the charged-particle activity in the vicinity of the
 
 \subsubsection{Energy Calibration}
 
-MVA TES
+
+Two different calibrations derived from simulation:
+
+- LC scale: Parameterised corrections for pile-up and detector response derived
+separately for 1- and 3-prong \tauhadvis. Purely calorimeter-based energy scale.
+
+- MVA-TES: Tau particle flow~\cite{PERF-2014-06} combined with additional
+information from tracking and calorimetry in Boosted Regression Trees to
+calibrate the \tauhadvis energy scale.
+
+
+The LC scale provides a better resolution at large \pT scales. Therefore, the
+calibration smoothly transitions from MVA-TES to LC calo-only in the region from
+200 to 300 GeV
+
+
+
 
 \subsubsection{Electron Veto}
 
