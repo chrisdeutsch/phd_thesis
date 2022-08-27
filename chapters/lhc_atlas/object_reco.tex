@@ -520,21 +520,15 @@ $\Ntracks = 3$ are considered and referred to as 1- and 3-prong \tauhadvis
 candidates, respectively. Tracks not classified as \emph{core} are classified as
 \emph{isolation} tracks if they fulfil
 \begin{align*}
-  & \pT > \SI{1}{\GeV} && |d_{0}| < \SI{1}{\milli\metre} && |z_{0} \sin\theta| < \SI{1.5}{\milli\metre} \\
+  & \pT > \SI{1}{\GeV} && |d_{0}| < \SI{1.0}{\milli\metre} && |z_{0} \sin\theta| < \SI{1.5}{\milli\metre} \\
   & N_{\text{pixel}} \geq 2 && N_{\text{pixel}} + N_{\text{SCT}} \geq 7 \,\text{,}
 \end{align*}
-where the track parameters are given at the perigee with respect to the... The
-number of hits on the reconstructed track, counting dead sensor modules located
-on the trajectory, is given by $N_{\text{pixel}}$ and $N_{\text{SCT}}$,
-respectively.
-
-
-
-
-
-The largest change in terms of
-\tauhadvis reconstruction between the beginning and the end of Run~2 was in
-terms of the track association.
+where the track parameters are given at the perigee with respect to the tau
+vertex. The number of hits on the reconstructed track, counting defective
+sensors located on the trajectory as hits, is given by $N_{\text{pixel}}$ and
+$N_{\text{SCT}}$, respectively. \emph{Isolation} tracks are used to define
+variables sensitive to the charged-particle activity in the vicinity of the
+\tauhadvis candidate.
 
 
 \subsubsection{Energy Calibration}
