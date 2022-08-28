@@ -480,10 +480,13 @@ At the ATLAS experiment, \tauleptons are reconstructed from the signature of
 their visible decay products, neglecting any neutrinos produced in the
 decay. Leptonic \taulepton decays are reconstructed as electrons or muons using
 the reconstruction techniques previously introduced
-in~\Cref{sec:ele_rec,sec:muon_rec}. The remainder of this section will instead
-focus on the reconstruction of the visible decay products of hadronic \taulepton
-decays, referred to as \tauhadvis, for which dedicated reconstruction techniques
-are employed.
+in~\Cref{sec:ele_rec,sec:muon_rec}. The remainder of this section focuses on the
+reconstruction of the visible decay products of hadronic \taulepton decays,
+referred to as \tauhadvis, for which dedicated reconstruction techniques are
+employed. The reconstruction of \tauhadvis at the beginning of Run~2 is
+described in Ref.~\cite{ATLAS-CONF-2017-029}. Several improvements have been
+made since, for example the introduction of a multivariate track selection
+method~\cite{duschinger}, which are included in the following description.
 
 % Should say something about the signature of a tau jet here
 The reconstruction of \tauhadvis is seeded by jets reconstructed using the
@@ -491,72 +494,77 @@ anti-\kt algorithm with $R = 0.4$ applied to topo-clusters at LC scale. Only
 jets with $\pT > \SI{10}{\GeV}$ and within $|\eta| < 2.5$ are considered as
 seeds for \tauhadvis reconstruction.
 
-A PV is associated to the jet seeding the \tauhadvis candidate using information
-from the tracking system. The PV association considers ID tracks that are
-matched to the jet via ghost-association~\cite{Cacciari:2008gn}, are within
+A PV is associated to the \tauhadvis candidate using information from the
+tracking system. The PV association considers ID tracks that are matched to the
+seed jet via ghost-association~\cite{Cacciari:2008gn}, are within
 $\Delta R < 0.2$ of the jet axis, and fulfil $\pT > \SI{1}{\GeV}$ and basic
-track quality criteria. For every PV, the scalar sum of \pT of tracks assigned
-to the vertex and passing the selection criteria is determined. The PV
-maximising this sum is associated to the jet and referred to as the \emph{tau
-  vertex}.
+track quality criteria. For every PV, the scalar sum of \pT of tracks that are
+assigned to the vertex and pass the selection criteria is determined. The PV
+maximising this sum is associated to the \tauhadvis candidate and referred to as
+the \emph{tau vertex}.
 
 An initial estimate of the \tauhadvis candidate four-momentum is derived by
-summing the four-momenta of topo-clusters in a cone of $\Delta R < 0.2$ about
-the jet axis. Moreover, the four-momentum is transformed into the coordinate
-system with the tau vertex at its origin. The axis defined by the tau vertex and
-the three-momentum of the \tauhadvis candidate is referred to as the \tauhadvis
-axis.
+summing the four-momenta of topo-clusters (at LC scale) in a cone of
+$\Delta R < 0.2$ about the jet axis. Moreover, the four-momentum is transformed
+into the coordinate system with the tau vertex at its origin. The axis defined
+by the tau vertex and the three-momentum of the \tauhadvis candidate is referred
+to as the \tauhadvis axis.
 
-Charged-particle tracks in the ID are associated to a \tauhadvis candidate if
-they are within $\Delta R < 0.4$ of the \tauhadvis axis. Tracks originating from
-charged hadrons produced in the \taulepton decay are identified by Boosted
-Decision Trees~\cite{duschinger}. These tracks are referred to as \emph{core}
-tracks, since they are usually found in the \emph{core region} of
-$\Delta R < 0.2$ about the \tauhadvis axis. The number of \emph{core} tracks
-associated to a \tauhadvis candidate is referred to as \Ntracks. Only candidates
-with $\Ntracks = 1$ and $\Ntracks = 3$ are considered and referred to as 1- and
-3-prong \tauhadvis candidates, respectively. Tracks not classified as
-\emph{core} are classified as \emph{isolation} tracks if they fulfil
+Tracks in the ID are associated to a \tauhadvis candidate if they are within
+$\Delta R < 0.4$ of the \tauhadvis axis. Tracks originating from charged hadrons
+produced in the \taulepton decay are identified by Boosted Decision
+Trees~\cite{duschinger}. These tracks are referred to as \emph{core} tracks,
+since they are usually found in the \emph{core region} of $\Delta R < 0.2$ about
+the \tauhadvis axis. The number of \emph{core} tracks associated to a \tauhadvis
+candidate is referred to as \Ntracks. Only candidates with $\Ntracks = 1$ and
+$\Ntracks = 3$ are considered and referred to as 1- and 3-prong \tauhadvis
+candidates, respectively.\todo{Add a plot showing the improvements?} Tracks not
+classified as \emph{core} are classified as \emph{isolation} tracks if they
+fulfil
 \begin{align*}
   & \pT > \SI{1}{\GeV} && |d_{0}| < \SI{1.0}{\milli\metre} && |z_{0} \sin\theta| < \SI{1.5}{\milli\metre} \\
   & N_{\text{pixel}} \geq 2 && N_{\text{pixel}} + N_{\text{SCT}} \geq 7 \,\text{,}
 \end{align*}
 where the track parameters are given at the perigee with respect to the tau
-vertex. The number of hits on the reconstructed track, counting defective
-sensors located on the trajectory as hits, is given by $N_{\text{pixel}}$ and
-$N_{\text{SCT}}$, respectively. \emph{Isolation} tracks are used to define
-variables sensitive to the charged-particle activity in the vicinity of the
-\tauhadvis candidate.
+vertex. The number of hits on the reconstructed track in the pixel and SCT
+detector layers, counting defective sensors located on the trajectory as hits,
+is given by $N_{\text{pixel}}$ and $N_{\text{SCT}}$,
+respectively. \emph{Isolation} tracks are used to define variables sensitive to
+the charged-particle activity in the vicinity of the \tauhadvis candidate.
+
+Calibrations of the initial estimate of the \tauhadvis candidate four-momentum
+to the \tauhadvis energy scale (TES) are derived using simulated events
+containing hadronic \taulepton decays. Two calibration methods are used:
+\begin{description}
+
+\item[Calorimeter-based TES] First, the expected energy contribution of pile-up
+  to the \tauhadvis is subtracted. The pile-up subtraction is parameterised as a
+  linear function of the number of reconstructed PVs in the event and in bins of
+  \tauhadvis $|\eta|$ and \Ntracks. Afterwards, the detector response is
+  calibrated as a function of the energy of the \tauhadvis after pile-up
+  subtraction and in bins of \tauhadvis $|\eta|$ and \Ntracks.
+
+\item[MVA-based TES] In the region from \SIrange{200}{300}{\GeV} the MVA-based
+  TES smoothly transitions into the calorimeter-based TES.
+
+\end{description}
+
+% Two different calibrations derived from simulation:
+
+% - LC scale: Parameterised corrections for pile-up and detector response derived
+% separately for 1- and 3-prong \tauhadvis. Purely calorimeter-based energy scale.
+
+% - MVA-TES: Tau particle flow~\cite{PERF-2014-06} combined with additional
+% information from tracking and calorimetry in Boosted Regression Trees to
+% calibrate the \tauhadvis energy scale.
 
 
-\subsubsection{Energy Calibration}
-
-
-Two different calibrations derived from simulation:
-
-- LC scale: Parameterised corrections for pile-up and detector response derived
-separately for 1- and 3-prong \tauhadvis. Purely calorimeter-based energy scale.
-
-- MVA-TES: Tau particle flow~\cite{PERF-2014-06} combined with additional
-information from tracking and calorimetry in Boosted Regression Trees to
-calibrate the \tauhadvis energy scale.
-
-
-The LC scale provides a better resolution at large \pT scales. Therefore, the
-calibration smoothly transitions from MVA-TES to LC calo-only in the region from
-200 to 300 GeV
-
-
-
+% The LC scale provides a better resolution at large \pT scales. Therefore, the
+% calibration smoothly transitions from MVA-TES to LC calo-only in the region from
+% 200 to 300 GeV
 
 \subsubsection{Electron Veto}
-
 \subsubsection{Tau Identification}
-
-
-
-
-
 
 
 \subsection{Missing Transverse Energy}%
