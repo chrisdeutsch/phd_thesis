@@ -1,6 +1,22 @@
 \section{Reconstruction of Collision Events in the ATLAS Detector}%
 \label{sec:object_reco_at_atlas}
 
+Particles produced in \pp-collision events are reconstructed using their signals
+in the various sub-systems of the ATLAS detector. At first, low-level objects
+such as charged-particle tracks, primary vertices, and clusters of energy in the
+calorimeters are reconstructed. These objects are used to reconstruct and
+identify higher-level objects corresponding to the signatures of particles such
+as electrons, muons, \tauleptons, or quarks/gluons in the form of jets. These
+objects, often referred to as \emph{physics objects}, provide estimates of the
+four-momentum and other properties of the underlying particle.
+
+The same reconstruction techniques are used for simulated events and data
+recorded with the detector. Additional calibrations are applied to ensure that
+the
+
+This section provides a summary of the object reconstruction relevant for the
+remainder of this thesis.
+
 % The reconstruction and selection of physics objects, i.e.\ objects representing
 % the signature of particles produced in the $pp$-collision, is described in the
 % following. The most relevant objects in this search are electrons, muons,
@@ -13,33 +29,6 @@
 % measurements of efficiencies, energy / momentum scales and
 % resolutions. Uncertainties on these measurements are propagated to the final
 % results by performing variations of these properties in simulation.
-
-The large solid angle coverage and detector subsystems of the ATLAS detector
-allows to reconstruct most objects produced in the hard interaction, allowing
-for an almost full interpretation of the event. Particles are reconstructed from
-their signatures in the detector
-
-
-
-Electrons, muons, \tauleptons, jets are reconstructed from their signatures in
-the detector.
-
-- Reconstruction of physics objects based on their signals in the detector
-
-- Same reconstruction techniques are applied to simulated events and data
-recorded with the detector
-
-- First, low-level objects such as tracks, vertices and topo-clusters.
-
-- Second, high-level physics objects reconstructed from the lower-level ones.
-
-- Finally \pTmiss
-
-
-
-A description of photon reconstruction or specialised reconstruction techniques
-is omitted. Details on the object selection used for the studies presented in
-\Cref{sec:tauid,sec:dihiggs} are given in the respective chapter.
 
 
 \subsection{Tracking and Vertexing}
