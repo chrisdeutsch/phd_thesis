@@ -331,7 +331,7 @@ physics analyses.
 Jet reconstruction using particle flow has several advantages compared to a
 calorimeter-based approach, as detailed in Ref.~\cite{PERF-2015-09}. The energy
 resolution for jets at low transverse momenta
-($\pT^{\text{jet}} \lesssim \SI{50}{\GeV}$, see for example
+($\pT^{\text{jet}} \lessapprox \SI{50}{\GeV}$, see for example
 Ref.~\cite{JETM-2018-05}) is improved due to the inclusion of tracking
 information. In part, this is due to the ability to account for charged hadrons
 with transverse momenta down to \SI{500}{\MeV} in the reconstruction of jets. In
@@ -555,29 +555,17 @@ decays. Two different calibation methods are used:
   charged and neutral hadrons produced in the \taulepton decay, as inputs. Tau
   Particle Flow provides an alternative method to reconstruct the \tauhadvis
   four-momentum with improved angular resolution, and improved energy resolution
-  for \tauhadvis with transverse energies below
+  for \tauhadvis with transverse energies below approximately
   \SI{100}{\GeV}~\cite{PERF-2014-06}. The BRT also includes variables sensitive
   to the pile-up conditions, the shapes of showers in the calorimeter, and the
-  \taulepton decay mode. In addition, \pTLC is included as an input since the
-  calorimeter-based estimate of \tauhadvis \pT is superior to the estimate from
-  Tau Particle Flow for \tauhadvis at high-\pT.
+  reconstructed \taulepton decay mode. In addition, \pTLC is included as an
+  input since the calorimeter-based estimate of \tauhadvis \pT is superior to
+  the estimate from Tau Particle Flow for high-\pT \tauhadvis.
 
 \end{description}
-
-% Two different calibrations derived from simulation:
-
-% - LC scale: Parameterised corrections for pile-up and detector response derived
-% separately for 1- and 3-prong \tauhadvis. Purely calorimeter-based energy scale.
-
-% - MVA-TES: Tau particle flow~\cite{PERF-2014-06} combined with additional
-% information from tracking and calorimetry in Boosted Regression Trees to
-% calibrate the \tauhadvis energy scale.
-
-
-% The LC scale provides a better resolution at large \pT scales. Therefore, the
-% calibration smoothly transitions from MVA-TES to LC calo-only in the region from
-% 200 to 300 GeV
-
+Unless otherwise noted, the BRT-based calibration is used for the remainder of
+this thesis. After calibration, the relative \tauhadvis \pT resolution ranges
+from \SIrange{5}{7}{\percent}~\cite{ATLAS-CONF-2017-029}.
 
 Other objects are frequently reconstructed as \tauhadvis candidates since
 \tauhadvis reconstruction provides limited rejection. The most common sources of
