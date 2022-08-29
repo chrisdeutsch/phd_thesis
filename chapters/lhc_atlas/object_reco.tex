@@ -559,27 +559,27 @@ decays. Two different calibation methods are used:
   \SI{100}{\GeV}~\cite{PERF-2014-06}. The BRT also includes variables sensitive
   to the pile-up conditions, the shapes of showers in the calorimeter, and the
   reconstructed \taulepton decay mode. In addition, \pTLC is included as an
-  input since the calorimeter-based estimate of \tauhadvis \pT is superior to
-  the estimate from Tau Particle Flow for high-\pT \tauhadvis.
+  input since the calorimeter-based estimate of \tauhadvis \pT is superior for
+  high-\pT \tauhadvis.
 
 \end{description}
 Unless otherwise noted, the BRT-based calibration is used for the remainder of
 this thesis. After calibration, the relative \tauhadvis \pT resolution ranges
 from \SIrange{5}{7}{\percent}~\cite{ATLAS-CONF-2017-029}.
 
-Other objects are frequently reconstructed as \tauhadvis candidates since
-\tauhadvis reconstruction provides limited rejection. The most common sources of
-\tauhadvis candidates not originating from hadronic decays of \tauleptons are
-quark- and gluon-initiated jets and electrons. The task of rejecting these
-candidates, referred to as \faketauhadvis, is called \tauid. \Cref{sec:tauid}
-discusses \tauid in detail with a focus on rejecting \tauhadvis candidates
-originating from quark- or gluon-initiated jets.
-
-\subsubsection{Electron Veto}
+The \tauhadvis reconstruction techniques presented thus far have limited ability
+to reject \tauhadvis candidates originating from sources other than hadronic
+\taulepton decays. The primary source being quark- or gluon-initiated jets and
+electrons that are mis-reconstructed as \tauhadvis candidates. A separate step,
+referred to as \tauid, is performed to reject \tauhadvis candidates from these
+sources. A detailed description of \tauid is given in \Cref{sec:tauid}.
 
 
 \subsection{Missing Transverse Energy}%
 \label{sec:atlas_met}
+
+
+
 
 
 %%% Local Variables:
