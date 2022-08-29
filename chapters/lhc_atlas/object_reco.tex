@@ -532,22 +532,35 @@ is given by $N_{\text{pixel}}$ and $N_{\text{SCT}}$,
 respectively. \emph{Isolation} tracks are used to define variables sensitive to
 the charged-particle activity in the vicinity of the \tauhadvis candidate.
 
-Calibrations of the initial estimate of the \tauhadvis candidate four-momentum
-to the \tauhadvis energy scale (TES) are derived using simulated events
-containing hadronic \taulepton decays. Two calibration methods are used:
+Calibrations of the \tauhadvis candidate four-momentum to the \tauhadvis energy
+scale (TES) are derived using simulated events containing hadronic \taulepton
+decays. Two different calibation methods are used:
 \begin{description}
 
-\item[Calorimeter-based TES] First, the expected energy contribution of pile-up
-  to the \tauhadvis is subtracted. The pile-up subtraction is parameterised as a
-  linear function of the number of reconstructed PVs in the event and in bins of
-  \tauhadvis $|\eta|$ and \Ntracks. Afterwards, the detector response is
-  calibrated as a function of the energy of the \tauhadvis after pile-up
-  subtraction and in bins of \tauhadvis $|\eta|$ and \Ntracks.
+\item[Calorimeter-based TES] The calorimeter-based TES is derived from the
+  initial estimate of the \tauhadvis four-momentum from topo-clusters (LC scale)
+  in the core region of the jet seeding the \tauhadvis. First, the expected
+  energy contribution of pile-up to the \tauhadvis is subtracted. This
+  subtraction is parameterised as a linear function of the number of
+  reconstructed PVs in the event and in bins of \tauhadvis $|\eta|$ and
+  \Ntracks. Afterwards, the detector response calibration is performed as a
+  function of the \tauhadvis energy after pile-up subtraction and in bins of
+  \tauhadvis $|\eta|$ and \Ntracks. The \tauhadvis transverse momentum after
+  this calibration step is denoted by \pTLC.
 
-\item[MVA-based TES]
-
-  % In the region from \SIrange{200}{300}{\GeV} the MVA-based TES smoothly
-  % transitions into the calorimeter-based TES. Not true???
+\item[BRT-based TES] The BRT-based TES is derived from \tauhadvis energy
+  calibrations performed using Boosted Regression Trees (BRT). This calibration
+  uses information from \emph{Tau Particle Flow}
+  reconstruction~\cite{PERF-2014-06}, which attempts to reconstruct individual
+  charged and neutral hadrons produced in the \taulepton decay, as inputs. Tau
+  Particle Flow provides an alternative method to reconstruct the \tauhadvis
+  four-momentum with improved angular resolution, and improved energy resolution
+  for \tauhadvis with transverse energies below
+  \SI{100}{\GeV}~\cite{PERF-2014-06}. The BRT also includes variables sensitive
+  to the pile-up conditions, the shapes of showers in the calorimeter, and the
+  \taulepton decay mode. In addition, \pTLC is included as an input since the
+  calorimeter-based estimate of \tauhadvis \pT is superior to the estimate from
+  Tau Particle Flow for \tauhadvis at high-\pT.
 
 \end{description}
 
@@ -565,8 +578,16 @@ containing hadronic \taulepton decays. Two calibration methods are used:
 % calibration smoothly transitions from MVA-TES to LC calo-only in the region from
 % 200 to 300 GeV
 
+
+Other objects are frequently reconstructed as \tauhadvis candidates since
+\tauhadvis reconstruction provides limited rejection. The most common sources of
+\tauhadvis candidates not originating from hadronic decays of \tauleptons are
+quark- and gluon-initiated jets and electrons. The task of rejecting these
+candidates, referred to as \faketauhadvis, is called \tauid. \Cref{sec:tauid}
+discusses \tauid in detail with a focus on rejecting \tauhadvis candidates
+originating from quark- or gluon-initiated jets.
+
 \subsubsection{Electron Veto}
-\subsubsection{Tau Identification}
 
 
 \subsection{Missing Transverse Energy}%
