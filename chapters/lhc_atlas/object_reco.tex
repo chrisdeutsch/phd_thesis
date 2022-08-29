@@ -586,18 +586,18 @@ and thus it holds that
   \myvec{p}_{\text{T}}^{\text{detected}} + \myvec{p}_{\text{T}}^{\text{undetected}} = \myvec{0} \,\text{,}
 \end{align*}
 where $\myvec{p}_{\text{T}}^{\text{detected}}$ and
-$\myvec{p}_{\text{T}}^{\text{undetected}}$ are the total transverse momentum
-vector of all detected and undetected particles produced in the hard
-interaction, respectively. Therefore, the missing transverse momentum is defined
-as
+$\myvec{p}_{\text{T}}^{\text{undetected}}$ are the total transverse momenta of
+the detected and undetected particles produced in the hard interaction,
+respectively. Therefore, the missing transverse momentum is defined as
 \begin{align*}
   \pTmiss
   \coloneqq \myvec{p}_{\text{T}}^{\text{undetected}}
   = -\myvec{p}_{\text{T}}^{\text{detected}} \,\text{.}
 \end{align*}
 The purpose of \pTmiss is to reconstruct the total transverse momentum of non-
-or only weakly-interacting particles such as neutrinos. An object-based
-definition of \pTmiss from Ref.~\cite{PERF-2016-07} is used that is defined as
+or only weakly interacting particles (\emph{invisible particles}) such as
+neutrinos. An object-based definition of \pTmiss from Ref.~\cite{PERF-2016-07}
+is used that is defined as
 \begin{align}
   \pTmiss =
   - \sum \pTvec{e}
@@ -609,67 +609,22 @@ definition of \pTmiss from Ref.~\cite{PERF-2016-07} is used that is defined as
   \,\text{,}
   \label{eq:met}
 \end{align}
-where the $\myvec{p}_{\text{T}}$-sums go over selected electrons, photons,
-muons, \tauhadvis, and jets. An additional term, \pTvec{\text{soft}}, is
+where the summations are over selected and calibrated electrons, photons, muons,
+\tauhadvis, and jets, respectively. An additional term, \pTvec{\text{soft}}, is
 introduced to account for soft radiation that is not reconstructed as part of
-another object. This term, referred to as the track soft term, is estimated by
-summing the transverse momenta of all tracks that pass basic track quality
-criteria and cannot be associated to any selected electron, photon, muon,
-\tauhadvis, or jet.
+another object. This term is estimated by summing the transverse momenta of
+tracks in the ID that are associated with the PV of the hard interaction, pass
+track quality criteria, and cannot be associated with any selected electron,
+photon, muon, \tauhadvis, or jet.
 
-The difficulties in reconstructing the total transverse momentum of non- or only
-weakly-interacting using \pTmiss is illustrated by \Cref{eq:met}. Any objects
-that were not included in the calculation, either due to detector acceptance
-effects or inefficiencies in the reconstruction, will distort the estimated
-\pTmiss
-
-. Moreover, uncertainties on the
-
-of individual objects accumulate, leading to large uncertainties on \pTmiss
-
-particularly in events with high activity.
-
-
-
-Moreover, any
-
-
-Therefore, \pTmiss is only a crude estimate with uncertainties strongly
-depending on the event activity.
-
-
-sums electrons, photons, muons, \tauhadvis, jets. An additional term
-
-
-\pTvec{\text{soft}} is introduced accounting for soft radiation that is not
-reconstructed as any object.
-
-
-
-
-
-
-Difficulties in \pTmiss reco:
-- All particles need to be detected
-- Uncertainties on transverse momenta of all objects accumulate
-
-
-
-
-
-
-
-
-
-non- or only weakly-interacting such as neutrinos
-
-
-
-The missing transverse momentum, \pTmiss, is used to reconstruct the total
-transverse momentum of
-
-
-
+\Cref{eq:met} illustrates the difficulties in reconstructing the total
+transverse momentum of invisible particles using \pTmiss. Any detectible object
+that fails to be detected, either due to detector acceptance effects or
+inefficiencies in the object reconstruction, will introduce deviations from the
+total transverse momentum of invisible particles. Moreover, uncertainties on
+transverse momenta of all reconstructed objects accumulate in the calculation of
+\pTmiss, leading to large uncertainties on \pTmiss particularly in events with
+high activity.
 
 % \item[Missing transverse momentum (\pTmiss)] is used to reconstruct
 %   the total transverse momentum of (undetected) weakly-interacting
