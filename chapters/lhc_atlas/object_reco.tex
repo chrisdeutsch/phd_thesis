@@ -578,8 +578,123 @@ sources. A detailed description of \tauid is given in \Cref{sec:tauid}.
 \subsection{Missing Transverse Energy}%
 \label{sec:atlas_met}
 
+The missing transverse momentum, \pTmiss, is used to reconstruct the total
+transverse momentum of undetected particles produced in the hard interaction. In
+the laboratory frame, the colliding partons have negligible transverse momentum
+and thus it holds that
+\begin{align*}
+  \myvec{p}_{\text{T}}^{\text{detected}} + \myvec{p}_{\text{T}}^{\text{undetected}} = \myvec{0} \,\text{,}
+\end{align*}
+where $\myvec{p}_{\text{T}}^{\text{detected}}$ and
+$\myvec{p}_{\text{T}}^{\text{undetected}}$ are the total transverse momentum
+vector of all detected and undetected particles produced in the hard
+interaction, respectively. Therefore, the missing transverse momentum is defined
+as
+\begin{align*}
+  \pTmiss
+  \coloneqq \myvec{p}_{\text{T}}^{\text{undetected}}
+  = -\myvec{p}_{\text{T}}^{\text{detected}} \,\text{.}
+\end{align*}
+The purpose of \pTmiss is to reconstruct the total transverse momentum of non-
+or only weakly-interacting particles such as neutrinos. An object-based
+definition of \pTmiss from Ref.~\cite{PERF-2016-07} is used that is defined as
+\begin{align}
+  \pTmiss =
+  - \sum \pTvec{e}
+  - \sum \pTvec{\gamma}
+  - \sum \pTvec{\mu}
+  - \sum \pTvec{\tauhadvis}
+  - \sum \pTvec{\text{jet}}
+  - \pTvec{\text{soft}}
+  \,\text{,}
+  \label{eq:met}
+\end{align}
+where the $\myvec{p}_{\text{T}}$-sums go over selected electrons, photons,
+muons, \tauhadvis, and jets. An additional term, \pTvec{\text{soft}}, is
+introduced to account for soft radiation that is not reconstructed as part of
+another object. This term, referred to as the track soft term, is estimated by
+summing the transverse momenta of all tracks that pass basic track quality
+criteria and cannot be associated to any selected electron, photon, muon,
+\tauhadvis, or jet.
+
+The difficulties in reconstructing the total transverse momentum of non- or only
+weakly-interacting using \pTmiss is illustrated by \Cref{eq:met}. Any objects
+that were not included in the calculation, either due to detector acceptance
+effects or inefficiencies in the reconstruction, will distort the estimated
+\pTmiss
+
+. Moreover, uncertainties on the
+
+of individual objects accumulate, leading to large uncertainties on \pTmiss
+
+particularly in events with high activity.
 
 
+
+Moreover, any
+
+
+Therefore, \pTmiss is only a crude estimate with uncertainties strongly
+depending on the event activity.
+
+
+sums electrons, photons, muons, \tauhadvis, jets. An additional term
+
+
+\pTvec{\text{soft}} is introduced accounting for soft radiation that is not
+reconstructed as any object.
+
+
+
+
+
+
+Difficulties in \pTmiss reco:
+- All particles need to be detected
+- Uncertainties on transverse momenta of all objects accumulate
+
+
+
+
+
+
+
+
+
+non- or only weakly-interacting such as neutrinos
+
+
+
+The missing transverse momentum, \pTmiss, is used to reconstruct the total
+transverse momentum of
+
+
+
+
+% \item[Missing transverse momentum (\pTmiss)] is used to reconstruct
+%   the total transverse momentum of (undetected) weakly-interacting
+%   particles produced in the hard interaction. In this search it is
+%   used to reconstruct the signatures of neutrinos produced in decays
+%   of \tauleptons and semi-leptonic decays of hadrons.
+
+%   An object-based definition of the missing transverse
+%   momentum~\cite{PERF-2016-07} is adopted that uses reconstructed and
+%   calibrated objects, i.e.\ electrons, muons, \tauhadvis, and jets as
+%   defined previously after an ambiguity resolution step introduced
+%   in~\Cref{sec:overlap_removal}, as inputs to the \pTmiss
+%   reconstruction. Soft charged particle radiation that is not part of
+%   any reconstructed object is accounted for by the so-called track
+%   soft term. The track soft term is defined as the vectorial sum of
+%   charged particle track $\myvec{\pT}$ over all tracks passing track
+%   quality criteria that are associated to the primary vertex of the
+%   hard interaction but not any reconstructed object. The object-based
+%   \pTmiss is subsequently reconstructed as the negative vectorial sum
+%   of transverse momenta of calibrated objects and the track soft
+%   term.\todo{What \pTmissAbs working point is used?}
+
+%   The vector of the missing transverse momentum in the transverse
+%   plane is denoted as \pTmiss and its magnitude as \pTmissAbs,
+%   hereafter.
 
 
 %%% Local Variables:
