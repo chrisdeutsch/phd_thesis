@@ -66,20 +66,19 @@ algorithm can fail to reconstruct a track.
 Reconstructed tracks are used to determine the locations of inelastic scattering
 interactions between protons in the ATLAS detector. These locations are marked
 by multiple charged-particle tracks originating from the same point along the
-beamline and are referred to as primary vertices (PVs). Consequently, the vertex
-of the hard scattering interaction of interest and the associated particles can
-be identified, allowing to reject reconstructed objects originating from
-pile-up. The ATLAS primary vertex reconstruction~\cite{PERF-2015-01} finds and
-reconstructs PVs using an iterative fitting procedure. The PV reconstruction
-starts by reconstructing a vertex at the location of highest track density in
-$z_0$ with respect to the beam-spot position. An adaptive vertex
-fitter~\cite{Fruhwirth:2007hz} is used to iteratively determine the vertex
-position while weighting reconstructed tracks according to their compatibility
-with the vertex position. After the fit, tracks that are incompatible with the
-vertex position are considered as unassociated and the process is repeated on
-all unassociated tracks. Finally, the PV with the largest sum of $\pT^2$ of
-associated tracks that has at least two tracks with $\pT > \SI{500}{\MeV}$ is
-selected as the PV of the hard scattering interaction of interest. Other
+beamline and are referred to as primary vertices (PVs).
+% The vertex of the hard interaction and the associated particles can be
+% identified, allowing to reject reconstructed objects originating from pile-up.
+The ATLAS PV reconstruction~\cite{PERF-2015-01} finds and reconstructs PVs using
+an iterative fitting procedure. It starts by reconstructing a vertex at the
+location of highest track density along the $z$-direction with respect to the
+beam-spot position. An adaptive vertex fitter~\cite{Fruhwirth:2007hz} is used to
+iteratively determine the vertex position while weighting reconstructed tracks
+according to their compatibility with the vertex position. After the fit, tracks
+that are incompatible with the fitted vertex are considered as unassociated and
+the process is repeated on all unassociated tracks. Finally, the PV with the
+largest sum of $\pT^2$ of associated tracks that has at least two tracks with
+$\pT > \SI{500}{\MeV}$ is selected as the PV of the hard interaction. Other
 vertices with at least two associated tracks are considered as originating from
 pile-up~\cite{PERF-2015-01}.
 
