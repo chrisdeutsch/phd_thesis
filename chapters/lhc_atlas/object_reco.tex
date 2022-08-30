@@ -174,55 +174,54 @@ from jets and non-prompt electrons.
 \subsection{Muons}%
 \label{sec:muon_rec}
 
-The reconstruction of muons in the ATLAS experiment primarily targets the
-signature of a particle that leaves a track in the ID and MS with only minimal
-energy deposition in the calorimeters due to ionisation. The instrumentation of
-the MS (cf.~\Cref{sec:atlas_ms}) allows for the reconstruction of muons up to
-$|\eta| < 2.7$. The following description of the muon reconstruction is based on
-Ref.~\cite{MUON-2018-03}.
+The reconstruction of muons in the ATLAS experiment targets the signature of a
+charged particle that is able to traverse the calorimeters with only minimal
+energy deposition due to ionisation. The instrumentation of the MS allows for
+the reconstruction of muons up to $|\eta| < 2.7$. The following description of
+muon reconstruction is based on Ref.~\cite{MUON-2018-03}.
 
 A stand-alone reconstruction of tracks in the MS is attempted by first
 reconstructing straight-line segments in individual layers of the MS. Track
 candidates are constructed from multiple track segments compatible with the
-signature of the trajectory of a muon produced at the interaction point. These
-candidates seed a precision fit to obtain the full muon trajectory and the
-associated parameters in the MS.
-
-Different reconstruction techniques are employed yielding five different types
-of reconstructed muons~\cite{MUON-2018-03}:
+trajectory of a muon produced at the interaction point. These candidates seed a
+fit to obtain the muon trajectory and the associated track parameters. Different
+reconstruction methods are employed yielding five types of reconstructed muons:
 \begin{description}
 
 \item[Combined muons] are reconstructed by matching a track in the MS to a track
   in the ID. A combined fit of the ID and MS track is performed, accounting for
   the ionisation energy loss of muons in the calorimeters, to reconstruct the
-  muon trajectory. Within $2.5 < |\eta| < 2.7$, combined muons may be
+  muon trajectory. Within $2.5 < |\eta| < 2.7$ combined muons may be
   reconstructed using short segments of ID tracks instead of fully reconstructed
-  ID tracks.
+  tracks.
 
 \item[Inside-out muons] are reconstructed by extending a track in the ID with
-  additional hits in the MS, the additional hits being used for a combined fit
-  of the muon trajectory in the ID and MS. The inside-out strategy aims to
-  recover cases where the stand-alone track reconstruction in the MS fails to
-  find a track.
+  hits in the MS. The additional hits are being used for a combined fit of the
+  muon trajectory in the ID and MS.
+  % The inside-out strategy aims to recover cases where the stand-alone track
+  % reconstruction in the MS fails to find a track.
 
 \item[MS extrapolated muons] are reconstructed by extrapolating a stand-alone MS
-  track to the beamline in cases where no matching ID track is found. This
-  strategy improves the reconstruction efficiency of muons outside of the ID
-  tracking acceptance, i.e.\ $2.5 < |\eta| < 2.7$.
+  track to the beamline in cases where no matching ID track is found. The MS
+  track defines the properties of the reconstructed muon. % This
+  % strategy improves the reconstruction efficiency of muons in the region of
+  % $2.5 < |\eta| < 2.7$, which is outside of the acceptance of track
+  % reconstruction in the ID.
 
-\item[Segment-tagged muons] are reconstructed by matching an ID track
-  extrapolated to the MS to one or more short track segments in the MS. The muon
-  four-momentum is reconstructed using the parameters of the ID track.
+\item[Segment-tagged muons] are reconstructed by matching an ID track to one or
+  more short track segments in the MS. The muon properties are determined by the
+  parameters of the ID track.
 
-\item[Calorimeter-tagged muons] are reconstructed from ID tracks leaving a
-  calorimeter signature similar to a minimum ionising particle. The ID track
-  defines the four-momentum of calorimeter-tagged muons.
+\item[Calorimeter-tagged muons] are reconstructed from ID tracks with a
+  signature in the calorimeters characteristic of a minimum ionising
+  particle. The ID track is used to define the properties of calorimeter-tagged
+  muons.
 
 \end{description}
 Several muon identification working points are defined using these muon types
 and additional requirements on the quality of the ID and MS tracks, and
 compatibility of ID and MS tracks in terms of charge and momentum. In this
-thesis, the \emph{loose} and \emph{medium} working points are used and
+thesis, the \emph{loose} and \emph{medium} working points are used, which are
 summarised hereafter. Of these working points, the medium working point has the
 most stringent requirements on the quality of reconstructed muons. It requires
 muons to be reconstructed as combined or inside-out muons or, alternatively, MS
@@ -234,9 +233,6 @@ a gap in the MS instrumentation (cf.~\Cref{sec:atlas_ms}), and relaxing the MS
 track quality requirements applied to inside-out muons. Muons passing the
 \emph{loose} working point are a superset of muons passing the \emph{medium}
 working point.
-
-\todo[inline]{Cosmic muons and TTVA? Muon momentum corrections measured in
-  data~\cite{PERF-2015-10}.}
 
 Isolation requirements are applied to reconstructed muon candidates to
 distinguish prompt from non-prompt muons. A similar approach to the one adopted
