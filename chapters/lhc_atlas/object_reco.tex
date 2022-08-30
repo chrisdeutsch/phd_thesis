@@ -357,25 +357,25 @@ associated to the PV of the hard interaction using the reconstructed tracks.
 \subsubsection{$b$-tagging}
 
 The production of $b$-quarks is an important signature of rare physics processes
-produced at the LHC. Similar to other quarks except the top quark, a $b$-quark
-produced in a hard interaction leads to the formation of a jet, referred to as a
-$b$-jet. A distinct feature of $b$-jets is the presence of a $b$-hadron with a
-mass exceeding \SI{5}{\GeV}~\cite{pdg2020} in the jet. These $b$-hadrons are
-short-lived and will, after traversing a short but measurable distance in the
-ATLAS detector, decay via the weak interaction. For example, the lightest
+at the LHC. A $b$-quark produced in a hard scattering interaction leads to the
+formation of a jet, referred to as a $b$-jet. A distinct feature of $b$-jets is
+the presence of a $b$-hadron with a mass exceeding \SI{5}{\GeV}~\cite{pdg2020}.
+These $b$-hadrons are short-lived and will decay after traversing a short but
+often measurable distance in the ATLAS detector. For example, the lightest
 $B$-mesons, the $B^0$ and $B^\pm$, have proper lifetimes of about
 \SI{1.5e-12}{\second}~\cite{pdg2020} and thus, assuming a $B$ meson momentum of
-\SI{10}{\GeV}, a mean flight path of approximately \SI{1}{\milli\metre} before
-decaying. Decays of $b$-hadrons frequently produce final states containing
-$c$-hadrons, which also decay after traversing a short distance in the detector.
+\SI{10}{\GeV}, a mean flight path of about \SI{1}{\milli\metre} before
+decaying. The dominant decay modes of $b$-hadrons produce final states
+containing $c$-hadrons, which also decay after traversing a short distance in
+the detector.
 
 The task of identifying $b$-jets is referred to as $b$-tagging. Features
-resulting from displaced decays of $b$- and $c$-hadrons can be exploited for the
-purpose of $b$-tagging. The $b$-tagging algorithms used as part of this thesis
-use two categories of features:
+resulting from displaced decays of $b$- and $c$-hadrons can be exploited for
+this purpose. Two categories of features are used by the $b$-tagging algorithms
+employed in this thesis:
 \begin{description}
 
-\item[Track impact parameter based:] Due to the relatively large mass of
+\item[Track impact parameter based features] Due to the relatively large mass of
   $b$-hadrons, the daughter particles of displaced $b$-hadron decays are
   produced at an angle with respect to the initial flight direction of the
   $b$-hadron. Consequently, the tracks of the daughter particles tend to have
@@ -385,13 +385,12 @@ use two categories of features:
   terms of the \emph{impact parameter significance} by dividing the impact
   parameter by its uncertainty.
 
-\item[Secondary vertex based:] Secondary vertices resulting from the daughter
-  particles of $b$- and $c$-hadron decays can be reconstructed using charged
-  particle tracks measured in the ID. Among others, the displacement of the
-  reconstructed secondary vertex from the PV of the hard interaction or the
+\item[Secondary vertex based features] Secondary vertices resulting from the
+  daughter particles of $b$- and $c$-hadron decays can be reconstructed using
+  charged-particle tracks measured in the ID. Among others, the displacement of
+  the reconstructed secondary vertex from the PV of the hard interaction or the
   invariant mass of the charged particles associated to the vertex can be used
   as features in $b$-tagging.
-
 \end{description}
 
 The $b$-tagging algorithms used at the ATLAS experiment combine discriminants
@@ -435,9 +434,12 @@ kinematic properties of the jet to yield a high-level $b$-tagging discriminant.
 Selections on this discriminant define several $b$-tagging working points with
 different probabilities of correctly identifying a $b$-jet, referred to as the
 $b$-tagging efficiency. In this thesis, a working point with \SI{77}{\percent}
-$b$-tagging efficiency in simulated \ttbar events is used. This working point
-has \emph{light}- and $c$-jet rejection factors of approximately 200 and 6,
-respectively, in simulated \ttbar events~\cite{FTAG-2019-07-001}.
+$b$-tagging efficiency in simulated \ttbar events is used.  In simulated \ttbar
+events, this working point has \emph{light}- and $c$-jet rejection factors of
+approximately 200 and 6, respectively~\cite{FTAG-2019-07-001}.
+
+% Alternative source for rejection factors:
+% http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PLOTS/FTAG-2019-005/
 
 
 \subsection{Tau Leptons}%
