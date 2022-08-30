@@ -317,16 +317,17 @@ with a jet-radius parameter of $R = 0.4$. The implementation of the
 Earlier analyses performed by the ATLAS collaboration used jets reconstructed by
 applying the anti-\kt algorithm to topo-clusters in the calorimeters,
 disregarding any information about charged particles from the tracking
-system. New techniques combining information from tracking and calorimetry are
+system. Techniques combining information from tracking and calorimetry are
 adopted by the ATLAS experiment for the reconstruction of jets. These are based
-on a reconstruction algorithm referred to as \emph{particle
-  flow} that attempts to reconstruct individual
-charged and neutral particles from their detector signatures.
+on a reconstruction algorithm referred to as \emph{particle flow} that attempts
+to reconstruct individual charged and neutral particles from their detector
+signatures.\footnote{The idea of particle flow reconstruction dates back to
+  collider experiments of the 1990s at LEP and HERA~\cite{PERF-2015-09}.}
 
 Jet reconstruction based on particle flow, described in
 Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploits the superior energy and angular
-resolution of reconstructing low-\pT charged hadrons using their track in the ID
-compared to a calorimetric measurement.\footnote{The charged pion mass is
+resolution of reconstructing low-\pT charged hadrons from their track in the ID
+instead of using calorimetric measurements.\footnote{The charged pion mass is
   assumed for the relationship between the momentum and energy of charged
   particles in the tracker.} Neutral particles have to be reconstructed from
 topo-clusters in the calorimeter, making it necessary to subtract the energy
