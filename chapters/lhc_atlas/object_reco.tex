@@ -242,16 +242,16 @@ for electrons, previously discussed in \Cref{sec:ele_rec}, is used.
 \subsection{Jets and $b$-tagging}%
 \label{sec:jet_rec}
 
-The production of quarks and gluons in hard scattering interactions leads to the
+The production of quarks or gluons in hard scattering interactions leads to the
 development of collimated sprays of particles which are referred to as
 jets. Jets are produced as a result of the colour confinement in QCD, leading to
 a fragmentation of the initial quark/gluon until the energy of the resulting
 fragments is sufficiently small to bind into colourless hadrons. The primary
 constitutents of jets are charged/neutral hadrons and photons from hadron
 decays. To reconstruct the kinematic properties of the quark/gluon that
-initiated the jet, the four-momenta of all particles from the
-fragmentation/hadronisation process have to be collected. This task is addressed
-by jet algorithms which combine particles, or other entities, into clusters to
+initiated the jet, the four-momenta of all particles from the fragmentation and
+hadronisation process have to be collected. This task is addressed by jet
+algorithms which combine particles, or other entities, into clusters to
 reconstruct jets. In the ATLAS experiment, the anti-\kt jet clustering
 algorithm~\cite{Cacciari:2008gp} is most frequently used.
 
@@ -259,21 +259,19 @@ algorithm~\cite{Cacciari:2008gp} is most frequently used.
 \subsubsection{The Anti-\kt Jet Clustering Algorithm}
 
 The anti-\kt jet clustering algorithm operates on collections of entities with
-well-defined four-momenta (e.g.\ topo-clusters in the calorimeters). Any set of
-one or more entities can be viewed as a pseudo-jet with a four-momentum given by
-the sum of the constituent four-momenta. Pseudo-jets are sequentially combined
-if they are close according to a distance metric. The distance between the
-pseudo-jets $i$ and $j$ is defined by the anti-\kt algorithm
-as~\cite{Cacciari:2008gp}
+well-defined four-momenta (e.g.\ topo-clusters). Any set of one or more entities
+can be viewed as a pseudo-jet with a four-momentum given by the sum of the
+constituent four-momenta. Pseudo-jets are sequentially combined if they are
+close according to a distance metric. The distance between pseudo-jets $i$ and
+$j$ is defined by the anti-\kt algorithm as~\cite{Cacciari:2008gp}
 \begin{align*}
   d_{ij} &= \min\bigl( p_{\text{T}i}^{-2}, p_{\text{T}j}^{-2} \bigr)
            \frac{ \dRy(i, j)^2 }{ R^2 } \,\text{,}
 \end{align*}
-where $\pT$ refers to pseudo-jet transverse momentum,
+where $p_{\text{T}i}$ refers to the transverse momentum of pseudo-jet $i$,
 $\dRy = \sqrt{\Delta y^2 + \Delta \phi^2}$ is the distance of two pseudo-jets in
-the $y\phi$-plane, with $y$ being the rapidity of the pseudo-jet,\footnote{The
-  rapidity is defined as
-  $y = \frac{1}{2} \ln \left( \frac{E + p_z}{E - p_z} \right)$, where $E$ is
+the $y\phi$-plane, with $y$ being the rapidity,\footnote{The rapidity is defined
+  as $y = \frac{1}{2} \ln \left( \frac{E + p_z}{E - p_z} \right)$, where $E$ is
   then energy of a particle and $p_z$ the momentum component along the
   beamline. In the ultrarelativistic limit the rapidity is equivalent to the
   pseudo-rapidity.} and $R$ is the jet-radius parameter of the algorithm. A
@@ -281,8 +279,8 @@ stopping criterion for the clustering algorithm is provided by the distance
 $d_{i\text{B}} = p_{\text{T}i}^{-2}$ by proceeding as
 follows~\cite{Cacciari:2008gp}:
 \begin{enumerate}
-\item Find the minimum distance $d_{ij}$ for all pairs of pseudo-jets and the
-  minimum distance $d_{i\text{B}}$ for all pseudo-jets.
+\item Find the minimum distance $d_{ij}$ for all pairs of distinct pseudo-jets
+  ($i \neq j$) and the minimum distance $d_{i\text{B}}$ for all pseudo-jets.
 
 \item If $\min_{i,j}(d_{ij}) < \min_{i}(d_{i\text{B}})$: The pair of pseudo-jets
   corresponding to the minimum in $d_{ij}$ is combined to form a new pseudo-jet.
@@ -296,11 +294,11 @@ These steps are repeated until no pseudo-jets are left.
 The anti-\kt algorithm produces conical jets with a typical radius of $\dRy = R$
 provided no high-\pT emissions are located in the vicinity of the jet. The
 algorithm has desirable theoretical properties, such as reconstructed jets being
-insensitive to soft or collinear emissions, thus making it the choice of the
-default jet clustering algorithm in the ATLAS experiment. In this thesis, the
-jet clustering uses the anti-\kt algorithm with a jet-radius parameter of
-$R = 0.4$. The implementation of the \textsc{FastJet} library~\cite{Fastjet} is
-used.
+insensitive to soft or collinear emissions~\cite{Cacciari:2008gp}, thus making
+it the choice of the default jet clustering algorithm in the ATLAS
+experiment. In this thesis, the jets are clustered using the anti-\kt algorithm
+with a jet-radius parameter of $R = 0.4$. The implementation of the
+\textsc{FastJet} library~\cite{Fastjet} is used.
 
 
 \subsubsection{Jet Reconstruction using Particle Flow}
