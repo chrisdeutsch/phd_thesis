@@ -17,9 +17,9 @@ resolutions. The following provides a summary of the object reconstruction
 relevant for the remainder of this thesis.
 
 
-\subsection{Tracking and Vertexing}
+\subsection{Charged-Particle Tracks and Primary Vertices}
 
-The reconstruction of trajectories of charged particles is referred to as track
+The reconstruction of charged-particle trajectories is referred to as track
 reconstruction or tracking. The inputs to the track reconstruction in the ID of
 the ATLAS detector are \emph{space-points} from the pixel and SCT detector, and
 \emph{drift-circles} from the TRT. Space-points are measurements of location in
@@ -43,8 +43,8 @@ $d_0$ ($z_0$), also referred to as the transverse (longitudinal) impact
 parameter of the track. The azimuthal and polar angle of the track at the
 perigee is given by $\phi$ and $\theta$, respectively. The ratio of electric
 charge and momentum of the particle is given by $q / p$, which is related to the
-curvature of the track. After the location of the hard interaction is
-reconstructed, tracks are often re-parameterised using this point as a reference
+curvature of the track. After locating the vertex of the hard interaction of
+interest, tracks are often re-parameterised using this point as a reference
 instead of the beam-spot position.
 
 In the ATLAS experiment, two primary tracking algorithms are used that are
@@ -57,11 +57,9 @@ segments in the TRT which are then combined with space-points from the pixel and
 SCT detectors. The outside-in algorithm is used to improve the reconstruction
 efficiency for tracks from secondary particles, such as electrons produced in
 conversions of photons in the detector material, for which the inside-out
-algorithm can fail to reconstruct a track.
-
-% The track reconstruction algorithms of the ATLAS experiment at the end of
-% Run~2 only provide tracks within the acceptance of the tracking detectors,
-% $|\eta| < 2.5$, and with $\pT > \SI{500}{\MeV}$.
+algorithm can fail to reconstruct a track. The track reconstruction algorithms
+provide charged-particle tracks within the ID acceptance of $|\eta| < 2.5$ and
+with $\pT > \SI{500}{\MeV}$.
 
 Reconstructed tracks are used to determine the locations of inelastic scattering
 interactions between protons in the ATLAS detector. These locations are marked
@@ -76,10 +74,10 @@ beam-spot position. An adaptive vertex fitter~\cite{Fruhwirth:2007hz} is used to
 iteratively determine the vertex position while weighting reconstructed tracks
 according to their compatibility with the vertex position. After the fit, tracks
 that are incompatible with the fitted vertex are considered as unassociated and
-the process is repeated on all unassociated tracks. Finally, the PV with the
-largest sum of $\pT^2$ of associated tracks that has at least two tracks with
-$\pT > \SI{500}{\MeV}$ is selected as the PV of the hard interaction. Other
-vertices with at least two associated tracks are considered as originating from
+the process is repeated on all unassociated tracks. After the PV reconstruction,
+only PVs with two associated tracks are kept. The PV with the largest sum of
+$\pT^2$ of associated tracks is selected as the PV of the hard
+interaction. Other vertices are considered as originating from
 pile-up~\cite{PERF-2015-01}.
 
 
