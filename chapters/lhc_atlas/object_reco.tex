@@ -22,42 +22,51 @@ relevant for the remainder of this thesis.
 The reconstruction of trajectories of charged particles is referred to as track
 reconstruction or tracking. The inputs to the track reconstruction in the ID of
 the ATLAS detector are \emph{space-points} from the pixel and SCT detector, and
-\emph{drift circles} from the TRT. Space-points are measurements of location in
+\emph{drift-circles} from the TRT. Space-points are measurements of location in
 three-dimensional space obtained by clustering the charge signals of adjacent
-segments in the pixel and SCT detectors. Drift circles are measurements of
-distance from the anode wires of individual straw-tubes in the TRT derived from
-electron drift times in the straw-tubes.
+segments in the pixel and SCT detectors~\cite{PERF-2015-08}. Drift-circles are
+measurements of distance from the anode wires of individual straw-tubes in the
+TRT determined by the electron drift times in the
+straw-tubes~\cite{IDET-2015-01}.
 
 Track reconstruction employs pattern recognition techniques to select
-space-points and drift circles that are compatible with the hypothesis of a
-charged particle in the axial magnetic field of the ID. Least-squares fits are
-performed, using selected space-points and drift circles, to determine the
-parameters characterising the track at a reference point. This reference point
-is typically the point of closest approach (perigee) to the nominal beam-spot
-position in the transverse plane. Five parameters describe the track at the
-perigee. The transverse (longitudinal) distance of the perigee from the
-reference point given by $d_0$ ($z_0$), also referred to as the transverse
-(longitudinal) impact parameter of the track. The azimuthal and polar angle of
-the track at the perigee given by $\phi$ and $\theta$, respectively. Finally,
-the ratio of electric charge and transverse momentum, $q / \pT$, parameterises
-the curvature of the track.
+space-points and drift-circles that are compatible with the hypothesis of a
+charged particle traversing through the axial magnetic field in the
+ID. Least-squares fits are performed, using selected space-points and
+drift-circles, to determine the parameters characterising the
+trajectory. Initially, the track parameters are given at the point of closest
+approach in the transverse plane (\emph{perigee}) to the beam-spot
+position~\cite{PERF-2015-08}. Five parameters, $(d_0, z_0, \phi, \theta, q/p)$,
+describe the track at the perigee~\cite{Akesson:2006sh}. The transverse
+(longitudinal) distance of the perigee from the beam-spot position is given by
+$d_0$ ($z_0$), also referred to as the transverse (longitudinal) impact
+parameter of the track. The azimuthal and polar angle of the track at the
+perigee is given by $\phi$ and $\theta$, respectively. The ratio of electric
+charge and momentum of the particle is given by $q / p$, which is related to the
+curvature of the track. After the location of the hard interaction is
+reconstructed, tracks are often re-parameterised using this point as a reference
+instead of the beam-spot position.
 
-At the ATLAS experiment, two primary tracking algorithms are used which are
+In the ATLAS experiment, two primary tracking algorithms are used that are
 referred to as the \emph{inside-out} and \emph{outside-in}
 algorithms~\cite{Cornelissen:2007vba,Salzburger:2015sgq,PERF-2015-08}. The
 inside-out algorithm starts by reconstructing tracks in the pixel and SCT
 detector only, then extending the track using measurements in the TRT. In
 contrast, the outside-in algorithm starts with the reconstruction of track
-segments in the TRT which are them combined with space-points from the pixel and
+segments in the TRT which are then combined with space-points from the pixel and
 SCT detectors. The outside-in algorithm is used to improve the reconstruction
 efficiency for tracks from secondary particles, such as electrons produced in
 conversions of photons in the detector material, for which the inside-out
 algorithm can fail to reconstruct a track.
 
+% The track reconstruction algorithms of the ATLAS experiment at the end of
+% Run~2 only provide tracks within the acceptance of the tracking detectors,
+% $|\eta| < 2.5$, and with $\pT > \SI{500}{\MeV}$.
+
 Reconstructed tracks are used to determine the locations of inelastic scattering
 interactions between protons in the ATLAS detector. These locations are marked
-by multiple charged-particle tracks originating from the same point in the
-detector and are referred to as primary vertices (PVs). Consequently, the vertex
+by multiple charged-particle tracks originating from the same point along the
+beamline and are referred to as primary vertices (PVs). Consequently, the vertex
 of the hard scattering interaction of interest and the associated particles can
 be identified, allowing to reject reconstructed objects originating from
 pile-up. The ATLAS primary vertex reconstruction~\cite{PERF-2015-01} finds and
