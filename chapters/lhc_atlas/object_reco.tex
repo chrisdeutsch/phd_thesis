@@ -2,8 +2,8 @@
 \label{sec:object_reco_at_atlas}
 
 Particles produced in \pp-collision events are reconstructed from their signals
-in the various sub-systems of the ATLAS detector. At first, low-level objects
-such as charged-particle tracks, primary vertices, and clusters of energy in the
+in the sub-systems of the ATLAS detector. At first, low-level objects such as
+charged-particle tracks, primary vertices, and clusters of energy in the
 calorimeters are reconstructed. These objects are used to reconstruct and
 identify higher-level objects that correspond to the signatures of particles
 such as electrons, muons, \tauleptons, or quarks/gluons in the form of jets.
@@ -110,8 +110,7 @@ the local hadronic calibration is referred to as the LC scale.
 
 Topo-clusters are used as inputs for the reconstruction of higher-level physics
 objects in the ATLAS detector. For example, topo-clusters at EM and LC scale are
-used in the reconstruction of electrons and \tauhadvis, respectively, which are
-discussed in \Cref{sec:ele_rec,sec:tau_rec}.
+used in the reconstruction of electrons and \tauhadvis, respectively.
 
 
 \subsection{Electrons}%
@@ -212,10 +211,10 @@ reconstruction methods are employed yielding five types of reconstructed muons:
   more short track segments in the MS. The muon properties are determined by the
   parameters of the ID track.
 
-\item[Calorimeter-tagged muons] are reconstructed from ID tracks with a
-  signature in the calorimeters characteristic of a minimum ionising
-  particle. The ID track is used to define the properties of calorimeter-tagged
-  muons.
+\item[Calorimeter-tagged muons] are reconstructed from ID tracks of charged
+  particles with a signature in the calorimeters characteristic of a minimum
+  ionising particle. The ID track is used to define the properties of
+  calorimeter-tagged muons.
 
 \end{description}
 Several muon identification working points are defined using these muon types
@@ -259,8 +258,8 @@ algorithm~\cite{Cacciari:2008gp} is most frequently used.
 \subsubsection{The Anti-\kt Jet Clustering Algorithm}
 
 The anti-\kt jet clustering algorithm operates on collections of entities with
-well-defined four-momenta (e.g.\ topo-clusters). Any set of one or more entities
-can be viewed as a pseudo-jet with a four-momentum given by the sum of the
+defined four-momenta (e.g.\ topo-clusters). Any set of one or more entities can
+be viewed as a pseudo-jet with a four-momentum given by the sum of the
 constituent four-momenta. Pseudo-jets are sequentially combined if they are
 close according to a distance metric. The distance between pseudo-jets $i$ and
 $j$ is defined by the anti-\kt algorithm as~\cite{Cacciari:2008gp}
@@ -317,7 +316,7 @@ with a jet-radius parameter of $R = 0.4$. The implementation of the
 Earlier analyses performed by the ATLAS collaboration used jets reconstructed by
 applying the anti-\kt algorithm to topo-clusters in the calorimeters,
 disregarding any information about charged particles from the tracking
-system. Techniques combining information from tracking and calorimetry are
+system. Techniques combining information from tracking and calorimetry are now
 adopted by the ATLAS experiment for the reconstruction of jets. These are based
 on a reconstruction algorithm referred to as \emph{particle flow} that attempts
 to reconstruct individual charged and neutral particles from their detector
@@ -375,7 +374,7 @@ this purpose. Two categories of features are used by the $b$-tagging algorithms
 employed in this thesis:
 \begin{description}
 
-\item[Track impact parameter based features] Due to the relatively large mass of
+\item[Track impact parameter based features] Due to the large mass of
   $b$-hadrons, the daughter particles of displaced $b$-hadron decays are
   produced at an angle with respect to the initial flight direction of the
   $b$-hadron. Consequently, the tracks of the daughter particles tend to have
@@ -392,6 +391,8 @@ employed in this thesis:
   invariant mass of the charged particles associated to the vertex can be used
   as features in $b$-tagging.
 \end{description}
+
+\todo[inline]{Add figure to illustrate these features?}
 
 The $b$-tagging algorithms used at the ATLAS experiment combine discriminants
 provided by multiple low-level algorithms. In this thesis, the \textsc{DL1r}
@@ -415,7 +416,7 @@ of five algorithms using neural networks:
   accomplished with a recurrent neural network taking tracks of the jet as
   inputs. Track properties, such as the impact parameter signficances, are
   passed to the network with every track. Based on these inputs, \textsc{RNNIP}
-  estimates the probability of the jet being a $b$-, $c$-, or \emph{light}-jet.
+  estimates the probability of a jet being a $b$-, $c$-, or \emph{light}-jet.
 
 \item[SV1 \& JetFitter] The \textsc{SV1}~\cite{ATL-PHYS-PUB-2017-011} and
   \textsc{JetFitter}~\cite{ATL-PHYS-PUB-2018-025} algorithms reconstruct the
@@ -434,9 +435,9 @@ kinematic properties of the jet to yield a high-level $b$-tagging discriminant.
 Selections on this discriminant define several $b$-tagging working points with
 different probabilities of correctly identifying a $b$-jet, referred to as the
 $b$-tagging efficiency. In this thesis, a working point with \SI{77}{\percent}
-$b$-tagging efficiency in simulated \ttbar events is used.  In simulated \ttbar
-events, this working point has \emph{light}- and $c$-jet rejection factors of
-approximately 200 and 6, respectively~\cite{FTAG-2019-07-001}.
+$b$-tagging efficiency in simulated \ttbar events is used.  This working point
+has \emph{light}- and $c$-jet rejection factors of approximately 200 and 6 in
+simulated \ttbar events, respectively~\cite{FTAG-2019-07-001}.
 
 % Alternative source for rejection factors:
 % http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PLOTS/FTAG-2019-005/
@@ -445,26 +446,22 @@ approximately 200 and 6, respectively~\cite{FTAG-2019-07-001}.
 \subsection{Tau Leptons}%
 \label{sec:tau_rec}
 
-The \taulepton has a mass of \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore
-sufficiently massive to decay into final states with charged leptons or hadrons
-as is illustrated in \Cref{fig:tau_feynman}. These decay modes are referred to
-as leptonic (\taulep) and hadronic (\tauhad) decay modes, respectively.
+The \taulepton is the heaviest lepton in the SM with a mass of
+\SI{1.777}{\GeV}~\cite{pdg2020}. It is sufficiently massive to decay into final
+states with a charged lepton or hadrons. These decay modes are referred to as
+leptonic (\taulep) and hadronic (\tauhad) decay modes, respectively. The
+\taulepton decay and its branching ratios are depicted in
+\Cref{fig:tau_feynman_br}. The majority of \taulepton decays produce final
+states with one or three charged hadrons, predominately $\pi^{\pm}$, which are
+referred to as 1- and 3-prong \tauhad.
 
 \todo[inline]{Come back to this once I know what has to be introduced here.}
-
-The \taulepton decay and branching ratios are illustrated in
-\Cref{fig:tau_branching_ratios}.
-
-% - What is \taulep and \tauhad
-% - How are \taulep reconstructed?
-% - What is the difference between \tauhad and \tauhadvis
-
 
 \begin{figure}[htb]
   \begin{subfigure}[b]{0.47\textwidth}
     \centering
 
-    \includegraphics{figs/tauid/tau_decay_feynman}
+    \includegraphics[width=0.75\textwidth]{figs/tauid/tau_decay_feynman}
 
     \vspace*{3em}
     \subcaption{}%
@@ -473,22 +470,27 @@ The \taulepton decay and branching ratios are illustrated in
   \begin{subfigure}[b]{0.47\textwidth}
     \centering
 
-    \begin{overpic}[scale=0.9]{figs/tauid/tau_branching_pie_chart}
-      \put (31, 83) {$\pi^- \nu_\tau$}
-      \put (-5.5, 45) {$\pi^- \pi^0 \nu_\tau$}
-      \put (16, 7) {$\pi^- 2 \pi^0 \nu_\tau$}
-      \put (40.5, 2) {$2 \pi^- \pi^+ \nu_\tau$}
-      \put (65, 6.5) {$2 \pi^- \pi^+ \pi^0 \nu_\tau$}
-      \put (76.5, 15.5) {other}
-      \put (70, 77.5) {$e^- \bar{\nu}_e \nu_\tau$}
-      \put (88.5, 41.5) {$\mu^- \bar{\nu}_\mu \nu_\tau$}
-    \end{overpic}
+    \includegraphics[width=0.85\textwidth]{figs/tauid/tau_branching_pie_chart_new}
+    % \begin{overpic}[scale=0.9]{figs/tauid/tau_branching_pie_chart}
+    %   \put (31, 83) {$\pi^- \nu_\tau$}
+    %   \put (-5.5, 45) {$\pi^- \pi^0 \nu_\tau$}
+    %   \put (16, 7) {$\pi^- 2 \pi^0 \nu_\tau$}
+    %   \put (40.5, 2) {$2 \pi^- \pi^+ \nu_\tau$}
+    %   \put (65, 6.5) {$2 \pi^- \pi^+ \pi^0 \nu_\tau$}
+    %   \put (76.5, 15.5) {other}
+    %   \put (70, 77.5) {$e^- \bar{\nu}_e \nu_\tau$}
+    %   \put (88.5, 41.5) {$\mu^- \bar{\nu}_\mu \nu_\tau$}
+    % \end{overpic}
 
     \subcaption{}%
     \label{fig:tau_branching_ratios}
   \end{subfigure}
-  \caption{Decay and branching ratios of the tau
-    lepton. Charge-conjugate decay modes are omitted.}
+
+  \caption{Feynman diagram (a) and branching ratios (b) of the $\tau^{-}$ decay.
+    The eigenstate coupling to the $u$-quark via the $W$ boson is denoted as
+    $d^\prime$.  The \taulepton decay branching ratios are taken from
+    Ref.~\cite{pdg2020} rounded to the nearest integer percentage.}%
+  \label{fig:tau_feynman_br}
 \end{figure}
 
 At the ATLAS experiment, \tauleptons are reconstructed from the signature of
@@ -553,15 +555,15 @@ decays. Two different calibation methods are used:
 \begin{description}
 
 \item[Calorimeter-based TES] The calorimeter-based TES is derived from the
-  initial estimate of the \tauhadvis four-momentum from topo-clusters (LC scale)
-  in the core region of the jet seeding the \tauhadvis. First, the expected
-  energy contribution of pile-up to the \tauhadvis is subtracted. This
-  subtraction is parameterised as a linear function of the number of
-  reconstructed PVs in the event and in bins of \tauhadvis $|\eta|$ and
-  \Ntracks. Afterwards, the detector response calibration is performed as a
-  function of the \tauhadvis energy after pile-up subtraction and in bins of
-  \tauhadvis $|\eta|$ and \Ntracks. The \tauhadvis transverse momentum after
-  this calibration step is denoted by \pTLC.
+  initial estimate of the \tauhadvis four-momentum from topo-clusters in the
+  core region of the jet seeding the \tauhadvis. First, the expected energy
+  contribution of pile-up to the \tauhadvis is subtracted. This subtraction is
+  parameterised as a linear function of the number of reconstructed PVs in the
+  event and in bins of \tauhadvis $|\eta|$ and \Ntracks. Afterwards, the
+  detector response calibration is performed as a function of the \tauhadvis
+  energy after pile-up subtraction and in bins of \tauhadvis $|\eta|$ and
+  \Ntracks. The \tauhadvis transverse momentum after this calibration step is
+  denoted as \pTLC.
 
 \item[BRT-based TES] The BRT-based TES is derived from \tauhadvis energy
   calibrations performed using Boosted Regression Trees (BRT). This calibration
