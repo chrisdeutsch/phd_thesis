@@ -1,56 +1,26 @@
 \section{Object Reconstruction and Selection}
 \label{sec:object_reconstruction}
 
-The reconstruction and selection of physics objects, i.e.\ objects
-representing the signature of particles produced in the
-$pp$-collision, is described in the following. The most relevant
-objects in this search are electrons, muons, \tauhadvis, jets,
-$b$-tagged jets, and the missing transverse momentum. These objects
-are reconstructed and identified using different algorithms targeting
-their distinct signature in the ATLAS detector. The same algorithms
-are used to reconstruct and identify objects in simulation and in data
-recorded with the detector.  Differences between the performance of
-the reconstruction and selection in simulation and data are accounted
-for by dedicated calibration measurements of efficiencies, energy /
-momentum scales and resolutions. Uncertainties on these measurements
-are propagated to the final results by performing variations of these
-properties in simulation.
+The reconstruction and selection of physics objects, i.e.\ objects representing
+the signature of particles produced in the $pp$-collision, is described in the
+following. The most relevant objects in this search are electrons, muons,
+\tauhadvis, jets, $b$-tagged jets, and the missing transverse momentum. These
+objects are reconstructed and identified using different algorithms targeting
+their distinct signature in the ATLAS detector. The same algorithms are used to
+reconstruct and identify objects in simulation and in data recorded with the
+detector.  Differences between the performance of the reconstruction and
+selection in simulation and data are accounted for by dedicated calibration
+measurements of efficiencies, energy / momentum scales and
+resolutions. Uncertainties on these measurements are propagated to the final
+results by performing variations of these properties in simulation.
 
-The following introduces the reconstruction and selection of physics
-objects relevant to this analysis. A discussion of objects not
-directly used in this analysis is omitted.
+The following introduces the reconstruction and selection of physics objects
+relevant to this analysis. A discussion of objects not directly used in this
+analysis is omitted.
 
-
-
-% The trajectories of charged particles...
-
-Charged particle tracks are reconstructed from their signature in the
-inner tracking detectors of the ATLAS detector. They are a fundamental
-input to other reconstruction and identification algorithms where they
-are used at different levels of reconstruction quality.
-
-The baseline selection for charged particle tracks requires
-$\pT > \SI{500}{\MeV}$ and $|\eta| < \num{2.5}$ in addition to several
-requirements on the number of hits, the number of missing hits
-(holes), and the number of hits shared between multiple tracks in the
-silicon-based tracking detectors.
-
-And impact parameter requirements.
-
-\cite{PERF-2015-08}
-
-Tracks measured in the inner detector are used to determine the $pp$
-interaction vertices, which are the points in the ATLAS detector where
-a scatter interaction between protons took place. For a given event
-recorded by the detector, the vertex with the largest sum of $\pT^2$
-of associated tracks and at least two associated tracks with
-$\pT > \SI{500}{\MeV}$ is considered as the primary vertex of the
-event. Other vertices with at least two tracks are considered as
-vertices originating from pile-up~\cite{PERF-2015-01}.
-
-The selection of objects directly used in this search is described in
-the following. More restrictive selections on these objects will be
-applied as part of the signal region event selection.
+The selection of objects directly used in this search is described in the
+following. More restrictive selections on these objects will be applied as part
+of the signal region event selection.
 \begin{description}
 
 \item[Electrons] are required to have $\pT > \SI{7}{\GeV}$ and to be

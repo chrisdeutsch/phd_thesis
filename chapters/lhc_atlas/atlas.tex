@@ -4,7 +4,7 @@
 The ATLAS detector~\cite{PERF-2007-01}, shown in
 \Cref{fig:atlas_detector_overview}, is a cylindrical particle detector
 surrounding the LHC beamline at one of the IPs. The detector covers most of the
-solid angle around the IP to ensure that all detectible particles from
+solid angle around the IP to ensure that all detectable particles from
 collisions can be observed. The central part of the ATLAS detector is referred
 to as the \emph{barrel}, while the two sections covering the solid angle close
 to the LHC beamline are referred to as the \emph{end-caps}. Different layers of
@@ -22,7 +22,7 @@ an almost full interpretation of collision events.
   \label{fig:atlas_detector_overview}
 \end{figure}
 
-The ATLAS experiment uses a right-handed cartesian coordinate system with the
+The ATLAS experiment uses a right-handed Cartesian coordinate system with the
 origin being located in the centre of the detector at the nominal IP. The axes
 of the coordinate system are given as follows: the $x$-axis points to the centre
 of the LHC, the $y$-axis points upwards, and the $z$-axis points along the LHC
@@ -52,11 +52,12 @@ most charged and neutral particles, and the \emph{Muon Spectrometer} (MS) used
 to measure the trajectories of muons that can pass the calorimeters. Particles
 in the ID are bent in the transverse plane due to a magnetic field of
 \SI{2}{\tesla} field strength pointing along the $z$-axis that is produced by a
-superconducting solenoid surrounding the ID.  The MS is contains superconducting
-toroid magnets that bend the trajectories of muons in the $\eta$-plane. The
-bending of charged particle trajectories in the ID and MS allows to determine
-the sign of the electric charge and momentum of particles. The following
-sections summarise the most important parts of the ATLAS detector.
+superconducting solenoid surrounding the ID.  The MS is equipped with
+superconducting toroid magnets that bend the trajectories of muons in the
+direction described by the $\eta$-coordinate. The curvature of charged particle
+trajectories in the ID and MS allows to determine the sign of the electric
+charge and momentum of particles. The following sections summarise the
+sub-systems of the ATLAS detector.
 
 
 \subsection{The Inner Detector}
@@ -64,11 +65,11 @@ sections summarise the most important parts of the ATLAS detector.
 The ID, schematically depicted in \Cref{fig:atlas_inner_detector}, is the
 innermost part of the ATLAS detector. It performs non-destructive measurements
 of the trajectories of charged particles within $|\eta| < 2.5$ by measuring the
-points where charged particles cross active detector layers. The measurment of
+points where charged particles cross active detector layers. The measurement of
 several points on the trajectory, and the known magnetic field in the ID, allows
 to reconstruct the trajectory of the particle. The reconstructed trajectory is
-referred to as the \emph{charged particle track} and sometimes abbreviated as
-\emph{track}. The precise measurement of charged particle tracks is important to
+referred to as the \emph{charged-particle track} and often abbreviated as
+\emph{track}. The precise measurement of charged-particle tracks is important to
 reconstruct the primary vertex (PV) of the hard interaction with high spatial
 resolution, allowing to remove tracks from pile-up which are typically displaced
 from the PV along the $z$-axis. Moreover, the accurate reconstruction of
@@ -117,7 +118,7 @@ pixels. These pixels have size of \SI{50}{\micro\metre} in the transverse
 direction and \SIrange{250}{400}{\micro\metre} along the
 beamline~\cite{PERF-2007-01,PIX-2018-001}. A charged particle traversing the
 pixel detector ionises the active detector material leading to the deposition of
-electric charge in nearby pixels. The charged deposited in individual pixels can
+electric charge in nearby pixels. The charge deposited in individual pixels can
 be read out to determine the point where the particle crossed the detector
 layer. The pixel detectors are arranged in four layers concentric with the
 beamline in the barrel region and three disks per end-cap region. Particles
@@ -131,13 +132,12 @@ barrel region (cf.\ \Cref{fig:atlas_inner_detector}). Similar to the pixel
 detector, the SCT is based on semiconductor detector technology, however, the
 active detector area is segmented in long but thin strips (microstrips) with a
 pitch between strips of about \SI{80}{\micro\metre}~\cite{PERF-2007-01}. A
-single microstrip detector layer only provides an accurate position measurement
-in the plane perpendicular to the strips. Therefore, SCT modules consist of two
-layers of microstrips which are tilted by a small angle to resolve the ambiguity
-in the direction parallel to the strips. The SCT is arranged in four layers in
-the barrel and nine disks in the end-cap region, yielding at least four
-measurements for tracks within the acceptance of the tracking
-system~\cite{PERF-2007-01}.
+single microstrip detector layer only provides a position measurement in the
+plane perpendicular to the strips. Therefore, SCT modules consist of two layers
+of microstrips which are tilted by a small angle to resolve the ambiguity in the
+direction parallel to the strips. The SCT is arranged in four layers in the
+barrel and nine disks in the end-cap region, yielding at least four measurements
+for tracks within the acceptance of the tracking system~\cite{PERF-2007-01}.
 
 % TRT
 The \emph{Transition Radiation Tracker} (TRT) is the final layer of the ID
@@ -164,11 +164,13 @@ absorbed in the xenon-based gas-mixture\footnote{Selected drift tubes affected
   by gas leaks are operated using a cheaper, argon-based gas
   mixture~\cite{IDET-2015-01}.} inside the straw-tubes, leading to measurably
 higher ionisation compared to a charged particle passing through the drift
-tube. This sensitivity of the TRT to transition radiation is used to identifiy
+tube. This sensitivity of the TRT to transition radiation is used to identify
 electrons and positrons.
 % Proportional to the Lorentz factor and thus most relevant for light particles.
 
-\subsection{The Calorimeter System}
+\subsection{The Calorimeter System}%
+\label{sec:atlas_calorimeters}
+
 
 The ATLAS calorimeter system, schematically depicted in
 \Cref{fig:atlas_calorimeters}, surrounds the ID and is used to perform
@@ -176,13 +178,13 @@ destructive measurements of the energy of most charged and neutral particles. Of
 the particles predicted by the SM, only muons and neutrinos can traverse the
 ATLAS calorimeter system without being absorbed. The calorimeter system covers a
 pseudorapidity range of $|\eta| < 4.9$, thus instrumenting almost the full solid
-angle surrounding the IP. This is important to prevent detectible particles from
+angle surrounding the IP. This is important to prevent detectable particles from
 avoiding detection, which consequently allows to determine the sum of transverse
-momentum carried away by indetectible particles such as neutrinos or non- or
+momentum carried away by undetectable particles such as neutrinos or non- or
 only weakly-interacting particles from BSM theories, the so-called missing
 transverse momentum (\Cref{sec:atlas_met}).
 
-\todo[inline]{Calorimetry is complementary to charged particle tracking. Energy
+\todo[inline]{Calorimetry is complementary to charged-particle tracking. Energy
   / momentum resolution and dependency on E / p.}
 
 \begin{figure}[htbp]
@@ -265,7 +267,8 @@ hadronic calorimeter is also segmented laterally and longitudinally, although
 with reduced granularity compared to the electromagnetic calorimeter.
 
 
-\subsection{The Muon Spectrometer}
+\subsection{The Muon Spectrometer}%
+\label{sec:atlas_ms}
 
 The MS, shown in \Cref{fig:atlas_muon_system}, is the outermost and largest part
 of the ATLAS detector. It is a tracking detector providing independent momentum
@@ -277,7 +280,7 @@ precision tracking and $|\eta| < 2.4$ for triggering on muons.
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{atlas/atlas_muon}
+  \includegraphics[width=0.56\textwidth]{atlas/atlas_muon}
 
   \caption{Overview of the ATLAS muon spectrometer. The image is taken from
     Ref.~\cite{PERF-2007-01}.}%
@@ -295,11 +298,12 @@ plate chambers (RPCs) and thin gap chambers (TGCs) in the barrel
 providing the necessary timing information to identify the bunch crossing a muon
 originates from. The MS is arranged, as depicted
 in~\Cref{fig:atlas_muon_system}, in three cylindrical layers surrounding the LHC
-beamline in the barrel region. The end-cap region is instrumented by muon
-chambers in the form of three wheels perpendicular to the beampipe. A
-\emph{small wheel} is located in front of the end-cap toroid, and two \emph{big
-  wheels} are located behind the end-cap toroid. Every layer/wheel consists of
-multiple tracking planes.
+beamline in the barrel region. A gap in the instrumentation of the MS is left at
+$\eta = 0$ for access to the inner parts of the detector for servicing. The
+end-cap region is instrumented by muon chambers in the form of three wheels
+perpendicular to the beampipe. A \emph{small wheel} is located in front of the
+end-cap toroid, and two \emph{big wheels} are located behind the end-cap
+toroid. Every layer/wheel consists of multiple tracking planes.
 
 
 \subsection{The ATLAS Trigger System}%
