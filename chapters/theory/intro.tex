@@ -13,7 +13,7 @@ Einstein summation convention: Sum over repeated indices.
 
 Cross-sections in barn $\SI{1}{\barn} = 10^{-28}\,\si{\metre\squared}$
 
-Cite what this description is based on: \cite{Thomson:2013zua}
+Cite what this description is based on: \cite{Halzen:1984mc,Thomson:2013zua}
 
 
 \section{Particles and Interactions in the Standard Model}
@@ -102,78 +102,140 @@ The elementary particles of the SM can be divided into three categories:
 
 A fundamental principle of the SM
 
+invariance of the dynamics of fields with respect to continuous and
+differentiable transformations...
 
+% \subsection{The Langrange Formalism}
 
-
-
-The SM
-
-Guiding principle of the SM: local gauge invariance.
-
-Fields -> continuous quantities dependent on space-time???
-
-
-
-
-\subsection{The Langrange Formalism}
-
-The description of the Standard Model uses the Lagrange formalism describing the
-behaviour of fields, $\phi_i(\myvec{x})$, with a \emph{Lagrangian density}
-$\lagrange(\phi_i, \partial_\mu \phi_i)$, where $\partial_\mu$ is the derivative
-with respect to the $\mu$-th space-time coordinate. Hereafter, the Lagragian
-density is referred to as the Lagrangian.
-
-The ``equations of motion'' for the fields are obtained by the principle of
-least action yielding Euler--Lagrange equations:
+The SM is a relativistic quantum field theory and thus described by space-time
+dependent fields $\phi_i(\myvec{x})$. The dynamics of fields are given by the
+\emph{Lagrangian density}, $\lagrange$, which is a function of the fields
+$\phi_i$ and their space-time derivatives $\partial_\mu \phi_i$
+($\mu = 0, 1, 2, 3$). The time-evolution of the fields follows from the
+principle of least action, i.e.\ by minimising the action
+$S = \int \mathrm{d}^4x \, \lagrange(\phi_i, \partial_\mu \phi_i)$, which yields
+the the Euler--Lagrange equations
 \begin{align*}
   \partial_{\mu} \left( \frac{\partial \lagrange}{\partial (\partial_{\mu} \phi_i)} \right) - \frac{\partial \lagrange}{\partial \phi_i} = 0
+\end{align*} that provide the equations of motion for the fields. The Lagrangian density is
+hereafter referred to as \emph{the Lagrangian}.
+
+% \subsection{Local Gauge Invariance}
+
+A continuous transformation of the fields that leaves the Lagrangian unchanged
+is referred to as a \emph{gauge transformation}. The fields resulting from this
+transformation follow the same equations of motion and thus describe the same
+physical system. This invariance is referred to as \emph{gauge invariance} or
+\emph{gauge symmetry}. The symmetry groups relevant for the description of the
+SM are the unitary group of dimension one, $U(1)$, and the special unitary
+groups of dimension two and three, $SU(2)$ and $SU(3)$, respectively. Any
+element of a unitary or special unitary group can be written as
+\begin{align*}
+  \hat{U} = \exp\big[ i \theta^a G^a \big] \,\text{,}
 \end{align*}
+where $\theta^a$ are real parameters, $G^a$ are (hermitian) generators of the
+group, and summation over repeated indices is implied. A Lagrangian that is
+invariant to a transformation $\hat{U}$ of the fields with parameters $\theta^a$
+is said to possess \emph{global} gauge invariance. The more restrictive case
+where the Lagrangian is invariant with respect to transformations of the fields
+with space-time dependent parameters $\theta^a(\myvec{x})$ is referred to as
+\emph{local} gauge invariance.
 
-$\partial_{\mu}$ is the covariant derivative $\partial / \partial x^{\mu}$.
+This is illustrated in the case of the Lagrangian of the Dirac field of mass $m$
+given by
+\begin{align}
+  \lagrange_{\text{Dirac}} = \bar{\psi} (i \gamma^\mu  \partial_\mu - m) \psi \,\text{,}
+  \label{eq:dirac_lagrangian}
+\end{align}
+where $\psi$ ($\bar{\psi} = \psi^\dagger \gamma^0$) are (adjoint) Dirac spinors,
+and $\gamma^\mu$ are the four Dirac matrices. \Cref{eq:dirac_lagrangian}
+possesses global gauge invariance with respect to transformations from the
+$U(1)$ group given by $\psi \to \psi^\prime = \exp[ i \theta ] \psi$. However,
+when performing a local transformation according to
+$\psi \to \psi^\prime = \exp[ i \theta(\myvec{x}) ] \psi$ the invariance of the
+Lagrangian is spoiled due to the derivative acting on the space-time dependent
+phase factor. One might impose $U(1)$ local gauge invariance of the Lagrangian
+by adding terms to \Cref{eq:dirac_lagrangian} that cancel the additional
+contributions. Conventionally, this is done by substituting the derivative
+$\partial_\mu$ by a gauge covariant derivative $D_\mu$ that transforms as
+$D_\mu\psi \to \exp[ i \theta(\myvec{x}) ] D_\mu\psi$ thus recovering local
+gauge invariance. The definition of $D_\mu$ with these properties requires the
+introduction of a new massless vector field, referred to as a \emph{gauge
+  field}, with appropriate transformation properties. The additional terms
+introduced by substituting $\partial_\mu \to D_\mu$ in
+\Cref{eq:dirac_lagrangian} are interpreted as interactions between fermions and
+the vector boson of the gauge field.
 
+The principle of local gauge invariance can be used to obtain the interaction
+Lagrangian of quantum electrodynamics (QED). The symmetry group of QED is
+$U(1)_{Q}$ with the subscript $Q$ indicating that the elements of this group act
+on fields with electric charge. Imposing local gauge invariance with respect to
+$\psi \to \psi^\prime = \exp[i q \theta(\myvec{x})] \psi$ yields the interaction Lagrangian
+\begin{align*}
+  \lagrange_{\text{int}} = - q \bar{\psi} \gamma^\mu \psi A_\mu \,\text{,}
+\end{align*}
+when introducing a massless vector field $A_\mu$ that transforms according to
+$A_\mu \to A_\mu - \partial_\mu \theta(\myvec{x})$ under the local
+transformation. The field $A^\mu$ can be identified as the four-potential of the
+electromagnetic field and the interaction Lagrangian $\lagrange_{\text{int}}$
+describes the interaction between fermions with electric charge $q$ and
+photons. For a single fermion type, the Lagrangian of QED is given by
+\begin{align*}
+  \lagrange_{\text{QED}} = \underbrace{\lagrange_{\text{Dirac}}}_{\text{Free fermionic field}}
+  \quad \underbrace{- q \bar{\psi} \gamma^\mu \psi A_\mu}_{\text{Interaction term}}
+  \quad \underbrace{- \frac{1}{4} F_{\mu\nu} F^{\mu\nu}}_{\text{Free EM field}} \,\text{,}
+\end{align*}
+which additionally includes the Lagrangian of the electromagnetic field in a
+vacuum with the electromagnetic tensor given by
+$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$.
 
-
-
-\subsection{Local Gauge Invariance}
-
-Interactions are dictated by symmetry principles
-
+\todo[inline]{Maybe note that a mass term a la $\frac{1}{2} m^2 A_\mu A^\mu$
+  would violate local gauge invariance.}
 
 Symmetry group of the SM:
 \begin{align*}
-  SU(3)_{\text{color}} \times SU(2)_{\text{L}} \times U(1)_{Y}
+  SU(3)_{\text{color}} \times SU(2)_{\text{L}} \times U(1)_Y
 \end{align*}
 
-Lie group:
+\todo[inline]{Concluding remarks???}
+
+
+\subsection{Quantum Chromodynamics}
+
+Quantum chromodynamics (QCD) is the quantum field theory describing the
+interactions of quarks and gluons. The symmetry group of QCD is
+$SU(3)_{\text{colour}}$ the subscript indicating that transformations of the
+group acts in colour-space. The generators of $SU(3)_{\text{colour}}$ are taken
+to be $T_a = \frac{1}{2} \lambda_a$ for $a = 1, \dots, 8$, where $\lambda_a$ are
+the Gell-Mann matrices. The $SU(3)_{\text{colour}}$ group is non-Abelian with
+the commutation relations between the generators given by
+$[T_a, T_b] = i f_{abc} T_c$, defining the structure constants $f_{abc}$ of the
+group.
+
+The principle of local gauge invariance under $SU(3)_{\text{colour}}$ yields the
+Lagrangian of QCD for a single quark flavour with mass $m$
+\begin{align}
+  \lagrange_{\text{QCD}} =
+  \underbrace{\bar{\psi} (i \gamma^\mu \partial_\mu - m) \psi}_{\text{Free quark field}}
+  \underbrace{- g_{\text{s}} (\bar{\psi} \gamma^\mu T_a \psi) G_\mu^a}_{\text{Fermion--gluon interaction}}
+  \underbrace{- \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a}_{\text{Kinetic term}}
+  \label{eq:qcd_lagrangian}
+\end{align}
+with the strong coupling constant $g_{\text{s}}$, the gauge fields corresponding
+to the eight massless gluons $G_\mu^a$, and the gluon field strength tensors
 \begin{align*}
-  U(\myvec{\alpha}) = \exp(i \myvec{\alpha} \cdot \myvec{G})
-\end{align*}
-U unitary. G generator (hermitian).
-
-
-Local gauge invariance:
-$\psi(\myvec{x}) \to \psi^\prime(\myvec{x}) = U(\myvec{x}) \psi(\myvec{x})$
-
-
-\subsection{Quantum Electrodynamics (QED)}
-
-\begin{align*}
-  \lagrange_{\text{Dirac}} = i \bar{\psi} \gamma^{\mu} \partial_{\mu} \psi - m \bar{\psi} \psi \quad \to \quad (i \gamma^{\mu} \partial_{\mu} - m) \psi = 0
+  G_{\mu\nu}^a = \partial_\mu G_\nu^a - \partial_\nu G_\mu^a - g_{\text{s}}
+  f_{abc} G_\mu^b G_\nu^c \,\text{.}
 \end{align*}
 
-Dirac equation describing free fermions.
+The fact that $SU(3)$ is non-Abelian, meaning a set of indices exists such that
+$f_{abc} \neq 0$, gives rise to the rich structure of QCD. The kinematic term in
+\Cref{eq:qcd_lagrangian} now involves terms that yield, in the language of
+Feynman diagrams, triple and quartic gluon vertices. On physical grounds, these
+gluon self-interactions occur due to gluons themselves being carriers of colour
+charge unlike the photon of QED which does not carry any electrical charge and
+therefore does not couple to itself.
 
-Perform local U(1) phase transformation.
-
-The Dirac equation of a free fermion does not satisfy local gauge invariance due
-to derivative terms.
-
-Can introduce an alternative derivative: $D_\mu = \partial_\mu + i q A_\mu$.
-
-Dirac spinor: $\psi$.
-
-
-\subsection{Quantum Chromodynamics (QCD)}
 
 \subsection{Weak}
 
