@@ -518,89 +518,117 @@ particles with a coupling constant $e$. This yields the condition
 connecting the QED coupling constant with the coupling constants $g$ and
 $g^\prime$ of the electroweak unification. Conventionally, the couplings of the
 electroweak unification are given in terms of $e$ and
-$\sin^2\theta_{\text{W}} = \num{0.23124 +- 0.00004}$~\cite{pdg2020}.
+$\sin^2\theta_{\text{W}} = \num{0.23124 +- 0.00004}$ at
+$Q^2 = m_{Z}^2$~\cite{pdg2020}.
+
+In analogy of QED and QCD, one adds the free field terms to the Lagrangian
+\begin{align*}
+  \lagrange_{W, Z, \gamma} =
+  - \frac{1}{4} W_{\mu\nu}^a W^{\mu\nu}_a
+  - \frac{1}{4} B_{\mu\nu} B^{\mu\nu}
+\end{align*}
+Since the $SU(2)_{\text{L}}$ group is non-Abelian, triple and quartic gauge
+boson couplings are introduced into the theory.
 
 
 \subsubsection{The Brout--Englert--Higgs Mechanism}
 
-BEH mechanism to dynamically generate mass of the heavy gauge bosons.
-
-%\subsection{Fermion Masses}
-
-The theory of the electroweak interaction was developed by unify the
-electromagnetic and weak interaction in a single
-model~\cite{Glashow:1961tr,Salam:1964ry,Weinberg:1967tq}. The model is based on
-the requirement of gauge invariance under $SU(2)_{\text{L}} \times U(1)_{Y}$,
-where
-
-
-
-The weak interaction via charged currents violates parity
-conservation~\cite{Wu:1957my} maximally by only coupling to particles with
-left-handed and anti-particles with right-handed chirality. This suggests, that
-the charged-current weak interaction adheres to a $SU(2)$ symmetry
-
-
-neutral current that does not change the flavour of the particle.
-
-Eigenstates of the charged-current weak interaction are indicated as
-$\{ d^\prime, s^\prime, b^\prime \}$ to differentiate them from the eigenstates
-of the strong interaction $\{ d, s, b \}$. The relationship between these
-representations is given by the  matrix.
-
-$SU(2)_{\text{L}}$
-
-Neutrino scattering experiments show that the neutral current is not purely
-left-handed.
-
-
-Weak isospin $I$ quantised along an arbitrary third axis yielding the $I_3$
-quantum numbers.
-
-
-Doublet under $SU(2)_{\text{L}}$ left-handed chiral particles
+Up to this point, the non-zero masses of the gauge bosons of the weak
+interaction and the fermion masses have been ignored. Explicitly adding a gauge boson mass term to the Lagrangian
 \begin{align*}
+  \lagrange_{\text{mass term}} = -\frac{1}{2} m^2 A_\mu A^\mu
+\end{align*}
+would violate the $SU(2)_{\text{L}} \otimes U(1)_Y$ gauge symmetry due to the
+transformation properties of the gauge field under a symmetry
+transformation. Similarly, fermion mass terms
+\begin{align*}
+  \lagrange = - m \bar{\psi} \psi
+\end{align*}
+...
+
+A method to dynamically generate the mass terms of the heavy gauge bosons was
+introduced into the electroweak theory by Weinberg adopting a mechanism
+developed by Brout, Englert, and Higgs, referred to as the Brout--Englert--Higgs
+(BEH) mechanism~\cite{Englert:1964et,Higgs:1964pj}.
+
+In the minimal Higgs model???
+
+Two complex scalar fields, one charged and one neutral field, are introduced
+that are arranged in a weak isospin doublet according to
+\begin{align*}
+  \phi =
   \begin{pmatrix}
-    u \\
-    d^\prime
-  \end{pmatrix}_{\text{L}}
-  \quad
+    \phi^+ \\
+    \phi^0
+  \end{pmatrix}
+  = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
-    \nu_\ell \\
-    \ell^{-}
-  \end{pmatrix}_{\text{L}}
+    \phi_1 + i \phi_2 \\
+    \phi_3 + i \phi_4
+  \end{pmatrix} \,\text{,}
 \end{align*}
-
-
-GSW model unifying the electromagnetic and weak interactions.
-
-
-
-charged-current interaction $SU(2)$ symmetry -> weak isospin
-
-Left handed chiral particles are in a weak isospin doublet
-
-Right handed chiral particles are in a weak isospin singlett
-
-Vice versa for antiparticles
-
-
-Gell-Mann--Nishijima:
+which can analogously be expressed as four real scalar fields $\phi_i$. The
+Lagrangian of the complex scalar field is given by the Klein--Gordon equation
 \begin{align*}
-  Y = 2 (Q  - I_3)
+  \lagrange = (\partial_\mu \phi)^\dagger \partial^\mu \phi - V(\phi)
 \end{align*}
+with potential term for the field denoted as $V(\phi)$.
 
-
-
-
-
-The coupling constant of the weak interaction is closely related to the coupling
-constant of QED:
+The aim of the BEH mechanism is to embed the doublet of complex scalar fields in
+the electroweak theory with a $SU(2)_{\text{L}}\otimes U(1)_Y$ symmetry. To
+fulfil the gauge invariance of the electroweak model, the potential must have
+radial symmetry in the sense that it only depends on $\phi^\dagger\phi$. One
+such choice is
 \begin{align*}
-  e = g_{\text{W}} \sin\theta_{\text{W}}
+  V(\phi) = \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2
 \end{align*}
+with two parameters $\mu^2$ and $\lambda$.\todo{Maybe say that this is the only
+  form that can be motivated theoretically? (higher powers do not yield
+  renormalisable theories)} The potential must be bound from below to have a
+well-defined state of minimum potential energy (vacuum state) and therefore
+$\lambda$ must be positive. No such restrictions exist for $\mu^2$, leaving two
+options. If $\mu^2 > 0$, the vacuum state is $\phi = \myvec{0}$ and $\mu$ is
+associated with the mass of the scalar field. If $\mu^2 < 0$, the field
+configuration $\phi = \myvec{0}$ is at an unstable point and the true vacuum is
+given by the condition
+\begin{align*}
+  \sum_{i = 1}^4 \phi_i^2 = -\frac{\mu^2}{\lambda} \eqqcolon v^2 \,\text{,}
+\end{align*}
+which represents a continuum of degenerate states at a radius of $v$ from the
+origin in the space spanned by the four real scalar fields. The variable $v$ is
+therefore referred to as the \emph{vacuum expectation value} (VEV). Hereafter,
+this particular choice of potential is referred to as the Higgs potential. The
+choice is further illustrated in \Cref{fig:mexican_hat} for a simplified model
+with only a single complex scalar field.
 
-\section{Electroweak Symmetry Breaking}
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.55\textwidth]{theory/potential}
+
+  \caption{The ``mexican-hat potential'' of a single complex scalar field as a
+    lower dimensional example illustrating the choice of the Higgs potential in
+    the SM. The degenerate vacuum states lie in a circle with radius $v$ given
+    by the condition $\phi_1^2 + \phi_2^2 = v^2$. Adapted from
+    Ref.~\cite{higgs_potential_tikz}.}%
+  \label{fig:mexican_hat}
+\end{figure}
+
+Perturbation theory -> Have to move to vacuum state such that perturbative
+methods work.
+
+Spontaneous symmetry breaking of the symmetry of the electroweak model.
+
+Show that the only symmetry left in the vacuum state is $U(1)_Q$
+
+Goldstone theorem / Unitary gauge
+
+The W / Z ``eat'' the goldstone bosons to obtain longitudinal polarisation
+states.
+
+
+
+
 
 \section{Fermion Masses}
 
