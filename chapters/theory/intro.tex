@@ -489,10 +489,10 @@ physical fields of the charged-current interaction can be identified as
 in analogy to the weak isospin ladder operators. Similarly, the physical fields
 describing the neutral-current interactions via the exchange of $Z$ bosons and
 photons can be expressed as a linear combination of the $W_\mu^3$ and $B_\mu$
-gauge fields. Experimentally, the $Z$ boson couples to both left- and
-right-handed chiral states, although not equally, and therefore such a mixing is
-required to describe the experimental data. The mixing can be described by a
-rotation of the fields by the weak mixing angle $\theta_{\text{W}}$ according to
+gauge fields. Experimental results show that the $Z$ boson couples to both left-
+and right-handed chiral states, although not equally, and therefore such a
+mixing is required. The mixing can be described by a rotation of the fields by
+the weak mixing angle $\theta_{\text{W}}$ according to
 \begin{align*}
   \begin{pmatrix}
     A_\mu \\
@@ -536,13 +536,13 @@ boson couplings are introduced into the theory.
 Up to this point, the non-zero masses of the gauge bosons of the weak
 interaction and the fermion masses have been ignored. Explicitly adding a gauge boson mass term to the Lagrangian
 \begin{align*}
-  \lagrange_{\text{mass term}} = -\frac{1}{2} m^2 A_\mu A^\mu
+  \lagrange_{\text{mass term}}^{\text{vector boson}} = -\frac{1}{2} m^2 A_\mu A^\mu
 \end{align*}
 would violate the $SU(2)_{\text{L}} \otimes U(1)_Y$ gauge symmetry due to the
 transformation properties of the gauge field under a symmetry
 transformation. Similarly, fermion mass terms
 \begin{align*}
-  \lagrange = - m \bar{\psi} \psi
+  \lagrange_{\text{mass term}}^{\text{fermion}} = - m \bar{\psi} \psi
 \end{align*}
 ...
 
@@ -554,7 +554,7 @@ developed by Brout, Englert, and Higgs, referred to as the Brout--Englert--Higgs
 In the minimal Higgs model???
 
 Two complex scalar fields, one charged and one neutral field, are introduced
-that are arranged in a weak isospin doublet according to
+that are arranged in a weak isospin doublet with $Y = 1$ according to
 \begin{align*}
   \phi =
   \begin{pmatrix}
@@ -614,6 +614,18 @@ with only a single complex scalar field.
   \label{fig:mexican_hat}
 \end{figure}
 
+
+
+
+
+$SU(2) \otimes U(1)$ is an exact symmetry of the Lagrangian, however, due to the
+non-vanishing VEV the symmetry is broken by the vacuum state.
+
+
+
+``Nature chooses one of the degenerate states'' (though they are related by the
+symmetry).
+
 Perturbation theory -> Have to move to vacuum state such that perturbative
 methods work.
 
@@ -621,7 +633,7 @@ Spontaneous symmetry breaking of the symmetry of the electroweak model.
 
 Show that the only symmetry left in the vacuum state is $U(1)_Q$
 
-Goldstone theorem / Unitary gauge
+Goldstone theorem~\cite{Goldstone:1962es} / Unitary gauge
 
 The W / Z ``eat'' the goldstone bosons to obtain longitudinal polarisation
 states.
