@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage[usenames,dvipsnames]{color}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{fmffile}{higgs_hhhh_fmf}
+  \begin{fmfgraph*}(60,50)
+    \fmfstraight
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+
+    \fmflabel{$H$}{i1}
+    \fmflabel{$H$}{i2}
+    \fmflabel{$H$}{o1}
+    \fmflabel{$H$}{o2}
+
+    \fmf{dashes}{i1,v}
+    \fmf{dashes}{i2,v}
+    \fmf{dashes}{v,o1}
+    \fmf{dashes}{v,o2}
+    \fmfdot{v}
+  \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}

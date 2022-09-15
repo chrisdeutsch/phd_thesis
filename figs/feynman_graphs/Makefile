@@ -4,6 +4,8 @@ SHELL=/bin/bash
 
 all: di_higgs_triangle.pdf di_higgs_box.pdf
 
+higgs: higgs_hhh.pdf higgs_hhhh.pdf higgs_hww.pdf higgs_hzz.pdf higgs_hhww.pdf higgs_hhzz.pdf
+
 cleanall: clean
 	rm -f *.pdf
 
