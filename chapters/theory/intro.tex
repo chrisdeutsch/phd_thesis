@@ -575,7 +575,7 @@ to
 which can analogously be expressed as four real scalar fields $\phi_i$. The
 Lagrangian of the complex scalar fields is given by the Klein--Gordon equation
 \begin{align*}
-  \lagrange = (\partial_\mu \phi)^\dagger \partial^\mu \phi - V(\phi)
+  \lagrange = (\partial_\mu \phi)^\dagger (\partial^\mu \phi) - V(\phi)
 \end{align*}
 with the potential term of the fields denoted as $V(\phi)$. The aim of the BEH
 mechanism is to embed the doublet of complex scalar fields in the electroweak
@@ -592,7 +592,7 @@ with two parameters $\mu^2$ and $\lambda$.\footnote{On the grounds of
 potential must be bound from below to have a well-defined state of minimum
 potential energy (vacuum state) and therefore $\lambda$ must be positive. No
 such restrictions exist for $\mu^2$, leaving two options. If $\mu^2 > 0$, the
-vacuum state is $\phi = \myvec{0}$ and $\mu$ is associated with the mass of the
+vacuum state is $\phi = \myvec{0}$ and $\mu$ is related to the mass of the
 scalar field. If $\mu^2 < 0$, the field configuration $\phi = \myvec{0}$ is at
 an unstable point and the true vacuum is given by the condition
 \begin{align*}
@@ -625,53 +625,84 @@ the spontaneous choice of a vacuum state with non-vanishing VEV appears to break
 the symmetry, a process referred to as \emph{spontaneous symmetry
   breaking}. Perturbative methods have to be used to find solutions to the field
 equations of motion, hence the fields have to be expressed as small
-perturbations relative to a vacuum state.
-
+perturbations relative to a vacuum state. Let the vacuum state be
 \begin{align*}
   \phi_{\text{v}} = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
     0 \\
     v
-  \end{pmatrix}
+  \end{pmatrix} \,\text{,}
 \end{align*}
-
-Four degrees of freedom for perturbations relative to the chosen vaccum state
-exist. Three degrees of freedom are chosen such that they leave
-$\phi^\dagger \phi$, and thus $V(\phi)$, invariant. The remaining degree of
-freedom alters the value of $\phi^\dagger \phi$ and thus $V(\phi)$.\footnote{In
-  the toy model depicted in \Cref{fig:mexican_hat}, the degrees of freedom
-  correspond to perturbations of the vacuum state in angular and radial
-  direction, respectively.} In the Lagrangian describing the fields $\phi$,
-these perturbations appear as three massless scalar fields and one massive
-scalar field. The quanta of the massless fields are referred to as
-Nambu--Goldstone bosons~\cite{Nambu:1960tm,Goldstone:1961eq}, however, a
-suitable gauge transformation, referred to as the \emph{unitary gauge}, allows
-to remove the massless scalar fields from the theory. In unitary gauge,
-\begin{align*}
+chosen such that only the neutral component is non-vanishing to ensure that the
+$U(1)_Q$ symmetry of QED is recovered after spontaneous symmetry
+breaking.\footnote{An infinitesimal $U(1)_Q$ transformation yields
+  $(1 + i \epsilon Q) \phi_{\text{v}} = \phi_{\text{v}}$, thus leaving the
+  vacuum state unchanged. This is not the case when replacing $Q$ with the
+  generators of $SU(2)_{\text{L}}$ or $U(1)_Y$.} Four degrees of freedom for
+perturbations relative to the chosen vaccum state exist. Three degrees of
+freedom are chosen such that they leave $\phi^\dagger \phi$, and thus $V(\phi)$,
+invariant. The remaining degree of freedom alters the value of
+$\phi^\dagger \phi$ and therefore $V(\phi)$.\footnote{In the toy model depicted
+  in \Cref{fig:mexican_hat}, the degrees of freedom correspond to perturbations
+  of the vacuum state in angular and radial direction, respectively.} In the
+Lagrangian describing the fields $\phi$, these perturbations appear as three
+massless scalar fields and one massive scalar field. The quanta of the massless
+fields are referred to as Nambu--Goldstone
+bosons~\cite{Nambu:1960tm,Goldstone:1961eq}, however, a suitable gauge
+transformation, referred to as the \emph{unitary gauge}, allows to remove the
+massless scalar fields from the theory. In unitary gauge, the doublet of complex
+scalar fields can be expressed as
+\begin{align}
   \phi(\myvec{x}) = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
     0 \\
     v + h(\myvec{x})
   \end{pmatrix}
-\end{align*}
-with $h(\myvec{x}) \in \mathbb{R}$.
+  \label{eq:vacuum_state_perturb}
+\end{align}
+with $h(\myvec{x}) \in \mathbb{R}$ being referred to as the Higgs field.
 
-
-Lagrangian of the Higgs sector (omitting terms independent of the field):
+Inserting \Cref{eq:vacuum_state_perturb} into the Higgs potential yields
 \begin{align*}
   V(h) =
   \underbrace{\lambda v^2 h(\myvec{x})^2}_{\text{Mass term}}
+  + \underbrace{\lambda v h(\myvec{x})^3}_{\text{Trilinear $h$ self-coupling}}
+  + \underbrace{\frac{\lambda}{4} h(\myvec{x})^4}_{\text{Quartic self-coupling}}
+\end{align*}
+The mass term corresponds to a mass of the Higgs field of
+$m_h = \sqrt{2 \lambda} v$.
+
+
+\begin{align*}
+  (D_\mu \phi)^\dagger (D^\mu \phi) =
+  \frac{1}{2} (\partial_\mu h) (\partial^\mu h)
+  + \left[
+  \frac{g^2 v^2}{4} W^{-}_\mu {W^{+}}^\mu
   +
-  \underbrace{\lambda v h(\myvec{x})^3}_{\text{Trilinear self-coupling}}
-  +
-  \underbrace{\frac{\lambda}{4} h(\myvec{x})^4}_{\text{Quartic self-coupling}}
+  \frac{(g^2 + {g^\prime}^2) v^2}{8} Z_\mu Z^\mu
+  \right] \left( 1 + \frac{1}{v} h \right)^2
 \end{align*}
 
-$m = \sqrt{2 \lambda v^2}$
+Yields:
+- Kinematic term for the scalar field $h$
+- Mass terms for both W and Z gauge bosons
+- Notably, no mass term for A
+- Couplings of the form $WWh$, $ZZh$, $WWhh$, and $ZZhh$
 
-Show that the only symmetry left in the vacuum state is $U(1)_Q$
 
-Nambu--Goldstone bosons
+\begin{align*}
+  &m_W = \frac{1}{2} g v  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, v
+\end{align*}
+No mass term for $A$ appears such that the photon remains massless.
+
+Overall the EWK theory has four free parameters, $g$, $g^\prime$, $m_h$, and
+$v$ and makes the following predictions:
+\begin{itemize}
+\item
+\end{itemize}
+
+
+
 
 Goldstone theorem~\cite{Goldstone:1961eq} / Unitary gauge
 
@@ -679,10 +710,19 @@ The W / Z ``eat'' the goldstone bosons to obtain longitudinal polarisation
 states.
 
 
+Free parameters of the EWK sector:
+\begin{align*}
+  g \quad g^\prime \quad v \quad m_h
+\end{align*}
 
 
 
-\section{Fermion Masses}
+
+
+\subsubsection{Fermion Masses and Yukawa Couplings}
+
+
+
 
 \section{The Higgs Boson}
 
