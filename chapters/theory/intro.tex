@@ -13,6 +13,8 @@ Einstein summation convention: Sum over repeated indices.
 
 Space-time indices are given as greek letters. All other indices are latin.
 
+The sign convention of the metric is $(+, -, -, -)$ (conventional in PP).
+
 Cross-sections in barn $\SI{1}{\barn} = 10^{-28}\,\si{\metre\squared}$
 
 Cite what this description is based on: \cite{Halzen:1984mc,Thomson:2013zua}
@@ -533,28 +535,31 @@ boson couplings are introduced into the theory.
 
 \subsubsection{The Brout--Englert--Higgs Mechanism}
 
-Up to this point, the non-zero masses of the gauge bosons of the weak
-interaction and the fermion masses have been ignored. Explicitly adding a gauge boson mass term to the Lagrangian
+In the context of the electroweak theory, the non-zero masses of the gauge
+bosons and the fermions have been ignored thus far. Explicitly adding a gauge
+field mass term to the Lagrangian, which would take the form
 \begin{align*}
-  \lagrange_{\text{mass term}}^{\text{vector boson}} = -\frac{1}{2} m^2 A_\mu A^\mu
+  \lagrange_{\text{mass}}^{B} = -\frac{1}{2} m^2 B_\mu B^\mu
 \end{align*}
-would violate the $SU(2)_{\text{L}} \otimes U(1)_Y$ gauge symmetry due to the
-transformation properties of the gauge field under a symmetry
-transformation. Similarly, fermion mass terms
+for the $B_\mu$ gauge field (analogously for $W_\mu^a$), would violate
+$SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry due to the transformation properties
+of the field. Similarly, fermion mass terms
 \begin{align*}
-  \lagrange_{\text{mass term}}^{\text{fermion}} = - m \bar{\psi} \psi
+  \lagrange_{\text{mass}}^{\text{fermion}} = - m \bar{\psi} \psi = - m [ \bar{\psi}_\text{R} \psi_\text{R} + \bar{\psi}_\text{L} \psi_\text{L} + \bar{\psi}_\text{R} \psi_\text{L} + \bar{\psi}_\text{L} \psi_\text{R}]
 \end{align*}
-...
+would lead to oscillations between left- ($\psi_{\text{L}}$) and right-handed
+($\psi_{\text{R}}$) chiral states thus violating the $SU(2)_{\text{L}}$ symmetry
+of the electroweak theory.
 
-A method to dynamically generate the mass terms of the heavy gauge bosons was
-introduced into the electroweak theory by Weinberg adopting a mechanism
-developed by Brout, Englert, and Higgs, referred to as the Brout--Englert--Higgs
-(BEH) mechanism~\cite{Englert:1964et,Higgs:1964pj}.
+Concerning the masses of the gauge fields, a mechanism to dynamically generate
+the required mass terms of the Lagrangian was introduced by Weinberg into the
+electroweak theory~\cite{Weinberg:1967tq}. The mechanism traces back to Brout,
+Englert, and Higgs~\cite{Englert:1964et,Higgs:1964pj} and is thus referred to as
+the Brout--Englert--Higgs (BEH) mechanism.
 
-In the minimal Higgs model???
-
-Two complex scalar fields, one charged and one neutral field, are introduced
-that are arranged in a weak isospin doublet with $Y = 1$ according to
+The BEH mechanism introduces two complex scalar fields, one electrically charged
+and one neutral field, arranged in a weak isospin doublet with $Y = 1$ according
+to
 \begin{align*}
   \phi =
   \begin{pmatrix}
@@ -568,38 +573,37 @@ that are arranged in a weak isospin doublet with $Y = 1$ according to
   \end{pmatrix} \,\text{,}
 \end{align*}
 which can analogously be expressed as four real scalar fields $\phi_i$. The
-Lagrangian of the complex scalar field is given by the Klein--Gordon equation
+Lagrangian of the complex scalar fields is given by the Klein--Gordon equation
 \begin{align*}
   \lagrange = (\partial_\mu \phi)^\dagger \partial^\mu \phi - V(\phi)
 \end{align*}
-with potential term for the field denoted as $V(\phi)$.
-
-The aim of the BEH mechanism is to embed the doublet of complex scalar fields in
-the electroweak theory with a $SU(2)_{\text{L}}\otimes U(1)_Y$ symmetry. To
-fulfil the gauge invariance of the electroweak model, the potential must have
-radial symmetry in the sense that it only depends on $\phi^\dagger\phi$. One
-such choice is
-\begin{align*}
+with the potential term of the fields denoted as $V(\phi)$. The aim of the BEH
+mechanism is to embed the doublet of complex scalar fields in the electroweak
+theory with a $SU(2)_{\text{L}}\otimes U(1)_Y$ symmetry. To fulfil the gauge
+invariance of the electroweak theory, the potential can only depend on
+$\phi^\dagger \phi$. One such choice is
+\begin{align}
   V(\phi) = \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2
-\end{align*}
-with two parameters $\mu^2$ and $\lambda$.\todo{Maybe say that this is the only
-  form that can be motivated theoretically? (higher powers do not yield
-  renormalisable theories)} The potential must be bound from below to have a
-well-defined state of minimum potential energy (vacuum state) and therefore
-$\lambda$ must be positive. No such restrictions exist for $\mu^2$, leaving two
-options. If $\mu^2 > 0$, the vacuum state is $\phi = \myvec{0}$ and $\mu$ is
-associated with the mass of the scalar field. If $\mu^2 < 0$, the field
-configuration $\phi = \myvec{0}$ is at an unstable point and the true vacuum is
-given by the condition
+  \label{eq:higgs_potential}
+\end{align}
+with two parameters $\mu^2$ and $\lambda$.\footnote{On the grounds of
+  renormalisability of the theory, the largest allowed power of
+  $\phi^\dagger \phi$ in the potential term is two. TODO: Citation?} The
+potential must be bound from below to have a well-defined state of minimum
+potential energy (vacuum state) and therefore $\lambda$ must be positive. No
+such restrictions exist for $\mu^2$, leaving two options. If $\mu^2 > 0$, the
+vacuum state is $\phi = \myvec{0}$ and $\mu$ is associated with the mass of the
+scalar field. If $\mu^2 < 0$, the field configuration $\phi = \myvec{0}$ is at
+an unstable point and the true vacuum is given by the condition
 \begin{align*}
   \sum_{i = 1}^4 \phi_i^2 = -\frac{\mu^2}{\lambda} \eqqcolon v^2 \,\text{,}
 \end{align*}
 which represents a continuum of degenerate states at a radius of $v$ from the
 origin in the space spanned by the four real scalar fields. The variable $v$ is
-therefore referred to as the \emph{vacuum expectation value} (VEV). Hereafter,
-this particular choice of potential is referred to as the Higgs potential. The
-choice is further illustrated in \Cref{fig:mexican_hat} for a simplified model
-with only a single complex scalar field.
+also referred to as the \emph{vacuum expectation value} (VEV). Hereafter, this
+particular choice of potential is referred to as the Higgs potential. The choice
+is further illustrated in \Cref{fig:mexican_hat} for a simplified model with
+only a single complex scalar field.
 
 \begin{figure}[htbp]
   \centering
@@ -614,26 +618,62 @@ with only a single complex scalar field.
   \label{fig:mexican_hat}
 \end{figure}
 
+The fields $\phi_i$ will assume a configuration that minimises the potential
+energy, hence realising one of the infinite number of vacuum states. While the
+full Lagrangian still possesses a $SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry,
+the spontaneous choice of a vacuum state with non-vanishing VEV appears to break
+the symmetry, a process referred to as \emph{spontaneous symmetry
+  breaking}. Perturbative methods have to be used to find solutions to the field
+equations of motion, hence the fields have to be expressed as small
+perturbations relative to a vacuum state.
+
+\begin{align*}
+  \phi_{\text{v}} = \frac{1}{\sqrt{2}}
+  \begin{pmatrix}
+    0 \\
+    v
+  \end{pmatrix}
+\end{align*}
+
+Four degrees of freedom for perturbations relative to the chosen vaccum state
+exist. Three degrees of freedom are chosen such that they leave
+$\phi^\dagger \phi$, and thus $V(\phi)$, invariant. The remaining degree of
+freedom alters the value of $\phi^\dagger \phi$ and thus $V(\phi)$.\footnote{In
+  the toy model depicted in \Cref{fig:mexican_hat}, the degrees of freedom
+  correspond to perturbations of the vacuum state in angular and radial
+  direction, respectively.} In the Lagrangian describing the fields $\phi$,
+these perturbations appear as three massless scalar fields and one massive
+scalar field. The quanta of the massless fields are referred to as
+Nambu--Goldstone bosons~\cite{Nambu:1960tm,Goldstone:1961eq}, however, a
+suitable gauge transformation, referred to as the \emph{unitary gauge}, allows
+to remove the massless scalar fields from the theory. In unitary gauge,
+\begin{align*}
+  \phi(\myvec{x}) = \frac{1}{\sqrt{2}}
+  \begin{pmatrix}
+    0 \\
+    v + h(\myvec{x})
+  \end{pmatrix}
+\end{align*}
+with $h(\myvec{x}) \in \mathbb{R}$.
 
 
+Lagrangian of the Higgs sector (omitting terms independent of the field):
+\begin{align*}
+  V(h) =
+  \underbrace{\lambda v^2 h(\myvec{x})^2}_{\text{Mass term}}
+  +
+  \underbrace{\lambda v h(\myvec{x})^3}_{\text{Trilinear self-coupling}}
+  +
+  \underbrace{\frac{\lambda}{4} h(\myvec{x})^4}_{\text{Quartic self-coupling}}
+\end{align*}
 
-
-$SU(2) \otimes U(1)$ is an exact symmetry of the Lagrangian, however, due to the
-non-vanishing VEV the symmetry is broken by the vacuum state.
-
-
-
-``Nature chooses one of the degenerate states'' (though they are related by the
-symmetry).
-
-Perturbation theory -> Have to move to vacuum state such that perturbative
-methods work.
-
-Spontaneous symmetry breaking of the symmetry of the electroweak model.
+$m = \sqrt{2 \lambda v^2}$
 
 Show that the only symmetry left in the vacuum state is $U(1)_Q$
 
-Goldstone theorem~\cite{Goldstone:1962es} / Unitary gauge
+Nambu--Goldstone bosons
+
+Goldstone theorem~\cite{Goldstone:1961eq} / Unitary gauge
 
 The W / Z ``eat'' the goldstone bosons to obtain longitudinal polarisation
 states.
