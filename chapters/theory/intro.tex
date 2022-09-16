@@ -19,7 +19,7 @@ Cross-sections in barn $\SI{1}{\barn} = 10^{-28}\,\si{\metre\squared}$
 
 
 The following summary of the theoretical foundation is based on
-Refs.~\cite{Halzen:1984mc,Thomson:2013zua}.
+Refs.~\cite{Halzen:1984mc,Thomson:2013zua,Djouadi:2005gi}.
 
 
 \section{Particles and Interactions in the Standard Model}
@@ -538,26 +538,20 @@ boson couplings are introduced into the theory.
 \subsubsection{The Brout--Englert--Higgs Mechanism}
 
 In the context of the electroweak theory, the non-zero masses of the gauge
-bosons and the fermions have been ignored thus far. Explicitly adding a gauge
-field mass term to the Lagrangian, which would take the form
+bosons (and fermions) have been ignored thus far. Inserting mass terms for gauge
+fields into the Lagrangian, which would take the form
 \begin{align*}
   \lagrange_{\text{mass}}^{B} = -\frac{1}{2} m^2 B_\mu B^\mu
 \end{align*}
 for the $B_\mu$ gauge field (analogously for $W_\mu^a$), would violate
 $SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry due to the transformation properties
-of the field. Similarly, fermion mass terms
-\begin{align*}
-  \lagrange_{\text{mass}}^{\text{fermion}} = - m \bar{\psi} \psi = - m [ \bar{\psi}_\text{R} \psi_\text{L} + \bar{\psi}_\text{L} \psi_\text{R} ]
-\end{align*}
-would lead to oscillations between left- ($\psi_{\text{L}}$) and right-handed
-($\psi_{\text{R}}$) chiral states thus violating the $SU(2)_{\text{L}}$ symmetry
-of the electroweak theory.
+of the field.
 
-Concerning the masses of the gauge fields, a mechanism to dynamically generate
-the required mass terms of the Lagrangian was introduced by Weinberg into the
-electroweak theory~\cite{Weinberg:1967tq}. The mechanism traces back to Brout,
-Englert, and Higgs~\cite{Englert:1964et,Higgs:1964pj} and is thus referred to as
-the Brout--Englert--Higgs (BEH) mechanism.
+A mechanism to dynamically generate the required mass terms of the Lagrangian
+was introduced by Weinberg into the electroweak
+theory~\cite{Weinberg:1967tq}. The mechanism traces back to Brout, Englert, and
+Higgs~\cite{Englert:1964et,Higgs:1964pj} and is thus referred to as the
+Brout--Englert--Higgs (BEH) mechanism.
 
 The BEH mechanism introduces two complex scalar fields, one electrically charged
 and one neutral field, arranged in a weak isospin doublet with $Y = 1$ according
@@ -765,9 +759,56 @@ the electroweak sector is fairly accurately specified.
 
 \subsubsection{Fermion Masses}
 
+As mentioned previously, the naive form of including fermion mass terms in the
+SM Lagrangian
+\begin{align*}
+  \lagrange_{\text{mass}}^{\text{fermion}} = - m \bar{\psi} \psi = - m [ \bar{\psi}_\text{R} \psi_\text{L} + \bar{\psi}_\text{L} \psi_\text{R} ]
+\end{align*}
+is not gauge invariant with respect to the $SU(2)_{\text{L}} \otimes U(1)_Y$
+symmetry group. Instead, the fermion mass terms in the SM are generated
+dynamically through electroweak symmetry breaking to ensure gauge invariance.
+
+A gauge invariant Lagrangian is introduced coupling the massive fermions to the
+doublet of complex scalar fields $\phi$ or a conjugate doublet defined as
+$\phi_{\text{c}} = i \sigma_2 \phi^*$.
+
+Exemplary for the first fermion generation:
+\begin{align*}
+  \lagrange_{\text{Yukawa}} =
+  - y_e \bar{L} \phi e_{\text{R}}
+  - y_d \bar{Q} \phi d_{\text{R}}
+  - y_u \bar{Q} \phi_{\text{c}} u_{\text{R}}
+  + \text{h.c.}
+\end{align*}
+(analogously for the second and third fermion generations).
+
+After electroweak symmetry breaking this becomes in unitary gauge:
+\begin{align}
+  \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_f v}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{v} h \right)
+  \label{eq:lagrangian_yukawa}
+\end{align}
+where $y_f$ is the Yukawa coupling constant for fermion $f$. The process of EWSB
+generates mass terms for the fermions
+\begin{align*}
+  m_f = \frac{y_f v}{\sqrt{2}}
+\end{align*}
 
 
 
+
+
+
+\begin{align*}
+  m_f = \frac{y_f v}{\sqrt{2}} \\
+  g_{Hff} = \frac{m_f}{v}
+\end{align*}
+
+
+\cite{Yukawa:1935xg}
+
+
+
+\todo[inline]{Mention mixing according to CKM matrices?}
 
 
 \section{The Higgs Boson and Higgs Boson Pair Production}
