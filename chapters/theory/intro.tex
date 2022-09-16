@@ -660,63 +660,27 @@ scalar fields can be expressed as
   \end{pmatrix}
   \label{eq:vacuum_state_perturb}
 \end{align}
-with $h(\myvec{x}) \in \mathbb{R}$ being referred to as the Higgs field.
+with $h(\myvec{x}) \in \mathbb{R}$.
 
-Inserting \Cref{eq:vacuum_state_perturb} into the Higgs potential yields
+Expressing the Higgs potential of \Cref{eq:higgs_potential} in terms of
+perturbations of the vacuum state of \Cref{eq:vacuum_state_perturb} and dropping
+terms not depending on $h(\myvec{x})$ yields
 \begin{align*}
   V(h) =
-  \underbrace{\lambda v^2 h(\myvec{x})^2}_{\text{Mass term}}
-  + \underbrace{\lambda v h(\myvec{x})^3}_{\text{Trilinear $h$ self-coupling}}
-  + \underbrace{\frac{\lambda}{4} h(\myvec{x})^4}_{\text{Quartic self-coupling}}
+  \lambda v^2 h(\myvec{x})^2
+  + \lambda v h(\myvec{x})^3
+  + \frac{\lambda}{4} h(\myvec{x})^4 \,\text{.}
 \end{align*}
-The mass term corresponds to a mass of the Higgs field of
-$m_h = \sqrt{2 \lambda} v$.
-
-
+The first term of $V(h)$ represents the mass term of the scalar field $h$ with a
+mass of $m_H = \sqrt{2\lambda} v$. The quantum of the scalar field is hereafter
+referred to as the Higgs boson. The terms cubic and quadratic in the scalar
+field yield self-interactions between Higgs bosons with coupling
+strengths\footnote{TODO: Explain mysterious factorial factors} of
 \begin{align*}
-  (D_\mu \phi)^\dagger (D^\mu \phi) =
-  \frac{1}{2} (\partial_\mu h) (\partial^\mu h)
-  + \left[
-  \frac{g^2 v^2}{4} W^{-}_\mu {W^{+}}^\mu
-  +
-  \frac{(g^2 + {g^\prime}^2) v^2}{8} Z_\mu Z^\mu
-  \right] \left( 1 + \frac{1}{v} h \right)^2
+  g_{HHH} = \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad g_{HHHH} = \frac{3 m_{H}^2}{v^2} \,\text{.}
 \end{align*}
-
-Yields:
-- Kinematic term for the scalar field $h$
-- Mass terms for both W and Z gauge bosons
-- Notably, no mass term for A
-- Couplings of the form $WWh$, $ZZh$, $WWhh$, and $ZZhh$
-
-
-\begin{align*}
-  &m_W = \frac{1}{2} g v  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, v
-\end{align*}
-No mass term for $A$ appears such that the photon remains massless.
-
-Overall the EWK theory has four free parameters, $g$, $g^\prime$, $m_h$, and
-$v$ and makes the following predictions:
-\begin{itemize}
-\item
-\end{itemize}
-
-
-
-
-Goldstone theorem~\cite{Goldstone:1961eq} / Unitary gauge
-
-The W / Z ``eat'' the goldstone bosons to obtain longitudinal polarisation
-states.
-
-
-Free parameters of the EWK sector:
-\begin{align*}
-  g \quad g^\prime \quad v \quad m_h
-\end{align*}
-
-
-
+The Feynman vertices of the Higgs boson self-interaction vertices are depicted
+in \Cref{fig:vertex_hhh,fig:vertex_hhhh}, respectively.
 
 \begin{figure}[htbp]
   \centering
@@ -725,6 +689,7 @@ Free parameters of the EWK sector:
     \centering
     \includegraphics{feynman_graphs/higgs_hhh}
     \subcaption{}
+    \label{fig:vertex_hhh}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \centering
@@ -743,6 +708,7 @@ Free parameters of the EWK sector:
     \centering
     \includegraphics{feynman_graphs/higgs_hhhh}
     \subcaption{}
+    \label{fig:vertex_hhhh}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \centering
@@ -755,15 +721,40 @@ Free parameters of the EWK sector:
     \subcaption{}
   \end{subfigure}
 
-  \caption{Vertices of the Higgs sector}
+  \caption{All vertices of Higgs bosons coupling to other bosons predicted by
+    the SM.}%
   \label{fig:higgs_vertices}
 \end{figure}
 
+The terms of the Klein--Gordon equation involving the space-time derivatives
+yield after substituting the $SU(2)_{\text{L}} \otimes U(1)_Y$ gauge covariant
+derivative and inserting the physical fields describing the $W$ and $Z$ bosons:
+\begin{align}
+  (D_\mu \phi)^\dagger (D^\mu \phi) =
+  \frac{1}{2} (\partial_\mu h) (\partial^\mu h)
+  + \left[
+  \frac{g^2 v^2}{4} W^{-}_\mu {W^{+}}^\mu
+  +
+  \frac{(g^2 + {g^\prime}^2) v^2}{8} Z_\mu Z^\mu
+  \right] \left( 1 + \frac{1}{v} h \right)^2 \,\text{.}
+  \label{eq:higgs_covariant_derivative}
+\end{align}
+The first term of \Cref{eq:higgs_covariant_derivative} yields the kinetic term
+for the scalar field $h$. Moreover, the BEH mechanism dynamically generates mass
+terms for the $W^\pm$ and $Z$ bosons while leaving the photon
+massless. Moreover, using the four parameters of the electroweak theory (e.g.\
+$g$, $g^\prime$, $m_{H}$, $v$) the masses of the bosons can be obtained from the
+Lagrangian\footnote{TODO: Explain mysterious factor of two for the W mass term.}
+such that
+\begin{align*}
+  &m_W = \frac{1}{2} g v  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, v && m_A = 0 \,\text{.}
+\end{align*}
+Finally, \Cref{eq:higgs_covariant_derivative} describes interation vertices of
+the form $WWH$, $ZZH$, $WWHH$, and $ZZHH$, which are depicted in
+\Cref{fig:higgs_vertices}.
 
 
-
-
-\subsubsection{Fermion Masses and Yukawa Couplings}
+\subsubsection{Fermion Masses}
 
 
 
