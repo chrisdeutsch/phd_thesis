@@ -17,7 +17,9 @@ The sign convention of the metric is $(+, -, -, -)$ (conventional in PP).
 
 Cross-sections in barn $\SI{1}{\barn} = 10^{-28}\,\si{\metre\squared}$
 
-Cite what this description is based on: \cite{Halzen:1984mc,Thomson:2013zua}
+
+The following summary of the theoretical foundation is based on
+Refs.~\cite{Halzen:1984mc,Thomson:2013zua}.
 
 
 \section{Particles and Interactions in the Standard Model}
@@ -96,7 +98,7 @@ The elementary particles of the SM can be divided into three categories:
   mechanism~\cite{Englert:1964et,Higgs:1964pj} that is used to include massive
   gauge bosons, the $W^\pm$ and $Z$ bosons, in the SM without violating the
   underlying principles of the gauge theory. This will be elaborated in
-  \Cref{todo}.
+  \Cref{seq:theory_ewk}.
 
 \end{description}
 
@@ -241,9 +243,9 @@ component objects
 \end{align*}
 in which the $q_i$ ($\bar{q}_i$) represent (adjoint) Dirac spinors describing
 the quark field with color $i$. The strong interaction does not distinguish
-between quarks of different colour thus assigning a $SU(3)_{\text{colour}}$
-symmetry group to QCD, the subscript indicating that elements of the group act
-in colour-space. The generators of $SU(3)_{\text{colour}}$ are taken to be
+between quarks of different colour thus a $SU(3)_{\text{colour}}$ is assigned,
+the subscript indicating that elements of the group act in colour-space. The
+generators of $SU(3)_{\text{colour}}$ are taken to be
 \begin{align*}
   T_a = \frac{1}{2} \lambda_a \qquad \text{for} \qquad a = 1, \dots, 8 \,\text{,}
 \end{align*}
@@ -252,9 +254,9 @@ where $\lambda_a$ are the Gell-Mann matrices.\footnote{Latin indices are raised
   where $\delta$ refers to the Kronecker delta and the Einstein summation
   convention is adopted.} The theory of QCD is referred to as a Yang--Mills
 gauge theory~\cite{Yang:1954ek} since the elements of $SU(3)_{\text{colour}}$ do
-not commute in general, i.e.\ the group is non-Abelian. The commutation relation
-between the generators is given by $[T_a, T_b] = i f_{abc} T^c$, defining the
-structure constants $f_{abc}$ of the group.
+not commute in general, i.e.\ the symmetry group is non-Abelian. The commutation
+relation between the generators is given by $[T_a, T_b] = i f_{abc} T^c$,
+defining the structure constants $f_{abc}$ of the group.
 
 Following the principle of local gauge invariance regarding a local
 $SU(3)_{\text{color}}$ transformation
@@ -516,7 +518,7 @@ coupling of QED, namely the photon must couple equally to left- and right-handed
 particles with a coupling constant $e$. This yields the condition
 \begin{align*}
   e = g \sin\theta_{\text{W}} = g^\prime \cos\theta_{\text{W}} \,\text{,}
-\end{align*}
+\end{align*}\todo{Note ways to express sin / cos as a function of $g$ and $g^\prime$.}
 connecting the QED coupling constant with the coupling constants $g$ and
 $g^\prime$ of the electroweak unification. Conventionally, the couplings of the
 electroweak unification are given in terms of $e$ and
@@ -545,7 +547,7 @@ for the $B_\mu$ gauge field (analogously for $W_\mu^a$), would violate
 $SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry due to the transformation properties
 of the field. Similarly, fermion mass terms
 \begin{align*}
-  \lagrange_{\text{mass}}^{\text{fermion}} = - m \bar{\psi} \psi = - m [ \bar{\psi}_\text{R} \psi_\text{R} + \bar{\psi}_\text{L} \psi_\text{L} + \bar{\psi}_\text{R} \psi_\text{L} + \bar{\psi}_\text{L} \psi_\text{R}]
+  \lagrange_{\text{mass}}^{\text{fermion}} = - m \bar{\psi} \psi = - m [ \bar{\psi}_\text{R} \psi_\text{L} + \bar{\psi}_\text{L} \psi_\text{R} ]
 \end{align*}
 would lead to oscillations between left- ($\psi_{\text{L}}$) and right-handed
 ($\psi_{\text{R}}$) chiral states thus violating the $SU(2)_{\text{L}}$ symmetry
@@ -673,32 +675,35 @@ terms not depending on $h(\myvec{x})$ yields
 \end{align*}
 The first term of $V(h)$ represents the mass term of the scalar field $h$ with a
 mass of $m_H = \sqrt{2\lambda} v$. The quantum of the scalar field is hereafter
-referred to as the Higgs boson. The terms cubic and quadratic in the scalar
-field yield self-interactions between Higgs bosons with coupling
-strengths\footnote{TODO: Explain mysterious factorial factors} of
+referred to as the Higgs boson ($H$). The terms cubic and quadratic in the
+scalar field represent self-interactions between Higgs bosons with constants
+parameterising the coupling strengths defined according to
+% \begin{align*}
+%   g_{HHH} = \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad g_{HHHH} = \frac{3 m_{H}^2}{v^2} \,\text{.}
+% \end{align*}
 \begin{align*}
-  g_{HHH} = \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad g_{HHHH} = \frac{3 m_{H}^2}{v^2} \,\text{.}
+  \lambda_{HHH} \coloneqq \lambda v = \frac{m_{H}^2}{2 v} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq \frac{\lambda}{4} = \frac{m_{H}^2}{8 v^2} \,\text{.}
 \end{align*}
-The Feynman vertices of the Higgs boson self-interaction vertices are depicted
-in \Cref{fig:vertex_hhh,fig:vertex_hhhh}, respectively.
+The Feynman vertices of Higgs boson self-interactions are depicted in
+\Cref{fig:vertex_hhh,fig:vertex_hhhh}, respectively.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}{0.33\textwidth}
     \centering
-    \includegraphics{feynman_graphs/higgs_hhh}
+    \includegraphics[scale=0.9]{feynman_graphs/higgs_hhh}
     \subcaption{}
     \label{fig:vertex_hhh}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \centering
-    \includegraphics{feynman_graphs/higgs_hzz}
+    \includegraphics[scale=0.9]{feynman_graphs/higgs_hzz}
     \subcaption{}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \centering
-    \includegraphics{feynman_graphs/higgs_hww}
+    \includegraphics[scale=0.9]{feynman_graphs/higgs_hww}
     \subcaption{}
   \end{subfigure}
 
@@ -706,18 +711,18 @@ in \Cref{fig:vertex_hhh,fig:vertex_hhhh}, respectively.
 
   \begin{subfigure}{0.33\textwidth}
     \centering
-    \includegraphics{feynman_graphs/higgs_hhhh}
+    \includegraphics[scale=0.9]{feynman_graphs/higgs_hhhh}
     \subcaption{}
     \label{fig:vertex_hhhh}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \centering
-    \includegraphics{feynman_graphs/higgs_hhzz}
+    \includegraphics[scale=0.9]{feynman_graphs/higgs_hhzz}
     \subcaption{}
   \end{subfigure}%
   \begin{subfigure}{0.33\textwidth}
     \centering
-    \includegraphics{feynman_graphs/higgs_hhww}
+    \includegraphics[scale=0.9]{feynman_graphs/higgs_hhww}
     \subcaption{}
   \end{subfigure}
 
@@ -741,17 +746,21 @@ derivative and inserting the physical fields describing the $W$ and $Z$ bosons:
 \end{align}
 The first term of \Cref{eq:higgs_covariant_derivative} yields the kinetic term
 for the scalar field $h$. Moreover, the BEH mechanism dynamically generates mass
-terms for the $W^\pm$ and $Z$ bosons while leaving the photon
-massless. Moreover, using the four parameters of the electroweak theory (e.g.\
-$g$, $g^\prime$, $m_{H}$, $v$) the masses of the bosons can be obtained from the
-Lagrangian\footnote{TODO: Explain mysterious factor of two for the W mass term.}
-such that
+terms for the $W^\pm$ and $Z$ bosons while leaving the photon massless. Using
+the four parameters of the electroweak theory (e.g.\ $g$, $g^\prime$, $m_{H}$,
+$v$) the masses of the bosons can be obtained from the Lagrangian\footnote{TODO:
+  Explain mysterious factor of two for the W mass term.}  such that
 \begin{align*}
   &m_W = \frac{1}{2} g v  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, v && m_A = 0 \,\text{.}
 \end{align*}
 Finally, \Cref{eq:higgs_covariant_derivative} describes interation vertices of
 the form $WWH$, $ZZH$, $WWHH$, and $ZZHH$, which are depicted in
 \Cref{fig:higgs_vertices}.
+
+
+Prior to the discovery of the Higgs boson: Know $g$, $g^\prime$, and $v$ but not
+$m_{H}$. After the Higgs boson was discovered, we now also know $m_H$ such that
+the electroweak sector is fairly accurately specified.
 
 
 \subsubsection{Fermion Masses}
