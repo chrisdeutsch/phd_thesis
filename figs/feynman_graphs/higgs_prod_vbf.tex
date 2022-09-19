@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{fmffile}{higgs_prod_vbf_fmf}
+  \begin{fmfgraph*}(100,50)
+    \fmfstraight
+    \fmfleft{i1,i2}
+    \fmfright{o1,h,o2}
+
+    % gluons
+    \fmf{fermion}{i1,t1,o1}
+    \fmf{fermion}{i2,t2,o2}
+    \fmffreeze
+
+    \fmf{boson,label=$V$,label.side=left}{t1,v}
+    \fmf{boson,label=$V$,label.side=right}{t2,v}
+    \fmffreeze
+
+    \fmf{dashes}{v,h}
+
+    \fmflabel{$q$}{i1}
+    \fmflabel{$q$}{i2}
+    \fmflabel{$q$}{o1}
+    \fmflabel{$q$}{o2}
+    \fmflabel{$H$}{h}
+  \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}

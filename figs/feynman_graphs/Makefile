@@ -6,6 +6,8 @@ all: di_higgs_triangle.pdf di_higgs_box.pdf
 
 higgs: higgs_hhh.pdf higgs_hhhh.pdf higgs_hww.pdf higgs_hzz.pdf higgs_hhww.pdf higgs_hhzz.pdf
 
+prodmodes: higgs_prod_ggf.pdf higgs_prod_vbf.pdf higgs_prod_vh.pdf higgs_prod_tth.pdf
+
 cleanall: clean
 	rm -f *.pdf
 
