@@ -386,15 +386,15 @@ grouped into weak isospin doublets according to
   \qquad
   \begin{pmatrix}
     u \\
-    d^\prime
+    d
   \end{pmatrix}_{\text{L}},
   \begin{pmatrix}
     c \\
-    s^\prime
+    s
   \end{pmatrix}_{\text{L}},
   \begin{pmatrix}
     t \\
-    b^\prime
+    b
   \end{pmatrix}_{\text{L}}
   \qquad
   \text{with}
@@ -412,24 +412,24 @@ states for right-handed fermions
   I = 0, I_3 = 0 \,\text{,}
 \end{align*}
 where the indices L and R correspond to the separation of the fermion fields
-into their left- and right-handed chiral components. The quark eigenstates of
-the weak interaction are indicated by $d^\prime, s^\prime, b^\prime$ which are
-related to the quark mass eigenstates via the Cabibbo--Kobayashi--Maskawa
-matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}. Right-handed neutrinos were
-omitted since they are not part of the SM.\footnote{The determination of the
-  nature of neutrinos is still an active area of physics research. In the SM,
-  neutrinos are assumed to be massless which is in disagreement with the
-  observation of neutrino oscillations. Under the assumption that neutrinos are
-  Dirac particles, the non-vanishing mass would suggest that there is mixing
-  between left- and right-handed chiral states of neutrinos. However, in the
-  current theory right-handed neutrinos would be ``sterile'' meaning they would
-  not interact via any of the interactions described by the SM. Alternative
-  proposals are that neutrinos are not Dirac but Majorana
-  particles~\cite{Majorana:1937vz}, which are particles that are identical to
-  their antiparticles.} The subscript of the $SU(2)_{\text{L}}$ symmetry group
-indicates that only the doublets of left-handed fermions mix under a
-transformation from the group.\todo{If we are assuming massless quarks -> mass
-  and weak eigenstates are the same.}
+into their left- and right-handed chiral components. % The quark eigenstates of
+% the weak interaction are indicated by $d^\prime, s^\prime, b^\prime$ which are
+% related to the quark mass eigenstates via the Cabibbo--Kobayashi--Maskawa
+% matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}.
+Right-handed neutrinos were omitted since they are not part of the
+SM.\footnote{The determination of the nature of neutrinos is still an active
+  area of physics research. In the SM, neutrinos are assumed to be massless
+  which is in disagreement with the observation of neutrino oscillations. Under
+  the assumption that neutrinos are Dirac particles, the non-vanishing mass
+  would suggest that there is mixing between left- and right-handed chiral
+  states of neutrinos. However, in the current theory right-handed neutrinos
+  would be ``sterile'' meaning they would not interact via any of the
+  interactions described by the SM. Alternative proposals are that neutrinos are
+  not Dirac but Majorana particles~\cite{Majorana:1937vz}, which are particles
+  that are identical to their antiparticles.} The subscript of the
+$SU(2)_{\text{L}}$ symmetry group indicates that only the doublets of
+left-handed fermions mix under a transformation from the group.\todo{If we are
+  assuming massless quarks -> mass and weak eigenstates are the same.}
 
 Second, a quantum number referred to as the \emph{weak hypercharge} defined
 according to
@@ -442,7 +442,7 @@ doublets, a transformation of the group would violate the $U(1)_Q$ symmetry of
 QED. This is remedied by replacing the $U(1)_Q$ with a $U(1)_Y$ symmetry with
 $Y$ being defined such both components of the doublet have the same weak
 hypercharge. The $U(1)_Q$ symmetry of QED will be recovered in a process called
-electroweak symmetry breaking that will be introduced at a later point.
+electroweak symmetry breaking (EWSB) that will be introduced at a later point.
 
 
 The principle of local gauge invariance with respect to the
@@ -520,10 +520,7 @@ particles with a coupling constant $e$. This yields the condition
   e = g \sin\theta_{\text{W}} = g^\prime \cos\theta_{\text{W}} \,\text{,}
 \end{align*}\todo{Note ways to express sin / cos as a function of $g$ and $g^\prime$.}
 connecting the QED coupling constant with the coupling constants $g$ and
-$g^\prime$ of the electroweak unification. Conventionally, the couplings of the
-electroweak unification are given in terms of $e$ and
-$\sin^2\theta_{\text{W}} = \num{0.23124 +- 0.00004}$ at
-$Q^2 = m_{Z}^2$~\cite{pdg2020}.
+$g^\prime$ of the electroweak unification.
 
 In analogy of QED and QCD, one adds the free field terms to the Lagrangian
 \begin{align*}
@@ -597,7 +594,7 @@ an unstable point and the true vacuum is given by the condition
 which represents a continuum of degenerate states at a radius of $v$ from the
 origin in the space spanned by the four real scalar fields. The variable $v$ is
 also referred to as the \emph{vacuum expectation value} (VEV). Hereafter, this
-particular choice of potential is referred to as the Higgs potential. The choice
+particular choice of potential is referred to as the BEH potential. The choice
 is further illustrated in \Cref{fig:mexican_hat} for a simplified model with
 only a single complex scalar field.
 
@@ -607,7 +604,7 @@ only a single complex scalar field.
   \includegraphics[width=0.55\textwidth]{theory/potential}
 
   \caption{The ``mexican-hat potential'' of a single complex scalar field as a
-    lower dimensional example illustrating the choice of the Higgs potential in
+    lower dimensional example illustrating the choice of the BEH potential in
     the SM. The degenerate vacuum states lie in a circle with radius $v$ given
     by the condition $\phi_1^2 + \phi_2^2 = v^2$. Adapted from
     Ref.~\cite{higgs_potential_tikz}.}%
@@ -652,31 +649,31 @@ scalar fields can be expressed as
   \phi(\myvec{x}) = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
     0 \\
-    v + h(\myvec{x})
+    v + H(\myvec{x})
   \end{pmatrix}
   \label{eq:vacuum_state_perturb}
 \end{align}
-with $h(\myvec{x}) \in \mathbb{R}$.
+with $H(\myvec{x}) \in \mathbb{R}$.
 
 Expressing the Higgs potential of \Cref{eq:higgs_potential} in terms of
 perturbations of the vacuum state of \Cref{eq:vacuum_state_perturb} and dropping
-terms not depending on $h(\myvec{x})$ yields
+terms not depending on $H$ yields
 \begin{align*}
-  V(h) =
-  \lambda v^2 h(\myvec{x})^2
-  + \lambda v h(\myvec{x})^3
-  + \frac{\lambda}{4} h(\myvec{x})^4 \,\text{.}
+  V(H) =
+  \lambda v^2 H^2
+  + \lambda v H^3
+  + \frac{\lambda}{4} H^4 \,\text{.}
 \end{align*}
-The first term of $V(h)$ represents the mass term of the scalar field $h$ with a
+The first term of $V(H)$ represents the mass term of the scalar field $H$ with a
 mass of $m_H = \sqrt{2\lambda} v$. The quantum of the scalar field is hereafter
 referred to as the Higgs boson ($H$). The terms cubic and quadratic in the
-scalar field represent self-interactions between Higgs bosons with constants
-parameterising the coupling strengths defined according to
+scalar field represent self-interactions between Higgs bosons with coupling
+strengths defined as
 % \begin{align*}
 %   g_{HHH} = \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad g_{HHHH} = \frac{3 m_{H}^2}{v^2} \,\text{.}
 % \end{align*}
 \begin{align*}
-  \lambda_{HHH} \coloneqq \lambda v = \frac{m_{H}^2}{2 v} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq \frac{\lambda}{4} = \frac{m_{H}^2}{8 v^2} \,\text{.}
+  \lambda_{HHH} \coloneqq 6 \lambda v = \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq 6 \lambda = \frac{3 m_{H}^2}{v^2} \,\text{.}
 \end{align*}
 The Feynman vertices of Higgs boson self-interactions are depicted in
 \Cref{fig:vertex_hhh,fig:vertex_hhhh}, respectively.
@@ -735,7 +732,7 @@ derivative and inserting the physical fields describing the $W$ and $Z$ bosons:
   \frac{g^2 v^2}{4} W^{-}_\mu {W^{+}}^\mu
   +
   \frac{(g^2 + {g^\prime}^2) v^2}{8} Z_\mu Z^\mu
-  \right] \left( 1 + \frac{1}{v} h \right)^2 \,\text{.}
+  \right] \left( 1 + \frac{1}{v} H \right)^2 \,\text{.}
   \label{eq:higgs_covariant_derivative}
 \end{align}
 The first term of \Cref{eq:higgs_covariant_derivative} yields the kinetic term
@@ -751,73 +748,143 @@ Finally, \Cref{eq:higgs_covariant_derivative} describes interation vertices of
 the form $WWH$, $ZZH$, $WWHH$, and $ZZHH$, which are depicted in
 \Cref{fig:higgs_vertices}.
 
+Prior to the discovery of the Higgs boson, of the four parameters describing the
+electroweak theory (e.g.\ $g$, $g^\prime$, $v$, $m_{H}$) the only one left to be
+determined was the mass of the Higgs boson, $m_{H}$.
+% The VEV of the Higgs field, $v$, was previously estimated from measurements of
+% couplings and masses of the weak gauge bosons and is approximately
+% \SI{246}{\GeV}~\cite{pdg2020}.
+After the discovery of the Higgs boson and the measurement of its mass, no
+unknown parameters remain in the electroweak theory.
 
-Prior to the discovery of the Higgs boson: Know $g$, $g^\prime$, and $v$ but not
-$m_{H}$. After the Higgs boson was discovered, we now also know $m_H$ such that
-the electroweak sector is fairly accurately specified.
+% Conventionally, the couplings of the electroweak unification are given in terms
+% of $e$ and $\sin^2\theta_{\text{W}} = \num{0.23124 +- 0.00004}$ at
+% $Q^2 = m_{Z}^2$~\cite{pdg2020}.
 
 
 \subsubsection{Fermion Masses}
 
-As mentioned previously, the naive form of including fermion mass terms in the
-SM Lagrangian
+The inclusion of fermion mass terms of the form
 \begin{align*}
   \lagrange_{\text{mass}}^{\text{fermion}} = - m \bar{\psi} \psi = - m [ \bar{\psi}_\text{R} \psi_\text{L} + \bar{\psi}_\text{L} \psi_\text{R} ]
 \end{align*}
-is not gauge invariant with respect to the $SU(2)_{\text{L}} \otimes U(1)_Y$
-symmetry group. Instead, the fermion mass terms in the SM are generated
-dynamically through electroweak symmetry breaking to ensure gauge invariance.
+into the Lagrangian violates the gauge invariance with respect to the
+$SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry. Instead, fermion mass terms are
+generated dynamically through EWSB by introducing interactions between the
+fermion fields and the scalar Higgs field, which are referred to as Yukawa
+interactions~\cite{Yukawa:1935xg}.
 
-A gauge invariant Lagrangian is introduced coupling the massive fermions to the
-doublet of complex scalar fields $\phi$ or a conjugate doublet defined as
-$\phi_{\text{c}} = i \sigma_2 \phi^*$.
-
-Exemplary for the first fermion generation:
+First, the conjugate of the Higgs field $\phi$ is defined as
+$\phi^{\text{c}} = i \sigma_2 \phi^*$, such that after after EWSB in unitary
+gauge
 \begin{align*}
+  \phi^{\text{c}} = \frac{1}{\sqrt{2}}
+  \begin{pmatrix}
+    v + H(\myvec{x}) \\
+    0
+  \end{pmatrix} \,\text{.}
+\end{align*}
+A Lagrangian of the Yukawa interactions with $SU(2)_{\text{L}} \otimes U(1)_Y$
+gauge invariance is defined, here exemplary for the first generation of
+fermions, as
+\begin{align}
   \lagrange_{\text{Yukawa}} =
   - y_e \bar{L} \phi e_{\text{R}}
+  - y_u \bar{Q} \phi^{\text{c}} u_{\text{R}}
   - y_d \bar{Q} \phi d_{\text{R}}
-  - y_u \bar{Q} \phi_{\text{c}} u_{\text{R}}
-  + \text{h.c.}
-\end{align*}
-(analogously for the second and third fermion generations).
-
-After electroweak symmetry breaking this becomes in unitary gauge:
-\begin{align}
-  \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_f v}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{v} h \right)
+  + \text{h.c.} \,\text{,}
   \label{eq:lagrangian_yukawa}
 \end{align}
-where $y_f$ is the Yukawa coupling constant for fermion $f$. The process of EWSB
-generates mass terms for the fermions
+where $\bar{L}$ and $\bar{Q}$ are the $SU(2)_{\text{L}}$ doublets of the first
+generation of leptons and quarks, respectively. The $SU(2)_{\text{L}}$ singletts
+for electrons, up-, and down-quarks are denoted as $e_{\text{R}}$,
+$u_{\text{R}}$, and $d_{\text{R}}$. Moreover, the coupling constants of the
+Yukawa interactions, which are free parameters of the theory, are given by
+$y_e$, $y_u$, and $y_d$. Finally, $\text{h.c.}$ represents the hermitian
+conjugate of the preceeding terms.
+
+After EWSB and in unitary gauge \Cref{eq:lagrangian_yukawa} reads
 \begin{align*}
-  m_f = \frac{y_f v}{\sqrt{2}}
+  \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_f v}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{v} H \right)
+\end{align*}
+yielding the required mass terms
+\begin{align*}
+  m_f = \frac{y_f v}{\sqrt{2}} \,\text{,}
+\end{align*}
+which are proportional to the Yukawa coupling constants, as well as interactions
+between Higgs bosons and fermions with a coupling strength proportional to the
+mass of the fermion given by
+\begin{align*}
+  g_{Hff} = \frac{m_f}{v} \,\text{.}
 \end{align*}
 
-
-
-
-
-
-\begin{align*}
-  m_f = \frac{y_f v}{\sqrt{2}} \\
-  g_{Hff} = \frac{m_f}{v}
-\end{align*}
-
-
-\cite{Yukawa:1935xg}
-
-
-
-\todo[inline]{Mention mixing according to CKM matrices?}
+The Lagrangian of \Cref{eq:lagrangian_yukawa} can be further generalised to
+include the remaining fermion generations, and mixing between the weak and mass
+eigenstates of quarks as described by the Cabibbo--Kobayashi--Maskawa
+matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}.
 
 
 \section{The Higgs Boson and Higgs Boson Pair Production}
+
+ATLAS \cite{HIGG-2012-27} and CMS \cite{CMS-HIG-12-028}
+
+
+
+
+% \begin{figure}[htbp]
+%   \centering
+
+%   \begin{subfigure}{0.47\textwidth}
+%     \centering
+
+%     \subcaption{ATLAS $H \to ZZ$}
+%   \end{subfigure}\hfill%
+%   \begin{subfigure}{0.47\textwidth}
+%     \centering
+
+%     \subcaption{CMS $H \to \gamma\gamma$}
+%   \end{subfigure}\hfill
+
+
+
+%   \includegraphics[width=0.5\textwidth]{theory/higgs_couplings}
+
+%   \caption{}
+%   \label{fig:higgs_discovery}
+% \end{figure}
+
+
+
+
+
+
+$v \approx \SI{246}{\GeV}$
+
+
+Discovery of the Higgs~CITE last remaining parameter of the electroweak theory
+determined.
+
+\begin{align*}
+  m_{H} = \SI{125.0}{}
+\end{align*}
+
 
 Higgs mass
 
 Higgs boson production
 
 Higgs couplings
+
+
+Couplings of gauge bosons in excellent agreement with the SM prediction
+
+Yukawa: top, bottom, tau, muon (?) also in agreement
+
+
+
+
+
+
 
 
 
