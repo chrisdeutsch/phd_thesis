@@ -1,20 +1,80 @@
 \section{The Higgs Boson}
 
-The Higgs boson
+The Higgs boson is the only elementary scalar particle predicted by the SM. It
+couples to all massive particles of the SM with coupling strengths related to
+the particle's mass. In particular, the strength of the Higgs boson coupling to
+gauge bosons is proportional to $m_V^2$, where $V$ refers to either the $W^\pm$
+or the $Z$ boson, and the Yukawa coupling to fermions proportional to $m_{f}$.
+
+About half a century after the proposal of the Glashow--Salam--Weinberg model of
+the electroweak interaction, the Higgs boson was discovered in 2012 by the
+ATLAS~\cite{HIGG-2012-27} and CMS~\cite{CMS-HIG-12-028} collaborations at the
+Large Hadron Collider. Since its discovery, extensive measurements of its
+properties have been performed showing agreement with the SM predictions. The
+Higgs boson has a mass of about $\SI{125}{\GeV}$ with the most precise
+measurement by the ATLAS collaboration being
+\begin{align*}
+  m_{H} = \num{124.94}%
+  \valuesep\numerrt{0.17}{stat.}%
+  \valuesep\numerrt{0.03}{syst.}%
+  \valuesep\si{\GeV}
+\end{align*}
+in the $H \to Z Z^{*} \to 4\ell$ channel~\cite{HIGG-2020-07} using \pp-collision
+events collected in the period from 2015 to 2018 at the Large Hadron Collider.
+The mass-dependent couplings of the Higgs boson to massive gauge bosons and
+fermions ($t$, $b$, $\tau$, $\mu$) are also experimentally established~CITE.
 
 
 
-elementary particle
 
 
-Discovery
+Production modes:
 
-ATLAS \cite{HIGG-2012-27} and CMS \cite{CMS-HIG-12-028}
+ggF, VBF, WH, ZH, ttH, (tH?)
+
+HH
+
+Decay modes:
+
+Yukawa couplings:
+
+To ``t''
+
+To ``b''
+
+To $\tau$
+
+To $\mu$
 
 
+
+Coupling strengths established:
+
+
+
+
+
+Most precise measurement by the ATLAS collaboration
+
+
+Discovery of the Higgs~CITE last remaining parameter of the electroweak theory
+determined.
+
+
+Higgs mass
+
+Higgs boson production
+
+Higgs couplings
+
+
+Couplings of gauge bosons in excellent agreement with the SM prediction
+
+Yukawa: top, bottom, tau, muon (?) also in agreement
 
 
 \subsection{Production and Decay Modes}
+
 
 \begin{figure}[htbp]
   \centering
@@ -29,6 +89,8 @@ ATLAS \cite{HIGG-2012-27} and CMS \cite{CMS-HIG-12-028}
     \includegraphics[scale=1]{feynman_graphs/higgs_prod_vbf}
     \subcaption{Vector boson fusion (VBF)}
   \end{subfigure}
+
+  \vspace*{0.5em}
 
   \begin{subfigure}{0.45\textwidth}
     \centering
@@ -49,43 +111,6 @@ ATLAS \cite{HIGG-2012-27} and CMS \cite{CMS-HIG-12-028}
 Pair production of Higgs bosons is covered in detail in
 \Cref{fig:theory_higgs_pair_prod}.
 
-
-
-\subsection{Higgs Boson Pair Production}
-\label{fig:theory_higgs_pair_prod}
-
-Observation:
-
-
-
-
-
-
-Production modes:
-
-ggF, VBF, WH, ZH, ttH, (tH?)
-
-HH
-
-Decay modes:
-
-
-
-
-
-
-Yukawa couplings:
-
-To ``t''
-
-To ``b''
-
-To $\tau$
-
-To $\mu$
-
-
-
 \begin{figure}[htbp]
   \centering
 
@@ -94,7 +119,8 @@ To $\mu$
 
     \includegraphics[width=0.95\textwidth]{theory/h_prod_crossec_13tev}
 
-    \subcaption{Cross sections of Higgs boson production modes.}
+    \subcaption{Cross sections of Higgs boson production modes as a function of
+      $m_{H}$.}
   \end{subfigure}\hfill%
   \begin{subfigure}[b]{0.47\textwidth}
     \centering
@@ -103,8 +129,8 @@ To $\mu$
     \input{tables/higgs_branching_ratios}
 
     \subcaption{Branching ratios of Higgs boson decay modes. The $gg$,
-      $\gamma\gamma$, and $Z\gamma$ decay modes occur via processes involving
-      heavy quark loops.}
+      $\gamma\gamma$, and $Z\gamma$ decay modes occur via higher-order
+      processes.}
   \end{subfigure}
 
   \caption{Higgs boson production cross section in \pp-collisions at a
@@ -114,100 +140,10 @@ To $\mu$
 \end{figure}
 
 
-% \begin{figure}[htbp]
-%   \centering
+\subsection{Higgs Boson Pair Production}
+\label{fig:theory_higgs_pair_prod}
 
-%   \begin{subfigure}{0.47\textwidth}
-%     \centering
-
-%     \subcaption{ATLAS $H \to ZZ$}
-%   \end{subfigure}\hfill%
-%   \begin{subfigure}{0.47\textwidth}
-%     \centering
-
-%     \subcaption{CMS $H \to \gamma\gamma$}
-%   \end{subfigure}\hfill
-
-
-
-%   \includegraphics[width=0.5\textwidth]{theory/higgs_couplings}
-
-%   \caption{}
-%   \label{fig:higgs_discovery}
-% \end{figure}
-
-
-
-
-
-
-$v \approx \SI{246}{\GeV}$
-
-
-Discovery of the Higgs~CITE last remaining parameter of the electroweak theory
-determined.
-
-\begin{align*}
-  m_{H} = \SI{125.0}{}
-\end{align*}
-
-
-Higgs mass
-
-Higgs boson production
-
-Higgs couplings
-
-
-Couplings of gauge bosons in excellent agreement with the SM prediction
-
-Yukawa: top, bottom, tau, muon (?) also in agreement
-
-
-
-
-
-
-
-
-\clearpage
-\todo[inline]{Here be dragons}
-
-\subsection{Production and Decay Modes}
-
-\subsection{Higgs Boson Self-Interaction and Higgs Boson Pair Production}
-
-Couplings of the Higgs boson to heavy vector bosons and heavy fermions
-are quickly established after the Higgs boson discovery. However, the
-Higgs boson self-coupling is still an open question and an important
-probe to check EWSB.
-
-% Super excellent talk by Katharine:
-% https://indico.cern.ch/event/1065153/attachments/2351166/4011032/Seminar.pdf
-
-All wrong...
-
-Taylor expansion of the Higgs potential about the minimum after EWSB:
-\begin{align*}
-  V(h) &= \frac{1}{2} m_{\PH}^2 h^2 + \lambda v h^3 + \frac{1}{4} \lambda h^4 + \dots \\
-  m_{\PH} &= \sqrt{2 \lambda v} \approx \SI{125}{\GeV} \\
-  \lambda &\approx 0.13 \quad \text{(SM)}
-\end{align*}
-$h$ is a complex field with the $h^2$-term being the mass term,
-$h^3$-term yielding the trilinear coupling, and the $h^4$-term
-yielding the quartic coupling. All these terms are directly predicted
-by the SM but an experimental probe is still justified to detect
-possible deviations from the SM. The self-coupling strength~$\lambda$
-can be directly probed in either double Higgs boson production or
-triple Higgs boson production (although inaccessible
-currently). Indirect probes also exist for example in single Higgs
-boson production where the self-coupling contributes at loop-level.
-
-Cross section of HH production is 1000 times smaller than single
-Higgs. \todo{Cross section diagram would be nice?}
-
-The Higgs potential in the SM is determined by two parameters:
-$v = 1 / \sqrt{\sqrt{2} G_{\text{F}}^0}$ and $\lambda$
+Production modes
 
 \begin{figure}[htbp]
   \centering
@@ -245,17 +181,59 @@ $v = 1 / \sqrt{\sqrt{2} G_{\text{F}}^0}$ and $\lambda$
   \label{fig:hh_feynmans}
 \end{figure}
 
+
+
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.45\textwidth]{theory/di_higgs_branching_ratio}
-  \caption{Possible final states of decays of pairs of Standard Model
-    Higgs bosons. Higgs boson branching ratios are taken
-    from~\cite{deFlorian:2016spz} and
-    assume~$m_{\PH} = \SI{125.0}{\GeV}$. The decay
-    mode~$\PH \ra \Pgluon\Pgluon$ is excluded due to limited
-    experimental feasibility.}
+  \caption{Possible final states of decays of pairs of Standard Model Higgs
+    bosons. Higgs boson branching ratios are taken from~\cite{deFlorian:2016spz}
+    and assume~$m_{H} = \SI{125.0}{\GeV}$. The decay mode~$H \ra g g$ is
+    excluded due to limited experimental feasibility.}
   \label{fig:hh_branching_ratios}
 \end{figure}
+
+
+
+\clearpage
+\todo[inline]{Here be dragons}
+
+
+\subsection{Higgs Boson Self-Interaction and Higgs Boson Pair Production}
+
+Couplings of the Higgs boson to heavy vector bosons and heavy fermions
+are quickly established after the Higgs boson discovery. However, the
+Higgs boson self-coupling is still an open question and an important
+probe to check EWSB.
+
+% Super excellent talk by Katharine:
+% https://indico.cern.ch/event/1065153/attachments/2351166/4011032/Seminar.pdf
+
+All wrong...
+
+Taylor expansion of the Higgs potential about the minimum after EWSB:
+\begin{align*}
+  V(h) &= \frac{1}{2} m_{\PH}^2 h^2 + \lambda v h^3 + \frac{1}{4} \lambda h^4 + \dots \\
+  m_{\PH} &= \sqrt{2 \lambda v} \approx \SI{125}{\GeV} \\
+  \lambda &\approx 0.13 \quad \text{(SM)}
+\end{align*}
+$h$ is a complex field with the $h^2$-term being the mass term,
+$h^3$-term yielding the trilinear coupling, and the $h^4$-term
+yielding the quartic coupling. All these terms are directly predicted
+by the SM but an experimental probe is still justified to detect
+possible deviations from the SM. The self-coupling strength~$\lambda$
+can be directly probed in either double Higgs boson production or
+triple Higgs boson production (although inaccessible
+currently). Indirect probes also exist for example in single Higgs
+boson production where the self-coupling contributes at loop-level.
+
+Cross section of HH production is 1000 times smaller than single
+Higgs. \todo{Cross section diagram would be nice?}
+
+The Higgs potential in the SM is determined by two parameters:
+$v = 1 / \sqrt{\sqrt{2} G_{\text{F}}^0}$ and $\lambda$
+
+
 
 4b: Very large branching ratio but huge multi-jet background.
 
