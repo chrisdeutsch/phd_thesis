@@ -44,18 +44,135 @@ $m_{H}$, are measured with high precision.\footnote{The VEV was known prior to
 
 \subsection{Production and Decay Modes}
 
+The production of Higgs bosons at the LHC occur through different production
+modes with production cross sections spanning multiple orders of magnitude. The
+Feynman diagrams of the four dominant production modes are shown in
+\Cref{fig:higgs_prod_feyn}, all of which have been experimentally confirmed. The
+production cross section in \pp-collisions at a centre-of-mass energy of
+\SI{13}{\TeV} is shown in \Cref{fig:higgs_prod_xsec} as a function of
+$m_{H}$. For $m_{H} = \SI{125.0}{\GeV}$, the \ggF production mode has the
+largest production cross section with
+$\sigma(\pp \to H) \approx \SI{50}{\pico\barn}$, followed by the the VBF mode
+with $\sigma(\pp \to qqH) \approx \SI{4}{\pico\barn}$, the $VH$ mode with
+$\sigma(\pp \to VH) \approx \SI{2}{\pico\barn}$ inclusive in $V = W^\pm$ and
+$V= Z$, and finally the $\ttbar H$ mode with
+$\sigma(\pp \to \ttbar H) \approx
+\SI{0.5}{\pico\barn}$~\cite{deFlorian:2016spz}. Higgs boson production modes
+involving two Higgs bosons in the final state, which are the processes of
+primary interest for this thesis, are covered in
+\Cref{fig:theory_higgs_pair_prod}.
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[scale=1]{feynman_graphs/higgs_prod_ggf}
+    \subcaption{Gluon-gluon fusion (\ggF)}
+  \end{subfigure}%
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[scale=1]{feynman_graphs/higgs_prod_vbf}
+    \subcaption{Vector boson fusion (VBF)}
+  \end{subfigure}
+
+  \vspace*{0.5em}
+
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[scale=1]{feynman_graphs/higgs_prod_vh}
+    \subcaption{Associated production with a massive vector boson ($VH$)}
+  \end{subfigure}%
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[scale=1]{feynman_graphs/higgs_prod_tth}
+    \subcaption{Associated production with \ttbar ($\ttbar H$)}
+  \end{subfigure}%
+
+  \caption{The dominant Higgs boson production modes in \pp-collisions at
+    centre-of-mass energies of \SI{13}{\TeV}.}%
+  \label{fig:higgs_prod_feyn}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[b]{0.47\textwidth}
+    \centering
+
+    \includegraphics[width=0.95\textwidth]{theory/h_prod_crossec_13tev}
+
+    \subcaption{Cross sections of Higgs boson production modes as a function of
+      $m_{H}$.}%
+    \label{fig:higgs_prod_xsec}
+  \end{subfigure}\hfill%
+  \begin{subfigure}[b]{0.47\textwidth}
+    \centering
+
+    \renewcommand{\arraystretch}{1.1}%
+    \input{tables/higgs_branching_ratios}
+
+    \vspace*{1.2em}
+
+    \subcaption{Branching ratios of Higgs boson decay modes. The $gg$,
+      $\gamma\gamma$, and $Z\gamma$ decay modes occur via higher-order
+      processes.}%
+    \label{tab:higgs_branching_ratios}
+  \end{subfigure}
+
+  \caption{Higgs boson production cross section in \pp-collisions at a
+    centre-of-mass energy of \SI{13}{\TeV} (a) and Higgs boson decay branching
+    ratios for $m_{H} = \SI{125.0}{\GeV}$ (b). The figure and branching ratios
+    are taken from Ref.~\cite{deFlorian:2016spz}.}
+\end{figure}
+
+The Higgs boson (with $m_{H} = \SI{125}{\GeV}$) is predicted to have a total
+decay width of about \SI{4}{\MeV}~\cite{deFlorian:2016spz} yielding a proper
+lifetime of $10^{-22}\,\si{\second}$. As a result, the Higgs boson decays almost
+immediately via one of the decay modes summarised in
+\Cref{tab:higgs_branching_ratios}.
 
 
 
 
 
-Production modes:
+The table illustrates the preferential coupling of the Higgs boson to heavier
+particles such as the weak gauge bosons and third generation
+fermions.\footnote{The decays of Higgs bosons to $W^+W^-$ and $ZZ$ are
+  suppressed since $m_{H} < 2 m_{W} < 2 m_{Z}$ such that one of the gauge bosons
+  has to be produced \emph{off shell}. The decays }
 
-ggF, VBF, WH, ZH, ttH, (tH?)
 
-HH
 
-Decay modes:
+
+Decays of $H \to \bbbar / \tau^+ \tau^-$,
+
+
+The Higgs
+boson branching ratios reflect the preferential coupling of the Higgs boson to
+heavy particles such as the weak gauge bosons and third generation fermions.
+
+First evidence of the Yukawa coupling of the Higgs boson to second generation
+fermions in the decay $H \to \mu^+ \mu^-$
+
+
+
+
+
+
+
+
+
+
+
+The branching ratios reflect the preferential coupling of the Higgs boson to
+heavy particles such as the weak gauge bosons and third generation fermions. In
+addition,
+
+The branching ratios illustrate the preferential coupling of the Higgs boson to
+heavy gauge bosons and fermions
+
+
 
 Yukawa couplings:
 
@@ -88,8 +205,6 @@ Yukawa: top, bottom, tau, muon (?) also in agreement
 
 
 
-
-
 \Cref{fig:higgs_prod_feyn}
 
 \Cref{fig:higgs_prod_xsec}
@@ -98,71 +213,11 @@ Pair production of Higgs bosons is covered in detail in
 \Cref{fig:theory_higgs_pair_prod}.
 
 
-\begin{figure}[htbp]
-  \centering
 
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[scale=1]{feynman_graphs/higgs_prod_ggf}
-    \subcaption{Gluon-gluon fusion (\ggF)}
-  \end{subfigure}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[scale=1]{feynman_graphs/higgs_prod_vbf}
-    \subcaption{Vector boson fusion (VBF)}
-  \end{subfigure}
-
-  \vspace*{0.5em}
-
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[scale=1]{feynman_graphs/higgs_prod_vh}
-    \subcaption{Associated production with a vector boson ($VH$)}
-  \end{subfigure}%
-  \begin{subfigure}{0.45\textwidth}
-    \centering
-    \includegraphics[scale=1]{feynman_graphs/higgs_prod_tth}
-    \subcaption{Associated production with \ttbar ($\ttbar H$)}
-  \end{subfigure}%
-
-  \caption{The dominant Higgs boson production modes in \pp-collisions at
-    centre-of-mass energies of \SI{13}{\TeV}.}%
-  \label{fig:higgs_prod_feyn}
-\end{figure}
 
 Preferential coupling to heavy
 
-\begin{figure}[htbp]
-  \centering
 
-  \begin{subfigure}[b]{0.47\textwidth}
-    \centering
-
-    \includegraphics[width=0.95\textwidth]{theory/h_prod_crossec_13tev}
-
-    \subcaption{Cross sections of Higgs boson production modes as a function of
-      $m_{H}$.}%
-    \label{fig:higgs_prod_xsec}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[b]{0.47\textwidth}
-    \centering
-
-    \renewcommand{\arraystretch}{1.1}%
-    \input{tables/higgs_branching_ratios}
-
-    \vspace*{0.5em}
-
-    \subcaption{Branching ratios of Higgs boson decay modes. The $gg$,
-      $\gamma\gamma$, and $Z\gamma$ decay modes occur via higher-order
-      processes.}%
-    \label{tab:higgs_branching_ratios}
-  \end{subfigure}
-
-  \caption{Higgs boson production cross section in \pp-collisions at a
-    centre-of-mass energy of \SI{13}{\TeV} (a) and Higgs boson decay branching
-    ratios for $m_{H} = \SI{125.0}{\GeV}$ (b). The figure and branching ratios
-    are taken from Ref.~\cite{deFlorian:2016spz}.}
-\end{figure}
 
 
 \subsection{Higgs Boson Pair Production}
