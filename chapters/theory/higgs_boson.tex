@@ -1,28 +1,49 @@
 \section{The Higgs Boson}
 
-The Higgs boson is the only elementary scalar particle predicted by the SM. It
-couples to all massive particles of the SM with coupling strengths related to
-the particle's mass. In particular, the strength of the Higgs boson coupling to
-gauge bosons is proportional to $m_V^2$, where $V$ refers to either the $W^\pm$
-or the $Z$ boson, and the Yukawa coupling to fermions proportional to $m_{f}$.
+The Higgs boson is the only scalar particle present in the current formulation
+of the SM. It is predicted to be massive with neither electric nor colour
+charge. It couples to all massive particles, including itself, with coupling
+strengths related to the mass of the particle. The coupling strength of the
+Higgs boson to gauge bosons, $V$, is proportional to $m_{V}^2$. Similarly, the
+Yukawa interactions between Higgs bosons and fermions are predicted to occur
+with strengths proportional to the mass of the fermions, $m_f$. The detection of
+the Higgs boson and confirmation of its properties (e.g.\ spin, intrinsic
+parity, mass-dependent coupling strengths\todo{CP?}) would represent evidence
+for the BEH mechanism and the Glashow--Salam--Weinberg model of the electroweak
+interaction.
 
-About half a century after the proposal of the Glashow--Salam--Weinberg model of
-the electroweak interaction, the Higgs boson was discovered in 2012 by the
+In 2012, almost half a century after the proposal of the
+Glashow--Salam--Weinberg model, the Higgs boson was discovered by the
 ATLAS~\cite{HIGG-2012-27} and CMS~\cite{CMS-HIG-12-028} collaborations at the
-Large Hadron Collider. Since its discovery, extensive measurements of its
-properties have been performed showing agreement with the SM predictions. The
-Higgs boson has a mass of about $\SI{125}{\GeV}$ with the most precise
-measurement by the ATLAS collaboration being
+Large Hadron Collider with a mass of about \SI{125}{\GeV}. Since its discovery,
+extensive measurements of its properties have been performed showing remarkable
+agreement with the SM predictions. In 2022, the Higgs boson mass has been
+measured with relative errors approaching \SI{0.1}{\percent}. An exemplary
+measurement of the Higgs boson mass by the ATLAS collaboration yields
 \begin{align*}
-  m_{H} = \num{124.94}%
-  \valuesep\numerrt{0.17}{stat.}%
-  \valuesep\numerrt{0.03}{syst.}%
+  m_{H} = \num{124.99}%
+  \valuesep\numerrt{0.18}{stat.}%
+  \valuesep\numerrt{0.04}{syst.}%
   \valuesep\si{\GeV}
 \end{align*}
 in the $H \to Z Z^{*} \to 4\ell$ channel~\cite{HIGG-2020-07} using \pp-collision
-events collected in the period from 2015 to 2018 at the Large Hadron Collider.
-The mass-dependent couplings of the Higgs boson to massive gauge bosons and
-fermions ($t$, $b$, $\tau$, $\mu$) are also experimentally established~CITE.
+events collected during Run~2 of the Large Hadron Collider. The scalar nature of
+the Higgs boson has been
+confirmed~\cite{HIGG-2013-17-witherratum,CMS-HIG-14-018} and its coupling
+strengths are thus far in good agreement with the SM
+predictions~\cite{HIGG-2021-23,CMS-HIG-22-001}. As a result, the electroweak
+sector is well established and the two parameters of the BEH potential, $v$ and
+$m_{H}$, are measured with high precision.\footnote{The VEV was known prior to
+  the discovery of the Higgs boson through measurements of the muon lifetime
+  which allows to determine the effective coupling constant $G_{\text{F}}$ of
+  the charged-current weak interaction. With known $G_{\text{F}}$, the VEV can
+  be determined according to
+  $v = \bigl( \sqrt{2} G_{\text{F}} \bigr)^{-1/2} \approx
+  \SI{246}{\GeV}$~\cite{MuLan:2010shf}.}
+
+
+\subsection{Production and Decay Modes}
+
 
 
 
@@ -47,14 +68,7 @@ To $\tau$
 To $\mu$
 
 
-
 Coupling strengths established:
-
-
-
-
-
-Most precise measurement by the ATLAS collaboration
 
 
 Discovery of the Higgs~CITE last remaining parameter of the electroweak theory
@@ -73,7 +87,15 @@ Couplings of gauge bosons in excellent agreement with the SM prediction
 Yukawa: top, bottom, tau, muon (?) also in agreement
 
 
-\subsection{Production and Decay Modes}
+
+
+
+\Cref{fig:higgs_prod_feyn}
+
+\Cref{fig:higgs_prod_xsec}
+
+Pair production of Higgs bosons is covered in detail in
+\Cref{fig:theory_higgs_pair_prod}.
 
 
 \begin{figure}[htbp]
@@ -104,12 +126,11 @@ Yukawa: top, bottom, tau, muon (?) also in agreement
   \end{subfigure}%
 
   \caption{The dominant Higgs boson production modes in \pp-collisions at
-    centre-of-mass energies of \SI{13}{\TeV}.}
+    centre-of-mass energies of \SI{13}{\TeV}.}%
+  \label{fig:higgs_prod_feyn}
 \end{figure}
 
-
-Pair production of Higgs bosons is covered in detail in
-\Cref{fig:theory_higgs_pair_prod}.
+Preferential coupling to heavy
 
 \begin{figure}[htbp]
   \centering
@@ -120,7 +141,8 @@ Pair production of Higgs bosons is covered in detail in
     \includegraphics[width=0.95\textwidth]{theory/h_prod_crossec_13tev}
 
     \subcaption{Cross sections of Higgs boson production modes as a function of
-      $m_{H}$.}
+      $m_{H}$.}%
+    \label{fig:higgs_prod_xsec}
   \end{subfigure}\hfill%
   \begin{subfigure}[b]{0.47\textwidth}
     \centering
@@ -128,9 +150,12 @@ Pair production of Higgs bosons is covered in detail in
     \renewcommand{\arraystretch}{1.1}%
     \input{tables/higgs_branching_ratios}
 
+    \vspace*{0.5em}
+
     \subcaption{Branching ratios of Higgs boson decay modes. The $gg$,
       $\gamma\gamma$, and $Z\gamma$ decay modes occur via higher-order
-      processes.}
+      processes.}%
+    \label{tab:higgs_branching_ratios}
   \end{subfigure}
 
   \caption{Higgs boson production cross section in \pp-collisions at a
@@ -143,7 +168,16 @@ Pair production of Higgs bosons is covered in detail in
 \subsection{Higgs Boson Pair Production}
 \label{fig:theory_higgs_pair_prod}
 
-Production modes
+Directly access the shape of the BEH potential.
+
+Production cross sections assuming $m_{H} = \SI{125.0}{\GeV}$:
+\begin{itemize}
+\item \ggF: \SI{31.05}{\femto\barn}~\cite{Grazzini:2018bsd}
+\item VBF: \SI{1.726}{\femto\barn}~\cite{Dreyer:2018qbw,LHCHWGHH}
+\item Higgs boson pair production in association with \ttbar (Third largest
+  $\ttbar HH$: \SI{0.775}{})
+\end{itemize}
+Factor 1000 smaller than single Higgs boson production
 
 \begin{figure}[htbp]
   \centering
@@ -177,7 +211,10 @@ Production modes
     \subcaption{}
   \end{subfigure}
 
-  \caption{Feynman graphs}
+  \caption{Feynman diagrams of the two dominant production modes of Higgs boson
+    pairs in \pp-collisions at centre-of-mass energies of \SI{13}{\TeV}.  The
+    diagrams of the \ggF and VBF production mode are shown in (a-b) and (c-e),
+    respectively.}%
   \label{fig:hh_feynmans}
 \end{figure}
 
