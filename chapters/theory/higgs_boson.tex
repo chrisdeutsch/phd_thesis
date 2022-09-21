@@ -151,6 +151,9 @@ collaboration~\cite{CMS-HIG-19-006}.
 \subsection{Higgs Boson Pair Production}%
 \label{fig:theory_higgs_pair_prod}
 
+% Super excellent talk by Katharine:
+% https://indico.cern.ch/event/1065153/attachments/2351166/4011032/Seminar.pdf
+
 After the discovery of the Higgs boson and the measurement of its mass, the free
 parameters of the EWSB in the SM, $v$ and $m_H$, are fully determined and thus
 also the form of the BEH potential. An important test of the SM is the
@@ -163,10 +166,18 @@ three Higgs bosons, respectively. Currently, the direct measurement of the
 quartic Higgs boson self-coupling is experimentally infeasible due to the small
 cross section of triple Higgs boson production (about \SI{80}{\atto\barn} in
 \pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$~\cite{Maltoni:2014eza}). Instead,
-the focus of this thesis lies on probing Higgs boson pair production.
+the focus of this thesis lies on directly probing the trilinear Higgs boson
+self-coupling, $\lambda_{HHH}$, in Higgs boson pair production.\footnote{The
+  Higgs boson self-coupling can also be probed indirectly through higher-order
+  corrections to the production of single Higgs bosons. See for example
+  Ref.~\cite{Degrassi:2016wml} \cite{ATLAS-CONF-2022-050}.}
+
+
+% Mention this somewhere?
+% \lambda &\approx 0.13 \quad \text{(SM)}
 
 The production of Higgs boson pairs at the LHC is a rare process with cross
-sections about 1000 times smaller than the production of single Higgs
+sections more than 1000 times smaller than the production of single Higgs
 bosons. Under the SM hypothesis, Higgs boson pair production is not yet
 accessible using data collected during Run~2 of the LHC. However, first evidence
 of Higgs boson pair production could be obtained by the end of the LHC
@@ -186,16 +197,20 @@ at $\sqrt{s} = \SI{13}{\TeV}$ and $m_{H} = \SI{125.0}{\GeV}$.
 
 The gluon-gluon fusion process (\ggF) is the dominant production mode of Higgs
 boson pairs in the SM (SM $HH$). The leading order diagrams of this process are
-depicted in \Cref{fig:dihiggs_ggf_feyn}.
-
-
-
-
-
-
-
-
-The dominant production mode at the LHC
+depicted in \Cref{fig:dihiggs_ggf_feyn}. Both diagrams involve a loop of heavy
+quarks, the loop being dominated by top-quarks due to their large coupling to
+the Higgs boson. The box diagram depicted in \Cref{fig:dihiggs_ggf_feyn_box}
+does not involve any Higgs boson self-interaction vertices.\footnote{As a
+  result, Higgs boson pair production exists even in the absence of Higgs boson
+  self-interactions.} However, the triangle diagram in
+\Cref{fig:dihiggs_ggf_feyn_triangle} does involve the Higgs boson self-coupling
+thus making SM $HH$ production sensitive to $\lambda_{HHH}$. The triangle and
+the box diagram interfere destructively leading to a small SM $HH$ production
+cross section via \ggF of
+\begin{align*}
+  \sigma(pp \to HH) = \SI{31.05}{\femto\barn}
+\end{align*}
+at $\text{NNLO}_{\FTapprox}$~\cite{Grazzini:2018bsd}.
 
 \begin{figure}[htbp]
   \centering
@@ -216,20 +231,25 @@ The dominant production mode at the LHC
   \caption{Feynman diagrams of Higgs boson pair production via \ggF at leading
     order. The diagrams (a) and (b) are commonly referred to as the box and
     triangle diagrams, respectively. The Higgs boson self-coupling and the
-    top-quark Yukawa coupling are indicated by \ktop and \klambda,
+    top-quark Yukawa coupling is indicated by $\lambda_{HHH}$ and $g_{Htt}$,
     respectively.}%
   \label{fig:dihiggs_ggf_feyn}
 \end{figure}
 
-Production cross sections assuming $m_{H} = \SI{125.0}{\GeV}$:
-\begin{itemize}
-\item \ggF: \SI{31.05}{\femto\barn}~\cite{Grazzini:2018bsd}
-\item VBF: \SI{1.726}{\femto\barn}~\cite{Dreyer:2018qbw,LHCHWGHH}
-\item Higgs boson pair production in association with \ttbar (Third largest
-  $\ttbar HH$: \SI{0.775}{})
-\end{itemize}
-
-
+The second largest SM \HH production mode is vector boson fusion (VBF). The
+leading order diagrams of the VBF production mode are depicted in
+\Cref{fig:dihiggs_vbf_feyn}. The diagrams involve the coupling of the Higgs
+boson to vector bosons, $g_{HVV}$, the quartic $HHVV$ coupling, $g_{HHVV}$, and
+the Higgs boson self-coupling. A characteristic feature of the VBF production
+mode is the presence of two additional jets originating from the fragmentation
+and hadronisation of the final state quarks. The predicted SM \HH production
+cross section via VBF is
+\begin{align*}
+  \sigma(\pp \to qqHH) = \SI{1.726}{\femto\barn}
+\end{align*}
+at $\text{N}^3\text{LO}$~\cite{Dreyer:2018qbw,LHCHWGHH}. Due to the small cross
+section, the VBF production mode is currently of lesser relevance to probe the
+nature of the Higgs boson self-coupling.
 
 \begin{figure}[htbp]
   \centering
@@ -250,15 +270,27 @@ Production cross sections assuming $m_{H} = \SI{125.0}{\GeV}$:
     \subcaption{}
   \end{subfigure}
 
-  \caption{Feynman diagrams of the two dominant production modes of Higgs boson
-    pairs in \pp-collisions at centre-of-mass energies of \SI{13}{\TeV}.  The
-    diagrams of the \ggF and VBF production mode are shown in (a-b) and (c-e),
-    respectively.}%
-  \label{fig:hh_feynmans}
+  \caption{Feynman diagrams of Higgs boson pair production via VBF at leading
+    order.}%
+  \label{fig:dihiggs_vbf_feyn}
 \end{figure}
+
+Additional production modes of SM \HH with even smaller cross sections
+exist. Examples of these are the associated production of \HH with weak vector
+bosons with
+$\sigma(\pp \to VHH) \approx \SI{0.9}{\femto\barn}$~\cite{deFlorian:2016spz}
+($V = W^\pm\,\text{or}\,Z$) and associated production with \ttbar with
+$\sigma(\pp \to \ttbar HH) \approx
+\SI{0.8}{\femto\barn}$~\cite{deFlorian:2016spz}. These production modes are not
+considered in the remainder of this thesis.
 
 
 \subsubsection{Final States}%
+
+Plethora of final states
+
+
+
 
 \begin{figure}[htbp]
   \centering
@@ -278,21 +310,9 @@ Production cross sections assuming $m_{H} = \SI{125.0}{\GeV}$:
 
 \subsection{Higgs Boson Self-Interaction and Higgs Boson Pair Production}
 
-Couplings of the Higgs boson to heavy vector bosons and heavy fermions
-are quickly established after the Higgs boson discovery. However, the
-Higgs boson self-coupling is still an open question and an important
-probe to check EWSB.
 
-% Super excellent talk by Katharine:
-% https://indico.cern.ch/event/1065153/attachments/2351166/4011032/Seminar.pdf
 
-All wrong...
 
-Taylor expansion of the Higgs potential about the minimum after EWSB:
-\begin{align*}
-  V(h) &= \frac{1}{2} m_{\PH}^2 h^2 + \lambda v h^3 + \frac{1}{4} \lambda h^4 + \dots \\
-  \lambda &\approx 0.13 \quad \text{(SM)}
-\end{align*}
 $h$ is a complex field with the $h^2$-term being the mass term,
 $h^3$-term yielding the trilinear coupling, and the $h^4$-term
 yielding the quartic coupling. All these terms are directly predicted
@@ -302,9 +322,6 @@ can be directly probed in either double Higgs boson production or
 triple Higgs boson production (although inaccessible
 currently). Indirect probes also exist for example in single Higgs
 boson production where the self-coupling contributes at loop-level.
-
-Cross section of HH production is 1000 times smaller than single
-Higgs. \todo{Cross section diagram would be nice?}
 
 
 4b: Very large branching ratio but huge multi-jet background.
