@@ -57,7 +57,8 @@ with $\sigma(\pp \to qqH) \approx \SI{4}{\pico\barn}$, the $VH$ mode with
 $\sigma(\pp \to VH) \approx \SI{2}{\pico\barn}$ inclusive in $V = W^\pm$ and
 $V= Z$, and finally the $\ttbar H$ mode with
 $\sigma(\pp \to \ttbar H) \approx
-\SI{0.5}{\pico\barn}$~\cite{deFlorian:2016spz}. Higgs boson production modes
+\SI{0.5}{\pico\barn}$~\cite{deFlorian:2016spz}.\todo{The $\ttbar H$ production
+  mode allows to access the top Yukawa coupling} Higgs boson production modes
 involving two Higgs bosons in the final state, which are the processes of
 primary interest for this thesis, are covered in
 \Cref{fig:theory_higgs_pair_prod}.
@@ -134,7 +135,7 @@ immediately via one of the decay modes summarised in
 products. The table reflects the preferential coupling of the Higgs boson to
 heavy particles such as the weak gauge bosons\footnote{The decays of Higgs
   bosons to $W^+W^-$ and $ZZ$ are suppressed since $m_{H} < 2 m_{W} < 2 m_{Z}$
-  such that one of the gauge bosons has to be produced \emph{off shell}.} and
+  such that one of the gauge bosons has to be produced \emph{off-shell}.} and
 third generation fermions. The vast majority of Higgs bosons decay into \bbbar
 with a branching ratio of \SI{58}{\percent}. The $b$-quark is the heaviest
 fermion that can be produced in decays of Higgs bosons with
@@ -147,10 +148,78 @@ form of evidence for the process $H \to \mu^+ \mu^-$ by the CMS
 collaboration~\cite{CMS-HIG-19-006}.
 
 
-\subsection{Higgs Boson Pair Production}
+\subsection{Higgs Boson Pair Production}%
 \label{fig:theory_higgs_pair_prod}
 
-Directly access the shape of the BEH potential.
+After the discovery of the Higgs boson and the measurement of its mass, the free
+parameters of the EWSB in the SM, $v$ and $m_H$, are fully determined and thus
+also the form of the BEH potential. An important test of the SM is the
+measurement of processes involving the Higgs boson self-coupling. These
+processes allow for a direct determination of the cubic and quartic terms in the
+BEH potential of \Cref{eq:beh_potential}, thus providing additional checks of
+the internal consistency of the SM. The direct measurement of the trilinear and
+quartic Higgs boson self-coupling can be performed in final states with two or
+three Higgs bosons, respectively. Currently, the direct measurement of the
+quartic Higgs boson self-coupling is experimentally infeasible due to the small
+cross section of triple Higgs boson production (about \SI{80}{\atto\barn} in
+\pp-collisions at $\sqrt{s} = \SI{13}{\TeV}$~\cite{Maltoni:2014eza}). Instead,
+the focus of this thesis lies on probing Higgs boson pair production.
+
+The production of Higgs boson pairs at the LHC is a rare process with cross
+sections about 1000 times smaller than the production of single Higgs
+bosons. Under the SM hypothesis, Higgs boson pair production is not yet
+accessible using data collected during Run~2 of the LHC. However, first evidence
+of Higgs boson pair production could be obtained by the end of the LHC
+programme. Nevertheless, probing Higgs boson pair production is valuable
+already. First, experimental methods can be developed and improved that might
+culminate in a discovery towards the end of the LHC programme. Second, possible
+deviations from the SM can manifest as enhancements of Higgs boson pair
+production to which sensitivity might already exist.
+
+
+\subsubsection{Production Modes}%
+
+In the SM, Higgs boson pairs are produced non-resonantly yielding final states
+with two real (on-shell) Higgs bosons. Several production modes of Higgs boson
+pairs are predicted by the SM. The following description assumes \pp-collisions
+at $\sqrt{s} = \SI{13}{\TeV}$ and $m_{H} = \SI{125.0}{\GeV}$.
+
+The gluon-gluon fusion process (\ggF) is the dominant production mode of Higgs
+boson pairs in the SM (SM $HH$). The leading order diagrams of this process are
+depicted in \Cref{fig:dihiggs_ggf_feyn}.
+
+
+
+
+
+
+
+
+The dominant production mode at the LHC
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{feynman_graphs/di_higgs_box}
+    \subcaption{}%
+    \label{fig:dihiggs_ggf_feyn_box}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{feynman_graphs/di_higgs_triangle}
+    \subcaption{}%
+    \label{fig:dihiggs_ggf_feyn_triangle}
+  \end{subfigure}
+
+  \caption{Feynman diagrams of Higgs boson pair production via \ggF at leading
+    order. The diagrams (a) and (b) are commonly referred to as the box and
+    triangle diagrams, respectively. The Higgs boson self-coupling and the
+    top-quark Yukawa coupling are indicated by \ktop and \klambda,
+    respectively.}%
+  \label{fig:dihiggs_ggf_feyn}
+\end{figure}
 
 Production cross sections assuming $m_{H} = \SI{125.0}{\GeV}$:
 \begin{itemize}
@@ -159,23 +228,11 @@ Production cross sections assuming $m_{H} = \SI{125.0}{\GeV}$:
 \item Higgs boson pair production in association with \ttbar (Third largest
   $\ttbar HH$: \SI{0.775}{})
 \end{itemize}
-Factor 1000 smaller than single Higgs boson production
+
+
 
 \begin{figure}[htbp]
   \centering
-
-  \begin{subfigure}{0.49\textwidth}
-    \centering
-    \includegraphics[width=0.7\textwidth]{feynman_graphs/di_higgs_box}
-    \subcaption{}
-  \end{subfigure}\hfill%
-  \begin{subfigure}{0.49\textwidth}
-    \centering
-    \includegraphics[width=0.7\textwidth]{feynman_graphs/di_higgs_triangle}
-    \subcaption{}
-  \end{subfigure}
-
-  \vspace*{1em}
 
   \begin{subfigure}{0.33\textwidth}
     \centering
@@ -201,6 +258,7 @@ Factor 1000 smaller than single Higgs boson production
 \end{figure}
 
 
+\subsubsection{Final States}%
 
 \begin{figure}[htbp]
   \centering
