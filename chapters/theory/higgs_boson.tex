@@ -210,7 +210,7 @@ cross section via \ggF of
 \begin{align*}
   \sigma(pp \to HH) = \SI{31.05}{\femto\barn}
 \end{align*}
-at $\text{NNLO}_{\FTapprox}$~\cite{Grazzini:2018bsd}.
+at NNLO~\FTapprox~\cite{Grazzini:2018bsd}.
 
 \begin{figure}[htbp]
   \centering
@@ -285,60 +285,81 @@ $\sigma(\pp \to \ttbar HH) \approx
 considered in the remainder of this thesis.
 
 
-\subsubsection{Final States}%
+\subsubsection{Decay Channels of Pairs of SM Higgs Bosons}%
 
-Plethora of final states
-
-
-
+With the observed mass of the Higgs boson of about \SI{125}{\GeV}, a large
+number of Higgs boson decay modes are of experimental interest to probe the
+nature of the EWSB in the SM. When considering decays of Higgs boson pairs, this
+results in a plethora of final states with often distinct signatures.  An
+overview of the branching ratios of a system of SM Higgs boson pairs is given in
+\Cref{fig:hh_branching_ratios}.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.45\textwidth]{theory/di_higgs_branching_ratio}
+
+  \includegraphics[width=0.5\textwidth]{theory/di_higgs_branching_ratio}
+
   \caption{Possible final states of decays of pairs of Standard Model Higgs
-    bosons. Higgs boson branching ratios are taken from~\cite{deFlorian:2016spz}
-    and assume~$m_{H} = \SI{125.0}{\GeV}$. The decay mode~$H \ra g g$ is
-    excluded due to limited experimental feasibility.}
+    bosons. Higgs boson branching ratios are taken from
+    Ref.~\cite{deFlorian:2016spz} and assume~$m_{H} = \SI{125.0}{\GeV}$. The
+    decay mode~$H \ra g g$ is excluded due to limited experimental feasibility.}%
   \label{fig:hh_branching_ratios}
 \end{figure}
+
+Experimentally, searches for SM \HH production have to make a compromise between
+the branching ratio of the decay channel, the ability to select the relevant SM
+\HH events, and the background contributions from other processes. Currently,
+the most sensitive search channels for SM \HH production are:
+\begin{description}
+
+\item[The \bbbb channel] has the largest branching ratio (\SI{34}{\percent}) of
+  any final state resulting from the decay of a Higgs boson pair. However, this
+  channel is dominated by backgrounds from QCD multi-jet production due to its
+  fully hadronic final state. As a result, selecting signal events is
+  challenging and requires $b$-jet triggers with strict transverse momentum
+  thresholds.
+  % Moreover, identifying the individual $H \to \bbbar$ candidates
+  % -> Not a huge problem for SM
+
+\item[The \bbtautau channel] has a reduced branching ratio (\SI{7.3}{\percent}),
+  however, the presence of two \tauleptons provides a decent signature to select
+  signal events and suppression of the QCD multi-jet background. In addition,
+  relevant backgrounds in this channel are the production of \ttbar, \Zjets, and
+  single Higgs bosons. Searches for SM \HH in the \bbtautau channel often focus
+  on final states with one leptonic and one hadronic \taulepton decay (\lephad),
+  and final states with two hadronic taulepton decays (\hadhad). These final
+  states cover almost \SI{90}{\percent} of $HH \to \bbtautau$ events.
+
+\item[The \bbyy channel] has a very small branching ratio (\SI{0.26}{\percent})
+  but the photon pair provides an outstanding signature to select signal
+  events. Additionally, the reconstruction of the di-photon invariant mass,
+  $m_{\gamma\gamma}$, has a typical resolution of \SIrange{1}{2}{\GeV} in the
+  ATLAS and CMS experiments at the
+  LHC~\cite{PERF-2007-01,CMS-CMS-00-001}.\footnote{Compared to the typical
+    resolutions of $H \to \bbbar$ and $H \to \tautau$ reconstruction in the
+    \bbbb and \bbtautau channels, this represents an improvement of about an
+    order of magnitude.} Therefore, $m_{\gamma\gamma}$ provides an excellent
+  discriminant to reject most background processes leaving only continuum
+  $\gamma\gamma$ and single Higgs boson production as relevant background
+  processes.
+
+\end{description}
+
+
+\subsubsection{Experimental Status}%
+
+The experimental status prior to the work of this thesis.
+
+Comparisons of the results obtained in this thesis with the latest ones are
+given in the respective subchapters.
+
+
 
 
 
 \clearpage
 \todo[inline]{Here be dragons}
 
-
-\subsection{Higgs Boson Self-Interaction and Higgs Boson Pair Production}
-
-
-
-
-$h$ is a complex field with the $h^2$-term being the mass term,
-$h^3$-term yielding the trilinear coupling, and the $h^4$-term
-yielding the quartic coupling. All these terms are directly predicted
-by the SM but an experimental probe is still justified to detect
-possible deviations from the SM. The self-coupling strength~$\lambda$
-can be directly probed in either double Higgs boson production or
-triple Higgs boson production (although inaccessible
-currently). Indirect probes also exist for example in single Higgs
-boson production where the self-coupling contributes at loop-level.
-
-
-4b: Very large branching ratio but huge multi-jet background.
-
-bbtautau: Can suppress multi-jet background reasonably but large
-backgrounds from EW and top.
-
-bbyy: Very clean, but low BR.
-
-Sensitivity vs mass:
-
-bbyy: Low mass sensitivity (due to low threshold photon triggers)
-
-bbtautau: Medium mass sensitivity
-
-bbbb: High mass sensitivity (BR and reduced problems in finding Higgs
-candidates due to boost)
 
 \begin{description}
 
@@ -358,10 +379,6 @@ candidates due to boost)
   Gravitons: Most could decay to pairs of SM Higgs bosons.
 
 \end{description}
-
-Single Higgs boson production cross section
-$\approx \SI{50}{\pico\barn}$. Compared to Higgs pair production cross
-section $\approx \SI{30}{\femto\barn}$.
 
 \todo[inline]{Shortcomings of the SM: Hierarchy problem, dark matter, quantum
   description of gravity}
