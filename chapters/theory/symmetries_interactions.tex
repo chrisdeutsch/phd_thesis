@@ -550,6 +550,7 @@ scalar fields can be expressed as
 \end{align}
 with $H(\myvec{x}) \in \mathbb{R}$.
 
+% Check: https://arxiv.org/pdf/1704.02311.pdf
 Expressing the BEH potential of \Cref{eq:higgs_potential} in terms of
 perturbations of the vacuum state of \Cref{eq:vacuum_state_perturb} and dropping
 terms not depending on $H$ yields
@@ -564,12 +565,16 @@ The first term of $V(H)$ represents the mass term of the scalar field $H$ with a
 mass of $m_H = \sqrt{2\lambda} v$. The quantum of the scalar field is hereafter
 referred to as the Higgs boson ($H$). The terms cubic and quadratic in the
 scalar field represent self-interactions between Higgs bosons with coupling
-strengths defined as
-% \begin{align*}
-%   g_{HHH} = \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad g_{HHHH} = \frac{3 m_{H}^2}{v^2} \,\text{.}
-% \end{align*}
+strengths defined as\footnote{There exists no strong consensus regarding the
+  definition of $\lambda_{HHH}$ and $\lambda_{HHHH}$. In this thesis a
+  convention is adopted such that the Higgs potential can be expressed as
+  \begin{align*}
+    V(H) = \frac{m_{H}^2}{2} H^2 + \frac{\lambda_{HHH}}{3!} H^3 + \frac{\lambda_{HHHH}}{4!}
+    H^4 \,\text{.}
+  \end{align*}
+}
 \begin{align*}
-  \lambda_{HHH} \coloneqq 6 \lambda v = \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq 6 \lambda = \frac{3 m_{H}^2}{v^2} \,\text{.}
+  \lambda_{HHH} \coloneqq \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq \frac{3 m_{H}^2}{v^2} \,\text{.}
 \end{align*}
 The Feynman vertices of Higgs boson self-interactions are depicted in
 \Cref{fig:vertex_hhh,fig:vertex_hhhh}, respectively.
