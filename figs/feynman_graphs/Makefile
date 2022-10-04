@@ -8,6 +8,8 @@ higgs: higgs_hhh.pdf higgs_hhhh.pdf higgs_hww.pdf higgs_hzz.pdf higgs_hhww.pdf h
 
 prodmodes: higgs_prod_ggf.pdf higgs_prod_vbf.pdf higgs_prod_vh.pdf higgs_prod_tth.pdf
 
+selfenergy: selfenergy_fermion.pdf
+
 cleanall: clean
 	rm -f *.pdf
 
