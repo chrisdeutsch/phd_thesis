@@ -234,18 +234,20 @@ Two important features of the theory of QCD are highlighted in the following:
 \subsection{Theory of the Electroweak Interaction}%
 \label{seq:theory_ewk}
 
-The principle of local gauge invariance was previously used to generate the
+The principle of local gauge invariance was previously used to obtain the
 fundamental interactions of QED and QCD. The characteristics of the weak
 interaction make this approach more difficult. In particular, the mediators of
-the interaction appear to be massive~\cite{pdg2020}
+the interaction are massive with masses of~\cite{pdg2020}
 \begin{align*}
-  m_W = \SI{80.377 +- 0.012}{\GeV} && m_{Z} = \SI{91.1876 +- 0.0021}{\GeV} \,\text{,}
+  m_W = \SI{80.377 +- 0.012}{\GeV}
+  \qquad \text{and} \qquad
+  m_{Z} = \SI{91.1876 +- 0.0021}{\GeV} \,\text{,}
 \end{align*}
-symmetry with respect to parity (space-inversion) transformations is
-violated~\cite{Wu:1957my}, and charged-current interactions couple fermions of
-different flavour that differ by one unit in electric charge. As a consequence,
-the construction of a gauge theory of the weak interaction that respects gauge
-invariance and describes the masses of gauge bosons and fermions requires
+the symmetry with respect to parity (space-inversion) transformations is
+violated~\cite{Wu:1957my}, and charged-current weak interactions couple fermions
+of different flavour that differ by one unit in electric charge. As a result,
+the construction of a gauge theory of the weak interaction that respects local
+gauge invariance and describes the masses of gauge bosons and fermions requires
 additional mechanisms that were not needed for the description of QED and QCD.
 
 
@@ -253,17 +255,22 @@ additional mechanisms that were not needed for the description of QED and QCD.
 
 The theory of the electroweak interaction was developed by Glashow, Salam, and
 Weinberg in the 1960s to unify the electromagnetic and weak interaction in a
-single model~\cite{Glashow:1961tr,Salam:1964ry,Weinberg:1967tq}. The electroweak
-theory is constructed as a non-Abelian gauge theory based on a symmetry group
-referred to as $SU(2)_{\text{L}} \otimes U(1)_{Y}$, the meaning of the indices
-being illustrated in the following.
+single model~\cite{Glashow:1961tr,Salam:1964ry,Weinberg:1967tq}. The theory is
+constructed as a non-Abelian gauge theory based on a symmetry group referred to
+as $SU(2)_{\text{L}} \otimes U(1)_{Y}$, the meaning of the subscripts will be
+illustrated in the following.
 
-First, a new quantum number referred to as \emph{weak isospin}, $I$, with its
-component along the 3-axis, $I_3$, is introduced. Based on the experimental
-observation that the charged-current weak interaction only couples to particles
-(antiparticles) with left-handed (right-handed) chirality, an appropriate
-grouping of the SM fermions is chosen. In particular, left-handed fermions are
-grouped into weak isospin doublets according to
+First, a new quantum number referred to as \emph{weak isospin} denoted by $I$,
+and its component along the 3-axis, $I_3$, is introduced. The charged-current
+weak interaction violates parity symmetry maximally, meaning it only couples to
+particles (antiparticles) with left-handed (right-handed) chirality. An
+appropriate weak isospin grouping of SM fermions is chosen in anticipation of a
+$SU(2)$ symmetry.
+% Based on the experimental observation that the charged-current weak
+% interaction only couples to particles (antiparticles) with left-handed
+% (right-handed) chirality, an appropriate grouping of the SM fermions is
+% chosen.
+Left-handed fermions are grouped into weak isospin doublets given by
 \begin{align*}
   \begin{pmatrix}
     \nu_{e} \\
@@ -295,8 +302,8 @@ grouped into weak isospin doublets according to
   \qquad
   I = \frac{1}{2}, I_3 = \pm \frac{1}{2} \,\text{,}
 \end{align*}
-the upper components corresponding to $I_3 = +\frac{1}{2}$, and nine singlet
-states for right-handed fermions
+where the upper (lower) components correspond to $I_3 = +\frac{1}{2}$
+($I_3 = -\frac{1}{2}$), and nine singlet states for right-handed fermions
 \begin{align*}
   e^{-}_{\text{R}}, \mu^{-}_{\text{R}}, \tau^{-}_{\text{R}},
   u_{\text{R}}, d_{\text{R}}, c_{\text{R}}, s_{\text{R}}, t_{\text{R}}, b_{\text{R}}
@@ -305,39 +312,43 @@ states for right-handed fermions
   \qquad
   I = 0, I_3 = 0 \,\text{,}
 \end{align*}
-where the indices L and R correspond to the separation of the fermion fields
-into their left- and right-handed chiral components. % The quark eigenstates of
+where the subscripts L and R refer to the projection of the fermion fields into
+their left- and right-handed chiral components,
+respectively. % The quark eigenstates of
 % the weak interaction are indicated by $d^\prime, s^\prime, b^\prime$ which are
 % related to the quark mass eigenstates via the Cabibbo--Kobayashi--Maskawa
 % matrix~\cite{Cabibbo:1963yz,Kobayashi:1973fv}.
-Right-handed neutrinos were omitted since they are not part of the
-SM.\footnote{The determination of the nature of neutrinos is still an active
-  area of physics research. In the SM, neutrinos are assumed to be massless
-  which is in disagreement with the observation of neutrino oscillations. Under
-  the assumption that neutrinos are Dirac particles, the non-vanishing mass
-  would suggest that there is mixing between left- and right-handed chiral
-  states of neutrinos. However, in the current theory right-handed neutrinos
-  would be ``sterile'' meaning they would not interact via any of the
-  interactions described by the SM. Alternative proposals are that neutrinos are
-  not Dirac but Majorana particles~\cite{Majorana:1937vz}, which are particles
-  that are identical to their antiparticles.} The subscript of the
-$SU(2)_{\text{L}}$ symmetry group indicates that only the doublets of
-left-handed fermions mix under a transformation from the group.\todo{If we are
-  assuming massless quarks -> mass and weak eigenstates are the same.}
+Right-handed neutrinos are omitted since they are not part of the SM.
+% \footnote{The determination of the nature of neutrinos is still an active area
+% of physics research. In the SM, neutrinos are assumed to be massless which is
+% in disagreement with the observation of neutrino oscillations. Under the
+% assumption that neutrinos are Dirac particles, the non-vanishing mass would
+% suggest that there is mixing between left- and right-handed chiral states of
+% neutrinos. However, in the current theory right-handed neutrinos would be
+% ``sterile'' meaning they would not interact via any of the interactions
+% described by the SM. Alternative proposals are that neutrinos are not Dirac
+% but Majorana particles~\cite{Majorana:1937vz}, which are particles that are
+% identical to their antiparticles.}
+Given this grouping of fermions, transformations from the $SU(2)_{\text{L}}$
+group only affect fermions with left-handed chirality, thus motivating the
+choice of subscript.
+% \todo{If we are assuming massless quarks -> mass and weak eigenstates are the
+% same.}
 
-Second, a quantum number referred to as the \emph{weak hypercharge} defined
+Second, a quantum number referred to as the \emph{weak hypercharge} is defined
 according to
 \begin{align*}
   Y = 2 (Q - I_3) \,\text{,}
 \end{align*}
-where $Q$ refers to the electric charge, is introduced. Since the electric
-charge differs between the upper and lower component of the $SU(2)_{\text{L}}$
-doublets, a transformation of the group would violate the $U(1)_Q$ symmetry of
-QED. This is remedied by replacing the $U(1)_Q$ with a $U(1)_Y$ symmetry with
-$Y$ being defined such both components of the doublet have the same weak
-hypercharge. The $U(1)_Q$ symmetry of QED will be recovered in a process called
-electroweak symmetry breaking (EWSB) that will be introduced at a later point.
-
+where $Q$ refers to the electric charge. Since the electric charge differs
+between the upper and lower component of the $SU(2)_{\text{L}}$ doublets, a
+$SU(2)_{\text{L}}$ transformation would violate the $U(1)_Q$ symmetry of
+QED. Therefore, the weak hypercharge is defined such that both components of a
+$SU(2)_{\text{L}}$ doublet have the same value of $Y$. The broken $U(1)_Q$
+symmetry is consequently replaced by a $U(1)_Y$ symmetry, which uses $Y$ as the
+generator of the group instead. The $U(1)_Q$ symmetry of QED will later be
+recovered in a process referred to as \emph{electroweak symmetry breaking}
+(EWSB).
 
 The principle of local gauge invariance with respect to the
 $SU(2)_{\text{L}} \otimes U(1)_Y$ group is invoked to generate the interactions
@@ -350,26 +361,24 @@ gauge transformations with space-time dependent parameters $\alpha_a$
   &\psi_{\text{R}} \to \psi_{\text{R}}^\prime = \exp\left[ i g^\prime \beta(\myvec{x}) \frac{Y}{2} \right] \psi_{\text{R}} \,\text{,}
 \end{align*}
 where $g$ and $g^\prime$ are coupling constants, and $\sigma^a$ are the Pauli
-matrices. The gauge covariant derivative is consequently given by
+matrices. The gauge covariant derivative is given by
 \begin{align*}
   D_\mu = \partial_\mu
   + i g W^a_\mu \frac{\sigma_a}{2}
   + i g^\prime B_\mu \frac{Y}{2} \,\text{,}
 \end{align*}
-where it is implied that the Pauli matrices only act on fields with left-handed
-chirality. Furthermore, four gauge fields, $W_\mu^a$ for $a = 1, 2, 3$ and
-$B_\mu$, are introduced which are associated to the $SU(2)_{\text{L}}$ and
-$U(1)_Y$ symmetry, respectively. The gauge fields transform, in analogy to QED
-and QCD, as follows
+where it is implied that the Pauli matrices only act on $\chi_{\text{L}}$ and
+not on $\psi_{\text{R}}$. Four gauge fields, $W_\mu^a$ ($a = 1, 2, 3$) and
+$B_\mu$, associated with the $SU(2)_{\text{L}}$ and $U(1)_Y$ symmetry are
+introduced. These fields transform, in analogy to QED and QCD, as follows
 \begin{align*}
   W_\mu^k &\xrightarrow{SU(2)_{\text{L}} \otimes SU(1)_Y} {W_\mu^k}^\prime = W_\mu^k - \partial_\mu \alpha^{k}(\myvec{x}) - g {f_{ij}}^k \alpha^{i} W_\mu^j \\
   B_\mu   &\xrightarrow{SU(2)_{\text{L}} \otimes SU(1)_Y} {B_\mu}^\prime = B_\mu - \partial_\mu \beta(\myvec{x}) \,\text{,}
 \end{align*}
-where $f_{ijk}$ are the structure constants of the non-Abelian
-$SU(2)_{\text{L}}$ group.
+where $f_{ijk}$ are the structure constants of the $SU(2)_{\text{L}}$ group.
 
 Substituting the gauge covariant derivative into the kinetic term of the Dirac
-field yields the interaction Lagrangian of the electroweak interaction for left-
+Lagrangian yields the interaction terms of the electroweak interaction for left-
 (L) and right-handed (R) chiral fields:
 \begin{align}
   &\lagrange_{\text{int}}^{\text{L}} = i \bar{\chi}_{\text{L}} \gamma^\mu \left[i g W_\mu^a \frac{\sigma_a}{2} + i g^\prime B_\mu \frac{Y}{2} \right] \chi_{\text{L}} \label{eq:theory_electroweak_left} \\
@@ -379,18 +388,19 @@ The four fields in the interaction Lagrangian are not the physical fields
 observed in nature. The fields $W_\mu^1$ and $W_\mu^2$ are associated with
 charged-current interactions noting that $\sigma_1$ and $\sigma_2$ are
 anti-diagonal matrices. Similarly, $W_\mu^3$ is associated with a
-neutral-current interaction coupling given $\sigma_3$ is a diagonal matrix.  The
-physical fields of the charged-current interaction can be identified as
+neutral-current interaction given $\sigma_3$ is a diagonal matrix. The physical
+fields of the charged-current interaction can be identified as
 \begin{align*}
-  W_\mu^\pm = \frac{1}{\sqrt{2}} (W_\mu^1 \mp i W_\mu^2)
+  W_\mu^\pm = \frac{1}{\sqrt{2}} (W_\mu^1 \mp i W_\mu^2) \,\text{.}
 \end{align*}
-in analogy to the weak isospin ladder operators. Similarly, the physical fields
-describing the neutral-current interactions via the exchange of $Z$ bosons and
-photons can be expressed as a linear combination of the $W_\mu^3$ and $B_\mu$
-gauge fields. Experimental results show that the $Z$ boson couples to both left-
-and right-handed chiral states, although not equally, and therefore such a
-mixing is required. The mixing can be described by a rotation of the fields by
-the weak mixing angle $\theta_{\text{W}}$ according to
+% in analogy to the weak isospin ladder operators.
+Similarly, the physical fields describing the neutral-current interactions via
+the exchange of $Z$ bosons and photons can be expressed as a linear combination
+of the $W_\mu^3$ and $B_\mu$ gauge fields. Experimental results show that the
+$Z$ boson couples to both left- and right-handed chiral states, although not
+equally, and therefore such a mixing is required. The mixing can be described by
+a rotation of the fields by the weak mixing angle $\theta_{\text{W}}$ according
+to
 \begin{align*}
   \begin{pmatrix}
     A_\mu \\
@@ -412,9 +422,12 @@ coupling of QED, namely the photon must couple equally to left- and right-handed
 particles with a coupling constant $e$. This yields the condition
 \begin{align*}
   e = g \sin\theta_{\text{W}} = g^\prime \cos\theta_{\text{W}} \,\text{,}
-\end{align*}\todo{Note ways to express sin / cos as a function of $g$ and $g^\prime$.}
+\end{align*}
+% \todo{Note ways to express sin / cos as a function of $g$ and $g^\prime$.}
 connecting the QED coupling constant with the coupling constants $g$ and
 $g^\prime$ of the electroweak unification.
+
+The kinetic term of the fields corresponding to the
 
 In analogy of QED and QCD, one adds the free field terms to the Lagrangian
 \begin{align*}
@@ -464,11 +477,11 @@ Lagrangian of the complex scalar fields is given by the Klein--Gordon equation
 \begin{align*}
   \lagrange = (\partial_\mu \phi)^\dagger (\partial^\mu \phi) - V(\phi)
 \end{align*}
-with the potential term of the fields denoted as $V(\phi)$. The aim of the BEH
-mechanism is to embed the doublet of complex scalar fields in the electroweak
-theory with a $SU(2)_{\text{L}}\otimes U(1)_Y$ symmetry. To fulfil the gauge
-invariance of the electroweak theory, the potential can only depend on
-$\phi^\dagger \phi$. One such choice is
+with the potential term denoted by $V(\phi)$. The aim of the BEH mechanism is to
+embed the doublet of complex scalar fields in the electroweak theory with a
+$SU(2)_{\text{L}}\otimes U(1)_Y$ symmetry. To fulfil the gauge invariance of the
+electroweak theory, the potential can only depend on $\phi^\dagger \phi$. One
+such choice is
 \begin{align}
   V(\phi) = \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2
   \label{eq:higgs_potential}
@@ -486,7 +499,7 @@ an unstable point and the true vacuum is given by the condition
   \sum_{i = 1}^4 \phi_i^2 = -\frac{\mu^2}{\lambda} \eqqcolon v^2 \,\text{,}
 \end{align*}
 which represents a continuum of degenerate states at a radius of $v$ from the
-origin in the space spanned by the four real scalar fields. The variable $v$ is
+origin in the space spanned by the four real scalar fields. The quantity $v$ is
 also referred to as the \emph{vacuum expectation value} (VEV). Hereafter, this
 particular choice of potential is referred to as the BEH potential. The choice
 is further illustrated in \Cref{fig:mexican_hat} for a simplified model with
