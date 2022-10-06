@@ -87,8 +87,10 @@ with electric charge $q$. For a single fermion type, the Lagrangian of QED is
 given by
 \begin{align*}
   \lagrange_{\text{QED}} = \underbrace{\lagrange_{\text{Dirac}}}_{\text{Free fermion field}}
-  \quad\underbrace{- q \bar{\psi} \gamma^\mu \psi A_\mu}_{\text{Fermion--photon interaction}}
-  \quad\underbrace{- \frac{1}{4} F_{\mu\nu} F^{\mu\nu}}_{\text{Free photon field}} \,\text{,}
+  \hspace*{1em}
+  \underbrace{- q \bar{\psi} \gamma^\mu \psi A_\mu}_{\text{Fermion--photon interaction}}
+  \hspace*{1em}
+  \underbrace{- \frac{1}{4} F_{\mu\nu} F^{\mu\nu}}_{\text{Free photon field}} \,\text{,}
 \end{align*}
 which additionally includes the Lagrangian of the free photon field defined by
 the electromagnetic tensor
@@ -135,22 +137,21 @@ component objects
     \bar{q}_\text{r} & \bar{q}_\text{g} & \bar{q}_\text{b}
   \end{pmatrix} \,\text{,}
 \end{align*}
-in which the $q_i$ ($\bar{q}_i$) represent (adjoint) Dirac spinors describing
-the quark field with color $i$. The strong interaction does not distinguish
-between quarks of different colour thus a $SU(3)_{\text{colour}}$ is assigned,
-the subscript indicating that elements of the group act in colour-space. The
-generators of $SU(3)_{\text{colour}}$ are taken to be
+in which $q_i$ ($\bar{q}_i$) represents the (adjoint) Dirac spinor describing
+the quark field with color $i$. The symmetry group of the strong interaction is
+$SU(3)_{\text{colour}}$, the subscript indicating that elements of the group act
+in colour-space. The generators of $SU(3)_{\text{colour}}$ are taken to be
 \begin{align*}
   T_a = \frac{1}{2} \lambda_a \qquad \text{for} \qquad a = 1, \dots, 8 \,\text{,}
 \end{align*}
-where $\lambda_a$ are the Gell-Mann matrices.\footnote{Latin indices are raised
-  and lowered according to $T_a = \delta_{ab} T^b$ or $T^a = \delta^{ab} T_b$,
-  where $\delta$ refers to the Kronecker delta and the Einstein summation
-  convention is adopted.} The theory of QCD is referred to as a Yang--Mills
-gauge theory~\cite{Yang:1954ek} since the elements of $SU(3)_{\text{colour}}$ do
-not commute in general, i.e.\ the symmetry group is non-Abelian. The commutation
-relation between the generators is given by $[T_a, T_b] = i f_{abc} T^c$,
-defining the structure constants $f_{abc}$ of the group.
+where $\lambda_a$ are the Gell-Mann matrices.\footnote{Mathematical objects with
+  an upper latin index and those with a lower latin index are assumed to be
+  identical (e.g.\ $T_a \equiv T^a$).} The theory of QCD is referred to as a
+Yang--Mills gauge theory~\cite{Yang:1954ek} since the elements of
+$SU(3)_{\text{colour}}$ do not commute in general, i.e.\ the symmetry group is
+non-Abelian. The commutation relation between the generators is given by
+$[T_a, T_b] = i f_{abc} T^c$, defining the structure constants $f_{abc}$ of the
+group.
 
 Following the principle of local gauge invariance regarding a local
 $SU(3)_{\text{color}}$ transformation
@@ -165,7 +166,7 @@ covariant derivative and eight massless gauge fields $G_\mu^a$
   \qquad \text{with} \qquad
   G_\mu^k \xrightarrow{SU(3)_{\text{colour}}} {G_\mu^k}^\prime = G_\mu^k  - \partial_\mu \theta^k(\myvec{x}) - g_{\text{s}} {f_{ij}}^k \theta^i(\myvec{x}) G_\mu^j \,\text{.}
 \end{align*}
-The gauge invariant kinetic term for the gluon fields is given by
+The kinetic energy of the gluon fields is given by the \emph{kinetic term}
 \begin{align*}
   \lagrange_{G} = - \frac{1}{4} G_{\mu\nu}^{a} G^{\mu\nu}_{a}
 \end{align*}
@@ -175,59 +176,58 @@ with the gluon field strength tensor
 \end{align*}
 The Lagrangian of QCD for a single flavour of quark with mass $m$ is
 consequently given by
-\begin{align}
+\begin{align*}
   \lagrange_{\text{QCD}} =
   \underbrace{\bar{\psi} (i \gamma^\mu \partial_\mu - m) \psi}_{\text{Free quark field}}
+  \hspace*{1em}
   \underbrace{- g_{\text{s}} (\bar{\psi} \gamma^\mu T_a \psi) G_\mu^a}_{\text{Quark--gluon interactions}}
-  \underbrace{- \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a}_{\text{Kinetic term}} \,\text{.}
-  \label{eq:qcd_lagrangian}
-\end{align}
+  \hspace*{1em}
+  \underbrace{- \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a}_{\text{Gluon kinetic term}} \,\text{.}
+  %\label{eq:qcd_lagrangian}
+\end{align*}
 This Lagrangian describes the free quark field, the interactions of quarks with
-the eight gluons, and the kinetic energy contained in the gluon fields (the
-kinetic term). The non-Abelian nature of the $SU(3)_{\text{colour}}$ group,
-meaning a set of indices exists such that $f_{abc} \neq 0$, gives rise to the
-distinct structure of QCD through the kinetic terms of the gluon fields in the
-Lagrangian. These terms include self-interactions between gluons which
-correspond to, in the language of Feynman diagrams, to triple and quartic gluon
-vertices. Gluons themselves are carriers of colour charge, particularly a
-combination of colour and anti-colour, which ultimately lead to such
-behaviour. This is unlike the photon of QED which does not carry any electrical
-charge and therefore does not couple to itself.
+the eight gluons, and the kinetic energy of the gluon fields. The non-Abelian
+nature of the $SU(3)_{\text{colour}}$ group, meaning a set of indices exists
+such that $f_{abc} \neq 0$, gives rise to the distinct structure of QCD through
+the kinetic term of the gluon fields. This term includes self-interactions
+between gluons which correspond to, in the language of Feynman diagrams, triple
+and quartic interaction vertices between gluons. Gluons themselves are carriers
+of colour charge, particularly a combination of colour and anticolour, which
+ultimately leads to such behaviour. This is unlike the photon of QED which is
+not a carrier of electrical charge and thus does not couple to itself.
 
-
-Two features of the theory of QCD are highlighted in the following:
+Two important features of the theory of QCD are highlighted in the following:
 \begin{description}
 
 \item[Colour confinement] Due to the dynamics of the gluon self-interactions,
-  free quarks or gluons cannot be observed in nature. Separating the quarks of a
-  quark--antiquark pair leads to the formation of \emph{flux tubes} in the gluon
-  field strength that result in a linear increase in field energy with
-  separation of the quarks. Eventually, the energy stored in the gluon field is
-  sufficiently large to create a quark--antiquark pair from the
-  vacuum. Ultimately, only quarks (or gluons) bound into colourless composite
-  particles (colour singlett states) remain. The most prevalent bound states of
-  quarks are (anti-)baryons consisting of three (anti-)quarks, and mesons
-  consisting of a quark--antiquark pair. The $SU(3)_{\text{colour}}$ symmetry
-  also allows for colour singlett states of multiple gluons referred to as
-  \emph{glueballs}, or other combinations of quarks such as tetra-
+  free quarks or gluons cannot be observed in nature. For example, separating
+  the quarks of a quark-antiquark pair leads to the formation of \emph{flux
+    tubes} in the gluon field strength that result in a linear increase in field
+  energy with separation of the quarks. Eventually, the energy stored in the
+  gluon field is sufficiently large to create a quark-antiquark pair from the
+  vacuum. This process repeats until only quarks or gluons bound into colourless
+  composite particles (colour singlet states) remain. The most prevalent bound
+  states of quarks are (anti-)baryons consisting of three (anti-)quarks, and
+  mesons consisting of a quark-antiquark pair. The $SU(3)_{\text{colour}}$
+  symmetry also allows for colour singlet states of multiple gluons referred to
+  as \emph{glueballs}, or other combinations of quarks such as tetra-
   ($q_1 \bar{q}_2 q_3 \bar{q}_4$) or pentaquarks ($q_1 q_2 q_3 q_4 \bar{q}_5$).
 
 \item[Running coupling \& asymptotic freedom] The strong coupling constant,
-  often expressed as $\alphas = g_{\text{s}}^2 / (4 \pi)$ in analogy to the
-  fine-structure constant of QED $\alpha = e^2 / (4 \pi)$, is not constant but
-  varies as a function of the momentum transfer, $q^2$, of an interaction. A
-  quark scattering process involving the exchange of a gluon is represented by
-  an infinite number of Feynman diagrams with different virtual corrections
-  (e.g.\ quark or gluon loops). A process referred to as \emph{renormalisation}
-  absorbs these corrections into an effective coupling constant, the coupling
-  consequently becoming a function of $Q^2$. This effect occurs in both QED and
-  QCD, however, with distinct signatures. While the coupling $\alpha(Q^2)$ of
-  QED increases with $Q^2$, $\alphas(Q^2)$ of QCD decreases with $Q^2$ due to
-  the gluon self-interaction. The high-$Q^2$ behaviour of the QCD coupling is
-  referred to as asymptotic freedom. In addition, at sufficiently large $Q^2$
-  the coupling is small such that perturbative methods can be used to obtain
-  predictions.
-
+  frequently expressed as $\alphas = g_{\text{s}}^2 / (4 \pi)$ in analogy to the
+  fine-structure constant $\alpha = e^2 / (4 \pi)$ of QED, is not constant but
+  varies as a function of the momentum transfer $Q$ of an interaction. A quark
+  scattering process involving the exchange of a gluon is represented by an
+  infinite number of Feynman diagrams with different higher-order corrections,
+  for example diagrams with additional quark or gluon loops. A process referred
+  to as \emph{renormalisation} absorbs these corrections into an effective
+  coupling constant, the coupling consequently becoming a function of
+  $Q^2$. This effect occurs in both QED and QCD, however, with distinct
+  signatures. While the coupling $\alpha(Q^2)$ of QED increases with $Q^2$,
+  $\alphas(Q^2)$ of QCD decreases with $Q^2$ due to gluon self-interactions. The
+  high-$Q^2$ behaviour of \alphas is referred to as \emph{asymptotic freedom}.
+  % At large $Q^2$ the value of \alphas is small such that perturbative methods
+  % can be used to obtain cross-section predictions.
 \end{description}
 
 
@@ -696,7 +696,7 @@ fermions, as
   \label{eq:lagrangian_yukawa}
 \end{align}
 where $\bar{L}$ and $\bar{Q}$ are the $SU(2)_{\text{L}}$ doublets of the first
-generation of leptons and quarks, respectively. The $SU(2)_{\text{L}}$ singletts
+generation of leptons and quarks, respectively. The $SU(2)_{\text{L}}$ singlets
 for electrons, up-, and down-quarks are denoted as $e_{\text{R}}$,
 $u_{\text{R}}$, and $d_{\text{R}}$. Moreover, the coupling constants of the
 Yukawa interactions, which are free parameters of the theory, are given by
