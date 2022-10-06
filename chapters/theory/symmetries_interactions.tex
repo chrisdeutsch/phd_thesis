@@ -379,14 +379,14 @@ where $f_{ijk}$ are the structure constants of the $SU(2)_{\text{L}}$ group.
 
 Substituting the gauge covariant derivative into the kinetic term of the Dirac
 Lagrangian yields the interaction terms of the electroweak interaction for left-
-(L) and right-handed (R) chiral fields:
+and right-handed chiral fields:
 \begin{align}
   &\lagrange_{\text{int}}^{\text{L}} = i \bar{\chi}_{\text{L}} \gamma^\mu \left[i g W_\mu^a \frac{\sigma_a}{2} + i g^\prime B_\mu \frac{Y}{2} \right] \chi_{\text{L}} \label{eq:theory_electroweak_left} \\
   &\lagrange_{\text{int}}^{\text{R}} = i \bar{\psi}_{\text{R}} \gamma^\mu \left[i g^\prime B_\mu \frac{Y}{2} \right] \psi_{\text{R}} \,\text{.} \label{eq:theory_electroweak_right}
 \end{align}
-The four fields in the interaction Lagrangian are not the physical fields
-observed in nature. The fields $W_\mu^1$ and $W_\mu^2$ are associated with
-charged-current interactions noting that $\sigma_1$ and $\sigma_2$ are
+The four fields occuring in the interaction terms do not represent the physical
+fields observed in nature. The fields $W_\mu^1$ and $W_\mu^2$ are associated
+with charged-current interactions noting that $\sigma_1$ and $\sigma_2$ are
 anti-diagonal matrices. Similarly, $W_\mu^3$ is associated with a
 neutral-current interaction given $\sigma_3$ is a diagonal matrix. The physical
 fields of the charged-current interaction can be identified as
@@ -427,8 +427,6 @@ particles with a coupling constant $e$. This yields the condition
 connecting the QED coupling constant with the coupling constants $g$ and
 $g^\prime$ of the electroweak unification.
 
-The kinetic term of the fields corresponding to the
-
 In analogy of QED and QCD, one adds the free field terms to the Lagrangian
 \begin{align*}
   \lagrange_{W, Z, \gamma} =
@@ -436,7 +434,7 @@ In analogy of QED and QCD, one adds the free field terms to the Lagrangian
   - \frac{1}{4} B_{\mu\nu} B^{\mu\nu}
 \end{align*}
 Since the $SU(2)_{\text{L}}$ group is non-Abelian, triple and quartic gauge
-boson couplings are introduced into the theory.
+boson couplings are introduced into the theory.\todo{Context?}
 
 
 \subsubsection{The Brout--Englert--Higgs Mechanism}
@@ -486,15 +484,16 @@ such choice is
   V(\phi) = \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2
   \label{eq:higgs_potential}
 \end{align}
-with two parameters $\mu^2$ and $\lambda$.\footnote{On the grounds of
+with two parameters $\mu^2$ and $\lambda$.\footnote{In terms of the
   renormalisability of the theory, the largest allowed power of
-  $\phi^\dagger \phi$ in the potential term is two. TODO: Citation?} The
-potential must be bound from below to have a well-defined state of minimum
-potential energy (vacuum state) and therefore $\lambda$ must be positive. No
-such restrictions exist for $\mu^2$, leaving two options. If $\mu^2 > 0$, the
-vacuum state is $\phi = \myvec{0}$ and $\mu$ is related to the mass of the
-scalar field. If $\mu^2 < 0$, the field configuration $\phi = \myvec{0}$ is at
-an unstable point and the true vacuum is given by the condition
+  $\phi^\dagger \phi$ in the Lagrangian is two. See for example
+  Ref.~\cite{Peskin:1995ev}.} The potential must be bound from below to have a
+well-defined state of minimum potential energy (vacuum state) and therefore
+$\lambda$ must be positive. No such restrictions exist for $\mu^2$, leaving two
+options. If $\mu^2 > 0$, the vacuum state is $\phi = \myvec{0}$ and $\mu$ is
+related to the mass of the scalar field. If $\mu^2 < 0$, the field configuration
+$\phi = \myvec{0}$ is at an unstable point and the true vacuum is given by the
+condition
 \begin{align*}
   \sum_{i = 1}^4 \phi_i^2 = -\frac{\mu^2}{\lambda} \eqqcolon v^2 \,\text{,}
 \end{align*}
