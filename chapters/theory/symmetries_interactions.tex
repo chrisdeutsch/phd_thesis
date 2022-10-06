@@ -1,46 +1,44 @@
 \section{Symmetries and Interactions}
 \label{sec:theo_symmetries_interactions}
 
-% \subsection{The Langrange Formalism}
-
-The SM is a relativistic quantum field theory and thus described by space-time
-dependent fields $\phi_i(\myvec{x})$. The dynamics of fields are given by the
-\emph{Lagrangian density}, $\lagrange$, which is a function of the fields
-$\phi_i$ and their space-time derivatives
+The SM is a relativistic quantum field theory which describes particles and
+their interaction using space-time dependent fields $\phi_i(\myvec{x})$. The
+field dynamics are determined by the \emph{Lagrangian density} $\lagrange$,
+which is a function of the fields $\phi_i$ and their space-time derivatives
 $\partial_\mu \phi_i = \partial \phi_i / \partial x^\mu$ ($\mu = 0, 1, 2,
-3$). The time-evolution of the fields follows from the principle of least
-action, i.e.\ by minimising the action
+3$). The evolution of the fields in time follows from the principle of
+stationary action, i.e.\ by extremising the action
 $S = \int \mathrm{d}^4x \, \lagrange(\phi_i, \partial_\mu \phi_i)$, which yields
-the the Euler--Lagrange equations
+the Euler--Lagrange equations
 \begin{align*}
-  \partial_{\mu} \left( \frac{\partial \lagrange}{\partial (\partial_{\mu} \phi_i)} \right) - \frac{\partial \lagrange}{\partial \phi_i} = 0
-\end{align*} that provide the equations of motion for the fields. The Lagrangian density is
-hereafter referred to as \emph{the Lagrangian}.
-
-% \subsection{Local Gauge Invariance}
+  \partial_{\mu} \left( \frac{\partial \lagrange}{\partial (\partial_{\mu} \phi_i)} \right) - \frac{\partial \lagrange}{\partial \phi_i} = 0 \,\text{.}
+\end{align*}
+For a given Lagrangian, the Euler--Lagrange equations provide the ``equations of
+motion'' of the fields. The Lagrangian density is hereafter abbreviated as the
+\emph{Lagrangian}.
 
 A continuous transformation of the fields that leaves the Lagrangian unchanged
 is referred to as a \emph{gauge transformation}. The fields resulting from this
-transformation follow the same equations of motion and thus describe the same
-physical system. This invariance is referred to as \emph{gauge invariance} or
-\emph{gauge symmetry}.
+transformation follow the same equations of motion and therefore describe the
+same physical system. This invariance is referred to as \emph{gauge invariance}
+or \emph{gauge symmetry}.
 % An external observer cannot distinguish between fields related by gauge
 % transformations and therefore the symmetry is considered an \emph{internal
 % symmetry} of the theory.
-The symmetry groups relevant for the description of the SM are the unitary group
-of dimension one, $U(1)$, and the special unitary groups of dimension two and
-three, $SU(2)$ and $SU(3)$, respectively. Any element of a unitary or special
+Continuous symmetries of the Lagrangian are characterised by Lie groups, the
+most important ones for the description of the SM being the unitary group
+$U(1)$, and the special unitary groups $SU(2)$ and $SU(3)$. Any element of a
 unitary group can be written as
 \begin{align*}
   \hat{U} = \exp\big[ i \theta_a G^a \big] \,\text{,}
 \end{align*}
-where $\theta_a$ are real parameters, $G^a$ are the generators of the group, and
-summation over repeated indices is implied. A Lagrangian that is invariant to a
-transformation $\hat{U}$ of the fields with parameters $\theta_a$ is said to
-possess \emph{global} gauge invariance. The more restrictive case where the
-Lagrangian is invariant with respect to transformations of the fields with
-space-time dependent parameters $\theta_a(\myvec{x})$ is referred to as
-\emph{local} gauge invariance.
+where $\theta_a$ are real parameters, $G^a$ are the generators of the group.
+% , and summation over repeated indices is implied.
+A Lagrangian that is invariant to a transformation $\hat{U}$ of the fields with
+parameters $\theta_a$ is said to possess \emph{global} gauge invariance. The
+more restrictive case where the Lagrangian is invariant with respect to
+transformations of the fields with space-time dependent parameters
+$\theta_a(\myvec{x})$ is referred to as \emph{local} gauge invariance.
 
 This is illustrated in the case of the Lagrangian of the Dirac field of mass $m$
 given by
@@ -50,9 +48,9 @@ given by
 \end{align}
 where $\psi$ ($\bar{\psi} = \psi^\dagger \gamma^0$) are (adjoint) Dirac spinors,
 and $\gamma^\mu$ are the four Dirac matrices. \Cref{eq:dirac_lagrangian}
-possesses global gauge invariance with respect to transformations from the
-$U(1)$ group given by $\psi \to \psi^\prime = \exp[ i q \theta ] \psi$, where
-$q$ is a coupling constant. However, when performing a local transformation by
+possesses global gauge invariance with respect to $U(1)$ transformations given
+by $\psi \to \psi^\prime = \exp[ i q \theta ] \psi$, where $q$ is an arbitrary
+constant (for the moment). However, when performing a local transformation by
 letting the parameter be a function of space-time, i.e.\
 $\theta \to \theta(\myvec{x})$, the invariance of the Lagrangian is spoiled due
 to the derivative acting on the space-time dependent phase factor. One might
@@ -61,7 +59,7 @@ impose $U(1)$ local gauge invariance of the Lagrangian by adding terms to
 contributions. Conventionally, this is done by substituting the derivative
 $\partial_\mu$ by a gauge covariant derivative $D_\mu$ that transforms as
 $D_\mu\psi \to \exp[ i q \theta(\myvec{x}) ] D_\mu\psi$ thus recovering local
-gauge invariance. The definition of $D_\mu$ with these properties requires the
+gauge invariance. A definition of $D_\mu$ with these properties requires the
 introduction of a new massless vector field, referred to as a \emph{gauge
   field}, with appropriate transformation properties:
 \begin{align}
@@ -69,30 +67,31 @@ introduction of a new massless vector field, referred to as a \emph{gauge
   \label{eq:covariant_derivative_qed}
 \end{align}
 The additional term introduced by substituting $\partial_\mu \to D_\mu$ in
-\Cref{eq:dirac_lagrangian} is interpreted as an interaction between the fermion
-and the vector boson of the gauge field.
+\Cref{eq:dirac_lagrangian} is interpreted as an interaction between fermions and
+vector bosons of the gauge field.
 
 The principle of local gauge invariance can be used to obtain the Lagrangian of
 quantum electrodynamics (QED) describing electromagnetic interactions. The
 symmetry group of QED is $U(1)_{Q}$, the subscript $Q$ indicating that the
-elements of this group act on fields with electric charge. Imposing local gauge
+generator of the group is the electric charge operator. Imposing local gauge
 invariance by substituting \Cref{eq:covariant_derivative_qed} into the Dirac
 Lagrangian yields the interaction term
 \begin{align*}
-  \lagrange_{\text{int}} = - q \bar{\psi} \gamma^\mu \psi A_\mu \,\text{.}
+  \lagrange_{\text{int.}} = - q \bar{\psi} \gamma^\mu \psi A_\mu \,\text{.}
 \end{align*}
 In the case of QED, the field $A^\mu$ is identified as the four-potential of the
-electromagnetic field, and the coupling constant $q$ as the charge of the
-fermion. Therefore, $\lagrange_{\text{int}}$ describes the coupling between the
-photon and a fermion with electric charge $q$. For a single fermion type, the
-Lagrangian of QED is given by
+electromagnetic field, and $q$ as the electric charge of the fermion.
+% The interaction term that was included to perserve local gauge invariance corresponds
+Thus, the interaction term describes the coupling between photons and fermions
+with electric charge $q$. For a single fermion type, the Lagrangian of QED is
+given by
 \begin{align*}
   \lagrange_{\text{QED}} = \underbrace{\lagrange_{\text{Dirac}}}_{\text{Free fermion field}}
   \quad\underbrace{- q \bar{\psi} \gamma^\mu \psi A_\mu}_{\text{Fermion--photon interaction}}
   \quad\underbrace{- \frac{1}{4} F_{\mu\nu} F^{\mu\nu}}_{\text{Free photon field}} \,\text{,}
 \end{align*}
 which additionally includes the Lagrangian of the free photon field defined by
-the electromagnetic tensor given by
+the electromagnetic tensor
 $F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$. The additional term also
 fulfils the local gauge invariance with respect to $U(1)_Q$.
 
