@@ -1,4 +1,4 @@
-\section{Symmetries and Interactions}
+\section{Symmetries and Interactions}%
 \label{sec:theo_symmetries_interactions}
 
 The SM is a relativistic quantum field theory which describes particles and
@@ -14,8 +14,8 @@ the Euler--Lagrange equations
   \partial_{\mu} \left( \frac{\partial \lagrange}{\partial (\partial_{\mu} \phi_i)} \right) - \frac{\partial \lagrange}{\partial \phi_i} = 0 \,\text{.}
 \end{align*}
 For a given Lagrangian, the Euler--Lagrange equations provide the ``equations of
-motion'' of the fields. The Lagrangian density is hereafter abbreviated as the
-\emph{Lagrangian}.
+motion'' of the fields. The Lagrangian density is hereafter simply referred to
+as the \emph{Lagrangian}.
 
 A continuous transformation of the fields that leaves the Lagrangian unchanged
 is referred to as a \emph{gauge transformation}. The fields resulting from this
@@ -47,9 +47,9 @@ given by
   \label{eq:dirac_lagrangian}
 \end{align}
 where $\psi$ ($\bar{\psi} = \psi^\dagger \gamma^0$) are (adjoint) Dirac spinors,
-and $\gamma^\mu$ are the four Dirac matrices. \Cref{eq:dirac_lagrangian}
-possesses global gauge invariance with respect to $U(1)$ transformations given
-by $\psi \to \psi^\prime = \exp[ i q \theta ] \psi$, where $q$ is an arbitrary
+and $\gamma^\mu$ are the Dirac matrices. \Cref{eq:dirac_lagrangian} possesses
+global gauge invariance with respect to $U(1)$ transformations given by
+$\psi \to \psi^\prime = \exp[ i q \theta ] \psi$, where $q$ is an arbitrary
 constant (for the moment). However, when performing a local transformation by
 letting the parameter be a function of space-time, i.e.\
 $\theta \to \theta(\myvec{x})$, the invariance of the Lagrangian is spoiled due
@@ -58,7 +58,7 @@ impose $U(1)$ local gauge invariance of the Lagrangian by adding terms to
 \Cref{eq:dirac_lagrangian} that cancel the additional
 contributions. Conventionally, this is done by substituting the derivative
 $\partial_\mu$ by a gauge covariant derivative $D_\mu$ that transforms as
-$D_\mu\psi \to \exp[ i q \theta(\myvec{x}) ] D_\mu\psi$ thus recovering local
+$D_\mu\psi \to \exp[ i q \theta(\myvec{x}) ] D_\mu\psi$, thus recovering local
 gauge invariance. A definition of $D_\mu$ with these properties requires the
 introduction of a new massless vector field, referred to as a \emph{gauge
   field}, with appropriate transformation properties:
@@ -117,11 +117,10 @@ electromagnetic and weak interaction. These will be introduced in
 \subsection{Quantum Chromodynamics}%
 \label{sec:theory_qcd}
 
-Quantum chromodynamics (QCD) is the quantum field theory describing the
-interactions of quarks and gluons. The fundamental charge of QCD is colour
-charge which comes in three distinct colours referred to as red, green, and blue
-(r, g, b). The quark fields are consequently written in terms of the three
-component objects
+Quantum chromodynamics (QCD) is the theory describing the interactions of quarks
+and gluons. The fundamental charge of QCD is colour charge which comes in three
+distinct colours referred to as red, green, and blue (r, g, b). The quark fields
+are consequently written in terms of the three component objects
 \begin{align*}
   \psi =
   \begin{pmatrix}
@@ -201,9 +200,8 @@ such that $f_{abc} \neq 0$, gives rise to the distinct structure of QCD through
 the kinetic term of the gluon fields. This term includes self-interactions
 between gluons which correspond to, in the language of Feynman diagrams, triple
 and quartic interaction vertices between gluons. Gluons themselves are carriers
-of colour charge, particularly a combination of colour and anticolour, which
-leads to this behaviour. This is unlike the photon of QED which is not a carrier
-of electrical charge and thus does not couple to itself.
+of colour charge which leads to this behaviour. This is unlike the photon of QED
+which does not carry electrical charge and thus does not couple to itself.
 
 Two important features of the theory of QCD are highlighted in the following:
 \begin{description}
