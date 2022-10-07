@@ -176,11 +176,11 @@ Furthermore, the contribution of the kinetic energy of the gluon fields to the
 QCD Lagrangian needs to be accounted for. This so-called \emph{kinetic term} is
 given by
 \begin{align*}
-  \lagrange_{G} = - \frac{1}{4} G_{\mu\nu}^{a} G^{\mu\nu}_{a} \,\text{,}
+  \lagrange_{g} = - \frac{1}{4} G_{\mu\nu}^{a} G^{\mu\nu}_{a} \,\text{,}
 \end{align*}
-where $G_{\mu\nu}^i$ is the gluon field strength tensor defined as
+where $G_{\mu\nu}^a$ is the gluon field strength tensor defined as
 \begin{align*}
-  G_{\mu\nu}^i = \partial_\mu G_\nu^i - \partial_\nu G_\mu^i - g_{\text{s}} {f^{i}}_{jk} G_\mu^j G_\nu ^k \,\text{.}
+  G_{\mu\nu}^a = \partial_\mu G_\nu^a - \partial_\nu G_\mu^a - g_{\text{s}} {f^{a}}_{bc} G_\mu^b G_\nu ^c \,\text{.}
 \end{align*}
 The Lagrangian of QCD for a single flavour of quark with mass $m$ is
 consequently given by
@@ -242,9 +242,9 @@ Two important features of the theory of QCD are highlighted in the following:
 \label{seq:theory_ewk}
 
 The principle of local gauge invariance was previously used to obtain the
-fundamental interactions of QED and QCD. The characteristics of the weak
-interaction make this approach more difficult. In particular, the mediators of
-the interaction are massive with masses of~\cite{pdg2020}
+Lagrangians of QED and QCD. The characteristics of the weak interaction make
+this approach more difficult. In particular, the mediators of the interaction
+are massive with masses of~\cite{pdg2020}
 \begin{align*}
   m_W = \SI{80.377 +- 0.012}{\GeV}
   \qquad \text{and} \qquad
@@ -336,9 +336,8 @@ Right-handed neutrinos are omitted since they are not part of the SM.
 % described by the SM. Alternative proposals are that neutrinos are not Dirac
 % but Majorana particles~\cite{Majorana:1937vz}, which are particles that are
 % identical to their antiparticles.}
-Given this grouping of fermions, transformations from the $SU(2)_{\text{L}}$
-group only affect fermions with left-handed chirality, thus motivating the
-choice of subscript.
+Given this grouping of fermions, $SU(2)_{\text{L}}$ transformations only affect
+fermions with left-handed chirality, thus motivating the choice of subscript.
 % \todo{If we are assuming massless quarks -> mass and weak eigenstates are the
 % same.}
 
@@ -382,26 +381,26 @@ introduced. These fields transform, in analogy to QED and QCD, as follows
   W_\mu^k &\xrightarrow{SU(2)_{\text{L}} \otimes SU(1)_Y} {W_\mu^k}^\prime = W_\mu^k - \partial_\mu \alpha^{k}(\myvec{x}) - g {f_{ij}}^k \alpha^{i} W_\mu^j \\
   B_\mu   &\xrightarrow{SU(2)_{\text{L}} \otimes SU(1)_Y} {B_\mu}^\prime = B_\mu - \partial_\mu \beta(\myvec{x}) \,\text{,}
 \end{align*}
-where $f_{ijk}$ are the structure constants of the $SU(2)_{\text{L}}$ group.
-
-Substituting the gauge covariant derivative into the kinetic term of the Dirac
-Lagrangian yields the interaction terms of the electroweak interaction for left-
-and right-handed chiral fields:
+where $f_{ijk}$ are the structure constants of $SU(2)_{\text{L}}$ with the
+generators of the group taken to be $\frac{1}{2} \sigma_a$.  Substituting the
+gauge covariant derivative into the kinetic term of the Dirac Lagrangian yields
+the interaction terms of the electroweak theory for left- and right-handed
+chiral fields
 \begin{align}
-  &\lagrange_{\text{int}}^{\text{L}} = i \bar{\chi}_{\text{L}} \gamma^\mu \left[i g W_\mu^a \frac{\sigma_a}{2} + i g^\prime B_\mu \frac{Y}{2} \right] \chi_{\text{L}} \label{eq:theory_electroweak_left} \\
-  &\lagrange_{\text{int}}^{\text{R}} = i \bar{\psi}_{\text{R}} \gamma^\mu \left[i g^\prime B_\mu \frac{Y}{2} \right] \psi_{\text{R}} \,\text{.} \label{eq:theory_electroweak_right}
+  &\lagrange_{\text{int.}}^{\text{L}} = i \bar{\chi}_{\text{L}} \gamma^\mu \left[i g W_\mu^a \frac{\sigma_a}{2} + i g^\prime B_\mu \frac{Y}{2} \right] \chi_{\text{L}} \label{eq:theory_electroweak_left} \\
+  &\lagrange_{\text{int.}}^{\text{R}} = i \bar{\psi}_{\text{R}} \gamma^\mu \left[i g^\prime B_\mu \frac{Y}{2} \right] \psi_{\text{R}} \,\text{.} \label{eq:theory_electroweak_right}
 \end{align}
 The four fields occurring in the interaction terms do not represent the physical
-fields observed in nature. The fields $W_\mu^1$ and $W_\mu^2$ are associated
-with charged-current interactions noting that $\sigma_1$ and $\sigma_2$ are
-anti-diagonal matrices. Similarly, $W_\mu^3$ is associated with a
-neutral-current interaction given $\sigma_3$ is a diagonal matrix. The physical
-fields of the charged-current interaction can be identified as
+fields observed in nature. Given the choice of Pauli matrices as the generators
+of $SU(2)_{\text{L}}$, the fields $W_\mu^1$ and $W_\mu^2$ are associated with
+charged-current interactions, and $W_\mu^3$ and $B_\mu$ with neutral-current
+interactions. The physical fields of the charged-current interaction can be
+identified as
 \begin{align*}
   W_\mu^\pm = \frac{1}{\sqrt{2}} (W_\mu^1 \mp i W_\mu^2) \,\text{.}
 \end{align*}
 % in analogy to the weak isospin ladder operators.
-Similarly, the physical fields describing the neutral-current interactions via
+Furthermore, the physical fields describing the neutral-current interactions via
 the exchange of $Z$ bosons and photons can be expressed as a linear combination
 of the $W_\mu^3$ and $B_\mu$ gauge fields. Experimental results show that the
 $Z$ boson couples to both left- and right-handed chiral states, although not
@@ -432,16 +431,20 @@ particles with a coupling constant $e$. This yields the condition
 \end{align*}
 % \todo{Note ways to express sin / cos as a function of $g$ and $g^\prime$.}
 connecting the QED coupling constant with the coupling constants $g$ and
-$g^\prime$ of the electroweak unification.
-
-In analogy of QED and QCD, one adds the free field terms to the Lagrangian
+$g^\prime$ of the electroweak interaction. Finally, the kinetic term of the
+$W_\mu^a$ and $B_\mu$ fields is given, in analogy to QED and QCD, by
 \begin{align*}
   \lagrange_{W, Z, \gamma} =
   - \frac{1}{4} W_{\mu\nu}^a W^{\mu\nu}_a
-  - \frac{1}{4} B_{\mu\nu} B^{\mu\nu}
+  - \frac{1}{4} B_{\mu\nu} B^{\mu\nu} \,\text{,}
 \end{align*}
-Since the $SU(2)_{\text{L}}$ group is non-Abelian, triple and quartic gauge
-boson couplings are introduced into the theory.\todo{Context?}
+where the field strength tensors are defined as
+\begin{align*}
+  W_{\mu\nu}^a &= \partial_\mu W_\nu^a - \partial_\nu W_\mu^a - g {f^a}_{bc} W_\mu^b W_\nu^c \\
+  B_{\mu\nu} &= \partial_\mu B_\nu - \partial_\nu B_\mu \,\text{.}
+\end{align*}
+Since $SU(2)_{\text{L}}$ is a non-Abelian group, triple and quartic gauge boson
+couplings are introduced through the kinetic term of the $W_\mu^a$ fields.
 
 
 \subsubsection{The Brout--Englert--Higgs Mechanism}
