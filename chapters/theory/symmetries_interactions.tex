@@ -450,20 +450,18 @@ couplings are introduced through the kinetic term of the $W_\mu^a$ fields.
 \subsubsection{The Brout--Englert--Higgs Mechanism}
 
 In the context of the electroweak theory, the non-zero masses of the gauge
-bosons (and fermions) have been ignored thus far. Inserting mass terms for gauge
-fields into the Lagrangian, which would take the form
+bosons (and fermions) have been ignored thus far. Inserting gauge field mass
+terms into the Lagrangian, for example for the physical $Z_\mu$ field with mass
+$m_Z$ according to
 \begin{align*}
-  \lagrange_{\text{mass}}^{B} = -\frac{1}{2} m^2 B_\mu B^\mu
+  \lagrange_{\text{mass}}^{Z} = \frac{1}{2} m_{Z}^2 Z_\mu Z^\mu \,\text{,}
 \end{align*}
-for the $B_\mu$ gauge field (analogously for $W_\mu^a$), would violate
-$SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry due to the transformation properties
-of the field.
-
-A mechanism to dynamically generate the required mass terms of the Lagrangian
-was introduced by Weinberg into the electroweak
-theory~\cite{Weinberg:1967tq}. The mechanism traces back to Brout, Englert, and
-Higgs~\cite{Englert:1964et,Higgs:1964pj} and is thus referred to as the
-Brout--Englert--Higgs (BEH) mechanism.
+would violate $SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry due to the
+transformation properties of the fields. A mechanism to dynamically generate the
+required mass terms was introduced into the electroweak theory by
+Weinberg~\cite{Weinberg:1967tq} to address this issue. This mechanism traces
+back to Brout, Englert, and Higgs~\cite{Englert:1964et,Higgs:1964pj} and is thus
+referred to as the Brout--Englert--Higgs (BEH) mechanism.
 
 The BEH mechanism introduces two complex scalar fields, one electrically charged
 and one neutral field, arranged in a weak isospin doublet with $Y = 1$ according
@@ -486,10 +484,10 @@ Lagrangian of the complex scalar fields is given by the Klein--Gordon equation
   \lagrange = (\partial_\mu \phi)^\dagger (\partial^\mu \phi) - V(\phi)
 \end{align*}
 with the potential term denoted by $V(\phi)$. The aim of the BEH mechanism is to
-embed the doublet of complex scalar fields in the electroweak theory with a
+embed the doublet of complex scalar fields into the electroweak theory with a
 $SU(2)_{\text{L}}\otimes U(1)_Y$ symmetry. To fulfil the gauge invariance of the
-electroweak theory, the potential can only depend on $\phi^\dagger \phi$. One
-such choice is
+electroweak theory, the potential term can only depend on $\phi^\dagger
+\phi$. One such choice is
 \begin{align}
   V(\phi) = \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2
   \label{eq:higgs_potential}
@@ -509,20 +507,20 @@ condition
 \end{align*}
 which represents a continuum of degenerate states at a radius of $v$ from the
 origin in the space spanned by the four real scalar fields. The quantity $v$ is
-also referred to as the \emph{vacuum expectation value} (VEV). Hereafter, this
-particular choice of potential is referred to as the BEH potential. The choice
-is further illustrated in \Cref{fig:mexican_hat} for a simplified model with
-only a single complex scalar field.
+therefore referred to as the \emph{vacuum expectation value} (VEV). Hereafter,
+this particular choice of potential is referred to as the BEH potential. This
+choice is illustrated in \Cref{fig:mexican_hat} for a simplified model with only
+a single complex scalar field.
 
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.55\textwidth]{theory/potential}
+  \includegraphics[scale=1.1]{theory/potential}
 
-  \caption{The ``mexican-hat potential'' of a single complex scalar field as a
-    lower dimensional example illustrating the choice of the BEH potential in
-    the SM. The degenerate vacuum states lie in a circle with radius $v$ given
-    by the condition $\phi_1^2 + \phi_2^2 = v^2$. Adapted from
+  \caption{The ``Mexican-hat potential'' of a single complex scalar field as a
+    low dimensional example to illustrate the choice of the BEH potential in the
+    SM. The degenerate vacuum states lie in a circle with radius $v$ given by
+    the condition $\phi_1^2 + \phi_2^2 = v^2$. Adapted from
     Ref.~\cite{higgs_potential_tikz}.}%
   \label{fig:mexican_hat}
 \end{figure}
@@ -532,9 +530,9 @@ energy, hence realising one of the infinite number of vacuum states. While the
 full Lagrangian still possesses a $SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry,
 the spontaneous choice of a vacuum state with non-vanishing VEV appears to break
 the symmetry, a process referred to as \emph{spontaneous symmetry
-  breaking}. Perturbative methods have to be used to find solutions to the field
+  breaking}. Perturbative methods are used to find solutions to the field
 equations of motion, hence the fields have to be expressed as small
-perturbations relative to a vacuum state. Let the vacuum state be
+perturbations relative to the vacuum state. Let the vacuum state be
 \begin{align*}
   \phi_{\text{v}} = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
@@ -573,8 +571,8 @@ with $H(\myvec{x}) \in \mathbb{R}$.
 
 % Check: https://arxiv.org/pdf/1704.02311.pdf
 Expressing the BEH potential of \Cref{eq:higgs_potential} in terms of
-perturbations of the vacuum state of \Cref{eq:vacuum_state_perturb} and dropping
-terms not depending on $H$ yields
+perturbations of the vacuum state, i.e.\ using \Cref{eq:vacuum_state_perturb},
+and dropping terms not depending on $H$ yields
 \begin{align}
   V(H) =
   \lambda v^2 H^2
@@ -584,11 +582,11 @@ terms not depending on $H$ yields
 \end{align}
 The first term of $V(H)$ represents the mass term of the scalar field $H$ with a
 mass of $m_H = \sqrt{2\lambda} v$. The quantum of the scalar field is hereafter
-referred to as the Higgs boson ($H$). The terms cubic and quadratic in the
-scalar field represent self-interactions between Higgs bosons with coupling
-strengths defined as\footnote{There exists no strong consensus regarding the
-  definition of $\lambda_{HHH}$ and $\lambda_{HHHH}$. In this thesis a
-  convention is adopted such that the Higgs potential can be expressed as
+referred to as the Higgs boson ($H$). The terms cubic and quartic in the scalar
+field represent self-interactions between Higgs bosons with coupling strengths
+defined as\footnote{There exists no consensus regarding the definition of
+  $\lambda_{HHH}$ and $\lambda_{HHHH}$. In this thesis a convention is adopted
+  such that the Higgs potential can be expressed as
   \begin{align*}
     V(H) = \frac{m_{H}^2}{2} H^2 + \frac{\lambda_{HHH}}{3!} H^3 + \frac{\lambda_{HHHH}}{4!}
     H^4 \,\text{.}
@@ -598,7 +596,32 @@ strengths defined as\footnote{There exists no strong consensus regarding the
   \lambda_{HHH} \coloneqq \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq \frac{3 m_{H}^2}{v^2} \,\text{.}
 \end{align*}
 The Feynman vertices of Higgs boson self-interactions are depicted in
-\Cref{fig:vertex_hhh,fig:vertex_hhhh}, respectively.
+\Cref{fig:vertex_hhh,fig:vertex_hhhh}.
+
+The term of the Klein--Gordon equation involving the space-time derivatives
+yield after substituting the $SU(2)_{\text{L}} \otimes U(1)_Y$ gauge covariant
+derivative and inserting the physical fields describing the $W$ and $Z$ bosons
+\begin{align}
+  (D_\mu \phi)^\dagger (D^\mu \phi) =
+  \frac{1}{2} (\partial_\mu H) (\partial^\mu H)
+  + \left[
+  \frac{g^2 v^2}{4} W^{-}_\mu {W^{+}}^\mu
+  +
+  \frac{(g^2 + {g^\prime}^2) v^2}{8} Z_\mu Z^\mu
+  \right] \left( 1 + \frac{1}{v} H \right)^2 \,\text{.}
+  \label{eq:higgs_covariant_derivative}
+\end{align}
+The first term of \Cref{eq:higgs_covariant_derivative} yields the kinetic term
+for the scalar field $H$. Moreover, the BEH mechanism dynamically generates mass
+terms for the $W^\pm$ and $Z$ bosons while leaving the photon massless. Using
+the four parameters of the electroweak theory ($g$, $g^\prime$, $m_{H}$, $v$)
+the masses of the bosons can be obtained from the Lagrangian such that
+\begin{align*}
+  &m_W = \frac{1}{2} g v  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, v && m_A = 0 \,\text{.}
+\end{align*}
+\Cref{eq:higgs_covariant_derivative} additionally describes interaction vertices
+of the form $WWH$, $ZZH$, $WWHH$, and $ZZHH$, which are depicted in
+\Cref{fig:higgs_vertices}.
 
 \begin{figure}[htbp]
   \centering
@@ -639,45 +662,16 @@ The Feynman vertices of Higgs boson self-interactions are depicted in
     \subcaption{}
   \end{subfigure}
 
-  \caption{All vertices of Higgs bosons coupling to other bosons predicted by
-    the SM.}%
+  \caption{Interaction vertices of Higgs bosons coupling to other bosons
+    predicted by the SM.}%
   \label{fig:higgs_vertices}
 \end{figure}
 
-The terms of the Klein--Gordon equation involving the space-time derivatives
-yield after substituting the $SU(2)_{\text{L}} \otimes U(1)_Y$ gauge covariant
-derivative and inserting the physical fields describing the $W$ and $Z$ bosons:
-\begin{align}
-  (D_\mu \phi)^\dagger (D^\mu \phi) =
-  \frac{1}{2} (\partial_\mu h) (\partial^\mu h)
-  + \left[
-  \frac{g^2 v^2}{4} W^{-}_\mu {W^{+}}^\mu
-  +
-  \frac{(g^2 + {g^\prime}^2) v^2}{8} Z_\mu Z^\mu
-  \right] \left( 1 + \frac{1}{v} H \right)^2 \,\text{.}
-  \label{eq:higgs_covariant_derivative}
-\end{align}
-The first term of \Cref{eq:higgs_covariant_derivative} yields the kinetic term
-for the scalar field $h$. Moreover, the BEH mechanism dynamically generates mass
-terms for the $W^\pm$ and $Z$ bosons while leaving the photon massless. Using
-the four parameters of the electroweak theory (e.g.\ $g$, $g^\prime$, $m_{H}$,
-$v$) the masses of the bosons can be obtained from the Lagrangian\footnote{TODO:
-  Explain mysterious factor of two for the W mass term.}  such that
-\begin{align*}
-  &m_W = \frac{1}{2} g v  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, v && m_A = 0 \,\text{.}
-\end{align*}
-Finally, \Cref{eq:higgs_covariant_derivative} describes interation vertices of
-the form $WWH$, $ZZH$, $WWHH$, and $ZZHH$, which are depicted in
-\Cref{fig:higgs_vertices}.
-
-Prior to the discovery of the Higgs boson, of the four parameters describing the
-electroweak theory (e.g.\ $g$, $g^\prime$, $v$, $m_{H}$) the only one left to be
-determined was the mass of the Higgs boson, $m_{H}$.
-% The VEV of the Higgs field, $v$, was previously estimated from measurements of
-% couplings and masses of the weak gauge bosons and is approximately
-% \SI{246}{\GeV}~\cite{pdg2020}.
-After the discovery of the Higgs boson and the measurement of its mass, no
-unknown parameters remain in the electroweak theory.
+% Prior to the discovery of the Higgs boson, of the four parameters describing
+% the electroweak theory the only one left to be determined was the mass of the
+% Higgs boson, $m_{H}$. After the discovery of the Higgs boson and the
+% measurement of its mass, no unknown parameters remain in the electroweak
+% theory.
 
 % Conventionally, the couplings of the electroweak unification are given in terms
 % of $e$ and $\sin^2\theta_{\text{W}} = \num{0.23124 +- 0.00004}$ at
@@ -691,7 +685,8 @@ The inclusion of fermion mass terms of the form
   \lagrange_{\text{mass}}^{\text{fermion}} = - m \bar{\psi} \psi = - m [ \bar{\psi}_\text{R} \psi_\text{L} + \bar{\psi}_\text{L} \psi_\text{R} ]
 \end{align*}
 into the Lagrangian violates the gauge invariance with respect to the
-$SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry. Instead, fermion mass terms are
+$SU(2)_{\text{L}} \otimes U(1)_Y$ symmetry, since fermions with left- and
+right-handed chirality transform differently. Instead, fermion mass terms are
 generated dynamically through EWSB by introducing interactions between the
 fermion fields and the scalar Higgs field, which are referred to as Yukawa
 interactions~\cite{Yukawa:1935xg}.
@@ -723,13 +718,12 @@ for electrons, up-, and down-quarks are denoted as $e_{\text{R}}$,
 $u_{\text{R}}$, and $d_{\text{R}}$. Moreover, the coupling constants of the
 Yukawa interactions, which are free parameters of the theory, are given by
 $y_e$, $y_u$, and $y_d$. Finally, $\text{h.c.}$ represents the hermitian
-conjugate of the preceding terms.
-
-After EWSB and in unitary gauge \Cref{eq:lagrangian_yukawa} reads
+conjugate of the preceding terms. After EWSB and in unitary gauge
+\Cref{eq:lagrangian_yukawa} reads
 \begin{align*}
   \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_f v}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{v} H \right)
 \end{align*}
-yielding the required mass terms
+yielding fermion mass terms with masses
 \begin{align*}
   m_f = \frac{y_f v}{\sqrt{2}} \,\text{,}
 \end{align*}
