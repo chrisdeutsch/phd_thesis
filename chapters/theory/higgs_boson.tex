@@ -1,7 +1,7 @@
 \section{The Higgs Boson}%
 \label{sec:higgs_boson}
 
-The Higgs boson is the only scalar particle in the SM. It is massive with
+The Higgs boson is the only scalar particle in the SM. It is massive and has
 neither electric nor colour charge. The Higgs boson couples to all massive
 particles, including itself, with coupling strengths monotonically related to
 the particle's mass. In particular, the coupling to gauge bosons, $V$, and
@@ -142,7 +142,7 @@ majority of Higgs bosons decay into \bbbar with a branching ratio of
 \SI{58}{\percent}. The $b$-quark is the heaviest fermion that can be produced in
 the Higgs boson decay, decays to top-quark pairs being forbidden due to
 $2 m_t \gg m_H$. The second most abundant fermionic Higgs boson decay mode is
-$H \to \tau^+ \tau^-$ with a branching ratio of with \SI{6.3}{\percent}. The
+$H \to \tau^+ \tau^-$ with a branching ratio of \SI{6.3}{\percent}. The
 $H \to \bbbar$ and $H \to \tau^+ \tau^-$ decay modes are among the most
 important probes of Yukawa interactions in the SM.
 % In addition, a first indication of SM-like Yukawa couplings to fermions of the
@@ -211,8 +211,12 @@ the box diagram interfere destructively leading to a small SM $HH$ production
 cross-section via \ggF of
 \begin{align*}
   \sigma(pp \to HH) = \SI{31.05}{\femto\barn}
+  \quad \text{with} \quad
+  \Delta \sigma / \sigma = \valuesep^{+\phantom{2}7\,\%}_{-23\,\%}
+  % \sigma(pp \to HH) = \SIpmerr{31.1}{+2.1}{-7.2}{\femto\barn}
+  %\sigma(pp \to HH) = (31.05\valuesep^{+\phantom{2}7\,\%}_{-23\,\%})\valuesep\si{\femto\barn}
 \end{align*}
-at NNLO~\FTapprox~\cite{Grazzini:2018bsd}.
+at NNLO~\FTapprox~\cite{Grazzini:2018bsd,Baglio:2020wgt,LHCHWGHH}.
 
 \begin{figure}[htbp]
   \centering
@@ -232,21 +236,22 @@ at NNLO~\FTapprox~\cite{Grazzini:2018bsd}.
 
   \caption{Feynman diagrams of Higgs boson pair production via \ggF at leading
     order. The diagrams (a) and (b) are commonly referred to as the box and
-    triangle diagrams, respectively. The Higgs boson self-coupling and the
-    top-quark Yukawa coupling is indicated by $\lambda_{HHH}$ and $g_{Htt}$,
-    respectively.}%
+    triangle diagrams, respectively. The Higgs boson self-coupling is denoted as
+    $\lambda_{HHH}$ and the top-quark Yukawa coupling as $g_{Htt}$.}%
   \label{fig:dihiggs_ggf_feyn}
 \end{figure}
 
-The second largest SM \HH production mode is VBF. The leading order diagrams of
-the this production mode are depicted in \Cref{fig:dihiggs_vbf_feyn}. The
-diagrams involve the coupling of the Higgs boson to vector bosons, $g_{HVV}$,
-the quartic $HHVV$ coupling, $g_{HHVV}$, and the Higgs boson self-coupling. A
-characteristic feature of the VBF production mode is the presence of two
-additional jets originating from the fragmentation and hadronisation of the
-final state quarks. The predicted SM \HH production cross-section via VBF is
+The second largest SM \HH production mode is VBF, the leading order diagrams
+being depicted in \Cref{fig:dihiggs_vbf_feyn}. The diagrams involve the coupling
+of the Higgs boson to vector bosons, $g_{HVV}$, the quartic $HHVV$ coupling,
+$g_{HHVV}$, and the Higgs boson self-coupling. A characteristic feature of the
+VBF production mode is the presence of two additional jets originating from the
+fragmentation and hadronisation of the final state quarks. The predicted SM \HH
+production cross-section via VBF is
 \begin{align*}
   \sigma(\pp \to qqHH) = \SI{1.726}{\femto\barn}
+  \quad \text{with} \quad
+  \Delta \sigma / \sigma = \pm 2.1\,\%
 \end{align*}
 at $\text{N}^3\text{LO}$~\cite{Dreyer:2018qbw,LHCHWGHH}. Due to the small
 cross-section, the VBF production mode is currently of lesser relevance to probe
@@ -314,8 +319,8 @@ search channels most sensitive to SM \HH production are:
 
 \item[The \bbbb channel] has the largest branching ratio (\SI{34}{\percent}) of
   any final state. However, this channel is dominated by backgrounds from QCD
-  multi-jet production due to its fully hadronic final state. As a result,
-  selecting signal events is challenging, requiring $b$-jet triggers with strict
+  multi-jet production due to its hadronic final state. As a result, selecting
+  signal events is challenging, requiring $b$-jet triggers with strict
   transverse momentum thresholds.
   % Moreover, identifying the individual $H \to \bbbar$ candidates
   % -> Not a huge problem for SM
@@ -332,9 +337,9 @@ search channels most sensitive to SM \HH production are:
 
 \item[The \bbyy channel] has a very small branching ratio of
   \SI{0.26}{\percent}, but the photon pair provides an outstanding signature to
-  select signal events. Additionally, the reconstruction of the di-photon
-  invariant mass, $m_{\gamma\gamma}$, has a typical resolution of
-  \SIrange{1}{2}{\GeV} in the ATLAS and CMS experiments at the
+  select signal events. The reconstruction of the di-photon invariant mass,
+  $m_{\gamma\gamma}$, has a typical resolution of \SIrange{1}{2}{\GeV} in the
+  ATLAS and CMS experiments at the
   LHC~\cite{PERF-2007-01,CMS-CMS-00-001}.\footnote{Compared to the typical
     resolutions of $H \to \bbbar$ and $H \to \tautau$ reconstruction in the
     \bbbb and \bbtautau channels, this represents an improvement of about an
