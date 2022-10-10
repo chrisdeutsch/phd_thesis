@@ -4,7 +4,8 @@
 The following summarises the experimental status of searches for Higgs boson
 pair production prior to the work performed as part of this thesis. The focus
 lies on results of the ATLAS and CMS collaborations obtained using \pp-collision
-datasets at $\sqrt{s} = \SI{13}{\TeV}$ from the 2015 and 2016 runs of the LHC.
+datasets at $\sqrt{s} = \SI{13}{\TeV}$ collected during the 2015 and 2016
+data-taking periods at the LHC.
 
 % The results obtained as part of this thesis will be compared to results of both
 % collaborations using the \pp-collision datasets recorded from 2015 to 2018 at
@@ -19,12 +20,11 @@ datasets at $\sqrt{s} = \SI{13}{\TeV}$ from the 2015 and 2016 runs of the LHC.
 The ATLAS and CMS collaborations set upper limits on the cross-section of SM \HH
 production via \ggF, $\sigma_{\ggF}$, at \SI{95}{\percent} CL. The results of
 both collaborations are summarised in \Cref{fig:prior_status_smhh}. Searches for
-SM \HH production were performed in a variety of channels, the \bbbb, \bbtautau,
-and \bbyy channels being the most sensitive ones. Since these three channels
-yielded comparable upper limits, a statistical combination of SM \HH searches
-was performed by both collaborations. The observed (expected) upper limits on
-$\sigma_{\ggF} / \sigma_{\ggF}^{\text{SM}}$ of the combination are $6.9$ ($10$)
-and $22.2$ ($12.8$) ATLAS and CMS collaboration,
+SM \HH production were performed in various channels, the \bbbb, \bbtautau, and
+\bbyy channels being the most sensitive ones. A statistical combination of SM
+\HH searches was performed by both collaborations. The observed (expected) upper
+limits on $\sigma_{\ggF} / \sigma_{\ggF}^{\text{SM}}$ of the combination are
+$6.9$ ($10$) and $22.2$ ($12.8$) ATLAS and CMS collaboration,
 respectively~\cite{HDBS-2018-58,CMS-HIG-17-030}. At the time of publication,
 these were the most stringent limits on SM \HH production.
 
@@ -53,16 +53,16 @@ these were the most stringent limits on SM \HH production.
   \caption{Upper limits on the cross-section of SM \HH production via \ggF at
     \SI{95}{\percent} CL by the ATLAS (a) and CMS (b) collaborations. The upper
     limits are normalised to a SM cross-section prediction of
-    $\sigma_{\ggF} = \SI{33.5}{\femto\barn}$ and given separately for individual
-    search channels and the statistical combination of all listed channels. In
-    both cases, the expected limits are derived under the background-only
-    hypothesis (i.e.\ no SM \HH production). The results are based on
-    \pp-collision data taken at the beginning of Run~2 of the LHC.}%
+    $\sigma_{\ggF} = \SI{33.5}{\femto\barn}$ and given separately for the
+    individual channels and the statistical combination of all listed
+    channels. In both cases, the expected limits are derived under the
+    background-only hypothesis (i.e.\ no SM \HH production). The results are
+    based on \pp-collision data taken at the beginning of Run~2 of the LHC.}%
   \label{fig:prior_status_smhh}
 \end{figure}
 
 
-\subsection{Constraints on the Trilinear Higgs Boson Self-Coupling}%
+\subsection{Constraints on the Strength of the Higgs Boson Self-Coupling}%
 \label{sec:past_results_klambda}
 
 The ATLAS and CMS collaborations reinterpreted the searches for SM \HH
@@ -73,7 +73,7 @@ self-coupling modifier, \klambda. All other couplings were fixed to their SM
 values. The results of both collaborations are summarised in
 \Cref{fig:prior_status_klambda}. The \klambda interval in which the upper limit
 on the cross-section does not exclude cross-section predicted by theory is
-considered as the allowed \klambda interval. The results depicted in
+considered as the \emph{allowed \klambda interval}. The results depicted in
 \Cref{fig:prior_status_klambda} yield allowed \klambda intervals of
 \begin{align*}
   -5.0 < \klambda < 12.0 \,\text{(observed)} \qquad -5.8 < \klambda < 12.0 \,\text{(expected)}
@@ -107,12 +107,12 @@ for the result of the CMS collaboration~\cite{CMS-HIG-17-030}.
   \end{subfigure}
 
   \caption{Upper limits on the cross-section of non-resonant \HH production at
-    \SI{95}{\percent} CL as a function of
-    $\klambda = \lambda_{HHH} / \lambda_{HHH}^{\text{SM}}$ by the ATLAS (a) and
-    CMS (b) collaborations. The expected upper limits are obtained under the
+    \SI{95}{\percent} CL as a function of \klambda by the ATLAS (a) and CMS (b)
+    collaborations. The expected upper limits are obtained under the
     background-only assumption (i.e.\ no non-resonant \HH production). Values of
     \klambda where the theoretical prediction exceeds the upper limit are
-    excluded by the measurements.}%
+    excluded by the measurements. The results are based on \pp-collision data
+    taken at the beginning of Run~2 of the LHC.}%
   \label{fig:prior_status_klambda}
 \end{figure}
 
@@ -120,8 +120,16 @@ for the result of the CMS collaboration~\cite{CMS-HIG-17-030}.
 \subsection{Searches for Resonant Production of Higgs Boson Pairs}%
 \label{sec:past_results_resonant}
 
-Searches for narrow-width scalar resonances produced in \ggF were performed by
-the ATLAS and CMS collaborations.
+The ATLAS and CMS collaborations performed searches for CP-even, scalar
+resonances with narrow width decaying into a pair of SM Higgs bosons. Resonance
+masses ranging from the \HH production threshold up to \SI{3000}{\GeV} are
+considered by both collaboration. The upper limits at \SI{95}{\percent} CL on
+the production cross-section of the scalar resonance as a function of its mass
+is shown in \Cref{fig:prior_status_reso}. Neither the ATLAS nor the CMS result
+show a statistically significant excess in the search for resonant \HH
+production. The excluded cross-sections range spans from about
+\SI{1000}{\femto\barn} at low mass to about \SI{5}{\femto\barn} at high
+resonance mass.
 
 \begin{figure}[htbp]
   \centering
@@ -134,23 +142,34 @@ the ATLAS and CMS collaborations.
   \definecolor{cwwyy}{RGB}{0, 204, 204}
   \definecolor{cwwww}{RGB}{204, 102, 51}
 
-  \begin{subfigure}[b]{0.40\textwidth}
+  \begin{subfigure}[t]{0.40\textwidth}
     \centering
 
     \includegraphics[width=\textwidth]{status/atlas_36ifb_resonant}
 
-    \subcaption{Hello (\mybox[cbbww]) (\mybox[cbbtautau]) (\mybox[cbbyy])
-      (\mybox[cbbbb]). Figure taken from Ref.~\cite{HDBS-2018-58}.}
+    \subcaption{Results of the ATLAS collaboration for the channels:
+      \bbbb~(\mybox[cbbbb]), \bbtautau~(\mybox[cbbtautau]),
+      \bbyy~(\mybox[cbbyy]), $\bbbar W^+ W^-$~(\mybox[cbbww]),
+      $W^+ W^- \gamma\gamma$~(\mybox[cwwyy]), and
+      $W^+ W^- W^+ W^-$~(\mybox[cwwww]). The statistical combination of all
+      channels is shown in black. The observed (expected) upper limits are
+      depicted as solid (dashed) lines. The figure is taken from
+      Ref.~\cite{HDBS-2018-58}.}
   \end{subfigure}\hfill%
-  \begin{subfigure}[b]{0.56\textwidth}
+  \begin{subfigure}[t]{0.56\textwidth}
     \centering
 
     \includegraphics[width=\textwidth]{status/cms_36ifb_resonant}
 
-    \subcaption{Figure taken from Ref.~\cite{CMS-HIG-17-030}.}
+    \subcaption{Results of the CMS collaboration for the statistical combination
+      of the \bbbb, \bbtautau, \bbyy, and $\bbbar VV$ ($V = Z$ or $W^\pm$)
+      channels. The figure is taken from Ref.~\cite{CMS-HIG-17-030}.}
   \end{subfigure}
 
-  \caption{Status}%
+  \caption{Upper limits at \SI{95}{\percent} CL on the production cross-section
+    of CP-even, scalar resonance ($S$ / $X$) decaying into a pair of SM Higgs
+    bosons by the ATLAS (a) and CMS (b) collaboration.  The results are based on
+    \pp-collision data taken at the beginning of Run~2 of the LHC.}%
   \label{fig:prior_status_reso}
 \end{figure}
 
