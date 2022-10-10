@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{fmffile}{higgs_prod_vh_fmf}
+  \begin{fmfgraph*}(100,50)
+    \fmfstraight
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+
+    \fmf{fermion}{i1,v1,i2}
+
+    \fmf{boson,label=$V$}{v1,v2}
+    \fmf{boson}{v2,o2}
+    \fmf{dashes}{v2,o1}
+
+    \fmflabel{$q$}{i1}
+    \fmflabel{$\bar{q}$}{i2}
+    \fmflabel{$H$}{o1}
+    \fmflabel{$V$}{o2}
+  \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}

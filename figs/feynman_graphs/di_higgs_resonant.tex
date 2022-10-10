@@ -8,7 +8,7 @@
 \begin{document}
 \pagestyle{empty}
 
-\begin{fmffile}{di_higgs_triangle_fmf}
+\begin{fmffile}{di_higgs_resonant_fmf}
   \begin{fmfgraph*}(120,45)
     \fmfstraight
     \fmfleft{i1,i2}
@@ -25,7 +25,7 @@
     \fmf{fermion,tension=1}{t1,t2,t3,t1}
 
     % Higgs boson
-    \fmf{dashes,tension=2,label=$H$}{t3,hhh}
+    \fmf{dashes,tension=2,label=$X$}{t3,hhh}
 
     % Higgs boson
     \fmf{dashes}{hhh,o1}
@@ -38,11 +38,9 @@
     \fmflabel{$H$}{o1}
     \fmflabel{$H$}{o2}
 
-    \fmfdot{hhh}
-    \fmflabel{$\lambda_{HHH}$}{hhh}
+    %\fmfdot{hhh}
 
-    \fmfdot{t3}
-    \fmflabel{$g_{Htt}$}{t3}
+    %\fmfdot{t3}
   \end{fmfgraph*}
 \end{fmffile}
 

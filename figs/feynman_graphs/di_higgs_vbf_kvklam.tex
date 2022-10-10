@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{feynmp}
 \usepackage[usenames,dvipsnames]{color}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
 \DeclareGraphicsRule{*}{mps}{*}{}
 
 \begin{document}
@@ -25,7 +27,7 @@
     \fmf{boson, tension=1.5}{t2,u1}
 
     % Higgs pair prod
-    \fmf{dashes,tension=2.0,label=$H$}{u1,v1}
+    \fmf{dashes,tension=2.0,label=$H$,label.side=left}{u1,v1}
     \fmf{dashes}{v1,o2}
     \fmf{dashes}{v1,o3}
 
@@ -40,9 +42,11 @@
 
     % Couplings
     \fmfdot{u1}
-    \fmfv{label=$\kappa_{V}$, label.angle=180}{u1}
+    % \fmfv{label=$\kappa_{V}$, label.angle=180}{u1}
+    \fmfv{label=$g_{HVV}$, label.angle=180}{u1}
     \fmfdot{v1}
-    \fmfv{label=$\kappa_{\lambda}$, label.angle=90}{v1}
+    % \fmfv{label=$\kappa_{\lambda}$, label.angle=90}{v1}
+    \fmfv{label=$\lambda_{HHH}$, label.angle=-90}{v1}
   \end{fmfgraph*}
 \end{fmffile}
 

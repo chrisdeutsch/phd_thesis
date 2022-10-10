@@ -8,7 +8,7 @@
 \begin{document}
 \pagestyle{empty}
 
-\begin{fmffile}{di_higgs_triangle_fmf}
+\begin{fmffile}{di_higgs_effective_fmf}
   \begin{fmfgraph*}(120,45)
     \fmfstraight
     \fmfleft{i1,i2}
@@ -38,11 +38,21 @@
     \fmflabel{$H$}{o1}
     \fmflabel{$H$}{o2}
 
-    \fmfdot{hhh}
-    \fmflabel{$\lambda_{HHH}$}{hhh}
+    %\fmfdot{hhh}
+    %\fmflabel{$\lambda_{HHH}$}{hhh}
 
-    \fmfdot{t3}
-    \fmflabel{$g_{Htt}$}{t3}
+    %\fmfdot{t3}
+    %\fmflabel{$g_{Htt}$}{t3}
+
+    \fmfv{
+      decor.shape=circle,
+      decor.filled=shaded,
+      decor.size=0.35cm,
+      label=$\kappa_\lambda$,
+      label.angle=90,
+      label.dist=0.25cm,
+    }{hhh}
+
   \end{fmfgraph*}
 \end{fmffile}
 

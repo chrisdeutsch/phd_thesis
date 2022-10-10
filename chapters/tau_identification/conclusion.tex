@@ -53,27 +53,24 @@ documented in Ref.~\cite{CMS-TAU-20-001}.
 
 % https://atlas-glance.cern.ch/atlas/analysis/analyses/details.php?id=7262
 % https://atlas-glance.cern.ch/atlas/analysis/pubnotes/details.php?id=6503
-The RNN-based \tauid continues to be used by the ATLAS experiment at
-the beginning of Run~3 of the LHC for identification at the high-level
-trigger and for offline event reconstruction.\todo{Cite TauCP Run2/3
-  pubnote once available.} In the long term, changes to the \tauid
-strategy are expected. A new RNN-based \tauhadvis track classification
-algorithm~\cite{Maerker:2021hro} was deployed for \tauhadvis
-reconstruction in Run~3\todo{Cite pub}. This algorithm could be
-integrated into or combined with the \tauid procedure to provide
-isolation information directly. Such an approach is motivated by the
-large overlap in track observables used by both algorithms and the
-inherent connection between \tauhadvis track selection and
-\tauid. Second, other types of networks operating on variable size
-collections of inputs (e.g.\ tracks and clusters) are explored by the
-collaboration. For \tauid, \deepsets~\cite{NIPS2017_f22e4747} are an
-alternative to the RNN-based approach. \deepsets operate on unordered
-sets of inputs and therefore, unlike RNN, do not require a specific
-ordering of the inputs. Preliminary results show that \tauid based on
-\deepsets yields results that are competitive with the implementation
-using RNN while requiring significantly less time for training and
-prediction.\footnote{Similar findings were obtained for
-  \deepsets-based $b$-tagging algorithms in
+The RNN-based \tauid continues to be used by the ATLAS experiment at the
+beginning of Run~3 of the LHC for identification at the high-level trigger and
+for offline event reconstruction~\cite{ATL-PHYS-PUB-2022-044}. In the long term,
+changes to the \tauid strategy are expected. A new RNN-based \tauhadvis track
+classification algorithm~\cite{Maerker:2021hro} was deployed for \tauhadvis
+reconstruction in Run~3~\cite{ATL-PHYS-PUB-2022-044}. This algorithm could be
+integrated into or combined with the \tauid procedure to provide isolation
+information directly. Such an approach is motivated by the large overlap in
+track observables used by both algorithms and the inherent connection between
+\tauhadvis track selection and \tauid. Second, other types of networks operating
+on variable size collections of inputs (e.g.\ tracks and clusters) are explored
+by the collaboration. For \tauid, \deepsets~\cite{NIPS2017_f22e4747} are an
+alternative to the RNN-based approach. \deepsets operate on unordered sets of
+inputs and therefore, unlike RNN, do not require a specific ordering of the
+inputs. Preliminary results show that \tauid based on \deepsets yields results
+that are competitive with the implementation using RNN while requiring
+significantly less time for training and prediction.\footnote{Similar findings
+  were obtained for \deepsets-based $b$-tagging algorithms in
   Ref.~\cite{ATL-PHYS-PUB-2020-014}.}
 
 % Write something about the reduction in time between iterations

@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{fmffile}{higgs_hhzz_fmf}
+  \begin{fmfgraph*}(60,50)
+    \fmfstraight
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+
+    \fmflabel{$Z^0$}{i1}
+    \fmflabel{$Z^0$}{i2}
+    \fmflabel{$H$}{o1}
+    \fmflabel{$H$}{o2}
+
+    \fmf{boson}{i1,v}
+    \fmf{boson}{i2,v}
+    \fmf{dashes}{v,o1}
+    \fmf{dashes}{v,o2}
+    \fmfdot{v}
+  \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}

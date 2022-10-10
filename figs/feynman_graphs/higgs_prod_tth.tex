@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{fmffile}{higgs_prod_tth_fmf}
+  \begin{fmfgraph*}(100,50)
+    \fmfstraight
+    \fmfleft{i1,i2}
+    \fmfright{o1,h,o2}
+
+    % Gluons
+    \fmf{gluon}{i1,t1}
+    \fmf{phantom}{t1,o1}
+
+    \fmf{gluon}{i2,t2}
+    \fmf{phantom}{t2,o2}
+
+    \fmffreeze
+
+    % Tops
+    \fmf{fermion}{o1,t1,v,t2,o2}
+
+    \fmffreeze
+
+    \fmf{dashes}{v,h}
+
+    \fmflabel{$g$}{i1}
+    \fmflabel{$g$}{i2}
+    \fmflabel{$\bar{t}$}{o1}
+    \fmflabel{$t$}{o2}
+    \fmflabel{$H$}{h}
+  \end{fmfgraph*}
+\end{fmffile}
+
+\end{document}
