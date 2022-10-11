@@ -1,13 +1,13 @@
-This chapter describes a new algorithm used at the ATLAS experiment to
-identify the visible decay products of hadronic \taulepton decays.
-The algorithm is applied to \tauhadvis candidates passing \tauhadvis
-reconstruction and aims to differentiate between candidates
-originating from \tauhad (\truetauhadvis) and those originating from
-non-\tauhad sources (\faketauhadvis). This step is necessary since
-\tauhadvis reconstruction is not optimised to reject \faketauhadvis
-but rather to correctly reconstruct \truetauhadvis.%  More generally,
-% the process of distinguishing between true- and \faketauhadvis is
-% called \tauid.
+This chapter describes a novel algorithm used at the ATLAS experiment to
+identify the visible decay products of hadronic \taulepton decays. The algorithm
+is applied to \tauhadvis candidates passing \tauhadvis reconstruction and aims
+to differentiate between candidates originating from \tauhad (\truetauhadvis)
+and those originating from non-\tauhad sources (\faketauhadvis). This step is
+necessary since \tauhadvis reconstruction is not optimised to reject
+\faketauhadvis but rather to correctly reconstruct \truetauhadvis and maintain
+high \tauhadvis reconstruction efficiencies.
+% More generally, the process of distinguishing between true- and \faketauhadvis
+% is called \tauid.
 
 The dominant source of \faketauhadvis at the ATLAS experiment are
 quark- or gluon-initiated jets due to their similarity to the hadronic
@@ -28,17 +28,16 @@ gluon-initiated jets:
 \begin{description}
 
 \item[\taulepton mass] The \taulepton has a mass of
-  \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore sufficiently
-  massive to decay hadronically while still having a small mass
-  compared to the energy scales typically studied at the ATLAS
-  experiment.
+  \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore sufficiently massive to decay
+  hadronically while still having a small mass compared to the energy scales
+  typically studied at the ATLAS experiment.
 
-  The \taulepton mass can be used as a feature directly by considering
-  the invariant mass of the visible daughter particles of hadronic
-  \taulepton decays. Ignoring reconstruction effects, this invariant
-  mass is bounded by the mass of the \taulepton. This is not the case
-  for \tauhadvis candidates originating from quark- or gluon-initiated
-  jets which do not have a strict upper bound.
+  The \taulepton mass can be used as a feature directly by considering the
+  invariant mass of the visible daughter particles of hadronic \taulepton
+  decays. Ignoring reconstruction effects, this invariant mass is bounded by the
+  mass of the \taulepton. This is not the case for \tauhadvis candidates
+  originating from quark- or gluon-initiated jets which do not have a strict
+  upper bound.
 
   The features described hereafter are consequences of, or closely
   related to the mass of the \taulepton.
@@ -63,38 +62,42 @@ gluon-initiated jets:
     are more likely to be reconstructed and misidentified as
     \tauhadvis candidates.}
 
-\item[Collimated daughter particles] The \tauhadvis candidates
-  typically considered by analyses at the ATLAS experiment have
-  transverse momenta exceeding \SI{20}{\GeV}. At these momentum scales
-  the decay products of \tauleptons are collimated due to the Lorentz
-  boost of the \taulepton. This leads to the characteristic detector
-  signature of a narrow jet with few visible particles. Requirements
-  on the isolation of \tauhadvis candidates allow to reject candidates
-  originating from quark- or gluon-initiated jets which have wider
-  angular distribution of hadrons.
+\item[Collimated daughter particles] The \tauhadvis candidates typically
+  considered by analyses at the ATLAS experiment have transverse momenta
+  exceeding \SI{20}{\GeV}. At these momentum scales the decay products of
+  \tauleptons are collimated due to the Lorentz boost of the \taulepton. This
+  leads to the characteristic detector signature of a narrow jet with few
+  visible particles. Requirements on the isolation\footnote{Isolation of a
+    reconstructed object refers to a lack of activity in the vicinity of the
+    object. The activity is often quantified using reconstructed
+    charged-particle tracks or topo-clusters in a cone or annulus surrounding
+    the object.} of \tauhadvis candidates allow to reject candidates originating
+  from quark- or gluon-initiated jets which have wider angular distribution of
+  hadrons.
   % Maybe define 'isolation'? -> Lack of activity outside of a core
   % region?
 
   % Mean flight path of a p = 20 GeV tau is
   % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
 \item[\taulepton lifetime] The \taulepton has a proper lifetime of
-  \SI{2.9e-13}{\second}
-  ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020} and thus typically
-  travels for a few millimetres inside the beampipe before
-  decaying. The distance traversed by the \taulepton before its decay
-  results in a secondary vertex that is displaced from the primary
-  vertex (PV) of the hard interaction. For \taulepton decay modes with
-  three charged hadrons, this secondary vertex can be reconstructed
-  and its displacement from the PV determined. For decay modes with
-  only one charged hadron, the secondary vertex cannot be
-  reconstructed directly. However, the longitudinal and transverse
-  impact parameters of the reconstructed charged-hadron track can be
-  used to gauge the incompatibility of the track with the PV, thus
-  being sensitive to displaced decays of \tauleptons.
+  \SI{2.9e-13}{\second} ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020} and
+  thus typically travels for a few millimetres inside the beampipe before
+  decaying. The distance traversed by the \taulepton before its decay results in
+  a secondary vertex that is displaced from the primary vertex (PV) of the hard
+  interaction. For \taulepton decay modes with three charged hadrons, this
+  secondary vertex can be reconstructed and its displacement from the PV
+  determined. For decay modes with only one charged hadron, the secondary vertex
+  cannot be reconstructed directly. However, the longitudinal and transverse
+  impact parameters of the reconstructed charged-hadron track can be used to
+  gauge the incompatibility of the track with the PV, thus being sensitive to
+  displaced decays of \tauleptons.
 
-  Features sensitive to displaced decays of \tauleptons can be used to
-  distinguish \tauhad from quark- or gluon-initiated jets in which
-  hadrons are produced promptly at the PV.
+  Features sensitive to the \taulepton lifetime can be used to distinguish
+  \tauhad from light-quark- or gluon-initiated jets, in which hadrons are
+  produced promptly at the PV. An exception are jets originating from $b$- and
+  $c$-quarks. These often contain displaced decays of $b$- or $c$-flavoured
+  hadrons. However, the other features remain effective in discerning \tauhad
+  from $b$- and $c$-jets.
 
 \end{description}
 Prior to the introduction of the method described in this chapter, the
@@ -102,16 +105,15 @@ ATLAS collaboration used BDTs as binary classifiers using high-level
 discriminating variables, i.e.\ variables purposefully constructed for
 the classification task, as inputs.
 
-This chapter introduces a method of performing \tauid using neural
-networks that combines the information of high-level discriminating
-variables with information from reconstructed charged-particle tracks
-and clusters of energy in the calorimeters. Individual tracks and
-clusters in the vicinity of \tauhadvis candidates and their associated
-features are included as inputs to the neural networks directly. Since
-the number of tracks and clusters associated to \tauhadvis candidates
-varies, a recurrent neural network (RNN) architecture is used that
-allows to operate on sequences of varying length. The method will be
-referred to as RNN \tauid hereafter.
+This chapter introduces a method of performing \tauid using neural networks that
+combines the information of high-level discriminating variables with information
+from reconstructed charged-particle tracks and topo-clusters in the
+calorimeters. Tracks and topo-clusters in the vicinity of \tauhadvis candidates
+and their associated features are included as inputs to neural networks. Since
+the number of tracks and topo-clusters associated to \tauhadvis candidates
+varies, a recurrent neural network (RNN) architecture is used that allows to
+operate on sequences of varying length. The method will be referred to as RNN
+\tauid hereafter.
 
 The RNN \tauid algorithm was initially proposed in
 Ref.~\cite{cdeutsch-master} motivated by a similar approach developed
@@ -125,13 +127,13 @@ Ref.~\cite{ATL-PHYS-PUB-2019-033}. % The RNN \tauid was adopted by the
 % using the \SI{139}{\per\femto\barn} $pp$-collision dataset recorded
 % with the ATLAS detector during Run~2 of the LHC.
 
-This chapter is structured as follows. The simulated events used for
-the development and performance evaluation of \tauid are introduced in
-\Cref{sec:tauid_mc}. The identification method based on RNN is
-described in \Cref{sec:tauid_rnn}. Its performance is estimated based
-on simulation and compared to the BDT-based approach in
-\Cref{sec:tauid_perf}.  \Cref{sec:tauid_conclusion} concludes and
-gives an outlook on possible future developments.
+This chapter is structured as follows: The simulated events used for the
+development and performance evaluation of \tauid are introduced in
+\Cref{sec:tauid_mc}. The identification method based on RNN is described in
+\Cref{sec:tauid_rnn}. Its performance is estimated based on simulation and
+compared to the BDT-based approach in \Cref{sec:tauid_perf}.
+\Cref{sec:tauid_conclusion} concludes and gives an outlook on possible future
+developments.
 
 %%% Local Variables:
 %%% mode: latex

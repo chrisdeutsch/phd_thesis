@@ -1,29 +1,26 @@
 \section{Tau Identification with Recurrent Neural Networks}%
 \label{sec:tauid_rnn}
 
-The RNN \tauid exploits the discrimination power of both high- and
-low-level inputs to distinguish \tauhad from quark- or gluon-initiated
-jets. This approach aims to avoid a possible loss of information
-relevant to \tauid when manually constructing high-level variables
-from low-level inputs. Specifically, charged-particle tracks and
-clusters of energy in the calorimeters, hereafter abbreviated as
-tracks and clusters, are included as low-level inputs to the
-algorithm. Their inclusion targets the differences in charged and
-neutral hadron multiplicities and track- and calorimeter-based
-isolation between true- and \faketauhadvis. Tau identification is
-performed separately for 1- and 3-prong \tauhadvis candidates due to
-their characteristic signatures.
+The RNN \tauid exploits the discrimination power of both high- and low-level
+inputs to distinguish \tauhad from quark- or gluon-initiated jets. This approach
+aims to avoid a possible loss of information relevant to \tauid when manually
+constructing high-level variables from low-level inputs. Specifically,
+charged-particle tracks and topo-clusters in the calorimeters, hereafter
+abbreviated as tracks and clusters, are included as low-level inputs to the
+algorithm. Their inclusion targets the differences in charged- and
+neutral-hadron multiplicities and track- and calorimeter-based isolation between
+true- and \faketauhadvis. Tau identification is performed separately for 1- and
+3-prong \tauhadvis candidates due to their distinct signatures.
 
 
 \subsection{Input Variables}
 
-The input variables included in the RNN \tauid algorithm are
-summarised in~\Cref{tab:tauid_input_variables}. Three distinct
-categories of inputs are considered. High-level inputs correspond to
-observables directly associated to \tauhadvis candidates. Track and
-cluster inputs refer to observables of tracks and clusters that are
-associated to a \tauhadvis candidate. In the following, a description
-of the input variable selection and track/cluster association is
+The input variables included in the RNN \tauid algorithm are summarised
+in~\Cref{tab:tauid_input_variables}. Three categories of inputs are
+considered. High-level inputs correspond to observables directly associated to
+\tauhadvis candidates. Track and cluster inputs refer to observables of tracks
+and clusters that are associated to a \tauhadvis candidate. In the following, a
+description of the input variable selection and track/cluster association is
 given.
 
 \begin{table}[htbp]
@@ -32,7 +29,7 @@ given.
   \caption{Summary of input variables used for RNN \tauid. The local
     hadronic calibration~\cite{PERF-2014-07} is used to calibrate
     jets, clusters, and \tauhadvis candidates unless otherwise
-    noted. Definitions of geometrical TopoCluster moments measuring
+    noted. Definitions of geometrical topo-cluster moments measuring
     the location and shape of clusters ($\lambda$,
     $\langle \lambda^2 \rangle$, $\langle r^2 \rangle$) are given in
     Ref.~\cite{PERF-2014-07}. Variables using cell-level calorimeter
@@ -162,12 +159,11 @@ for training and evaluation of the networks.
 
 \subsubsection{Cluster Input Variables}
 
-Topological clusters of energy in the calorimeters~\cite{PERF-2014-07}
-are considered as inputs to the RNN \tauid if they are constituents
-of the jet seeding the \tauhadvis reconstruction. All clusters are
-calibrated using the local hadronic calibration to account for the
-non-compensating nature of the calorimeters, energy deposition in
-calorimeter cells not part of the cluster, and energy loss in inactive
+Topo-clusters in the calorimeters are considered as inputs to the RNN \tauid if
+they are constituents of the jet seeding the \tauhadvis reconstruction. All
+clusters are calibrated using the local hadronic calibration to account for the
+non-compensating nature of the calorimeters, energy deposition in calorimeter
+cells not part of the cluster, and energy loss in inactive
 material~\cite{PERF-2014-07}.
 
 The inclusion of the $E_{\text{T}}^{\text{cluster}}$,
