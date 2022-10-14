@@ -1,33 +1,3 @@
-% 1954: Yang & Mills -> Extended gauge theory to non-abelian groups (QCD)
-%
-% 1961: Glashow: Electroweak unification -> predict Z boson based on 'partial'-symmetries
-%       \cite{Glashow:1961tr}
-%
-% 1964: "Broken Symmetry and the Mass of Gauge Vector Mesons"
-%       Englert/Brout \cite{Englert:1964et}
-%
-% 1964: "Broken Symmetries and the Masses of Gauge Bosons"
-%       Higgs \cite{Higgs:1964pj}
-% -> Spontaneous symmetry breaking to have massive gauge bosons aquire their mass
-%
-% 1967: Weinberg & Salam: Higgs mechanism included into the electroweak theory
-%       Weinberg \cite{Weinberg:1967tq}
-%
-% Birth of the 'Standard Model' as it is today.
-
-% Why study particle physics
-% - Study of natural phenomena / what laws govern the universe?
-% - Study matter and radiation, and its dynamics across space and time
-% - Where do we come from where do we go?
-% - Matter and radiation
-% - Particle collider experiments reproduce the conditions of the universe
-
-
-% Modern particle physics born in the 20th century: The Standard Model
-% - First collider experiments
-% - In its current form developed in the 1960s
-% - Modern particle physics -> QFT
-
 The turn of the 20\textsuperscript{th} century marked the origin of modern
 physics, ushering in a century of remarkable advancements in our understanding
 of fundamental physics. Key to this success was the development of the
@@ -76,7 +46,6 @@ required.
 %
 % conceptually the same since then.
 
-
 The Higgs boson is predicted to interact with itself--a characteristic referred
 to as the Higgs boson self-coupling. This self-coupling is a result of the BEH
 mechanism, and its strength is directly related to the shape of the Higgs
@@ -89,38 +58,53 @@ resulting in the production of a pair of Higgs bosons. Higgs boson pair
 production is a very rare process, which is why experimental evidence for such
 processes has yet to be established.
 
-This thesis is concerned with a search for Higgs boson pair production in final
-states with a pair of $b$-quarks and a pair of \tauleptons, that is
-$HH \to \bbtautau$. The search is performed using proton--proton collision data
-at a centre-of-mass energy of \SI{13}{\TeV} recorded by the ATLAS detector
+A search for Higgs boson pair production in final states with a pair of
+$b$-quarks and a pair of \tauleptons, that is $HH \to \bbtautau$, is presented
+in this thesis. The search is performed using proton--proton (\pp) collision
+data at a centre-of-mass energy of \SI{13}{\TeV} recorded by the ATLAS detector
 during Run~2 of the LHC. The data were collected by the ATLAS collaboration over
 a period spanning from 2015 to 2018, yielding a dataset with an integrated
-luminosity of \SI{139}{\per\femto\barn}. Two channels are considered for the
+luminosity of \SI{139}{\per\femto\barn}. Two channels are considered in the
 search: the \hadhad channel targeting events with two hadronic \taulepton
 decays,\footnote{In the parlance of particle physics, decays of the form
   $\tau^- \to \text{hadrons} + \nu_\tau$ are referred to as a hadronic
   \taulepton decays (\tauhad), and $\tau^- \to \ell^- \bar{\nu}_\ell \nu_\tau$
   for $\ell = e$ or $\mu$ as leptonic \taulepton decays (\taulep).} and the
 \lephad channel targeting events with one leptonic and one hadronic \taulepton
-decay. The main focus of this thesis is on the \hadhad channel and the
-statistical combination/interpretation of the results of the \hadhad and \lephad
-channels.
+decay. Three different signatures of Higgs boson pair production are considered:
+\begin{enumerate}
+
+\item Non-resonant production of Higgs boson pairs as predicted by the SM (SM
+  \HH production).
+
+\item Production of Higgs boson pairs via an intermediate scalar resonance
+  (resonant \HH production).
+  % Such processes are not predicted by the SM but can arise in a multitude of
+  % models with physics beyond the SM (BSM), for example in models with extended
+  % Higgs sectors.
+
+\item Non-resonant production of Higgs boson pairs with anomalous values of the
+  Higgs boson self-coupling constant.
+
+\end{enumerate}
+The latter two signatures only arise in models involving physics beyond the SM
+(BSM).
 
 
-
-- Searching for SM \HH production
-
-- Searching for resonant production of Higgs boson pairs in scenarios involving
-physics beyond the SM (BSM)
-
-- Setting constraints on the Higgs boson self-coupling
+% The latter two scenarios
 
 
-- Tau identification: Novel machine learning
+% - Searching for SM \HH production
+
+% - Searching for resonant production of Higgs boson pairs in scenarios involving
+% physics beyond the SM (BSM)
+
+% - Setting constraints on the Higgs boson self-coupling
+
+% - Tau identification: Novel machine learning
 
 
-
-\vspace{5em}
+% The focus of this thesis is on the \hadhad channel.
 
 This thesis is structured as follows: \Cref{sec:standard_model} lays the
 foundation for searches for Higgs boson pair production. The SM is summarised,
@@ -148,36 +132,35 @@ collected at the ATLAS experiment during Run~2 of the Large Hadron Collider. In
 re-interpreted to set constraints on the possible values of the strength of the
 Higgs boson self-coupling. The thesis is concluded in \Cref{sec:conclusion}.
 
-\clearpage
+% \clearpage
 
-\todo[inline]{This thesis presents results published as part of (list
-  of publications)...}
+% \todo[inline]{This thesis presents results published as part of (list
+%   of publications)...}
 
 
-Notes from chat with Jochen:
-\begin{itemize}
+% Notes from chat with Jochen:
+% \begin{itemize}
 
-\item Keep it short \ra about 120 pages
-  \begin{itemize}
-  \item SM about 15 pages and focus on \HH production
+% \item Keep it short \ra about 120 pages
+%   \begin{itemize}
+%   \item SM about 15 pages and focus on \HH production
 
-  \item LHC and ATLAS experiment about 10 pages: For every detector
-    component a picture and a paragraph
+%   \item LHC and ATLAS experiment about 10 pages: For every detector
+%     component a picture and a paragraph
 
-  \item Experimental methods: 10 pages
+%   \item Experimental methods: 10 pages
 
-  \item Try to keep it way below 160 pages???
-  \end{itemize}
+%   \item Try to keep it way below 160 pages???
+%   \end{itemize}
 
-\item Cut out or move less interesting things to the backup
+% \item Cut out or move less interesting things to the backup
 
-\item Make it more interesting! Cut out repetition...
+% \item Make it more interesting! Cut out repetition...
 
-\end{itemize}
+% \end{itemize}
 
-\todo[inline]{Should clarify: BEH mechanism (i.e. W / Z eating the goldstone
-  bosons) only gives masses to gauge bosons. EWSB gives masses to the fermions.}
-
+% \todo[inline]{Should clarify: BEH mechanism (i.e. W / Z eating the goldstone
+%   bosons) only gives masses to gauge bosons. EWSB gives masses to the fermions.}
 
 %%% Local Variables:
 %%% mode: latex
