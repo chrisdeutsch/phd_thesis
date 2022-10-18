@@ -3,21 +3,93 @@
 \label{sec:statistical_inference}
 % ==============================================================================
 
-Particle physics workhorse of statistical interpretation:
+This section introduces techniques of statistical inference commonly used in the
+ATLAS experiment to interpret the results of searches and measurements. Among
+these are methods for parameter and interval estimation, as well as statistical
+hypothesis testing. These methods are also adopted for the statistical
+interpretation of the results presented in this thesis. A software framework
+based on \texttt{HistFactory}~\cite{cranmer2012},
+\texttt{RooFit}~\cite{Verkerke:2003ir}, and
+\texttt{RooStats}~\cite{Moneta:2010pm} is employed for the statistical
+interpretation. The following discussion is restricted to statistical models of
+binned count data and adopts the notation of Ref.~\cite{cranmer2012} with minor
+adjustments.
 
-- Method of maximum likelihood for point estimation
+% Particle physics workhorse of statistical interpretation:
 
-- Likelihood ratio tests (or closely related to the Likelihood ratio test) for
-hypothesis testing, estimation of confidence intervals (or limit)
+% - Method of maximum likelihood for point estimation
 
-- Restrict to performing statistical interpretations using binned distributions.
+% - Likelihood ratio tests (or closely related to the Likelihood ratio test) for
+% hypothesis testing, estimation of confidence intervals (or limit)
+
+% - Restrict to performing statistical interpretations using binned distributions.
+
+
+\subsection{Statistical Models of Binned Count Data}
+
+In high-energy physics, the use of binned count data is widespread for
+visualisation and statistical modelling of data. Analyses of collider data often
+consider multiple (mutually disjoint) regions, also referred to as
+\emph{channels}, defined by certain event selections. Each region consisting of
+one or more bins of a discriminating variable. Let $\mathcal{C}$ denote the set
+of channels and $\mathcal{B}_{c}$ the set of bins in channel~$c$. The
+probability of observing $n_{cb}$ events in a bin~$b$ of channel~$c$ is modelled
+by a Poisson distribution and denoted as $\pois(n_{cb} \vert \nu_{cb})$, where
+$\nu_{cb}$ refers to the, generally unknown, expected number of events for the
+given bin.
+
+\begin{align*}
+  \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) =
+  \sum_{s \in \mathcal{S}} \gamma_{cb} \phi_{cs} \eta_{cs}(\myvec{\alpha}) \sigma_{csb}(\myvec{\alpha})
+\end{align*}
+
+The number of events in a given bin is modelled using a Poisson distribution,
+such that the probability to observe $n$ events is given by
+$\pois(n \vert \nu)$, where $\nu$ denotes the
 
 
 
-The following gives an introduction into the techniques used for the
-statistical analysis. Statistical inference is used to extract useful
-information from measurement results and to test competing hypotheses.
 
+statistical interpretation of results is frequently performed using binned
+statistical models.
+
+
+
+
+Orthogonal regions defined by event selections (channels)
+
+Binned distribution of some discriminant. Let $\mathcal{C}$ be the set of
+channels and $\mathcal{B}_{c}$ be the set of bins for channel
+$c \in \mathcal{C}$.
+
+
+In every bin indexed by $c \in \mathcal{C}$ and $b \in \mathcal{B}_{c}$, the
+probability distribution of the observed number of events, $n_{cb}$, is given by
+a Poisson distribution
+\begin{align*}
+  \pois(n_{cb} \vert \nu_{cb}) = \frac{\nu_{cb}^{n_{cb}} \exp(-\nu_{cb})}{n_{cb}!}
+\end{align*}
+
+
+
+
+
+
+\begin{align*}
+  L = \left[
+  \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(n_{cb} \vert \nu_{cb}) \right] \prod_{\dots} f_{p}(a_{p} \vert \alpha_{p})
+\end{align*}
+
+
+\begin{itemize}
+\item $\sigma_{csb}(\myvec{\alpha})$:
+
+\item $\eta_{cs}(\myvec{\alpha})$:
+
+\item $\gamma_{cb}$:
+
+\item $\phi_{cs}$:
+\end{itemize}
 
 \subsection{The Method of Maximum Likelihood}
 
