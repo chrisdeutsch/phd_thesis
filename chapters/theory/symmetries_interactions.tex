@@ -54,7 +54,7 @@ constant (for the moment). However, when performing a local transformation by
 letting the parameter be a function of space-time, i.e.\
 $\theta \to \theta(\myvec{x})$, the invariance of the Lagrangian is spoiled due
 to the derivative acting on the space-time dependent phase factor. One might
-impose $U(1)$ local gauge invariance of the Lagrangian by adding terms to
+impose $U(1)$ local gauge invariance on the Lagrangian by adding terms to
 \Cref{eq:dirac_lagrangian} that cancel the additional
 contributions. Conventionally, this is done by substituting the derivative
 $\partial_\mu$ by a gauge covariant derivative $D_\mu$ that transforms as
@@ -83,19 +83,19 @@ In the case of QED, the field $A^\mu$ is identified as the four-potential of the
 electromagnetic field, and $q$ as the electric charge of the fermion.
 % The interaction term that was included to perserve local gauge invariance corresponds
 Thus, the interaction term describes the coupling between photons and fermions
-with electric charge $q$. For a single fermion type, the Lagrangian of QED is
+with electric charge $q$. For a single type of fermion, the Lagrangian of QED is
 given by
 \begin{align*}
   \lagrange_{\text{QED}} = \underbrace{\lagrange_{\text{Dirac}}}_{\text{Free fermion field}}
   \hspace*{1em}
   \underbrace{- q \bar{\psi} \gamma^\mu \psi A_\mu}_{\text{Fermion--photon interaction}}
   \hspace*{1em}
-  \underbrace{- \frac{1}{4} F_{\mu\nu} F^{\mu\nu}}_{\text{Free photon field}} \,\text{,}
+  \underbrace{- \frac{1}{4} F_{\mu\nu} F^{\mu\nu}}_{\text{Photon field kinetic term}} \,\text{,}
 \end{align*}
-which additionally includes the Lagrangian of the free photon field defined by
-the electromagnetic tensor
-$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$. The additional term also
-fulfils the local gauge invariance with respect to $U(1)_Q$.
+which additionally includes the Lagrangian of the free photon field, referred to
+as the \emph{kinetic term} of the field, defined by the electromagnetic tensor
+$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu$. This additional term
+also fulfils the local gauge invariance with respect to $U(1)_Q$.
 
 The principle of local gauge invariance is at the heart of the SM where it is
 used to great success in describing the three fundamental interactions. The
@@ -107,11 +107,6 @@ where $SU(3)_{\text{colour}}$ is the symmetry of the strong interaction, and
 $SU(2)_{\text{L}} \otimes U(1)_Y$ the symmetry of the unified description of the
 electromagnetic and weak interaction. These will be introduced in
 \Cref{sec:theory_qcd} and \Cref{seq:theory_ewk}, respectively.
-
-% \todo[inline]{Maybe note that a mass term a la $\frac{1}{2} m^2 A_\mu A^\mu$
-%   would violate local gauge invariance.}
-
-% \todo[inline]{Concluding remarks???}
 
 
 \subsection{Quantum Chromodynamics}%
@@ -172,13 +167,13 @@ according to
 \begin{align*}
   G_\mu^k \xrightarrow{SU(3)_{\text{colour}}} {G_\mu^k}^\prime = G_\mu^k  - \partial_\mu \theta^k(\myvec{x}) - g_{\text{s}} {f_{ij}}^k \theta^i(\myvec{x}) G_\mu^j \,\text{.}
 \end{align*}
-Furthermore, the contribution of the kinetic energy of the gluon fields to the
-QCD Lagrangian needs to be accounted for. This so-called \emph{kinetic term} is
-given by
+Furthermore, the Lagrangian of QCD has to account for the energy density of the
+gluon fields (and their interactions). This contribution is given by the kinetic
+term of the Gluon fields and reads
 \begin{align*}
   \lagrange_{g} = - \frac{1}{4} G_{\mu\nu}^{a} G^{\mu\nu}_{a} \,\text{,}
 \end{align*}
-where $G_{\mu\nu}^a$ is the gluon field strength tensor defined as
+where $G_{\mu\nu}^a$ are the gluon field strength tensors defined as
 \begin{align*}
   G_{\mu\nu}^a = \partial_\mu G_\nu^a - \partial_\nu G_\mu^a - g_{\text{s}} {f^{a}}_{bc} G_\mu^b G_\nu ^c \,\text{.}
 \end{align*}
@@ -190,7 +185,7 @@ consequently given by
   \hspace*{1em}
   \underbrace{- g_{\text{s}} (\bar{\psi} \gamma^\mu T_a \psi) G_\mu^a}_{\text{Quark--gluon interactions}}
   \hspace*{1em}
-  \underbrace{- \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a}_{\text{Gluon kinetic term}} \,\text{.}
+  \underbrace{- \frac{1}{4} G_{\mu\nu}^a G^{\mu\nu}_a}_{\text{Gluon field kinetic term}} \,\text{.}
   %\label{eq:qcd_lagrangian}
 \end{align*}
 This Lagrangian describes the free quark field, the interactions of quarks with
@@ -207,18 +202,20 @@ Two important features of the theory of QCD are highlighted in the following:
 \begin{description}
 
 \item[Colour confinement] Due to the dynamics of the gluon self-interactions,
-  free quarks or gluons cannot be observed in nature. For example, separating
-  the quarks of a quark-antiquark pair leads to the formation of \emph{flux
-    tubes} in the gluon field strength that result in a linear increase in field
-  energy with separation of the quarks. Eventually, the energy stored in the
-  gluon field is sufficiently large to create a quark-antiquark pair from the
-  vacuum. This process repeats until only quarks or gluons bound into colourless
-  composite particles (colour singlet states) remain. The most prevalent bound
-  states of quarks are (anti-)baryons consisting of three (anti-)quarks, and
-  mesons consisting of a quark-antiquark pair. The $SU(3)_{\text{colour}}$
-  symmetry also allows for colour singlet states of multiple gluons referred to
-  as \emph{glueballs}, or other combinations of quarks such as tetra-
-  ($q_1 \bar{q}_2 q_3 \bar{q}_4$) or pentaquarks ($q_1 q_2 q_3 q_4 \bar{q}_5$).
+  free quarks or gluons cannot be observed in nature~\cite{Wilson:1974sk}. For
+  example, separating the quarks of a quark-antiquark pair leads to the
+  formation of \emph{flux tubes} in the gluon field strength that result in a
+  linear increase in field energy with separation of the quarks. Eventually, the
+  energy stored in the gluon field is sufficiently large to create a
+  quark-antiquark pair from the vacuum. This process repeats until only quarks
+  or gluons bound into colourless composite particles (colour singlet states)
+  remain. The most prevalent bound states of quarks are (anti-)baryons
+  consisting of three (anti-)quarks, and mesons consisting of a quark-antiquark
+  pair. The $SU(3)_{\text{colour}}$ symmetry also allows for colour singlet
+  states of multiple gluons referred to as
+  \emph{glueballs}~\cite{Fritzsch:1972jv,Fritzsch:1975tx}, or other combinations
+  of quarks such as tetra- ($q_1 \bar{q}_2 q_3 \bar{q}_4$) or pentaquarks
+  ($q_1 q_2 q_3 q_4 \bar{q}_5$)~\cite{Gell-Mann:1964ewy}.
 
 \item[Running coupling \& asymptotic freedom] The strong coupling constant,
   frequently expressed as $\alphas = g_{\text{s}}^2 / (4 \pi)$ in analogy to the
@@ -232,7 +229,8 @@ Two important features of the theory of QCD are highlighted in the following:
   $Q^2$. This effect occurs in both QED and QCD, however, with distinct
   signatures. While the coupling $\alpha(Q^2)$ of QED increases with $Q^2$,
   $\alphas(Q^2)$ of QCD decreases with $Q^2$ due to gluon self-interactions. The
-  high-$Q^2$ behaviour of \alphas is referred to as \emph{asymptotic freedom}.
+  high-$Q^2$ behaviour of \alphas is referred to as \emph{asymptotic
+    freedom}~\cite{Gross:1973id,Politzer:1973fx}.
   % At large $Q^2$ the value of \alphas is small such that perturbative methods
   % can be used to obtain cross-section predictions.
 \end{description}
@@ -270,14 +268,20 @@ illustrated in the following.
 First, a new quantum number referred to as \emph{weak isospin} denoted by $I$,
 and its component along the 3-axis, $I_3$, is introduced. The charged-current
 weak interaction violates parity symmetry maximally, meaning it only couples to
-particles (antiparticles) with left-handed (right-handed) chirality. An
-appropriate weak isospin grouping of SM fermions is chosen in anticipation of a
-$SU(2)$ symmetry.
+fermionic fields with left-handed chirality.\footnote{Chirality of a Dirac field
+  is defined by the operator
+  $\gamma^5 \coloneq i \gamma^0 \gamma^1 \gamma^2 \gamma^3$. The eigenvectors of
+  $\gamma^5$ are states of well-defined chirality with eigenvalues of $+1$ or
+  $-1$, referred to as right- and left-handed chiral states, respectively. Any
+  spinor can be written as a superposition of right- and left-handed chiral
+  states using the projection operators
+  $P_{\text{R/L}} = (1 \pm \gamma^5) / 2$.} An appropriate weak isospin grouping
+of SM fermions is chosen in anticipation of a $SU(2)$ symmetry.
 % Based on the experimental observation that the charged-current weak
 % interaction only couples to particles (antiparticles) with left-handed
 % (right-handed) chirality, an appropriate grouping of the SM fermions is
 % chosen.
-Left-handed fermions are grouped into weak isospin doublets given by
+Left-handed fermion fields are grouped into weak isospin doublets given by
 \begin{align*}
   \begin{pmatrix}
     \nu_{e} \\
@@ -310,7 +314,7 @@ Left-handed fermions are grouped into weak isospin doublets given by
   I = \frac{1}{2}, I_3 = \pm \frac{1}{2} \,\text{,}
 \end{align*}
 where the upper (lower) components correspond to $I_3 = +\frac{1}{2}$
-($I_3 = -\frac{1}{2}$), and nine singlet states for right-handed fermions
+($I_3 = -\frac{1}{2}$), and nine singlet states for right-handed fermion fields
 \begin{align*}
   e^{-}_{\text{R}}, \mu^{-}_{\text{R}}, \tau^{-}_{\text{R}},
   u_{\text{R}}, d_{\text{R}}, c_{\text{R}}, s_{\text{R}}, t_{\text{R}}, b_{\text{R}}
@@ -319,8 +323,8 @@ where the upper (lower) components correspond to $I_3 = +\frac{1}{2}$
   \qquad
   I = 0, I_3 = 0 \,\text{,}
 \end{align*}
-where the subscripts L and R refer to the projection of the fermion fields into
-their left- and right-handed chiral components,
+where the subscripts L and R refer to the projection of the fields into their
+left- and right-handed chiral components,
 respectively. % The quark eigenstates of
 % the weak interaction are indicated by $d^\prime, s^\prime, b^\prime$ which are
 % related to the quark mass eigenstates via the Cabibbo--Kobayashi--Maskawa
@@ -336,8 +340,8 @@ Right-handed neutrinos are omitted since they are not part of the SM.
 % described by the SM. Alternative proposals are that neutrinos are not Dirac
 % but Majorana particles~\cite{Majorana:1937vz}, which are particles that are
 % identical to their antiparticles.}
-Given this grouping of fermions, $SU(2)_{\text{L}}$ transformations only affect
-fermions with left-handed chirality, thus motivating the choice of subscript.
+Given this grouping, $SU(2)_{\text{L}}$ transformations only affect fermion
+fields with left-handed chirality, thus motivating the choice of subscript.
 % \todo{If we are assuming massless quarks -> mass and weak eigenstates are the
 % same.}
 
@@ -492,8 +496,8 @@ electroweak theory, the potential term can only depend on $\phi^\dagger
   V(\phi) = \mu^2 \phi^\dagger \phi + \lambda (\phi^\dagger \phi)^2
   \label{eq:higgs_potential}
 \end{align}
-with two parameters $\mu^2$ and $\lambda$.\footnote{In terms of the
-  renormalisability of the theory, the largest allowed power of
+with $\mu^2$ and $\lambda$ being parameters of the potential.\footnote{In terms
+  of the renormalisability of the theory, the largest allowed power of
   $\phi^\dagger \phi$ in the Lagrangian is two. See for example
   Ref.~\cite{Peskin:1995ev}.} The potential must be bound from below to have a
 well-defined state of minimum potential energy (vacuum state) and therefore
@@ -508,7 +512,7 @@ condition
 which represents a continuum of degenerate states at a radius of $v$ from the
 origin in the space spanned by the four real scalar fields. The quantity $v$ is
 therefore referred to as the \emph{vacuum expectation value} (VEV). Hereafter,
-this particular choice of potential is referred to as the BEH potential. This
+this particular choice of potential is referred to as the Higgs potential. This
 choice is illustrated in \Cref{fig:mexican_hat} for a simplified model with only
 a single complex scalar field.
 
@@ -518,9 +522,9 @@ a single complex scalar field.
   \includegraphics[scale=1.1]{theory/potential}
 
   \caption{The ``Mexican-hat potential'' of a single complex scalar field as a
-    low dimensional example to illustrate the choice of the BEH potential in the
-    SM. The degenerate vacuum states lie in a circle with radius $v$ given by
-    the condition $\phi_1^2 + \phi_2^2 = v^2$. Adapted from
+    low dimensional example to illustrate the choice of the Higgs potential in
+    the SM. The degenerate vacuum states lie in a circle with radius $v$ given
+    by the condition $\phi_1^2 + \phi_2^2 = v^2$. Adapted from
     Ref.~\cite{higgs_potential_tikz}.}%
   \label{fig:mexican_hat}
 \end{figure}
@@ -570,7 +574,7 @@ scalar fields can be expressed as
 with $H(\myvec{x}) \in \mathbb{R}$.
 
 % Check: https://arxiv.org/pdf/1704.02311.pdf
-Expressing the BEH potential of \Cref{eq:higgs_potential} in terms of
+Expressing the Higgs potential of \Cref{eq:higgs_potential} in terms of
 perturbations of the vacuum state, i.e.\ using \Cref{eq:vacuum_state_perturb},
 and dropping terms not depending on $H$ yields
 \begin{align}
@@ -721,17 +725,17 @@ $y_e$, $y_u$, and $y_d$. Finally, $\text{h.c.}$ represents the hermitian
 conjugate of the preceding terms. After EWSB and in unitary gauge
 \Cref{eq:lagrangian_yukawa} reads
 \begin{align*}
-  \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_f v}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{v} H \right)
+  \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_{\hspace{-0.1em}f} v}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{v} H \right)
 \end{align*}
 yielding fermion mass terms with masses
 \begin{align*}
-  m_f = \frac{y_f v}{\sqrt{2}} \,\text{,}
+  m_{f} = \frac{y_{\hspace{-0.1em}f} v}{\sqrt{2}} \,\text{,}
 \end{align*}
 which are proportional to the Yukawa coupling constants, as well as interactions
 between Higgs bosons and fermions with a coupling strength proportional to the
 mass of the fermion given by
 \begin{align*}
-  g_{Hff} = \frac{m_f}{v} \,\text{.}
+  g_{H\!f\!f} = \frac{m_f}{v} \,\text{.}
 \end{align*}
 
 The Lagrangian of \Cref{eq:lagrangian_yukawa} can be further generalised to
