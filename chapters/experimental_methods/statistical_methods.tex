@@ -24,7 +24,7 @@ adopted with few modifications.
 
 % - Restrict to performing statistical interpretations using binned distributions.
 
-\subsection{The Statistical Model}
+\subsection{The HistFactory Model}
 
 In high-energy physics, the use of binned data is widespread for visualisation
 and statistical modelling. Analyses of collider data typically consider multiple
@@ -102,10 +102,10 @@ is described in the following~\cite{cranmer2012}:
   estimate $\sigma_{csb}$.
 
   In this thesis, the method by Barlow and Beeston~\cite{barlow1993} is used to
-  account for the statistical uncertainties on $\sigma_{csb}$. To reduce the
-  number of parameters of the statistical model, the method is simplified as
-  proposed in Ref.~\cite{conway2011} by only considering the statistical
-  uncertainty on $\sum_{s \in \mathcal{S}} \sigma_{csb}$ for a given bin and
+  account for statistical uncertainties on $\sigma_{csb}$. To reduce the number
+  of parameters of the statistical model, the method is simplified as proposed
+  in Ref.~\cite{conway2011} by only considering the statistical uncertainty on
+  $\sum_{s \in \mathcal{S}} \sigma_{csb}$ for a given bin and
   channel. Consequently, the parameters $\gamma_{csb}$ can be replaced by
   $\gamma_{cb}$, omitting the dependence on the physics process.
 
@@ -128,13 +128,15 @@ defining the external constraints on the NPs~$\myvec{\alpha}$ and
 $\myvec{\gamma}$. The external constraints are defined by
 \begin{align*}
   L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) =
-  \Biggl[\, \prod_{p} f(a_p \vert \alpha_p)     \,\Biggr]
+  \Biggl[\, \prod_{p=1}^{n} f(a_p \vert \alpha_p)     \,\Biggr]
   \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb} \vert \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
 \end{align*}
-with the two terms in brackets
+the two terms in brackets are elaborated hereafter:
 \begin{itemize}
 
-\item The first term describes the constraints
+\item
+
+  The first term describes the constraints
 
   $a = 0$ such that the MLE of $\hat{\alpha} = 0$
 
