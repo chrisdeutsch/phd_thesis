@@ -43,15 +43,20 @@ number of events for the given bin. The expectation $\nu_{cb}$, which has to be
 inferred from the observed data, is parameterised as
 \begin{align*}
   \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) =
-  \sum_{s \in \mathcal{S}} \, \gamma_{csb} \, \phi_{cs} \, \eta_{cs}(\myvec{\alpha}) \, \sigma_{csb}(\myvec{\alpha}) \,\text{,}
+  \sum_{s \in \mathcal{S}_{c}} \, \gamma_{csb} \, \Phi_{cs}(\myvec{\phi}) \, \eta_{cs}(\myvec{\alpha}) \, \sigma_{csb}(\myvec{\alpha}) \,\text{,}
 \end{align*}
-where $\myvec{\alpha}$, $\myvec{\phi}$, $\myvec{\gamma}$ are parameters, and
-$\mathcal{S}$ is the set of physics processes that are included in the
-model~\cite{cranmer2012}. The parameters $\myvec{\alpha}$ and $\myvec{\gamma}$
-are nuisance parameters (NPs) with external constraints, which will be
-introduced shortly. The relevance of the four factors $\gamma_{csb}$,
-$\phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$ is described in the
-following~\cite{cranmer2012}:
+where $\mathcal{S}_{c}$ is the set of physics processes contributing to
+channel~$c$, and $\myvec{\alpha} = (\alpha_1, \dots, \alpha_n)$,
+$\myvec{\phi} = (\phi_1, \dots, \phi_m)$, and $\myvec{\gamma}$, which denotes a
+vector of all $\gamma_{csb}$, are parameters of the model~\cite{cranmer2012}.
+% $\myvec{\alpha} = (\alpha_p)_{p = 1}^{n}$,
+% $\myvec{\phi} = (\phi_p)_{p = 1}^m$, $\myvec{\gamma} = (\gamma_{csb})$ are
+% parameters, and $\mathcal{S}$ is the set of physics processes that are
+% included in the model~\cite{cranmer2012}.
+The parameters $\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance parameters
+(NPs) with external constraints, which will be introduced shortly. The relevance
+of the four factors $\gamma_{csb}$, $\Phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$
+is described in the following~\cite{cranmer2012}:
 \begin{itemize}
 
 \item $\sigma_{csb}(\myvec{\alpha})$ is referred to as the \emph{parameterised
@@ -61,23 +66,28 @@ following~\cite{cranmer2012}:
   region data. The parameterised histogram has additional degrees of freedom,
   parameterised by $\myvec{\alpha}$, to account for uncertainties on the shape
   of the histogram. These degrees of freedom leave the overall normalisation
-  given by $\sum_{b \in \mathcal{B}_{c}} \sigma_{csb}(\myvec{\alpha})$
-  unchanged.
+  $\sum_{b \in \mathcal{B}_{c}} \sigma_{csb}(\myvec{\alpha})$ for a given
+  channel~$c$ and process~$s$ unchanged.
 
 \item $\eta_{cs}(\myvec{\alpha})$ represents a normalisation factor applied
   uniformly to all bins of the parameterised histogram for a given process~$s$
-  in channel~$c$. The normalisation factor $\eta_{cs}$ is not allowed to vary
-  freely since it is a function of the NPs~$\myvec{\alpha}$, the NPs being
-  subject to external constraints. This factor is included to account for
-  uncertainties on the normalisation of process~$s$ in channel~$c$.
+  in channel~$c$. The normalisation factor $\eta_{cs}$ cannot vary freely since
+  it is a function of the constrained NPs~$\myvec{\alpha}$. This factor is
+  included to account for uncertainties on the normalisation of process~$s$ in
+  channel~$c$.
 
-\item $\phi_{cs}$\todo{This is not correct: should be a product of normalisation
-    factors} represents a \emph{free} normalisation factor applied uniformly to
-  all bins of the parameterised histogram for a given process~$s$ in
-  channel~$c$. These parameters are optional, i.e.\ they can be fixed to unity
-  for a given process/channel depending on the statistical model one wants to
-  construct.
-  % Normalisation factors that are shared?
+\item $\Phi_{cs}(\myvec{\phi})$ also represents a normalisation factor applied
+  uniformly to all bins of the parameterised histogram for a given process~$s$
+  in channel~$c$. However, $\Phi_{cs}$ is the product of \emph{free}
+  (unconstrained) normalisation factors given by
+  \begin{align*}
+    \Phi_{cs}(\myvec{\phi}) = \prod_{p \in \mathcal{N}_{cs}} \phi_p \,\text{,}
+  \end{align*}
+  where $\mathcal{N}_{cs}$ denotes the set of indices that defines which free
+  normalisation factors are to be applied to a given process~$s$ in channel~$c$.
+  % These parameters are optional, i.e.\ they can be fixed to unity for a given
+  % process/channel depending on the statistical model one wants to construct.
+  % % Normalisation factors that are shared?
   In most cases, at least one normalisation factor is present that is applied to
   the physics process of interest, also referred to as the \emph{signal}. This
   normalisation factor is referred to as the \emph{signal strength}, $\mu$, and
@@ -95,8 +105,8 @@ following~\cite{cranmer2012}:
   account for the statistical uncertainties on $\sigma_{csb}$. To reduce the
   number of parameters of the statistical model, the method is simplified as
   proposed in Ref.~\cite{conway2011} by only considering the statistical
-  uncertainty on $\sum_{s \in \mathcal{S}} \sigma_{csb}$ in a given
-  bin/channel. Consequently, the parameters $\gamma_{csb}$ can be replaced by
+  uncertainty on $\sum_{s \in \mathcal{S}} \sigma_{csb}$ for a given bin and
+  channel. Consequently, the parameters $\gamma_{csb}$ can be replaced by
   $\gamma_{cb}$, omitting the dependence on the physics process.
 
 \end{itemize}
@@ -135,12 +145,8 @@ with the two terms in brackets
   $\alpha_p$ confidence interval of $[-1, 1]$ at \SI{68}{\percent} confidence
   level. Therefore, the
 
-
-
   \SI{68}{\percent} confidence interval is given by $\alpha_p \in [-1, 1]$,
   hence $\alpha_p = \pm 1$ is interpreted as $\pm 1 \sigma$
-
-
 
 \item
 
