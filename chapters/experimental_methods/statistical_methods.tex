@@ -31,32 +31,33 @@ and statistical modelling. Analyses of collider data typically consider multiple
 mutually disjoint regions, also referred to as \emph{channels}, defined by
 certain event selections. Each region consists of one or more bins defined by a
 discriminating variable.
-% Maybe say something about signals / backgrounds and define what a 'physics
-% process' is?
+
+\todo[inline]{Maybe say something about signals / backgrounds and define what a
+  'physics process' is? Often count events in bins...}
 
 Let $\mathcal{C}$ denote the set of channels and $\mathcal{B}_{c}$ the set of
 bins in channel~$c$. The probability of observing $n_{cb}$ events in bin~$b$ of
 channel~$c$ is modelled by a Poisson distribution with probability mass function
 $\pois(n_{cb} \vert \nu_{cb})$, where $\nu_{cb}$ denotes the (unknown) expected
 number of events for the given bin. The expectation $\nu_{cb}$, which has to be
-inferred from the observed data, is parameterised as~\cite{cranmer2012}
+inferred from the observed data, is parameterised as
 \begin{align*}
   \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) =
   \sum_{s \in \mathcal{S}} \, \gamma_{csb} \, \phi_{cs} \, \eta_{cs}(\myvec{\alpha}) \, \sigma_{csb}(\myvec{\alpha}) \,\text{,}
 \end{align*}
-where $\myvec{\alpha}$, $\myvec{\phi}$, $\myvec{\gamma}$ are parameters of the
-model, and $\mathcal{S}$ is the set of physics processes that are included in
-the model. The parameters $\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance
-parameters constrained by auxiliary measurements, which will be introduced
-shortly. The relevance of the four factors $\gamma_{csb}$, $\phi_{cs}$,
-$\eta_{cs}$, and $\sigma_{csb}$ is described in the
+where $\myvec{\alpha}$, $\myvec{\phi}$, $\myvec{\gamma}$ are parameters, and
+$\mathcal{S}$ is the set of physics processes that are included in the
+model~\cite{cranmer2012}. The parameters $\myvec{\alpha}$ and $\myvec{\gamma}$
+are nuisance parameters (NPs) constrained by auxiliary measurements, which will
+be introduced shortly. The relevance of the four factors $\gamma_{csb}$,
+$\phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$ is described in the
 following~\cite{cranmer2012}:
 \begin{itemize}
 
 \item $\sigma_{csb}(\myvec{\alpha})$ is referred to as the \emph{parameterised
     histogram} of process~$s$ in channel~$c$, the index $b$ denoting the bins of
   the histogram. It serves to estimate the expected number of events from
-  process~$s$ in channel~$c$ and is usually derived from simulation or control
+  process~$s$ in channel~$c$ and is usually derived using simulation or control
   region data. The parameterised histogram has additional degrees of freedom,
   parameterised by $\myvec{\alpha}$, to account for uncertainties on the shape
   of the histogram. These degrees of freedom leave the overall normalisation
@@ -66,78 +67,171 @@ following~\cite{cranmer2012}:
 \item $\eta_{cs}(\myvec{\alpha})$ represents a normalisation factor applied
   uniformly to all bins of the parameterised histogram for a given process~$s$
   in channel~$c$. The normalisation factor $\eta_{cs}$ is not allowed to vary
-  freely since it is a function of the nuisance parameters~$\myvec{\alpha}$,
-  which are themselves constrained by auxiliary measurements. This factor is
-  included to account for uncertainties on the normalisation of process~$s$ in
-  channel~$c$.
+  freely since it is a function of the NPs~$\myvec{\alpha}$, which are
+  themselves constrained by auxiliary measurements. This factor is included to
+  account for uncertainties on the normalisation of process~$s$ in channel~$c$.
 
-\item $\phi_{cs}$ represents a free normalisation factor applied uniformly to
-  all bins of the parameterised histogram for a given process~$s$ in
-  channel~$c$. These parameters are optional, i.e.\ they can be fixed to unity
-  for a given process/channel depending on the statistical model one wants to
-  construct.
+\item $\phi_{cs}$ represents a \emph{free} normalisation factor applied
+  uniformly to all bins of the parameterised histogram for a given process~$s$
+  in channel~$c$. These parameters are optional, i.e.\ they can be fixed to
+  unity for a given process/channel depending on the statistical model one wants
+  to construct.
   % Normalisation factors that are shared?
-  In most cases, at least one normalisation factor is present that
-  is applied to the physics process of interest, also referred to as the
-  \emph{signal}. This normalisation factor is referred to as the signal
-  strength, $\mu$, and is often considered to be the parameter of interest
-  (POI).
+  In most cases, at least one normalisation factor is present that is applied to
+  the physics process of interest, also referred to as the \emph{signal}. This
+  normalisation factor is referred to as the \emph{signal strength}, $\mu$, and
+  is often considered to be the parameter of interest (POI). Normalisation
+  factors are considered to be NPs if they are not POIs.
 
 \item $\gamma_{csb}$ are parameters that introduce additional degrees of freedom
-  for every channel, process, and bin. These parameters allow to incorporate
+  for every channel, process, and bin. They are used to incorporate
   uncertainties that originate from sources that are independent between
   channels, processes, and bins. An example of such an uncertainty is the
   statistical uncertainty arising from the use of finite samples of events to
   estimate $\sigma_{csb}$.
 
   In this thesis, the method by Barlow and Beeston~\cite{barlow1993} is used to
-  account for these uncertainties. To reduce the number of parameters of the
-  statistical model, the method is simplified as proposed in
-  Ref.~\cite{conway2011} by only considering the statistical uncertainty on the
-  sum of processes in a given bin/channel. Consequently, the parameters
-  $\gamma_{csb}$ can be replaced by $\gamma_{cb}$, omitting the dependence on
-  the physics process.
+  account for the statistical uncertainties on $\sigma_{csb}$. To reduce the
+  number of parameters of the statistical model, the method is simplified as
+  proposed in Ref.~\cite{conway2011} by only considering the statistical
+  uncertainty on $\sum_{s \in \mathcal{S}} \sigma_{csb}$ in a given
+  bin/channel. Consequently, the parameters $\gamma_{csb}$ can be replaced by
+  $\gamma_{cb}$, omitting the dependence on the physics process.
 
 \end{itemize}
-
-
-A discussion of the functional form of $\sigma_{csb}(\myvec{\alpha})$ and
+A description of the exact functional form of $\sigma_{csb}(\myvec{\alpha})$ and
 $\eta_{cs}(\myvec{\alpha})$ is omitted here but can be found in
-Ref.~\cite{cranmer2012}.
-
-
-These parameters can be fixed or correlated
-
-
-
-
-
-
-
-
-
-The likelihood function of this model is given by
+Ref.~\cite{cranmer2012}. The likelihood function of the statistical model is
+given by
 \begin{align*}
   L(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) = \Biggl[\,
   \prod_{c \in \mathcal{C}}
   \prod_{b \in \mathcal{B}_{c}}
   \pois\bigl( n_{cb} \big| \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) \bigr)
   \,\Biggr]
-  \times C(\myvec{\alpha}, \myvec{\gamma})
+  \times L_{\text{aux}}(\myvec{\alpha}, \myvec{\gamma}) \,\text{,}
+\end{align*}
+where $L_{\text{aux}}(\myvec{\alpha}, \myvec{\gamma})$ refers to the likelihood
+function of the auxiliary measurements that constrain the NPs~$\myvec{\alpha}$
+and $\myvec{\gamma}$.
+
+
+
+
+The statistical model of the auxiliary measurements constraining the NPs
+$\myvec{\alpha}$ is closely connected to the functional form of
+$\sigma_{csb}(\myvec{\alpha})$ and $\eta_{cs}(\myvec{\alpha})$, thus only a
+general introduction is given.
+
+
+
+
+
+These measurements are usually defined by performing comparisons of
+
+
+with alternative predictions that characterise systematic uncertainties
+
+
+
+
+
+Often, these
+measurements are defined by a comparison
+
+
+
+
+
+The likelihood function of the auxiliary measurement is given by
+\begin{align*}
+  L_{\text{aux}}(\myvec{\alpha}, \myvec{\gamma}) =
+  \Biggl[\, \prod_{p \in A} f_p(a_p \vert \alpha_p)     \,\Biggr]
+  \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb} \vert \gamma_{cb} \tau_{cb}) \,\Biggr]
 \end{align*}
 
+In this thesis, $f_p(a_p \vert \alpha_p)$ denotes the probability density of a
+Normal distribution with mean~$\alpha_p$ and unit variance.
 
-% \prod_{p \in \mathrm{A} \cup \Gamma} f_{p}(a_{p} \vert \alpha_{p})
+
+Maximum likelihood estimation is used to estimate model parameters from fits to
+data.
+
+Asimov dataset.
+
+
+\subsection{Hypothesis Testing}
+
+- In the following let the likelihood function be denoted
+$L(\mu, \myvec{\theta})$ to separate the POI, $\mu$, from the nuisance
+parameters $\myvec{\theta}$.
+
+- Generally want to test statements of particular values of the signal strength
+$\mu$
+
+- The statistical model is nested
+
+- Tests are based on variations of the likelihood ratio test
 
 \begin{align*}
-  C(\myvec{\alpha}, \myvec{\gamma}) =
-  \Biggl[\, \prod_{p \in A} f_p(a_p \vert \alpha_p)     \,\Biggr]
-  \Biggl[\, \prod_{p \in \Gamma} f_p(g_p \vert \gamma_p) \,\Biggr]
+  \Lambda(\mu) = -2 \ln \left[ \frac{ L\bigl(\mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L(\muhat, \hat{\myvec{\theta}})} \right]
+\end{align*}
+
+Wilk's theorem.
+
+Under the null -> $\chi^2$ distribution with $n$ degrees of freedom, where $n$
+is the...
+
+In the following we focus on a single POI, such that $n = 1$.
+
+
+\subsubsection{Discovery of a Signal}
+
+For the discovery of a signal one can readily test the nullhypothesis of
+$\mu = 0$ against the alternative of $\mu \neq 1$. This can be readily performed
+using $\Lambda(0)$ as the test statistic. The sampling distribution of
+$\Lambda(0)$ under the null hypothesis is known in asymptotic
+approximation. However, when searching for new phenomena one is generally
+interested in signals with positive strength, i.e.\ $\mu > 0$. This leads to an
+altered likelihood ratio test statistic given by
+\begin{align*}
+  q_0 = \begin{cases}
+          \Lambda(0), & \muhat > 0 \\
+          0,          & \muhat \leq 0
+        \end{cases}
 \end{align*}
 
 
-The choice of constraint terms is intimately connected to the meaning of
-$\eta_{cs}$ and $\sigma_{csb}$.
+The asymptotic sampling distribution of $q_0$ under the null hypothesis is given
+by
+\begin{align*}
+  f(q_0; n) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; n) \,\text{,}
+\end{align*}
+which is a equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
+distribution with $n$ degrees of freedom, $f_{\chi^2}$.
+
+For a given critical value of $q_0^\text{c}$ of the test, the discovery
+significance (type I error rate) is given by
+\begin{align*}
+  p_0 = \int_{q_0^\text{crit}}^\infty \mathrm{d}q f(q; n) \overset{n = 1}{=} \sqrt{q_0^\text{crit}}
+\end{align*}
+
+The significance $p_0$ is often expressed as
+\begin{align*}
+  Z_0 = \Phi^{-1}(1 - p_0) \,\text{,}
+\end{align*}
+where $\Phi^{-1}$ is the quantile function of the Standard Normal
+distribution. In particle physics, for the discovery of a signal two
+significance thresholds are
+
+
+two signifiance thresholds are namely $Z_0 = 3$ ($p_0 = \num{1.35e-3}$) and
+$Z_0 = 5$ ($p_0 = \num{2.87e-7}$), which are the thresholds for \emph{evidence}
+and \emph{discovery}, respectively.
+
+
+\subsubsection{Upper Limits on the Signal Strength}
+
 
 
 \subsection{The Method of Maximum Likelihood}
