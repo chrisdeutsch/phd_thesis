@@ -124,7 +124,7 @@ given by
   \label{eq:likelihood_histfactory}
 \end{align}
 where $L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma})$ is the likelihood
-defining the external constraints on the NPs~$\myvec{\alpha}$ and
+function defining the external constraints on the NPs~$\myvec{\alpha}$ and
 $\myvec{\gamma}$. The external constraints are defined by
 \begin{align*}
   L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) =
@@ -168,6 +168,10 @@ from
 
 
 
+In this thesis, $f_p(a_p \vert \alpha_p)$ denotes the probability density of a
+Normal distribution with mean~$\alpha_p$ and unit variance.
+
+
 
 
 The statistical model of the auxiliary measurements constraining the NPs
@@ -177,35 +181,42 @@ general introduction is given.
 
 
 
-
-
 These measurements are usually defined by performing comparisons of
 
 
 with alternative predictions that characterise systematic uncertainties
 
 
-
-
-
 Often, these
 measurements are defined by a comparison
-
-
-
 
 
 The likelihood function of the auxiliary measurement is given by
 
 
-In this thesis, $f_p(a_p \vert \alpha_p)$ denotes the probability density of a
-Normal distribution with mean~$\alpha_p$ and unit variance.
 
+\vspace{5em}
 
-Maximum likelihood estimation is used to estimate model parameters from fits to
-data.
+The parameters of the model can be estimated using a maximum likelihood fit to
+observed data. Hereafter, it is assumed that the model has one POI denoted by
+$\mu$ and NPs denoted by $\myvec{\theta}$. The \emph{unconditional fit}
+estimates the best-fit parameters according to
+\begin{align*}
+  (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta})} L(\mu, \myvec{\theta}) \,\text{.}
+\end{align*}
+Often, the model is restricted by fixing the POI~$\mu$ to a constant value. For
+example, the model with the restriction $\mu = 0$ is typically referred to as
+the \emph{background-only model}. In the restricted case, the best-fit
+parameters are determined by the \emph{conditional fit} according to
+\begin{align*}
+  \hat{\hat{\theta}}(\mu) = \argmax_{\myvec{\theta}} L(\mu, \myvec{\theta}) \,\text{,}
+\end{align*}
+for a given value of $\mu$.
+
 
 Asimov dataset.
+
+
 
 
 \subsection{Hypothesis Testing}
