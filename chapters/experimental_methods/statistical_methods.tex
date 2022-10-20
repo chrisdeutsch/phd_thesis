@@ -228,6 +228,22 @@ parameters $\myvec{\theta}$.
 - Generally want to test statements of particular values of the signal strength
 $\mu$
 
+- In general, we have composite hypothesis. Let $\Theta$ denote the full
+parameter space of the model.
+
+
+ The null hypothesis is
+\begin{align*}
+  H_0: \theta \in \Theta_0 = \{ (\mu, \myvec{\theta}) \,\vert\, (\mu, \myvec{\theta}) \in \Theta \text{ and } \mu = \mu^\prime \} \phantom{\,\text{.}}
+\end{align*}
+and the alternative hypothesis
+\begin{align*}
+  H_1: \theta \in \Theta_1 = \{ (\mu, \myvec{\theta}) \,\vert\, (\mu, \myvec{\theta}) \in \Theta \text{ and } \mu \neq \mu^\prime \} \,\text{.}
+\end{align*}
+These hypotheses are referred to as nested ($\Theta = \Theta_0 \cup \Theta_1$)
+and composite
+
+
 - The statistical model is nested
 
 - Tests are based on variations of the likelihood ratio test
