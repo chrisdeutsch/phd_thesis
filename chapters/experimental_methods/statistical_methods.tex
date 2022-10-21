@@ -193,8 +193,6 @@ measurements are defined by a comparison
 
 The likelihood function of the auxiliary measurement is given by
 
-
-
 \vspace{5em}
 
 The parameters of the model can be estimated using a maximum likelihood fit to
@@ -204,63 +202,71 @@ estimates the best-fit parameters according to
 \begin{align*}
   (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta})} L(\mu, \myvec{\theta}) \,\text{.}
 \end{align*}
-Often, the model is restricted by fixing the POI~$\mu$ to a constant value. For
-example, the model with the restriction $\mu = 0$ is typically referred to as
-the \emph{background-only model}. In the restricted case, the best-fit
-parameters are determined by the \emph{conditional fit} according to
+Often, the model is restricted by fixing the POI to a constant value of
+$\mu^\prime$. For example, the model with the restriction $\mu = 0$ is typically
+referred to as the \emph{background-only model}. In the restricted case, the
+best-fit parameters are determined by the \emph{conditional fit} for
+$\mu = \mu^\prime $ according to
 \begin{align*}
-  \hat{\hat{\theta}}(\mu) = \argmax_{\myvec{\theta}} L(\mu, \myvec{\theta}) \,\text{,}
+  \hat{\hat{\theta}}(\mu^\prime) = \argmax_{\myvec{\theta}} L(\mu^\prime, \myvec{\theta}) \,\text{.}
 \end{align*}
-for a given value of $\mu$.
-
 
 Asimov dataset.
 
 
-
-
 \subsection{Hypothesis Testing}
 
-- In the following let the likelihood function be denoted
-$L(\mu, \myvec{\theta})$ to separate the POI, $\mu$, from the nuisance
-parameters $\myvec{\theta}$.
+In high-energy physics, one is often concerned with comparing the goodness of
+fit of competing statistical models for a set of observed data. Specifically,
+statements about the signal strength are of interest in HEP. For example,
+comparisons of a background-only model ($\mu = 0$) with a model that includes
+both signal and background ($\mu > 0$) are commonly performed in searches for
+new phenomena.  This comparison procedure is formalised in the framework of
+\emph{statistical hypothesis testing.}
 
-- Generally want to test statements of particular values of the signal strength
-$\mu$
-
-- In general, we have composite hypothesis. Let $\Theta$ denote the full
-parameter space of the model.
-
-
- The null hypothesis is
+The \emph{likelihood ratio test} (LRT) is frequently used in HEP to compare the
+likelihood of two hypotheses given observed data. Let $\Omega$ be the parameter
+space of the statistical model introduced in the previous section. A null
+hypothesis, $H_0$, is defined as
 \begin{align*}
-  H_0: \theta \in \Theta_0 = \{ (\mu, \myvec{\theta}) \,\vert\, (\mu, \myvec{\theta}) \in \Theta \text{ and } \mu = \mu^\prime \} \phantom{\,\text{.}}
+  H_0: (\mu, \myvec{\theta}) \in \Omega_0
+  \quad \text{with} \quad \Omega_0 \subset \Omega \,\text{,}
 \end{align*}
-and the alternative hypothesis
+where $\Omega_0$ is a set of model parameters that defines the null
+hypothesis,\footnote{Example: If one is interested in taking the background-only
+  hypothesis as the null hypothesis (and no restrictions are made regarding the
+  possible values of the NPs), then
+  $\Omega_0 = \{ (\mu, \myvec{\theta}) \vert (\mu, \myvec{\theta}) \in \Omega
+  \text{ and } \mu = 0 \}$.} and an alternative hypothesis, $H_1$, as
 \begin{align*}
-  H_1: \theta \in \Theta_1 = \{ (\mu, \myvec{\theta}) \,\vert\, (\mu, \myvec{\theta}) \in \Theta \text{ and } \mu \neq \mu^\prime \} \,\text{.}
+  H_1: (\mu, \myvec{\theta}) \in \Omega_1
+  \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
 \end{align*}
-These hypotheses are referred to as nested ($\Theta = \Theta_0 \cup \Theta_1$)
-and composite
+The test statistic of the LRT comparing $H_0$ and $H_1$ is given by
+\begin{align*}
+  \Lambda = -2 \ln \left[
+  \frac{\sup_{(\mu, \myvec{\theta}) \in \Omega_0} L(\mu, \myvec{\theta})}
+  {\sup_{(\mu, \myvec{\theta}) \in \Omega\phantom{_0}} L(\mu, \myvec{\theta})}
+  \right] \,\text{,}
+\end{align*}
+where the numerator (denominator) of the term in brackets is the supremum of the
+likelihood for the restricted (unrestricted) model~\cite{casella2001}. A
+critical value of the test statistic, denoted by $\Lambda_{\text{crit}}$, is
+chosen and compared to the observed value $\Lambda_{\text{obs}}$. If
+$\Lambda_{\text{obs}} > \Lambda_{\text{crit}}$ then $H_0$ is rejected in favour
+of $H_1$. Otherwise $H_0$ cannot be rejected. The value of
+$\Lambda_{\text{crit}}$ defines the significance and power of the test.
 
 
-- The statistical model is nested
+\subsubsection{Discovery of a Positive Signal}
 
-- Tests are based on variations of the likelihood ratio test
 
 \begin{align*}
   \Lambda(\mu) = -2 \ln \left[ \frac{ L\bigl(\mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L(\muhat, \hat{\myvec{\theta}})} \right]
 \end{align*}
 
-Wilk's theorem.
-
-Under the null -> $\chi^2$ distribution with $n$ degrees of freedom, where $n$
-is the...
-
-In the following we focus on a single POI, such that $n = 1$.
 
 
-\subsubsection{Discovery of a Signal}
 
 For the discovery of a signal one can readily test the nullhypothesis of
 $\mu = 0$ against the alternative of $\mu \neq 1$. This can be readily performed
@@ -276,9 +282,11 @@ altered likelihood ratio test statistic given by
         \end{cases}
 \end{align*}
 
+one-sided test
+
 
 The asymptotic sampling distribution of $q_0$ under the null hypothesis is given
-by
+by \cite{Cowan:2010js}
 \begin{align*}
   f(q_0; n) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; n) \,\text{,}
 \end{align*}
@@ -306,6 +314,15 @@ and \emph{discovery}, respectively.
 
 
 \subsubsection{Upper Limits on the Signal Strength}
+
+
+\begin{align*}
+  \tilde{q}_\mu =
+  \begin{cases}
+    a \\
+    b \\
+  \end{cases}
+\end{align*}
 
 
 
