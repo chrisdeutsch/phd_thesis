@@ -199,17 +199,19 @@ The parameters of the model can be estimated using a maximum likelihood fit to
 observed data. Hereafter, it is assumed that the model has one POI denoted by
 $\mu$ and NPs denoted by $\myvec{\theta}$. The \emph{unconditional fit}
 estimates the best-fit parameters according to
-\begin{align*}
+\begin{align}
   (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta})} L(\mu, \myvec{\theta}) \,\text{.}
-\end{align*}
+  \label{eq:unconditional_fit}
+\end{align}
 Often, the model is restricted by fixing the POI to a constant value of
 $\mu^\prime$. For example, the model with the restriction $\mu = 0$ is typically
 referred to as the \emph{background-only model}. In the restricted case, the
 best-fit parameters are determined by the \emph{conditional fit} for
 $\mu = \mu^\prime $ according to
-\begin{align*}
-  \hat{\hat{\theta}}(\mu^\prime) = \argmax_{\myvec{\theta}} L(\mu^\prime, \myvec{\theta}) \,\text{.}
-\end{align*}
+\begin{align}
+  \hat{\hat{\myvec{\theta}}}(\mu^\prime) = \argmax_{\myvec{\theta}} L(\mu^\prime, \myvec{\theta}) \,\text{.}
+  \label{eq:conditional_fit}
+\end{align}
 
 Asimov dataset.
 
@@ -224,20 +226,19 @@ both signal and background ($\mu > 0$) are commonly performed in searches for
 new phenomena.  This comparison procedure is formalised in the framework of
 \emph{statistical hypothesis testing.}
 
-The \emph{likelihood ratio test} (LRT) is frequently used in HEP to compare the
-likelihood of two hypotheses given observed data. Let $\Omega$ be the parameter
-space of the statistical model introduced in the previous section. A null
-hypothesis, $H_0$, is defined as
+The \emph{likelihood ratio test} (LRT) is frequently used in HEP to perform
+hypothesis tests. Let $\Omega$ be the parameter space of the statistical model
+introduced in the previous section. A null hypothesis, $H_0$, is defined as
 \begin{align*}
   H_0: (\mu, \myvec{\theta}) \in \Omega_0
   \quad \text{with} \quad \Omega_0 \subset \Omega \,\text{,}
 \end{align*}
 where $\Omega_0$ is a set of model parameters that defines the null
-hypothesis,\footnote{Example: If one is interested in taking the background-only
-  hypothesis as the null hypothesis (and no restrictions are made regarding the
-  possible values of the NPs), then
-  $\Omega_0 = \{ (\mu, \myvec{\theta}) \vert (\mu, \myvec{\theta}) \in \Omega
-  \text{ and } \mu = 0 \}$.} and an alternative hypothesis, $H_1$, as
+hypothesis,\footnote{Example: Taking the background-only hypothesis as the null
+  hypothesis (and making no restrictions regarding the possible values of the
+  NPs), then
+  $\Omega_0 = \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega
+  \,\land\, \mu = 0 \}$.} and an alternative hypothesis, $H_1$, as
 \begin{align*}
   H_1: (\mu, \myvec{\theta}) \in \Omega_1
   \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
@@ -258,69 +259,77 @@ of $H_1$. Otherwise $H_0$ cannot be rejected. The value of
 $\Lambda_{\text{crit}}$ defines the significance and power of the test.
 
 
-\subsubsection{Discovery of a Positive Signal}
+\subsubsection{Discovery of a Signal}
 
-
+In the framework of hypothesis testing, the discovery of a signal implies
+rejecting the background-only hypothesis ($\mu = 0$) in favour of the
+signal-plus-background hypothesis. Usually, only signals with positive strength,
+that is $\mu > 0$, are considered as potential discoveries. Formally, the
+relevant hypotheses for testing the discovery of a (positive) signal are
 \begin{align*}
-  \Lambda(\mu) = -2 \ln \left[ \frac{ L\bigl(\mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L(\muhat, \hat{\myvec{\theta}})} \right]
+  &H_0: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega^+ \,\land\, \mu = 0 \} \\
+  &H_1: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega^+ \,\land\, \mu > 0 \} \,\text{,}
 \end{align*}
-
-
-
-
-For the discovery of a signal one can readily test the nullhypothesis of
-$\mu = 0$ against the alternative of $\mu \neq 1$. This can be readily performed
-using $\Lambda(0)$ as the test statistic. The sampling distribution of
-$\Lambda(0)$ under the null hypothesis is known in asymptotic
-approximation. However, when searching for new phenomena one is generally
-interested in signals with positive strength, i.e.\ $\mu > 0$. This leads to an
-altered likelihood ratio test statistic given by
+where $\Omega^+$ denotes the parameter space of the model with the restriction
+that $\mu \geq 0$. A test statistic based on the LRT is defined
+as~\cite{Cowan:2010js}
 \begin{align*}
   q_0 = \begin{cases}
-          \Lambda(0), & \muhat > 0 \\
+          -2 \ln \left[ \frac{ L\bigl(0, \hat{\hat{\myvec{\theta}}}(0) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat > 0 \\
           0,          & \muhat \leq 0
-        \end{cases}
+        \end{cases} \quad\text{,}
 \end{align*}
-
-one-sided test
-
+where $\muhat$, $\hat{\myvec{\theta}}$, and $\hat{\hat{\myvec{\theta}}}$ are
+defined as in \Cref{eq:unconditional_fit,eq:conditional_fit}. This test
+statistic is referred to as the \emph{discovery test statistic}.
 
 The asymptotic sampling distribution of $q_0$ under the null hypothesis is given
-by \cite{Cowan:2010js}
+by~\cite{Cowan:2010js}
 \begin{align*}
-  f(q_0; n) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; n) \,\text{,}
+  f(q_0) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; 1) \,\text{,}
 \end{align*}
-which is a equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
-distribution with $n$ degrees of freedom, $f_{\chi^2}$.
-
-For a given critical value of $q_0^\text{c}$ of the test, the discovery
-significance (type I error rate) is given by
+which is an equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
+distribution with one degree of freedom. A test defining the rejection region as
+$q_0 > q_0^{\text{crit}}$, where $q_0^{\text{crit}}$ is the chosen critical
+value for the test, as an asymptotic significance of
 \begin{align*}
-  p_0 = \int_{q_0^\text{crit}}^\infty \mathrm{d}q f(q; n) \overset{n = 1}{=} \sqrt{q_0^\text{crit}}
+  p_0 = \int_{q_0^\text{crit}}^\infty \mathrm{d}q_0 f(q_0; 1) = \sqrt{q_0^\text{crit}} \,\text{.}
 \end{align*}
-
-The significance $p_0$ is often expressed as
+The significance $p_0$, also referred to as the \emph{discovery significance},
+is often expressed as
 \begin{align*}
-  Z_0 = \Phi^{-1}(1 - p_0) \,\text{,}
+  z_0 = \Phi^{-1}(1 - p_0) \,\text{,}
 \end{align*}
 where $\Phi^{-1}$ is the quantile function of the Standard Normal
-distribution. In particle physics, for the discovery of a signal two
-significance thresholds are
+distribution. In particle physics, the significance threshold required for tests
+for new physics is conventionally chosen to be $z_0 = 5$
+($p_0 = \num{2.87e-7}$), also referred to as ``$5\sigma$'' significance.
 
-
-two signifiance thresholds are namely $Z_0 = 3$ ($p_0 = \num{1.35e-3}$) and
-$Z_0 = 5$ ($p_0 = \num{2.87e-7}$), which are the thresholds for \emph{evidence}
-and \emph{discovery}, respectively.
+% two signifiance thresholds are namely $Z_0 = 3$ ($p_0 = \num{1.35e-3}$) and
+% $Z_0 = 5$ ($p_0 = \num{2.87e-7}$), which are the thresholds for \emph{evidence}
+% and \emph{discovery}, respectively.
 
 
 \subsubsection{Upper Limits on the Signal Strength}
 
 
+
+
+\begin{align*}
+  H_0: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega \,\land\, \mu \geq \mu^\prime \} \\
+  H_1: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega \,\land\, \mu < \mu^\prime \}
+\end{align*}
+
+
+
+
+
 \begin{align*}
   \tilde{q}_\mu =
   \begin{cases}
-    a \\
-    b \\
+    -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)} \right], & \muhat \in (\infty, 0] \\[1em]
+    -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat \in (0, \mu] \\[1em]
+    0,\phantom{ \biggl[  \biggr]} & \muhat \in (\mu, \infty) \\
   \end{cases}
 \end{align*}
 
