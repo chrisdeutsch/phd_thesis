@@ -225,22 +225,11 @@ Hereafter, the model with the restriction $\mu = 0$ is referred to as the
 In high-energy physics, one is often concerned with comparing the goodness of
 fit of competing statistical models for a set of observed data. Specifically,
 statements about the signal strength are of interest in HEP. For example,
-comparisons of a background-only model ($\mu = 0$) with a model that includes
-both signal and background ($\mu > 0$) are commonly performed in searches for
-new phenomena.  This comparison procedure is formalised in the framework of
-\emph{statistical hypothesis testing.}
+comparisons of the background-only model with the signal-plus-background model
+are commonly performed when searching for new phenomena. This comparison
+procedure is formalised in the framework of \emph{statistical hypothesis
+  testing.}
 
-The \emph{likelihood ratio test} (LRT) is frequently used in HEP to perform
-hypothesis tests.
-
-Let $\Omega$ be the parameter space of the statistical model introduced in the
-previous section, with elements $\omega = (\mu, \myvec{\theta})$.
-
-
-Further, elements from $\Omega$
-
-
-elements from $\Omega$ are denoted as $\omega = (\mu, )$
 
 
 A null hypothesis, $H_0$, is defined as
@@ -251,12 +240,19 @@ A null hypothesis, $H_0$, is defined as
 where $\Omega_0$ is a set of model parameters that defines the null
 hypothesis,\footnote{Example: Taking the background-only hypothesis as the null
   hypothesis (and making no restrictions regarding the possible values of the
-  NPs), then $\Omega_0 = \{ (\mu, \myvec{\theta}) \in \Omega \mid \mu = 0 \}$.}
-and an alternative hypothesis, $H_1$, as
+  NPs), then
+  $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime
+  = 0 \}$.}  and an alternative hypothesis, $H_1$, as
 \begin{align*}
   H_1: (\mu, \myvec{\theta}) \in \Omega_1
   \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
 \end{align*}
+
+
+The \emph{likelihood ratio test} (LRT) is frequently used in HEP for hypothesis
+testing.
+
+
 The test statistic of the LRT comparing $H_0$ and $H_1$ is given by
 \begin{align*}
   \Lambda = -2 \ln \left[
