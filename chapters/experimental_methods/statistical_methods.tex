@@ -195,25 +195,29 @@ The likelihood function of the auxiliary measurement is given by
 
 \vspace{5em}
 
-The parameters of the model can be estimated using a maximum likelihood fit to
-observed data. Hereafter, it is assumed that the model has one POI denoted by
-$\mu$ and NPs denoted by $\myvec{\theta}$. The \emph{unconditional fit}
-estimates the best-fit parameters according to
+Given some observed data, the parameters of the model can be estimated using
+maximum likelihood estimation. Hereafter, it is assumed that the model has one
+POI denoted by $\mu$ that is to be interpreted as a signal strength. All other
+(non-POI) parameters of the model are collectively referred to as
+$\myvec{\theta}$. Let $\Omega$ be the parameter space of the model with
+elements~$(\mu, \myvec{\theta})$. The maximum likelihood estimate (MLE) of the
+parameters are determined by the \emph{unconditional fit}:
 \begin{align}
-  (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta})} L(\mu, \myvec{\theta}) \,\text{.}
+  (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta}) \in \Omega} L(\mu, \myvec{\theta}) \,\text{.}
   \label{eq:unconditional_fit}
 \end{align}
-Often, the model is restricted by fixing the POI to a constant value of
-$\mu^\prime$. For example, the model with the restriction $\mu = 0$ is typically
-referred to as the \emph{background-only model}. In the restricted case, the
-best-fit parameters are determined by the \emph{conditional fit} for
-$\mu = \mu^\prime $ according to
+Often, a restricted model is constructed by fixing the POI to an arbitrary value
+$\mu^*$. In this case, the MLE of the model parameters are given by the
+\emph{conditional fit for $\mu = \mu^*$}:
 \begin{align}
-  \hat{\hat{\myvec{\theta}}}(\mu^\prime) = \argmax_{\myvec{\theta}} L(\mu^\prime, \myvec{\theta}) \,\text{.}
+  \hat{\hat{\myvec{\theta}}}(\mu^*) = \argmax_{\myvec{\theta} \in \{ \myvec{\theta}^\prime \mid (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \,\land\, \mu^\prime = \mu^* \} } L(\mu^*, \myvec{\theta}) \,\text{.}
   \label{eq:conditional_fit}
 \end{align}
+Hereafter, the model with the restriction $\mu = 0$ is referred to as the
+\emph{background-only model}. The unrestricted model is referred to as the
+\emph{signal-plus-background model}.
 
-Asimov dataset.
+\todo[inline]{Asimov dataset.}
 
 
 \subsection{Hypothesis Testing}
@@ -227,8 +231,19 @@ new phenomena.  This comparison procedure is formalised in the framework of
 \emph{statistical hypothesis testing.}
 
 The \emph{likelihood ratio test} (LRT) is frequently used in HEP to perform
-hypothesis tests. Let $\Omega$ be the parameter space of the statistical model
-introduced in the previous section. A null hypothesis, $H_0$, is defined as
+hypothesis tests.
+
+Let $\Omega$ be the parameter space of the statistical model introduced in the
+previous section, with elements $\omega = (\mu, \myvec{\theta})$.
+
+
+Further, elements from $\Omega$
+
+
+elements from $\Omega$ are denoted as $\omega = (\mu, )$
+
+
+A null hypothesis, $H_0$, is defined as
 \begin{align*}
   H_0: (\mu, \myvec{\theta}) \in \Omega_0
   \quad \text{with} \quad \Omega_0 \subset \Omega \,\text{,}
@@ -236,9 +251,8 @@ introduced in the previous section. A null hypothesis, $H_0$, is defined as
 where $\Omega_0$ is a set of model parameters that defines the null
 hypothesis,\footnote{Example: Taking the background-only hypothesis as the null
   hypothesis (and making no restrictions regarding the possible values of the
-  NPs), then
-  $\Omega_0 = \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega
-  \,\land\, \mu = 0 \}$.} and an alternative hypothesis, $H_1$, as
+  NPs), then $\Omega_0 = \{ (\mu, \myvec{\theta}) \in \Omega \mid \mu = 0 \}$.}
+and an alternative hypothesis, $H_1$, as
 \begin{align*}
   H_1: (\mu, \myvec{\theta}) \in \Omega_1
   \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
@@ -267,8 +281,8 @@ signal-plus-background hypothesis. Usually, only signals with positive strength,
 that is $\mu > 0$, are considered as potential discoveries. Formally, the
 relevant hypotheses for testing the discovery of a (positive) signal are
 \begin{align*}
-  &H_0: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega^+ \,\land\, \mu = 0 \} \\
-  &H_1: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega^+ \,\land\, \mu > 0 \} \,\text{,}
+  &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime = 0 \}
+  &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime > 0 \} \,\text{,}
 \end{align*}
 where $\Omega^+$ denotes the parameter space of the model with the restriction
 that $\mu \geq 0$. A test statistic based on the LRT is defined
@@ -284,16 +298,16 @@ defined as in \Cref{eq:unconditional_fit,eq:conditional_fit}. This test
 statistic is referred to as the \emph{discovery test statistic}.
 
 The asymptotic sampling distribution of $q_0$ under the null hypothesis is given
-by~\cite{Cowan:2010js}
+by the probability density function~\cite{Cowan:2010js}
 \begin{align*}
   f(q_0) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; 1) \,\text{,}
 \end{align*}
 which is an equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
-distribution with one degree of freedom. A test defining the rejection region as
-$q_0 > q_0^{\text{crit}}$, where $q_0^{\text{crit}}$ is the chosen critical
+distribution with one degree of freedom. A test defining the rejection region
+has $q_0 > q_0^{\text{crit}}$, where $q_0^{\text{crit}}$ is the chosen critical
 value for the test, as an asymptotic significance of
 \begin{align*}
-  p_0 = \int_{q_0^\text{crit}}^\infty \mathrm{d}q_0 f(q_0; 1) = \sqrt{q_0^\text{crit}} \,\text{.}
+  p_0 = \int_{q_0^\text{crit}}^\infty \mathrm{d}q_0 \, f(q_0; 1) = \sqrt{q_0^\text{crit}} \,\text{.}
 \end{align*}
 The significance $p_0$, also referred to as the \emph{discovery significance},
 is often expressed as
@@ -313,11 +327,9 @@ for new physics is conventionally chosen to be $z_0 = 5$
 \subsubsection{Upper Limits on the Signal Strength}
 
 
-
-
 \begin{align*}
-  H_0: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega \,\land\, \mu \geq \mu^\prime \} \\
-  H_1: (\mu, \myvec{\theta}) \in \{ (\mu, \myvec{\theta}) \mid (\mu, \myvec{\theta}) \in \Omega \,\land\, \mu < \mu^\prime \}
+  &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime \geq \mu^* \}
+  &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime < \mu^* \}
 \end{align*}
 
 
