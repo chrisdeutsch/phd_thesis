@@ -299,16 +299,18 @@ by the probability density function~\cite{Cowan:2010js}
   f(q_0) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; 1) \,\text{,}
 \end{align*}
 which is an equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
-distribution with one degree of freedom. A test defining the rejection region
-has $q_0 > q_0^{\text{crit}}$, where $q_0^{\text{crit}}$ is the chosen critical
-value for the test, as an asymptotic significance of
+distribution with one degree of freedom. A test defining the rejection region as
+$q_0 > q_{0, \text{crit}}$, where $q_{0, \text{crit}}$ is the chosen critical
+value for the test, as an asymptotic significance of\todo{Not correct!}
 \begin{align*}
-  p_0 = \int_{q_0^\text{crit}}^\infty \mathrm{d}q_0 \, f(q_0; 1) = \sqrt{q_0^\text{crit}} \,\text{.}
+  p_0 = \int_{q_{0, \text{crit}}}^\infty \mathrm{d}q_0 \, f(q_0; 1) =
+  1 - \Phi\left(\sqrt{q_{0, \text{crit}}}\right)
+  %\sqrt{q_0^\text{crit}} \,\text{.}
 \end{align*}
 The significance $p_0$, also referred to as the \emph{discovery significance},
 is often expressed as
 \begin{align*}
-  z_0 = \Phi^{-1}(1 - p_0) \,\text{,}
+  z_0 = \Phi^{-1}(1 - p_0) = \sqrt{q_{0, \text{crit}}} \,\text{,}
 \end{align*}
 where $\Phi^{-1}$ is the quantile function of the Standard Normal
 distribution. In particle physics, the significance threshold required for tests
