@@ -195,20 +195,20 @@ The likelihood function of the auxiliary measurement is given by
 
 \vspace{5em}
 
-Given some observed data, the parameters of the model can be estimated using
+The parameters of the model can be estimated, given the observed data, using
 maximum likelihood estimation. Hereafter, it is assumed that the model has one
 POI denoted by $\mu$ that is to be interpreted as a signal strength. All other
 (non-POI) parameters of the model are collectively referred to as
 $\myvec{\theta}$. Let $\Omega$ be the parameter space of the model with
 elements~$(\mu, \myvec{\theta})$. The maximum likelihood estimate (MLE) of the
-parameters are determined by the \emph{unconditional fit}:
+parameters are determined by the \emph{unconditional fit}
 \begin{align}
   (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta}) \in \Omega} L(\mu, \myvec{\theta}) \,\text{.}
   \label{eq:unconditional_fit}
 \end{align}
 Often, a restricted model is constructed by fixing the POI to an arbitrary value
 $\mu^*$. In this case, the MLE of the model parameters are given by the
-\emph{conditional fit for $\mu = \mu^*$}:
+\emph{conditional fit for $\mu = \mu^*$}
 \begin{align}
   \hat{\hat{\myvec{\theta}}}(\mu^*) = \argmax_{\myvec{\theta} \in \{ \myvec{\theta}^\prime \mid (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \,\land\, \mu^\prime = \mu^* \} } L(\mu^*, \myvec{\theta}) \,\text{.}
   \label{eq:conditional_fit}
@@ -223,37 +223,28 @@ Hereafter, the model with the restriction $\mu = 0$ is referred to as the
 \subsection{Hypothesis Testing}
 
 In high-energy physics, one is often concerned with comparing the goodness of
-fit of competing statistical models for a set of observed data. Specifically,
-statements about the signal strength are of interest in HEP. For example,
-comparisons of the background-only model with the signal-plus-background model
-are commonly performed when searching for new phenomena. This comparison
-procedure is formalised in the framework of \emph{statistical hypothesis
-  testing.}
+fit of competing statistical models to observed data. These comparisons allow to
+make statements about values of the signal strength that are still in agreement
+with the observations. The framework of \emph{statistical hypothesis testing}
+provides a principled approach to perform these comparisons.
 
-
-
-A null hypothesis, $H_0$, is defined as
+With the statistical model introduced previously, the null hypothesis, $H_0$, is
+given by
 \begin{align*}
   H_0: (\mu, \myvec{\theta}) \in \Omega_0
   \quad \text{with} \quad \Omega_0 \subset \Omega \,\text{,}
 \end{align*}
-where $\Omega_0$ is a set of model parameters that defines the null
+where $\Omega_0$ is the set of model parameters defining the null
 hypothesis,\footnote{Example: Taking the background-only hypothesis as the null
-  hypothesis (and making no restrictions regarding the possible values of the
-  NPs), then
+  hypothesis, then
   $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime
-  = 0 \}$.}  and an alternative hypothesis, $H_1$, as
+  = 0 \}$.}  and the alternative hypothesis, $H_1$, by
 \begin{align*}
   H_1: (\mu, \myvec{\theta}) \in \Omega_1
   \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
 \end{align*}
-
-
-The \emph{likelihood ratio test} (LRT) is frequently used in HEP for hypothesis
-testing.
-
-
-The test statistic of the LRT comparing $H_0$ and $H_1$ is given by
+A \emph{likelihood ratio test} (LRT) can be used to compare both hypotheses. The
+test statistic of the LRT is given by
 \begin{align*}
   \Lambda = -2 \ln \left[
   \frac{\sup_{(\mu, \myvec{\theta}) \in \Omega_0} L(\mu, \myvec{\theta})}
@@ -262,20 +253,21 @@ The test statistic of the LRT comparing $H_0$ and $H_1$ is given by
 \end{align*}
 where the numerator (denominator) of the term in brackets is the supremum of the
 likelihood for the restricted (unrestricted) model~\cite{casella2001}. A
-critical value of the test statistic, denoted by $\Lambda_{\text{crit}}$, is
-chosen and compared to the observed value $\Lambda_{\text{obs}}$. If
-$\Lambda_{\text{obs}} > \Lambda_{\text{crit}}$ then $H_0$ is rejected in favour
-of $H_1$. Otherwise $H_0$ cannot be rejected. The value of
-$\Lambda_{\text{crit}}$ defines the significance and power of the test.
+critical value of the test statistic, $\Lambda_{\text{crit}}$, is chosen and
+compared to the observed value of the test statistic. If
+$\Lambda > \Lambda_{\text{crit}}$ then $H_0$ is rejected in favour of
+$H_1$. Otherwise $H_0$ cannot be rejected. The chosen value of
+$\Lambda_{\text{crit}}$ defines the rejection region of the test and thus its
+statistical significance and power.
 
 
 \subsubsection{Discovery of a Signal}
 
 In the framework of hypothesis testing, the discovery of a signal implies
-rejecting the background-only hypothesis ($\mu = 0$) in favour of the
-signal-plus-background hypothesis. Usually, only signals with positive strength,
-that is $\mu > 0$, are considered as potential discoveries. Formally, the
-relevant hypotheses for testing the discovery of a (positive) signal are
+rejecting the background-only hypothesis in favour of the signal-plus-background
+hypothesis. Usually, only signals with positive strength, that is $\mu > 0$, are
+considered as potential discoveries. The relevant hypotheses for testing the
+discovery of a signal are
 \begin{align*}
   &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime = 0 \}
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime > 0 \} \,\text{,}
@@ -290,36 +282,53 @@ as~\cite{Cowan:2010js}
         \end{cases} \quad\text{,}
 \end{align*}
 where $\muhat$, $\hat{\myvec{\theta}}$, and $\hat{\hat{\myvec{\theta}}}$ are
-defined as in \Cref{eq:unconditional_fit,eq:conditional_fit}. This test
-statistic is referred to as the \emph{discovery test statistic}.
-
-The asymptotic sampling distribution of $q_0$ under the null hypothesis is given
-by the probability density function~\cite{Cowan:2010js}
+defined as in \Cref{eq:unconditional_fit,eq:conditional_fit}.\footnote{The
+  unconditional fit is performed without the $\mu \geq 0$ constraint. Instead,
+  the constraint is imposed in the definition of the test statistic by setting
+  the maximum likelihood of the unrestricted model to
+  $L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)$ in the $\muhat < 0$ case.}
+This test statistic is referred to as the \emph{discovery test statistic}. The
+asymptotic sampling distribution of $q_0$ under $H_0$ is given by the
+probability density function~\cite{Cowan:2010js}
 \begin{align*}
   f(q_0) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; 1) \,\text{,}
 \end{align*}
 which is an equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
-distribution with one degree of freedom. A test defining the rejection region as
-$q_0 > q_{0, \text{crit}}$, where $q_{0, \text{crit}}$ is the chosen critical
-value for the test, as an asymptotic significance of\todo{Not correct!}
+distribution with one degree of freedom. The discovery test statistic is often
+expressed in terms of an asymptotic $p$-value according to
+\begin{align*}
+  p_0 = \int_{q_{0}}^\infty \mathrm{d}q_0^\prime \, f(q_0^\prime) =
+  1 - \Phi\left(\sqrt{q_{0}}\right) \,\text{,}
+\end{align*}
+where $\Phi$ is the cumulative distribution function of the Standard Normal
+distribution.
+
+
+
+Another way to express $p_0$ is the \emph{discovery significance}
+
+
+
+
+
+
+
+Defining the rejection region of the
+test as $q_{0} > q_{0, \text{crit}}$, where $q_{0, \text{crit}}$ is the chosen
+critical value, yields an asymptotic significance of
 \begin{align*}
   p_0 = \int_{q_{0, \text{crit}}}^\infty \mathrm{d}q_0 \, f(q_0; 1) =
-  1 - \Phi\left(\sqrt{q_{0, \text{crit}}}\right)
-  %\sqrt{q_0^\text{crit}} \,\text{.}
+  1 - \Phi\left(\sqrt{q_{0, \text{crit}}}\right) \,\text{,}
 \end{align*}
-The significance $p_0$, also referred to as the \emph{discovery significance},
-is often expressed as
+where $\Phi$ is the cumulative distribution function of the Standard Normal
+distribution. The significance $p_0$, also referred to as the \emph{discovery
+  significance}, is often expressed as
 \begin{align*}
-  z_0 = \Phi^{-1}(1 - p_0) = \sqrt{q_{0, \text{crit}}} \,\text{,}
+  z_0 = \Phi^{-1}(1 - p_0) = \sqrt{q_{0, \text{crit}}} \,\text{.}
 \end{align*}
-where $\Phi^{-1}$ is the quantile function of the Standard Normal
-distribution. In particle physics, the significance threshold required for tests
-for new physics is conventionally chosen to be $z_0 = 5$
-($p_0 = \num{2.87e-7}$), also referred to as ``$5\sigma$'' significance.
-
-% two signifiance thresholds are namely $Z_0 = 3$ ($p_0 = \num{1.35e-3}$) and
-% $Z_0 = 5$ ($p_0 = \num{2.87e-7}$), which are the thresholds for \emph{evidence}
-% and \emph{discovery}, respectively.
+In particle physics, the conventional significance threshold required to claim
+discovery of new physics is $z_0 = 5$ ($p_0 = \num{2.87e-7}$), which is also
+referred to as the ``$5\sigma$'' threshold for discovery.
 
 
 \subsubsection{Upper Limits on the Signal Strength}
@@ -343,6 +352,8 @@ for new physics is conventionally chosen to be $z_0 = 5$
   \end{cases}
 \end{align*}
 
+
+\todo[inline]{CLs method}
 
 
 \subsection{The Method of Maximum Likelihood}
