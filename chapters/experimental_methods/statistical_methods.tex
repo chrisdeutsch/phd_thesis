@@ -301,34 +301,15 @@ expressed in terms of an asymptotic $p$-value according to
   1 - \Phi\left(\sqrt{q_{0}}\right) \,\text{,}
 \end{align*}
 where $\Phi$ is the cumulative distribution function of the Standard Normal
-distribution.
-
-
-
-Another way to express $p_0$ is the \emph{discovery significance}
-
-
-
-
-
-
-
-Defining the rejection region of the
-test as $q_{0} > q_{0, \text{crit}}$, where $q_{0, \text{crit}}$ is the chosen
-critical value, yields an asymptotic significance of
+distribution. Another way of expressing the test statistic is in terms of the
+\emph{discovery significance}~$Z_0$, which is defined as
 \begin{align*}
-  p_0 = \int_{q_{0, \text{crit}}}^\infty \mathrm{d}q_0 \, f(q_0; 1) =
-  1 - \Phi\left(\sqrt{q_{0, \text{crit}}}\right) \,\text{,}
+  Z_0 = \Phi^{-1}(1 - p_0) = \sqrt{q_{0}} \,\text{.}
 \end{align*}
-where $\Phi$ is the cumulative distribution function of the Standard Normal
-distribution. The significance $p_0$, also referred to as the \emph{discovery
-  significance}, is often expressed as
-\begin{align*}
-  z_0 = \Phi^{-1}(1 - p_0) = \sqrt{q_{0, \text{crit}}} \,\text{.}
-\end{align*}
-In particle physics, the conventional significance threshold required to claim
-discovery of new physics is $z_0 = 5$ ($p_0 = \num{2.87e-7}$), which is also
-referred to as the ``$5\sigma$'' threshold for discovery.
+In particle physics, the conventional significance threshold that has to be
+exceeded to claim discovery of new physics is $Z_0 = 5$ ($p_0 =
+\num{2.87e-7}$). This threshold is also referred to as the ``$5\sigma$ threshold
+for discovery''.
 
 
 \subsubsection{Upper Limits on the Signal Strength}
