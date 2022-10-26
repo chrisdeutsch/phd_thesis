@@ -317,9 +317,8 @@ which is also referred to as the ``$5\sigma$ threshold''.
 \subsubsection{Upper Limits on the Signal Strength}
 
 In the absence of a signal, one is often interested in determining the largest
-value of the signal strength parameter that would still be compatible with the
-observations. This process is referred to as setting upper limits on $\mu$ and
-is formally expressed as tests of the hypotheses
+value of the signal strength that would still be compatible with the
+observations. This is referred to as an upper limit on $\mu$ and is formally expressed in terms of tests of the hypotheses
 \begin{align*}
   &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime \geq \mu^* \}
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime < \mu^* \} \,\text{,}
@@ -328,15 +327,8 @@ where $\mu^*$ is a parameter and it is assumed that $\mu$ is non-negative. An
 upper limit on $\mu$ is determined by finding the smallest $\mu^*$ such that the
 test rejects $H_0$ with significance $\alpha$. This value of $\mu^*$ defines the
 upper limit at $1 - \alpha$ confidence level (CL). Conventionally, upper limits
-are set at $\SI{95}{\percent}$ CL ($\alpha = 0.05$) in HEP.
-
-
-
-
-A LRT-based test statistic is constructed to compare $H_0$ and $H_1$
-
-A LRT-based test statistic is constructed to compare $H_0$ and $H_1$ according
-to~\cite{Cowan:2010js}
+are set at $\SI{95}{\percent}$ CL ($\alpha = 0.05$) in HEP. A test statistic
+derived from the LRT is used to compare $H_0$ and $H_1$ and is given by
 \begin{align*}
   \tilde{q}_{\mu} =
   \begin{cases}
@@ -345,29 +337,7 @@ to~\cite{Cowan:2010js}
     0,\phantom{ \biggl[  \biggr]} & \muhat \in (\mu, \infty) \\
   \end{cases} \,\text{,}
 \end{align*}
-where the asterisk
-
-
-
-
-
-
-
-
-Let $\alpha$ be the statistical significance of the
-test comparing $H_0$ and $H_1$, then the upper limit is given by $\mu^*$ at a
-confidence level (CL) of $1 - \alpha$.
-
-
-
-
-
-
-
-
-
-
-
+where for notational simplicity $\mu^*$ is denoted as $\mu$~\cite{Cowan:2010js}.
 
 
 
