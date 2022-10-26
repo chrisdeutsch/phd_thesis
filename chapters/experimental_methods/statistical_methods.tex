@@ -314,197 +314,64 @@ for discovery''.
 
 \subsubsection{Upper Limits on the Signal Strength}
 
-
+In the absence of a statistically significant signal, one is often interested in
+setting an upper limit on the signal strength parameter that is still compatible
+with the observations. The relevant hypotheses for setting upper limits on $\mu$
+are
 \begin{align*}
   &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime \geq \mu^* \}
-  &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime < \mu^* \}
+  &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime < \mu^* \} \,\text{,}
 \end{align*}
-
-
-
-
-
+where $\mu^*$ is an arbitrary constant and it is assumed that the signal
+strength is non-negative. A test statistic based on the LRT is
+constructed~\cite{Cowan:2010js}
 \begin{align*}
-  \tilde{q}_\mu =
+  \tilde{q}_{\mu} =
   \begin{cases}
     -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)} \right], & \muhat \in (\infty, 0] \\[1em]
     -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat \in (0, \mu] \\[1em]
     0,\phantom{ \biggl[  \biggr]} & \muhat \in (\mu, \infty) \\
-  \end{cases}
+  \end{cases} \,\text{,}
 \end{align*}
+where the asterisk
+
+
+
+
+
+
+
+
+Let $\alpha$ be the statistical significance of the
+test comparing $H_0$ and $H_1$, then the upper limit is given by $\mu^*$ at a
+confidence level (CL) of $1 - \alpha$.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \todo[inline]{CLs method}
 
+CLs method: \cite{Read:2002hq}
 
-\subsection{The Method of Maximum Likelihood}
+\begin{align}
+  \text{CL}_\text{s+b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid \mu) \, \mathrm{d}\tilde{q}_\mu \\
+  \text{CL}_\text{b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid 0) \, \mathrm{d}\tilde{q}_\mu
+\end{align}
 
-Let~$f(\myvec{x} \mid \boldtheta)$ be the joint probability
-density\footnote{The principles outlined in the following also hold
-  for discrete probabiltiy distributions where the equivalent of the
-  probability density is the probability mass.} of a vector of random
-variables~$\myvec{X} = (X_1, \dots, X_n)$ that depends on
-parameters~$\boldtheta$. For a given
-realisation~$\myvec{x} = (x_1, \dots, x_n)$ of~$\myvec{X}$ one can
-consider the joint density at the point~$\myvec{x}$ as a function of
-the parameter vector~$\boldtheta$
-\begin{align*}
-  L(\boldtheta \mid \boldx) = f(\boldx \mid \boldtheta) \overset{\text{i.i.d.}}{=} \prod_{i=1}^n f(x_i \mid \boldtheta)
-\end{align*}
-which is called the likelihood function. The last equality holds for
-independent and identically
-distributed~$X_i \sim f(x \mid \boldtheta)$. The likelihood function
-connects the probability density of the (fixed)
-observation~$\myvec{x}$ with the parameter vector~\boldtheta. The
-parameters of the joint distribution can be inferred from the
-observation using of maximum likelihood estimation by
-\begin{align*}
-  \hat{\boldtheta}(\boldx) = \argmax_{\boldtheta} L(\boldtheta \mid \boldx)
-\end{align*}
-where~$\hat{\boldtheta}$ is an estimator of the parameters based on
-the observed value of~\myvec{X}, i.e.\ the estimator is chosen such
-that the likelihood of observing~\boldx is maximised.
 
-The likelihood function is a fundamental part of frequentist
-statistical inference used to analyse results of high-energy physics
-experiments. Maximum likelihood estimators have convenient properties
-in the large sample limit under some general regularity
-conditions\footnote{For a detailed description of these conditions see
-  for example~\cite{casella2001}.} on the likelihood
-function. Let~$\hat{\theta}_n$ denote the maximum likelihood estimator
-for~$\theta$ on a sample of size~$n$, then the estimator has the
-following asymptotic properties~\cite{casella2001}:
-\begin{description}
-\item[Consistency] The estimator converges to the true value~$\theta$
-  with an arbitrarily small deviation as the sample size tends to
-  infinity, i.e.\
-  $\lim_{n \ra \infty} P(|\hat{\theta}_n - \theta| < \epsilon) = 1$
-  for any $\epsilon > 0$. In this limit the estimator is unbiased with
-  vanishing variance.
-
-\item[Asymptotic normality and efficiency] In the large sample
-  limit~$\sqrt{n}(\hat{\theta}_n - \theta)$ converges in distribution
-  to a normal distribution with zero mean and variance~$v(\theta)$,
-  where~$\theta$ is the true value of the parameter and~$v(\theta)$
-  the \textit{asymptotic variance} of the estimator. The estimator is
-  \textit{asymptotically efficient} in the sense that~$v(\theta)$
-  reaches the Cram\'er--Rao lower bound for the asymptotic variance of
-  estimators.
-\end{description}
-
-Frequently one minimises the negative logarithm of the likelihood
-(NLL) instead, which being a monotonic transformation does not change
-the parameter values extremum, to convert the products / exponentials
-frequently appearing in the likelihood function into sums / factors.
-
-The probability density function~$f$ is frequently intractable
-analytically but can be estimated using Monte Carlo
-simulation. Therefore, one can discretise the the observable of
-interest into~$k$~bins such that the probability for an event to fall
-into bin~$i$ can be described by
-\begin{align*}
-  p_i(\boldtheta) = \int_\text{bin} f(x; \boldtheta) \, \mathrm{d}x
-\end{align*}
-or using frequentist methods when only MC simulation is available. In
-the case of the binned distribution, the likelihood function for a
-fixed sample of size~$n$ is given by the probability mass function of
-the multinomial distribution
-\begin{align*}
-  L(\boldtheta \mid \boldn) = \frac{n!}{\prod_{i=1}^k n_i!} \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
-\end{align*}
-where~$n_i$ corresponds to the number of observations in bin~$i$ with
-the condition that
-\begin{align*}
-  \sum_{i = 1}^k n_i = n \quad \text{and} \quad \sum_{i = 1}^k p_i(\boldtheta) = 1 \,\text{.}
-\end{align*}
-
-In high energy physics, the size of the collected dataset is not fixed
-a priori but is varying according to a Poisson distribution with an
-expected rate~$\nu$. This is accounted for in the so-called ``extended
-likelihood function''~\cite{cowan1998}:
-\begin{align*}
-  L(\nu, \boldtheta \mid \boldn) =
-  \frac{\nu^n e^{-\nu}}{n!} \times \frac{n!}
-  {\prod_{i = 1}^k n_{i}!}
-  \prod_{i = 1}^k \left[ p_i(\boldtheta) \right]^{n_i}
-\end{align*}
-which follows from the joint distribution given by the product of the
-Poisson and multinomial probability mass functions (conditional on the
-number of events observed?).  With the expectation value of the number
-of events in bin~$i$ given
-by~$\nu_i(\boldtheta) = \nu p_i(\boldtheta)$\todo{Can $\nu$ depend on
-  \boldtheta? In principle it can and should!?} and the previously
-mentioned conditions it follows that
-\begin{align*}
-  L(\nu_1, \dots, \nu_k, \boldtheta \mid \boldn) = \prod_{i = 1}^k \frac{\nu_i^{n_i} e^{-\nu_i}}{n_i!}
-\end{align*}
-which is the product of Poisson probabilities of observing~$n_i$
-events in a bin with an expected number of events~$\nu_i$ (the
-dependency on \boldtheta is omitted).
-
-% The Poisson part gives the probability of observing~$n$ events while
-% the multinomial describes the probability of distributing these events
-% among~$k$ bins. In general~$\nu_i$ can depend on~\boldtheta.
-
-In general we are interested in mixture models, where events can
-originate from different processes and the observable, which is called
-the discriminant in this context as it aims to distinguish between the
-different parts of the mixture, follows a process-specific
-distribution. For illustration consider two species of events, one
-from a signal process with PDF $f_\text{S}(x; \boldtheta)$ and from a
-background process with PDF $f_\text{B}(x; \boldtheta)$. Consider a
-model where the signal process contributes with a fraction~$\alpha$
-such that the PDF of the mixture is:
-\begin{align*}
-  f(x; \mu, \boldtheta) = \alpha f_\text{S}(x; \boldtheta) + (1 - \alpha) f_\text{B}(x; \boldtheta) \,\text{.}
-\end{align*}
-In practice~$f_\text{B}$ is frequently itself a mixture model
-consisting of multiple background processes. ($f_\text{S}$ should only
-depend on $\boldtheta_\text{s}$ same for bkg.?) In the binned representation this
-mixture model yields:
-\begin{align*}
-  \nu_i(\mu, \boldtheta) = \mu \nu_i^\text{S}(\boldtheta) + \nu_i^\text{B}(\boldtheta)
-\end{align*}
-with the signal strength~$\mu$ being a parameter of the model, which
-is frequently expressed as the cross section of the signal process
-with respect to a baseline value like the SM expectation.
-
-The parameter~$\mu$ of the mixture model is usually the parameter of
-interest (POI) while the other parameters~\boldtheta, which need to be
-determined to estimate the signal strength, are called nuisance
-parameters.
-
-\todo[inline]{Maybe stress that at this point it's a particular choice
-  model?}
-
-The binned / extended likelihood function is further extended by
-incorporating multiple analysis channels, additional free parameters
-(like the signal strength), systematic uncertainties, and auxiliary
-measurements. With a set of analysis channels~$\mathcal{C}$, a set of
-bins in a given channel~$\mathcal{B}_\mathcal{C}$, and a set of
-auxiliary measurements~$\mathbb{S}$, the likelihood function can be
-written as~\cite{cranmer2012}:
-\begin{align*}
-  L(\boldalpha, \boldphi, \boldgamma) =
-  \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{\mathcal{C}}}
-  \mathrm{Pois}\left( n_{cb} \mid \nu_{cb}(\boldalpha, \boldphi, \boldgamma) \right)
-  \mathrm{Pois}\left(m_{cb} \mid  \gamma_{cb} \tau_{cb} \right)
-  \prod_{p \in \mathbb{S}} f_p\left(a_p \mid \alpha_p \right)
-\end{align*}
-Latin letter correspond to observables while greek letters correspond
-to nuisance parameters.
-
-\begin{align*}
-  \nu_{cb}(\boldalpha, \boldphi, \boldgamma) = \sum_{s \in \mathcal{S}} \gamma_{cb} \, \phi_{cs} \, \eta_{cs}(\boldalpha) \, \sigma_{csb}(\boldalpha)
-\end{align*}
-$\boldalpha = (\alpha_i)_i$, $\boldphi = (\phi_{cs})_{cs}$,
-$\boldgamma = (\gamma_{cb})$.
-
-\todo[inline]{Describe: histogram-based uncertainties, normalisation
-  uncertainties, free normalisation factors, MC stat uncertainty}
-
-\todo[inline]{Describe what is meant by 'observables' and 'global
-  observables'.}
+\begin{align}
+  \text{CL}_\text{s} = \frac{\text{CL}_\text{s+b}}{\text{CL}_\text{b}}
+\end{align}
 
 
 \subsection{Treatment of Statistical Uncertainties on Background Rate
@@ -584,183 +451,6 @@ number of events.
 These relationships will be needed in the context of the statistical
 interpretation of the results in~\Cref{sec:toys_global_observables}.
 
-
-\subsection{Hypothesis Testing}
-\label{sec:hypothesis_testing}
-
-What is a hypothesis? A population that is described by a specific set
-of parameters. Hypothesis tests distinguish between two complementary
-hypotheses. Hypothesis test provides a rule to either accept (reject)
-the null hypothesis, rejecting (accepting) the alternative based on an
-observed sample from a population.
-
-
-Hypothesis testing aims to distinguish between a null hypothesis~$H_0$
-(e.g.\ the Standard Model) and an alternative hypothesis~$H_1$. The
-value of a test statistic~$t(\mathbf{x})$, which is commonly a real
-number, serves to indicate agreement with $H_0$ or $H_1$,
-respectively. Various methods exist to construct suitable test
-statistics.
-
-A rejection region of the test can be defined by setting a threshold
-on the test statistic, i.e.\ $t > t_\text{cut}$, which specifies the
-significance~$\alpha$ of the test, which is the probability to reject
-$H_0$ in favour of $H_1$ if $H_0$ was true (type I error
-rate). Moreover, the power of the test, $1 - \beta$, is specified,
-which is related to the probability~$\beta$ of accepting $H_1$ when
-$H_0$ was true (type II error rate). The field of particle physics
-adopts the convention that the null hypothesis needs to be rejected at
-a significance level of~$\alpha = \num{2.87e-7}$ ($5\sigma$) to claim
-discovery of new phenomena (which is intentionally low to prevent
-false discoveries). Exclusion of signal models is usually done at 95\%
-confidence level ($\alpha = 0.05$).
-
-
-Composite hypothesis: hypothesis depending on some parameter, e.g.\
-signal strength, nuisance parameters.
-
-
-$\boldtheta \in \boldsymbol{\Theta}_0$ (usually a simple hypothesis,
-i.e.\ the set has one element)
-
-$\boldtheta \in \boldsymbol{\Theta}_1$ (composite hypothesis)
-
-Nested model: The b-only model is a limiting case of the
-alternative~$\mu \ra 0$.
-
-
-
-\subsubsection{Likelihood Ratio Test and Neyman-Pearson Lemma}
-
-The (profile) Likelihood Ratio Test is the optimal test based on the
-Neyman-Pearson lemma~\cite{neyman1933} meaning for a given
-significance level yielding the largest power.
-\begin{align*}
-  \lambda = \frac{L(\boldtheta \mid H_0)}{L(\boldtheta \mid H_1)}
-\end{align*}
-
-\todo[inline]{The Likelihood Ratio Test is only the optimal test if
-  there are no free parameters.}
-
-Likelihood ratio test for nested / composite models (i.e.\ the
-alternativ model contains the null hypothesis as a
-subset~$\Theta_0 \subset \Theta$:
-\begin{align}
-  \lambda = \frac{\sup_{\theta \in \Theta_0} L(\theta \mid \boldx)}{\sup_{\theta \in \Theta\phantom{_0}} L(\theta \mid \boldx)}
-\end{align}
-where the numerator is the restricted MLE over $\Theta_0$ and the
-numerator the unrestricted MLE. Frequently, the test statistics are
-expressed as~$-2 \ln \lambda$ due to the asymptotic properties of the
-sampling distributions.
-
-The likelihood ratio still depends on both the parameters of interest
-as well as the nuisance parameters. The profile likelihood given by
-\begin{align*}
-  L_\text{p}(\mu) = \sup_\theta L(\mu, \theta) % \\
-%  \hat{\hat{\theta}}(\mu) = \argmax_\theta \mathcal{L}(\mu, \theta \mid \mathbf{x})
-\end{align*}
-and represents a profile of the likelihood function along the line
-given by~$\hat{\hat{\theta}}(\mu) = \argmax_\theta L(\mu, \theta)$
-(sometimes called the conditional maximum likelihood estimate of the
-nuisance parameters given~$\mu$ -- double hat to distinguish it from
-the maximum likelihood estimate~$\hat{\theta}$). The maximum of the
-profile likelihood coincides with the maximum likelihood estimate.
-
-
-In HEP we usually have a model where the signal contribution is
-controlled by the signal strenght~$\mu \geq 0$ where~$\mu = 0$
-corresponds to the background-only hypothesis. Thus the likelihood
-ratio test for a null hypothesis with signal strength~$\mu$ is written as
-\begin{align}
-  \lambda(\mu) = \frac{\sup_\theta L(\mu, \theta \mid \boldx)}{\sup_{\mu,\theta} L(\mu, \theta \mid \boldx)}
-\end{align}
-
-
-\begin{align*}
-  \Lambda(\mu) = \frac{\mathcal{L}\left( \mu, \hat{\hat{\theta}} \mid \mathbf{x} \right)}
-                      {\mathcal{L}\left( \hat{\mu}, \hat{\theta} \mid \mathbf{x} \right)}
-\end{align*}
-
-
-hat: estimator to distinguish it from the true value of the parameter.
-
-Asymptotic distributions: Wilk's theorem (valid under some regularity
-conditions: asymptotic, nested, either model is correct, identifiable,
-i.e.\ any value of parameters is uniquely assigned to a distinct
-hypothesis)
-
-
-
-\subsubsection{Discovery Significance}
-
-
-The test statistic for the discovery of a positive signal
-is~\cite{Cowan:2010js}:
-\begin{align}
-  q_0 =
-  \begin{cases}
-    -2 \log \lambda(0) & \muhat \geq 0 \\
-    0 & \muhat < 0
-  \end{cases}
-\end{align}
-
-
-
-
-Asymptotic distribution: non-central chi-square with degrees of
-freedom according to the number of POIs. In the case of the null
-hypothesis, this reduces to the result from Wilk (non-centrality
-factor is zero) but really it is a half chi-square distribution.
-
-
-\subsubsection{Confidence Intervals \& Upper Limits}
-
-A confidence interval (comparison to point estimate, e.g.\ MLE) is an
-interval of a parameter derived from the observed sample that covers
-the true value with a given coverage probabilty. (The interval is the
-random quantity and not the parameter).
-
-The calculation of confidence intervals and upper limits can be
-depicted as an inversion of hypothesis tests. The question is which
-$\mu$ null hypothesis would be rejected at a fixed significance
-level~$\alpha$. The confidence interval is then the region which
-cannot be rejected at the specified coverage $1 - \alpha$.
-
-Asymptotic properties of likelihood ratio -> should be roughly normal
-in the minimum, can be taylor expanded and then confidence intervals
-can be extracted from the Hessian at the MLE.
-
-
-\begin{align}
-  \tilde{q}_\mu =
-  \begin{cases}
-    -2 \ln \tilde{\lambda}(\mu) & \muhat \leq \mu \\
-    0 & \muhat > \mu
-  \end{cases}
-\end{align}
-
-Asimov (for CLs method)?
-
-CLs method: \cite{Read:2002hq}
-
-\begin{align}
-  \text{CL}_\text{s+b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid \mu) \, \mathrm{d}\tilde{q}_\mu \\
-  \text{CL}_\text{b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid 0) \, \mathrm{d}\tilde{q}_\mu
-\end{align}
-
-
-\begin{align}
-  \text{CL}_\text{s} = \frac{\text{CL}_\text{s+b}}{\text{CL}_\text{b}}
-\end{align}
-
-
-
-% Statistical Analysis:
-
-% Hypothesis testing: Neyman Pearson lemma, Likelihood ratio (\LambdaΛ) test
-% Wilk's theorem (asymptotic approximation)
-% Discovery significance (q0)
-% Limit setting (CLs / CLs+b)
 
 %%% Local Variables:
 %%% mode: latex
