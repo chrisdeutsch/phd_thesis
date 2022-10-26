@@ -256,7 +256,7 @@ likelihood for the restricted (unrestricted) model~\cite{casella2001}. A
 critical value of the test statistic, $\Lambda_{\text{crit}}$, is chosen and
 compared to the observed value of the test statistic. If
 $\Lambda > \Lambda_{\text{crit}}$ then $H_0$ is rejected in favour of
-$H_1$. Otherwise $H_0$ cannot be rejected. The chosen value of
+$H_1$. Otherwise, $H_0$ cannot be rejected. The chosen value of
 $\Lambda_{\text{crit}}$ defines the rejection region of the test and thus its
 statistical significance and power.
 
@@ -274,7 +274,7 @@ discovery of a signal are
 \end{align*}
 where $\Omega^+$ denotes the parameter space of the model with the restriction
 that $\mu \geq 0$. A test statistic based on the LRT is defined
-as~\cite{Cowan:2010js}
+as
 \begin{align*}
   q_0 = \begin{cases}
           -2 \ln \left[ \frac{ L\bigl(0, \hat{\hat{\myvec{\theta}}}(0) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat > 0 \\
@@ -282,49 +282,61 @@ as~\cite{Cowan:2010js}
         \end{cases} \quad\text{,}
 \end{align*}
 where $\muhat$, $\hat{\myvec{\theta}}$, and $\hat{\hat{\myvec{\theta}}}$ are
-defined as in \Cref{eq:unconditional_fit,eq:conditional_fit}.\footnote{The
+defined as in
+\Cref{eq:unconditional_fit,eq:conditional_fit}~\cite{Cowan:2010js}.\footnote{The
   unconditional fit is performed without the $\mu \geq 0$ constraint. Instead,
   the constraint is imposed in the definition of the test statistic by setting
   the maximum likelihood of the unrestricted model to
   $L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)$ in the $\muhat < 0$ case.}
 This test statistic is referred to as the \emph{discovery test statistic}. The
 asymptotic sampling distribution of $q_0$ under $H_0$ is given by the
-probability density function~\cite{Cowan:2010js}
+probability density function
 \begin{align*}
   f(q_0) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; 1) \,\text{,}
 \end{align*}
 which is an equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
-distribution with one degree of freedom. The discovery test statistic is often
-expressed in terms of an asymptotic $p$-value according to
+distribution with one degree of freedom~\cite{Cowan:2010js}. The discovery test
+statistic is often expressed in terms of an asymptotic $p$-value according
+to
 \begin{align*}
   p_0 = \int_{q_{0}}^\infty \mathrm{d}q_0^\prime \, f(q_0^\prime) =
   1 - \Phi\left(\sqrt{q_{0}}\right) \,\text{,}
 \end{align*}
 where $\Phi$ is the cumulative distribution function of the Standard Normal
-distribution. Another way of expressing the test statistic is in terms of the
-\emph{discovery significance}~$Z_0$, which is defined as
+distribution~\cite{Cowan:2010js}. Another way of expressing the test statistic
+is in terms of the \emph{discovery significance}~$Z_0$, which is defined
+as~\cite{Cowan:2010js}
 \begin{align*}
   Z_0 = \Phi^{-1}(1 - p_0) = \sqrt{q_{0}} \,\text{.}
 \end{align*}
 In particle physics, the conventional significance threshold that has to be
-exceeded to claim discovery of new physics is $Z_0 = 5$ ($p_0 =
-\num{2.87e-7}$). This threshold is also referred to as the ``$5\sigma$ threshold
-for discovery''.
+exceeded to claim discovery of new physics is $Z_0 = 5$ ($p_0 = \num{2.87e-7}$),
+which is also referred to as the ``$5\sigma$ threshold''.
 
 
 \subsubsection{Upper Limits on the Signal Strength}
 
-In the absence of a statistically significant signal, one is often interested in
-setting an upper limit on the signal strength parameter that is still compatible
-with the observations. The relevant hypotheses for setting upper limits on $\mu$
-are
+In the absence of a signal, one is often interested in determining the largest
+value of the signal strength parameter that would still be compatible with the
+observations. This process is referred to as setting upper limits on $\mu$ and
+is formally expressed as tests of the hypotheses
 \begin{align*}
   &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime \geq \mu^* \}
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime < \mu^* \} \,\text{,}
 \end{align*}
-where $\mu^*$ is an arbitrary constant and it is assumed that the signal
-strength is non-negative. A test statistic based on the LRT is
-constructed~\cite{Cowan:2010js}
+where $\mu^*$ is a parameter and it is assumed that $\mu$ is non-negative. An
+upper limit on $\mu$ is determined by finding the smallest $\mu^*$ such that the
+test rejects $H_0$ with significance $\alpha$. This value of $\mu^*$ defines the
+upper limit at $1 - \alpha$ confidence level (CL). Conventionally, upper limits
+are set at $\SI{95}{\percent}$ CL ($\alpha = 0.05$) in HEP.
+
+
+
+
+A LRT-based test statistic is constructed to compare $H_0$ and $H_1$
+
+A LRT-based test statistic is constructed to compare $H_0$ and $H_1$ according
+to~\cite{Cowan:2010js}
 \begin{align*}
   \tilde{q}_{\mu} =
   \begin{cases}
