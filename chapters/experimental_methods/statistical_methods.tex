@@ -219,6 +219,17 @@ Hereafter, the model with the restriction $\mu = 0$ is referred to as the
 
 \todo[inline]{Asimov dataset.}
 
+Lastly,
+
+Asimov datasets -> all observables are set to their expected values.
+
+expected experimental sensitivity prior to looking at the recorded data.
+
+referred to as a \emph{Asimov dataset}
+
+An Asimov dataset can be used in place of data to determine the expected
+experimental sensitivity.
+
 
 \subsection{Hypothesis Testing}
 
@@ -273,8 +284,7 @@ discovery of a signal are
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime > 0 \} \,\text{,}
 \end{align*}
 where $\Omega^+$ denotes the parameter space of the model with the restriction
-that $\mu \geq 0$. A test statistic based on the LRT is defined
-as
+that $\mu \geq 0$. An empirical test statistic based on the LRT is defined as
 \begin{align*}
   q_0 = \begin{cases}
           -2 \ln \left[ \frac{ L\bigl(0, \hat{\hat{\myvec{\theta}}}(0) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat > 0 \\
@@ -316,32 +326,86 @@ which is also referred to as the ``$5\sigma$ threshold''.
 
 \subsubsection{Upper Limits on the Signal Strength}
 
-In the absence of a signal, one is often interested in determining the largest
-value of the signal strength that would still be compatible with the
-observations. This is referred to as an upper limit on $\mu$ and is formally expressed in terms of tests of the hypotheses
+Often, it is of interest to determine the largest signal strength that would
+still be compatible with the observed data. Formally, this constitutes
+estimating a one-sided confidence interval for $\mu$ that is bounded from above,
+hence referred to as an upper limit. The upper limit can be determined by
+inverting a test of the hypotheses
 \begin{align*}
   &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime \geq \mu^* \}
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime < \mu^* \} \,\text{,}
 \end{align*}
-where $\mu^*$ is a parameter and it is assumed that $\mu$ is non-negative. An
-upper limit on $\mu$ is determined by finding the smallest $\mu^*$ such that the
-test rejects $H_0$ with significance $\alpha$. This value of $\mu^*$ defines the
-upper limit at $1 - \alpha$ confidence level (CL). Conventionally, upper limits
-are set at $\SI{95}{\percent}$ CL ($\alpha = 0.05$) in HEP. A test statistic
-derived from the LRT is used to compare $H_0$ and $H_1$ and is given by
+where $\mu^*$ is a parameter and it is assumed that $\mu$ is non-negative. Let
+$(1 - \alpha)$ be the desired confidence level (CL) of the interval to be
+estimated. Given a test of $H_0$ and $H_1$ with significance level~$\alpha$, the
+confidence interval is given by the values of $\mu^*$ for which $H_0$ cannot be
+rejected by the test. The largest value of $\mu^*$ for which this condition
+holds is referred to as the upper limit on $\mu$ at $(1-\alpha)$~CL. The
+determination of upper limits in HEP uses an empirical test statistic derived
+from the LRT that reads
 \begin{align*}
-  \tilde{q}_{\mu} =
+  \qmutilde =
   \begin{cases}
     -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)} \right], & \muhat \in (\infty, 0] \\[1em]
     -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat \in (0, \mu] \\[1em]
     0,\phantom{ \biggl[  \biggr]} & \muhat \in (\mu, \infty) \\
   \end{cases} \,\text{,}
 \end{align*}
-where for notational simplicity $\mu^*$ is denoted as $\mu$~\cite{Cowan:2010js}.
+where for notational simplicity $\mu^*$ is denoted as
+$\mu$~\cite{Cowan:2010js}. The asymptotic sampling distributions of \qmutilde
+were derived in Ref.~\cite{Cowan:2010js} for any assumed value of the signal
+strength. Let~$f(\qmutilde \mid \mu^\prime)$ be the asymptotic sampling
+distribution of \qmutilde under the assumption that the signal strength is
+$\mu^\prime$.
 
 
 
-\todo[inline]{CLs method}
+
+
+
+
+\begin{align*}
+  p_\mu = \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu) \\
+  p_{\text{b}} = \int_{0}^{\tilde{q}_{\mu, \text{obs}}} \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)
+\end{align*}
+
+
+
+until $p_\mu$ is equal to the chosen value of $\alpha$.
+
+
+However, in particle physics
+
+
+
+
+
+
+\vspace{5em}
+
+Conventionally, upper limits are set at $\SI{95}{\percent}$ CL
+($\alpha = 0.05$) in HEP. An empirical test statistic derived from the LRT is
+defined according to
+
+
+Conventionally, upper limits are set at $\SI{95}{\percent}$~CL
+($\alpha = 0.05$) in HEP, although using a more conservative approach that will
+be introduced shortly.
+
+
+Using the asymptotic approximation, an iterative procedure can be employed to
+find the value of $\mu$ such that
+\begin{align*}
+  \CLsb
+  = 1 - \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\tilde{q}_{\mu} \, f(\tilde{q}_{\mu} \mid \mu)
+\end{align*}
+is equal to \SI{95}{\percent}.
+
+
+
+However, in particle physics a more conservative approach is taken to set upper
+limits. The \CLs method
+
 
 CLs method: \cite{Read:2002hq}
 
