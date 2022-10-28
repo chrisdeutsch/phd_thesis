@@ -5,8 +5,8 @@
 
 Techniques of statistical inference commonly used at the ATLAS experiment to
 interpret the results of searches and measurements are introduced in the
-following. Among these are methods for parameter estimation and statistical
-hypothesis testing. They are used to fit statistical models to observed data (or
+following. Among these are methods for parameter estimation and hypothesis
+testing. They are used to fit statistical models to observed data (or
 pseudodata) and to make frequentist statements about the presence or absence of
 a signal.
 
@@ -14,52 +14,38 @@ a signal.
 \subsection{The \textsc{HistFactory} Model}%
 \label{sec:histfactory}
 
-In high-energy physics, the use of binned data is widespread for visualisation
-and statistical modelling. Analyses of collider data typically consider multiple
-mutually disjoint regions, also referred to as \emph{channels}, defined by
-certain event selections. Each region consists of one or more bins defined by a
-discriminating variable. Events from different signal and background processes
-contribute to these regions. These processes are referred to as \emph{physics
-  processes} hereafter. \textsc{HistFactory}~\cite{cranmer2012}
-
-
-
-
-
-
-
-
-
-In this thesis, statistical software based on
-\textsc{HistFactory}~\cite{cranmer2012}, \textsc{RooFit}~\cite{Verkerke:2003ir},
-and \textsc{RooStats}~\cite{Moneta:2010pm} is used to construct statistical
-models and to perform the statistical interpretation of results. The
-\textsc{HistFactory} model forms the foundation of the statistical
-interpretation and thus is introduced in the following. The notation of
-Ref.~\cite{cranmer2012} is adopted with few modifications.
+In high-energy physics, the use of binned data--usually in the form of
+histograms--is widespread for visualisation and statistical modelling. Analyses
+of collider data typically consider multiple mutually disjoint regions, also
+referred to as \emph{channels}, defined by certain event selections. Each region
+consists of one or more bins defined by a discriminating variable. Events from
+different signal and background processes, hereafter referred to as
+\emph{physics processes}, contribute to these regions. In this context,
+\textsc{HistFactory}~\cite{cranmer2012} is the tool used to construct
+statistical models for likelihood-based inference. The \textsc{HistFactory}
+model is introduced in the following, adopting the notation of
+Ref.~\cite{cranmer2012} with few modifications.
 
 Let $\mathcal{C}$ denote the set of channels and $\mathcal{B}_{c}$ the set of
 bins in channel~$c$. The probability of observing $n_{cb}$ events in bin~$b$ of
 channel~$c$ is modelled by a Poisson distribution with probability mass function
-$\pois(n_{cb} \vert \nu_{cb})$, where $\nu_{cb}$ denotes the (unknown) expected
-number of events for the given bin. The expectation $\nu_{cb}$, which has to be
-inferred from the observed data, is parameterised as
+$\pois(n_{cb} \mid \nu_{cb})$, where $\nu_{cb}$ denotes the expected number of
+events for the given bin. The expectation~$\nu_{cb}$, which has to be inferred
+from the observed data, is parameterised as
 \begin{align*}
   \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) =
   \sum_{s \in \mathcal{S}_{c}} \, \gamma_{csb} \, \Phi_{cs}(\myvec{\phi}) \, \eta_{cs}(\myvec{\alpha}) \, \sigma_{csb}(\myvec{\alpha}) \,\text{,}
 \end{align*}
 where $\mathcal{S}_{c}$ is the set of physics processes contributing to
-channel~$c$, and $\myvec{\alpha} = (\alpha_1, \dots, \alpha_n)$,
-$\myvec{\phi} = (\phi_1, \dots, \phi_m)$, and $\myvec{\gamma}$, which denotes a
-vector of all $\gamma_{csb}$, are parameters of the model~\cite{cranmer2012}.
-% $\myvec{\alpha} = (\alpha_p)_{p = 1}^{n}$,
-% $\myvec{\phi} = (\phi_p)_{p = 1}^m$, $\myvec{\gamma} = (\gamma_{csb})$ are
-% parameters, and $\mathcal{S}$ is the set of physics processes that are
-% included in the model~\cite{cranmer2012}.
-The parameters $\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance parameters
-(NPs) with external constraints, which will be introduced shortly. The relevance
-of the four factors $\gamma_{csb}$, $\Phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$
-is described in the following~\cite{cranmer2012}:
+channel~$c$, and the parameters of the model are denoted by
+${\myvec{\alpha} = (\alpha_1, \dots, \alpha_n)}$,
+${\myvec{\phi} = (\phi_1, \dots, \phi_m)}$, and
+$\myvec{\gamma}$~\cite{cranmer2012}.\footnote{The vector $\myvec{\gamma}$ groups
+  the $\gamma_{csb}$ parameters for all channels, processes, and bins.} Of these
+parameters, $\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance parameters (NPs)
+with external constraints, which will be introduced shortly.  The relevance of
+the four factors $\gamma_{csb}$, $\Phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$ is
+described in the following~\cite{cranmer2012}:
 \begin{itemize}
 
 \item $\sigma_{csb}(\myvec{\alpha})$ is referred to as the \emph{parameterised
@@ -74,10 +60,10 @@ is described in the following~\cite{cranmer2012}:
 
 \item $\eta_{cs}(\myvec{\alpha})$ represents a normalisation factor applied
   uniformly to all bins of the parameterised histogram for a given process~$s$
-  in channel~$c$. The normalisation factor $\eta_{cs}$ cannot vary freely since
-  it is a function of the constrained NPs~$\myvec{\alpha}$. This factor is
-  included to account for uncertainties on the normalisation of process~$s$ in
-  channel~$c$.
+  in channel~$c$. The normalisation factor $\eta_{cs}$ cannot vary freely, since
+  it is a function of the constrained parameters $\myvec{\alpha}$. This factor
+  is included to account for uncertainties on the normalisation of process~$s$
+  in channel~$c$.
 
 \item $\Phi_{cs}(\myvec{\phi})$ also represents a normalisation factor applied
   uniformly to all bins of the parameterised histogram for a given process~$s$
@@ -93,9 +79,9 @@ is described in the following~\cite{cranmer2012}:
   % % Normalisation factors that are shared?
   In most cases, at least one normalisation factor is present that is applied to
   the physics process of interest, also referred to as the \emph{signal}. This
-  normalisation factor is referred to as the \emph{signal strength}, $\mu$, and
-  is often considered to be the parameter of interest (POI). Normalisation
-  factors are considered to be NPs if they are not POIs.
+  normalisation factor is referred to as the \emph{signal strength}~$\mu$ and is
+  often considered to be the parameter of interest (POI). Normalisation factors
+  are considered to be NPs if they are not POIs.
 
 \item $\gamma_{csb}$ are parameters that introduce additional degrees of freedom
   for every channel, process, and bin. They are used to incorporate
@@ -121,7 +107,7 @@ given by
   L(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) = \Biggl[\,
   \prod_{c \in \mathcal{C}}
   \prod_{b \in \mathcal{B}_{c}}
-  \pois\bigl( n_{cb} \big| \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) \bigr)
+  \pois\bigl( n_{cb} \mid \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) \bigr)
   \,\Biggr]
   \times L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) \,\text{,}
   \label{eq:likelihood_histfactory}
@@ -131,70 +117,36 @@ function defining the external constraints on the NPs~$\myvec{\alpha}$ and
 $\myvec{\gamma}$. The external constraints are defined by
 \begin{align*}
   L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) =
-  \Biggl[\, \prod_{p=1}^{n} f(a_p \vert \alpha_p)     \,\Biggr]
-  \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb} \vert \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
+  \Biggl[\, \prod_{p=1}^{n} f(a_p \mid \alpha_p)     \,\Biggr]
+  \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb} \mid \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
 \end{align*}
 the two terms in brackets are elaborated hereafter:
-\begin{itemize}
+\begin{enumerate}
 
-\item
+\item The term $f(a_p \mid \alpha_p)$ can be interpreted as the likelihood
+  function resulting from an auxiliary measurement of the parameter~$\alpha_p$
+  given that $a_p$ is observed. Conventionally, $f(a_p \mid \alpha_p)$ is taken
+  to be the probability density of a Normal distribution with unit variance and
+  mean $\alpha_p$. Furthermore, it is assumed that the measurement observed
+  $a_p = 0$ such that, considering only the auxiliary measurement, the maximum
+  likelihood estimate (MLE) of $\alpha_p$ is 0 with an uncertainty of
+  $\Delta \alpha_p = \pm 1$.
 
-  The first term describes the constraints
-
-  $a = 0$ such that the MLE of $\hat{\alpha} = 0$
-
-  $f(a \vert \alpha)$ denotes the probability density of a Normal distribution
-  with unit variance and mean of $\alpha$.
-
-  In isolation, this term describes an auxiliary measurement yielding a
-  $\alpha_p$ confidence interval of $[-1, 1]$ at \SI{68}{\percent} confidence
-  level. Therefore, the
-
-  \SI{68}{\percent} confidence interval is given by $\alpha_p \in [-1, 1]$,
-  hence $\alpha_p = \pm 1$ is interpreted as $\pm 1 \sigma$
-
-\item
-
-\end{itemize}
+  This particular choice of constraint term is intimiately connected to the
+  functional form of $\sigma_{csb}(\myvec{\alpha})$ and
+  $\eta_{cs}(\myvec{\alpha})$, which completely describes the physical effect of
+  the nuisance parameter.
 
 
-where the first bracket defines the constraints on
-$\myvec{\alpha} = (\alpha_p)_p$ and the second one
+  sometimes a simplified representation of an actual measurement.
 
+  sometimes a pseudo-measurement that serves to incorporate an uncertainty in
+  the model.
 
+\item Barlow--Beeston
 
-The statistical model of
-the auxiliary measurements constraining the NPs $\myvec{\alpha}$ is constructed
-from
+\end{enumerate}
 
-
-
-
-
-In this thesis, $f_p(a_p \vert \alpha_p)$ denotes the probability density of a
-Normal distribution with mean~$\alpha_p$ and unit variance.
-
-
-
-
-The statistical model of the auxiliary measurements constraining the NPs
-$\myvec{\alpha}$ is closely connected to the functional form of
-$\sigma_{csb}(\myvec{\alpha})$ and $\eta_{cs}(\myvec{\alpha})$, thus only a
-general introduction is given.
-
-
-
-These measurements are usually defined by performing comparisons of
-
-
-with alternative predictions that characterise systematic uncertainties
-
-
-Often, these
-measurements are defined by a comparison
-
-
-The likelihood function of the auxiliary measurement is given by
 
 \vspace{5em}
 
