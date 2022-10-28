@@ -352,229 +352,75 @@ statistic derived from the LRT that reads
 \end{align*}
 where for notational simplicity $\mu^*$ is denoted as
 $\mu$~\cite{Cowan:2010js}. The asymptotic sampling distributions of \qmutilde
-were derived in Ref.~\cite{Cowan:2010js} for any assumed value of the signal
-strength. Let~$f(\qmutilde \mid \mu^\prime)$ be the asymptotic sampling
+were derived in Ref.~\cite{Cowan:2010js} for any assumed value of the true
+signal strength. Let~$f(\qmutilde \mid \mu^\prime)$ be the asymptotic sampling
 distribution of \qmutilde under the assumption that the signal strength is
 $\mu^\prime$. Following the approach outlined before, an approximate upper limit
-at $(1 - \alpha)$~CL can be determined by finding $\mu$ such that
+at $(1 - \alpha)$~CL can be determined by finding the largest $\mu$ such that
 \begin{align*}
-  p_\mu = \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu)
+  p_\mu = \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu) \leq \alpha \,\text{,}
 \end{align*}
-is equal to $\alpha$, where $\tilde{q}_{\mu, \text{obs}}$ denotes the observed
-value of the test statistic.
+where $\tilde{q}_{\mu, \text{obs}}$ denotes the observed value of the test
+statistic.
 
 In searches for new physics, a modified approach referred to as the
 \CLs~technique~\cite{Junk:1999kv,Read:2002hq} is adopted to derive upper limits
 on $\mu$. The method of estimating upper limits based on $p_\mu$ is susceptible
 to setting overly stringent constraints on $\mu$ in regions with little signal
-sensitivity.
-
-
-\begin{align*}
+sensitivity. While this is expected given a coverage probability below
+\SI{100}{\percent}, it is preferred to avoid the spurious exclusion of signals
+in regions with no sensitivity. This problem is addressed by the \CLs method
+which introduces a modified test statistic defined as
+\begin{align}
   \CLs = \frac
   {\int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu)}
-  {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)}
-\end{align*}
+  {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)} \,\text{.}
+  \label{eq:cls}
+\end{align}
+The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by the power
+of the \qmutilde-based test to reject $H_0$ when the background-only hypothesis
+is true. This modification can be understood qualitatively by considering two
+edge cases:
+\begin{itemize}
 
+\item High signal sensitivity: the power of the test to reject $H_0$ under the
+  background-only hypothesis approaches unity and thus $\CLs \approx p_\mu$.
+
+\item Low signal sensitivity: the power of the test to reject $H_0$ under the
+  background-only hypothesis approaches $p_\mu$ and thus $\CLs \approx 1$.
+
+\end{itemize}
+A graphical illustration of these cases is given in \Cref{fig:cls_qmutilde}.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}{0.46\textwidth}
     \includegraphics[width=\textwidth]{statistics/cls_high_sensitivity}
-    \caption{}
+    \caption{High signal sensitivity}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.46\textwidth}
     \includegraphics[width=\textwidth]{statistics/cls_low_sensitivity}
-    \caption{}
+    \caption{Low signal sensitivity}
   \end{subfigure}
 
-  \caption{Bla}
+  \caption{Qualitative illustration of the sampling distributions of \qmutilde
+    under the signal-plus-background and background-only hypothesis. The red
+    (blue) hatched area corresponds to the integrals entering the numerator
+    (denominator) of the \CLs statistic in~\Cref{eq:cls}.}%
+  \label{fig:cls_qmutilde}
 \end{figure}
 
-An example of
-such a scenario is a counting experiment with a large expected number of
-background events and small expected number of signal events.
-
-
-If the observed number of events
-
-
-, and in extreme cases completely exclude the signal-plus-background hypothesis.
-
-
-
-
-. In extreme cases
-
-
-
-
-Such spurious exclusions are of course expected, since the estimated confidence
-intervals have an (approximate) coverage probability of $(1 - \alpha)$.
-
-
-
-
-
-
-If the observed number of events is below the background expectation, . For extreme downward fluctuations
-
-
-
-
-An example of such a scenario is a region with a large expected number of
-background events
-
-
-
-penalising
-
-
-
-
-
-
-background expectation and
-
-
-
-
-
-An example of
-such a scenario
-
-
-
-
-
-
-
-
-
-
-conservative in regions where there is little sensitivity to a signal.
-
-
-
-
-
-
-The method introduced above
-
-
-
-
-
-
-
-
-In particle physics, this method is slightly modified to counteract
-
-
-
-This method of estimating upper limits on $\mu$ is perceived
-
-
-This method of estimating upper limits is perceived to have .
-
-approximate coverage probability of $(1 - \alpha)$
-
-
-$(1 - \alpha)$.
-
-This method addresses
-
-In searches for new physics, a modified approach is adopted to derive upper
-limits on the signal strength, which is referred to as the
-\CLs~technique~\cite{Junk:1999kv,Read:2002hq}.
-
-
-
-
-
-This method addresses spurious exclusions of signals to which an analysis
-
-
-
-
-
-
-This method addresses
-
-previous method (sometimes referred to as \CLsb)
-
-
-
-
-
-
-
-In particle physics, a modified approach is adopted to derive upper limits on
-the signal strength, which is referred to as the
-\CLs~technique~\cite{Junk:1999kv,Read:2002hq}.
-
-overcoverage
-
-
-In particle physics, a modified approach is taken that yields more conservative
-confidence intervals.
-
-
-
-
-
-
-
-
-
-% until $p_\mu$ is equal to the chosen value of $\alpha$.
-
-
-However, in particle physics
-
-
-
-
-
-
-\vspace{5em}
-
-Conventionally, upper limits are set at $\SI{95}{\percent}$ CL
-($\alpha = 0.05$) in HEP. An empirical test statistic derived from the LRT is
-defined according to
-
-
-Conventionally, upper limits are set at $\SI{95}{\percent}$~CL
-($\alpha = 0.05$) in HEP, although using a more conservative approach that will
-be introduced shortly.
-
-
-Using the asymptotic approximation, an iterative procedure can be employed to
-find the value of $\mu$ such that
-\begin{align*}
-  \CLsb
-  = 1 - \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\tilde{q}_{\mu} \, f(\tilde{q}_{\mu} \mid \mu)
-\end{align*}
-is equal to \SI{95}{\percent}.
-
-
-
-However, in particle physics a more conservative approach is taken to set upper
-limits. The \CLs method
-
-
-CLs method:
-
-\begin{align}
-  \text{CL}_\text{s+b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid \mu) \, \mathrm{d}\tilde{q}_\mu \\
-  \text{CL}_\text{b} = \int^\infty_{q_\text{obs}} f(\tilde{q}_\mu \mid 0) \, \mathrm{d}\tilde{q}_\mu
-\end{align}
-
-
-\begin{align}
-  \text{CL}_\text{s} = \frac{\text{CL}_\text{s+b}}{\text{CL}_\text{b}}
-\end{align}
+Upper limits on $\mu$ using the \CLs technique are estimated by finding the
+largest value of $\mu$ for which $\CLs \leq \alpha$. Since \CLs approaches unity
+in cases of low signal sensitivity, spurious exclusions of signals are
+effectively prevented. Finally, upper limits derived from the condition
+$\CLs \leq \alpha$ are referred to as upper limits at $(1 - \alpha)$~CL,
+however, these limits have to be interpreted as being conservative in the sense
+that the coverage probability of the estimated intervals exceeds $(1 - \alpha)$
+by construction due to $\CLs \geq p_\mu$. Conventionally, upper limits are set
+at $\SI{95}{\percent}$~CL ($\alpha = 0.05$) in HEP. Hereafter, all quoted upper
+limits are estimated using the \CLs technique.
 
 
 \subsection{Treatment of Statistical Uncertainties on Background Rate
