@@ -3,8 +3,8 @@
 \label{sec:statistical_inference}
 % ==============================================================================
 
-Techniques of statistical inference commonly used at the ATLAS experiment to
-interpret the results of searches and measurements are introduced in the
+Techniques of statistical inference commonly used at the ATLAS experiment for
+the interpretation of results of searches and measurements are introduced in the
 following. Among these are methods for parameter estimation and hypothesis
 testing. They are used to fit statistical models to observed data (or
 pseudodata) and to make frequentist statements about the presence or absence of
@@ -17,8 +17,8 @@ a signal.
 In high-energy physics, the use of binned data--usually in the form of
 histograms--is widespread for visualisation and statistical modelling. Analyses
 of collider data typically consider multiple mutually disjoint regions, also
-referred to as \emph{channels}, defined by certain event selections. Each region
-consists of one or more bins defined by a discriminating variable. Events from
+referred to as \emph{channels}, defined by event selections. Each region
+consists of one or more bins given by a discriminating variable. Events from
 different signal and background processes, hereafter referred to as
 \emph{physics processes}, contribute to these regions. In this context,
 \textsc{HistFactory}~\cite{cranmer2012} is the tool used to construct
@@ -72,7 +72,7 @@ described in the following~\cite{cranmer2012}:
   \begin{align*}
     \Phi_{cs}(\myvec{\phi}) = \prod_{p \in \mathcal{N}_{cs}} \phi_p \,\text{,}
   \end{align*}
-  where $\mathcal{N}_{cs}$ denotes the set of indices that defines which free
+  where $\mathcal{N}_{cs}$ denotes the set of indices that defines which
   normalisation factors are to be applied to a given process~$s$ in channel~$c$.
   % These parameters are optional, i.e.\ they can be fixed to unity for a given
   % process/channel depending on the statistical model one wants to construct.
@@ -91,12 +91,12 @@ described in the following~\cite{cranmer2012}:
   estimate $\sigma_{csb}$.
 
   In this thesis, the method by Barlow and Beeston~\cite{barlow1993} is used to
-  account for statistical uncertainties on $\sigma_{csb}$. To reduce the number
-  of parameters of the statistical model, the method is simplified as proposed
-  in Ref.~\cite{conway2011} by only considering the statistical uncertainty on
-  $\sum_{s \in \mathcal{S}} \sigma_{csb}$ for a given bin and
-  channel. Consequently, the parameters $\gamma_{csb}$ can be replaced by
-  $\gamma_{cb}$, omitting the dependence on the physics process.
+  account for statistical uncertainties on the estimation of $\sigma_{csb}$. To
+  reduce the number of parameters of the statistical model, the method is
+  simplified as proposed in Ref.~\cite{conway2011} by only considering the
+  statistical uncertainty on $\sum_{s \in \mathcal{S}} \sigma_{csb}$ for a given
+  bin and channel. Consequently, the parameters $\gamma_{csb}$ can be replaced
+  by $\gamma_{cb}$, omitting the dependence on the physics process.
 
 \end{itemize}
 A description of the exact functional form of $\sigma_{csb}(\myvec{\alpha})$ and
@@ -120,22 +120,52 @@ $\myvec{\gamma}$. The external constraints are defined by
   \Biggl[\, \prod_{p=1}^{n} f(a_p \mid \alpha_p)     \,\Biggr]
   \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb} \mid \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
 \end{align*}
-the two terms in brackets are elaborated hereafter:
+with the terms in brackets being described in the following:
 \begin{enumerate}
 
 \item The term $f(a_p \mid \alpha_p)$ can be interpreted as the likelihood
-  function resulting from an auxiliary measurement of the parameter~$\alpha_p$
-  given that $a_p$ is observed. Conventionally, $f(a_p \mid \alpha_p)$ is taken
-  to be the probability density of a Normal distribution with unit variance and
-  mean $\alpha_p$. Furthermore, it is assumed that the measurement observed
-  $a_p = 0$ such that, considering only the auxiliary measurement, the maximum
-  likelihood estimate (MLE) of $\alpha_p$ is 0 with an uncertainty of
+  function of an auxiliary measurement of the parameter~$\alpha_p$ given that
+  $a_p$ is observed. Conventionally, $f(a_p \mid \alpha_p)$ is taken to be the
+  probability density of a Normal distribution with unit variance and mean
+  $\alpha_p$. Furthermore, it is assumed that the measurement observed $a_p = 0$
+  such that, considering only the auxiliary measurement, the maximum likelihood
+  estimate (MLE) of $\alpha_p$ is 0 with an uncertainty of
   $\Delta \alpha_p = \pm 1$. This particular choice of constraint term is
   closely connected to the functional form of $\sigma_{csb}(\myvec{\alpha})$ and
-  $\eta_{cs}(\myvec{\alpha})$, which completely describe the physical effects of
-  the nuisance parameter.
+  $\eta_{cs}(\myvec{\alpha})$, that is for a single NP $\sigma_{csb}(0)$ and
+  $\eta_{cs}(0)$ represents the nominal histogram and normalisation, while
+  $\sigma_{csb}(\pm 1)$ and $\eta_{cs}(\pm 1)$ correspond to $\pm 1 \sigma$
+  variations of the histogram shape and normalisation, respectively.
 
-\item Barlow--Beeston
+  % which completely describe the physical effects of the nuisance
+  % parameter.\footnote{\cite{cranmer2012}.}
+
+\item The $\pois(m_{cb} \mid \gamma_{cb} \tau_{cb})$ terms provide constraints
+  for the $\gamma_{cb}$ parameters introduced by the (simplified)
+  Barlow--Beeston method. For every bin a constant
+  $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the
+  summations go over all events making up the background prediction in the given
+  bin and $w_i$ corresponds to the event weight of the $i$-th event. This
+  constant is interpreted as an effective number of unweighted
+  events.\footnote{Let $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
+    $Y = \sum_{i = 1}^{N^\prime} 1 = N^\prime$, where $N$ and $N^\prime$ are
+    independent Poisson random variables and $W$ are i.i.d.\ weights that are
+    independent of $N$ and $N^\prime$. The effective number of unweighted events
+    refers to the value of $\expect(N^\prime)$ that ensures that the relative
+    standard deviation of $Y_{\text{w}}$ and $Y$ are equal. This condition
+    yields $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and
+    after approximating the expectations with sample averages
+    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.}
+
+
+  $m_{cb} = \tau_{cb}$
+
+
+    % (i.e.\
+  % $\sqrt{\var(Y_{\text{w}})} / \expect(Y_{\text{w}}) = \sqrt{\var(Y)} /
+  % \expect(Y)$).
+
+
 
 \end{enumerate}
 
