@@ -6,6 +6,9 @@
 \newcommand*{\antitau}{anti-\tauhadvis}
 \newcommand*{\rnnscore}{\ensuremath{\text{RNN score}}\xspace}
 \newcommand*{\CLs}{\ensuremath{\text{CL}_{\text{s}}}\xspace}
+\newcommand*{\CLb}{\ensuremath{\text{CL}_{\text{b}}}\xspace}
+\newcommand*{\CLsb}{\ensuremath{\text{CL}_{\text{s}+\text{b}}}\xspace}
+\newcommand*{\qmutilde}{\ensuremath{\tilde{q}_{\mu}}\xspace}
 \newcommand*{\xsecggfvbf}{\ensuremath{\sigma_{\text{ggF+VBF}}}\xspace}
 \newcommand*{\pTreco}{\ensuremath{p_{\text{T}}^{\text{reco.}}}\xspace}
 \newcommand*{\LOneTopo}{\textsc{L1Topo}\xspace}
@@ -20,6 +23,14 @@
 \DeclareMathOperator{\expect}{E}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\diag}{diag}
+
+% Double hat
+\newlength{\dhatheight}
+\newcommand{\doublehat}[1]{%
+  \settoheight{\dhatheight}{\ensuremath{\hat{#1}}}%
+  \addtolength{\dhatheight}{-0.2ex}%
+  \hat{\vphantom{\rule{1pt}{\dhatheight}}%
+    \smash{\hat{#1}}}}
 
 % Bold vector working with latin and greek characters
 \newcommand*{\myvec}[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{#1}}}}
