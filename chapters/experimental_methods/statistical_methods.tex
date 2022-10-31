@@ -93,9 +93,9 @@ described in the following~\cite{cranmer2012}:
   account for statistical uncertainties on the estimation of $\sigma_{csb}$. To
   reduce the number of parameters of the statistical model, the method is
   simplified as proposed in Ref.~\cite{conway2011} by only considering the
-  statistical uncertainty on $\sum_{s \in \mathcal{S}} \sigma_{csb}$ for a given
-  bin and channel. Consequently, the parameters $\gamma_{csb}$ can be replaced
-  by $\gamma_{cb}$, omitting the dependence on the physics process.
+  statistical uncertainty on $\sum_{s \in \mathcal{S}_{c}} \sigma_{csb}$ for a
+  given bin and channel. Consequently, the parameters $\gamma_{csb}$ can be
+  replaced by $\gamma_{cb}$, omitting the dependence on the physics process.
 
 \end{itemize}
 A description of the exact functional form of $\sigma_{csb}(\myvec{\alpha})$ and
@@ -131,8 +131,8 @@ with the terms in brackets being described in the following:
   estimate (MLE) of $\alpha_p$ is 0 with an uncertainty of
   $\Delta \alpha_p = \pm 1$. This particular choice of constraint term is
   closely connected to the functional form of $\sigma_{csb}(\myvec{\alpha})$ and
-  $\eta_{cs}(\myvec{\alpha})$, that is for a single NP $\sigma_{csb}(0)$ and
-  $\eta_{cs}(0)$ represent the nominal histogram and normalisation, while
+  $\eta_{cs}(\myvec{\alpha})$, i.e.\ for a single parameter $\sigma_{csb}(0)$
+  and $\eta_{cs}(0)$ represent the nominal histogram and normalisation, while
   $\sigma_{csb}(\pm 1)$ and $\eta_{cs}(\pm 1)$ correspond to $\pm 1 \sigma$
   variations of the histogram shape and normalisation, respectively.
 
@@ -148,7 +148,7 @@ with the terms in brackets being described in the following:
   as an effective number of unweighted events,\footnote{Let
     $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
     $Y = \sum_{i = 1}^{N^\prime} 1 = N^\prime$, where $N$ and $N^\prime$ are
-    independent Poisson random variables and $W$ are i.i.d.\ weights that are
+    independent Poisson random variables and $W_i$ are i.i.d.\ weights that are
     independent of $N$ and $N^\prime$. The effective number of unweighted events
     refers to the value of $\expect(N^\prime)$ that ensures that the relative
     standard deviation of $Y_{\text{w}}$ and $Y$ are equal. This condition
@@ -174,8 +174,8 @@ maximum likelihood estimation. Hereafter, it is assumed that the model has one
 POI denoted by $\mu$ that is to be interpreted as a signal strength. All other
 (non-POI) parameters of the model are collectively referred to as
 $\myvec{\theta}$. Let $\Omega$ be the parameter space of the model with
-elements~$(\mu, \myvec{\theta})$. The maximum likelihood estimate (MLE) of the
-parameters are determined by the \emph{unconditional fit}
+elements~$(\mu, \myvec{\theta})$. The MLE of the parameters are determined by
+the \emph{unconditional fit}
 \begin{align}
   (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta}) \in \Omega} L(\mu, \myvec{\theta}) \,\text{.}
   \label{eq:unconditional_fit}
@@ -209,12 +209,13 @@ make statements about values of the signal strength that are still in agreement
 with the observations. The framework of \emph{statistical hypothesis testing}
 provides a principled approach to perform these comparisons.
 
-With the statistical model introduced previously, a null hypothesis, $H_0$, can be defined as
+With the statistical model introduced previously, a null hypothesis, $H_0$, is
+defined as
 \begin{alignat*}{3}
   &H_0: (\mu, \myvec{\theta}) \in \Omega_0
     \quad &\text{with} \quad &\Omega_0 \subset \Omega \,\text{,} \\
   \intertext{where $\Omega_0$ is the set of model parameters that specify the
-  null hypothesis, and an alternative hypothesis, $H_1$, defined as}
+  null hypothesis, and an alternative hypothesis, $H_1$, is defined as}
   &H_1: (\mu, \myvec{\theta}) \in \Omega_1
     \quad &\text{with} \quad &\Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
 \end{alignat*}
@@ -226,7 +227,7 @@ With the statistical model introduced previously, a null hypothesis, $H_0$, can 
 % \footnote{Example: Taking the background-only hypothesis as
 %   the null hypothesis, then $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime = 0 \}$.}
 %
-A \emph{likelihood ratio test} (LRT) can be used to compare both hypotheses. The
+A \emph{likelihood ratio test} (LRT) can be used to compare the hypotheses. The
 test statistic of the LRT is given by
 \begin{align*}
   \Lambda = -2 \ln \left[
