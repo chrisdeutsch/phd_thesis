@@ -23,9 +23,9 @@ in prior iterations. The following description of BDT focuses on the algorithm
 implemented in \textsc{TMVA}~\cite{TMVA}, which is used in this thesis for the
 training of BDTs.
 
-Decision trees are the base classifiers used in BDTs. A decision tree partitions
-a multivariate space by recursively performing binary splits along the
-coordinate axes until a stopping criterion is met. The resulting binary tree
+Decision trees are used as the base classifiers in BDTs. A decision tree
+partitions a multivariate space by recursively performing binary splits along
+the coordinate axes until a stopping criterion is met. The resulting binary tree
 structure and partitioning is illustrated in \Cref{fig:decision_tree} for a
 two-dimensional example. A decision tree with $n$~leaf nodes partitions the
 multivariate space into $n$~disjoint subregions denoted by $R_i$ for
@@ -38,10 +38,10 @@ node is quantified by the Gini index
 \end{align*}
 where $p$ is the proportion/purity of positive class in a given
 node~\cite{hastie09}. Decision trees are typically grown using a \emph{greedy}
-strategy by splitting nodes such that the weighted sum of Gini impurities of the
-resulting daughter nodes is minimised, where the impurities are weighted
-according to the total weight of training examples populating a given node.
-
+strategy by performing the best possible split for every node. This split is
+determined by minimising the weighted sum of Gini impurities of the resulting
+daughter nodes, where the impurities are weighted according to the total weight
+of training examples populating a given node.
 
 
 Probabilistic classification:
