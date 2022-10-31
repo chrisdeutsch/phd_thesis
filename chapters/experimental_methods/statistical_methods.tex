@@ -21,10 +21,10 @@ referred to as \emph{channels}, defined by event selections. Each region
 consists of one or more bins given by a discriminating variable. Events from
 different signal and background processes, hereafter referred to as
 \emph{physics processes}, contribute to these regions. In this context,
-\textsc{HistFactory}~\cite{cranmer2012} is the tool used to construct
-statistical models for likelihood-based inference. The \textsc{HistFactory}
-model is introduced in the following, adopting the notation of
-Ref.~\cite{cranmer2012} with few modifications.
+\textsc{HistFactory}~\cite{cranmer2012} is the tool used in this thesis to
+construct statistical models for likelihood-based inference. The
+\textsc{HistFactory} model is introduced in the following, adopting the notation
+of Ref.~\cite{cranmer2012} with few modifications.
 
 Let $\mathcal{C}$ denote the set of channels and $\mathcal{B}_{c}$ the set of
 bins in channel~$c$. The probability of observing $n_{cb}$ events in bin~$b$ of
@@ -120,7 +120,7 @@ $\myvec{\gamma}$. The external constraints are defined by
   \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb} \mid \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
 \end{align*}
 with the terms in brackets being described in the following:
-\begin{enumerate}
+\begin{itemize}
 
 \item The term $f(a_p \mid \alpha_p)$ can be interpreted as the likelihood
   function of an auxiliary measurement of the parameter~$\alpha_p$ given that
@@ -161,7 +161,7 @@ with the terms in brackets being described in the following:
   $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed to
   observe $m_{cb} = \tau_{cb}$, and therefore the nominal values of the
   $\gamma_{cb}$ parameters is 1.
-\end{enumerate}
+\end{itemize}
 % Once all parameters of the \textsc{HistFactory} model are fixed, the
 % probability distributions of the observables~$n_{cb}$
 %
@@ -210,19 +210,22 @@ with the observations. The framework of \emph{statistical hypothesis testing}
 provides a principled approach to perform these comparisons.
 
 With the statistical model introduced previously, a null hypothesis, $H_0$, can be defined as
-\begin{align*}
-  H_0: (\mu, \myvec{\theta}) \in \Omega_0
-  \quad \text{with} \quad \Omega_0 \subset \Omega \,\text{,}
-\end{align*}
-where $\Omega_0$ is the set of model parameters specifying the null
-hypothesis,\footnote{Example: Taking the background-only hypothesis as the null
-  hypothesis, then
-  $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime
-  = 0 \}$.}  and an alternative hypothesis, $H_1$, defined as
-\begin{align*}
-  H_1: (\mu, \myvec{\theta}) \in \Omega_1
-  \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
-\end{align*}
+\begin{alignat*}{3}
+  &H_0: (\mu, \myvec{\theta}) \in \Omega_0
+    \quad &\text{with} \quad &\Omega_0 \subset \Omega \,\text{,} \\
+  \intertext{where $\Omega_0$ is the set of model parameters that specify the
+  null hypothesis, and an alternative hypothesis, $H_1$, defined as}
+  &H_1: (\mu, \myvec{\theta}) \in \Omega_1
+    \quad &\text{with} \quad &\Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
+\end{alignat*}
+% \begin{align*}
+%   H_1: (\mu, \myvec{\theta}) \in \Omega_1
+%   \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
+    %   \end{align*}
+%
+% \footnote{Example: Taking the background-only hypothesis as
+%   the null hypothesis, then $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime = 0 \}$.}
+%
 A \emph{likelihood ratio test} (LRT) can be used to compare both hypotheses. The
 test statistic of the LRT is given by
 \begin{align*}
