@@ -155,11 +155,11 @@ with the terms in brackets being described in the following:
     yields $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and
     after approximating expected values with sample averages
     $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.} which is a
-  measure of the statistical precision of the background estimate using a finite
-  sample of events. This statistical uncertainty is incorporated in the model by
-  setting up auxiliary measurements of the effective number of unweighted
-  events, $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed
-  to observe $m_{cb} = \tau_{cb}$, and therefore the nominal values of the
+  measure of the statistical precision of the background estimate in the
+  bin. This statistical uncertainty is incorporated in the model by setting up
+  auxiliary measurements of the effective number of unweighted events,
+  $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed to
+  observe $m_{cb} = \tau_{cb}$, and therefore the nominal values of the
   $\gamma_{cb}$ parameters is 1.
 \end{enumerate}
 % Once all parameters of the \textsc{HistFactory} model are fixed, the
@@ -196,49 +196,12 @@ Lastly, special datasets referred to as \emph{Asimov
 parameters, the Asimov dataset is the dataset in which the observables $n_{cb}$
 and the global observables $a_p$ and $m_{cb}$ are equal to their expected
 values. Asimov datasets can be used, in place of the observed data, to evaluate
-the expected experimental sensitivity of searches or measurements in HEP. The
-methods that will be introduced in the following section,
+the expected experimental sensitivity of searches or measurements in HEP. Some
+uses of Asimov datasets will be highlighted in the subsequent sections.
 
 
-The methods that will be introduced in the subsequent section can be applied to
-Asimov datasets to yield median d
-
-
-
-
-
-
-
-
-
-
-
-% In the
-% subsequent section, statistical inference can be performed using Asimov dataa
-
-
-% Asimov datasets yield the
-
-
-% allow the determination of the median values
-% of test statistics~\cite{Cowan:2010js},
-
-
-
-
-% In
-% the subsequent section, Asimov dataset
-
-
-% can be used to obtain the median values of test statistics~\cite{Cowan:2010js},
-% allowing to calculate median discovery significances or median upper limits on
-% the signal strength parameter.
-
-
-% median discovery significances and median upper limits on the signal strength.
-
-
-\subsection{Hypothesis Testing}
+\subsection{Hypothesis Testing}%
+\label{sec:hypotesting}
 
 In high-energy physics, one is often concerned with comparing the goodness of
 fit of competing statistical models to observed data. These comparisons allow to
@@ -328,8 +291,11 @@ as~\cite{Cowan:2010js}
 \end{align*}
 In particle physics, the conventional significance threshold that has to be
 exceeded to claim discovery of new physics is $Z_0 = 5$ ($p_0 = \num{2.87e-7}$),
-which is also referred to as the ``$5\sigma$ threshold''.
-
+which is also referred to as the ``$5\sigma$ threshold''. Lastly, the
+\emph{median discovery significance} of a signal with an assumed strength of
+$\mu$ can be estimated using the Asimov dataset with the same signal strength
+when determining $Z_0$~\cite{Cowan:2010js}. The median discovery significance is
+also referred to as the \emph{expected signal significance}.
 
 \subsubsection{Upper Limits on the Signal Strength}
 
@@ -385,9 +351,9 @@ which introduces a modified test statistic defined as
   \label{eq:cls}
 \end{align}
 The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by the power
-of the \qmutilde-based test to reject $H_0$ when the background-only hypothesis
-is true. This modification can be understood qualitatively by considering two
-edge cases:
+of the \qmutilde-based test in rejecting $H_0$ when the background-only
+hypothesis is true. This modification can be understood qualitatively by
+considering two edge cases:
 \begin{itemize}
 
 \item High signal sensitivity: the power of the test to reject $H_0$ under the
@@ -404,17 +370,18 @@ A graphical illustration of these cases is given in \Cref{fig:cls_qmutilde}.
 
   \begin{subfigure}{0.46\textwidth}
     \includegraphics[width=\textwidth]{statistics/cls_high_sensitivity}
-    \caption{High signal sensitivity}
+    \caption{Example with high signal sensitivity}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.46\textwidth}
     \includegraphics[width=\textwidth]{statistics/cls_low_sensitivity}
-    \caption{Low signal sensitivity}
+    \caption{Example with low signal sensitivity}
   \end{subfigure}
 
   \caption{Qualitative illustration of the sampling distributions of \qmutilde
-    under the signal-plus-background and background-only hypothesis. The red
-    (blue) hatched area corresponds to the integrals entering the numerator
-    (denominator) of the \CLs statistic in~\Cref{eq:cls}.}%
+    under the signal-plus-background (red) and background-only (blue)
+    hypothesis. The red (blue) hatched area corresponds to the integrals
+    entering the numerator (denominator) of the \CLs statistic
+    in~\Cref{eq:cls}.}%
   \label{fig:cls_qmutilde}
 \end{figure}
 
