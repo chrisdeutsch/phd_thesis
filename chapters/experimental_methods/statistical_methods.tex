@@ -84,11 +84,10 @@ described in the following~\cite{cranmer2012}:
   are considered to be NPs if they are not POIs.
 
 \item $\gamma_{csb}$ are parameters that introduce additional degrees of freedom
-  for every channel, process, and bin. They are used to incorporate
-  uncertainties that originate from sources that are independent between
-  channels, processes, and bins. An example of such an uncertainty is the
-  statistical uncertainty arising from the use of finite samples of events to
-  estimate $\sigma_{csb}$.
+  for every bin. They are used to incorporate uncertainties that originate from
+  sources that are independent between bins. An example of such an uncertainty
+  is the statistical uncertainty arising from the use of finite samples of
+  events to estimate $\sigma_{csb}$.
 
   In this thesis, the method by Barlow and Beeston~\cite{barlow1993} is used to
   account for statistical uncertainties on the estimation of $\sigma_{csb}$. To
@@ -133,7 +132,7 @@ with the terms in brackets being described in the following:
   $\Delta \alpha_p = \pm 1$. This particular choice of constraint term is
   closely connected to the functional form of $\sigma_{csb}(\myvec{\alpha})$ and
   $\eta_{cs}(\myvec{\alpha})$, that is for a single NP $\sigma_{csb}(0)$ and
-  $\eta_{cs}(0)$ represents the nominal histogram and normalisation, while
+  $\eta_{cs}(0)$ represent the nominal histogram and normalisation, while
   $\sigma_{csb}(\pm 1)$ and $\eta_{cs}(\pm 1)$ correspond to $\pm 1 \sigma$
   variations of the histogram shape and normalisation, respectively.
 
@@ -145,32 +144,30 @@ with the terms in brackets being described in the following:
   Barlow--Beeston method. For every bin a constant
   $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the
   summations go over all events making up the background prediction in the given
-  bin and $w_i$ corresponds to the event weight of the $i$-th event. This
-  constant is interpreted as an effective number of unweighted
-  events.\footnote{Let $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
+  bin and $w_i$ is the event weight of event~$i$. This constant is interpreted
+  as an effective number of unweighted events,\footnote{Let
+    $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
     $Y = \sum_{i = 1}^{N^\prime} 1 = N^\prime$, where $N$ and $N^\prime$ are
     independent Poisson random variables and $W$ are i.i.d.\ weights that are
     independent of $N$ and $N^\prime$. The effective number of unweighted events
     refers to the value of $\expect(N^\prime)$ that ensures that the relative
     standard deviation of $Y_{\text{w}}$ and $Y$ are equal. This condition
     yields $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and
-    after approximating the expectations with sample averages
-    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.}
-
-
-  $m_{cb} = \tau_{cb}$
-
-
-    % (i.e.\
-  % $\sqrt{\var(Y_{\text{w}})} / \expect(Y_{\text{w}}) = \sqrt{\var(Y)} /
-  % \expect(Y)$).
-
-
-
+    after approximating expected values with sample averages
+    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.} which is a
+  measure of the statistical precision of the background estimate using a finite
+  sample of events. This statistical uncertainty is incorporated in the model by
+  setting up auxiliary measurements of the effective number of unweighted
+  events, $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed
+  to observe $m_{cb} = \tau_{cb}$, and therefore the nominal values of the
+  $\gamma_{cb}$ parameters is 1.
 \end{enumerate}
-
-
-\vspace{5em}
+% Once all parameters of the \textsc{HistFactory} model are fixed, the
+% probability distributions of the observables~$n_{cb}$
+%
+% $n_{cb}$ ``observables''
+%
+% $a_p$ $m_{cb}$ ``global observables''
 
 The parameters of the model can be estimated, given the observed data, using
 maximum likelihood estimation. Hereafter, it is assumed that the model has one
@@ -194,18 +191,51 @@ Hereafter, the model with the restriction $\mu = 0$ is referred to as the
 \emph{background-only model}. The unrestricted model is referred to as the
 \emph{signal-plus-background model}.
 
-\todo[inline]{Asimov dataset.}
+Lastly, special datasets referred to as \emph{Asimov
+  datasets}~\cite{Cowan:2010js} are introduced. For a given set of model
+parameters, the Asimov dataset is the dataset in which the observables $n_{cb}$
+and the global observables $a_p$ and $m_{cb}$ are equal to their expected
+values. Asimov datasets can be used, in place of the observed data, to evaluate
+the expected experimental sensitivity of searches or measurements in HEP. The
+methods that will be introduced in the following section,
 
-Lastly,
 
-Asimov datasets -> all observables are set to their expected values.
+The methods that will be introduced in the subsequent section can be applied to
+Asimov datasets to yield median d
 
-expected experimental sensitivity prior to looking at the recorded data.
 
-referred to as a \emph{Asimov dataset}
 
-An Asimov dataset can be used in place of data to determine the expected
-experimental sensitivity.
+
+
+
+
+
+
+
+
+% In the
+% subsequent section, statistical inference can be performed using Asimov dataa
+
+
+% Asimov datasets yield the
+
+
+% allow the determination of the median values
+% of test statistics~\cite{Cowan:2010js},
+
+
+
+
+% In
+% the subsequent section, Asimov dataset
+
+
+% can be used to obtain the median values of test statistics~\cite{Cowan:2010js},
+% allowing to calculate median discovery significances or median upper limits on
+% the signal strength parameter.
+
+
+% median discovery significances and median upper limits on the signal strength.
 
 
 \subsection{Hypothesis Testing}
