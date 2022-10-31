@@ -41,10 +41,10 @@ channel~$c$, and the parameters of the model are denoted by
 ${\myvec{\alpha} = (\alpha_1, \dots, \alpha_n)}$,
 ${\myvec{\phi} = (\phi_1, \dots, \phi_m)}$, and
 $\myvec{\gamma}$~\cite{cranmer2012}.\footnote{The vector $\myvec{\gamma}$ groups
-  the $\gamma_{csb}$ parameters for all channels, processes, and bins.} Of these
-parameters, $\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance parameters (NPs)
-with external constraints, which will be introduced shortly.  The relevance of
-the four factors $\gamma_{csb}$, $\Phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$ is
+  the $\gamma_{csb}$ parameters for all bins.} Of these parameters,
+$\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance parameters (NPs) with
+external constraints, which will be introduced shortly.  The relevance of the
+four factors $\gamma_{csb}$, $\Phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$ is
 described in the following~\cite{cranmer2012}:
 \begin{itemize}
 
@@ -209,17 +209,16 @@ make statements about values of the signal strength that are still in agreement
 with the observations. The framework of \emph{statistical hypothesis testing}
 provides a principled approach to perform these comparisons.
 
-With the statistical model introduced previously, the null hypothesis, $H_0$, is
-given by
+With the statistical model introduced previously, a null hypothesis, $H_0$, can be defined as
 \begin{align*}
   H_0: (\mu, \myvec{\theta}) \in \Omega_0
   \quad \text{with} \quad \Omega_0 \subset \Omega \,\text{,}
 \end{align*}
-where $\Omega_0$ is the set of model parameters defining the null
+where $\Omega_0$ is the set of model parameters specifying the null
 hypothesis,\footnote{Example: Taking the background-only hypothesis as the null
   hypothesis, then
   $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime
-  = 0 \}$.}  and the alternative hypothesis, $H_1$, by
+  = 0 \}$.}  and an alternative hypothesis, $H_1$, defined as
 \begin{align*}
   H_1: (\mu, \myvec{\theta}) \in \Omega_1
   \quad \text{with} \quad \Omega_1 = \Omega \setminus \Omega_0 \,\text{.}
@@ -293,9 +292,9 @@ In particle physics, the conventional significance threshold that has to be
 exceeded to claim discovery of new physics is $Z_0 = 5$ ($p_0 = \num{2.87e-7}$),
 which is also referred to as the ``$5\sigma$ threshold''. Lastly, the
 \emph{median discovery significance} of a signal with an assumed strength of
-$\mu$ can be estimated using the Asimov dataset with the same signal strength
-when determining $Z_0$~\cite{Cowan:2010js}. The median discovery significance is
-also referred to as the \emph{expected signal significance}.
+$\mu$ can be estimated by using an Asimov dataset with the same signal strength
+in the determination of $Z_0$~\cite{Cowan:2010js}. The median discovery
+significance is also referred to as the \emph{expected signal significance}.
 
 \subsubsection{Upper Limits on the Signal Strength}
 
@@ -388,8 +387,8 @@ A graphical illustration of these cases is given in \Cref{fig:cls_qmutilde}.
 Upper limits on $\mu$ using the \CLs technique are estimated by finding the
 largest value of $\mu$ for which $\CLs \leq \alpha$. Since \CLs approaches unity
 in cases of low signal sensitivity, spurious exclusions of signals are
-effectively prevented. Finally, upper limits derived from the condition
-$\CLs \leq \alpha$ are referred to as upper limits at $(1 - \alpha)$~CL,
+effectively prevented. Upper limits derived from the condition
+$\CLs \leq \alpha$ are also referred to as upper limits at $(1 - \alpha)$~CL,
 however, these limits have to be interpreted as being conservative in the sense
 that the coverage probability of the estimated intervals exceeds $(1 - \alpha)$
 by construction due to $\CLs \geq p_\mu$. Conventionally, upper limits are set
