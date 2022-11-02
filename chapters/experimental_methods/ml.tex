@@ -184,23 +184,19 @@ implemented in TMVA~\cite{TMVA}:
     respectively.
 
   \item Using the training data, fit a regression tree to estimate the
-    pseudoresiduals given the predictors~$x$. The prediction of the $m$-th
-    regression tree is denoted by $b(x; \gamma_{m})$, hereafter, where
-    $\gamma_{m}$ are the parameters of the tree.
+    pseudoresiduals given the predictors~$x$. This regression tree uses, as
+    previously described, the squared error as a splitting criterion. The
+    prediction of the $m$-th regression tree is denoted by $b(x; \gamma_{m})$,
+    hereafter, where $\gamma_{m}$ are the parameters of the tree.
 
   \item The predictions of the leaf nodes of the regression tree are updated to
-    approximately minimise
+    minimise
     \begin{align*}
-      \frac{ \sum_i w_i L(y_i, F_{m - 1}(x_i) + b(x; \gamma_{m})) }{ \sum_i w_i }
+      \frac{ \sum_i w_i L(y_i, F_{m - 1}(x_i) + b(x; \gamma_{m})) }{ \sum_i w_i } \,\text{,}
     \end{align*}
-
-
-    the binary cross entropy loss
-    \begin{align*}
-      \sum_i w_i L(y_i, F_{m - 1}(x_i) + b(x; \gamma_{m})) \,\text{.}
-    \end{align*}
-    The constant predicted by the $j$-th leaf of the $m$-th tree is updated to
-    be
+    which is the estimate of the binary cross entropy loss using the training
+    data. The constant predicted by the $j$-th leaf of the $m$-th tree is
+    updated to be
     \begin{align*}
       c_{j} = \frac{ \sum_i w_i \tilde{y}_i }{ \sum_i w_i |\tilde{y}_i| (2 - |\tilde{y}_i|)} \,\text{,}
     \end{align*}
