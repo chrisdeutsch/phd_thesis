@@ -2,26 +2,33 @@
 
 \begin{itemize}
 \item What is machine learning?
+
+\item Why is it useful for HEP? (Problems are multivariate...)
+
 \item Supervised learning, i.e.\ have labelled data.
+
 \item Binary classification tasks: Every training example has a label indicating
   the class membership.
+
 \item In HEP, the positive class is typically referred to as \emph{signal} while
   the negative class is referred to as \emph{background}.
+
 \item What is training data, etc.
+
 \item What is training.
 \end{itemize}
 
 
 \subsection{Boosted Decision Trees}
 
-Boosted decision trees (BDT) are a classification algorithm consisting on an
-ensemble of \emph{decision trees} that are combined to yield a powerful
-classifier. The ensemble of decision trees is created using a algorithm referred
-to as \emph{boosting}, which iteratively constructs decision tree classifiers or
-regressors while emphasising training examples that were incorrectly classified
-in prior iterations. The following description of BDT focuses on the algorithm
-implemented in \textsc{TMVA}~\cite{TMVA}, which is used in this thesis for the
-training of BDTs.
+Boosted decision trees (BDT) are classification and regression algorithms
+composed of multiple \emph{decision trees}. The predictions of the ensemble of
+decision trees is combined to yield superior classification/regression
+performance compared to single tree. The ensemble of decision trees is created
+using an algorithm referred to as \emph{boosting}. In the following, a
+description of the BDT algorithm implemented in \textsc{TMVA}~\cite{TMVA} is
+given. This algorithm is used to train BDTs in
+
 
 \subsubsection{Classification and Regression Trees}
 
