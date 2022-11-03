@@ -22,26 +22,30 @@
 \subsection{Boosted Decision Trees}
 
 Boosted decision trees (BDT) are classification and regression algorithms
-composed of multiple \emph{decision trees}. The predictions of the ensemble of
-decision trees is combined to yield superior classification/regression
-performance compared to single tree. The ensemble of decision trees is created
-using an algorithm referred to as \emph{boosting}. In the following, a
-description of the BDT algorithm implemented in \textsc{TMVA}~\cite{TMVA} is
-given. This algorithm is used to train BDTs in
+composed of multiple \emph{decision trees}. The ensemble of decision trees is
+created using an algorithm referred to as \emph{boosting}, which iteratively
+fits shallow decision trees--or in general, any \emph{weak learning
+  algorithm}--to altered versions of the training data. The training data is
+modified at every iteration to emphasise errors made by the ensemble in previous
+iterations. Finally, the predictions of the ensemble of trees are combined,
+providing superior classification/regression performance compared to a single
+decision tree. In the following a description of the BDT algorithm implemented
+in \textsc{TMVA}~\cite{TMVA} is given, which is later used in the search for
+Higgs boson pair production.
 
 
 \subsubsection{Classification and Regression Trees}
 
 Classification and regression trees~\cite{Breiman:1984jka,hastie09}, hereafter
-collectively referred to as \emph{decision trees}, are used as base functions in
-BDTs. A decision tree partitions a multivariate space with coordinates
+collectively referred to as \emph{decision trees}, are used as weak learners in
+BDT. A decision tree partitions a multivariate space with coordinates
 $\myvec{x} = (x_1, \dots, x_n)$ by recursively performing binary splits along
 the coordinate axes until a stopping criterion is met. The resulting binary tree
 structure and partitioning is illustrated in \Cref{fig:decision_tree} for a
 two-dimensional example. A decision tree with $J$~leaf nodes partitions the
-input space into $J$~disjoint subregions denoted by $R_j$ for $j = 1, \dots,
-J$. A constant value $c_j$ is assigned to every region $R_j$ such that the
-prediction of a decision tree can be written as~\cite{hastie09}
+input space into $J$~mutually disjoint subregions denoted by $R_j$ for
+$j = 1, \dots, J$. A constant value $c_j$ is assigned to every region $R_j$ such
+that the prediction of a decision tree can be written as~\cite{hastie09}
 \begin{align*}
   f(\myvec{x}) = \sum_{j = 1}^{J} c_j \, \mathbf{1}(\myvec{x} \in R_j) \qquad \text{with} \qquad \mathbf{1}(\myvec{x} \in R_j) =
   \begin{cases}
@@ -66,9 +70,9 @@ prediction of a decision tree can be written as~\cite{hastie09}
   \end{subfigure}\hfill%
 
   \caption{Example of a decision tree in a two-dimensional space with
-    coordinates $\myvec{x} = (x_1, x_2)$. The tree has a depth of two and has
-    four leaf nodes that define the regions $R_1, \dots, R_4$. The figure is
-    adapted from Ref.~\cite{hastie09}.}%
+    coordinates $\myvec{x} = (x_1, x_2)$. The tree has a depth of two and four
+    leaf nodes that define the regions $R_1, \dots, R_4$. The figure is adapted
+    from Ref.~\cite{hastie09}.}%
   \label{fig:decision_tree}
 \end{figure}
 
@@ -101,8 +105,8 @@ the daughter nodes are given by
   c_{\text{L}} = \frac{\sum_{(y, w) \in T_{\text{L}}} w y}{\sum_{(y, w) \in T_{\text{L}}} w} \qquad \text{and} \qquad c_{\text{R}} = \frac{\sum_{(y, w) \in T_{\text{R}}} w y}{\sum_{(y, w) \in T_{\text{R}}} w} \,\text{,}
 \end{align*}
 which is the weighted mean of the regression target for the training examples
-populating the left and right node, respectively. The best possible split in a
-regression tree is chosen such that the squared error defined as
+populating the left and right node, respectively. The best possible split of a
+onode in a regression tree is chosen such that the squared error defined as
 \begin{align*}
   \sum_{(y, w) \in T_{\text{L}}} w (y - c_{\text{L}})^2 + \sum_{(y, w) \in T_{\text{R}} } w (y - c_{\text{R}})^2
 \end{align*}
@@ -229,6 +233,8 @@ implemented in TMVA~\cite{TMVA}:
     \hat{p}(x) = \frac{1}{1 + \exp(-2 F_{M}(x))} \,\text{.}
   \end{align*}
 \end{enumerate}
+
+Gradient descent in function space...
 
 
 \subsection{Neural Networks}
