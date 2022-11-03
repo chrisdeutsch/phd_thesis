@@ -22,11 +22,11 @@
 \subsection{Boosted Decision Trees}
 
 Boosted decision trees (BDT) are classification and regression algorithms
-composed of multiple \emph{decision trees}. The ensemble of decision trees is
+composed of multiple \emph{decision trees}. This ensemble of decision trees is
 created using an algorithm referred to as \emph{boosting}, which iteratively
 fits shallow decision trees--or in general, any \emph{weak learning
   algorithm}--to altered versions of the training data. The training data is
-modified at every iteration to emphasise errors made by the ensemble in previous
+modified at every iteration to emphasise errors made in previous
 iterations. Finally, the predictions of the ensemble of trees are combined,
 providing superior classification/regression performance compared to a single
 decision tree. In the following a description of the BDT algorithm implemented
@@ -38,14 +38,14 @@ Higgs boson pair production.
 
 Classification and regression trees~\cite{Breiman:1984jka,hastie09}, hereafter
 collectively referred to as \emph{decision trees}, are used as the basis for
-BDT. A decision tree partitions a multivariate space with coordinates
+BDT. A decision tree partitions an $n$-dimensional space with coordinates
 $\myvec{x} = (x_1, \dots, x_n)$ by recursively performing binary splits along
 the coordinate axes until a stopping criterion is met. The resulting binary tree
 structure and partitioning is illustrated in \Cref{fig:decision_tree} for a
 two-dimensional example. A decision tree with $J$~leaf nodes partitions the
 input space into $J$~mutually disjoint subregions denoted by $R_j$ for
 $j = 1, \dots, J$. A constant value $c_j$ is assigned to every region $R_j$ such
-that the prediction of a decision tree can be written as
+that the prediction of a decision tree for a point~$\myvec{x}$ can expressed as
 \begin{align*}
   h\bigl( \myvec{x}; \{c_j, R_j\}_{j=1}^{J} \bigr) = \sum_{j = 1}^{J} c_j \, \mathbf{1}(\myvec{x} \in R_j) \qquad \text{with} \qquad \mathbf{1}(\myvec{x} \in R_j) =
   \begin{cases}
@@ -78,8 +78,8 @@ decision tree~\cite{hastie09}.
   \label{fig:decision_tree}
 \end{figure}
 
-Classification trees are constructed such that the partitioning of the input
-space yields subregions with low impurity, that is, the regions are mostly
+Classification trees are constructed with the goal that the partitioning of the
+input space yields subregions with low impurity, that is, the regions are mostly
 populated by training examples of a single class. In this case, the impurity of
 a tree node is quantified by the Gini index
 \begin{align*}
@@ -98,7 +98,7 @@ label of the majority class in a given leaf node.
 Regression trees are constructed using a similar approach, however, with an
 altered splitting criterion and different assigment of constants to leaf
 nodes. Consider the split of a parent node into a left (L) and right (R)
-daughter node. Let $(y, w)$ denote the tuple of regression target and weight for
+daughter node. Let $(y, w)$ denote the tuple of regression target and weight of
 a given training example. Moreover, let $T_{\text{L}}$ and $T_{\text{R}}$ denote
 the set of $(y, w)$ for training examples populating the left and right daughter
 node, respectively. The constants $c_{\text{L}}$ and $c_{\text{R}}$ assigned to
@@ -117,15 +117,90 @@ is minimised.
 
 \subsubsection{Boosting of Decision Trees}
 
+The general idea of boosting is to solve a given prediction task by constructing
+an additive model of the form
+\begin{align*}
+  F_{M}(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_m) \,\text{,}
+\end{align*}
+where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_m)$ are basis
+functions with parameters~$\gamma_{m}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%gradient boosting~\cite{} in a binary classification setting.
+
+
+
+
+
+
+
+is to solve a prediction task using an additive
+model of the form
+\begin{align*}
+  F_{M} = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_m) \,\text{,}
+\end{align*}
+where
+
+
+
+
+
+
+stagewise fashion
+
+
+is a function with
+parameters.
+
+
+
+
+
+
+
+expansion with respect to some basis functions $b(\myvec{x}; )$
+
+
+
+
+
+using an additive expansion
+
+
+
+where
+
+
+
+
+A number of boosting algorithms exist such as
+\textsc{AdaBoost}~\cite{freund_shapire:adaboost,freund_shapire:adaboost2} and
+the more general framework of \emph{gradient boosting}~\cite{Friedman:2001wbq}.
+
+
+
+
 
 Boosting fits an additive expansion
 
+\begin{align*}
+  F_M(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m})
+\end{align*}
 
-
-
-
-
-Boosting is a meta-learning algorithm...
 
 % construct an additive model
 % \begin{align*}
@@ -139,6 +214,37 @@ differentiable loss function.  In this thesis, the gradient boosting
 implementation of TMVA~\cite{TMVA} is used which implements the
 \textsc{TreeBoost} algorithm by Friedman~\cite{Friedman:2001wbq}.
 
+% \begin{align*}
+%   F(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m})
+% \end{align*}
+
+additive stagewise additive
+
+Gradient boosting -> optimise arbitrary differentiable loss function
+
+As a result, versatile (can do classification, regression (mean, quantile)
+
+
+
+\textsc{TreeBoost} by Friedman~\cite{Friedman:2000,Friedman:2001wbq}
+
+
+
+
+>>>>>>>>
+
+
+
+
+
+In a binary classification setting with predictors~$\myvec{X}$ and class labels
+$Y = +1$ for the positive and $Y = -1$ for the negative class,
+
+
+
+\begin{align*}
+  L(Y, F(\myvec{X})) = \log\bigl( 1 + e^{-2 Y F(\myvec{X})} \bigr)
+\end{align*}
 
 
 
@@ -146,33 +252,15 @@ implementation of TMVA~\cite{TMVA} is used which implements the
 
 
 \begin{align*}
-  a
+  F(\myvec{x})
+  = \argmin_F \, \expect[ L(Y, F(\myvec{X})) \mid \myvec{X} = \myvec{x} ]
+  = \frac{1}{2} \log\frac{
+  \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})
+  }{
+  \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x})
+  }
 \end{align*}
 
-
-
-
-
-% \begin{align*}
-%   F(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m})
-% \end{align*}
-
-
-
-
-
-
-additive stagewise additive
-
-
-
-Gradient boosting -> optimise arbitrary differentiable loss function
-
-
-\textsc{TreeBoost} by Friedman~\cite{Friedman:2000,Friedman:2001wbq}
-
-
-Gradient boosting ->
 
 
 
@@ -200,13 +288,13 @@ boosting is described in the following. The description is based on algorithm
 proposed by Friedman~\cite{Friedman:2001wbq} with few modifications as
 implemented in TMVA~\cite{TMVA}:
 \begin{enumerate}
-  \setlength{\itemsep}{0pt}
+  \setlength{\itemsep}{5pt}
 
 \item Initialise $F_0(\myvec{x}) = 0$
 
 \item For $m = 1$ to $M$:
   \begin{enumerate}
-    \setlength{\itemsep}{0pt}
+    \setlength{\itemsep}{5pt}
 
   \item Calculate the pseudoresiduals
     \begin{align*}
@@ -225,35 +313,33 @@ implemented in TMVA~\cite{TMVA}:
     is the number of leaf nodes, $c_{jm}$ is the prediction of the $j$-th leaf
     node, and $R_{jm}$ is the region defined by the $j$-th leaf node.
 
-  \item The predictions of the leaf nodes of the regression tree are updated to
-    minimise
+  \item The predictions of the leaf nodes of the regression tree,
+    $\{c_{jm}\}_{j=1}^{J_{m}}$, are updated to minimise
     \begin{align*}
-      \frac{
       \sum_i w_i \, L\bigl( y_i, F_{m - 1}(\myvec{x}_i)
-      + b\bigl(\myvec{x}_i; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}}\bigr) \bigr)
-      }{
-      \sum_i w_i
-      } \,\text{,}
+      + h\bigl( \myvec{x}_i; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr) \bigr)
+      \,\text{,}
     \end{align*}
-    which is the estimate of the binary cross entropy loss using the training
-    data. The constant predicted by the $j$-th leaf of the $m$-th tree is
-    updated to be
+    which is equivalent to minimising the average loss as estimated using the
+    finite sample of training data. This optimisation problem has no analytical
+    minimiser. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen to
+    approximately minimise the above criterion by performing a single step of
+    Newton's method. This yields updated leaf node constants
     \begin{align*}
       c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (2 - |r_i|)} \,\text{,}
     \end{align*}
-    where the sum goes over all training examples populating the $j$-th leaf.
-
-    The partitioning of the input space by the regression tree remains unchanged
-    by this update.
-
-    This step is specific to the \textsc{TreeBoost} algorithm by Friedman.
+    where the sum goes over all training examples populating the $j$-th leaf of
+    the tree. This step is specific to the \textsc{TreeBoost} algorithm proposed
+    by Friedman.
 
   \item Perform a gradient descent step by setting
     \begin{align*}
       F_m(x) = F_{m - 1}(x) + \nu \, h(\myvec{x}; \{c_{jm}^\prime, R_{jm}\}_{j=1}^{J_{m}}) \,\text{,}
     \end{align*}
     where $0 < \nu \leq 1$ is a hyperparameter of the algorithm referred to as
-    the \emph{shrinkage} or \emph{learning rate}.
+    the \emph{shrinkage} or \emph{learning rate}.  \todo[inline]{The shrinkage
+      serves as a method of regularisation. I.e.\ by not taking he close to
+      optimal step.}
 
   \end{enumerate}
 
