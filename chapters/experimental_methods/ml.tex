@@ -27,11 +27,11 @@ created using an algorithm referred to as \emph{boosting}, which iteratively
 fits shallow decision trees--or in general, any \emph{weak learning
   algorithm}--to altered versions of the training data. The training data is
 modified at every iteration to emphasise errors made in previous
-iterations. Finally, the predictions of the ensemble of trees are combined,
-providing superior classification/regression performance compared to a single
-decision tree. In the following a description of the BDT algorithm implemented
-in \textsc{TMVA}~\cite{TMVA} is given, which is later used in the search for
-Higgs boson pair production.
+iterations. Finally, the predictions of the ensemble of trees are combined with
+the goal of providing superior classification/regression performance compared to
+a single decision tree. In the following a description of the BDT algorithm
+implemented in \textsc{TMVA}~\cite{TMVA} is given, which is later used in the
+search for Higgs boson pair production.
 
 
 \subsubsection{Classification and Regression Trees}
@@ -117,96 +117,38 @@ is minimised.
 
 \subsubsection{Boosting of Decision Trees}
 
-The general idea of boosting is to solve a given prediction task by constructing
-an additive model of the form
+Boosting is an approach of solving a prediction problem by constructing an
+additive model of the form
 \begin{align*}
-  F_{M}(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_m) \,\text{,}
+  F_{M}(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
 \end{align*}
-where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_m)$ are basis
-functions with parameters~$\gamma_{m}$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%gradient boosting~\cite{} in a binary classification setting.
-
-
-
-
-
-
-
-is to solve a prediction task using an additive
-model of the form
+where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_{m})$ are basis
+functions parameterised
+by~$\gamma_{m}$~\cite{Friedman:2000,Friedman:2001wbq}. Often, the basis
+functions are taken to be classification or regression trees. Boosting fits
+additive models in a \emph{forward stagewise fashion}, which refers to an
+iterative approach in which the $m$-th stage of the model
 \begin{align*}
-  F_{M} = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_m) \,\text{,}
+  F_{m}(\myvec{x}) = F_{m - 1}(\myvec{x}) + \beta_m b(\myvec{x}; \gamma_{m})
 \end{align*}
-where
-
-
-
-
-
-
-stagewise fashion
-
-
-is a function with
-parameters.
-
-
-
-
-
-
-
-expansion with respect to some basis functions $b(\myvec{x}; )$
-
-
-
-
-
-using an additive expansion
-
-
-
-where
-
-
-
-
-A number of boosting algorithms exist such as
+is determined by optimising some objective function with respect to $\beta_{m}$
+and $\gamma_{m}$~\cite{hastie09}. Notably, the parameters
+$\{\beta_n, \gamma_n\}_{n = 1}^{m-1}$ remain unchanged during the $m$-th
+boosting stage. A number of boosting algorithms exist, among the most prevalent
+ones being
 \textsc{AdaBoost}~\cite{freund_shapire:adaboost,freund_shapire:adaboost2} and
-the more general framework of \emph{gradient boosting}~\cite{Friedman:2001wbq}.
+\emph{gradient boosting}~\cite{Friedman:2001wbq}.
 
 
 
 
 
-Boosting fits an additive expansion
-
-\begin{align*}
-  F_M(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m})
-\end{align*}
 
 
-% construct an additive model
-% \begin{align*}
-%   F(x) = \sum_{m = 1}^{M} \beta_m b(x; \gamma_m) \,\text{,}
-% \end{align*}
-% where $b(x; \gamma_m)$
+
+
+
+
 
 \textsc{AdaBoost}~\cite{freund_shapire:adaboost,freund_shapire:adaboost2} and
 more general gradient boosting techniques that allow to minimise an arbitrary
@@ -214,19 +156,12 @@ differentiable loss function.  In this thesis, the gradient boosting
 implementation of TMVA~\cite{TMVA} is used which implements the
 \textsc{TreeBoost} algorithm by Friedman~\cite{Friedman:2001wbq}.
 
-% \begin{align*}
-%   F(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m})
-% \end{align*}
 
 additive stagewise additive
 
 Gradient boosting -> optimise arbitrary differentiable loss function
 
 As a result, versatile (can do classification, regression (mean, quantile)
-
-
-
-\textsc{TreeBoost} by Friedman~\cite{Friedman:2000,Friedman:2001wbq}
 
 
 
@@ -278,7 +213,7 @@ Gradient boosting with decision trees can be used to find an approximation to
 $F^*$ using finite samples of training data.
 
 In the following, the \textsc{TreeBoost} algorithm~\cite{Friedman:2001wbq} for
-binary classification is outlined, which is the algorithm employed by
+binary classification is outlined. This algorithm is employed by
 \textsc{TMVA}~\cite{TMVA} for gradient boosting with decision trees. The
 description is based on Ref.~\cite{Friedman:2001wbq} with few modifications, the
 most significant one being the incorporation of sample weights for the training
@@ -318,17 +253,18 @@ examples.
       \right)\mathclose{}
       \,\text{,}
     \end{align*}
-    where $w_i$ is the weight of training example $i$. This is equivalent to
-    minimising the weighted average of the loss, estimated using the sample of
-    training data, for the current boosting iteration. This optimisation problem
-    has no analytical minimiser. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are
-    chosen to approximately minimise the above criterion by performing a single
-    step of Newton's method. For the loss function in \Cref{eq:loss_gradboost}
-    this yields updated leaf node constants
+    where $w_i$ is the weight of training example $i$ and the sum goes over all
+    training examples. This is equivalent to minimising the weighted mean of the
+    loss for the current boosting iteration. This optimisation problem has no
+    analytical minimiser. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen to
+    approximately minimise the above criterion by performing a single step of
+    Newton's method.\footnote{The starting point for Newton's method is taken to
+      be $c_{jm} = 0$ for all leaf nodes.} For the loss function in
+    \Cref{eq:loss_gradboost}, this yields updated leaf node constants
     \begin{align*}
       c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (1 - |r_i|)} \,\text{,}
     \end{align*}
-    where the sum goes over all training examples populating the $j$-th leaf of
+    where the sum goes over the training examples populating the $j$-th leaf of
     the tree. This step is specific to the \textsc{TreeBoost} algorithm proposed
     by Friedman.
 
@@ -344,9 +280,9 @@ examples.
   estimate the probability $\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})$
   according to
   \begin{align*}
-    \hat{p}(x) = \frac{1}{1 + \exp(-F_{M}(x))} \,\text{,}
+    \hat{p}(\myvec{x}) = \frac{1}{1 + \exp(-F_{M}(\myvec{x}))} \,\text{,}
   \end{align*}
-  which follows from \Cref{eq:gradboost_logodds}. In HEP, this probability is
+  which follows from \Cref{eq:gradboost_logodds}. In HEP, this quantity is
   commonly referred to as the \emph{BDT score}.
 
 \end{enumerate}
