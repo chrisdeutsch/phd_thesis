@@ -230,103 +230,103 @@ As a result, versatile (can do classification, regression (mean, quantile)
 
 
 
-
->>>>>>>>
-
-
-
-
-
-In a binary classification setting with predictors~$\myvec{X}$ and class labels
-$Y = +1$ for the positive and $Y = -1$ for the negative class,
-
-
-
-\begin{align*}
-  L(Y, F(\myvec{X})) = \log\bigl( 1 + e^{-2 Y F(\myvec{X})} \bigr)
-\end{align*}
-
-
-
-
-
-
-\begin{align*}
-  F(\myvec{x})
-  = \argmin_F \, \expect[ L(Y, F(\myvec{X})) \mid \myvec{X} = \myvec{x} ]
-  = \frac{1}{2} \log\frac{
+Consider a binary classification problem with predictors $\myvec{X}$ and class
+labels $Y$, which are taken to be $Y = +1$ for the positive and $Y = -1$ for the
+negative class. Both $\myvec{X}$ and $Y$ are considered to be random
+variables. Further, let
+\begin{align}
+  L(Y, F(\myvec{X})) = \log\mathopen{}\left(
+  1 + e^{-Y F(\myvec{X})}
+  \right)\mathclose{}
+  \label{eq:loss_gradboost}
+\end{align}
+be a loss function and $F$~a function of the predictors. The function $F^*$ that
+minimises the expected loss is given by
+\begin{align}
+  F^*(\myvec{x})
+  = \argmin_F \, \expect[ L(Y, F) \mid \myvec{X} = \myvec{x} ]
+  = \log\mathopen{}\left(
+  \frac{
   \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})
   }{
   \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x})
   }
-\end{align*}
+  \right)\mathclose{} \,\text{,}
+  \label{eq:gradboost_logodds}
+\end{align}
+which are the log-odds of an observation with predictors~$\myvec{x}$ belonging
+to the positive class, thus motivating the choice of loss function in
+\Cref{eq:loss_gradboost} for classification.
+% \footnote{Noting that
+%   \begin{align*}
+%     \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp(-F^*(\myvec{x}))} \qquad \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp(+F^*(\myvec{x}))} \,\text{,}
+%   \end{align*}
+%   the loss function of \Cref{eq:loss_gradboost} follows from the binary
+%   cross-entropy (BCE)
+%   \begin{align*}
+%     L_{\text{BCE}} =
+%     \begin{cases}
+%       - \log\mathbb{P}(Y = +1 \mid \myvec{X}), & Y = +1 \\
+%       - \log\mathbb{P}(Y = -1 \mid \myvec{X}), & Y = -1
+%     \end{cases}
+%     \,\text{,}
+%   \end{align*}
+%   further motivating the use of this particular loss function and making a
+%   connection to the classification approach using neural networks that will be
+%   discussed in~\Cref{sec:neural_networks}.}
+Gradient boosting with decision trees can be used to find an approximation to
+$F^*$ using finite samples of training data.
 
-
-
-
-
-Use an additive stagewise model to approximate
-\begin{align*}
-  F(\myvec{X}) = \frac{1}{2} \log\left[ \frac{p(\myvec{X})}{1 - p(\myvec{X})} \right] \qquad \text{with} \qquad p(\myvec{X}) = \mathbb{P}(Y = +1 \mid \myvec{X})
-\end{align*}
-which is half the log-odds of the positive class.
-
-
-Binary cross entropy
-\begin{align*}
-  L(Y, F(\myvec{X})) &=
-  \begin{cases}
-    - \log( p(\myvec{X}) ), & Y = +1 \\
-    - \log( 1 - p(\myvec{X}) ), & Y = -1
-  \end{cases} \\[0.3em]
-                     &= \log\bigl( 1 + e^{-2 Y F(\myvec{X})} \bigr)
-\end{align*}
-
-
-The \textsc{TreeBoost} algorithm for binary classification and $M$ iterations of
-boosting is described in the following. The description is based on algorithm
-proposed by Friedman~\cite{Friedman:2001wbq} with few modifications as
-implemented in TMVA~\cite{TMVA}:
+In the following, the \textsc{TreeBoost} algorithm~\cite{Friedman:2001wbq} for
+binary classification is outlined, which is the algorithm employed by
+\textsc{TMVA}~\cite{TMVA} for gradient boosting with decision trees. The
+description is based on Ref.~\cite{Friedman:2001wbq} with few modifications, the
+most significant one being the incorporation of sample weights for the training
+examples.
 \begin{enumerate}
-  \setlength{\itemsep}{5pt}
+  \setlength{\itemsep}{4pt}
 
 \item Initialise $F_0(\myvec{x}) = 0$
 
-\item For $m = 1$ to $M$:
+\item For $m = 1$ to $M$ (boosting iterations):
   \begin{enumerate}
-    \setlength{\itemsep}{5pt}
+    \setlength{\itemsep}{4pt}
 
   \item Calculate the pseudoresiduals
     \begin{align*}
       r_i
       = - \left. \frac{\partial L(y_i, F(\myvec{x}_i))}{\partial F(\myvec{x}_i)}\right|_{F(\myvec{x}_i) = F_{m - 1}(\myvec{x}_i)}
-      \overset{\text{BCE}}{=} \frac{2 y_i}{1 + \exp(2 y_i F_{m-1}(\myvec{x}_i))}
+      \overset{\text{Eq.\ (\ref{eq:loss_gradboost})}}{=} \frac{y_i}{1 + \exp(y_i F_{m-1}(\myvec{x}_i))}
     \end{align*}
-    for all training examples, where $\myvec{x}_i$ are the predictors and
-    $y_i \in \{ -1, +1 \}$ the class label of the $i$-th training example,
-    respectively.
+    for all training examples, where $\myvec{x}_i$ are the predictors and $y_i$
+    the class label of the $i$-th training example, respectively.
 
   \item Using the training data, fit a regression tree to estimate the
     pseudoresiduals given the predictors~$\myvec{x}$. The prediction of the
     $m$-th regression tree is denoted by
     $h\bigl( \myvec{x}; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr)$, where $J_{m}$
-    is the number of leaf nodes, $c_{jm}$ is the prediction of the $j$-th leaf
-    node, and $R_{jm}$ is the region defined by the $j$-th leaf node.
+    is the number of leaf nodes, $c_{jm}$ is the constant predicted by the
+    $j$-th leaf node, and $R_{jm}$ is the region defined by the $j$-th leaf
+    node.
 
-  \item The predictions of the leaf nodes of the regression tree,
+  \item The leaf node constants of the regression tree,
     $\{c_{jm}\}_{j=1}^{J_{m}}$, are updated to minimise
     \begin{align*}
-      \sum_i w_i \, L\bigl( y_i, F_{m - 1}(\myvec{x}_i)
-      + h\bigl( \myvec{x}_i; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr) \bigr)
+      \sum_i w_i \cdot
+      L\mathopen{}\left( y_i, F_{m - 1}(\myvec{x}_i)
+      + h\bigl( \myvec{x}_i; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr)
+      \right)\mathclose{}
       \,\text{,}
     \end{align*}
-    which is equivalent to minimising the average loss as estimated using the
-    finite sample of training data. This optimisation problem has no analytical
-    minimiser. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen to
-    approximately minimise the above criterion by performing a single step of
-    Newton's method. This yields updated leaf node constants
+    where $w_i$ is the weight of training example $i$. This is equivalent to
+    minimising the weighted average of the loss, estimated using the sample of
+    training data, for the current boosting iteration. This optimisation problem
+    has no analytical minimiser. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are
+    chosen to approximately minimise the above criterion by performing a single
+    step of Newton's method. For the loss function in \Cref{eq:loss_gradboost}
+    this yields updated leaf node constants
     \begin{align*}
-      c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (2 - |r_i|)} \,\text{,}
+      c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (1 - |r_i|)} \,\text{,}
     \end{align*}
     where the sum goes over all training examples populating the $j$-th leaf of
     the tree. This step is specific to the \textsc{TreeBoost} algorithm proposed
@@ -334,26 +334,28 @@ implemented in TMVA~\cite{TMVA}:
 
   \item Perform a gradient descent step by setting
     \begin{align*}
-      F_m(x) = F_{m - 1}(x) + \nu \, h(\myvec{x}; \{c_{jm}^\prime, R_{jm}\}_{j=1}^{J_{m}}) \,\text{,}
+      F_m(x) = F_{m - 1}(x) + \nu \cdot h\bigl( \myvec{x}; \{c_{jm}^\prime, R_{jm}\}_{j=1}^{J_{m}} \bigr) \,\text{,}
     \end{align*}
     where $0 < \nu \leq 1$ is a hyperparameter of the algorithm referred to as
-    the \emph{shrinkage} or \emph{learning rate}.  \todo[inline]{The shrinkage
-      serves as a method of regularisation. I.e.\ by not taking he close to
-      optimal step.}
-
+    the \emph{shrinkage} or \emph{learning rate}.
   \end{enumerate}
 
-\item The final prediction of the boosting procedure, $F_{M}(x)$, is used to
-  estimate the probability $p(x) = \mathbb{P}(Y = +1 \mid x)$ according to
+\item The final prediction of the boosting procedure, $F_{M}(x)$, can be used to
+  estimate the probability $\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})$
+  according to
   \begin{align*}
-    \hat{p}(x) = \frac{1}{1 + \exp(-2 F_{M}(x))} \,\text{.}
+    \hat{p}(x) = \frac{1}{1 + \exp(-F_{M}(x))} \,\text{,}
   \end{align*}
+  which follows from \Cref{eq:gradboost_logodds}. In HEP, this probability is
+  commonly referred to as the \emph{BDT score}.
+
 \end{enumerate}
 
 Gradient descent in function space...
 
 
-\subsection{Neural Networks}
+\subsection{Neural Networks}%
+\label{sec:neural_networks}
 
 \subsubsection{Recurrent Neural Networks}%
 \label{sec:rnn}
