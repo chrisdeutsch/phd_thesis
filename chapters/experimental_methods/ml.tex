@@ -71,7 +71,7 @@ decision tree~\cite{hastie09}.
     \caption{Partitioning resulting from the binary tree in (a).}
   \end{subfigure}\hfill%
 
-  \caption{Example of a decision tree in a two-dimensional space with
+  \caption{Example of a decision tree operating on a two-dimensional space with
     coordinates $\myvec{x} = (x_1, x_2)$. The tree has a depth of two and four
     leaf nodes that define the regions $R_1, \dots, R_4$. The figure is adapted
     from Ref.~\cite{hastie09}.}%
@@ -120,49 +120,28 @@ is minimised.
 Boosting is an approach of solving a prediction problem by constructing an
 additive model of the form
 \begin{align*}
-  F_{M}(\myvec{x}) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
+  F_{M}\bigl(\myvec{x}; \{ \beta_m, \gamma_{m} \}_{m=1}^{M} \bigr) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
 \end{align*}
 where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_{m})$ are basis
 functions parameterised
-by~$\gamma_{m}$~\cite{Friedman:2000,Friedman:2001wbq}. Often, the basis
-functions are taken to be classification or regression trees. Boosting fits
-additive models in a \emph{forward stagewise fashion}, which refers to an
-iterative approach in which the $m$-th stage of the model
+by~$\gamma_{m}$~\cite{Friedman:2000,Friedman:2001wbq}. While there is some
+flexibility in choosing the family of basis functions, boosting is frequently
+performed using classification or regression trees, which will be the subject of
+the remainder of this section. Given a sample of training data, boosting fits an
+additive model in a \emph{forward stagewise fashion}, which refers to an
+iterative procedure in which the $m$-th stage of the model given by
 \begin{align*}
-  F_{m}(\myvec{x}) = F_{m - 1}(\myvec{x}) + \beta_m b(\myvec{x}; \gamma_{m})
+  F_{m}\bigl(\myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m} \bigr) = F_{m - 1}\bigl( \myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1} \bigr) + \beta_m b(\myvec{x}; \gamma_{m})
 \end{align*}
-is determined by optimising some objective function with respect to $\beta_{m}$
-and $\gamma_{m}$~\cite{hastie09}. Notably, the parameters
-$\{\beta_n, \gamma_n\}_{n = 1}^{m-1}$ remain unchanged during the $m$-th
-boosting stage. A number of boosting algorithms exist, among the most prevalent
-ones being
+is determined by optimising an objective function with respect to $\beta_{m}$
+and $\gamma_{m}$ while leaving the other parameters unchanged~\cite{hastie09}. A
+number of boosting algorithms exist, among the most prevalent ones being
 \textsc{AdaBoost}~\cite{freund_shapire:adaboost,freund_shapire:adaboost2} and
-\emph{gradient boosting}~\cite{Friedman:2001wbq}.
-
-
-
-
-
-
-
-
-
-
-
-
-\textsc{AdaBoost}~\cite{freund_shapire:adaboost,freund_shapire:adaboost2} and
-more general gradient boosting techniques that allow to minimise an arbitrary
-differentiable loss function.  In this thesis, the gradient boosting
-implementation of TMVA~\cite{TMVA} is used which implements the
-\textsc{TreeBoost} algorithm by Friedman~\cite{Friedman:2001wbq}.
-
-
-additive stagewise additive
-
-Gradient boosting -> optimise arbitrary differentiable loss function
-
-As a result, versatile (can do classification, regression (mean, quantile)
-
+\emph{gradient boosting}~\cite{Friedman:2001wbq}. Gradient boosting provides a
+framework for constructing additive models that minimise an arbitrary
+differentiable loss function. As a result, gradient boosting is highly
+versatile, allowing to solve numerous prediction problems that can be expressed
+as the minimisation of a loss function.
 
 
 Consider a binary classification problem with predictors $\myvec{X}$ and class
