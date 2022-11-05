@@ -16,6 +16,8 @@
 \item What is training data, etc.
 
 \item What is training.
+
+\item Overfitting?
 \end{itemize}
 
 
@@ -192,28 +194,40 @@ Gradient boosting with decision trees can be used to find an approximation to
 $F^*$ using finite samples of training data.
 
 In the following, the \textsc{TreeBoost} algorithm~\cite{Friedman:2001wbq} for
-binary classification is outlined. This algorithm is employed by
+binary classification is outlined. A version of this algorithm is employed by
 \textsc{TMVA}~\cite{TMVA} for gradient boosting with decision trees. The
 description is based on Ref.~\cite{Friedman:2001wbq} with few modifications, the
 most significant one being the incorporation of sample weights for the training
 examples.
-\begin{enumerate}
-  \setlength{\itemsep}{4pt}
+
+\vspace{11pt}
+\noindent\textbf{\textsc{TreeBoost} algorithm for binary classification} \\[11pt]
+Inputs:
+\begin{itemize}[itemsep=2pt,topsep=4pt,botsep=0pt]
+\item Training data $\{(\myvec{x}_i, y_i, w_i)\}_{i = 1}^{N}$ with
+  predictors~$\myvec{x}_i$, class labels $y_i$, and weights~$w_i$.
+\item Number of boosting iterations $M$.
+\item Shrinkage parameter~$\nu$ ($0 < \nu \leq 1$).
+\item Hyperparameters of the regression tree algorithm
+\end{itemize}
+\begin{enumerate}[itemsep=4pt,topsep=11pt]
 
 \item Initialise $F_0(\myvec{x}) = 0$
 
-\item For $m = 1$ to $M$ (boosting iterations):
-  \begin{enumerate}
-    \setlength{\itemsep}{4pt}
+\item For $m = 1$ to $M$:
+  \begin{enumerate}[itemsep=4pt]
 
   \item Calculate the pseudoresiduals
     \begin{align*}
       r_i
-      = - \left. \frac{\partial L(y_i, F(\myvec{x}_i))}{\partial F(\myvec{x}_i)}\right|_{F(\myvec{x}_i) = F_{m - 1}(\myvec{x}_i)}
-      \overset{\text{Eq.\ (\ref{eq:loss_gradboost})}}{=} \frac{y_i}{1 + \exp(y_i F_{m-1}(\myvec{x}_i))}
+      = - \left. \frac{\partial L(y_i, F(\myvec{x}_i))}
+      {\partial F(\myvec{x}_i)}\right|_{F(\myvec{x}_i) = F_{m - 1}(\myvec{x}_i)}
+      \overset{\text{Eq.\ (\ref{eq:loss_gradboost})}}{=}
+      \frac{y_i}{1 + \exp(y_i F_{m-1}(\myvec{x}_i))}
     \end{align*}
-    for all training examples, where $\myvec{x}_i$ are the predictors and $y_i$
-    the class label of the $i$-th training example, respectively.
+    for all training examples.
+    % , where $\myvec{x}_i$ are the predictors and $y_i$ the class label of the
+    % $i$-th training example, respectively.
 
   \item Using the training data, fit a regression tree to estimate the
     pseudoresiduals given the predictors~$\myvec{x}$. The prediction of the
@@ -232,27 +246,30 @@ examples.
       \right)\mathclose{}
       \,\text{,}
     \end{align*}
-    where $w_i$ is the weight of training example $i$ and the sum goes over all
-    training examples. This is equivalent to minimising the weighted mean of the
-    loss for the current boosting iteration. This optimisation problem has no
-    analytical minimiser. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen to
-    approximately minimise the above criterion by performing a single step of
+    where the sum goes over all training data. This is equivalent to minimising
+    the weighted mean of the loss for the current boosting iteration. This
+    optimisation problem has no analytical minimiser for
+    \Cref{eq:loss_gradboost}. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen
+    to approximately minimise the above criterion by performing a single step of
     Newton's method.\footnote{The starting point for Newton's method is taken to
       be $c_{jm} = 0$ for all leaf nodes.} For the loss function in
     \Cref{eq:loss_gradboost}, this yields updated leaf node constants
     \begin{align*}
       c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (1 - |r_i|)} \,\text{,}
     \end{align*}
-    where the sum goes over the training examples populating the $j$-th leaf of
-    the tree. This step is specific to the \textsc{TreeBoost} algorithm proposed
-    by Friedman.
+    where the sum goes over the training data populating the $j$-th leaf of the
+    tree. This step is specific to the \textsc{TreeBoost} algorithm proposed by
+    Friedman.
 
   \item Perform a gradient descent step by setting
     \begin{align*}
       F_m(x) = F_{m - 1}(x) + \nu \cdot h\bigl( \myvec{x}; \{c_{jm}^\prime, R_{jm}\}_{j=1}^{J_{m}} \bigr) \,\text{,}
     \end{align*}
     where $0 < \nu \leq 1$ is a hyperparameter of the algorithm referred to as
-    the \emph{shrinkage} or \emph{learning rate}.
+    the \emph{shrinkage} or \emph{learning rate}. Values of the shrinkage
+    parameter below unity lead to suboptimal updates as a form of regularisation
+    to prevent overfitting.
+
   \end{enumerate}
 
 \item The final prediction of the boosting procedure, $F_{M}(x)$, can be used to
