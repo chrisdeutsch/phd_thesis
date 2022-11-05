@@ -127,39 +127,34 @@ additive model of the form
 where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_{m})$ are basis
 functions parameterised
 by~$\gamma_{m}$~\cite{Friedman:2000,Friedman:2001wbq}. While there is some
-flexibility in choosing the family of basis functions, boosting is frequently
-performed using classification or regression trees, which will be the subject of
-the remainder of this section. Given a sample of training data, boosting fits an
-additive model in a \emph{forward stagewise fashion}, which refers to an
-iterative procedure in which the $m$-th stage of the model given by
+flexibility in choosing the family of basis functions, boosting is commonly
+performed using decision trees. Given a sample of training data, the additive
+model is fit using an iterative procedure in which the $m$-th stage of the
+model, which is given by
 \begin{align*}
-  F_{m}\bigl(\myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m} \bigr) = F_{m - 1}\bigl( \myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1} \bigr) + \beta_m b(\myvec{x}; \gamma_{m})
+  F_{m}\bigl(\myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m} \bigr) = F_{m - 1}\bigl( \myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1} \bigr) + \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
 \end{align*}
 is determined by optimising an objective function with respect to $\beta_{m}$
-and $\gamma_{m}$ while leaving the other parameters unchanged~\cite{hastie09}. A
-number of boosting algorithms exist, among the most prevalent ones being
-\textsc{AdaBoost}~\cite{freund_shapire:adaboost,freund_shapire:adaboost2} and
-\emph{gradient boosting}~\cite{Friedman:2001wbq}. Gradient boosting provides a
-framework for constructing additive models that minimise an arbitrary
-differentiable loss function. As a result, gradient boosting is highly
-versatile, allowing to solve numerous prediction problems that can be expressed
-as the minimisation of a loss function.
+and $\gamma_{m}$ while leaving all other parameters fixed~\cite{hastie09}. The
+following is concerned with a boosting algorithm referred to as \emph{gradient
+  boosting}~\cite{Friedman:2001wbq}, which provides a general framework for
+constructing additive models that minimise an arbitrary differentiable loss
+function. As a result, gradient boosting is a useful tool to solve numerous
+prediction tasks.
 
-
-Consider a binary classification problem with predictors $\myvec{X}$ and class
-labels $Y$, which are taken to be $Y = +1$ for the positive and $Y = -1$ for the
-negative class. Both $\myvec{X}$ and $Y$ are considered to be random
-variables. Further, let
+Consider a binary classification problem with predictors~$\myvec{X}$ and class
+labels~$Y$, which are taken to be $Y = +1$ for the positive and $Y = -1$ for the
+negative class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
 \begin{align}
   L(Y, F(\myvec{X})) = \log\mathopen{}\left(
   1 + e^{-Y F(\myvec{X})}
   \right)\mathclose{}
   \label{eq:loss_gradboost}
 \end{align}
-be a loss function and $F$~a function of the predictors. The function $F^*$ that
-minimises the expected loss is given by
+be a loss function and $F$~a function of the predictors. The function $F^{*\!}$
+that minimises the expected loss is given by
 \begin{align}
-  F^*(\myvec{x})
+  F^{*\!}(\myvec{x})
   = \argmin_F \, \expect[ L(Y, F) \mid \myvec{X} = \myvec{x} ]
   = \log\mathopen{}\left(
   \frac{
@@ -171,8 +166,17 @@ minimises the expected loss is given by
   \label{eq:gradboost_logodds}
 \end{align}
 which are the log-odds of an observation with predictors~$\myvec{x}$ belonging
-to the positive class, thus motivating the choice of loss function in
-\Cref{eq:loss_gradboost} for classification.
+to the positive class. Knowledge of $F^{*\!}(\myvec{x})$ would solve the
+classification task since
+\begin{align*}
+  &\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp\bigl( -F^{*\!}(\myvec{x}) \bigr)}
+  &&\mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp\bigl( +F^{*\!}(\myvec{x}) \bigr)} \,\text{.}
+\end{align*}
+
+>>> TBC
+
+thus motivating the choice of loss function in \Cref{eq:loss_gradboost} for
+classification.
 % \footnote{Noting that
 %   \begin{align*}
 %     \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp(-F^*(\myvec{x}))} \qquad \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp(+F^*(\myvec{x}))} \,\text{,}
@@ -191,7 +195,7 @@ to the positive class, thus motivating the choice of loss function in
 %   connection to the classification approach using neural networks that will be
 %   discussed in~\Cref{sec:neural_networks}.}
 Gradient boosting with decision trees can be used to find an approximation to
-$F^*$ using finite samples of training data.
+$F^*$ using a finite sample of training data.
 
 In the following, the \textsc{TreeBoost} algorithm~\cite{Friedman:2001wbq} for
 binary classification is outlined. A version of this algorithm is employed by
