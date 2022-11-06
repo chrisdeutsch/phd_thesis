@@ -154,7 +154,7 @@ negative class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
 \end{align}
 be a loss function and $F$~a function of the predictors. The function that
 minimises the expected loss is given by
-\begin{align}
+\begin{align*}
   F^{*\!}(\myvec{x})
   = \argmin_F \, \expect[ L(Y, F) \mid \myvec{X} = \myvec{x} ]
   = \log\mathopen{}\left(
@@ -164,16 +164,17 @@ minimises the expected loss is given by
   \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x})
   }
   \right)\mathclose{} \,\text{,}
-  \label{eq:gradboost_logodds}
-\end{align}
+  %\label{eq:gradboost_logodds}
+\end{align*}
 which are the log-odds of an observation with predictors~$\myvec{x}$ belonging
 to the positive class~\cite{Friedman:2000}. Knowledge of $F^{*\!}(\myvec{x})$
 would solve the classification task since
-\begin{align*}
+\begin{align}
   \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{-F^{*\!}(\myvec{x})}}
   \qquad \text{and} \qquad
   \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{+F^{*\!}(\myvec{x})}} \,\text{,}
-\end{align*}
+  \label{eq:gradboost_probas}
+\end{align}
 thus motivating the choice of loss function in \Cref{eq:loss_gradboost} for
 binary classification.
 
@@ -191,8 +192,8 @@ by Friedman~\cite{Friedman:2001wbq} that uses gradient boosted decision trees
 and the loss function in \Cref{eq:loss_gradboost} to fit a binary classifier to
 a sample of training data. A version of this algorithm is employed in
 \textsc{TMVA}~\cite{TMVA}, which provides the BDT implementation used in this
-thesis. The description is based on Ref.~\cite{Friedman:2001wbq} with few
-modifications, such as allowing training examples to be weighted.
+thesis. The description is based on Ref.~\cite{Friedman:2001wbq} with some
+modifications (e.g.\ allowing training data to be weighted).
 
 \vspace{11pt}
 \noindent\textbf{\textsc{TreeBoost} algorithm for binary classification} \\[11pt]
@@ -243,42 +244,49 @@ modifications, such as allowing training examples to be weighted.
       \right)\mathclose{}
       \,\text{,}
     \end{align*}
-    where the sum goes over all training data. This is equivalent to minimising
-    the weighted mean of the loss for the current boosting iteration. This
-    optimisation problem has no analytical minimiser for
+    where the sum goes over all training data. This optimisation problem has no
+    analytical minimiser for the loss function in
     \Cref{eq:loss_gradboost}. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen
     to approximately minimise the above criterion by performing a single step of
     Newton's method.\footnote{The starting point for Newton's method is taken to
-      be $c_{jm} = 0$ for all leaf nodes.} For the loss function in
-    \Cref{eq:loss_gradboost}, this yields updated leaf node constants
+      be $c_{jm} = 0$ for all leaf nodes.} This yields updated leaf node
+    constants
     \begin{align*}
       c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (1 - |r_i|)} \,\text{,}
     \end{align*}
-    where the sum goes over the training data populating the $j$-th leaf of the
-    tree. This step is specific to the \textsc{TreeBoost} algorithm proposed by
+    where the sum goes over the training data populating the $j$-th leaf node of
+    the tree. This step is specific to the \textsc{TreeBoost} algorithm by
     Friedman.
 
-  \item Perform a gradient descent step by setting
+  \item Determine the $m$-th stage of the model by setting
     \begin{align*}
-      F_m(x) = F_{m - 1}(x) + \nu \cdot h\bigl( \myvec{x}; \{c_{jm}^\prime, R_{jm}\}_{j=1}^{J_{m}} \bigr) \,\text{,}
+      F_m(\myvec{x}) = F_{m - 1}(\myvec{x})
+      + \nu \cdot h\bigl( \myvec{x}; \{c_{jm}^\prime, R_{jm}\}_{j=1}^{J_{m}} \bigr)
+      \,\text{,}
     \end{align*}
-    where $0 < \nu \leq 1$ is a hyperparameter of the algorithm referred to as
-    the \emph{shrinkage} or \emph{learning rate}. Values of the shrinkage
-    parameter below unity lead to suboptimal updates as a form of regularisation
-    to prevent overfitting.
+    where $\nu$ is a parameter of the boosting algorithm referred to as the
+    \emph{shrinkage} or \emph{learning rate}. Generally, the shrinkage is set to
+    values below unity such that every stage of boosting performs a suboptimal
+    update. This serves as a form of regularisation to prevent overfitting.
 
   \end{enumerate}
 
-\item The final prediction of the boosting procedure, $F_{M}(x)$, can be used to
-  estimate the probability $\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})$
-  according to
+\item The final prediction of the boosting procedure, $F_{M\hspace{-0.07em}}(x)$, can be used
+  to estimate the probability $\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})$
+  according to \Cref{eq:gradboost_probas} as
   \begin{align*}
-    \hat{p}(\myvec{x}) = \frac{1}{1 + \exp(-F_{M}(\myvec{x}))} \,\text{,}
+    p(\myvec{x}) = \frac{1}{1 + e^{-F_{M\hspace{-0.07em}}(\myvec{x})}} \,\text{.}
   \end{align*}
-  which follows from \Cref{eq:gradboost_logodds}. In HEP, this quantity is
-  commonly referred to as the \emph{BDT score}.
+  In HEP, this quantity is commonly referred to as the \emph{BDT score}.
 
 \end{enumerate}
+
+
+This algorithm is
+
+
+
+
 
 Gradient descent in function space...
 
