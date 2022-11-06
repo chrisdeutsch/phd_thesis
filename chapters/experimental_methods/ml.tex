@@ -229,7 +229,7 @@ modifications (e.g.\ allowing training data to be weighted).
 
   \item Fit a regression tree to the training data to estimate the
     pseudoresiduals using the predictors~$\myvec{x}$. The prediction of the
-    regression tree is denoted by
+    fitted regression tree is denoted by
     $h\bigl( \myvec{x}; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr)$, where $J_{m}$
     is the number of leaf nodes, $c_{jm}$ is the constant predicted by the
     $j$-th leaf node, and $R_{jm}$ is the region defined by the $j$-th leaf
@@ -249,7 +249,7 @@ modifications (e.g.\ allowing training data to be weighted).
     \Cref{eq:loss_gradboost}. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen
     to approximately minimise the above criterion by performing a single step of
     Newton's method.\footnote{The starting point for Newton's method is taken to
-      be $c_{jm} = 0$ for all leaf nodes.} This yields updated leaf node
+      be $c_{jm} = 0$ for all leaf nodes.} This yields the updated leaf node
     constants
     \begin{align*}
       c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (1 - |r_i|)} \,\text{,}
