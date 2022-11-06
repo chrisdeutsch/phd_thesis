@@ -119,30 +119,29 @@ is minimised.
 
 \subsubsection{Boosting of Decision Trees}
 
-Boosting is an approach of solving a prediction problem by constructing an
-additive model of the form
+Boosting is an approach of solving predictions tasks by constructing additive
+models of the form
 \begin{align*}
   F_{M}\bigl(\myvec{x}; \{ \beta_m, \gamma_{m} \}_{m=1}^{M} \bigr) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
 \end{align*}
 where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_{m})$ are basis
 functions parameterised
 by~$\gamma_{m}$~\cite{Friedman:2000,Friedman:2001wbq}. While there is some
-flexibility in choosing the family of basis functions, boosting is commonly
-performed using decision trees. Given a sample of training data, the model is
-fit using an iterative procedure in which the $m$-th stage of the model, which
-is given by
-\begin{align*}
-  F_{m}\bigl(\myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m} \bigr) = F_{m - 1}\bigl( \myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1} \bigr) + \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
-\end{align*}
-is determined by choosing $\beta_{m}$ and $\gamma_{m}$ such that an objective
-function is improved with respect to the previous boosting
-iteration~\cite{hastie09}. Notably, the $m$-th stage does not alter the
-parameters~$\{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1}$. The following is concerned
-with a boosting algorithm referred to as \emph{gradient
-  boosting}~\cite{Friedman:2001wbq}, which provides a general framework for
-constructing additive models that minimise an arbitrary differentiable loss
-function. This allows gradient boosting to be used to solve numerous prediction
-tasks.
+flexibility in choosing the family of basis functions, boosting is typically
+applied to decision trees.
+% Given a sample of training data, the model is fit using an
+% iterative procedure in which the $m$-th stage of the model, which is given by
+% \begin{align*}
+%   F_{m}\bigl(\myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m} \bigr) = F_{m - 1}\bigl( \myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1} \bigr) + \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
+% \end{align*}
+% is determined by choosing $\beta_{m}$ and $\gamma_{m}$ such that an objective
+% function is improved~\cite{hastie09}. Notably, the $m$-th stage does not alter
+% the parameters~$\{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1}$.
+The following is concerned with a boosting algorithm referred to as
+\emph{gradient boosting}~\cite{Friedman:2001wbq}. Gradient boosting is an
+algorithm for constructing additive models that minimise arbitrary
+differentiable loss functions, thus making it a useful tool for solving various
+prediction tasks.
 
 Consider a binary classification problem with predictors~$\myvec{X}$ and class
 labels~$Y$, which are taken to be $Y = +1$ for the positive and $Y = -1$ for the
@@ -153,8 +152,8 @@ negative class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
   \right)\mathclose{}
   \label{eq:loss_gradboost}
 \end{align}
-be a loss function and $F(\myvec{X})$~a function of the predictors. The function
-that minimises the expected loss is given by
+be a loss function and $F$~a function of the predictors. The function that
+minimises the expected loss is given by
 \begin{align}
   F^{*\!}(\myvec{x})
   = \argmin_F \, \expect[ L(Y, F) \mid \myvec{X} = \myvec{x} ]
@@ -168,24 +167,32 @@ that minimises the expected loss is given by
   \label{eq:gradboost_logodds}
 \end{align}
 which are the log-odds of an observation with predictors~$\myvec{x}$ belonging
-to the positive class. Knowledge of $F^{*\!}(\myvec{x})$ would solve the
-classification task since
+to the positive class~\cite{Friedman:2000}. Knowledge of $F^{*\!}(\myvec{x})$
+would solve the classification task since
 \begin{align*}
   \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{-F^{*\!}(\myvec{x})}}
   \qquad \text{and} \qquad
   \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{+F^{*\!}(\myvec{x})}} \,\text{,}
 \end{align*}
 thus motivating the choice of loss function in \Cref{eq:loss_gradboost} for
-binary classification. Gradient boosting with decision trees can be used to find
-an approximation to $F^{*\!}(\myvec{x})$ using a finite sample of training data.
+binary classification.
 
+% Gradient boosting can be used to find an additive model that minimises this
+% loss function for a finite sample,
 
-In the following, the \textsc{TreeBoost} algorithm~\cite{Friedman:2001wbq} for
-binary classification is outlined. A version of this algorithm is employed by
-\textsc{TMVA}~\cite{TMVA} for gradient boosting with decision trees. The
-description is based on Ref.~\cite{Friedman:2001wbq} with few modifications, the
-most significant one being the incorporation of sample weights for the training
-examples.
+% with this loss function can be used to
+% find an approximation to $F^{*\!}(\myvec{x})$
+
+% with decision trees can be used to find an approximation to
+% $F^{*\!}(\myvec{x})$ using a finite sample of training data.
+
+The following outlines an algorithm referred to as \textsc{TreeBoost} proposed
+by Friedman~\cite{Friedman:2001wbq} that uses gradient boosted decision trees
+and the loss function in \Cref{eq:loss_gradboost} to fit a binary classifier to
+a sample of training data. A version of this algorithm is employed in
+\textsc{TMVA}~\cite{TMVA}, which provides the BDT implementation used in this
+thesis. The description is based on Ref.~\cite{Friedman:2001wbq} with few
+modifications, such as allowing training examples to be weighted.
 
 \vspace{11pt}
 \noindent\textbf{\textsc{TreeBoost} algorithm for binary classification} \\[11pt]
@@ -219,9 +226,9 @@ examples.
     % , where $\myvec{x}_i$ are the predictors and $y_i$ the class label of the
     % $i$-th training example, respectively.
 
-  \item Using the training data, fit a regression tree to estimate the
-    pseudoresiduals given the predictors~$\myvec{x}$. The prediction of the
-    $m$-th regression tree is denoted by
+  \item Fit a regression tree to the training data to estimate the
+    pseudoresiduals using the predictors~$\myvec{x}$. The prediction of the
+    regression tree is denoted by
     $h\bigl( \myvec{x}; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr)$, where $J_{m}$
     is the number of leaf nodes, $c_{jm}$ is the constant predicted by the
     $j$-th leaf node, and $R_{jm}$ is the region defined by the $j$-th leaf
