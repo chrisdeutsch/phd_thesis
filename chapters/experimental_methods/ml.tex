@@ -128,19 +128,21 @@ where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_{m})$ are basis
 functions parameterised
 by~$\gamma_{m}$~\cite{Friedman:2000,Friedman:2001wbq}. While there is some
 flexibility in choosing the family of basis functions, boosting is commonly
-performed using decision trees. Given a sample of training data, the additive
-model is fit using an iterative procedure in which the $m$-th stage of the
-model, which is given by
+performed using decision trees. Given a sample of training data, the model is
+fit using an iterative procedure in which the $m$-th stage of the model, which
+is given by
 \begin{align*}
   F_{m}\bigl(\myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m} \bigr) = F_{m - 1}\bigl( \myvec{x}; \{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1} \bigr) + \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
 \end{align*}
-is determined by optimising an objective function with respect to $\beta_{m}$
-and $\gamma_{m}$ while leaving all other parameters fixed~\cite{hastie09}. The
-following is concerned with a boosting algorithm referred to as \emph{gradient
+is determined by choosing $\beta_{m}$ and $\gamma_{m}$ such that an objective
+function is improved with respect to the previous boosting
+iteration~\cite{hastie09}. Notably, the $m$-th stage does not alter the
+parameters~$\{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1}$. The following is concerned
+with a boosting algorithm referred to as \emph{gradient
   boosting}~\cite{Friedman:2001wbq}, which provides a general framework for
 constructing additive models that minimise an arbitrary differentiable loss
-function. As a result, gradient boosting is a useful tool to solve numerous
-prediction tasks.
+function. This allows gradient boosting to be used to solve numerous prediction
+tasks.
 
 Consider a binary classification problem with predictors~$\myvec{X}$ and class
 labels~$Y$, which are taken to be $Y = +1$ for the positive and $Y = -1$ for the
@@ -151,7 +153,7 @@ negative class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
   \right)\mathclose{}
   \label{eq:loss_gradboost}
 \end{align}
-be a loss function and $F$~a function of the predictors. The function $F^{*\!}$
+be a loss function and $F(\myvec{X})$~a function of the predictors. The function
 that minimises the expected loss is given by
 \begin{align}
   F^{*\!}(\myvec{x})
@@ -169,33 +171,14 @@ which are the log-odds of an observation with predictors~$\myvec{x}$ belonging
 to the positive class. Knowledge of $F^{*\!}(\myvec{x})$ would solve the
 classification task since
 \begin{align*}
-  &\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp\bigl( -F^{*\!}(\myvec{x}) \bigr)}
-  &&\mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp\bigl( +F^{*\!}(\myvec{x}) \bigr)} \,\text{.}
+  \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{-F^{*\!}(\myvec{x})}}
+  \qquad \text{and} \qquad
+  \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{+F^{*\!}(\myvec{x})}} \,\text{,}
 \end{align*}
-
->>> TBC
-
 thus motivating the choice of loss function in \Cref{eq:loss_gradboost} for
-classification.
-% \footnote{Noting that
-%   \begin{align*}
-%     \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp(-F^*(\myvec{x}))} \qquad \mathbb{P}(Y = -1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + \exp(+F^*(\myvec{x}))} \,\text{,}
-%   \end{align*}
-%   the loss function of \Cref{eq:loss_gradboost} follows from the binary
-%   cross-entropy (BCE)
-%   \begin{align*}
-%     L_{\text{BCE}} =
-%     \begin{cases}
-%       - \log\mathbb{P}(Y = +1 \mid \myvec{X}), & Y = +1 \\
-%       - \log\mathbb{P}(Y = -1 \mid \myvec{X}), & Y = -1
-%     \end{cases}
-%     \,\text{,}
-%   \end{align*}
-%   further motivating the use of this particular loss function and making a
-%   connection to the classification approach using neural networks that will be
-%   discussed in~\Cref{sec:neural_networks}.}
-Gradient boosting with decision trees can be used to find an approximation to
-$F^*$ using a finite sample of training data.
+binary classification. Gradient boosting with decision trees can be used to find
+an approximation to $F^{*\!}(\myvec{x})$ using a finite sample of training data.
+
 
 In the following, the \textsc{TreeBoost} algorithm~\cite{Friedman:2001wbq} for
 binary classification is outlined. A version of this algorithm is employed by
@@ -206,20 +189,23 @@ examples.
 
 \vspace{11pt}
 \noindent\textbf{\textsc{TreeBoost} algorithm for binary classification} \\[11pt]
-Inputs:
-\begin{itemize}[itemsep=2pt,topsep=4pt]
+\noindent Inputs:
+\begin{itemize}[itemsep=1pt,topsep=4pt]
 \item Training data $\{(\myvec{x}_i, y_i, w_i)\}_{i = 1}^{N}$ with
   predictors~$\myvec{x}_i$, class labels $y_i$, and weights~$w_i$.
 \item Number of boosting iterations $M$.
 \item Shrinkage parameter~$\nu$ ($0 < \nu \leq 1$).
-\item Hyperparameters of the regression tree algorithm
+\item Hyperparameters of the regression tree algorithm.
 \end{itemize}
-\begin{enumerate}[itemsep=4pt,topsep=11pt]
 
-\item Initialise $F_0(\myvec{x}) = 0$
+\vspace{6pt}
+\noindent Algorithm:
+\begin{enumerate}[itemsep=1pt,topsep=4pt]
+
+\item Initialise $F_0(\myvec{x}) = 0$.
 
 \item For $m = 1$ to $M$:
-  \begin{enumerate}[itemsep=4pt]
+  \begin{enumerate}[itemsep=1pt]
 
   \item Calculate the pseudoresiduals
     \begin{align*}
