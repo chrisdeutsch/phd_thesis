@@ -166,9 +166,9 @@ minimises the expected loss is given by
   \right)\mathclose{} \,\text{,}
   %\label{eq:gradboost_logodds}
 \end{align*}
-which are the log-odds of an observation with predictors~$\myvec{x}$ belonging
-to the positive class~\cite{Friedman:2000}. Knowledge of $F^{*\!}$ would solve
-the classification task since
+which are the conditional log-odds of an observation with predictors~$\myvec{x}$
+belonging to the positive class~\cite{Friedman:2000}. Knowledge of $F^{*\!}$
+would solve the classification task since
 \begin{align}
   \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{-F^{*\!}(\myvec{x})}}
   \qquad \text{and} \qquad
@@ -210,7 +210,15 @@ with some modifications (e.g.\ allowing training data to be weighted).
 \noindent Algorithm:
 \begin{enumerate}[itemsep=1pt,topsep=4pt]
 
-\item Initialise $F_0(\myvec{x}) = 0$.
+\item The model is initialised to predict a constant given by
+  \begin{align*}
+    F_0(\myvec{x}) = \log\mathopen{}\left( \frac{1 + \bar{y}}{1 - \bar{y}}
+    \right)\mathclose{}
+    \qquad \text{with} \qquad
+    \bar{y} = \frac{\sum_{i=1}^{N} w_i y_i}{\sum_{i=1}^{N} w_i} \,\text{,}
+  \end{align*}
+  which are the (unconditional) log-odds of $Y = +1$ estimated using the
+  training data.
 
 \item For $m = 1$ to $M$:
   \begin{enumerate}[itemsep=1pt]
@@ -281,7 +289,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
   In HEP, this quantity is commonly referred to as the \emph{BDT score}.
 
 \end{enumerate}
-\vspace{6pt} This algorithm is reminiscent of the classical gradient descent
+\vspace{8pt} This algorithm is reminiscent of the classical gradient descent
 algorithm for optimisation, however, in the case of gradient boosting the
 optimisation is performed in the space of
 functions~\cite{Friedman:2001wbq}. Steps 2a) and 2b) of the algorithm serve to
