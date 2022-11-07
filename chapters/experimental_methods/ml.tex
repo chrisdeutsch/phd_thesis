@@ -305,24 +305,40 @@ descent step is determined on a per-leaf basis. Finally, step 2d) performs the
 \subsection{Neural Networks}%
 \label{sec:neural_networks}
 
-Neural networks (NNs) are parametric functions...
-
-
-
-For example, a \emph{multilayer perceptron} is a NN composed of transformations
-of the form
-\begin{align*}
+In the most general sense, neural networks (NNs) are defined by the composition
+of multiple, usually non-linear, parametric functions. The individual functions
+making up a NN are referred to as \emph{layers}. An example of a simple NN is
+the \emph{multilayer perceptron} (MLP). The basic element of the MLP are
+\emph{densely connected layers} that apply a transformation of the form
+\begin{align}
   f_i(\myvec{x}; \myvec{W}_i, \myvec{b}_i) = \phi_i(\myvec{W}_i \myvec{x} + \myvec{b}_i) \,\text{,}
-\end{align*}
-where $\myvec{W}_i$ and $\myvec{b}_i$ is a weight matrix and bias vector,
-respectively, and $\phi_i$ is an element-wise activation function. These
-transformations are performed sequentially such that the prediction of a
-multilayer perceptron consisting of $N$ layers is given by
+  \label{eq:dense_layer}
+\end{align}
+where $\myvec{x}$ is the layer input, $\myvec{W}_i$ and $\myvec{b}_i$ is a
+weight matrix and bias vector, respectively, and $\phi_i$ is an element-wise
+activation function. A MLP with $N$ hidden layers is given by the composition of
+$N + 1$ transformations of the form displayed in \Cref{eq:dense_layer}, such
+that the output of the MLP can be expressed as
 \begin{align*}
-  f\bigl( \myvec{x}; \{\myvec{W}_i, \myvec{b}_i\}_{i=1}^{N} \bigr) =
-  \bigl(f_N \circ f_{N - 1} \circ \dots \circ f_1\bigr)\bigl(\myvec{x}; \{\myvec{W}_i, \myvec{b}_i\}_{i=1}^{N} \bigr) \,\text{.}
+  f\bigl( \myvec{x}; \{\myvec{W}_{i},\myvec{b}_{i} \}_{i=1}^{N+1} \bigr)
+  = \bigl( f_{N+1} \circ \dots \circ f_{1} \bigr)
+  \bigl( \myvec{x}; \{\myvec{W}_i, \myvec{b}_i\}_{i=1}^{N+1} \bigr)
+  \,\text{.}
 \end{align*}
-This approach generalises to other types of transformations.
+
+
+
+The structure of a NN can be defined by a computational graph that connects
+different layers. In the case of the MLP, the graph
+
+(i.e.\ $\text{Layer}_{1} \to \dots \to \text{Layer}_{N+1}$)
+
+Generally, the structure of a NN is defined by a computational graph that
+connects .
+
+
+In the case of the MLP, the graph is simply a given by a sequential
+connectiong.
 
 
 
@@ -330,43 +346,10 @@ This approach generalises to other types of transformations.
 
 
 
+MLP -> sequential connection of . Generally, layers can be arranged in more
+complicated computational graphs making NN highly flexible.
 
 
-
-
-
-
-
-
-
-
-
-
-
-are a large class of parametric functions
-
-
-that can be used to approximate any function~\cite{}.
-
-
-
-
-
-
-
-$\myvec{x}_{\text{out}} = f_i(\myvec{x}_{\text{in}}; \myvec{\theta}_i)$
-
-
-An example of such a transformation is a densely connected layer which applies a
-transformation of the form
-\begin{align*}
-  \myvec{x}_{\text{out}} =
-\end{align*}
- A
-neural network is constructed by composing multiple layers, i.e.\
-\begin{align*}
-    f = f_N \circ \dots \circ f_1
-\end{align*}
 
 
 
