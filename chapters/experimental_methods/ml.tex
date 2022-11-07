@@ -3,7 +3,8 @@
 \begin{itemize}
 \item What is machine learning?
 
-\item Why is it useful for HEP? (Problems are multivariate...)
+\item Why is it useful for HEP? (Problems are multivariate... -- with high-order
+  interactions between variables)
 
 \item Supervised learning, i.e.\ have labelled data.
 
@@ -147,7 +148,7 @@ Consider a binary classification problem with predictors~$\myvec{X}$ and class
 labels~$Y$, which are $Y = +1$ for the positive and $Y = -1$ for the negative
 class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
 \begin{align}
-  L(Y, F(\myvec{X})) = \log\mathopen{}\left(
+  L(Y, F(\myvec{X})) = \ln\mathopen{}\left(
   1 + e^{-Y F(\myvec{X})}
   \right)\mathclose{}
   \label{eq:loss_gradboost}
@@ -157,7 +158,7 @@ minimises the expected loss is given by
 \begin{align*}
   F^{*\!}(\myvec{x})
   = \argmin_F \, \expect[ L(Y, F) \mid \myvec{X} = \myvec{x} ]
-  = \log\mathopen{}\left(
+  = \ln\mathopen{}\left(
   \frac{
   \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})
   }{
@@ -212,7 +213,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
 
 \item The model is initialised to make a constant prediction according to
   \begin{align*}
-    F_0(\myvec{x}) = \log\mathopen{}\left( \frac{1 + \bar{y}}{1 - \bar{y}}
+    F_0(\myvec{x}) = \ln\mathopen{}\left( \frac{1 + \bar{y}}{1 - \bar{y}}
     \right)\mathclose{}
     \qquad \text{with} \qquad
     \bar{y} = \frac{\sum_{i=1}^{N} w_i y_i}{\sum_{i=1}^{N} w_i} \,\text{,}
@@ -307,40 +308,54 @@ descent step is determined on a per-leaf basis. Finally, step 2d) performs the
 
 In the most general sense, neural networks (NNs) are defined by the composition
 of multiple, usually non-linear, parametric functions. The individual functions
-making up a NN are referred to as \emph{layers}. An example of a simple NN is
-the \emph{multilayer perceptron} (MLP). The basic element of the MLP are
-\emph{densely connected layers} that apply a transformation of the form
+making up an NN are referred to as \emph{layers}. An illustrative example of a
+simple NN is the \emph{multilayer perceptron} (MLP). The basic element of
+MLPs--and many other types of NNs--are \emph{densely connected layers} that
+apply a transformation of the form
 \begin{align}
   f_i(\myvec{x}; \myvec{W}_i, \myvec{b}_i) = \phi_i(\myvec{W}_i \myvec{x} + \myvec{b}_i) \,\text{,}
   \label{eq:dense_layer}
 \end{align}
 where $\myvec{x}$ is the layer input, $\myvec{W}_i$ and $\myvec{b}_i$ is a
-weight matrix and bias vector, respectively, and $\phi_i$ is an element-wise
-activation function. A MLP with $N$ hidden layers is given by the composition of
-$N + 1$ transformations of the form displayed in \Cref{eq:dense_layer}, such
-that the output of the MLP can be expressed as
+weight matrix and bias vector, respectively, and $\phi_i$ is an activation
+function that is applied element-wise. An MLP with $N$ hidden layers is given by
+the composition of $N + 1$ functions of the form displayed in
+\Cref{eq:dense_layer}, such that the output of the MLP can be expressed as
 \begin{align*}
   f\bigl( \myvec{x}; \{\myvec{W}_{i},\myvec{b}_{i} \}_{i=1}^{N+1} \bigr)
   = \bigl( f_{N+1} \circ \dots \circ f_{1} \bigr)
   \bigl( \myvec{x}; \{\myvec{W}_i, \myvec{b}_i\}_{i=1}^{N+1} \bigr)
   \,\text{.}
 \end{align*}
+In general, the structure of NNs can be more complex than illustrated in this
+example (e.g.\ networks with multiple inputs or outputs). Therefore, it is often
+useful to express the order of computation in an NN as a directed graph with
+nodes representing individual layers. For the MLP example, this graph is given
+by
+\begin{align*}
+  (\text{Input} \to) \, \text{Dense}_{1} \to \dots \to \text{Dense}_{N + 1} \, (\to \text{Output}) \,\text{,}
+\end{align*}
+where the layers denoted as ``Input'' and ``Output'' do not perform any
+computation a
 
 
 
-The structure of a NN can be defined by a computational graph that connects
-different layers. In the case of the MLP, the graph
-
-(i.e.\ $\text{Layer}_{1} \to \dots \to \text{Layer}_{N+1}$)
-
-Generally, the structure of a NN is defined by a computational graph that
-connects .
 
 
-In the case of the MLP, the graph is simply a given by a sequential
-connectiong.
 
 
+
+
+
+
+
+
+
+
+
+
+refers to the input to the MLP, $\text{Dense}_{i}$ represents
+the $i$-th densely connected layer, and ...
 
 
 
@@ -356,12 +371,14 @@ complicated computational graphs making NN highly flexible.
 \begin{align*}
   L(Y, \myvec{X}; \myvec{\theta}) =
   \begin{cases}
-    -\log\mathopen{}\left( f(\myvec{X}; \myvec{\theta}) \right)\mathclose{}, & Y = 1 \\
-    -\log\mathopen{}\left( 1 - f(\myvec{X}; \myvec{\theta}) \right)\mathclose{}, & Y = 0 \\
+    -\ln\mathopen{}\left( f(\myvec{X}; \myvec{\theta}) \right)\mathclose{}, & Y = 1 \\
+    -\ln\mathopen{}\left( 1 - f(\myvec{X}; \myvec{\theta}) \right)\mathclose{}, & Y = 0 \\
   \end{cases}
 \end{align*}
 
-\footnote{ \Cref{eq:loss_gradboost} }
+\footnote{This is equivalent to the loss function used for gradient boosting in
+  \Cref{eq:loss_gradboost} noting that the class labels are now $Y \in \{0, 1\}$
+  and th.}
 
 
 \begin{itemize}
