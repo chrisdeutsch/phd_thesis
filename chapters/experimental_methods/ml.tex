@@ -210,7 +210,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
 \noindent Algorithm:
 \begin{enumerate}[itemsep=2pt]
 
-\item The model is initialised to predict a constant given by
+\item The model is initialised to make a constant prediction according to
   \begin{align*}
     F_0(\myvec{x}) = \log\mathopen{}\left( \frac{1 + \bar{y}}{1 - \bar{y}}
     \right)\mathclose{}
@@ -298,8 +298,8 @@ the previous boosting iteration. In gradient descent, the step size of the
 update is often determined by performing a line search along the direction of
 steepest descent. This is the task of step 2c) in which the step size is
 determined, however, for \textsc{TreeBoost} the size of the gradient descent
-step is determined on a per-leaf basis. Finally, 2d) performs the (intentionally
-suboptimal) gradient descent update.
+step is determined on a per-leaf basis. Finally, step 2d) performs the
+(regularised) gradient descent update.
 
 
 \subsection{Neural Networks}%
