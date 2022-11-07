@@ -31,9 +31,9 @@ fits shallow decision trees--or in general, any \emph{weak learning
 modified at every iteration to emphasise errors made in previous
 iterations. Finally, the predictions of the ensemble of trees are combined with
 the goal of providing superior classification/regression performance compared to
-a single decision tree. In the following a description of the BDT algorithm
-implemented in \textsc{TMVA}~\cite{TMVA} is given, which is later used in the
-search for Higgs boson pair production.
+a single decision tree. In the following a description of one of the BDT
+algorithms implemented in \textsc{TMVA}~\cite{TMVA} is given, which is later
+used in the search for Higgs boson pair production.
 
 
 \subsubsection{Classification and Regression Trees}
@@ -55,8 +55,8 @@ that the prediction of a decision tree for a point~$\myvec{x}$ can expressed as
     0, & \text{else}
   \end{cases} \,\text{,}
 \end{align*}
-where $\{c_j, R_j\}_{j=1}^{J}$ represents the parameters that specify the
-decision tree~\cite{hastie09}.
+where $\{c_j, R_j\}_{j=1}^{J}$ fully specifies the decision
+tree~\cite{hastie09}.
 
 \begin{figure}[htbp]
   \centering
@@ -144,8 +144,8 @@ differentiable loss functions, thus making it a useful tool for solving various
 prediction tasks.
 
 Consider a binary classification problem with predictors~$\myvec{X}$ and class
-labels~$Y$, which are taken to be $Y = +1$ for the positive and $Y = -1$ for the
-negative class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
+labels~$Y$, which are $Y = +1$ for the positive and $Y = -1$ for the negative
+class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
 \begin{align}
   L(Y, F(\myvec{X})) = \log\mathopen{}\left(
   1 + e^{-Y F(\myvec{X})}
@@ -167,8 +167,8 @@ minimises the expected loss is given by
   %\label{eq:gradboost_logodds}
 \end{align*}
 which are the log-odds of an observation with predictors~$\myvec{x}$ belonging
-to the positive class~\cite{Friedman:2000}. Knowledge of $F^{*\!}(\myvec{x})$
-would solve the classification task since
+to the positive class~\cite{Friedman:2000}. Knowledge of $F^{*\!}$ would solve
+the classification task since
 \begin{align}
   \mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x}) = \frac{1}{1 + e^{-F^{*\!}(\myvec{x})}}
   \qquad \text{and} \qquad
@@ -187,13 +187,13 @@ binary classification.
 % with decision trees can be used to find an approximation to
 % $F^{*\!}(\myvec{x})$ using a finite sample of training data.
 
-The following outlines an algorithm referred to as \textsc{TreeBoost} proposed
-by Friedman~\cite{Friedman:2001wbq} that uses gradient boosted decision trees
-and the loss function in \Cref{eq:loss_gradboost} to fit a binary classifier to
-a sample of training data. A version of this algorithm is employed in
-\textsc{TMVA}~\cite{TMVA}, which provides the BDT implementation used in this
-thesis. The description is based on Ref.~\cite{Friedman:2001wbq} with some
-modifications (e.g.\ allowing training data to be weighted).
+An algorithm referred to as \textsc{TreeBoost} proposed by
+Friedman~\cite{Friedman:2001wbq} is outlined. \textsc{TreeBoost} uses gradient
+boosted decision trees and the loss function in \Cref{eq:loss_gradboost} to fit
+a binary classifier to a sample of training data. A version of this algorithm is
+employed in \textsc{TMVA}~\cite{TMVA}, which provides the BDT implementation
+used in this thesis. The description is based on Ref.~\cite{Friedman:2001wbq}
+with some modifications (e.g.\ allowing training data to be weighted).
 
 \vspace{11pt}
 \noindent\textbf{\textsc{TreeBoost} algorithm for binary classification} \\[11pt]
@@ -271,24 +271,28 @@ modifications (e.g.\ allowing training data to be weighted).
 
   \end{enumerate}
 
-\item The final prediction of the boosting procedure, $F_{M\hspace{-0.07em}}(x)$, can be used
-  to estimate the probability $\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})$
-  according to \Cref{eq:gradboost_probas} as
+\item The final prediction of the boosting procedure,
+  $F_{M\hspace{-0.07em}}(x)$, can be used to estimate the probability
+  $\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})$ according to
+  \Cref{eq:gradboost_probas} as
   \begin{align*}
     p(\myvec{x}) = \frac{1}{1 + e^{-F_{M\hspace{-0.07em}}(\myvec{x})}} \,\text{.}
   \end{align*}
   In HEP, this quantity is commonly referred to as the \emph{BDT score}.
 
 \end{enumerate}
-
-
-This algorithm is
-
-
-
-
-
-Gradient descent in function space...
+\vspace{6pt} This algorithm is reminiscent of the classical gradient descent
+algorithm for optimisation, however, in the case of gradient boosting the
+optimisation is performed in the space of
+functions~\cite{Friedman:2001wbq}. Steps 2a) and 2b) of the algorithm serve to
+estimate the negative gradient of the loss function with respect to
+$F(\myvec{x})$, which is evaluated at the function estimate of the previous
+boosting iteration. In gradient descent, the step size of the update is often
+determined by performing a line search along the direction of steepest
+descent. This is the task of step 2c) in which the step size is determined,
+however, for \textsc{TreeBoost} the size of the gradient descent step is
+determined on a per-leaf basis. Finally, 2d) performs the (intentionally
+suboptimal) gradient descent update.
 
 
 \subsection{Neural Networks}%
