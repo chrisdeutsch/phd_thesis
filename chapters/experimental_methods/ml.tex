@@ -198,7 +198,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
 \vspace{11pt}
 \noindent\textbf{\textsc{TreeBoost} algorithm for binary classification} \\[11pt]
 \noindent Inputs:
-\begin{itemize}[itemsep=1pt,topsep=4pt]
+\begin{itemize}[itemsep=2pt]
 \item Training data $\{(\myvec{x}_i, y_i, w_i)\}_{i = 1}^{N}$ with
   predictors~$\myvec{x}_i$, class labels $y_i$, and weights~$w_i$.
 \item Number of boosting iterations $M$.
@@ -208,7 +208,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
 
 \vspace{6pt}
 \noindent Algorithm:
-\begin{enumerate}[itemsep=1pt,topsep=4pt]
+\begin{enumerate}[itemsep=2pt]
 
 \item The model is initialised to predict a constant given by
   \begin{align*}
@@ -221,7 +221,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
   training data.
 
 \item For $m = 1$ to $M$:
-  \begin{enumerate}[itemsep=1pt]
+  \begin{enumerate}[itemsep=2pt]
 
   \item Calculate the pseudoresiduals
     \begin{align*}
@@ -289,17 +289,16 @@ with some modifications (e.g.\ allowing training data to be weighted).
   In HEP, this quantity is commonly referred to as the \emph{BDT score}.
 
 \end{enumerate}
-\vspace{8pt} This algorithm is reminiscent of the classical gradient descent
-algorithm for optimisation, however, in the case of gradient boosting the
-optimisation is performed in the space of
-functions~\cite{Friedman:2001wbq}. Steps 2a) and 2b) of the algorithm serve to
-estimate the negative gradient of the loss function with respect to
-$F(\myvec{x})$, which is evaluated at the function estimate of the previous
-boosting iteration. In gradient descent, the step size of the update is often
-determined by performing a line search along the direction of steepest
-descent. This is the task of step 2c) in which the step size is determined,
-however, for \textsc{TreeBoost} the size of the gradient descent step is
-determined on a per-leaf basis. Finally, 2d) performs the (intentionally
+This algorithm is reminiscent of the classical gradient descent algorithm for
+optimisation, however, in the case of gradient boosting the optimisation is
+performed in the space of functions~\cite{Friedman:2001wbq}. Steps 2a) and 2b)
+of the algorithm serve to estimate the negative gradient of the loss function
+with respect to $F(\myvec{x})$, which is evaluated at the function estimate of
+the previous boosting iteration. In gradient descent, the step size of the
+update is often determined by performing a line search along the direction of
+steepest descent. This is the task of step 2c) in which the step size is
+determined, however, for \textsc{TreeBoost} the size of the gradient descent
+step is determined on a per-leaf basis. Finally, 2d) performs the (intentionally
 suboptimal) gradient descent update.
 
 
