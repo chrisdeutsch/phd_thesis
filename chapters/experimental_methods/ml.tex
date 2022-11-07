@@ -8,7 +8,7 @@
 \item Supervised learning, i.e.\ have labelled data.
 
 \item Binary classification tasks: Every training example has a label indicating
-  the class membership.
+  the class membership. -> Focus on classification tasks
 
 \item In HEP, the positive class is typically referred to as \emph{signal} while
   the negative class is referred to as \emph{background}.
@@ -98,7 +98,7 @@ configuration--the proportion of examples from the positive class or the class
 label of the majority class in a given leaf node.
 
 Regression trees are constructed using a similar approach, however, with an
-altered splitting criterion and different assigment of constants to leaf
+altered splitting criterion and different assignment of constants to leaf
 nodes. Consider the split of a parent node into a left (L) and right (R)
 daughter node. Let $(y, w)$ denote the tuple of regression target and weight of
 a given training example. Moreover, let $T_{\text{L}}$ and $T_{\text{R}}$ denote
@@ -223,7 +223,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
 \item For $m = 1$ to $M$:
   \begin{enumerate}[itemsep=2pt]
 
-  \item Calculate the pseudoresiduals
+  \item Calculate the pseudo-residuals
     \begin{align*}
       r_i
       = - \left. \frac{\partial L(y_i, F(\myvec{x}_i))}
@@ -236,7 +236,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
     % $i$-th training example, respectively.
 
   \item Fit a regression tree to the training data to estimate the
-    pseudoresiduals using the predictors~$\myvec{x}$. The prediction of the
+    pseudo-residuals using the predictors~$\myvec{x}$. The prediction of the
     fitted regression tree is denoted by
     $h\bigl( \myvec{x}; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr)$, where $J_{m}$
     is the number of leaf nodes, $c_{jm}$ is the constant predicted by the
@@ -304,6 +304,99 @@ descent step is determined on a per-leaf basis. Finally, step 2d) performs the
 
 \subsection{Neural Networks}%
 \label{sec:neural_networks}
+
+Neural networks (NNs) are parametric functions...
+
+
+
+For example, a \emph{multilayer perceptron} is a NN composed of transformations
+of the form
+\begin{align*}
+  f_i(\myvec{x}; \myvec{W}_i, \myvec{b}_i) = \phi_i(\myvec{W}_i \myvec{x} + \myvec{b}_i) \,\text{,}
+\end{align*}
+where $\myvec{W}_i$ and $\myvec{b}_i$ is a weight matrix and bias vector,
+respectively, and $\phi_i$ is an element-wise activation function. These
+transformations are performed sequentially such that the prediction of a
+multilayer perceptron consisting of $N$ layers is given by
+\begin{align*}
+  f\bigl( \myvec{x}; \{\myvec{W}_i, \myvec{b}_i\}_{i=1}^{N} \bigr) =
+  \bigl(f_N \circ f_{N - 1} \circ \dots \circ f_1\bigr)\bigl(\myvec{x}; \{\myvec{W}_i, \myvec{b}_i\}_{i=1}^{N} \bigr) \,\text{.}
+\end{align*}
+This approach generalises to other types of transformations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+are a large class of parametric functions
+
+
+that can be used to approximate any function~\cite{}.
+
+
+
+
+
+
+
+$\myvec{x}_{\text{out}} = f_i(\myvec{x}_{\text{in}}; \myvec{\theta}_i)$
+
+
+An example of such a transformation is a densely connected layer which applies a
+transformation of the form
+\begin{align*}
+  \myvec{x}_{\text{out}} =
+\end{align*}
+ A
+neural network is constructed by composing multiple layers, i.e.\
+\begin{align*}
+    f = f_N \circ \dots \circ f_1
+\end{align*}
+
+
+
+\begin{align*}
+  L(Y, \myvec{X}; \myvec{\theta}) =
+  \begin{cases}
+    -\log\mathopen{}\left( f(\myvec{X}; \myvec{\theta}) \right)\mathclose{}, & Y = 1 \\
+    -\log\mathopen{}\left( 1 - f(\myvec{X}; \myvec{\theta}) \right)\mathclose{}, & Y = 0 \\
+  \end{cases}
+\end{align*}
+
+\footnote{ \Cref{eq:loss_gradboost} }
+
+
+\begin{itemize}
+
+\item What is a NN
+
+\item Activation functions
+
+\item Weight initialisation
+
+\item Loss function
+
+\item Classification
+
+\item Stochastic gradient descent
+
+\end{itemize}
+
 
 \subsubsection{Recurrent Neural Networks}%
 \label{sec:rnn}
