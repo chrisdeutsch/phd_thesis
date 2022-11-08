@@ -230,10 +230,10 @@ defined as
 A \emph{likelihood ratio test} (LRT) can be used to compare the hypotheses. The
 test statistic of the LRT is given by
 \begin{align*}
-  \Lambda = -2 \ln \left[
+  \Lambda = -2 \ln\mathopen{}\left[
   \frac{\sup_{(\mu, \myvec{\theta}) \in \Omega_0} L(\mu, \myvec{\theta})}
   {\sup_{(\mu, \myvec{\theta}) \in \Omega\phantom{_0}} L(\mu, \myvec{\theta})}
-  \right] \,\text{,}
+  \right]\mathclose{} \,\text{,}
 \end{align*}
 where the numerator (denominator) of the term in brackets is the supremum of the
 likelihood for the restricted (unrestricted) model~\cite{casella2001}. A
@@ -260,7 +260,7 @@ where $\Omega^+$ denotes the parameter space of the model with the restriction
 that $\mu \geq 0$. An empirical test statistic based on the LRT is defined as
 \begin{align*}
   q_0 = \begin{cases}
-          -2 \ln \left[ \frac{ L\bigl(0, \hat{\hat{\myvec{\theta}}}(0) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat > 0 \\
+          -2 \ln\mathopen{}\left[ \frac{ L\bigl(0, \hat{\hat{\myvec{\theta}}}(0) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right]\mathclose{}, & \muhat > 0 \\
           0,          & \muhat \leq 0
         \end{cases} \quad\text{,}
 \end{align*}
@@ -321,8 +321,8 @@ statistic derived from the LRT that reads
 \begin{align*}
   \qmutilde =
   \begin{cases}
-    -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)} \right], & \muhat \in (\infty, 0] \\[1em]
-    -2\ln\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right], & \muhat \in (0, \mu] \\[1em]
+    -2\ln\mathopen{}\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)} \right]\mathclose{}, & \muhat \in (\infty, 0] \\[1em]
+    -2\ln\mathopen{}\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right]\mathclose{}, & \muhat \in (0, \mu] \\[1em]
     0,\phantom{ \biggl[  \biggr]} & \muhat \in (\mu, \infty) \\
   \end{cases} \,\text{,}
 \end{align*}
