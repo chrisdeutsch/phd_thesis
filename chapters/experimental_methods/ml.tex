@@ -422,7 +422,7 @@ by a parameter update according to
 where $\eta_{t}$ is referred to as the learning rate. The learning rate might be
 constant with respect to $t$ or follow a pre-defined schedule, for example
 exponentially decaying learning rates are frequently used. A modification of SGD
-is \emph{SGD with momentum} in
+is \emph{SGD with momentum} which improves the convergence in
 \begin{align*}
   \myvec{\theta}_{t + 1} = \myvec{\theta}_{t}
   + \alpha \Delta\myvec{\theta}_{t} - \eta_t \myvec{g}(\myvec{\theta}_{t})
@@ -434,61 +434,14 @@ is \emph{SGD with momentum} in
   \end{cases}
 \end{align*}
 which introduces the momentum parameter
-$\alpha$~\cite{rumelhart1986learning,Goodfellow-et-al-2016}.
-
-
-
-
-
+$0 \leq \alpha < 1$~\cite{rumelhart1986learning,Goodfellow-et-al-2016}. The
+update of SGD with momentum can be loosely interpreted as the movement of a
+massive object through parameter space with two forces acting on the object: a
+force proportional to~$-\myvec{g}(\myvec{\theta})$; a friction-like force
+proportional and opposed to the
+velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 
 % Exponential decay $\eta_{t} = \eta_{0} (1 - \lambda)^{-t}$
-
-
-
-In both cases the learning rate $\eta$
-
-
-
-
-SGD introduces random fluctuations into a classical gradient descent algorithm
-in an effort to prevent the algorithm
-local minima
-
-
-Mini-batch:  mini-batch of size
-$M$.
-
-The minibatch-average gradient of the loss function
-and the update
-\begin{align*}
-  \myvec{\theta}_{t + 1} = \myvec{\theta}_{t} - \eta \cdot g(\myvec{\theta}_{t})
-\end{align*}
-
-SGD with momentum
-\begin{align*}
-  \myvec{\theta}_{t + 1} =
-  \myvec{\theta}_{t}
-  - \eta \cdot g(\myvec{\theta}_{t})
-  + \alpha \cdot (\myvec{\theta}_{t}- \myvec{\theta}_{t-1})
-\end{align*}
-
-
-
-\begin{itemize}
-
-\item What is a NN
-
-\item Activation functions
-
-\item Weight initialisation
-
-\item Loss function
-
-\item Classification
-
-\item Stochastic gradient descent
-
-\end{itemize}
 
 
 \subsubsection{Recurrent Neural Networks}%
