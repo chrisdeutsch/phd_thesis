@@ -412,43 +412,29 @@ given by
   \sum_{i=1}^{M} w_{(i)}
   } \,\text{.}
 \end{align*}
-
-
-
-
-
-Training of NNs using SGD proceeds by initialising the parameters randomly
-
-
-
-
-
-
-
-
-
-Every iteration of SGD draws a mini-batch from the training data and performs a
-parameter update according to
+Training of NNs using SGD proceeds by first randomly initialising the parameters
+of the network ($\myvec{\theta}_{0}$). Afterwards, a number SGD iterations are
+performed that consist of drawing a mini-batch from the training data followed
+by a parameter update according to
 \begin{align*}
-  \myvec{\theta}_{t + 1} = \myvec{\theta}_{t} - \eta \cdot \myvec{g}(\myvec{\theta}_{t}) \,\text{,}
+  \myvec{\theta}_{t + 1} = \myvec{\theta}_{t} - \eta_{t} \myvec{g}(\myvec{\theta}_{t}) \,\text{,}
 \end{align*}
-where $\eta$ is referred to as the learning rate.
-
-
-
-Often, the learning rate
-depends
-
-
-
-
-
-The learning rate
-
-
-
-
-
+where $\eta_{t}$ is referred to as the learning rate. The learning rate might be
+constant with respect to $t$ or follow a pre-defined schedule, for example
+exponentially decaying learning rates are frequently used. A modification of SGD
+is \emph{SGD with momentum} in
+\begin{align*}
+  \myvec{\theta}_{t + 1} = \myvec{\theta}_{t}
+  + \alpha \Delta\myvec{\theta}_{t} - \eta_t \myvec{g}(\myvec{\theta}_{t})
+  \qquad \text{with} \qquad
+  \Delta\myvec{\theta}_{t} =
+  \begin{cases}
+    \myvec{\theta}_{t} - \myvec{\theta}_{t - 1}, & t > 0 \\
+    0,                                         & t = 0
+  \end{cases}
+\end{align*}
+which introduces the momentum parameter
+$\alpha$~\cite{rumelhart1986learning,Goodfellow-et-al-2016}.
 
 
 
