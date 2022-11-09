@@ -378,44 +378,49 @@ classification.\footnote{The loss function in \Cref{eq:loss_bce} is similar to
   conditional probability of $Y = 1$, directly.}
 
 The binary classification task can be solved by approximating
-$f^{*\!}(\myvec{x})$ using an NN with parameters chosen such that the mean loss
+$f^{*\!}(\myvec{x})$ using an NN with parameters set such that the mean loss
 over a sample of training data~$\{\myvec{x}_i, y_i, w_i\}_{i = 1}^N$ is
-minimised, i.e.\
+minimised. Formally, the parameters are given by the optimisation problem
 \begin{align*}
   \myvec{\hat{\theta}} =
   \argmin_{\myvec{\theta}}\mathopen{}\left(
-  \frac{\sum_{i = 1}^{N} w_i \, L(y_i, f(\myvec{x}_i; \myvec{\theta}))}{\sum_{i = 1}^{N} w_i}
+  \frac{\sum_{i = 1}^{N} w_i L(y_i, f(\myvec{x}_i; \myvec{\theta}))}{\sum_{i = 1}^{N} w_i}
   \right)\mathclose{}
   \,\text{.}
 \end{align*}
-This optimisation problem is (for non-trivial NNs) non-convex and analytically
-intractable. In practice, the minimisation is often performed using
-\emph{stochastic gradient descent} (SGD) or derivatives thereof. SGD is a
-gradient-based optimisation method in which the gradient of the loss function is
-estimated using random subsamples of training data. These subsamples are
-referred to as \emph{mini-batches} and are denoted by
-$\{\myvec{x}_{(i)}, y_{(i)}, w_{(i)}\}_{i=1}^{M}$, where $M$ is the batch
-size~\cite{Goodfellow-et-al-2016}. The mini-batch estimate of the gradient is
+This optimisation is non-convex and analytically intractable (for non-trivial
+NNs). In practice, the minimisation is often performed using \emph{stochastic
+  gradient descent} (SGD) or derivatives thereof. SGD is a gradient-based
+optimisation method in which the gradient of the loss function is estimated
+using random subsamples of training data. These subsamples are referred to as
+\emph{mini-batches} and are denoted by
+$\{\myvec{x}_{(i)}, y_{(i)}, w_{(i)}\}_{i=1}^{M}$ for a batch of size
+$M$~\cite{Goodfellow-et-al-2016}. The mini-batch estimate of the gradient is
 given by
 \begin{align*}
   \myvec{g}(\myvec{\theta})
   = \frac{
-  \sum_{i=1}^{M} w_{(i)} \, \nabla_{\!\myvec{\theta}} \, L(y_{(i)}, f(\myvec{x}_{(i)}; \myvec{\theta}))
+  \sum_{i=1}^{M} w_{(i)}  \nabla_{\!\myvec{\theta}} L(y_{(i)}, f(\myvec{x}_{(i)}; \myvec{\theta}))
   }{
   \sum_{i=1}^{M} w_{(i)}
-  } \,\text{.}
+  } \,\text{,}
 \end{align*}
-Training of NNs using SGD proceeds by first randomly initialising the parameters
-of the network ($\myvec{\theta}_{0}$). Afterwards, a number SGD iterations are
-performed that consist of drawing a mini-batch from the training data followed
-by a parameter update according to
+where $\nabla_{\!\myvec{\theta}}$ refers to the vector of partial derivatives in
+parameter space~\cite{Goodfellow-et-al-2016}. The training of NNs using SGD
+proceeds by first randomly initialising the parameters to
+$\myvec{\theta} = \myvec{\theta}_0$. Afterwards, a number of SGD iterations are
+performed until convergence or another stopping criterion is met. The iterations
+consist of drawing a mini-batch from the training data followed by the parameter
+update
 \begin{align*}
   \myvec{\theta}_{t + 1} = \myvec{\theta}_{t} - \eta_{t} \myvec{g}(\myvec{\theta}_{t}) \,\text{,}
 \end{align*}
-where $\eta_{t}$ is referred to as the learning rate. The learning rate might be
-constant with respect to $t$ or follow a pre-defined schedule, for example
-exponentially decaying learning rates are frequently used. A modification of SGD
-is \emph{SGD with momentum} which improves the convergence in
+where $\eta_{t}$ is referred to as the learning
+rate~\cite{Goodfellow-et-al-2016}. The learning rate can follow a pre-defined
+schedule with respect to the iteration counter~$t$, common ones being constant
+or exponentially decaying learning rates. A modification of this algorithm is
+\emph{SGD with momentum} which aims to improve the convergence properties of
+SGD. The modified algorithm alters the parameter update according to
 \begin{align*}
   \myvec{\theta}_{t + 1} = \myvec{\theta}_{t}
   + \alpha \Delta\myvec{\theta}_{t} - \eta_t \myvec{g}(\myvec{\theta}_{t})
@@ -430,7 +435,7 @@ which introduces the momentum parameter
 $0 \leq \alpha < 1$~\cite{rumelhart1986learning,Goodfellow-et-al-2016}. The
 update of SGD with momentum can be loosely interpreted as the movement of a
 massive object through parameter space with two forces acting on the object: a
-force proportional to~$-\myvec{g}(\myvec{\theta})$; a friction-like force
+force proportional to~$-\myvec{g}(\myvec{\theta})$ and a friction-like force
 proportional and opposed to the
 velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 
