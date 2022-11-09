@@ -452,6 +452,8 @@ language processing being the representation of sentences, which are sequences
 of words. In the context of HEP, one might encode the properties of jets
 reconstructed in an particle collision event as a variable-length sequence.
 
+
+
 Internal state -> contextual information
 
 Formally, variable-length sequences will be denoted by
@@ -462,11 +464,23 @@ in the following, where the length of the sequence~$N$ is allowed to vary
 between data points.
 
 
+
+Long short-term memory (LSTM)~\cite{lstm}
+
+
+\cite{lstm,Goodfellow-et-al-2016,keras}
+
+
+three gates: the forget gate, the input gate, and the output gate.
+
+
 \begin{alignat*}{3}
   \myvec{f}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{f}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{f}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{f}}) \\
   \myvec{i}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{i}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{i}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{i}}) \\
   \myvec{o}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{o}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{o}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{o}})
 \end{alignat*}
+
+The activations of the gates control the flow of information
 
 \begin{align*}
   &\myvec{c}_{t} = \myvec{f}_{t} \circ \myvec{c}_{t - 1}
@@ -480,15 +494,23 @@ between data points.
   \includegraphics[scale=1.0]{ml/lstm}
 
   \caption{Computational graph of a single LSTM cell for time step
-    $t$. Operations in circles in circles represent element-wise multiplication
-    ($\times$), addition ($+$), and element-wise application of the $\tanh$
-    activation function ($\myvec{\phi}$).}
+    $t$. Operations in circles represent element-wise multiplication
+    ($\times$), element-wise addition ($+$), and element-wise application of the
+    $\tanh$ activation function ($\myvec{\phi}$).
+
+  }
   \label{fig:lstm}
 \end{figure}
 
 
 
-LSTM~\cite{lstm}
+
+
+
+% A input sequence~$(\myvec{x}_{t})_{t = 1}^{N}$ can be processed by connecting
+    % repeating the computation depicted in the figure once for
+    % connecting $N$ of the depicted cell as depicted horizontally
+    % horizontally connecting $N$.
 
 
 

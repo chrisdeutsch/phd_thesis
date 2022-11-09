@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.26">
-<info created="D:20221107132533" modified="D:20221109144953"/>
+<info created="D:20221107132533" modified="D:20221109145157"/>
 <preamble>\usepackage{newtxtext}
 \usepackage{newtxmath}
 \usepackage{bm}
@@ -610,14 +610,14 @@ h
 </path>
 <text layer="beta" matrix="1 0 0 1 -64 -624" transformations="translations" pos="192 768" stroke="black" type="label" width="6.938" height="5.878" depth="0.04" halign="center" valign="center" size="11" style="math">\times</text>
 <text matrix="1 0 0 1 -76 -520" transformations="translations" pos="204 728" stroke="black" type="label" width="52.562" height="7.715" depth="2.25" halign="center" valign="center" size="11" style="math">\bm{f}_{t}(\bm{x}_{t}, \bm{h}_{t - 1})</text>
-<text matrix="1 0 0 1 -32 -552" transformations="translations" pos="204 728" stroke="black" type="label" width="50.501" height="7.722" depth="2.14" halign="center" valign="center" size="11" style="math">\bm{i}_{t}(\bm{x}_{t}, \bm{h}_{t - 1})</text>
+<text matrix="1 0 0 1 -28 -552" transformations="translations" pos="204 728" stroke="black" type="label" width="50.501" height="7.722" depth="2.14" halign="center" valign="center" size="11" style="math">\bm{i}_{t}(\bm{x}_{t}, \bm{h}_{t - 1})</text>
 <path stroke="black" pen="0.7">
 128 200 m
 128 156 l
 </path>
 <path stroke="black" pen="0.7">
 212 176 m
-200 176 l
+204 176 l
 </path>
 <text matrix="1 0 0 1 32 -624" transformations="translations" pos="192 768" stroke="black" type="label" width="6.153" height="5.422" depth="0" halign="center" valign="center" size="11" style="math">+</text>
 <text matrix="1 0 0 1 32 -592" transformations="translations" pos="192 768" stroke="black" type="label" width="6.938" height="5.878" depth="0.04" halign="center" valign="center" size="11" style="math">\times</text>
