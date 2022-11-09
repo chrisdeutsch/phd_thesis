@@ -439,13 +439,33 @@ force proportional to~$-\myvec{g}(\myvec{\theta})$ and a friction-like force
 proportional and opposed to the
 velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 
-% Exponential decay $\eta_{t} = \eta_{0} (1 - \lambda)^{-t}$
-
 
 \subsubsection{Recurrent Neural Networks}%
 \label{sec:rnn}
 
-Uses: Natural language processing, time series data
+Another appealing feature of NNs is the ability to process various forms of
+structured data--e.g.~graphical images or natural language--by employing
+specialised network architectures. Among these architectures are \emph{recurrent
+  neural networks} (RNN), which allow to operate on variable-length
+sequences. Such sequences occur in many scenarios, an example from natural
+language processing being the representation of sentences, which are ordered
+sequences of words. In the context of HEP, one might encode the properties of
+jets reconstructed in an particle collision event as a variable-length sequence.
+
+
+
+Formally, variable-length sequences will be denoted by
+
+$\myvec{x} = (\myvec{x}_{t})_{t = 1}^{N}$
+
+in the following, where the length of the sequence~$N$ is allowed to vary
+between data points.
+
+
+
+
+
+
 
 RNN operates on sequences of vectors. The length of the sequence is
 variable. Each element of the sequence is typically referred to as a \emph{time
