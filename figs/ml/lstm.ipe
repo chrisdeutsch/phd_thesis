@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.26">
-<info created="D:20221107132533" modified="D:20221109143854"/>
+<info created="D:20221107132533" modified="D:20221109144953"/>
 <preamble>\usepackage{newtxtext}
 \usepackage{newtxmath}
 \usepackage{bm}
@@ -325,7 +325,7 @@ h
 <view layers="beta" active="beta"/>
 <path layer="beta" stroke="0.216 0.494 0.722" pen="0.7">
 96 144 m
-120 144 l
+116 144 l
 </path>
 <path stroke="0.894 0.102 0.11" pen="0.7">
 96 240 m
@@ -646,7 +646,7 @@ h
 <text matrix="1 0 0 1 8 -160" transformations="translations" pos="68 400" stroke="0.894 0.102 0.11" type="label" width="19.714" height="7.622" depth="1.77" halign="right" valign="center" size="11" style="math">\bm{h}_{t-1}</text>
 <text matrix="1 0 0 1 304 -256" transformations="translations" pos="68 400" stroke="0.216 0.494 0.722" type="label" width="9.34" height="4.96" depth="1.77" valign="center" size="11" style="math">\bm{c}_{t}</text>
 <text matrix="1 0 0 1 304 -160" transformations="translations" pos="68 400" stroke="0.894 0.102 0.11" type="label" width="10.66" height="7.622" depth="1.77" valign="center" size="11" style="math">\bm{h}_{t}</text>
-<text matrix="1 0 0 1 156 -124" transformations="translations" pos="68 400" stroke="0.302 0.686 0.29" type="label" width="8.959" height="4.526" depth="1.62" halign="center" valign="baseline" style="math">\bm{x}_{t}</text>
+<text matrix="1 0 0 1 156 -124" transformations="translations" pos="68 400" stroke="0.302 0.686 0.29" type="label" width="9.766" height="4.96" depth="1.77" halign="center" valign="baseline" size="11" style="math">\bm{x}_{t}</text>
 <text matrix="1 0 0 1 -48 -272" transformations="translations" pos="272 512" stroke="0" type="label" width="76.066" height="7.622" depth="1.77" halign="center" valign="center" size="11" style="math">\bm{U} {\color{g} \bm{x}_{t}} + \bm{W} {\color{r} \bm{h}_{t-1}} + \bm{b}</text>
 <path stroke="0.302 0.686 0.29" pen="0.7">
 224 272 m
@@ -759,9 +759,6 @@ h
 96 544 m
 100 544 l
 </path>
-<path matrix="1 0 0 1 -80 -624" stroke="black" pen="0.7">
-8 0 0 8 208 768 e
-</path>
 <path matrix="1 0 0 1 -64 -624" stroke="black" pen="0.7">
 8 0 0 8 288 768 e
 </path>
@@ -860,6 +857,13 @@ h
 <path stroke="0.216 0.494 0.722" pen="0.7">
 80 144 m
 92 144 l
+</path>
+<path matrix="1 0 0 1 20 -400" stroke="0.216 0.494 0.722" pen="0.2" arrow="normal/normal">
+96 544 m
+100 544 l
+</path>
+<path matrix="1 0 0 1 -80 -624" stroke="black" pen="0.7">
+8 0 0 8 208 768 e
 </path>
 </page>
 </ipe>
