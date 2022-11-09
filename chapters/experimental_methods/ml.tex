@@ -446,13 +446,13 @@ velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 Another appealing feature of NNs is the ability to process various forms of
 structured data--e.g.~graphical images or natural language--by employing
 specialised network architectures. Among these architectures are \emph{recurrent
-  neural networks} (RNN), which allow to operate on variable-length
+  neural networks} (RNN), which allow to operate on ordered, variable-length
 sequences. Such sequences occur in many scenarios, an example from natural
-language processing being the representation of sentences, which are ordered
-sequences of words. In the context of HEP, one might encode the properties of
-jets reconstructed in an particle collision event as a variable-length sequence.
+language processing being the representation of sentences, which are sequences
+of words. In the context of HEP, one might encode the properties of jets
+reconstructed in an particle collision event as a variable-length sequence.
 
-
+Internal state -> contextual information
 
 Formally, variable-length sequences will be denoted by
 
@@ -462,7 +462,30 @@ in the following, where the length of the sequence~$N$ is allowed to vary
 between data points.
 
 
+\begin{alignat*}{3}
+  \myvec{f}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{f}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{f}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{f}}) \\
+  \myvec{i}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{i}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{i}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{i}}) \\
+  \myvec{o}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{o}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{o}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{o}})
+\end{alignat*}
 
+\begin{align*}
+  &\myvec{c}_{t} = \myvec{f}_{t} \circ \myvec{c}_{t - 1}
+    + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{h}_{t-1} + \myvec{b}) \\
+  &\myvec{h}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{c}_{t})
+\end{align*}
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[scale=1.0]{ml/lstm}
+
+  \caption{LSTM cell}
+  \label{fig:lstm}
+\end{figure}
+
+
+
+LSTM~\cite{lstm}
 
 
 
