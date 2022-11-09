@@ -359,7 +359,7 @@ class, respectively. A suitable loss function for binary classification is
 \end{align}
 where it is assumed that the NN can be defined such that
 $f(\myvec{x}, \myvec{\theta}) \in (0, 1)$, for example by using the logistic
-(sigmoid) function as the activiation function in the final layer. This loss
+(sigmoid) function as the activation function in the final layer. This loss
 function is referred to as the \emph{binary cross-entropy loss}, hereafter. The
 function that minimises the expected loss is
 \begin{align*}
@@ -416,7 +416,7 @@ update
   \myvec{\theta}_{t + 1} = \myvec{\theta}_{t} - \eta_{t} \myvec{g}(\myvec{\theta}_{t}) \,\text{,}
 \end{align*}
 where $\eta_{t}$ is referred to as the learning
-rate~\cite{Goodfellow-et-al-2016}. The learning rate can follow a pre-defined
+rate~\cite{Goodfellow-et-al-2016}. The learning rate can follow a predefined
 schedule with respect to the iteration counter~$t$, common ones being constant
 or exponentially decaying learning rates. A modification of this algorithm is
 \emph{SGD with momentum} which aims to improve the convergence properties of
