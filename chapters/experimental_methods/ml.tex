@@ -444,21 +444,54 @@ velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 \label{sec:rnn}
 
 Another appealing feature of NNs is the ability to process various forms of
-structured data--e.g.~graphical images or natural language--by employing
-specialised network architectures. Among these architectures are \emph{recurrent
-  neural networks} (RNN), which allow to operate on ordered, variable-length
+structured data (graphical images, natural language, etc.) using specialised
+network architectures. Among these architectures are \emph{recurrent neural
+  networks} (RNN), which allow to operate on ordered, variable-length
 sequences. Such sequences occur in many scenarios, an example from natural
-language processing being the representation of sentences, which are sequences
-of words. In the context of HEP, one might encode the properties of jets
-reconstructed in an particle collision event as a variable-length sequence.
+language processing being the representation of sentences, which are ordered
+sequences of words. In the context of HEP, one might encode the properties of
+jets reconstructed in a particle collision event as a variable-length
+sequence. In the following, ordered, variable-length sequences are denoted by
+\begin{align*}
+  \myvec{x} = (\myvec{x}_{t})_{t = 1}^{N} \,\text{,}
+\end{align*}
+where $t$ is referred to as the \emph{time step}, $N$ is the length of the
+sequence, and $\myvec{x}_{t}$ represents the features associated with the $t$-th
+element of the sequence. Computations involving sequences can yield mappings of
+the form:
+\begin{alignat*}{3}
+  &\text{Many-to-many:}\,
+  &&(\myvec{x}_{t})_{t = 1}^{N} &&\ra (\myvec{y}_{t})_{t = 1}^{M} \\
+  &\text{Many-to-one:}\,
+  &&(\myvec{x}_{t})_{t = 1}^{N} &&\ra (\myvec{y}_{1}) \\
+  &\text{One-to-many:}\,
+  &&(\myvec{x}_1)              &&\ra (\myvec{y}_{t})_{t = 1}^{M} \,\text{.}
+\end{alignat*}
+Moreover, when performing such computations, it would be useful to exploit the
+context in which an element of the input/output sequence occurs. For example, it
+might be beneficial to include information of the first $t - 1$ elements of a
+sequence when processing the $t$-th element. These kinds of computations are the
+primary motivation for RNN. This thesis is mostly concerned with the
+many-to-one, and many-to-many case for $N = M$.
+
+
+
+
+
+
+
+
+
+Problems with RNN
+- The problem of learning long-term dependencies in recurrent networks
+-
+
+
+
 
 
 
 Internal state -> contextual information
-
-Formally, variable-length sequences will be denoted by
-
-$\myvec{x} = (\myvec{x}_{t})_{t = 1}^{N}$
 
 in the following, where the length of the sequence~$N$ is allowed to vary
 between data points.
