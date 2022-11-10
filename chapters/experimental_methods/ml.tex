@@ -446,7 +446,7 @@ velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 Another appealing feature of NNs is the ability to process various forms of
 structured data (graphical images, natural language, etc.) using specialised
 network architectures. Among these architectures are \emph{recurrent neural
-  networks} (RNN), which allow to operate on ordered, variable-length
+  networks} (RNNs), which allow to operate on ordered, variable-length
 sequences. Such sequences occur in many scenarios, an example from natural
 language processing being the representation of sentences, which are ordered
 sequences of words. In the context of HEP, one might encode the properties of
@@ -469,10 +469,48 @@ the form:
 \end{alignat*}
 Moreover, when performing such computations, it would be useful to exploit the
 context in which an element of the input/output sequence occurs. For example, it
-might be beneficial to include information of the first $t - 1$ elements of a
-sequence when processing the $t$-th element. These kinds of computations are the
-primary motivation for RNN. This thesis is mostly concerned with the
-many-to-one, and many-to-many case for $N = M$.
+can be beneficial to include information regarding the first $t - 1$ elements of
+a sequence when processing the $t$-th element. These kinds of computations are
+the primary motivation for RNNs. This thesis is mostly concerned with the
+many-to-one and many-to-many ($N = M$) cases.
+
+The ability of RNNs to process variable-length sequences while exploiting
+contextual information is enabled by two general concepts: \emph{parameter
+  sharing} and the incorporation of an \emph{internal state} in the
+network. These concepts are illustrated using the example of the \emph{long
+  short-term memory} (LSTM) architecture~\cite{lstm,gers2000learning},
+hereafter. Consider an input sequence~$(\myvec{x}_{t})_{t = 1}^{N}$ and an
+output sequence of the same length~$(\myvec{h}_{t})_{t = 1}^{N}$. Further, let
+$\myvec{h}_{0} = \myvec{0}$.  LSTM computes the output sequence by iterating
+over time steps starting at $t = 1$. Three quantities referred to as \emph{gate
+  activations} are defined as~\cite{Goodfellow-et-al-2016}
+\begin{alignat*}{3}
+  \myvec{f}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{f}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{f}}  \myvec{h}_{t - 1} &&+ \myvec{b}^{\text{f}}\bigr) \\
+  \myvec{i}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{i}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{i}}  \myvec{h}_{t - 1} &&+ \myvec{b}^{\text{i}}\bigr) \\
+  \myvec{o}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{o}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{o}}  \myvec{h}_{t - 1} &&+ \myvec{b}^{\text{o}}\bigr) \,\text{,}
+\end{alignat*}
+which are the gate activations of the \emph{forget gate}, \emph{input gate}, and
+the \emph{output gate} at time $t$, respectively. Each gate is defined by weight
+matrices~$\myvec{U}^{\text{f/i/o}}$ and $\myvec{W}^{\text{f/i/o}}$, as well as a
+bias vector~$\myvec{b}^{\text{f/i/o}}$. For a given gate, the weights and biases
+are identical across all time steps, which is an implementation of parameter
+sharing. Finally, $\myvec{\sigma}$ refers to the element-wise application of the
+logistic (sigmoid) function such that the gate activations are elements of
+$(0, 1)^{M}$.
+
+
+
+
+The purpose of the gate
+
+\begin{align*}
+  &\myvec{c}_{t} = \myvec{f}_{t} \circ \myvec{c}_{t - 1}
+    + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{h}_{t-1} + \myvec{b}) \\
+  &\myvec{h}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{c}_{t}) \,\text{,}
+\end{align*}
+where $\circ$ is the element-wise multiplication of two vectors, $\phi$ is an
+activation function defined by the element-wise application of the hyperbolic
+tangent.
 
 
 
@@ -481,45 +519,66 @@ many-to-one, and many-to-many case for $N = M$.
 
 
 
+
+
+
+
+
+
+There are other methods such as \emph{gated recurrent units}~\cite{} and also
+approaches using entirely different architectures such as
+\emph{transformers}~\cite{vaswani2017attention}.
+
+the same set of parameters is used to define the computation at any time step.
+
+dynamic internal state that evolves through time.
+
+The processing of variable-length sequences with an NN involves a mechanism of
+sharing parameters p
+
+requires a mechanism of
+sharing parameters
+
+
+requiring a mechanism of sharing parameters
+
+
+
+
+
+
+
+
+
+- Processing sequence: weights have to be shared.
+- Context: need some dynamic internal state that propagates through time
 
 Problems with RNN
 - The problem of learning long-term dependencies in recurrent networks
--
-
-
-
-
-
-
-Internal state -> contextual information
-
-in the following, where the length of the sequence~$N$ is allowed to vary
-between data points.
-
-
 
 Long short-term memory (LSTM)~\cite{lstm}
 
+\textsc{Keras}~\cite{keras}
 
-\cite{lstm,Goodfellow-et-al-2016,keras}
+%% Goodfellow-et-al-2016,}
+
 
 
 three gates: the forget gate, the input gate, and the output gate.
 
 
-\begin{alignat*}{3}
-  \myvec{f}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{f}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{f}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{f}}) \\
-  \myvec{i}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{i}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{i}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{i}}) \\
-  \myvec{o}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}(\myvec{U}_{\text{o}} \kern1pt \myvec{x}_{t} &&+ \myvec{W}_{\text{o}} \kern1pt \myvec{h}_{t - 1} &&+ \myvec{b}_{\text{o}})
-\end{alignat*}
+\footnote{The introduction of gates is a solution to what is referred to as the
+  \emph{vanishing} or \emph{exploding gradient
+    problem}~\cite{hochreiter1991untersuchungen,}, which prevents efficient
+  training of simpler RNN architectures using gradient-based optimisation
+  methods due to exponentially decaying/growing gradients with respect to $t$.}
+
+
+
 
 The activations of the gates control the flow of information
 
-\begin{align*}
-  &\myvec{c}_{t} = \myvec{f}_{t} \circ \myvec{c}_{t - 1}
-    + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{h}_{t-1} + \myvec{b}) \\
-  &\myvec{h}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{c}_{t})
-\end{align*}
+
 
 \begin{figure}[htbp]
   \centering
