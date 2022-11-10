@@ -490,23 +490,32 @@ over time steps starting at $t = 1$. Three quantities referred to as \emph{gate
   \myvec{o}_{t}(\myvec{x}_{t}, \myvec{h}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{o}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{o}}  \myvec{h}_{t - 1} &&+ \myvec{b}^{\text{o}}\bigr) \,\text{,}
 \end{alignat*}
 which are the gate activations of the \emph{forget gate}, \emph{input gate}, and
-the \emph{output gate} at time $t$, respectively. Each gate is defined by weight
-matrices~$\myvec{U}^{\text{f/i/o}}$ and $\myvec{W}^{\text{f/i/o}}$, as well as a
-bias vector~$\myvec{b}^{\text{f/i/o}}$. For a given gate, the weights and biases
-are identical across all time steps, which is an implementation of parameter
-sharing. Finally, $\myvec{\sigma}$ refers to the element-wise application of the
-logistic (sigmoid) function such that the gate activations are elements of
-$(0, 1)^{M}$.
+the \emph{output gate} at time $t$, respectively. Each gate is parameterised by
+weight matrices~$\myvec{U}^{\text{f/i/o}}$ and $\myvec{W}^{\text{f/i/o}}$, as
+well as a bias vector~$\myvec{b}^{\text{f/i/o}}$. For a given gate, the weights
+and biases are identical across all time steps, which is an implementation of
+parameter sharing. Finally, $\myvec{\sigma}$ refers to the element-wise
+application of the logistic (sigmoid) function such that the gate activations
+are elements of $(0, 1)^{M}$.
 
 
 
+The internal state of the LSTM at time $t$ is denoted by
+$\myvec{s}_{t}$. Initially the state is set to $\myvec{s}_{0} = \myvec{0}$. The
+state at time $t$ is computed according to%~\cite{}
+\begin{align}
+  \myvec{s}_{t} = \myvec{f}_{t} \circ \myvec{s}_{t - 1}
+  + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{h}_{t-1} + \myvec{b})
+  \label{eq:lstm_state_update}
+\end{align}
+.
 
-The purpose of the gate
+\Cref{eq:lstm_state_update} illustrates
+
+
 
 \begin{align*}
-  &\myvec{c}_{t} = \myvec{f}_{t} \circ \myvec{c}_{t - 1}
-    + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{h}_{t-1} + \myvec{b}) \\
-  &\myvec{h}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{c}_{t}) \,\text{,}
+  &\myvec{h}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{s}_{t}) \,\text{,}
 \end{align*}
 where $\circ$ is the element-wise multiplication of two vectors, $\phi$ is an
 activation function defined by the element-wise application of the hyperbolic
@@ -525,29 +534,12 @@ tangent.
 
 
 
-There are other methods such as \emph{gated recurrent units}~\cite{} and also
-approaches using entirely different architectures such as
-\emph{transformers}~\cite{vaswani2017attention}.
+There are other methods such as \emph{gated recurrent
+  units}~\cite{cho2014properties} and also approaches using entirely different
+architectures such as \emph{transformers}~\cite{vaswani2017attention}.
 
-the same set of parameters is used to define the computation at any time step.
 
 dynamic internal state that evolves through time.
-
-The processing of variable-length sequences with an NN involves a mechanism of
-sharing parameters p
-
-requires a mechanism of
-sharing parameters
-
-
-requiring a mechanism of sharing parameters
-
-
-
-
-
-
-
 
 
 - Processing sequence: weights have to be shared.
@@ -569,7 +561,7 @@ three gates: the forget gate, the input gate, and the output gate.
 
 \footnote{The introduction of gates is a solution to what is referred to as the
   \emph{vanishing} or \emph{exploding gradient
-    problem}~\cite{hochreiter1991untersuchungen,}, which prevents efficient
+    problem}~\cite{hochreiter1991untersuchungen}, which prevents efficient
   training of simpler RNN architectures using gradient-based optimisation
   methods due to exponentially decaying/growing gradients with respect to $t$.}
 
