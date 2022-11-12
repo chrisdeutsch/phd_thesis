@@ -447,18 +447,19 @@ velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 \label{sec:rnn}
 
 Another appealing feature of NNs is the ability to process various forms of
-structured data (graphical images, natural language, etc.) using specialised
-network architectures. Among these architectures are \emph{recurrent neural
-  networks} (RNNs), which allow to operate on ordered, variable-length
-sequences. Such sequences occur in many scenarios, an example from natural
-language processing being the representation of sentences, which are ordered
-sequences of words. In the context of HEP, one might encode the properties of
-jets reconstructed in a particle collision event as a variable-length
-sequence. In the following, ordered, variable-length sequences are denoted
-by~$(\myvec{x}_{t})_{t = 1}^{N}$, where $t$ is referred to as \emph{time} or
-\emph{time step}, $N$ is the length of the sequence, and $\myvec{x}_{t}$
-represents the features associated with the $t$-th element of the
-sequence. Computations involving sequences can result in mappings of the form:
+unstructured\todo{meaning too vague?} data (graphical images, natural language,
+etc.) using specialised network architectures. Among these architectures are
+\emph{recurrent neural networks} (RNNs), which allow to operate on ordered,
+variable-length sequences. Such sequences occur in many scenarios, an example
+from natural language processing being the representation of sentences, which
+are ordered sequences of words. In the context of HEP, one might encode the
+properties of jets reconstructed in a particle collision event as a
+variable-length sequence. In the following, such sequences are denoted
+by~$(\myvec{x}_{t})_{t = 1}^{N}$, where $t$ is conventionally referred to as
+\emph{time} or a \emph{time step}, $N$ is the length of the sequence, and
+$\myvec{x}_{t}$ represents the features associated with the $t$-th element of
+the sequence. Computations involving sequences can result in mappings of the
+form:
 \begin{alignat*}{3}
   &\text{Many-to-many:}\,
   &&(\myvec{x}_{t})_{t = 1}^{N} &&\ra (\myvec{y}_{t})_{t = 1}^{M} \\
@@ -478,19 +479,19 @@ The ability of RNNs to process variable-length sequences while exploiting
 contextual information is enabled by two concepts: \emph{parameter sharing} and
 the incorporation of an \emph{internal state} in the network. These concepts are
 illustrated using the example of the \emph{long short-term memory} (LSTM)
-architecture~\cite{lstm,gers2000learning}, hereafter.\footnote{Maybe say that
-  first the mathematical implementation is discussed and then the 'meaning'.}
+architecture~\cite{lstm,gers2000learning}, hereafter.\todo{Maybe say that first
+  the mathematical implementation is discussed and then the 'meaning'.}
 Consider an input and output sequence denoted by $(\myvec{x}_{t})_{t = 1}^{N}$
 and $(\myvec{y}_{t})_{t = 1}^{N}$, respectively, both sequences having the same
 length. Further, let $\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes the
 output sequence by iterating over time steps starting at $t = 1$. Three
 quantities referred to as \emph{gate activations} are defined
 as~\cite{Goodfellow-et-al-2016}
-\begin{alignat}{3}
+\begin{alignat*}{3}
   \myvec{f}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{f}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{f}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{f}}\bigr) \\
   \myvec{i}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{i}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{i}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{i}}\bigr) \\
-  \myvec{o}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{o}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{o}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{o}}\bigr) \,\text{,}                                                       \label{eq:lstm_gates}
-\end{alignat}
+  \myvec{o}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{o}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{o}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{o}}\bigr) \,\text{,}                                                       % \label{eq:lstm_gates}
+\end{alignat*}
 which are the gate activations of the \emph{forget gate}, \emph{input gate}, and
 the \emph{output gate} at time $t$, respectively. The gate activations are
 parameterised by weight matrices~$\myvec{U}^{\text{f/i/o}}$ and
@@ -503,7 +504,7 @@ $(0, 1)^{M}$. Moreover, an LSTM layer includes an internal state that propagates
 and evolves forward through time. At time $t$, the state of the LSTM is denoted
 by $\myvec{s}_{t}$ and the initial ($t = 0$) state is set to
 $\myvec{s}_{0} = \myvec{0}$. The internal state of an LSTM at time $t$ is given
-by the following recurrence relation
+by the following recurrence relation~\cite{Goodfellow-et-al-2016,keras}
 \begin{align}
   \myvec{s}_{t} = \myvec{f}_{t} \circ \myvec{s}_{t - 1}
   + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{h}_{t-1} + \myvec{b}) \,\text{,}
@@ -511,13 +512,37 @@ by the following recurrence relation
 \end{align}
 where $\circ$ is the element-wise multiplication of two vectors, $\myvec{\phi}$
 is an activation function defined by the element-wise application of the
-hyperbolic tangent, and $\myvec{U}$, $\myvec{W}$, and $\myvec{b}$ are weights
-and biases shared across time steps. Finally, the output of the LSTM layer at
-time $t$ is given by
+hyperbolic tangent,\footnote{The choice of activation function in
+  \Cref{eq:lstm_state_update} is specific to the implementation of LSTM networks
+  in \textsc{Keras}~\cite{keras}.} and $\myvec{U}$, $\myvec{W}$, and $\myvec{b}$
+are weights and biases shared across time steps. Finally, the output of the LSTM
+layer at time~$t$ is given by~\cite{Goodfellow-et-al-2016}
 \begin{align}
   &\myvec{y}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{s}_{t}) \,\text{.}
   \label{eq:lstm_output}
 \end{align}
+A simplified illustration of the computations performed by an LSTM layer for a
+single time step is depicted in \Cref{fig:lstm}.
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[scale=1.0]{ml/lstm}
+
+  \caption{Computational graph of a single LSTM cell for time step
+    $t$. Operations in circles represent element-wise multiplication
+    ($\times$), element-wise addition ($+$), and element-wise application of the
+    $\tanh$ activation function ($\myvec{\phi}$).
+  }
+  \label{fig:lstm}
+\end{figure}
+
+
+
+
+
+
 
 
 
@@ -567,18 +592,7 @@ The activations of the gates control the flow of information
 
 
 
-\begin{figure}[htbp]
-  \centering
 
-  \includegraphics[scale=1.0]{ml/lstm}
-
-  \caption{Computational graph of a single LSTM cell for time step
-    $t$. Operations in circles represent element-wise multiplication
-    ($\times$), element-wise addition ($+$), and element-wise application of the
-    $\tanh$ activation function ($\myvec{\phi}$).
-  }
-  \label{fig:lstm}
-\end{figure}
 
 
 
