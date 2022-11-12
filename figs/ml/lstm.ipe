@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
-<ipe version="70218" creator="Ipe 7.2.25">
-<info created="D:20221107132533" modified="D:20221111100146"/>
+<ipe version="70218" creator="Ipe 7.2.26">
+<info created="D:20221107132533" modified="D:20221112123613"/>
 <preamble>\usepackage{newtxtext}
 \usepackage{newtxmath}
 \usepackage{bm}
@@ -319,10 +319,11 @@ h
 <tiling name="rising" angle="30" step="4" width="1"/>
 </ipestyle>
 <page>
-<layer name="alpha"/>
-<layer name="beta"/>
-<layer name="Guidelines_3"/>
-<view layers="beta" active="beta"/>
+<layer name="alpha" edit="no"/>
+<layer name="beta" edit="no"/>
+<layer name="EDIT-GROUP" data="active=beta;primary=beta;locked="/>
+<layer name="Guidelines_3" edit="no"/>
+<view layers="beta EDIT-GROUP" active="EDIT-GROUP"/>
 <path layer="beta" stroke="0.216 0.494 0.722" pen="0.7">
 96 144 m
 116 144 l
@@ -779,40 +780,6 @@ h
 220 260 l
 </path>
 <group>
-<path stroke="0" pen="1">
-96 252 m
-4 0 0 -4 100 252 100 256 a
-</path>
-<path stroke="0" pen="1">
-348 256 m
-4 0 0 -4 348 252 352 252 a
-</path>
-<path stroke="0" pen="1">
-352 132 m
-4 0 0 -4 348 132 348 128 a
-</path>
-<path stroke="0" pen="1">
-100 128 m
-4 0 0 -4 100 132 96 132 a
-</path>
-<path stroke="0" pen="1">
-100 256 m
-348 256 l
-</path>
-<path stroke="0" pen="1">
-352 252 m
-352 132 l
-</path>
-<path stroke="0" pen="1">
-348 128 m
-100 128 l
-</path>
-<path stroke="0" pen="1">
-96 132 m
-96 252 l
-</path>
-</group>
-<group>
 <path stroke="0" pen="0.7">
 184 244 m
 4 0 0 -4 188 244 188 248 a
@@ -864,6 +831,17 @@ h
 </path>
 <path matrix="1 0 0 1 -80 -624" stroke="black" pen="0.7">
 8 0 0 8 208 768 e
+</path>
+<path layer="EDIT-GROUP" stroke="0" pen="1">
+348 256 m
+4 0 0 -4 348 252 352 252 a
+352 132 l
+4 0 0 -4 348 132 348 128 a
+100 128 l
+4 0 0 -4 100 132 96 132 a
+96 252 l
+4 0 0 -4 100 252 100 256 a
+h
 </path>
 </page>
 </ipe>

@@ -423,7 +423,8 @@ rate~\cite{Goodfellow-et-al-2016}. The learning rate can follow a predefined
 schedule with respect to the iteration counter~$t$, common ones being constant
 or exponentially decaying learning rates. A modification of this algorithm is
 \emph{SGD with momentum} which aims to improve the convergence properties of
-SGD. The modified algorithm alters the parameter update according to
+SGD~\cite{polyak1964some,rumelhart1986learning}. The modified algorithm alters
+the parameter update according to
 \begin{align*}
   \myvec{\theta}_{t + 1} = \myvec{\theta}_{t}
   + \alpha \Delta\myvec{\theta}_{t} - \eta_t \myvec{g}(\myvec{\theta}_{t})
@@ -447,19 +448,18 @@ velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 \label{sec:rnn}
 
 An appealing feature of NNs is their ability to process various forms of
-unstructured\todo{meaning too vague?} data (e.g.~graphical images, natural
-language, etc.) using specialised network architectures. Among these
-architectures are \emph{recurrent neural networks} (RNNs), which allow to
-operate on ordered, variable-length sequences. Such sequences occur in many
-scenarios, an example from natural language processing being the representation
-of sentences, which can be thought of as ordered sequences of words. In the
-context of HEP, one might encode the properties of jets reconstructed in a
-particle collision event as a variable-length sequence. In the following, such
-sequences are denoted by~$(\myvec{x}_{t})_{t = 1}^{N}$, where $t$ is
-conventionally referred to as \emph{time} or a \emph{time step}, $N$ is the
-length of the sequence, and $\myvec{x}_{t}$ represents the features associated
-with the $t$-th element of the sequence. Computations involving sequences can
-yield mappings of the form:
+unstructured data (e.g.~graphical images, natural language, etc.) using
+specialised network architectures. Among these architectures are \emph{recurrent
+  neural networks} (RNNs), which allow to operate on ordered, variable-length
+sequences. Such sequences occur in many scenarios, an example from natural
+language processing being the representation of sentences, which can be thought
+of as ordered sequences of words. In the context of HEP, one might encode the
+properties of jets reconstructed in a particle collision event as a
+variable-length sequence. In the following, such sequences are denoted
+by~$(\myvec{x}_{t})_{t = 1}^{N}$, where $t$ is conventionally referred to as
+\emph{time} or a \emph{time step}, $N$ is the length of the sequence, and
+$\myvec{x}_{t}$ represents the features associated with the $t$-th element of
+the sequence. Computations involving sequences can yield mappings of the form:
 \begin{alignat*}{3}
   &\text{Many-to-many:}\,
   &&(\myvec{x}_{t})_{t = 1}^{N} &&\ra (\myvec{y}_{t})_{t = 1}^{M} \\
@@ -479,14 +479,12 @@ The ability of RNNs to process variable-length sequences while exploiting
 contextual information is enabled by two concepts: \emph{parameter sharing} and
 the incorporation of an \emph{internal state} in the network. These concepts are
 illustrated using the example of the \emph{long short-term memory} (LSTM)
-architecture~\cite{lstm,gers2000learning}, hereafter.\todo{Maybe say that first
-  the mathematical implementation is discussed and then the 'meaning'.}
-Consider an input and output sequence of the same length denoted by
-$(\myvec{x}_{t})_{t = 1}^{N}$ and $(\myvec{y}_{t})_{t = 1}^{N}$,
-respectively. Further, let $\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes
-the output sequence by iterating over time steps starting at $t = 1$. Three
-quantities referred to as \emph{gate activations} are defined
-as~\cite{Goodfellow-et-al-2016}
+architecture~\cite{lstm,gers2000learning}, hereafter. Consider an input and
+output sequence of the same length denoted by $(\myvec{x}_{t})_{t = 1}^{N}$ and
+$(\myvec{y}_{t})_{t = 1}^{N}$, respectively. Further, let
+$\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes the output sequence by
+iterating over time steps starting at $t = 1$. Three quantities referred to as
+\emph{gate activations} are defined as~\cite{Goodfellow-et-al-2016}
 \begin{alignat*}{3}
   \myvec{f}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{f}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{f}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{f}}\bigr) \\
   \myvec{i}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{i}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{i}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{i}}\bigr) \\
@@ -502,7 +500,7 @@ The function~$\myvec{\sigma}$ refers to the element-wise application of the
 logistic (sigmoid) function, thus the elements of the gate activation vectors
 take values in $(0, 1)$. Moreover, an LSTM layer includes an internal state that
 propagates and evolves forward through time. At time $t$, the state of the LSTM
-is denoted by $\myvec{s}_{t}$ and the initial ($t = 0$) state is set to
+is denoted by $\myvec{s}_{t}$ and the initial state is set to
 $\myvec{s}_{0} = \myvec{0}$. The internal state of an LSTM at time $t$ is given
 by the following recurrence relation~\cite{Goodfellow-et-al-2016,keras}
 \begin{align}
@@ -518,20 +516,26 @@ hyperbolic tangent,\footnote{The choice of activation function in
 are weights and biases shared across time steps. Finally, the output of the LSTM
 layer at time~$t$ is given by~\cite{Goodfellow-et-al-2016}
 \begin{align}
-  &\myvec{y}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{s}_{t}) \,\text{.}
+  &\myvec{y}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{s}_{t}) \,\text{,}
   \label{eq:lstm_output}
 \end{align}
+using the definitions introduced before.
 
-An illustration of the computations performed by an LSTM layer is depicted in
-\Cref{fig:lstm} for a single time step. Moreover, the figure clarifies the
-gating mechanism employed by LSTM networks. The multiplication of the forget
-gate activation, $\myvec{f}_{t}(\myvec{x}_{t}, \myvec{y}_{t - 1})$, with the
-previous internal state, $\myvec{s}_{t - 1}$, allows to selectively
-forget/remember elements of the state depending on the gate
-activation. Similarly, the input gate regulates the incorporation of information
-derived from the current element in the input sequence, $\myvec{x}_{t}$, and the
-prior output of the LSTM, $\myvec{y}_{t - 1}$, into the internal state at
-time~$t$. Lastly, the output gate controls.
+The computational graph of an LSTM layer for a single time step is depicted in
+\Cref{fig:lstm}, illustrating the role of the forget, input, and output gates in
+controlling the flow of information. The forget gate allows to selectively
+forget/remember aspects about the internal state at time $t - 1$ by multiplying
+the state vector~$\myvec{s}_{t - 1}$ by the activation of the forget
+gate. Similarly, the input gate controls the inclusion of information derived
+from the current element of the input sequence, $\myvec{x}_{t}$, and the output
+of the preceeding time step, $\myvec{y}_{t - 1}$, into the internal state at
+time~$t$. Lastly, the output gate controls which parts of the internal state
+(after application of $\myvec{\phi}$) are presented as the
+output~$\myvec{y}_{t}$. An input sequence of length $N$ can be processed by
+repeating the computations depicted in~\Cref{fig:lstm} until the input sequence
+is exhausted, thus yielding an output sequence of the same length. Lastly, a
+many-to-one mapping can be achieved by discarding the first~$N - 1$ outputs of
+an LSTM, using only~$\myvec{y}_{N}$ for further computations.
 
 \begin{figure}[htbp]
   \centering
@@ -553,7 +557,7 @@ time~$t$. Lastly, the output gate controls.
 
 
 
-
+\vspace{5em}
 
 Maybe say that the RNN as described here is directional. (There are
 bi-directional RNNs which are not used here.)
@@ -567,65 +571,23 @@ There are other methods such as \emph{gated recurrent
 architectures such as \emph{transformers}~\cite{vaswani2017attention}.
 
 
-dynamic internal state that evolves through time.
-
-
-- Processing sequence: weights have to be shared.
-- Context: need some dynamic internal state that propagates through time
-
 Problems with RNN
 - The problem of learning long-term dependencies in recurrent networks
 
-Long short-term memory (LSTM)~\cite{lstm}
+% \footnote{The introduction of gates is a solution to what is referred to as
+% the \emph{vanishing} or \emph{exploding gradient
+% problem}~\cite{hochreiter1991untersuchungen}, which prevents efficient
+% training of simpler RNN architectures using gradient-based optimisation
+% methods due to exponentially decaying/growing gradients with respect to $t$.}
 
-\textsc{Keras}~\cite{keras}
+%   A input sequence~$(\myvec{x}_{t})_{t = 1}^{N}$ can be processed by
+%   connecting repeating the computation depicted in the figure once for
+%   connecting $N$ of the depicted cell as depicted horizontally horizontally
+%   connecting $N$.
 
-%% Goodfellow-et-al-2016,}
-
-
-
-three gates: the forget gate, the input gate, and the output gate.
-
-
-\footnote{The introduction of gates is a solution to what is referred to as the
-  \emph{vanishing} or \emph{exploding gradient
-    problem}~\cite{hochreiter1991untersuchungen}, which prevents efficient
-  training of simpler RNN architectures using gradient-based optimisation
-  methods due to exponentially decaying/growing gradients with respect to $t$.}
-
-
-
-
-The activations of the gates control the flow of information
-
-
-
-
-
-
-
-
-
-
-% A input sequence~$(\myvec{x}_{t})_{t = 1}^{N}$ can be processed by connecting
-    % repeating the computation depicted in the figure once for
-    % connecting $N$ of the depicted cell as depicted horizontally
-    % horizontally connecting $N$.
-
-
-
-
-RNN operates on sequences of vectors. The length of the sequence is
-variable. Each element of the sequence is typically referred to as a \emph{time
-  step}.
-
-Can be unfolded into a feedforward neural network. Main point: The unfolded
-layers share their parameters (otherwise the sequences would have to have fixed
-length).
-
-
-Gated RNNs solve the vanishing or exploding gradient problems that plague naive
-RNN implementations. Gradients exponentially decay or grow with every time step.
+%   Gated RNNs solve the vanishing or exploding gradient problems that plague
+%   naive RNN implementations. Gradients exponentially decay or grow with every
+%   time step.
 
 
 %%% Local Variables:
