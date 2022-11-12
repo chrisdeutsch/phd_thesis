@@ -446,20 +446,20 @@ velocity~$\Delta\myvec{\theta}_{t}$~\cite{Goodfellow-et-al-2016}.
 \subsubsection{Recurrent Neural Networks}%
 \label{sec:rnn}
 
-Another appealing feature of NNs is the ability to process various forms of
-unstructured\todo{meaning too vague?} data (graphical images, natural language,
-etc.) using specialised network architectures. Among these architectures are
-\emph{recurrent neural networks} (RNNs), which allow to operate on ordered,
-variable-length sequences. Such sequences occur in many scenarios, an example
-from natural language processing being the representation of sentences, which
-are ordered sequences of words. In the context of HEP, one might encode the
-properties of jets reconstructed in a particle collision event as a
-variable-length sequence. In the following, such sequences are denoted
-by~$(\myvec{x}_{t})_{t = 1}^{N}$, where $t$ is conventionally referred to as
-\emph{time} or a \emph{time step}, $N$ is the length of the sequence, and
-$\myvec{x}_{t}$ represents the features associated with the $t$-th element of
-the sequence. Computations involving sequences can result in mappings of the
-form:
+An appealing feature of NNs is their ability to process various forms of
+unstructured\todo{meaning too vague?} data (e.g.~graphical images, natural
+language, etc.) using specialised network architectures. Among these
+architectures are \emph{recurrent neural networks} (RNNs), which allow to
+operate on ordered, variable-length sequences. Such sequences occur in many
+scenarios, an example from natural language processing being the representation
+of sentences, which can be thought of as ordered sequences of words. In the
+context of HEP, one might encode the properties of jets reconstructed in a
+particle collision event as a variable-length sequence. In the following, such
+sequences are denoted by~$(\myvec{x}_{t})_{t = 1}^{N}$, where $t$ is
+conventionally referred to as \emph{time} or a \emph{time step}, $N$ is the
+length of the sequence, and $\myvec{x}_{t}$ represents the features associated
+with the $t$-th element of the sequence. Computations involving sequences can
+yield mappings of the form:
 \begin{alignat*}{3}
   &\text{Many-to-many:}\,
   &&(\myvec{x}_{t})_{t = 1}^{N} &&\ra (\myvec{y}_{t})_{t = 1}^{M} \\
@@ -481,10 +481,10 @@ the incorporation of an \emph{internal state} in the network. These concepts are
 illustrated using the example of the \emph{long short-term memory} (LSTM)
 architecture~\cite{lstm,gers2000learning}, hereafter.\todo{Maybe say that first
   the mathematical implementation is discussed and then the 'meaning'.}
-Consider an input and output sequence denoted by $(\myvec{x}_{t})_{t = 1}^{N}$
-and $(\myvec{y}_{t})_{t = 1}^{N}$, respectively, both sequences having the same
-length. Further, let $\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes the
-output sequence by iterating over time steps starting at $t = 1$. Three
+Consider an input and output sequence of the same length denoted by
+$(\myvec{x}_{t})_{t = 1}^{N}$ and $(\myvec{y}_{t})_{t = 1}^{N}$,
+respectively. Further, let $\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes
+the output sequence by iterating over time steps starting at $t = 1$. Three
 quantities referred to as \emph{gate activations} are defined
 as~\cite{Goodfellow-et-al-2016}
 \begin{alignat*}{3}
@@ -497,12 +497,12 @@ the \emph{output gate} at time $t$, respectively. The gate activations are
 parameterised by weight matrices~$\myvec{U}^{\text{f/i/o}}$ and
 $\myvec{W}^{\text{f/i/o}}$, as well as bias
 vectors~$\myvec{b}^{\text{f/i/o}}$. For a given gate, the weights and biases are
-the same for all time steps, which is an implementation of parameter sharing.
+the same for all time steps. This is an implementation of parameter sharing.
 The function~$\myvec{\sigma}$ refers to the element-wise application of the
-logistic (sigmoid) function, thus the gate activations are elements of
-$(0, 1)^{M}$. Moreover, an LSTM layer includes an internal state that propagates
-and evolves forward through time. At time $t$, the state of the LSTM is denoted
-by $\myvec{s}_{t}$ and the initial ($t = 0$) state is set to
+logistic (sigmoid) function, thus the elements of the gate activation vectors
+take values in $(0, 1)$. Moreover, an LSTM layer includes an internal state that
+propagates and evolves forward through time. At time $t$, the state of the LSTM
+is denoted by $\myvec{s}_{t}$ and the initial ($t = 0$) state is set to
 $\myvec{s}_{0} = \myvec{0}$. The internal state of an LSTM at time $t$ is given
 by the following recurrence relation~\cite{Goodfellow-et-al-2016,keras}
 \begin{align}
@@ -521,9 +521,17 @@ layer at time~$t$ is given by~\cite{Goodfellow-et-al-2016}
   &\myvec{y}_{t} = \myvec{o}_{t} \circ \myvec{\phi}(\myvec{s}_{t}) \,\text{.}
   \label{eq:lstm_output}
 \end{align}
-A simplified illustration of the computations performed by an LSTM layer for a
-single time step is depicted in \Cref{fig:lstm}.
 
+An illustration of the computations performed by an LSTM layer is depicted in
+\Cref{fig:lstm} for a single time step. Moreover, the figure clarifies the
+gating mechanism employed by LSTM networks. The multiplication of the forget
+gate activation, $\myvec{f}_{t}(\myvec{x}_{t}, \myvec{y}_{t - 1})$, with the
+previous internal state, $\myvec{s}_{t - 1}$, allows to selectively
+forget/remember elements of the state depending on the gate
+activation. Similarly, the input gate regulates the incorporation of information
+derived from the current element in the input sequence, $\myvec{x}_{t}$, and the
+prior output of the LSTM, $\myvec{y}_{t - 1}$, into the internal state at
+time~$t$. Lastly, the output gate controls.
 
 \begin{figure}[htbp]
   \centering
