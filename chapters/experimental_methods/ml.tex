@@ -48,7 +48,8 @@ structure and partitioning is illustrated in \Cref{fig:decision_tree} for a
 two-dimensional example. A decision tree with $J$~leaf nodes partitions the
 input space into $J$~mutually disjoint subregions denoted by $R_j$ for
 $j = 1, \dots, J$. A constant value $c_j$ is assigned to every region $R_j$ such
-that the prediction of a decision tree for a point~$\myvec{x}$ can expressed as
+that the prediction of a decision tree for a point~$\myvec{x}$ can be expressed
+as
 \begin{align*}
   h\bigl( \myvec{x}; \{c_j, R_j\}_{j=1}^{J} \bigr) = \sum_{j = 1}^{J} c_j \, \mathbf{1}(\myvec{x} \in R_j) \qquad \text{with} \qquad \mathbf{1}(\myvec{x} \in R_j) =
   \begin{cases}
@@ -451,16 +452,15 @@ An appealing feature of NNs is their ability to process various forms of
 unstructured data (e.g.~graphical images, natural language, etc.) using
 specialised network architectures. Among these architectures are \emph{recurrent
   neural networks} (RNNs), which operate on ordered, variable-length
-sequences. Such sequences occur in many scenarios, an example from natural
-language processing being the representation of a sentence, which can be thought
-of as an ordered sequence of words. In the context of HEP, one might encode the
-properties of jets reconstructed in a particle collision event as a
-variable-length sequence. Hereafter, sequences are denoted
-by~$(\myvec{x}_{t})_{t = 1}^{N}$, where $t$ is conventionally referred to as
+sequences. Such sequences occur in many scenarios, an example being the
+representation of sentences in natural language processing. In the context of
+HEP, one might encode the properties of jets reconstructed in a particle
+collision event as a variable-length sequence. Hereafter, sequences are denoted
+by~$(\myvec{x}_{t})_{t = 1}^{N}$, where~$t$ is conventionally referred to as
 \emph{time} or a \emph{time step}, $N$ is the length of the sequence, and
-$\myvec{x}_{t}$ represents the features associated with the $t$-th element of
-the sequence. When including sequence data as inputs or outputs in NNs, layers
-that describe mappings of the form
+$\myvec{x}_{t}$ represents the feature vector associated with the $t$-th element
+of the sequence. When including sequence data as inputs or outputs in NNs,
+layers that describe mappings of the form
 \begin{alignat*}{3}
   &\text{Many-to-many:}\,
   &&(\myvec{x}_{t})_{t = 1}^{N} &&\ra (\myvec{y}_{t})_{t = 1}^{M} \\
@@ -469,11 +469,11 @@ that describe mappings of the form
   &\text{One-to-many:}\,
   &&(\myvec{x}_1)              &&\ra (\myvec{y}_{t})_{t = 1}^{M} \,\text{,}
 \end{alignat*}
-are of particular interest. In addition, for certain machine learning tasks it
-can be useful to exploit the context in which an element of the input/output
-sequence occurs. These are the main features addressed by RNNs. The remainder of
-this section focuses on the \emph{many-to-one} and \emph{many-to-many} ($N = M$)
-cases.
+are of particular interest. Additionally, for certain machine learning tasks it
+can be beneficial to exploit the context in which an element of the input/output
+sequence occurs. These capabilities are provided by recurrent layers, which are
+described in the remainder of this section. The focus of the description lies on
+the \emph{many-to-one} and \emph{many-to-many} ($N = M$) cases.
 
 % When performing such computations, it can often be useful to exploit the
 % context in which an element of the input/output sequence occurs.  For example,
@@ -482,12 +482,13 @@ cases.
 % computations are the primary motivation for RNNs. This thesis is mostly
 % concerned with the many-to-one and many-to-many ($N = M$) cases.
 
-The ability of RNNs to process variable-length sequences while exploiting
-contextual information is enabled by two concepts: \emph{parameter sharing} and
-the inclusion of an \emph{internal state} in the network. In the following,
-these concepts are illustrated using the example of \emph{long short-term
-  memory} (LSTM) layers~\cite{lstm,gers2000learning}. Consider an input and
-output sequence of the same length denoted by $(\myvec{x}_{t})_{t = 1}^{N}$ and
+The ability of RNNs to perform computations involving variable-length sequences
+while exploiting contextual information is enabled by two concepts:
+\emph{parameter sharing} and the inclusion of an \emph{internal state} in the
+network. In the following, these concepts are illustrated using the example of
+\emph{long short-term memory} (LSTM)
+layers~\cite{lstm,gers2000learning}. Consider an input and output sequence of
+the same length denoted by $(\myvec{x}_{t})_{t = 1}^{N}$ and
 $(\myvec{y}_{t})_{t = 1}^{N}$, respectively. Further, let
 $\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes the output sequence by
 iterating over time steps starting at $t = 1$. Three quantities referred to as
@@ -502,9 +503,9 @@ the \emph{output gate} at time $t$, respectively. The gate activations are
 parameterised by weight matrices~$\myvec{U}^{\text{f/i/o}}$ and
 $\myvec{W}^{\text{f/i/o}}$, as well as bias
 vectors~$\myvec{b}^{\text{f/i/o}}$. For a given gate, the weights and biases are
-the same for all time steps. This is an implementation of parameter sharing.
+the same for all time steps, which is an implementation of parameter sharing.
 The function~$\myvec{\sigma}$ refers to the element-wise application of the
-logistic (sigmoid) function, thus the elements of the gate activation vectors
+logistic (sigmoid) function, thus the components of the gate activation vectors
 take values in $(0, 1)$. Moreover, an LSTM layer includes an internal state that
 propagates and evolves forward through time. At time $t$, the state of the LSTM
 is denoted by $\myvec{s}_{t}$ and the initial state is set to
@@ -529,13 +530,13 @@ layer at time~$t$ is given by~\cite{Goodfellow-et-al-2016}
 using the definitions introduced before.
 
 The computational graph of an LSTM layer for a single time step is depicted in
-\Cref{fig:lstm}, illustrating the role of the forget, input, and output gates in
-controlling the flow of information. The forget gate allows to selectively
-forget/remember aspects about the internal state at time $t - 1$ by multiplying
-the state vector~$\myvec{s}_{t - 1}$ by the activation of the forget
+\Cref{fig:lstm}, illustrating the role of the forget gate, input gate, and
+output gate in controlling the flow of information. The forget gate allows to
+selectively forget/remember aspects about the internal state at time $t - 1$ by
+multiplying the state vector~$\myvec{s}_{t - 1}$ by the activation of the forget
 gate. Similarly, the input gate controls the inclusion of information derived
 from the current element of the input sequence, $\myvec{x}_{t}$, and the output
-of the preceeding time step, $\myvec{y}_{t - 1}$, into the internal state at
+of the preceding time step, $\myvec{y}_{t - 1}$, into the internal state at
 time~$t$. Lastly, the output gate controls which parts of the internal state
 (after application of $\myvec{\phi}$) are presented as the
 output~$\myvec{y}_{t}$. An input sequence of length $N$ can be processed by
