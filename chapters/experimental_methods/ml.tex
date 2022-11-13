@@ -1,10 +1,46 @@
-\section{Machine Learning}
+\section{Machine Learning}%
+\label{sec:machine_learning}
+
+In the field of HEP, one is often concerned with the analysis of experimental
+data with observations consisting of numerous observed quantities.
+% The analysis of such data is referred to as multivariate analysis (MVA).
+A common tasks in HEP is classificiation, an example being the classification of
+particle collision events into events from signal and background processes. In
+the past, classification rules were often determined by hand. This is a
+difficult and time intensive process, in particular when working with
+high-dimensional data. Over the last decade, the use of machine learning methods
+in HEP has become increasingly popular as an alternative approach.
+
+
+
+
+supervised learning: we have access to the desired outcome.
+
+During the last, the use of machine learning methods in HEP has become
+increasingly popular.
+
+
+
+
+
+in the last decade.
+
+
+Machine learning is becoming
+
+
+
+The use of machine learning is becoming increasingly prevalent
+
+
+
+
+
+
+
 
 \begin{itemize}
 \item What is machine learning?
-
-\item Why is it useful for HEP? (Problems are multivariate... -- with high-order
-  interactions between variables)
 
 \item Supervised learning, i.e.\ have labelled data.
 
@@ -471,9 +507,9 @@ layers that describe mappings of the form
 \end{alignat*}
 are of particular interest. Additionally, for certain machine learning tasks it
 can be beneficial to exploit the context in which an element of the input/output
-sequence occurs. These capabilities are provided by recurrent layers, which are
-described in the remainder of this section. The focus of the description lies on
-the \emph{many-to-one} and \emph{many-to-many} ($N = M$) cases.
+sequence occurs. These capabilities are provided by recurrent NN layers, which
+are described in the remainder of this section. The focus of the description
+lies on the \emph{many-to-one} and \emph{many-to-many} ($N = M$) cases.
 
 % When performing such computations, it can often be useful to exploit the
 % context in which an element of the input/output sequence occurs.  For example,
@@ -485,14 +521,14 @@ the \emph{many-to-one} and \emph{many-to-many} ($N = M$) cases.
 The ability of RNNs to perform computations involving variable-length sequences
 while exploiting contextual information is enabled by two concepts:
 \emph{parameter sharing} and the inclusion of an \emph{internal state} in the
-network. In the following, these concepts are illustrated using the example of
-\emph{long short-term memory} (LSTM)
-layers~\cite{lstm,gers2000learning}. Consider an input and output sequence of
-the same length denoted by $(\myvec{x}_{t})_{t = 1}^{N}$ and
-$(\myvec{y}_{t})_{t = 1}^{N}$, respectively. Further, let
-$\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes the output sequence by
-iterating over time steps starting at $t = 1$. Three quantities referred to as
-\emph{gate activations} are defined as~\cite{Goodfellow-et-al-2016}
+network. These concepts are illustrated using the example of the \emph{long
+  short-term memory} (LSTM) layer~\cite{lstm,gers2000learning}. Consider an
+input and output sequence denoted by $(\myvec{x}_{t})_{t = 1}^{N}$ and
+$(\myvec{y}_{t})_{t = 1}^{N}$, respectively, both sequences having the same
+length. Further, let $\myvec{y}_{0} = \myvec{0}$. An LSTM layer computes the
+output sequence by iterating over time steps starting at $t = 1$. Three
+quantities referred to as \emph{gate activations} are defined
+as~\cite{Goodfellow-et-al-2016}
 \begin{alignat*}{3}
   \myvec{f}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{f}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{f}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{f}}\bigr) \\
   \myvec{i}_{t}(\myvec{x}_{t}, \myvec{y}_{t-1}) &= \myvec{\sigma}\bigl(\myvec{U}^{\text{i}}  \myvec{x}_{t} &&+ \myvec{W}^{\text{i}}  \myvec{y}_{t - 1} &&+ \myvec{b}^{\text{i}}\bigr) \\
@@ -513,7 +549,7 @@ $\myvec{s}_{0} = \myvec{0}$. The internal state of an LSTM at time $t$ is given
 by the following recurrence relation~\cite{Goodfellow-et-al-2016,keras}
 \begin{align}
   \myvec{s}_{t} = \myvec{f}_{t} \circ \myvec{s}_{t - 1}
-  + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{h}_{t-1} + \myvec{b}) \,\text{,}
+  + \myvec{i}_{t} \circ \myvec{\phi}(\myvec{U} \myvec{x}_{t} + \myvec{W} \myvec{y}_{t-1} + \myvec{b}) \,\text{,}
   \label{eq:lstm_state_update}
 \end{align}
 where $\circ$ is the element-wise multiplication of two vectors, $\myvec{\phi}$
@@ -551,44 +587,38 @@ an LSTM, using only~$\myvec{y}_{N}$ for further computations.
   \includegraphics[scale=1.0]{ml/lstm}
 
   \caption{Computational graph of a single LSTM cell for time step
-    $t$. Operations in circles represent element-wise multiplication
-    ($\times$), element-wise addition ($+$), and element-wise application of the
-    $\tanh$ activation function ($\myvec{\phi}$).
-  }
+    $t$. Operations in circles represent element-wise multiplication ($\times$),
+    element-wise addition ($+$), and element-wise application of the $\tanh$
+    activation function ($\myvec{\phi}$). The graph illustrates the computations
+    performed as part of \Cref{eq:lstm_state_update,eq:lstm_output}.}%
   \label{fig:lstm}
 \end{figure}
 
-\vspace{5em}
-
-Maybe say that the RNN as described here is directional. (There are
-bi-directional RNNs which are not used here.)
-
-
-
-
-
-There are other methods such as \emph{gated recurrent
-  units}~\cite{cho2014properties} and also approaches using entirely different
-architectures such as \emph{transformers}~\cite{vaswani2017attention}.
+Alternatives to LSTM for processing ordered, variable-length sequences in NNs
+exist. For example, \emph{gated recurrent units}~\cite{cho2014properties} are
+recurrent layers similar to LSTM layers in the sense that they also exploit a
+gating mechanism to control the flow of information. A disadvantage of RNNs is
+the sequential nature of the computations they perform, thus preventing
+efficient parallelisation. Recently, a new architectures referred to as
+\emph{transformers}~\cite{vaswani2017attention} were introduced to address this
+problem.
 
 
-Problems with RNN
-- The problem of learning long-term dependencies in recurrent networks
+% state-of-the-art for machine translation.
+
+% An example also relying on a recurrent NN architecture with a gating
+% mechanism being \emph{gated recurrent
+%   units}.
+
+% Approaches not relying on recurrent network architectures
+
+% the most being \emph{transformers}
 
 % \footnote{The introduction of gates is a solution to what is referred to as
 % the \emph{vanishing} or \emph{exploding gradient
 % problem}~\cite{hochreiter1991untersuchungen}, which prevents efficient
 % training of simpler RNN architectures using gradient-based optimisation
 % methods due to exponentially decaying/growing gradients with respect to $t$.}
-
-%   A input sequence~$(\myvec{x}_{t})_{t = 1}^{N}$ can be processed by
-%   connecting repeating the computation depicted in the figure once for
-%   connecting $N$ of the depicted cell as depicted horizontally horizontally
-%   connecting $N$.
-
-%   Gated RNNs solve the vanishing or exploding gradient problems that plague
-%   naive RNN implementations. Gradients exponentially decay or grow with every
-%   time step.
 
 
 %%% Local Variables:
