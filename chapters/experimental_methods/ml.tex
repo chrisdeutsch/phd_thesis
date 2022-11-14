@@ -4,7 +4,7 @@
 Methods of multivariate analysis (MVA) have been used in HEP for decades to
 maximise the insights gained from experimental data. In the past, these analyses
 were usually performed by hand, which is a difficult and time-consuming process,
-particularly when working with high-dimensional data. Over the past decade,
+in particular when working with high-dimensional data. Over the past decade,
 automated approaches of MVA have become increasingly popular, freeing up
 researchers and frequently outperforming handcrafted solutions. This automation
 is provided by algorithms that construct predictive models using samples of
@@ -15,21 +15,28 @@ under the category of \emph{supervised learning}. The goal of supervised
 learning is the construction of models that predict an outcome~$\myvec{Y}$ using
 a set of predictors~$\myvec{X}$ by learning from a sample of labelled training
 data~$\{ (\myvec{x}_i, \myvec{y}_i) \}_{i=1}^{N}$. Depending on the type of
-outcome variable one distinguishes between classification (categorical outcomes)
-and regression (e.g.~continuous, count, or ordinal outcomes)
-algorithms. Supervised learning is particularly applicable in HEP due to the
-ability to generate large amounts of labelled training data using Monte Carlo
-simulation tools, the simulations being heavily tuned to experimental data and
-thus closely reflecting the data-generating processes. Nowadays, machine
-learning algorithms represent the state of the art for many tasks in HEP such as
-particle identification.
+outcome one distinguishes between classification (categorical outcomes) and
+regression (e.g.~continuous, count, or ordinal outcomes). Supervised learning is
+particularly applicable in HEP due to the ability to generate large amounts of
+labelled training data using Monte Carlo simulation, the simulations being
+heavily tuned to experimental observations to accurately represent the
+data-generating processes. Nowadays, machine learning algorithms represent the
+state of the art for many tasks in HEP such as particle identification.
 
-% A common analysis task is the classification of observations into different
-% categories based on measured quantities. For example, one might classify
-% particle collision events into events likely originating from signal or
-% background processes based on reconstructed, event-level observables.
+This section gives an overview of the machine learning algorithms used in this
+thesis, specifically focussing on algorithms for solving binary classification
+tasks. \Cref{sec:bdt} introduces \emph{boosted decision trees}, which are used
+in \Cref{sec:dihiggs,sec:higgs_self_coupling} for signal-background
+discrimination in the search for non-resonant \HH production. The basic
+principles of \emph{neural networks} are introduced
+in~\Cref{sec:neural_networks}, including a discussion of a type of network
+referred to as \emph{recurrent neural networks}. Neural networks are used for
+the identification of hadronic \taulepton decays in \Cref{sec:tauid}, as well as
+for the search for resonant \HH production in~\Cref{sec:dihiggs}.
 
-\subsection{Boosted Decision Trees}
+
+\subsection{Boosted Decision Trees}%
+\label{sec:bdt}
 
 Boosted decision trees (BDT) are classification and regression algorithms
 composed of multiple \emph{decision trees}. This ensemble of decision trees is
