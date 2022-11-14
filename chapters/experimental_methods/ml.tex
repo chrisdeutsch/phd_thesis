@@ -74,7 +74,7 @@ of a decision tree for a point~$\myvec{x}$ can be expressed as
     0, & \text{else}
   \end{cases} \,\text{,}
 \end{align*}
-where $\{c_j, R_j\}_{j=1}^{J}$ fully specifies the decision
+where $\{c_j, R_j\}_{j=1}^{J}$ fully characterises the decision
 tree~\cite{hastie09}.
 
 % An algorithm for growing a decision tree for a regression task, also referred
@@ -92,34 +92,33 @@ tree~\cite{hastie09}.
     \centering
     \includegraphics[scale=1.05]{ml/decision_tree_partitioning}
     \vspace*{0.7em}
-    \caption{Partitioning resulting from the binary tree in (a).}
+    \caption{The partitioning resulting from the binary tree in (a).}
   \end{subfigure}\hfill%
 
-  \caption{Example of a decision tree operating on a two-dimensional space with
-    coordinates $\myvec{x} = (x_1, x_2)$. The tree has a depth of two and four
-    leaf nodes that define the regions $R_1, \dots, R_4$. The figure is adapted
-    from Ref.~\cite{hastie09}.}%
+  \caption{Example of a decision tree partitioning a two-dimensional space with
+    coordinates~$(x_1, x_2)$. The tree has a depth of two and four leaf nodes
+    that define the regions~$R_1, \dots, R_4$. The figure is adapted from
+    Ref.~\cite{hastie09}.}%
   \label{fig:decision_tree}
 \end{figure}
 
 The construction of decision trees for regression (regression trees) is
-discussed hereafter. First, constraints are set on the structure of the tree as
-a means to limit its complexity. For example, the maximum depth of the tree or
-the maximum number of leaf nodes in the tree could be limited. The following
-steps are assumed to be subject to the chosen constraints. In the ideal case,
-regression trees are constructed by finding a partitioning~$\{R_j\}_{j=1}^{J}$
-and leaf node constants~$\{c_j\}_{j=1}^{J}$ such that the mean squared error
-(MSE) given by
+summarised hereafter. First, constraints are set on the tree structure as a
+means to limit its complexity, for example by setting a maximum tree depth.
+%The following steps are assumed to be subject to the chosen constraints.
+In the ideal case, regression trees are constructed by finding a
+partitioning~$\{R_j\}_{j=1}^{J}$ and leaf node constants~$\{c_j\}_{j=1}^{J}$
+that minimise the mean squared error (MSE) given by
 \begin{align*}
-  \text{MSE} = \frac{\sum_{i = 1}^{N} w_i \left( y_i - h\bigl( \myvec{x}_i; \{c_j, R_j\}_{j=1}^{J} \bigr) \right)^2}{\sum_{i = 1}^{N} w_i}
+  \text{MSE} = \frac{\sum_{i = 1}^{N} w_i \left( y_i - h\bigl( \myvec{x}_i; \{c_j, R_j\}_{j=1}^{J} \bigr) \right)^2}{\sum_{i = 1}^{N} w_i} \,\text{,}
 \end{align*}
-is minimised, where~$\{\myvec{x}_i, y_i, w_i\}_{i=1}^{N}$ is a sample of
-training data with scalar targets~$y_i$ and sample weights~$w_i$. This
-optimisation problem is not easily solved for trees with depths larger than one.
-Instead, one resorts to using a greedy strategy. At any stage of the tree
-growing algorithm, the split (and the corresponding leaf node constants) leading
-to the largest reduction in MSE is chosen. The tree growing algorithm terminates
-once no further splits can be performed.
+where~$\{\myvec{x}_i, y_i, w_i\}_{i=1}^{N}$ is a sample of training data with
+scalar targets~$y_i$ and sample weights~$w_i$. This optimisation problem is not
+easily solved for trees with depths larger than one.  Instead, one resorts to
+using a greedy tree growth strategy. At any stage of the tree growing algorithm,
+the split (and the corresponding leaf node constants) leading to the largest
+reduction in MSE is chosen. The tree growing algorithm terminates once no
+further splits can be performed.
 
 % Consider a candidate split of a parent node (P) into a left (L) and right (R)
 % daughter node. Let~$(y, w)$ be the tuple of regression target and weight for a
