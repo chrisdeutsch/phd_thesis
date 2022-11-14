@@ -39,31 +39,34 @@ for the search for resonant \HH production in~\Cref{sec:dihiggs}.
 \label{sec:bdt}
 
 Boosted decision trees (BDT) are classification and regression algorithms
-composed of multiple \emph{decision trees}. This ensemble of decision trees is
-created using an algorithm referred to as \emph{boosting}, which iteratively
-fits shallow decision trees--or in general, any \emph{weak learning
-  algorithm}--to altered versions of the training data. The training data is
-modified at every iteration to emphasise errors made in previous
-iterations. Finally, the predictions of the ensemble of trees are combined with
+composed of an ensemble of \emph{decision trees}. This ensemble is created using
+an algorithm referred to as \emph{boosting}, which iteratively fits shallow
+decision trees--or in general, any \emph{weak learning algorithm}--to altered
+versions of the training data. The training data is modified at every iteration
+to emphasise prediction errors made by previous iterations of the
+algorithm. Finally, the predictions of the ensemble of trees are combined with
 the goal of providing superior classification/regression performance compared to
-a single decision tree. In the following, a description of one of the BDT
-algorithms implemented in \textsc{TMVA}~\cite{TMVA} is given, which is later
-used in the search for Higgs boson pair production.
+a single decision tree.
+
+% In the following, a description of one of the BDT algorithms implemented in
+% \textsc{TMVA}~\cite{TMVA} is given, which is later used in the search for
+% Higgs boson pair production.
 
 
-\subsubsection{Classification and Regression Trees}
+\subsubsection{Decision Trees for Regression}
 
-Classification and regression trees~\cite{Breiman:1984jka,hastie09}, hereafter
-collectively referred to as \emph{decision trees}, are used as the basis for
-BDT. A decision tree partitions an $n$-dimensional space with coordinates
+% Classification and regression trees~\cite{Breiman:1984jka,hastie09}, hereafter
+% collectively referred to as \emph{decision trees}, are used as the basis for
+% BDT.
+A decision tree partitions an $n$-dimensional space with coordinates
 $\myvec{x} = (x_1, \dots, x_n)$ by recursively performing binary splits along
-the coordinate axes until a stopping criterion is met. The resulting binary tree
-structure and partitioning is illustrated in \Cref{fig:decision_tree} for a
-two-dimensional example. A decision tree with $J$~leaf nodes partitions the
-input space into $J$~mutually disjoint subregions denoted by $R_j$ for
-$j = 1, \dots, J$. A constant value $c_j$ is assigned to every region $R_j$ such
-that the prediction of a decision tree for a point~$\myvec{x}$ can be expressed
-as
+the coordinate axes until a stopping criterion is
+met~\cite{Breiman:1984jka,hastie09}. The resulting binary tree structure and
+partitioning is illustrated in \Cref{fig:decision_tree} for a two-dimensional
+example. A decision tree with $J$~leaf nodes splits the input space into
+$J$~mutually disjoint subregions denoted by $R_j$ for $j = 1, \dots, J$. A
+constant value $c_j$ is assigned to every region $R_j$ such that the prediction
+of a decision tree for a point~$\myvec{x}$ can be expressed as
 \begin{align*}
   h\bigl( \myvec{x}; \{c_j, R_j\}_{j=1}^{J} \bigr) = \sum_{j = 1}^{J} c_j \, \mathbf{1}(\myvec{x} \in R_j) \qquad \text{with} \qquad \mathbf{1}(\myvec{x} \in R_j) =
   \begin{cases}
@@ -73,6 +76,9 @@ as
 \end{align*}
 where $\{c_j, R_j\}_{j=1}^{J}$ fully specifies the decision
 tree~\cite{hastie09}.
+
+% An algorithm for growing a decision tree for a regression task, also referred
+% to as a regression tree, is introduced, hereafter.\footnote{}
 
 \begin{figure}[htbp]
   \centering
@@ -96,41 +102,58 @@ tree~\cite{hastie09}.
   \label{fig:decision_tree}
 \end{figure}
 
-Classification trees are constructed with the goal that the partitioning of the
-input space yields subregions with low impurity, that is, the regions are mostly
-populated by training examples of a single class. In this case, the impurity of
-a tree node is quantified by the Gini index
+The construction of decision trees for regression (regression trees) is
+discussed hereafter. First, constraints are set on the structure of the tree as
+a means to limit its complexity. For example, the maximum depth of the tree or
+the maximum number of leaf nodes in the tree could be limited. The following
+steps are assumed to be subject to the chosen constraints. In the ideal case,
+regression trees are constructed by finding a partitioning~$\{R_j\}_{j=1}^{J}$
+and leaf node constants~$\{c_j\}_{j=1}^{J}$ such that the mean squared error
+(MSE) given by
 \begin{align*}
-  I_{\text{G}}(p) = 2 p (1 - p) \,\text{,}
+  \text{MSE} = \frac{\sum_{i = 1}^{N} w_i \left( y_i - h\bigl( \myvec{x}_i; \{c_j, R_j\}_{j=1}^{J} \bigr) \right)^2}{\sum_{i = 1}^{N} w_i}
 \end{align*}
-where $p$ is the proportion of examples from the positive class in a given
-node~\cite{hastie09}. A \emph{greedy} strategy is adopted to grow decision trees
-by performing the best possible split at every node. This split is determined by
-minimising the weighted sum of Gini impurities of the resulting daughter nodes,
-where impurities are weighted according to the total weight of training examples
-populating a given node. In the classification case, the constants $c_j$
-assigned to leaf nodes of the tree are either--depending on the algorithm
-configuration--the proportion of examples from the positive class or the class
-label of the majority class in a given leaf node.
+is minimised, where~$\{\myvec{x}_i, y_i, w_i\}_{i=1}^{N}$ is a sample of
+training data with scalar targets~$y_i$ and sample weights~$w_i$. This
+optimisation problem is not easily solved for trees with depths larger than one.
+Instead, one resorts to using a greedy strategy. At any stage of the tree
+growing algorithm, the split leading to the largest reduction in MSE is
+chosen. Concretely, consider a candidate split of a parent node (P) into a left
+(L) and right (R) daughter node. Let~$(y, w)$ be the tuple of regression target
+and weight for a given training example. Moreover, let $T_{\text{P}}$,
+$T_{\text{L}}$, and $T_{\text{R}}$ denote the set of $(y, w)$ for training
+examples populating the parent node, left daughter node, and right daughter
+node, respectively. The reduction in MSE by the candidate split is given by
+\begin{align*}
+  \Delta\text{MSE} =
+  \frac{1}{\sum_{i = 1}^{N} w_i} \left(
+  \sum_{(y, w) \in T_{\text{P}}} w (y - c_{\text{P}})^2
+  - \sum_{(y, w) \in T_{\text{L}}} w (y - c_{\text{L}})^2
+  - \sum_{(y, w) \in T_{\text{R}}} w (y - c_{\text{R}})^2
+  \right)
+\end{align*}
+where the leaf node constants minimising the MSE criterion are given by
+\begin{align*}
+  c_{i} = \frac{ \sum_{(y, w) \in T_{i}} w y }{ \sum_{(y, w) \in T_{i}} w }
+\end{align*}
+for $i = \text{P}, \text{L}, \text{R}$~\cite{Breiman:1984jka,hastie09}.
 
-Regression trees are constructed using a similar approach, however, with an
-altered splitting criterion and different assignment of constants to leaf
-nodes. Consider the split of a parent node into a left (L) and right (R)
-daughter node. Let $(y, w)$ denote the tuple of regression target and weight of
-a given training example. Moreover, let $T_{\text{L}}$ and $T_{\text{R}}$ denote
-the set of $(y, w)$ for training examples populating the left and right daughter
-node, respectively. The constants $c_{\text{L}}$ and $c_{\text{R}}$ assigned to
-the daughter nodes are given by
-\begin{align*}
-  c_{\text{L}} = \frac{\sum_{(y, w) \in T_{\text{L}}} w y}{\sum_{(y, w) \in T_{\text{L}}} w} \qquad \text{and} \qquad c_{\text{R}} = \frac{\sum_{(y, w) \in T_{\text{R}}} w y}{\sum_{(y, w) \in T_{\text{R}}} w} \,\text{,}
-\end{align*}
-which is the weighted mean of the regression target for the training examples
-populating the left and right node, respectively. The best possible split of a
-node in a regression tree is chosen such that the squared error defined as
-\begin{align*}
-  \sum_{(y, w) \in T_{\text{L}}} w (y - c_{\text{L}})^2 + \sum_{(y, w) \in T_{\text{R}} } w (y - c_{\text{R}})^2
-\end{align*}
-is minimised.
+% Classification trees are constructed with the goal that the partitioning of
+% the input space yields subregions with low impurity, that is, the regions are
+% mostly populated by training examples of a single class. In this case, the
+% impurity of a tree node is quantified by the Gini index
+% \begin{align*}
+%   I_{\text{G}}(p) = 2 p (1 - p) \,\text{,}
+% \end{align*}
+% where $p$ is the proportion of examples from the positive class in a given
+% node~\cite{hastie09}. A \emph{greedy} strategy is adopted to grow decision
+% trees by performing the best possible split at every node. This split is
+% determined by minimising the weighted sum of Gini impurities of the resulting
+% daughter nodes, where impurities are weighted according to the total weight of
+% training examples populating a given node. In the classification case, the
+% constants $c_j$ assigned to leaf nodes of the tree are either--depending on
+% the algorithm configuration--the proportion of examples from the positive
+% class or the class label of the majority class in a given leaf node.
 
 
 \subsubsection{Boosting of Decision Trees}
