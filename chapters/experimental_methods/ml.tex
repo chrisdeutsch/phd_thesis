@@ -163,8 +163,8 @@ further splits can be performed.
 
 \subsubsection{Boosting of Decision Trees}
 
-Boosting is an approach of solving predictions tasks by constructing additive
-models of the form
+Boosting\todo{Better transition?} is an approach of solving predictions tasks by
+constructing additive models of the form
 \begin{align*}
   F_{M}\bigl(\myvec{x}; \{ \beta_m, \gamma_{m} \}_{m=1}^{M} \bigr) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
 \end{align*}
@@ -181,11 +181,11 @@ applied to decision trees.
 % is determined by choosing $\beta_{m}$ and $\gamma_{m}$ such that an objective
 % function is improved~\cite{hastie09}. Notably, the $m$-th stage does not alter
 % the parameters~$\{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1}$.
-The following is concerned with a boosting algorithm referred to as
-\emph{gradient boosting}~\cite{Friedman:2001wbq}. Gradient boosting is an
-algorithm for constructing additive models that minimise arbitrary
-differentiable loss functions, thus making it a useful tool for solving various
-prediction tasks.
+The following\todo{Should say that there are other algorithms.} is concerned
+with a boosting algorithm referred to as \emph{gradient
+  boosting}~\cite{Friedman:2001wbq}. Gradient boosting is an algorithm for
+constructing additive models that minimise arbitrary differentiable loss
+functions, thus making it a useful tool for solving various prediction tasks.
 
 Consider a binary classification problem with predictors~$\myvec{X}$ and class
 labels~$Y$, which are $Y = +1$ for the positive and $Y = -1$ for the negative
@@ -196,8 +196,8 @@ class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
   \right)\mathclose{}
   \label{eq:loss_gradboost}
 \end{align}
-be a loss function and $F$~a function of the predictors. The function that
-minimises the expected loss is given by
+be a loss function and $F$~a scalar function of the predictors. The function
+that minimises the expected loss is given by
 \begin{align*}
   F^{*\!}(\myvec{x})
   = \argmin_F \, \expect[ L(Y, F) \mid \myvec{X} = \myvec{x} ]
@@ -222,22 +222,14 @@ would solve the classification task since
 thus motivating the choice of loss function in \Cref{eq:loss_gradboost} for
 binary classification.
 
-% Gradient boosting can be used to find an additive model that minimises this
-% loss function for a finite sample,
-
-% with this loss function can be used to
-% find an approximation to $F^{*\!}(\myvec{x})$
-
-% with decision trees can be used to find an approximation to
-% $F^{*\!}(\myvec{x})$ using a finite sample of training data.
-
 An algorithm referred to as \textsc{TreeBoost} proposed by
 Friedman~\cite{Friedman:2001wbq} is outlined. \textsc{TreeBoost} uses gradient
 boosted decision trees and the loss function in \Cref{eq:loss_gradboost} to fit
 a binary classifier to a sample of training data. A version of this algorithm is
 employed in \textsc{TMVA}~\cite{TMVA}, which provides the BDT implementation
 used in this thesis. The description is based on Ref.~\cite{Friedman:2001wbq}
-with some modifications (e.g.\ allowing training data to be weighted).
+with some modifications.
+% (e.g.\ allowing training data to be weighted).
 
 \vspace{11pt}
 \noindent\textbf{\textsc{TreeBoost} algorithm for binary classification} \\[11pt]
@@ -254,15 +246,15 @@ with some modifications (e.g.\ allowing training data to be weighted).
 \noindent Algorithm:
 \begin{enumerate}[itemsep=2pt]
 
-\item The model is initialised to make a constant prediction according to
+\item The model is initialised to
   \begin{align*}
     F_0(\myvec{x}) = \ln\mathopen{}\left( \frac{1 + \bar{y}}{1 - \bar{y}}
     \right)\mathclose{}
     \qquad \text{with} \qquad
     \bar{y} = \frac{\sum_{i=1}^{N} w_i y_i}{\sum_{i=1}^{N} w_i} \,\text{,}
   \end{align*}
-  which are the (unconditional) log-odds of $Y = +1$ estimated using the
-  training data.
+  which is the training sample estimate of the (unconditional) log-odds of
+  $Y = +1$.
 
 \item For $m = 1$ to $M$:
   \begin{enumerate}[itemsep=2pt]
@@ -332,7 +324,7 @@ with some modifications (e.g.\ allowing training data to be weighted).
   \begin{align*}
     p(\myvec{x}) = \frac{1}{1 + e^{-F_{M\hspace{-0.07em}}(\myvec{x})}} \,\text{.}
   \end{align*}
-  In HEP, this quantity is commonly referred to as the \emph{BDT score}.
+  In HEP, this quantity is often referred to as the \emph{BDT score}.
 
 \end{enumerate}
 This algorithm is reminiscent of the classical gradient descent algorithm for
