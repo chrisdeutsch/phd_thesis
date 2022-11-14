@@ -117,26 +117,32 @@ is minimised, where~$\{\myvec{x}_i, y_i, w_i\}_{i=1}^{N}$ is a sample of
 training data with scalar targets~$y_i$ and sample weights~$w_i$. This
 optimisation problem is not easily solved for trees with depths larger than one.
 Instead, one resorts to using a greedy strategy. At any stage of the tree
-growing algorithm, the split leading to the largest reduction in MSE is
-chosen. Concretely, consider a candidate split of a parent node (P) into a left
-(L) and right (R) daughter node. Let~$(y, w)$ be the tuple of regression target
-and weight for a given training example. Moreover, let $T_{\text{P}}$,
-$T_{\text{L}}$, and $T_{\text{R}}$ denote the set of $(y, w)$ for training
-examples populating the parent node, left daughter node, and right daughter
-node, respectively. The reduction in MSE by the candidate split is given by
-\begin{align*}
-  \Delta\text{MSE} =
-  \frac{1}{\sum_{i = 1}^{N} w_i} \left(
-  \sum_{(y, w) \in T_{\text{P}}} w (y - c_{\text{P}})^2
-  - \sum_{(y, w) \in T_{\text{L}}} w (y - c_{\text{L}})^2
-  - \sum_{(y, w) \in T_{\text{R}}} w (y - c_{\text{R}})^2
-  \right)
-\end{align*}
-where the leaf node constants minimising the MSE criterion are given by
-\begin{align*}
-  c_{i} = \frac{ \sum_{(y, w) \in T_{i}} w y }{ \sum_{(y, w) \in T_{i}} w }
-\end{align*}
-for $i = \text{P}, \text{L}, \text{R}$~\cite{Breiman:1984jka,hastie09}.
+growing algorithm, the split (and the corresponding leaf node constants) leading
+to the largest reduction in MSE is chosen. The tree growing algorithm terminates
+once no further splits can be performed.
+
+% Consider a candidate split of a parent node (P) into a left (L) and right (R)
+% daughter node. Let~$(y, w)$ be the tuple of regression target and weight for a
+% given training example. Moreover, let $T_{\text{P}}$, $T_{\text{L}}$, and
+% $T_{\text{R}}$ denote the set of $(y, w)$ for training examples populating the
+% parent node, left daughter node, and right daughter node, respectively. The
+% reduction in MSE by the candidate split is given by
+% \begin{align*}
+%   \Delta\text{MSE} =
+%   \frac{1}{\sum_{i = 1}^{N} w_i} \left(
+%   \sum_{(y, w) \in T_{\text{P}}} w (y - c_{\text{P}})^2
+%   - \sum_{(y, w) \in T_{\text{L}}} w (y - c_{\text{L}})^2
+%   - \sum_{(y, w) \in T_{\text{R}}} w (y - c_{\text{R}})^2
+%   \right) \,\text{,}
+% \end{align*}
+% where the leaf node constants minimising the MSE criterion are given by
+% \begin{align*}
+%   c_{i} = \frac{ \sum_{(y, w) \in T_{i}} w y }{ \sum_{(y, w) \in T_{i}} w }
+% \end{align*}
+% for $i = \text{P}, \text{L}, \text{R}$~\cite{Breiman:1984jka,hastie09}.
+
+
+% The tree growing terminates once no splits can be performed
 
 % Classification trees are constructed with the goal that the partitioning of
 % the input space yields subregions with low impurity, that is, the regions are
@@ -296,9 +302,10 @@ with some modifications (e.g.\ allowing training data to be weighted).
     analytical minimiser for the loss function in
     \Cref{eq:loss_gradboost}. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen
     to approximately minimise the above criterion by performing a single step of
-    Newton's method.\footnote{The starting point for Newton's method is taken to
-      be $c_{jm} = 0$ for all leaf nodes.} This yields the updated leaf node
-    constants
+    Newton's method.
+    % \footnote{The starting point for Newton's method is taken to be
+    % $c_{jm} = 0$ for all leaf nodes.}
+    This yields the updated leaf node constants
     \begin{align*}
       c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (1 - |r_i|)} \,\text{,}
     \end{align*}
