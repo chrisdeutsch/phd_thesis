@@ -340,13 +340,14 @@ Ref.~\cite{Friedman:2001wbq} with some modifications.
 \end{enumerate}
 This algorithm is reminiscent of the classical gradient descent algorithm for
 minimisation. However, in the case of gradient boosting the optimisation is
-performed in the space of functions~\cite{Friedman:2001wbq}. Steps~2a) and 2b)
-of the algorithm estimate the negative gradient of the loss function with
-respect to~$F(\myvec{x})$, which is evaluated at the function estimate of the
-previous boosting iteration. In gradient descent algorithms, the step size of
-the update is sometimes determined by performing a line search along the
-direction of steepest descent. For the \textsc{TreeBoost} algorithm, the step
-size is determined in step 2c) on a per-leaf basis.
+performed in the space of functions and not in parameter
+space~\cite{Friedman:2001wbq}. Steps~2a) and 2b) of the algorithm estimate the
+negative gradient of the loss function with respect to~$F(\myvec{x})$, which is
+evaluated at the function estimate of the previous boosting iteration. Classical
+gradient descent algorithms sometimes determine the step size of the parameter
+update by performing a line search along the direction of steepest descent. For
+the \textsc{TreeBoost} algorithm, this step size is determined by step 2c) on a
+per-leaf basis.
 % , however, for \textsc{TreeBoost} the size of the gradient descent step is
 % determined on a per-leaf basis.
 Finally, step 2d) performs the (regularised) gradient descent update.
