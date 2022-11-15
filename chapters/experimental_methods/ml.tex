@@ -41,16 +41,15 @@ for the search for resonant \HH production in~\Cref{sec:dihiggs}.
 
 Boosted decision trees (BDT) are models used for classification and regression
 that consist of ensembles of \emph{decision trees}. These ensembles are created
-using an algorithm referred to as \emph{boosting}, which iteratively fits
-shallow decision trees--or in general, any \emph{weak learning algorithm}--to
-altered versions of the training data. The training data is modified at every
-iteration to emphasise prediction errors made by previous boosting
-iterations. Finally, the predictions of the ensemble of trees are combined with
-the goal of providing superior predictions compared to those of a single
-decision tree. The following sections discuss the application of decision trees
-to regression tasks (regression trees), as well as a boosting algorithm referred
-to as \emph{gradient boosting} that constructs ensembles of regression trees for
-solving various prediction tasks.
+using an algorithm called \emph{boosting}, which iteratively fits shallow
+decision trees--or in general, any \emph{weak learning algorithm}--to altered
+versions of the training data. The training data is modified at every iteration
+to emphasise prediction errors made by previous boosting iterations. Finally,
+the predictions of the ensemble of trees are combined with the goal of providing
+superior predictive performance compared to a single decision tree. The
+following sections discuss the application of decision trees to regression tasks
+(regression trees), as well as a \emph{gradient boosting} algorithm that
+constructs ensembles of regression trees to solve various prediction tasks.
 
 % In the following, a description of one of the BDT algorithms implemented in
 % \textsc{TMVA}~\cite{TMVA} is given, which is later used in the search for
@@ -105,9 +104,11 @@ tree~\cite{hastie09}.
   \label{fig:decision_tree}
 \end{figure}
 
-The construction of decision trees for regression (regression trees) is
-summarised hereafter. First, constraints are set on the tree structure as a
-means to limit its complexity, for example by setting a maximum tree depth.
+% The construction of decision trees for regression (regression trees) is
+% summarised hereafter.
+The construction of regression trees is summarised hereafter. First, constraints
+are set on the tree structure as a means to limit the tree complexity, for
+example by setting a maximum tree depth.
 %The following steps are assumed to be subject to the chosen constraints.
 In the ideal case, regression trees are constructed by finding a
 partitioning~$\{R_j\}_{j=1}^{J}$ and leaf node constants~$\{c_j\}_{j=1}^{J}$
@@ -117,7 +118,7 @@ that minimise the mean squared error (MSE) given by
 \end{align*}
 where~$\{\myvec{x}_i, y_i, w_i\}_{i=1}^{N}$ is a sample of training data with
 scalar targets~$y_i$ and sample weights~$w_i$. This optimisation problem is not
-easily solved for trees with depths larger than one.  Instead, one resorts to
+easily solved for trees with depths larger than one. Instead, one resorts to
 using a greedy tree growth strategy. At any stage of the tree growing algorithm,
 the split (and the corresponding leaf node constants) leading to the largest
 reduction in MSE is chosen. The tree growing algorithm terminates once no
@@ -185,8 +186,8 @@ applied to decision trees.
 % function is improved~\cite{hastie09}. Notably, the $m$-th stage does not alter
 % the parameters~$\{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1}$.
 The following\todo{Should say that there are other algorithms.} is concerned
-with a boosting algorithm referred to as \emph{gradient
-  boosting}~\cite{Friedman:2001wbq}. Gradient boosting is an algorithm for
+with a boosting algorithm referred to as gradient
+boosting~\cite{Friedman:2001wbq}. Gradient boosting is an algorithm for
 constructing additive models that minimise arbitrary differentiable loss
 functions, thus making it a useful tool for solving various prediction tasks.
 
