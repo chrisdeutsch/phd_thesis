@@ -25,7 +25,7 @@ Nowadays, the state-of-the-art solutions to many tasks in HEP, for example
 particle identification, are based on machine learning.
 
 This section gives an overview of the machine learning algorithms used in this
-thesis, specifically focussing on algorithms for solving binary classification
+thesis, specifically focusing on algorithms for solving binary classification
 tasks. \Cref{sec:bdt} introduces \emph{boosted decision trees}, which are used
 in \Cref{sec:dihiggs,sec:higgs_self_coupling} for signal-background
 discrimination in the search for non-resonant \HH production. The basic
@@ -168,10 +168,11 @@ further splits can be performed.
 
 \subsubsection{Boosting of Decision Trees}
 
-Boosting\todo{Better transition?} is an approach of solving predictions tasks by
-constructing additive models of the form
+Boosting is an approach of solving prediction tasks by constructing additive
+models of the form
 \begin{align*}
   F_{M}\bigl(\myvec{x}; \{ \beta_m, \gamma_{m} \}_{m=1}^{M} \bigr) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
+  \label{eq:additive_model_boosting}
 \end{align*}
 where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_{m})$ are basis
 functions parameterised
@@ -186,15 +187,23 @@ applied to decision trees.
 % is determined by choosing $\beta_{m}$ and $\gamma_{m}$ such that an objective
 % function is improved~\cite{hastie09}. Notably, the $m$-th stage does not alter
 % the parameters~$\{ \beta_{n}, \gamma_{n} \}_{n=1}^{m-1}$.
-The following\todo{Should say that there are other algorithms.} is concerned
-with a boosting algorithm referred to as gradient
-boosting~\cite{Friedman:2001wbq}. Gradient boosting is an algorithm for
-constructing additive models that minimise arbitrary differentiable loss
-functions, thus making it a useful tool for solving various prediction tasks.
+The following is concerned with a boosting algorithm called gradient
+boosting~\cite{Friedman:2001wbq}. Gradient boosting is particularly versatile,
+as it constructs models by minimising an arbitrary differentiable loss function.
+This allows gradient boosting to be applied to various kinds of prediction
+tasks, an example of binary classification being given hereafter.
+
+% The following\todo{Should say that there are other algorithms.} is concerned
+% with a boosting algorithm referred to as gradient
+% boosting~\cite{Friedman:2001wbq}. Gradient boosting is an algorithm for
+% constructing additive models that minimise arbitrary differentiable loss
+% functions, thus making it a useful tool for solving various prediction tasks.
 
 Consider a binary classification problem with predictors~$\myvec{X}$ and class
 labels~$Y$, which are $Y = +1$ for the positive and $Y = -1$ for the negative
-class. Both $\myvec{X}$ and $Y$ are random variables. Further, let
+class.
+% Both $\myvec{X}$ and $Y$ are random variables.
+Further, let
 \begin{align}
   L(Y, F(\myvec{X})) = \ln\mathopen{}\left(
   1 + e^{-Y F(\myvec{X})}
