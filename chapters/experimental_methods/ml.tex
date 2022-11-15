@@ -240,8 +240,8 @@ Friedman~\cite{Friedman:2001wbq} is outlined. \textsc{TreeBoost} uses gradient
 boosted decision trees and the loss function in \Cref{eq:loss_gradboost} to fit
 a binary classifier to a sample of training data. A version of this algorithm is
 employed in \textsc{TMVA}~\cite{TMVA}, which provides the BDT implementation
-used in this thesis. The description is based on Ref.~\cite{Friedman:2001wbq}
-with some modifications.
+used in this thesis. The description is adapted from
+Ref.~\cite{Friedman:2001wbq} with some modifications.
 % (e.g.\ allowing training data to be weighted).
 
 \vspace{11pt}
@@ -272,7 +272,7 @@ with some modifications.
 \item For $m = 1$ to $M$:
   \begin{enumerate}[itemsep=2pt]
 
-  \item Calculate the pseudo-residuals
+  \item Calculate the pseudo-residual
     \begin{align*}
       r_i
       = - \left. \frac{\partial L(y_i, F(\myvec{x}_i))}
@@ -282,12 +282,11 @@ with some modifications.
       \frac{y_i}{1 + e^{y_i F_{m-1}(\myvec{x}_i)}}
     \end{align*}
     for all training examples.
-    % , where $\myvec{x}_i$ are the predictors and $y_i$ the class label of the
-    % $i$-th training example, respectively.
 
-  \item Fit a regression tree to the training data to estimate the
-    pseudo-residuals using the predictors~$\myvec{x}$. The prediction of the
-    fitted regression tree is denoted by
+  \item Fit a regression tree to estimate the relationship between
+    pseudo-residuals and predictors using
+    $\{(\myvec{x}_i, r_i, w_i)\}_{i = 1}^N$ as the training dataset. The
+    prediction of the fitted regression tree is denoted by
     $h\bigl( \myvec{x}; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr)$, where $J_{m}$
     is the number of leaf nodes, $c_{jm}$ is the constant predicted by the
     $j$-th leaf node, and $R_{jm}$ is the region defined by the $j$-th leaf
@@ -300,20 +299,19 @@ with some modifications.
       L\mathopen{}\left( y_i, F_{m - 1}(\myvec{x}_i)
       + h\bigl( \myvec{x}_i; \{c_{jm}, R_{jm}\}_{j=1}^{J_{m}} \bigr)
       \right)\mathclose{}
-      \,\text{,}
+      \,\text{.}
     \end{align*}
-    where the sum goes over all training data. This optimisation problem has no
-    analytical minimiser for the loss function in
-    \Cref{eq:loss_gradboost}. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are chosen
-    to approximately minimise the above criterion by performing a single step of
-    Newton's method.
+    This optimisation problem has no analytical minimiser for the loss function
+    in \Cref{eq:loss_gradboost}. Instead, the $\{c_{jm}\}_{j=1}^{J_{m}}$ are
+    chosen to approximately minimise the above criterion by performing a single
+    step of Newton's method.
     % \footnote{The starting point for Newton's method is taken to be
     % $c_{jm} = 0$ for all leaf nodes.}
     This yields the updated leaf node constants
     \begin{align*}
       c_{jm}^\prime = \frac{ \sum_i w_i r_i }{ \sum_i w_i |r_i| (1 - |r_i|)} \,\text{,}
     \end{align*}
-    where the sum goes over the training data populating the $j$-th leaf node of
+    where the sums go over the training data populating the $j$-th leaf node of
     the tree. This step is specific to the \textsc{TreeBoost} algorithm by
     Friedman.
 
@@ -341,16 +339,17 @@ with some modifications.
 
 \end{enumerate}
 This algorithm is reminiscent of the classical gradient descent algorithm for
-minimisation, however, in the case of gradient boosting the optimisation is
-performed in the space of functions instead~\cite{Friedman:2001wbq}. Steps 2a)
-and 2b) of the algorithm serve to estimate the negative gradient of the loss
-function with respect to $F(\myvec{x})$, which is evaluated at the function
-estimate of the previous boosting iteration. In gradient descent, the step size
-of the update is often determined by performing a line search along the
-direction of steepest descent. This is the task of step 2c) in which the step
-size is determined, however, for \textsc{TreeBoost} the size of the gradient
-descent step is determined on a per-leaf basis. Finally, step 2d) performs the
-(regularised) gradient descent update.
+minimisation. However, in the case of gradient boosting the optimisation is
+performed in the space of functions~\cite{Friedman:2001wbq}. Steps~2a) and 2b)
+of the algorithm estimate the negative gradient of the loss function with
+respect to~$F(\myvec{x})$, which is evaluated at the function estimate of the
+previous boosting iteration. In gradient descent algorithms, the step size of
+the update is sometimes determined by performing a line search along the
+direction of steepest descent. For the \textsc{TreeBoost} algorithm, the step
+size is determined in step 2c) on a per-leaf basis.
+% , however, for \textsc{TreeBoost} the size of the gradient descent step is
+% determined on a per-leaf basis.
+Finally, step 2d) performs the (regularised) gradient descent update.
 
 
 \subsection{Neural Networks}%
