@@ -30,7 +30,7 @@ tasks. \Cref{sec:bdt} introduces \emph{boosted decision trees}, which are used
 in \Cref{sec:dihiggs,sec:higgs_self_coupling} for signal-background
 discrimination in the search for non-resonant \HH production. The basic
 principles of \emph{neural networks} are introduced
-in~\Cref{sec:neural_networks}, including a discussion of a network architecture
+in~\Cref{sec:neural_networks}, including a discussion of an architecture
 referred to as \emph{recurrent neural networks}. Neural networks are used for
 the identification of hadronic \taulepton decays in \Cref{sec:tauid}, as well as
 for the search for resonant \HH production in~\Cref{sec:dihiggs}.
@@ -40,16 +40,17 @@ for the search for resonant \HH production in~\Cref{sec:dihiggs}.
 \label{sec:bdt}
 
 Boosted decision trees (BDT) are models used for classification and regression
-that consist of ensembles of \emph{decision trees}. These ensembles are created
+consisting of ensembles of \emph{decision trees}. These ensembles are created
 using an algorithm called \emph{boosting}, which iteratively fits shallow
 decision trees--or in general, any \emph{weak learning algorithm}--to altered
 versions of the training data. The training data is modified at every iteration
 to emphasise prediction errors made by previous boosting iterations. Finally,
 the predictions of the ensemble of trees are combined with the goal of providing
-superior predictive performance compared to a single decision tree. The
-following sections discuss the application of decision trees to regression tasks
-(regression trees), as well as a \emph{gradient boosting} algorithm that
-constructs ensembles of regression trees to solve various prediction tasks.
+superior classification/regression performance compared to a single decision
+tree. The following sections discuss the application of decision trees to
+regression tasks (regression trees), as well as a \emph{gradient boosting}
+algorithm that builds ensembles of regression trees for solving various
+prediction tasks.
 
 % In the following, a description of one of the BDT algorithms implemented in
 % \textsc{TMVA}~\cite{TMVA} is given, which is later used in the search for
@@ -107,8 +108,8 @@ tree~\cite{hastie09}.
 % The construction of decision trees for regression (regression trees) is
 % summarised hereafter.
 The construction of regression trees is summarised hereafter. First, constraints
-are set on the tree structure as a means to limit the tree complexity, for
-example by setting a maximum tree depth.
+are set on the tree structure as a means to limit tree complexity, for example
+by setting a maximum tree depth.
 %The following steps are assumed to be subject to the chosen constraints.
 In the ideal case, regression trees are constructed by finding a
 partitioning~$\{R_j\}_{j=1}^{J}$ and leaf node constants~$\{c_j\}_{j=1}^{J}$
