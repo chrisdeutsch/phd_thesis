@@ -357,7 +357,7 @@ Finally, step 2d) performs the (regularised) gradient descent update.
 \label{sec:neural_networks}
 
 Neural networks (NNs) can be interpreted as functions defined by the composition
-of multiple, usually non-linear, parametric functions. They can represent a rich
+of multiple, usually non-linear, parametric functions. NNs represent a rich
 class of functions, motivating their use as function
 approximators~\cite{hornik1989multilayer}. An illustrative example of an NN is
 the \emph{multilayer perceptron} (MLP). The basic element of MLPs, and many
@@ -370,11 +370,10 @@ transformations of the form
 where $\myvec{x}$ is the layer input, $\myvec{W}_i$ and $\myvec{b}_i$ is a
 weight matrix and bias vector, respectively, and $\myvec{\phi}_i$ is an
 activation function that is applied element-wise.\footnote{The element-wise
-  application of a scalar function of one variable, $f(x)$, on a vector
-  $\myvec{x} = (x_1, \dots, x_N)$ is defined by
-  $\bigl( f(x_1), \dots, f(x_N) \bigr)$.} An MLP with $N$~hidden layers is given
-by the composition of $N + 1$ functions of the form displayed in
-\Cref{eq:dense_layer}, such that the output of the MLP can be expressed as
+  application of a function, $f(x)$, on a vector $\myvec{x} = (x_1, \dots, x_N)$
+  is defined by $\bigl( f(x_1), \dots, f(x_N) \bigr)$.} An MLP with $N$~hidden
+layers is given by the composition of $N + 1$ functions of the form displayed in
+\Cref{eq:dense_layer}, allowing the MLP prediction to be expressed as
 \begin{align*}
   \myvec{f}\bigl( \myvec{x}; \{\myvec{W}_{i},\myvec{b}_{i} \}_{i=1}^{N+1} \bigr)
   = \bigl( \myvec{f}_{N+1} \circ \dots \circ \myvec{f}_{1} \bigr)
@@ -382,7 +381,7 @@ by the composition of $N + 1$ functions of the form displayed in
   \,\text{.}
 \end{align*}
 In general, the structure of NNs can be more complex than illustrated in this
-example. Therefore, the \emph{architecture} of a NN is frequently expressed as a
+example. Therefore, the architecture of an NN is frequently expressed as a
 directed graph with nodes representing functions/layers and edges defining how
 functions/layers are composed.
 
@@ -395,12 +394,16 @@ functions/layers are composed.
 % layer is also referred to as the output layer.
 
 The ability of NNs to approximate a large class of functions makes them
-attractive candidates for machine learning applications. Hereafter, the
-prediction of a generic NN is denoted by $f(\myvec{x}; \myvec{\theta})$, where
-$\myvec{x}$ is the NN input and $\myvec{\theta}$ are its parameters. Consider a
-binary classification problem with predictors~$\myvec{X}$ and class labels~$Y$,
-which take the values of $Y = 1$ and $Y = 0$ for the positive and negative
-class, respectively. A suitable loss function for binary classification is
+attractive candidates for machine learning applications.
+% Hereafter, the prediction of a generic NN with a is denoted by
+% $f(\myvec{x}; \myvec{\theta})$, where $\myvec{x}$ is the NN input and
+% $\myvec{\theta}$ are its parameters.
+Consider a binary classification problem with predictors~$\myvec{X}$ and class
+labels~$Y$, which take the values of $Y = 1$ and $Y = 0$ for the positive and
+negative class, respectively. Moreover, let
+$f(\myvec{x}; \myvec{\theta}) \in (0, 1)$ denote the prediction of an NN with
+inputs~$\myvec{x}$ and network parameters~$\myvec{\theta}$. A suitable loss
+function for binary classification is
 \begin{align}
   L(Y, f(\myvec{X}; \myvec{\theta})) =
   \begin{cases}
@@ -409,11 +412,11 @@ class, respectively. A suitable loss function for binary classification is
   \end{cases} \,\text{,}
   \label{eq:loss_bce}
 \end{align}
-where it is assumed that the NN can be defined such that
-$f(\myvec{x}, \myvec{\theta}) \in (0, 1)$, for example by using the logistic
-(sigmoid) function as the activation function in the final layer. This loss
-function is referred to as the \emph{binary cross-entropy loss}, hereafter. The
-function that minimises the expected loss is
+% where it is assumed that the NN can be defined such that
+% $f(\myvec{x}, \myvec{\theta}) \in (0, 1)$, for example by using the logistic
+% (sigmoid) function as the activation function in the final layer.
+which is called the \emph{binary cross-entropy loss}. The function that
+minimises the expected binary cross-entropy loss is
 \begin{align*}
   f^{*\!}(\myvec{x})
   = \argmin_{f} \expect[ L(Y, f) \mid \myvec{X} = \myvec{x} ]
