@@ -42,15 +42,16 @@ for the search for resonant \HH production in~\Cref{sec:dihiggs}.
 Boosted decision trees (BDT) are models used for classification and regression
 consisting of ensembles of \emph{decision trees}. These ensembles are created
 using an algorithm called \emph{boosting}, which iteratively fits shallow
-decision trees--or in general, any \emph{weak learning algorithm}--to altered
-versions of the training data. The training data is modified at every iteration
-to emphasise prediction errors made by previous boosting iterations. Finally,
-the predictions of the ensemble of trees are combined with the goal of providing
-superior classification/regression performance compared to a single decision
-tree. The following sections discuss the application of decision trees to
-regression tasks (regression trees), as well as a \emph{gradient boosting}
-algorithm that builds ensembles of regression trees for solving various
-prediction tasks.
+decision trees
+% --or in general, any weak learning algorithm--
+to altered versions of the training data. The training data is modified at every
+iteration to emphasise prediction errors made by previous boosting
+iterations. Finally, the predictions of the ensemble of trees are combined with
+the goal of providing superior classification/regression performance compared to
+a single decision tree. The following sections discuss the application of
+decision trees to regression tasks (regression trees), as well as a
+\emph{gradient boosting} algorithm that builds ensembles of regression trees to
+solve prediction tasks.
 
 % In the following, a description of one of the BDT algorithms implemented in
 % \textsc{TMVA}~\cite{TMVA} is given, which is later used in the search for
@@ -345,8 +346,8 @@ space~\cite{Friedman:2001wbq}. Steps~2a) and 2b) of the algorithm estimate the
 negative gradient of the loss function with respect to~$F(\myvec{x})$, which is
 evaluated at the function estimate of the previous boosting iteration. Classical
 gradient descent algorithms sometimes determine the step size of the parameter
-update by performing a line search along the direction of steepest descent. For
-the \textsc{TreeBoost} algorithm, this step size is determined by step 2c) on a
+update by performing a line search along the direction of steepest descent. In
+the \textsc{TreeBoost} algorithm this step size is determined by step 2c) on a
 per-leaf basis.
 % , however, for \textsc{TreeBoost} the size of the gradient descent step is
 % determined on a per-leaf basis.
