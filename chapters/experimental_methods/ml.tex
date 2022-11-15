@@ -168,11 +168,10 @@ further splits can be performed.
 
 \subsubsection{Boosting of Decision Trees}
 
-Boosting is an approach of solving prediction tasks by constructing additive
-models of the form
+Boosting is an approach of solving prediction tasks by constructing models of
+the form
 \begin{align*}
   F_{M}\bigl(\myvec{x}; \{ \beta_m, \gamma_{m} \}_{m=1}^{M} \bigr) = \sum_{m = 1}^{M} \beta_m b(\myvec{x}; \gamma_{m}) \,\text{,}
-  \label{eq:additive_model_boosting}
 \end{align*}
 where $\beta_m$ are coefficients and $b(\myvec{x}; \gamma_{m})$ are basis
 functions parameterised
