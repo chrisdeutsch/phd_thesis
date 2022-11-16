@@ -598,7 +598,8 @@ of length $N$ can be processed by repeating the computations depicted
 in~\Cref{fig:lstm} until the input sequence is exhausted, thus yielding an
 output sequence of the same length. Finally, a many-to-one mapping can be
 achieved by discarding the first~$N - 1$ outputs of an LSTM and using
-only~$\myvec{y}_{N}$ for further computation.
+only~$\myvec{y}_{N}$ for further computation. A concrete example of LSTM layers
+being used in HEP is given in \Cref{sec:tauid}.
 
 \begin{figure}[htbp]
   \centering
