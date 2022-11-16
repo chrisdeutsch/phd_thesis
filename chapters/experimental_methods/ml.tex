@@ -51,7 +51,7 @@ the goal of providing superior classification/regression performance compared to
 a single decision tree. The following sections discuss the application of
 decision trees to regression tasks (regression trees), as well as a
 \emph{gradient boosting} algorithm that builds ensembles of regression trees to
-solve prediction tasks.
+perform binary classification.
 
 % In the following, a description of one of the BDT algorithms implemented in
 % \textsc{TMVA}~\cite{TMVA} is given, which is later used in the search for
@@ -118,13 +118,13 @@ that minimise the mean squared error (MSE) given by
 \begin{align*}
   \text{MSE} = \frac{\sum_{i = 1}^{N} w_i \left( y_i - h\bigl( \myvec{x}_i; \{c_j, R_j\}_{j=1}^{J} \bigr) \right)^2}{\sum_{i = 1}^{N} w_i} \,\text{,}
 \end{align*}
-where~$\{\myvec{x}_i, y_i, w_i\}_{i=1}^{N}$ is a sample of training data with
-scalar targets~$y_i$ and sample weights~$w_i$. This optimisation problem is not
-easily solved for trees with depths larger than one. Instead, one resorts to
-using a greedy tree growth strategy. At any stage of the tree growing algorithm,
-the split (and the corresponding leaf node constants) leading to the largest
-reduction in MSE is chosen. The tree growing algorithm terminates once no
-further splits can be performed.
+where~$\{ (\myvec{x}_i, y_i, w_i) \}_{i=1}^{N}$ is a sample of training data
+with scalar targets~$y_i$ and sample weights~$w_i$. Generally, this optimisation
+problem is not easily solved; therefore, a greedy tree growth strategy is used
+instead~\cite{james2013introduction,hastie09}. At any stage of the tree growing
+algorithm, the split (and the corresponding leaf node constants) leading to the
+largest reduction in MSE is chosen. The tree growing algorithm terminates once
+no further splits can be performed.
 
 % Consider a candidate split of a parent node (P) into a left (L) and right (R)
 % daughter node. Let~$(y, w)$ be the tuple of regression target and weight for a
@@ -330,7 +330,7 @@ Ref.~\cite{Friedman:2001wbq} with some modifications.
   \end{enumerate}
 
 \item The final prediction of the boosting procedure,
-  $F_{M\hspace{-0.07em}}(x)$, can be used to estimate the probability
+  $F_{M\hspace{-0.07em}}(\myvec{x})$, can be used to estimate the probability
   $\mathbb{P}(Y = +1 \mid \myvec{X} = \myvec{x})$ according to
   \Cref{eq:gradboost_probas} as
   \begin{align*}
