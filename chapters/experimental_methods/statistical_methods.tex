@@ -28,7 +28,7 @@ of Ref.~\cite{cranmer2012} with few modifications.
 Let $\mathcal{C}$ denote the set of channels and $\mathcal{B}_{c}$ the set of
 bins in channel~$c$. The probability of observing $n_{cb}$ events in bin~$b$ of
 channel~$c$ is modelled by a Poisson distribution with probability mass function
-$\pois(n_{cb} \mid \nu_{cb})$, where $\nu_{cb}$ denotes the expected number of
+$\pois(n_{cb}; \nu_{cb})$, where $\nu_{cb}$ denotes the expected number of
 events for the given bin. The expectation~$\nu_{cb}$, which has to be inferred
 from the observed data, is parameterised as
 \begin{align*}
@@ -71,8 +71,8 @@ described in the following~\cite{cranmer2012}:
   \begin{align*}
     \Phi_{cs}(\myvec{\phi}) = \prod_{p \in \mathcal{N}_{cs}} \phi_p \,\text{,}
   \end{align*}
-  where $\mathcal{N}_{cs}$ denotes the set of indices that defines which
-  normalisation factors are to be applied to a given process~$s$ in channel~$c$.
+  where $\mathcal{N}_{cs}$ defines the normalisation factors that are to be
+  applied to a given process~$s$ in channel~$c$.
   % These parameters are optional, i.e.\ they can be fixed to unity for a given
   % process/channel depending on the statistical model one wants to construct.
   % % Normalisation factors that are shared?
@@ -105,7 +105,7 @@ given by
   L(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) = \Biggl[\,
   \prod_{c \in \mathcal{C}}
   \prod_{b \in \mathcal{B}_{c}}
-  \pois\bigl( n_{cb} \mid \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) \bigr)
+  \pois\bigl( n_{cb}; \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) \bigr)
   \,\Biggr]
   \times L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) \,\text{,}
   \label{eq:likelihood_histfactory}
@@ -115,36 +115,37 @@ function defining the external constraints on the NPs~$\myvec{\alpha}$ and
 $\myvec{\gamma}$. The external constraints are defined by
 \begin{align*}
   L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) =
-  \Biggl[\, \prod_{p=1}^{n} f(a_p \mid \alpha_p)     \,\Biggr]
-  \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb} \mid \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
+  \Biggl[\, \prod_{p=1}^{n} f(a_p; \alpha_p)     \,\Biggr]
+  \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb}; \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
 \end{align*}
 with the terms in brackets being described in the following:
 \begin{itemize}
 
-\item The term $f(a_p \mid \alpha_p)$ can be interpreted as the likelihood
-  function of an auxiliary measurement of the parameter~$\alpha_p$ given that
-  $a_p$ is observed. Conventionally, $f(a_p \mid \alpha_p)$ is taken to be the
-  probability density of a Normal distribution with unit variance and mean
+\item The term $f(a_p; \alpha_p)$ can be interpreted as the likelihood function
+  of an auxiliary measurement of the parameter~$\alpha_p$ given that $a_p$ is
+  observed. Conventionally, $f(a_p; \alpha_p)$ is taken to be the probability
+  density of a Normal distribution with unit variance and mean
   $\alpha_p$. Furthermore, it is assumed that the measurement observed $a_p = 0$
   such that, considering only the auxiliary measurement, the maximum likelihood
   estimate (MLE) of $\alpha_p$ is 0 with an uncertainty of
   $\Delta \alpha_p = \pm 1$. This particular choice of constraint term is
   closely connected to the functional form of $\sigma_{csb}(\myvec{\alpha})$ and
-  $\eta_{cs}(\myvec{\alpha})$, i.e.\ for a single parameter $\sigma_{csb}(0)$
-  and $\eta_{cs}(0)$ represent the nominal histogram and normalisation, while
-  $\sigma_{csb}(\pm 1)$ and $\eta_{cs}(\pm 1)$ correspond to $\pm 1 \sigma$
-  variations of the histogram shape and normalisation, respectively.
+  $\eta_{cs}(\myvec{\alpha})$. For example, in a model with a single constrained
+  NP the nominal histogram and normalisation is given by $\sigma_{csb}(0)$ and
+  $\eta_{cs}(0)$, while $\sigma_{csb}(\pm 1)$ and $\eta_{cs}(\pm 1)$ correspond
+  to $\pm 1 \sigma$ variations of the histogram shape and normalisation,
+  respectively.
 
   % which completely describe the physical effects of the nuisance
   % parameter.\footnote{\cite{cranmer2012}.}
 
-\item The $\pois(m_{cb} \mid \gamma_{cb} \tau_{cb})$ terms provide constraints
-  for the $\gamma_{cb}$ parameters introduced by the (simplified)
-  Barlow--Beeston method. For every bin a constant
-  $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the
-  summations go over all events making up the background prediction in the given
-  bin and $w_i$ is the event weight of event~$i$. This constant is interpreted
-  as an effective number of unweighted events,\footnote{Let
+\item The $\pois(m_{cb}; \gamma_{cb} \tau_{cb})$ terms provide constraints for
+  the $\gamma_{cb}$ parameters introduced by the simplified Barlow--Beeston
+  method. For every bin a constant
+  $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the sums go
+  over all events making up the background prediction in the given bin and $w_i$
+  is the event weight of event~$i$. This constant is interpreted as an effective
+  number of unweighted events,\footnote{Let
     $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
     $Y = \sum_{i = 1}^{N^\prime} 1 = N^\prime$, where $N$ and $N^\prime$ are
     independent Poisson random variables and $W_i$ are i.i.d.\ weights that are
@@ -158,7 +159,7 @@ with the terms in brackets being described in the following:
   bin. This statistical uncertainty is incorporated in the model by setting up
   auxiliary measurements of the effective number of unweighted events,
   $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed to
-  observe $m_{cb} = \tau_{cb}$, and therefore the nominal values of the
+  observe $m_{cb} = \tau_{cb}$, and therefore the nominal value of the
   $\gamma_{cb}$ parameters is 1.
 \end{itemize}
 % Once all parameters of the \textsc{HistFactory} model are fixed, the
