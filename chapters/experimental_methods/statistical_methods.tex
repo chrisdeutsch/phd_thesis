@@ -13,13 +13,13 @@ frequentist statements about the presence or absence of a signal.
 \subsection{The \textsc{HistFactory} Model}%
 \label{sec:histfactory}
 
-In high-energy physics, the use of binned data, usually in the form of
-histograms, is widespread for visualisation and statistical modelling. Analyses
-of collider data typically consider multiple mutually disjoint regions, also
-referred to as \emph{channels}, defined by event selections. Each region
-consists of one or more bins given by a discriminating variable. Events from
-different signal and background processes, hereafter referred to as
-\emph{physics processes}, contribute to these regions. In this context,
+The use of binned data, usually in the form of histograms, is widespread for
+visualisation and statistical modelling in HEP. Analyses of collider data
+typically consider multiple mutually disjoint regions, also referred to as
+\emph{channels}, defined by event selections. Each region consists of one or
+more bins given by a discriminating variable. Events from different signal and
+background processes, hereafter referred to as \emph{physics processes},
+contribute to these regions. In this context,
 \textsc{HistFactory}~\cite{cranmer2012} is the tool used in this thesis to
 construct statistical models for likelihood-based inference. The
 \textsc{HistFactory} model is introduced in the following, adopting the notation
@@ -203,11 +203,11 @@ uses of Asimov datasets will be highlighted in the subsequent sections.
 \subsection{Hypothesis Testing}%
 \label{sec:hypotesting}
 
-In high-energy physics, one is often concerned with comparing the goodness of
-fit of competing statistical models to observed data. These comparisons allow to
-make statements about values of the signal strength that are still in agreement
-with the observations. The framework of \emph{statistical hypothesis testing}
-provides a principled approach to perform these comparisons.
+In HEP, one is often concerned with comparing the goodness of fit of competing
+statistical models to observed data. These comparisons allow to make statements
+about values of the signal strength that are still in agreement with the
+observations. The framework of \emph{statistical hypothesis testing} provides a
+principled approach to perform these comparisons.
 
 With the statistical model introduced previously, a null hypothesis, $H_0$, is
 defined as
@@ -228,7 +228,7 @@ defined as
 %   the null hypothesis, then $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime = 0 \}$.}
 %
 A \emph{likelihood ratio test} (LRT) can be used to compare the hypotheses. The
-test statistic of the LRT is given by
+test statistic of the LRT is given by~\cite{casella2001}
 \begin{align*}
   \Lambda = -2 \ln\mathopen{}\left[
   \frac{\sup_{(\mu, \myvec{\theta}) \in \Omega_0} L(\mu, \myvec{\theta})}
@@ -236,13 +236,12 @@ test statistic of the LRT is given by
   \right]\mathclose{} \,\text{,}
 \end{align*}
 where the numerator (denominator) of the term in brackets is the supremum of the
-likelihood for the restricted (unrestricted) model~\cite{casella2001}. A
-critical value of the test statistic, $\Lambda_{\text{crit}}$, is chosen and
-compared to the observed value of the test statistic. If
-$\Lambda > \Lambda_{\text{crit}}$ then $H_0$ is rejected in favour of
-$H_1$. Otherwise, $H_0$ cannot be rejected. The chosen value of
-$\Lambda_{\text{crit}}$ defines the rejection region of the test and thus its
-statistical significance and power.
+likelihood for the restricted (unrestricted) model. A critical value of the test
+statistic, $\Lambda_{\text{crit}}$, is chosen and compared to the observed value
+of the test statistic. If $\Lambda > \Lambda_{\text{crit}}$ then $H_0$ is
+rejected in favour of $H_1$. Otherwise, $H_0$ cannot be rejected. The chosen
+value of $\Lambda_{\text{crit}}$ defines the rejection region of the test and
+thus its statistical significance and power.
 
 
 \subsubsection{Discovery of a Signal}
@@ -257,38 +256,37 @@ discovery of a signal are
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime > 0 \} \,\text{,}
 \end{align*}
 where $\Omega^+$ denotes the parameter space of the model with the restriction
-that $\mu \geq 0$. An empirical test statistic based on the LRT is defined as
-\begin{align*}
+that $\mu \geq 0$. An empirical test statistic based on the LRT is defined
+as~\cite{Cowan:2010js}
+\begin{align}
   q_0 = \begin{cases}
           -2 \ln\mathopen{}\left[ \frac{ L\bigl(0, \hat{\hat{\myvec{\theta}}}(0) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right]\mathclose{}, & \muhat > 0 \\
           0,          & \muhat \leq 0
         \end{cases} \quad\text{,}
-\end{align*}
+  \label{eq:discovery_teststat}
+\end{align}
 where $\muhat$, $\hat{\myvec{\theta}}$, and $\hat{\hat{\myvec{\theta}}}$ are
-defined as in
-\Cref{eq:unconditional_fit,eq:conditional_fit}~\cite{Cowan:2010js}.\footnote{The
+defined as in \Cref{eq:unconditional_fit,eq:conditional_fit}.\footnote{The
   unconditional fit is performed without the $\mu \geq 0$ constraint. Instead,
   the constraint is imposed in the definition of the test statistic by setting
   the maximum likelihood of the unrestricted model to
   $L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)$ in the $\muhat < 0$ case.}
 This test statistic is referred to as the \emph{discovery test statistic}. The
 asymptotic sampling distribution of $q_0$ under $H_0$ is given by the
-probability density function
+probability density function~\cite{Cowan:2010js}
 \begin{align*}
   f(q_0) = \frac{1}{2} \delta(q_0) + \frac{1}{2} f_{\chi^2}(q_0; 1) \,\text{,}
 \end{align*}
 which is an equal mixture of a Dirac $\delta$ distribution and a $\chi^2$
-distribution with one degree of freedom~\cite{Cowan:2010js}. The discovery test
-statistic is often expressed in terms of an asymptotic $p$-value according
-to
+distribution with one degree of freedom. The discovery test statistic is often
+expressed in terms of an asymptotic $p$-value according to~\cite{Cowan:2010js}
 \begin{align*}
   p_0 = \int_{q_{0}}^\infty \mathrm{d}q_0^\prime \, f(q_0^\prime) =
   1 - \Phi\left(\sqrt{q_{0}}\right) \,\text{,}
 \end{align*}
 where $\Phi$ is the cumulative distribution function of the Standard Normal
-distribution~\cite{Cowan:2010js}. Another way of expressing the test statistic
-is in terms of the \emph{discovery significance}~$Z_0$, which is defined
-as~\cite{Cowan:2010js}
+distribution. Another way of expressing the test statistic is in terms of the
+\emph{discovery significance}~$Z_0$, which is defined as~\cite{Cowan:2010js}
 \begin{align*}
   Z_0 = \Phi^{-1}(1 - p_0) = \sqrt{q_{0}} \,\text{.}
 \end{align*}
@@ -317,22 +315,25 @@ $H_0$ and $H_1$ with significance level~$\alpha$, the confidence interval is the
 set of values of $\mu^*$ for which $H_0$ cannot be rejected by the test. The
 upper bound of this set is referred to as the upper limit on $\mu$ at
 $(1 - \alpha)$~CL. The estimation of upper limits in HEP uses an empirical test
-statistic derived from the LRT that reads
-\begin{align*}
+statistic derived from the LRT that reads~\cite{Cowan:2010js}
+\begin{align}
   \qmutilde =
   \begin{cases}
     -2\ln\mathopen{}\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( 0, \hat{\hat{\myvec{\theta}}}(0) \bigr)} \right]\mathclose{}, & \muhat \in (\infty, 0] \\[1em]
     -2\ln\mathopen{}\left[ \frac{ L\bigl( \mu, \hat{\hat{\myvec{\theta}}}(\mu) \bigr)}{L\bigl( \muhat, \hat{\myvec{\theta}} \bigr)} \right]\mathclose{}, & \muhat \in (0, \mu] \\[1em]
     0,\phantom{ \biggl[  \biggr]} & \muhat \in (\mu, \infty) \\
   \end{cases} \,\text{,}
-\end{align*}
-where for notational simplicity $\mu^*$ is denoted as
-$\mu$~\cite{Cowan:2010js}. The asymptotic sampling distributions of \qmutilde
-were derived in Ref.~\cite{Cowan:2010js} for any assumed value of the true
-signal strength. Let~$f(\qmutilde \mid \mu^\prime)$ be the asymptotic sampling
-distribution of \qmutilde under the assumption that the signal strength is
-$\mu^\prime$. Following the approach outlined before, an approximate upper limit
-at $(1 - \alpha)$~CL can be determined by finding the largest $\mu$ such that
+  \label{eq:qmutilde}
+\end{align}
+where for notational simplicity $\mu^*$ is denoted as $\mu$. Moreover, the
+unconditional fit determining \muhat in \Cref{eq:qmutilde} is performed without
+the positivity constraint on the signal strength. The asymptotic sampling
+distribution of \qmutilde is derived in Ref.~\cite{Cowan:2010js} for any assumed
+value of the true signal strength.  Let~$f(\qmutilde \mid \mu^\prime)$ be the
+asymptotic sampling distribution of \qmutilde under the assumption that the
+signal strength is $\mu^\prime$. Following the approach outlined before, an
+approximate upper limit at $(1 - \alpha)$~CL can be determined by finding the
+largest $\mu$ such that
 \begin{align*}
   p_\mu = \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu) \leq \alpha \,\text{,}
 \end{align*}
@@ -397,10 +398,13 @@ however, these limits have to be interpreted as being conservative in the sense
 that the coverage probability of the estimated intervals exceeds $(1 - \alpha)$
 by construction due to $\CLs \geq p_\mu$. Conventionally, upper limits are set
 at $\SI{95}{\percent}$~CL ($\alpha = 0.05$) in HEP. Hereafter, all quoted upper
-limits are estimated using the \CLs technique. Finally, median upper limits on
-$\mu$--also referred to as expected upper limits--can be derived by performing
-the procedure outlined above using background-only Asimov datasets instead of
-the observed data~\cite{Cowan:2010js}.
+limits are estimated using the \CLs technique. Finally, the \emph{median upper
+  limit} on $\mu$ can be derived by performing the procedure outlined above
+using background-only Asimov data instead of observed
+data~\cite{Cowan:2010js}. The median upper limit is also referred to as the
+\emph{expected upper limit}.
+
+
 
 
 %%% Local Variables:
