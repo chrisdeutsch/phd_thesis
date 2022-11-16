@@ -33,7 +33,8 @@
     \smash{\hat{#1}}}}
 
 % Bold vector working with latin and greek characters
-\newcommand*{\myvec}[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{#1}}}}
+% \newcommand*{\myvec}[1]{\ifstrequal{#1}{0}{\ensuremath{\mathbf{0}}}{\ensuremath{\boldsymbol{#1}}}}
+\newcommand*{\myvec}[1]{\bm{#1}}
 
 % A few useful definitions.
 \newcommand{\mysim}{\sim\!}
@@ -145,6 +146,7 @@
 % Miscellaneous
 
 \DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 \newcommand*{\muhat}{\ensuremath{\hat{\mu}}\xspace}
 \newcommand*{\boldx}{\ensuremath{\myvec{x}}\xspace}
