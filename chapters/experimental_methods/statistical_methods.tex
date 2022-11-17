@@ -101,15 +101,15 @@ A description of the exact functional form of $\sigma_{csb}(\myvec{\alpha})$ and
 $\eta_{cs}(\myvec{\alpha})$ is omitted here but can be found in
 Ref.~\cite{cranmer2012}. The likelihood function of the statistical model is
 given by
-\begin{align}
+\begin{align*}
   L(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) = \Biggl[\,
   \prod_{c \in \mathcal{C}}
   \prod_{b \in \mathcal{B}_{c}}
   \pois\bigl( n_{cb}; \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) \bigr)
   \,\Biggr]
   \times L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) \,\text{,}
-  \label{eq:likelihood_histfactory}
-\end{align}
+  % \label{eq:likelihood_histfactory}
+\end{align*}
 where $L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma})$ is the likelihood
 function defining the external constraints on the NPs~$\myvec{\alpha}$ and
 $\myvec{\gamma}$. The external constraints are defined by
@@ -142,10 +142,10 @@ with the terms in brackets being described in the following:
 \item The $\pois(m_{cb}; \gamma_{cb} \tau_{cb})$ terms provide constraints for
   the $\gamma_{cb}$ parameters introduced by the simplified Barlow--Beeston
   method. For every bin a constant
-  $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the sums go
-  over all events making up the background prediction in the bin and $w_i$ is
-  the weight of $i$-th event. The constant $\tau_{cb}$ is interpreted as an
-  effective number of unweighted events,\footnote{Let
+  $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the sums are
+  over events making up the background prediction in the given bin and $w_i$ are
+  the corresponding event weights. The constant~$\tau_{cb}$ can be interpreted
+  as an effective number of unweighted events,\footnote{Let
     $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
     $Y = \sum_{i = 1}^{N^\prime} 1 = N^\prime$, where $N$ and $N^\prime$ are
     independent Poisson random variables and $W_i$ are i.i.d.\ weights that are
@@ -155,12 +155,13 @@ with the terms in brackets being described in the following:
     yields $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and
     after approximating expected values with sample averages
     $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.} which measures
-  the statistical precision of the background estimate in a given
-  bin. This\todo{Which?}  statistical uncertainty is incorporated in the model
-  by setting up auxiliary measurements of the effective number of unweighted
-  events, $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed
-  to observe $m_{cb} = \tau_{cb}$, and therefore the nominal value of the
-  $\gamma_{cb}$ parameters is 1.
+  the statistical precision of the background estimate in the bin. The model
+  incorporates the statistical uncertainty by setting up auxiliary measurements
+  of the effective number of unweighted events, $\gamma_{cb}\tau_{cb}$, for
+  every bin. These measurements observe $m_{cb} = \tau_{cb}$, and therefore the
+  nominal value of the $\gamma_{cb}$ parameters is 1.\todo{Say that the
+    effective number of unweighted events is approximated by a Poisson
+    distribution?}
 \end{itemize}
 % Once all parameters of the \textsc{HistFactory} model are fixed, the
 % probability distributions of the observables~$n_{cb}$
@@ -169,10 +170,10 @@ with the terms in brackets being described in the following:
 %
 % $a_p$ $m_{cb}$ ``global observables''
 
-The parameters of the model can be estimated, given the observed data, using
-maximum likelihood estimation. Hereafter, it is assumed that the model has one
-POI denoted by $\mu$ that is to be interpreted as a signal strength. All other
-(non-POI) parameters of the model are collectively referred to as
+The parameters of the model can be estimated using maximum likelihood
+estimation, given the observed data. Hereafter, it is assumed that the model has
+one POI denoted by $\mu$ that is to be interpreted as a signal strength. All
+other (non-POI) parameters of the model are collectively referred to as
 $\myvec{\theta}$. Let $\Omega$ be the parameter space of the model with
 elements~$(\mu, \myvec{\theta})$. The MLE of the parameters are determined by
 the \emph{unconditional fit}
@@ -196,17 +197,17 @@ Lastly, special datasets referred to as \emph{Asimov
 parameters, the Asimov dataset is the dataset in which the observables $n_{cb}$
 and the global observables $a_p$ and $m_{cb}$ are equal to their expected
 values. Asimov datasets can be used, in place of the observed data, to evaluate
-the expected experimental sensitivity of searches or measurements in HEP. Some
-uses of Asimov datasets will be highlighted in the subsequent sections.
+the expected experimental sensitivity of searches and measurements in HEP. Some
+uses of Asimov datasets will be highlighted in subsequent sections.
 
 
-\subsection{Hypothesis Testing}%
+\subsection{Hypothesis Testing in Particle Physics}%
 \label{sec:hypotesting}
 
 In HEP, one is often concerned with comparing the goodness of fit of competing
 statistical models to observed data. These comparisons allow to make statements
 about values of the signal strength that are still in agreement with the
-observations. The framework of \emph{statistical hypothesis testing} provides a
+observations. The framework of statistical hypothesis testing provides a
 principled approach to perform these comparisons.
 
 With the statistical model introduced previously, a null hypothesis, $H_0$, is
@@ -227,8 +228,8 @@ defined as
 % \footnote{Example: Taking the background-only hypothesis as
 %   the null hypothesis, then $\Omega_0 = \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \mid \mu^\prime = 0 \}$.}
 %
-A \emph{likelihood ratio test} (LRT) can be used to compare the hypotheses. The
-test statistic of the LRT is given by~\cite{casella2001}
+A \emph{likelihood ratio test} (LRT) can be used to compare these
+hypotheses. The test statistic of the LRT is given by~\cite{casella2001}
 \begin{align*}
   \Lambda = -2 \ln\mathopen{}\left[
   \frac{\sup_{(\mu, \myvec{\theta}) \in \Omega_0} L(\mu, \myvec{\theta})}
@@ -292,11 +293,12 @@ distribution. Another way of expressing the test statistic is in terms of the
 \end{align*}
 In particle physics, the conventional significance threshold that has to be
 exceeded to claim discovery of new physics is $Z_0 = 5$ ($p_0 = \num{2.87e-7}$),
-which is also referred to as the ``$5\sigma$ threshold''. Lastly, the
-\emph{median discovery significance} of a signal with an assumed strength of
-$\mu$ can be estimated by using an Asimov dataset with the same signal strength
-in the determination of $Z_0$~\cite{Cowan:2010js}. The median discovery
-significance is also referred to as the \emph{expected signal significance}.
+which is also called the ``$5\sigma$ threshold''. Lastly, the \emph{median
+  discovery significance} of a signal with an assumed strength of $\mu$ can be
+estimated by determining $Z_0$ for an Asimov dataset constructed with the same
+signal strength~\cite{Cowan:2010js}. The median discovery significance is also
+referred to as the \emph{expected signal significance}.
+
 
 \subsubsection{Upper Limits on the Signal Strength}
 
