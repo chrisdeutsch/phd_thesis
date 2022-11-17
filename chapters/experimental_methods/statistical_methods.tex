@@ -30,7 +30,7 @@ bins in channel~$c$. The probability of observing $n_{cb}$ events in bin~$b$ of
 channel~$c$ is modelled by a Poisson distribution with probability mass function
 $\pois(n_{cb}; \nu_{cb})$, where $\nu_{cb}$ denotes the expected number of
 events for the given bin. The expectation~$\nu_{cb}$, which has to be inferred
-from the observed data, is parameterised as
+from the observed data, is parameterised as~\cite{cranmer2012}
 \begin{align*}
   \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) =
   \sum_{s \in \mathcal{S}_{c}} \, \gamma_{csb} \, \Phi_{cs}(\myvec{\phi}) \, \eta_{cs}(\myvec{\alpha}) \, \sigma_{csb}(\myvec{\alpha}) \,\text{,}
@@ -38,13 +38,12 @@ from the observed data, is parameterised as
 where $\mathcal{S}_{c}$ is the set of physics processes contributing to
 channel~$c$, and the parameters of the model are denoted by
 ${\myvec{\alpha} = (\alpha_1, \dots, \alpha_n)}$,
-${\myvec{\phi} = (\phi_1, \dots, \phi_m)}$, and
-$\myvec{\gamma}$~\cite{cranmer2012}.\footnote{The vector $\myvec{\gamma}$ groups
-  the $\gamma_{csb}$ parameters for all bins.} Of these parameters,
-$\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance parameters (NPs) with
-external constraints, which will be introduced shortly.  The relevance of the
-four factors $\gamma_{csb}$, $\Phi_{cs}$, $\eta_{cs}$, and $\sigma_{csb}$ is
-described in the following~\cite{cranmer2012}:
+${\myvec{\phi} = (\phi_1, \dots, \phi_m)}$, and $\myvec{\gamma}$.\footnote{The
+  vector $\myvec{\gamma}$ groups the $\gamma_{csb}$ parameters for all bins.} Of
+these parameters, $\myvec{\alpha}$ and $\myvec{\gamma}$ are nuisance parameters
+(NPs) with external constraints, which will be introduced shortly.  The
+relevance of the four factors $\gamma_{csb}$, $\Phi_{cs}$, $\eta_{cs}$, and
+$\sigma_{csb}$ is described in the following~\cite{cranmer2012}:
 \begin{itemize}
 
 \item $\sigma_{csb}(\myvec{\alpha})$ is referred to as the \emph{parameterised
@@ -78,9 +77,9 @@ described in the following~\cite{cranmer2012}:
   % % Normalisation factors that are shared?
   In most cases, at least one normalisation factor is present that is applied to
   the physics process of interest, also referred to as the \emph{signal}. This
-  normalisation factor is referred to as the \emph{signal strength}~$\mu$ and is
-  often considered to be the parameter of interest (POI). Normalisation factors
-  are considered to be NPs if they are not POIs.
+  normalisation factor is called the \emph{signal strength}~$\mu$ and is often
+  considered to be the parameter of interest (POI). Normalisation factors are
+  considered to be NPs if they are not POIs.
 
 \item $\gamma_{csb}$ are parameters that introduce additional degrees of freedom
   for every bin. They are used to incorporate uncertainties that originate from
@@ -143,9 +142,9 @@ with the terms in brackets being described in the following:
   the $\gamma_{cb}$ parameters introduced by the simplified Barlow--Beeston
   method. For every bin a constant
   $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the sums go
-  over all events making up the background prediction in the given bin and $w_i$
-  is the event weight of event~$i$. This constant is interpreted as an effective
-  number of unweighted events,\footnote{Let
+  over all events making up the background prediction in the bin and $w_i$ is
+  the weight of $i$-th event. The constant $\tau_{cb}$ is interpreted as an
+  effective number of unweighted events,\footnote{Let
     $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
     $Y = \sum_{i = 1}^{N^\prime} 1 = N^\prime$, where $N$ and $N^\prime$ are
     independent Poisson random variables and $W_i$ are i.i.d.\ weights that are
@@ -154,12 +153,12 @@ with the terms in brackets being described in the following:
     standard deviation of $Y_{\text{w}}$ and $Y$ are equal. This condition
     yields $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and
     after approximating expected values with sample averages
-    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.} which is a
-  measure of the statistical precision of the background estimate in the
-  bin. This statistical uncertainty is incorporated in the model by setting up
-  auxiliary measurements of the effective number of unweighted events,
-  $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed to
-  observe $m_{cb} = \tau_{cb}$, and therefore the nominal value of the
+    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.} which measures
+  the statistical precision of the background estimate in a given
+  bin. This\todo{Which?}  statistical uncertainty is incorporated in the model
+  by setting up auxiliary measurements of the effective number of unweighted
+  events, $\gamma_{cb}\tau_{cb}$, for every bin. These measurements are assumed
+  to observe $m_{cb} = \tau_{cb}$, and therefore the nominal value of the
   $\gamma_{cb}$ parameters is 1.
 \end{itemize}
 % Once all parameters of the \textsc{HistFactory} model are fixed, the
@@ -326,14 +325,14 @@ statistic derived from the LRT that reads~\cite{Cowan:2010js}
   \label{eq:qmutilde}
 \end{align}
 where for notational simplicity $\mu^*$ is denoted as $\mu$. Moreover, the
-unconditional fit determining \muhat in \Cref{eq:qmutilde} is performed without
-the positivity constraint on the signal strength. The asymptotic sampling
-distribution of \qmutilde is derived in Ref.~\cite{Cowan:2010js} for any assumed
-value of the true signal strength.  Let~$f(\qmutilde \mid \mu^\prime)$ be the
-asymptotic sampling distribution of \qmutilde under the assumption that the
-signal strength is $\mu^\prime$. Following the approach outlined before, an
-approximate upper limit at $(1 - \alpha)$~CL can be determined by finding the
-largest $\mu$ such that
+unconditional fit determining $\muhat$ and $\hat{\myvec{\theta}}$ in
+\Cref{eq:qmutilde} is performed without the positivity constraint on the signal
+strength. The asymptotic sampling distribution of \qmutilde is derived in
+Ref.~\cite{Cowan:2010js} for any assumed value of the true signal strength.
+Let~$f(\qmutilde \mid \mu^\prime)$ be the asymptotic sampling distribution of
+\qmutilde under the assumption that the signal strength is
+$\mu^\prime$. Following the approach outlined before, an approximate upper limit
+at $(1 - \alpha)$~CL can be determined by finding the largest $\mu$ such that
 \begin{align*}
   p_\mu = \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu) \leq \alpha \,\text{,}
 \end{align*}
