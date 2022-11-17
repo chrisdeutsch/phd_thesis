@@ -170,13 +170,12 @@ with the terms in brackets being described in the following:
 %
 % $a_p$ $m_{cb}$ ``global observables''
 
-The parameters of the model can be estimated using maximum likelihood
-estimation, given the observed data. Hereafter, it is assumed that the model has
-one POI denoted by $\mu$ that is to be interpreted as a signal strength. All
-other (non-POI) parameters of the model are collectively referred to as
-$\myvec{\theta}$. Let $\Omega$ be the parameter space of the model with
-elements~$(\mu, \myvec{\theta})$. The MLE of the parameters are determined by
-the \emph{unconditional fit}
+Given observed data, the parameters of the model can be estimated using maximum
+likelihood estimation. Hereafter, it is assumed that the model has one POI,
+namely, the signal strength~$\mu$. All other (non-POI) parameters of the model
+are collectively referred to as $\myvec{\theta}$. Let $\Omega$ be the parameter
+space of the model with elements~$(\mu, \myvec{\theta})$. The MLE of the
+parameters are determined by the \emph{unconditional fit}
 \begin{align}
   (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta}) \in \Omega} L(\mu, \myvec{\theta}) \,\text{.}
   \label{eq:unconditional_fit}
@@ -185,11 +184,11 @@ Often, a restricted model is constructed by fixing the POI to an arbitrary value
 $\mu^*$. In this case, the MLE of the model parameters are given by the
 \emph{conditional fit for $\mu = \mu^*$}
 \begin{align}
-  \hat{\hat{\myvec{\theta}}}(\mu^*) = \argmax_{\myvec{\theta} \in \{ \myvec{\theta}^\prime \mid (\mu^\prime, \myvec{\theta}^\prime) \in \Omega \,\land\, \mu^\prime = \mu^* \} } L(\mu^*, \myvec{\theta}) \,\text{.}
+  \hat{\hat{\myvec{\theta}}}(\mu^*) = \argmax_{\myvec{\theta} \in \{ \myvec{\theta}^\prime \mid (\mu^*, \myvec{\theta}^\prime) \in \Omega \} } L(\mu^*, \myvec{\theta}) \,\text{.}
   \label{eq:conditional_fit}
 \end{align}
-Hereafter, the model with the restriction $\mu = 0$ is referred to as the
-\emph{background-only model}. The unrestricted model is referred to as the
+The model with the restriction $\mu = 0$ is called the \emph{background-only
+  model}, while the unrestricted model is called the
 \emph{signal-plus-background model}.
 
 Lastly, special datasets referred to as \emph{Asimov
@@ -311,13 +310,15 @@ inverting a test of the hypotheses
   &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime \geq \mu^* \}
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime < \mu^* \} \,\text{,}
 \end{align*}
-where $\mu^*$ is used to parameterise the hypotheses. Let $(1 - \alpha)$ be the
+where $\mu^*$ is used to parameterise the hypotheses. Let $1 - \alpha$ be the
 desired confidence level (CL) of the interval to be estimated. Given a test of
 $H_0$ and $H_1$ with significance level~$\alpha$, the confidence interval is the
 set of values of $\mu^*$ for which $H_0$ cannot be rejected by the test. The
-upper bound of this set is referred to as the upper limit on $\mu$ at
-$(1 - \alpha)$~CL. The estimation of upper limits in HEP uses an empirical test
-statistic derived from the LRT that reads~\cite{Cowan:2010js}
+upper bound of this set is
+% referred to as
+the upper limit on $\mu$ at $1 - \alpha$~CL. The estimation of upper limits in
+HEP uses an empirical test statistic derived from the LRT that
+reads~\cite{Cowan:2010js}
 \begin{align}
   \qmutilde =
   \begin{cases}
@@ -335,9 +336,10 @@ Ref.~\cite{Cowan:2010js} for any assumed value of the true signal strength.
 Let~$f(\qmutilde \mid \mu^\prime)$ be the asymptotic sampling distribution of
 \qmutilde under the assumption that the signal strength is
 $\mu^\prime$. Following the approach outlined before, an approximate upper limit
-at $(1 - \alpha)$~CL can be determined by finding the largest $\mu$ such that
+at $1 - \alpha$~CL can be determined by finding the largest value of $\mu$ such
+that
 \begin{align*}
-  p_\mu = \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu) \leq \alpha \,\text{,}
+  p_\mu = \int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu) > \alpha \,\text{,}
 \end{align*}
 where $\tilde{q}_{\mu, \text{obs}}$ denotes the observed value of the test
 statistic.
@@ -357,9 +359,9 @@ method which introduces a modified test statistic defined as~\cite{Cowan:2010js}
   \label{eq:cls}
 \end{align}
 The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by the power
-of the \qmutilde-based test in rejecting $H_0$ when the background-only
-hypothesis is true. This modification can be understood qualitatively by
-considering two edge cases:
+of the \qmutilde-based test in correctly rejecting $H_0$ when the
+background-only hypothesis is true. This modification can be understood
+qualitatively by considering two edge cases:
 \begin{itemize}
 
 \item High signal sensitivity: the power of the test to reject $H_0$ under the
@@ -395,11 +397,11 @@ Upper limits on $\mu$ using the \CLs technique are estimated by finding the
 largest value of $\mu$ for which $\CLs \leq \alpha$. Since \CLs approaches unity
 in cases of low signal sensitivity, spurious exclusions of signals are
 effectively prevented. Upper limits derived from the condition
-$\CLs \leq \alpha$ are also referred to as upper limits at $(1 - \alpha)$~CL,
+$\CLs \leq \alpha$ are also referred to as upper limits at $1 - \alpha$~CL,
 however, these limits have to be interpreted as being conservative in the sense
-that the coverage probability of the estimated intervals exceeds $(1 - \alpha)$
-by construction due to $\CLs \geq p_\mu$. Conventionally, upper limits are set
-at $\SI{95}{\percent}$~CL ($\alpha = 0.05$) in HEP. Hereafter, all quoted upper
+that the coverage probability of the estimated intervals exceeds $1 - \alpha$ by
+construction due to $\CLs \geq p_\mu$. Conventionally, upper limits are set at
+$\SI{95}{\percent}$~CL ($\alpha = 0.05$) in HEP. Hereafter, all quoted upper
 limits are estimated using the \CLs technique. Finally, the \emph{median upper
   limit} on $\mu$ can be derived by performing the procedure outlined above
 using background-only Asimov data instead of observed
