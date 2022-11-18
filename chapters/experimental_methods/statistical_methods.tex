@@ -18,9 +18,9 @@ The use of binned data
 is widespread for data visualisation and statistical modelling in HEP. Analyses
 of collider data typically consider multiple mutually disjoint regions, also
 referred to as \emph{channels}, defined by event selections. Each region
-consists of one or more bins of a discriminating variable. Events from different
-signal and background processes, hereafter referred to as \emph{physics
-  processes}, contribute to these regions. In this context,
+consists of one or more bins defined by a discriminating variable. Events from
+different signal and background processes, hereafter referred to as
+\emph{physics processes}, contribute to these regions. In this context,
 \textsc{HistFactory}~\cite{cranmer2012} is the tool used in this thesis for
 constructing statistical models for likelihood-based inference. The
 \textsc{HistFactory} model is introduced in the following, adopting the notation
@@ -49,11 +49,11 @@ $\sigma_{csb}$ is described in the following~\cite{cranmer2012}:
 
 \item $\sigma_{csb}(\myvec{\alpha})$ is referred to as the \emph{parameterised
     histogram} of process~$s$ in channel~$c$, the index $b$ denoting the bins of
-  the histogram. It serves to estimate the expected number of events from
-  process~$s$ in channel~$c$ and is usually derived using simulation or control
-  region data. The parameterised histogram has additional degrees of freedom,
-  parameterised by $\myvec{\alpha}$, to account for uncertainties on the shape
-  of the histogram. These degrees of freedom leave the overall normalisation
+  the histogram. It estimates the expected number of events from process~$s$ in
+  channel~$c$ and is usually derived from simulation or control region data. The
+  parameterised histogram has additional degrees of freedom, parameterised by
+  $\myvec{\alpha}$, to account for uncertainties on the shape of the
+  histogram. These degrees of freedom leave the overall normalisation
   $\sum_{b \in \mathcal{B}_{c}} \sigma_{csb}(\myvec{\alpha})$ for a given
   channel~$c$ and process~$s$ unchanged.
 
@@ -130,11 +130,11 @@ with the terms in brackets being described in the following:
   estimate (MLE) of $\alpha_p$ is 0 with an uncertainty of
   $\Delta \alpha_p = \pm 1$. This particular choice of constraint term is
   closely connected to the functional form of $\sigma_{csb}(\myvec{\alpha})$ and
-  $\eta_{cs}(\myvec{\alpha})$. For example, in a model with a single constrained
-  NP the nominal histogram and normalisation is given by $\sigma_{csb}(0)$ and
-  $\eta_{cs}(0)$, while $\sigma_{csb}(\pm 1)$ and $\eta_{cs}(\pm 1)$ correspond
-  to $\pm 1 \sigma$ variations of the histogram shape and normalisation,
-  respectively.
+  $\eta_{cs}(\myvec{\alpha})$. For example, in a model with one externally
+  constrained NP the nominal histogram and normalisation is given by
+  $\sigma_{csb}(0)$ and $\eta_{cs}(0)$, while $\sigma_{csb}(\pm 1)$ and
+  $\eta_{cs}(\pm 1)$ correspond to $\pm 1 \sigma$ variations of the histogram
+  shape and normalisation, respectively.
 
   % which completely describe the physical effects of the nuisance
   % parameter.\footnote{\cite{cranmer2012}.}
@@ -172,16 +172,16 @@ with the terms in brackets being described in the following:
 
 Given observed data, the parameters of the model can be estimated using maximum
 likelihood estimation. Hereafter, it is assumed that the model has one POI,
-namely, the signal strength~$\mu$. All other (non-POI) parameters of the model
-are collectively referred to as $\myvec{\theta}$. Let $\Omega$ be the parameter
+namely, the signal strength~$\mu$. All other parameters of the model are
+collectively referred to as $\myvec{\theta}$. Let $\Omega$ be the parameter
 space of the model with elements~$(\mu, \myvec{\theta})$. The MLE of the
-parameters are determined by the \emph{unconditional fit}
+parameters is determined by the \emph{unconditional fit}
 \begin{align}
   (\muhat, \hat{\myvec{\theta}}) = \argmax_{(\mu, \myvec{\theta}) \in \Omega} L(\mu, \myvec{\theta}) \,\text{.}
   \label{eq:unconditional_fit}
 \end{align}
 Often, a restricted model is constructed by fixing the POI to an arbitrary value
-$\mu^*$. In this case, the MLE of the model parameters are given by the
+$\mu^*$. In this case, the MLE of the model parameters is given by the
 \emph{conditional fit for $\mu = \mu^*$}
 \begin{align}
   \hat{\hat{\myvec{\theta}}}(\mu^*) = \argmax_{\myvec{\theta} \in \{ \myvec{\theta}^\prime \mid (\mu^*, \myvec{\theta}^\prime) \in \Omega \} } L(\mu^*, \myvec{\theta}) \,\text{.}
@@ -241,16 +241,16 @@ statistic, $\Lambda_{\text{crit}}$, is chosen and compared to the observed value
 of the test statistic. If $\Lambda > \Lambda_{\text{crit}}$ then $H_0$ is
 rejected in favour of $H_1$. Otherwise, $H_0$ cannot be rejected. The chosen
 value of $\Lambda_{\text{crit}}$ defines the rejection region of the test and
-thus its statistical significance and power.
+thus its significance level and power.
 
 
 \subsubsection{Discovery of a Signal}
 
-In the framework of hypothesis testing, the discovery of a signal implies
-rejecting the background-only hypothesis in favour of the signal-plus-background
-hypothesis. Usually, only signals with positive strength, that is $\mu > 0$, are
-considered as potential discoveries. The relevant hypotheses for testing the
-discovery of a signal are
+In the context of statistical hypothesis testing, the discovery of a signal
+implies rejecting the background-only hypothesis in favour of the
+signal-plus-background hypothesis. Generally, only signals with positive
+strength, that is $\mu > 0$, are considered as potential discoveries. The
+relevant hypotheses for testing the discovery of a signal are
 \begin{align*}
   &H_0: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime = 0 \}
   &&H_1: (\mu, \myvec{\theta}) \in \{ (\mu^\prime, \myvec{\theta}^\prime) \in \Omega^+ \mid \mu^\prime > 0 \} \,\text{,}
@@ -358,17 +358,18 @@ method which introduces a modified test statistic defined as~\cite{Cowan:2010js}
   {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)} \,\text{.}
   \label{eq:cls}
 \end{align}
-The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by the power
-of the \qmutilde-based test in correctly rejecting $H_0$ when the
+The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by the
+probability/power of the \qmutilde-based test to correctly reject $H_0$ when the
 background-only hypothesis is true. This modification can be understood
 qualitatively by considering two edge cases:
 \begin{itemize}
 
-\item High signal sensitivity: the power of the test to reject $H_0$ under the
-  background-only hypothesis approaches unity and thus $\CLs \approx p_\mu$.
+\item High signal sensitivity: the probability of correctly rejecting $H_0$
+  under the background-only hypothesis approaches unity and thus
+  $\CLs \approx p_\mu$.
 
-\item Low signal sensitivity: the power of the test to reject $H_0$ under the
-  background-only hypothesis approaches $p_\mu$ and thus $\CLs \approx 1$.
+\item Low signal sensitivity: the probability of correctly rejecting $H_0$ under
+  the background-only hypothesis approaches $p_\mu$ and thus $\CLs \approx 1$.
 
 \end{itemize}
 A graphical illustration of these cases is given in \Cref{fig:cls_qmutilde}.
