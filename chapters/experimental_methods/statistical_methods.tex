@@ -345,10 +345,11 @@ where $\tilde{q}_{\mu, \text{obs}}$ denotes the observed value of the test
 statistic.
 
 In searches for new physics, a modified approach referred to as the
-\CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is adopted to derive
-upper limits on $\mu$. The method of estimating upper limits based on $p_\mu$ is
-susceptible to setting overly stringent constraints on $\mu$ in regions with
-little signal sensitivity. While this is expected given a coverage probability
+\CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is adopted to set
+upper limits on $\mu$. The estimation of upper limits based on $p_\mu$ is
+susceptible to setting overly stringent constraints on $\mu$ in scenarios with
+little signal sensitivity, that is, for cases where the test has little power
+against the alternative. While this is expected given a coverage probability
 below \SI{100}{\percent}, it is preferred to avoid the spurious exclusion of
 signals in regions with no sensitivity. This problem is addressed by the \CLs
 method which introduces a modified test statistic defined as~\cite{Cowan:2010js}
@@ -395,21 +396,36 @@ A graphical illustration of these cases is given in \Cref{fig:cls_qmutilde}.
 \end{figure}
 
 Upper limits on $\mu$ using the \CLs technique are estimated by finding the
-largest value of $\mu$ for which $\CLs \leq \alpha$. Since \CLs approaches unity
-in cases of low signal sensitivity, spurious exclusions of signals are
-effectively prevented. Upper limits derived from the condition
-$\CLs \leq \alpha$ are also referred to as upper limits at $1 - \alpha$~CL,
-however, these limits have to be interpreted as being conservative in the sense
-that the coverage probability of the estimated intervals exceeds $1 - \alpha$ by
-construction due to $\CLs \geq p_\mu$. Conventionally, upper limits are set at
+largest value of $\mu$ for which $\CLs > \alpha$. Since \CLs approaches unity in
+cases of low signal sensitivity, spurious exclusions of signals are effectively
+prevented. Upper limits derived from the condition $\CLs > \alpha$ are also
+referred to as upper limits at $1 - \alpha$~CL, however, these limits have to be
+interpreted as being conservative in the sense that the coverage probability of
+the estimated intervals exceeds $1 - \alpha$ by construction due to
+$\CLs \geq p_\mu$. Conventionally, upper limits are set at
 $\SI{95}{\percent}$~CL ($\alpha = 0.05$) in HEP. Hereafter, all quoted upper
 limits are estimated using the \CLs technique. Finally, the \emph{median upper
   limit} on $\mu$ can be derived by performing the procedure outlined above
 using background-only Asimov data instead of observed
 data~\cite{Cowan:2010js}. The median upper limit is also referred to as the
-\emph{expected upper limit}.
+\emph{expected upper limit}. An example of the limit setting procedure using the
+\CLs method is given in \Cref{fig:cls_example}.
 
+\begin{figure}[htbp]
+  \centering
 
+  \includegraphics[width=0.46\textwidth]{statistics/cls_limits}
+
+  \caption{Scan of the \CLs test statistic as a function of $\mu$ for an event
+    counting experiment with an expectation of 5 signal events, 50 background
+    events, and a background systematic uncertainty of $\pm 5$ events. The
+    expected/median value of \CLs is obtained from the background-only Asimov
+    dataset. The \CLs intervals containing \SI{68}{\percent} ($\pm 1 \sigma$)
+    and \SI{95}{\percent} ($\pm 2 \sigma$) of probability mass under the
+    background-only hypothesis are indicated as green and yellow bands,
+    respectively.}%
+  \label{fig:cls_example}
+\end{figure}
 
 
 %%% Local Variables:
