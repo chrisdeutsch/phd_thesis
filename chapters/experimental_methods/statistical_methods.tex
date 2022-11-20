@@ -351,16 +351,35 @@ In searches for new physics, a modified approach referred to as the
 upper limits on the signal strength. To motivate the use of the \CLs method, a
 perceived shortcoming of tests based on~$p_\mu$ is illustrated hereafter. A test
 of the hypotheses $H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ with rejection
-region $p_{\mu^*} \leq \alpha$ has an asymptotic significance level of~$\alpha$
-by construction. Consequently, the probability of incorrectly rejecting $H_0$
-when $\mu = \mu^*$ is $\alpha$. Since $\alpha$ is fixed a priori, the
-probability (statistical power) of correctly rejecting $H_0$ when $\mu = 0$
+region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level of~$\alpha$
+by construction. Thus, the probability of incorrectly rejecting $H_0$ when
+$\mu = \mu^*$ is $\alpha$. Since $\alpha$ is fixed a priori, the probability
+(statistical power) of correctly rejecting $H_0$ assuming the background-only
+hypothesis
 % , which can range from $\alpha$ to one,
 is solely determined by the experimental sensitivity to a signal with
 strength~$\mu^{*}$. In significance testing, the decision to reject the null
 hypothesis is made irrespective of the statistical power of the test. However,
-the power of the test has implications on how positive test results (i.e.\
-rejecting $H_0$) have to be interpreted:
+the power of the test has implications on how statistically significant tests
+have to be interpreted.
+
+
+
+
+Consider the probability of~$H_1$ being true given that the test is significant
+(positive).
+
+
+
+From Bayes' theorem it follows
+\begin{align*}
+  \mathbb{P}(\text{true} \mid \text{positive}) = \frac{(1 - \beta) R}{(1 - \beta) R + \alpha} \,\text{,}
+\end{align*}
+where $R = \mathbb{P}(\text{true}) / \mathbb{P}(\text{false})$ is the ratio of
+the prior probabilities that $H_1$ is true and false, respectively.
+
+
+
 \begin{itemize}
 
 \item Positive test with high power:
@@ -372,22 +391,6 @@ rejecting $H_0$) have to be interpreted:
   the test is more likely to be a false positive.
 
 \end{itemize}
-
-
-\footnote{Positive predictive value follows from Bayes' theorem
-  \begin{align*}
-    \mathbb{P}(\text{true} \mid \text{positive}) = \frac{(1 - \beta) R}{(1 - \beta) R + \alpha} \,\text{,}
-  \end{align*}
-  where $R = \mathbb{P}(\text{true}) / \mathbb{P}(\text{false})$ is the ratio of
-  prior probabilities.}
-
-
-
-
-
-
-
-
 
 
 In fact, a test defining the rejection region as $p_\mu \leq \alpha$ rejects the
