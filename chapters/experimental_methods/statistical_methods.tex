@@ -348,22 +348,38 @@ coverage probability of $1 - \alpha$.
 
 In searches for new physics, a modified approach referred to as the
 \CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is adopted to set
-upper limits on~$\mu$. To motivate the use of the \CLs method, a perceived
-shortcoming of tests based on~$p_\mu$ is described hereafter. A test of the
-hypotheses $H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ with rejection region
-$p_{\mu^*} \leq \alpha$ has a significance level of $\alpha$ by
-construction. Thus, the probability of incorrectly rejecting $H_0$ when
-$\mu = \mu^*$ is $\alpha$. Since $\alpha$ is fixed, the probability/power of
-correctly rejecting $H_0$ when $\mu = 0$, which ranges from $\alpha$ to one, is
-solely determined by the experimental sensitivity to a signal with
-strength~$\mu^{*}$.
+upper limits on the signal strength. To motivate the use of the \CLs method, a
+perceived shortcoming of tests based on~$p_\mu$ is illustrated hereafter. A test
+of the hypotheses $H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ with rejection
+region $p_{\mu^*} \leq \alpha$ has an asymptotic significance level of~$\alpha$
+by construction. Consequently, the probability of incorrectly rejecting $H_0$
+when $\mu = \mu^*$ is $\alpha$. Since $\alpha$ is fixed a priori, the
+probability (statistical power) of correctly rejecting $H_0$ when $\mu = 0$
+% , which can range from $\alpha$ to one,
+is solely determined by the experimental sensitivity to a signal with
+strength~$\mu^{*}$. In significance testing, the decision to reject the null
+hypothesis is made irrespective of the statistical power of the test. However,
+the power of the test has implications on how positive test results (i.e.\
+rejecting $H_0$) have to be interpreted:
 \begin{itemize}
 
-\item Significant test and high power (high experimental sensitivity):
+\item Positive test with high power:
 
-\item Significant test and low power (low experimental sensitivity):
+  the test is more likely to be a true positive.
+
+\item Positive test with low power:
+
+  the test is more likely to be a false positive.
 
 \end{itemize}
+
+
+\footnote{Positive predictive value follows from Bayes' theorem
+  \begin{align*}
+    \mathbb{P}(\text{true} \mid \text{positive}) = \frac{(1 - \beta) R}{(1 - \beta) R + \alpha} \,\text{,}
+  \end{align*}
+  where $R = \mathbb{P}(\text{true}) / \mathbb{P}(\text{false})$ is the ratio of
+  prior probabilities.}
 
 
 
