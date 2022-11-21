@@ -346,13 +346,13 @@ where $\tilde{q}_{\mu, \text{obs}}$ denotes the observed value of the test
 statistic. Confidence intervals derived using this method have an asymptotic
 coverage probability of $1 - \alpha$.
 
-In searches for new physics, an approach referred to as the
-\CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is adopted to set
-upper limits on the signal strength. To motivate the use of the \CLs method, a
-problem with tests based on~$p_\mu$ is illustrated. A test of
-$H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ (omitting NPs for brevity) with
-rejection region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level
-of~$\alpha$ by construction.
+In searches for new physics, the
+\CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is used to set upper
+limits on $\mu$. To motivate the use of this method, a problem with tests based
+on~$p_\mu$ is illustrated hereafter. A test of $H_0: \mu \geq \mu^*$ and
+$H_1: \mu < \mu^*$ (NPs are omitted for brevity) with rejection
+region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level of~$\alpha$
+by construction.
 % Consequently, the probability of falsely rejecting $H_0$ when $\mu = \mu^*$ is $\alpha$.
 Since $\alpha$ is fixed a priori, the probability (statistical power) of
 correctly rejecting~$H_0$ under the background-only hypothesis, $1 - \beta$, is
@@ -400,47 +400,40 @@ experiment.
 
 The \CLs technique addresses the spurious exclusion of signals by introducing
 the test statistic~\cite{Cowan:2010js}
-\begin{align}
+\begin{align*}
   \CLs = \frac
   {\int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu)}
   {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)} \,\text{,}
-  \label{eq:cls}
-\end{align}
-where $\tilde{q}_{\mu, \text{obs}}$ is the observed value of the test
-statistic. The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by
-the probability of observing a value of \qmutilde larger than the observed value
-under the background-only hypothesis.
+  % \label{eq:cls}
+\end{align*}
+where $\tilde{q}_{\mu, \text{obs}}$ is the observed value of \qmutilde. The \CLs
+statistic modifies $p_\mu$ (the numerator) by dividing it by the probability of
+having a \qmutilde larger than the observed value under the background-only
+hypothesis. This modification can be understood qualitatively by considering the
+two limiting cases:
+\begin{itemize}
 
-% (observed power of the test)
+\item High signal sensitivity (high statistical power): $\CLs \to p_\mu$.
+
+\item Low signal sensitivity (low statistical power): $\CLs \to 1$.
+
+\end{itemize}
+The \CLs technique estimates upper limits on the signal strength by finding the
+largest value of $\mu$ for which $\CLs > \alpha$. Since \CLs approaches unity in
+cases of low signal sensitivity, spurious exclusions are effectively
+prevented. These upper limits
 
 \vspace{5em}
 
-The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by the
-probability/power of the \qmutilde-based test to correctly reject $H_0$ when the
-background-only hypothesis is true. This modification can be understood
-qualitatively by considering two edge cases:
-\begin{itemize}
 
-\item High signal sensitivity: the probability of correctly rejecting $H_0$
-  under the background-only hypothesis approaches unity and thus
-  $\CLs \ra p_\mu$.
-
-\item Low signal sensitivity: the probability of correctly rejecting $H_0$ under
-  the background-only hypothesis approaches $p_\mu$ and thus $\CLs \ra 1$.
-
-\end{itemize}
-A graphical illustration of these cases is given in \Cref{fig:cls_qmutilde}.
-
-
-
-Using the \CLs technique, upper limits on the signal strength are estimated by
-finding the largest value of $\mu$ for which $\CLs > \alpha$. Since \CLs
-approaches unity in cases of low signal sensitivity, spurious exclusions of
-signals are effectively prevented. Upper limits derived from the condition
+Upper limits derived from the condition
 $\CLs > \alpha$ are also referred to as upper limits at $1 - \alpha$~CL,
 however, these limits have to be interpreted as being conservative in the sense
 that the coverage probability of the estimated intervals exceeds $1 - \alpha$ by
-construction due to $\CLs \geq p_\mu$. Conventionally, upper limits are set at
+construction due to $\CLs \geq p_\mu$.
+
+
+Conventionally, upper limits are set at
 $\SI{95}{\percent}$~CL ($\alpha = 0.05$) in HEP.  Finally, the \emph{median
   upper limit} on $\mu$ can be derived by performing the procedure outlined
 above using background-only Asimov data instead of observed
