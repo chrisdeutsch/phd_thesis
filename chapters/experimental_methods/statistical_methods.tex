@@ -346,26 +346,26 @@ where $\tilde{q}_{\mu, \text{obs}}$ denotes the observed value of the test
 statistic. Confidence intervals derived using this method have an asymptotic
 coverage probability of $1 - \alpha$.
 
-In searches for new physics, the
-\CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is used to set upper
-limits on $\mu$. To motivate the use of this method, a problem with tests based
-on~$p_\mu$ is illustrated hereafter. A test of $H_0: \mu \geq \mu^*$ and
+Searches for new physics use the \CLs~technique
+~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} to set upper limits on $\mu$
+instead. To motivate the use of this technique, a problem with tests based
+on~$p_\mu$ is illustrated. A test of $H_0: \mu \geq \mu^*$ and
 $H_1: \mu < \mu^*$ (NPs are omitted for brevity) with rejection
 region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level of~$\alpha$
 by construction.
 % Consequently, the probability of falsely rejecting $H_0$ when $\mu = \mu^*$ is $\alpha$.
-Since $\alpha$ is fixed a priori, the probability (statistical power) of
-correctly rejecting~$H_0$ under the background-only hypothesis, $1 - \beta$, is
-solely determined by the experimental sensitivity to a signal with
+Since $\alpha$ is fixed a priori, the probability/power of correctly
+rejecting~$H_0$ under the background-only hypothesis, $1 - \beta$, is solely
+determined by the experimental sensitivity to a signal with
 strength~$\mu^*$. This is illustrated in
 \Cref{fig:cls_qmu_highpower,fig:cls_qmu_lowpower} for an experiment with high
 and low sensitivity, respectively. A problem arises when considering an
 experiment that has hardly any sensitivity in distinguishing between the
-$\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case, the statistical power of
-the test approaches $\alpha$, which is illustrated
+$\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case, the power of the
+test~($1 - \beta$) approaches $\alpha$, which is illustrated
 in~\Cref{fig:cls_qmu_lowpower}. This means that a signal to which the experiment
 has little sensitivity will still be excluded with a probability of at
-least~$\alpha$ under the background-only hypothesis. In HEP these \emph{spurious
+least~$\alpha$ under the background-only hypothesis. In HEP such \emph{spurious
   exclusions} are undesired, motivating the introduction of an alternative test
 statistic for upper limits that takes into account the sensitivity of the
 experiment.
@@ -376,13 +376,13 @@ experiment.
   \begin{subfigure}{0.46\textwidth}
     % \includegraphics[width=\textwidth]{statistics/cls_high_sensitivity}
     \includegraphics[width=\textwidth]{statistics/high_power}
-    \caption{Test with high statistical power ($1 - \beta \approx 0.8$).}%
+    \caption{Test with high statistical power ($1 - \beta = 0.8$).}%
     \label{fig:cls_qmu_highpower}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.46\textwidth}
     % \includegraphics[width=\textwidth]{statistics/cls_low_sensitivity}
     \includegraphics[width=\textwidth]{statistics/low_power}
-    \caption{Test with low statistical power ($1 - \beta \approx 0.1$).}%
+    \caption{Test with low statistical power ($1 - \beta = 0.1$).}%
     \label{fig:cls_qmu_lowpower}
   \end{subfigure}
 
@@ -398,8 +398,7 @@ experiment.
   \label{fig:cls_qmu}
 \end{figure}
 
-The \CLs technique addresses the spurious exclusion of signals by introducing
-the test statistic~\cite{Cowan:2010js}
+The \CLs technique introduces the alternative test statistic~\cite{Cowan:2010js}
 \begin{align*}
   \CLs = \frac
   {\int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu)}
@@ -408,33 +407,23 @@ the test statistic~\cite{Cowan:2010js}
 \end{align*}
 where $\tilde{q}_{\mu, \text{obs}}$ is the observed value of \qmutilde. The \CLs
 statistic modifies $p_\mu$ (the numerator) by dividing it by the probability of
-having a \qmutilde larger than the observed value under the background-only
-hypothesis. This modification can be understood qualitatively by considering the
-two limiting cases:
-\begin{itemize}
-
-\item High signal sensitivity (high statistical power): $\CLs \to p_\mu$.
-
-\item Low signal sensitivity (low statistical power): $\CLs \to 1$.
-
-\end{itemize}
-The \CLs technique estimates upper limits on the signal strength by finding the
-largest value of $\mu$ for which $\CLs > \alpha$. Since \CLs approaches unity in
-cases of low signal sensitivity, spurious exclusions are effectively
-prevented. These upper limits
+observing a \qmutilde larger than the observed value under the background-only
+hypothesis. Upper limits on the signal strength are then estimated by finding
+the largest value of $\mu$ for which $\CLs > \alpha$. In the limiting case of an
+experiment with no signal sensitivity the value of \CLs approaches unity, thus
+preventing spurious exclusions.
 
 \vspace{5em}
 
+These limits are also referred to as upper limits at $1 - \alpha$~CL, however,
+their coverage probability exceeds $1 - \alpha$ by construction due to
+$\CLs > p_\mu$. Since \CLs approaches unity in cases of low signal sensitivity,
+spurious exclusions are effectively prevented when using the \CLs
+method. Conventionally, upper limits are set at $\SI{95}{\percent}$~CL
+($\alpha = 0.05$) in HEP.
 
-Upper limits derived from the condition
-$\CLs > \alpha$ are also referred to as upper limits at $1 - \alpha$~CL,
-however, these limits have to be interpreted as being conservative in the sense
-that the coverage probability of the estimated intervals exceeds $1 - \alpha$ by
-construction due to $\CLs \geq p_\mu$.
 
-
-Conventionally, upper limits are set at
-$\SI{95}{\percent}$~CL ($\alpha = 0.05$) in HEP.  Finally, the \emph{median
+Finally, the \emph{median
   upper limit} on $\mu$ can be derived by performing the procedure outlined
 above using background-only Asimov data instead of observed
 data~\cite{Cowan:2010js}. The median upper limit is also referred to as the
