@@ -349,7 +349,7 @@ coverage probability of $1 - \alpha$.
 In searches for new physics, an approach referred to as the
 \CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is adopted to set
 upper limits on the signal strength. To motivate the use of the \CLs method, a
-shortcoming of tests based on~$p_\mu$ is illustrated. A test of
+problem with tests based on~$p_\mu$ is illustrated. A test of
 $H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ (omitting NPs for brevity) with
 rejection region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level
 of~$\alpha$ by construction.
@@ -359,16 +359,16 @@ correctly rejecting~$H_0$ under the background-only hypothesis, $1 - \beta$, is
 solely determined by the experimental sensitivity to a signal with
 strength~$\mu^*$. This is illustrated in
 \Cref{fig:cls_qmu_highpower,fig:cls_qmu_lowpower} for an experiment with high
-and low experimental sensitivity, respectively. A problem arises when
-considering an experiment that has hardly any sensitivity in distinguishing
-between the $\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case, the
-statistical power of the test approaches $\alpha$, that is,
-$1 - \beta \to \alpha$, which is illustrated in~\Cref{fig:cls_qmu_lowpower}. In
-practice, a signal to which the experiment has little sensitivity will still be
-excluded with a probability of at least~$\alpha$ under the background-only
-hypothesis. In HEP these \emph{spurious exclusions} are undesired, motivating
-the introduction of an alternative test statistic that takes into account the
-sensitivity of the experiment.
+and low sensitivity, respectively. A problem arises when considering an
+experiment that has hardly any sensitivity in distinguishing between the
+$\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case, the statistical power of
+the test approaches $\alpha$, which is illustrated
+in~\Cref{fig:cls_qmu_lowpower}. This means that a signal to which the experiment
+has little sensitivity will still be excluded with a probability of at
+least~$\alpha$ under the background-only hypothesis. In HEP these \emph{spurious
+  exclusions} are undesired, motivating the introduction of an alternative test
+statistic for upper limits that takes into account the sensitivity of the
+experiment.
 
 \begin{figure}[htbp]
   \centering
@@ -398,8 +398,8 @@ sensitivity of the experiment.
   \label{fig:cls_qmu}
 \end{figure}
 
-The \CLs technique addresses the spurious exclusion of signals by introducing a
-modified test statistic~\cite{Cowan:2010js}
+The \CLs technique addresses the spurious exclusion of signals by introducing
+the test statistic~\cite{Cowan:2010js}
 \begin{align}
   \CLs = \frac
   {\int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu)}
