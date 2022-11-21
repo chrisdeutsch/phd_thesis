@@ -349,14 +349,13 @@ coverage probability of $1 - \alpha$.
 Searches for new physics use the \CLs~technique
 ~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} to set upper limits on $\mu$
 instead. To motivate the use of this technique, a problem with tests based
-on~$p_\mu$ is illustrated. A test of $H_0: \mu \geq \mu^*$ and
-$H_1: \mu < \mu^*$ (NPs are omitted for brevity) with rejection
-region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level of~$\alpha$
-by construction.
+on~$p_\mu$ is outlined hereafter. A test of $H_0: \mu \geq \mu^*$ and
+$H_1: \mu < \mu^*$ with rejection region~$p_{\mu^*} \leq \alpha$ has an
+asymptotic significance level of~$\alpha$ by construction.
 % Consequently, the probability of falsely rejecting $H_0$ when $\mu = \mu^*$ is $\alpha$.
 Since $\alpha$ is fixed a priori, the probability/power of correctly
-rejecting~$H_0$ under the background-only hypothesis, $1 - \beta$, is solely
-determined by the experimental sensitivity to a signal with
+rejecting~$H_0$ under the background-only hypothesis, denoted by $1 - \beta$, is
+solely determined by the experimental sensitivity to a signal with
 strength~$\mu^*$. This is illustrated in
 \Cref{fig:cls_qmu_highpower,fig:cls_qmu_lowpower} for an experiment with high
 and low sensitivity, respectively. A problem arises when considering an
@@ -366,8 +365,8 @@ test~($1 - \beta$) approaches $\alpha$, which is illustrated
 in~\Cref{fig:cls_qmu_lowpower}. This means that a signal to which the experiment
 has little sensitivity will still be excluded with a probability of at
 least~$\alpha$ under the background-only hypothesis. In HEP such \emph{spurious
-  exclusions} are undesired, motivating the introduction of an alternative test
-statistic for upper limits that takes into account the sensitivity of the
+  exclusions} are undesired, motivating the use of an alternative method for
+setting upper limits that takes into account the signal sensitivity of the
 experiment.
 
 \begin{figure}[htbp]
@@ -386,44 +385,36 @@ experiment.
     \label{fig:cls_qmu_lowpower}
   \end{subfigure}
 
-  \caption{Qualitative illustration of the sampling distribution of $q_{\mu}$
-    under the signal-plus-background (blue) and background-only (red)
-    hypothesis. The blue shaded area corresponds to the significance
-    level~$\alpha$ of the test, which is $\alpha = 0.05$ in both cases. The red
-    shaded area corresponds to the statistical power~$1 - \beta$ of correctly
-    rejecting the null hypothesis when the background-only hypothesis is
-    true. The test statistic $q_{\mu}$, which differs from \qmutilde by allowing
-    negative values of the signal strength (see for example
-    Ref.~\cite{Cowan:2010js}), is chosen for illustration purposes only.}%
+  \caption{Sampling distribution of $q_{\mu}$ under the signal-plus-background
+    (blue) and background-only (red) hypothesis. The area shaded in blue
+    corresponds to the significance level~$\alpha$ of the test, which is
+    $\alpha = 0.05$ in both cases. The area shaded in red corresponds to the
+    statistical power~$1 - \beta$ of the test. The test statistic
+    $q_{\mu}$~\cite{Cowan:2010js}, which differs from \qmutilde by allowing
+    negative values of the signal strength, is chosen for illustration purposes
+    only.}%
   \label{fig:cls_qmu}
 \end{figure}
 
-The \CLs technique introduces the alternative test statistic~\cite{Cowan:2010js}
+The \CLs technique addresses the problem of spurious exclusions by introducing
+the test statistic~\cite{Cowan:2010js}
 \begin{align*}
   \CLs = \frac
   {\int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu)}
-  {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)} \,\text{,}
+  {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)} \,\text{.}
   % \label{eq:cls}
 \end{align*}
-where $\tilde{q}_{\mu, \text{obs}}$ is the observed value of \qmutilde. The \CLs
-statistic modifies $p_\mu$ (the numerator) by dividing it by the probability of
-observing a \qmutilde larger than the observed value under the background-only
-hypothesis. Upper limits on the signal strength are then estimated by finding
-the largest value of $\mu$ for which $\CLs > \alpha$. In the limiting case of an
-experiment with no signal sensitivity the value of \CLs approaches unity, thus
-preventing spurious exclusions.
-
-\vspace{5em}
-
-These limits are also referred to as upper limits at $1 - \alpha$~CL, however,
-their coverage probability exceeds $1 - \alpha$ by construction due to
-$\CLs > p_\mu$. Since \CLs approaches unity in cases of low signal sensitivity,
-spurious exclusions are effectively prevented when using the \CLs
-method. Conventionally, upper limits are set at $\SI{95}{\percent}$~CL
-($\alpha = 0.05$) in HEP.
-
-
-Finally, the \emph{median
+This statistic modifies $p_\mu$ (the numerator) by dividing it by the
+probability of \qmutilde being larger than the observed value under the
+background-only hypothesis. Upper limits on the signal strength are then
+estimated by finding the largest value of $\mu$ for which $\CLs > \alpha$. In
+the limiting case of an experiment with no signal sensitivity the value of \CLs
+approaches unity, thus preventing spurious exclusions. Limits derived using this
+approach are also referred to as upper limits at $1 - \alpha$~CL, however, their
+coverage probability exceeds $1 - \alpha$ by construction due to $\CLs >
+p_\mu$. Therefore, the confidence intervals estimated using the \CLs technique
+have to be interpreted as being conservative. By convention, upper limits in HEP
+are set at $\SI{95}{\percent}$~CL ($\alpha = 0.05$). Lastly, the \emph{median
   upper limit} on $\mu$ can be derived by performing the procedure outlined
 above using background-only Asimov data instead of observed
 data~\cite{Cowan:2010js}. The median upper limit is also referred to as the
@@ -436,17 +427,15 @@ all quoted upper limits are estimated using the \CLs technique.
 
   \includegraphics[width=0.46\textwidth]{statistics/cls_limits}
 
-  \caption{Scan of the \CLs test statistic as a function of $\mu$ for an event
-    counting experiment with an expectation of 5 signal events, 50 background
-    events, and a background systematic uncertainty of $\pm 5$ events. The
-    expected/median value of \CLs is obtained from the background-only Asimov
-    dataset. The \CLs intervals containing \SI{68}{\percent} ($\pm 1 \sigma$)
-    and \SI{95}{\percent} ($\pm 2 \sigma$) of probability mass under the
-    background-only hypothesis are indicated as green and yellow bands,
-    respectively.}%
+  \caption{The \CLs test statistic as a function of~$\mu$ for an event counting
+    experiment with an expectation of 5 signal events, 50 background events, and
+    a background systematic uncertainty of $\pm 5$ events. The expected/median
+    \CLs is obtained from the background-only Asimov dataset. The \CLs intervals
+    containing approximately \SI{68}{\percent}~($\pm 1 \sigma$) and
+    \SI{95}{\percent}~($\pm 2 \sigma$) of probability mass under the
+    background-only hypothesis are indicated as coloured bands.}%
   \label{fig:cls_example}
 \end{figure}
-
 
 %%% Local Variables:
 %%% mode: latex
