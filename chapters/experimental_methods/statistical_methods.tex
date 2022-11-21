@@ -349,48 +349,82 @@ coverage probability of $1 - \alpha$.
 In searches for new physics, a modified approach referred to as the
 \CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is adopted to set
 upper limits on the signal strength. To motivate the use of the \CLs method, a
-perceived shortcoming of tests based on~$p_\mu$ is illustrated hereafter. A test
-of the hypotheses $H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ with rejection
-region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level of~$\alpha$
-by construction. Thus, the probability of incorrectly rejecting $H_0$ when
-$\mu = \mu^*$ is $\alpha$. Since $\alpha$ is fixed a priori, the probability
-(statistical power) of correctly rejecting $H_0$ assuming the background-only
-hypothesis
-% , which can range from $\alpha$ to one,
-is solely determined by the experimental sensitivity to a signal with
-strength~$\mu^{*}$. In significance testing, the decision to reject the null
-hypothesis is made irrespective of the statistical power of the test. However,
-the power of the test has implications on how statistically significant tests
-have to be interpreted.
+shortcoming of tests based on~$p_\mu$ is illustrated. A test of
+$H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ (omitting NPs for brevity) with
+rejection region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level
+of~$\alpha$ by construction. Consequently, the probability of falsely rejecting
+$H_0$ when $\mu = \mu^*$ is $\alpha$. Since $\alpha$ is fixed a priori, the
+probability (statistical power) of correctly rejecting~$H_0$ under the
+background-only hypothesis, $1 - \beta$, is solely determined by the
+experimental sensitivity to a signal with strength~$\mu^*$. This is illustrated
+in \Cref{fig:cls_qmu} for an experiment with high experimental sensitivity (high
+power) and an experiment with low experimental sensitivitiy (low power).  A
+problem arises when considering an experiment that has hardly any sensitivity in
+distinguishing between the $\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case,
+the statistical power of the test approaches $\alpha$, that is,
+$1 - \beta \to \alpha$, which is illustrated in~\Cref{fig:cls_qmu_lowpower}.
+
+
+
+The practical consequence is that a signal, to which an experiment has little to
+no sensitivity, is still excluded with a probability of at least~$\alpha$ under
+the background-only hypothesis.
 
 
 
 
-Consider the probability of~$H_1$ being true given that the test is significant
-(positive).
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.46\textwidth}
+    % \includegraphics[width=\textwidth]{statistics/cls_high_sensitivity}
+    \includegraphics[width=\textwidth]{statistics/high_power}
+    \caption{Test with high statistical power ($1 - \beta \approx 0.8$).}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.46\textwidth}
+    % \includegraphics[width=\textwidth]{statistics/cls_low_sensitivity}
+    \includegraphics[width=\textwidth]{statistics/low_power}
+    \caption{Test with low statistical power ($1 - \beta \approx 0.1$).}%
+    \label{fig:cls_qmu_lowpower}
+  \end{subfigure}
+
+  \caption{Qualitative illustration of the sampling distribution of $q_{\mu}$
+    under the signal-plus-background (blue) and background-only (red)
+    hypothesis. The blue shaded area corresponds to the significance
+    level~$\alpha$ of the test, which is $\alpha = 0.05$ in both cases. The red
+    shaded area corresponds to the statistical power~$1 - \beta$ of correctly
+    rejecting the null hypothesis when the background-only hypothesis is
+    true. The test statistic $q_{\mu}$, which differs from \qmutilde by allowing
+    negative values of the signal strength (see for example
+    Ref.~\cite{Cowan:2010js}), is chosen for illustration purposes only.}%
+  \label{fig:cls_qmu}
+\end{figure}
 
 
 
-From Bayes' theorem it follows
-\begin{align*}
-  \mathbb{P}(\text{true} \mid \text{positive}) = \frac{(1 - \beta) R}{(1 - \beta) R + \alpha} \,\text{,}
-\end{align*}
-where $R = \mathbb{P}(\text{true}) / \mathbb{P}(\text{false})$ is the ratio of
-the prior probabilities that $H_1$ is true and false, respectively.
+\vspace{5em}
+
+In significance testing, the decision to reject the null hypothesis is made
+irrespective of the statistical power of the test. However, the power of the
+test has implications on how statistically significant tests have to be
+interpreted. Namely, the false positive rate, that is, the probability that the
+alternative hypothesis is false given that the test is significant, increases
+with decreasing statistical power.
 
 
-
-\begin{itemize}
-
-\item Positive test with high power:
-
-  the test is more likely to be a true positive.
-
-\item Positive test with low power:
-
-  the test is more likely to be a false positive.
-
-\end{itemize}
+\footnote{The false positive rate (FPR) for a test of simple hypotheses $H_0$
+  and $H_1$ with significance level~$\alpha$ and power~$1 - \beta$ follows from
+  Bayes' theorem
+  \begin{align*}
+    \text{FPR} = \mathbb{P}( H_1 \text{ is false} \mid \text{test is positive}) =
+    \frac{\alpha}{
+    (1 - \beta)
+    \frac{\mathbb{P}(H_1 \text{ is true})}{\mathbb{P}(H_1 \text{ is false})}
+    + \alpha} \,\text{,}
+  \end{align*}
+  where $\mathbb{P}(H_1 \text{ is true})$ and $\mathbb{P}(H_1 \text{ is false})$
+  are the prior probabilities that the alternative hypothesis is true and false,
+  respectively.}
 
 
 In fact, a test defining the rejection region as $p_\mu \leq \alpha$ rejects the
@@ -515,25 +549,7 @@ qualitatively by considering two edge cases:
 \end{itemize}
 A graphical illustration of these cases is given in \Cref{fig:cls_qmutilde}.
 
-\begin{figure}[htbp]
-  \centering
 
-  \begin{subfigure}{0.46\textwidth}
-    \includegraphics[width=\textwidth]{statistics/cls_high_sensitivity}
-    \caption{Example with high signal sensitivity}
-  \end{subfigure}\hfill%
-  \begin{subfigure}{0.46\textwidth}
-    \includegraphics[width=\textwidth]{statistics/cls_low_sensitivity}
-    \caption{Example with low signal sensitivity}
-  \end{subfigure}
-
-  \caption{Qualitative illustration of the sampling distributions of \qmutilde
-    under the signal-plus-background (red) and background-only (blue)
-    hypothesis. The red (blue) hatched area corresponds to the integrals
-    entering the numerator (denominator) of the \CLs statistic
-    in~\Cref{eq:cls}.}%
-  \label{fig:cls_qmutilde}
-\end{figure}
 
 Using the \CLs technique, upper limits on the signal strength are estimated by
 finding the largest value of $\mu$ for which $\CLs > \alpha$. Since \CLs
