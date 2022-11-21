@@ -346,32 +346,29 @@ where $\tilde{q}_{\mu, \text{obs}}$ denotes the observed value of the test
 statistic. Confidence intervals derived using this method have an asymptotic
 coverage probability of $1 - \alpha$.
 
-In searches for new physics, a modified approach referred to as the
+In searches for new physics, an approach referred to as the
 \CLs~technique~\cite{Junk:1999kv,Read:2000ru,Read:2002hq} is adopted to set
 upper limits on the signal strength. To motivate the use of the \CLs method, a
 shortcoming of tests based on~$p_\mu$ is illustrated. A test of
 $H_0: \mu \geq \mu^*$ and $H_1: \mu < \mu^*$ (omitting NPs for brevity) with
 rejection region~$p_{\mu^*} \leq \alpha$ has an asymptotic significance level
-of~$\alpha$ by construction. Consequently, the probability of falsely rejecting
-$H_0$ when $\mu = \mu^*$ is $\alpha$. Since $\alpha$ is fixed a priori, the
-probability (statistical power) of correctly rejecting~$H_0$ under the
-background-only hypothesis, $1 - \beta$, is solely determined by the
-experimental sensitivity to a signal with strength~$\mu^*$. This is illustrated
-in \Cref{fig:cls_qmu} for an experiment with high experimental sensitivity (high
-power) and an experiment with low experimental sensitivitiy (low power).  A
-problem arises when considering an experiment that has hardly any sensitivity in
-distinguishing between the $\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case,
-the statistical power of the test approaches $\alpha$, that is,
-$1 - \beta \to \alpha$, which is illustrated in~\Cref{fig:cls_qmu_lowpower}.
-
-
-
-The practical consequence is that a signal, to which an experiment has little to
-no sensitivity, is still excluded with a probability of at least~$\alpha$ under
-the background-only hypothesis.
-
-
-
+of~$\alpha$ by construction.
+% Consequently, the probability of falsely rejecting $H_0$ when $\mu = \mu^*$ is $\alpha$.
+Since $\alpha$ is fixed a priori, the probability (statistical power) of
+correctly rejecting~$H_0$ under the background-only hypothesis, $1 - \beta$, is
+solely determined by the experimental sensitivity to a signal with
+strength~$\mu^*$. This is illustrated in
+\Cref{fig:cls_qmu_highpower,fig:cls_qmu_lowpower} for an experiment with high
+and low experimental sensitivity, respectively. A problem arises when
+considering an experiment that has hardly any sensitivity in distinguishing
+between the $\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case, the
+statistical power of the test approaches $\alpha$, that is,
+$1 - \beta \to \alpha$, which is illustrated in~\Cref{fig:cls_qmu_lowpower}. In
+practice, a signal to which the experiment has little sensitivity will still be
+excluded with a probability of at least~$\alpha$ under the background-only
+hypothesis. In HEP these \emph{spurious exclusions} are undesired, motivating
+the introduction of an alternative test statistic that takes into account the
+sensitivity of the experiment.
 
 \begin{figure}[htbp]
   \centering
@@ -379,7 +376,8 @@ the background-only hypothesis.
   \begin{subfigure}{0.46\textwidth}
     % \includegraphics[width=\textwidth]{statistics/cls_high_sensitivity}
     \includegraphics[width=\textwidth]{statistics/high_power}
-    \caption{Test with high statistical power ($1 - \beta \approx 0.8$).}
+    \caption{Test with high statistical power ($1 - \beta \approx 0.8$).}%
+    \label{fig:cls_qmu_highpower}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.46\textwidth}
     % \includegraphics[width=\textwidth]{statistics/cls_low_sensitivity}
@@ -400,139 +398,23 @@ the background-only hypothesis.
   \label{fig:cls_qmu}
 \end{figure}
 
-
-
-\vspace{5em}
-
-In significance testing, the decision to reject the null hypothesis is made
-irrespective of the statistical power of the test. However, the power of the
-test has implications on how statistically significant tests have to be
-interpreted. Namely, the false positive rate, that is, the probability that the
-alternative hypothesis is false given that the test is significant, increases
-with decreasing statistical power.
-
-
-\footnote{The false positive rate (FPR) for a test of simple hypotheses $H_0$
-  and $H_1$ with significance level~$\alpha$ and power~$1 - \beta$ follows from
-  Bayes' theorem
-  \begin{align*}
-    \text{FPR} = \mathbb{P}( H_1 \text{ is false} \mid \text{test is positive}) =
-    \frac{\alpha}{
-    (1 - \beta)
-    \frac{\mathbb{P}(H_1 \text{ is true})}{\mathbb{P}(H_1 \text{ is false})}
-    + \alpha} \,\text{,}
-  \end{align*}
-  where $\mathbb{P}(H_1 \text{ is true})$ and $\mathbb{P}(H_1 \text{ is false})$
-  are the prior probabilities that the alternative hypothesis is true and false,
-  respectively.}
-
-
-In fact, a test defining the rejection region as $p_\mu \leq \alpha$ rejects the
-null hypothesis with a probability of $\alpha$
-
-
-with a signal strength
-of~$\mu$.
-
-
-has a
-probability of rejecting the null hypothesis of $\alpha$ when the
-
-incorrectly
-rejects the null hypothesis with a probability of $\alpha$ when the
-
-
-
-When estimating
-
-
-
-$p_\mu \leq \alpha$
-
-To understand the motivation b
-
-Performing tests using $p_\mu$ as the test statistic
-
-
-The estimation of upper limits based on $p_\mu$ is susceptible to spuriously
-excluding .
-
-
-In fact, by construction the probability of.
-
-
-
-
-excluding a signal with the
-
-
-Using~$p_\mu$ as a test statistic is susceptible to
-spuriously excluding a signal of
-
-
-
-The estimation of upper limits based on $p_\mu$ is susceptible to spuriously
-excluding a signal with a hypothesised value
-
-
-. In fact, by construction it does
-so with a probability of~$\alpha$.
-
-
-
-
-
-
-This is expected, since the test is constructed
-
-
-
-
-
-
-
-observing a deficit with respect to the background expectation.
-
-
-
-In fact, the test
-will mistakingly reject the null hypothesis with a probability of~$\alpha$.
-
-
-
-
-
-The estimation of upper limits based on $p_\mu$ is
-susceptible to setting overly stringent constraints on $\mu$ in scenarios where
-the hypothesis test
-
-
-
-
-
-
-
-
-
-
-
-
-The estimation of upper limits based on $p_\mu$ is susceptible to setting overly
-stringent constraints on $\mu$ in scenarios with little signal sensitivity, that
-is, for cases where the test has little power against the background-only
-alternative.
-% While this is expected given that the null hypothesis is mistakingly rejected with a probability of alpha
-While this is expected given a coverage
-probability of $1 - \alpha$, it is preferred to avoid the spurious exclusion of
-signals in regions with no sensitivity. This problem is addressed by the \CLs
-method, which introduces a modified test statistic defined
-as~\cite{Cowan:2010js}
+The \CLs technique addresses the spurious exclusion of signals by introducing a
+modified test statistic~\cite{Cowan:2010js}
 \begin{align}
   \CLs = \frac
   {\int_{\tilde{q}_{\mu, \text{obs}}}^{\infty} \mathrm{d}\qmutilde \, f(\qmutilde \mid \mu)}
-  {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)} \,\text{.}
+  {\int_{\tilde{q}_{\mu, \text{obs}}}^\infty \mathrm{d}\qmutilde \, f(\qmutilde \mid 0)} \,\text{,}
   \label{eq:cls}
 \end{align}
+where $\tilde{q}_{\mu, \text{obs}}$ is the observed value of the test
+statistic. The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by
+the probability of observing a value of \qmutilde larger than the observed value
+under the background-only hypothesis.
+
+% (observed power of the test)
+
+\vspace{5em}
+
 The \CLs statistic modifies $p_\mu$ (the numerator) by dividing it by the
 probability/power of the \qmutilde-based test to correctly reject $H_0$ when the
 background-only hypothesis is true. This modification can be understood
