@@ -133,6 +133,7 @@ resulting in softer \mHH spectra.
     $\klambda = 0, 1, 10$. Differential cross sections for other
     values of \klambda are estimated using morphing techniques that
     are discussed in \Cref{sec:self_coupling_signals}.}
+  \label{fig:xsec_median_mhh}
 \end{figure}
 
 The \klambda-dependency of $\mathrm{d}\sigma / \mathrm{d}\mHH$ is an
@@ -285,8 +286,8 @@ mode, the morphing technique is used directly by performing linear
 combinations of the $\klambda = 1, 2, 10$ event samples. In this case,
 the re-weighting method is not used because the effects of \klambda
 variations are not easily parameterised as a re-weighting in a single
-variable. All event samples not used for morphing or re-weighting are
-used for validation purposes.
+variable. Event samples not used for morphing or re-weighting are used
+for validation purposes.
 
 Uncertainties on the modelling of the signal processes with anomalous
 \klambda are derived according to \Cref{sec:modelling_uncertainties}.
@@ -307,19 +308,20 @@ events, hereafter abbreviated as \emph{signal acceptance}, as a
 function of \klambda. The signal acceptance is shown in
 \Cref{fig:acceptance_vs_klambda} for the signal region selections in
 all three channels and their combination. It reaches a maximum at
-$\klambda \approx 2$ which corresponds to the value of the
+$\klambda \approx 2$, which corresponds to the value of the
 self-coupling constant with the largest median \mHH for signal events
-produced via \ggF. The limited signal acceptance at low \mHH due to
-the trigger selection is illustrated in \Cref{fig:acceptance_vs_mhh}
-for the dominant \ggF production mode. The \hadhad and \lephad SLT
-channel show similar signal acceptance over a wide range of \mHH,
-however, in the range of $\SI{250}{\GeV}< \mHH < \SI{320}{\GeV}$ the
-\lephad SLT channel dominates the signal acceptance in this
-search. The inclusion of the \lephad LTT channel, due to selecting
-events with leptons below the lepton \pT-threshold of the \lephad~SLT
-channel, is primarily intended to improve the signal acceptance at low
-\mHH where its relative contribution to the total signal acceptance is
-largest.
+produced via \ggF (cf.~\Cref{fig:xsec_median_mhh}). In addition, the
+signal acceptance in bins of the generator-level \mHH is shown in
+\Cref{fig:acceptance_vs_mhh} for the dominant \ggF production mode.
+% illustrating the limitations.
+The \hadhad and \lephad SLT channel show similar signal acceptance
+over a wide range of \mHH, however, in the range of
+$\SI{250}{\GeV}< \mHH < \SI{320}{\GeV}$ the \lephad SLT channel
+dominates the signal acceptance in this search. The inclusion of the
+\lephad LTT channel, due to selecting events with leptons below the
+lepton \pT-threshold of the \lephad~SLT channel, is primarily intended
+to improve the signal acceptance at low \mHH where its relative
+contribution to the total signal acceptance is largest.
 
 \begin{figure}[htbp]
   \centering
@@ -332,15 +334,16 @@ largest.
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{0.485\textwidth}
     \includegraphics[width=\textwidth]{self_coupling/acc_vs_mhh}
-    \subcaption{Signal (\ggF only) acceptance in bins of \mHH.}%
+    \subcaption{Signal (\ggF only) acceptance in bins of the
+      generator-level \mHH.}%
     \label{fig:acceptance_vs_mhh}
   \end{subfigure}
 
-  \caption{Non-resonant \HH signal acceptance in the \hadhad,
-    \lephad~SLT, and \lephad~LTT channel. The signal acceptance is
-    calculated as the fraction of events with $\bbbar\tauhad\tauhad$
-    or $\bbbar\taulep\tauhad$ final states passing the signal region
-    selections of a given channel.}%
+  \caption{Acceptance of events from non-resonant \HH production in
+    the \hadhad, \lephad~SLT, and \lephad~LTT channels. The signal
+    acceptance is calculated as the fraction of events with
+    $\bbbar\tauhad\tauhad$ or $\bbbar\taulep\tauhad$ final states
+    passing the signal region selections of a given channel.}%
   \label{fig:acceptance_vs_klambda_vs_mhh}
 \end{figure}
 
