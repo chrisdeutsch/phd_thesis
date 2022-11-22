@@ -275,17 +275,18 @@ For the \ggF production mode, this morphing technique is only used
 indirectly. Differential distributions at generator-level are obtained
 by linearly combining the $\klambda = 0, 1, 20$ event samples without
 detector simulation. These distributions are used to derive a
-re-weighting in the generator-level \mHH that allows to re-weight the
-$\klambda = 1$ event sample to any other value of \klambda. The
-re-weighting is then applied to the $\klambda = 1$ sample with full
-detector simulation. This approach avoids having to run the
-computationally expensive detector simulation for all event samples
-required for the morphing technique. For the VBF production mode, the
-morphing technique is used directly by combining the
-$\klambda = 1, 2, 10$ samples. In this case the re-weighting method is
-not used because the effect of \klambda variations cannot be expressed
-as a re-weighting in a single variable. The event samples that are not
-used for morphing or re-weighting are used for validation purposes.
+re-weighting in bins of the generator-level \mHH that allows to
+re-weight the $\klambda = 1$ event sample to any other value of
+\klambda. The re-weighting is then applied to the $\klambda = 1$
+sample with full detector simulation. This approach avoids having to
+run the computationally expensive detector simulation for all event
+samples required for the morphing technique. For the VBF production
+mode, the morphing technique is used directly by performing linear
+combinations of the $\klambda = 1, 2, 10$ event samples. In this case,
+the re-weighting method is not used because the effects of \klambda
+variations are not easily parameterised as a re-weighting in a single
+variable. All event samples not used for morphing or re-weighting are
+used for validation purposes.
 
 Uncertainties on the modelling of the signal processes with anomalous
 \klambda are derived according to \Cref{sec:modelling_uncertainties}.
