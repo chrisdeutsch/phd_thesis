@@ -215,20 +215,25 @@ briefly discussed in the conclusion of this chapter.
 \subsection{Signal Templates and Uncertainties}%
 \label{sec:self_coupling_signals}
 
-Templates of the contribution of a signal with anomalous values of
-\klambda in all three signal regions are required for the
-reinterpretation. These are obtained using morphing and re-weighting
-techniques developed by the ATLAS collaboration that will be explained
-hereafter. An ingredient for both methods are simulated event samples
-for different assumed values of \klambda. The event simulation
-proceeds using the same generator setup described in
-\Cref{sec:data_and_simulation}. Non-resonant \HH events are generated
-for $\klambda = 1, 10$ for the \ggF production mode and
-$\klambda = 0, 1, 10, 20$ for the VBF production mode. Additionally,
-large samples of events from non-resonant \HH production via \ggF are
-generated for $\klambda = 0, 1, 10, 20$ without simulation of the
-ATLAS detector. These event samples are normalised using the cross
-sections previously shown in \Cref{fig:hh_xsec_incl}.
+The distributions of the signal process in the three signal regions
+and for various values of \klambda are required for the
+reinterpretation.
+% Templates of the contribution of a signal with anomalous values of
+% \klambda in all three signal regions are required for the
+% reinterpretation.
+These are obtained using morphing and re-weighting techniques
+developed by the ATLAS collaboration that are explained hereafter. An
+ingredient for both methods are simulated event samples for different
+assumed values of \klambda. The event simulation proceeds using the
+same generator setup described in
+\Cref{sec:data_and_simulation}. Events from non-resonant \HH
+production are generated for $\klambda = 1, 10$ for the \ggF
+production mode and $\klambda = 0, 1, 10, 20$ for the VBF production
+mode. In addition, large samples of events from non-resonant \HH
+production via \ggF are generated for $\klambda = 0, 1, 10, 20$
+without simulation of the ATLAS detector. All event samples are
+normalised using the cross sections previously shown in
+\Cref{fig:hh_xsec_incl}.
 
 Established morphing techniques~\cite{ATL-PHYS-PUB-2015-047} are used
 to obtain signal templates for arbitrary \klambda by linearly
@@ -242,14 +247,18 @@ order in \klambda. The squared matrix element can be written as
 where $\mathcal{A}$ is the (complex) amplitude of diagrams involving
 the Higgs boson-self coupling after factoring out the value of the
 anomalous self-coupling constant, and $\mathcal{B}$ the amplitude of
-diagrams not involving any Higgs boson self-interactions. Therefore,
-knowing $|\mathcal{M}|^2$ at three suitably chosen values of \klambda
-one can obtain the matrix element for any value of \klambda by solving
-for the squared amplitudes of $\mathcal{A}$ and $\mathcal{B}$, and the
-interference term. The same considerations apply to predictions of
-differential cross sections such that the differential cross section
-at any \klambda can be obtained by linearly combining the predictions
-at $\klambda = a, b$ and $c$ according to
+diagrams not involving any Higgs boson self-interactions. The
+knowledge of $|\mathcal{M}|^2$ for three distinct values of \klambda
+allows to calculate the squared matrix element for any value of
+\klambda by solving for the squared amplitudes of $\mathcal{A}$ and
+$\mathcal{B}$, and the interference term. The same considerations can
+be applied to express the differential cross section for any \klambda
+as a linear combination of predictions at $\klambda = a, b, c$
+according to
+% The same considerations apply to predictions of differential cross
+% sections, such that the differential cross section at any \klambda
+% can be obtained by linearly combining the predictions at
+% $\klambda = a, b$ and $c$ according to
 \begin{align*}
   \frac{\mathrm{d}\sigma}{\mathrm{d}\myvec{x}}(\klambda)
   = w_1(\klambda) \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\myvec{x}} \right|_{\klambda = a}
@@ -257,24 +266,31 @@ at $\klambda = a, b$ and $c$ according to
   + w_3(\klambda) \left. \frac{\mathrm{d}\sigma}{\mathrm{d}\myvec{x}} \right|_{\klambda = c} \,\text{,}
 \end{align*}
 where the coefficients $w_i(\klambda)$ are second degree polynomials
-in \klambda.
+in \klambda and $\myvec{x}$ is an arbitrary variable characterising
+the scattering process.\footnote{For non-resonant \HH production via
+  \ggF, this method was documented by the ATLAS collaboration in
+  Ref.~\cite{ATL-PHYS-PUB-2019-007}.}
 
 For the \ggF production mode, this morphing technique is only used
-indirectly. Differential cross section predictions at generator-level
-are obtained by linearly combining the $\klambda = 0, 1, 20$ event
-samples without detector simulation. These predictions are used to
-derive a re-weighting in the generator-level \mHH for the
-$\klambda = 1$ event sample to obtain any \klambda. This re-weighting
-is then applied to the $\klambda = 1$ sample with full detector
-simulation. For the VBF production mode, the morphing technique is
-used directly by combining the $\klambda = 1, 2, 10$ samples. Event
-samples not used for morphing or re-weighting are used for validation
-purposes.
+indirectly. Differential distributions at generator-level are obtained
+by linearly combining the $\klambda = 0, 1, 20$ event samples without
+detector simulation. These distributions are used to derive a
+re-weighting in the generator-level \mHH that allows to re-weight the
+$\klambda = 1$ event sample to any other value of \klambda. The
+re-weighting is then applied to the $\klambda = 1$ sample with full
+detector simulation. This approach avoids having to run the
+computationally expensive detector simulation for all event samples
+required for the morphing technique. For the VBF production mode, the
+morphing technique is used directly by combining the
+$\klambda = 1, 2, 10$ samples. In this case the re-weighting method is
+not used because the effect of \klambda variations cannot be expressed
+as a re-weighting in a single variable. The event samples that are not
+used for morphing or re-weighting are used for validation purposes.
 
 Uncertainties on the modelling of the signal processes with anomalous
 \klambda are derived according to \Cref{sec:modelling_uncertainties}.
 Variations of the $H \to \tautau$ and $H \to \bbbar$ branching ratios,
-the parton shower program, the renormalisation and factorisation
+the parton shower simulation, the renormalisation and factorisation
 scales, and the PDFs and $\alphas$ are considered. Additionally, the
 statistical uncertainties of the \klambda re-weighting factors are
 accounted for.
