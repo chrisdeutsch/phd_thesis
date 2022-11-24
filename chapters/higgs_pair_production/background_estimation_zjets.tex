@@ -6,45 +6,38 @@
 % Differential cross-sections for Z + b-jets at 13 TeV
 % https://link.springer.com/content/pdf/10.1007/JHEP07(2020)044.pdf
 
-The production of \PZ bosons in association with jets is estimated
-using events simulated with \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}
-interfaced to the matrix element generators
+The production of \PZ bosons in association with jets is estimated using events
+simulated with \SHERPA[2.2.1]~\cite{Bothmann:2019yzt} interfaced to the matrix
+element generators
 \OPENLOOPS~\cite{Buccioni:2019sur,Cascioli:2011va,Denner:2016kdg} and
-Comix~\cite{Gleisberg:2008fv} (cf.\ \Cref{tab:monte_carlo} in
-\Cref{sec:data_and_simulation}). This generator configuration merges
-hard-scatter matrix elements at NLO for final states with up to two
-partons with matrix elements at LO for up to four partons. Prior to
-the fit, inclusive \Zjets cross sections at
-NNLO~\cite{Anastasiou:2003ds} are used for the normalisation of the
-background prediction.
+Comix~\cite{Gleisberg:2008fv} (cf.\ \Cref{tab:monte_carlo}). This generator
+configuration merges hard-scatter matrix elements at NLO for final states with
+up to two partons and matrix elements at LO for up to four partons. Prior to the
+fit, inclusive \Zjets cross sections at NNLO~\cite{Anastasiou:2003ds} are used
+for the normalisation of the background prediction.
 
 % Why IS HF difficult?
 % Theory context here: https://arxiv.org/pdf/2204.12355.pdf
-The requirement of having two \btagged jets in the signal regions
-leads to an enhancement of \PZ bosons produced in association with
-quarks of heavy flavour. The modelling of the \ZHF background is
-difficult due to its sensitivity to the flavour structure of the
-proton and to gluons splitting to bottom or charm
-quarks~\cite{Maltoni:2012pa,Napoletano:2018euk,Napoletano:2019tla}. The
-nominal prediction of the \ZHF background with \SHERPA, which employs
-a five flavour number scheme\footnote{TODO: Explain} for the treatment
-of $b$-quarks in the proton, is known to underestimate the \ZHF
-contribution~\cite{STDM-2017-38}.
-% by \SIrange{10}{30}{\percent} depending on the selected phase
-% space~\cite{STDM-2017-38}.
-Therefore, the normalisation of the \ZHF background is measured in a
-dedicated control region.
+The requirement of having two \btagged jets in the signal regions leads to an
+enhancement of \PZ bosons produced in association with quarks of heavy
+flavour. The normalisation of the \ZHF background is known to be underestimated
+by the generator configuration that is employed in this
+search~\cite{STDM-2017-38}. Therefore, the normalisation of this background is
+measured in a dedicated control region.
 
-% Instead of relying on the normalisation predicted by simulation, the
-% normalisation of the \ZHF background is measured in a dedicated
-% control region targeting $Z + bb$ production which is then
-% extrapolated to the signal regions.
+% The modelling of the \ZHF background is difficult due to its sensitivity to
+% the flavour structure of the proton and to gluons splitting to bottom or charm
+% quarks~\cite{Maltoni:2012pa,Napoletano:2018euk,Napoletano:2019tla}.  The
+% nominal prediction of the \ZHF background with \SHERPA, which employs a five
+% flavour number scheme\footnote{TODO: Explain} for the treatment of $b$-quarks
+% in the proton, is known to underestimate the \ZHF
+% contribution~\cite{STDM-2017-38}.  by \SIrange{10}{30}{\percent} depending on
+% the selected phase space~\cite{STDM-2017-38}.
 
-The approach of estimating the \ZHF background described in the
-following is adopted with few modifications~\cite{bokan} from the
-previous publication in this channel~\cite{HIGG-2016-16-witherratum}
-which built on findings from searches of $VH$ ($\PHiggs \to \bbbar$)
-production~\cite{HIGG-2016-29}.
+The approach of estimating the \ZHF background described in the following is
+adopted with few modifications~\cite{bokan} from the previous publication in
+this channel~\cite{HIGG-2016-16-witherratum}, which built on findings from
+searches of $VH$ ($\PHiggs \to \bbbar$) production~\cite{HIGG-2016-29}.
 
 % Control region definition
 A dedicated control region is defined targeting the production of
