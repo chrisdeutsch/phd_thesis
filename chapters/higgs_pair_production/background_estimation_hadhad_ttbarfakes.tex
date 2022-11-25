@@ -167,7 +167,7 @@ luminosities of \SI{58}{\ifb} and \SI{37}{\ifb}, respectively.
 
 The \jettotauhadvis misidentification efficiencies strongly depend on the
 charged particle multiplicity and transverse momentum of reconstructed
-\tauhadvis candidates. This might also reflect in the corrections to
+\tauhadvis candidates. This might also be reflected in corrections of the
 \jettotauhadvis misidentification efficiencies in simulation. Therefore, the
 scale factor measurement is performed in bins/regions of \Ntracks and \pT of the
 \tauhadvis candidate given by:
@@ -186,46 +186,47 @@ extract potential \pT-dependencies of the correction factors. In cases where
 events are required to pass single-\tauhadvis triggers, the \pT intervals from
 25 to \SI{30}{\GeV} are omitted to ensure that the \tauhadvis-triggers operate
 close to their trigger efficiency plateau. This is analogous to the selections
-applied in the SR of the \hadhad channel. Examples of event yields in the
+applied in the SR of the \hadhad channel. Two examples of event yields in the
 regions entering the SF measurement are shown
 in~\Cref{fig:ttbarsf_region_summary_prefit}.
 
 \begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}[t]{.485\textwidth}
+  \begin{subfigure}[t]{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_offl}
-    \caption{SF-CR events without requirements on \tauhadvis candidates at
-      trigger-level.}
+    \caption{SF-CR events without trigger-level \tauid requirements.}
   \end{subfigure}\hfill%
-  \begin{subfigure}[t]{.485\textwidth}
+  \begin{subfigure}[t]{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_tau25}
-    \caption{SF-CR events with \tauhadvis candidates passing the
-      \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.}
+    \caption{SF-CR events selected by the \texttt{HLT\_tau25\_medium1\_tracktwo}
+      trigger and passing \tauhadvis trigger-matching.}
   \end{subfigure}
 
-  \caption{Expected event yields in the SF-CR in bins of \tauhadvis candidate
-    \Ntracks and \pT. The bins are labelled as 1P and 3P for $\Ntracks = 1$ and
-    $3$, respectively, and the \pT intervals are given in units of
-    \si{\GeV}. The background model is shown prior to the fit.}%
+  \caption{Expected and observed event yields in the SF-CR in bins of \tauhadvis
+    candidate \Ntracks and \pT. The bins are labelled as 1P and 3P for
+    $\Ntracks = 1$ and $\Ntracks = 3$, respectively, and the \pT intervals are
+    given in units of \si{\GeV}. The background model is shown prior to the
+    fit.}%
   \label{fig:ttbarsf_region_summary_prefit}
 \end{figure}
 
-A discriminant is required to distinguish contributions of \ttbar with and
-without \faketauhadvis in the SF measurement, since only the former is sensitive
-to \jettotauhadvis misidentification efficiencies. The transverse mass of the
-lepton and \pTmissAbs is used for this purpose, which is defined as
+A discriminant is required to distinguish between \ttbar with and without
+\faketauhadvis, since only the former is sensitive to \jettotauhadvis
+misidentification efficiencies. The transverse mass of the lepton and \pTmissAbs
+is used for this purpose, which is defined as
 \begin{align*}
   \mTW = \sqrt{2 | \myvec{p}_{\text{T}}^{\ell} | | \pTmiss | \left( 1 - \cos \Delta\phi \right)} \,\text{,}
 \end{align*}
 where $\Delta \phi$ is the angle between the lepton transverse momentum,
 $\myvec{p}_{\text{T}}^{\ell}$, and the missing transverse momentum, \pTmiss. The
 \mTW discriminant targets the differences between di- and semi-leptonic decay
-modes of \ttbar which are the primary sources of events with true- and
+modes of \ttbar that are the primary sources of events with true- and
 \faketauhadvis, respectively. The differences are illustrated
 in~\Cref{fig:ttbarsf_mtw_pdf} with di-leptonic decay modes of \ttbar showing a
 heavy tail towards large \mTW due to the presence of additional neutrinos, while
-semi-leptonic decay modes have a pronounced peak close to the $W$~boson mass.
+semi-leptonic decay modes have a pronounced peak close to the mass of the
+$W$~boson.
 
 % The distribution of \mTW in the SF-CR is shown
 % in~\Cref{fig:ttbarsf_mtw_pdf} separately for di- and semi-leptonic
@@ -272,11 +273,11 @@ candidate \pT and \Ntracks regions.
 \begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}{.485\textwidth}
+  \begin{subfigure}{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3035_1P}
     \caption{$\Ntracks = 1$ and $\SI{30}{\GeV} \leq \pT < \SI{35}{\GeV}$.}
   \end{subfigure}\hfill%
-  \begin{subfigure}{.485\textwidth}
+  \begin{subfigure}{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3040_3P}
     \caption{$\Ntracks = 3$ and $\SI{30}{\GeV} \leq \pT < \SI{40}{\GeV}$.}
   \end{subfigure}
