@@ -1,68 +1,66 @@
-Top quark pair production with at least one \tauhadvis candidate originating
-from a misidentified quark- or gluon-initiated jet is the second largest
-background in the \hadhad channel. A large fraction of \SI{85}{\percent} of this
+Top quark pair production events in which at least one \tauhadvis candidate
+originates from a misidentified quark- or gluon-initiated jet are the second
+largest background in the \hadhad channel. About \SI{85}{\percent} of this
 background stems from semi-leptonic decay modes of \ttbar where the selected
-\tauhadvis candidates consist of one true- and one \faketauhadvis. The fraction
-of \ttbarFakes events with both candidates being \faketauhadvis is about
-\SI{15}{\percent} and thus comparatively small. The \ttbarFakes background is
-estimated using simulation after applying data-driven corrections in the form of
-\faketauhadvis scale factors (SFs) measured in a CR enriched in \ttbar
-events. The SFs correct the \jettotauhadvis misidentification efficiencies
-predicted by simulation which are, in general, not centrally calibrated by the
-ATLAS collaboration due to their process dependency.
+\tauhadvis candidates consist of one true- and one \faketauhadvis.  The
+remaining \SI{15}{\percent} are \ttbarFakes events with two \faketauhadvis.
+% The fraction of \ttbarFakes events with both candidates being \faketauhadvis
+% is about \SI{15}{\percent} and thus comparatively small.
+The \ttbarFakes background is estimated using simulation after applying
+data-driven corrections in the form of \faketauhadvis scale factors (SFs)
+measured in a CR enriched in \ttbar events. The SFs correct the \jettotauhadvis
+misidentification efficiencies predicted by simulation, which are not centrally
+calibrated by the ATLAS collaboration due to their process dependency.
 
-Before proceeding with the description of the method, differences
-between \faketauhadvis backgrounds from \ttbar and multi-jet are
-highlighted that motivate the use of different background estimation
-techniques:
+Before proceeding with the description of the method, differences between
+\faketauhadvis backgrounds from \ttbar and multi-jet are highlighted that
+motivate the use of different background estimation techniques:
 \begin{itemize}
 
 \item The majority of \ttbarFakes background events consist of only one
   \faketauhadvis, while in multi-jet events both candidates are \faketauhadvis.
 
-\item The probability of quark- or gluon-initiated jets reconstructed
-  as \tauhadvis to pass \tauid, the so-called fake rate, depends on
-  the type of parton that initiated the jet. \Faketauhadvis from
-  \ttbar predominately originate from jets produced in hadronic decays
-  of $W$~bosons which have larger fake rates than jets originating
-  from gluons.
+\item The probability that a quark- or gluon-initiated jet reconstructed as
+  \tauhadvis passes \tauid, also called the \emph{fake rate}, depends on the
+  type of parton that initiated the jet. In \ttbar events, \faketauhadvis
+  predominately originate from quarks produced in decays of $W$~bosons, which
+  have larger fake rates than gluon-initiated jets. As a result, \faketauhadvis
+  background estimation is inherently process dependent.
 
 \item In the \hadhad channel, no suitable \ttbarFakes CR can be defined that
   allows to separate \faketauhadvis backgrounds from \ttbar and multi-jet while
   maintaining sufficient statistical precision for background estimation. This
   necessitates defining a CR in $\ell + \tauhadvis$ ($\ell = e, \mu$) final
-  states where the multi-jet contribution is negligible.
+  states in which the multi-jet contribution can be neglected.
 
 \end{itemize}
-The main disadvantage of separately estimating the \faketauhadvis
-background from \ttbar and multi-jet is the inflation of systematic
-uncertainties on the total \faketauhadvis background compared to a
-combined approach.\footnote{A concrete example is the combined fake
-  factor method employed in the \lephad channel that is discussed
-  in~\Cref{sec:bkg_lephad_combined_ff}.} However, these inflated
-uncertainties have little effect of the signal sensitivity. This is
-because the targeted signal processes have distinct kinematic
-properties that differentiate them from \faketauhadvis backgrounds,
-and the search being limited by statistical uncertainties as opposed
-to systematic ones.
+The main disadvantage of separately estimating the \faketauhadvis background
+from \ttbar and multi-jet is the inflation of systematic uncertainties on the
+estimate of the total \faketauhadvis background compared to a combined
+approach.\footnote{An example of a combined approach is the combined fake factor
+  method employed in the \lephad channel, which is summarised
+  in~\Cref{sec:bkg_lephad_combined_ff}.}  However, these inflated uncertainties
+have little effect on the signal sensitivity for two reasons: First, the
+targeted signal processes have distinct kinematic properties that differentiate
+them from \faketauhadvis backgrounds. Second, the search is limited by
+statistical uncertainties as opposed to systematic ones.
 
 
 \subsubsection{Control Region Definition}
 
 The CR for the scale factor measurement (SF-CR) targets final states with an
 electron or muon and a \tauhadvis candidate. The region definition is based on
-the selections applied in the \lephad channels where a similar CR is used for
+the selections applied in the \lephad channels, where a similar CR is used for
 \faketauhadvis background estimation. Minor changes are applied to its
 definition to ensure consistency with the SR selection of the \hadhad
 channel. The most important selection criteria and differences are briefly
 summarised:
 \begin{itemize}
 
-\item The \tauhadvis selection is adapted to follow the selection of
-  the \hadhad channel more closely by selecting candidates with
-  $\pT > \SI{25}{\GeV}$ and $|\eta| < \num{2.5}$ (instead of
-  $\pT > \SI{20}{\GeV}$ and $|\eta| < \num{2.3}$ in the \lephad
-  channels).
+\item The \tauhadvis selection is adapted to follow the selection of the \hadhad
+  channel more closely by selecting candidates with $\pT > \SI{25}{\GeV}$ and
+  $|\eta| < \num{2.5}$ (instead of $\pT > \SI{20}{\GeV}$ and
+  $|\eta| < \num{2.3}$ in the \lephad channels).
 
 \item All events are required to have exactly one \tauhadvis candidate passing
   \tauid, exactly one electron or muon passing their respective isolation and
@@ -70,12 +68,13 @@ summarised:
   events passing the single-lepton trigger selection are considered.
 
 \item The electron/muon and the \tauhadvis candidate are required to be
-  reconstructed with electric charges of opposite sign. This requirement ensures
-  that the charge correlations between light lepton and \faketauhadvis from
-  semi-leptonic decays of \ttbar are similar to the correlation between
-  \tauhadvis candidates from \ttbarFakes in the \hadhad SR for cases where only
-  one candidate is a \faketauhadvis. The effect of charge correlation on
-  \ttbarFakes estimation was previously studied in Ref.~\cite{bokan}.
+  reconstructed with electric charges of opposite sign.
+  % This requirement ensures that the charge correlations between light lepton
+  % and \faketauhadvis from semi-leptonic decays of \ttbar are similar to the
+  % correlation between \tauhadvis candidates from \ttbarFakes in the \hadhad SR
+  % for cases where only one candidate is a \faketauhadvis. The effect of charge
+  % correlation on \ttbarFakes estimation was previously studied in
+  % Ref.~\cite{bokan}.
 
 \item Orthogonality between the SF-CR and the SR of the \lephad SLT channel is
   ensured by requiring $\mBB > \SI{150}{\GeV}$.
@@ -89,15 +88,15 @@ summarised:
 % region the quark/gluon composition of jets is likely different which
 % also affects the fake rates.}.
 
-The dominant process in the SF-CR is \ttbar production which is selected with a
+The dominant process in the SF-CR is \ttbar production, which is selected with a
 purity of \SI{94}{\percent}. About \SI{66}{\percent} of SF-CR events are from
 di-leptonic decay modes of \ttbar that yield an electron/muon and a \tauhadvis
 in the final state. The production of \ttbar events with \tauhadvis candidates
 originating from quark- or gluon-initiated jets, which is the process of
 interest for this measurement, constitutes \SI{28}{\percent} of selected
-events. Minor backgrounds in this region are single top (\SI{4}{\percent}) and
-$\Vjets$ (\SI{2}{\percent}) production. The \multijet background is assumed to
-be negligible. The distribution of transverse momenta and pseudorapidity of
+events. Minor backgrounds in this region are single top quark (\SI{4}{\percent})
+and $\Vjets$ (\SI{2}{\percent}) production. The \multijet background is assumed
+to be negligible. The distribution of transverse momenta and pseudorapidity of
 \tauhadvis candidates in the SF-CR prior to the fit is shown
 in~\Cref{fig:ttbarSF_prefit_pt}.
 
@@ -110,13 +109,15 @@ in~\Cref{fig:ttbarSF_prefit_pt}.
   \caption{Distribution of \tauhadvis \pT and $\eta$ in the SF-CR prior to the
     maximum likelihood fit. Events with \tauhadvis \pT larger than
     \SI{200}{\GeV} are merged into the last bin. The uncertainty contains all
-    statistical and systematic uncertainties except for normalisation
-    uncertainties on \ttbar arising from its modelling in simulation. Modelling
-    uncertainties affecting the shape of the distributions are included.}%
+    statistical and systematic uncertainties.
+    %except for normalisation
+    %uncertainties on \ttbar arising from its modelling in simulation. Modelling
+    %uncertainties affecting the shape of the distributions are included.
+  }%
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
-The \jettotauhadvis misidentification efficiencies depend on the identification
+\Jettotauhadvis misidentification efficiencies depend on the identification
 requirements applied to \tauhadvis candidates. In this search, such requirements
 are imposed on \tauhadvis candidates at trigger-level and during offline event
 reconstruction. This two-stage selection of \tauhadvis candidates is taken into
