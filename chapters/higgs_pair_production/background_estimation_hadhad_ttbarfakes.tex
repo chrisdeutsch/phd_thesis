@@ -1,9 +1,10 @@
 Top quark pair production events in which at least one \tauhadvis candidate
 originates from a misidentified quark- or gluon-initiated jet are the second
-largest background in the \hadhad channel. About \SI{85}{\percent} of this
-background stems from semi-leptonic decay modes of \ttbar where the selected
-\tauhadvis candidates consist of one true- and one \faketauhadvis.  The
-remaining \SI{15}{\percent} are \ttbarFakes events with two \faketauhadvis.
+largest background in the \hadhad channel. A fraction of \SI{85}{\percent} of
+events from this background stem from semi-leptonic decay modes of \ttbar. In
+these events, the selected \tauhadvis candidates consist of one true- and one
+\faketauhadvis. The remaining \SI{15}{\percent} are \ttbarFakes events with two
+\faketauhadvis.
 % The fraction of \ttbarFakes events with both candidates being \faketauhadvis
 % is about \SI{15}{\percent} and thus comparatively small.
 The \ttbarFakes background is estimated using simulation after applying
@@ -31,14 +32,14 @@ motivate the use of different background estimation techniques:
   allows to separate \faketauhadvis backgrounds from \ttbar and multi-jet while
   maintaining sufficient statistical precision for background estimation. This
   necessitates defining a CR in $\ell + \tauhadvis$ ($\ell = e, \mu$) final
-  states in which the multi-jet contribution can be neglected.
+  states, in which the multi-jet contribution can be neglected.
 
 \end{itemize}
 The main disadvantage of separately estimating the \faketauhadvis background
 from \ttbar and multi-jet is the inflation of systematic uncertainties on the
 estimate of the total \faketauhadvis background compared to a combined
 approach.\footnote{An example of a combined approach is the combined fake factor
-  method employed in the \lephad channel, which is summarised
+  method employed in the \lephad channel. This method is summarised
   in~\Cref{sec:bkg_lephad_combined_ff}.}  However, these inflated uncertainties
 have little effect on the signal sensitivity for two reasons: First, the
 targeted signal processes have distinct kinematic properties that differentiate
@@ -107,9 +108,9 @@ in~\Cref{fig:ttbarSF_prefit_pt}.
   \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/ETAVR}
 
   \caption{Distribution of \tauhadvis \pT and $\eta$ in the SF-CR prior to the
-    maximum likelihood fit. Events with \tauhadvis \pT larger than
-    \SI{200}{\GeV} are merged into the last bin. The uncertainty contains all
-    statistical and systematic uncertainties.
+    fit. Events with \tauhadvis \pT larger than \SI{200}{\GeV} are merged into
+    the last bin. The uncertainty contains all statistical and systematic
+    uncertainties.
     %except for normalisation
     %uncertainties on \ttbar arising from its modelling in simulation. Modelling
     %uncertainties affecting the shape of the distributions are included.
@@ -195,16 +196,18 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
 
   \begin{subfigure}[t]{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_offl}
-    \caption{SF-CR events without trigger-level \tauid requirements.}
+
+    \caption{Events without trigger-level \tauid requirements.}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_tau25}
-    \caption{SF-CR events selected by the \texttt{HLT\_tau25\_medium1\_tracktwo}
-      trigger and passing \tauhadvis trigger-matching.}
+
+    \caption{Events passing \tauhadvis trigger-matching and the
+      \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.}
   \end{subfigure}
 
   \caption{Expected and observed event yields in the SF-CR in bins of \tauhadvis
-    candidate \Ntracks and \pT. The bins are labelled as 1P and 3P for
+    candidate \Ntracks and \pT. The bins are labelled as ``1P'' and ``3P'' for
     $\Ntracks = 1$ and $\Ntracks = 3$, respectively, and the \pT intervals are
     given in units of \si{\GeV}. The background model is shown prior to the
     fit.}%
@@ -293,9 +296,9 @@ candidate \pT and \Ntracks regions.
 
 \subsubsection{Uncertainties in the Scale Factor Measurement}
 
-Several experimental and theoretical uncertainties are considered in the fits
-measuring the SFs. In general, these uncertainties can affect the normalisation
-and shape of the expected \mTW distribution for a given process in all regions
+Several experimental and theoretical uncertainties are considered in the SF
+measurement. In general, these uncertainties can affect the normalisation and
+shape of the expected \mTW distribution for a given process in all regions
 entering the fit. The uncertainties included in the SF measurement and their
 treatment closely follows the approach taken in
 \Cref{sec:uncertainties,sec:statistical_analysis} to interpret the results of
@@ -312,10 +315,9 @@ triggers.\footnote{Uncertainties on single-\tauhadvis trigger efficiencies are
   only considered for SF measurements taking into account trigger-level \tauid
   requirements.}  Uncertainties on the re-weighting of the pile-up conditions in
 simulation and the integrated luminosity used to normalise simulated event
-samples are included in the measurement. Finally, statistical uncertainties from
-the finite size of the simulation samples are included in the fit model
-according to the method by Barlow and Beeston~\cite{barlow1993,conway2011}
-introduced in \Cref{sec:barlow_beeston}.
+samples are included in the measurement. Lastly, statistical uncertainties from
+the finite size of the simulation samples are included according to the method
+by Barlow and Beeston~\cite{barlow1993,conway2011}.
 
 Theory uncertainties on the modelling of \ttbar production using simulation are
 derived for this measurement according to prescriptions, which are summarised in
@@ -325,15 +327,15 @@ shower is derived by comparison with an alternative matrix element generator and
 matching scheme. Uncertainties on the modelling of the parton shower,
 hadronisation, and underlying event are determined by comparison with an
 alternative parton shower program. The effect of missing higher orders in the
-(truncated) perturbative expansion in \alphas is probed by performing variations
+truncated perturbative expansion in \alphas is probed by performing variations
 of renormalisation and factorisation scales. Finally, uncertainties on the
 modelling of additional emissions are derived by performing variations of the
 simulated initial- and final-state radiation. Modelling uncertainties are
 derived separately for \ttbar events with and without \faketauhadvis, but are
 regarded as correlated in the fit model if they originate from the same
 source. Effects of the \ttbar modelling uncertainties on the shape of the \mTW
-discriminants and the expected number of events in the different \tauhadvis
-candidate \Ntracks and \pT regions considered in the fit model.
+discriminants and the expected number of events in different \tauhadvis
+candidate \Ntracks and \pT regions are considered in the fit model.
 
 Reduced sets of theory uncertainties are considered for minor backgrounds in the
 SF measurement. Uncertainties on the cross-sections of single-top and \Vjets
