@@ -200,8 +200,8 @@ tasks, an example of binary classification being given hereafter.
 % functions, thus making it a useful tool for solving various prediction tasks.
 
 Consider a binary classification problem with predictors~$\myvec{X}$ and class
-labels~$Y$, which are $Y = +1$ for the positive and $Y = -1$ for the negative
-class.
+labels~$Y$, which are $Y = +1$ for the positive class and $Y = -1$ for the
+negative class.
 % Both $\myvec{X}$ and $Y$ are random variables.
 Further, let
 \begin{align}
@@ -210,7 +210,7 @@ Further, let
   \right)\mathclose{}
   \label{eq:loss_gradboost}
 \end{align}
-be a loss function and $F$~a scalar function of the predictors. The function
+be a loss function and $F$~be a scalar function of the predictors. The function
 that minimises the expected loss is given by
 \begin{align*}
   F^{*\!}(\myvec{x})
@@ -347,7 +347,7 @@ negative gradient of the loss function with respect to~$F(\myvec{x})$, which is
 evaluated at the function estimate of the previous boosting iteration. Classical
 gradient descent algorithms sometimes determine the step size of the parameter
 update by performing a line search along the direction of steepest descent. In
-the \textsc{TreeBoost} algorithm this step size is determined by step 2c) on a
+the \textsc{TreeBoost} algorithm, this step size is determined by step 2c) on a
 per-leaf basis.
 % , however, for \textsc{TreeBoost} the size of the gradient descent step is
 % determined on a per-leaf basis.
@@ -378,7 +378,6 @@ connected layers, yielding the expression
   \myvec{f}\bigl( \myvec{x}; \{\myvec{W}_{i},\myvec{b}_{i} \}_{i=1}^{N+1} \bigr)
   = \bigl( \myvec{f}_{N+1} \circ \dots \circ \myvec{f}_{1} \bigr)
   \bigl( \myvec{x}; \{\myvec{W}_i, \myvec{b}_i\}_{i=1}^{N+1} \bigr)
-  \,\text{,}
 \end{align*}
 for the MLP output. In general, the structure of NNs can be more complex than
 illustrated in this example. Therefore, NN architectures are frequently
@@ -426,14 +425,17 @@ minimises the expected binary cross-entropy loss is
   = \mathbb{P}(Y = 1 \mid \myvec{X} = \myvec{x}) \,\text{,}
 \end{align*}
 motivating the use of \Cref{eq:loss_bce} as a loss function for binary
-classification.\footnote{The loss function in \Cref{eq:loss_bce} is similar to
-  the one used for binary classification with gradient boosted trees in
-  \Cref{eq:loss_gradboost}. This is due to both being derived from the negative
-  log-likelihood of the Bernoulli distribution (the distribution of $Y$). The
-  only differences are the change in class labels ($Y \in \{-1, 1\}$ for boosted
-  trees; $Y \in \{0, 1\}$ for NNs) and the fact that the ensemble of trees
-  approximates the conditional log-odds of $Y = 1$ while the NN estimates the
-  conditional probability of $Y = 1$, directly.}
+classification.
+% This footnote is probably not needed.
+%
+% \footnote{The loss function in \Cref{eq:loss_bce} is similar to the one used
+% for binary classification with gradient boosted trees in
+% \Cref{eq:loss_gradboost}. This is due to both being derived from the negative
+% log-likelihood of the Bernoulli distribution (the distribution of $Y$). The
+% only differences are the change in class labels ($Y \in \{-1, 1\}$ for boosted
+% trees; $Y \in \{0, 1\}$ for NNs) and the fact that the ensemble of trees
+% approximates the conditional log-odds of $Y = 1$ while the NN estimates the
+% conditional probability of $Y = 1$, directly.}
 
 The binary classification task can be solved by approximating
 $f^{*\!}(\myvec{x})$ using an NN with parameters set such that the mean loss
@@ -469,7 +471,7 @@ proceeds by first randomly initialising the parameters to
 $\myvec{\theta} = \myvec{\theta}_0$. Afterwards, a number of SGD iterations are
 performed until convergence or another stopping criterion is met. The iterations
 consist of drawing a mini-batch from the training data, computing the mini-batch
-estimate of the gradient, and performing the parameter update
+estimate of the gradient, and then performing the parameter update
 \begin{align*}
   \myvec{\theta}_{t + 1} = \myvec{\theta}_{t} - \eta_{t} \myvec{g}(\myvec{\theta}_{t}) \,\text{,}
 \end{align*}
@@ -562,8 +564,8 @@ the same for all time steps, which is an implementation of parameter sharing.
 The function~$\myvec{\sigma}$ refers to the element-wise application of the
 logistic (sigmoid) function, thus the components of the gate activation vectors
 take values in $(0, 1)$. Moreover, an LSTM layer includes an internal state that
-propagates and evolves forward through time. At time $t$, the state of the LSTM
-is denoted by $\myvec{s}_{t}$ and the initial state is set to
+propagates and evolves forward through time. At time $t$, the state of an LSTM
+is denoted by $\myvec{s}_{t}$, and the initial state is set to
 $\myvec{s}_{0} = \myvec{0}$. The internal state of an LSTM at time $t$ is given
 by the following recurrence relation~\cite{Goodfellow-et-al-2016,keras}
 \begin{align}
