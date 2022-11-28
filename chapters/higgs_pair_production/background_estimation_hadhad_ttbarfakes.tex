@@ -601,23 +601,23 @@ possible biases in the estimated SFs due to \tauhadvis-trigger turn-on effects
 is estimated. Second, an uncertainty on the extrapolation of the measured SFs
 from $\ell + \tauhad$ final states to \hadhad final states is derived.
 
-A systematic uncertainty on the scale factors is derived for the effect of
-different \tauhadvis transverse momentum (energy) thresholds at the HLT (L1
-trigger). Events selected by di-\tauhadvis triggers require \tauhadvis
-candidates to pass thresholds on the transverse momentum (energy) of
-\SI{35}{\GeV} and \SI{25}{\GeV} at the HLT (\SI{20}{\GeV} and \SI{12}{\GeV} at
-the L1 trigger) for the leading and sub-leading \tauhadvis candidate,
-respectively. When estimating the \ttbarFakes background where the
-\faketauhadvis is required to pass trigger-matching, scale factors measured for
-single-\tauhadvis triggers with thresholds of $\pTHLT > \SI{25}{\GeV}$ and
-$E_{\text{T}}^{\text{L1}} > \SI{12}{\GeV}$ are applied, primarily targeting the
-effect of isolation and identification requirements and neglecting differences
-due to the \pT- and \ET-thresholds at trigger-level. This is an approximation
-for cases where the leading \tauhadvis candidate is mimicked by a quark- or
-gluon-jet, the approximation being motivated by the large overlap in events
-selected by both the lower and higher threshold trigger beyond the
-$\pT > \SI{40}{\GeV}$ cut applied to the leading \tauhadvis candidate during
-offline event selection.
+A systematic uncertainty accounting for the effects of different \tauhadvis \pT
+(\ET) thresholds at the HLT (L1 trigger) on the \faketauhadvis SFs is
+determined. The nominal SF measurement is performed using \tauhadvis-triggers
+with thresholds of $\pTHLT > \SI{25}{\GeV}$ and $\ETLone > \SI{12}{\GeV}$ at the
+HLT and L1 trigger, respectively. However, the SR selection of the \hadhad
+channel also employs \tauhadvis-triggers with higher thresholds, for example,
+$\pTHLT > \SI{35}{\GeV}$ and $\ETLone > \SI{20}{\GeV}$ for the \pT-leading
+\tauhadvis candidate selected by DTTs. The application of SFs measured for
+\tauhadvis-triggers with thresholds of $\pTHLT > \SI{25}{\GeV}$
+($\ETLone > \SI{12}{\GeV}$) to \faketauhadvis passing \tauhadvis-triggers with
+$\pTHLT > \SI{35}{\GeV}$ ($\ETLone > \SI{20}{\GeV}$) can introduce a bias due to
+differences in the trigger efficiency turn-on curves for both triggers.
+Generally, this bias is expected to be small since selection are applied during
+offline event reconstruction ensuring that the \tauhadvis-triggers operate close
+to their trigger efficiency plateau.
+
+\vspace{5em}
 
 The overlap is studied in simulated \ttbar with at least one \faketauhadvis in
 the SF-CR by examining the fraction of \tauhadvis candidates passing the
@@ -629,11 +629,10 @@ reconstructed as 3-prong candidates. %
 % The difference between 1- and 3-prong candidates is caused by a
 % slower increase in trigger efficiency with increasing \tauhadvis \pT
 % for 3-prong candidates~\cite{ATLAS-CONF-2017-061}.
-Both triggers reach near \SI{100}{\percent} overlap for 1-prong
-candidates with $\pT > \SI{50}{\GeV}$ and 3-prong candidates with
-$\pT > \SI{60}{\GeV}$.\todo{Plot?} No uncertainty is introduced for
-larger transverse momenta due to negligible differences between both
-triggers.
+Both triggers reach near \SI{100}{\percent} overlap for 1-prong candidates with
+$\pT > \SI{50}{\GeV}$ and 3-prong candidates with
+$\pT > \SI{60}{\GeV}$.\todo{Plot?} No uncertainty is introduced for larger
+transverse momenta due to negligible differences between both triggers.
 
 The scale factor measurement is repeated for the single-\tauhadvis triggers with
 higher thresholds and compared to the nominal result in the \faketauhadvis \pT
@@ -666,8 +665,7 @@ for later statistical analysis.
   \input{tables/ttbarSF_tau25_35_uncertainty}
 \end{table}
 
-
-
+\vspace{5em}
 
 The measurement of the scale factors is performed in a region
 ($\ell+\tauhad$ SF-CR) different from where they are applied (\hadhad
