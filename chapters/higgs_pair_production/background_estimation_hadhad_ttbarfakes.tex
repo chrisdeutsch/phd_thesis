@@ -49,9 +49,9 @@ statistical uncertainties as opposed to systematic ones.
 
 \subsubsection{Control Region Definition}
 
-The CR for the scale factor measurement (SF-CR) targets final states with an
-electron or muon and a \tauhadvis candidate. The region definition is based on
-the selections applied in the \lephad channels, where a similar CR is used for
+The CR for the SF measurement (SF-CR) targets final states with an electron or
+muon and a \tauhadvis candidate. The region definition is based on the
+selections applied in the \lephad channels, where a similar CR is used for
 \faketauhadvis background estimation. Minor changes are applied to its
 definition to ensure consistency with the SR selection of the \hadhad
 channel. The most important selection criteria and differences are briefly
@@ -169,9 +169,9 @@ luminosities of \SI{58}{\ifb} and \SI{37}{\ifb}, respectively.
 The \jettotauhadvis misidentification efficiencies strongly depend on the
 charged particle multiplicity and transverse momentum of reconstructed
 \tauhadvis candidates. This might also be reflected in corrections of the
-\jettotauhadvis misidentification efficiencies in simulation. Therefore, the
-scale factor measurement is performed in bins/regions of \Ntracks and \pT of the
-\tauhadvis candidate given by:
+\jettotauhadvis misidentification efficiencies in simulation. Therefore, the SF
+measurement is performed in bins/regions of \Ntracks and \pT of the \tauhadvis
+candidate given by:
 \begin{itemize}
 
 \item $\Ntracks = 1$ and $\pT / \si{\GeV}$: $[25, 30)$, $[30, 35)$, $[35, 40)$,
@@ -516,8 +516,8 @@ all relevant \tauid criteria. The size of the corrections described by the SFs
 can reach up to \SI{55}{\percent} for \faketauhadvis of high \pT where
 simulation overestimates the contribution of \faketauhadvis in \ttbar. SFs for
 \faketauhadvis reconstructed as 1-prong (3-prong) candidates with
-$\pT < \SI{70}{\GeV}$ are generally within \SI{20}{\percent} (\SI{40}{\percent})
-of unity. Only small differences are observed between SFs measured for different
+$\pT < \SI{70}{\GeV}$ are within \SI{20}{\percent} (\SI{40}{\percent}) of
+unity. Only small differences are observed between SFs measured for different
 \tauid requirements at trigger-level as is shown
 in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
 
@@ -564,8 +564,7 @@ addition, pulls and constraints of nuisance parameters, and correlations between
 nuisance parameters and the POIs are inspected. Exemplary post-fit predictions
 of the model are shown in \Cref{fig:ttbarSF_postfit_ptmtw} in terms of the \pT
 of \tauhadvis candidates and \mTW in the SF-CR after requiring events to pass
-the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and
-trigger-matching.\todo{Some concluding sentence would be nice.}
+the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.
 
 \begin{figure}[htbp]
   \centering
@@ -594,13 +593,13 @@ uncertainty. The constraints on these parameters tend to be moderate with ratios
 of post- to pre-fit uncertainties above \SI{70}{\percent}. Due to the
 sensitivity of the \mTW discriminant to the modelling of \pTmissAbs and the
 abundance of \ttbar events in the SF-CR, the fit is expected to have some power
-to constrain the associated nuisance parameters. Furthermore, the \tauhadvis
-energy scale uncertainties are derived from $Z \ra \tau_{\mu} \tauhad$
-tag-and-probe measurements~\cite{ATLAS-CONF-2017-029} which provide probe
-\tauhadvis with (typically) smaller transverse momenta than the ones produced in
-\ttbar events. With the SF measurement being performed in \Ntracks and \pT bins
-of the \tauhadvis candidate and targeting \ttbar events, constraints on the
-\tauhadvis energy scale in the SF measurement are expected.
+to constrain the associated nuisance parameters. Moreover, the \tauhadvis energy
+scale uncertainties are derived from $Z \ra \tau_{\mu} \tauhad$ tag-and-probe
+measurements~\cite{ATLAS-CONF-2017-029} which provide probe \tauhadvis with
+smaller transverse momenta than the ones produced in \ttbar events. With the SF
+measurement being performed in \Ntracks and \pT bins of the \tauhadvis candidate
+and targeting \ttbar events, constraints on the \tauhadvis energy scale in the
+SF measurement are expected.
 
 % Pulls and constraints of nuisance parameters are examined for all scale factor
 % measurements. The nuisance parameter estimates agree within uncertainties with
@@ -632,8 +631,8 @@ of the \tauhadvis candidate and targeting \ttbar events, constraints on the
 The limited discrimination power of \mTW in distinguishing \ttbar events with
 and without \faketauhadvis leads to large anti-correlations between
 \faketauhadvis SFs and the \ttbar normalisation factor. Due to this coupling,
-positive correlation is induced between the SFs themselves. This is illustrated
-in \Cref{fig:ttbarSF_corr_matrix} for an exemplary SF measurement.
+positive correlations are induced between the SFs themselves. This is
+illustrated in \Cref{fig:ttbarSF_corr_matrix} for an exemplary SF measurement.
 
 % The fit model introduces large anti-correlations between the overall \ttbar
 % normalisation and the extracted scale factors for \ttbar with \faketauhadvis. An
@@ -654,53 +653,45 @@ in \Cref{fig:ttbarSF_corr_matrix} for an exemplary SF measurement.
 
   \includegraphics[scale=0.88]{ttbarSF/correlation_matrix}
 
-  \caption{Post-fit correlation matrix between selected parameters of
-    the fit model for the \faketauhadvis scale factor measurement
-    after matching \tauhadvis to the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. A reduced number
-    of nuisance parameters is shown for illustration
-    purposes. Nuisance parameters are included if the absolute value
-    of its correlation coefficient exceeds \SI{30}{\percent} with at
-    least one parameter of interest.}%
+  \caption{Post-fit correlation matrix between selected parameters of the fit
+    model for the \faketauhadvis SF measurement after matching \tauhadvis to the
+    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. A reduced number of nuisance
+    parameters is shown for illustration purposes. Nuisance parameters are
+    included if the absolute value of its correlation coefficient with at least
+    one POI exceeds \SI{30}{\percent}.}%
   \label{fig:ttbarSF_corr_matrix}
 \end{figure}
 
-Correlations between the extracted scale factors need to be taken into account
-when propagating the measurement uncertainties to the estimate of \ttbar with
-\faketauhadvis in the \hadhad SR. A way to achieve this is by providing
-decorrelated variations of the measurement that jointly explain the total
-uncertainty of all scale factors. These sets of scale factor variations can be
-used to propagate the uncertainties without having to account for correlations.
+Correlations between the measured SFs need to be taken into account when
+propagating the uncertainties on the SFs to the estimate of the \ttbarFakes
+background in the \hadhad SR. This is achieved by providing a set of
+decorrelated variations of the measurement that explains the total uncertainty
+of all measured SFs. These variations can be used to propagate the uncertainties
+to the background estimate without having to account for correlations.
 
-A decorrelated set of variations can be obtained by a linear
-transformation procedure of the $N$ measured scale factors. The
-transformation is obtained by diagonalising the post-fit scale factor
-covariance matrix, resulting in a set of eigenvectors and
-eigenvalues. The eigenvectors provide an alternative basis in which
-the measurement is described by $N$~linear combinations of scale
-factors with diagonal covariance matrix. The eigenvalues correspond to
-the variance explained by certain linear combinations of scale
-factors. %
+A decorrelated set of variations is obtained by performing a linear
+transformation of the $N$ measured SFs. The transformation is obtained by
+diagonalising the post-fit SF covariance matrix, yielding a set of eigenvectors
+and eigenvalues. The eigenvectors provide an alternative basis in which the
+measurement is described by $N$~linear combinations of SFs with diagonal
+covariance matrix. The eigenvalues correspond to the variance explained by
+certain linear combinations of SFs.
 % The covariance between two different linear combinations is
 % zero by construction and the eigenvalues describe the variance of
 % individual linear combinations.
-In the frame with diagonal covariance matrix, the scale factor
-measurement is varied by performing $\pm 1 \sigma$ variations, then
-transforming the resulting variations back to the original, physically
-interpretable frame. This procedure yields $N$ systematic variations
-of the scale factor measurement each with an up- and
-down-variation.\footnote{In this context, calling a variation ``up''
-  or ``down'' has no concrete physical meaning.} The variations are
-ordered by descending variance in the diagonal frame, yielding
-variations that are roughly decreasing in their impact on the total
-\ttbarFakes background estimate. An example of this decorrelation
-approach is shown in~\Cref{fig:ttbarSF_eigenvariations}. The effect of
-large correlations between scale factors can be seen in the leading
-variation (\texttt{EIGEN0}) as a systematic shift of the variation in
-all bins with respect to the nominal result. In contrast, the
-variation explaining the least variance (\texttt{EIGEN9}) only alters
-the scale factors for 1-prong \faketauhadvis with low transverse
-momenta.
+In the frame with diagonal covariance matrix, the SF measurement is varied by
+performing $\pm 1 \sigma$ variations, then transforming the resulting variations
+back to the original, physically interpretable frame. This procedure yields $N$
+systematic variations of the SF measurement, each with an up- and
+down-variation. The variations are ordered by descending variance in the
+diagonal frame, yielding variations that are roughly decreasing in their impact
+on the total \ttbarFakes background estimate. An example of the results of the
+decorrelation procedure is shown in~\Cref{fig:ttbarSF_eigenvariations}. The
+effect of large correlations between SFs can be observed in the leading
+variation (\texttt{EIGEN0}) as a systematic shift of the variation in all bins
+with respect to the nominal result. In contrast, the variation explaining the
+least variance (\texttt{EIGEN9}) only alters the SFs for 1-prong \faketauhadvis
+with low transverse momenta.
 
 \begin{figure}[htbp]
   \centering
@@ -716,69 +707,58 @@ momenta.
     \label{fig:ttbarSF_eigenvariations_3p}
   \end{subfigure}
 
-  \caption{Variations resulting from the decorrelation procedure
-    applied to the \faketauhadvis scale factor measurement for the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. Two variations
-    explaining most of the variance (\texttt{EIGEN0/1}) and the
-    variation explaining least of the variance of the measurement
-    (\texttt{EIGEN9}) are shown. Adding the deviations of all
-    variations from the nominal result in quadrature recovers the
-    total systematic error.}%
+  \caption{Variations resulting from the decorrelation procedure applied to the
+    SF measurement for the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. The
+    two variations leading in the explained variance (\texttt{EIGEN0} and
+    \texttt{EIGEN1}), as well as the variation explaining the least variance
+    (\texttt{EIGEN9}) are shown. Adding the deviations of all variations
+    (\texttt{EIGEN0}-\texttt{EIGEN9}) from the nominal result in quadrature
+    recovers the total uncertainty.}%
   \label{fig:ttbarSF_eigenvariations}
 \end{figure}
 
 
-\subsubsection{Application of \faketauhadvis Scale Factors in the
-  \hadhad Channel}
+\subsubsection{Application of \faketauhadvis Scale Factors in the \hadhad
+  Channel}
 
 The \ttbarFakes background in the SR of the \hadhad channel is estimated by
-applying \faketauhadvis scale factors to \ttbar events from simulation with at
-least one \faketauhadvis. These events are required to pass the SR selection
-criteria of the \hadhad channel, including events being selected by a trigger
-according to the selection strategy described in~\Cref{sec:trigger} and
-reconstructed \tauhadvis candidates being matched to \tauhadvis at the HLT.
+applying \faketauhadvis SFs to \ttbar events from simulation with at least one
+\faketauhadvis. These events are required to pass the SR selection criteria of
+the \hadhad channel, including the trigger selection described
+in~\Cref{sec:trigger}. The SFs are chosen depending on the trigger category and
+whether the \faketauhadvis is the \tauhadvis candidate leading in \pT,
+sub-leading in \pT, or both selected candidates are \faketauhadvis. When both
+\tauhadvis candidates are originating from quark- or gluon-initiated jets, the
+SF correction is assumed to factorise and the product of SFs is assigned as an
+event-level weight.
 
-The scale factors are chosen depending on the trigger category (STT or
-DTT) and whether the \faketauhadvis is the \tauhadvis candidate
-leading in \pT, sub-leading in \pT, or whether both selected
-candidates are \faketauhadvis. When both \tauhadvis candidates are
-originating from quark- or gluon-initiated jets, the scale factor correction is
-assumed to factorise and the product of scale factors is assigned as
-an event-level weight.
-
-In events selected by di-\tauhadvis triggers, both \tauhadvis
-candidates have to fulfil the trigger-level isolation and
-identification requirements. In this case, the set of scale factors is
-chosen according to the trigger chain that selected the event,
-independently of which candidate is a \faketauhadvis. In contrast,
-only one \tauhadvis candidate has to fulfil the trigger-level
-requirements in the single-\tauhadvis trigger category. A
-simplification is made assuming that the \tauhadvis candidate leading
-in \pT satisfies the trigger conditions, causing the event to be
-selected. This assumption is valid for more than \SI{99}{\percent}
-\ttbar events containing \faketauhadvis in the STT
-category. Therefore, scale factors measured for \faketauhadvis after
-trigger-matching are applied when the leading \tauhadvis is faked by a
-jet; scale factors derived without trigger-matching are applied when
-the sub-leading \tauhadvis is faked by a jet. Similar to the DTT case,
-if the \faketauhadvis is the \tauhadvis candidate leading in \pT then
-the set of scale factors is used that corresponds to the trigger chain
-that selected the event. The calculation of the multiplicative event
-weight for \ttbarFakes events from simulation is summarised
+In events selected by DTTs, both \tauhadvis candidates have to fulfil the
+trigger-level identification requirements. In this case, the set of SFs is
+chosen according to the trigger chain that selected the event, independently of
+which \tauhadvis candidate is the \faketauhadvis. In contrast, only one
+\tauhadvis candidate has to fulfil the trigger-level requirements in events
+selected by STTs. For STT events, it is assumed that the \tauhadvis candidate
+leading in \pT is the one satisfying the trigger conditions. This assumption is
+correct for more than \SI{99}{\percent} \ttbar events containing \faketauhadvis
+in the STT category. Therefore, SFs measured for \faketauhadvis after
+trigger-matching are applied when the leading \tauhadvis candidate is the
+\faketauhadvis; SFs derived without trigger-matching are applied when the
+sub-leading \tauhadvis candidate is the \faketauhadvis. Similar to the DTT case,
+if the \tauhadvis candidate leading in \pT is the \faketauhadvis, then the set
+of SFs that corresponds to the trigger chain that selected the event is
+used. The event weight calculation is summarised
 in~\Cref{tab:ttbarSF_application_rule}.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Multiplicative event weights for the data-driven correction
-    of \ttbar with \faketauhadvis from simulation. Events are
-    distinguished by whether the leading \tauhadvis candidate
-    ($\tau_{\text{lead}}$), the sub-leading \tauhadvis candidate
-    ($\tau_{\text{subl}}$), or both are faked by a quark- or
-    gluon-jet. Scale factors for \faketauhadvis without trigger
-    requirements are denoted as $\text{SF}_{\text{loose}}$; scale
-    factors with isolation and identification requirements at
-    trigger-level by $\text{SF}_\text{loose+trig.}$.}%
+  \caption{Multiplicative event weights for the data-driven correction of \ttbar
+    with \faketauhadvis from simulation. Events are distinguished by whether the
+    leading \tauhadvis candidate ($\tau_{\text{lead}}$), the sub-leading
+    \tauhadvis candidate ($\tau_{\text{subl}}$), or both are faked by a quark-
+    or gluon-jet. SFs for \faketauhadvis without trigger requirements are
+    denoted as $\text{SF}_{\text{loose}}$; SFs with isolation and identification
+    requirements at trigger-level by $\text{SF}_\text{loose+trig.}$.}%
   \label{tab:ttbarSF_application_rule}
 
   \resizebox{\textwidth}{!}{
