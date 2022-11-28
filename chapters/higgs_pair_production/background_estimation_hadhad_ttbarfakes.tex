@@ -231,18 +231,6 @@ heavy tail towards large \mTW due to the presence of additional neutrinos, while
 semi-leptonic decay modes have a pronounced peak close to the mass of the
 $W$~boson.
 
-% The distribution of \mTW in the SF-CR is shown
-% in~\Cref{fig:ttbarsf_mtw_pdf} separately for di- and semi-leptonic
-% decay modes of \ttbar. For semi-leptonic \ttbar, the primary source of
-% \faketauhadvis, the event rate diminishes quickly for transverse
-% masses beyond the mass of the \PW boson. In contrast, di-leptonic
-% \ttbar final states show a comparatively heavy tail towards large
-% values of \mTW due to the presence of an additional neutrino. The \mTW
-% distribution of semi-leptonic \ttbar remains stable with respect to
-% changes in the considered momentum range for the reconstructed
-% \tauhadvis candidate. This is not the case for the di-lepton
-% contribution where the tail towards high \mTW is further enhanced with
-% increasing \pT of the \tauhadvis candidate\todo{Show?}.
 
 \begin{figure}[htbp]
   \centering
@@ -343,170 +331,6 @@ production are included in the model. Due to the known normalisation discrepancy
 of \Vjets production in the presence of jets originating from heavy flavour
 quarks, an additional normalisation uncertainty of \SI{30}{\percent} is assigned
 to the \Vjets background.
-
-% A reduced set of theory uncertainties for minor backgrounds is considered. For
-% the production of single top-quarks, the uncertainties on the cross-section are
-% included in the fit model. Due to the known normalisation discrepancy in \Vjets
-% in the presence of jets originating from heavy flavour, an uncertainty of
-% \SI{30}{\percent} is applied to the overall normalisation of the process.
-
-% Theory uncertainties on minor backgrounds
-
-% The predicted number of events in bins entering the measurement are
-% subject to statistical, experimental, and theoretical
-% uncertainties. These uncertainties can affect the shape and
-% normalisation of the \mTW distribution in the measurement regions and
-% the relative acceptance between regions for a given physics
-% process. Systematic uncertainties affecting the modelling of \ttbar
-% with true and fake-\tauhadvis in simulation are of primary concern due
-% to their ability to alter the extracted scale factors. In the
-% following, a description of the uncertainties is given with a focus of
-% theoretical modelling uncertainties derived for this
-% measurement. Detector-related experimental uncertainties are only
-% briefly summarised, a detailed description following
-% in~\Cref{sec:uncertainties} when introducing the fit model of the
-% search for Higgs boson pair production.
-
-% Statistical uncertainties arise from the finite size of the simulation
-% samples used to estimate the physics processes entering this
-% measurement. These are included in the likelihood function using the
-% method by Barlow and Beeston~\cite{barlow1993,conway2011} introduced
-% in \Cref{sec:barlow_beeston}.
-
-% Major detector-related experimental uncertainties originate from the
-% reconstruction and selection of electrons, muons, \tauhadvis and jets.
-% These uncertainties can affect the reconstructed momenta in scale,
-% resolution, and direction as well as selection efficiencies of physics
-% objects for example due to isolation and identification
-% requirements. When requiring events to pass the resurrected trigger
-% decision of single-\tauhadvis triggers, calibrations of trigger
-% selection efficiencies and their associated uncertainties are applied
-% to \tauhadvis that are matched to a generator-level \tauhad (true
-% \tauhadvis). Uncertainties on the missing transverse momentum account
-% for changes in momentum scale and resolution. The uncertainties on
-% \btag efficiencies and mis-tag rates are obtained from dedicated
-% calibration measurements performed by the ATLAS collaboration and are
-% considered in the fit model. Other experimental uncertainties
-% originating from trigger efficiencies of single lepton triggers,
-% efficiencies of jet vertex tagging, re-weighting of pile-up conditions
-% in simulation to match the conditions in Run~2 data, and the
-% integrated luminosity used to normalise the simulated datasets are
-% included in the fit.
-
-% Uncertainties derived by performing a two-sample comparison (NLO+PS
-% matching, PS, \hdamp) are parameterised in \tauhadvis \pT,
-% reconstructed \tauhadvis decay mode, and \mTW, separately for \ttbar
-% with true and \faketauhadvis. A smooth functional dependence of these
-% uncertainties is obtained using least squares fits of polynomials to
-% the relative change in event yields comparing the alternative with the
-% nominal sample in bins of \tauhadvis \pT and \mTW. This approach
-% limits spurious pulls and constraints of the associated nuisance
-% parameters in the maximum likelihood fit due to statistical
-% fluctuations of the derived uncertainties. The degree of the fitted
-% polynomials is determined by leave-one-out cross-validation yielding a
-% low expected value and variance of the $\chi^2$ statistic.
-
-% Dependencies of the uncertainties on \tauhadvis \pT and \mTW are
-% factorised. First, the effect of the uncertainties on \tauhadvis \pT
-% is determined by performing the regression on the relative difference
-% in event yields between both samples binned in \tauhadvis \pT. An
-% example for the PS variation for true \tauhadvis in 1- and 3-prong
-% decay modes is shown
-% in~\Cref{fig:ttbarSF_uncertainty_ps_1p_pt,fig:ttbarSF_uncertainty_ps_3p_pt}. Subsequently,
-% the nominal event sample is re-weighted using the estimated
-% \pT-dependency of the uncertainty and the residual non-closure in \mTW
-% with respect to the variation sample is examined. Generally, the
-% non-closure is small after taking the \tauhadvis \pT effect of the
-% variations into account. Minor shape differences are only observed for
-% the ME and PS generator variations for true \tauhadvis. The
-% non-closure is parameterised similarly, where non-negligible, and
-% assigned as an uncertainty fully correlated with the \pT-dependent
-% effect. Examples of the residual non-closure in \mTW after
-% \pT-re-weighting is shown
-% in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}. Variations
-% of the damping parameter, $\hdamp$, show no significant effect on the
-% shape of the \tauhadvis \pT or \mTW distributions, thus uncertainties
-% are only assigned on the relative normalisation between categories
-% defined by \tauhadvis decay mode and truth-matching to generator-level
-% \tauhad.
-
-% Subsequently, the nominal sample is reweighted using the estimated
-% \pT-dependency and the residual non-closure in \mTW is examined. The
-% non-closure in \mTW is small after taking the \tauhadvis \pT effect of
-% the variation into account. Minor shape differences are only observed
-% for the ME and PS generation variations for true \tauhadvis. An
-% example is shown
-% in~\Cref{fig:ttbarSF_uncertainty_ps_1p_mtw,fig:ttbarSF_uncertainty_ps_3p_mtw}
-% for the PS variation. The non-closure is assigned as an uncertainty
-% fully correlated with the \pT effect. The variations of the damping
-% parameter related to the NLO+PS matching in \POWHEG show no
-% statistically significant effect depending on \tauhadvis \pT or
-% \mTW. Thus only an uncertainty on the relative normalisation between
-% categories is assigned.
-
-% \begin{figure}[htbp]
-%   \centering
-
-%   \begin{subfigure}[t]{.48\textwidth}
-%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_1p_pt}
-%     \caption{Impact of the PS variation on \tauhadvis \pT for 1-prong
-%       \tauhadvis.}
-%     \label{fig:ttbarSF_uncertainty_ps_1p_pt}
-%   \end{subfigure}\hfill%
-%   \begin{subfigure}[t]{.48\textwidth}
-%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_1p_mtw}
-%     \caption{Non-closure in \mTW of the PS variation for 1-prong
-%       \tauhadvis after re-weighting the nominal simulation sample.}
-%     \label{fig:ttbarSF_uncertainty_ps_1p_mtw}
-%   \end{subfigure}
-
-%   \vspace{0.5em}
-
-%   \begin{subfigure}[t]{.48\textwidth}
-%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_3p_pt}
-%     \caption{Impact of the PS variation on \tauhadvis \pT for 3-prong
-%       \tauhadvis.}
-%     \label{fig:ttbarSF_uncertainty_ps_3p_pt}
-%   \end{subfigure}\hfill%
-%   \begin{subfigure}[t]{.48\textwidth}
-%     \includegraphics[width=\textwidth]{ttbarSF/uncertainties/ps_true_3p_mtw}
-%     \caption{Non-closure in \mTW of the PS variation for 3-prong
-%       \tauhadvis after re-weighting the nominal simulation sample.}
-%     \label{fig:ttbarSF_uncertainty_ps_3p_mtw}
-%   \end{subfigure}
-
-%   \caption{The effect of the parton shower and hadronisation model
-%     uncertainty on the relative difference in event yield, defined as
-%     $N_{\text{syst.}} / N_{\text{nom.}} - 1$ with $N_{\text{syst.}}$
-%     and $N_{\text{nom.}}$ being the event yield in a given bin for the
-%     systematic variation and nominal event sample, derived from a
-%     two-sample comparison of \POWHEGBOX[v2]+~\PYTHIA[8] (nominal) and
-%     \POWHEGBOX[v2]+~\HERWIG[7] (variation). Shown are the uncertainty
-%     for 1-prong (a,b) and 3-prong (c,d) \tauhadvis matched to \tauhad
-%     at generator-level (true \tauhadvis). The lower threshold on
-%     \tauhadvis \pT was relaxed to \SI{20}{\GeV} (from \SI{25}{\GeV})
-%     compared to the top control region.}%
-%   \label{fig:ttbarSF_uncertainty_ps}
-% \end{figure}
-
-% The alternative parton shower has the largest effect on the
-% modelling of \faketauhadvis.
-
-% Acceptance uncertainties on \ttbar with \faketauhadvis are assigned as
-% shape-only uncertainties in all measurement regions since the
-% normalisation of this component is extracted in the likelihood fit.
-% In contrast, the normalisation of \ttbar with true \tauhadvis is not
-% extracted in each measurement region separately. Therefore, both the
-% normalisation and the shape effect of the acceptance uncertainties are
-% propagated to the fit for \ttbar with true \tauhadvis.
-
-
-% The effect of uncertainties on the predicted rates are parameterised by
-% nuisance parameters that enter the maximum likelihood fit with
-% Gaussian constraint terms. Uncertainties arising from the same source
-% are assumed to be fully correlated across all regions and
-% bins. Uncertainties derived from two-sample comparisons are
-% symmetrised.
 
 
 \subsubsection{Results of the Scale Factor Measurement}
@@ -718,7 +542,7 @@ with low transverse momenta.
 \end{figure}
 
 
-\subsubsection{Application of \faketauhadvis Scale Factors in the \hadhad
+\subsubsection{Application of \Faketauhadvis Scale Factors in the \hadhad
   Channel}
 
 The \ttbarFakes background in the SR of the \hadhad channel is estimated by
@@ -752,13 +576,14 @@ in~\Cref{tab:ttbarSF_application_rule}.
 \begin{table}[htbp]
   \centering
 
-  \caption{Multiplicative event weights for the data-driven correction of \ttbar
-    with \faketauhadvis from simulation. Events are distinguished by whether the
-    leading \tauhadvis candidate ($\tau_{\text{lead}}$), the sub-leading
-    \tauhadvis candidate ($\tau_{\text{subl}}$), or both are faked by a quark-
-    or gluon-jet. SFs for \faketauhadvis without trigger requirements are
-    denoted as $\text{SF}_{\text{loose}}$; SFs with isolation and identification
-    requirements at trigger-level by $\text{SF}_\text{loose+trig.}$.}%
+  \caption{Event weights resulting from the application of SFs to \ttbarFakes
+    events in simulation. Events are categorised by whether the leading
+    \tauhadvis candidate~($\tau_{\text{lead.}}$), sub-leading \tauhadvis
+    candidate~($\tau_{\text{subl.}}$), or both \tauhadvis candidates are
+    \faketauhadvis. SFs for \faketauhadvis without identification at
+    trigger-level are denoted by $\text{SF}_{\text{loose}}$. SFs for
+    \faketauhadvis with both offline and trigger-level identification
+    requirements are denoted by $\text{SF}_\text{loose+trig.}$.}%
   \label{tab:ttbarSF_application_rule}
 
   \resizebox{\textwidth}{!}{
@@ -766,65 +591,41 @@ in~\Cref{tab:ttbarSF_application_rule}.
   }
 \end{table}
 
-% When applying the scale factors to events in the 𝜏 had 𝜏 had -channel,
-% an approach similar to the application of true 𝜏 had calibrations
-% (e.g. trigger and offline 𝜏 had ), where it is assumed that the
-% calibrations factorize in a multi-𝜏 had final state, is taken. In this
-% analysis this assumption only affects the 𝑡 𝑡 ¯ final state with two
-% fake 𝜏 had (FF events). This contribution is a sub-leading source of
-% fake 𝜏 had making up only 15 % of the
-% total 𝑡 𝑡 ¯ +fake 𝜏 had contribution (the dominant contributions are
-% events where only one 𝜏 had is fake – i.e.  TF and FT events). The
-% uncertainties related to the fake scale factor measurement are assumed
-% to be
-% fully correlated between both 𝜏 had in DTT FF events 12 and are
-% propagated as such to the final background estimate in the 𝜏 had 𝜏 had
-% -channel. Compared to the size of the uncertainties affecting FF
-% events (e.g. 40 %
-% for the 𝜏 lep 𝜏 had → 𝜏 had 𝜏 had extrapolation uncertainties,
-% c.f. Table 24), deviations from this assumption are thought to be
-% negligible.
 
+\subsubsection{Additional Systematic Uncertainties on the \ttbarFakes Background
+  in the \hadhad Channel}
 
-\subsubsection{Systematic Uncertainties}
+In addition to the uncertainties originating from the SF measurement, two other
+sources of uncertainties are considered. First, an uncertainty accounting for
+possible biases in the estimated SFs due to \tauhadvis-trigger turn-on effects
+is estimated. Second, an uncertainty on the extrapolation of the measured SFs
+from $\ell + \tauhad$ final states to \hadhad final states is derived.
 
-% \todo[inline]{How does STT play into this? The momentum thresholds are
-%   unrealistically high so that it can barely be measured with this
-%   approach.}
+A systematic uncertainty on the scale factors is derived for the effect of
+different \tauhadvis transverse momentum (energy) thresholds at the HLT (L1
+trigger). Events selected by di-\tauhadvis triggers require \tauhadvis
+candidates to pass thresholds on the transverse momentum (energy) of
+\SI{35}{\GeV} and \SI{25}{\GeV} at the HLT (\SI{20}{\GeV} and \SI{12}{\GeV} at
+the L1 trigger) for the leading and sub-leading \tauhadvis candidate,
+respectively. When estimating the \ttbarFakes background where the
+\faketauhadvis is required to pass trigger-matching, scale factors measured for
+single-\tauhadvis triggers with thresholds of $\pTHLT > \SI{25}{\GeV}$ and
+$E_{\text{T}}^{\text{L1}} > \SI{12}{\GeV}$ are applied, primarily targeting the
+effect of isolation and identification requirements and neglecting differences
+due to the \pT- and \ET-thresholds at trigger-level. This is an approximation
+for cases where the leading \tauhadvis candidate is mimicked by a quark- or
+gluon-jet, the approximation being motivated by the large overlap in events
+selected by both the lower and higher threshold trigger beyond the
+$\pT > \SI{40}{\GeV}$ cut applied to the leading \tauhadvis candidate during
+offline event selection.
 
-In addition to the measurement-based uncertainties, two other sources
-of uncertainties are considered. These target the effect of thresholds
-applied to \tauhadvis at the HLT and L1 trigger, and the extrapolation
-of the scale factors from $\ell + \tauhad$ to \hadhad final states.
-
-A systematic uncertainty on the scale factors is derived for the
-effect of different \tauhadvis transverse momentum (energy) thresholds
-at the HLT (L1 trigger). Events selected by di-\tauhadvis triggers
-require \tauhadvis candidates to pass thresholds on the transverse
-momentum (energy) of \SI{35}{\GeV} and \SI{25}{\GeV} at the HLT
-(\SI{20}{\GeV} and \SI{12}{\GeV} at the L1 trigger) for the leading
-and sub-leading \tauhadvis candidate, respectively. When estimating
-the \ttbarFakes background where the \faketauhadvis is required to
-pass trigger-matching, scale factors measured for single-\tauhadvis
-triggers with thresholds of $\pTHLT > \SI{25}{\GeV}$ and
-$E_{\text{T}}^{\text{L1}} > \SI{12}{\GeV}$ are applied, primarily
-targeting the effect of isolation and identification requirements and
-neglecting differences due to the \pT- and \ET-thresholds at
-trigger-level. This is an approximation for cases where the leading
-\tauhadvis candidate is mimicked by a quark- or gluon-jet, the
-approximation being motivated by the large overlap in events selected
-by both the lower and higher threshold trigger beyond the
-$\pT > \SI{40}{\GeV}$ cut applied to the leading \tauhadvis candidate
-during offline event selection.
-
-The overlap is studied in simulated \ttbar with at least one
-\faketauhadvis in the SF-CR by examining the fraction of \tauhadvis
-candidates passing the $\pTHLT > \SI{35}{\GeV}$~trigger given they
-pass the $\pTHLT > \SI{25}{\GeV}$~trigger. For \faketauhadvis with
-$\pT > \SI{40}{\GeV}$ the overlap between triggers is
-\SI{95}{\percent} for \faketauhadvis reconstructed as 1-prong
-candidates; \SI{85}{\percent} for \faketauhadvis reconstructed as
-3-prong candidates. %
+The overlap is studied in simulated \ttbar with at least one \faketauhadvis in
+the SF-CR by examining the fraction of \tauhadvis candidates passing the
+$\pTHLT > \SI{35}{\GeV}$~trigger given they pass the
+$\pTHLT > \SI{25}{\GeV}$~trigger. For \faketauhadvis with $\pT > \SI{40}{\GeV}$
+the overlap between triggers is \SI{95}{\percent} for \faketauhadvis
+reconstructed as 1-prong candidates; \SI{85}{\percent} for \faketauhadvis
+reconstructed as 3-prong candidates. %
 % The difference between 1- and 3-prong candidates is caused by a
 % slower increase in trigger efficiency with increasing \tauhadvis \pT
 % for 3-prong candidates~\cite{ATLAS-CONF-2017-061}.
@@ -864,6 +665,9 @@ for later statistical analysis.
 
   \input{tables/ttbarSF_tau25_35_uncertainty}
 \end{table}
+
+
+
 
 The measurement of the scale factors is performed in a region
 ($\ell+\tauhad$ SF-CR) different from where they are applied (\hadhad
