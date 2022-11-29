@@ -630,15 +630,14 @@ estimation of the \ttbarFakes background. For \faketauhadvis reconstructed as
 An uncertainty is assigned to the SFs applied to \faketauhadvis passing the
 \texttt{tau35} triggers if the transverse momentum of the \faketauhadvis is
 close to the \pT-threshold of the trigger. Specifically, the uncertainty is
-applied to 1-prong (3-prong) \faketauhadvis with transverse momenta below
-\SI{50}{\GeV} (\SI{60}{\GeV}). The size of the uncertainty is determined by
+applied for 1-prong (3-prong) \faketauhadvis with transverse momenta below
+\SI{50}{\GeV} (\SI{60}{\GeV}). The size of the uncertainty is estimated by
 repeating the SF measurement for the \texttt{tau35} triggers and comparing with
 the nominal set of SFs. This comparison is performed for all trigger chains
 employed in the analysis. In all cases, the relative uncertainty resulting from
 the comparison is approximately \SI{6}{\percent}. This uncertainty is small
 compared to other uncertainties affecting the \ttbarFakes background estimate,
 however, it is still considered in the analysis.
-
 
 % \begin{table}[htbp]
 %   \centering
@@ -654,34 +653,30 @@ however, it is still considered in the analysis.
 %   \input{tables/ttbarSF_tau25_35_uncertainty}
 % \end{table}
 
-The measurement of the scale factors is performed in a region
-($\ell+\tauhad$ SF-CR) different from where they are applied (\hadhad
-SR). An uncertainty is assigned on the relative difference in the
-acceptance of \ttbarFakes between the measurement region and the
-application region, effectively serving as an extrapolation
-uncertainty. This uncertainty is determined by performing variations
-of the \ttbar modelling in simulation and estimating the change in
-relative acceptance between both regions, the relative acceptance
-being the ratio of the acceptance in the application region and the
-measurement region.
+The measurement of the scale factors is performed in a region ($\ell+\tauhad$
+SF-CR) different from where they are applied (\hadhad SR). An uncertainty is
+assigned on the relative difference in the acceptance of \ttbarFakes between the
+measurement region and the application region, effectively serving as an
+extrapolation uncertainty. This uncertainty is determined by performing
+variations of the \ttbar modelling in simulation and estimating the change in
+relative acceptance between both regions, the relative acceptance being the
+ratio of the acceptance in the application region and the measurement region.
 
-The estimation of extrapolation uncertainties between SF-CR and
-\hadhad SR considers the same sources of \ttbar modelling variations
-as used for the scale factor measurement. Different parameterisation
-are derived for \ttbar with a single \faketauhadvis and two
-\faketauhadvis in the \hadhad SR.
+The estimation of extrapolation uncertainties between SF-CR and \hadhad SR
+considers the same sources of \ttbar modelling variations as used for the scale
+factor measurement. Different parameterisation are derived for \ttbar with a
+single \faketauhadvis and two \faketauhadvis in the \hadhad SR.
 
 For \ttbar events with a single \faketauhadvis in the \hadhad SR the
 extrapolation uncertainty is examined in dependence on \pT of the
-\faketauhadvis, separately for 1- and 3-prong candidates. Except for
-the parton shower variation, no \tauhadvis \pT-dependent effect of the
-uncertainty is observed.  The comparison of alternative parton shower
-programs, comparing \PYTHIA[8] and \HERWIG[7], results in a
-shape-dependence of the extrapolation uncertainty as a function of
-\tauhadvis \pT which is shown in~\Cref{fig:ttbarSF_extrapol_shape}.
-Similar to the modelling uncertainties for the measurement, a
-polynomial is fitted to smoothly interpolate the uncertainty over a
-range of \tauhadvis \pT. %\todo{Interpretation. What if pT > 150?}
+\faketauhadvis, separately for 1- and 3-prong candidates. Except for the parton
+shower variation, no \tauhadvis \pT-dependent effect of the uncertainty is
+observed.  The comparison of alternative parton shower programs, comparing
+\PYTHIA[8] and \HERWIG[7], results in a shape-dependence of the extrapolation
+uncertainty as a function of \tauhadvis \pT which is shown
+in~\Cref{fig:ttbarSF_extrapol_shape}.  Similar to the modelling uncertainties
+for the measurement, a polynomial is fitted to smoothly interpolate the
+uncertainty over a range of \tauhadvis \pT.
 
 \begin{figure}[htbp]
   \centering
@@ -705,19 +700,18 @@ range of \tauhadvis \pT. %\todo{Interpretation. What if pT > 150?}
   \label{fig:ttbarSF_extrapol_shape}
 \end{figure}
 
-A different approach is taken for the extrapolation uncertainty
-between SF-CR and \hadhad SR for cases where both \tauhadvis
-candidates are faked by a quark- or gluon-jet. Only a normalisation
-uncertainty is assigned due to the ambiguous matching of \tauhadvis
-candidates between the \lephad (one \faketauhadvis) and the \hadhad
-region (two \faketauhadvis). This approximation is made to avoid this
-ambiguity and is further motivated by events with two \faketauhadvis
-being a subdominant contribution to the total \ttbarFakes background.
+A different approach is taken for the extrapolation uncertainty between SF-CR
+and \hadhad SR for cases where both \tauhadvis candidates are faked by a quark-
+or gluon-jet. Only a normalisation uncertainty is assigned due to the ambiguous
+matching of \tauhadvis candidates between the \lephad (one \faketauhadvis) and
+the \hadhad region (two \faketauhadvis). This approximation is made to avoid
+this ambiguity and is further motivated by events with two \faketauhadvis being
+a subdominant contribution to the total \ttbarFakes background.
 
 The extrapolation uncertainties are summarised
-in~\Cref{tab:ttbarSF_acceptance_uncertainty}. The parton shower
-variations dominate the total uncertainty on the relative acceptance
-between the SF-CR and the SR, ranging from \SIrange{20}{40}{\percent}.
+in~\Cref{tab:ttbarSF_acceptance_uncertainty}. The parton shower variations
+dominate the total uncertainty on the relative acceptance between the SF-CR and
+the SR, ranging from \SIrange{20}{40}{\percent}.
 
 \begin{table}[htbp]
   \centering
