@@ -101,27 +101,24 @@ selection, which is discussed in \Cref{sec:event_selection}.
   % calorimeter-based energy measurement with information from the tau particle
   % flow algorithm~\cite{PERF-2014-06} in boosted regression trees.
 
-\item[Anti-\tauhadvis] adhere to the same selection criteria as
-  \tauhadvis except for the \tauhadvis identification requirement
-  which is partially inverted. \tauhadvis candidates are considered to
-  be anti-\tauhadvis if they do not pass the loose \tauhadvis
-  identification working point but exceed a very loose selection on
-  the \tauhadvis identification score of $\text{RNN score} > 0.01$,
-  which corresponds to a true \tauhadvis selection efficiency of about
-  \SI{99}{\percent} in simulated $\gamma^* \to \tauhad\tauhad$.
+\item[Anti-\tauhadvis] follow the same selection criteria as \tauhadvis except
+  for a partial inversion of the \tauid requirement. Specifically, \tauhadvis
+  candidates are considered to be anti-\tauhadvis if they fail the loose \tauid
+  working point but pass a very loose selection on the \tauid score of
+  $\text{RNN score} > 0.01$.
+  % , which corresponds to a true \tauhadvis selection efficiency of about
+  % \SI{99}{\percent} in simulated $\gamma^* \to \tauhad\tauhad$ events.
 
-  Anti-\tauhadvis are only considered when events have fewer than two
-  (one) \tauhadvis passing the selection criteria of the \hadhad
-  (\lephad) channel. In this case, anti-\tauhadvis are randomly
-  selected until the required number of (anti-)\tauhadvis candidates,
-  two in the \hadhad and one in the \lephad channel, is
-  achieved. Anti-\tauhadvis that are not selected by the random
-  anti-\tauhadvis selection are treated as jets and will later be
-  removed as part of the overlap removal procedure.
+  Anti-\tauhadvis are only considered in events with fewer than two (one)
+  \tauhadvis passing the selection criteria of the \hadhad (\lephad) channel. In
+  this case, anti-\tauhadvis are randomly selected until the required number of
+  (anti-)\tauhadvis candidates, two in the \hadhad and one in the \lephad
+  channel, is achieved. Anti-\tauhadvis that are not selected by the random
+  anti-\tauhadvis selection are treated as jets and are removed as part of the
+  overlap removal procedure discussed in~\Cref{sec:overlap_removal}.
 
-  All search channels use the presence of a selected anti-\tauhadvis
-  to define control regions used to derive data-driven estimates of
-  backgrounds containing \faketauhadvis using the fake factor method.
+  The \hadhad and \lephad channels use the presence of anti-\tauhadvis to define
+  control regions for the estimation of backgrounds with \faketauhadvis.
 
 \item[Jets] are reconstructed using the anti-\kt
   algorithm~\cite{Cacciari:2008gp} with a radius parameter
@@ -189,7 +186,7 @@ selection, which is discussed in \Cref{sec:event_selection}.
 \end{description}
 
 
-\subsection{Overlap Removal}
+\subsection{Overlap Removal}%
 \label{sec:overlap_removal}
 
 The reconstruction and selection of physics objects described
