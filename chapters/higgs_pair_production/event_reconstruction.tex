@@ -243,97 +243,82 @@ overlap removal procedure as a means to maximise the signal acceptance.
 % prompt muons being reconstructed as fake jets is implemented in the official
 % ASG OLR tool.
 
-\subsection{$H \to \bbbar$ Candidate Reconstruction and Momentum
-  Corrections for $b$-tagged Jets}%
+\subsection{$H \to \bbbar$ Candidate Reconstruction and Momentum Corrections for
+  $b$-tagged Jets}%
 \label{sec:hbb_reco}%
 \label{sec:bjet_momentum_corrections}
 
-\todo{Move to event selection???}
+The $H \to \bbbar$ candidate is reconstructed using jets in the central region
+of the detector. In events with two \btagged jets, the four-momentum of the
+Higgs boson candidate is reconstructed by summing the four-momenta of both
+\btagged jets. In regions with fewer than two \btagged jets, which are used as
+control and validation regions, the Higgs candidate four-momentum is
+reconstructed as the sum of four-momenta of either the \btagged jet and the
+\pT-leading untagged jet (1 $b$-tag regions) or the sum of the two \pT-leading
+untagged jets (0 $b$-tag regions). Regions with more than two \btagged jets are
+not considered in this search. The reconstructed Higgs boson candidate is used
+to calculate the invariant mass of the $\bbbar$-system, \mBB, which is an
+important variable in distinguishing signal from background events.
 
-The Higgs boson candidate decaying into a pair of $b$-quarks is
-reconstructed using jets in the central region of the detector
-($|\eta| < 2.5$). In regions requiring two $b$-tagged jets, the
-four-momentum of the Higgs boson candidate is reconstructed by summing
-the four-momenta of both $b$-tagged jets. The Higgs boson candidate
-four-momentum in regions with fewer than two $b$-tagged jets, which
-are used as control and validation regions, is reconstructed from the
-sum of four momenta of either the $b$-tagged jet and the \pT-leading
-untagged jet (1 $b$-tag regions) or the sum of the two \pT-leading
-untagged jets (0 $b$-tag regions). Regions with more than two
-$b$-tagged jets are not considered in this search. The reconstructed
-Higgs boson candidate is used to calculate the invariant mass of the
-$\bbbar$-system, \mBB, which is an important variable to distinguish
-signals from backgrounds.
-
-Corrections are applied to $b$-tagged jets in order to improve the
-scale and resolution of the $b$-jet momentum reconstruction,
-consequently improving the scale and resolution of the reconstructed
-\mBB and thus its discrimination power between signals and
-backgrounds.
-
-The $b$-jet momentum corrections are applied in addition to the
-standard jet calibration~\cite{JETM-2018-05}, targeting the effects of
-out-of-cone radiation and semi-muonic $b$- or $c$-hadron decays inside
-the $b$-jet on the reconstructed jet four-momentum. Two separate
-corrections, which were previously used by the ATLAS collaboration in
+Corrections are applied to $b$-tagged jets in order to improve the scale and
+resolution of the $b$-jet momentum reconstruction.
+% , consequently improving the scale and resolution of the reconstructed \mBB.
+These $b$-jet momentum corrections are applied in addition to the standard jet
+calibration~\cite{JETM-2018-05}, targeting the effects of out-of-cone radiation
+and semi-muonic $b$- or $c$-hadron decays inside the $b$-jet on the
+reconstructed jet four-momentum. Two separate corrections, which were previously
+used by the ATLAS collaboration in
 Refs.~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}, are applied:
 \begin{description}
 
-\item[Muon-in-jet correction] Muons produced in decays of $b$- or
-  $c$-hadrons in $b$-jets deposit little energy in the calorimeters
-  leading to an underestimation of the jet four-momentum. The
-  muon-in-jet correction is applied when a muon with
-  $\pT > \SI{4}{\GeV}$ passing the \emph{medium} selection working
-  point can be found within a variable size cone (shrinking with
-  increasing \pT of the muon) centred on the jet axis. No
-  requirements on the isolation of muons for the muon-in-jet
-  corrections are made. In case one or more muons fulfilling the
-  criteria are selected, the four-momentum of the muon closest to the
-  jet axis, after correcting for the energy it deposited in the
-  calorimeters, is added to the four-momentum of the jet.
+\item[Muon-in-jet correction] Muons produced in decays of $b$- or $c$-hadrons
+  inside $b$-jets deposit little energy in the calorimeters, thus leading to an
+  underestimation of the jet four-momentum. The muon-in-jet correction is
+  applied when a muon with $\pT > \SI{4}{\GeV}$ passing the \emph{medium}
+  selection working point can be found within a variable size cone centred on
+  the jet axis.
+  % (i.e.\ a shrinking cone with increasing \pT of the muon).
+  No requirements are applied on the isolation of muons entering the muon-in-jet
+  correction. In case one or more muons fulfilling the criteria are selected,
+  the four-momentum of the muon closest to the jet axis, after correcting for
+  the energy it deposited in the calorimeters, is added to the four-momentum of
+  the jet.
 
-\item[\pTreco correction] The \pTreco correction aims to correct for
-  out-of-cone radiation as well as momentum carried away by neutrinos
-  produced in semi-muonic decays of hadrons in the jet. It is derived
-  from $b$-tagged jets in simulated \ttbar events as a function of the
-  \pT of the reconstructed jets, \pTreco, and separately for jets
-  containing a muon and jets that do not contain a muon following the
-  approach used for the muon-in-jet correction. The correction is
-  applied as a multiplicative factor on the jet momentum scale and is
-  derived as the ratio $p_{\text{T}}^{\text{truth}} / \pTreco$ in bins
-  of \pTreco, where $p_{\text{T}}^{\text{truth}}$ is the transverse
-  momentum of the truth jet, a jet constructed from generator-level
-  particles, that is geometrically matched to the jet at
-  reconstruction-level.
+\item[\pTreco correction] The \pTreco correction accounts for out-of-cone
+  radiation as well as momentum carried away by neutrinos produced in
+  semi-leptonic decays of hadrons in the jet. It is derived using $b$-tagged
+  jets in simulated \ttbar events as a function of the \pT of the reconstructed
+  jet, \pTreco, separately for jets containing a muon according to the
+  muon-in-jet correction and jets that do not contain a muon. The correction is
+  applied as a multiplicative factor on the jet momentum scale and is derived as
+  the ratio $p_{\text{T}}^{\text{truth}} / \pTreco$ in bins of \pTreco, where
+  $p_{\text{T}}^{\text{truth}}$ is the transverse momentum of the truth jet, a
+  jet constructed from generator-level particles, that is geometrically matched
+  to the jet at reconstruction-level.
 
 \end{description}
-Both corrections are performed at the level of individual jets and do
-not explicitly include information about the remainder of the event.
+Both corrections are performed at the level of individual jets and do not use
+information about the remainder of the event.
 
-The effect of the corrections on the reconstructed \mBB for simulated
-SM \HH events produced via \ggF in the \hadhad channel is depicted
-in~\Cref{fig:bjet_momentum_corr_mbb}. The improvement in the $b$-jet
-momentum scale and resolution from the muon-in-jet correction and the
-\pTreco correction lead to a relative reduction of the width of the
-Higgs boson mass peak in \mBB of about \SI{13}{\percent}, as measured
-by the full width at half maximum.
+The effect of these corrections on the reconstructed \mBB in simulated SM \HH
+events in the \hadhad channel is depicted
+in~\Cref{fig:bjet_momentum_corr_mbb}. The improvement in the $b$-jet momentum
+scale and resolution from the muon-in-jet correction and the \pTreco correction
+lead to a relative reduction of the width of the Higgs boson mass peak in \mBB
+of about \SI{13}{\percent} as measured by the full width at half maximum.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.65\textwidth]{reconstruction/bjet_corrections}
 
-  \caption{Effects of different $b$-jet momentum corrections on the
-    reconstructed \mBB of $H \to \bbbar$ candidates from simulated SM
-    \HH events in the \hadhad channel. Bukin
-    functions~\cite{Bukin:2007zha}\todo[inline]{Check me} are fitted
-    to binned distributions obtained from simulation. The location of
-    the peak maximum is given by $x_{\text{p}}$ and the full width at
-    half maximum divided by $2\sqrt{2 \ln 2}$ is given by
-    $\sigma_{\text{p}}$ (yielding width scales comparable to the
-    standard deviation of a Normal distribution). The uncorrected
-    distribution is obtained using the standard jet calibration
-    without further corrections for $b$-jets.}%
+  \caption{The effect of different $b$-jet momentum corrections on the
+    reconstructed \mBB in simulated SM \HH events in a 2~$b$-tag region of the
+    \hadhad channel. Bukin functions~\cite{Bukin:2007zha} are fitted to the \mBB
+    distributions. The location of the peak maximum is given by $x_{\text{p}}$
+    and the full width at half maximum divided by $2\sqrt{2 \ln 2}$ is given by
+    $\sigma_{\text{p}}$. The uncorrected distribution is obtained using the
+    standard jet calibration without further corrections for \btagged jets.}%
   \label{fig:bjet_momentum_corr_mbb}
 \end{figure}
 
