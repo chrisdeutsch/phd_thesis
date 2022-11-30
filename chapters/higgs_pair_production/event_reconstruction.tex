@@ -189,13 +189,12 @@ selection, which is discussed in \Cref{sec:event_selection}.
 \subsection{Overlap Removal}%
 \label{sec:overlap_removal}
 
-The reconstruction and selection of physics objects described
-previously does not ensure that any detector signature can be
-unambiguously assigned to exactly one reconstructed object. This
-ambiguity is resolved by performing an overlap removal procedure which
-rejects objects that can be associated, either geometrically or by
-shared charged particle tracks, with an object of higher priority. In
-the case of geometric matching the association is performed on the
+The object reconstruction and selection described previously does not ensure
+that detector signatures can be unambiguously assigned to exactly one
+reconstructed object. Any ambiguities are resolved by performing an overlap
+removal procedure. This procedure rejects objects that can be associated, either
+geometrically or by shared charged particle tracks, with an object of higher
+priority. In the case of geometric matching the association is performed on the
 basis of the angular distance
 \begin{align*}
   \dRy = \sqrt{\Delta y^2 + \Delta \phi^2} \,\text{,}
@@ -203,12 +202,25 @@ basis of the angular distance
 where $\Delta y$ and $\Delta \phi$ refers to the differences in rapidity and
 azimuthal angle of two objects, respectively.
 
-A sequential procedure is used to resolve the overlaps of
-reconstructed physics objects. The procedure is summarised
-in~\Cref{tab:overlap_removal} following recommendations developed by
-the ATLAS collaboration. Two additional steps are added to resolve
-overlaps between jets and anti-\tauhadvis which aim to improve the
-signal selection efficiency in this search.
+A sequential procedure is used to resolve the overlaps of reconstructed physics
+objects. The procedure is summarised in~\Cref{tab:overlap_removal} following
+recommendations developed by the ATLAS collaboration. The last three steps serve
+to resolve overlaps between jets and anti-\tauhadvis. This procedure establishes
+the following priority between jets, \tauhadvis, and selected anti-\tauhadvis:
+\begin{center}
+  \tauhadvis > \btagged jet > anti-\tauhadvis > untagged jet.
+\end{center}
+An alternative priority given by
+\begin{center}
+  \btagged jet > \tauhadvis > anti-\tauhadvis > untagged jet
+\end{center}
+was also considered but found to reduce the signal acceptance when selecting
+events with 2 \btagged jets due to the limited \tauhadvis rejection of the
+\textsc{DL1r} \btag algorithm at the \SI{77}{\percent} efficiency working
+point. The alternative leads to a relative reduction in SM \HH signal acceptance
+by \SI{13}{\percent} (\SI{8}{\percent}) in the \hadhad (\lephad)
+channels. Therefore, \tauhadvis take precedence over $b$-tagged jets in the
+overlap removal procedure as a means to maximise the signal acceptance.
 
 \begin{table}[htbp]
   \centering
@@ -216,43 +228,20 @@ signal selection efficiency in this search.
   % https://gitlab.cern.ch/atlas/athena/tree/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/
   % Harmonization note: https://cds.cern.ch/record/1743654/files/ATL-COM-PHYS-2014-451.pdf
 
-  \caption{Summary of the sequential overlap removal algorithm with
-    rows representing steps of the procedure. Steps are executed from
-    top to bottom, rejecting objects in the \emph{Reject} column in
-    favour of objects in the \emph{Accept} column if the condition is
-    fulfilled. The last three steps }%
+  \caption{Summary of the sequential overlap removal algorithm with rows
+    representing steps of the procedure. Steps are executed from top to bottom,
+    rejecting objects in the \emph{Reject} column in favour of objects in the
+    \emph{Accept} column if the condition is fulfilled.}%
   \label{tab:overlap_removal}
-  \todo[inline]{Fix caption}
 
   \resizebox{\textwidth}{!}{%
     \input{tables/overlap_removal}
   }
 \end{table}
 
-The overlap removal establishes the following priority between jets,
-\tauhadvis, and selected anti-\tauhadvis:
-\begin{center}
-  \tauhadvis > \btagged jet > anti-\tauhadvis > untagged jet.
-\end{center}
-An alternative prioritisation given by
-\begin{center}
-  \btagged jet > \tauhadvis > anti-\tauhadvis > untagged jet
-\end{center}
-is also investigated but found to reduce the signal acceptance when
-selecting events with 2 \btagged jets due to the limited \tauhadvis
-rejection of the \textsc{DL1r} \btag algorithm at the
-\SI{77}{\percent} efficiency working point. The alternative leads to a
-relative reduction in SM \HH signal acceptance by \SI{8}{\percent}
-(\SI{13}{\percent}) in the \lephad (\hadhad) channels. Thus \tauhadvis
-take precedence over $b$-tagged jets in the overlap removal procedure,
-maximising the signal acceptance.
-
 % Due to a bug in the PFlow jet reconstruction, an additional OLR step removing
-% prompt muons being reconstructed as fake jets is implemented in the official ASG
-% OLR tool.
-
-\todo[inline]{Truth labelling of jets in simulation cf.\ VHbb evidence paper}
-\todo[inline]{Truth labelling of fake taus in simulation}
+% prompt muons being reconstructed as fake jets is implemented in the official
+% ASG OLR tool.
 
 \subsection{$H \to \bbbar$ Candidate Reconstruction and Momentum
   Corrections for $b$-tagged Jets}%
