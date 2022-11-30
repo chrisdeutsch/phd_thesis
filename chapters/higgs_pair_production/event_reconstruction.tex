@@ -2,63 +2,51 @@
 \label{sec:object_reconstruction}
 
 The reconstruction and selection of physics objects, i.e.\ objects representing
-the signature of particles produced in the $pp$-collision, is described in the
-following. The most relevant objects in this search are electrons, muons,
+the signature of particles produced in $pp$-collisions, is described in this
+section. The most relevant objects in this search are electrons, muons,
 \tauhadvis, jets, $b$-tagged jets, and the missing transverse momentum. These
-objects are reconstructed and identified using different algorithms targeting
-their distinct signature in the ATLAS detector. The same algorithms are used to
-reconstruct and identify objects in simulation and in data recorded with the
-detector.  Differences between the performance of the reconstruction and
-selection in simulation and data are accounted for by dedicated calibration
-measurements of efficiencies, energy / momentum scales and
-resolutions. Uncertainties on these measurements are propagated to the final
-results by performing variations of these properties in simulation.
+objects are reconstructed and identified using algorithms that target their
+distinct signatures in the ATLAS detector.
+%The same algorithms are used to
+%reconstruct and identify objects in simulation and in data recorded with the
+%detector.
+Differences between the performance of the object reconstruction and selection
+in simulation and data are accounted for by dedicated calibration measurements
+of efficiencies, energy/momentum scales and resolutions. Uncertainties on these
+measurements are propagated to the final results by performing variations of
+these properties in simulation.
 
-The following introduces the reconstruction and selection of physics objects
-relevant to this analysis. A discussion of objects not directly used in this
-analysis is omitted.
-
-The selection of objects directly used in this search is described in the
-following. More restrictive selections on these objects will be applied as part
-of the signal region event selection.
+The selection of objects used in this search is described in the following. More
+restrictive selections are applied as part of the event selection, which is
+discussed in \Cref{sec:event_selection}.
 \begin{description}
 
 \item[Electrons] are required to have $\pT > \SI{7}{\GeV}$ and to be
-  reconstructed within the acceptance of the tracking detectors
-  $|\eta| < \num{2.47}$. Electrons in the transition region between
-  the barrel and end-cap electromagnetic calorimeters of the ATLAS
-  detector, $1.37 < |\eta| < 1.52$, are rejected. A likelihood-based
-  discriminant is used for electron identification to reject electron
-  candidates originating from jets and non-prompt electrons (e.g.\
-  from photon conversions or decays of hadrons) by exploiting
-  variables sensitive to the shower-shape, track quality, information
-  about transition radiation emission in the TRT, and spatial and
-  momentum matching between track and calorimeter
-  cluster~\cite{EGAM-2018-01}. The loose electron identification
-  working point is used corresponding to an average identification
-  efficiency of about \SI{93}{\percent}~\cite{EGAM-2018-01}.
+  reconstructed within the acceptance of the tracking detectors,
+  $|\eta| < \num{2.47}$. Electrons in the transition region between the barrel
+  and end-cap electromagnetic calorimeters, $1.37 < |\eta| < 1.52$, are
+  rejected. All reconstructed electrons have to pass the loose working point of
+  a likelihood-based electron identification algorithm to reject non-prompt
+  electrons and electron candidates originating from jets. This working point
+  has a target identification efficiency of \SI{93}{\percent} for electrons with
+  transverse momenta of about \SI{40}{\GeV}~\cite{EGAM-2018-01,PERF-2017-01}.
 
   % FCLoose
   % topoetcone20/pT < 0.2
   % ptvarcone20_TightTTVA_pt1000/pT < 0.15
-  Electron candidates with high activity in the vicinity of the
-  electron are rejected by making a loose requirement on both
-  calorimeter- and track-based isolation variables
-  ($E_{\text{T}}^\text{cone20} / \pT < 0.2$ and
-  $p_{\text{T}}^{\text{varcone20}}/ \pT < 0.15$ as described in
-  Ref.~\cite{EGAM-2018-01}). The electron selection efficiency of the
-  isolation requirement exceeds \SI{95}{\percent} for electrons with
-  $\pT > \SI{20}{\GeV}$, quickly approaching efficiencies close to
-  \SI{100}{\percent} at larger transverse
-  momenta~\cite{EGAM-2018-01}. This requirement is inverted as part of
-  the \faketauhadvis background estimation in the \lephad channel to
-  provide a control region enhanced in multi-jet events.
-
+  Electron candidates with high activity in the vicinity of the electron are
+  rejected by making a loose requirement on both calorimeter- and track-based
+  isolation variables~\cite{EGAM-2018-01}.
+  % ($E_{\text{T}}^\text{cone20} / \pT < 0.2$ and
+  % $p_{\text{T}}^{\text{varcone20}}/ \pT < 0.15$ as described in
+  % Ref.~\cite{EGAM-2018-01}).
+  The electron selection efficiency of the isolation requirement exceeds
+  \SI{95}{\percent} for electrons with $\pT > \SI{20}{\GeV}$, quickly
+  approaching efficiencies close to \SI{100}{\percent} at larger transverse
+  momenta~\cite{EGAM-2018-01}. This requirement is inverted as part of the
+  \faketauhadvis background estimation in the \lephad channel to provide a
+  control region enhanced in multi-jet events.
   % Energy calibration???
-
-  % Post-selection:
-  % Medium LH
-  % pT > 18 GeV
 
 \item[Muons] are required to have $\pT > \SI{7}{\GeV}$ and pass the
   loose identification working point. Muons passing the loose working
