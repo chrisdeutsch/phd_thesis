@@ -121,43 +121,41 @@ selection, which is discussed in \Cref{sec:event_selection}.
   control regions for the estimation of backgrounds with \faketauhadvis.
 
 \item[Jets] are reconstructed using the anti-\kt
-  algorithm~\cite{Cacciari:2008gp} with a radius parameter
-  of~$R = 0.4$. The inputs to the jet algorithm are provided by a
-  particle flow reconstruction algorithm, described in
-  Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploiting the superior
-  momentum resolution of the tracking system for charged particles
-  with low transverse momenta by replacing the calorimetric
-  measurement of their energy with a tracking-based momentum
-  measurement, necessitating the subtraction of energy deposits by
-  charged particles in the calorimeter. The particle flow algorithm
-  provides an improved jet energy and angular resolution as well as
-  pile-up stability compared to jets constructed based on topological
-  clusters in the calorimeters (at EM scale)
-  only~\cite{PERF-2015-09,JETM-2018-05}.
+  algorithm~\cite{Cacciari:2008gp} with a radius parameter of~$R = 0.4$. The
+  inputs to the jet algorithm are provided by the particle flow reconstruction
+  algorithm previously described in~\Cref{sec:jet_rec}.
 
-  Jets in the central region defined by $|\eta| < 2.5$ are required to
-  fulfil $\pT > \SI{20}{\GeV}$; jets in the forward regions defined
-  by $2.5 < |\eta| < 4.5$ are required to fulfil
-  $\pT > \SI{30}{\GeV}$. Jets originating from pile-up are suppressed
-  by ensuring that jets pass jet-vertex-tagger (JVT)
-  requirements. Jets in the central region are required to pass the
-  tight working point of the JVT~\cite{PERF-2014-03}. Jets in the
-  forward region, which lack tracking system coverage, are required to
-  fulfil the loose working point of a dedicated jet-vertex-tagger for
-  forward jets~\cite{PERF-2016-06-witherratum,ATL-PHYS-PUB-2019-026}.
+  % , described in Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploiting the
+  % superior momentum resolution of the tracking system for charged particles
+  % with low transverse momenta by replacing the calorimetric measurement of
+  % their energy with a tracking-based momentum measurement, necessitating the
+  % subtraction of energy deposits by charged particles in the calorimeter. The
+  % particle flow algorithm provides an improved jet energy and angular
+  % resolution as well as pile-up stability compared to jets constructed based
+  % on topological clusters in the calorimeters (at EM scale)
+  % only~\cite{PERF-2015-09,JETM-2018-05}.
 
-  A multivariate $b$-tagging algorithm is applied to all jets in the
-  central region to identify jets originating from $b$-quarks,
-  distinguishing them from jets initiated by gluons or quarks of
-  light- or charm-flavour. The \textsc{DL1r}
-  algorithm~\cite{FTAG-2018-01,ATL-PHYS-PUB-2017-013} is used which
-  combines the scores of several low-level taggers that exploit the
-  signature of displaced decays of $b$-hadrons using information on
-  the track impact parameters (\textsc{IP2D}, \textsc{IP3D} \&
-  \textsc{RNNIP}) and secondary vertices (\textsc{SV1} \&
-  \textsc{JetFitter}). A $b$-tagging working point with an efficiency
-  of \SI{77}{\percent} of correctly tagging $b$-jets in \ttbar is
-  used.
+  Jets in the central (forward) region of the detector defined by $|\eta| < 2.5$
+  ($2.5 < |\eta| < 4.5$) are required to fulfil~$\pT > \SI{20}{\GeV}$
+  ($\pT > \SI{30}{\GeV}$). Jets originating from pile-up are suppressed by
+  ensuring that all jets pass jet-vertex-tagger (JVT) requirements. In the
+  central region, jets have to pass the tight JVT working
+  point~\cite{PERF-2014-03}. Jets in the forward regions
+  % , which lack tracking system coverage,
+  are required to fulfil the loose working point of a dedicated JVT for forward
+  jets~\cite{PERF-2016-06-witherratum,ATL-PHYS-PUB-2019-026}.
+
+  A multivariate $b$-tagging algorithm is applied to all jets in the central
+  region to identify jets originating from $b$-quarks.
+  % , distinguishing them from jets initiated by gluons or quarks of light- or
+  % charm-flavour.
+  The \textsc{DL1r} algorithm~\cite{FTAG-2019-07} is used which combines the
+  scores of several low-level taggers that exploit the signature of displaced
+  decays of $b$-hadrons using information on the track impact parameters
+  (\textsc{IP2D}, \textsc{IP3D} \& \textsc{RNNIP}) and secondary vertices
+  (\textsc{SV1} \& \textsc{JetFitter}). A $b$-tagging working point with an
+  efficiency of \SI{77}{\percent} of correctly tagging $b$-jets in simulated
+  \ttbar events is used.
 
 \item[Missing transverse momentum (\pTmiss)] is used to reconstruct
   the total transverse momentum of (undetected) weakly-interacting
@@ -200,10 +198,8 @@ basis of the angular distance
 \begin{align*}
   \dRy = \sqrt{\Delta y^2 + \Delta \phi^2} \,\text{,}
 \end{align*}
-where $\Delta y$ and $\Delta \phi$ refers to the differences in
-rapidity\footnote{The rapidity is defined as
-  $y = \frac{1}{2} \ln \left( \frac{E + p_z}{E - p_z} \right)$.} and azimuthal
-angle of two objects, respectively.
+where $\Delta y$ and $\Delta \phi$ refers to the differences in rapidity and
+azimuthal angle of two objects, respectively.
 
 A sequential procedure is used to resolve the overlaps of
 reconstructed physics objects. The procedure is summarised
