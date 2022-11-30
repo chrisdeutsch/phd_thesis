@@ -16,9 +16,9 @@ of efficiencies, energy/momentum scales and resolutions. Uncertainties on these
 measurements are propagated to the final results by performing variations of
 these properties in simulation.
 
-The selection of objects used in this search is described in the following. More
-restrictive selections are applied as part of the event selection, which is
-discussed in \Cref{sec:event_selection}.
+The baseline selection of objects used in this search is described in the
+following. More restrictive selections are applied as part of the event
+selection, which is discussed in \Cref{sec:event_selection}.
 \begin{description}
 
 \item[Electrons] are required to have $\pT > \SI{7}{\GeV}$ and to be
@@ -48,77 +48,58 @@ discussed in \Cref{sec:event_selection}.
   control region enhanced in multi-jet events.
   % Energy calibration???
 
-\item[Muons] are required to have $\pT > \SI{7}{\GeV}$ and pass the
-  loose identification working point. Muons passing the loose working
-  point are a superset of medium muons which are defined according to
-  Ref.~\cite{MUON-2018-03} as: muons passing either the
-  \emph{combined} or \emph{inside-out combined} reconstruction in
-  $|\eta| < 2.5$; muons passing either the \emph{muon-spectrometer
-    extrapolated} or \emph{silicon-associated forward} reconstruction
-  in $2.5 < |\eta| < 2.7$. Various requirements are set on the muon
-  reconstruction quality and matching between ID and MS tracks which
-  depend on the muon reconstruction type and detector region. The
-  loose identification working point additionally allows for
-  \emph{calorimeter-tagged} and \emph{segment-tagged} muons in
-  $|\eta| < 0.1$, a region insufficiently covered by the MS, to
-  improve the muon selection efficiency.
+\item[Muons] are required to have $\pT > \SI{7}{\GeV}$ and pass the loose
+  identification working point (cf.~\Cref{sec:muon_rec}). The muon
+  identification efficiency of the loose working point exceeds \SI{97}{\percent}
+  for muons with $\pT > \SI{10}{\GeV}$ in simulated \ttbar
+  events~\cite{MUON-2018-03}. In addition, muons are required to pass the loose
+  isolation point based on an isolation requirement combining information on
+  charged and neutral particle signatures using a particle flow
+  approach~\cite{MUON-2018-03}. The muon selection efficiency of the isolation
+  working point exceeds \SI{97}{\percent} for muons with $\pT > \SI{20}{\GeV}$
+  in simulated \ttbar events~\cite{MUON-2018-03}. The isolation requirement is
+  inverted to provide a control region for the \faketauhadvis estimation in the
+  \lephad channel.
 
-  Muons are required to pass a loose isolation working point based on
-  an isolation requirement combining information on charged and
-  neutral particle signatures using a particle flow approach
-  ($p_{\text{T}}^{\text{varcone30}} + 0.4 \times
-  E_{\text{T}}^{\text{neflow20}} < 0.16$~\cite{MUON-2018-03}). The
-  isolation requirement is inverted to provide a control region for
-  the \faketauhadvis estimation in the \lephad channel.
-
-  % What happens with muons for the muon in jet correction?
+  % Muons passing the loose working point are a superset of medium muons which
+  % are defined according to Ref.~\cite{MUON-2018-03} as: muons passing either
+  % the \emph{combined} or \emph{inside-out combined} reconstruction in
+  % $|\eta| < 2.5$; muons passing either the \emph{muon-spectrometer
+  % extrapolated} or \emph{silicon-associated forward} reconstruction in
+  % $2.5 < |\eta| < 2.7$. Various requirements are set on the muon
+  % reconstruction quality and matching between ID and MS tracks which depend on
+  % the muon reconstruction type and detector region. The loose identification
+  % working point additionally allows for \emph{calorimeter-tagged} and
+  % \emph{segment-tagged} muons in $|\eta| < 0.1$, a region insufficiently
+  % covered by the MS, to improve the muon selection efficiency.
 
   % isPflowLoose_VarRadIso
   % (ptvarcone30_TightTTVA_pt500 + 0.4 neflowisol20) / pT < 0.16
 
-  % Post-selection
-  % pT > 17 GeV
-  % Medium muon + |\eta| < 2.5
-  % Iso???
+  % $p_{\text{T}}^{\text{varcone30}} + 0.4 \times E_{\text{T}}^{\text{neflow20}}
+  % < 0.16$~\cite{MUON-2018-03}
 
-\item[\tauhadvis] are required to have $\pT > \SI{20}{\GeV}$ and
-  $|\eta| < 2.5$, rejecting candidates reconstructed in the transition
-  region between barrel and end-caps ($1.37 < |\eta| < 1.52$).
-
-  Candidate \tauhadvis are required to have either 1 or 3 charged
-  particle tracks identified according to a multivariate track
-  classification algorithm as originating from a charged pion produced
-  in the \taulepton decay. The combined electric charge of these
-  tracks is required to be $\pm 1\,e$.
+\item[\tauhadvis] are required to have $\pT > \SI{20}{\GeV}$ and $|\eta| <
+  2.5$. In addition, \tauhadvis candidates in the transition region between the
+  barrel and end-cap calorimeters, $1.37 < |\eta| < 1.52$, are rejected. Only
+  \tauhadvis candidates with one or three associated charged-particle tracks are
+  considered. The total electric charge of these tracks is required to be
+  $\pm 1$.
 
   A BDT-based electron veto algorithm is applied to 1-prong \tauhadvis
-  candidates to reject candidates originating from the signature of an
-  electron in the detector. The algorithm is \SI{95}{\percent}
-  efficient in selecting \tauhadvis candidates matched to \tauhad
-  decays.
+  candidates to reject cases where electrons are reconstructed as 1-prong
+  \tauhadvis. This algorithm has an efficiency of \SI{95}{\percent} in selecting
+  \tauhadvis candidates matched to hadronic \taulepton decays.
 
-  A loose \tauhadvis identification using the RNN algorithm
-  (cf.~\Cref{sec:tauid}) that combines the information of high-level
-  variables, with sequences of charged particle tracks and clusters
-  that are associated to the \tauhadvis candidates. This working point
-  is defined to yield a true \tauhadvis selection efficiency of
-  \SI{85}{\percent} (\SI{75}{\percent}) in simulated
-  $\gamma^* \to \tauhad\tauhad$ events for 1-prong (3-prong)
-  \tauhadvis. The mean \faketauhadvis selection
-  efficiency\footnote{The \faketauhadvis selection efficiency depends
-    strongly on the transverse momentum of \tauhadvis candidates thus
-    only a mean value is given.} of the loose working point is about
-  \SI{5}{\percent} (\SI{1}{\percent}) for 1-prong (3-prong) \tauhadvis
-  candidates from simulated multi-jet
-  events~\cite{ATL-PHYS-PUB-2019-033}.
+  The loose working point of the RNN-based \tauid algorithm introduced in
+  \Cref{sec:tauid} is used to reject \tauhadvis candidates originating from
+  quark- and gluon-initiated jets. This working point targets a true \tauhadvis
+  selection efficiency of \SI{85}{\percent} (\SI{75}{\percent}) in simulated
+  $\gamma^* \to \tauhad\tauhad$ events for 1-prong (3-prong) \tauhadvis.
 
-  The \tauhadvis energy calibration is performed by combining a
-  calorimeter-based energy measurement with information from the tau
-  particle flow algorithm~\cite{PERF-2014-06} in boosted regression
-  trees.
-
-  % \todo[inline]{taus: seeding; energy scale (LC \& BRT); track selection;
-  %   acceptance; Tau-ID (jet \& e)}
+  % The \tauhadvis energy calibration is performed by combining a
+  % calorimeter-based energy measurement with information from the tau particle
+  % flow algorithm~\cite{PERF-2014-06} in boosted regression trees.
 
 \item[Anti-\tauhadvis] adhere to the same selection criteria as
   \tauhadvis except for the \tauhadvis identification requirement
