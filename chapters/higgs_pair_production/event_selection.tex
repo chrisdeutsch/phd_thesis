@@ -198,93 +198,80 @@ items in the table are given in the remainder of this section.
 \end{sidewaystable}
 
 As Run~2 of the LHC progressed, several improvements were made to the HLT
-algorithms for \tauhadvis triggers. Therefore, three different \tauhadvis HLT
-chains are used in this analysis, the differences between them being described
-in the following:
+algorithms used in \tauhadvis triggers. Consequently, three different HLT chains
+are used in this analysis, the differences between them being described in the
+following:
 \begin{description}
 
 \item[\texttt{medium1\_tracktwo}] This chain is the primary HLT chain for
-  \tauhadvis triggers from
-  2015--2017~\cite{ATL-DAQ-PUB-2016-001,ATL-DAQ-PUB-2017-001,ATL-DAQ-PUB-2018-002}. A
-  brief summary based on Ref.~\cite{ATLAS-CONF-2017-061} is given.
+  \tauhadvis triggers in the data-taking period from 2015 to
+  2017~\cite{ATL-DAQ-PUB-2016-001,ATL-DAQ-PUB-2017-001,ATL-DAQ-PUB-2018-002}. A
+  brief summary based on Ref.~\cite{ATLAS-CONF-2017-061} is given hereafter.
 
-  First, a purely calorimeter-based reconstruction of the \tauhadvis
-  candidate is performed in the region of interest (ROI) provided by
-  the L1 trigger. The topo-cluster algorithm is applied to cells of
-  energy in the calorimeters, the resulting clusters calibrated using
-  a scheme accounting for the different response of the calorimeter to
-  $e^\pm$/$\gamma$ and hadrons. The energy of \tauhadvis candidates is
-  determined from clusters in a core region ($\Delta R < 0.2$) around
-  the barycentre of cluster energies in the ROI, subsequently applying
-  a \tauhadvis-specific calibration which is a function of \tauhadvis
-  candidate \pT, $\eta$, and pile-up conditions. HLT thresholds on the
-  transverse momentum of \tauhadvis candidates are applied after these
+  First, a purely calorimeter-based reconstruction of the \tauhadvis candidate
+  is performed in the region of interest (ROI) provided by the L1 trigger. The
+  topo-cluster algorithm is applied to the calorimeter cells within the ROI, and
+  the topo-clusters are calibrated using the local hadronic calibration. The
+  energy of \tauhadvis candidates is determined from clusters in a core region
+  ($\Delta R < 0.2$) around the barycentre of topo-cluster energy in the
+  ROI. Subsequently, a \tauhadvis-specific energy calibration is applied.
+  % subsequently applying a \tauhadvis-specific calibration which is a function
+  % of \tauhadvis candidate \pT, $\eta$, and pile-up conditions.
+  The HLT threshold on the \pT of \tauhadvis candidates is applied after these
   steps.
 
-  Second, a two-stage tracking
-  approach~\cite{TRIG-2016-01,ATLAS-CONF-2017-061} using \emph{fast
-    tracking}, instead of the more time-consuming \emph{precision
-    tracking}, is employed. As a first stage, fast tracking is
-  performed in a narrow region surrounding the \tauhadvis ROI centre
-  but extended over a large section of the beamline. The \pT-leading
-  track resulting from the first stage is used to narrow down the
-  search space along the beamline by only considering tracks within
-  $|\Delta z| < \SI{10}{\milli\metre}$ of this track, allowing to
-  widen the search region around the ROI centre for the second
-  stage. After the second stage of fast tracking, multiplicities of
-  core ($\Delta R < 0.2$) and isolation tracks
-  ($0.2 < \Delta R < 0.4$) are defined. Track multiplicity
-  requirements are applied by selecting \tauhadvis candidates at the
-  HLT with one to three tracks in the core and at most one track in
-  the isolation region.
+  Second, a two-stage tracking approach~\cite{TRIG-2016-01,ATLAS-CONF-2017-061}
+  using \emph{fast tracking}, instead of the more time-consuming \emph{precision
+    tracking}, is employed. As a first stage, fast tracking is performed in a
+  narrow region surrounding the \tauhadvis candidate but extended over a large
+  section of the beamline. The \pT-leading track resulting from the first stage
+  is used to narrow down the search space along the beamline by only considering
+  tracks within $|\Delta z| < \SI{10}{\milli\metre}$ of this track. This allows
+  to widen the search region around the \tauhadvis candidate for the second
+  stage. After the second stage of fast tracking, multiplicities of core
+  ($\Delta R < 0.2$) and isolation tracks ($0.2 < \Delta R < 0.4$) are
+  defined. Track multiplicity requirements are applied by requiring \tauhadvis
+  candidates to have one to three tracks in the core region and at most one
+  track in the isolation region.
 
-  As a final step, a \tauhadvis selection similar to the offline
-  \tauhadvis selection is performed. The tracks resulting from the
-  two-stage tracking are used as seeds for precision tracking. The
-  precision tracks are then used to calculate discriminating variables
-  used for \tauid. Finally, a BDT-based \tauid algorithm, similar to
-  its counterpart from the offline \tauhadvis reconstruction, is
-  applied and \tauhadvis are required to pass the \emph{medium}
-  working point.\footnote{The working points of the \tauid applied at
-    trigger-level do not correspond to working points of the offline
-    \tauid. The medium working point of the online \tauid applies less
-    stringent requirements than the loose working point of the offline
-    \tauid.}
+  Finally, a \tauhadvis selection similar to the offline \tauhadvis selection is
+  performed. The tracks resulting from the two-stage tracking are used as seeds
+  for precision tracking. The precision tracks are then used to calculate
+  discriminating variables used for \tauid. A BDT-based \tauid algorithm,
+  similar to its counterpart from the offline \tauhadvis reconstruction, is
+  applied and \tauhadvis are required to pass the \emph{medium} working
+  point.\footnote{The medium working point of the HLT \tauid applies less
+    stringent requirements than the loose working point of the RNN-based \tauid
+    algorithm applied during offline event reconstruction.}
 
 \item[\texttt{medium1\_tracktwoEF}]
   % The precision tracks are also called EF tracks, while fast tracks
   % are called FTF tracks.
-  This chain was introduced for data-taking in
-  2018~\cite{ATL-DAQ-PUB-2019-001} and differs from the previous one
-  by delaying the track multiplicity selections to a later stage of
-  the HLT chain. Instead of counting tracks from the two-stage fast
-  track finding, the track multiplicities are defined using precision
-  tracks. This change circumvented a reduction in efficiency for
-  3-prong \tauhadvis in high pile-up conditions due to the fast track
-  finding being more susceptible to fake
-  tracks~\cite{ATL-DAQ-PUB-2019-001}.
+  This chain was introduced for data-taking in 2018~\cite{ATL-DAQ-PUB-2019-001}
+  and differs from the previous item by delaying the track multiplicity
+  selections to a later stage of the HLT chain. Instead of counting tracks from
+  the two-stage fast track finding, the track multiplicities are defined using
+  precision tracks. This change circumvents a reduction in efficiency for
+  3-prong \tauhadvis in high pile-up conditions due to the fast track finding
+  being more susceptible to fake tracks~\cite{ATL-DAQ-PUB-2019-001}.
 
-\item[\texttt{mediumRNN\_tracktwoMVA}] This chain started operation in
-  period K of 2018 data-taking~\cite{ATL-DAQ-PUB-2019-001}. The
-  integrated luminosity from period K to the end of Run~2 corresponds
-  to about \SI{37}{\per\femto\barn}. Several changes were implemented
-  on top of the previous chain.
+\item[\texttt{mediumRNN\_tracktwoMVA}] This chain started operation in period K
+  of 2018 data-taking~\cite{ATL-DAQ-PUB-2019-001}. The integrated luminosity
+  from period K to the end of Run~2 corresponds to about
+  \SI{37}{\per\femto\barn}. Several changes were implemented on top of the
+  \texttt{medium1\_tracktwoEF} chain.
 
-  First, the \tauhadvis energy calibrations as part of the
-  calorimeter-based \tauhadvis reconstruction are replaced by
-  multivariate methods, namely Boosted Regression Trees. Second, the
-  trigger-level \tauid is replaced by an identification algorithm
-  based on RNN, adopting the approach taken for offline \tauid,
-  offering improved rejection of \tauhadvis originating from quark- or
-  gluon-initiated jets at the HLT. The improved background rejection
-  allows to relax the track multiplicity cuts from 1--3 precision
-  tracks to 0--3 precision tracks in the core region. Allowing
-  \tauhadvis candidates without precision tracks in the core region
-  recovers cases where the fast track finding does not yield good
-  quality seeds for the precision tracking.  After the offline event
-  reconstruction, a fraction of these events can be correctly
-  reconstructed, thus improving the selection efficiency of the
-  trigger.
+  First, the \tauhadvis energy calibrations as part of the calorimeter-based
+  \tauhadvis reconstruction are replaced by multivariate methods. Second, the
+  trigger-level \tauid is replaced by an identification algorithm based on the
+  RNN \tauid algorithm introduced in \Cref{sec:tauid}. The improved background
+  rejection of this algorithm allowed to relax the track multiplicity
+  requirements from 1--3 precision tracks to 0--3 precision tracks in the core
+  region. Selecting \tauhadvis candidates without precision tracks in the core
+  region recovers cases in which the fast track finding does not yield good
+  quality seeds for the precision tracking. After the offline event
+  reconstruction, a fraction of these events can be correctly reconstructed,
+  thus improving the selection efficiency of the trigger.
 \end{description}
 From period K in 2018 onwards, the use of a logical \emph{or} between
 the \texttt{medium1\_tracktwoEF} and \texttt{mediumRNN\_tracktwoMVA}
