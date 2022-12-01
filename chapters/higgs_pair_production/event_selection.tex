@@ -123,51 +123,46 @@ defining the SRs and CRs are introduced in \Cref{sec:sr_and_cr_selection}.
 \label{sec:trigger}%
 \label{sec:hadhad_trigger_selection}
 
-The triggers used to select events of interest for the \hadhad channel
-are summarised in \Cref{tab:triggers_hadhad}. The choice of triggers
-depends on the data-taking period and will be motivated in the
-following. Reconstruction or selections applied at the level of the
-full event reconstruction will be qualified by \emph{offline} (e.g.\
-offline reconstruction, offline selection/requirements) to distinguish
-them from trigger-level (\emph{online}) reconstruction or selections.
+The triggers used to select events of interest for the \hadhad channel are
+summarised in \Cref{tab:triggers_hadhad}. The choice of triggers depends on the
+data-taking period and is motivated in the following. Reconstruction or
+selections applied at the level of the full event reconstruction will be
+qualified by \emph{offline} (e.g.\ offline reconstruction, offline
+selection/requirements) to distinguish them from trigger-level (\emph{online})
+reconstruction or selections.
 
 \begin{sidewaystable}[p]
   \centering
 
-  \caption{List of single- and di-\tauhadvis triggers used in the
-    \hadhad channel. The trigger naming conventions of the ATLAS
-    collaboration are used and summarised in the following. The
-    \pT-thresholds on \tauhadvis at the HLT are denoted by
-    \texttt{tauX}, where \texttt{X} is the threshold in
-    \si{\GeV}. Three different \tauhadvis HLT chains are used, the
-    differences between them are explained in the main body. \ET and
-    isolation requirements for \tauhadvis at the L1 trigger are
-    denoted by \texttt{XTAUY}(\texttt{I}/\texttt{IM}) with \texttt{Y}
-    referring to the \ET-threshold in \si{\GeV},
-    \texttt{I}/\texttt{IM} the isolation requirements, and \texttt{X}
-    the number of \tauhadvis fulfilling these criteria. Jets at the L1
-    trigger are similarly denoted by \texttt{XJY}(\texttt{.0ETA23}),
-    where \texttt{Y} refers to the jet \ET-threshold in \si{\GeV}, the
-    suffix \texttt{.0ETA23} referring to a requirement of
-    $|\eta| < 2.3$ on jets, and \texttt{X} the number of jets
-    fulfilling these conditions. Unless a trigger is based on the L1
-    topological trigger system~\cite{TRIG-2019-02} (L1Topo), here
-    chains using the \texttt{DR-TAU20ITAU12I-J25} seed, no
-    disambiguation between objects at L1 is performed such that one
-    \texttt{TAU20IM} also ensures at least one count of
-    \texttt{TAU12IM}, \texttt{J20}, and \texttt{J12}. For chains based
-    on L1Topo, disambiguation is performed and additionally \tauhadvis
-    at L1 are required to fulfil
-    $\Delta R(\tau_0^{\text{L1}}, \tau_1^{\text{L1}}) \leq 2.8$.
-    Requirements on \tauhadvis and jets from offline event
-    reconstruction (offline requirements) are imposed. These
-    requirements are specified in terms of the leading or sub-leading
-    \tauhadvis ($\tau_0$ or $\tau_1$) or the leading or sub-leading
-    central jet ($\text{j}_0$ or $\text{j}_1$). For all events
-    selected by DTT, \tauhadvis have to fulfil
-    $\pT(\tau_0) > \SI{40}{\GeV}$ and $\pT(\tau_1) >
-    \SI{30}{\GeV}$. The data-taking periods where triggers were used
-    are given in the last column.}%
+  \caption{List of single- and di-\tauhadvis triggers used in the \hadhad
+    channel. The trigger naming conventions of the ATLAS collaboration are used
+    and summarised in the following. The \pT-thresholds on \tauhadvis at the HLT
+    are denoted by \texttt{tauX}, where \texttt{X} is the threshold in
+    \si{\GeV}. Three different \tauhadvis HLT chains are used, the differences
+    between them are explained in the main body. \ET and isolation requirements
+    for \tauhadvis at the L1 trigger are denoted by
+    \texttt{XTAUY}(\texttt{I}/\texttt{IM}) with \texttt{Y} referring to the
+    \ET-threshold in \si{\GeV}, \texttt{I}/\texttt{IM} the isolation
+    requirements, and \texttt{X} the number of \tauhadvis fulfilling these
+    criteria. Jets at the L1 trigger are similarly denoted by
+    \texttt{XJY}(\texttt{.0ETA23}), where \texttt{Y} refers to the jet
+    \ET-threshold in \si{\GeV}, the suffix \texttt{.0ETA23} referring to a
+    requirement of $|\eta| < 2.3$ on jets, and \texttt{X} the number of jets
+    fulfilling these conditions. Unless a trigger is based on the L1 topological
+    trigger system~\cite{TRIG-2019-02} (L1Topo), here chains using the
+    \texttt{DR-TAU20ITAU12I-J25} seed, no disambiguation between objects at L1
+    is performed such that one \texttt{TAU20IM} also ensures at least one count
+    of \texttt{TAU12IM}, \texttt{J20}, and \texttt{J12}. For chains based on
+    L1Topo, disambiguation is performed and additionally \tauhadvis at L1 are
+    required to fulfil
+    $\Delta R(\tau_0^{\text{L1}}, \tau_1^{\text{L1}}) \leq 2.8$.  Requirements
+    on \tauhadvis and jets from offline event reconstruction (offline
+    requirements) are imposed. These requirements are specified in terms of the
+    leading or sub-leading \tauhadvis ($\tau_0$ or $\tau_1$) or the leading or
+    sub-leading central jet ($\text{j}_0$ or $\text{j}_1$). For all events
+    selected by DTT, \tauhadvis have to fulfil $\pT(\tau_0) > \SI{40}{\GeV}$ and
+    $\pT(\tau_1) > \SI{30}{\GeV}$. The data-taking periods where triggers were
+    used are given in the last column.}%
   \label{tab:triggers_hadhad}
 
   \resizebox{\textwidth}{!}{
@@ -175,16 +170,15 @@ them from trigger-level (\emph{online}) reconstruction or selections.
   }
 \end{sidewaystable}
 
-As Run~2 of the LHC progressed, several improvements were made to the
-HLT algorithms for \tauhadvis triggers. In total three different
-\tauhadvis HLT chains are used:
+As Run~2 of the LHC progressed, several improvements were made to the HLT
+algorithms for \tauhadvis triggers. In total three different \tauhadvis HLT
+chains are used in this analysis:
 \begin{description}
 
-\item[\texttt{medium1\_tracktwo}] This chain is the primary HLT chain
-  for \tauhadvis triggers from
+\item[\texttt{medium1\_tracktwo}] This chain is the primary HLT chain for
+  \tauhadvis triggers from
   2015--2017~\cite{ATL-DAQ-PUB-2016-001,ATL-DAQ-PUB-2017-001,ATL-DAQ-PUB-2018-002}. A
-  brief summary derived from Ref.~\cite{ATLAS-CONF-2017-061} is given
-  here.
+  brief summary based on Ref.~\cite{ATLAS-CONF-2017-061} is given.
 
   First, a purely calorimeter-based reconstruction of the \tauhadvis
   candidate is performed in the region of interest (ROI) provided by
