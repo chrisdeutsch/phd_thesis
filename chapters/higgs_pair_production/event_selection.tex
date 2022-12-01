@@ -272,37 +272,51 @@ following:
   quality seeds for the precision tracking. After the offline event
   reconstruction, a fraction of these events can be correctly reconstructed,
   thus improving the selection efficiency of the trigger.
+
+  The \texttt{mediumRNN\_tracktwoMVA} HLT chain is intended to be used in
+  conjunction with the corresponding \texttt{medium1\_tracktwoEF} chain by
+  combining both using a logical \emph{or}. Calibrations for this combination
+  are provided by the ATLAS collaboration.
 \end{description}
-From period K in 2018 onwards, the use of a logical \emph{or} between
-the \texttt{medium1\_tracktwoEF} and \texttt{mediumRNN\_tracktwoMVA}
-chains is recommended, calibrations for this combination being
-centrally provided by the ATLAS collaboration. This recommendation is
-adopted for the trigger selection of this search.
 
-Both single- and di-\tauhadvis triggers are used to select events of
-interest for the \hadhad channel. When an event fulfils both the STT
-and DTT criteria, precedence is given to the STT.
+% Both single- and di-\tauhadvis triggers are used to select events of
+% interest for the \hadhad channel. When an event fulfils both the STT
+% and DTT criteria, precedence is given to the STT.
 
-The STTs used during Run~2 of the LHC had changing \pT-thresholds that
-were applied to \tauhadvis at trigger-level. At the HLT, these
-thresholds ranged from \SI{80}{\GeV} up to \SI{160}{\GeV}. To ensure
-that the triggers operate close to their trigger-efficiency plateau,
-it is required that one \tauhadvis from the offline reconstruction can
-be geometrically matched to the \tauhadvis at the HLT
-($\Delta R < 0.2$) and that the offline \tauhadvis transverse momentum
-exceeds the HLT threshold by \SIrange{15}{20}{\GeV}. The exact
-requirements on \tauhadvis are listed in~\Cref{tab:triggers_hadhad}.
+The STTs used in this analysis have varying \pT~thresholds applied to \tauhadvis
+candidates depending on the data-taking period. At the HLT, these thresholds
+range from \SI{80}{\GeV} to \SI{160}{\GeV}.
 
-The \tauhadvis \pT requirements applied by DTTs at the HLT remain
-unchanged throughout Run~2 of the LHC, requiring the leading and
-sub-leading \tauhadvis candidate \pT to exceed \SI{35}{\GeV} and
-\SI{25}{\GeV}, respectively. To ensure that the triggers are close to
-fully efficient, two \tauhadvis from offline reconstruction are
-required to be matched to \tauhadvis at the HLT and exceed the
-corresponding HLT \pT-threshold by at least \SI{5}{\GeV}. The primary
-limitations of DTTs arise at the L1 trigger, necessitating changes in
-the L1 seeds used for these triggers as the instantaneous luminosity
-of the LHC increased during Run~2.
+The STT selection requires at least one \tauhadvis from the offline event
+reconstruction to be geometrically matched ($\Delta R < 0.2$) to a \tauhadvis at
+the HLT. Moreover, the \pT of the \tauhadvis has to exceed the \pT~threshold at
+the HLT by \SIrange{15}{20}{\GeV}. The exact requirements are given
+in~\Cref{tab:triggers_hadhad}. If an event fulfils both the STT and DTT
+selection, precedence is given to the STT category.
+
+\vspace{5em}
+
+The \tauhadvis \pT requirements applied by the DTT selection remain unchanged
+throughout Run~2 of the LHC. At the HLT, the \pT leading and \pT sub-leading
+\tauhadvis candidate
+
+
+At the HLT, the leading and sub-leading \tauhadvis
+candidate has to have transverse momenta exceeding \SI{35}{\GeV} and
+\SI{25}{\GeV}, respectively. In addition, two \tauhadvis candidates from the
+offline event reconstruction are required to be trigger-matched
+
+
+
+
+
+To ensure
+that the triggers are close to fully efficient, two \tauhadvis from offline
+reconstruction are required to be matched to \tauhadvis at the HLT and exceed
+the corresponding HLT \pT-threshold by at least \SI{5}{\GeV}. The primary
+limitations of DTTs arise at the L1 trigger, necessitating changes in the L1
+seeds used for these triggers as the instantaneous luminosity of the LHC
+increased during Run~2.
 
 In 2015, the chosen DTT had no additional requirements beyond two
 isolated \tauhadvis at the L1 trigger. However, an offline requirement
@@ -422,6 +436,18 @@ loss of about \SI{60}{\per\pico\barn} of integrated luminosity in the
     offline event reconstruction are abbreviated as $\tau_0$ and
     $\tau_1$ ($\text{j}_0$ and $\text{j}_1$), respectively.}%
   \label{fig:trigger_selection_flowchart}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.8\textwidth]{selection/trigger_flowchart_clean}
+
+  \caption{Flowchart of the \hadhad channel trigger selection. The leading and
+    sub-leading \tauhadvis candidate (jet) from the offline event reconstruction
+    are abbreviated as $\tau_0$ and $\tau_1$ ($\text{j}_0$ and $\text{j}_1$),
+    respectively.}%
+  \label{fig:trigger_selection_flowchart_2}
 \end{figure}
 
 The efficiency of selecting the signal processes using this trigger
