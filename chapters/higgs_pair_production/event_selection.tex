@@ -1,7 +1,7 @@
 \section{Event Selection}%
 \label{sec:event_selection}
 
-Events consistent with the signature of $\bbbar\hadhad$ and $\bbbar\lephad$
+Events consistent with the signature of $\bbbar\lephad$ and $\bbbar\hadhad$
 final states are selected. A loose event selection is applied that is largely
 determined by the triggers employed in this search. The discrimination of signal
 and background events is not the primary goal of the event selection but rather
@@ -10,85 +10,93 @@ of a multivariate analysis that is introduced in
 are defined for the purpose of estimating backgrounds or validating background
 estimates.
 
-Events considered for further analysis are required to fulfil basic
-quality criteria independent of the analysis channel:
-\begin{itemize}
-  % GRL + basic checks
+All events considered in this analysis have to fulfil the data quality criteria
+of the ATLAS collaboration~\cite{DAPR-2018-01} and are required to have a
+reconstructed primary vertex. Moreover, events containing one or more jets that
+are classified as originating from non-collision backgrounds or calorimeter
+noise according to a loose jet cleaning working point~\cite{ATLAS-CONF-2015-029}
+are rejected.
 
-  % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::Tile) == xAOD::EventInfo::Error
-  % Problems in tile calorimeter (``tile corrupted events''')
-  %
-  % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::LAr) == xAOD::EventInfo::Error
-  % LAr noise bursts
-  %
-  % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::SCT) == xAOD::EventInfo::Error
-  % SCT corrupted events (``recovery period after single event upset''')
-  %
-  % eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18
-  % Event info missing after TTC restart
-\item All events are required to fulfil the data quality criteria by
-  the ATLAS collaboration~\cite{DAPR-2018-01} requiring stable beams
-  at the LHC and a fully operational detector.\todo{Repetition}
+% Events considered for further analysis are required to fulfil basic
+% quality criteria independent of the analysis channel:
+% \begin{itemize}
+%   % GRL + basic checks
 
-  % Has vertex
-\item The event is required to have a primary vertex.
+%   % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::Tile) == xAOD::EventInfo::Error
+%   % Problems in tile calorimeter (``tile corrupted events''')
+%   %
+%   % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::LAr) == xAOD::EventInfo::Error
+%   % LAr noise bursts
+%   %
+%   % eventInfoIn->errorState(xAOD::EventInfo::EventFlagSubDet::SCT) == xAOD::EventInfo::Error
+%   % SCT corrupted events (``recovery period after single event upset''')
+%   %
+%   % eventInfoIn->isEventFlagBitSet(xAOD::EventInfo::Core,18
+%   % Event info missing after TTC restart
+% \item All events are required to fulfil the data quality criteria by the ATLAS
+%   collaboration~\cite{DAPR-2018-01} requiring stable beams at the LHC and a
+%   fully operational detector.
 
-  % No fake jets
-  % DFCommonJets_eventClean_LooseBad
-\item Events containing one or more jets that are classified as originating
-  from non-collision backgrounds or calorimeter noise according to a
-  \emph{loose} jet cleaning~\cite{ATLAS-CONF-2015-029} working point are
-  rejected.
-\end{itemize}
+%   % Has vertex
+% \item The event is required to have a primary vertex.
 
-The search is divided into several analysis channels given by the
-decay mode of the \taulepton pair and the type of trigger that
-selected the event. The \lephad channel targets semi-leptonic decay
-modes using single-lepton triggers (SLTs) and lepton-plus-\tauhadvis
-triggers (LTTs). Each trigger category defines a corresponding
-sub-channel, referred to as the \lephad SLT and \lephad LTT channels,
-respectively. The \hadhad channel selects events with two \tauhadvis
-candidates using single-\tauhadvis triggers (STTs) and di-\tauhadvis
-triggers (DTTs). While different types of triggers are used in this
-channel, the later statistical analysis will not distinguish between
-events selected by STTs and DTTs, thus the \hadhad final state is
-treated as a single analysis channel. In some cases, for example for
-the background estimation, it will be required to distinguish between
-both trigger categories. Cases where this applies will be indicated
-explicitly.
+%   % No fake jets
+%   % DFCommonJets_eventClean_LooseBad
+% \item Events containing one or more jets that are classified as originating
+%   from non-collision backgrounds or calorimeter noise according to a
+%   \emph{loose} jet cleaning~\cite{ATLAS-CONF-2015-029} working point are
+%   rejected.
+% \end{itemize}
 
-Orthogonality between the \lephad and \hadhad channels is ensured by
-the electron, muon, and \tauhadvis selections. In the \hadhad channel,
-events are required to have exactly two \tauhadvis, vetoing events
-with electrons or muons passing loose identification. Events in the
-\lephad channels are required to have exactly one \tauhadvis and
-exactly one electron or muon passing their respective loose
-identification working point. Additionally, electrons (muons) are
-required to pass the tight (medium) identification working point to
-reduce backgrounds from jets being misidentified as electrons (muons).
+The search is divided into different channels that are determined by the decay
+mode of the \taulepton pair and the type of trigger that selected the event. The
+\lephad channel targets semi-leptonic decay modes using single-lepton triggers
+(SLTs) and lepton-plus-\tauhadvis triggers (LTTs). Each trigger defines a
+corresponding sub-channel referred to as the \lephad SLT and \lephad LTT
+channel, respectively. The \hadhad channel selects events with two \tauhadvis
+candidates using single-\tauhadvis triggers (STTs) and di-\tauhadvis triggers
+(DTTs). While different types of triggers are used in the \hadhad channel, the
+statistical analysis will not distinguish between events selected by STTs and
+DTTs.
 
-Electrons, muons, and \tauhadvis have to be geometrically matched to
-their corresponding objects at the HLT according to the trigger that
-selected the event. Trigger-dependent transverse momentum thresholds
-are applied to electrons, muons, and \tauhadvis to ensure that
-triggers operate close to their trigger-efficiency plateau. The
-thresholds applied in events selected by STTs or SLTs increased with
-increasing instantaneous luminosity of the LHC during Run~2. In
-contrast, \pT-thresholds on electrons, muons, and \tauhadvis remained
-constant for DTTs and LTTs, trigger-rates instead being limited by
-requiring additional jets and specific event topologies at the L1
-trigger. The inclusion of the \lephad LTT channel allows to select
-events with electrons or muons with transverse momenta below the SLT
-\pT-threshold by requiring an additional \tauhadvis at
-trigger-level. Orthogonality between the \lephad SLT and LTT channel
-is ensured by only considering events with lepton \pT below the SLT
-\pT-threshold for the LTT channel.
+% While different types of triggers are used in this channel, the later
+% statistical analysis will not distinguish between events selected by STTs and
+% DTTs, thus the \hadhad final state is treated as a single analysis channel. In
+% some cases, for example for the background estimation, it will be required to
+% distinguish between both trigger categories. Cases where this applies will be
+% indicated explicitly.
 
-An overview of the signal region event selection for all search
-channels is given in \Cref{tab:event_selection}. A more detailed
-description of the \hadhad channel trigger selection will be given in
-\Cref{sec:hadhad_trigger_selection}. Further selections applied at
-event-level to define signal and control regions will be summarised in
+Orthogonality between the \lephad and \hadhad channel is ensured by selections
+on the number of electrons, muons, and \tauhadvis. In the \hadhad channel,
+events are required to have exactly two \tauhadvis and events with electrons or
+muons are rejected. In the \lephad channels, events are required to have exactly
+one \tauhadvis and exactly one electron or muon. Additionally, electrons (muons)
+are required to pass the tight (medium) identification working point to reduce
+backgrounds with non-prompt leptons or jets being misidentified as electrons
+(muons).
+
+Electrons, muons, and \tauhadvis have to be geometrically matched to their
+corresponding objects at the HLT according to the trigger that selected the
+event. This requirement is referred to as
+\emph{trigger-matching}. Trigger-dependent \pT~thresholds are applied to
+electrons, muons, and \tauhadvis to ensure that triggers operate close to their
+trigger-efficiency plateau. The \pT~thresholds of SLTs and STTs increased with
+increasing instantaneous luminosity of the LHC during Run~2. In contrast, the
+\pT~thresholds on electrons, muons, and \tauhadvis remained constant for LTTs
+and DTTs, the trigger-rates instead being limited by requiring additional jets
+at the L1 trigger.
+
+% The inclusion of the \lephad LTT channel allows to select events with
+% electrons or muons with transverse momenta below the SLT \pT-threshold by
+% requiring an additional \tauhadvis at trigger-level. Orthogonality between the
+% \lephad SLT and LTT channel is ensured by only considering events with lepton
+% \pT below the SLT \pT-threshold for the LTT channel.
+
+An overview of the signal region event selection for all search channels is
+given in \Cref{tab:event_selection}. A more detailed description of the \hadhad
+channel trigger selection is given in
+\Cref{sec:hadhad_trigger_selection}. Further selections applied at event-level
+to define signal and control regions are summarised in
 \Cref{sec:sr_and_cr_selection}.
 
 \begin{table}[htbp]
