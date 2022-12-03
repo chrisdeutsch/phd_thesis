@@ -123,9 +123,9 @@ defining the SRs and CRs are introduced in \Cref{sec:sr_and_cr_selection}.
 \label{sec:trigger}%
 \label{sec:hadhad_trigger_selection}
 
-This section describes the trigger selection of the \hadhad channel. The
-triggers used in this channel depend on the data-taking period due to the
-changing instantaneous luminosity and introduction of new trigger algorithms
+% This section describes the trigger selection of the \hadhad channel.
+The triggers used in the \hadhad channel depend on the data-taking period due to
+the changing instantaneous luminosity and introduction of new trigger algorithms
 during Run~2 of the LHC.
 % Due to the changing instantaneous luminosity during Run~2 of the LHC, the
 % triggers used in this analysis depend on the data-taking period.
@@ -368,55 +368,31 @@ following:
   to ensure that the $\ET > \SI{25}{\GeV}$ L1 jet trigger operates close to its
   trigger-efficiency plateau.
 
-\item[2017 data-taking period] Two DTTs based on new L1~seeds are used in 2017
-  (cf.~\Cref{tab:triggers_hadhad}). Both triggers are used in this search, the
-  trigger being chosen depending on the selected phase space. If the sub-leading
+\item[2017 data-taking period] Two DTTs based on different L1~seeds are used for
+  data recorded in 2017 (cf.~\Cref{tab:triggers_hadhad}). If the sub-leading
   central jet of the event fulfils $\pT > \SI{45}{\GeV}$, the DTT based on the
-  \texttt{TAU20IM\_2TAU12IM\_4J12} L1~seed is used. This trigger requires two
-  additional jets at the L1 trigger with $\ET > \SI{12}{\GeV}$. The
+  \texttt{TAU20IM\_2TAU12IM\_4J12} L1~seed is used. This trigger requires
+  two additional jets at the L1 trigger with $\ET > \SI{12}{\GeV}$. The
   \pT~threshold of \SI{45}{\GeV} ensures that the L1 jet trigger operates close
   to its trigger-efficiency plateau. This trigger is hereafter referred to as
-  the \FourJTwelve DTT. If the sub-leading central jet does not fulfil the
-  condition of the \FourJTwelve DTT but the event has a central jet with
-  $\pT > \SI{80}{\GeV}$ and $\dRtautau < 2.5$, then the DTT with the
-  \texttt{DR-TAU20ITAU12I-J25} L1~seed is considered.
+  the \FourJTwelve DTT. If the condition for the \FourJTwelve trigger is not
+  fulfilled but the event has a central jet with $\pT > \SI{80}{\GeV}$ and a
+  angular distance between the \tauhadvis candidates of $\dRtautau < 2.5$, then
+  the DTT based on the \texttt{DR-TAU20ITAU12I-J25} L1~seed is considered. This
+  trigger is based on the L1 topological trigger system~\cite{TRIG-2019-02} that
+  disambiguates jet and \tauhadvis ROIs and applies other topological
+  requirements. At the L1 trigger, a jet with $\ET > \SI{25}{\GeV}$ that is not
+  overlapping with a \tauhadvis ROI is required. Moreover, the \tauhadvis ROIs
+  at the L1 trigger have to fulfil $\dRtautau < 2.8$. This trigger is referred
+  to as the \LOneTopo DTT.
 
-  % In 2017, DTTs based on two new L1 seeds were introduced, one specifically
-  % for this search (\texttt{TAU20IM\_2TAU12IM\_4J12}), and one a continuation
-  % of the DTT used in 2016 with altered requirements to cope with the increase
-  % in instantaneous luminosity (\texttt{DR-TAU20ITAU12I-J25}).  Both trigger
-  % chains are used in this search, the trigger being chosen depending on the
-  % selected phase space. If the transverse momentum of the sub-leading central
-  % jet from the offline event reconstruction exceeds \SI{45}{\GeV}, the trigger
-  % chain based on the \texttt{TAU20IM\_2TAU12IM\_4J12} seed is used. This chain
-  % requires two additional jets with $\ET > \SI{12}{\GeV}$ at L1, the offline
-  % requirement on the sub-leading jet \pT ensuring that the trigger operates
-  % close to its efficiency plateau. This type of DTT will be referred to as
-  % \FourJTwelve.
-
-  % If the condition for the \FourJTwelve trigger is not fulfilled but the event
-  % has a central jet with $\pT > \SI{80}{\GeV}$ and $\dRtautau < 2.5$, then the
-  % DTT with the \texttt{DR-TAU20ITAU12I-J25} seed is considered.
-
-  This trigger is based on the
-  L1 topological trigger system~\cite{TRIG-2019-02} that allows to disambiguate
-  between jet and \tauhadvis ROIs and to apply other topological requirements at
-  L1. As a result of the disambiguation, the jet requirement at L1 is stricter
-  compared to the DTT used in 2016. Additionally, only events with a distance of
-  $\Delta R \leq \num{2.8}$ between \tauhadvis ROIs at L1 are selected by the
-  trigger. The phase space where this trigger is employed is chosen such that
-  the L1 requirements are fully efficient. Due to the use of the L1 topological
-  trigger system, this type of trigger will be referred to as \LOneTopo in the
-  following.
-
-  The \FourJTwelve trigger enhances the acceptance of events with low invariant
-  masses of the \HH-system~(\mHH) such as events originating from resonant \HH
-  production for resonances with low mass. The \LOneTopo trigger limits the
-  acceptance of such events due to the high \pT-threshold on the leading jet and
-  the \dRtautau requirement. For resonances with masses larger than
-  \SI{325}{\GeV} and for SM \HH production, which has sufficiently hard \mHH
-  spectrum, the signal acceptance improvement of using both \FourJTwelve and
-  \LOneTopo triggers has little benefit over the \LOneTopo trigger only.
+  The \FourJTwelve DTT is introduced to improve the acceptance of signal events
+  with with small \HH-system masses, for example events from resonant \HH
+  production via resonances of low mass. The \LOneTopo DTT has limited
+  acceptance for such events due to the high \pT~thresholds on the leading jet
+  and the \dRtautau requirement. For resonances with masses larger than
+  \SI{325}{\GeV} and for SM \HH production, the improvement in signal acceptance
+  by including the \FourJTwelve triggers is negligible.
 
 \item[2018 data-taking period] In 2018, new \tauhadvis HLT algorithms were
   introduced that updated the existing \LOneTopo- and \FourJTwelve-based trigger
