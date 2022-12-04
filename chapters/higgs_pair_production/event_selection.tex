@@ -234,16 +234,16 @@ following:
   to widen the search region around the \tauhadvis candidate for the second
   stage. After the second stage of fast tracking, multiplicities of core
   ($\Delta R < 0.2$) and isolation tracks ($0.2 < \Delta R < 0.4$) are
-  defined. Track multiplicity requirements are applied by requiring \tauhadvis
+  defined. Track multiplicity selections are applied by requiring \tauhadvis
   candidates to have one to three tracks in the core region and at most one
   track in the isolation region.
 
   Finally, a \tauhadvis selection similar to the offline \tauhadvis selection is
   performed. The tracks resulting from the two-stage tracking are used as seeds
   for precision tracking. The precision tracks are then used to calculate
-  discriminating variables used for \tauid. A BDT-based \tauid algorithm,
-  similar to its counterpart from the offline \tauhadvis reconstruction, is
-  applied and \tauhadvis are required to pass the \emph{medium} working
+  discriminating variables used for \tauid. A BDT-based \tauid algorithm
+  % , similar to its counterpart from the offline \tauhadvis reconstruction,
+  is applied and \tauhadvis are required to pass the \emph{medium} working
   point.\footnote{The medium working point of the HLT \tauid applies less
     stringent requirements than the loose working point of the RNN-based \tauid
     algorithm applied during offline event reconstruction.}
@@ -394,28 +394,20 @@ following:
   \SI{325}{\GeV} and for SM \HH production, the improvement in signal acceptance
   from including the \FourJTwelve DTT is negligible.
 
-\item[2018 data-taking period] In 2018, new \tauhadvis HLT algorithms were
-  introduced that updated the existing \LOneTopo- and \FourJTwelve-based trigger
-  chains. Changes were made to the L1 seeds used by the \FourJTwelve DTT,
-  requiring at least four jets with $\ET > \SI{12}{\GeV}$ in $|\eta| < 2.3$
-  instead. This change lead to a mismatch in the pseudorapidity selection for
-  \tauhadvis ($|\eta| < 2.5$) and jet ROIs ($|\eta| < 2.3$) at the L1 trigger
-  such that the L1 jet multiplicity requirement was not specified as
-  intended.\footnote{A \tauhadvis ROI in the region
-    $2.3 \lesssim |\eta| \lesssim 2.5$ might be reconstructed as a jet ROI with
-    $|\eta| > 2.3$ and will therefore not contribute towards the number of jets
-    within $|\eta| < 2.3$.}  Moreover, the pseudorapidity requirement on jets
-  does not align with the offline event selection where jets can be \btagged up
-  to $|\eta| < 2.5$. This mismatch caused an inefficiency in the trigger
-  selection for signal processes, cancelling the efficiency improvements
-  obtained at the HLT from to the $\texttt{medium1\_tracktwoEF}$ chains, leaving
-  the trigger efficiency at the level of the \FourJTwelve trigger used in
-  2017. The relative reduction in trigger efficiency for signal processes
-  compared to the \FourJTwelve trigger without the $|\eta| < 2.3$ requirement is
-  approximately \SI{5}{\percent}. This issue is resolved in the trigger menu
-  used for Run~3 of the LHC by extending the pseudorapidity range for jets in
-  the L1 seed used by \FourJTwelve triggers.
+\item[2018 data-taking period] New HLT algorithms were introduced for \tauhadvis
+  triggers in 2018, updating the existing \LOneTopo- and \FourJTwelve-based
+  DTTs. In addition, the L1~seed of the \FourJTwelve DTT was changed to require
+  at least four jets with $\ET > \SI{12}{\GeV}$ in $|\eta| < 2.3$. This change
+  introduced a mismatch in the selection of \tauhadvis ($|\eta| < 2.5$) and jet
+  ROIs ($|\eta| < 2.3$) at the L1 trigger. As a result, the jet multiplicity
+  requirement was not specified as intended, potentially requiring more than two
+  additional jets if a \tauhadvis is reconstructed in $2.3 < |\eta| < 2.5$. This
+  mismatch lead to a relative reduction in trigger efficiency for signal
+  processes of about \SI{5}{\percent} compared to the \FourJTwelve trigger
+  without the $|\eta| < 2.3$ requirement on jets. This issue is resolved in the
+  trigger menu of the ATLAS experiment for Run~3 of the LHC.
 \end{description}
+
 
 \subsubsection{Summary of the Trigger Selection}
 
