@@ -144,7 +144,7 @@ given in the remainder of this section.
     close to their trigger-efficiency plateau. These requirements are specified
     in terms of the \pT leading or sub-leading \tauhadvis ($\tau_0$ or $\tau_1$)
     and the \pT leading or sub-leading central jet ($\text{j}_0$ or
-    $\text{j}_1$). All events selected by DTT have to fulfil
+    $\text{j}_1$). All events selected by DTTs have to fulfil
     $\pT(\tau_0) > \SI{40}{\GeV}$ and $\pT(\tau_1) > \SI{30}{\GeV}$ (omitted in
     the table). The last column specifies the data-taking period in which a
     trigger was used.}
@@ -369,21 +369,21 @@ following:
 
 \item[2017 data-taking period] Two DTTs based on different L1~seeds are used for
   data recorded in 2017 (cf.~\Cref{tab:triggers_hadhad}). If the sub-leading
-  central jet of the event fulfils $\pT > \SI{45}{\GeV}$, the DTT based on the
-  \texttt{TAU20IM\_2TAU12IM\_4J12} L1~seed is used. This trigger requires
+  central jet of the event fulfils $\pT > \SI{45}{\GeV}$, then the DTT based on
+  the \texttt{TAU20IM\_2TAU12IM\_4J12} L1~seed is used. This trigger requires
   two additional jets at the L1 trigger with $\ET > \SI{12}{\GeV}$. The
   \pT~threshold of \SI{45}{\GeV} ensures that the L1 jet trigger operates close
   to its trigger-efficiency plateau. This trigger is hereafter referred to as
-  the \FourJTwelve DTT. If the condition for the \FourJTwelve trigger is not
-  fulfilled but the event has a central jet with $\pT > \SI{80}{\GeV}$ and a
+  the \FourJTwelve DTT. If the condition for the \FourJTwelve DTT is not
+  fulfilled but the event has a central jet with $\pT > \SI{80}{\GeV}$ and an
   angular distance between the \tauhadvis candidates of $\dRtautau < 2.5$, then
   the DTT based on the \texttt{DR-TAU20ITAU12I-J25} L1~seed is considered. This
-  trigger is based on the L1 topological trigger system~\cite{TRIG-2019-02} that
-  disambiguates jet and \tauhadvis ROIs and applies other topological
+  trigger is based on the L1 topological trigger system~\cite{TRIG-2019-02},
+  which disambiguates jet and \tauhadvis ROIs and applies other topological
   requirements. At the L1 trigger, a jet with $\ET > \SI{25}{\GeV}$ that is not
-  overlapping with a \tauhadvis ROI is required. Moreover, the \tauhadvis ROIs
-  at the L1 trigger have to fulfil $\dRtautau < 2.8$. This trigger is referred
-  to as the \LOneTopo DTT.
+  overlapping with a \tauhadvis ROI is required. Additionally, the \tauhadvis
+  ROIs at the L1 trigger have to fulfil $\dRtautau < 2.8$. This trigger is
+  referred to as the \LOneTopo DTT.
 
   The \FourJTwelve DTT is introduced to improve the acceptance of signal events
   with with small \HH-system masses, for example events from resonant \HH
@@ -402,9 +402,9 @@ following:
   requirement was not specified as intended, potentially requiring more than two
   additional jets if a \tauhadvis is reconstructed in $2.3 < |\eta| < 2.5$. This
   mismatch lead to a relative reduction in trigger efficiency for signal
-  processes of about \SI{5}{\percent} compared to the \FourJTwelve trigger
-  without the $|\eta| < 2.3$ requirement on jets. This issue is resolved in the
-  trigger menu of the ATLAS experiment for Run~3 of the LHC.
+  processes of about \SI{5}{\percent} compared to the \FourJTwelve DTT without
+  the $|\eta| < 2.3$ requirement on jets. This issue is resolved in the trigger
+  menu of the ATLAS experiment for Run~3 of the LHC.
 \end{description}
 
 
