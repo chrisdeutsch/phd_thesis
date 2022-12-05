@@ -226,17 +226,18 @@ following:
 
   Second, a two-stage tracking approach~\cite{TRIG-2016-01,ATLAS-CONF-2017-061}
   using \emph{fast tracking}, instead of the more time-consuming \emph{precision
-    tracking}, is employed. As a first stage, fast tracking is performed in a
-  narrow region surrounding the \tauhadvis candidate but extended over a large
-  section of the beamline. The \pT-leading track resulting from the first stage
-  is used to narrow down the search space along the beamline by only considering
-  tracks within $|\Delta z| < \SI{10}{\milli\metre}$ of this track. This allows
-  to widen the search region around the \tauhadvis candidate for the second
-  stage. After the second stage of fast tracking, multiplicities of core
-  ($\Delta R < 0.2$) and isolation tracks ($0.2 < \Delta R < 0.4$) are
-  defined. Track multiplicity selections are applied by requiring \tauhadvis
-  candidates to have one to three tracks in the core region and at most one
-  track in the isolation region.
+    tracking}, is employed. The first stage performs tracking in a narrow region
+  surrounding the \tauhadvis candidate close to the calorimeters but extended
+  over a large section of the beamline. The \pT-leading track resulting from
+  this stage is used to narrow down the search space along the beamline by only
+  considering the beamline section within $|\Delta z| < \SI{10}{\milli\metre}$
+  of this track for the second stage of tracking, thus allowing to widen the
+  search region around the \tauhadvis candidate close to the calorimeters. After
+  the second stage of tracking, core and isolation tracks are defined according
+  to the conditions $\Delta R(\text{track}, \tauhadvis) < 0.2$ and
+  $0.2 < \Delta R(\text{track}, \tauhadvis) < 0.4$, respectively. Subsequently,
+  track multiplicity selections are applied by requiring \tauhadvis candidates
+  to have one to three core tracks and at most one isolation track.
 
   Finally, a \tauhadvis selection similar to the offline \tauhadvis selection is
   performed. The tracks resulting from the two-stage tracking are used as seeds
@@ -288,11 +289,11 @@ following:
 % \begin{figure}[htbp]
 %   \centering
 
-%   \begin{subfigure}{.485\textwidth}
+%   \begin{subfigure}{.49\textwidth}
 %     \includegraphics[width=\textwidth]{selection/trig_eff_1p}
 %     \caption{$\Ntracks = 1$}
 %   \end{subfigure}\hfill
-%   \begin{subfigure}{.485\textwidth}
+%   \begin{subfigure}{.49\textwidth}
 %     \includegraphics[width=\textwidth]{selection/trig_eff_3p}
 %     \caption{$\Ntracks = 3$}
 %   \end{subfigure}
@@ -414,7 +415,7 @@ A flowchart summarising the trigger selection is depicted
 in~\Cref{fig:trigger_selection_flowchart}. Two features of the trigger selection
 are not illustrated in the figure. First, the \LOneTopo DTT only started
 operation with period B5 in 2017. In the intermittent period where \LOneTopo was
-not available, the \tauhadvis trigger chain based on
+not available the \tauhadvis trigger chain based on
 \texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} is used instead. The
 $\dRtautau < 2.5$ selection necessary for the \LOneTopo DTT is still applied in
 this case. Second, for three runs in 2017 the L1 topological trigger system was
@@ -436,21 +437,22 @@ category due to the prescale.
   \label{fig:trigger_selection_flowchart}
 \end{figure}
 
-The efficiency of selecting the signal processes using this trigger selection
-varies with the considered signal hypothesis. After an event
-pre-selection,\footnote{After electron and muon veto and a \tauhadvis candidate
-  pre-selection step. More context for these selections will be given
-  in~\Cref{tab:cutflow}.} the efficiency of a signal event to be selected by the
-trigger, the \tauhadvis candidates being trigger-matched and passing their
-trigger-dependent \pT thresholds is about \SI{40}{\percent} for SM \HH
-production. For the resonant production of $pp \to X \to \HH$, the efficiency of
-this selection ranges from \SI{30}{\percent} for $\mX = \SI{300}{\GeV}$ up to
-\SI{75}{\percent} for $\mX = \SI{1600}{\GeV}$. The signal selection efficiency
-of offline requirements on transverse momenta of jets and \dRtautau range from
-\SI{80}{\percent} up to \SI{98}{\percent} for SM \HH production and resonant
-production for intermediate to high \mX. These requirements are more limiting
-for low \mX, e.g.\ at $\mX = \SI{300}{\GeV}$ the efficiency is reduced to about
-\SI{56}{\percent}.
+The signal selection efficiency of the trigger selection varies with the
+considered signal hypothesis. After an event
+pre-selection,\footnote{Electron/muon veto and a \tauhadvis candidate
+  pre-selection. Details are given in \Cref{tab:cutflow} of
+  \Cref{sec:sr_and_cr_selection}.} the probability of an event to be selected by
+the trigger, to pass the trigger-matching requirement, and to pass the
+trigger-dependent \tauhadvis~\pT thresholds is about \SI{40}{\percent} for the
+SM~\HH signal. For resonant production of Higgs boson pairs, the efficiency
+ranges from \SI{30}{\percent} for $\mX = \SI{300}{\GeV}$ up to \SI{75}{\percent}
+for $\mX = \SI{1600}{\GeV}$.
+
+% The signal selection efficiency of offline requirements on transverse momenta
+% of jets and \dRtautau range from \SI{80}{\percent} up to \SI{98}{\percent} for
+% SM \HH production and resonant production for intermediate to high \mX. These
+% requirements are more limiting for low \mX, e.g.\ at $\mX = \SI{300}{\GeV}$
+% the efficiency is reduced to about \SI{56}{\percent}.
 
 % STT selects only few events, predominately targeting regions of high resonance
 % mass / high mHH.
@@ -486,7 +488,8 @@ di-$\tau$ mass reconstruction using the MMC. Drell--Yan processes producing
 $\mMMC > \SI{60}{\GeV}$. In addition, the SRs of the \lephad SLT and LTT channel
 only consider events fulfilling $\mBB < \SI{150}{\GeV}$. This selection allows
 to define an orthogonal \ttbar CR by inverting the selection on \mBB. This
-region is used for measurements related to \faketauhadvis background estimation.
+region is used for measurements related to the \faketauhadvis background
+estimation.
 
 The expected event yields after the SR selection of all three channels are
 summarised in~\Cref{tab:smhh_prefit_yields}. The bulk of events entering the SRs
@@ -520,7 +523,7 @@ summarised in~\Cref{tab:nonres_acc_times_eff} for all three channels. Compared
 to the previously published result in this
 channel~\cite{HIGG-2016-16-witherratum}, this analysis shows an increase in the
 SM~\HH \AccTimesEff by a factor of about 2 (1.5) for the \hadhad (\lephad)
-channel. This increase results from improved \tauhadvis reconstruction
+channel. This increase is a consequence of improved \tauhadvis reconstruction
 techniques and loosened identification requirements for \tauhadvis and \btagged
 jets.
 % compared to the previous result.
@@ -531,7 +534,7 @@ rates at working points with tagging efficiencies similar to the working points
 used previously. Consequently, the identification criteria can be loosened while
 maintaining background rates similar to the ones of the previous analysis.
 Second, Higgs boson pair production has distinct kinematic features that can be
-used to distinguish between signal events and events containing jets that are
+used to distinguish signal events and events containing jets that are
 misidentified as $b$-jets or \tauhadvis, for example, using multivariate
 methods. When exploiting these features, the signal sensitivity of this analysis
 improves with a less stringent object selection.
@@ -619,24 +622,27 @@ following improvements:
   % for the \textsc{DL1r} tagger~\cite{FTAG-2019-07}.
 \end{description}
 These object-level efficiency improvements compound when considering the
-efficiencies at event-level due to the selection of two $b$-tagged jets and two
-(one) reconstructed and identified \tauhadvis in the SR of the \hadhad (\lephad)
-channel. These changes explain the majority of the increase in \AccTimesEff for
-SM~\HH with respect to the previous search by the ATLAS collaboration in this
-channel.
+efficiencies at event-level
+% due to the selection of two $b$-tagged jets and two (one) reconstructed and
+% identified \tauhadvis in the SR of the \hadhad (\lephad) channel.
+and explain the majority of the increase in SM~\HH \AccTimesEff with respect to
+the previous search by the ATLAS collaboration in this channel.
 
 The \AccTimesEff of the SR selection for signals from resonant \HH production
 are shown in \Cref{fig:signal_acceptance_resonant} as a function of the
 resonance mass. In the \hadhad channel, the acceptance of signal events from
 decays of low-mass resonances is limited by the trigger selection. The signal
 acceptance increases quickly with increasing \mX, reaching a maximum of about
-\SI{10}{\percent} at $\mX = \SI{1000}{\GeV}$. For resonances with masses larger
-than \SI{1000}{\GeV}, the Higgs bosons are produced with large transverse
-momenta such that their decay products cannot be resolved using the object
-reconstruction techniques employed in this search. Dedicated searches for scalar
-resonances with masses of up to \SI{3}{\TeV} decaying into Higgs boson pairs
-were performed by the ATLAS collaboration in the $\bbbar\hadhad$ final state
-using special reconstruction techniques in Ref.~\cite{HDBS-2019-22}.
+\SI{10}{\percent} at $\mX = \SI{1000}{\GeV}$. The \AccTimesEff decreases for
+resonances with masses greater than \SI{1000}{\GeV} due to the Higgs boson decay
+products becoming increasingly collimated, at which point the object
+reconstruction becomes less effective at resolving the decay products.
+% such that their decay products cannot be resolved using the object
+% reconstruction techniques employed in this search.
+Dedicated searches for scalar resonances with masses of up to \SI{3}{\TeV}
+decaying into Higgs boson pairs were performed by the ATLAS collaboration in the
+$\bbbar\hadhad$ final state using special reconstruction techniques in
+Ref.~\cite{HDBS-2019-22}.
 
 \begin{figure}[htbp]
   \centering
@@ -654,9 +660,9 @@ using special reconstruction techniques in Ref.~\cite{HDBS-2019-22}.
 \end{figure}
 
 Lastly, the signal event yield after different steps of the SR event selection
-of the \hadhad channel is shown in~\Cref{tab:cutflow}. Most events are rejected
-due to the trigger selection, the \tauhadvis candidate selection, or the
-requirement of two \btagged jets in the SR.
+of the \hadhad channel is shown in~\Cref{tab:cutflow}. Most events are lost due
+to the trigger selection, the \tauhadvis candidate selection, or the requirement
+of two \btagged jets in the SR.
 
 \begin{sidewaystable}[p]
   \centering
