@@ -1,12 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
-<ipe version="70218" creator="Ipe 7.2.24">
-<info created="D:20210121150630" modified="D:20220613195150"/>
+<ipe version="70218" creator="Ipe 7.2.26">
+<info created="D:20221201181826" modified="D:20221203112353"/>
 <preamble>\usepackage{amsmath}
 \usepackage{newtxtext}
 \usepackage{newtxmath}
 \usepackage{siunitx}
-\mathchardef\mhyphen=&quot;2D</preamble>
+\usepackage{xspace}
+\mathchardef\mhyphen=&quot;2D
+
+\newcommand*{\tauhadvis}{\ensuremath{\tau_{\text{had-vis}}}\xspace}
+\newcommand*{\pT}{\ensuremath{p_{\text{T}}}\xspace}</preamble>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -185,6 +189,64 @@ h
 h
 </path>
 </symbol>
+<symbol name="arrow/mid-normal(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.3 0 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.3 0 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+1 0 m
+0 0.333 l
+0 -0.333 l
+h
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+1 0 m
+0 0.333 l
+0 -0.333 l
+h
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
 <anglesize name="22.5 deg" value="22.5"/>
 <anglesize name="30 deg" value="30"/>
 <anglesize name="45 deg" value="45"/>
@@ -248,6 +310,7 @@ h
 <textsize name="footnote" value="\footnotesize"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="large" value="\large"/>
+<textsize name="script" value="\scriptsize"/>
 <textsize name="small" value="\small"/>
 <textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
@@ -259,142 +322,226 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" stroke="black" pen="0.8">
-256 800 m
-192 752 l
-</path>
-<path matrix="1 0 0 1 0 16" stroke="0" pen="fat">
-160 736 m
-160 720 l
-224 720 l
-224 736 l
+<text layer="alpha" transformations="translations" pos="48 784" stroke="black" type="label" width="18.315" height="5.397" depth="0.09" valign="center" size="8">Event</text>
+<text transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="10.856" depth="5.73" valign="center" size="8" style="center">Pass STT \&amp; matching \\
+Pass \tauhadvis \pT thresholds</text>
+<path stroke="black" pen="0.7">
+92 796 m
+92 772 l
+196 772 l
+196 796 l
 h
 </path>
-<text matrix="1 0 0 1 96 16" transformations="translations" pos="96 728" stroke="black" type="label" width="40.986" height="6.739" depth="0.12" halign="center" valign="center">STT event</text>
-<text matrix="1 0 0 1 96 16" transformations="translations" pos="104 720" stroke="black" type="label" width="0" height="0" depth="0" valign="baseline"></text>
-<path stroke="black" pen="0.8">
-320 752 m
-256 704 l
-</path>
-<path stroke="black" pen="0.8">
-320 752 m
-384 704 l
-</path>
-<text matrix="1 0 0 1 96 36" transformations="translations" pos="288 664" stroke="black" type="label" width="22.127" height="6.283" depth="2.15" halign="center" valign="top">reject</text>
-<use matrix="1 0 0 1 96 16" name="mark/disk(sx)" pos="224 736" size="normal" stroke="black"/>
-<use matrix="1 0 0 1 88 32" name="mark/disk(sx)" pos="168 672" size="normal" stroke="black"/>
-<path stroke="black" pen="0.8">
-256 704 m
-160 656 l
-</path>
-<path stroke="black" pen="0.8">
-256 704 m
-352 656 l
-</path>
-<use matrix="1 0 0 1 64 48" name="mark/disk(sx)" pos="96 608" size="normal" stroke="black"/>
-<use matrix="1 0 0 1 128 48" name="mark/disk(sx)" pos="224 608" size="normal" stroke="black"/>
-<path stroke="black" pen="0.8">
-160 656 m
-112 608 l
-</path>
-<text matrix="1 0 0 1 16 -128" transformations="translations" pos="96 728" stroke="black" type="label" width="42.839" height="6.739" depth="0.12" halign="center" valign="center">DTT event</text>
-<path stroke="black" pen="0.8">
-352 656 m
-272 608 l
-</path>
-<path stroke="black" pen="0.8">
-352 656 m
-432 608 l
-</path>
-<use matrix="1 0 0 1 96 64" name="mark/disk(sx)" pos="176 544" size="normal" stroke="black"/>
-<use matrix="1 0 0 1 160 64" name="mark/disk(sx)" pos="272 544" size="normal" stroke="black"/>
-<path stroke="black" pen="0.8">
-272 608 m
-224 560 l
-</path>
-<text matrix="1 0 0 1 128 -176" transformations="translations" pos="96 728" stroke="black" type="label" width="70.785" height="6.768" depth="1.78" halign="center" valign="center">DTT event (\textsc{4J12})</text>
-<path stroke="black" pen="0.8">
-432 608 m
-384 560 l
-</path>
-<path stroke="black" pen="0.8">
-432 608 m
-464 576 l
-</path>
-<path stroke="black" pen="0.8">
-384 560 m
-336 512 l
-</path>
-<use matrix="1 0 0 1 0 80" name="mark/disk(sx)" pos="384 480" size="normal" stroke="black"/>
-<path matrix="1 0 0 1 -80 -128" stroke="black" pen="fat">
-160 736 m
-160 720 l
-224 720 l
-224 736 l
+<path stroke="black" pen="0.7">
+92 748 m
+92 724 l
+196 724 l
+196 748 l
 h
 </path>
-<path matrix="1 0 0 1 0 80" stroke="black" pen="fat">
-176 480 m
-176 464 l
-272 464 l
-272 480 l
+<text matrix="1 0 0 1 0 -48" transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="10.977" depth="5.86" valign="center" size="8" style="center">$\pT(\tau_0) &gt; \SI{40}{\GeV}$\\
+$\pT(\tau_1) &gt; \SI{30}{\GeV}$</text>
+<path stroke="black" arrow="normal/normal">
+144 772 m
+144 748 l
+</path>
+<path stroke="black" arrow="normal/normal">
+144 724 m
+144 700 l
+</path>
+<path stroke="black" pen="0.7">
+92 700 m
+92 676 l
+196 676 l
+196 700 l
 h
 </path>
-<path matrix="1 0 0 1 0 96" stroke="black" pen="fat">
-288 416 m
-288 400 l
-384 400 l
-384 416 l
+<path stroke="black" pen="0.7">
+92 652 m
+92 628 l
+196 628 l
+196 652 l
 h
 </path>
-<text matrix="1 0 0 1 240 -224" transformations="translations" pos="96 728" stroke="black" type="label" width="84.443" height="6.768" depth="1.78" halign="center" valign="center">DTT event (\textsc{L1Topo})</text>
-<text matrix="1 0 0 1 176 -92" transformations="translations" pos="288 664" stroke="black" type="label" width="22.127" height="6.283" depth="2.15" halign="center" valign="top">reject</text>
-<text matrix="1 0 0 1 128 -140" transformations="translations" pos="288 664" stroke="black" type="label" width="22.127" height="6.283" depth="2.15" halign="center" valign="top">reject</text>
-<text matrix="1 0 0 1 16 -92" transformations="translations" pos="288 664" stroke="black" type="label" width="22.127" height="6.283" depth="2.15" halign="center" valign="top">reject</text>
-<text matrix="1 0 0 1 -96 -44" transformations="translations" pos="288 664" stroke="black" type="label" width="22.127" height="6.283" depth="2.15" halign="center" valign="top">reject</text>
-<text matrix="0.707107 0.707107 -0.707107 0.707107 536.227 -48.8705" pos="292 540" stroke="0.18 0.204 0.212" type="minipage" width="76" height="9.885" depth="4.76" halign="center" valign="bottom" size="7">Pass \textsc{L1Topo} DTT\\
-$\tau_\text{had-vis}$ trigger-matched
-</text>
-<text matrix="0.707107 0.707107 -0.707107 0.707107 514.886 -173.563" pos="432 628" stroke="0.18 0.204 0.212" type="minipage" width="72" height="10.045" depth="4.93" valign="top" size="7">$p_{\text{T}}(\text{j}_0) &gt; \SI{80}{\GeV}$\\
-$\Delta R(\tau_0, \tau_1) &lt; 2.5$
-</text>
-<text matrix="0.707107 -0.707107 0.707107 0.707107 -240.967 502.681" pos="424 552" stroke="0.18 0.204 0.212" type="label" width="10.844" height="4.72" depth="0.05" halign="center" valign="baseline" size="7">else</text>
-<text matrix="0.800009 0.599987 -0.599987 0.800009 489.859 -14.9501" pos="256 732" stroke="0.18 0.204 0.212" type="minipage" width="60" height="10.064" depth="4.94" valign="top" size="7">$p_{\text{T}}(\tau_0) &gt; \SI{40}{\GeV}$\\
-$p_{\text{T}}(\tau_1) &gt; \SI{30}{\GeV}$</text>
-<text matrix="0.707107 0.707107 -0.707107 0.707107 503.252 115.336" pos="116 528" stroke="0.18 0.204 0.212" type="minipage" width="104" height="9.885" depth="4.76" valign="top" size="7">Pass \textsc{4J12} DTT\\
-$\tau_{\text{had-vis}}$ trigger-matched
-</text>
-<text matrix="0.8575 0.514484 -0.514484 0.8575 424.528 98.4242" pos="136 524" stroke="0.18 0.204 0.212" type="minipage" width="96" height="6.066" depth="0.94" valign="top" size="7">$p_{\text{T}}(\text{j}_0) \geq p_{\text{T}}(\text{j}_1)  &gt; \SI{45}{\GeV}$</text>
-<text matrix="0.800009 0.599987 -0.599987 0.800009 570.855 66.5297" pos="108 800" stroke="0.18 0.204 0.212" type="minipage" width="75.582" height="14.042" depth="8.93" valign="top" size="7">Pass STT\\
-$\tau_{\text{had-vis}}$~trigger-matched\\
-Pass $\tau_{\text{had-vis}}$~$p_{\text{T}}$  thresholds</text>
-<text matrix="0.707107 0.707107 -0.707107 0.707107 543.875 130.822" pos="32 668" stroke="0.18 0.204 0.212" type="minipage" width="80" height="14.245" depth="9.13" valign="top" size="7">Pass DTT\\
-$\tau_{\text{had-vis}}$ trigger-matched\\
-$p_{\text{T}}(\text{j}_0) &gt; \SI{80}{\GeV}$</text>
-<text matrix="0.894428 0.447213 -0.447213 0.894428 439.096 -16.5764" pos="92 728" stroke="0.18 0.204 0.212" type="label" width="31.382" height="4.721" depth="0.08" valign="baseline" size="7">2015--2016</text>
-<text matrix="0.894428 -0.447213 0.447213 0.894428 -95.3162 49.7313" pos="56 744" stroke="0.18 0.204 0.212" type="label" width="31.382" height="4.721" depth="0.08" valign="baseline" size="7">2017--2018</text>
-<path matrix="1 0 0 1 -48 -48" stroke="black" pen="0.8">
-432 608 m
-464 576 l
+<path stroke="black" arrow="normal/normal">
+144 676 m
+144 652 l
 </path>
-<text matrix="0.707107 -0.707107 0.707107 0.707107 -288.967 454.681" pos="424 552" stroke="0.18 0.204 0.212" type="label" width="10.844" height="4.72" depth="0.05" halign="center" valign="baseline" size="7">else</text>
-<path matrix="1 0 0 1 -160 0" stroke="black" pen="0.8">
-432 608 m
-464 576 l
+<path stroke="black" arrow="normal/normal">
+144 628 m
+144 604 l
 </path>
-<text matrix="0.707107 -0.707107 0.707107 0.707107 -400.967 502.681" pos="424 552" stroke="0.18 0.204 0.212" type="label" width="10.844" height="4.72" depth="0.05" halign="center" valign="baseline" size="7">else</text>
-<path matrix="1 0 0 1 -272 48" stroke="black" pen="0.8">
-432 608 m
-464 576 l
+<path stroke="black" pen="0.7">
+92 604 m
+92 580 l
+196 580 l
+196 604 l
+h
 </path>
-<text matrix="0.707107 -0.707107 0.707107 0.707107 -512.967 550.681" pos="424 552" stroke="0.18 0.204 0.212" type="label" width="10.844" height="4.72" depth="0.05" halign="center" valign="baseline" size="7">else</text>
-<use matrix="1 0 0 1 88 128" name="mark/disk(sx)" pos="168 672" size="normal" stroke="black"/>
-<text matrix="0.800009 -0.599987 0.599987 0.800009 -341.111 340.028" pos="320 728" stroke="0.18 0.204 0.212" type="label" width="10.844" height="4.72" depth="0.05" halign="center" valign="baseline" size="7">else</text>
-<path matrix="1 0 0 1 -64 48" stroke="black" pen="0.8">
-320 752 m
-384 704 l
+<path stroke="black" arrow="normal/normal">
+196 784 m
+220 784 l
 </path>
-<text matrix="0.800009 -0.599987 0.599987 0.800009 -405.111 388.028" pos="320 728" stroke="0.18 0.204 0.212" type="label" width="10.844" height="4.72" depth="0.05" halign="center" valign="baseline" size="7">else</text>
-<text matrix="0.8575 -0.514484 0.514484 0.8575 -218.564 277.352" pos="332 620" stroke="0.18 0.204 0.212" type="label" width="10.844" height="4.72" depth="0.05" valign="baseline" size="7">else</text>
+<path stroke="black" arrow="normal/normal">
+196 736 m
+220 736 l
+</path>
+<path stroke="black" arrow="normal/normal">
+196 688 m
+220 688 l
+</path>
+<path stroke="black" arrow="normal/normal">
+196 592 m
+220 592 l
+</path>
+<text transformations="translations" pos="224 736" stroke="black" type="label" width="17.702" height="5.393" depth="1.72" valign="center" size="8">reject</text>
+<text matrix="1 0 0 1 -16 56" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="center" valign="center" size="8">Yes</text>
+<text matrix="1 0 0 1 -84 24" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="right" valign="center" size="8">No</text>
+<text matrix="1 0 0 1 -16 8" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="center" valign="center" size="8">No</text>
+<text matrix="1 0 0 1 -84 -24" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="right" valign="center" size="8">Yes</text>
+<text matrix="1 0 0 1 -84 -72" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="right" valign="center" size="8">No</text>
+<text matrix="1 0 0 1 -84 -120" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="right" valign="center" size="8">No</text>
+<text matrix="1 0 0 1 -16 -40" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="center" valign="center" size="8">Yes</text>
+<text matrix="1 0 0 1 -16 -88" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="center" valign="center" size="8">Yes</text>
+<text matrix="1 0 0 1 -16 -136" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="center" valign="center" size="8">Yes</text>
+<path stroke="black" pen="0.7">
+220 700 m
+220 676 l
+324 676 l
+324 700 l
+h
+</path>
+<path matrix="1 0 0 1 128 0" stroke="black" arrow="normal/normal">
+196 688 m
+220 688 l
+</path>
+<text matrix="1 0 0 1 128 -48" transformations="translations" pos="224 736" stroke="black" type="label" width="34.271" height="5.397" depth="0.09" valign="center" size="8">DTT event</text>
+<path matrix="1 0 0 1 0 -48" stroke="black" arrow="normal/normal">
+196 688 m
+220 688 l
+</path>
+<path stroke="black" pen="0.7">
+220 652 m
+220 628 l
+324 628 l
+324 652 l
+h
+</path>
+<path matrix="1 0 0 1 128 -48" stroke="black" arrow="normal/normal">
+196 688 m
+220 688 l
+</path>
+<text matrix="1 0 0 1 128 -96" transformations="translations" pos="224 736" stroke="black" type="label" width="56.628" height="5.418" depth="1.42" valign="center" size="8">DTT (\textsc{4J12}) event</text>
+<text matrix="1 0 0 1 128 -144" transformations="translations" pos="224 736" stroke="black" type="label" width="67.555" height="5.418" depth="1.42" valign="center" size="8">DTT (\textsc{L1Topo}) event</text>
+<text matrix="1 0 0 1 0 -192" transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="10.965" depth="5.84" valign="center" size="8" style="center">$\pT(\text{j}_0) &gt; \SI{80}{\GeV}$\\
+$\Delta R(\tau_0, \tau_1) &lt; 2.5$</text>
+<text matrix="1 0 0 1 0 -96" transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="6.123" depth="0.99" valign="center" size="8" style="center">2015--2016 data-taking period</text>
+<text matrix="1 0 0 1 0 -144" transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="6.44" depth="1.32" valign="center" size="8" style="center">$\pT(\text{j}_0) \geq \pT(\text{j}_1) &gt; \SI{45}{\GeV}$</text>
+<path matrix="1 0 0 1 128 -96" stroke="black" arrow="normal/normal">
+196 688 m
+220 688 l
+</path>
+<path stroke="black" pen="0.7">
+220 604 m
+220 580 l
+324 580 l
+324 604 l
+h
+</path>
+<text matrix="1 0 0 1 128 -192" transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="10.927" depth="5.81" valign="center" size="8" style="center">Pass DTT (\textsc{L1Topo}) \&amp; matching</text>
+<text matrix="1 0 0 1 128 -144" transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="6.137" depth="1" valign="center" size="8" style="center">Pass DTT (\textsc{4J12}) \&amp; matching</text>
+<text matrix="1 0 0 1 128 -96" transformations="translations" pos="96 784" stroke="black" type="minipage" width="96" height="11.109" depth="6" valign="center" size="8" style="center">Pass DTT \&amp; matching \\
+$\pT(\text{j}_0) &gt; \SI{80}{\GeV}$</text>
+<text matrix="1 0 0 1 112 -40" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="center" valign="center" size="8">Yes</text>
+<text matrix="1 0 0 1 112 -88" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="center" valign="center" size="8">Yes</text>
+<text matrix="1 0 0 1 112 -136" transformations="translations" pos="224 736" stroke="black" type="label" width="11.557" height="5.392" depth="0.06" halign="center" valign="center" size="8">Yes</text>
+<path stroke="black" arrow="normal/normal">
+272 628 m
+272 616 l
+348 616 l
+</path>
+<text matrix="1 0 0 1 128 -120" transformations="translations" pos="224 736" stroke="black" type="label" width="17.702" height="5.393" depth="1.72" valign="center" size="8">reject</text>
+<text matrix="1 0 0 1 112 -112" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="center" valign="center" size="8">No</text>
+<path stroke="black" arrow="normal/normal">
+272 580 m
+272 568 l
+348 568 l
+</path>
+<text matrix="1 0 0 1 128 -168" transformations="translations" pos="224 736" stroke="black" type="label" width="17.702" height="5.393" depth="1.72" valign="center" size="8">reject</text>
+<text matrix="1 0 0 1 112 -160" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="center" valign="center" size="8">No</text>
+<text matrix="1 0 0 1 0 48" transformations="translations" pos="224 736" stroke="black" type="label" width="32.789" height="5.397" depth="0.09" valign="center" size="8">STT event</text>
+<path stroke="black" arrow="normal/normal">
+272 676 m
+272 664 l
+348 664 l
+</path>
+<text matrix="1 0 0 1 128 -72" transformations="translations" pos="224 736" stroke="black" type="label" width="17.702" height="5.393" depth="1.72" valign="center" size="8">reject</text>
+<text matrix="1 0 0 1 112 -64" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="center" valign="center" size="8">No</text>
+<path stroke="black" arrow="normal/normal">
+144 580 m
+144 564 l
+176 564 l
+</path>
+<text matrix="1 0 0 1 -44 -172" transformations="translations" pos="224 736" stroke="black" type="label" width="17.702" height="5.393" depth="1.72" valign="center" size="8">reject</text>
+<text matrix="1 0 0 1 -56 -164" transformations="translations" pos="224 736" stroke="black" type="label" width="9.58" height="5.397" depth="0.09" halign="center" valign="center" size="8">No</text>
+<path stroke="black" arrow="normal/normal">
+76 784 m
+92 784 l
+</path>
+<path stroke="black" pen="1">
+220 788 m
+4 0 0 -4 224 788 224 792 a
+256 792 l
+4 0 0 -4 256 788 260 788 a
+260 780 l
+4 0 0 -4 256 780 256 776 a
+224 776 l
+4 0 0 -4 224 780 220 780 a
+h
+</path>
+<path stroke="black" pen="1">
+348 692 m
+4 0 0 -4 352 692 352 696 a
+388 696 l
+4 0 0 -4 388 692 392 692 a
+392 684 l
+4 0 0 -4 388 684 388 680 a
+352 680 l
+4 0 0 -4 352 684 348 684 a
+h
+</path>
+<path stroke="black" pen="1">
+348 644 m
+4 0 0 -4 352 644 352 648 a
+408 648 l
+4 0 0 -4 408 644 412 644 a
+412 636 l
+4 0 0 -4 408 636 408 632 a
+352 632 l
+4 0 0 -4 352 636 348 636 a
+h
+</path>
+<path stroke="black" pen="1">
+348 596 m
+4 0 0 -4 352 596 352 600 a
+420 600 l
+4 0 0 -4 420 596 424 596 a
+424 588 l
+4 0 0 -4 420 588 420 584 a
+352 584 l
+4 0 0 -4 352 588 348 588 a
+h
+</path>
+<path stroke="black" pen="1">
+40 788 m
+4 0 0 -4 44 788 44 792 a
+72 792 l
+4 0 0 -4 72 788 76 788 a
+76 780 l
+4 0 0 -4 72 780 72 776 a
+44 776 l
+4 0 0 -4 44 780 40 780 a
+h
+</path>
 </page>
 </ipe>
