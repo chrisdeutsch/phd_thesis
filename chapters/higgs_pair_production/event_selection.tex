@@ -6,9 +6,9 @@ final states are selected. A loose event selection is applied that is largely
 determined by the triggers employed in this search. The discrimination of signal
 and background events is not the primary goal of the event selection but rather
 of a multivariate analysis that is introduced in
-\Cref{sec:multivariate_analysis}. In addition, control and validation regions
-are defined for the purpose of estimating backgrounds or validating background
-estimates.
+\Cref{sec:multivariate_analysis}.
+% In addition, control and validation regions are defined for the purpose of
+% estimating backgrounds or validating background estimates.
 
 All events considered in this analysis have to fulfil the data quality criteria
 of the ATLAS collaboration~\cite{DAPR-2018-01} and are required to have a
@@ -95,7 +95,7 @@ trigger.
 An overview of the SR event selection is given in \Cref{tab:event_selection}. A
 more detailed description of the \hadhad channel trigger selection is given in
 \Cref{sec:hadhad_trigger_selection}. Further selections applied at event-level
-defining the SRs and CRs are introduced in \Cref{sec:sr_and_cr_selection}.
+defining the SRs are discussed in \Cref{sec:sr_and_cr_selection}.
 
 \begin{table}[htbp]
   \centering
@@ -459,43 +459,40 @@ for low \mX, e.g.\ at $\mX = \SI{300}{\GeV}$ the efficiency is reduced to about
 % turn-on???
 
 
-\subsection{Signal and Control Region Event Selection}%
+\subsection{Signal Region Event Selection}%
 \label{sec:sr_and_cr_selection}
 
-% Make a note here that the basic object multiplicities need to be fulfilled?
-Events passing the trigger selection and the associated cuts on electrons,
-muons, \tauhadvis, and jets from the offline event reconstruction are considered
-for the SR definitions.  Only regions with exactly two \btagged jets (2 $b$-tag
-regions) are considered as signal regions. Regions with fewer \btagged jets,
-being largely dominated by background processes, would not contribute to the
-signal sensitivity in a relevant way. Instead, the 0 and 1 $b$-tag regions are
-used as control and validation regions for the background estimation.
+Events passing the selections on the multiplicities of electrons, muons,
+\tauhadvis, and jets (cf.~\Cref{tab:event_selection}) and the trigger selection
+are used to define the SRs. Only regions with exactly two \btagged jets (2
+$b$-tag regions) are considered as SRs. Regions with fewer \btagged jets are
+dominated by background processes and thus would not contribute to the signal
+sensitivity. Instead, 0 and 1 $b$-tag regions are used as control and validation
+regions.
 
 The electric charge of the electron, muon, or \tauhadvis candidate has to be
 reconstructed with opposite-sign (OS) with respect to the charge of the other
-\tauhadvis candidate in the event. Events from processes producing pairs of
-\tauleptons, such as the signal processes, \Zjets, $H \to \tautau$, \ttbar, are
-expected to be reconstructed with OS charge. Events with same-sign (SS) electric
-charge of the visible $H \to \tautau$ candidate objects predominantly originate
-from events with \tauhadvis mimicked by quark- or gluon-initiated
-jets. Therefore, the SS region is used in the \hadhad channel for the estimation
-of the multi-jet background.
+\tauhadvis candidate in the event. Events from processes producing \taulepton
+pairs, such as the signal processes, \Zjets, $H \to \tautau$, and \ttbar, are
+expected to be reconstructed with OS electric charge. Events with same-sign (SS)
+electric charge of the visible \taulepton decay products predominately originate
+from events in which a quark- or gluon-initiated jet is misidentified as a
+\tauhadvis. Therefore, the SS region is used in the \hadhad channel for the
+estimation of the multi-jet background.
 
 All events considered in this search are required to successfully pass the
-di-$\tau$ mass reconstruction using the MMC. Drell-Yan processes producing
+di-$\tau$ mass reconstruction using the MMC. Drell--Yan processes producing
 \taulepton pairs with low invariant mass are rejected by requiring
-$\mMMC > \SI{60}{\GeV}$.
-
-The signal regions of the \lephad channels only consider events fulfilling
-$\mBB < \SI{150}{\GeV}$. This selection allows to define an orthogonal \ttbar
-control region depleted of signal events by inverting the cut on \mBB. This
-region is used for measurements related to the \faketauhadvis background
-estimation in the \lephad and \hadhad channels.
+$\mMMC > \SI{60}{\GeV}$. In addition, the SRs of the \lephad SLT and LTT channel
+only consider events fulfilling $\mBB < \SI{150}{\GeV}$. This selection allows
+to define an orthogonal \ttbar CR depleted of signal events by inverting the
+selection on \mBB. This region is used for measurements related to
+\faketauhadvis background estimation.
 
 The expected event yields after the signal region selection of all three
 channels are summarised in~\Cref{tab:smhh_prefit_yields}. The bulk of events
 entering the signal regions are from top quark backgrounds, \Zjets, and
-backgrounds where a quark- or gluon-initiated jet mimics the signature of a
+backgrounds in which a quark- or gluon-initiated jet is reconstructed as a
 \tauhadvis (\jettotauhadvis).
 
 \begin{table}[htbp]
@@ -646,8 +643,6 @@ reconstruction techniques in Ref.~\cite{HDBS-2019-22}.
     \hadhad channel (\lephad channels). The figure is taken from
     Ref.~\cite{ATLAS-CONF-2021-030}.}%
   \label{fig:signal_acceptance_resonant}
-
-  \todo[inline]{Update to paper version}
 \end{figure}
 
 A cutflow of the signal region event selection of the \hadhad channel is shown
