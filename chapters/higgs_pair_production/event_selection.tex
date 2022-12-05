@@ -462,11 +462,11 @@ for low \mX, e.g.\ at $\mX = \SI{300}{\GeV}$ the efficiency is reduced to about
 \subsection{Signal Region Event Selection}%
 \label{sec:sr_and_cr_selection}
 
-Events passing the selections on the multiplicities of electrons, muons,
-\tauhadvis, and jets (cf.~\Cref{tab:event_selection}) and the trigger selection
-are used to define the SRs. Only regions with exactly two \btagged jets (2
-$b$-tag regions) are considered as SRs. Regions with fewer \btagged jets are
-dominated by background processes and thus would not contribute to the signal
+Events passing the electron, muon, \tauhadvis, and jet selections
+(cf.~\Cref{tab:event_selection}) as well as the trigger selection are used to
+define the SRs. Only regions with exactly two \btagged jets (2 $b$-tag regions)
+are considered as SRs. Regions with fewer \btagged jets are dominated by
+background processes and thus would not contribute to the signal
 sensitivity. Instead, 0 and 1 $b$-tag regions are used as control and validation
 regions.
 
@@ -498,16 +498,15 @@ in which a quark- or gluon-initiated jet is reconstructed as a \tauhadvis
   \centering
 
   \caption{Expected event yields in all three SRs prior to the fit. The yields
-    are shown including all statistical and systematic uncertainties. The
-    \faketauhadvis background estimation technique employed in the \lephad
-    channels does not distinguish between different sources of \faketauhadvis
-    (the majority is expected to originate from \ttbar). The category ``other
-    backgrounds'' combines minor contributions from
+    are shown including all statistical and systematic uncertainties.  The
+    SM~\HH event yields are given for the SM expectation. The \faketauhadvis
+    background estimation technique employed in the \lephad channels does not
+    distinguish between different sources of \faketauhadvis. The category
+    ``other backgrounds'' combines minor contributions from
     $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$, $Z \to \mu^{+}\mu^{-}$,
     \Wjets, diboson and $\ttbar V$. The background estimation and systematic
-    uncertainties will be discussed in detail
-    in~\Cref{sec:background_estimation,sec:uncertainties}. The SM \HH event
-    yields are given for a signal strength according to the SM expectation.}%
+    uncertainties are discussed in detail
+    in~\Cref{sec:background_estimation,sec:uncertainties}.}%
   \label{tab:smhh_prefit_yields}%
   \label{tab:hadhad_presel_yields}
 
@@ -516,24 +515,25 @@ in which a quark- or gluon-initiated jet is reconstructed as a \tauhadvis
   }
 \end{table}
 
-The acceptance times efficiency, \AccTimesEff, of the SR selection for the
-SM~\HH signal is summarised in~\Cref{tab:nonres_acc_times_eff}. Compared to the
-previously published result in this channel~\cite{HIGG-2016-16-witherratum},
-this search selects SM~\HH with improvements in the \AccTimesEff by a factor
-exceeding 2 (1.5) for the \hadhad channel (\lephad channels). This increase
-results from improved \tauhadvis reconstruction techniques and loosened object
-selection requirements for \tauhadvis and \btagged jets compared to the
-previously published result. The reason for using a loosened object selection is
-two-fold. First, the \tauhadvis identification and $b$-tagging algorithms were
-significantly improved~\cite{ATL-PHYS-PUB-2019-033,FTAG-2019-07}, yielding
-reduced mistag rates at working points with tagging efficiencies similar to the
-previously used working points. This allows to adopt looser object selection
-criteria while maintaining background rates similar to the ones of the previous
-generation of taggers. Second, Higgs boson pair production has distinct
-kinematic features that can be used to distinguish between signal events and
-events containing jets that are misidentified as $b$-jets or \tauhadvis, for
-example, using multivariate methods. As a result, the best signal sensitivity is
-achieved with a less stringent object selection.
+The SM~\HH acceptance times efficiency (\AccTimesEff) of the SR selections is
+summarised in~\Cref{tab:nonres_acc_times_eff} for all three channels. Compared
+to the previously published result in this
+channel~\cite{HIGG-2016-16-witherratum}, this search selects SM~\HH with
+improvements in the \AccTimesEff by a factor of about 2 (1.5) for the \hadhad
+channel (\lephad channels). This increase results from improved \tauhadvis
+reconstruction techniques and loosened object selection requirements for
+\tauhadvis and \btagged jets compared to the previously published result. The
+reason for using a loosened object selection is two-fold. First, the \tauhadvis
+identification and $b$-tagging algorithms were significantly
+improved~\cite{ATL-PHYS-PUB-2019-033,FTAG-2019-07}, yielding reduced mistag
+rates at working points with tagging efficiencies similar to the previously used
+working points. This allows to adopt looser object selection criteria while
+maintaining background rates similar to the ones of the previous generation of
+taggers. Second, Higgs boson pair production has distinct kinematic features
+that can be used to distinguish between signal events and events containing jets
+that are misidentified as $b$-jets or \tauhadvis, for example, using
+multivariate methods. As a result, the best signal sensitivity is achieved with
+a less stringent object selection.
 
 % when exploiting the distinct kinematic features of Higgs boson pair production
 % to isolate events of interest (e.g.\ using multivariate methods), then the
@@ -651,23 +651,20 @@ using special reconstruction techniques in Ref.~\cite{HDBS-2019-22}.
   \label{fig:signal_acceptance_resonant}
 \end{figure}
 
-% The \AccTimesEff is given as the fraction of selected events with respect to
-% all $pp \to \HH \to \bbbar\hadhad$ ($pp \to \HH \to \bbbar\lephad$) events in
-% the \hadhad channel (\lephad channels).
-
-A cutflow of the SR event selection of the \hadhad channel is shown
-in~\Cref{tab:cutflow}. Due to the loose pre-selection, most events are rejected
-due to the trigger selection, \tauhadvis candidate selection, or the requirement
-of two \btagged jets in the SR.
+The signal event yield after different steps of the SR event selection of the
+\hadhad channel is shown in~\Cref{tab:cutflow}. Most events are rejected due to
+the trigger selection, the \tauhadvis candidate selection, or the requirement of
+two \btagged jets in the SR.
 
 \begin{sidewaystable}[p]
   \centering
 
-  \caption{SR selection cutflow in the \hadhad channel for the SM \HH signals
-    and four exemplary scalar resonance signals. The expected number of events
-    are normalised using the cross sections predicted by the SM for the SM \HH
-    production and using $\sigma(pp \to X \to \HH) = \SI{10}{\femto\barn}$ for
-    the $X \to \HH$ signals.}%
+  \caption{Event yields after different selection steps in the \hadhad channel
+    for the SM~\HH signals and four exemplary signals from decays of scalar
+    resonances. The expected number of events are normalised using the cross
+    sections predicted by the SM for the SM \HH production and using
+    $\sigma(pp \to X \to \HH) = \SI{10}{\femto\barn}$ for the $X \to \HH$
+    signals.}%
   \label{tab:cutflow}
 
   \resizebox{\textwidth}{!}{
