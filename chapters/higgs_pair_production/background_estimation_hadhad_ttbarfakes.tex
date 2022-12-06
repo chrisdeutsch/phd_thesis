@@ -599,45 +599,47 @@ In addition to the uncertainties originating from the SF measurement, two other
 sources of uncertainties are considered. First, an uncertainty accounting for a
 possible bias in the estimated SFs due to trigger efficiency turn-on effects is
 determined. Second, an uncertainty on the extrapolation of the measured SFs from
-$\ell + \tauhad$ final states to \hadhad final states is derived.
+$\ell + \tauhadvis$ final states to final states with two \tauhadvis is derived.
 
 A systematic uncertainty accounting for the effect of \tauhadvis \pT (\ET)
-thresholds at the HLT (L1 trigger) on the \faketauhadvis SFs is estimated. The
+thresholds at the HLT~(L1 trigger) on the \faketauhadvis SFs is estimated. The
 nominal SF measurement is performed using \tauhadvis-triggers with thresholds of
-$\pTHLT > \SI{25}{\GeV}$ and $\ETLone > \SI{12}{\GeV}$ (\texttt{tau25}) at the
-HLT and L1 trigger, respectively. However, the SR selection in the \hadhad
-channel also uses triggers with higher thresholds, for example,
-$\pTHLT > \SI{35}{\GeV}$ and $\ETLone > \SI{20}{\GeV}$ (\texttt{tau35}) for the
-leading \tauhadvis candidate selected by DTTs. The application of SFs measured
-for \texttt{tau25} to \faketauhadvis passing \texttt{tau35} can introduce a bias
-due to differences in selection efficiency between triggers. In general, this
-bias is expected to be small since selections are applied during offline event
-reconstruction to ensure that the \tauhadvis-triggers operate close to their
-trigger efficiency plateau.
+$\pT > \SI{25}{\GeV}$ at the HLT and $\ET > \SI{12}{\GeV}$ at the L1
+trigger~(\texttt{tau25}). However, triggers with larger thresholds are also
+employed in the \hadhad channel. For example, thresholds of
+$\pT > \SI{35}{\GeV}$ at the HLT and $\ET > \SI{20}{\GeV}$ at the L1 trigger
+(\texttt{tau35}) are applied to the leading \tauhadvis candidate selected by
+DTTs. The application of SFs measured for \texttt{tau25} triggers to
+\faketauhadvis that are required to pass a \texttt{tau35} trigger can introduce
+a bias due to differences in selection efficiency between both triggers. This
+effect is only relevant for \faketauhadvis with transverse momenta close to the
+\pT~threshold of the \texttt{tau35} trigger
+(\SIrange[range-phrase=--]{40}{50}{\GeV} for 1-prong candidates and
+\SIrange[range-phrase=--]{40}{60}{\GeV} for 3-prong candidates). For
+\faketauhadvis with larger transverse momenta the differences between triggers
+become negligible.
 
-The difference in trigger efficiency between \texttt{tau25} and \texttt{tau35}
-is studied in simulated \ttbarFakes events in the SF-CR. Only events with
-\tauhadvis candidates with $\pT > \SI{40}{\GeV}$ are considered. After this
-selection, \SI{95}{\percent} (\SI{85}{\percent}) of \faketauhadvis reconstructed
-as 1-prong (3-prong) candidates selected by \texttt{tau25} also pass the
-\texttt{tau35} triggers. The difference in \faketauhadvis selected by the
-\texttt{tau25} and \texttt{tau35} triggers is a potential source of bias in the
-estimation of the \ttbarFakes background. For \faketauhadvis reconstructed as
-1-prong (3-prong) candidates and with $\pT > \SI{50}{\GeV}$
-($\pT > \SI{60}{\GeV}$), the differences in \faketauhadvis selected by
-\texttt{tau25} and \texttt{tau35} become negligible.
+% The difference in trigger efficiency between \texttt{tau25} and \texttt{tau35}
+% is studied in simulated \ttbarFakes events in the SF-CR. Only events with
+% \tauhadvis candidates with $\pT > \SI{40}{\GeV}$ are considered. After this
+% selection, \SI{95}{\percent} (\SI{85}{\percent}) of \faketauhadvis
+% reconstructed as 1-prong (3-prong) candidates selected by \texttt{tau25} also
+% pass the \texttt{tau35} triggers. The difference in \faketauhadvis selected by
+% the \texttt{tau25} and \texttt{tau35} triggers is a potential source of bias
+% in the estimation of the \ttbarFakes background. For \faketauhadvis
+% reconstructed as 1-prong (3-prong) candidates and with $\pT > \SI{50}{\GeV}$
+% ($\pT > \SI{60}{\GeV}$), the differences in \faketauhadvis selected by
+% \texttt{tau25} and \texttt{tau35} become negligible.
 
-An uncertainty is assigned to the SFs applied to \faketauhadvis passing the
+An uncertainty is assigned to SFs applied to \faketauhadvis passing the
 \texttt{tau35} triggers if the transverse momentum of the \faketauhadvis is
-close to the \pT-threshold of the trigger. Specifically, the uncertainty is
-applied for 1-prong (3-prong) \faketauhadvis with transverse momenta below
+close to the \pT~threshold of the trigger. In particular, the uncertainty is
+only applied for 1-prong (3-prong) \faketauhadvis with transverse momenta below
 \SI{50}{\GeV} (\SI{60}{\GeV}). The size of the uncertainty is estimated by
 repeating the SF measurement for the \texttt{tau35} triggers and comparing with
 the nominal set of SFs. This comparison is performed for all trigger chains
-employed in the analysis. The relative uncertainty resulting from the comparison
-is approximately \SI{6}{\percent}. This uncertainty is small compared to other
-uncertainties affecting the \ttbarFakes background estimate, however, it is
-still considered in the analysis.
+employed in the analysis, resulting in a relative uncertainty of approximately
+\SI{6}{\percent} for all trigger chains.
 
 % \begin{table}[htbp]
 %   \centering
@@ -653,24 +655,26 @@ still considered in the analysis.
 %   \input{tables/ttbarSF_tau25_35_uncertainty}
 % \end{table}
 
-The measurement of the SFs is performed in the SF-CR and applied to the SR of
-the \hadhad channel. An uncertainty is assigned to account for the extrapolation
-of the SF measurement from \lephad final states to \hadhad final states. The
+The measurement of the SFs is performed in the SF-CR and applied to events in
+the SR of the \hadhad channel. An uncertainty is assigned to account for the
+extrapolation of the SF measurement from the SF-CR to the \hadhad SR. The
 uncertainties are derived by performing variations of the \ttbar modelling in
 simulation and comparing the acceptance of \ttbarFakes events in the SF-CR and
-the SR of the \hadhad channel. Variations of the matrix element generator, the
-parton shower simulation, the renormalisation and factorisation scales, and the
-modelling of initial and final state radiation are performed
+the \hadhad SR. Variations of the matrix element generator, the parton shower
+simulation, the renormalisation and factorisation scales, and the modelling of
+initial and final state radiation are considered
 (cf.~\Cref{app:top_uncertainties}).
 
 The comparison of \ttbarFakes acceptances are performed separately for events in
-the SR of the \hadhad channel in which the leading \tauhadvis candidate is the
-\faketauhadvis (FT events), the sub-leading \tauhadvis candidate is the
-\faketauhadvis (TF events), and cases in which both candidates are
-\faketauhadvis (FF events). This comparison yields uncertainties of
-\SI{14}{\percent} on TF events, \SI{7}{\percent} on FT events, and
-\SI{39}{\percent} on the FF events. In all cases the uncertainty is dominated by
-the comparison of \PYTHIA[8] and \HERWIG[7] for the parton shower simulation.
+the \hadhad SR in which the leading \tauhadvis candidate is the \faketauhadvis
+(FT~events), the sub-leading \tauhadvis candidate is the \faketauhadvis
+(TF~events), and cases in which both candidates are \faketauhadvis
+(FF~events). This comparison yields uncertainties of \SI{14}{\percent} on
+TF~events, \SI{7}{\percent} on FT~events, and \SI{39}{\percent} on the
+FF~events. In all cases the uncertainty is dominated by the comparison of
+\PYTHIA[8] and \HERWIG[7] for the simulation of the parton shower. The large
+uncertainty on FF~events is expected since the measurement in the SF-CR can only
+target events with exactly one \faketauhadvis.
 
 
 \subsubsection{Discussion}
