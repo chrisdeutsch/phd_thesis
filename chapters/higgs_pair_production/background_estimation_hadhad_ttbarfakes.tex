@@ -653,82 +653,24 @@ still considered in the analysis.
 %   \input{tables/ttbarSF_tau25_35_uncertainty}
 % \end{table}
 
+The measurement of the SFs is performed in the SF-CR and applied to the SR of
+the \hadhad channel. An uncertainty is assigned to account for the extrapolation
+of the SF measurement from \lephad final states to \hadhad final states. The
+uncertainties are derived by performing variations of the \ttbar modelling in
+simulation and comparing the acceptance of \ttbarFakes events in the SF-CR and
+the SR of the \hadhad channel. Variations of the matrix element generator, the
+parton shower simulation, the renormalisation and factorisation scales, and the
+modelling of initial and final state radiation are performed
+(cf.~\Cref{app:top_uncertainties}).
 
-The measurement of the SFs is performed in the SF-CR and applied to the \hadhad
-SR. An uncertainty is assigned on the relative difference in the acceptance of
-\ttbarFakes events between the measurement region and the application region,
-effectively serving as an extrapolation uncertainty.
-
-effectively serving as an extrapolation uncertainty. This uncertainty is
-determined by performing variations of the \ttbar modelling in simulation and
-estimating the change in relative acceptance between both regions, the relative
-acceptance being the ratio of the acceptance in the application region and the
-measurement region.
-
-The estimation of extrapolation uncertainties between SF-CR and \hadhad SR
-considers the same sources of \ttbar modelling variations as used for the scale
-factor measurement. Different parameterisation are derived for \ttbar with a
-single \faketauhadvis and two \faketauhadvis in the \hadhad SR.
-
-For \ttbar events with a single \faketauhadvis in the \hadhad SR the
-extrapolation uncertainty is examined in dependence on \pT of the
-\faketauhadvis, separately for 1- and 3-prong candidates. Except for the parton
-shower variation, no \tauhadvis \pT-dependent effect of the uncertainty is
-observed.  The comparison of alternative parton shower programs, comparing
-\PYTHIA[8] and \HERWIG[7], results in a shape-dependence of the extrapolation
-uncertainty as a function of \tauhadvis \pT which is shown
-in~\Cref{fig:ttbarSF_extrapol_shape}.  Similar to the modelling uncertainties
-for the measurement, a polynomial is fitted to smoothly interpolate the
-uncertainty over a range of \tauhadvis \pT.
-
-\begin{figure}[htbp]
-  \centering
-
-  \begin{subfigure}[t]{.495\textwidth}
-    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_extrapol_PS_1p}
-    \caption{}
-    \label{fig:ttbarSF_extrapol_shape_a}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[t]{.495\textwidth}
-    \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_extrapol_PS_3p}
-    \caption{}
-    \label{fig:ttbarSF_extrapol_shape_b}
-  \end{subfigure}
-
-  \caption{Extrapolation uncertainty of the scale factors measured in
-    the SF-CR to the \hadhad SR based on parton shower comparisons
-    (\PYTHIA[8] and \HERWIG[7]). The uncertainty is shown for 1-prong
-    (a) and 3-prong \faketauhadvis (b) including a fit of polynomials
-    to the binned estimate of the uncertainty.}
-  \label{fig:ttbarSF_extrapol_shape}
-\end{figure}
-
-A different approach is taken for the extrapolation uncertainty between SF-CR
-and \hadhad SR for cases where both \tauhadvis candidates are faked by a quark-
-or gluon-jet. Only a normalisation uncertainty is assigned due to the ambiguous
-matching of \tauhadvis candidates between the \lephad (one \faketauhadvis) and
-the \hadhad region (two \faketauhadvis). This approximation is made to avoid
-this ambiguity and is further motivated by events with two \faketauhadvis being
-a subdominant contribution to the total \ttbarFakes background.
-
-The extrapolation uncertainties are summarised
-in~\Cref{tab:ttbarSF_acceptance_uncertainty}. The parton shower variations
-dominate the total uncertainty on the relative acceptance between the SF-CR and
-the SR, ranging from \SIrange{20}{40}{\percent}.
-
-\begin{table}[htbp]
-  \centering
-
-  \caption{Normalisation uncertainties on the relative acceptance
-    between SF-CR and SR. The uncertainties are symmetrised and
-    rounded to two significant figures. $\dagger$: The parton shower
-    uncertainty is parameterised as a function of \tauhadvis \pT (see
-    also~\Cref{fig:ttbarSF_extrapol_shape}) and is not included in the
-    total uncertainty.}%
-  \label{tab:ttbarSF_acceptance_uncertainty}
-
-  \input{tables/ttbarSF_acceptance_uncertainty}
-\end{table}
+The comparison of \ttbarFakes acceptances are performed separately for events in
+the SR of the \hadhad channel in which the leading \tauhadvis candidate is the
+\faketauhadvis (FT events), the sub-leading \tauhadvis candidate is the
+\faketauhadvis (TF events), and cases in which both candidates are
+\faketauhadvis (FF events). This comparison yields uncertainties of
+\SI{14}{\percent} on TF events, \SI{7}{\percent} on FT events, and
+\SI{39}{\percent} on the FF events. In all cases the uncertainty is dominated by
+the comparison of \PYTHIA[8] and \HERWIG[7] for the parton shower simulation.
 
 
 \subsubsection{Discussion}
@@ -769,7 +711,8 @@ The uncertainty on the total \ttbarFakes yield in the \hadhad SR can
 be separated by category to give the relative importances of different
 sources of uncertainty:
 \begin{align*}
-  \sigma_\text{total}^{\ttbarFakes} = \valuesep\numerrt{22}{stat.}%
+  N(\ttbarFakes) = \num{2490}
+  \valuesep\numerrt{22}{stat.}%
   \valuesep\numerrt{210}{meas.}%
   \valuesep\numerrt{240}{extrapol.}%
   \valuesep\numerrt{3.6}{trigger threshold} \,\text{.}
