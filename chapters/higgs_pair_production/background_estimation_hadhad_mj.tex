@@ -37,23 +37,21 @@ pipeline of the ATLAS experiment.\footnote{Datasets targeting
   0.01.}  However, the fake factor method is still valid in the presence of
 these constraints provided the underlying assumptions of the method hold.
 
-The electric charge of \tauhadvis candidates produced in signal or
-backgrounds processes with two \tauhadvis from hadronic decays of
-\tauleptons (e.g.\ $\PZ \to \tautau$, $\PHiggs \to \tautau$, \ttbar)
-are expected to be reconstructed with opposite-sign (OS). The OS
-requirement is inverted yielding regions with \tauhadvis candidates of
-same-sign (SS) electric charge, depleting the region of processes
-where both \tauhadvis originate from hadronic \taulepton decays. In
-contrast, the multi-jet background contributes similarly to the OS and
-SS regions since \tauhadvis charge reconstruction has little
-sensitivity to the relative sign of the electric charge between a pair
-of partons initiating jets that are misidentified as \tauhadvis.
+The electric charge of \tauhadvis candidates produced in signal or backgrounds
+processes with two \tauhadvis from hadronic decays of \tauleptons (e.g.\
+$\PZ \to \tautau$, $\PHiggs \to \tautau$, \ttbar) are expected to be
+reconstructed with opposite-sign (OS). The OS requirement is inverted yielding
+regions with \tauhadvis candidates of same-sign (SS) electric charge, depleting
+the region of processes where both \tauhadvis originate from hadronic \taulepton
+decays. In contrast, the multi-jet background contributes similarly to the OS
+and SS regions since \tauhadvis charge reconstruction has little sensitivity to
+the relative sign of the electric charge between a pair of partons initiating
+jets that are misidentified as \tauhadvis.
 
-With the previously defined control regions and the assumption of
-independence of the observables defining the regions, the expected
-multi-jet contribution in regions with \tauhadvis passing loose
-identification and with \tauhadvis pairs of opposite-sign electric
-charge can be estimated using
+With the previously defined control regions and the assumption of independence
+of the observables defining the regions, the expected multi-jet contribution in
+regions with \tauhadvis passing loose identification and with \tauhadvis pairs
+of OS electric charge can be estimated using
 \begin{align*}
   N_\text{multi-jet}^{\text{OS, ID}} =
   N_\text{multi-jet}^{\text{OS, Anti-ID}}
@@ -231,23 +229,23 @@ FFs.
 \subsubsection{Measurement of Fake Factors}
 
 % Binning in years / trigger
-The FF measurement is performed separately for events selected by single- and
-di-\tauhadvis triggers and separately for different data taking periods. The
-\tauhadvis-triggers changed as Run~2 of the LHC progressed, selecting events of
-different topologies and altering the algorithms used for reconstruction and
-identification of \tauhadvis at the HLT. To account for potential differences in
-FFs from these changes, the measurement is performed separately for three major
-data collection periods: 2015--2016, 2017, and 2018.
+The FF measurement is performed separately for events selected by STTs and DTTs
+and separately for different data-taking periods. The \tauhadvis-triggers
+changed as Run~2 of the LHC progressed, selecting events of different topologies
+and altering the algorithms used for reconstruction and identification of
+\tauhadvis at the HLT. To account for potential differences in FFs from these
+changes, the measurement is performed separately for three major data-taking
+periods: 2015--2016, 2017, and 2018.
 
 % Reason for binning in
 The categorisation of the FFs by trigger that selected the event is further
-motivated by the differences between both trigger categories. Single-\tauhadvis
-triggers require one \tauhadvis candidate with high transverse momentum that is
-identified at the HLT without any selections applied to the other candidate. In
-contrast, di-\tauhadvis triggers require two \tauhadvis to be identified at the
-HLT with similar transverse momentum thresholds applied to both. This allows
-\tauhadvis candidates in the di-\tauhadvis trigger category to be treated
-equally once \pT-threshold effects are accounted for. % This is not the case for
+motivated by the differences between both trigger categories. STTs require one
+\tauhadvis candidate with high transverse momentum that is identified at the HLT
+without any selections applied to the other candidate. In contrast, DTTs require
+two \tauhadvis to be identified at the HLT with similar transverse momentum
+thresholds applied to both. This allows \tauhadvis candidates in the DTT to be
+treated equally once \pT-threshold effects are accounted
+for. % This is not the case for
 % events selected by single-\tauhadvis triggers.
 
 Dependencies of FFs on properties of reconstructed \tauhadvis are accounted for
@@ -255,15 +253,14 @@ by further categorisation based on properties of the (anti-)\tauhadvis that
 distinguishes the ID from the Anti-ID regions. The FF measurement is performed
 separately for 1- and 3-prong \tauhadvis candidates for both trigger categories.
 
-FFs for events selected by di-\tauhadvis triggers are additionally measured in
-bins of \tauhadvis~\pT and separately for \tauhadvis in the barrel and end-cap
-regions of the detector. In contrast, few multi-jet events are selected by
-single-\tauhadvis triggers due to high \pT thresholds on \tauhadvis preventing
-fine subdivision of the FF measurement. Therefore, FFs for events selected by
-single-\tauhadvis triggers are measured separately for cases where the
-anti-\tauhadvis is leading and sub-leading in \pT. This accounts for the \tauid
-applied at the HLT and the transverse momentum differences between the leading
-and sub-leading \tauhadvis~candidates.
+FFs for events selected by DTTs are additionally measured in bins of
+\tauhadvis~\pT and separately for \tauhadvis in the barrel and end-cap regions
+of the detector. In contrast, few multi-jet events are selected by STTs due to
+high \pT thresholds on \tauhadvis preventing fine subdivision of the FF
+measurement. Therefore, FFs for events selected by STTs are measured separately
+for cases where the anti-\tauhadvis is leading and sub-leading in \pT. This
+accounts for the \tauid applied at the HLT and the transverse momentum
+differences between the leading and sub-leading \tauhadvis~candidates.
 
 
 \subsubsection{Measurement of Fake Factors for Events Selected by DTTs}
@@ -287,8 +284,8 @@ and sub-leading \tauhadvis~candidates.
   \item[$\tau_0$ ($\tau_1$)] The \tauhadvis candidate leading (sub-leading) in \pT.
 
   \item[$\myvec{x}_\tau$] A vector of categorical observables of \tauhadvis that
-    specifies the bin of the FF measurement. For the di-\tauhadvis trigger
-    category these correspond to bins in \Ntracks, \pT, and $\eta$.
+    specifies the bin of the FF measurement. For the DTT category these
+    correspond to bins in \Ntracks, \pT, and $\eta$.
     % The measurement in the di-\tauhadvis trigger category
     % is performed separately for 1- and 3-prong \tauhadvis, and in bins
     % of \tauhadvis \pT and $\eta$.
@@ -352,81 +349,79 @@ and sub-leading \tauhadvis~candidates.
   % Prior the agreement of the background estimates obtained with FF0
   % and FF1 were confirmed.
 
-  The motivation of using the approach of defining inclusive FFs is
-  two-fold. First, it allows to use all events entering the Anti-ID region,
-  independent of whether the anti-\tauhadvis is leading or sub-leading in \pT,
-  thus improving the statistical precision of the background estimate. Second,
-  the FFs can be parameterised in properties of the anti-\tauhadvis directly,
-  allowing to target the key differences between the ID and Anti-ID
-  regions. This represents a change with respect to the previous
+  The motivation of using the approach of defining inclusive FFs is twofold:
+  First, it allows to use all events entering the Anti-ID region, independent of
+  whether the anti-\tauhadvis is leading or sub-leading in \pT, thus improving
+  the statistical precision of the background estimate. Second, the FFs can be
+  parameterised in properties of the anti-\tauhadvis directly, allowing to
+  target the key differences between the ID and Anti-ID regions. This represents
+  a change with respect to the previous
   publication~\cite{HIGG-2016-16-witherratum} where FFs were parameterised
   jointly in the properties of both \tauhadvis candidates simultaneously, thus
   limiting %the statistical precision of
   the FF measurement due to high dimensionality of the parameterisation.}
 
-The inclusive FFs for events selected by di-\tauhadvis triggers are measured
-according to~\Cref{eq:inclusive_fake_factor} and parameterised in \tauhadvis
-decay mode, transverse momentum, pseudorapidity, and the period of data
-collection. The number of multi-jet events is obtained by subtracting the
-expected number of non-multi-jet events estimated using simulation from the
-number of observed events in data.
+The inclusive FFs for events selected by DTTs are measured according
+to~\Cref{eq:inclusive_fake_factor} and parameterised in \tauhadvis decay mode,
+transverse momentum, pseudorapidity, and the period of data-taking. The number
+of multi-jet events is obtained by subtracting the expected number of
+non-multi-jet events estimated using simulation from the number of observed
+events in data.
 
-The result of the FF measurement for di-\tauhadvis triggers is summarised
+The result of the FF measurement for DTTs is summarised
 in~\Cref{fig:mjfakes_fake_factors}. Qualitatively, the behaviour of the FFs with
-respect to \tauhadvis properties is the same between data collection
-periods. Minor differences can be observed when comparing FFs between years. No
-attempt was made to combine the measurements of certain periods as the
-statistical precision of the FF measurement is not a limiting factor in the
-analysis.
+respect to \tauhadvis properties is the same between data-taking periods. Minor
+differences can be observed when comparing FFs between years. No attempt was
+made to combine the measurements of certain periods as the statistical precision
+of the FF measurement is not a limiting factor in the analysis.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}{0.495\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_1516}
-    \subcaption{2015--2016 data collection period}
+    \subcaption{2015--2016 data-taking period}
   \end{subfigure}
   \begin{subfigure}{0.495\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_17}
-    \subcaption{2017 data collection period}
+    \subcaption{2017 data-taking period}
   \end{subfigure}
 
   \begin{subfigure}{0.495\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_factors_dtt_18}
-    \subcaption{2018 data collection period}
+    \subcaption{2018 data-taking period}
   \end{subfigure}
 
-  \caption{Di-\tauhadvis trigger FFs measured in the 1 $b$-tag SS region. The
-    measurement is performed separately for the three major data collection
-    periods (a-c), 1- and 3-prong \tauhadvis candidates (upper/lower panels),
-    and for \tauhadvis in the barrel (red) and end-cap regions (blue) of the
-    ATLAS detector. Events with (anti-)\tauhadvis $\pT > \SI{150}{\GeV}$ are
-    included in the last FF bin. Uncertainties are from statistical sources
-    only. Systematic uncertainties originating from the non-multi-jet
-    subtraction are assumed to be negligible due to the small size of the
-    subtraction in the 1 $b$-tag SS region.}%
+  \caption{DTT FFs measured in the 1 $b$-tag SS region. The measurement is
+    performed separately for the three major data-taking periods (a-c), 1- and
+    3-prong \tauhadvis candidates (upper/lower panels), and for \tauhadvis in
+    the barrel (red) and end-cap regions (blue) of the ATLAS detector. Events
+    with (anti-)\tauhadvis $\pT > \SI{150}{\GeV}$ are included in the last FF
+    bin. Uncertainties are from statistical sources only. Systematic
+    uncertainties originating from the non-multi-jet subtraction are assumed to
+    be negligible due to the small size of the subtraction in the 1 $b$-tag SS
+    region.}%
   \label{fig:mjfakes_fake_factors}
 \end{figure}
 
 
 \subsubsection{Measurement of Fake Factors for Events Selected by STTs}
 
-The measurement of FFs for events selected by single-\tauhadvis triggers
-proceeds differently from the di-\tauhadvis trigger case. Due to the selections
-applied at the HLT and the usually large difference in \pT between both
-\tauhadvis candidates, the single-\tauhadvis trigger FFs are measured separately
-for the leading and sub-leading \tauhadvis candidates. Additionally, the high
-\pT thresholds on \tauhadvis at trigger-level provide large rejection of most SM
-processes, limiting the number of events entering the control regions for the FF
-measurement, thus preventing a differential FF measurement in \tauhadvis \pT and
-$\eta$.
+The measurement of FFs for events selected by STTs proceeds differently from the
+DTT case. Due to the selections applied at the HLT and the usually large
+difference in \pT between both \tauhadvis candidates, the STT FFs are measured
+separately for the leading and sub-leading \tauhadvis candidates. Additionally,
+the high \pT thresholds on \tauhadvis at trigger-level provide large rejection
+of most SM processes, limiting the number of events entering the control regions
+for the FF measurement, thus preventing a differential FF measurement in
+\tauhadvis \pT and $\eta$.
 
 The approach of averaging the background estimates obtained from the two
-partitions of the Anti-ID region remains valid for single-\tauhadvis triggers,
+partitions of the Anti-ID region remains valid for STTs,
 including~\Cref{eq:inclusive_fake_factor} which can be used to calculate the
-FFs. The main difference between the the single- and di-\tauhadvis trigger FF
-measurement is the replacement of the variables specifying the \pT and $\eta$
-bin in $\myvec{x}_\tau$ with an indicator variable specifying whether the
+FFs. The main difference between the the STT and DTT FF measurement is the
+replacement of the variables specifying the \pT and $\eta$ bin in
+$\myvec{x}_\tau$ with an indicator variable specifying whether the
 anti-\tauhadvis is leading or sub-leading in \pT.
 
 % First, at the HLT \tauhadvis
@@ -439,22 +434,21 @@ anti-\tauhadvis is leading or sub-leading in \pT.
 % triggers cannot be measured differentially in \tauhadvis \pT and
 % $\eta$.
 
-The measured single-\tauhadvis trigger FFs are shown
-in~\Cref{fig:mjfakes_stt_ffs} for the three major data collection periods. Each
-period is divided into four categories depending on $N_{\text{tracks}}$ and
-whether the anti-\tauhadvis is leading ($\tau_0$) or sub-leading ($\tau_1$) in
-\pT.
+The measured STT FFs are shown in~\Cref{fig:mjfakes_stt_ffs} for the three major
+data-taking periods. Each period is divided into four categories depending on
+$N_{\text{tracks}}$ and whether the anti-\tauhadvis is leading ($\tau_0$) or
+sub-leading ($\tau_1$) in \pT.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.495\textwidth]{fakefactors/fake_factors_stt}
 
-  \caption{Single-\tauhadvis trigger FFs measured in the 1 $b$-tag SS region,
-    separately for the three major data collection periods. The measurement is
-    performed in bins of the reconstructed \tauhadvis decay mode (1- and
-    3-prong) and separately for cases where the anti-\tauhadvis is leading
-    ($\tau_0$) and sub-leading in \pT ($\tau_1$).}%
+  \caption{STT FFs measured in the 1 $b$-tag SS region, separately for the three
+    major data-taking periods. The measurement is performed in bins of the
+    reconstructed \tauhadvis decay mode (1- and 3-prong) and separately for
+    cases where the anti-\tauhadvis is leading ($\tau_0$) and sub-leading in \pT
+    ($\tau_1$).}%
   \label{fig:mjfakes_stt_ffs}
   % \todo[inline]{Largest deviation for leading 1-prong tau possibly
   % due to looser pT threshold. But why not for 3-prong?}
@@ -483,25 +477,24 @@ within the expected measurement errors, to the alternative hypothesis
 of \pTmissAbs primarily originating from undetected weakly interacting
 particles.
 
-The distributions of the variables used to define the multi-jet
-validation region are shown in~\Cref{fig:fake_factor_OSVR_cutvars}
-after pre-selection. The contribution of \Zjets is reduced by
-rejecting events with di-$\tauhad$ masses close to the \PZ boson mass.
-Multi-jet events are expected to have little real \pTmissAbs, thus
-events with a significant \pTmissAbs measurement are rejected to
-reduce the \ttbar contribution in this region. The selection increases
-the multi-jet purity in the validation region to \SI{75}{\percent}
-with a multi-jet selection efficiency of about \SI{50}{\percent} with
-respect to the pre-selection.
+The distributions of the variables used to define the multi-jet validation
+region are shown in~\Cref{fig:fake_factor_OSVR_cutvars} after pre-selection. The
+contribution of \Zjets is reduced by rejecting events with di-$\tauhad$ masses
+close to the \PZ boson mass.  Multi-jet events are expected to have little real
+\pTmissAbs, thus events with a significant \pTmissAbs measurement are rejected
+to reduce the \ttbar contribution in this region. The selection increases the
+multi-jet purity in the validation region to \SI{75}{\percent} with a multi-jet
+selection efficiency of about \SI{50}{\percent} with respect to the
+pre-selection.
 
 \begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/mMMC_presel}
     \subcaption{}
   \end{subfigure}\hspace*{0.04\textwidth}%
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/metSig_presel}
     \subcaption{}
   \end{subfigure}
@@ -526,24 +519,24 @@ observables of the leading and sub-leading \tauhadvis candidate.
 \begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau0Pt_fakevr}
   \end{subfigure}\hspace*{0.04\textwidth}%
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau1Pt_fakevr}
   \end{subfigure}
 
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau0Eta_fakevr}
   \end{subfigure}\hspace*{0.04\textwidth}%
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau1Eta_fakevr}
   \end{subfigure}
 
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau0Ntrk_fakevr}
   \end{subfigure}\hspace*{0.04\textwidth}%
-  \begin{subfigure}{0.45\textwidth}
+  \begin{subfigure}{0.44\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/fake_os_vr/Tau1Ntrk_fakevr}
   \end{subfigure}
 
@@ -569,24 +562,23 @@ originate from a violation of the assumptions or from a mismodelling of the
 subtracted non-multi-jet backgrounds.
 
 Comparisons of FFs measured in the OS and SS regions are shown
-in~\Cref{fig:fake_factor_OSSS} for di-\tauhadvis and single-\tauhadvis
-triggers. A comparison of the all sets di-\tauhadvis trigger FFs using
-$\chi^2$-tests is given in~\Cref{tab:fake_factor_osss_chi2test} showing good
-agreement with one exception. %
+in~\Cref{fig:fake_factor_OSSS} for DTTs and STTs. A comparison of the all sets
+DTT FFs using $\chi^2$-tests is given in~\Cref{tab:fake_factor_osss_chi2test}
+showing good agreement with one exception. %
 % All sets of fake factors are compared using $\chi^2$-tests,
 % the results for di-\tauhadvis triggers are summarised
 % in~\Cref{tab:fake_factor_osss_chi2test}, showing good agreement with
 % one exception.
-A relative deviation of about \SI{50}{\percent} between OS and SS fake factor is
-observed for a single FF bin for di-\tauhadvis triggers in
-2015--2016.\footnote{The bin corresponds to 3-prong \tauhadvis with \pT from
-  \SIrange{50}{65}{\GeV} in the end-cap of the detector. The OS FF for this bin
-  is \num{0.09 +- 0.02} and the SS FF \num{0.21 +- 0.03}.}  Except for this bin,
-no large systematic differences between OS and SS FFs are observed, however the
-power of this test is limited by the uncertainties of the FF measurement in the
-OS region. To account for non-closure between the OS and SS FFs, the full
-difference between both sets of FFs is assigned as an additional systematic
-uncertainty and propagated to the multi-jet estimate.
+A relative deviation of about \SI{50}{\percent} between OS and SS FF is observed
+for a single FF bin for DTTs in 2015--2016.\footnote{The bin corresponds to
+  3-prong \tauhadvis with \pT from \SIrange{50}{65}{\GeV} in the end-cap of the
+  detector. The OS FF for this bin is \num{0.09 +- 0.02} and the SS FF \num{0.21
+    +- 0.03}.}  Except for this bin, no large systematic differences between OS
+and SS FFs are observed, however the power of this test is limited by the
+uncertainties of the FF measurement in the OS region. To account for non-closure
+between the OS and SS FFs, the full difference between both sets of FFs is
+assigned as an additional systematic uncertainty and propagated to the multi-jet
+estimate.
 
 
 \begin{figure}[htbp]
@@ -594,16 +586,15 @@ uncertainty and propagated to the multi-jet estimate.
 
   \begin{subfigure}[t]{0.48\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_18}
-    \subcaption{Comparison of OS and SS fake factors for events
-      selected by di-\tauhadvis triggers. Only the 2018 data
-      collection period is shown for illustration purposes.}
+    \subcaption{Comparison of OS and SS fake factors for events selected by
+      DTTs. Only the 2018 data-taking period is shown for illustration
+      purposes.}%
     \label{fig:fake_factor_OSSS_dtt}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{0.48\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_stt}
-    \subcaption{Comparison of OS and SS fake factors for events
-      selected by single-\tauhadvis triggers for all major data
-      collection periods.}
+    \subcaption{Comparison of OS and SS fake factors for events selected by STTs
+      for all major data-taking periods.}%
     \label{fig:fake_factor_OSSS_stt}
   \end{subfigure}
 
@@ -622,11 +613,10 @@ uncertainty and propagated to the multi-jet estimate.
 \begin{table}[htbp]
   \centering
 
-  \caption{Comparison of OS and SS FFs for di-\tauhadvis triggers using
-    $\chi^2$-tests to summarise the statistical compatibility of both sets of
-    FFs over all \tauhadvis \pT bins. The barrel and end-cap detector regions
-    correspond to \tauhadvis $|\eta| < 1.37$ and $|\eta| \geq 1.52$,
-    respectively.}%
+  \caption{Comparison of OS and SS FFs for DTTs using $\chi^2$-tests to
+    summarise the statistical compatibility of both sets of FFs over all
+    \tauhadvis \pT bins. The barrel and end-cap detector regions correspond to
+    \tauhadvis $|\eta| < 1.37$ and $|\eta| \geq 1.52$, respectively.}%
   \label{tab:fake_factor_osss_chi2test}
 
   \input{tables/mjfakes_osss_chisq.tex}
@@ -770,8 +760,8 @@ The uncertainty on the extrapolation of FFs from the 1 $b$-tag to 2 $b$-tag
 regions is estimated by performing variations of the measured transfer factors
 within their statistical uncertainty. The variations are performed separately
 for the four categories of the transfer factor measurement. As a conservative
-estimate of the uncertainty, transfer factors of the three data collection
-periods are varied coherently in a given category. Consequently, the multi-jet
+estimate of the uncertainty, transfer factors of the three data-taking periods
+are varied coherently in a given category. Consequently, the multi-jet
 background model receives four degrees of freedom from extrapolation
 uncertainties and any shape effect of these variations is propagated to the
 distributions of interest. The combined uncertainty of these variations on the
