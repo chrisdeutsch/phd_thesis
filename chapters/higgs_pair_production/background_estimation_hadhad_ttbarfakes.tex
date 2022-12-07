@@ -772,48 +772,48 @@ high~\pT.
 \subsubsection{Estimation of \Faketauhadvis Scale Factors for the Anti-ID
   Region}
 
-The estimation of the \multijet background in the \hadhad SR, to be
-described in~\Cref{sec:bkg_hadhad_ff}, requires a large subtraction of
-\ttbarFakes events in the 2 $b$-tag \antiid region for \tauhadvis with
-electric charge of opposite sign. The scale factor method for
-estimating the \ttbarFakes background is extended to the \antiid
-region to provide uncertainties on the subtraction performed as part
+The estimation of the \multijet background in the \hadhad SR, which is described
+in~\Cref{sec:bkg_hadhad_ff}, requires a large subtraction of \ttbarFakes events
+in the 2 $b$-tag \antiid region for \tauhadvis candidates with OS electric
+charge. The SF method for estimating the \ttbarFakes background is extended to
+the \antiid region to provide uncertainties on the subtraction performed as part
 of the \multijet estimation.
 
-The scale factor measurement is repeated using the same SF-CR
-definition except for inverting the offline \tauhadvis identification
-requirement. Instead of \tauhadvis passing loose offline \tauid,
-\tauhadvis are required to fail the loose working point but exceed a
-RNN \tauid score threshold of \num{0.01}. The same requirements from
-the ID-region measurement regarding the reconstruction and
-identification of \tauhadvis at the HLT are imposed.
+The SF measurement is repeated using the same SF-CR definition except for
+inverting the \tauhadvis identification requirement applied during offline event
+reconstruction. Instead of \tauhadvis passing the loose \tauid working point,
+\tauhadvis are required to fail the loose working point but exceed a RNN \tauid
+score threshold of \num{0.01}. The same requirements from the ID-region
+measurement regarding the reconstruction and identification of \tauhadvis at the
+HLT are imposed.
 
-The inversion of the \tauid requirement rejects most \ttbar events
-with \tauhadvis originating from hadronic decays of \tauleptons,
-yielding a region with high purity of \ttbarFakes
-(ca.~\SI{80}{\percent}). Matching anti-\tauhadvis from the offline
-reconstruction to \tauhadvis at the HLT reduces the total \ttbarFakes
-yield by about \SI{80}{\percent} due to the trigger-level
-identification requirements, the \ttbarFakes purity staying largely
-unchanged, however.
+The inversion of the \tauid requirement rejects most \ttbar events with
+true-\tauhadvis, yielding a region with high purity of \ttbarFakes
+(ca.~\SI{80}{\percent}). Matching anti-\tauhadvis from the offline event
+reconstruction to \tauhadvis at the HLT reduces the \ttbarFakes yield by about
+\SI{80}{\percent} due to the trigger-level identification requirements, however,
+the \ttbarFakes purity remains largely unchanged.
 
-A reduced set of experimental uncertainties is used for this
-measurement due to practical limitations in the dataset preparation
-for the $\ell + \tauhad$ \antiid region. Uncertainties varying the
-four-momentum of reconstructed objects are omitted except
-uncertainties on the \tauhadvis energy scale. Other uncertainties that
-can be expressed by alternative event weights, for example
-uncertainties on tagging efficiencies, are considered. Due to this
-constraint, the total deviation of the central value of the scale
-factors measured in the \antiid region from unity is assigned as an
-additional uncertainty and propagated to the \multijet estimate in the
-\hadhad SR.
+A reduced set of experimental uncertainties is used for this measurement due to
+practical limitations in the dataset preparation for the $\ell + \tauhadvis$
+\antiid region. Uncertainties varying the four-momentum of reconstructed objects
+are omitted except uncertainties on the \tauhadvis energy scale. Other
+uncertainties that can be expressed by alternative event weights, for example
+uncertainties on tagging efficiencies, are considered. Due to this constraint,
+the total deviation of the central value of the SFs measured in the \antiid
+region from unity is assigned as an additional uncertainty and propagated to the
+\multijet estimate in the \hadhad SR.
 
-The scale factors measured in the Anti-ID region are shown
+The SFs measured in the Anti-ID region are shown
 in~\Cref{fig:ttbarSF_antiid_SF}. The contribution of \faketauhadvis
-reconstructed as 1-prong candidates predicted by simulation agrees
-well with the data-driven measurement. For 3-prong candidates,
-deviations of up to \SI{20}{\percent} from simulation are observed.
+reconstructed as 1-prong candidates predicted by simulation agrees well with the
+data-driven measurement. For 3-prong candidates, deviations of up to
+\SI{20}{\percent} from simulation are observed. The same decorrelation technique
+is used to propagate the measurement uncertainties when applying the SFs in the
+Anti-ID region of the \hadhad channel. The rules for applying SFs remain
+unchanged with respect to the SF application in the ID-region. The context and
+impact of the SFs for the Anti-ID region on the \multijet estimate will be
+further discussed in the following section.
 
 \begin{figure}[htbp]
   \centering
@@ -840,34 +840,24 @@ deviations of up to \SI{20}{\percent} from simulation are observed.
     \label{fig:ttbarSF_antiid_SF_d}
   \end{subfigure}
 
-  \caption{Scale factors for \faketauhadvis from \ttbar simulation in
-    the Anti-ID region separated \tauhadvis identification criteria
-    applied at trigger-level. Figures (a) and (b) compare the scale
-    factors with and without \tauid at the HLT. The effect of
-    different \tauhadvis trigger chains on the extracted scale factors
-    is shown in (c) and (d). The last bin summarises events with
-    \tauhadvis~$\pT \geq \SI{70}{\GeV}$. The markers are shifted from
-    the geometrical bin centre for illustration purposes.}%
+  \caption{SFs for \faketauhadvis from \ttbar simulation in the Anti-ID region
+    separated \tauhadvis identification criteria applied at
+    trigger-level. Figures (a) and (b) compare the SFs with and without \tauid
+    at the HLT. The effect of different \tauhadvis trigger chains on the
+    extracted SFs is shown in (c) and (d). The last bin summarises events with
+    \tauhadvis~$\pT \geq \SI{70}{\GeV}$. The markers are shifted from the
+    geometrical bin centre for illustration purposes only.}%
   \label{fig:ttbarSF_antiid_SF}
 \end{figure}
 
-The same decorrelation technique is used to propagate the measurement
-uncertainties when applying the scale factors in the Anti-ID region of
-the \hadhad channel. The rules for applying scale factors remain
-unchanged with respect to the scale factor application in the
-ID-region. The context and impact of the scale factors for the Anti-ID
-region on the \multijet estimate will be further discussed in the
-following section.
-
-% Only the leading
-% variations are used to define the subtraction uncertainty.
+\todo[inline]{Plots here or appendix: \ttbarFakes estimate in the \hadhad SR
+  (taupt?). taupt in the Anti-ID SF-CR before and after trigger matching?}
 
 % \todo[inline]{Possibly include the SS region (in addition to OS) to
 % get better constraints on ttbar and ttbarFakes. Possibly can float
 % both true and fake \ttbar in every region reducing the correlation
 % between the resulting NFs. One would have to account for possible
 % biases from charge correlations.}
-
 
 %%% Local Variables:
 %%% mode: latex
