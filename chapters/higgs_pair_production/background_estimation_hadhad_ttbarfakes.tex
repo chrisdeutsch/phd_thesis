@@ -638,7 +638,7 @@ only applied for 1-prong (3-prong) \faketauhadvis with transverse momenta below
 repeating the SF measurement for the \texttt{tau35} triggers and comparing with
 the nominal set of SFs. This comparison is performed for all trigger chains
 employed in the analysis, resulting in a relative uncertainty of approximately
-\SI{6}{\percent} for all trigger chains considered in this search.
+\SI{6}{\percent} for all triggers considered in this search.
 
 % \begin{table}[htbp]
 %   \centering
@@ -695,8 +695,8 @@ relative uncertainties on the prediction split by uncertainty source are:
 \item Uncertainty on SFs due to different \pT (\ET) thresholds of
   \tauhadvis-triggers:~$\pm \SI{0.2}{\percent}$
 
-\item Statistical uncertainty from the finite number of simulated \ttbar events
-  in the \hadhad SR:~$\pm \SI{0.9}{\percent}$
+\item Statistical uncertainty from finite number of simulated
+  events:~$\pm \SI{0.9}{\percent}$
 
 \end{itemize}
 The dominant sources of uncertainty on the prediction of the \ttbarFakes
@@ -704,14 +704,13 @@ background are the uncertainties on the SFs from the SF measurement and the
 extrapolation uncertainties. Due to the small expected number of FF events in
 the \hadhad SR (cf.~\Cref{tab:ttbarSF_yields}), the large extrapolation
 uncertainty for FF events has limited impact on the uncertainty of the total
-\ttbarFakes prediction. The uncertainty from the effect of different
+\ttbarFakes prediction. The uncertainty accounting for the effects of different
 \pT~(\ET)~thresholds of \tauhadvis triggers has only a minor impact on the
-overall \ttbarFakes background prediction since only a small fraction of \ttbar
-events have a \faketauhadvis that is both the leading \tauhadvis candidate and
-close to the \pT~threshold of the \tauhadvis-trigger. \Cref{tab:ttbarSF_yields}
-summarises the \ttbarFakes prediction in the \hadhad SR and compares it to the
-prediction from simulation without application of \faketauhadvis SFs. Generally,
-both predictions agree within uncertainties with the exception of the
+overall \ttbarFakes background prediction since only a small fraction of events
+are affected by this uncertainty. \Cref{tab:ttbarSF_yields} summarises the
+\ttbarFakes prediction in the \hadhad SR and compares it to the prediction from
+simulation without application of \faketauhadvis SFs. Generally, both
+predictions agree within uncertainties with the exception of the
 FT~component. The predicted number of FT~events is smaller after application of
 \ttbarFake SFs due to SFs being smaller than unity for \faketauhadvis with
 high~\pT.
@@ -743,7 +742,8 @@ high~\pT.
     \faketauhadvis~SFs. Only MC statistical uncertainties are shown for the
     estimate without application of the \faketauhadvis~SFs. The background
     estimate using the \faketauhadvis~SFs includes statistical uncertainties and
-    all systematic uncertainties related to the SF method. }%
+    all systematic uncertainties related to the SF method. Other experimental
+    uncertainties are omitted.}%
   \label{tab:ttbarSF_yields}
 
   \input{tables/ttbarSF_yields}
