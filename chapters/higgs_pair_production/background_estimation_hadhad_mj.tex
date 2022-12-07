@@ -1,4 +1,4 @@
-Multi-jet production is a source of background in the \hadhad SR where both
+Multi-jet production is a source of background in the \hadhad SR in which both
 \tauhadvis candidates originate from the misidentification of quark- or
 gluon-initiated jets. It represents the second largest background with
 \faketauhadvis in the \hadhad SR after the dominant \ttbarFakes contribution.
@@ -8,75 +8,83 @@ gluon-initiated jets. It represents the second largest background with
 The multi-jet background is estimated using the data-driven fake factor
 method. It is applicable in cases where two observables exist that are
 statistically independent for the background process to be estimated while also
-being strong discriminators between the background and other processes (signal
-and non-multi-jet processes). Four disjoint regions can be defined, three
+being strong discriminators between the background and other processes (i.e.\
+signal and non-multi-jet processes). Four disjoint regions can be defined, three
 background-enriched CRs and a signal-like region, by categorising events based
 on both observables. The assumption of statistical independence allows to relate
 the expected number of events for the background process between CRs and the
-signal-like region, allowing to estimate the background in the signal-like
-region using data observed in the CRs.
+signal-like region. This can be used to estimate the background in the
+signal-like region using data observed in the CRs.
 
 In the \hadhad channel, two observables that allow to define CRs enriched in
 multi-jet events are the \tauid requirements fulfilled by the \tauhadvis
-candidates and the sign of the electric charges of both candidates.
+candidates and the sign of the electric charges of both candidates. Two disjoint
+regions are defined based on the \tauid requirement: the ID~region and the
+\antiid~region. The ID~region consists of events in which both \tauhadvis
+candidates pass the loose \tauid working point. The identification criterion is
+partially inverted to define a multi-jet enriched CR by requiring exactly one
+loose \tauhadvis and exactly one
+anti-\tauhadvis~(cf.~\Cref{sec:object_reconstruction}). This region is referred
+to as the \antiid~region. Similarly, two regions are defined based on the charge
+signs of the two \tauhadvis candidates: a OS~region and a SS~region. Lastly, the
+\tauid and charge sign criterion are combined to define four distinct regions:
+the OS~ID~region (the signal-like region), the OS~Anti-ID~region, the
+SS~ID~region, and the SS~Anti-ID~region.
 
-In the SR, \tauhadvis candidates are required to pass the loose \tauid working
-point. This requirement defines regions where both \tauhadvis candidates pass
-identification, hereafter referred to as ID regions. The selection is partially
-inverted to obtain CRs enhanced in multi-jet events by requiring that exactly
-one \tauhadvis candidate is failing the loose \tauid working point while still
-passing a working point corresponding to a true \tauhadvis identification
-efficiency of about \SI{99}{\percent} ($\text{RNN score} > 0.01$). The
-\tauhadvis candidates fulfilling this selection are referred to as
-anti-\tauhadvis and the regions defined by the inversion of the identification
-criterion as Anti-ID regions. The identification criterion cannot be fully
-inverted due to a pre-selection applied in the data reduction pipeline of the
-ATLAS experiment.\footnote{Datasets targeting $\PHiggs \to \hadhad$ require
-  events with at least one \tauhadvis passing the loose \tauid working point and
-  one \tauhadvis with a \tauid score exceeding 0.01.}  However, the fake factor
-method is still valid in the presence of these constraints provided the
-underlying assumptions of the method hold.\todo{Already explained (see object
-  selection)}
+% In the SR, \tauhadvis candidates are required to pass the loose \tauid working
+% point. This requirement defines regions where both \tauhadvis candidates pass
+% identification, hereafter referred to as ID regions. The selection is
+% partially inverted to obtain CRs enhanced in multi-jet events by requiring
+% that exactly one \tauhadvis candidate is failing the loose \tauid working
+% point while still passing a working point corresponding to a true \tauhadvis
+% identification efficiency of about \SI{99}{\percent}
+% ($\text{RNN score} > 0.01$). The \tauhadvis candidates fulfilling this
+% selection are referred to as anti-\tauhadvis and the regions defined by the
+% inversion of the identification criterion as Anti-ID regions. The
+% identification criterion cannot be fully inverted due to a pre-selection
+% applied in the data reduction pipeline of the ATLAS
+% experiment.\footnote{Datasets targeting $\PHiggs \to \hadhad$ require events
+% with at least one \tauhadvis passing the loose \tauid working point and one
+% \tauhadvis with a \tauid score exceeding 0.01.}  However, the fake factor
+% method is still valid in the presence of these constraints provided the
+% underlying assumptions of the method hold.
 
-The electric charge of \tauhadvis candidates produced in signal or backgrounds
-processes with two \tauhadvis from hadronic decays of \tauleptons (e.g.\
-$\PZ \to \tautau$, $\PHiggs \to \tautau$, \ttbar) are expected to be
-reconstructed with opposite-sign (OS).\todo{Already explained (event
-  selection?)} The OS requirement is inverted yielding regions with \tauhadvis
-candidates of same-sign (SS) electric charge, depleting the region of processes
-where both \tauhadvis originate from hadronic \taulepton decays. In contrast,
-the multi-jet background contributes similarly to the OS and SS regions since
-\tauhadvis charge reconstruction has little sensitivity to the relative sign of
-the electric charge between a pair of partons initiating jets that are
-misidentified as \tauhadvis.
+% The electric charge of \tauhadvis candidates produced in signal or backgrounds
+% processes with two \tauhadvis from hadronic decays of \tauleptons (e.g.\
+% $\PZ \to \tautau$, $\PHiggs \to \tautau$, \ttbar) are expected to be
+% reconstructed with opposite-sign (OS). The OS requirement is inverted yielding
+% regions with \tauhadvis candidates of same-sign (SS) electric charge,
+% depleting the region of processes where both \tauhadvis originate from
+% hadronic \taulepton decays. In contrast, the multi-jet background contributes
+% similarly to the OS and SS regions since \tauhadvis charge reconstruction has
+% little sensitivity to the relative sign of the electric charge between a pair
+% of partons initiating jets that are misidentified as \tauhadvis.
 
-With the previously defined CRs and the assumption of independence of the
-observables defining the regions, the expected multi-jet contribution in regions
-with \tauhadvis passing loose identification and with \tauhadvis pairs of OS
-electric charge can be estimated using
+Using the previously defined regions and the independence assumption, the
+expected multi-jet contribution in the OS ID region can be estimated according
+to
 \begin{align*}
   N_\text{multi-jet}^{\text{OS, ID}} =
   N_\text{multi-jet}^{\text{OS, Anti-ID}}
   \cdot
   \underbrace{\frac{N_\text{multi-jet}^{\text{SS, ID}}}
   {N_\text{multi-jet}^{\text{SS, Anti-ID}}}}
-  _{= \text{FF}_{\text{SS}}} \,\text{,}
+  _{\eqqcolon \text{FF}_{\text{SS}}} \,\text{,}
 \end{align*}
-where $N_\text{multi-jet}$ is the number of multi-jet events in a given
-region. The fake factor (FF) measures the ratio of multi-jet events in the ID
-and Anti-ID region.% \footnote{The use of identification
-% or isolation criteria to defining the ratio is the main difference
-% between the fake factor method and the more general ABCD method.}
-
-The CRs defined by inverting the OS and/or ID requirements on \tauhadvis do not
-provide pure samples of multi-jet events. Therefore, the number of multi-jet
-events is estimated according to
+where $N_\text{multi-jet}^{r}$ is the number of multi-jet events in
+region~$r$. The ratio of multi-jet events in the ID and Anti-ID region is
+referred to as the fake factor (FF).
+% \footnote{The use of identification or isolation criteria to defining the
+% ratio is the main difference between the fake factor method and the more
+% general ABCD method.}
+Generally, the CRs do not provide pure samples of multi-jet events. Therefore,
+the number of multi-jet events is estimated according to
 \begin{align*}
-  N_\text{multi-jet} = N_\text{data} - N_\text{non-multi-jet} \,\text{,}
+  N_\text{multi-jet}^{r} = N_\text{data}^{r} - N_\text{non-multi-jet}^{r} \,\text{,}
 \end{align*}
-where $N_\text{data}$ is the observed number of events in the
-multi-jet enriched region and $N_\text{non-multi-jet}$ the expected
-number of non-multi-jet events estimated using simulation.
+where $N_\text{data}^{r}$ is the observed number of events in the multi-jet
+enriched region and $N_\text{non-multi-jet}^{r}$ the expected number of
+non-multi-jet events estimated using simulation.
 
 The probability of misidentifying a quark- or gluon-initiated jet as a
 \tauhadvis depends on the properties of the reconstructed \tauhadvis
