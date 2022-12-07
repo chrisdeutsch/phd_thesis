@@ -99,9 +99,9 @@ not well suited to estimate FFs:
   control regions preventing a differential measurement of FFs in properties of
   the \tauhadvis.
 
-\item The multi-jet estimate cannot be validated in the 2 $b$-tag
-  region due to the absence of a region with high multi-jet purity
-  that is similar to the signal region.
+\item The multi-jet estimate cannot be validated in the 2 $b$-tag region due to
+  the absence of a region with high multi-jet purity that is similar to the
+  signal region.
 
   % Resultingly, the statistical independence of the charge sign and ID
   % observables employed by the FF method cannot be verified.
@@ -116,16 +116,15 @@ FF measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
 \begin{table}[htbp]
   \centering
 
-  \caption{Expected number of multi-jet events in regions defined by
-    the electric charge of the \tauhadvis pair (OS/SS) and \tauhadvis
-    identification (ID/Anti-ID). The expected number of multi-jet
-    events, $N_\text{multi-jet}$, is estimated by subtracting the
-    expected number of non-multi-jet events, $N_\text{non-multi-jet}$,
-    from the observed number of events in a given region. The
-    breakdown is shown after the 1 $b$-tag requirement in (a); after
-    the 2 $b$-tag requirement in (b). The signal region (2 $b$-tag OS
-    ID) is omitted. Only statistical uncertainties on the expected
-    event yields are shown.}%
+  \caption{Expected number of multi-jet events in regions defined by the
+    electric charge of the \tauhadvis pair (OS/SS) and \tauhadvis identification
+    (ID/Anti-ID). The expected number of multi-jet events, $N_\text{multi-jet}$,
+    is estimated by subtracting the expected number of non-multi-jet events,
+    $N_\text{non-multi-jet}$, from the observed number of events in a given
+    region. The breakdown is shown after the 1 $b$-tag requirement in (a); after
+    the 2 $b$-tag requirement in (b). The signal region (2 $b$-tag OS ID) is
+    omitted. Only statistical uncertainties on the expected event yields are
+    shown.}%
   \label{tab:mjfakes_yields}
 
   \begin{subtable}[t]{\textwidth}
@@ -286,18 +285,17 @@ differences between the leading and sub-leading \tauhadvis~candidates.
   \item[$\myvec{x}_\tau$] A vector of categorical observables of \tauhadvis that
     specifies the bin of the FF measurement. For the DTT category these
     correspond to bins in \Ntracks, \pT, and $\eta$.
-    % The measurement in the di-\tauhadvis trigger category
-    % is performed separately for 1- and 3-prong \tauhadvis, and in bins
-    % of \tauhadvis \pT and $\eta$.
+    % The measurement in the di-\tauhadvis trigger category is performed
+    % separately for 1- and 3-prong \tauhadvis, and in bins of \tauhadvis \pT
+    % and $\eta$.
 
-  \item[$\NmjID{SS(OS)}{i}\ffargs$] The estimated number of multi-jet
-    events in the SS (OS) ID region where~$\tau_i$ falls into the bin
-    specified by~$\myvec{x}_\tau$.
-
-  \item[$\NmjAntiID{SS(OS)}{i}\ffargs$] The estimated number of
-    multi-jet events in the SS (OS) Anti-ID region where $\tau_i$ is
-    the anti-\tauhadvis and falls into the bin specified
+  \item[$\NmjID{SS(OS)}{i}\ffargs$] The estimated number of multi-jet events in
+    the SS (OS) ID region where~$\tau_i$ falls into the bin specified
     by~$\myvec{x}_\tau$.
+
+  \item[$\NmjAntiID{SS(OS)}{i}\ffargs$] The estimated number of multi-jet events
+    in the SS (OS) Anti-ID region where $\tau_i$ is the anti-\tauhadvis and
+    falls into the bin specified by~$\myvec{x}_\tau$.
   \end{description}
   With these definitions, two sets of FFs can be defined as
   \begin{align*}
@@ -321,9 +319,9 @@ differences between the leading and sub-leading \tauhadvis~candidates.
     \FF_\text{incl.}\ffargs = \frac{1}{2} \left[ f_0\ffargs \cdot \FF_0\ffargs
     + f_1\ffargs \cdot \FF_1\ffargs \right] \,\text{,}
   \end{align*}
-  with $f_i\ffargs$ being the fraction of anti-\tauhadvis in the bin
-  given by $\myvec{x}_\tau$ that are leading ($i = 0$) or sub-leading
-  ($i = 1$) in \pT, formally given by
+  with $f_i\ffargs$ being the fraction of anti-\tauhadvis in the bin given by
+  $\myvec{x}_\tau$ that are leading ($i = 0$) or sub-leading ($i = 1$) in \pT,
+  formally given by
   \begin{align*}
     f_i\ffargs = \frac{\NmjAntiID{SS}{i}\ffargs}
                       {\NmjAntiID{SS}{0}\ffargs + \NmjAntiID{SS}{1}\ffargs} \,\text{.}
@@ -335,8 +333,8 @@ differences between the leading and sub-leading \tauhadvis~candidates.
                        { \NmjAntiID{SS}{0}\ffargs + \NmjAntiID{SS}{1}\ffargs } \,\text{,}
     \label{eq:inclusive_fake_factor}
   \end{align}
-  which can be applied to events in the inclusive Anti-ID region to
-  obtain the multi-jet estimate in the ID region.
+  which can be applied to events in the inclusive Anti-ID region to obtain the
+  multi-jet estimate in the ID region.
 
   % and the multi-jet estimate in the OS region obtained by\todo{Should there be a $\sum_{x_\tau}$ here?}
   % \begin{align*}
@@ -457,25 +455,24 @@ sub-leading ($\tau_1$) in \pT.
 
 \subsubsection{Validation of the Multi-jet Estimate in the 1 $b$-tag OS Region}
 
-An independent validation of the background estimate can be performed
-in the 1 $b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}).
+An independent validation of the background estimate can be performed in the 1
+$b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}).
 % , which is not part of the fake factor measurement.
-After the event pre-selection, this region has a multi-jet purity of
-about \SI{50}{\percent} with the dominant non-multi-jet contributions
-originating from \Zjets and \ttbar. The multi-jet purity is enhanced
-for validation purposes by requiring events to fulfil
+After the event pre-selection, this region has a multi-jet purity of about
+\SI{50}{\percent} with the dominant non-multi-jet contributions originating from
+\Zjets and \ttbar. The multi-jet purity is enhanced for validation purposes by
+requiring events to fulfil
 % https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MetSignificance
 % Using `TreatPUJets == true' and Basic soft term (met::Random)
 \begin{align*}
   \mMMC > \SI{110}{\GeV} \qquad \text{and} \qquad \mathcal{S} < 3 \,\text{,}
 \end{align*}
 where $\mathcal{S}$ is the object-based \pTmissAbs
-significance~\cite{ATLAS-CONF-2018-038}. The \pTmissAbs significance
-measures the statistical significance of a test comparing the
-hypothesis that the reconstructed \pTmissAbs is compatible with zero
-within the expected measurement errors, to the alternative hypothesis
-of \pTmissAbs primarily originating from undetected weakly interacting
-particles.
+significance~\cite{ATLAS-CONF-2018-038}. The \pTmissAbs significance measures
+the statistical significance of a test comparing the hypothesis that the
+reconstructed \pTmissAbs is compatible with zero within the expected measurement
+errors, to the alternative hypothesis of \pTmissAbs primarily originating from
+undetected weakly interacting particles.
 
 The distributions of the variables used to define the multi-jet validation
 region are shown in~\Cref{fig:fake_factor_OSVR_cutvars} after pre-selection. The
@@ -694,12 +691,12 @@ limitation of the multi-jet estimation method used in this analysis.
     \subcaption{}
   \end{subfigure}
 
-  \caption{Histogram of the leading (a) and sub-leading (b) \tauhadvis
-    candidate \pT in the 2 $b$-tag OS Anti-ID region. Non-multi-jet
-    backgrounds are display as coloured histograms and include the
-    statistical uncertainty of the prediction. The difference between
-    the observed data and the non-multi-jet background prediction is
-    attributed to the missing multi-jet estimate.}%
+  \caption{Histogram of the leading (a) and sub-leading (b) \tauhadvis candidate
+    \pT in the 2 $b$-tag OS Anti-ID region. Non-multi-jet backgrounds are
+    display as coloured histograms and include the statistical uncertainty of
+    the prediction. The difference between the observed data and the
+    non-multi-jet background prediction is attributed to the missing multi-jet
+    estimate.}%
   \label{fig:mjfakes_2tag_os_antiid}
 \end{figure}
 
@@ -717,8 +714,8 @@ limitation of the multi-jet estimation method used in this analysis.
 %
 % Total: ~11.5%
 
-The following systematic uncertainties are considered and propagated
-to the multi-jet estimate in the \hadhad signal region:
+The following systematic uncertainties are considered and propagated to the
+multi-jet estimate in the \hadhad signal region:
 \begin{itemize}
 
 \item Statistical uncertainties on the FFs.
@@ -729,9 +726,8 @@ to the multi-jet estimate in the \hadhad signal region:
 \item Extrapolation uncertainties on FFs measured in 1 $b$-tag regions to 2
   $b$-tag regions.
 
-\item Non-multi-jet subtraction uncertainties from the subtraction of
-  \ttbar, \ttbarFakes, and other processes in the 2 $b$-tag OS Anti-ID
-  region.
+\item Non-multi-jet subtraction uncertainties from the subtraction of \ttbar,
+  \ttbarFakes, and other processes in the 2 $b$-tag OS Anti-ID region.
 
 \end{itemize}
 
@@ -771,23 +767,21 @@ multi-jet normalisation in the signal region is $\pm \SI{5.5}{\percent}$.
 %   ttbar (+16.8% -18.6%)
 %   ttbar fakes
 %   other (50% up and down)
-Systematic uncertainties from the subtraction of non-multi-jet events
-in the 2 $b$-tag OS Anti-ID region are estimated by performing
-variations of the subtracted contributions from \ttbarTrue,
-\ttbarFakes, and other non-multi-jet processes. In all cases, the
-effect of these variations on the shape of the multi-jet prediction in
-the signal region is considered in the background model.
+Systematic uncertainties from the subtraction of non-multi-jet events in the 2
+$b$-tag OS Anti-ID region are estimated by performing variations of the
+subtracted contributions from \ttbarTrue, \ttbarFakes, and other non-multi-jet
+processes. In all cases, the effect of these variations on the shape of the
+multi-jet prediction in the signal region is considered in the background model.
 
-The uncertainty resulting from the subtraction of \ttbarTrue,
-constituting about \SI{13}{\percent} of the total subtraction, is
-obtained by varying the normalisation of the subtracted \ttbarTrue
-template by its uncertainty. This uncertainty is determined by
-performing variations of the modelling of \ttbar in simulation
-according to the approach previously used for the \ttbarFakes scale
-factor measurement in~\Cref{sec:bkg_hadhad_ttbarfakes} and described
-in Ref.~\cite{ATL-PHYS-PUB-2020-023}. The following summarises the
-variations and their impact on the normalisation of the \ttbarTrue
-template in the 2 $b$-tag OS Anti-ID region:
+The uncertainty resulting from the subtraction of \ttbarTrue, constituting about
+\SI{13}{\percent} of the total subtraction, is obtained by varying the
+normalisation of the subtracted \ttbarTrue template by its uncertainty. This
+uncertainty is determined by performing variations of the modelling of \ttbar in
+simulation according to the approach previously used for the \ttbarFakes scale
+factor measurement in~\Cref{sec:bkg_hadhad_ttbarfakes} and described in
+Ref.~\cite{ATL-PHYS-PUB-2020-023}. The following summarises the variations and
+their impact on the normalisation of the \ttbarTrue template in the 2 $b$-tag OS
+Anti-ID region:
 \begin{itemize}
 \item Hard scatter and PS+NLO matching: $\pm\SI{6.0}{\percent}$.
 \item Parton shower and hadronisation model: $\pm\SI{11}{\percent}$.
@@ -799,54 +793,48 @@ template in the 2 $b$-tag OS Anti-ID region:
   $\numpmerr{+0.53}{-0.68}\valuesep{\si{\percent}}$ and
   $\numpmerr{+5.4}{-10.0}\valuesep{\si{\percent}}$.
 \end{itemize}
-The combination of these sources yields a normalisation uncertainty on
-the \ttbarTrue template of
-$\numpmerr{+16.8}{-18.6}\valuesep{\si{\percent}}$. The resulting
-uncertainty on the multi-jet prediction in the signal region is
-$\pm \SI{2.8}{\percent}$, which is small due to the small relative
-size of the \ttbarTrue subtraction.
+The combination of these sources yields a normalisation uncertainty on the
+\ttbarTrue template of $\numpmerr{+16.8}{-18.6}\valuesep{\si{\percent}}$. The
+resulting uncertainty on the multi-jet prediction in the signal region is
+$\pm \SI{2.8}{\percent}$, which is small due to the small relative size of the
+\ttbarTrue subtraction.
 
-The subtraction of \ttbarFakes in the 2 $b$-tag OS Anti-ID region
-accounts for \SI{78}{\percent} of the total non-multi-jet subtraction
-in this region. Five variations of the subtraction are performed which
-are defined using results of the scale factor measurement for
-\ttbarFakes in the Anti-ID region (cf.\
+The subtraction of \ttbarFakes in the 2 $b$-tag OS Anti-ID region accounts for
+\SI{78}{\percent} of the total non-multi-jet subtraction in this region. Five
+variations of the subtraction are performed which are defined using results of
+the scale factor measurement for \ttbarFakes in the Anti-ID region (cf.\
 \Cref{sec:bkg_hadhad_ttbarfakes}). %Four variations are provided by the
 % uncertainties of the Anti-ID scale factor measurement.
-For every combination of \tauid applied at trigger-level and offline
-\tauhadvis reconstruction, the (eigen-)variations explaining most of
-the variance of the scale factor measurement are used to define the
-\ttbarFakes subtraction uncertainty, yielding a total of four
-variations. The variations sub-leading in the explained variance have
-negligible impact on the multi-jet prediction and are therefore
-omitted to reduce the number of free parameters in the fit model. An
-additional uncertainty is assigned according to the difference between
-the \ttbarFakes prediction with and without the scale factor
-correction to account for the reduced set of experimental systematic
-uncertainties used for the measurement of \ttbarFakes scale factors in
-the Anti-ID region. These five variations have a combined effect on
-the normalisation of the multi-jet prediction in the signal region of
-$\pm\SI{7.4}{\percent}$, representing the largest source of uncertainty on
-the multi-jet estimate.
+For every combination of \tauid applied at trigger-level and offline \tauhadvis
+reconstruction, the (eigen-)variations explaining most of the variance of the
+scale factor measurement are used to define the \ttbarFakes subtraction
+uncertainty, yielding a total of four variations. The variations sub-leading in
+the explained variance have negligible impact on the multi-jet prediction and
+are therefore omitted to reduce the number of free parameters in the fit
+model. An additional uncertainty is assigned according to the difference between
+the \ttbarFakes prediction with and without the scale factor correction to
+account for the reduced set of experimental systematic uncertainties used for
+the measurement of \ttbarFakes scale factors in the Anti-ID region. These five
+variations have a combined effect on the normalisation of the multi-jet
+prediction in the signal region of $\pm\SI{7.4}{\percent}$, representing the
+largest source of uncertainty on the multi-jet estimate.
 
-Other non-multi-jet processes account for approximately
-\SI{9}{\percent} of the non-multi-jet subtraction in the 2 $b$-tag OS
-Anti-ID region. The dominant contributions are events from \Vjets and
-single top production, both processes contributing similarly to the
-subtraction. As a conservative estimate, the normalisation of the
-subtracted components is varied by $\pm \SI{50}{\percent}$,
-propagating the effect of these variations to the multi-jet prediction
-in the signal region. This variation changes the normalisation of the
-multi-jet estimate in the signal region by $\pm\SI{5.9}{\percent}$.
+Other non-multi-jet processes account for approximately \SI{9}{\percent} of the
+non-multi-jet subtraction in the 2 $b$-tag OS Anti-ID region. The dominant
+contributions are events from \Vjets and single top production, both processes
+contributing similarly to the subtraction. As a conservative estimate, the
+normalisation of the subtracted components is varied by $\pm \SI{50}{\percent}$,
+propagating the effect of these variations to the multi-jet prediction in the
+signal region. This variation changes the normalisation of the multi-jet
+estimate in the signal region by $\pm\SI{5.9}{\percent}$.
 
-In addition to these systematic uncertainties, statistical
-uncertainties originating from the finite number of events in the 2
-$b$-tag OS Anti-ID region and the statistical precision of the
-simulation-based subtraction of non-multi-jet processes are
-considered. This uncertainty is implemented in the fit model using the
-method by Barlow and Beeston~\cite{barlow1993,conway2011} separately
-for every bin of the fitted observable. The effect of this uncertainty
-on the multi-jet normalisation in the signal region is
+In addition to these systematic uncertainties, statistical uncertainties
+originating from the finite number of events in the 2 $b$-tag OS Anti-ID region
+and the statistical precision of the simulation-based subtraction of
+non-multi-jet processes are considered. This uncertainty is implemented in the
+fit model using the method by Barlow and Beeston~\cite{barlow1993,conway2011}
+separately for every bin of the fitted observable. The effect of this
+uncertainty on the multi-jet normalisation in the signal region is
 $\pm \SI{1.9}{\percent}$.
 
 A summary of all uncertainties affecting the multi-jet background prediction in
@@ -876,7 +864,7 @@ top), and the extrapolation of 1 $b$-tag FFs to 2 $b$-tag regions.
 % Yield table / plots of regions
 
 % \todo[inline]{Could we use nOS to enhance statistics? Maybe flip the FF method
-%   so that we use events in SS ID to build the template instead of OS Anti-ID.}
+% so that we use events in SS ID to build the template instead of OS Anti-ID.}
 
 % \todo[inline]{Can we make the STT FF depend on the trigger-match instead of
 %   the leading / subleading binning?}
