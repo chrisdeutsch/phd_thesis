@@ -3,51 +3,44 @@
 % \todo[inline]{Maybe say that we perform some tricks to go from
 %   ``event-level'' fake factors to ``tau-level'' fake factors?}
 
-Multi-jet production is a source of background in the \hadhad signal
-region where both \tauhadvis candidates originate from the
-misidentification of quark- or gluon-initiated jets. It represents the
-second largest background with \faketauhadvis in the \hadhad SR after
-the dominant \ttbarFakes contribution.
+Multi-jet production is a source of background in the \hadhad SR where both
+\tauhadvis candidates originate from the misidentification of quark- or
+gluon-initiated jets. It represents the second largest background with
+\faketauhadvis in the \hadhad SR after the dominant \ttbarFakes contribution.
 
 \subsubsection{The fake factor method}
 
-The multi-jet background is estimated with the fake factor method, a
-data-driven method for background estimation. It is applicable in
-cases where two observables exist that are statistically independent
-for the background process to be estimated, while also being strong
-discriminators between the background and other processes (signal and
-non-multi-jet processes). Four disjoint regions can be defined, three
-background-enriched control regions and a signal-like region, by
-categorising events based on both observables. The assumption of
-statistical independence allows to relate the expected number of
-events for the background process between control regions and the
-signal-like region, allowing to estimate the background in the
+The multi-jet background is estimated with the data-driven fake factor
+method. It is applicable in cases where two observables exist that are
+statistically independent for the background process to be estimated while also
+being strong discriminators between the background and other processes (signal
+and non-multi-jet processes). Four disjoint regions can be defined, three
+background-enriched CRs and a signal-like region, by categorising events based
+on both observables. The assumption of statistical independence allows to relate
+the expected number of events for the background process between control regions
+and the signal-like region, allowing to estimate the background in the
 signal-like region using data observed in the control regions.
 
-In the \hadhad channel, two observables that allow to define control
-regions enriched in multi-jet events are the \tauid requirements
-fulfilled by the \tauhadvis candidates and the sign of the electric
-charges of both candidates.
+In the \hadhad channel, two observables that allow to define CRs enriched in
+multi-jet events are the \tauid requirements fulfilled by the \tauhadvis
+candidates and the sign of the electric charges of both candidates.
 
-In the signal region, \tauhadvis candidates are required to pass the
-loose \tauid working point. This requirement defines regions where
-both \tauhadvis candidates pass identification, hereafter referred to
-as ID regions. The selection is partially inverted to obtain control
-regions enhanced in multi-jet events by requiring that exactly one
-\tauhadvis candidate is failing the loose \tauid working point while
-still passing a working point corresponding to a true \tauhadvis
+In the SR, \tauhadvis candidates are required to pass the loose \tauid working
+point. This requirement defines regions where both \tauhadvis candidates pass
+identification, hereafter referred to as ID regions. The selection is partially
+inverted to obtain control regions enhanced in multi-jet events by requiring
+that exactly one \tauhadvis candidate is failing the loose \tauid working point
+while still passing a working point corresponding to a true \tauhadvis
 identification efficiency of about \SI{99}{\percent}
-($\text{RNN score} > 0.01$). The \tauhadvis candidates fulfilling this
-selection are referred to as anti-\tauhadvis and the regions defined
-by the inversion of the identification criterion as Anti-ID
-regions. The identification criterion cannot be fully inverted due to
-a pre-selection applied in the data reduction pipeline of the ATLAS
-experiment.\footnote{Datasets targeting $\PHiggs \to \hadhad$ require
-  events with at least one \tauhadvis passing the loose \tauid working
-  point and one \tauhadvis with a \tauid score exceeding 0.01.}
-However, the fake factor method is still valid in the presence of
-these constraints provided the underlying assumptions of the method
-hold.
+($\text{RNN score} > 0.01$). The \tauhadvis candidates fulfilling this selection
+are referred to as anti-\tauhadvis and the regions defined by the inversion of
+the identification criterion as Anti-ID regions. The identification criterion
+cannot be fully inverted due to a pre-selection applied in the data reduction
+pipeline of the ATLAS experiment.\footnote{Datasets targeting
+  $\PHiggs \to \hadhad$ require events with at least one \tauhadvis passing the
+  loose \tauid working point and one \tauhadvis with a \tauid score exceeding
+  0.01.}  However, the fake factor method is still valid in the presence of
+these constraints provided the underlying assumptions of the method hold.
 
 The electric charge of \tauhadvis candidates produced in signal or
 backgrounds processes with two \tauhadvis from hadronic decays of
