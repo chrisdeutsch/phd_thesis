@@ -5,16 +5,16 @@ gluon-initiated jets. It represents the second largest background with
 
 \subsubsection{The Fake Factor Method}
 
-The multi-jet background is estimated with the data-driven fake factor
+The multi-jet background is estimated using the data-driven fake factor
 method. It is applicable in cases where two observables exist that are
 statistically independent for the background process to be estimated while also
 being strong discriminators between the background and other processes (signal
 and non-multi-jet processes). Four disjoint regions can be defined, three
 background-enriched CRs and a signal-like region, by categorising events based
 on both observables. The assumption of statistical independence allows to relate
-the expected number of events for the background process between control regions
-and the signal-like region, allowing to estimate the background in the
-signal-like region using data observed in the control regions.
+the expected number of events for the background process between CRs and the
+signal-like region, allowing to estimate the background in the signal-like
+region using data observed in the CRs.
 
 In the \hadhad channel, two observables that allow to define CRs enriched in
 multi-jet events are the \tauid requirements fulfilled by the \tauhadvis
@@ -23,35 +23,37 @@ candidates and the sign of the electric charges of both candidates.
 In the SR, \tauhadvis candidates are required to pass the loose \tauid working
 point. This requirement defines regions where both \tauhadvis candidates pass
 identification, hereafter referred to as ID regions. The selection is partially
-inverted to obtain control regions enhanced in multi-jet events by requiring
-that exactly one \tauhadvis candidate is failing the loose \tauid working point
-while still passing a working point corresponding to a true \tauhadvis
-identification efficiency of about \SI{99}{\percent}
-($\text{RNN score} > 0.01$). The \tauhadvis candidates fulfilling this selection
-are referred to as anti-\tauhadvis and the regions defined by the inversion of
-the identification criterion as Anti-ID regions. The identification criterion
-cannot be fully inverted due to a pre-selection applied in the data reduction
-pipeline of the ATLAS experiment.\footnote{Datasets targeting
-  $\PHiggs \to \hadhad$ require events with at least one \tauhadvis passing the
-  loose \tauid working point and one \tauhadvis with a \tauid score exceeding
-  0.01.}  However, the fake factor method is still valid in the presence of
-these constraints provided the underlying assumptions of the method hold.
+inverted to obtain CRs enhanced in multi-jet events by requiring that exactly
+one \tauhadvis candidate is failing the loose \tauid working point while still
+passing a working point corresponding to a true \tauhadvis identification
+efficiency of about \SI{99}{\percent} ($\text{RNN score} > 0.01$). The
+\tauhadvis candidates fulfilling this selection are referred to as
+anti-\tauhadvis and the regions defined by the inversion of the identification
+criterion as Anti-ID regions. The identification criterion cannot be fully
+inverted due to a pre-selection applied in the data reduction pipeline of the
+ATLAS experiment.\footnote{Datasets targeting $\PHiggs \to \hadhad$ require
+  events with at least one \tauhadvis passing the loose \tauid working point and
+  one \tauhadvis with a \tauid score exceeding 0.01.}  However, the fake factor
+method is still valid in the presence of these constraints provided the
+underlying assumptions of the method hold.\todo{Already explained (see object
+  selection)}
 
 The electric charge of \tauhadvis candidates produced in signal or backgrounds
 processes with two \tauhadvis from hadronic decays of \tauleptons (e.g.\
 $\PZ \to \tautau$, $\PHiggs \to \tautau$, \ttbar) are expected to be
-reconstructed with opposite-sign (OS). The OS requirement is inverted yielding
-regions with \tauhadvis candidates of same-sign (SS) electric charge, depleting
-the region of processes where both \tauhadvis originate from hadronic \taulepton
-decays. In contrast, the multi-jet background contributes similarly to the OS
-and SS regions since \tauhadvis charge reconstruction has little sensitivity to
-the relative sign of the electric charge between a pair of partons initiating
-jets that are misidentified as \tauhadvis.
+reconstructed with opposite-sign (OS).\todo{Already explained (event
+  selection?)} The OS requirement is inverted yielding regions with \tauhadvis
+candidates of same-sign (SS) electric charge, depleting the region of processes
+where both \tauhadvis originate from hadronic \taulepton decays. In contrast,
+the multi-jet background contributes similarly to the OS and SS regions since
+\tauhadvis charge reconstruction has little sensitivity to the relative sign of
+the electric charge between a pair of partons initiating jets that are
+misidentified as \tauhadvis.
 
-With the previously defined control regions and the assumption of independence
-of the observables defining the regions, the expected multi-jet contribution in
-regions with \tauhadvis passing loose identification and with \tauhadvis pairs
-of OS electric charge can be estimated using
+With the previously defined CRs and the assumption of independence of the
+observables defining the regions, the expected multi-jet contribution in regions
+with \tauhadvis passing loose identification and with \tauhadvis pairs of OS
+electric charge can be estimated using
 \begin{align*}
   N_\text{multi-jet}^{\text{OS, ID}} =
   N_\text{multi-jet}^{\text{OS, Anti-ID}}
@@ -96,8 +98,8 @@ not well suited to estimate FFs:
   from modelling uncertainties on the subtracted components.
 
 \item The strict \btag requirement suppresses the multi-jet contribution in the
-  control regions preventing a differential measurement of FFs in properties of
-  the \tauhadvis.
+  CRs preventing a differential measurement of FFs in properties of the
+  \tauhadvis.
 
 \item The multi-jet estimate cannot be validated in the 2 $b$-tag region due to
   the absence of a region with high multi-jet purity that is similar to the
@@ -410,9 +412,9 @@ DTT case. Due to the selections applied at the HLT and the usually large
 difference in \pT between both \tauhadvis candidates, the STT FFs are measured
 separately for the leading and sub-leading \tauhadvis candidates. Additionally,
 the high \pT thresholds on \tauhadvis at trigger-level provide large rejection
-of most SM processes, limiting the number of events entering the control regions
-for the FF measurement, thus preventing a differential FF measurement in
-\tauhadvis \pT and $\eta$.
+of most SM processes, limiting the number of events entering the CRs for the FF
+measurement, thus preventing a differential FF measurement in \tauhadvis \pT and
+$\eta$.
 
 The approach of averaging the background estimates obtained from the two
 partitions of the Anti-ID region remains valid for STTs,
@@ -852,9 +854,9 @@ top), and the extrapolation of 1 $b$-tag FFs to 2 $b$-tag regions.
     statistical uncertainty (\texttt{FF\_STAT\_HADHADSR}) which is an
     uncertainty on the normalisation only. Uncertainties are grouped by their
     source and given separately for each nuisance parameter. $\dagger$:
-    statistical uncertainties from the finite number of simulated and control
-    region events are combined for all background processes thus no dedicated
-    nuisance parameters exist for the statistical uncertainty of the multi-jet
+    statistical uncertainties from the finite number of simulated and CR events
+    are combined for all background processes thus no dedicated nuisance
+    parameters exist for the statistical uncertainty of the multi-jet
     prediction.}%
   \label{tab:multi_jet_uncertainties}
 
