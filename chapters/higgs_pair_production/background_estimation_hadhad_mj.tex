@@ -65,17 +65,18 @@ multi-jet contribution in the OS ID region can be estimated according to
 \begin{align*}
   N_\text{multi-jet}^{\text{OS, ID}} =
   N_\text{multi-jet}^{\text{OS, Anti-ID}}
+  \cdot
   \underbrace{\frac{N_\text{multi-jet}^{\text{SS, ID}}}
   {N_\text{multi-jet}^{\text{SS, Anti-ID}}}}
   _{\eqqcolon \text{FF}_{\text{SS}}} \,\text{,}
 \end{align*}
-where $N_\text{multi-jet}^{r}$ is the number of multi-jet events in
+where $N_\text{multi-jet}^{r}$ is the expected number of multi-jet events in
 region~$r$. The ratio of multi-jet events in the ID and Anti-ID region is
 referred to as the fake factor (FF).
 % \footnote{The use of identification or isolation criteria to defining the
 % ratio is the main difference between the fake factor method and the more
 % general ABCD method.}
-Generally, the CRs do not provide pure samples of multi-jet event, and thus the
+Generally, the CRs do not provide pure samples of multi-jet events, and thus the
 number of multi-jet events has to be estimated according to
 \begin{align*}
   N_\text{multi-jet}^{r} = N_\text{data}^{r} - N_\text{non-multi-jet}^{r} \,\text{,}
@@ -256,12 +257,12 @@ measurement is performed separately for 1- and 3-prong \tauhadvis candidates for
 both trigger categories. For events selected by DTTs, the FFs are additionally
 measured in bins of the \tauhadvis candidate~\pT and separately for candidates
 in the barrel ($|\eta| < 1.37$) and end-cap ($|\eta| \geq 1.52$) regions of the
-detector. Few multi-jet events are selected by STTs due to the high \pT
-thresholds on \tauhadvis candidates, preventing a fine binning of the FF
-measurement. In this case, FFs are meaasured separately for cases where the
+detector. Few multi-jet events are selected by STTs due to the large
+\pT~thresholds on \tauhadvis candidates, preventing a fine binning of the FF
+measurement. In this case, FFs are measured separately for cases where the
 anti-\tauhadvis is leading in \pT and sub-leading in \pT. This accounts for the
-\tauid applied at the HLT and the large transverse momentum differences between
-the leading and sub-leading \tauhadvis candidate.
+\tauid applied at the HLT and the large difference in transverse momentum
+between the leading and sub-leading \tauhadvis candidate.
 
 % In contrast, few multi-jet events are selected by STTs due to high \pT
 % thresholds on \tauhadvis preventing fine subdivision of the FF
@@ -282,7 +283,7 @@ the leading and sub-leading \tauhadvis candidate.
   \newcommand*{\NmjAntiIDIncl}[1]{\ensuremath{N_\text{multi-jet}^{\text{#1, Anti-ID}}}\xspace}
   \newcommand*{\NmjAntiID}[2]{\ensuremath{N_\text{multi-jet}^{\text{#1, anti-}\tau_{#2}}}\xspace}
 
-  The Anti-ID region can be partitioned into two sub-regions: one where the
+  The Anti-ID region can be split into two sub-regions: one where the
   anti-\tauhadvis is the leading and one where it is the sub-leading \tauhadvis
   candidate. Provided the conditions for the FF method are fulfilled, both
   regions can be used to obtain separate estimates of the multi-jet background
@@ -291,12 +292,11 @@ the leading and sub-leading \tauhadvis candidate.
   \begin{description}[style=standard]
   \item[$\tau_0$ ($\tau_1$)] The \tauhadvis candidate leading (sub-leading) in \pT.
 
-  \item[$\myvec{x}_\tau$] A vector of categorical observables of \tauhadvis that
-    specifies the bin of the FF measurement. For the DTT category these
-    correspond to bins in \Ntracks, \pT, and $\eta$.
-    % The measurement in the di-\tauhadvis trigger category is performed
-    % separately for 1- and 3-prong \tauhadvis, and in bins of \tauhadvis \pT
-    % and $\eta$.
+  \item[$\myvec{x}_\tau$] A vector of categorical observables of the
+    reconstructed \tauhadvis candidate that specifies the bin of the FF
+    measurement.
+    % For the DTT category, these correspond to the bin in \Ntracks, \pT, and
+    % $\eta$.
 
   \item[$\NmjID{SS(OS)}{i}\ffargs$] The estimated number of multi-jet events in
     the SS (OS) ID region where~$\tau_i$ falls into the bin specified
@@ -319,11 +319,11 @@ the leading and sub-leading \tauhadvis candidate.
     \quad \text{for} \quad i = 0, 1 \,\text{.}
   \end{align*}
   The average of both estimates also yields an estimate of the multi-jet
-  background. The process of averaging both estimates can be expressed by an
-  alternative set of FFs that do not distinguish in whether the anti-\tauhadvis
-  is the leading or sub-leading \tauhadvis candidate, thus acting on the
-  entirety of the Anti-ID region instead of a sub-region thereof. This inclusive
-  FF is given by
+  background. The process of averaging both multi-jet estimates can be expressed
+  by an alternative set of FFs that do not distinguish in whether the
+  anti-\tauhadvis is the leading or sub-leading \tauhadvis candidate, thus
+  acting on the entirety of the Anti-ID region instead of a sub-region
+  thereof. This inclusive FF is given by
   \begin{align*}
     \FF_\text{incl.}\ffargs = \frac{1}{2} \left[ f_0\ffargs \cdot \FF_0\ffargs
     + f_1\ffargs \cdot \FF_1\ffargs \right] \,\text{,}
@@ -362,25 +362,25 @@ the leading and sub-leading \tauhadvis candidate.
   the statistical precision of the background estimate. Second, the FFs can be
   parameterised in properties of the anti-\tauhadvis directly, allowing to
   target the key differences between the ID and Anti-ID regions. This represents
-  a change with respect to the previous
-  publication~\cite{HIGG-2016-16-witherratum} where FFs were parameterised
-  jointly in the properties of both \tauhadvis candidates simultaneously, thus
-  limiting %the statistical precision of
-  the FF measurement due to high dimensionality of the parameterisation.}
+  a change with respect to the previous publication in
+  Ref.~\cite{HIGG-2016-16-witherratum} in which FFs were parameterised in the
+  properties of both \tauhadvis candidates simultaneously. The high
+  dimensionality of the FF parameterisation was a limitation in the previous
+  measurement.}
 
-The inclusive FFs for events selected by DTTs are measured according
-to~\Cref{eq:inclusive_fake_factor} and parameterised in \tauhadvis decay mode,
-transverse momentum, pseudorapidity, and the period of data-taking. The number
-of multi-jet events is obtained by subtracting the expected number of
-non-multi-jet events estimated using simulation from the number of observed
-events in data.
+% The inclusive FFs for events selected by DTTs are measured according
+% to~\Cref{eq:inclusive_fake_factor} and parameterised in \tauhadvis decay mode,
+% transverse momentum, pseudorapidity, and the period of data-taking. The number
+% of multi-jet events is obtained by subtracting the expected number of
+% non-multi-jet events estimated using simulation from the number of observed
+% events in data.
 
 The result of the FF measurement for DTTs is summarised
 in~\Cref{fig:mjfakes_fake_factors}. Qualitatively, the behaviour of the FFs with
-respect to \tauhadvis properties is the same between data-taking periods. Minor
-differences can be observed when comparing FFs between years. No attempt was
-made to combine the measurements of certain periods as the statistical precision
-of the FF measurement is not a limiting factor in the analysis.
+respect to \tauhadvis candidate properties is the same between data-taking
+periods. Minor differences can be observed when comparing FFs between years. No
+attempt was made to combine the measurements as the statistical precision of the
+FF measurement is not a limiting factor in the analysis.
 
 \begin{figure}[htbp]
   \centering
