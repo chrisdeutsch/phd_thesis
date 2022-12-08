@@ -402,72 +402,68 @@ FF measurement is not a limiting factor in the analysis.
   \caption{DTT FFs measured in the 1 $b$-tag SS region. The measurement is
     performed separately for the three major data-taking periods (a-c), 1- and
     3-prong \tauhadvis candidates (upper/lower panels), and for \tauhadvis in
-    the barrel (red) and end-cap regions (blue) of the ATLAS detector. Events
+    the barrel (red) and end-cap (blue) regions of the ATLAS detector. Events
     with (anti-)\tauhadvis $\pT > \SI{150}{\GeV}$ are included in the last FF
-    bin. Uncertainties are from statistical sources only. Systematic
-    uncertainties originating from the non-multi-jet subtraction are assumed to
-    be negligible due to the small size of the subtraction in the 1 $b$-tag SS
-    region.}%
+    bin. Only statistical uncertainties are shown. Systematic uncertainties
+    originating from the non-multi-jet subtraction are assumed to be negligible
+    due to the small size of the subtraction in the 1 $b$-tag SS region.}%
   \label{fig:mjfakes_fake_factors}
 \end{figure}
 
 
 \subsubsection{Measurement of Fake Factors for Events Selected by STTs}
 
-The measurement of FFs for events selected by STTs proceeds differently from the
-DTT case. Due to the selections applied at the HLT and the usually large
-difference in \pT between both \tauhadvis candidates, the STT FFs are measured
-separately for the leading and sub-leading \tauhadvis candidates. Additionally,
-the high \pT thresholds on \tauhadvis at trigger-level provide large rejection
-of most SM processes, limiting the number of events entering the CRs for the FF
-measurement, thus preventing a differential FF measurement in \tauhadvis \pT and
-$\eta$.
+The measurement of FFs for events selected by STTs can proceed
+using~\Cref{eq:inclusive_fake_factor}. The measured STT FFs are shown
+in~\Cref{fig:mjfakes_stt_ffs} for the three major data-taking periods. Each
+period is divided into four categories depending on $N_{\text{tracks}}$ and
+whether the anti-\tauhadvis is leading ($\tau_0$) or sub-leading ($\tau_1$) in
+\pT.
 
-The approach of averaging the background estimates obtained from the two
-partitions of the Anti-ID region remains valid for STTs,
-including~\Cref{eq:inclusive_fake_factor} which can be used to calculate the
-FFs. The main difference between the the STT and DTT FF measurement is the
-replacement of the variables specifying the \pT and $\eta$ bin in
-$\myvec{x}_\tau$ with an indicator variable specifying whether the
-anti-\tauhadvis is leading or sub-leading in \pT.
+% The measurement of FFs for events selected by STTs proceeds differently from
+% the DTT case. Due to the selections applied at the HLT and the usually large
+% difference in \pT between both \tauhadvis candidates, the STT FFs are measured
+% separately for the leading and sub-leading \tauhadvis
+% candidates. Additionally, the high \pT thresholds on \tauhadvis at
+% trigger-level provide large rejection of most SM processes, limiting the
+% number of events entering the CRs for the FF measurement, thus preventing a
+% differential FF measurement in \tauhadvis \pT and $\eta$.
 
-% First, at the HLT \tauhadvis
-% identification is only applied to one of the \tauhadvis candidates,
-% preventing an inclusive treatment of both \tauhadvis
-% candidates. Second, the high \pT thresholds on \tauhadvis at
-% trigger-level has high rejection of most SM processes, limiting the
-% number of events entering the control regions for the fake factor
-% measurement. As a result, the fake factors for singe-\tauhadvis
-% triggers cannot be measured differentially in \tauhadvis \pT and
-% $\eta$.
+% The approach of averaging the background estimates obtained from the two
+% partitions of the Anti-ID region remains valid for STTs,
+% including~\Cref{eq:inclusive_fake_factor} which can be used to calculate the
+% FFs. The main difference between the the STT and DTT FF measurement is the
+% replacement of the variables specifying the \pT and $\eta$ bin in
+% $\myvec{x}_\tau$ with an indicator variable specifying whether the
+% anti-\tauhadvis is leading or sub-leading in \pT.
 
-The measured STT FFs are shown in~\Cref{fig:mjfakes_stt_ffs} for the three major
-data-taking periods. Each period is divided into four categories depending on
-$N_{\text{tracks}}$ and whether the anti-\tauhadvis is leading ($\tau_0$) or
-sub-leading ($\tau_1$) in \pT.
+% First, at the HLT \tauhadvis identification is only applied to one of the
+% \tauhadvis candidates, preventing an inclusive treatment of both \tauhadvis
+% candidates. Second, the high \pT thresholds on \tauhadvis at trigger-level has
+% high rejection of most SM processes, limiting the number of events entering
+% the control regions for the fake factor measurement. As a result, the fake
+% factors for singe-\tauhadvis triggers cannot be measured differentially in
+% \tauhadvis \pT and $\eta$.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.495\textwidth]{fakefactors/fake_factors_stt}
 
-  \caption{STT FFs measured in the 1 $b$-tag SS region, separately for the three
+  \caption{STT FFs measured in the 1~$b$-tag~SS~region separately for the three
     major data-taking periods. The measurement is performed in bins of the
-    reconstructed \tauhadvis decay mode (1- and 3-prong) and separately for
-    cases where the anti-\tauhadvis is leading ($\tau_0$) and sub-leading in \pT
-    ($\tau_1$).}%
+    \tauhadvis candidate~\Ntracks (1- and 3-prong) and separately for cases
+    where the anti-\tauhadvis is leading ($\tau_0$) and sub-leading in \pT
+    ($\tau_1$). Only statistical uncertainties are shown.}%
   \label{fig:mjfakes_stt_ffs}
-  % \todo[inline]{Largest deviation for leading 1-prong tau possibly
-  % due to looser pT threshold. But why not for 3-prong?}
 \end{figure}
-
 
 \subsubsection{Validation of the Multi-jet Estimate in the 1 $b$-tag OS Region}
 
 An independent validation of the background estimate can be performed in the 1
 $b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}).
 % , which is not part of the fake factor measurement.
-After the event pre-selection, this region has a multi-jet purity of about
+After the initial event selection, this region has a multi-jet purity of about
 \SI{50}{\percent} with the dominant non-multi-jet contributions originating from
 \Zjets and \ttbar. The multi-jet purity is enhanced for validation purposes by
 requiring events to fulfil
