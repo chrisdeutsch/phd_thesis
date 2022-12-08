@@ -60,13 +60,11 @@ SS~ID~region, and the SS~Anti-ID~region.
 % little sensitivity to the relative sign of the electric charge between a pair
 % of partons initiating jets that are misidentified as \tauhadvis.
 
-Using the previously defined regions and the independence assumption, the
-expected multi-jet contribution in the OS ID region can be estimated according
-to
+With these region definitions and the independence assumption, the expected
+multi-jet contribution in the OS ID region can be estimated according to
 \begin{align*}
   N_\text{multi-jet}^{\text{OS, ID}} =
   N_\text{multi-jet}^{\text{OS, Anti-ID}}
-  \cdot
   \underbrace{\frac{N_\text{multi-jet}^{\text{SS, ID}}}
   {N_\text{multi-jet}^{\text{SS, Anti-ID}}}}
   _{\eqqcolon \text{FF}_{\text{SS}}} \,\text{,}
@@ -84,14 +82,17 @@ number of multi-jet events has to be estimated according to
 \end{align*}
 where $N_\text{data}^{r}$ is the observed number of events in region~$r$ and
 $N_\text{non-multi-jet}^{r}$ the expected number of non-multi-jet events in
-region~$r$ estimated using simulation.
+region~$r$ estimated using simulation. Lastly, the probability of misidentifying
+a quark- or gluon-initiated jet as a \tauhadvis depends on the properties of the
+reconstructed \tauhadvis candidate, especially on \Ntracks and \pT. To control
+for this effect, FFs are measured in bins of \tauhadvis candidate properties.
 
-The probability of misidentifying a quark- or gluon-initiated jet as a
-\tauhadvis depends on the properties of the reconstructed \tauhadvis
-candidate. Particularly, the reconstructed decay mode and visible transverse
-momentum affect the probability of a jet reconstructed as a \tauhadvis to pass
-\tauid. To control for this effect, FFs are derived in bins of \tauhadvis
-candidate properties.\todo{Move this paragraph to a later part?}
+% In addition, the probability of misidentifying a quark- or gluon-initiated jet
+% as a \tauhadvis depends on the properties of the reconstructed \tauhadvis
+% candidate. Particularly, the reconstructed decay mode and visible transverse
+% momentum affect the probability of a jet reconstructed as a \tauhadvis to pass
+% \tauid. To control for this effect, FFs are measured in bins of \tauhadvis
+% candidate properties.
 
 In~\Cref{tab:mjfakes_yields} the expected multi-jet and non-multi-jet event
 yields in the regions relevant for the \faketauhadvis estimation are
@@ -126,15 +127,13 @@ FF measurement are shown in~\Cref{fig:mjfakes_1tag_ss_plots}.
 \begin{table}[htbp]
   \centering
 
-  \caption{Expected number of multi-jet events in regions defined by the
-    electric charge of the \tauhadvis pair (OS/SS) and \tauhadvis identification
-    (ID/Anti-ID). The expected number of multi-jet events, $N_\text{multi-jet}$,
-    is estimated by subtracting the expected number of non-multi-jet events,
-    $N_\text{non-multi-jet}$, from the observed number of events in a given
+  \caption{Expected number of multi-jet and non-multi-jet events in regions
+    entering the FF method in the \hadhad channel. The expected number of
+    multi-jet events is estimated by subtracting the expected number of
+    non-multi-jet events from the observed number of events in a given
     region. The breakdown is shown after the 1 $b$-tag requirement in (a); after
-    the 2 $b$-tag requirement in (b). The signal region (2 $b$-tag OS ID) is
-    omitted. Only statistical uncertainties on the expected event yields are
-    shown.}%
+    the 2 $b$-tag requirement in (b). The SR (2 $b$-tag OS ID) is omitted. Only
+    statistical uncertainties on the expected event yields are shown.}%
   \label{tab:mjfakes_yields}
 
   \begin{subtable}[t]{\textwidth}
@@ -612,7 +611,7 @@ estimate.
     non-closure uncertainty that is propagated to the multi-jet background
     estimate when applying SS FFs to events in OS regions. Statistical
     uncertainties from the finite number of observed data events and the
-    non-multi-jet subtraction are shown.}
+    non-multi-jet subtraction are shown.}%
   \label{fig:fake_factor_OSSS}
 \end{figure}
 
@@ -695,7 +694,7 @@ limitation of the multi-jet estimation method used in this analysis.
   \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/region_plots/tau0pt_2tag_os_antiid}
     \subcaption{}
-  \end{subfigure}
+  \end{subfigure}%
   \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/region_plots/tau1pt_2tag_os_antiid}
     \subcaption{}
