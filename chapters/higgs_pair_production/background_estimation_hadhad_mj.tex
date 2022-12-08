@@ -461,14 +461,11 @@ whether the anti-\tauhadvis is leading ($\tau_0$) or sub-leading ($\tau_1$) in
 \subsubsection{Validation of the Multi-jet Estimate in the 1 $b$-tag OS Region}
 
 An independent validation of the background estimate can be performed in the 1
-$b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}).
-% , which is not part of the fake factor measurement.
-After the initial event selection, this region has a multi-jet purity of about
-\SI{50}{\percent} with the dominant non-multi-jet contributions originating from
-\Zjets and \ttbar. The multi-jet purity is enhanced for validation purposes by
-requiring events to fulfil
-% https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MetSignificance
-% Using `TreatPUJets == true' and Basic soft term (met::Random)
+$b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}). After the initial
+event selection, this region has a multi-jet purity of about \SI{50}{\percent}
+with the dominant non-multi-jet contributions originating from \Zjets and
+\ttbar. A multi-jet validation region (VR) is defined by additionally requiring
+events to fulfil
 \begin{align*}
   \mMMC > \SI{110}{\GeV} \qquad \text{and} \qquad \mathcal{S} < 3 \,\text{,}
 \end{align*}
@@ -476,17 +473,22 @@ where $\mathcal{S}$ is the object-based \pTmissAbs
 significance~\cite{ATLAS-CONF-2018-038}. The \pTmissAbs significance measures
 the statistical significance of a test comparing the hypothesis that the
 reconstructed \pTmissAbs is compatible with zero within the expected measurement
-errors, to the alternative hypothesis of \pTmissAbs primarily originating from
-undetected weakly interacting particles.
+errors to the alternative hypothesis of \pTmissAbs primarily originating from
+undetected weakly interacting particles. The distributions of \mMMC and
+$\mathcal{S}$ prior to the multi-jet VR selection are shown
+in~\Cref{fig:fake_factor_OSVR_cutvars}. After the selection, the multi-jet
+purity in the VR is increased to \SI{75}{\percent} with a multi-jet selection
+efficiency of about \SI{50}{\percent} with respect to the inclusive 1 $b$-tag OS
+ID region.
 
-The distributions of the variables used to define the multi-jet VR are shown
-in~\Cref{fig:fake_factor_OSVR_cutvars} after pre-selection. The contribution of
-\Zjets is reduced by rejecting events with di-$\tauhad$ masses close to the \PZ
-boson mass.  Multi-jet events are expected to have little real \pTmissAbs, thus
-events with a significant \pTmissAbs measurement are rejected to reduce the
-\ttbar contribution in this region. The selection increases the multi-jet purity
-in the VR to \SI{75}{\percent} with a multi-jet selection efficiency of about
-\SI{50}{\percent} with respect to the pre-selection.
+% The distributions of the variables used to define the multi-jet VR are shown
+% in~\Cref{fig:fake_factor_OSVR_cutvars} after pre-selection. The contribution
+% of \Zjets is reduced by rejecting events with di-$\tauhad$ masses close to the
+% \PZ boson mass.  Multi-jet events are expected to have little real \pTmissAbs,
+% thus events with a significant \pTmissAbs measurement are rejected to reduce
+% the \ttbar contribution in this region. The selection increases the multi-jet
+% purity in the VR to \SI{75}{\percent} with a multi-jet selection efficiency of
+% about \SI{50}{\percent} with respect to the pre-selection.
 
 \begin{figure}[htbp]
   \centering
