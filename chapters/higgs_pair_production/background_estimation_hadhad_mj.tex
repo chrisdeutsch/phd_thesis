@@ -227,42 +227,49 @@ dependencies that are not captured by the parameterisation of the FFs.
 % agree under the assumptions of the method.\todo{Needs some work...}
 
 
-\subsubsection{Measurement of Fake Factors}
+\subsubsection{Binning of the Fake Factor Measurement}
 
 % Binning in years / trigger
 The FF measurement is performed separately for events selected by STTs and DTTs
-and separately for different data-taking periods. The \tauhadvis-triggers
-changed as Run~2 of the LHC progressed, selecting events of different topologies
-and altering the algorithms used for reconstruction and identification of
-\tauhadvis at the HLT. To account for potential differences in FFs from these
-changes, the measurement is performed separately for three major data-taking
-periods: 2015--2016, 2017, and 2018.
+to account for the differences in selection applied by these triggers. STTs
+require one \tauhadvis candidate with high transverse momentum passing the HLT
+\tauid, while DTTs require two \tauhadvis candidates both passing HLT \tauid and
+significantly lower \pT~thresholds. In addition, the changes in
+\tauhadvis-triggers during Run~2 of the LHC are accounted for by performing the
+FF measurement separately for three major data-taking periods:~2015--2016, 2017,
+and 2018.
 
-% Reason for binning in
-The categorisation of the FFs by trigger that selected the event is further
-motivated by the differences between both trigger categories. STTs require one
-\tauhadvis candidate with high transverse momentum that is identified at the HLT
-without any selections applied to the other candidate. In contrast, DTTs require
-two \tauhadvis to be identified at the HLT with similar transverse momentum
-thresholds applied to both. This allows \tauhadvis candidates in the DTT to be
-treated equally once \pT-threshold effects are accounted
-for. % This is not the case for
-% events selected by single-\tauhadvis triggers.
+% Reason for binning
+%
+% The categorisation of the FFs by trigger that selected the event is further
+% motivated by the differences between both trigger categories. STTs require one
+% \tauhadvis candidate with high transverse momentum that is identified at the
+% HLT without any selections applied to the other candidate. In contrast, DTTs
+% require two \tauhadvis to be identified at the HLT with similar transverse
+% momentum thresholds applied to both. This allows \tauhadvis candidates in the
+% DTT to be treated equally once \pT-threshold effects are accounted for.
 
-Dependencies of FFs on properties of reconstructed \tauhadvis are accounted for
-by further categorisation based on properties of the (anti-)\tauhadvis that
-distinguishes the ID from the Anti-ID regions. The FF measurement is performed
-separately for 1- and 3-prong \tauhadvis candidates for both trigger categories.
+Dependencies of FFs on properties of reconstructed \tauhadvis candidates are
+accounted for by further categorisation based on properties of the
+(anti-)\tauhadvis that distinguishes the ID from the Anti-ID regions. The FF
+measurement is performed separately for 1- and 3-prong \tauhadvis candidates for
+both trigger categories. For events selected by DTTs, the FFs are additionally
+measured in bins of the \tauhadvis candidate~\pT and separately for candidates
+in the barrel ($|\eta| < 1.37$) and end-cap ($|\eta| \geq 1.52$) regions of the
+detector. Few multi-jet events are selected by STTs due to the high \pT
+thresholds on \tauhadvis candidates, preventing a fine binning of the FF
+measurement. In this case, FFs are meaasured separately for cases where the
+anti-\tauhadvis is leading in \pT and sub-leading in \pT. This accounts for the
+\tauid applied at the HLT and the large transverse momentum differences between
+the leading and sub-leading \tauhadvis candidate.
 
-FFs for events selected by DTTs are additionally measured in bins of
-\tauhadvis~\pT and separately for \tauhadvis in the barrel and end-cap regions
-of the detector. In contrast, few multi-jet events are selected by STTs due to
-high \pT thresholds on \tauhadvis preventing fine subdivision of the FF
-measurement. Therefore, FFs for events selected by STTs are measured separately
-for cases where the anti-\tauhadvis is leading and sub-leading in \pT. This
-accounts for the \tauid applied at the HLT and the transverse momentum
-differences between the leading and sub-leading \tauhadvis~candidates.
-
+% In contrast, few multi-jet events are selected by STTs due to high \pT
+% thresholds on \tauhadvis preventing fine subdivision of the FF
+% measurement. Therefore, FFs for events selected by STTs are measured
+% separately for cases where the anti-\tauhadvis is leading and sub-leading in
+% \pT. This accounts for the \tauid applied at the HLT and the transverse
+% momentum differences between the leading and sub-leading
+% \tauhadvis~candidates.
 
 \subsubsection{Measurement of Fake Factors for Events Selected by DTTs}
 
