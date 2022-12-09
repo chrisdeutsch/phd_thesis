@@ -460,15 +460,15 @@ whether the anti-\tauhadvis is leading ($\tau_0$) or sub-leading ($\tau_1$) in
 
 \subsubsection{Validation of the Multi-jet Estimate in the 1 $b$-tag OS Region}
 
-An independent validation of the background estimate can be performed in the 1
+An independent validation of the background estimate is performed in the 1
 $b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}). After the initial
 event selection, this region has a multi-jet purity of about \SI{50}{\percent}
 with the dominant non-multi-jet contributions originating from \Zjets and
 \ttbar. A multi-jet validation region (VR) is defined by additionally requiring
-events to fulfil $\mMMC > \SI{110}{\GeV}$ and $\mathcal{S} < 3$,
-% \begin{align*}
-%   \mMMC > \SI{110}{\GeV} \qquad \text{and} \qquad \mathcal{S} < 3 \,\text{,}
-% \end{align*}
+events to fulfil
+\begin{align*}
+  \mMMC > \SI{110}{\GeV} \quad \text{and} \quad \mathcal{S} < 3 \,\text{,}
+\end{align*}
 where $\mathcal{S}$ is the object-based \pTmissAbs
 significance~\cite{ATLAS-CONF-2018-038}. The \pTmissAbs significance measures
 the statistical significance of a test comparing the hypothesis that the
@@ -477,7 +477,7 @@ errors to the alternative hypothesis of \pTmissAbs primarily originating from
 undetected weakly interacting particles. The distributions of \mMMC and
 $\mathcal{S}$ prior to the multi-jet VR selection are shown
 in~\Cref{fig:fake_factor_OSVR_cutvars}. After the selection, the multi-jet
-purity in the VR is increased to \SI{75}{\percent} with a multi-jet selection
+purity in the VR increases to \SI{75}{\percent} with a multi-jet selection
 efficiency of about \SI{50}{\percent} with respect to the inclusive 1 $b$-tag OS
 ID region.
 
@@ -504,10 +504,10 @@ ID region.
 
   \caption{The invariant di-\tauhad mass (a) and the object-based \pTmissAbs
     significance (b) in the 1 $b$-tag OS ID region after the pre-selection. The
-    estimate of the multi-jet background (light blue) is obtained using the FF
-    method (cf.\ \Cref{fig:fakefactor_regions}). Fake-\tauhadvis originating
-    from \ttbar (red) are estimated using simulation. The background prediction
-    is shown pre-fit, including statistical and detector-related systematic
+    estimate of the multi-jet background (blue) is obtained using the FF method
+    (cf.\ \Cref{fig:fakefactor_regions}). Fake-\tauhadvis originating from
+    \ttbar (red) are estimated using simulation. The background prediction is
+    shown pre-fit, including statistical and detector-related systematic
     uncertainties.}
   \label{fig:fake_factor_OSVR_cutvars}
 \end{figure}
@@ -519,8 +519,11 @@ using simulation. The background prediction in the multi-jet VR is compared to
 data in~\Cref{fig:fake_factor_OSVR_kinematics} for several observables of the
 leading and sub-leading \tauhadvis candidate. Decent agreement between the
 background prediction and data is observed in the VR for \tauhadvis-related
-observables.\todo{Mention overestimation at \SIrange{60}{70}{\GeV} in sub-lead
-  \tauhadvis \pT?}
+observables. A small mismodelling of the background is observed in the \pT
+distribution of the sub-leading \tauhadvis candidate in the range of
+\SIrange{60}{70}{\GeV} where the background appears to be overestimated by about
+\SI{15}{\percent}. An uncertainty will be assigned to account for the
+non-closure in the multi-jet VR.
 
 \begin{figure}[htbp]
   \centering
@@ -547,59 +550,49 @@ observables.\todo{Mention overestimation at \SIrange{60}{70}{\GeV} in sub-lead
   \end{subfigure}
 
   \caption{Validation of \tauhadvis observables in the multi-jet VR. The
-    multi-jet background prediction (blue) is obtained using the FF method. The
-    \tauhadvis observables \pT (top), $\eta$ (centre), and $N_{\text{tracks}}$
-    (bottom) are shown for the leading (left) and sub-leading \tauhadvis
-    (right). The background prediction is shown pre-fit and includes statistical
-    and detector-related systematic uncertainties. No systematic uncertainties
-    on the multi-jet estimate are included.}%
+    multi-jet prediction (blue) is obtained using the FF method. The \tauhadvis
+    observables \pT (top), $\eta$ (centre), and $N_{\text{tracks}}$ (bottom) are
+    shown for the leading (left) and sub-leading \tauhadvis (right). The
+    background prediction is shown pre-fit and includes statistical and
+    detector-related systematic uncertainties. No systematic uncertainties on
+    the multi-jet estimate are included.}%
   \label{fig:fake_factor_OSVR_kinematics}
 \end{figure}
 
-
-
-Further tests of the assumptions of the
-FF method can be performed by a comparison of the FFs measured in the 1 $b$-tag
-SS region with FFs obtained from a measurement in the 1 $b$-tag OS multi-jet
-VR. Under the assumptions of the FF method, both OS and SS FFs are expected to
-agree. Possible differences between both sets of FFs can originate from a
-violation of the assumptions or from a mismodelling of the subtracted
+The validity of the FF method can be tested by comparing FFs measured in the
+1~$b$-tag~SS~region with FFs obtained from measurements in the
+1~$b$-tag~OS~multi-jet~VR. Under the assumptions of the FF method, the OS and SS
+FFs are expected to agree. Differences between both sets of FFs can originate
+from a violation of the assumptions or from a mismodelling of the subtracted
 non-multi-jet backgrounds.
 
-Comparisons of FFs measured in the OS and SS regions are shown
-in~\Cref{fig:fake_factor_OSSS} for DTTs and STTs. A comparison of the all sets
-DTT FFs using $\chi^2$-tests is given in~\Cref{tab:fake_factor_osss_chi2test}
-showing good agreement with one exception. %
-% All sets of fake factors are compared using $\chi^2$-tests,
-% the results for di-\tauhadvis triggers are summarised
-% in~\Cref{tab:fake_factor_osss_chi2test}, showing good agreement with
-% one exception.
-A relative deviation of about \SI{50}{\percent} between OS and SS FF is observed
-for a single FF bin for DTTs in 2015--2016.\footnote{The bin corresponds to
-  3-prong \tauhadvis with \pT from \SIrange{50}{65}{\GeV} in the end-cap of the
-  detector. The OS FF for this bin is \num{0.09 +- 0.02} and the SS FF \num{0.21
-    +- 0.03}.}  Except for this bin, no large systematic differences between OS
-and SS FFs are observed, however the power of this test is limited by the
-uncertainties of the FF measurement in the OS region. To account for non-closure
-between the OS and SS FFs, the full difference between both sets of FFs is
-assigned as an additional systematic uncertainty and propagated to the multi-jet
-estimate.
-
+Exemplary comparisons of FFs measured in the OS and SS regions are shown
+in~\Cref{fig:fake_factor_OSSS} for DTTs and STTs. A test of the compatability of
+OS and SS FFs for DTTs is tabulated in~\Cref{tab:fake_factor_osss_chi2test}
+showing good agreement with one exception. A significant deviation of about
+\SI{50}{\percent} between OS and SS FFs is observed for a single FF bin for DTTs
+in 2015--2016.\footnote{The FF bin corresponds to 3-prong \tauhadvis candidates
+  with \pT from \SIrange{50}{65}{\GeV} in the end-cap of the detector. The OS FF
+  for this bin is \num{0.09 +- 0.02} and the SS FF \num{0.21 +- 0.03}.} Except
+for this bin, no large differences between OS and SS FFs are observed, however,
+the power of these tests is limited by the uncertainties of the FF measurement
+in the OS region. To account for non-closure between the OS and SS FFs, the full
+difference between both sets of FFs is assigned as an additional systematic
+uncertainty and propagated to the multi-jet estimate.
 
 \begin{figure}[htbp]
   \centering
 
   \begin{subfigure}[t]{0.48\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_18}
-    \subcaption{Comparison of OS and SS fake factors for events selected by
-      DTTs. Only the 2018 data-taking period is shown for illustration
-      purposes.}%
+    \subcaption{Comparison of OS and SS FFs for events selected by DTTs. Only
+      the 2018 data-taking period.}%
     \label{fig:fake_factor_OSSS_dtt}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{0.48\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_stt}
-    \subcaption{Comparison of OS and SS fake factors for events selected by STTs
-      for all major data-taking periods.}%
+    \subcaption{Comparison of OS and SS FFs for events selected by STTs for all
+      major data-taking periods.}%
     \label{fig:fake_factor_OSSS_stt}
   \end{subfigure}
 
