@@ -1,59 +1,57 @@
 The estimation of \jettotauhadvis backgrounds in the \lephad channels is
 outlined in the following. A data-driven background estimation method yielding a
 combined estimate of the multi-jet and \ttbar background with a \faketauhadvis
-is adopted. The method is an extension of the fake factor method, previously
-introduced in \Cref{sec:hadhad_multijet}, to account for multiple sources of
-\faketauhadvis that can differ in their process-specific fake factors.
+is adopted. The method is an extension of the FF~method, previously introduced
+in \Cref{sec:hadhad_multijet}, to account for multiple sources of \faketauhadvis
+that can differ in their process-specific FFs.
 
-Events in the \lephad channel where the \tauhadvis candidate is an \antitau
-define the Anti-ID region used for the fake factor method. Two control regions
-are defined that are enhanced in multi-jet and \ttbar events, respectively. Both
-regions have a corresponding ID and Anti-ID region and are orthogonal to the
-SRs. These CRs are used to determine fake factors specifically for
-\faketauhadvis from multi-jet and \ttbar events. The CR definitions and fake
-factor calculations are described in the following:
+Events in the \lephad channel where the selected \tauhadvis candidate is an
+\antitau define the Anti-ID region used for the FF method. Two CRs are defined
+that are enhanced in multi-jet and \ttbar events, respectively. Both regions
+have a corresponding ID and Anti-ID region and are orthogonal to the SRs. These
+CRs are used to determine FFs specifically for \faketauhadvis from multi-jet and
+\ttbar events. The CR definitions and FF measurements are described in the
+following:
 \begin{description}
 
 \item[Multi-jet fake factors] are determined in a region defined by the
-  requirement that the electron/muon fails the loose isolation working point and
-  removing the $\mBB < \SI{150}{\GeV}$ selection applied in the SRs. The
-  remainder of the selection is identical to the SR selection of the \lephad
+  requirement that the electron/muon fails the loose isolation working
+  point. Moreover, the $\mBB < \SI{150}{\GeV}$ requirement is dropped. The
+  remainder of the CR selection is identical to the SR selection of the \lephad
   channels. This CR has high multi-jet purity and allows to calculate multi-jet
-  fake factors, \FFqcd, as the ratio of multi-jet events in the ID and Anti-ID
-  region. The number of multi-jet events is estimated by subtracting the number
-  of non-multi-jet events estimated using simulation from the observed number of
-  events in a given region.
+  FFs, \FFqcd, as the ratio of multi-jet events in the ID and Anti-ID
+  region. The number of multi-jet events is estimated by subtracting the
+  expected number of non-multi-jet events, which is estimated using simulation,
+  from the observed number of events.
 
 \item[\ttbar fake factors] are determined in a region defined by requiring
-  $\mBB > \SI{150}{\GeV}$ while other selections remain identical to the SR
-  selection. This CR has high \ttbar purity but is not pure in \ttbarFakes
-  events
-  % relevant for the fake factor calculation
-  due to contributions of \ttbar events with \truetauhadvis that have to be
-  subtracted. Fake factors for \ttbar, \FFttbar, are calculated as the ratio of
+  $\mBB > \SI{150}{\GeV}$ with the other selections remaining identical to the
+  SR selection. This CR has high \ttbar purity but is not pure in \ttbarFakes
+  events due to contributions of \ttbar events with a \truetauhadvis that have
+  to be subtracted. FFs for \ttbar, \FFttbar, are calculated as the ratio of
   \ttbarFakes events in ID and Anti-ID regions. The number of \ttbarFakes events
   is estimated, assuming negligible contribution of multi-jet events, by
-  subtracting the number of non-\ttbarFakes events estimated using simulation
-  from the observed number of events in a given region.
+  subtracting the expected number of non-\ttbarFakes events, which is estimated
+  using simulation, from the observed number of events.
 
 \end{description}
-The fake factor calculation is performed separately for the \lephad SLT and LTT
-channels, and separately for 1- and 3-prong \tauhadvis candidates. Moreover, the
-fake factors are measured in bins of \tauhadvis candidate \pT.
+The FF measurement is performed separately for the \lephad SLT and LTT channels,
+and separately for 1- and 3-prong \tauhadvis candidates. Moreover, the FFs are
+measured in bins of \tauhadvis candidate \pT.
 
-To estimate the \faketauhadvis background in the SRs, it needs to be considered
-that the Anti-ID regions corresponding to the SRs consist of mixtures of
-multi-jet and \ttbar events with \faketauhadvis. Let \rqcd be the fraction of
+When estimating the \faketauhadvis background in one of the \lephad SRs, it
+needs to be considered that the corresponding Anti-ID region consists of a
+mixture of multi-jet and \ttbarFakes events. Let \rqcd be the fraction of
 \faketauhadvis events from multi-jet processes in this Anti-ID
 region. \emph{Combined fake factors} are defined as the weighted combination of
 \FFqcd and \FFttbar:
 \begin{align*}
   \FFcomb = \rqcd \, \FFqcd + (1 - \rqcd) \, \FFttbar \,\text{.}
 \end{align*}
-The combined fake factors can be applied to events with \faketauhadvis,
-irrespective of whether the event originates from multi-jet or \ttbar processes,
-to yield the background estimate in the ID region. The determination of \rqcd
-proceeds according to
+The combined FFs can be applied to events with \faketauhadvis, irrespective of
+whether the event originates from multi-jet or \ttbar processes, to yield the
+background estimate in the ID region. The determination of \rqcd proceeds
+according to
 \begin{align}
   \rqcd =
   \frac{N_{\text{multi-jet}}}{N_{\text{multi-jet}} + N_{\text{\ttbarFakes}}}
@@ -80,17 +78,17 @@ contribution in the LTT channel is larger with \rqcd ranging from
 similar size in most bins.
 
 The \faketauhadvis estimation in the \lephad channel is concluded by briefly
-discussing the reason for not using a combined fake factor method in the \hadhad
+discussing the reason for not using a combined FF method in the \hadhad
 channel. In general, using a similar method in the \hadhad channel would be
 preferred compared to performing separate estimates of the \faketauhadvis
-backgrounds from multi-jet and \ttbar.  This is because the combined fake factor
-method does not require to distinguish between events with \faketauhadvis from
-multi-jet and \ttbar when applying the fake factors to events from the Anti-ID
+backgrounds from multi-jet and \ttbar.  This is because the combined FF method
+does not require to distinguish between events with \faketauhadvis from
+multi-jet and \ttbar when applying the FFs to events from the Anti-ID
 region. Currently, the multi-jet estimate in the \hadhad channel requires a
 large subtraction of \ttbar events with \faketauhadvis which is a large source
-of systematic uncertainty on the multi-jet estimate. For the combined fake
-factor method, this uncertainty would be restricted to an uncertainty on the
-\rqcd determination. However, under the assumption that \FFqcd and \FFttbar are
+of systematic uncertainty on the multi-jet estimate. For the combined FF method,
+this uncertainty would be restricted to an uncertainty on the \rqcd
+determination. However, under the assumption that \FFqcd and \FFttbar are
 similar, a large uncertainty on \rqcd would only have a small effect on the
 resulting \faketauhadvis background estimate. Difficulties arise when trying to
 adopt the method to the \hadhad channel which were previously discussed in
