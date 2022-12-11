@@ -717,7 +717,7 @@ of the multi-jet estimation method used in this analysis.
 % Total: ~11.5%
 
 The following systematic uncertainties are considered and propagated to the
-multi-jet estimate in the \hadhad SR:\todo{TODO}
+multi-jet estimate in the \hadhad SR:
 \begin{itemize}
 
 \item Statistical uncertainties on the FFs.
@@ -725,11 +725,14 @@ multi-jet estimate in the \hadhad SR:\todo{TODO}
 \item Non-closure uncertainty between FFs estimated in 1~$b$-tag OS and SS
   regions.
 
-\item Uncertainties on the extrapolation of FFs derived in the 1~$b$-tag
-  regionto the 2~$b$-tag region.
+\item Uncertainties on the extrapolation of FFs derived in the 1~$b$-tag~region
+  to the 2~$b$-tag~region.
 
-\item Non-multi-jet subtraction uncertainties for the subtraction of \ttbar,
-  \ttbarFakes, and other processes in the 2~$b$-tag OS Anti-ID region.
+\item Non-multi-jet subtraction uncertainties for the subtraction of \ttbar and
+  other processes in the 2~$b$-tag OS Anti-ID region.
+
+\item Statistical uncertainties due to the finite number of events in the
+  2~$b$-tag OS Anti-ID CR.
 
 \end{itemize}
 
@@ -835,32 +838,25 @@ A summary of all uncertainties affecting the multi-jet background prediction in
 the SR is given in~\Cref{tab:multi_jet_uncertainties}. The dominant sources of
 uncertainty on the multi-jet normalisation are the subtraction of \ttbarFakes,
 the subtraction of other non-multi-jet processes~(\Vjets and single top), and
-the extrapolation of 1~$b$-tag FFs to 2~$b$-tag regions.
+the extrapolation of 1~$b$-tag FFs to 2~$b$-tag regions. The total uncertainty
+on the normalisation of the multi-jet estimate in the \hadhad~SR is about
+\SI{12}{\percent}.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Impact of uncertainties on the normalisation of the multi-jet
-    prediction in the \hadhad SR. The effect of uncertainties on the shape of
-    the multi-jet prediction are propagated except for the FF statistical
-    uncertainty (\texttt{FF\_STAT\_HADHADSR}) which is an uncertainty on the
-    normalisation only. Uncertainties are grouped by their source and given
-    separately for each nuisance parameter. $\dagger$: statistical uncertainties
-    from the finite number of simulated and CR events are combined for all
-    background processes thus no dedicated nuisance parameters exist for the
-    statistical uncertainty of the multi-jet prediction.}%
+  \caption{Uncertainty on the normalisation of the multi-jet background
+    prediction in the \hadhad~SR. For a given source of uncertainty, the number
+    of independent NPs in the background model is given in the ``Components''
+    column. Whether a given uncertainty affects the normalisation (N) and/or
+    shape (S) of the multi-jet prediction is given in parentheses.
+    $\dagger$:~Statistical uncertainties from the finite number of simulated and
+    CR events are combined for all background processes.}%
   \label{tab:multi_jet_uncertainties}
 
   \input{tables/multi_jet_uncertainties}
 \end{table}
 
-% Yield table / plots of regions
-
-% \todo[inline]{Could we use nOS to enhance statistics? Maybe flip the FF method
-% so that we use events in SS ID to build the template instead of OS Anti-ID.}
-
-% \todo[inline]{Can we make the STT FF depend on the trigger-match instead of
-%   the leading / subleading binning?}
 
 %%% Local Variables:
 %%% mode: latex
