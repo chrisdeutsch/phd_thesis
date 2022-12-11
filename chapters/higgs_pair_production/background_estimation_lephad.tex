@@ -1,17 +1,17 @@
 The estimation of \jettotauhadvis backgrounds in the \lephad channels is
-outlined in the following. A data-driven background estimation method yielding a
-combined estimate of the multi-jet and \ttbar background with a \faketauhadvis
-is adopted. The method is an extension of the FF~method, previously introduced
-in \Cref{sec:hadhad_multijet}, to account for multiple sources of \faketauhadvis
-that can differ in their process-specific FFs.
+outlined in the following. A data-driven background estimation technique
+yielding a combined estimate of the multi-jet and \ttbar background with a
+\faketauhadvis is adopted. The method is an extension of the FF~method
+% , previously introduced in \Cref{sec:hadhad_multijet},
+that accounts for multiple sources of \faketauhadvis, differing in their
+process-specific FFs.
 
 Events in the \lephad channel in which the selected \tauhadvis candidate is an
 \antitau define the Anti-ID region used for the FF method. Two CRs are defined
-that are enhanced in multi-jet and \ttbar events, respectively. Both regions
-have a corresponding ID and Anti-ID region and are orthogonal to the SRs. These
-CRs are used to determine FFs specifically for \faketauhadvis from multi-jet and
-\ttbar events. The CR definitions and FF measurements are described in the
-following:
+that are enhanced in multi-jet and \ttbar events, respectively. Both regions can
+be divided into an ID and an Anti-ID region. These CRs are used to determine FFs
+specifically for \faketauhadvis from multi-jet and \ttbar events. The CR
+definitions and FF measurements are described in the following:
 \begin{description}
 
 \item[Multi-jet fake factors] are determined in a region defined by the
@@ -77,26 +77,44 @@ contribution in the LTT channel is larger with \rqcd ranging from
 \faketauhadvis background prediction since \FFqcd and \FFttbar tend to be of
 similar size in most bins.
 
-The \faketauhadvis estimation in the \lephad channel is concluded by briefly
-discussing the reason for not using a combined FF method in the \hadhad
-channel. In general, using a similar method in the \hadhad channel would be
-preferred compared to performing separate estimates of the \faketauhadvis
-backgrounds from multi-jet and \ttbar. This is because the combined FF method
-does not require to distinguish between events with \faketauhadvis from
-multi-jet and \ttbar when applying the FFs to events from the Anti-ID
-region. Currently, the multi-jet estimate in the \hadhad channel requires a
-large subtraction of \ttbar events with \faketauhadvis, which is a large source
-of systematic uncertainty on the multi-jet estimate. For the combined FF method,
-this uncertainty would be restricted to an uncertainty on the \rqcd
-determination. However, under the assumption that \FFqcd and \FFttbar are
-similar, a large uncertainty on \rqcd would only have a small effect on the
-resulting \faketauhadvis background estimate. Difficulties arise when trying to
-adopt the method to the \hadhad channel which were previously discussed in
-\Cref{sec:bkg_hadhad_ttbarfakes}. It is possible that these can be overcome in
-the future. At the current stage the search is not limited by uncertainties
-related to the \faketauhadvis estimation methods and therefore this approach was
-not pursued. However, the method should be considered for future iterations of
-this search for which systematic uncertainties will become more relevant.
+The use of a similar method in the \hadhad channel would be preferred compared
+to seperately estimating the \faketauhadvis background from multi-jet and
+\ttbar. The combined FF method does not need to distinguish between events with
+\faketauhadvis from multi-jet and \ttbar when applying the FFs to events in the
+Anti-ID region. In contrast, the multi-jet estimate in the \hadhad channel
+requires a large subtraction of \ttbarFakes events, which is a dominant source
+of systematic uncertainty. In the combined FF method this uncertainty is
+restricted to an uncertainty on \rqcd. Despite possibly large uncertainties on
+\rqcd, the uncertainty on the \faketauhadvis background estimate from the
+combined FF method would be small since \FFqcd and \FFttbar are of similar
+size. The search presented in this thesis is not limited by uncertainties
+related to the \faketauhadvis background estimation and therefore this approach
+was not pursued. However, in the future systematic uncertainties will become
+more relevant at which point the combined FF method should also be considered
+for the \hadhad channel.
+
+% The \faketauhadvis estimation in the \lephad channel is concluded by briefly
+% discussing the reason for not using a combined FF method in the \hadhad
+% channel. In general, using a similar method in the \hadhad channel would be
+% preferred compared to performing separate estimates of the \faketauhadvis
+% backgrounds from multi-jet and \ttbar. This is because the combined FF method
+% does not require to distinguish between events with \faketauhadvis from
+% multi-jet and \ttbar when applying the FFs to events from the Anti-ID
+% region. Currently, the multi-jet estimate in the \hadhad channel requires a
+% large subtraction of \ttbar events with \faketauhadvis, which is a large
+% source of systematic uncertainty on the multi-jet estimate. For the combined
+% FF method, this uncertainty would be restricted to an uncertainty on the \rqcd
+% determination. However, under the assumption that \FFqcd and \FFttbar are
+% similar, a large uncertainty on \rqcd would only have a small effect on the
+% resulting \faketauhadvis background estimate.
+
+% Difficulties arise when trying to adopt the method to the \hadhad channel
+% which were previously discussed in \Cref{sec:bkg_hadhad_ttbarfakes}. It is
+% possible that these can be overcome in the future. At the current stage the
+% search is not limited by uncertainties related to the \faketauhadvis
+% estimation methods and therefore this approach was not pursued. However, the
+% method should be considered for future iterations of this search for which
+% systematic uncertainties will become more relevant.
 
 %%% Local Variables:
 %%% mode: latex
