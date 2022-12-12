@@ -92,69 +92,64 @@ the background model.
 \label{sec:modelling_uncertainties}%
 \label{sec:theory_uncertainties}
 
-A number of theoretical uncertainties have to be considered for signal and
+A number of theoretical uncertainties need to be considered for signal and
 background processes estimated using simulation. For a given process these
 uncertainties are split, where applicable, into uncertainties on the cross
-section of the process, uncertainties on the acceptance of an analysis selection
-(e.g.\ the SR selection), and uncertainties affecting the acceptance in terms of
-the shape of discriminants used for the statistical analysis. With few
-exceptions, acceptance uncertainties on a given process that originate from the
-same source are assumed to be fully correlated between all analysis regions.
+section and uncertainties on the acceptance due to analysis
+selections. Generally, acceptance uncertainties for a given signal or background
+process are assumed to be correlated across regions if the uncertainty
+originates from the same source.
 
-The description of theory uncertainties is divided into three parts.  First, the
-treatment of uncertainties on the major \ZHF and \ttbar backgrounds is
-described, representing a special case since the cross section of these
-processes is determined from the likelihood fit to observed data. Subsequently,
-uncertainties on other background processes estimated with simulation and
-normalised using theoretical predictions are briefly outlined. Finally,
-uncertainties on the modelling of the SM \HH and BSM $X \to \HH$ signals are
+The description of the theory uncertainties is structures as follows: First, the
+uncertainties on the major \ZHF and \ttbar backgrounds is described. Second,
+uncertainties on minor background processes are estimated. Finally,
+uncertainties on the modelling of the SM~\HH and BSM $X \to \HH$ signals are
 presented.
 
-%\subsubsection{Uncertainties on the relative acceptance of \ZHF and
-% \ttbar between regions}
+
 \subsubsection{Acceptance Uncertainties on \ZHF and \ttbar Backgrounds}
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in the
-combined likelihood fit of CRs and SRs. Constraints on the normalisation of the
-\ZHF background primarily originate from the dedicated CR. The normalisation of
-the \ttbar background is mainly constrained in the SR of the \lephad SLT channel
-and the \ZHF CR. Due to the determination of the normalisation of these
-processes from the fit to data, any uncertainties on their overall
-normalisation, for example uncertainties on the total cross sections, are
-omitted. Uncertainties changing the relative acceptance of \ZHF or \ttbar events
-between regions have to be considered instead. These uncertainties will be
-referred to as \emph{relative acceptance uncertainties}, hereafter. The approach
-outlined in the following was originally adopted by the previously published
-analysis in this channel~\cite{HIGG-2016-16-witherratum} from searches and
-measurements of $VH$~($H\to\bbbar$)
-production~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
+simultaneous fit to the observed data in all regions. Constraints on the
+normalisation of the \ZHF background can be obtained from the dedicated
+\ZHF~CR. Similarly, the \ttbar normalisation can be constrained in the SR of the
+\lephad SLT channel and the \ZHF~CR. Since the normalisation of these processes
+is determined in the fit to data, any uncertainties on the normalisation of
+these processes (e.g.~cross section uncertainties) are omitted. Instead,
+uncertainties on the relative acceptance of \ZHF and \ttbar between analysis
+regions have to be considered. These uncertaines are hereafter referred to as
+\emph{relative acceptance uncertainties}.
+% The approach outlined below was originally adopted by the previous search
+% performed in this channel~\cite{HIGG-2016-16-witherratum} from searches and
+% measurements of $VH$~($H\to\bbbar$)
+% production~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
 
-Assuming a general case of a background process that is estimated using
-simulation and normalised by a fit to data in two analysis regions A and B, with
-region A being defined as the reference region. In this case, the probability of
-an event to be selected in a given region~R is given by the product of
-acceptance and efficiency, $(\AccTimesEff)_{\text{R}}$, for this region. The
-simulation predicts how \AccTimesEff relates between both regions and one can
-define the ratio
+The derivation of relative acceptance uncertainties is described using an
+example of a background that is estimated using simulation and normalised by a
+fit to data in two regions~A and~B, with region~A being declared as the
+\emph{reference region}. The probability of an event being selected into
+region~R is given by the product of acceptance and efficiency,
+$(\AccTimesEff)_{\text{R}}$, for this region. The simulation of the background
+process predicts how \AccTimesEff relates between regions and one can define the
+ratio
 \begin{align*}
   \mathcal{R} = \frac{(\AccTimesEff)_{\text{B}}}{(\AccTimesEff)_{\text{A}}} \,\text{,}
 \end{align*}
-which will be be referred to as the \emph{relative acceptance} between regions A
-and B. Uncertainties on the modelling of $\mathcal{R}$ in simulation are
+which will be be referred to as the \emph{relative acceptance} between regions~A
+and~B. Uncertainties on the modelling of $\mathcal{R}$ in simulation are
 assigned as uncertainties on the normalisation of the background process in
-region B\todo{Show mathematically?} and no additional uncertainties are assigned
-in the reference region, A. They are estimated by performing variations of the
-background prediction, for example using alternative generator configurations,
-and estimating a relative change of~$\mathcal{R}$ according to
+region~B and no additional uncertainties are assigned in the reference
+region. Uncertainties on $\mathcal{R}$ are estimated by performing variations of
+the simulation and estimating a relative change in $\mathcal{R}$ according to
 \begin{align}
   \frac{\Delta \mathcal{R}}{\mathcal{R}} = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})} \,\text{.}
   \label{eq:relative_acceptance_uncertainty}
 \end{align}
-The use of the relative acceptance for the definition of the modelling
-uncertainties leads to a cancellation of variations that lead to the same
-relative change in \AccTimesEff in both regions, which corresponds to an overall
-change in normalisation that can be absorbed into the freely floating
-normalisation factor.
+Using relative acceptances to define modelling uncertainties leads to
+cancellations of variations that lead to the same relative change in
+\AccTimesEff in both regions, which corresponds to a change in the overall
+normalisation of the process that can be absorbed in the free normalisation
+factor.
 
 % This uncertainty on the relative acceptance between the the
 % reference region A and region B is included in the background model
