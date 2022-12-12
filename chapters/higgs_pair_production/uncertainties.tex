@@ -30,14 +30,13 @@ signal and background processes estimated using simulation.
 
 The integrated luminosity of the \pp-collision dataset recorded with the ATLAS
 detector during Run~2 of the LHC is measured with an uncertainty of
-\SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This uncertainty is assigned to
+\SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. This uncertainty is applied to
 all processes normalised using theoretical cross section predictions. Moreover,
 an uncertainty is assigned on the re-weighting of the simulated event samples to
-match the pile-up conditions in the recorded \pp-collision dataset.
-
-Uncertainties related to the reconstruction and selection of physics objects are
-provided by dedicated calibration measurements performed by the ATLAS
-collaboration. In this search, these calibrations are used for
+match the pile-up conditions in the recorded \pp-collision
+dataset. Uncertainties related to the reconstruction and selection of physics
+objects are provided by dedicated calibration measurements performed by the
+ATLAS collaboration. In this search, these calibrations are used for
 electrons~\cite{EGAM-2018-01,TRIG-2018-05}, muons~\cite{MUON-2018-03},
 \tauhadvis~\cite{ATLAS-CONF-2017-029}, jets~\cite{JETM-2018-05},
 flavour-tagging~\cite{FTAG-2018-01,FTAG-2020-08,FTAG-2021-002}, and the
@@ -53,37 +52,40 @@ reconstructed and selected objects are also propagated to the object-based
 % Additional calibrations and uncertainties are derived for event samples using
 % fast simulation of the ATLAS detector.
 
-Except\todo{merge with previous paragraph.} for the luminosity uncertainty, any
-of the previously mentioned uncertainties can affect the shape and/or
-normalisation of the distributions used in the statistical
-interpretation. Therefore, both the shape and normalisation effects of these
-uncertainties are propagated to the relevant distributions.
+% Except for the luminosity uncertainty, any of the previously mentioned
+% uncertainties can affect the shape and/or normalisation of the distributions
+% used in the statistical interpretation. Therefore, both the shape and
+% normalisation effects of these uncertainties are propagated to the relevant
+% distributions.
 
 \begin{table}[htbp]
   \centering
 
   \caption{Summary of instrumental uncertainties. The number of independent NPs
-    describing the uncertainty, $N_{\text{NPs}}$, is given in the right-most
-    column.}%
+    describing the uncertainty is given in the right-most column.}%
   \label{tab:experimental_uncertainties_2}
 
   { \renewcommand{\arraystretch}{1.5} \input{tables/detector_uncertainties} }
 \end{table}
 
-Experimental uncertainties on the \faketauhadvis background estimate in the
-\lephad channel are derived to account for the statistical uncertainties of the
-\FFqcd, \FFttbar, and \rqcd estimates. Moreover, uncertainties on the
-subtraction of \ttbar and non-\ttbar processes in the fake factor method are
-accounted for. An additional uncertainty is assigned on the value of \rqcd due
-to it being derived using a simulation-based estimate of \ttbarFakes in the
-Anti-ID region. In the \lephad SLT and LTT channel the total uncertainties on
-the normalisation of the \faketauhadvis background are $^{+18\,\%}_{-23\,\%}$
-and $^{+28\,\%}_{-30\,\%}$, respectively. The leading contributions to these
-uncertainties are the \ttbar subtraction and variations of \rqcd in the SLT
-channel and the \ttbar and non-\ttbar subtraction, variations of \rqcd, and the
-statistical precision of \FFttbar in the LTT channel. The effect of these
-variations on the shape of final discriminants are considered in the background
-model.
+Experimental uncertainties on the \faketauhadvis background estimates in the
+\lephad channels account for the statistical uncertainties of the \FFqcd,
+\FFttbar, and \rqcd estimates. Moreover, uncertainties on the subtraction of
+\ttbar and non-\ttbar processes in the combined FF method are taken into
+account. An additional uncertainty is assigned on \rqcd due to it being derived
+using a simulation-based estimate of the \ttbarFakes contribution in the \antiid
+region. In the \lephad SLT and LTT channel the total uncertainty on the
+normalisation of the \faketauhadvis background are
+$^{\hspace{0.25pt}+\hspace{0.25pt}18\,\%}_{-23\,\%}$ and
+$^{\hspace{0.25pt}+\hspace{0.25pt}28\,\%}_{-30\,\%}$, respectively. The effect
+of these uncertainties on the shape of the final discriminants are considered in
+the background model.
+
+% The leading contributions to these uncertainties are the \ttbar subtraction
+% and variations of \rqcd in the SLT channel and the \ttbar and non-\ttbar
+% subtraction, variations of \rqcd, and the statistical precision of \FFttbar in
+% the LTT channel. The effect of these variations on the shape of final
+% discriminants are considered in the background model.
 
 
 \subsection{Theory Uncertainties}%
