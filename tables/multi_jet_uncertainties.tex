@@ -23,30 +23,46 @@
 % TTBAR_FAKESF_ANTITAU_TAU25RNN_EIGEN0__1up         -5.1 %
 % TTBAR_FAKESF_ANTITAU_TAU25_EIGEN0__1down          +4.2 %
 % TTBAR_FAKESF_ANTITAU_TAU25_EIGEN0__1up            -4.3 %
-\begin{tabular}{llr}
+% \begin{tabular}{llr}
+%   \toprule
+%   \textbf{Source} &  \textbf{Nuisance parameter} & \textbf{Uncertainty}\\
+%   \midrule
+%   Statistical uncertainty & --$^\dagger$ & $\pm 1.9\,\%$ \\
+%   \midrule
+%   FF statistical uncertainty & \texttt{FF\_STAT\_HADHADSR} & $\pm 1.4\,\%$ \\
+%   \midrule
+%   Non-closure of OS / SS FFs & \texttt{FF\_OSSS} & $\pm 1.0\,\%$ \\
+%   \midrule
+%   1 to 2 $b$-tag extrapolation & \texttt{TF\_STAT\_1P\_LEAD} & $\pm 3.4\,\%$ \\
+%                                & \texttt{TF\_STAT\_1P\_SUBL} & $\pm 3.4\,\%$ \\
+%                                & \texttt{TF\_STAT\_3P\_LEAD} & $\pm 1.9\,\%$ \\
+%                                & \texttt{TF\_STAT\_3P\_SUBL} & $\pm 1.7\,\%$ \\
+%   \midrule
+%   \ttbar subtraction & \texttt{FF\_TRUE\_TTBAR\_SUBTRACTION} & $\pm 2.8\,\%$ \\
+%   \midrule
+%   \ttbarFakes subtraction & \texttt{TTBAR\_FAKESF\_ANTITAU\_DIFF} & $\pm 2.1\,\%$ \\
+%                                  & \texttt{TTBAR\_FAKESF\_ANTITAU\_OFFL\_EIGEN0} & $\pm 0.1\,\%$ \\
+%                                  & \texttt{TTBAR\_FAKESF\_ANTITAU\_TAU25\_EIGEN0} & $\pm 4.3\,\%$ \\
+%                                  & \texttt{TTBAR\_FAKESF\_ANTITAU\_TAU25EF\_EIGEN0} & $\pm 2.2\,\%$ \\
+%                                  & \texttt{TTBAR\_FAKESF\_ANTITAU\_TAU25RNN\_EIGEN0} & $\pm 5.1\,\%$ \\
+%   \midrule
+%   Other subtraction & \texttt{FF\_OTHER\_SUBTRACTION} & $\pm 5.9\,\%$ \\
+%   \bottomrule
+% \end{tabular}
+
+\begin{tabular}{lcc}
   \toprule
-  \textbf{Source} &  \textbf{Nuisance parameter} & \textbf{Uncertainty}\\
+  \textbf{Source} &  \textbf{Components} & \textbf{Uncertainty}\\
   \midrule
+  FF statistical uncertainty & 1 (N) & $\pm 1.4\,\%$ \\
+  Non-closure of OS and SS FFs & 1 (NS) & $\pm 1.0\,\%$ \\
+  1 to 2 $b$-tag extrapolation & 4 (NS) & $\pm 5.5\,\%$ \\
+  \ttbarTrue subtraction & 1 (NS) & $\pm 2.8\,\%$ \\
+  \ttbarFakes subtraction & 5 (NS) & $\pm 7.4\,\%$ \\
+  Other subtraction & 1 (NS) & $\pm 5.9\,\%$ \\
   Statistical uncertainty & --$^\dagger$ & $\pm 1.9\,\%$ \\
   \midrule
-  FF statistical uncertainty & \texttt{FF\_STAT\_HADHADSR} & $\pm 1.4\,\%$ \\
-  \midrule
-  Non-closure of OS / SS FFs & \texttt{FF\_OSSS} & $\pm 1.0\,\%$ \\
-  \midrule
-  1 to 2 $b$-tag extrapolation & \texttt{TF\_STAT\_1P\_LEAD} & $\pm 3.4\,\%$ \\
-                               & \texttt{TF\_STAT\_1P\_SUBL} & $\pm 3.4\,\%$ \\
-                               & \texttt{TF\_STAT\_3P\_LEAD} & $\pm 1.9\,\%$ \\
-                               & \texttt{TF\_STAT\_3P\_SUBL} & $\pm 1.7\,\%$ \\
-  \midrule
-  \ttbar subtraction & \texttt{FF\_TRUE\_TTBAR\_SUBTRACTION} & $\pm 2.8\,\%$ \\
-  \midrule
-  \ttbarFakes subtraction & \texttt{TTBAR\_FAKESF\_ANTITAU\_DIFF} & $\pm 2.1\,\%$ \\
-                                 & \texttt{TTBAR\_FAKESF\_ANTITAU\_OFFL\_EIGEN0} & $\pm 0.1\,\%$ \\
-                                 & \texttt{TTBAR\_FAKESF\_ANTITAU\_TAU25\_EIGEN0} & $\pm 4.3\,\%$ \\
-                                 & \texttt{TTBAR\_FAKESF\_ANTITAU\_TAU25EF\_EIGEN0} & $\pm 2.2\,\%$ \\
-                                 & \texttt{TTBAR\_FAKESF\_ANTITAU\_TAU25RNN\_EIGEN0} & $\pm 5.1\,\%$ \\
-  \midrule
-  Other subtraction & \texttt{FF\_OTHER\_SUBTRACTION} & $\pm 5.9\,\%$ \\
+  Total & & $\pm 12\,\%$ \\
   \bottomrule
 \end{tabular}
 
