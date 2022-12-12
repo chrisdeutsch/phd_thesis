@@ -1,22 +1,22 @@
 \section{Systematic Uncertainties}%
 \label{sec:uncertainties}
 
-The sources of systematic uncertainties affecting the search for non-resonant
-and resonant Higgs boson pair production are discussed in the
-following. Experimental uncertainties are described in
-\Cref{sec:experimental_uncertainties} but exclude uncertainties related to the
-estimation of \faketauhadvis backgrounds in the \hadhad channel, which were
-previously described in~\Cref{sec:bkg_hadhad_ttbarfakes,sec:bkg_hadhad_ff}.
-Theory uncertainties are described in~\Cref{sec:theory_uncertainties} and
-include uncertainties on the modelling of physics processes with MC simulations.
+The systematic uncertainties affecting the search for non-resonant and resonant
+Higgs boson pair production are discussed in the following. Experimental
+uncertainties are described in \Cref{sec:experimental_uncertainties} but exclude
+uncertainties related to the estimation of \faketauhadvis backgrounds in the
+\hadhad channel. These were previously described
+in~\Cref{sec:bkg_hadhad_ttbarfakes,sec:bkg_hadhad_ff}. Theory uncertainties are
+described in~\Cref{sec:theory_uncertainties} and include uncertainties on the
+modelling of physics processes with MC simulations.
 
-The searches presented in this chapter are largely limited by statistical
-uncertainties due to the finite number of events observed in the signal
-regions. Theoretical uncertainties play a sub-leading role and instrumental
-uncertainties are only relevant for the searches for scalar resonances with low
-masses ($\mX \lesssim \SI{300}{\GeV}$). The impact of uncertainties on the
-results will be discussed during the statistical interpretation in
-\Cref{sec:statistical_analysis}.
+The searches for Higgs boson pair production presented in this thesis are
+generally limited by statistical uncertainties due to the finite number of
+events observed in the SRs. Theory uncertainties play a sub-leading role and
+instrumental uncertainties are only relevant for searches for scalar resonance
+with low masses ($\mX \lesssim \SI{300}{\GeV}$). The impact of statistical and
+systematic uncertainties on the results are discussed in the context of the
+statistical interpretation in \Cref{sec:statistical_analysis}.
 
 
 \subsection{Experimental Uncertainties}%
@@ -54,7 +54,7 @@ electron, muon, and \tauhadvis triggers are only considered in channels where
 these triggers are used. All uncertainties affecting the 4-momentum of
 reconstructed and selected objects are also propagated to the object-based
 \pTmissAbs reconstruction. Additional calibrations and uncertainties are derived
-for event samples using \emph{fast simulation} of the ATLAS detector.
+for event samples using fast simulation of the ATLAS detector.
 
 % calibrations and uncertainties that are sensitive to the modelling of the
 % calorimeter response are specifically derived for simulated event samples
@@ -102,10 +102,10 @@ A number of theoretical uncertainties have to be considered for signal and
 background processes estimated using simulation. For a given process these
 uncertainties are split, where applicable, into uncertainties on the cross
 section of the process, uncertainties on the acceptance of an analysis selection
-(e.g.\ the signal region selection), and uncertainties affecting the acceptance
-in terms of the shape of discriminants used for the statistical analysis. With
-few exceptions, acceptance uncertainties on a given process that originate from
-the same source are assumed to be fully correlated between all analysis regions.
+(e.g.\ the SR selection), and uncertainties affecting the acceptance in terms of
+the shape of discriminants used for the statistical analysis. With few
+exceptions, acceptance uncertainties on a given process that originate from the
+same source are assumed to be fully correlated between all analysis regions.
 
 The description of theory uncertainties is divided into three parts.  First, the
 treatment of uncertainties on the major \ZHF and \ttbar backgrounds is
@@ -121,19 +121,19 @@ presented.
 \subsubsection{Acceptance Uncertainties on \ZHF and \ttbar Backgrounds}
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in the
-combined likelihood fit of control and signal regions. Constraints on the
-normalisation of the \ZHF background primarily originate from the dedicated
-control region. The normalisation of the \ttbar background is mainly constrained
-in the signal region of the \lephad SLT channel and the \ZHF control region. Due
-to the determination of the normalisation of these processes from the fit to
-data, any uncertainties on their overall normalisation, for example
-uncertainties on the total cross sections, are omitted. Uncertainties changing
-the relative acceptance of \ZHF or \ttbar events between regions have to be
-considered instead. These uncertainties will be referred to as \emph{relative
-  acceptance uncertainties}, hereafter. The approach outlined in the following
-was originally adopted by the previously published analysis in this
-channel~\cite{HIGG-2016-16-witherratum} from searches and measurements of
-$VH$~($H\to\bbbar$) production~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
+combined likelihood fit of control and SRs. Constraints on the normalisation of
+the \ZHF background primarily originate from the dedicated CR. The normalisation
+of the \ttbar background is mainly constrained in the SR of the \lephad SLT
+channel and the \ZHF CR. Due to the determination of the normalisation of these
+processes from the fit to data, any uncertainties on their overall
+normalisation, for example uncertainties on the total cross sections, are
+omitted. Uncertainties changing the relative acceptance of \ZHF or \ttbar events
+between regions have to be considered instead. These uncertainties will be
+referred to as \emph{relative acceptance uncertainties}, hereafter. The approach
+outlined in the following was originally adopted by the previously published
+analysis in this channel~\cite{HIGG-2016-16-witherratum} from searches and
+measurements of $VH$~($H\to\bbbar$)
+production~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}.
 
 Assuming a general case of a background process that is estimated using
 simulation and normalised by a fit to data in two analysis regions A and B, with
@@ -179,12 +179,12 @@ normalisation factor.
 
 % Note: Sign is important -> direction of effect when correlating systematics
 
-The relative acceptance uncertainties are defined using the \ZHF control region
-as a reference region, providing constraints on both the \ZHF and \ttbar
+The relative acceptance uncertainties are defined using the \ZHF CR as a
+reference region, providing constraints on both the \ZHF and \ttbar
 backgrounds. The uncertainties are estimated separately for the \ZHF and \ttbar
-backgrounds in the signal regions (\hadhad, \lephad SLT, \lephad
-LTT). Uncertainties originating from the same source are assumed to be fully
-correlated between all analysis regions.
+backgrounds in the SRs (\hadhad, \lephad SLT, \lephad LTT). Uncertainties
+originating from the same source are assumed to be fully correlated between all
+analysis regions.
 
 The relative acceptance uncertainties originating from the modelling of the \ZHF
 background in simulation are estimated by performing variations of the event
@@ -194,15 +194,14 @@ generation process.
 
 Relative acceptance uncertainties on the \ZHF background are derived using these
 variations according to~\Cref{eq:relative_acceptance_uncertainty} for the three
-signal regions. The uncertainties are summarised
-in~\Cref{tab:uncertainties_zhf_extrapol} separately for all sources of
-uncertainty.
+SRs. The uncertainties are summarised in~\Cref{tab:uncertainties_zhf_extrapol}
+separately for all sources of uncertainty.
 
-The \lephad SLT signal region selection is the closest to the \ZHF control
-region, resulting in a small relative acceptance uncertainty of approximately
-\SI{9}{\percent}. The \hadhad and \lephad LTT channels deviate yielding an
-uncertainty of approximately \SI{16}{\percent}. In all cases the dominant
-sources of uncertainty are the scale variations as well as the comparison with
+The \lephad SLT SR selection is the closest to the \ZHF CR, resulting in a small
+relative acceptance uncertainty of approximately \SI{9}{\percent}. The \hadhad
+and \lephad LTT channels deviate yielding an uncertainty of approximately
+\SI{16}{\percent}. In all cases the dominant sources of uncertainty are the
+scale variations as well as the comparison with
 \MGNLO+\PYTHIA[8]\todo{``Interpretation'' needs some work.}.
 
 The relative acceptance uncertainties on the \ttbar background are estimated
@@ -222,17 +221,17 @@ scales, and \PYTHIA[8] damping parameter, $\hdamp$, are omitted. Instead they
 are included in the variations of the initial-state radiation. The uncertainties
 on the amount of final-state radiation and the PDF+\alphas uncertainties are
 estimated using internal re-weighting in \PYTHIA[8]. The relative acceptance
-uncertainty for \ttbar backgrounds in the three signal regions is given
+uncertainty for \ttbar backgrounds in the three SRs is given
 in~\Cref{tab:uncertainties_ttbar_extrapol}.
 
 \begin{table}[htbp]
   \centering
 
   \caption{Relative acceptance uncertainties on the \ZHF (a) and \ttbar
-    background (b) in the three signal regions. The relative sign of the effect
-    of variations between the signal regions is indicated by the ``$\pm$'' and
-    ``$\mp$'' prefixes. The total uncertainty is given for illustration of the
-    size of the uncertainties only.}
+    background (b) in the three SRs. The relative sign of the effect of
+    variations between the SRs is indicated by the ``$\pm$'' and ``$\mp$''
+    prefixes. The total uncertainty is given for illustration of the size of the
+    uncertainties only.}
 
   \begin{subtable}[t]{0.95\textwidth}
     \centering
@@ -254,25 +253,24 @@ in~\Cref{tab:uncertainties_ttbar_extrapol}.
 \end{table}
 
 Relative acceptance uncertainties are implemented as uncertainties on the
-normalisation of the respective backgrounds in signal regions only. Variations
-of the modelling in simulation can also change the shapes of discriminants used
-for signal extraction, including $\mll$ in the \ZHF control region, which have
-to be considered.
+normalisation of the respective backgrounds in SRs only. Variations of the
+modelling in simulation can also change the shapes of discriminants used for
+signal extraction, including $\mll$ in the \ZHF CR, which have to be considered.
 
 The impact of modelling uncertainties on distributions of the MVA discriminants
-in the signal regions and the \mll distribution in the \ZHF control region are
-investigated by performing shape comparisons of the varied and nominal
-distributions. In cases where the shapes do not differ significantly, no
-additional uncertainties are assigned.  When deviations are observed, the shape
-uncertainties are propagated to the discriminants and correlated with the
-corresponding normalisation uncertainty.
+in the SRs and the \mll distribution in the \ZHF CR are investigated by
+performing shape comparisons of the varied and nominal distributions. In cases
+where the shapes do not differ significantly, no additional uncertainties are
+assigned.  When deviations are observed, the shape uncertainties are propagated
+to the discriminants and correlated with the corresponding normalisation
+uncertainty.
 
 Shape uncertainties on the \ZHF background are considered for the comparison
 with the alternative event generation setup changing both the matrix element and
 the parton shower generator (\hadhad), and for variations of the factorisation
 and renormalisation scales (\hadhad, \lephad SLT \& LTT). All other variations,
-including variations in the \ZHF control region, are found to have negligible
-impact on the shape of the discriminating variables (\mll / MVA scores).
+including variations in the \ZHF CR, are found to have negligible impact on the
+shape of the discriminating variables (\mll / MVA scores).
 
 Shape uncertainties on the \ttbar background are considered for the comparison
 with alternative matrix element generator and parton shower programs (\hadhad,
@@ -331,7 +329,7 @@ is given in the following:
 
   The total acceptance uncertainty on $tW$ production is \SI{34}{\percent},
   \SI{14}{\percent}, \SI{23}{\percent} in the \hadhad, \lephad SLT, and \lephad
-  LTT signal region, respectively. The shape effect of the FSR and $tW$-$\ttbar$
+  LTT SR, respectively. The shape effect of the FSR and $tW$-$\ttbar$
   interference uncertainties on the MVA discriminants are propagated using
   suitable parameterisation.
 
@@ -423,10 +421,10 @@ in~\Cref{tab:theory_uncertainty_signal} for the considered production modes. The
 uncertainties on PDF+\alphas are found to be negligible in most cases and thus
 omitted. The impact of the variations on the shape of the MVA discriminants is
 found to be negligible in most cases. The variations of the factorisation and
-renormalisation scales for the VBF production mode in the \hadhad signal region
-is found to induce small changes in the shape (up to \SI{2}{\percent} in bins
-sensitive to the SM $HH$ signal) of the SM $HH$ BDT score distribution which is
-implemented as a shape uncertainty for later statistical evaluation.
+renormalisation scales for the VBF production mode in the \hadhad SR is found to
+induce small changes in the shape (up to \SI{2}{\percent} in bins sensitive to
+the SM $HH$ signal) of the SM $HH$ BDT score distribution which is implemented
+as a shape uncertainty for later statistical evaluation.
 
 \begin{table}[htbp]
   \centering
@@ -434,8 +432,7 @@ implemented as a shape uncertainty for later statistical evaluation.
   \todo[inline]{Why is there a dagger?}
 
   \caption{Theory uncertainties on the acceptance of non-resonant SM $HH$
-    signals in the three signal regions. Uncertainties marked as ``--'' are
-    negligible.}%
+    signals in the three SRs. Uncertainties marked as ``--'' are negligible.}%
   \label{tab:theory_uncertainty_signal}
 
   \input{tables/theory_uncertainty_signal}
@@ -502,13 +499,13 @@ acceptance uncertainties ranging from \SIrange{16}{19}{\percent}.
   \includegraphics[scale=0.85]{uncertainties/resonant_ps_acc}
 
   \caption{Acceptance uncertainty on the BSM production of $gg \to X \to HH$ in
-    the signal regions estimated from a comparison with an alternative parton
-    shower program. A positive sign of the uncertainty indicates that the
-    alternative configuration (\PYTHIA) predicts a larger \AccTimesEff than the
-    nominal one (\HERWIG) and vice versa for negatively signed
-    uncertainties. The lines indicate the linear inter- / extrapolation in \mX
-    used to obtain the uncertainties for all other points of \mX considered in
-    the analysis (hollow markers).}
+    the SRs estimated from a comparison with an alternative parton shower
+    program. A positive sign of the uncertainty indicates that the alternative
+    configuration (\PYTHIA) predicts a larger \AccTimesEff than the nominal one
+    (\HERWIG) and vice versa for negatively signed uncertainties. The lines
+    indicate the linear inter- / extrapolation in \mX used to obtain the
+    uncertainties for all other points of \mX considered in the analysis (hollow
+    markers).}
   \label{fig:resonant_partonshower}
 \end{figure}
 
@@ -527,12 +524,12 @@ available. An uncertainty is estimated by comparing the acceptance between full
 and fast simulation for a benchmark sample at a mass of \SI{400}{\GeV}. The
 acceptance predicted using fast simulation is \SI{6.5}{\percent}
 (\SI{3.6}{\percent}) larger than in full simulation for the \hadhad (\lephad
-LTT) signal region for the benchmark point. Distributions of kinematic and MVA
-input variables are compared between fast and full simulation showing no
-significant deviations in their shapes. Therefore, the difference in acceptance
-is assigned as an additional normalisation uncertainty in the \hadhad and
-\lephad LTT channel for all signal samples simulated using
-\textsc{ATLFAST-II}~(i.e.\ $\mX \leq \SI{1000}{\GeV}$).
+LTT) SR for the benchmark point. Distributions of kinematic and MVA input
+variables are compared between fast and full simulation showing no significant
+deviations in their shapes. Therefore, the difference in acceptance is assigned
+as an additional normalisation uncertainty in the \hadhad and \lephad LTT
+channel for all signal samples simulated using \textsc{ATLFAST-II}~(i.e.\
+$\mX \leq \SI{1000}{\GeV}$).
 
 %%% Local Variables:
 %%% mode: latex
