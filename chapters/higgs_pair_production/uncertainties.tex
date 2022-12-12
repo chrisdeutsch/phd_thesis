@@ -166,32 +166,42 @@ factor.
 
 % The shape effects of uncertainties are estimated separately and will be described in~\Cref{sec:modelling_uncertainties}.
 
-% Note: Sign is important -> direction of effect when correlating systematics
+Relative acceptance uncertainties are defined for the \ZHF and \ttbar
+backgrounds using the \ZHF~CR as a reference region. The uncertainties are
+estimated separately for the SRs of the \hadhad, \lephad SLT, and \lephad LTT
+channel.
 
-The relative acceptance uncertainties are defined using the \ZHF CR as a
-reference region, providing constraints on both the \ZHF and \ttbar
-backgrounds. The uncertainties are estimated separately for the \ZHF and \ttbar
-backgrounds in the SRs (\hadhad, \lephad SLT, \lephad LTT). Uncertainties
-originating from the same source are assumed to be fully correlated between all
-analysis regions.
+For the \ZHF background, the uncertainties are derived by performing variations
+of the simulation setup following recommendations by the ATLAS collaboration,
+which are summarised in \Cref{app:zjets_uncertainties}. The following aspects of
+the simulation are varied: the matrix element generator and parton shower
+program, the factorisation and renormalisation scales, the resummation scale,
+the multi-jet merging scale, the PDFs and \alphas, and the PDF set. The relative
+acceptance uncertainties on the \ZHF background are summarised
+in~\Cref{tab:uncertainties_zhf_extrapol} for the three SRs.
 
-The relative acceptance uncertainties originating from the modelling of the \ZHF
-background in simulation are estimated by performing variations of the event
-generation process.
+% The \lephad SLT SR selection is the closest to the \ZHF CR, resulting in a
+% small relative acceptance uncertainty of approximately \SI{9}{\percent}. The
+% \hadhad and \lephad LTT channels deviate yielding an uncertainty of
+% approximately \SI{16}{\percent}. In all cases the dominant sources of
+% uncertainty are the scale variations as well as the comparison with
+% \MGNLO+\PYTHIA[8]\todo{``Interpretation'' needs some work.}.
 
-\todo[inline]{TODO: reference \Cref{app:zjets_uncertainties}.}
+\todo[inline]{to be continued}
 
-Relative acceptance uncertainties on the \ZHF background are derived using these
-variations according to~\Cref{eq:relative_acceptance_uncertainty} for the three
-SRs. The uncertainties are summarised in~\Cref{tab:uncertainties_zhf_extrapol}
-separately for all sources of uncertainty.
+A similar approach is taken for the relative acceptance uncertainties on the
+\ttbar background. Prescriptions developed by the ATLAS collaboration
+(cf.~\Cref{app:top_uncertainties}) are used to derive \ttbar modelling
+uncertainties.
 
-The \lephad SLT SR selection is the closest to the \ZHF CR, resulting in a small
-relative acceptance uncertainty of approximately \SI{9}{\percent}. The \hadhad
-and \lephad LTT channels deviate yielding an uncertainty of approximately
-\SI{16}{\percent}. In all cases the dominant sources of uncertainty are the
-scale variations as well as the comparison with
-\MGNLO+\PYTHIA[8]\todo{``Interpretation'' needs some work.}.
+alternative matrix element generator, alternative parton shower program,
+variations of the initial- and final-state radiation, PDF and \alphas
+uncertainties
+
+
+~\Cref{tab:uncertainties_ttbar_extrapol}.
+
+
 
 The relative acceptance uncertainties on the \ttbar background are estimated
 using a similar approach. The prescriptions documented in
@@ -224,7 +234,7 @@ in~\Cref{tab:uncertainties_ttbar_extrapol}.
 
   \begin{subtable}[t]{0.95\textwidth}
     \centering
-    \subcaption{\ZHF ($Z+bb$, $Z+bc$, $Z+cc$) background}%
+    \subcaption{\ZHF background}%
     \label{tab:uncertainties_zhf_extrapol}
 
     \input{tables/uncertainties_zhf_extrapol}
