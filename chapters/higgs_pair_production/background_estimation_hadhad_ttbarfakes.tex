@@ -66,7 +66,7 @@ summarised:
 \item All events are required to have exactly one \tauhadvis candidate passing
   \tauid, exactly one electron or muon passing their respective isolation and
   identification criteria, and exactly two \btagged jets. In addition, only
-  events passing the single-lepton trigger selection are considered.
+  events passing the SLT selection are considered.
 
 \item The electron/muon and the \tauhadvis candidate are required to be
   reconstructed with electric charges of opposite sign.
@@ -108,13 +108,9 @@ shown in~\Cref{fig:ttbarSF_prefit_pt}.
   \includegraphics[width=0.49\textwidth]{ttbarSF/prefit_sfcr/ETAVR}
 
   \caption{Distribution of \tauhadvis \pT and $\eta$ in the SF-CR prior to the
-    fit. Events with \tauhadvis \pT larger than \SI{200}{\GeV} are merged into
-    the last bin. The uncertainty contains all statistical and systematic
-    uncertainties.
-    %except for normalisation
-    %uncertainties on \ttbar arising from its modelling in simulation. Modelling
-    %uncertainties affecting the shape of the distributions are included.
-  }%
+    fit. Events with \tauhadvis candidate \pT larger than \SI{200}{\GeV} are
+    merged into the last bin. All statistical and systematic uncertainties are
+    included.}%
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
 
@@ -216,8 +212,8 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
 
 A discriminant is required to distinguish between \ttbar with and without
 \faketauhadvis since only the former is sensitive to \jettotauhadvis
-misidentification efficiencies. The transverse mass of the lepton and \pTmissAbs
-is used for this purpose, which is defined as
+misidentification efficiencies. The transverse mass of the electron/muon and
+\pTmissAbs is used for this purpose, which is defined as
 \begin{align*}
   \mTW = \sqrt{2 | \myvec{p}_{\text{T}}^{\ell} | | \pTmiss | \left( 1 - \cos \Delta\phi \right)} \,\text{,}
 \end{align*}
@@ -244,7 +240,7 @@ $W$~boson.
 \end{figure}
 
 The \faketauhadvis SFs are measured using a simultaneous likelihood fit of the
-binned \mTW discriminants in all regions of \tauhadvis candidate \pT and
+binned \mTW distributions in all regions of \tauhadvis candidate \pT and
 \Ntracks. The fit model is constructed using simulated \ttbar, single top, and
 \Vjets events. The sample of \ttbar events is split by whether the reconstructed
 \tauhadvis candidate is a \faketauhadvis or not. The overall normalisation of
@@ -257,8 +253,8 @@ SFs are considered to be the POIs of the measurement.
 The pre-fit expectation of the model in two exemplary regions is shown
 in~\Cref{fig:ttbarsf_mtw_examples_prefit} for SF-CR events passing the
 \verb|HLT_tau25_medium1_tracktwo| trigger and trigger-matching. The binning of
-the \mTW discriminants, as shown in the figure, is the same in all \tauhadvis
-candidate \pT and \Ntracks regions.
+the \mTW discriminants is the same in all \tauhadvis candidate \pT and \Ntracks
+regions.
 
 \begin{figure}[htbp]
   \centering

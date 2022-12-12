@@ -36,12 +36,12 @@ at least one jet labelled as light, are referred to as \ZLF.\todo{This needs to
 
 % Why IS HF difficult?
 % Theory context here: https://arxiv.org/pdf/2204.12355.pdf
-The requirement of having two \btagged jets in the signal regions leads to an
-enhancement of events from \PZ boson production in association with quarks of
-heavy flavour. The normalisation of this background is known to be
-underestimated by the generator configuration chosen for this
-search~\cite{STDM-2017-38}. To control for this mismodelling, the normalisation
-of the \ZHF background is measured in a dedicated control region.
+The requirement of having two \btagged jets in the SRs leads to an enhancement
+of events from \PZ~boson production in association with quarks of heavy
+flavour. The normalisation of this background is known to be underestimated by
+the generator configuration chosen for this search~\cite{STDM-2017-38}. To
+control for this mismodelling, the normalisation of the \ZHF background is
+measured in a dedicated CR.
 % The modelling of the \ZHF background is difficult due to its sensitivity to
 % the flavour structure of the proton and to gluons splitting to bottom or charm
 % quarks~\cite{Maltoni:2012pa,Napoletano:2018euk,Napoletano:2019tla}.  The
@@ -56,12 +56,11 @@ findings from searches for $VH$ ($\PHiggs \to \bbbar$)
 production~\cite{HIGG-2016-29}.
 
 % Control region definition
-A dedicated control region is defined that targets the production of
-$\PZ \ra \Plp\Plm$ ($\ell = e , \mu$) in association with $b$-jets. The
-definitions of selected physics objects and event quality criteria remain the
-same as previously described
-in~\Cref{sec:object_reconstruction,sec:event_selection}. Events with same
-flavour lepton pairs are recorded using single- and di-lepton
+A dedicated CR is defined that targets the production of $\PZ \ra \Plp\Plm$
+($\ell = e , \mu$) in association with $b$-jets. The definitions of selected
+physics objects and event quality criteria remain the same as previously
+described in~\Cref{sec:object_reconstruction,sec:event_selection}. Events with
+same flavour lepton pairs are recorded using single- and di-lepton
 triggers. Thresholds are applied to the \pT of electrons and muons after offline
 reconstruction to ensure that the triggers operate close to their trigger
 efficiency plateau. Depending on the run conditions of the LHC, the
@@ -78,9 +77,9 @@ flavour with opposite electric charges and a di-lepton invariant mass falling
 into a \PZ~boson mass window of $\SI{75}{\GeV} < \mll < \SI{110}{\GeV}$. Lastly,
 events are required to have exactly two \btagged jets with an invariant mass
 fulfilling~\mbox{$\mBB \not\in [\SI{40}{\GeV}, \SI{210}{\GeV}]$}. The \mBB
-requirement is necessary to ensure orthogonality with signal regions of searches
-for Higgs boson pair production in $\bbbar\Plp\Plm$ ($\ell = e, \mu$) final
-states performed by the ATLAS collaboration.
+requirement is necessary to ensure orthogonality with SRs of searches for Higgs
+boson pair production in $\bbbar\Plp\Plm$ ($\ell = e, \mu$) final states
+performed by the ATLAS collaboration.
 % \footnote{For future iterations of this search it would be justifiable, based
 % on arguments of the larger SM \HH sensitivity of the $\bbbar\tau^{+}\tau^{-}$
 % channel, to forgo the orthogonality requirement thus allowing the use a \ZHF
@@ -89,10 +88,11 @@ states performed by the ATLAS collaboration.
 After the event selection, the electron and muon channels are combined for
 further analysis.
 
-The pre-fit event yields in the \ZHF control region are given
-in~\Cref{tab:zcr_yields}. The majority of events in the control region originate
-from \ZHF\footnote{About \SI{90}{\percent} of events in the combined \ZHF sample
-  are $Z + bb$ events.} or top quark pair production.
+The pre-fit event yields in the \ZHF CR are given in~\Cref{tab:zcr_yields}. The
+majority of events in the CR originate from \ZHF
+% \footnote{About \SI{90}{\percent} of events in the combined \ZHF sample are
+% $Z + bb$ events.}
+or \ttbar production.
 % Only about
 % 3% of top quark is single top The production of $Z + bb$ accounts for \SI{90}{\percent} of events in the inclusive \ZHF sample.
 To distinguish between the \ZHF and \ttbar contributions in the likelihood fit,
@@ -103,11 +103,11 @@ the expected discrepancy between data and the pre-fit prediction.
 \begin{table}[htbp]
   \centering
 
-  \caption{Event yields in the \ZHF control region before (pre-fit) and after
-    (post-fit) the binned maximum likelihood fit of the \mll distribution in the
-    control region. The \emph{Other} category summarises smaller backgrounds and
-    largely consists of events from di-boson processes. The uncertainties on the
-    event yields include all experimental and systematic uncertainties.}%
+  \caption{Event yields in the \ZHF CR before (pre-fit) and after (post-fit) the
+    binned maximum likelihood fit of the \mll distribution in the CR. The
+    \emph{Other} category summarises smaller backgrounds and largely consists of
+    events from di-boson processes. The uncertainties on the event yields
+    include all experimental and systematic uncertainties.}%
   \label{tab:zcr_yields}
 
   \input{tables/zcr_pre_and_postfit_yields}
@@ -131,32 +131,32 @@ the expected discrepancy between data and the pre-fit prediction.
   \end{subfigure}\hfill%
   \begin{subfigure}{.485\textwidth}
     \includegraphics[width=\textwidth]{zhfcr/Region_BMin0_incJet1_Y2015_DZllbbCR_T2_L2_distmLL_J2_GlobalFit_conditionnal_mu0_fixed}
-    \subcaption{Post-fit (\ZHF control region only)}
+    \subcaption{Post-fit (\ZHF CR only)}
     \label{fig:zcr_mll_postfit}
   \end{subfigure}
 
   \caption{Distribution of the invariant di-lepton mass for the combination of
-    electron- and muon-channel in the \ZHF control region before (a) and after
-    (b) performing a likelihood fit restricted to the control region.
+    electron- and muon-channel in the \ZHF CR before (a) and after
+    (b) performing a likelihood fit restricted to the CR.
     % The contribution of \Zjets is sub-divided into cases where both $b$-jet
     % candidates are matched to heavy flavour quarks ($b$ or $c$) and cases where
     % at most one candidate is matched to heavy flavour quarks at
     % generator-level.
-    Prior to the fit, the \Zjets background is normalised to cross section
-    predictions at NNLO~\cite{Anastasiou:2003ds}. All statistical and systematic
-    uncertainties are included.}
+    % Prior to the fit, the \Zjets background is normalised to cross section
+    % predictions at NNLO~\cite{Anastasiou:2003ds}.
+    All statistical and systematic uncertainties are included.}
 \end{figure}
 
 % ATLAS_norm_Zhf    1.3856e+00 +/-  1.19e-01
 % ATLAS_norm_ttbar    9.7290e-01 +/-  3.92e-02
 % Included in the SR fits: Systematic uncertainties are introduced at a later stage...
-The \ZHF control region is included in the simultaneous likelihood fit of signal
-and control regions to provide constraints on the normalisation of the \ZHF
-background. Details on systematic uncertainties and the fit model are discussed
+The \ZHF CR is included in the simultaneous likelihood fit of SRs and CRs to
+provide constraints on the normalisation of the \ZHF background. Details on
+systematic uncertainties and the fit model are discussed
 in~\Cref{sec:uncertainties,sec:statistical_analysis}. Restricting the fit to the
-control region yields estimates of the normalisation factors of \num{1.39 \pm
-  0.12} and \num{0.97 \pm 0.04} for \ZHF and \ttbar, respectively. The quoted
-normalisation factors include all statistical and systematic
+CR yields estimates of the normalisation factors of \num{1.39 \pm 0.12} and
+\num{0.97 \pm 0.04} for \ZHF and \ttbar, respectively. The quoted normalisation
+factors include all statistical and systematic
 uncertainties. \Cref{tab:zcr_yields} and \Cref{fig:zcr_mll_postfit} show the
 event yields and \mll distribution after the fit.
 
