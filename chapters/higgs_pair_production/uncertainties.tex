@@ -22,12 +22,12 @@ statistical interpretation in \Cref{sec:statistical_analysis}.
 \subsection{Experimental Uncertainties}%
 \label{sec:experimental_uncertainties}
 
-Experimental uncertainties affecting this search arise from the measurement of
-the integrated luminosity, the re-weighting of the pile-up conditions in
-simulation, the reconstruction of physics objects, and the efficiencies of
-selections applied to these objects. Unless otherwise noted, the uncertainties
-described in the following are applicable to all signal and background processes
-estimated using simulation.
+Experimental uncertainties arise from the measurement of the integrated
+luminosity, the re-weighting of the pile-up conditions in simulation, the
+reconstruction of physics objects, and the efficiencies of selections applied to
+these objects. Unless otherwise noted, the uncertainties described in the
+following are applicable to all signal and background processes estimated using
+simulation.
 
 The integrated luminosity of the \pp-collision dataset recorded with the ATLAS
 detector during Run~2 of the LHC is measured with an uncertainty of
@@ -43,33 +43,27 @@ collaboration. In this search, these calibrations are used for
 electrons~\cite{EGAM-2018-01,TRIG-2018-05}, muons~\cite{MUON-2018-03},
 \tauhadvis~\cite{ATLAS-CONF-2017-029}, jets~\cite{JETM-2018-05},
 flavour-tagging~\cite{FTAG-2018-01,FTAG-2020-08,FTAG-2021-002}, and the
-\pTmissAbs reconstruction~\cite{ATLAS-CONF-2018-023}.\footnote{Earlier,
-  representative results are referenced if, at the time of writing, no
-  publication of the calibrations used in this chapter existed.} The
-measurements yield calibrations and uncertainties for the momentum, momentum
-resolution, and selection efficiencies of reconstructed objects. The major
-categories of instrumental uncertainties are summarised in
+\pTmissAbs reconstruction~\cite{ATLAS-CONF-2018-023}. The measurements yield
+calibrations and uncertainties for the momentum, momentum resolution, and
+selection efficiencies of reconstructed objects. The major categories of
+instrumental uncertainties are summarised in
 \Cref{tab:experimental_uncertainties_2}. Uncertainties on the efficiencies of
 electron, muon, and \tauhadvis triggers are only considered in channels where
-these triggers are used. All uncertainties affecting the 4-momentum of
+these triggers are used. All uncertainties affecting the four-momentum of
 reconstructed and selected objects are also propagated to the object-based
-\pTmissAbs reconstruction. Additional calibrations and uncertainties are derived
-for event samples using fast simulation of the ATLAS detector.
-
-% calibrations and uncertainties that are sensitive to the modelling of the
-% calorimeter response are specifically derived for simulated event samples
-% using \emph{fast simulation} of the ATLAS detector.
+\pTmissAbs reconstruction.
+% Additional calibrations and uncertainties are derived for event samples using
+% fast simulation of the ATLAS detector.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Summary of instrumental uncertainties. The number of degrees of
-    freedom of the uncertainties is given as $N_{\text{d.f.}}$ in the right-most
+  \caption{Summary of instrumental uncertainties. The number of independent NPs
+    describing the uncertainty, $N_{\text{NPs}}$, is given in the right-most
     column.}%
   \label{tab:experimental_uncertainties_2}
 
-  \renewcommand{\arraystretch}{1.25}
-  \input{tables/detector_uncertainties}
+  { \renewcommand{\arraystretch}{1.5} \input{tables/detector_uncertainties} }
 \end{table}
 
 Except for the luminosity uncertainty, any of the previously mentioned
