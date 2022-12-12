@@ -764,51 +764,48 @@ to SFs being smaller than unity for \faketauhadvis with high~\pT.
 % 90% PS uncertainty for 1-prong taus is anti-correlated due to sign-change of uncertainty
 
 
-\subsubsection{Estimation of \Faketauhadvis Scale Factors for the \antiid
-  Region}
+\subsubsection{Estimation of \Faketauhadvis Scale Factors for Anti-\tauhadvis}
 
 The estimation of the \multijet background in the \hadhad SR, which is described
 in~\Cref{sec:bkg_hadhad_ff}, requires a large subtraction of \ttbarFakes events
-in the 2 $b$-tag \antiid region for \tauhadvis candidates with OS electric
-charge. The SF method for estimating the \ttbarFakes background is extended to
-the \antiid region to provide uncertainties on the subtraction performed as part
-of the \multijet estimation.
+in a region defined by the presence of an \antitau
+(cf.~\Cref{sec:object_reconstruction}). The SF method is extended to \antitau to
+provide uncertainties on this subtraction.
+% in the 2 $b$-tag \antiid CR for \tauhadvis candidates with OS electric
+% charge. The SF method for estimating the \ttbarFakes background is extended to
+% the \antiid region to provide uncertainties on the subtraction performed as
+% part of the \multijet estimation.
 
 The SF measurement is repeated using the same SF-CR definition except for
-inverting the \tauhadvis identification requirement applied during offline event
-reconstruction. Instead of \tauhadvis passing the loose \tauid working point,
-\tauhadvis are required to fail the loose working point but exceed an RNN \tauid
-score threshold of \num{0.01}. The same requirements from the ID-region
-measurement regarding the reconstruction and identification of \tauhadvis at the
-HLT are imposed.\todo{Already explained (object selection)}
-
-The inversion of the \tauid requirement rejects most \ttbar events with
-true-\tauhadvis, yielding a region with high purity of \ttbarFakes
-(ca.~\SI{80}{\percent}). Matching anti-\tauhadvis from the offline event
-reconstruction to \tauhadvis at the HLT reduces the \ttbarFakes yield by about
-\SI{80}{\percent} due to the trigger-level identification requirements, however,
-the \ttbarFakes purity remains largely unchanged.
+requiring an \antitau instead of a \tauhadvis candidate passing loose
+identification.
+% inverting the \tauhadvis identification requirement applied during offline
+% event reconstruction. Instead of \tauhadvis passing the loose \tauid working
+% point, \tauhadvis are required to fail the loose working point but exceed an
+% RNN \tauid score threshold of \num{0.01}. The same requirements from the
+% ID-region measurement regarding the reconstruction and identification of
+% \tauhadvis at the HLT are imposed.\todo{Already explained (object selection)}
+This inversion of the \tauid requirement rejects most \ttbar events with
+true-\tauhadvis, yielding a region with \ttbarFakes purity of about
+\SI{80}{\percent}. Trigger-matching of the \antitau to a \tauhadvis at the HLT
+reduces the \ttbarFakes yield by about \SI{80}{\percent} due to the
+trigger-level identification requirements; however, the \ttbarFakes purity
+remains largely unchanged.
 
 A reduced set of experimental uncertainties is used for this measurement due to
-practical limitations in the dataset preparation for the $\ell + \tauhadvis$
-\antiid region. Uncertainties varying the four-momentum of reconstructed objects
-are omitted except uncertainties on the \tauhadvis energy scale. Other
-uncertainties that can be expressed by alternative event weights, for example
-uncertainties on tagging efficiencies, are considered. Due to this constraint,
-the total deviation of the central value of the SFs measured in the \antiid
-region from unity is assigned as an additional uncertainty and propagated to the
-\multijet estimate in the \hadhad SR.
+practical limitations in the dataset preparation for the
+$\ell + \text{anti-}\tauhadvis$ region. Uncertainties varying the four-momentum
+of reconstructed objects are omitted except uncertainties on the \tauhadvis
+energy scale. Other uncertainties that can be expressed by alternative event
+weights, for example uncertainties on tagging efficiencies, are considered. Due
+to this constraint, the total deviation of the central value of the SFs from
+unity is assigned as an additional uncertainty on the measured SFs for \antitau.
 
-The SFs measured in the \antiid region are shown
-in~\Cref{fig:ttbarSF_antiid_SF}. The contribution of \faketauhadvis
-reconstructed as 1-prong candidates predicted by simulation agrees well with the
-data-driven measurement. For 3-prong candidates, deviations of up to
-\SI{20}{\percent} from simulation are observed. The same decorrelation technique
-is used to propagate the measurement uncertainties when applying the SFs in the
-\antiid region of the \hadhad channel. The rules for applying SFs remain
-unchanged with respect to the SF application in the ID-region. The context and
-impact of the SFs for the \antiid region on the \multijet estimate will be
-further discussed in the following section.
+The measured SFs for \antitau are shown in~\Cref{fig:ttbarSF_antiid_SF}. The SFs
+are generally within \SI{20}{\percent} of unity. The same decorrelation
+technique is used to propagate the measurement uncertainties when applying the
+SFs to \antitau in the \hadhad channel. The context and impact of the SFs for
+\antitau on the \multijet estimate is discussed in \Cref{sec:bkg_hadhad_ff}.
 
 \begin{figure}[htbp]
   \centering
@@ -835,8 +832,8 @@ further discussed in the following section.
     \label{fig:ttbarSF_antiid_SF_d}
   \end{subfigure}
 
-  \caption{SFs for \faketauhadvis from \ttbar simulation in the \antiid region
-    for different \tauhadvis identification criteria applied at trigger-level.
+  \caption{Results of the \ttbarFakes SF measurement for anti-\tauhadvis and
+    different \tauhadvis identification criteria applied at trigger-level.
     Figures~(a) and~(b) compare the SFs with and without \tauid at the HLT. The
     effect of different \tauhadvis-triggers on the extracted SFs is shown in~(c)
     and~(d). The last bin summarises events with
