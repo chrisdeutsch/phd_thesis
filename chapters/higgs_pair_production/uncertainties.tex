@@ -193,11 +193,11 @@ summarised in~\Cref{tab:uncertainties_ttbar_extrapol}.
 \begin{table}[htbp]
   \centering
 
-  \caption{Relative acceptance uncertainties on the \ZHF (a) and \ttbar
-    background (b) in the three SRs. The relative sign of the effect of
-    variations between the SRs is indicated by the ``$\pm$'' and ``$\mp$''
-    prefixes. The total uncertainty is given for illustration of the size of the
-    uncertainties only.}
+  \caption{Relative acceptance uncertainties on the \ZHF (a) and \ttbar (b)
+    background in the three SRs. All uncertainties are estimated using the
+    \ZHF~CR as the reference region. The relative sign of the effect of
+    variations is indicated by the $\pm$ and $\mp$ prefixes. The total
+    uncertainty is given for illustration purposes only.}
 
   \begin{subtable}[t]{0.95\textwidth}
     \centering
@@ -207,7 +207,7 @@ summarised in~\Cref{tab:uncertainties_ttbar_extrapol}.
     \input{tables/uncertainties_zhf_extrapol}
   \end{subtable}
 
-  \vspace{10pt}
+  \vspace{12pt}
 
   \begin{subtable}[t]{0.95\textwidth}
     \centering
@@ -219,30 +219,28 @@ summarised in~\Cref{tab:uncertainties_ttbar_extrapol}.
 \end{table}
 
 Relative acceptance uncertainties are implemented as uncertainties on the
-normalisation of the respective backgrounds in SRs only. Variations of the
-modelling in simulation can also change the shapes of discriminants used for
-signal extraction, including $\mll$ in the \ZHF CR, which have to be considered.
+normalisation of backgrounds in the SRs. Variations of the modelling in
+simulation can also change the shapes of discriminants used for signal
+extraction, including $\mll$ in the \ZHF CR, which need to be
+considered. Therefore, the impact of modelling uncertainties on the
+distributions of the MVA discriminants in the SRs and the \mll distribution in
+the \ZHF~CR are investigated. In cases where the shapes do not differ
+significantly, no additional uncertainties are assigned. When deviations are
+observed, the shape uncertainties are propagated to the discriminants and
+correlated with the corresponding normalisation uncertainties.
 
-The impact of modelling uncertainties on distributions of the MVA discriminants
-in the SRs and the \mll distribution in the \ZHF CR are investigated by
-performing shape comparisons of the varied and nominal distributions. In cases
-where the shapes do not differ significantly, no additional uncertainties are
-assigned.  When deviations are observed, the shape uncertainties are propagated
-to the discriminants and correlated with the corresponding normalisation
-uncertainty.
-
-Shape uncertainties on the \ZHF background are considered for the comparison
-with the alternative event generation setup changing both the matrix element and
-the parton shower generator (\hadhad), and for variations of the factorisation
-and renormalisation scales (\hadhad, \lephad SLT \& LTT). All other variations,
-including variations in the \ZHF CR, are found to have negligible impact on the
-shape of the discriminating variables (\mll / MVA scores).
+Shape uncertainties on the \ZHF background are considered for the variation of
+the matrix element generator and parton shower program (\hadhad channel), and
+for variations of the factorisation and renormalisation scales (\hadhad and
+\lephad SLT/LTT channels). All other variations are found to have negligible
+impact on thes hape of the discriminating variables, including \mll in the
+\ZHF~CR.
 
 Shape uncertainties on the \ttbar background are considered for the comparison
-with alternative matrix element generator and parton shower programs (\hadhad,
-\lephad SLT), and the uncertainty on the amount of initial- and final-state
-radiation (\hadhad). All other variations have negligible impact of the shapes
-of the relevant distributions.
+with an alternative matrix element generator and parton shower program (\hadhad
+and \lephad SLT channels), and the uncertainty on the modelling of initial- and
+final-state radiation (\hadhad channel). All other variations have negligible
+impact on the shapes of the relevant distributions.
 
 
 \subsubsection{Uncertainties on Minor Backgrounds}
