@@ -245,27 +245,25 @@ impact on the shapes of the relevant distributions.
 
 \subsubsection{Uncertainties on Minor Backgrounds}
 
-The minor backgrounds considered by the analysis are normalised using cross
-sections from theory and thus both cross section as well as acceptance
-uncertainties are considered. In contrast to the major backgrounds, shape
-uncertainties on minor backgrounds are neglected and only uncertainties on the
-normalisation are considered (with the exception of the $tW$ acceptance
-uncertainties).  A brief description of the uncertainties on minor backgrounds
-is given in the following:
+The minor backgrounds considered in the analysis are normalised using
+theoretical cross sections predictions and thus both cross section and
+acceptance uncertainties are considered. Except for the $tW$~acceptance
+uncertainties, only uncertainties on the normalisation of minor backgrounds are
+considered. A brief description of the uncertainties on minor backgrounds is
+given in the following:
 \begin{description}
 
-\item[$Z + (bl, cl, ll)$] A normalisation uncertainty of \SI{5}{\percent} is
-  assigned to account for the uncertainty on the predicted cross section of
-  \Zjets production at NNLO~\cite{Anastasiou:2003ds} used to normalise the
-  sample. Additionally, an acceptance uncertainty of \SI{23}{\percent} is
-  adopted from Ref.~\cite{HIGG-2018-51}.
+\item[\PZ + LF] A normalisation uncertainty of \SI{5}{\percent} is assigned to
+  account for the uncertainty on the predicted cross section of \Zjets
+  production at NNLO~\cite{Anastasiou:2003ds}. Additionally, an acceptance
+  uncertainty of \SI{23}{\percent} is adopted from Ref.~\cite{HIGG-2018-51}.
 
-\item[$W + \text{jets}$] A \SI{5}{\percent} cross section uncertainty is
-  assigned to the NNLO cross section prediction~\cite{Anastasiou:2003ds}. A
-  normalisation uncertainty of \SI{37}{\percent} is assigned in the \lephad
-  channels adopted from Ref.~\cite{HIGG-2018-51}. This uncertainty is inflated
-  to \SI{50}{\percent} in the \hadhad channel since the small \Wjets
-  contribution is not part of the data-driven \faketauhadvis estimation.
+\item[\PW + jets] A \SI{5}{\percent} cross section uncertainty is assigned to
+  the NNLO cross section prediction~\cite{Anastasiou:2003ds}. A normalisation
+  uncertainty of \SI{37}{\percent} is assigned in the \lephad channels, which is
+  adopted from Ref.~\cite{HIGG-2018-51}. This uncertainty is inflated to
+  \SI{50}{\percent} in the \hadhad channel since the small \Wjets contribution
+  is not part of the data-driven \faketauhadvis estimation.
 
 \item[Diboson] Normalisation uncertainties of \SI{20}{\percent},
   \SI{26}{\percent}, and \SI{25}{\percent} are applied to $ZZ$, $WZ$, and $WW$
@@ -275,53 +273,49 @@ is given in the following:
 \item[Single top] Uncertainties on the cross section used to normalise the
   predictions are taken from Ref.~\cite{stopxsec}. A \SI{20}{\percent}
   acceptance uncertainty is assigned to the minor contribution of single top
-  produced in $s$- and $t$-channel diagrams which is adopted from
+  produced via $s$- and $t$-channel diagrams, which is adopted from
   Ref.~\cite{HIGG-2018-51}.
 
   Acceptance uncertainties in the phase space selected by the analysis are
-  derived for $tW$ production, which is the dominant source of single top
+  derived for $tW$~production, which is the dominant source of single top
   background in this analysis. The acceptance uncertainties on the NLO+PS
-  matching and the choice of parton shower program are estimated separately by
-  comparison with alternative simulation setups using \MGNLO[2.6.2] and
-  \HERWIG[7], respectively. Uncertainties on PDF+\alphas and the amount of
-  initial- and final-state radiation are obtained by re-weighting of the nominal
-  simulation result. Finally, an uncertainty on the treatment of the removal of
-  interference\todo{What happens to the interference? Neglected?  Included in
-    \ttbar?} between $tW$ at NLO and \ttbar production is estimated by
-  performing MC-to-MC comparisons of the nominal diagram removal and diagram
-  subtraction schemes~\cite{Frixione:2008yi}.
+  matching and the choice of parton shower program are estimated by comparison
+  with alternative simulation setups using \MGNLO[2.6.2] and \HERWIG[7],
+  respectively. Uncertainties on PDF+\alphas and the simulation of initial- and
+  final-state radiation are obtained by re-weighting of the nominal simulation
+  result. Finally, an uncertainty on the treatment of the interference between
+  $tW$ at NLO and \ttbar production is estimated by performing MC-to-MC
+  comparisons of the nominal \emph{diagram removal} and \emph{diagram
+    subtraction} schemes~\cite{Frixione:2008yi}.
 
-  The total acceptance uncertainty on $tW$ production is \SI{34}{\percent},
-  \SI{14}{\percent}, \SI{23}{\percent} in the \hadhad, \lephad SLT, and \lephad
-  LTT SR, respectively. The shape effect of the FSR and $tW$-$\ttbar$
-  interference uncertainties on the MVA discriminants are propagated using
-  suitable parameterisation.
+  The total acceptance uncertainty on $tW$~production is \SI{34}{\percent} in
+  the \hadhad~channel, \SI{14}{\percent} in the \lephad~SLT channel, and
+  \SI{23}{\percent} in the \lephad~LTT channel. Shape effects of the FSR and
+  $tW$-$\ttbar$ interference uncertainties on the MVA discriminants are taken
+  into account in the background model.
 
-\item[Single SM $H$ production] Uncertainties on the total cross section of the
-  SM $H$ production modes considered as backgrounds are assigned according to
-  the recommendations in Ref.~\cite{deFlorian:2016spz} for
+\item[Single SM~$H$] Uncertainties on the total cross section of the SM $H$
+  production modes considered as backgrounds are assigned according to the
+  recommendations in Ref.~\cite{deFlorian:2016spz} for
   $m_{H} = \SI{125.0}{\GeV}$. Analogously, uncertainties on the branching ratios
   of $\PHiggs \to \tautau$ and $\PHiggs \to \bbbar$ are assigned to the relevant
   processes and are taken from Ref.~\cite{deFlorian:2016spz}.
 
   An acceptance uncertainty of \SI{100}{\percent} is assigned to $H \to \tautau$
-  backgrounds produced via \ggF, VBF, and $WH$ to account for difficulties in the
-  modelling of produced in association with heavy flavour quarks\todo{Citation?}
-  and the lack of a dedicated background estimate for single Higgs bosons
-  production via $bbH$.
+  backgrounds produced via \ggF, VBF, and $WH$ to account for difficulties in
+  the modelling of associated production of SM~$H$ with heavy flavour
+  quarks. This uncertainty is a convention adopted by the ATLAS collaboration
+  for searches for Higgs boson pair production using the Run~2 \pp-collision
+  dataset.
 
   Acceptance uncertainties in the phase space selected by the analysis are
   derived for single Higgs boson backgrounds produced via $ZH$, $\ttbar H$ for
   both $H \to \tautau$ and $H \to \bbbar$. They are derived by varying the
-  parton shower program (\HERWIG[7]), PDF+\alphas, and factorisation /
-  renormalisation scales and assigned as normalisation uncertainties when
-  non-negligible. Additionally for $\ttbar H$ production, an uncertainty on the
-  NLO+PS matching is assigned by comparing with an alternative generator
-  (\MGNLO[v2.6.0]), and uncertainties targeting the modelling of initial- and
-  final-state radiation.
+  parton shower program, the factorisation and renormalisation scale, the PDF
+  and \alphas. Additionally for $\ttbar H$ production, uncertainties on the
+  NLO+PS matching and the modelling of initial- and final-state radiation are
+  assigned.
 \end{description}
-
-\todo[inline]{No uncertainties on $ttW$ and $ttZ$?}
 
 % \begin{table}[htbp]
 %   \centering
@@ -331,24 +325,27 @@ is given in the following:
 %   \caption{Summary of minor background uncertainties}
 % \end{table}
 
+
 \subsubsection{Signal Modelling Uncertainties: SM $HH$}
 
 % CROSS SECTION
-Uncertainties on the cross section of the SM $HH$ production in the \ggF and VBF
-production modes are considered when the signal strength,
-$\mu = \sigma / \sigma_{\text{SM}}$, is used as a parameter of interest
-(POI). When the total SM $HH$ cross section is the POI, the cross section
-uncertainties are omitted.
+Uncertainties on the cross section of SM~\HH production via the \ggF and VBF are
+taken into account when the signal strength,
+$\mu = \sigma / \sigma_{\text{SM}}$, is considered to be the POI. When the
+SM~\HH production cross section is the POI, the cross section uncertainties are
+omitted.
 
 The uncertainty on the cross section of SM $HH$ in the \ggF production mode at
 NNLO~\FTapprox~\cite{Grazzini:2018bsd} consists of an uncertainty on PDF+\alphas
 of \SI{\pm 3.0}{\percent}~\cite{LHCHWGHH} and an uncertainty from scale
 variations and the scheme used for the treatment of the mass of the virtual top
-in the heavy-quark loop of $^{+6\%}_{-23\%}$~\cite{Baglio:2020wgt}. For the VBF
-production mode, which is normalised using cross section at
+in the heavy-quark loop of
+$^{\hspace{0.25pt}+\hspace{0.25pt}\phantom{2}6}_{-23}\valuesep\si{\percent}$~\cite{Baglio:2020wgt}. For
+the VBF production mode, which is normalised using cross section at
 N$^3$LO~\cite{Dreyer:2018qbw}, the scale uncertainties
-are~$^{+0.03\,\%}_{-0.04\,\%}$~\cite{LHCHWGHH} and the uncertainty from PDF and
-\alphas is~\SI{\pm 2.1}{\percent}~\cite{LHCHWGHH}.
+are~$^{\hspace{0.25pt}+\hspace{0.25pt}0.03}_{-0.04}\valuesep\si{\percent}$~\cite{LHCHWGHH}
+and the uncertainty from PDF and \alphas is~\SI{\pm
+  2.1}{\percent}~\cite{LHCHWGHH}.
 
 Uncertainties on the branching ratios of $H \to \tautau$ and $H \to \bbbar$ are
 taken from Ref.~\cite{deFlorian:2016spz} and assigned as uncertainties on the
@@ -393,17 +390,16 @@ as a shape uncertainty for later statistical evaluation.
 \begin{table}[htbp]
   \centering
 
-  \todo[inline]{Why is there a dagger?}
-
-  \caption{Theory uncertainties on the acceptance of non-resonant SM $HH$
-    signals in the three SRs. Uncertainties marked as ``--'' are negligible.}%
+  \caption{Theory uncertainties on the acceptance of events from SM~$HH$
+    production in the three SRs. Uncertainties marked as ``--'' are
+    found to be negligible.}%
   \label{tab:theory_uncertainty_signal}
 
   \input{tables/theory_uncertainty_signal}
 \end{table}
 
-\todo[inline]{Acceptance uncertainties are assumed to be fully correlated across
-  channels but uncorrelated across production modes.}
+% \todo[inline]{Acceptance uncertainties are assumed to be fully correlated
+% across channels but uncorrelated across production modes.}
 
 \subsubsection{Signal Modelling Uncertainties: BSM $gg \to X \to HH$}
 
