@@ -8,7 +8,7 @@ uncertainties related to the estimation of \faketauhadvis backgrounds in the
 \hadhad channel. These were previously described
 in~\Cref{sec:bkg_hadhad_ttbarfakes,sec:bkg_hadhad_ff}. Theory uncertainties are
 described in~\Cref{sec:theory_uncertainties} and include uncertainties on the
-modelling of physics processes with MC simulations.
+modelling of physics processes using MC simulations.
 
 The searches for Higgs boson pair production presented in this thesis are
 generally limited by statistical uncertainties due to the finite number of
@@ -44,11 +44,11 @@ flavour-tagging~\cite{FTAG-2018-01,FTAG-2020-08,FTAG-2021-002}, and the
 uncertainties on the momentum scale, momentum resolution, and selection
 efficiencies of reconstructed objects. The major categories of instrumental
 uncertainties are summarised in
-\Cref{tab:experimental_uncertainties_2}. Uncertainties on the efficiencies of
-electron, muon, and \tauhadvis triggers are only considered in channels where
-these triggers are used. All uncertainties affecting the four-momentum of
-reconstructed and selected objects are also propagated to the object-based
-\pTmissAbs reconstruction.
+\Cref{tab:experimental_uncertainties_2}. Uncertainties on the selection
+efficiencies of electron, muon, and \tauhadvis triggers are only considered in
+channels where these triggers are used. All uncertainties affecting the
+four-momentum of reconstructed and selected objects are also propagated to the
+object-based \pTmissAbs reconstruction.
 % Additional calibrations and uncertainties are derived for event samples using
 % fast simulation of the ATLAS detector.
 
@@ -100,24 +100,23 @@ selections. Generally, acceptance uncertainties for a given signal or background
 process are assumed to be correlated across regions if the uncertainty
 originates from the same source.
 
-The description of the theory uncertainties is structures as follows: First, the
-uncertainties on the major \ZHF and \ttbar backgrounds is described. Second,
-uncertainties on minor background processes are estimated. Finally,
-uncertainties on the modelling of the SM~\HH and BSM $X \to \HH$ signals are
-presented.
+The description of the theory uncertainties is structured as follows: First, the
+uncertainties on the major \ZHF and \ttbar backgrounds are described. Second,
+uncertainties on minor background processes are estimated. Lastly, uncertainties
+on the modelling of the signal processes are presented.
 
 
 \subsubsection{Acceptance Uncertainties on \ZHF and \ttbar Backgrounds}
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in the
 simultaneous fit to the observed data in all regions. Constraints on the
-normalisation of the \ZHF background can be obtained from the dedicated
+normalisation of the \ZHF background can be obtained from the
 \ZHF~CR. Similarly, the \ttbar normalisation can be constrained in the SR of the
 \lephad SLT channel and the \ZHF~CR. Since the normalisation of these processes
 is determined in the fit to data, any uncertainties on the normalisation of
 these processes (e.g.~cross section uncertainties) are omitted. Instead,
 uncertainties on the relative acceptance of \ZHF and \ttbar between analysis
-regions have to be considered. These uncertaines are hereafter referred to as
+regions have to be considered. These uncertainties are hereafter referred to as
 \emph{relative acceptance uncertainties}.
 % The approach outlined below was originally adopted by the previous search
 % performed in this channel~\cite{HIGG-2016-16-witherratum} from searches and
@@ -142,14 +141,16 @@ region~B and no additional uncertainties are assigned in the reference
 region. Uncertainties on $\mathcal{R}$ are estimated by performing variations of
 the simulation and estimating a relative change in $\mathcal{R}$ according to
 \begin{align}
-  \frac{\Delta \mathcal{R}}{\mathcal{R}} = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})} \,\text{.}
+  \frac{\Delta \mathcal{R}}{\mathcal{R}} = \frac{\mathcal{R}(\text{variation}) - \mathcal{R}(\text{nominal})}{\mathcal{R}(\text{nominal})} \,\text{,}
   \label{eq:relative_acceptance_uncertainty}
 \end{align}
-Using relative acceptances to define modelling uncertainties leads to
-cancellations of variations that lead to the same relative change in
-\AccTimesEff in both regions, which corresponds to a change in the overall
-normalisation of the process that can be absorbed in the free normalisation
-factor.
+where $\mathcal{R}(\text{nominal})$ and $\mathcal{R}(\text{variation})$ is the
+relative acceptance predicted by the nominal and varied simulation setup,
+respectively. Using relative acceptances to define modelling uncertainties leads
+to cancellations of variations that lead to the same relative change in
+\AccTimesEff in both regions. This corresponds to an overall change in
+normalisation of the process in both regions that can be absorbed in the free
+normalisation factor.
 
 % This uncertainty on the relative acceptance between the the
 % reference region A and region B is included in the background model
@@ -180,48 +181,14 @@ the multi-jet merging scale, the PDFs and \alphas, and the PDF set. The relative
 acceptance uncertainties on the \ZHF background are summarised
 in~\Cref{tab:uncertainties_zhf_extrapol} for the three SRs.
 
-% The \lephad SLT SR selection is the closest to the \ZHF CR, resulting in a
-% small relative acceptance uncertainty of approximately \SI{9}{\percent}. The
-% \hadhad and \lephad LTT channels deviate yielding an uncertainty of
-% approximately \SI{16}{\percent}. In all cases the dominant sources of
-% uncertainty are the scale variations as well as the comparison with
-% \MGNLO+\PYTHIA[8]\todo{``Interpretation'' needs some work.}.
-
-\todo[inline]{to be continued}
-
-A similar approach is taken for the relative acceptance uncertainties on the
-\ttbar background. Prescriptions developed by the ATLAS collaboration
-(cf.~\Cref{app:top_uncertainties}) are used to derive \ttbar modelling
-uncertainties.
-
-alternative matrix element generator, alternative parton shower program,
-variations of the initial- and final-state radiation, PDF and \alphas
-uncertainties
-
-
-~\Cref{tab:uncertainties_ttbar_extrapol}.
-
-
-
-The relative acceptance uncertainties on the \ttbar background are estimated
-using a similar approach. The prescriptions documented in
-Ref.~\cite{ATL-PHYS-PUB-2020-023} are used to estimate modelling uncertainties
-on the nominal prediction obtained from simulation with
-\POWHEGBOX[v2]+\PYTHIA[8]. A revised version of these prescriptions was
-previously presented in~\Cref{sec:bkg_hadhad_ttbarfakes} as part of the
-\ttbarFakes scale factor measurement. In the following, the prescriptions are
-summarised, highlighting the differences with respect to the previous
-description.
-
-The uncertainty of the modelling of the hard interaction (parton shower) is
-evaluated by replacing \POWHEGBOX[v2] (\PYTHIA[8]) with \MGNLO (\HERWIG[7]) for
-the matrix element (parton shower) generation. Explicit variations of the
-scales, and \PYTHIA[8] damping parameter, $\hdamp$, are omitted. Instead they
-are included in the variations of the initial-state radiation. The uncertainties
-on the amount of final-state radiation and the PDF+\alphas uncertainties are
-estimated using internal re-weighting in \PYTHIA[8]. The relative acceptance
-uncertainty for \ttbar backgrounds in the three SRs is given
-in~\Cref{tab:uncertainties_ttbar_extrapol}.
+A similar approach is taken for the \ttbar background. Variations of the
+simulation setup are performed according to prescriptions developed by the ATLAS
+collaboration (cf.~\Cref{app:top_uncertainties}). The following elements of the
+simulation setup are varied: the matrix element generator, the simulation of the
+parton shower and hadronisation, the factorisation and renormalisation scales,
+the simulation of initial- and final-state radiation, the PDFs and \alphas. The
+relative acceptance uncertainties resulting from these prescriptions are
+summarised in~\Cref{tab:uncertainties_ttbar_extrapol}.
 
 \begin{table}[htbp]
   \centering
@@ -340,7 +307,7 @@ is given in the following:
   processes and are taken from Ref.~\cite{deFlorian:2016spz}.
 
   An acceptance uncertainty of \SI{100}{\percent} is assigned to $H \to \tautau$
-  backgrounds produced via ggF, VBF, and $WH$ to account for difficulties in the
+  backgrounds produced via \ggF, VBF, and $WH$ to account for difficulties in the
   modelling of produced in association with heavy flavour quarks\todo{Citation?}
   and the lack of a dedicated background estimate for single Higgs bosons
   production via $bbH$.
@@ -369,13 +336,13 @@ is given in the following:
 \subsubsection{Signal Modelling Uncertainties: SM $HH$}
 
 % CROSS SECTION
-Uncertainties on the cross section of the SM $HH$ production in the ggF and VBF
+Uncertainties on the cross section of the SM $HH$ production in the \ggF and VBF
 production modes are considered when the signal strength,
 $\mu = \sigma / \sigma_{\text{SM}}$, is used as a parameter of interest
 (POI). When the total SM $HH$ cross section is the POI, the cross section
 uncertainties are omitted.
 
-The uncertainty on the cross section of SM $HH$ in the ggF production mode at
+The uncertainty on the cross section of SM $HH$ in the \ggF production mode at
 NNLO~\FTapprox~\cite{Grazzini:2018bsd} consists of an uncertainty on PDF+\alphas
 of \SI{\pm 3.0}{\percent}~\cite{LHCHWGHH} and an uncertainty from scale
 variations and the scheme used for the treatment of the mass of the virtual top
@@ -401,7 +368,7 @@ performing six variations of the factorisation and renormalisation scales using
 internal re-weighting of the generator. Uncertainties on the PDF sets are
 estimated using the prescriptions for the
 \PDFforLHC[15nlo]~\cite{Butterworth:2015oua} and
-\NNPDF[3.0nlo]~\cite{Ball:2014uwa} PDF sets for ggF and VBF, respectively. The
+\NNPDF[3.0nlo]~\cite{Ball:2014uwa} PDF sets for \ggF and VBF, respectively. The
 PDF uncertainties are provided in the form of 30 eigenvariations for
 \PDFforLHC[15nlo] and 100 replica sets for \NNPDF[3.0nlo]. Finally, the value of
 $\alphas(\mZ^2)$ is varied up and down by 0.0015 (0.001) about the central value
