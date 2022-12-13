@@ -329,29 +329,28 @@ given in the following:
 \subsubsection{Signal Modelling Uncertainties: SM~$HH$ Production}
 
 Uncertainties on the predicted SM~\HH production cross section are taken into
-account when the signal strength is taken as the POI in the statistical
+account when the signal strength is used as the POI in the statistical
 analysis. In contrast, when the SM~\HH production cross section is the POI,
 cross section uncertainties on the signal processes are omitted. In either case,
 uncertainties on the branching ratios of $H \to \tautau$ and $H \to \bbbar$ are
 taken from Ref.~\cite{deFlorian:2016spz} and assigned as uncertainties on the
 signal normalisation.
 
-The theoretical cross section prediction for SM~\HH production via \ggF at
-NNLO~\FTapprox~\cite{Grazzini:2018bsd} has an uncertainty
-of~$^{\hspace{0.25pt}+\hspace{0.25pt}\phantom{2}6}_{-23}\valuesep\si{\percent}$
-from scale variations and the treatment of the finite top quark
-mass~\cite{Baglio:2020wgt}, and an uncertainty of~\SI{\pm 3.0}{\percent} from
-variations of PDF+\alphas~\cite{LHCHWGHH}. The cross section prediction for
-SM~\HH production via VBF at N$^3$LO~\cite{Dreyer:2018qbw} has an uncertainty
-of~$^{\hspace{0.25pt}+\hspace{0.25pt}0.03}_{-0.04}\valuesep\si{\percent}$ from
-scale variations~\cite{LHCHWGHH} and \SI{\pm 2.1}{\percent} from variations of
+The uncertainty on the SM~\HH production cross section via \ggF
+is~$^{\hspace{0.25pt}+\hspace{0.25pt}\phantom{2}6}_{-23}\valuesep\si{\percent}$
+for the scale variations and the treatment of the finite top quark
+mass~\cite{Baglio:2020wgt}, and~\SI{\pm 3.0}{\percent} for variations of
+PDF+\alphas~\cite{LHCHWGHH}. Similarly, the uncertainty on the SM~\HH production
+cross section via VBF
+is~$^{\hspace{0.25pt}+\hspace{0.25pt}0.03}_{-0.04}\valuesep\si{\percent}$ for
+the scale variations and \SI{\pm 2.1}{\percent} for variations of
 PDF+\alphas~\cite{LHCHWGHH}.
 
 Signal acceptance uncertainties are derived in all SRs by performing variations
 of the generator setup. An uncertainty on the choice of parton shower and
 hadronisation model is estimated by comparing the nominal setup using \PYTHIA[8]
 with an alternative setup using \HERWIG[7] for parton showering and
-hadronisation. An uncertainty from missing higher orders of the truncated
+hadronisation. An uncertainty from missing higher orders of the truncatednnn
 perturbative expansion in \alphas is estimated by performing six variations of
 the factorisation and renormalisation scales. For SM~\HH production via \ggF
 (VBF), uncertainties on the PDFs are taken into account following the
@@ -385,55 +384,46 @@ for the \ggF and VBF production modes.
 
 \subsubsection{Signal Modelling Uncertainties: Resonant \HH Production}
 
-Cross section uncertainties are not considered for the production of heavy
-scalar resonances in BSM scenarios since the cross
-section~$\sigma(gg \to X \to HH)$ is used as the POI. However, uncertainties on
-the SM Higgs boson branching ratios are considered according to
-Ref.~\cite{deFlorian:2016spz}.
+Cross section uncertainties are not considered for signals originating from
+resonant \HH production due to the cross section~$\sigma(gg \to X \to HH)$ being
+used as the POI. However, uncertainties on the Higgs boson branching ratios are
+considered.
 
-Acceptance uncertainties on BSM \HH production are estimated for the choice of
-parton shower program, factorisation and renormalisation scales, and
-PDF+\alphas. The uncertainties are calculated for a subset of resonance masses
-considered in the analysis (due to the availability of alternative samples) and
-are subsequently extrapolated to the full set.
+Signal acceptance uncertainties are estimated for the choice of parton shower
+and hadronisation model, the factorisation and renormalisation scales, and
+PDF+\alphas. These uncertainties are derived for a subset of resonance masses
+considered in the analysis
+% (due to the availability of alternative samples)
+which are then extrapolated to the full set.
 
-The acceptance uncertainty from the choice of parton shower program is estimated
-by replacing the default configuration using \HERWIG[7.1.3] with \PYTHIA[8.235]
-for signals with six different resonance masses:
-\begin{align*}
-  \mX / \si{\GeV} \in \left\{ 251, 260, 280, 400, 500, 1000
-  \right\} \,\text{.}
-\end{align*}
-The uncertainty is estimated by comparing the acceptance of signal-like events,
-which for this purpose are defined as all events exceeding the
-15\textsuperscript{th} percentile of the PNN score distribution for the default
-signal generation setup, between both parton shower programs. This approach is
-taken due to large changes in acceptance of (background-like) signal events at
-low PNN score to which this search is not sensitive, thus avoiding an inflation
-of the parton shower uncertainty at high PNN score which the analysis can be
-sensitive to. The uncertainties evaluated at six points of \mX are linearly
-interpolated and extrapolated ($\mX > \SI{1000}{\GeV}$) in \mX to estimate
-uncertainties for signal masses for which no alternative samples were produced.
+The acceptance uncertainty from the choice of parton shower program and
+hadronisation model is estimated by comparing the default configuration using
+\HERWIG[7] with \PYTHIA[8] for signals with
+\mbox{$\mX / \si{\GeV} \in \left\{ 251, 260, 280, 400, 500, 1000 \right\}$}.
+% \begin{align*}
+%   \mX / \si{\GeV} \in \left\{ 251, 260, 280, 400, 500, 1000
+%   \right\} \,\text{.}
+% \end{align*}
+% The uncertainty is estimated by comparing the acceptance of signal-like
+% events, which for this purpose are defined as all events exceeding the
+% 15\textsuperscript{th} percentile of the PNN score distribution for the
+% default signal generation setup, between both parton shower programs. This
+% approach is taken due to large changes in acceptance of (background-like)
+% signal events at low PNN score to which this search is not sensitive, thus
+% avoiding an inflation of the parton shower uncertainty at high PNN score which
+% the analysis can be sensitive to.
+The uncertainties evaluated at these points are linearly interpolated
+(extrapolated) for $\mX \leq \SI{1000}{\GeV}$ ($\mX > \SI{1000}{\GeV}$) to
+provide estimates of the uncertainty for other mass points. This procedure is
+illustrated in \Cref{fig:resonant_partonshower} for all three channels.
 
-\Cref{fig:resonant_partonshower} illustrates the acceptance uncertainty
-estimated from the comparison of parton shower programs. The alternative
-configuration using \PYTHIA for parton showering predicts acceptances that are
-slightly larger than the nominal configuration for the \hadhad and \lephad SLT
-channels at low resonance masses. For $\mX = \SI{1000}{\GeV}$ \HERWIG predicts
-larger signal acceptances in all three channels. The linear extrapolation in \mX
-to the largest resonance mass of \SI{1600}{\GeV} that is considered leads to
-acceptance uncertainties ranging from \SIrange{16}{19}{\percent}.
-
-% \begin{table}[htbp]
-%   \centering
-
-%   \input{tables/uncertainties_resonant}
-
-%   \caption{Acceptance uncertainty on the BSM production of $gg \to X \to HH$
-%   in the \hadhad, \lephad SLT, and \lephad LTT signal regions estimated using
-%   variations of the parton shower program.}
-% \label{tab:resonant_partonshower}
-% \end{table}
+The alternative configuration using \PYTHIA for parton showering predicts
+acceptances that are slightly larger than the nominal configuration for the
+\hadhad and \lephad SLT channels at low resonance masses. For
+$\mX = \SI{1000}{\GeV}$ \HERWIG predicts larger signal acceptances in all three
+channels. The linear extrapolation in \mX to the largest resonance mass of
+\SI{1600}{\GeV} that is considered leads to acceptance uncertainties ranging
+from \SIrange{16}{19}{\percent}.
 
 \begin{figure}[htbp]
   \centering
@@ -447,8 +437,9 @@ acceptance uncertainties ranging from \SIrange{16}{19}{\percent}.
     (\HERWIG) and vice versa for negatively signed uncertainties. The lines
     indicate the linear inter- / extrapolation in \mX used to obtain the
     uncertainties for all other points of \mX considered in the analysis (hollow
-    markers).}
+    markers).}%
   \label{fig:resonant_partonshower}
+  \todo[inline]{Bigger font?}
 \end{figure}
 
 Acceptance uncertainties from factorisation and renormalisation scales, and
