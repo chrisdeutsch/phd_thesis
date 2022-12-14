@@ -110,7 +110,7 @@ on the modelling of the signal processes are presented.
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in the
 simultaneous fit to the observed data in all regions. Constraints on the
-normalisation of the \ZHF background can be obtained from the
+normalisation of the \ZHF background can be obtained from data in the
 \ZHF~CR. Similarly, the \ttbar normalisation can be constrained in the SR of the
 \lephad SLT channel and the \ZHF~CR. Since the normalisation of these processes
 is determined in the fit to data, any uncertainties on the normalisation of
@@ -149,7 +149,7 @@ relative acceptance predicted by the nominal and varied simulation setup,
 respectively. Using relative acceptances to define modelling uncertainties leads
 to cancellations of variations that lead to the same relative change in
 \AccTimesEff in both regions. This corresponds to an overall change in
-normalisation of the process in both regions that can be absorbed in the free
+normalisation of the process in both regions that can be absorbed into the free
 normalisation factor.
 
 % This uncertainty on the relative acceptance between the the
@@ -183,12 +183,13 @@ in~\Cref{tab:uncertainties_zhf_extrapol} for the three SRs.
 
 A similar approach is taken for the \ttbar background. Variations of the
 simulation setup are performed according to prescriptions developed by the ATLAS
-collaboration (cf.~\Cref{app:top_uncertainties}). The following elements of the
-simulation setup are varied: the matrix element generator, the simulation of the
-parton shower and hadronisation, the factorisation and renormalisation scales,
-the simulation of initial- and final-state radiation, the PDFs and \alphas. The
-relative acceptance uncertainties resulting from these prescriptions are
-summarised in~\Cref{tab:uncertainties_ttbar_extrapol}.
+collaboration, which are documented in~\Cref{app:top_uncertainties}. The
+following elements of the simulation setup are varied: the matrix element
+generator, the simulation of the parton shower and hadronisation, the
+factorisation and renormalisation scales, the simulation of initial- and
+final-state radiation, the PDFs and \alphas. The relative acceptance
+uncertainties resulting from these prescriptions are summarised
+in~\Cref{tab:uncertainties_ttbar_extrapol}.
 
 \begin{table}[htbp]
   \centering
@@ -233,7 +234,7 @@ Shape uncertainties on the \ZHF background are considered for the variation of
 the matrix element generator and parton shower program (\hadhad channel), and
 for variations of the factorisation and renormalisation scales (\hadhad and
 \lephad SLT/LTT channels). All other variations are found to have negligible
-impact on thes hape of the discriminating variables, including \mll in the
+impact on the shape of the discriminating variables, including \mll in the
 \ZHF~CR.
 
 Shape uncertainties on the \ttbar background are considered for the comparison
@@ -270,29 +271,29 @@ given in the following:
   production, respectively. These uncertainties are adopted from
   Ref.~\cite{HIGG-2018-51}.
 
-\item[Single top] Uncertainties on the cross section used to normalise the
-  predictions are taken from Ref.~\cite{stopxsec}. A \SI{20}{\percent}
-  acceptance uncertainty is assigned to the minor contribution of single top
-  produced via $s$- and $t$-channel diagrams, which is adopted from
+\item[Single top quark] Uncertainties on the cross section used to normalise the
+  predictions are taken from Ref.~\cite{stopxsec}. An acceptance uncertainty of
+  \SI{20}{\percent} is assigned to the minor contribution of single top quark
+  production via $s$- and $t$-channel diagrams, which is adopted from
   Ref.~\cite{HIGG-2018-51}.
 
   Acceptance uncertainties in the phase space selected by the analysis are
-  derived for $tW$~production, which is the dominant source of single top
-  background in this analysis. The acceptance uncertainties on the NLO+PS
+  derived for $tW$~production, which is the dominant source of single top quark
+  background in this analysis. The acceptance uncertainties from the NLO+PS
   matching and the choice of parton shower program are estimated by comparison
-  with alternative simulation setups using \MGNLO[2.6.2] and \HERWIG[7],
-  respectively. Uncertainties on PDF+\alphas and the simulation of initial- and
-  final-state radiation are obtained by re-weighting of the nominal simulation
-  result. Finally, an uncertainty on the treatment of the interference between
-  $tW$ at NLO and \ttbar production is estimated by performing MC-to-MC
-  comparisons of the nominal \emph{diagram removal} and \emph{diagram
-    subtraction} schemes~\cite{Frixione:2008yi}.
+  with alternative simulation setups using \MGNLO and \HERWIG[7],
+  respectively. Uncertainties from PDF+\alphas and the simulation of initial-
+  and final-state radiation are obtained by re-weighting of the nominal
+  simulation result. Finally, an uncertainty on the treatment of the
+  interference between $tW$ production at NLO and \ttbar production is estimated
+  by performing MC-to-MC comparisons of the nominal \emph{diagram removal} and
+  \emph{diagram subtraction} schemes~\cite{Frixione:2008yi}.
 
   The total acceptance uncertainty on $tW$~production is \SI{34}{\percent} in
   the \hadhad~channel, \SI{14}{\percent} in the \lephad~SLT channel, and
-  \SI{23}{\percent} in the \lephad~LTT channel. Shape effects of the FSR and
-  $tW$-$\ttbar$ interference uncertainties on the MVA discriminants are taken
-  into account in the background model.
+  \SI{23}{\percent} in the \lephad~LTT channel. Shape effects of the final-state
+  radiation and $tW$-$\ttbar$ interference uncertainties on the MVA
+  discriminants are taken into account in the background model.
 
 \item[Single SM~$H$] Uncertainties on the total cross section of the SM $H$
   production modes considered as backgrounds are assigned according to the
@@ -305,13 +306,13 @@ given in the following:
   backgrounds produced via \ggF, VBF, and $WH$ to account for difficulties in
   the modelling of associated production of SM~$H$ with heavy flavour
   quarks. This uncertainty is a convention adopted by the ATLAS collaboration
-  for searches for Higgs boson pair production using the Run~2 \pp-collision
-  dataset.
+  for searches for Higgs boson pair production using the \pp-collision dataset
+  collected during Run~2 of the LHC.
 
   Acceptance uncertainties in the phase space selected by the analysis are
   derived for single Higgs boson backgrounds produced via $ZH$, $\ttbar H$ for
   both $H \to \tautau$ and $H \to \bbbar$. They are derived by varying the
-  parton shower program, the factorisation and renormalisation scale, the PDF
+  parton shower program, the factorisation and renormalisation scale, the PDFs
   and \alphas. Additionally for $\ttbar H$ production, uncertainties on the
   NLO+PS matching and the modelling of initial- and final-state radiation are
   assigned.
@@ -350,16 +351,17 @@ Signal acceptance uncertainties are derived in all SRs by performing variations
 of the generator setup. An uncertainty on the choice of parton shower and
 hadronisation model is estimated by comparing the nominal setup using \PYTHIA[8]
 with an alternative setup using \HERWIG[7] for parton showering and
-hadronisation. An uncertainty from missing higher orders of the truncatednnn
+hadronisation. An uncertainty from missing higher orders of the truncated
 perturbative expansion in \alphas is estimated by performing six variations of
 the factorisation and renormalisation scales. For SM~\HH production via \ggF
 (VBF), uncertainties on the PDFs are taken into account following the
 prescriptions of the \PDFforLHC[15nlo]~\cite{Butterworth:2015oua}
-(\NNPDF[3.0nlo]~\cite{Ball:2014uwa}) set of PDFs. Lastly, the value of \alphas
-($Q^2 = \mZ^2$) is varied up and down by $0.0015$ ($0.001$) about the central
-value of $0.118$ in the \PDFforLHC[15nlo] (\NNPDF[3.0nlo]) PDF set. The SM~$HH$
-acceptance uncertainties are summarised in~\Cref{tab:theory_uncertainty_signal}
-for the \ggF and VBF production modes.
+(\NNPDF[3.0nlo]~\cite{Ball:2014uwa}) set of PDFs. Lastly, the value
+of~$\alphas\mathopen{}\bigl( Q^2 = \mZ^2 \bigr)\mathclose{}$ is varied up and
+down by $0.0015$ ($0.001$) about the central value of $0.118$ in the
+\PDFforLHC[15nlo] (\NNPDF[3.0nlo]) PDF set. The SM~$HH$ acceptance uncertainties
+are summarised in~\Cref{tab:theory_uncertainty_signal} for the \ggF and VBF
+production modes.
 
 % The uncertainties on PDF+\alphas are found to be negligible in most cases and
 % thus omitted. The impact of the variations on the shape of the MVA
@@ -373,9 +375,9 @@ for the \ggF and VBF production modes.
 \begin{table}[htbp]
   \centering
 
-  \caption{Theory uncertainties on the acceptance of events from SM~$HH$
-    production via \ggF and VBF in the three SRs. Uncertainties marked as ``--''
-    are found to be negligible.}%
+  \caption{Uncertainties on the acceptance of SM~\HH events produced via \ggF
+    and VBF in the three SRs. Uncertainties marked as ``--'' are found to be
+    negligible.}%
   \label{tab:theory_uncertainty_signal}
 
   \input{tables/theory_uncertainty_signal}
@@ -430,16 +432,14 @@ from \SIrange{16}{19}{\percent}.
 
   \includegraphics[scale=0.85]{uncertainties/resonant_ps_acc}
 
-  \caption{Acceptance uncertainty on the BSM production of $gg \to X \to HH$ in
-    the SRs estimated from a comparison with an alternative parton shower
-    program. A positive sign of the uncertainty indicates that the alternative
-    configuration (\PYTHIA) predicts a larger \AccTimesEff than the nominal one
-    (\HERWIG) and vice versa for negatively signed uncertainties. The lines
-    indicate the linear inter- / extrapolation in \mX used to obtain the
-    uncertainties for all other points of \mX considered in the analysis (hollow
-    markers).}%
+  \caption{Uncertainties on the acceptance of $gg \to X \to \HH$ events in the
+    SRs due to the choice of parton shower and hadronisation model. A positive
+    (negative) sign of the uncertainty indicates that the alternative
+    configuration (\PYTHIA) predicts a larger (smaller) \AccTimesEff than the
+    nominal one (\HERWIG). The lines indicate the linear inter-/extrapolation
+    used to obtain the uncertainties for other points of \mX considered in the
+    analysis.}%
   \label{fig:resonant_partonshower}
-  \todo[inline]{Bigger font?}
 \end{figure}
 
 Acceptance uncertainties from factorisation and renormalisation scales, and
