@@ -105,22 +105,22 @@ to avoid the introduction of biases.
 \subsubsection{Binning of MVA Discriminants}%
 \label{sec:binning_alg}
 
-The sensitivity of the searches to a signal strongly depends on the binning used
-for the MVA discriminants in the statistical interpretation. The binning has to
-be chosen such that regions with high signal-to-background ratio (high MVA
-score) are well-separated from those with low signal-to-background ratio
+The signal sensitivity of the searches depends on the binning used for the MVA
+discriminants in the statistical interpretation. The binning has to be chosen
+such that regions with high signal-to-background ratio (high MVA score) are
+well-separated from regions with low signal-to-background ratio
 (low/intermediate MVA score).
 
 An iterative re-binning algorithm is used to determine the binning of the MVA
 discriminants. The aim of the algorithm is to maximise the expected sensitivity
 to a given signal while ensuring that the background prediction obeys
 constraints on the statistical uncertainty and expected number of events in each
-bin. The constraints are intended to stabilise the fits and ensure that the
-asymptotic approximations used for the statistical interpretation are
-applicable. The algorithm described in the following was previously used in
-Ref.~\cite{HIGG-2016-16-witherratum} and is continued to be used in the \hadhad
-channel of this search. A different, but conceptually similar algorithm is used
-in the \lephad channels, which is documented in Ref.~\cite{HDBS-2018-40}.
+bin. The constraints ensure that asymptotic approximations can be used for the
+statistical interpretation. The algorithm described in the following was
+previously used in Ref.~\cite{HIGG-2016-16-witherratum} and is continued to be
+used in the \hadhad channel of this search.
+% A different, but conceptually similar algorithm is used in the \lephad
+% channels, which is documented in Ref.~\cite{HDBS-2018-40}.
 
 The algorithm is provided with MVA score histograms with fine, equidistant
 binning of the signal and total background expectation at the nominal values of
@@ -131,21 +131,30 @@ like MVA score bins, until the bin fulfils a set of requirements:
 \item The relative statistical uncertainty of the background prediction in the
   bin must be smaller
   than~\mbox{$\SI{50}{\percent} \times f_\text{s} + \SI{1}{\percent}$}, where
-  $f_\text{s}$ is the fraction of signal events in the bin relative to the total
-  number of signal events in the channel. This requirement limits the
-  statistical uncertainty of the background estimate in the most signal-like
-  bins after re-binning to be in the range of \SIrange{10}{20}{\percent}.
+  $f_\text{s}$ is the fraction of signal events in the bin with respect to the
+  total number of signal events in the channel.\footnote{In the \lephad
+    channels, a requirement of $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used
+    instead, where $f_{\text{b}}$ is the fraction of background events defined
+    in analogy to~$f_{\text{s}}$.} This requirement limits the statistical
+  uncertainty of the background estimate in the most signal-like bins after
+  re-binning to be in the range of \SIrange{10}{20}{\percent}.
 
-\item The expected number of background events in the bin must be larger than 5.
+\item The expected number of background events in the bin must be larger than
+  five.
 
 \end{enumerate}
 When a bin fulfilling all requirements is found, the process is repeated
 starting from the next bin that is not yet merged. The algorithm terminates with
 a final bin at low MVA score. If the final bin does not fulfil the criteria, it
-is merged with the preceding bin. The size of bins resulting from the re-binning
-procedure can vary by multiple orders of magnitude. For visualisation purposes,
-the variable-width MVA score bins are therefore displayed using equidistant
-bins.
+is merged with the preceding bin.
+% In the \lephad channels, the requirements for bins are altered to at least
+% five expected background events and $10 f_{\text{s}} + 5 f_{\text{b}} > 1$,
+% where $f_{\text{b}}$ is the fraction of background events defined in analogy
+% to~$f_{\text{s}}$.
+The size of bins resulting from the re-binning procedure can vary by multiple
+orders of magnitude. For visualisation purposes, the variable-width MVA score
+bins are therefore displayed as equidistant bins.
+
 
 % \subsubsection{Merging of Physics Processes}
 
@@ -186,13 +195,13 @@ alternative prediction.
 Uncertainties with up- and down-variations that change the prediction in one or
 multiple bins in the same direction are also subject to symmetrisation. These
 cases typically result from small statistical fluctuations which can cause
-artificial over- or underconstraints of the associated NPs after the
-fit.\footnote{Overconstrained (underconstrained) NPs are parameters with
-  post-fit uncertainties that are smaller (larger) than the pre-fit uncertainty
-  of the parameter. They are referred to as ``artificial'' since they arise from
-  a mis-specification of the model as opposed to physical reasons.} These
-uncertainties are symmetrised by assigning half of the difference between the
-up- and down-variation as a symmetric uncertainty on the nominal
+artificial over- or underconstraints of the associated NPs after the fit.
+% \footnote{Overconstrained (underconstrained) NPs are parameters with post-fit
+% uncertainties that are smaller (larger) than the pre-fit uncertainty of the
+% parameter. They are referred to as ``artificial'' since they arise from a
+% mis-specification of the model as opposed to physical reasons.}
+These uncertainties are symmetrised by assigning half of the difference between
+the up- and down-variation as a symmetric uncertainty on the nominal
 prediction. This symmetrisation method is selectively applied to affected
 uncertainties (e.g.\ uncertainties on the jet energy scale and resolution).
 
