@@ -89,8 +89,8 @@ fits to Asimov data, CR data, CR and SR data but blinding the signal-like
 regions at high MVA score, and finally fits to observed data in all
 regions. Alternative models that exclude certain SRs were investigated to
 understand the effect of individual channels on the results. At every step, the
-MLE of the model parameters, the errors on the estimated parameters, and their
-correlations were inspected to ensure that the model behaves as expected. During
+MLE of the model parameters, the errors and correlations of the estimated
+parameters were inspected to ensure that the model behaves as expected. During
 early stages of the model development, these checks informed the construction of
 the model. However, after unblinding of the SRs, the statistical model was fixed
 to avoid the introduction of biases.
@@ -105,10 +105,11 @@ to avoid the introduction of biases.
 \subsubsection{Binning of MVA Discriminants}%
 \label{sec:binning_alg}
 
-The signal sensitivity of the searches depends on the binning used for the MVA
-discriminants in the statistical interpretation. The binning has to be chosen
-such that it separates regions with high signal-to-background ratio (high MVA
-score) from regions with low signal-to-background ratio (low MVA score).
+The sensitivity of the searches to a signal strongly depends on the binning used
+for the MVA discriminants in the statistical interpretation. The binning has to
+be chosen such that regions with high signal-to-background ratio (high MVA
+score) are well-separated from those with low signal-to-background ratio
+(low/intermediate MVA score).
 
 An iterative re-binning algorithm is used to determine the binning of the MVA
 discriminants. The aim of the algorithm is to maximise the expected sensitivity
@@ -116,14 +117,10 @@ to a given signal while ensuring that the background prediction obeys
 constraints on the statistical uncertainty and expected number of events in each
 bin. The constraints are intended to stabilise the fits and ensure that the
 asymptotic approximations used for the statistical interpretation are
-applicable.
-% of the sampling distributions of test statistics used in this
-% analysis are applicable.
-The algorithm described in the following was previously used in
+applicable. The algorithm described in the following was previously used in
 Ref.~\cite{HIGG-2016-16-witherratum} and is continued to be used in the \hadhad
-channel of this search. A different algorithm, while conceptually similar, is
-used in the \lephad channels and is described in
-Ref.~\cite{ATLAS-CONF-2021-030}.
+channel of this search. A different, but conceptually similar algorithm is used
+in the \lephad channels, which is documented in Ref.~\cite{HDBS-2018-40}.
 
 The algorithm is provided with MVA score histograms with fine, equidistant
 binning of the signal and total background expectation at the nominal values of
@@ -135,7 +132,7 @@ like MVA score bins, until the bin fulfils a set of requirements:
   bin must be smaller
   than~\mbox{$\SI{50}{\percent} \times f_\text{s} + \SI{1}{\percent}$}, where
   $f_\text{s}$ is the fraction of signal events in the bin relative to the total
-  number of signal events in the considered region.  This requirement limits the
+  number of signal events in the channel. This requirement limits the
   statistical uncertainty of the background estimate in the most signal-like
   bins after re-binning to be in the range of \SIrange{10}{20}{\percent}.
 
@@ -145,12 +142,10 @@ like MVA score bins, until the bin fulfils a set of requirements:
 When a bin fulfilling all requirements is found, the process is repeated
 starting from the next bin that is not yet merged. The algorithm terminates with
 a final bin at low MVA score. If the final bin does not fulfil the criteria, it
-is merged with the preceding bin.
-
-The size of bins resulting from the re-binning procedure can vary by multiple
-orders of magnitude. For better visualisation of the bin contents, the MVA
-scores are displayed as equidistant bins.
-
+is merged with the preceding bin. The size of bins resulting from the re-binning
+procedure can vary by multiple orders of magnitude. For visualisation purposes,
+the variable-width MVA score bins are therefore displayed using equidistant
+bins.
 
 % \subsubsection{Merging of Physics Processes}
 
@@ -335,7 +330,7 @@ POI unless otherwise noted. Further merging of physics processes is performed
 for illustration only. The contributions from top quark pair and single top
 production are combined into the ``top quark'' background. Contributions from
 minor backgrounds are combined into the ``other'' background category which
-includes the processes $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$ and
+includes the processes $Z \to \tautau + \text{LF}$, $Z \to e^{+}e^{-}$ and
 $Z \to \mu^{+}\mu^{-}$ inclusive in the flavour label of the $b$-jet candidates,
 \Wjets, diboson, and $\ttbar V$.
 
@@ -413,7 +408,7 @@ in~\Cref{tab:postfit_yields_smhh}.
     \input{tables/smhh_postfit_yield_incl}
   \end{subtable}
 
-  \vspace{10pt}
+  \vspace{12pt}
 
   \begin{subtable}{\textwidth}
     \centering
@@ -432,10 +427,8 @@ in~\Cref{tab:postfit_yields_smhh}.
   %                            "ttW", "ttZ"}        %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  \todo[inline]{It looks like the error propagation effectively
-    symmetrises the error (HH should be asymmetric).}
-
-  \todo[inline]{Have this pre-fit in appendix?}
+  % \todo[inline]{It looks like the error propagation effectively
+  %   symmetrises the error (HH should be asymmetric).}
 \end{table}
 
 The choice of analysis strategy of using multivariate discriminants to extract
@@ -609,7 +602,7 @@ from the unconditional fit to observed data.
   \begin{subfigure}{0.32\textwidth}
     \centering
     \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_lephad}
-    \subcaption{\lephad channels (SLT \& LTT) and \ZHF CR}
+    \subcaption{\lephad channels and \ZHF CR}
   \end{subfigure}
 
   \caption{Ranking of the post-fit impact of NPs on $\mu$ as measured by the
