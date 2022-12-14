@@ -183,28 +183,23 @@ bins are therefore displayed as equidistant bins.
 
 \subsubsection{Symmetrisation of Systematic Uncertainties}
 
-Uncertainties arising from comparisons of a nominal with an alternative
-prediction only provide a single systematic variation which cannot be readily
-incorporated in the statistical model. These \emph{one-sided uncertainties}
-occur when, for example, estimating modelling uncertainties by comparing
-different generator configurations. In these cases, variations are symmetrised
-by mirroring their effect with respect to the nominal prediction. This procedure
-is used for all uncertainties resulting from a comparison with a single
-alternative prediction.
+Uncertainties derived from comparisons of the nominal with an alternative
+prediction only provide a single systematic variation and cannot be readily
+incorporated in the statistical model. In this case, variations are symmetrised
+by mirroring their effect with respect to the nominal prediction.
 
 Uncertainties with up- and down-variations that change the prediction in one or
-multiple bins in the same direction are also subject to symmetrisation. These
-cases typically result from small statistical fluctuations which can cause
+multiple bins in the same direction are also subject to symmetrisation. Such
+variations usually result from statistical fluctuations and can lead to
 artificial over- or underconstraints of the associated NPs after the fit.
 % \footnote{Overconstrained (underconstrained) NPs are parameters with post-fit
 % uncertainties that are smaller (larger) than the pre-fit uncertainty of the
 % parameter. They are referred to as ``artificial'' since they arise from a
 % mis-specification of the model as opposed to physical reasons.}
-These uncertainties are symmetrised by assigning half of the difference between
-the up- and down-variation as a symmetric uncertainty on the nominal
-prediction. This symmetrisation method is selectively applied to affected
-uncertainties (e.g.\ uncertainties on the jet energy scale and resolution).
-
+In this case, uncertainties are symmetrised by assigning half of the difference
+between the up- and down-variation as a symmetric uncertainty. This
+symmetrisation method is selectively applied to affected uncertainties (e.g.\
+jet energy scale and resolution uncertainties).
 
 % \subsubsection{Inter- and Extrapolation of Systematic Uncertainties}
 
@@ -253,18 +248,17 @@ uncertainties (e.g.\ uncertainties on the jet energy scale and resolution).
 % https://indico.cern.ch/event/736395/contributions/3040869/attachments/1671620/2684026/SmoothingPruning.pdf
 % https://cds.cern.ch/record/2692202/files/CERN-THESIS-2018-447.pdf
 All uncertainties are split into separate normalisation and shape uncertainties
-that are treated as being fully correlated. The templates used to define shape
-uncertainties are susceptible to statistical fluctuation which can lead to
-artificial pulls and constraints when fitting the model. This typically occurs
-when shape uncertainties are derived from the comparison of two Monte Carlo
-samples or from variations that change the four-momentum of reconstructed
-physics objects. In these cases, a smoothing procedure is applied to the
-templates which is adopted from Ref.~\cite{HIGG-2013-23}. Shape uncertainties
-that are based on a re-weighting of the nominal prediction are less susceptible
-to statistical fluctuations in which case no smoothing is applied by
-default. Exceptions are made for selected uncertainties such as the FSR
-uncertainties for single top and \ttbar production which introduce large weights
-that degrade the statistical precision of the templates.
+that are correlated in the statistical model. The templates used to define shape
+uncertainties are susceptible to statistical fluctuations, which can introduce
+spurious pulls or constraints of NPs after the fit. This is often the case when
+deriving shape uncertainties from a two-sample comparison or from variations
+that change the four-momentum of reconstructed physics objects. In these cases,
+a smoothing procedure is applied that is adopted from
+Ref.~\cite{HIGG-2013-23}. Shape uncertainties based on a re-weighting of the
+nominal prediction are less susceptible to statistical fluctuations and thus no
+smoothing is applied by default. An exception is made for the variations of the
+final-state radiation in single top quark and \ttbar production. These are
+subject to large statistical fluctuations and are therefore smoothed.
 
 % The derivation of shape uncertainties are susceptible to statistical
 % fluctuations\footnote{This is can also be the case for normalisation
@@ -294,14 +288,14 @@ that degrade the statistical precision of the templates.
 % applied, when configured for a given uncertainty, separately for all
 % analysis regions and samples after merging.
 
-The model is simplified by pruning small systematic uncertainties. This
-procedure is applied separately to all samples and channels after symmetrisation
-and smoothing, and separately for normalisation and shape uncertainties. The
-normalisation component of an uncertainty is removed if both the up- and
-down-variation change the normalisation by less than \SI{0.5}{\percent}. The
-shape component of an uncertainty is removed if the relative change of the up-
-and down-variations in all bins of a given channel is less than
-\SI{0.5}{\percent}.
+After symmetrisation and smoothing, the model is simplified by removing
+(pruning) small systematic uncertainties. This procedure is applied separately
+to all samples and channels, and separately for the normalisation and shape
+components of uncertainties. The normalisation component of an uncertainty is
+removed if both the up- and down-variation change the normalisation by less than
+\SI{0.5}{\percent}. The shape component of an uncertainty is removed if the
+relative change of the up- and down-variations in all bins of a given channel is
+less than \SI{0.5}{\percent}.
 
 
 \subsubsection{Nuisance Parameter Correlation Scheme}
@@ -313,11 +307,11 @@ process are assumed to be correlated between channels provided they originate
 from the same source. NPs related to the \faketauhadvis background estimation
 are not correlated between the \hadhad and \lephad channels since different
 estimation methods are used. However, they are correlated between the \lephad
-SLT and LTT channel which use the same estimation techniques.
+SLT and LTT channel, which use the same estimation techniques.
 
 An exception to this scheme are the parton shower uncertainties for \ttbar which
 were decorrelated between the \hadhad, \lephad SLT, and \lephad LTT
-channel. This decision was based on observed tensions between the best-fit NP
+channel. This decision is based on observed tensions between the best-fit NP
 values when performing fits of the individual channels.
 
 % Hadhad: No pull, slight overconstraint
