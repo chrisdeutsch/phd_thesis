@@ -417,15 +417,17 @@ hadronisation model is estimated by comparing the default configuration using
 The uncertainties evaluated at these points are linearly interpolated
 (extrapolated) for $\mX \leq \SI{1000}{\GeV}$ ($\mX > \SI{1000}{\GeV}$) to
 provide estimates of the uncertainty for other mass points. This procedure is
-illustrated in \Cref{fig:resonant_partonshower} for all three channels.
+illustrated in \Cref{fig:resonant_partonshower} for all three channels. The
+extrapolation to $\mX = \SI{1600}{\GeV}$ can lead to an uncertainty of up to
+\SI{20}{\percent}.
 
-The alternative configuration using \PYTHIA for parton showering predicts
-acceptances that are slightly larger than the nominal configuration for the
-\hadhad and \lephad SLT channels at low resonance masses. For
-$\mX = \SI{1000}{\GeV}$ \HERWIG predicts larger signal acceptances in all three
-channels. The linear extrapolation in \mX to the largest resonance mass of
-\SI{1600}{\GeV} that is considered leads to acceptance uncertainties ranging
-from \SIrange{16}{19}{\percent}.
+% The alternative configuration using \PYTHIA for parton showering predicts
+% acceptances that are slightly larger than the nominal configuration for the
+% \hadhad and \lephad SLT channels at low resonance masses. For
+% $\mX = \SI{1000}{\GeV}$ \HERWIG predicts larger signal acceptances in all
+% three channels. The linear extrapolation in \mX to the largest resonance mass
+% of \SI{1600}{\GeV} that is considered leads to acceptance uncertainties
+% ranging from \SIrange{16}{19}{\percent}.
 
 \begin{figure}[htbp]
   \centering
@@ -449,20 +451,19 @@ applied in the analysis. The uncertainties are found to be negligible and are
 therefore omitted.
 
 An additional uncertainty is assigned in the \hadhad and \lephad LTT channels to
-signal samples using fast simulation with
-\textsc{ATLFAST-II}~\cite{SOFT-2010-01}. The efficiency of \tauhadvis triggers
-is found to deviate between full and fast simulation, without dedicated
-calibrations of \tauhadvis trigger efficiencies in fast simulation being
-available. An uncertainty is estimated by comparing the acceptance between full
-and fast simulation for a benchmark sample at a mass of \SI{400}{\GeV}. The
-acceptance predicted using fast simulation is \SI{6.5}{\percent}
-(\SI{3.6}{\percent}) larger than in full simulation for the \hadhad (\lephad
-LTT) SR for the benchmark point. Distributions of kinematic and MVA input
-variables are compared between fast and full simulation showing no significant
-deviations in their shapes. Therefore, the difference in acceptance is assigned
-as an additional normalisation uncertainty in the \hadhad and \lephad LTT
-channel for all signal samples simulated using \textsc{ATLFAST-II}~(i.e.\
-$\mX \leq \SI{1000}{\GeV}$).
+signal samples using fast simulation of the ATLAS detector. The efficiency of
+\tauhadvis-triggers is found to deviate between full and fast simulation,
+without dedicated calibrations of \tauhadvis-trigger efficiencies in fast
+simulation being available. An uncertainty is estimated by comparing the
+acceptance between full and fast simulation for a benchmark signal with
+$\mX = \SI{400}{\GeV}$. The acceptance predicted using fast simulation is
+\SI{6.5}{\percent} (\SI{3.6}{\percent}) larger than in full simulation for the
+\hadhad (\lephad LTT) SR for the benchmark point. Distributions of kinematic and
+MVA input variables are compared between fast and full simulation showing no
+significant deviations in their shapes. Therefore, the difference in acceptance
+is assigned as an additional normalisation uncertainty in the \hadhad and
+\lephad LTT channel for all signal samples using fast detector simulation, i.e.\
+all signals with $\mX \leq \SI{1000}{\GeV}$.
 
 %%% Local Variables:
 %%% mode: latex
