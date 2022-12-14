@@ -1,39 +1,39 @@
 \section{Statistical Interpretation}%
 \label{sec:statistical_analysis}
 
-The statistical interpretation of the results uses the frequentist framework
-presented in \Cref{sec:statistical_inference} to perform searches for resonant
-and non-resonant Higgs boson pair production. In the absence of a statistically
-significant signal, the main results of the statistical interpretation are upper
-limits on the strength and cross section of SM \HH production via \ggF and VBF,
-and upper limits on the cross section of resonant production of \HH via scalar,
-narrow width resonances with masses ranging from \SIrange{251}{1600}{\GeV}
-produced in \ggF.
+The statistical interpretation of the search for resonant and non-resonant \HH
+production proceeds using the methods introduced in
+\Cref{sec:statistical_inference}. The main results of the statistical
+interpretation are:~upper limits on the signal strength and cross section of
+SM~\HH production via \ggF and VBF; upper limits on the cross section of
+resonant \HH production via scalar, narrow-width resonances produced in \ggF.
 
-This section is structured as follows: In \Cref{sec:sig_bkg_model} the models
-used for the statistical interpretation are described. The results of the search
-for SM \HH and resonant \HH production are presented in
-\Cref{sec:results_nonres} and \Cref{sec:results_res}, respectively. The section
-concludes with \Cref{sec:global_significance} with the global significance
-estimation of the largest excess in the search for resonant \HH production.
+This section is structured as follows: First, the statistical model is
+introduced in \Cref{sec:sig_bkg_model}. Second, the results of the search for
+SM~\HH and resonant \HH production are presented in \Cref{sec:results_nonres}
+and \Cref{sec:results_res}, respectively. Finally, the statistical
+interpretation is concluded with an estimation of the statistical significance
+of the largest excess observed in the search for resonant \HH production in
+\Cref{sec:global_significance}.
 
 
-\subsection{Statistical Models}%
+\subsection{The Statistical Model}%
 \label{sec:sig_bkg_model}
 
-A probabilistic model is constructed for every signal hypothesis to be probed
-that describes the distribution of event counts in bins of the MVA discriminants
-in the SRs and \mll in the \ZHF CR. This model is constructed using the signal
-and background estimates and their uncertainties described in earlier
-sections. The discriminants are summarised in~\Cref{tab:fitted_variable} for all
-regions entering the searches for SM \HH and resonant \HH production.
+A separate statistical model is constructed for every signal hypothesis to be
+probed. These models describe the distribution of event counts in bins of the
+MVA discriminants in the SRs and \mll in the \ZHF~CR. The models are built with
+\textsc{HistFactory} (cf.~\Cref{sec:histfactory}) and include the signal and
+background estimates and uncertainties described in previous sections. The
+discriminants used in the analysis channels are summarised
+in~\Cref{tab:fitted_variable}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Summary of the discriminants used for the statistical interpretation
-    in the three SRs and the \ZHF CR. The search for resonant production of
-    Higgs boson pairs uses the PNN distribution evaluated with a mass parameter
-    equal to the resonance mass to be probed.}%
+  \caption{Summary of the discriminants used in the three SRs and the
+    \ZHF~CR. The search for resonant \HH production uses the distribution of
+    PNN~scores with the PNN being evaluated with a mass parameter equal to the
+    resonance mass to be probed.}%
   \label{tab:fitted_variable}
 
   \begin{tabular}{l@{\hskip 25pt}ccccc}
@@ -48,8 +48,9 @@ regions entering the searches for SM \HH and resonant \HH production.
   \end{tabular}
 \end{table}
 
-The parameters of interest (POI) of the SM \HH search are the total SM \HH
-production cross section via \ggF and VBF, \xsecggfvbf, and the signal strength
+The POIs of the search for non-resonant \HH production are the total SM~\HH
+production cross section via \ggF and VBF, \xsecggfvbf, and the corresponding
+signal strength
 \begin{align*}
   \mu = \frac{\xsecggfvbf}{\xsecggfvbf^{\text{SM}}}
   \qquad \text{with} \qquad
@@ -57,52 +58,51 @@ production cross section via \ggF and VBF, \xsecggfvbf, and the signal strength
   \,\text{,}
 \end{align*}
 which measures the cross section relative to the SM prediction from
-Refs.~\cite{Grazzini:2018bsd,Dreyer:2018qbw}. For the search for resonant \HH
-production, the total cross section $\sigma(pp \to X \to HH)$ is considered as
-the POI. The cross sections are inclusive in the decay modes of the Higgs bosons
-and are determined from the measurement in the \bbtautau channel assuming Higgs
-boson branching ratios as predicted by the SM. Non-resonant production of \HH is
-not considered as a background to the search for resonant \HH production.
+Refs.~\cite{Grazzini:2018bsd,Dreyer:2018qbw}. Notably, the interpretation of the
+SM~\HH search does not distinguish between the \ggF and VBF production modes.
+In the search for resonant \HH production, the cross
+section~$\sigma(pp \to X \to HH)$ is considered to be the POI. Moreover, SM~\HH
+production is not considered as a background in the search for resonant \HH
+production.
 
-The models include unconstrained normalisation factors that scale the
-contribution of the \ZHF and \ttbar backgrounds in all regions. An additional
-nuisance parameter is introduced for every independent source of systematic
-uncertainty. In contrast to the normalisation factors, these nuisance parameters
-are constrained by auxiliary measurements and can act on both the normalisation
-and shape of the distributions predicted by the model. Finally, statistical
-uncertainties on background rate estimates obtained using finite samples of
-simulated or control region\footnote{Anti-ID CR events are used to obtain
-  data-driven estimates of the \faketauhadvis backgrounds in the SRs.} events
-are implemented according to the simplified Barlow-Beeston method introduced in
-\Cref{sec:barlow_beeston}.
+% The cross sections are inclusive in the decay modes of the Higgs bosons and
+% are determined from the measurement in the \bbtautau channel assuming Higgs
+% boson branching ratios as predicted by the SM.
 
-The parameters of the models are inferred by maximising their likelihood
-functions for an observed or Asimov dataset. The main results are based on
-likelihood-ratio tests of hypothesised values of the POIs. Unless otherwise
-noted, asymptotic approximations are used for the sampling distributions of the
-likelihood-ratio test statistic.
+The models include free normalisation factors that scale the contribution of the
+\ZHF and \ttbar backgrounds in all channels. In addition, an NP is introduced
+for every independent systematic uncertainty included in the model. Lastly,
+statistical uncertainties on the background rates estimated using finite samples
+of simulated events (or CR data) are implemented according to the simplified
+Barlow--Beeston method~\cite{barlow1993,conway2011}.
+% The parameters of the model are inferred from observed or Asimov data using
+% maximum likelihood estimation.
 
-The statistical model was checked during its development by performing fits to
-Asimov datasets, control region data, control region and signal region data but
-blinding the high MVA score regions, and finally fits to observed data in all
-regions. Alternative models that exclude certain signal regions were also
-investigated to understand the effect of individual channels on the statistical
-model.  At every step, the maximum likelihood estimates of the model parameters
-and their confidence intervals were inspected to ensure that the model behaves
-as expected. At the early stages of the model development, these checks informed
-the construction of the model. After unblinding the signal regions, the
-statistical model was considered as fixed to prevent the introduction of biases.
+% The parameters of the models are inferred by maximising their likelihood
+% functions for an observed or Asimov dataset. The main results are based on
+% likelihood ratio tests of hypothesised values of the POIs. Unless otherwise
+% noted, asymptotic approximations are used for the sampling distributions of
+% the likelihood ratio test statistic.
 
+The statistical models were scrutinised during their development by performing
+fits to Asimov data, CR data, CR and SR data but blinding the signal-like
+regions at high MVA score, and finally fits to observed data in all
+regions. Alternative models that exclude certain SRs were investigated to
+understand the effect of individual channels on the results. At every step, the
+MLE of the model parameters, the errors on the estimated parameters, and their
+correlations were inspected to ensure that the model behaves as expected. During
+early stages of the model development, these checks informed the construction of
+the model. However, after unblinding of the SRs, the statistical model was fixed
+to avoid the introduction of biases.
 
-\todo[inline]{Maybe a short introductory sentence to say that details of the fit
-  model are discussed hereafter. Also could briefly mention that we omit
-  ``merging'' since this has little practical relevance. Also omit the
-  discussion of inter- and extrapolation of uncertainties.}
+% \todo[inline]{Maybe a short introductory sentence to say that details of the
+% fit model are discussed hereafter. Also could briefly mention that we omit
+% ``merging'' since this has little practical relevance. Also omit the
+% discussion of inter- and extrapolation of uncertainties.}
 
-A few detailed aspects of the statistical model are given in the following.
+% A few detailed aspects of the statistical model are given in the following.
 
-
-\subsubsection{Binning Algorithm for MVA Discriminants}%
+\subsubsection{Binning of MVA Discriminants}%
 \label{sec:binning_alg}
 
 The signal sensitivity of the searches depends on the binning used for the MVA
@@ -127,9 +127,8 @@ Ref.~\cite{ATLAS-CONF-2021-030}.
 
 The algorithm is provided with MVA score histograms with fine, equidistant
 binning of the signal and total background expectation at the nominal values of
-all nuisance parameters. It proceeds by iteratively merging bins, starting from
-the most-signal like MVA score bins, until the bin fulfils a set of
-requirements:
+all NPs. It proceeds by iteratively merging bins, starting from the most-signal
+like MVA score bins, until the bin fulfils a set of requirements:
 \begin{enumerate}
 
 \item The relative statistical uncertainty of the background prediction in the
@@ -192,16 +191,15 @@ alternative prediction.
 Uncertainties with up- and down-variations that change the prediction in one or
 multiple bins in the same direction are also subject to symmetrisation. These
 cases typically result from small statistical fluctuations which can cause
-artificial over- or underconstraints of the associated nuisance parameters after
-the fit.\footnote{Overconstrained (underconstrained) nuisance parameters are
-  parameters with post-fit uncertainties that are smaller (larger) than the
-  pre-fit uncertainty of the parameter. They are referred to as ``artificial''
-  since they arise from a mis-specification of the model as opposed to physical
-  reasons.} These uncertainties are symmetrised by assigning half of the
-difference between the up- and down-variation as a symmetric uncertainty on the
-nominal prediction. This symmetrisation method is selectively applied to
-affected uncertainties (e.g.\ uncertainties on the jet energy scale and
-resolution).
+artificial over- or underconstraints of the associated NPs after the
+fit.\footnote{Overconstrained (underconstrained) NPs are parameters with
+  post-fit uncertainties that are smaller (larger) than the pre-fit uncertainty
+  of the parameter. They are referred to as ``artificial'' since they arise from
+  a mis-specification of the model as opposed to physical reasons.} These
+uncertainties are symmetrised by assigning half of the difference between the
+up- and down-variation as a symmetric uncertainty on the nominal
+prediction. This symmetrisation method is selectively applied to affected
+uncertainties (e.g.\ uncertainties on the jet energy scale and resolution).
 
 
 % \subsubsection{Inter- and Extrapolation of Systematic Uncertainties}
@@ -304,20 +302,19 @@ and down-variations in all bins of a given channel is less than
 
 \subsubsection{Nuisance Parameter Correlation Scheme}
 
-All normalisation factors are correlated between channels. Nuisance parameters
-related to instrumental uncertainties are correlated between all channels and
-physics processes. Theory uncertainties on cross sections and acceptances for a
-given process are assumed to be correlated between channels provided they
-originate from the same source. Nuisance parameters related to the
-\faketauhadvis background estimation are not correlated between the \hadhad and
-\lephad channels since different estimation methods are used. However, they are
-correlated between the \lephad SLT and LTT channel which use the same estimation
-techniques.
+All normalisation factors are correlated between channels. NPs related to
+instrumental uncertainties are correlated between all channels and physics
+processes. Theory uncertainties on cross sections and acceptances for a given
+process are assumed to be correlated between channels provided they originate
+from the same source. NPs related to the \faketauhadvis background estimation
+are not correlated between the \hadhad and \lephad channels since different
+estimation methods are used. However, they are correlated between the \lephad
+SLT and LTT channel which use the same estimation techniques.
 
 An exception to this scheme are the parton shower uncertainties for \ttbar which
 were decorrelated between the \hadhad, \lephad SLT, and \lephad LTT
-channel. This decision was based on observed tensions between the best-fit
-nuisance parameter values when performing fits of the individual channels.
+channel. This decision was based on observed tensions between the best-fit NP
+values when performing fits of the individual channels.
 
 % Hadhad: No pull, slight overconstraint
 % Lephad SLT: Large overconstraint
@@ -348,15 +345,15 @@ $Z \to \mu^{+}\mu^{-}$ inclusive in the flavour label of the $b$-jet candidates,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The normalisation factors of \ttbar and \ZHF estimated using a likelihood fit of
 the background-only model are \num{0.97 +- 0.04} and \num{1.40 +- 0.11},
-respectively, consistent with the result obtained from fits of the control
-region only (cf.\ \Cref{sec:bkg_zjets}).
+respectively, consistent with the result obtained from fits of the CR only (cf.\
+\Cref{sec:bkg_zjets}).
 
 In~\Cref{fig:mvascores_postfit} the MVA score distributions predicted by the
 background-only model are compared to data in the \hadhad, \lephad SLT, and
-\lephad LTT channels after the maximum likelihood fit combining all signal and
-control regions. After performing the fit, the background model provides a good
-description of the data observed in the signal regions. Additionally, the
-expected event yields per process in these regions after the fit are summarised
+\lephad LTT channels after the maximum likelihood fit combining all SRs and
+CRs. After performing the fit, the background model provides a good description
+of the data observed in the SRs. Additionally, the expected event yields per
+process in these regions after the fit are summarised
 in~\Cref{tab:postfit_yields_smhh}.
 
 \begin{figure}[htbp]
@@ -389,30 +386,28 @@ in~\Cref{tab:postfit_yields_smhh}.
 
   \caption{Distribution of the MVA discriminants used to extract the
     non-resonant SM \HH signal in the \lephad SLT (a), \lephad LTT (b), and
-    \hadhad (c) channel after the background-only fit of all signal and control
-    regions. The signal overlay is scaled to the expected upper limit on the
-    signal strength of $3.9$ from the combination of all channels. The
-    \faketauhadvis background in the \hadhad channel is shown separately for
-    \faketauhadvis from multi-jet (MJ) and \ttbar.}%
+    \hadhad (c) channel after the background-only fit of all SRs and CRs. The
+    signal overlay is scaled to the expected upper limit on the signal strength
+    of $3.9$ from the combination of all channels. The \faketauhadvis background
+    in the \hadhad channel is shown separately for \faketauhadvis from multi-jet
+    (MJ) and \ttbar.}%
   \label{fig:mvascores_postfit}
 \end{figure}
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Expected event yields per physics process in the three signal regions
-    (a) and in the two most signal-like bins of the MVA discriminants (b) after
-    the background-only fit to the observed data in all regions. The category
+  \caption{Expected event yields per physics process in the three SRs (a) and in
+    the two most signal-like bins of the MVA discriminants (b) after the
+    background-only fit to the observed data in all regions. The category
     ``other backgrounds'' combines minor contributions from
     $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$, $Z \to \mu^{+}\mu^{-}$,
     \Wjets, diboson and $\ttbar V$. The expected SM \HH signal yield is shown
-    with $\mu = 1$ and nuisance parameters at their best-fit value except for
-    nuisance parameters only affecting the SM \HH signal which are kept at their
-    pre-fit values.}
+    with $\mu = 1$ and NPs at their best-fit value except for NPs only affecting
+    the SM \HH signal which are kept at their pre-fit values.}
 
   \begin{subtable}{\textwidth}
-    \centering
-    \subcaption{Expected event yields in the signal regions}%
+    \centering \subcaption{Expected event yields in the SRs}%
     \label{tab:postfit_yields_smhh}
 
     \input{tables/smhh_postfit_yield_incl}
@@ -511,30 +506,29 @@ data by about \SI{10}{\percent} which is not fully covered by uncertainties.
     \includegraphics[width=\textwidth]{results_nonres/postfit_mvainputs/Region_BMin0_incJet1_distmHH_J2_Y2015_DLLOS_T2_SpcTauHH_L0_GlobalFit_conditionnal_mu0log}
   \end{subfigure}
 
-  \caption{Distributions of the BDT input variables in the \hadhad signal region
-    after the background-only fit of MVA scores and \mll in signal and control
-    regions to the observed data. The expected SM $\HH$ signal is overlayed with
-    a normalisation corresponding to $\mu = 400$.}
+  \caption{Distributions of the BDT input variables in the \hadhad SR after the
+    background-only fit of MVA scores and \mll in SRs and CRs to the observed
+    data. The expected SM $\HH$ signal is overlayed with a normalisation
+    corresponding to $\mu = 400$.}
   \label{fig:postfit_mva_inputs}
 \end{figure}
 
 A post hoc analysis of the mismodelling observed at low \dRtautau is performed
 by examining the dependency of the measured \ZHF normalisation factor as a
 function of the transverse momentum of the $Z$ boson by performing a simplified
-normalisation measurement in the control region in bins of~$\pT(Z)$
-reconstructed from the lepton transverse momenta.\todo{Sentence way too
-  long. Rewrite.} This cross-check shows a trend of decreasing \ZHF
-normalisation factors with increasing $\pT(Z)$ which can lead to differences of
-about \SIrange{5}{10}{\percent} at typical values of $\pT(Z)$ after the \hadhad
+normalisation measurement in the CR in bins of~$\pT(Z)$ reconstructed from the
+lepton transverse momenta.\todo{Sentence way too long. Rewrite.} This
+cross-check shows a trend of decreasing \ZHF normalisation factors with
+increasing $\pT(Z)$ which can lead to differences of about
+\SIrange{5}{10}{\percent} at typical values of $\pT(Z)$ after the \hadhad
 pre-selection (approx.\ $\SI{100}{\GeV} < \pT(Z) < \SI{200}{\GeV}$) when
 comparing to the $\pT(Z)$-inclusive normalisation factor. Due to the
 anticorrelation between $\pT(Z)$ and \dRtautau, this effect can be further
 enhanced in regions of low \dRtautau. The acceptance uncertainties on the \ZHF
 background, which are derived purely based on simulation, might not fully
-account for the effect as it is observed in control region data. In future
-analyses it could be beneficial to control for such differential effects when
-performing auxiliary measurements of the \ZHF background.\todo{Put a plot in
-  appendix?}
+account for the effect as it is observed in CR data. In future analyses it could
+be beneficial to control for such differential effects when performing auxiliary
+measurements of the \ZHF background.\todo{Put a plot in appendix?}
 
 % q0 (obs): 0.357911
 % sig (obs): 0.598257
@@ -579,25 +573,24 @@ and the statistical precision of the background estimate.
     $(\Delta\hat{\mu}^2_{\text{tot}} - \Delta\hat{\mu}^2_{\text{w/o cat}}) /
     \Delta \hat{\mu}^2_{\text{tot}}$, where $\Delta\hat{\mu}^2_{\text{tot}}$ is
     the estimate of the total variance of the MLE of $\mu$ and
-    $\Delta\hat{\mu}^2_{\text{w/o cat}}$ its variance after fixing the nuisance
-    parameters of a category to their best-fit value. The variance of
-    $\hat{\mu}$ from data statistical uncertainties is determined directly from
-    the model with all nuisance parameters fixed to their best-fit values. The
-    fractions of subcategories do not necessarily sum to the fraction of the
-    parent category due to correlations between nuisance parameters.}
+    $\Delta\hat{\mu}^2_{\text{w/o cat}}$ its variance after fixing the NPs of a
+    category to their best-fit value. The variance of $\hat{\mu}$ from data
+    statistical uncertainties is determined directly from the model with all NPs
+    fixed to their best-fit values. The fractions of subcategories do not
+    necessarily sum to the fraction of the parent category due to correlations
+    between NPs.}
 
   \input{tables/breakdown_nonres}
 
   \label{tab:breakdown_nonres}
 \end{table}
 
-The effect of uncertainties on \muhat is examined on the level of individual
-nuisance parameters in~\Cref{fig:nonres_np_rankings} separately for the
-combination of all channels and for fits of the \hadhad and \lephad channels
-individually. A ranking of the 15 nuisance parameters with the largest impact on
-the signal strength estimation is shown, including the MLE of the nuisance
-parameters and their \SI{68}{\percent} confidence intervals from the
-unconditional fit to observed data.
+The effect of uncertainties on \muhat is examined on the level of individual NPs
+in~\Cref{fig:nonres_np_rankings} separately for the combination of all channels
+and for fits of the \hadhad and \lephad channels individually. A ranking of the
+15 NPs with the largest impact on the signal strength estimation is shown,
+including the MLE of the NPs and their \SI{68}{\percent} confidence intervals
+from the unconditional fit to observed data.
 
 \begin{sidewaysfigure}[p]
   \centering
@@ -619,30 +612,28 @@ unconditional fit to observed data.
     \subcaption{\lephad channels (SLT \& LTT) and \ZHF CR}
   \end{subfigure}
 
-  \caption{Ranking of the post-fit impact of nuisance parameters on $\mu$ as
-    measured by the change in the estimated signal strength ($\Delta \mu$) when
-    performing the fit after fixing a nuisance parameter~$\theta$ to
-    $\hat{\theta} \pm \Delta \hat{\theta}$, where $\hat{\theta}$ is the MLE and
-    $\Delta \hat{\theta}$ the post-fit uncertainty on the nuisance
-    parameter. The impact on $\mu$ is shown on the top axis in descending order
-    of the mean $|\Delta \mu|$ of the $+\Delta \hat{\theta}$ and
-    $-\Delta \hat{\theta}$ variation. The bottom axis shows the MLE of the
-    nuisance parameters including their post-fit uncertainty, with marker
-    colours indicating the type of nuisance parameter: NP with Gaussian
-    constraint ($\alpha$ / black markers), NP with Poisson constraint related to
-    the statistical precision of the background estimate ($\gamma$ / green
-    markers), and unconstrained normalisation factors (red markers). NP rankings
-    and their MLE are obtained from fits of the signal-plus-background model to
-    the observed data in all regions (a), in the \hadhad signal region and the
-    \ZHF CR (b), in the \lephad signal regions and the \ZHF CR (c).}%
+  \caption{Ranking of the post-fit impact of NPs on $\mu$ as measured by the
+    change in the estimated signal strength ($\Delta \mu$) when performing the
+    fit after fixing a NP~$\theta$ to $\hat{\theta} \pm \Delta \hat{\theta}$,
+    where $\hat{\theta}$ is the MLE and $\Delta \hat{\theta}$ the post-fit
+    uncertainty on the NP. The impact on $\mu$ is shown on the top axis in
+    descending order of the mean $|\Delta \mu|$ of the $+\Delta \hat{\theta}$
+    and $-\Delta \hat{\theta}$ variation. The bottom axis shows the MLE of the
+    NPs including their post-fit uncertainty, with marker colours indicating the
+    type of NP: NP with Gaussian constraint ($\alpha$ / black markers), NP with
+    Poisson constraint related to the statistical precision of the background
+    estimate ($\gamma$ / green markers), and unconstrained normalisation factors
+    (red markers). NP rankings and their MLE are obtained from fits of the
+    signal-plus-background model to the observed data in all regions (a), in the
+    \hadhad SR and the \ZHF CR (b), in the \lephad SRs and the \ZHF CR (c).}%
   \label{fig:nonres_np_rankings}
   \todo[inline]{The uncertainties are obtained from the likelihood profile - asymmetric.}
 \end{sidewaysfigure}
 
-The 15 highest ranked nuisance parameters show good compatibility with their
-values prior to the fit. For few nuisance parameters the fit provides more
-stringent constraints than suggested by their prior measurement, which is
-consistent with the results obtained from fits to Asimov datasets.
+The 15 highest ranked NPs show good compatibility with their values prior to the
+fit. For few NPs the fit provides more stringent constraints than suggested by
+their prior measurement, which is consistent with the results obtained from fits
+to Asimov datasets.
 
 The largest NP constraint observed in the \hadhad channel fit is from the \ZHF
 acceptance uncertainty determined from MC-to-MC comparison of \SHERPA and
@@ -650,28 +641,28 @@ acceptance uncertainty determined from MC-to-MC comparison of \SHERPA and
 conservative, since it arises from a comparison of the nominal event generation
 at NLO with a prediction lower order of the perturbative expansion (LO).
 
-In the \lephad channel, large constraints are observed on the nuisance parameter
-associated to the uncertainty on $r_{\text{QCD}}$ and the \ttbar acceptance
-uncertainty from the comparison of parton shower programs. The uncertainty on
-$r_{\text{QCD}}$ is derived to be conservative, varying the assumed fraction of
-\faketauhadvis originating from multi-jet processes in the anti-\tauhadvis
-control region between 0 and \SI{100}{\percent}, explaining the large
-constraints on this parameter. The constraints on the \ttbar acceptance
-uncertainty based on the parton shower comparison stems from the \lephad SLT
-channel which has high purity of top quark backgrounds. Since the constraint is
-large, this uncertainty source is de-correlated between channels to avoid
-underestimating the acceptance uncertainty in other channels based on the
-measurement in the \lephad SLT channel\todo{Should mention this earlier?}.
+In the \lephad channel, large constraints are observed on the NP associated to
+the uncertainty on $r_{\text{QCD}}$ and the \ttbar acceptance uncertainty from
+the comparison of parton shower programs. The uncertainty on $r_{\text{QCD}}$ is
+derived to be conservative, varying the assumed fraction of \faketauhadvis
+originating from multi-jet processes in the anti-\tauhadvis CR between 0 and
+\SI{100}{\percent}, explaining the large constraints on this parameter. The
+constraints on the \ttbar acceptance uncertainty based on the parton shower
+comparison stems from the \lephad SLT channel which has high purity of top quark
+backgrounds. Since the constraint is large, this uncertainty source is
+de-correlated between channels to avoid underestimating the acceptance
+uncertainty in other channels based on the measurement in the \lephad SLT
+channel\todo{Should mention this earlier?}.
 
-A few features of the ranking of nuisance parameters / nuisance parameter
-categories, as previously presented in \Cref{tab:breakdown_nonres} and
-\Cref{fig:nonres_np_rankings}, are highlighted in the following:
+A few features of the ranking of NPs / NP categories, as previously presented in
+\Cref{tab:breakdown_nonres} and \Cref{fig:nonres_np_rankings}, are highlighted
+in the following:
 \begin{itemize}
 \item Statistical uncertainties on the background prediction have a large impact
   when comparing to other systematic uncertainties. These uncertainties arise
   from the finite number of simulated events used for the background predictions
-  and the number of control region events used to perform the data-driven
-  \faketauhadvis background estimates.
+  and the number of CR events used to perform the data-driven \faketauhadvis
+  background estimates.
 
   The distinct features of Higgs boson pair production in the SM allow to
   separate the targeted signal well from most background processes when
@@ -685,12 +676,11 @@ categories, as previously presented in \Cref{tab:breakdown_nonres} and
   background predictions in the most signal-like bins.
 
   Additionally, the data-driven estimate of the multi-jet background in the
-  \hadhad channel includes large subtractions of non-multi-jet events in the
-  control region, further degrading the statistical precision of the background
-  estimate. As a result, in the \hadhad-only fit the associated nuisance
-  parameter has the largest impact of any single NP on the extracted signal
-  strength (cf.\ $\gamma$ NP for SMBDT bin 13
-  in~\Cref{fig:nonres_np_ranking_hadhad}).
+  \hadhad channel includes large subtractions of non-multi-jet events in the CR,
+  further degrading the statistical precision of the background estimate. As a
+  result, in the \hadhad-only fit the associated NP has the largest impact of
+  any single NP on the extracted signal strength (cf.\ $\gamma$ NP for SMBDT bin
+  13 in~\Cref{fig:nonres_np_ranking_hadhad}).
 
 \item The $tW$ acceptance uncertainty derived from comparing simulated events
   with different treatment of the $tW$ and \ttbar interference is the NP with
@@ -758,9 +748,9 @@ non-resonant SM \HH production, replacing the BDT / NN discriminants with PNN
 discriminants evaluated at the $\mX$ hypothesis of interest. Moreover, the
 absence of SM Higgs boson pair production is assumed for this interpretation.
 
-The PNN discriminants in the signal region of the \hadhad channel are shown for
-four exemplary mass points in~\Cref{fig:resonant_mva_postfit} after the fit of
-the background-only model to the observed data in all analysis channels.
+The PNN discriminants in the SR of the \hadhad channel are shown for four
+exemplary mass points in~\Cref{fig:resonant_mva_postfit} after the fit of the
+background-only model to the observed data in all analysis channels.
 Additionally, \Cref{tab:yields_postfit_resonant} depicts the expected number of
 events after the fit in a signal-like region of the PNN discriminant. Figures of
 the PNN discriminants for the \lephad SLT and LTT channels are documented
@@ -798,8 +788,8 @@ in~\Cref{sec:app_additional_figures}.
 
   \caption{Distribution of the PNN discriminant in the \hadhad channel after the
     maximum likelihood fit of the background-only model in all signal and
-    control regions. The distributions are shown for four different parameter
-    values of the parameterised neural network ranging from \SI{300}{\GeV} to
+    CRs. The distributions are shown for four different parameter values of the
+    parameterised neural network ranging from \SI{300}{\GeV} to
     \SI{1600}{\GeV}. The signal overlay is scaled to the expected upper limit
     on~$\sigma(pp \to X \to HH)$ for the resonance mass considered.}%
   \label{fig:resonant_mva_postfit}
@@ -809,15 +799,14 @@ in~\Cref{sec:app_additional_figures}.
 \begin{table}[htbp]
   \centering
 
-  \caption{Expected number of events per physics process in the \hadhad signal
-    region for signal-like bins of the PNN discriminant after the
-    background-only fit to observed data in all regions. The two most
-    signal-like bins are shown for $\mX = \SI{300}{\GeV}$ and
-    \SI{500}{\GeV}. $\dagger$: The large discrimination power of the PNN for
-    large \mX leads to a small number of bins for the statistical interpretation
-    due to the choice of re-binning algorithm. Therefore, the expected number of
-    events is shown only for the most signal-like bin for
-    $\mX = \SI{1000}{\GeV}$ and \SI{1600}{\GeV}.}%
+  \caption{Expected number of events per physics process in the \hadhad SR for
+    signal-like bins of the PNN discriminant after the background-only fit to
+    observed data in all regions. The two most signal-like bins are shown for
+    $\mX = \SI{300}{\GeV}$ and \SI{500}{\GeV}. $\dagger$: The large
+    discrimination power of the PNN for large \mX leads to a small number of
+    bins for the statistical interpretation due to the choice of re-binning
+    algorithm. Therefore, the expected number of events is shown only for the
+    most signal-like bin for $\mX = \SI{1000}{\GeV}$ and \SI{1600}{\GeV}.}%
   \label{tab:yields_postfit_resonant}
 
   \resizebox{\textwidth}{!}{%
@@ -858,13 +847,13 @@ level of $\num{3.0}\,\sigma$.\footnote{By convention in HEP the discovery
   where $\Phi^{-1}$ is the inverse cumulative distribution function (quantile
   function) of the Standard Normal distribution and $p$ the $p$-value of the
   test.} The excess is localised in the \hadhad channel with a significance of
-$\num{2.8}\,\sigma$ when performing the test by only including the \hadhad
-signal region and the \ZHF control region. The $p$-values and significances for
-all considered signal hypotheses are shown in \Cref{fig:local_pvalues}
-separately for the \lephad and \hadhad channels and their combination. All
-significances quoted thus far do not account for multiple hypothesis testing and
-are therefore referred to as local significances. The effect of multiple testing
-is discussed in \Cref{sec:global_significance}.
+$\num{2.8}\,\sigma$ when performing the test by only including the \hadhad SR
+and the \ZHF CR. The $p$-values and significances for all considered signal
+hypotheses are shown in \Cref{fig:local_pvalues} separately for the \lephad and
+\hadhad channels and their combination. All significances quoted thus far do not
+account for multiple hypothesis testing and are therefore referred to as local
+significances. The effect of multiple testing is discussed in
+\Cref{sec:global_significance}.
 
 \begin{figure}[htbp]
   \centering
@@ -907,10 +896,10 @@ to the expectation obtained from these injection tests.
     datasets with injected signals with \mX of 900, 1000, and
     \SI[group-minimum-digits=5]{1100}{\GeV}. The injected signals are normalised
     to their best-fit signal strength from the unconditional fit to observed
-    data in all channels.  Signals are injected in all signal regions and the
-    expected $p$-value resulting from the statistical interpretation of the
-    combination of all channels is shown. Additionally, the observed $p$-values
-    from the combination of all analysis channels (dashed line) are included for
+    data in all channels.  Signals are injected in all SRs and the expected
+    $p$-value resulting from the statistical interpretation of the combination
+    of all channels is shown. Additionally, the observed $p$-values from the
+    combination of all analysis channels (dashed line) are included for
     comparison.}
   \label{fig:local_pvalues_injected}
 \end{figure}
@@ -946,8 +935,8 @@ the combination of all channels, \lephad-only, and \hadhad-only.
     masses, \mX, of the scalar resonance. The exclusion limits are obtained
     using the asymptotic \CLs method at \SI{95}{\percent} confidence level. The
     expected upper limits obtained from tests of the \lephad and \hadhad channel
-    only (incl.\ the control region) are overlayed to illustrate the sensitivity
-    of individual channels.}%
+    only (incl.\ the CR) are overlayed to illustrate the sensitivity of
+    individual channels.}%
   \label{fig:res_upper_limits}
 \end{figure}
 
@@ -1001,7 +990,7 @@ into categories of uncertainties for four exemplary signal mass hypotheses.
     decomposition is determined analogously to~\Cref{tab:breakdown_nonres},
     separately for four exemplary signal mass hypotheses. The fractions of
     subcategories do not necessarily sum to the fraction of the parent category
-    due to correlations between nuisance parameters.}%
+    due to correlations between NPs.}%
   \label{tab:breakdown_res}
 
   % Observed breakdown
@@ -1019,8 +1008,8 @@ final state objects constituting the Higgs boson candidates are produced with
 low transverse momenta, which is typically the case for signals with small
 \mX. Similarly, \faketauhadvis backgrounds and uncertainties related to their
 data-driven estimation, which are partially included in the background
-statistical uncertainties due to the finite number events in the control regions
-(and non-multi-jet subtraction in the case of the \hadhad channel), play a more
+statistical uncertainties due to the finite number events in the CRs (and
+non-multi-jet subtraction in the case of the \hadhad channel), play a more
 significant role at low \mX.
 
 
@@ -1156,9 +1145,9 @@ discussed in a later section.
 
 The generation of random variates for observables, and global observables
 related to the Barlow-Beeston method can proceed independently for all analysis
-channels due to their orthogonality. Standard procedures are used in the control
-region to generate these random variates since the contribution of this region
-to the likelihood functions is identical for all tests.
+channels due to their orthogonality. Standard procedures are used in the CR to
+generate these random variates since the contribution of this region to the
+likelihood functions is identical for all tests.
 
 %Driven by data statistics. But MC background statistical uncertainties
 %are non-negligible.
@@ -1203,8 +1192,7 @@ correlation matrix obtained in the \hadhad channel are shown
 in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from the
 \hadhad channel enter the statistical interpretation leading to a matrix of
 dimension $144 \times 144$. Similar matrices are obtained in the \lephad SLT and
-LTT signal regions with dimension $193 \times 193$ and $182 \times 182$,
-respectively.
+LTT SRs with dimension $193 \times 193$ and $182 \times 182$, respectively.
 
 \begin{figure}[htbp]
   \centering
@@ -1467,12 +1455,12 @@ leading to dependencies between the background rate predictions (from simulation
 and CR data) between bins. The random generation of these (global) observables
 is simplified, however, since resampling methods can be used.
 
-The sample of simulated and control region events used to predict the background
-rates in all bins of the discriminants can be resampled using non-parametric
-Bootstrap methods~\cite{10.1214/aos/1176344552,efron1994introduction} to obtain
-replicas of the sample that capture the statistical uncertainties and
-correlations between background rate predictions. Every event in the original
-sample is assigned a random bootstrap weight $w_i^{\text{b}}$ drawn from
+The sample of simulated and CR events used to predict the background rates in
+all bins of the discriminants can be resampled using non-parametric Bootstrap
+methods~\cite{10.1214/aos/1176344552,efron1994introduction} to obtain replicas
+of the sample that capture the statistical uncertainties and correlations
+between background rate predictions. Every event in the original sample is
+assigned a random bootstrap weight $w_i^{\text{b}}$ drawn from
 $\pois(\lambda = 1)$ serving as an approximation to the regular non-parametric
 Bootstrap~\cite{google:poisson,ATL-PHYS-PUB-2021-011}. The resulting bootstrap
 replica provides new rate estimates for all bins given
@@ -1522,11 +1510,11 @@ methods is sufficient.
 
   \caption{Comparison of marginal distributions of global observables from the
     Barlow-Beeston method. The red markers show the Poisson distribution used to
-    define the constraints on the $\gamma_{cb}$ nuisance parameters
-    ($\gamma_{cb} = 1$ is assumed) in the likelihood function. The grey
-    histogram shows the distribution of the global observable following the
-    Bootstrap approach that accounts for correlations of $m_{cb}$ between
-    bins. Statistical uncertainties on the Bootstrap histogram are negligible.}
+    define the constraints on the $\gamma_{cb}$ NPs ($\gamma_{cb} = 1$ is
+    assumed) in the likelihood function. The grey histogram shows the
+    distribution of the global observable following the Bootstrap approach that
+    accounts for correlations of $m_{cb}$ between bins. Statistical
+    uncertainties on the Bootstrap histogram are negligible.}
   \label{fig:comparison_bootstrap_poisson}
 \end{figure}
 
