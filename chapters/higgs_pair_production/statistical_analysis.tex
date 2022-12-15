@@ -479,15 +479,15 @@ mismodelling can be partially explained by a dependency of the \ZHF
 normalisation factor on the transverse momentum of the $Z$~boson, $\pT(Z)$, that
 is not accounted for. As a cross-check, the determination of the normalisation
 factors in the \ZHF~CR is repeated in bins of $\pT(Z)$ as estimated by the
-reconstructed transverse momenta of the lepton pair. This test shows that the
+reconstructed transverse momentum of the lepton pair. This test shows that the
 \ZHF normalisation factors tends to decrease with increasing $\pT(Z)$. For
 typical values of $\pT(Z)$ after the \hadhad SR selection, this dependency can
 lead to differences of up to \SI{10}{\percent} compared to the
 $\pT(Z)$-inclusive normalisation factor. Due to the anticorrelation of \dRtautau
 and $\pT(Z)$, this effect might be further enhanced in regions of low
-\dRtautau. The $\pT(Z)$-dependency was only discovered after unblinding and
-could therefore not be included in the statistical model. In future analyses it
-might be beneficial to control for this effect.
+\dRtautau. The $\pT(Z)$-dependency of the normalisation factor was only
+discovered after unblinding and could therefore not be included in the model. In
+future analyses it might be beneficial to control for this effect.
 
 % A post hoc analysis of the mismodelling observed at low \dRtautau is performed
 % by examining the dependency of the measured \ZHF normalisation factor as a
@@ -544,50 +544,47 @@ might be beneficial to control for this effect.
 A formal comparison of the background-only and signal-plus-background hypothesis
 is performed. A LRT-based test for the discovery of a positive signal
 (cf.~\Cref{sec:hypotesting}) is used for this comparison. This test yields an
-observed $p$-value of \SI{27}{\percent} ($0.6\,\sigma$) and thus the
-background-only hypothesis cannot be rejected.
+observed $p$-value of \SI{27}{\percent} and thus the background-only hypothesis
+cannot be rejected.
 % (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
 % dataset)
-The signal strength obtained from the unconditional fit is
+Moreover, the signal strength obtained from the unconditional fit is
 $\hat{\mu} = 0.9\,^{\hspace{0.25pt}+\hspace{0.25pt}1.8}_{-1.5}$ for the
 combination of all channels,\footnote{The best-fit signal strength of the fit
   combining \hadhad channel and CR
   is~$\hat{\mu} = 0.7\,^{\hspace{0.25pt}+\hspace{0.25pt}1.9}_{-1.6}$ and for the
   combination of \lephad channels and
   CR~$\hat{\mu} = 1.9\,^{\hspace{0.25pt}+\hspace{0.25pt}3.7}_{-3.2}$.} which is
-compatible with the signal strength in the SM but also with the absence of Higgs
-boson pair production.
+compatible with non-resonant \HH production predicted by the SM but also with
+its absence.
 
-The dominant uncertainties affecting the measurement of the SM \HH signal
+The dominant uncertainties affecting the measurement of the SM~\HH signal
 strength are summarised in~\Cref{tab:breakdown_nonres} for the combination of
 all channels. The measurement is mainly limited by the statistical uncertainty
 originating from the small number of events observed at high values of the MVA
-discriminants, explaining about $\frac{2}{3}$ of the variance on
-\muhat. Systematic uncertainties play a sub-leading role explaining the
-remaining third of the total variance on \muhat. The largest sources of
-systematic uncertainty are originating from the modelling of the SM backgrounds
-and the statistical precision of the background estimate.
+discriminants, which explains about $\frac{2}{3}$ of the variance on
+\muhat. Systematic uncertainties play a lesser role, explaining about
+$\frac{1}{3}$ of the variance on \muhat. The largest source of systematic
+uncertainty are due to uncertainties on the modelling of backgrounds and the
+statistical precision of the background estimate.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Decomposition of the variance of $\hat{\mu}$ by uncertainty category
-    for the maximum likelihood fit to the observed data in all regions. The
-    fraction of the variance on $\hat{\mu}$ from a category is approximated
-    using
+  \caption{Breakdown of the variance of $\hat{\mu}$ by uncertainty category for
+    the unconditional fit to observed data in all regions. The fraction of the
+    variance on $\hat{\mu}$ from a category is approximated using
     $(\Delta\hat{\mu}^2_{\text{tot}} - \Delta\hat{\mu}^2_{\text{w/o cat}}) /
     \Delta \hat{\mu}^2_{\text{tot}}$, where $\Delta\hat{\mu}^2_{\text{tot}}$ is
-    the estimate of the total variance of the MLE of $\mu$ and
+    the estimate of the total variance of \muhat and
     $\Delta\hat{\mu}^2_{\text{w/o cat}}$ its variance after fixing the NPs of a
-    category to their best-fit value. The variance of $\hat{\mu}$ from data
-    statistical uncertainties is determined directly from the model with all NPs
-    fixed to their best-fit values. The fractions of subcategories do not
-    necessarily sum to the fraction of the parent category due to correlations
-    between NPs.}
+    given category to their best-fit values. The variance of \muhat from data
+    statistical uncertainties is determined from the model with all NPs fixed to
+    their best-fit values. The fractions of subcategories do not necessarily sum
+    to the fraction of the parent category due to correlations between NPs.}%
+  \label{tab:breakdown_nonres}
 
   \input{tables/breakdown_nonres}
-
-  \label{tab:breakdown_nonres}
 \end{table}
 
 The effect of uncertainties on \muhat is examined on the level of individual NPs
@@ -632,7 +629,8 @@ from the unconditional fit to observed data.
     signal-plus-background model to the observed data in all regions (a), in the
     \hadhad SR and the \ZHF CR (b), in the \lephad SRs and the \ZHF CR (c).}%
   \label{fig:nonres_np_rankings}
-  \todo[inline]{The uncertainties are obtained from the likelihood profile - asymmetric.}
+  % \todo[inline]{The uncertainties are obtained from the likelihood profile -
+  % asymmetric.}
 \end{sidewaysfigure}
 
 The 15 highest ranked NPs show good compatibility with their values prior to the
