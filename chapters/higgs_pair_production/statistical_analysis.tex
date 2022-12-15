@@ -315,8 +315,8 @@ values when performing fits of the individual channels.
 \subsection{Results of the Search for SM~\HH Production}%
 \label{sec:results_nonres}
 
-The results of the search for non-resonant production of SM \HH are presented
-for the combination of all channels. Results are also presented prior to the
+The results of the search for non-resonant production of \HH are presented for
+the combination of all channels. Results are also presented prior to the
 combination of the \hadhad and \lephad channels to illustrate the signal
 sensitivity of individual channels and differences in the impact of systematic
 uncertainties. All results are obtained from the model using the SM~\HH signal
@@ -373,13 +373,13 @@ restricted to the \ZHF~CR in~\Cref{sec:bkg_zjets}.
     \subcaption{\hadhad channel}
   \end{subfigure}
 
-  \caption{Distribution of the MVA discriminants used to extract the
-    non-resonant SM \HH signal in the \lephad SLT (a), \lephad LTT (b), and
-    \hadhad (c) channel after the background-only fit of all SRs and CRs. The
-    signal overlay is scaled to the expected upper limit on the signal strength
-    of $3.9$ from the combination of all channels. The \faketauhadvis background
-    in the \hadhad channel is shown separately for \faketauhadvis from multi-jet
-    (MJ) and \ttbar.}%
+  \caption{Distribution of the MVA discriminants used to extract the SM~\HH
+    signal in the \lephad SLT (a), \lephad LTT (b), and \hadhad (c) channel
+    after the background-only fit of all SRs and CRs. The signal overlay is
+    scaled to the expected upper limit on the signal strength of $3.9$ from the
+    combination of all channels. The \faketauhadvis background in the \hadhad
+    channel is shown separately for \faketauhadvis from multi-jet (MJ) and
+    \ttbar.}%
   \label{fig:mvascores_postfit}
 \end{figure}
 
@@ -405,9 +405,8 @@ restricted to the \ZHF~CR in~\Cref{sec:bkg_zjets}.
   \vspace{12pt}
 
   \begin{subtable}{\textwidth}
-    \centering
-    \subcaption{Expected event yields in the two most signal-like bins
-      of the BDT (\hadhad) and NN (\lephad) discriminants.}%
+    \centering \subcaption{Expected event yields in the two most signal-like
+      bins of the BDT (\hadhad) and NN (\lephad) discriminants.}%
     \label{tab:postfit_yields_smhh_signallike}
 
     \input{tables/smhh_postfit_yield_lastbins}
@@ -449,7 +448,7 @@ search.
 % Top quark (SLT): 1(ttbar):1(stop)
 % Top quark (LTT): 5(ttbar):1(stop)
 In the \lephad channels, the dominant backgrounds in the two most signal-like
-bins are originating from the production of top quarks and \ZHF. Compared to the
+bins originate from the production of top quarks and \ZHF. Compared to the
 \hadhad channel, top quark backgrounds are more abundant
 % \footnote{The targeted $\ell + \tauhad$ final state does not distinguish
 % between prompt production of electrons / muons and non-prompt production via
@@ -461,24 +460,51 @@ bins are originating from the production of top quarks and \ZHF. Compared to the
 % Ref.~\cite{pdg2020}) prior to the event reconstruction, and disregarding
 % \faketauhadvis contributions.}
 with a large contribution of about \SI{50}{\percent} (\SI{15}{\percent}) from
-single top production in the SLT (LTT) channel. Compared to the \hadhad channel,
-the signal-to-background ratio in the most signal-like bins is reduced due to
-the abundance of top quark backgrounds and the decrease resolution of the
-$\tautau$- and $HH$-system mass reconstruction due to an additional neutrino in
-\lephad decay modes of the \tautau-system.
+single top production in the SLT (LTT) channel. As a result, the
+signal-to-background ratio in the most signal-like bins is reduced, in part also
+due to the decrease in resolution of the \mMMC and \mHH reconstruction resulting
+from an additional neutrino in the $H \to \lephad$ decay.
 
 % This is due to the
 % abundance of top quark backgrounds and the larger difficulty of reconstructing
 % the $H \to \tautau$ candidate in \lephad decay modes, degrading the resolution
 % of the $\tautau$ and \HH mass reconstruction.
 
-The modelling of MVA input variables in the \hadhad channel can be inspected
-in~\Cref{fig:postfit_mva_inputs}, which shows the variables after the
-background-only fit of the MVA discriminants to observed data, combining all
-channels of the analysis. The post-fit background model describes the observed
-data well with minor discrepancies in the angular observables. For example at
-low values of \dRtautau the background model tends to overestimate the observed
-data by about \SI{10}{\percent} which is not fully covered by uncertainties.
+Post-fit plots of the MVA input variables in the \hadhad channel are depicted
+in~\Cref{fig:postfit_mva_inputs}. The background model describes the observed
+data well with minor discprepancies in the angular observables. For example, at
+low values of \dRtautau the background prediction exceeds the observed data by
+by \SIrange{10}{15}{\percent}, which is not fully covered by uncertainties. This
+mismodelling can be partially explained by a dependency of the \ZHF
+normalisation factor on the transverse momentum of the $Z$~boson, $\pT(Z)$, that
+is not accounted for. As a cross-check, the determination of the normalisation
+factors in the \ZHF~CR is repeated in bins of $\pT(Z)$ as estimated by the
+reconstructed transverse momenta of the lepton pair. This test shows that the
+\ZHF normalisation factors tends to decrease with increasing $\pT(Z)$. For
+typical values of $\pT(Z)$ after the \hadhad SR selection, this dependency can
+lead to differences of up to \SI{10}{\percent} compared to the
+$\pT(Z)$-inclusive normalisation factor. Due to the anticorrelation of \dRtautau
+and $\pT(Z)$, this effect might be further enhanced in regions of low
+\dRtautau. The $\pT(Z)$-dependency was only discovered after unblinding and
+could therefore not be included in the statistical model. In future analyses it
+might be beneficial to control for this effect.
+
+% A post hoc analysis of the mismodelling observed at low \dRtautau is performed
+% by examining the dependency of the measured \ZHF normalisation factor as a
+% function of the transverse momentum of the $Z$ boson by performing a
+% simplified normalisation measurement in the CR in bins of~$\pT(Z)$
+% reconstructed from the lepton transverse momenta.\todo{Sentence way too
+% long. Rewrite.} This cross-check shows a trend of decreasing \ZHF
+% normalisation factors with increasing $\pT(Z)$ which can lead to differences
+% of about \SIrange{5}{10}{\percent} at typical values of $\pT(Z)$ after the
+% \hadhad pre-selection (approx.\ $\SI{100}{\GeV} < \pT(Z) < \SI{200}{\GeV}$)
+% when comparing to the $\pT(Z)$-inclusive normalisation factor. Due to the
+% anticorrelation between $\pT(Z)$ and \dRtautau, this effect can be further
+% enhanced in regions of low \dRtautau. The acceptance uncertainties on the \ZHF
+% background, which are derived purely based on simulation, might not fully
+% account for the effect as it is observed in CR data. In future analyses it
+% could be beneficial to control for such differential effects when performing
+% auxiliary measurements of the \ZHF background.\todo{Put a plot in appendix?}
 
 \begin{figure}[htbp]
   \centering
@@ -503,27 +529,10 @@ data by about \SI{10}{\percent} which is not fully covered by uncertainties.
 
   \caption{Distributions of the BDT input variables in the \hadhad SR after the
     background-only fit of MVA scores and \mll in SRs and CRs to the observed
-    data. The expected SM $\HH$ signal is overlayed with a normalisation
-    corresponding to $\mu = 400$.}
+    data. The expected SM~\HH signal is overlayed with a normalisation
+    corresponding to $\mu = 400$.}%
   \label{fig:postfit_mva_inputs}
 \end{figure}
-
-A post hoc analysis of the mismodelling observed at low \dRtautau is performed
-by examining the dependency of the measured \ZHF normalisation factor as a
-function of the transverse momentum of the $Z$ boson by performing a simplified
-normalisation measurement in the CR in bins of~$\pT(Z)$ reconstructed from the
-lepton transverse momenta.\todo{Sentence way too long. Rewrite.} This
-cross-check shows a trend of decreasing \ZHF normalisation factors with
-increasing $\pT(Z)$ which can lead to differences of about
-\SIrange{5}{10}{\percent} at typical values of $\pT(Z)$ after the \hadhad
-pre-selection (approx.\ $\SI{100}{\GeV} < \pT(Z) < \SI{200}{\GeV}$) when
-comparing to the $\pT(Z)$-inclusive normalisation factor. Due to the
-anticorrelation between $\pT(Z)$ and \dRtautau, this effect can be further
-enhanced in regions of low \dRtautau. The acceptance uncertainties on the \ZHF
-background, which are derived purely based on simulation, might not fully
-account for the effect as it is observed in CR data. In future analyses it could
-be beneficial to control for such differential effects when performing auxiliary
-measurements of the \ZHF background.\todo{Put a plot in appendix?}
 
 % q0 (obs): 0.357911
 % sig (obs): 0.598257
@@ -532,19 +541,20 @@ measurements of the \ZHF background.\todo{Put a plot in appendix?}
 % SM (Asimov mu = 1)
 % Median significance: 0.667530
 % Median pValue: 0.252217
-After visually inspecting the goodness of fit between the background-only model
-and the observed data, a formal comparison of the competing hypotheses is
-performed. The background-only hypothesis is tested against the alternative that
-includes a SM \HH signal with non-negative signal strength using a likelihood
-ratio test. The test yields an observed $p_0$-value of \SI{27}{\percent} and
-thus the background-only hypothesis cannot be rejected.
-% (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$
-% Asimov dataset)
+A formal comparison of the background-only and signal-plus-background hypothesis
+is performed. A LRT-based test for the discovery of a positive signal
+(cf.~\Cref{sec:hypotesting}) is used for this comparison. This test yields an
+observed $p$-value of \SI{27}{\percent} ($0.6\,\sigma$) and thus the
+background-only hypothesis cannot be rejected.
+% (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
+% dataset)
 The signal strength obtained from the unconditional fit is
-$\hat{\mu} = 0.9\,\numpmerr{+1.8}{-1.5}$ for the combination of all
-channels,\footnote{The best-fit signal strength of the fit combining \hadhad
-  channel and CR is $\hat{\mu} = 0.7\,\numpmerr{+1.9}{-1.6}$ and for \lephad
-  channels and CR, $\hat{\mu} = 1.9\,\numpmerr{+3.7}{-3.2}$.}  which is
+$\hat{\mu} = 0.9\,^{\hspace{0.25pt}+\hspace{0.25pt}1.8}_{-1.5}$ for the
+combination of all channels,\footnote{The best-fit signal strength of the fit
+  combining \hadhad channel and CR
+  is~$\hat{\mu} = 0.7\,^{\hspace{0.25pt}+\hspace{0.25pt}1.9}_{-1.6}$ and for the
+  combination of \lephad channels and
+  CR~$\hat{\mu} = 1.9\,^{\hspace{0.25pt}+\hspace{0.25pt}3.7}_{-3.2}$.} which is
 compatible with the signal strength in the SM but also with the absence of Higgs
 boson pair production.
 
