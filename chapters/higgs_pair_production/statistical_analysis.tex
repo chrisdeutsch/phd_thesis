@@ -3,10 +3,10 @@
 
 The statistical interpretation of the search for resonant and non-resonant \HH
 production proceeds using the methods introduced in
-\Cref{sec:statistical_inference}. The main results of the statistical
-interpretation are:~upper limits on the signal strength and cross section of
-SM~\HH production via \ggF and VBF; upper limits on the cross section of
-resonant \HH production via scalar, narrow-width resonances produced in \ggF.
+\Cref{sec:statistical_inference}. The main results of the analysis are:~upper
+limits on the signal strength and cross section of SM~\HH production via \ggF
+and VBF; upper limits on the cross section of resonant \HH production via
+scalar, narrow-width resonances produced in \ggF.
 
 This section is structured as follows: First, the statistical model is
 introduced in \Cref{sec:sig_bkg_model}. Second, the results of the search for
@@ -17,16 +17,16 @@ of the largest excess observed in the search for resonant \HH production in
 \Cref{sec:global_significance}.
 
 
-\subsection{The Statistical Model}%
+\subsection{The Statistical Models}%
 \label{sec:sig_bkg_model}
 
 A separate statistical model is constructed for every signal hypothesis to be
 probed. These models describe the distribution of event counts in bins of the
-MVA discriminants in the SRs and \mll in the \ZHF~CR. The models are built with
+MVA discriminants in the SRs and \mll in the \ZHF~CR. They are built with
 \textsc{HistFactory} (cf.~\Cref{sec:histfactory}) and include the signal and
-background estimates and uncertainties described in previous sections. The
-discriminants used in the analysis channels are summarised
-in~\Cref{tab:fitted_variable}.
+background estimates, as well as the associated uncertainties, described in
+previous sections. The discriminants used in all analysis channels are
+summarised in~\Cref{tab:fitted_variable}.
 
 \begin{table}[htbp]
   \centering
@@ -61,20 +61,18 @@ which measures the cross section relative to the SM prediction from
 Refs.~\cite{Grazzini:2018bsd,Dreyer:2018qbw}. Notably, the interpretation of the
 SM~\HH search does not distinguish between the \ggF and VBF production modes.
 In the search for resonant \HH production, the cross
-section~$\sigma(pp \to X \to HH)$ is considered to be the POI. Moreover, SM~\HH
+section~$\sigma(pp \to X \to HH)$ is used as the POI. Moreover, SM~\HH
 production is not considered as a background in the search for resonant \HH
-production.
+production. In either case, free normalisation factors that scale the
+contributions of \ZHF and \ttbar backgrounds in all channels are included in the
+model. Lastly, statistical uncertainties on the background rates estimated using
+finite samples of simulated events or CR data are implemented according to the
+simplified Barlow--Beeston method~\cite{barlow1993,conway2011}.
 
 % The cross sections are inclusive in the decay modes of the Higgs bosons and
 % are determined from the measurement in the \bbtautau channel assuming Higgs
 % boson branching ratios as predicted by the SM.
 
-The models include free normalisation factors that scale the contribution of the
-\ZHF and \ttbar backgrounds in all channels. In addition, an NP is introduced
-for every independent systematic uncertainty included in the model. Lastly,
-statistical uncertainties on the background rates estimated using finite samples
-of simulated events (or CR data) are implemented according to the simplified
-Barlow--Beeston method~\cite{barlow1993,conway2011}.
 % The parameters of the model are inferred from observed or Asimov data using
 % maximum likelihood estimation.
 
@@ -89,33 +87,27 @@ fits to Asimov data, CR data, CR and SR data but blinding the signal-like
 regions at high MVA score, and finally fits to observed data in all
 regions. Alternative models that exclude certain SRs were investigated to
 understand the effect of individual channels on the results. At every step, the
-MLE of the model parameters, the errors and correlations of the estimated
-parameters were inspected to ensure that the model behaves as expected. During
-early stages of the model development, these checks informed the construction of
-the model. However, after unblinding of the SRs, the statistical model was fixed
+MLE of the model parameters, including the parameter errors and correlations,
+were inspected to ensure that the model behaves as expected. During early stages
+of the model development, these checks informed the construction of the
+model. However, after unblinding of the SRs the statistical model remained fixed
 to avoid the introduction of biases.
 
-% \todo[inline]{Maybe a short introductory sentence to say that details of the
-% fit model are discussed hereafter. Also could briefly mention that we omit
-% ``merging'' since this has little practical relevance. Also omit the
-% discussion of inter- and extrapolation of uncertainties.}
-
-% A few detailed aspects of the statistical model are given in the following.
 
 \subsubsection{Binning of MVA Discriminants}%
 \label{sec:binning_alg}
 
-The signal sensitivity of the searches depends on the binning used for the MVA
-discriminants in the statistical interpretation. The binning has to be chosen
-such that regions with high signal-to-background ratio (high MVA score) are
-well-separated from regions with low signal-to-background ratio
+The signal sensitivity of the \HH searches depends on the binning used for the
+MVA discriminants in the statistical interpretation. The binning has to be
+chosen such that regions with high signal-to-background ratio (high MVA score)
+are well-separated from regions with low signal-to-background ratio
 (low/intermediate MVA score).
 
 An iterative re-binning algorithm is used to determine the binning of the MVA
 discriminants. The aim of the algorithm is to maximise the expected sensitivity
 to a given signal while ensuring that the background prediction obeys
 constraints on the statistical uncertainty and expected number of events in each
-bin. The constraints ensure that asymptotic approximations can be used for the
+bin. These constraints ensure that asymptotic approximations can be used for the
 statistical interpretation. The algorithm described in the following was
 previously used in Ref.~\cite{HIGG-2016-16-witherratum} and is continued to be
 used in the \hadhad channel of this search.
@@ -123,9 +115,10 @@ used in the \hadhad channel of this search.
 % channels, which is documented in Ref.~\cite{HDBS-2018-40}.
 
 The algorithm is provided with MVA score histograms with fine, equidistant
-binning of the signal and total background expectation at the nominal values of
-all NPs. It proceeds by iteratively merging bins, starting from the most-signal
-like MVA score bins, until the bin fulfils a set of requirements:
+binning separately for the signal and total background expectation at the
+nominal values of all NPs. It proceeds by iteratively merging bins, starting
+from the most signal-like MVA score bins, until the bin fulfils a set of
+requirements:
 \begin{enumerate}
 
 \item The relative statistical uncertainty of the background prediction in the
@@ -136,8 +129,8 @@ like MVA score bins, until the bin fulfils a set of requirements:
     channels, a requirement of $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used
     instead, where $f_{\text{b}}$ is the fraction of background events defined
     in analogy to~$f_{\text{s}}$.} This requirement limits the statistical
-  uncertainty of the background estimate in the most signal-like bins after
-  re-binning to be in the range of \SIrange{10}{20}{\percent}.
+  uncertainty of the background estimate in the most signal-like bins to be in a
+  range of \SIrange{10}{20}{\percent} after re-binning.
 
 \item The expected number of background events in the bin must be larger than
   five.
@@ -198,8 +191,8 @@ artificial over- or underconstraints of the associated NPs after the fit.
 % mis-specification of the model as opposed to physical reasons.}
 In this case, uncertainties are symmetrised by assigning half of the difference
 between the up- and down-variation as a symmetric uncertainty. This
-symmetrisation method is selectively applied to affected uncertainties (e.g.\
-jet energy scale and resolution uncertainties).
+symmetrisation method is selectively applied to affected uncertainties, such as
+the jet energy scale and resolution uncertainties.
 
 % \subsubsection{Inter- and Extrapolation of Systematic Uncertainties}
 
