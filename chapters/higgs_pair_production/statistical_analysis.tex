@@ -589,10 +589,10 @@ The effect of uncertainties on \muhat is examined on the level of individual NPs
 in~\Cref{fig:nonres_np_rankings}, separately for the \hadhad and \lephad
 channels as well as their combination. A ranking of NPs with the largest impact
 on the estimated signal strength is shown in the figure, including the MLE of
-the NPs and their \SI{68}{\percent} confidence intervals. Generally, the 15
-highest ranked NPs are compatible with their pre-fit values. For few NPs the fit
-provides more stringent constraints than suggested by their prior measurement,
-which is consistent with results from fits to Asimov dataset.
+the NPs and their \SI{68}{\percent} confidence intervals. Generally, the NPs are
+compatible with their pre-fit values. For few NPs the fit provides more
+stringent constraints than suggested by their prior measurement, which is
+consistent with results from fits to Asimov dataset.
 
 The largest constraint observed in the \hadhad channel is on the NP related to
 the \ZHF acceptance uncertainty determined by a MC-to-MC comparison of \SHERPA
@@ -648,33 +648,43 @@ underestimating the acceptance uncertainty in other channels.
   \label{fig:nonres_np_rankings}
 \end{sidewaysfigure}
 
-A few features of the ranking of NPs / NP categories, as previously presented in
-\Cref{tab:breakdown_nonres} and \Cref{fig:nonres_np_rankings}, are highlighted
-in the following:
+While the analysis is mostly limited by the size of the \pp-collision dataset, a
+few of the leading sources of uncertainty are discussed in the following:
 \begin{itemize}
-\item Statistical uncertainties on the background prediction have a large impact
-  when comparing to other systematic uncertainties. These uncertainties arise
-  from the finite number of simulated events used for the background predictions
-  and the number of CR events used to perform the data-driven \faketauhadvis
-  background estimates.
 
-  The distinct features of Higgs boson pair production in the SM allow to
-  separate the targeted signal well from most background processes when
-  employing multivariate techniques. Therefore, simulation-based background
-  predictions, while generally produced with integrated luminosities exceeding
-  that of the collected data,\footnote{The data statistical uncertainties, not
-    the statistical precision of the background prediction, are the primary
-    limitation for the signal extraction as can be seen
-    in~\Cref{tab:breakdown_nonres}.} do not populate the region of high MVA
-  scores densely, leading to non-negligible statistical uncertainties on the
-  background predictions in the most signal-like bins.
+\item Statistical uncertainties on the expected background rates in high MVA
+  score bins are among the uncertainties with the largest impact on the analysis
+  sensitivity. The MC simulations used for background estimation only populate
+  the high MVA score region sparsely, resulting in large statistical
+  uncertainties. In addition, the \faketauhadvis background estimation in the
+  \hadhad~channel requires a large subtraction of non-multi-jet events that
+  further reduces the statistical precision of the background rate
+  predictions. As a result, the associated uncertainties have non-negligible
+  effect on the analysis sensitivity.
 
-  Additionally, the data-driven estimate of the multi-jet background in the
-  \hadhad channel includes large subtractions of non-multi-jet events in the CR,
-  further degrading the statistical precision of the background estimate. As a
-  result, in the \hadhad-only fit the associated NP has the largest impact of
-  any single NP on the extracted signal strength (cf.\ $\gamma$ NP for SMBDT bin
-  13 in~\Cref{fig:nonres_np_ranking_hadhad}).
+  % Statistical uncertainties on the background prediction have a large impact
+  % when comparing to other systematic uncertainties. These uncertainties arise
+  % from the finite number of simulated events used for the background predictions
+  % and the number of CR events used to perform the data-driven \faketauhadvis
+  % background estimates.
+
+  % The distinct features of Higgs boson pair production in the SM allow to
+  % separate the targeted signal well from most background processes when
+  % employing multivariate techniques. Therefore, simulation-based background
+  % predictions, while generally produced with integrated luminosities exceeding
+  % that of the collected data,\footnote{The data statistical uncertainties, not
+  % the statistical precision of the background prediction, are the primary
+  % limitation for the signal extraction as can be seen
+  % in~\Cref{tab:breakdown_nonres}.} do not populate the region of high MVA
+  % scores densely, leading to non-negligible statistical uncertainties on the
+  % background predictions in the most signal-like bins.
+
+  % Additionally, the data-driven estimate of the multi-jet background in the
+  % \hadhad channel includes large subtractions of non-multi-jet events in the
+  % CR, further degrading the statistical precision of the background
+  % estimate. As a result, in the \hadhad-only fit the associated NP has the
+  % largest impact of any single NP on the extracted signal strength (cf.\
+  % $\gamma$ NP for SMBDT bin 13 in~\Cref{fig:nonres_np_ranking_hadhad}).
 
 \item The $tW$ acceptance uncertainty derived from comparing simulated events
   with different treatment of the $tW$ and \ttbar interference is the NP with
@@ -693,31 +703,31 @@ in the following:
   most signal-like bins of the BDT discriminant used in the \hadhad channel
   select a considerable number of single Higgs boson events of which ca.\ X are
   from \ggF leading to large uncertainties (since 100\% is assigned).
-\end{itemize}
 
-\todo[inline]{Discussion: Impact of data statistical uncertainties is about the
-  same -> Speaks for improvements in CP and the analysis. Instrumental decreased
-  in full Run~2. Huge improvements in calibration measurements.} The effect of
-uncertainties is similar to the previous Run~2
+\end{itemize}
+The effect of uncertainties is similar to the previous Run~2
 analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of $pp$
 collisions at $\sqrt{s} = \SI{13}{\TeV}$ with \SI{36.1}{\per\femto\barn}
 integrated luminosity.
+% \todo[inline]{Discussion: Impact of data statistical uncertainties is about the
+%   same -> Speaks for improvements in CP and the analysis. Instrumental decreased
+%   in full Run~2. Huge improvements in calibration measurements.}
 
 In the absence of statistical evidence for SM \HH production, upper limits are
 set on its signal strength and cross section using the \CLs method at
-\SI{95}{\percent} confidence level (cf.\ \Cref{sec:hypotesting}). The exclusion
-limits are summarised in~\Cref{tab:limits_non_resonant} separately for the
-\lephad and \hadhad channels, and for the combination of all channels.
+\SI{95}{\percent} CL (cf.\ \Cref{sec:hypotesting}). The exclusion limits are
+summarised in~\Cref{tab:limits_non_resonant} separately for the \lephad and
+\hadhad channels, and for the combination of all channels.
 
 \begin{table}[htbp]
   \centering
 
   \caption{Expected and observed upper limits on the the cross section of Higgs
     boson pair production via \ggF and VBF, $\sigma(pp \to HH)$, and the SM \HH
-    ($gg$F+VBF) signal strength at \SI{95}{\percent} confidence level using the
-    \CLs method. The expected limits are obtained under the assumption of
-    $\mu = 0$. Uncertainties on the SM prediction of $\sigma(pp \to \HH)$ are
-    not considered when setting limits on the cross section directly.}%
+    ($gg$F+VBF) signal strength at \SI{95}{\percent} CL using the \CLs
+    method. The expected limits are obtained under the assumption of $\mu =
+    0$. Uncertainties on the SM prediction of $\sigma(pp \to \HH)$ are not
+    considered when setting limits on the cross section directly.}%
   \label{tab:limits_non_resonant}
 
   % Workspaces: comb_2022_01_29
@@ -911,9 +921,9 @@ observed, are compatible. Further discussion of the nature of this excess will
 be given in \Cref{sec:global_significance,sec:result_discussion}.
 
 Upper limits are set on $\sigma(pp \to X \to \HH)$ as a function of the mass of
-the scalar resonance, \mX, using the \CLs method at \SI{95}{\percent} confidence
-level. The observed and expected exclusion limits on the cross section are shown
-in \Cref{fig:res_upper_limits}. Scalar resonances produced with a cross sections
+the scalar resonance, \mX, using the \CLs method at \SI{95}{\percent} CL. The
+observed and expected exclusion limits on the cross section are shown in
+\Cref{fig:res_upper_limits}. Scalar resonances produced with a cross sections
 ranging from \SIrange{20}{900}{\femto\barn} depending on \mX are excluded given
 the data observed in all analysis channels. The expected and observed limits are
 additionally tabulated in~\Cref{app:limit_tables} for all \mX and separately for
@@ -927,10 +937,10 @@ the combination of all channels, \lephad-only, and \hadhad-only.
 
   \caption{Upper limits on $\sigma(pp \to X \to \HH)$ when considering different
     masses, \mX, of the scalar resonance. The exclusion limits are obtained
-    using the asymptotic \CLs method at \SI{95}{\percent} confidence level. The
-    expected upper limits obtained from tests of the \lephad and \hadhad channel
-    only (incl.\ the CR) are overlayed to illustrate the sensitivity of
-    individual channels.}%
+    using the asymptotic \CLs method at \SI{95}{\percent} CL. The expected upper
+    limits obtained from tests of the \lephad and \hadhad channel only (incl.\
+    the CR) are overlayed to illustrate the sensitivity of individual
+    channels.}%
   \label{fig:res_upper_limits}
 \end{figure}
 
