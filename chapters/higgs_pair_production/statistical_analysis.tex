@@ -393,7 +393,7 @@ restricted to the \ZHF~CR in~\Cref{sec:bkg_zjets}.
     $Z \to \tautau + \text{LF}$, $Z \to e^{+}e^{-}$, $Z \to \mu^{+}\mu^{-}$,
     \Wjets, diboson, and $\ttbar V$. The expected SM \HH signal yield is shown
     with $\mu = 1$ and NPs at their best-fit value except for NPs only affecting
-    the SM \HH signal which are kept at their pre-fit values.}
+    the SM \HH signal, which are kept at their pre-fit values.}
 
   \begin{subtable}{\textwidth}
     \centering \subcaption{Expected event yields in the SRs.}%
@@ -480,7 +480,7 @@ normalisation factor on the transverse momentum of the $Z$~boson, $\pT(Z)$, that
 is not accounted for. As a cross-check, the determination of the normalisation
 factors in the \ZHF~CR is repeated in bins of $\pT(Z)$ as estimated by the
 reconstructed transverse momentum of the lepton pair. This test shows that the
-\ZHF normalisation factors tends to decrease with increasing $\pT(Z)$. For
+\ZHF normalisation factors tend to decrease with increasing $\pT(Z)$. For
 typical values of $\pT(Z)$ after the \hadhad SR selection, this dependency can
 lead to differences of up to \SI{10}{\percent} compared to the
 $\pT(Z)$-inclusive normalisation factor. Due to the anticorrelation of \dRtautau
@@ -541,22 +541,20 @@ future analyses it might be beneficial to control for this effect.
 % SM (Asimov mu = 1)
 % Median significance: 0.667530
 % Median pValue: 0.252217
-A formal comparison of the background-only and signal-plus-background hypothesis
-is performed. A LRT-based test for the discovery of a positive signal
-(cf.~\Cref{sec:hypotesting}) is used for this comparison. This test yields an
-observed $p$-value of \SI{27}{\percent} and thus the background-only hypothesis
-cannot be rejected.
+A comparison of the background-only and signal-plus-background hypothesis is
+performed using a LRT-based test for the discovery of a positive signal
+(cf.~\Cref{sec:hypotesting}). This test yields an observed $p$-value of
+\SI{27}{\percent}; thus, the background-only hypothesis cannot be rejected.
 % (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
 % dataset)
 Moreover, the signal strength obtained from the unconditional fit is
 $\hat{\mu} = 0.9\,^{\hspace{0.25pt}+\hspace{0.25pt}1.8}_{-1.5}$ for the
-combination of all channels,\footnote{The best-fit signal strength of the fit
-  combining \hadhad channel and CR
+combination of all channels, which is compatible with non-resonant \HH
+production predicted by the SM but also with its absence.\footnote{The best-fit
+  signal strength of the combination of \hadhad channel and \ZHF~CR
   is~$\hat{\mu} = 0.7\,^{\hspace{0.25pt}+\hspace{0.25pt}1.9}_{-1.6}$ and for the
-  combination of \lephad channels and
-  CR~$\hat{\mu} = 1.9\,^{\hspace{0.25pt}+\hspace{0.25pt}3.7}_{-3.2}$.} which is
-compatible with non-resonant \HH production predicted by the SM but also with
-its absence.
+  combination of the \lephad channels and
+  \ZHF~CR~$\hat{\mu} = 1.9\,^{\hspace{0.25pt}+\hspace{0.25pt}3.7}_{-3.2}$.}
 
 The dominant uncertainties affecting the measurement of the SM~\HH signal
 strength are summarised in~\Cref{tab:breakdown_nonres} for the combination of
@@ -588,74 +586,67 @@ statistical precision of the background estimate.
 \end{table}
 
 The effect of uncertainties on \muhat is examined on the level of individual NPs
-in~\Cref{fig:nonres_np_rankings} separately for the combination of all channels
-and for fits of the \hadhad and \lephad channels individually. A ranking of the
-15 NPs with the largest impact on the signal strength estimation is shown,
-including the MLE of the NPs and their \SI{68}{\percent} confidence intervals
-from the unconditional fit to observed data.
+in~\Cref{fig:nonres_np_rankings}, separately for the \hadhad and \lephad
+channels as well as their combination. A ranking of NPs with the largest impact
+on the estimated signal strength is shown in the figure, including the MLE of
+the NPs and their \SI{68}{\percent} confidence intervals. Generally, the 15
+highest ranked NPs are compatible with their pre-fit values. For few NPs the fit
+provides more stringent constraints than suggested by their prior measurement,
+which is consistent with results from fits to Asimov dataset.
+
+The largest constraint observed in the \hadhad channel is on the NP related to
+the \ZHF acceptance uncertainty determined by a MC-to-MC comparison of \SHERPA
+(NLO) and \MGPY (LO). This uncertainty is conservative since it compares the
+nominal matrix element generator at NLO with a lower order
+prediction. Therefore, the associated NP is expected to be constrained in the
+fit. In the \lephad channel, large constraints are observed on the NP associated
+with the uncertainty on \rqcd and the \ttbar acceptance uncertainty from the
+comparison of parton shower programs. The uncertainty on \rqcd is derived to be
+conservative, varying \rqcd between 0 and \SI{100}{\percent}, explaining the
+large constraints on this parameter.
+% the assumed fraction of \faketauhadvis originating from
+% multi-jet processes in the anti-\tauhadvis CR between 0 and \SI{100}{\percent},
+% explaining the large constraints on this parameter.
+The constraints on the \ttbar acceptance uncertainty based on the parton shower
+comparison originates in the \lephad SLT channel. Since the constraint is large,
+this uncertainty source is de-correlated between channels to prevent
+underestimating the acceptance uncertainty in other channels.
 
 \begin{sidewaysfigure}[p]
   \centering
 
-  \begin{subfigure}{0.32\textwidth}
+  \begin{subfigure}{0.328\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_combined}
+    \includegraphics[width=\textwidth, trim=0.2em 0 1em 0, clip]{results_nonres/rankings/ranking_nonres_combined}
     \subcaption{Combination of all channels}
   \end{subfigure}\hfill%
-  \begin{subfigure}{0.32\textwidth}
+  \begin{subfigure}{0.328\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_hadhad}
+    \includegraphics[width=\textwidth, trim=0.2em 0 1em 0, clip]{results_nonres/rankings/ranking_nonres_hadhad}
     \subcaption{\hadhad channel and \ZHF CR}%
     \label{fig:nonres_np_ranking_hadhad}
   \end{subfigure}\hfill%
-  \begin{subfigure}{0.32\textwidth}
+  \begin{subfigure}{0.328\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{results_nonres/rankings/ranking_nonres_lephad}
+    \includegraphics[width=\textwidth, trim=0.2em 0 1em 0, clip]{results_nonres/rankings/ranking_nonres_lephad}
     \subcaption{\lephad channels and \ZHF CR}
   \end{subfigure}
 
-  \caption{Ranking of the post-fit impact of NPs on $\mu$ as measured by the
-    change in the estimated signal strength ($\Delta \mu$) when performing the
-    fit after fixing a NP~$\theta$ to $\hat{\theta} \pm \Delta \hat{\theta}$,
-    where $\hat{\theta}$ is the MLE and $\Delta \hat{\theta}$ the post-fit
-    uncertainty on the NP. The impact on $\mu$ is shown on the top axis in
-    descending order of the mean $|\Delta \mu|$ of the $+\Delta \hat{\theta}$
-    and $-\Delta \hat{\theta}$ variation. The bottom axis shows the MLE of the
-    NPs including their post-fit uncertainty, with marker colours indicating the
-    type of NP: NP with Gaussian constraint ($\alpha$ / black markers), NP with
-    Poisson constraint related to the statistical precision of the background
-    estimate ($\gamma$ / green markers), and unconstrained normalisation factors
-    (red markers). NP rankings and their MLE are obtained from fits of the
-    signal-plus-background model to the observed data in all regions (a), in the
-    \hadhad SR and the \ZHF CR (b), in the \lephad SRs and the \ZHF CR (c).}%
+  \caption{Ranking of NPs based on the post-fit impact on $\mu$ as measured by
+    the change in the estimated signal strength~$\Delta \mu$ when performing the
+    fit after fixing a given NP to $\hat{\theta} \pm \Delta \hat{\theta}$, where
+    $\hat{\theta}$ is the MLE and $\Delta \hat{\theta}$ the post-fit uncertainty
+    on the NP. The impact on $\mu$ is shown on the top axis and the NPs are
+    given in descending order of the mean~$|\Delta \mu|$. The bottom axis shows
+    the MLE of the NPs and the post-fit uncertainty, with marker colours
+    indicating the type of NP:~NP with Gaussian constraint~($\alpha$, black), NP
+    with Poisson constraint from the simplified Barlow--Beeston
+    method~($\gamma$, green), and normalisation factors~(red). The NP rankings
+    and MLE are obtained from fits of the signal-plus-background model to
+    observed data in all regions (a), in the \hadhad SR and \ZHF~CR (b), and in
+    the \lephad SRs and \ZHF~CR (c).}%
   \label{fig:nonres_np_rankings}
-  % \todo[inline]{The uncertainties are obtained from the likelihood profile -
-  % asymmetric.}
 \end{sidewaysfigure}
-
-The 15 highest ranked NPs show good compatibility with their values prior to the
-fit. For few NPs the fit provides more stringent constraints than suggested by
-their prior measurement, which is consistent with the results obtained from fits
-to Asimov datasets.
-
-The largest NP constraint observed in the \hadhad channel fit is from the \ZHF
-acceptance uncertainty determined from MC-to-MC comparison of \SHERPA and
-\MGNLOPY. The uncertainty associated with this NP is expected to be
-conservative, since it arises from a comparison of the nominal event generation
-at NLO with a prediction lower order of the perturbative expansion (LO).
-
-In the \lephad channel, large constraints are observed on the NP associated to
-the uncertainty on $r_{\text{QCD}}$ and the \ttbar acceptance uncertainty from
-the comparison of parton shower programs. The uncertainty on $r_{\text{QCD}}$ is
-derived to be conservative, varying the assumed fraction of \faketauhadvis
-originating from multi-jet processes in the anti-\tauhadvis CR between 0 and
-\SI{100}{\percent}, explaining the large constraints on this parameter. The
-constraints on the \ttbar acceptance uncertainty based on the parton shower
-comparison stems from the \lephad SLT channel which has high purity of top quark
-backgrounds. Since the constraint is large, this uncertainty source is
-de-correlated between channels to avoid underestimating the acceptance
-uncertainty in other channels based on the measurement in the \lephad SLT
-channel\todo{Should mention this earlier?}.
 
 A few features of the ranking of NPs / NP categories, as previously presented in
 \Cref{tab:breakdown_nonres} and \Cref{fig:nonres_np_rankings}, are highlighted
