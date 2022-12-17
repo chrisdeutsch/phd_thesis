@@ -472,7 +472,7 @@ from an additional neutrino in the $H \to \lephad$ decay.
 
 Post-fit plots of the MVA input variables in the \hadhad channel are depicted
 in~\Cref{fig:postfit_mva_inputs}. The background model describes the observed
-data well with minor discprepancies in the angular observables. For example, at
+data well with minor discrepancies in the angular observables. For example, at
 low values of \dRtautau the background prediction exceeds the observed data by
 by \SIrange{10}{15}{\percent}, which is not fully covered by uncertainties. This
 mismodelling can be partially explained by a dependency of the \ZHF
@@ -528,7 +528,7 @@ future analyses it might be beneficial to control for this effect.
   \end{subfigure}
 
   \caption{Distributions of the BDT input variables in the \hadhad SR after the
-    background-only fit of MVA scores and \mll in SRs and CRs to the observed
+    background-only fit of the MVA score distributions and \mll to observed
     data. The expected SM~\HH signal is overlayed with a normalisation
     corresponding to $\mu = 400$.}%
   \label{fig:postfit_mva_inputs}
@@ -604,12 +604,12 @@ with the uncertainty on \rqcd and the \ttbar acceptance uncertainty from the
 comparison of parton shower programs. The uncertainty on \rqcd is derived to be
 conservative, varying \rqcd between 0 and \SI{100}{\percent}, explaining the
 large constraints on this parameter.
-% the assumed fraction of \faketauhadvis originating from
-% multi-jet processes in the anti-\tauhadvis CR between 0 and \SI{100}{\percent},
-% explaining the large constraints on this parameter.
+% the assumed fraction of \faketauhadvis originating from multi-jet processes in
+% the anti-\tauhadvis CR between 0 and \SI{100}{\percent}, explaining the large
+% constraints on this parameter.
 The constraints on the \ttbar acceptance uncertainty based on the parton shower
 comparison originates in the \lephad SLT channel. Since the constraint is large,
-this uncertainty source is de-correlated between channels to prevent
+this uncertainty source is decorrelated between channels to prevent
 underestimating the acceptance uncertainty in other channels.
 
 \begin{sidewaysfigure}[p]
@@ -648,8 +648,9 @@ underestimating the acceptance uncertainty in other channels.
   \label{fig:nonres_np_rankings}
 \end{sidewaysfigure}
 
-While the analysis is mostly limited by the size of the \pp-collision dataset, a
-few of the leading sources of uncertainty are discussed in the following:
+While the analysis is mostly limited by the size of the recorded \pp-collision
+dataset, a few of the leading sources of uncertainty are discussed in the
+following:
 \begin{itemize}
 
 \item Statistical uncertainties on the expected background rates in high MVA
@@ -686,48 +687,51 @@ few of the leading sources of uncertainty are discussed in the following:
   % largest impact of any single NP on the extracted signal strength (cf.\
   % $\gamma$ NP for SMBDT bin 13 in~\Cref{fig:nonres_np_ranking_hadhad}).
 
-\item The $tW$ acceptance uncertainty derived from comparing simulated events
-  with different treatment of the $tW$ and \ttbar interference is the NP with
-  the largest impact on \muhat for both the combined and the \lephad-only
-  fit. It primarily originates from the \lephad SLT channel where the
-  uncertainty on $tW$ can reach up to \SI{80}{\percent} at high NN
-  score. Moreover, single top production constitutes about \SI{50}{\percent} of
-  the top background at high NN score in the \lephad SLT channel, resulting in a
-  large impact of this NP on the signal extraction. This uncertainty has less
-  impact in the \hadhad and \lephad LTT channel due to the $tW$ fraction and the
-  uncertainty itself being smaller\todo{Technically the LTT uncertainty is about
-    the same}.
+\item The $tW$ acceptance uncertainty targeting the $tW$ and \ttbar interference
+  is the systematic uncertainty with the largest impact on $\mu$ in the \lephad
+  channels and the combination. The large impact originates from the \lephad SLT
+  channel, where the uncertainty can reach up to \SI{80}{\percent} at high NN
+  score. Moreover, $tW$ production makes up half of the top quark background at
+  high NN score in the \lephad SLT channel. This uncertainty is less relevant in
+  the \hadhad and \lephad LTT channels due to smaller fractions of $tW$ events
+  in the most signal-like bins of the MVA discriminants.
 
-\item The uncertainty on the acceptance of $gg \to H \to \tautau$ production in
-  association with quarks of heavy flavour has a large impact on \muhat. The
-  most signal-like bins of the BDT discriminant used in the \hadhad channel
-  select a considerable number of single Higgs boson events of which ca.\ X are
-  from \ggF leading to large uncertainties (since 100\% is assigned).
+\item The uncertainty of \SI{100}{\percent} on the acceptance of
+  $gg \to H \to \tautau$ production in association with quarks of heavy flavour
+  has a large impact on the fitted $\mu$. The most signal-like bins of the BDT
+  discriminant in the \hadhad channel select a considerable amount of single
+  Higgs boson events (cf.~\Cref{tab:postfit_yields_smhh_signallike}). About a
+  fourth of these events are expected to be from $H \to \tautau$ production via
+  \ggF, which are subject to the heavy flavour uncertainty. As a result, this
+  uncertainty is among the leading ones on the total background prediction in
+  the most signal-like bins.
 
 \end{itemize}
-The effect of uncertainties is similar to the previous Run~2
-analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of $pp$
-collisions at $\sqrt{s} = \SI{13}{\TeV}$ with \SI{36.1}{\per\femto\barn}
-integrated luminosity.
-% \todo[inline]{Discussion: Impact of data statistical uncertainties is about the
-%   same -> Speaks for improvements in CP and the analysis. Instrumental decreased
-%   in full Run~2. Huge improvements in calibration measurements.}
+% The effect of uncertainties is similar to the previous Run~2
+% analysis~\cite{HIGG-2016-16-witherratum} using a partial dataset of $pp$
+% collisions at $\sqrt{s} = \SI{13}{\TeV}$ with \SI{36.1}{\per\femto\barn}
+% integrated luminosity.
+%
+% \todo[inline]{Discussion: Impact of data statistical uncertainties is about
+% the same -> Speaks for improvements in CP and the analysis. Instrumental
+% decreased in full Run~2. Huge improvements in calibration measurements.}
 
-In the absence of statistical evidence for SM \HH production, upper limits are
+In the absence of statistical evidence for SM~\HH production, upper limits are
 set on its signal strength and cross section using the \CLs method at
 \SI{95}{\percent} CL (cf.\ \Cref{sec:hypotesting}). The exclusion limits are
-summarised in~\Cref{tab:limits_non_resonant} separately for the \lephad and
-\hadhad channels, and for the combination of all channels.
+summarised in~\Cref{tab:limits_non_resonant}, separately for the \lephad
+channels, the \hadhad channel, and their combination.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Expected and observed upper limits on the the cross section of Higgs
-    boson pair production via \ggF and VBF, $\sigma(pp \to HH)$, and the SM \HH
-    ($gg$F+VBF) signal strength at \SI{95}{\percent} CL using the \CLs
-    method. The expected limits are obtained under the assumption of $\mu =
-    0$. Uncertainties on the SM prediction of $\sigma(pp \to \HH)$ are not
-    considered when setting limits on the cross section directly.}%
+  \caption{Expected and observed upper limits on the the cross section of SM~\HH
+    production via \ggF and VBF, \xsecggfvbf, and the SM~\HH signal strength,
+    $\mu$, at \SI{95}{\percent}~CL using the \CLs method. The expected limits
+    are obtained under the assumption of the background-only
+    hypothesis. Uncertainties on the SM prediction of \xsecggfvbf are not
+    considered when setting limits on the cross section directly. The table is
+    adapted from Ref~\cite{HDBS-2018-40}.}%
   \label{tab:limits_non_resonant}
 
   % Workspaces: comb_2022_01_29
@@ -736,9 +740,9 @@ summarised in~\Cref{tab:limits_non_resonant} separately for the \lephad and
 
 The observed upper limit on the SM \HH signal strength is \num{4.7} with an
 expectation of \num{3.9} for the combination of all channels.  The exclusion is
-largely driven by the high sensitivity of the \hadhad channel to the SM \HH
+largely driven by the high sensitivity of the \hadhad channel to SM~\HH
 production, providing observed (expected) exclusion limits on $\mu$ of \num{5.0}
-(\num{4.4}). Further discussion and interpretation of these results will follow
+(\num{4.4}). Further discussion and interpretation of these results is given
 in~\Cref{sec:result_discussion}.
 
 
