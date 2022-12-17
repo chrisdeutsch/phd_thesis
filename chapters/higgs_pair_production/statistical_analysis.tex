@@ -745,7 +745,7 @@ in~\Cref{sec:result_discussion}.
 \end{table}
 
 
-\subsection{Results of the Search for Resonant Production of $HH$}
+\subsection{Results of the Search for Resonant \HH Production}%
 \label{sec:results_res}
 
 The search for resonant production of Higgs boson pairs via scalar resonances is
@@ -794,8 +794,8 @@ in~\Cref{sec:app_additional_figures}.
   \end{subfigure}
 
   \caption{Distribution of the PNN discriminant in the \hadhad channel after the
-    maximum likelihood fit of the background-only model in all signal and
-    CRs. The distributions are shown for four different parameter values of the
+    fit of the background-only model to observed data in all regions. The
+    distributions are shown for four different parameter values of the
     parameterised neural network ranging from \SI{300}{\GeV} to
     \SI{1600}{\GeV}. The signal overlay is scaled to the expected upper limit
     on~$\sigma(pp \to X \to HH)$ for the resonance mass considered.}%
@@ -807,9 +807,9 @@ in~\Cref{sec:app_additional_figures}.
   \centering
 
   \caption{Expected number of events per physics process in the \hadhad SR for
-    signal-like bins of the PNN discriminant after the background-only fit to
-    observed data in all regions. The two most signal-like bins are shown for
-    $\mX = \SI{300}{\GeV}$ and \SI{500}{\GeV}. $\dagger$: The large
+    signal-like bins of the PNN discriminant after a fit of the background-only
+    fit model to observed data in all regions. The two most signal-like bins are
+    shown for $\mX = \SI{300}{\GeV}$ and \SI{500}{\GeV}. $\dagger$:~The large
     discrimination power of the PNN for large \mX leads to a small number of
     bins for the statistical interpretation due to the choice of re-binning
     algorithm. Therefore, the expected number of events is shown only for the
@@ -849,13 +849,15 @@ The background-only and the signal-plus-background models are compared using a
 likelihood ratio test separately for all considered signal hypotheses. The
 combination of all analysis channels yields an excess at $\mX = \SI{1000}{\GeV}$
 with an observed $p$-value of $\num{1.3e-3}$ and is therefore significant at a
-level of $\num{3.0}\,\sigma$.\footnote{By convention in HEP the discovery
-  significance is expressed in terms of $\sigma$ given by $\Phi^{-1}(1 - p)$,
-  where $\Phi^{-1}$ is the inverse cumulative distribution function (quantile
-  function) of the Standard Normal distribution and $p$ the $p$-value of the
-  test.} The excess is localised in the \hadhad channel with a significance of
-$\num{2.8}\,\sigma$ when performing the test by only including the \hadhad SR
-and the \ZHF CR. The $p$-values and significances for all considered signal
+level of $\num{3.0}\,\sigma$.
+% \footnote{By convention in HEP the discovery
+% significance is expressed in terms of $\sigma$ given by $\Phi^{-1}(1 - p)$,
+% where $\Phi^{-1}$ is the inverse cumulative distribution function (quantile
+% function) of the Standard Normal distribution and $p$ the $p$-value of the
+% test.}
+The excess is localised in the \hadhad channel with a significance of
+$\num{2.8}\,\sigma$ when performing the test by only including the \hadhad~SR
+and the \ZHF~CR. The $p$-values and significances for all considered signal
 hypotheses are shown in \Cref{fig:local_pvalues} separately for the \lephad and
 \hadhad channels and their combination. All significances quoted thus far do not
 account for multiple hypothesis testing and are therefore referred to as local
@@ -870,15 +872,15 @@ significances. The effect of multiple testing is discussed in
 
   \caption{Observed local $p$-values for the comparison of the background-only
     and the signal-plus-background model as a function of the mass of the scalar
-    resonance. The asymptotic approximation of the sampling distribution of the
-    discovery test statistic under the background-only model is used.}%
+    resonance. The asymptotic approximation is used for the $p$-value
+    computation.}%
   \label{fig:local_pvalues}
 
   % Dashed lines indiciate the equivalent right-tailed probabilities in
   % terms of standard deviations of a centered Normal distribution,
   % formally given by the condition $p_0 = \mathbb{P}(Z > n \sigma)$
   % for~$Z \sim \mathcal{N}(0, \sigma^2)$ and $n = 0, 1, \dots, 4$.
-  \todo[inline]{Discuss what's going on at 251? At around 400?}
+  % \todo[inline]{Discuss what's going on at 251? At around 400?}
 \end{figure}
 
 % Discuss the width of the excess
@@ -900,14 +902,12 @@ to the expectation obtained from these injection tests.
   \includegraphics[width=0.65\textwidth]{results_res/injection}
 
   \caption{Expected local $p$-values from hypothesis tests performed on Asimov
-    datasets with injected signals with \mX of 900, 1000, and
-    \SI[group-minimum-digits=5]{1100}{\GeV}. The injected signals are normalised
-    to their best-fit signal strength from the unconditional fit to observed
-    data in all channels.  Signals are injected in all SRs and the expected
-    $p$-value resulting from the statistical interpretation of the combination
-    of all channels is shown. Additionally, the observed $p$-values from the
-    combination of all analysis channels (dashed line) are included for
-    comparison.}
+    datasets with injected signals with \mX of \num{900}, \num{1000}, and
+    \SI{1100}{\GeV}. The injected signals are normalised to their best-fit
+    signal strength from the unconditional fit to observed data in all channels.
+    Signals are injected in all SRs and the expected $p$-value resulting from
+    the statistical interpretation of the combination of all channels is
+    shown. The observed $p$-values (dashed line) are included for comparison.}
   \label{fig:local_pvalues_injected}
 \end{figure}
 
