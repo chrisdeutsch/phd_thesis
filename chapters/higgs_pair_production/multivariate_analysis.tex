@@ -375,11 +375,11 @@ of the model configuration is estimated using 5-fold cross-validation
 separately on even- and odd-numbered events.
 
 The hyperparameter values considered for the optimisation are listed
-in~\Cref{tab:hyperparameter_grid_bdt}. The total weight of signal and
-background events in the BDT training are ensured to be equal by
-rescaling of the event weights prior to training. The decision tree
-algorithm uses the Gini index as the splitting criterion. For every
-tree branching, 400 possible cuts on input variables are
+in~\Cref{tab:hyperparameter_grid_bdt}.\todo{Citation for AdaBoost?} The total
+weight of signal and background events in the BDT training are ensured to be
+equal by rescaling of the event weights prior to training.
+% The decision tree algorithm uses the Gini index as the splitting criterion.
+For every tree branching, 400 possible cuts on input variables are
 considered. Other parameters remain at their default
 values.\footnote{TMVA~v4.2.1~(ROOT~6.16/00)}
 
@@ -559,7 +559,10 @@ similarities of the \mHH spectra between signal and background
     least important.}%
   \label{tab:variable_importance_bdt}
 
-  \input{tables/permutation_importance/bdt}
+  {
+    \renewcommand{\arraystretch}{1.12}
+    \input{tables/permutation_importance/bdt}
+  }
 \end{table}
 
 
