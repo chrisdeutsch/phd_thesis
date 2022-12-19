@@ -1032,19 +1032,24 @@ play a more important role at low \mX.
   Production}%
 \label{sec:global_significance}
 
-In the search for resonant Higgs boson pair production multiple hypothesis tests
-are performed that probe for 20 different \mX of the scalar resonance.\todo{Note
-  that this focuses on the combination of all channels.} The previously quoted
-significance of $3.0\sigma$ of the test at $\mX = \SI{1000}{\GeV}$ does not
-account for the effect of multiple hypothesis testing and was therefore referred
-to as the local significance. Under the background-only hypothesis, any of the
-20 tests could yield a statistically significant result by chance, possibly
-leading to a false discovery.\footnote{This concept is usually referred to as
-  the look-elsewhere effect in HEP.}
+The search for resonant \HH production performs multiple hypothesis tests,
+probing 20 different signal hypotheses. When performing multiple tests, it needs
+to be considered that under the background-only hypothesis any test could yield
+a statistically significant result by chance, which would constitute a false
+discovery (type I error). As the number of tests increases, so does the
+probability of making one or more false discoveries when not controlling for
+this effect. The previously quoted significance of $3.0\sigma$ of the test at
+$\mX = \SI{1000}{\GeV}$ does not account for multiple testing and therefore the
+significance was referred to as a local significance. In this section, an
+alternative test statistic referred to as the \emph{global significance} is
+introduced that explicitly controls for the false discovery rate over a set of
+hypothesis tests.
+
+\vspace{5em}
 
 Formally, the effect of multiple testing can be accounted for by considering the
-probability to make one or more false discoveries (type II errors) when
-considering an entire family of hypothesis tests.
+probability to make one or more false discoveries when considering an entire
+family of hypothesis tests.
 % and the associated critical thresholds on the test statistics.
 This probability, which is referred to as the family-wise error rate (FWER), can
 be controlled by setting the critical thresholds of the tests
@@ -1056,7 +1061,7 @@ the FWER corresponding to the threshold equal to the observed test statistic of
 the most significant test is given directly. In this case the FWER is
 \begin{align*}
   \pglobal = \text{FWER}(\zmaxlocal)
-  = \mathbb{P}(\Zmaxlocal > \zmaxlocal \vert H_0)\,\text{,}
+  = \mathbb{P}( \Zmaxlocal > \zmaxlocal \mid H_0 )\,\text{,}
 \end{align*}\todo{Define directly via the probability to observe an excess larger than the observed one.}
 where \zmaxlocal is the observed maximum of the local significance and
 \Zmaxlocal the random variable describing the maximum local significance under
