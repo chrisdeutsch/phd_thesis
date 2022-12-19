@@ -950,57 +950,71 @@ channel, the \lephad channel, and their combination.
   \label{fig:res_upper_limits}
 \end{figure}
 
-The upper limits on the cross section decrease quickly with increasing \mX in
-the mass range from ca.\ \SIrange{300}{500}{\GeV}. This is a consequence of the
-large positive slope in signal acceptance with respect to the mass of the scalar
-resonance (cf.~\Cref{fig:signal_acceptance_resonant}) and the increasingly
-distinct signature of the signal aiding in the discrimination between the signal
-and background processes. Particularly the ability to distinguish the signal
-from the top background, which has large contributions for
-$\mX \lesssim \SI{500}{\GeV}$\todo{Yield tables for lephad would be nice},
-increases quickly as larger resonance masses are considered. The signal
-acceptance reaches a maximum at $\mX = \SI{1000}{\GeV}$ after which
-reconstruction effects starts to degrade the acceptance due to the inability to
-resolve the constituents of the $H \to \tautau$ and $H \to \bbbar$
-candidates. This leads to a broad plateau of the upper limit and a degradation
-of the exclusion limits at the upper end of the considered mass range.
+The upper limits on the cross section improve quickly in the \mX range from
+\SIrange{300}{500}{\GeV} as a consequence of the increasing signal acceptance
+(cf.~\Cref{fig:signal_acceptance_resonant}) and increasing signal-background
+separation of the PNNs with \mX. In particular, the ability to distinguish
+between signal and top quark backgrounds, which have a large contribution for
+$\mX \lesssim \SI{500}{\GeV}$, improves quickly as larger resonance masses are
+considered. Beyond $\mX = \SI{1000}{\GeV}$ the upper limits start to degrade due
+to the inability to resolve the constituents of the $H \to \tautau$ and
+$H \to \bbbar$ candidates.
+
+% This is a consequence of the large positive slope in signal acceptance with
+% respect to the mass of the scalar resonance
+% (cf.~\Cref{fig:signal_acceptance_resonant}) and the increasingly distinct
+% signature of the signal aiding in the discrimination between the signal and
+% background processes.
+
+% This leads to a broad plateau of the upper limit and a degradation of the
+% exclusion limits at the upper end of the considered mass range.
 
 The importance of individual analysis channels to the expected exclusion limit
-varies as different resonance masses are considered. Except for the smallest \mX
-considered, where the signal acceptance of the \hadhad channel is heavily
-limited by the \tauhadvis-triggers, the \hadhad channel gives the most stringent
-limits in the range of low to intermediate \mX due to the comparatively large
-and irreducible top quark background in the \lephad channels. For hypotheses of
-signal masses of about \SI{1000}{\GeV} and larger, the upper limits of both
-channels start to converge since \Zjets production becomes the dominant
-background in the most signal-like PNN bins at high \mX and the acceptance of
-$Z \to \tautau + \text{jets}$ in both channels being similar\todo{Cross check
-  this}.
+varies with the considered resonance mass. Except for the smallest \mX where the
+\hadhad channel has only limited signal acceptance, the \hadhad channel gives
+the most stringent limits in the range of low to intermediate \mX. This is due
+to the \lephad channels being dominated by the large, irreducible top quark
+background in this regime. For signals with $\mX \gtrsim \SI{1000}{\GeV}$ both
+channels are dominated by \Zjets backgrounds in the high PNN score regions and
+yield similar exclusion limits.
 
-The search for resonant production of Higgs boson pairs via scalar resonances is
-primarily limited by the data statistical uncertainty particularly for
-intermediate to high \mX. This is illustrated in~\Cref{tab:breakdown_res} where
-the variance on the best-fit cross section from the unconditional
-fit\footnote{The excess for $\mX = \SI{1000}{\GeV}$ induces shifts in the
-  (observed) variance breakdown depicted in~\Cref{tab:breakdown_res}, slightly
-  inflating data statistical uncertainties while suppressing the impact of most
-  systematic uncertainties (the exception being signal modelling uncertainties)
-  compared to the
-  expectation. In~\Cref{app:breakdown_table}~\Cref{tab:breakdown_res_exp_mu0}
-  the decomposition is performed for the expectation of
-  $\sigma(pp \to X \to HH) = 0$ for comparison.}, $\hat{\sigma}$, is decomposed
-into categories of uncertainties for four exemplary signal mass hypotheses.
+The search for resonant \HH production is primarily limited by the data
+statistical uncertainty, particularly for signals with intermediate to high
+\mX. This is illustrated in~\Cref{tab:breakdown_res} where the variance on the
+best-fit cross section from the unconditional fit
+%,
+% \footnote{The excess for $\mX = \SI{1000}{\GeV}$ induces shifts in the
+% (observed) variance breakdown depicted in~\Cref{tab:breakdown_res}, slightly
+% inflating data statistical uncertainties while suppressing the impact of most
+% systematic uncertainties (the exception being signal modelling uncertainties)
+% compared to the
+% expectation. In~\Cref{app:breakdown_table}~\Cref{tab:breakdown_res_exp_mu0}
+% the decomposition is performed for the expectation of
+% $\sigma(pp \to X \to HH) = 0$ for comparison.}
+% $\hat{\sigma}$,
+is decomposed into categories for four exemplary signal hypotheses. Systematic
+uncertainties have a sizeable effect
+% on the total variance of $\hat{\sigma}$
+only for searches for scalar resonances with low mass. Instrumental
+uncertainties, most significantly uncertainties affecting jets, \pTmissAbs, and
+\tauhadvis, have the largest impact on the search when the reconstructed Higgs
+boson candidates have low transverse momenta, as is the case for signals with
+low \mX. Similarly, \faketauhadvis backgrounds and uncertainties related to
+their data-driven estimation
+% , which are partially included in the background statistical
+%uncertainties due to the finite number events in the CRs (and non-multi-jet
+%subtraction in the case of the \hadhad channel),
+play a more important role at low \mX.
 
 \begin{table}[htbp]
   \centering
 
-  \caption{Decomposition of the variance on $\hat{\sigma}$, the maximum
-    likelihood estimate of the cross section $\sigma(pp \to X\to HH)$, by
-    uncertainty category for the fit to observed data in all regions. The
-    decomposition is determined analogously to~\Cref{tab:breakdown_nonres},
-    separately for four exemplary signal mass hypotheses. The fractions of
-    subcategories do not necessarily sum to the fraction of the parent category
-    due to correlations between NPs.}%
+  \caption{Breakdown of the variance on $\hat{\sigma}$, the MLE of the cross
+    section $\sigma(pp \to X\to HH)$, by uncertainty category for the fit to
+    observed data in all regions. The decomposition is determined analogously
+    to~\Cref{tab:breakdown_nonres}. A similar breakdown based on fits to Asimov
+    data is given in \Cref{tab:breakdown_res_exp_mu0} in
+    \Cref{app:breakdown_table}.}%
   \label{tab:breakdown_res}
 
   % Observed breakdown
@@ -1010,39 +1024,23 @@ into categories of uncertainties for four exemplary signal mass hypotheses.
   % \input{tables/breakdown_res_exp_mu0}
 \end{table}
 
-Systematic uncertainties have a sizeable effect on the total variance of
-$\hat{\sigma}$ only for searches of scalar resonances with low
-mass. Instrumental uncertainties, most significantly uncertainties affecting
-jets / \pTmissAbs and \tauhadvis, have the largest impact on the search when the
-final state objects constituting the Higgs boson candidates are produced with
-low transverse momenta, which is typically the case for signals with small
-\mX. Similarly, \faketauhadvis backgrounds and uncertainties related to their
-data-driven estimation, which are partially included in the background
-statistical uncertainties due to the finite number events in the CRs (and
-non-multi-jet subtraction in the case of the \hadhad channel), play a more
-significant role at low \mX.
+% \todo[inline]{Ranking plots: Selected masses combined only?}
 
-
-\todo[inline]{Ranking plots: Selected masses combined only?}
-
-\todo[inline]{Table of lephad yields?}
+% \todo[inline]{Table of lephad yields?}
 
 \subsection{Global Significance Estimation in the Search for Resonant \HH
   Production}%
 \label{sec:global_significance}
 
-\todo[inline]{Note that this focuses on the combination of all
-  channels.}
-
 In the search for resonant Higgs boson pair production multiple hypothesis tests
-are performed that probe for 20 different \mX of the scalar resonance. The
-previously quoted significance of $3.0\sigma$ of the test at
-$\mX = \SI{1000}{\GeV}$ does not account for the effect of multiple hypothesis
-testing and was therefore referred to as the local significance. Under the
-background-only hypothesis, any of the 20 tests could yield a statistically
-significant result by chance, possibly leading to a false
-discovery.\footnote{This concept is usually referred to as the look-elsewhere
-  effect in HEP.}
+are performed that probe for 20 different \mX of the scalar resonance.\todo{Note
+  that this focuses on the combination of all channels.} The previously quoted
+significance of $3.0\sigma$ of the test at $\mX = \SI{1000}{\GeV}$ does not
+account for the effect of multiple hypothesis testing and was therefore referred
+to as the local significance. Under the background-only hypothesis, any of the
+20 tests could yield a statistically significant result by chance, possibly
+leading to a false discovery.\footnote{This concept is usually referred to as
+  the look-elsewhere effect in HEP.}
 
 Formally, the effect of multiple testing can be accounted for by considering the
 probability to make one or more false discoveries (type II errors) when
