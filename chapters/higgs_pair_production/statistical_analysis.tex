@@ -1045,43 +1045,42 @@ alternative test statistic referred to as the \emph{global significance} is
 introduced that explicitly controls for the false discovery rate over a set of
 hypothesis tests.
 
-\vspace{5em}
-
-Formally, the effect of multiple testing can be accounted for by considering the
-probability to make one or more false discoveries when considering an entire
-family of hypothesis tests.
-% and the associated critical thresholds on the test statistics.
-This probability, which is referred to as the family-wise error rate (FWER), can
-be controlled by setting the critical thresholds of the tests
-appropriately. When accounting for the effect of multiple testing in searches
-for new physics, all hypothesis tests are usually treated equally resulting in
-the same thresholds being applied in all tests. By convention in HEP, the
-critical thresholds are not adjusted explicitly to control the FWER but rather
-the FWER corresponding to the threshold equal to the observed test statistic of
-the most significant test is given directly. In this case the FWER is
+The effect of multiple testing can be accounted for by considering the
+probability of making one or more false discoveries over a set (family) of
+hypothesis tests. This probability, which is called the family-wise error rate
+(FWER)~\cite{lehmann2005testing}, can be controlled, for example, by setting the
+critical threshold of the individual tests such that the FWER remains below an
+acceptable level. In HEP this is typically done by defining the global $p$-value
 \begin{align*}
-  \pglobal = \text{FWER}(\zmaxlocal)
-  = \mathbb{P}( \Zmaxlocal > \zmaxlocal \mid H_0 )\,\text{,}
-\end{align*}\todo{Define directly via the probability to observe an excess larger than the observed one.}
-where \zmaxlocal is the observed maximum of the local significance and
-\Zmaxlocal the random variable describing the maximum local significance under
-the background-only hypothesis ($H_0$). In both cases the maximum is taken over
-the family of hypothesis tests considered in the statistical interpretation.
-
-\todo[inline]{Say that in all cases we assume the background-only hypothesis
-  unless otherwise noted.}
-
-This formulation %of the FWER
-is equivalent to the $p$-value of a hypothesis test that employs the maximum
-local significance over a family of tests as the test statistic and observing
-$\Zmaxlocal = \zmaxlocal$, and is thus called the global $p$-value or \pglobal
-for brevity. This global $p$-value is subsequently translated into the global
-significance, analogously to the treatment of local $p$-values and
-significances, according to
+  \pglobal = \mathbb{P}( \Zmaxlocal > \zmaxlocalobs \mid H_0 )\,\text{,}
+\end{align*}
+where \Zmaxlocal is a random variable denoting the maximum local significance
+over all tests, \zmaxlocalobs is the observed value of \Zmaxlocal, and $H_0$
+refers to the background-only hypothesis. The global significance is defined as
 \begin{align*}
   z_{\text{global}} = \Phi^{-1}(1 - \pglobal) \,\text{,}
 \end{align*}
-where $\Phi^{-1}$ is the quantile function of the Standard Normal distribution.
+where $\Phi^{-1}$ is the quantile function of the Standard Normal
+distribution. Finally, discovery can be claimed if \pglobal (\zglobal) is less
+(greater) than \num{2.87e-7} ($5\sigma$), which ensures that the FWER is at most
+\num{2.87e-7}.
+
+The distribution of \Zmaxlocal under the background-only hypothesis is required
+to determine the global significance. In general, the distribution of \Zmaxlocal
+is unknown and needs to be determined by simulation. In practice, this is done
+as follows: First, a toy experiment is drawn from the background-only
+model. Second, the set of hypothesis tests is performed for a given toy
+experiment and the maximum local significance over all tests is
+determined. These steps are repeated $N$ times yielding a sample of random
+variates for \Zmaxlocal under the background-only hypothesis. The global
+$p$-value is then estimated according to
+\begin{align*}
+  \pglobal \approx \frac{ \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} }
+  { N } \,\text{,}
+\end{align*}
+
+\vspace{10em}
+
 
 In practice the global significance can be determined using simulation provided
 a probabilistic model of $H_0$ is available. A number of $N$ toy experiments can
@@ -1091,9 +1090,7 @@ significance over all tests, \zmaxlocal. The global $p$-value is then estimated
 as the fraction of toy experiments with \zmaxlocal exceeding the observed value
 \begin{align*}
   \pglobal \approx \frac{ \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} }
-                        { N } \,\text{,}
-  %= \mathbb{E} ( \mathbf{1}_{[z, \infty)}(\zmaxlocal) \vert H_0 )
-  %\approx \frac{1}{N} \sum_{i = 1}^N \mathbf{1}_{[z, \infty)}\left( \zmaxlocal_{, i} \right)
+  { N } \,\text{,}
 \end{align*}
 where $z_{\text{local, obs}}^{\text{max}}$ refers to the observed maximum local
 significance in data. Other methods for calculating global significances exist,
