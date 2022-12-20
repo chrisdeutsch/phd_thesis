@@ -1089,40 +1089,67 @@ experiment. Other methods for calculating global significances exist, see for
 example Ref.~\cite{Gross:2010qma}; however, they also rely on the ability of
 drawing toy experiments from the background-only model.
 
+In the search for resonant \HH production, the primary difficulty in estimating
+the global significance of the excess at $\mX = \SI{1000}{\GeV}$ lies in the
+generation of the toy experiments from the background-only hypothesis. While the
+likelihood functions used for the statistical interpretation are built based on
+probabilistic models of the binned PNN discriminants, these models only provide
+a description of a single discriminant at a time. However, a background model
+that jointly describes all binned discriminants is required to generate toy
+experiments for the global significance estimation. The need for such a model
+was already indicated by the large width of the significance response in the
+signal injection tests (cf.~\Cref{fig:local_pvalues_injected}), which is caused
+by a partial overlap of events selected by the most signal-like bins of the PNN
+discriminants for adjacent mass points.
 
+A substitute background model is constructed that accounts for dependencies
+between all observables entering the statistical interpretation. The model is
+constructed such that it closely approximates (after marginalising out
+observables not relevant for a given mass point) the background-only models used
+for the statistical interpretation in \Cref{sec:results_res}. This ensures that
+the same statistical analysis can be applied to toy experiments without
+introducing biases due to a mismatch between models. A detailed description of
+the substitute model is given in \Cref{app:toy_generation}; however, the key
+parts are highlighted hereafter.
+
+The model is constructed assuming the pre-fit expectation for all backgrounds
+except for the \ttbar and \ZHF normalisation factors, which are set to
+approximate post-fit values of 0.97 and 1.35, respectively. The model has three
+distinct parts, each describing a certain kind of random variable:
+\begin{description}
+
+\item[Observables] refer to the observed number of events in a given bin of a
+
+  , correspond $n_{cb}$ in \Cref{eq:likelihood_histfactory},
+  % Poisson marginals connected by Gaussian copula
+
+  The distribution of observables is modelled using a joint distribution
+  described by Poisson marginal distributions which are Gaussian copula
+
+  Correlation matrix describing the Gaussian copula is derived from MC
+  simulation.
+
+\item[Global observables (Barlow--Beeston method)] ($m_{cb}$ in
+  \Cref{eq:likelihood_histfactory_constraints})
+  % Resampling of the MC and then determining the associated observables for
+  % every bin
+
+\item[Global observables (other systematic uncertainties)] ($a_p$ in
+  \Cref{eq:likelihood_histfactory_constraints})
+  % Fully correlated drawn from Standard Normal distribution.
+
+\end{description}
+The background model used in the \ZHF~CR is the same for all hypothesis tests;
+therefore, standard toy generation methods are used for the observables and the
+global observables related to the Barlow--Beeston method.
 
 \vspace{10em}
 
-The primary difficulty in estimating the global significance of the excess at
-$\mX = \SI{1000}{\GeV}$ lies in the generation of toy experiments from the
-background-only hypothesis. While the likelihood functions used for the
-statistical interpretation contain a model of the binned PNN discriminants,
-these models only provide a description of a single discriminant at a time, not
-accounting for dependencies between observables of different discriminants. The
-estimation of the global significance, however, requires a background model
-jointly describing all binned discriminants used in the search, which is not
-readily available.
 
-The need for such a joint model was already indicated by the large width of the
-significance response in the signal injection tests for large \mX
-(cf.~\Cref{fig:local_pvalues_injected}) which is caused by a partial overlap of
-signal events in the most signal-like bins of PNN discriminants for adjacent
-mass points. This overlap is expected to extend to background events and thus
-will have an effect on the global significance estimation which has to be
-quantified.
 
-A substitute background model is constructed, accounting for correlations
-between all observables entering the statistical interpretation, that can be
-used to generate toy experiments for the global significance estimation. This
-model should closely approximate the marginal models contained in the likelihood
-functions (i.e.\ the model of a single binned PNN discriminant) such that the
-statistical analysis can proceed using the same likelihood functions without
-incurring large biases due to a mismatch between models.
 
-The model is constructed assuming the pre-fit expectation for all backgrounds,
-except for the normalisation factors of the \ttbar and \ZHF backgrounds, which
-are set to approximate post-fit values of 0.97 and 1.35, respectively. Two major
-classes of random variables need to be considered when generating toy
+
+Two major classes of random variables need to be considered when generating toy
 experiments:
 \begin{enumerate}
 \item Random variables describing the observed number of events in a given bin,
