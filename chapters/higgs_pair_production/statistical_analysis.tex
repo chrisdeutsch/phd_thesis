@@ -1039,24 +1039,26 @@ a statistically significant result by chance, which would constitute a false
 discovery (type I error). As the number of tests increases, so does the
 probability of making one or more false discoveries when not controlling for
 this effect. The previously quoted significance of $3.0\sigma$ of the test at
-$\mX = \SI{1000}{\GeV}$ does not account for multiple testing and therefore the
+$\mX = \SI{1000}{\GeV}$ does not account for multiple testing; therefore, the
 significance was referred to as a local significance. In this section, an
 alternative test statistic referred to as the \emph{global significance} is
-introduced that explicitly controls for the false discovery rate over a set of
-hypothesis tests.
+introduced that controls for the false discovery rate over a set of hypothesis
+tests.
 
 The effect of multiple testing can be accounted for by considering the
 probability of making one or more false discoveries over a set (family) of
 hypothesis tests. This probability, which is called the family-wise error rate
 (FWER)~\cite{lehmann2005testing}, can be controlled, for example, by setting the
 critical threshold of the individual tests such that the FWER remains below an
-acceptable level. In HEP this is typically done by defining the global $p$-value
+acceptable level. In HEP this is conventionally done by defining the global
+$p$-value
 \begin{align*}
   \pglobal = \mathbb{P}( \Zmaxlocal > \zmaxlocalobs \mid H_0 )\,\text{,}
 \end{align*}
 where \Zmaxlocal is a random variable denoting the maximum local significance
-over all tests, \zmaxlocalobs is the observed value of \Zmaxlocal, and $H_0$
-refers to the background-only hypothesis. The global significance is defined as
+over all tests, \zmaxlocalobs is the value of \Zmaxlocal observed in data, and
+$H_0$ refers to the background-only hypothesis. The global significance is
+defined as
 \begin{align*}
   z_{\text{global}} = \Phi^{-1}(1 - \pglobal) \,\text{,}
 \end{align*}
@@ -1066,36 +1068,30 @@ distribution. Finally, discovery can be claimed if \pglobal (\zglobal) is less
 \num{2.87e-7}.
 
 The distribution of \Zmaxlocal under the background-only hypothesis is required
-to determine the global significance. In general, the distribution of \Zmaxlocal
-is unknown and needs to be determined by simulation. In practice, this is done
-as follows: First, a toy experiment is drawn from the background-only
-model. Second, the set of hypothesis tests is performed for a given toy
-experiment and the maximum local significance over all tests is
-determined. These steps are repeated $N$ times yielding a sample of random
-variates for \Zmaxlocal under the background-only hypothesis. The global
-$p$-value is then estimated according to
+to determine the global significance. In general, this distribution is unknown
+and needs to be determined by simulation. This is done as follows:~First, a toy
+experiment is drawn from the background-only model. Second, the set of
+hypothesis tests is performed for a given toy experiment and the maximum local
+significance over all tests is determined. These steps are repeated $N$ times
+yielding a sample of realisations of \Zmaxlocal under the background-only
+hypothesis. For a given value of \zmaxlocalobs, the global $p$-value can then be
+estimated according to
 \begin{align*}
-  \pglobal \approx \frac{ \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} }
-  { N } \,\text{,}
+  \pglobal \approx
+  \frac{
+  \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}}
+  }{
+  N
+  } \,\text{,}
 \end{align*}
+where \zmaxlocal refers to the realisation of \Zmaxlocal for a given toy
+experiment. Other methods for calculating global significances exist, see for
+example Ref.~\cite{Gross:2010qma}; however, they also rely on the ability of
+drawing toy experiments from the background-only model.
+
+
 
 \vspace{10em}
-
-
-In practice the global significance can be determined using simulation provided
-a probabilistic model of $H_0$ is available. A number of $N$ toy experiments can
-be drawn from $H_0$, subsequently performing the set of hypothesis tests on all
-experiments and noting, separately for every toy experiment, the maximum local
-significance over all tests, \zmaxlocal. The global $p$-value is then estimated
-as the fraction of toy experiments with \zmaxlocal exceeding the observed value
-\begin{align*}
-  \pglobal \approx \frac{ \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} }
-  { N } \,\text{,}
-\end{align*}
-where $z_{\text{local, obs}}^{\text{max}}$ refers to the observed maximum local
-significance in data. Other methods for calculating global significances exist,
-see for example Ref.~\cite{Gross:2010qma}, that generally also rely on the
-ability of drawing toy experiments from $H_0$.
 
 The primary difficulty in estimating the global significance of the excess at
 $\mX = \SI{1000}{\GeV}$ lies in the generation of toy experiments from the
