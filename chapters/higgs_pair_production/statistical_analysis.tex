@@ -1048,10 +1048,9 @@ tests.
 The effect of multiple testing can be accounted for by considering the
 probability of making one or more false discoveries over a set (family) of
 hypothesis tests. This probability, which is called the family-wise error rate
-(FWER)~\cite{lehmann2005testing}, can be controlled, for example, by setting the
-critical threshold of the individual tests such that the FWER remains below an
-acceptable level. In HEP this is conventionally done by defining the global
-$p$-value
+(FWER)~\cite{lehmann2005testing}, can be controlled by setting the critical
+threshold of the individual tests such that the FWER remains below an acceptable
+level. In HEP this is conventionally done by defining the global $p$-value
 \begin{align*}
   \pglobal = \mathbb{P}( \Zmaxlocal > \zmaxlocalobs \mid H_0 )\,\text{,}
 \end{align*}
@@ -1115,53 +1114,44 @@ parts are highlighted here.
 The model is constructed from the pre-fit expectation for all backgrounds except
 for the \ttbar and \ZHF normalisation factors, which are set to approximate
 post-fit values of 0.97 and 1.35, respectively. The model is divided into three
-parts, each describing a certain type of random variable:
+parts, each part describing a certain type of random variable:
 \begin{description}
 
 \item[Observables] Observables are random variables representing the number of
   events that are observed in a given bin (i.e.~$n_{cb}$ in
   \Cref{eq:likelihood_histfactory}). The marginal distributions of the
-  observables are univariate Poisson distributions with known expected rate
-  under the background-only hypothesis. When only considering a single PNN
-  discriminant, these observables are mutually independent due to all bins being
-  pairwise disjoint. However, this is not the case when considering the PNN
-  discriminants for all values of \mX. As a result, the joint distribution of
-  all observables is a multivariate Poisson distribution with non-trivial
+  observables are Poisson distributions with known expected value under the
+  background-only hypothesis. When only considering a single PNN discriminant,
+  these observables are mutually independent due to all bins being pairwise
+  disjoint. However, this is not the case when considering the PNN discriminants
+  for all 20 values of \mX. In this case, the joint distribution of all
+  observables is a multivariate Poisson distribution with non-trivial
   dependencies between observables.
 
-  The joint distribution of observables is estimated as follows: First, the
-  linear correlation coefficients for all pairs of observables
+  The joint distribution of observables is estimated as follows:~First, the
+  marginal distributions of the observables are extracted from the nominal
+  background-only models. Second, the linear correlation coefficients for all
+  pairs of observables are estimated using MC simulation, allowing to construct
+  correlation matrices for the observables. Lastly, the marginal distributions
+  of the observables are linked using a Gaussian copula to form the joint
+  distribution of all observables,\footnote{This approach is motivated by
+    Sklar's theorem~\cite{Sklar1959FonctionsDR}, which states that any
+    $n$-dimensional joint distribution function can be factorised into
+    $n$~one-dimensional marginal distribution functions and an $n$-dimensional
+    copula~\cite{nelsen}. The copula solely describes the dependencies between
+    the random variables.} where the Gaussian copula is defined by the
+  correlation matrix estimated in the second step.
 
-  for all pairs of observables is estimated using
-  MC simulation. Second, the
-
-
-
-
-  This is addressed by estimating the linear correlation coefficient for all
-  pairs of observables in the analysis using MC simulation.
-
-
-
-
-
-  % The joint distribution is thus a multivariate Poisson distribution with
-  % non-trivial correlations between bins.
-
-  % The distribution of observables is modelled using a joint distribution
-  % described by Poisson marginal distributions which are Gaussian copula
-
-  % Correlation matrix describing the Gaussian copula is derived from MC
-  % simulation.
-
-\item[Global observables (Barlow--Beeston method)] ($m_{cb}$ in
+\item[Global observables (Barlow--Beeston method)] (i.e.~$m_{cb}$ in
   \Cref{eq:likelihood_histfactory_constraints})
   % Resampling of the MC and then determining the associated observables for
   % every bin
 
-\item[Global observables (other systematic uncertainties)] ($a_p$ in
-  \Cref{eq:likelihood_histfactory_constraints})
-  % Fully correlated drawn from Standard Normal distribution.
+\item[Global observables (other systematic uncertainties)] The global
+  observables related to all other systematic uncertainties (i.e.~$a_p$ in
+  \Cref{eq:likelihood_histfactory_constraints}) are assumed to be fully
+  correlated for all hypothesis tests and are drawn from a Standard Normal
+  distribution.
 
 \end{description}
 The background model used in the \ZHF~CR is the same for all hypothesis tests;
@@ -1169,14 +1159,6 @@ therefore, standard toy generation methods are used for the observables and the
 global observables related to the Barlow--Beeston method.
 
 \vspace{10em}
-
-
-
-
-
-
-
-
 
 Two major classes of random variables need to be considered when generating toy
 experiments:
