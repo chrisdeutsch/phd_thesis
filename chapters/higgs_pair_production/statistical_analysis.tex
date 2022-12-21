@@ -1138,14 +1138,21 @@ parts, each part describing a certain type of random variable:
     Sklar's theorem~\cite{Sklar1959FonctionsDR}, which states that any
     $n$-dimensional joint distribution function can be factorised into
     $n$~one-dimensional marginal distribution functions and an $n$-dimensional
-    copula~\cite{nelsen}. The copula solely describes the dependencies between
-    the random variables.} where the Gaussian copula is defined by the
-  correlation matrix estimated in the second step.
+    copula~\cite{nelsen}. The copula describes the dependencies between the
+    random variables.} where the Gaussian copula is defined by the correlation
+  matrix estimated in the second step.
 
-\item[Global observables (Barlow--Beeston method)] (i.e.~$m_{cb}$ in
-  \Cref{eq:likelihood_histfactory_constraints})
-  % Resampling of the MC and then determining the associated observables for
-  % every bin
+\item[Global observables (Barlow--Beeston method)] The global observables
+  related to the simpified Barlow--Beeston method are random variables that
+  describe the effective number of unweighted events from simulation or CR data
+  in a given bin (i.e.~$m_{cb}$ in
+  \Cref{eq:likelihood_histfactory_constraints}). Similar to the observables, the
+  effective number of unweighted events has non-trivial correlations between
+  bins of different discriminants. Resampling techniques are applied to MC
+  simulation and CR data used for background estimation. For every bin, the
+  effective number of unweighted events is recalculated using the resampled
+  datasets. The resulting values of the global observables are then used as a
+  toy experiment for the global significance estimation.
 
 \item[Global observables (other systematic uncertainties)] The global
   observables related to all other systematic uncertainties (i.e.~$a_p$ in
@@ -1157,6 +1164,8 @@ parts, each part describing a certain type of random variable:
 The background model used in the \ZHF~CR is the same for all hypothesis tests;
 therefore, standard toy generation methods are used for the observables and the
 global observables related to the Barlow--Beeston method.
+
+
 
 \vspace{10em}
 
@@ -1171,10 +1180,6 @@ experiments:
   to as \emph{global observables}.
 \end{enumerate}
 
-\emph{Observables} are expected to be partially correlated due to the overlap of
-events between pairs of bins of different PNN discriminants. Their treatment
-will be discussed in the following section.
-
 \emph{Global observables} need to be further subdivided into two cases. First,
 the global observables related to the auxiliary measurement encoding the
 statistical uncertainty on the background
@@ -1187,14 +1192,6 @@ former are also partially correlated due to an overlap of simulated / control
 region events between bins. The treatment of global observables will be
 discussed in a later section.
 
-The generation of random variates for observables, and global observables
-related to the Barlow-Beeston method can proceed independently for all analysis
-channels due to their orthogonality. Standard procedures are used in the CR to
-generate these random variates since the contribution of this region to the
-likelihood functions is identical for all tests.
-
-%Driven by data statistics. But MC background statistical uncertainties
-%are non-negligible.
 
 % MOVED THESE TO APPENDIX
 %
