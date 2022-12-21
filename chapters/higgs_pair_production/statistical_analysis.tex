@@ -1032,25 +1032,25 @@ play a more important role at low \mX.
   Production}%
 \label{sec:global_significance}
 
-The search for resonant \HH production performs multiple hypothesis tests,
-probing 20 different signal hypotheses. When performing multiple tests, it needs
-to be considered that under the background-only hypothesis any test could yield
-a statistically significant result by chance, which would constitute a false
-discovery (type I error). As the number of tests increases, so does the
-probability of making one or more false discoveries when not controlling for
-this effect. The previously quoted significance of $3.0\sigma$ of the test at
-$\mX = \SI{1000}{\GeV}$ does not account for multiple testing; therefore, the
-significance was referred to as a local significance. In this section, an
-alternative test statistic referred to as the \emph{global significance} is
-introduced that controls for the false discovery rate over a set of hypothesis
-tests.
+In the search for resonant \HH production multiple hypothesis tests are
+performed, probing 20 different signal hypotheses in total. When performing
+multiple tests, it needs to be considered that under the background-only
+hypothesis any test could yield a statistically significant result by chance,
+which would constitute a false discovery (type I error). As the number of tests
+increases, so does the probability of making one or more false discoveries when
+not controlling for this effect. The previously quoted significance of
+$3.0\sigma$ of the test at $\mX = \SI{1000}{\GeV}$ does not account for multiple
+testing; therefore, the significance was referred to as the local
+significance. In this section, an alternative test statistic referred to as the
+\emph{global significance} is introduced that controls for the false discovery
+rate over a set of hypothesis tests.
 
-The effect of multiple testing can be accounted for by considering the
-probability of making one or more false discoveries over a set (family) of
-hypothesis tests. This probability, which is called the family-wise error rate
-(FWER)~\cite{lehmann2005testing}, can be controlled by setting the critical
-threshold of the individual tests such that the FWER remains below an acceptable
-level. In HEP this is conventionally done by defining the global $p$-value
+The probability of making one or more false discoveries over a set (family) of
+hypothesis tests is referred to as the family-wise error rate
+(FWER)~\cite{lehmann2005testing}. The FWER can be controlled by setting the
+critical thresholds of individual hypothesis tests such that the FWER remains at
+an acceptable level. In HEP this is conventionally done by defining the global
+$p$-value
 \begin{align*}
   \pglobal = \mathbb{P}( \Zmaxlocal > \zmaxlocalobs \mid H_0 )\,\text{,}
 \end{align*}
@@ -1089,17 +1089,17 @@ example Ref.~\cite{Gross:2010qma}; however, they also rely on the ability of
 drawing toy experiments from the background-only model.
 
 In the search for resonant \HH production, the primary difficulty in estimating
-the global significance of the excess at $\mX = \SI{1000}{\GeV}$ lies in the
-generation of the toy experiments from the background-only model. While the
-likelihood functions used for the statistical interpretation are built based on
-probabilistic models of the binned PNN discriminants, these models only provide
-a description of the discriminants for a single mass point. However, a
-background model that jointly describes all discriminants is required to
-generate toy experiments for the global significance estimation. The need for
-such a model was already indicated by the large width of the significance
-response in the signal injection tests (cf.~\Cref{fig:local_pvalues_injected}),
-which is caused by a partial overlap of events selected by the most signal-like
-bins of the PNN discriminants for adjacent mass points.
+the global significance lies in the generation of toy experiments from the
+background-only model. While the likelihood functions used for the statistical
+interpretation are built based on probabilistic models of the binned PNN
+discriminants, these models only provide a description of the discriminants for
+a single mass point. However, a background model that jointly describes all
+discriminants is required to generate toy experiments for the global
+significance estimation. The need for such a model was already indicated by the
+large width of the significance response in the signal injection tests
+(cf.~\Cref{fig:local_pvalues_injected}), which is caused by a partial overlap of
+events selected by the most signal-like bins of the PNN discriminants for
+adjacent mass points.
 
 A substitute background-only model is constructed that accounts for dependencies
 between all observables entering the statistical interpretation. The model is
@@ -1131,11 +1131,11 @@ parts, each part describing a certain type of random variable:
   The joint distribution of observables is estimated as follows:~First, the
   marginal distributions of the observables are extracted from the nominal
   background-only models. Second, the linear correlation coefficients for all
-  pairs of observables are estimated using MC simulation, allowing to construct
-  correlation matrices for the observables. Lastly, the marginal distributions
-  of the observables are linked using a Gaussian copula to form the joint
-  distribution of all observables,\footnote{This approach is motivated by
-    Sklar's theorem~\cite{Sklar1959FonctionsDR}, which states that any
+  pairs of observables are estimated using MC simulation, which allows to
+  construct correlation matrices for the observables. Lastly, the marginal
+  distributions of the observables are linked using a Gaussian copula to form
+  the joint distribution of all observables,\footnote{This approach is motivated
+    by Sklar's theorem~\cite{Sklar1959FonctionsDR}, which states that any
     $n$-dimensional joint distribution function can be factorised into
     $n$~one-dimensional marginal distribution functions and an $n$-dimensional
     copula~\cite{nelsen}. The copula describes the dependencies between the
@@ -1157,7 +1157,7 @@ parts, each part describing a certain type of random variable:
 \item[Global observables (other systematic uncertainties)] The global
   observables related to all other systematic uncertainties (i.e.~$a_p$ in
   \Cref{eq:likelihood_histfactory_constraints}) are assumed to be fully
-  correlated for all hypothesis tests and are drawn from a Standard Normal
+  correlated for all hypothesis tests and are drawn from the Standard Normal
   distribution.
 
 \end{description}
@@ -1378,11 +1378,11 @@ distinguish between adjacent mass points.
 % performed as part of this search are weak enough such that the assumption of
 % independence yields acceptable estimates for the global significance.
 
-In conclusion, the global significance of the excess observed in data for the
-test of the $\mX = \SI{1000}{\GeV}$ hypothesis (with a local significance of
-$3.1\sigma$) is determined to be $2.0\sigma$ using a toy-based estimation
-method. Uncertainties on the estimated significances are below \num{0.1} and
-thus omitted in subsequent discussions.
+In conclusion, the local (global) significance of the excess observed in data
+for the test of the $\mX = \SI{1000}{\GeV}$ signal hypothesis is found to be
+$3.1 \sigma$ ($2.0 \sigma$) using a toy-based estimation method. The
+uncertainties on the estimated significances are below \num{0.1} and are omitted
+in subsequent discussions.
 
 %%% Local Variables:
 %%% mode: latex
