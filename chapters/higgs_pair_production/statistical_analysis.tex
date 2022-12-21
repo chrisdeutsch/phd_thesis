@@ -1250,15 +1250,13 @@ from~\Cref{fig:q0_samplingdist_q0sig}.
 % results (cf.\ \Cref{sec:statistical_analysis}) only replacing the values of
 % observables and global observables with the ones drawn from the model.
 
-A total of \num{10000} toy experiments are performed to ensure that the global
-significance can be estimated with a statistical uncertainty below
-\num{0.1}. This choice is based on the expectation of the global significance
-being close to $2\sigma$, which is obtained from analytical calculations under
-the assumption that the 20 tests are mutually independent.
-% The estimation of the global significance proceeds using the toy
-% generation procedure outlined in the previous sections to account for
-% dependencies between hypothesis tests.
-
+A total of \num{10000} toy experiments are performed that use observables and
+global observables drawn from the substitute background-only model outlined
+previously.
+% The number of toy experiments is chosen such that the global significance can
+% be estimated with a statistical uncertainty below \num{0.1}.  This choice is
+% based on the expectation of a global significance close to $2$, which is
+% obtained from the assumption that all 20 tests are mutually independent.
 The following steps performed separately for every toy experiment:
 \begin{enumerate}
 
@@ -1269,31 +1267,34 @@ The following steps performed separately for every toy experiment:
   likelihood functions with values from the toy experiment.
 
 \item The observed values of $q_0$ are translated to local significances using
-  the relationships between $z_{\text{local}}$ and $q_0$.
+  the toy-based estimates of the relationship between $q_0$ and
+  $z_{\text{local}}$.
 
-\item The maximum local significance over all 20 tests is determined.
+\item The maximum local significance over all tests is determined.
 
 \end{enumerate}
-Performing these steps for all toy experiments yields an estimate of the
-distribution of the maximum local significance (over the 20 tests) under the
-background-only hypothesis.
+% Performing these steps for all toy experiments yields an estimate of the
+% distribution of \Zmaxlocal under the background-only hypothesis.
 
-The maximum likelihood fits required to obtain the test statistic do not always
+The fits required to obtain the discovery test statistic do not always
 succeed. A total of \num{74} fits\footnote{Out of \num{400000} fits, i.e.\
   $20\,\text{(number of tests)} \times 2\,\text{(conditional \& unconditional
     fit)} \times \num{10000}\,\text{(number of toys)}$.}  did not converge even
-after retrying the fits with altered optimiser settings. These failures do not
-occur randomly but systematically, being restricted to failures of unconditional
-fits for cases where a large deficit is observed in the toy data of a bin with
-large signal sensitivity. Since a deficit does not constitute a discovery in
-this search, the value of $q_0$ is set to 0 in these cases and the toy
-experiment is kept.
+after retrying with altered optimiser settings. The failures are restricted to
+unconditional fits in cases where a large deficit is observed in the toy data of
+a bin with large signal sensitivity. In these cases, the value of $q_0$ is set
+to 0 since a deficit does not constitute evidence in favour of the
+signal-plus-background hypothesis.
+% These failures do not occur randomly but systematically, being restricted to
+% failures of unconditional fits for cases where a large deficit is observed in
+% the toy data of a bin with large signal sensitivity. Since a deficit does not
+% constitute a discovery in this search, the value of $q_0$ is set to 0 in these
+% cases and the toy experiment is kept.
 
-The result of the toy experiments is shown in~\Cref{fig:zmax_toys} illustrating
-the effect of multiple testing leading to an expectation of \Zmaxlocal of about
-\num{1.8} even in the absence of a signal. Considering this effect, the global
-$p$-value is calculated as the fraction of toy experiments exceeding the
-observed~$z_{\text{local}}^{\text{max}}$ in data yielding
+The result of the toy experiments is shown in~\Cref{fig:zmax_toys}, which
+illustrates the effect of multiple hypothesis testing leading to an expectation
+of \Zmaxlocal of about \num{1.8} even in the absence of a signal. The toy
+experiments yield an estimate of the global $p$-value of
 \begin{align*}
   \pglobal = \num{0.0222}\numerrt{0.0015}{toy stat.}
 \end{align*}
@@ -1302,30 +1303,30 @@ and an equivalent global significance of
   z_{\text{global}} = \num{2.01}\numerrt{0.03}{toy stat.} \,\text{,}
 \end{align*}
 where only statistical uncertainties from the finite number of toy experiments
-for the global significance determination are considered.
+for the global significance determination are considered. In addition, the
+statistical uncertainty on the toy-based estimate of the relationship between
+$q_0$ and $z_{\text{local}}$ is propagated to the global significance using the
+Bootstrap method~\cite{10.1214/aos/1176344552,efron1994introduction}. The
+resulting uncertainty on $z_{\text{global}}$ is \num{0.04} yielding a final
+result of
+\begin{align*}
+  z_{\text{global}} = \num{2.01}\numerrt{0.05}{total} \,\text{.}
+\end{align*}
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.62\textwidth]{global_significance/zmax_toys}
 
-  \caption{Estimate of the distribution of the maximum local significance over
-    the 20 hypothesis tests considered under the background-only hypothesis
-    using toy experiments. The local significance of the excess observed in data
-    is indicated in orange. The estimate after kernel smoothing is overlayed in
-    red (for illustration only). The quoted uncertainties are from the finite
-    number of toy experiments only.}%
+  \caption{Toy-based estimate of the distribution of the maximum local
+    significance, \Zmaxlocal, over the 20 hypothesis tests under the
+    background-only hypothesis. The local significance of the excess observed in
+    data is indicated in orange. The distribution after kernel smoothing is
+    overlayed in red for illustration purposes. The uncertainty on the global
+    $p$-value/significance only accounts for the finite number of toy
+    experiments.}%
   \label{fig:zmax_toys}
 \end{figure}
-
-The uncertainty on $z_{\text{global}}$ from the finite number of toy experiments
-used to determine the relationships between $q_0$ and $z_{\text{local}}$ is
-estimated using the Bootstrap method. The resulting uncertainty on
-$z_{\text{global}}$ is \num{0.04} yielding the final result of
-\begin{align*}
-  z_{\text{global}} = \num{2.01}\numerrt{0.05}{total} \,\text{.}
-\end{align*}
-% Uncertainties based on modelling assumptions are not included.
 
 Furthermore, the toy experiments can be used to estimate the joint distribution
 of test statistics for all hypothesis tests under the background-only assumption
