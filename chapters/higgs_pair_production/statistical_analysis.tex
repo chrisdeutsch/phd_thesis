@@ -1063,11 +1063,11 @@ defined as
 \end{align*}
 where $\Phi^{-1}$ is the quantile function of the Standard Normal
 distribution. By convention, discovery is claimed if \pglobal (\zglobal) is less
-(greater) than \num{2.87e-7} ($5\sigma$), which ensures that the FWER is at most
+(greater) than \num{2.87e-7} ($5$), which ensures that the FWER is at most
 \num{2.87e-7}.
 
 The distribution of \Zmaxlocal under the background-only hypothesis is required
-to determine the global significance. In general, this distribution is unknown
+to estimate the global significance. In general, this distribution is unknown
 and needs to be determined by simulation. This is done as follows:~First, a toy
 experiment is drawn from the background-only model. Second, the set of
 hypothesis tests is performed for a given toy experiment and the maximum local
@@ -1148,11 +1148,11 @@ parts, each part describing a certain type of random variable:
   in a given bin (i.e.~$m_{cb}$ in
   \Cref{eq:likelihood_histfactory_constraints}). Similar to the observables, the
   effective number of unweighted events has non-trivial correlations between
-  bins of different discriminants. Resampling techniques are applied to MC
-  simulation and CR data used for background estimation. For every bin, the
+  bins of different discriminants. Resampling techniques are applied to the MC
+  simulations and CR data used for background estimation. For every bin, the
   effective number of unweighted events is recalculated using the resampled
-  datasets. The resulting values of the global observables are then used as a
-  toy experiment for the global significance estimation.
+  datasets. The resulting values of the global observables are then used to
+  define toy experiments for the global significance estimation.
 
 \item[Global observables (other systematic uncertainties)] The global
   observables related to all other systematic uncertainties (i.e.~$a_p$ in
@@ -1173,31 +1173,25 @@ global observables related to the Barlow--Beeston method.
 %
 % -> appendix/toys.tex
 
-\subsubsection{Global Significance Determination}
 
-In the following the determination of the global significance is discussed using
-toy experiments drawn from the background-only model introduced in the previous
-sections. The likelihood functions used to perform the discovery tests are
-structurally identical to the ones used to obtain the primary results (cf.\
-\Cref{sec:statistical_analysis}) only replacing the values of observables and
-global observables with the ones drawn from the model.
+\subsubsection{Sampling Distribution of the Discovery Test Statistic}
 
 Before proceeding with the estimation of the global significance, the validity
-of the asymptotic approximation used to determine the local significances from
-the observed values of the $q_0$ test statistic (i.e.\
-$z_{\text{local}} = \sqrt{q_0}$) is examined. For this purpose separate sets of
-toy experiments are generated using standard toy generation methods. Standard
-methods can be used because the modelling of dependencies between tests is not
-required when determining the sampling distribution of the test statistic at the
-level of an individual hypothesis test. The quality of the approximation is
-investigated, separately for all 20 hypothesis tests, using \num{100000} toy
-experiments per test such that the region close to the threshold of interest of
-$q_0 \approx 9$ ($z_{\text{local}} \approx 3$) is well populated. A
-representative example for the test of the $\mX = \SI{1000}{\GeV}$ signal
-hypothesis is shown in~\Cref{fig:q0_samplingdist}. The figure depicts a
-comparison of the $q_0$ sampling distributions under the background-only
-hypothesis and the resulting relationship between the observed value of $q_0$
-and the local significance.
+of the asymptotic approximation used to determine local significances from
+observed values of the $q_0$ test statistic
+% , i.e.~$z_{\text{local}} = \sqrt{q_0}$,
+is examined. For this purpose, separate sets of toy experiments are generated
+using standard toy generation methods.
+% Standard methods can be used because the modelling of dependencies between
+% tests is not required when determining the sampling distribution of the test
+% statistic at the level of an individual hypothesis test.
+The quality of the approximation is investigated for all 20 hypothesis tests
+using \num{100000} toy experiments per test.
+% such that the region close to the threshold of interest of $q_0 \approx 9$
+% ($z_{\text{local}} \approx 3$) is well-populated.
+A representative example of the $q_0$~sampling distribution under the
+background-only hypothesis and the resulting relationship between $q_0$ and the
+local significance is shown in~\Cref{fig:q0_samplingdist}.
 
 \begin{figure}[htbp]
   \centering
@@ -1216,29 +1210,45 @@ and the local significance.
   \end{subfigure}
 
   \caption{Comparison of the $q_0$ sampling distribution under the
-    background-only hypothesis (a) for the asymptotic approximation and a
-    toy-based estimate ($N_{\text{toys}} = \num{100000}$). The resulting
-    relationship between the local significance and the observed value of $q_0$
-    is depicted in (b). Both are shown for the test of the
-    $\mX = \SI{1000}{\GeV}$ hypothesis combining all analysis channels.}%
+    background-only hypothesis for the asymptotic approximation and an estimate
+    using \num{100000} toy experiments (a). The resulting relationship between
+    the local significance and the observed value of $q_0$ (b). Both are shown
+    for the test of the $\mX = \SI{1000}{\GeV}$ signal hypothesis combining all
+    analysis channels.}%
   \label{fig:q0_samplingdist}
 \end{figure}
 
-The asymptotic approximation describes the relationship between the observed
-$q_0$ and $z_{\text{local}}$ well for all 20 tests considered in this
-analysis. It tends to underestimate the local significance slightly for most
-tests, however. For example, the excess observed in data for the test of the
-$\mX = \SI{1000}{\GeV}$ hypothesis yields a value of $q_0 = \num{9.08}$
-(combination of all analysis channels) resulting in the previously quoted local
-significance of \num{3.01} under the asymptotic approximation. The toy-based
-estimate yields a local significance of \num{3.09 +- 0.03} which results from
-the observed $q_0$ and the result depicted
-in~\Cref{fig:q0_samplingdist_q0sig}. The following analysis of the global
-significance proceeds using toy-based estimates of local
-significances.\footnote{For the purpose of determining the global significance,
-  the differences between the asymptotic approximation and the toy-based
-  estimate of the $q_0$ sampling distributions have negligible effect on the
-  result and lead to the same conclusions.}
+The asymptotic approximation provides a good description of the relationship
+between $q_0$ and $z_{\text{local}}$ for all 20 hypothesis tests considered in
+the search for resonant \HH production. Both methods of estimating the local
+significance agree within a few percent for all hypothesis tests. Nevertheless,
+toy-based estimates are used for the global significance estimation. In this
+case, the local significance of the excess at $\mX = \SI{1000}{\GeV}$ with
+$q_0 = \num{9.08}$ is estimated to be $\num{3.09 +- 0.03}$, which is obtained
+from~\Cref{fig:q0_samplingdist_q0sig}.
+
+% The excess observed in data for the test of the $\mX = \SI{1000}{\GeV}$
+% hypothesis yields a value of $q_0 = \num{9.08}$ for the combination of all
+% channels. This value of the discovery test statistic corresponds to a local
+% significance of $\num{3.01}$ under the asymptotic approximation and
+% $\num{3.09 +- 0.03}$ for the toy-based estimate depicted
+% in~\Cref{fig:q0_samplingdist_q0sig}. The following analysis of the global
+% significance proceeds using toy-based estimates of local significances.
+%
+% \footnote{For the purpose of determining the global significance,
+%   the differences between the asymptotic approximation and the toy-based
+%   estimate of the $q_0$ sampling distributions have negligible impact on the
+%   result.}
+
+% ----------------------------------------------------------------------------
+\subsubsection{Global Significance Estimation}
+
+% In the following the determination of the global significance is discussed
+% using toy experiments drawn from the background-only model introduced in the
+% previous sections. The likelihood functions used to perform the discovery
+% tests are structurally identical to the ones used to obtain the primary
+% results (cf.\ \Cref{sec:statistical_analysis}) only replacing the values of
+% observables and global observables with the ones drawn from the model.
 
 A total of \num{10000} toy experiments are performed to ensure that the global
 significance can be estimated with a statistical uncertainty below
@@ -1316,9 +1326,6 @@ $z_{\text{global}}$ is \num{0.04} yielding the final result of
   z_{\text{global}} = \num{2.01}\numerrt{0.05}{total} \,\text{.}
 \end{align*}
 % Uncertainties based on modelling assumptions are not included.
-
-\todo[inline]{State that the toy experiments were compared to the
-  'standard method' yielding compatible results?}
 
 Furthermore, the toy experiments can be used to estimate the joint distribution
 of test statistics for all hypothesis tests under the background-only assumption
