@@ -1267,7 +1267,7 @@ The following steps performed for every toy experiment:
 \begin{enumerate}
 
 \item The values of $q_0$ are determined for all 20 hypothesis tests considered
-  in the analysis. This step involves performing a conditional ($\sigma = 0$)
+  in the analysis. This step involves performing a conditional (background-only)
   and an unconditional maximum likelihood fit of the model parameters after
   replacing observables and global observables in the likelihood functions with
   values from the toy experiment.
@@ -1334,33 +1334,33 @@ result of
   \label{fig:zmax_toys}
 \end{figure}
 
-Lastly, the toy experiments can be used to estimate the joint distribution of
-the local significances for all hypothesis tests under the background-only
-hypothesis to illustrate the dependencies between tests. For this purpose, a
-signed definition of the local significance given by
+Lastly, the toy experiments can be used to estimate the correlations between
+local significances for all tests under the background-only hypothesis. For this
+purpose, a signed definition of the local significance given by
 \begin{align*}
   z_{\text{local}}^{\text{signed}} = \sgn(\hat{\sigma}) \sqrt{q_0}
 \end{align*}
-is used, where $\sgn(\hat{\sigma})$ is the sign of the best-fit cross
+is used, where $\sgn(\hat{\sigma})$ refers to the sign of the best-fit cross
 section. This choice is made for easier interpretation since
 $z_{\text{local}}^{\text{signed}}$ follows a Standard Normal distribution under
-the background-only hypothesis. The correlation matrix between the signed local
-significances of all 20 tests is determined using the toy experiments and is
+the background-only assumption. The correlation matrix between
+$z_{\text{local}}^{\text{signed}}$ for all 20 hypothesised values of \mX is
 shown in \Cref{fig:corr_sig}. The figure illustrates the increasing correlation
-between tests at large \mX due to the reduced capacity of the PNNs to
-distinguish between adjacent mass points.
+between tests at large \mX that was previously observed in the signal injection
+tests.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.7\textwidth]{global_significance/sig_corr}
 
-  \caption{Linear correlation coefficient between signed local significances of
-    the 20 hypothesis tests performed for the scalar resonance search under the
-    background-only hypothesis. The coefficients are estimated using \num{10000}
-    toy experiments drawn from the background-only substitute model. Cells are
-    annotated, omitting the diagonal, if the correlation coefficient is greater
-    than or equal to \SI{5}{\percent}.}%
+  \caption{Linear correlation coefficients between the signed local
+    significances of hypothesis tests testing the disocvery of a signal with
+    mass $\mX$ and $\mX^\prime$ under the background-only hypothesis. The
+    coefficients are estimated using \num{10000} toy experiments drawn from the
+    background-only substitute model. Cells are annotated, omitting the
+    diagonal, if the correlation coefficient is greater than or equal to
+    \SI{5}{\percent}.}%
   \label{fig:corr_sig}
 \end{figure}
 
