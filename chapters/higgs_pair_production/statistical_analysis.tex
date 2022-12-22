@@ -1054,16 +1054,16 @@ $p$-value
 \begin{align*}
   \pglobal = \mathbb{P}( \Zmaxlocal > \zmaxlocalobs \mid H_0 )\,\text{,}
 \end{align*}
-where \Zmaxlocal is a random variable denoting the maximum local significance
+where \Zmaxlocal is the random variable denoting the maximum local significance
 over all tests, \zmaxlocalobs is the value of \Zmaxlocal observed in data, and
-$H_0$ refers to the background-only hypothesis. The global significance is
+$H_0$ refers to the background-only hypothesis. The global significance is then
 defined as
 \begin{align*}
-  z_{\text{global}} = \Phi^{-1}(1 - \pglobal) \,\text{,}
+  \zglobal = \Phi^{-1}(1 - \pglobal) \,\text{,}
 \end{align*}
 where $\Phi^{-1}$ is the quantile function of the Standard Normal
 distribution. By convention, discovery is claimed if \pglobal (\zglobal) is less
-(greater) than \num{2.87e-7} ($5$), which ensures that the FWER is at most
+(greater) than \num{2.87e-7} ($5\sigma$), which ensures that the FWER is at most
 \num{2.87e-7}.
 
 The distribution of \Zmaxlocal under the background-only hypothesis is required
@@ -1075,16 +1075,19 @@ significance over all tests is determined. These steps are repeated $N$ times
 yielding a sample of realisations of \Zmaxlocal under the background-only
 hypothesis. For a given value of \zmaxlocalobs, the global $p$-value can then be
 estimated according to
+% \begin{align*}
+%   \pglobal \approx
+%   \frac{
+%   \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}}
+%   }{
+%   N
+%   } \,\text{,}
+% \end{align*}
 \begin{align*}
-  \pglobal \approx
-  \frac{
-  \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}}
-  }{
-  N
-  } \,\text{,}
+  \pglobal \approx \frac{1}{N} \,\times\, \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} \,\text{,}
 \end{align*}
 where \zmaxlocal refers to the realisation of \Zmaxlocal for a given toy
-experiment. Other methods for calculating global significances exist, see for
+experiment. Other methods of calculating global significances exist, see for
 example Ref.~\cite{Gross:2010qma}; however, they also rely on the ability of
 drawing toy experiments from the background-only model.
 
@@ -1140,7 +1143,9 @@ parts, each part describing a certain type of random variable:
     $n$~one-dimensional marginal distribution functions and an $n$-dimensional
     copula~\cite{nelsen}. The copula describes the dependencies between the
     random variables.} where the Gaussian copula is defined by the correlation
-  matrix estimated in the second step.
+  matrix estimated in the second step. Methods of drawing random variates from
+  the joint distribution described by the marginals and the Gaussian copula
+  exist~\cite{nelsen} and are used for the generation of toy experiments.
 
 \item[Global observables (Barlow--Beeston method)] The global observables
   related to the simpified Barlow--Beeston method are random variables that
@@ -1149,10 +1154,10 @@ parts, each part describing a certain type of random variable:
   \Cref{eq:likelihood_histfactory_constraints}). Similar to the observables, the
   effective number of unweighted events has non-trivial correlations between
   bins of different discriminants. Resampling techniques are applied to the MC
-  simulations and CR data used for background estimation. For every bin, the
-  effective number of unweighted events is recalculated using the resampled
-  datasets. The resulting values of the global observables are then used to
-  define toy experiments for the global significance estimation.
+  simulations and CR data used for background estimation. Subsequently, the
+  effective number of unweighted events is recalculated for every bin using the
+  resampled dataset. The resulting values of the global observables are then
+  used as part of the toy experiments.
 
 \item[Global observables (other systematic uncertainties)] The global
   observables related to all other systematic uncertainties (i.e.~$a_p$ in
@@ -1161,9 +1166,9 @@ parts, each part describing a certain type of random variable:
   distribution.
 
 \end{description}
-The background model used in the \ZHF~CR is the same for all hypothesis tests;
+The statistical model used in the \ZHF~CR is the same for all hypothesis tests;
 therefore, standard toy generation methods are used for the observables and the
-global observables related to the Barlow--Beeston method.
+global observables related to the Barlow--Beeston method in the \ZHF~CR.
 
 % MOVED THESE TO APPENDIX
 %
@@ -1191,7 +1196,8 @@ using \num{100000} toy experiments per test.
 % ($z_{\text{local}} \approx 3$) is well-populated.
 A representative example of the $q_0$~sampling distribution under the
 background-only hypothesis and the resulting relationship between $q_0$ and the
-local significance is shown in~\Cref{fig:q0_samplingdist}.
+local significance is shown in~\Cref{fig:q0_samplingdist} and compared to the
+asymptotic approximation.
 
 \begin{figure}[htbp]
   \centering
@@ -1257,16 +1263,16 @@ previously.
 % be estimated with a statistical uncertainty below \num{0.1}.  This choice is
 % based on the expectation of a global significance close to $2$, which is
 % obtained from the assumption that all 20 tests are mutually independent.
-The following steps performed separately for every toy experiment:
+The following steps performed for every toy experiment:
 \begin{enumerate}
 
-\item The values of the $q_0$ test statistic are determined for all 20
-  hypothesis tests considered in the analysis. This step involves performing a
-  conditional ($\sigma = 0$) and an unconditional maximum likelihood fit of the
-  model parameters after replacing observables and global observables in the
-  likelihood functions with values from the toy experiment.
+\item The values of $q_0$ are determined for all 20 hypothesis tests considered
+  in the analysis. This step involves performing a conditional ($\sigma = 0$)
+  and an unconditional maximum likelihood fit of the model parameters after
+  replacing observables and global observables in the likelihood functions with
+  values from the toy experiment.
 
-\item The observed values of $q_0$ are translated to local significances using
+\item The observed values of $q_0$ are translated into local significances using
   the toy-based estimates of the relationship between $q_0$ and
   $z_{\text{local}}$.
 
@@ -1300,7 +1306,7 @@ experiments yield an estimate of the global $p$-value of
 \end{align*}
 and an equivalent global significance of
 \begin{align*}
-  z_{\text{global}} = \num{2.01}\numerrt{0.03}{toy stat.} \,\text{,}
+  \zglobal = \num{2.01}\numerrt{0.03}{toy stat.} \,\text{,}
 \end{align*}
 where only statistical uncertainties from the finite number of toy experiments
 for the global significance determination are considered. In addition, the
@@ -1310,7 +1316,7 @@ Bootstrap method~\cite{10.1214/aos/1176344552,efron1994introduction}. The
 resulting uncertainty on $z_{\text{global}}$ is \num{0.04} yielding a final
 result of
 \begin{align*}
-  z_{\text{global}} = \num{2.01}\numerrt{0.05}{total} \,\text{.}
+  \zglobal = \num{2.01}\numerrt{0.05}{total} \,\text{.}
 \end{align*}
 
 \begin{figure}[htbp]
