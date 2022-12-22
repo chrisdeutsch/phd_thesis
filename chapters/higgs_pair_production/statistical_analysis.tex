@@ -1032,526 +1032,172 @@ play a more important role at low \mX.
   Production}%
 \label{sec:global_significance}
 
-In the search for resonant Higgs boson pair production multiple hypothesis tests
-are performed that probe for 20 different \mX of the scalar resonance.\todo{Note
-  that this focuses on the combination of all channels.} The previously quoted
-significance of $3.0\sigma$ of the test at $\mX = \SI{1000}{\GeV}$ does not
-account for the effect of multiple hypothesis testing and was therefore referred
-to as the local significance. Under the background-only hypothesis, any of the
-20 tests could yield a statistically significant result by chance, possibly
-leading to a false discovery.\footnote{This concept is usually referred to as
-  the look-elsewhere effect in HEP.}
+In the search for resonant \HH production multiple hypothesis tests are
+performed, probing 20 different signal hypotheses in total. When performing
+multiple tests, it needs to be considered that under the background-only
+hypothesis any test could yield a statistically significant result by chance,
+which would constitute a false discovery (type I error). As the number of tests
+increases, so does the probability of making one or more false discoveries when
+not controlling for this effect. The previously quoted significance of
+$3.0\sigma$ of the test at $\mX = \SI{1000}{\GeV}$ does not account for multiple
+testing; therefore, the significance was referred to as the local
+significance. In this section, an alternative test statistic referred to as the
+\emph{global significance} is introduced that controls for the false discovery
+rate over a set of hypothesis tests.
 
-Formally, the effect of multiple testing can be accounted for by considering the
-probability to make one or more false discoveries (type II errors) when
-considering an entire family of hypothesis tests.
-% and the associated critical thresholds on the test statistics.
-This probability, which is referred to as the family-wise error rate (FWER), can
-be controlled by setting the critical thresholds of the tests
-appropriately. When accounting for the effect of multiple testing in searches
-for new physics, all hypothesis tests are usually treated equally resulting in
-the same thresholds being applied in all tests. By convention in HEP, the
-critical thresholds are not adjusted explicitly to control the FWER but rather
-the FWER corresponding to the threshold equal to the observed test statistic of
-the most significant test is given directly. In this case the FWER is
+The probability of making one or more false discoveries over a set (family) of
+hypothesis tests is referred to as the family-wise error rate
+(FWER)~\cite{lehmann2005testing}. The FWER can be controlled by setting the
+critical thresholds of individual hypothesis tests such that the FWER remains at
+an acceptable level. In HEP this is conventionally done by defining the global
+$p$-value
 \begin{align*}
-  \pglobal = \text{FWER}(\zmaxlocal)
-  = \mathbb{P}(\Zmaxlocal > \zmaxlocal \vert H_0)\,\text{,}
-\end{align*}\todo{Define directly via the probability to observe an excess larger than the observed one.}
-where \zmaxlocal is the observed maximum of the local significance and
-\Zmaxlocal the random variable describing the maximum local significance under
-the background-only hypothesis ($H_0$). In both cases the maximum is taken over
-the family of hypothesis tests considered in the statistical interpretation.
-
-\todo[inline]{Say that in all cases we assume the background-only hypothesis
-  unless otherwise noted.}
-
-This formulation %of the FWER
-is equivalent to the $p$-value of a hypothesis test that employs the maximum
-local significance over a family of tests as the test statistic and observing
-$\Zmaxlocal = \zmaxlocal$, and is thus called the global $p$-value or \pglobal
-for brevity. This global $p$-value is subsequently translated into the global
-significance, analogously to the treatment of local $p$-values and
-significances, according to
-\begin{align*}
-  z_{\text{global}} = \Phi^{-1}(1 - \pglobal) \,\text{,}
+  \pglobal = \mathbb{P}( \Zmaxlocal > \zmaxlocalobs \mid H_0 )\,\text{,}
 \end{align*}
-where $\Phi^{-1}$ is the quantile function of the Standard Normal distribution.
-
-In practice the global significance can be determined using simulation provided
-a probabilistic model of $H_0$ is available. A number of $N$ toy experiments can
-be drawn from $H_0$, subsequently performing the set of hypothesis tests on all
-experiments and noting, separately for every toy experiment, the maximum local
-significance over all tests, \zmaxlocal. The global $p$-value is then estimated
-as the fraction of toy experiments with \zmaxlocal exceeding the observed value
+where \Zmaxlocal is the random variable denoting the maximum local significance
+over all tests, \zmaxlocalobs is the value of \Zmaxlocal observed in data, and
+$H_0$ refers to the background-only hypothesis. The global significance is then
+defined as
 \begin{align*}
-  \pglobal \approx \frac{ \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} }
-                        { N } \,\text{,}
-  %= \mathbb{E} ( \mathbf{1}_{[z, \infty)}(\zmaxlocal) \vert H_0 )
-  %\approx \frac{1}{N} \sum_{i = 1}^N \mathbf{1}_{[z, \infty)}\left( \zmaxlocal_{, i} \right)
+  \zglobal = \Phi^{-1}(1 - \pglobal) \,\text{,}
 \end{align*}
-where $z_{\text{local, obs}}^{\text{max}}$ refers to the observed maximum local
-significance in data. Other methods for calculating global significances exist,
-see for example Ref.~\cite{Gross:2010qma}, that generally also rely on the
-ability of drawing toy experiments from $H_0$.
+where $\Phi^{-1}$ is the quantile function of the Standard Normal
+distribution. By convention, discovery is claimed if \pglobal (\zglobal) is less
+(greater) than \num{2.87e-7} ($5\sigma$), which ensures that the FWER is at most
+\num{2.87e-7}.
 
-The primary difficulty in estimating the global significance of the excess at
-$\mX = \SI{1000}{\GeV}$ lies in the generation of toy experiments from the
-background-only hypothesis. While the likelihood functions used for the
-statistical interpretation contain a model of the binned PNN discriminants,
-these models only provide a description of a single discriminant at a time, not
-accounting for dependencies between observables of different discriminants. The
-estimation of the global significance, however, requires a background model
-jointly describing all binned discriminants used in the search, which is not
-readily available.
-
-The need for such a joint model was already indicated by the large width of the
-significance response in the signal injection tests for large \mX
-(cf.~\Cref{fig:local_pvalues_injected}) which is caused by a partial overlap of
-signal events in the most signal-like bins of PNN discriminants for adjacent
-mass points. This overlap is expected to extend to background events and thus
-will have an effect on the global significance estimation which has to be
-quantified.
-
-A substitute background model is constructed, accounting for correlations
-between all observables entering the statistical interpretation, that can be
-used to generate toy experiments for the global significance estimation. This
-model should closely approximate the marginal models contained in the likelihood
-functions (i.e.\ the model of a single binned PNN discriminant) such that the
-statistical analysis can proceed using the same likelihood functions without
-incurring large biases due to a mismatch between models.
-
-The model is constructed assuming the pre-fit expectation for all backgrounds,
-except for the normalisation factors of the \ttbar and \ZHF backgrounds, which
-are set to approximate post-fit values of 0.97 and 1.35, respectively. Two major
-classes of random variables need to be considered when generating toy
-experiments:
-\begin{enumerate}
-\item Random variables describing the observed number of events in a given bin,
-  usually referred to as \emph{observables}.
-
-\item Random variables describing the central value of auxiliary measurements
-  that provide the description of systematic uncertainties. These are referred
-  to as \emph{global observables}.
-\end{enumerate}
-
-\emph{Observables} are expected to be partially correlated due to the overlap of
-events between pairs of bins of different PNN discriminants. Their treatment
-will be discussed in the following section.
-
-\emph{Global observables} need to be further subdivided into two cases. First,
-the global observables related to the auxiliary measurement encoding the
-statistical uncertainty on the background
-estimate %(due to the finite number of simulated events and events in
-% the control region)
-according to the Barlow-Beeston method. Second, all other global observables
-describing experimental and theory uncertainties. The latter are assumed to be
-fully correlated for all hypothesis tests performed in this search, while the
-former are also partially correlated due to an overlap of simulated / control
-region events between bins. The treatment of global observables will be
-discussed in a later section.
-
-The generation of random variates for observables, and global observables
-related to the Barlow-Beeston method can proceed independently for all analysis
-channels due to their orthogonality. Standard procedures are used in the CR to
-generate these random variates since the contribution of this region to the
-likelihood functions is identical for all tests.
-
-%Driven by data statistics. But MC background statistical uncertainties
-%are non-negligible.
-
-\subsubsection{Generation of Toy Observables}
-
-For the generation of random toy observables, the correlation between
-observables based on the overlap of bins needs to be quantified. Let $A$ and $B$
-be observables corresponding to a pair of bins which are marginally distributed
-according to Poisson distributions. The dependence between $A$ and $B$ is given
-by the overlap in the kinematic region (phase space) selected by both bins. The
-phase space selected by either bin can be partitioned into three parts with
-associated observables $X_i$:
-\begin{itemize}
-\item The phase space selected by bin A but not B with observable $X_1$.
-\item The phase space selected by bin A and B with observable $X_2$.
-\item The phase space selected by bin B but not A with observable $X_3$.
-\end{itemize}
-Due to the partitioning of the phase space, the observables $X_i$ are i.i.d.\
-$\pois(\lambda_i)$ with rate parameters $\lambda_i$ for $i = 1, 2, 3$. The
-observables $A$ and $B$ can thus be written as
+The distribution of \Zmaxlocal under the background-only hypothesis is required
+to estimate the global significance. In general, this distribution is unknown
+and needs to be determined by simulation. This is done as follows:~First, a toy
+experiment is drawn from the background-only model. Second, the set of
+hypothesis tests is performed for a given toy experiment and the maximum local
+significance over all tests is determined. These steps are repeated $N$ times
+yielding a sample of realisations of \Zmaxlocal under the background-only
+hypothesis. For a given value of \zmaxlocalobs, the global $p$-value can then be
+estimated according to
+% \begin{align*}
+%   \pglobal \approx
+%   \frac{
+%   \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}}
+%   }{
+%   N
+%   } \,\text{,}
+% \end{align*}
 \begin{align*}
-  A &= X_1 + X_2 \sim \pois(\lambda_1 + \lambda_2) \\
-  B &= X_2 + X_3 \sim \pois(\lambda_2 + \lambda_3)
+  \pglobal \approx \frac{1}{N} \,\times\, \text{Number of toys with } \zmaxlocal > z_{\text{local, obs}}^{\text{max}} \,\text{,}
 \end{align*}
-and the Pearson correlation coefficient between $A$ and $B$ can be determined
-as\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) = \var(X_2)
-  = \lambda_2$ from the independence of $X_1$, $X_2$, and $X_3$.}
-\begin{align*}
-  \rho_{AB} = \frac{\cov(A, B)}{\sqrt{\var(A)\var(B)}}
-  = \frac{\lambda_2}{\sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 + \lambda_3)}} \,\text{,}
-\end{align*}
-which reflects the intuition that the overlap in selected phase space, described
-by the rate $\lambda_2$, induces a correlation between both observables. In the
-following, the model described by $A$ and $B$ will be referred to as the
-bivariate Poisson model.
+where \zmaxlocal refers to the realisation of \Zmaxlocal for a given toy
+experiment. Other methods of calculating global significances exist, see for
+example Ref.~\cite{Gross:2010qma}; however, they also rely on the ability of
+drawing toy experiments from the background-only model.
 
-An approximation of the correlation coefficient for all pair-wise combinations
-of bins in an analysis channel can be obtained by replacing the rate parameters
-$\lambda_i$ by the rates from the background estimate. Submatrices of the
-correlation matrix obtained in the \hadhad channel are shown
-in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from the
-\hadhad channel enter the statistical interpretation leading to a matrix of
-dimension $144 \times 144$. Similar matrices are obtained in the \lephad SLT and
-LTT SRs with dimension $193 \times 193$ and $182 \times 182$, respectively.
+In the search for resonant \HH production, the primary difficulty in estimating
+the global significance lies in the generation of toy experiments from the
+background-only model. While the likelihood functions used for the statistical
+interpretation are built based on probabilistic models of the binned PNN
+discriminants, these models only provide a description of the discriminants for
+a single mass point. However, a background model that jointly describes all
+discriminants is required to generate toy experiments for the global
+significance estimation. The need for such a model was already indicated by the
+large width of the significance response in the signal injection tests
+(cf.~\Cref{fig:local_pvalues_injected}), which is caused by a partial overlap of
+events selected by the most signal-like bins of the PNN discriminants for
+adjacent mass points.
 
-\begin{figure}[htbp]
-  \centering
+A substitute background-only model is constructed that accounts for dependencies
+between all observables entering the statistical interpretation. The model is
+constructed such that it closely approximates (after marginalising out
+observables not relevant for a given mass point) the background-only models used
+for the statistical interpretation in \Cref{sec:results_res}. This ensures that
+the same statistical analysis can be applied to toy experiments without
+introducing biases due to a mismatch between models. A detailed description of
+the substitute model is given in \Cref{app:toy_generation}; however, the key
+parts are highlighted here.
 
-  \begin{subfigure}{\textwidth}
-    \centering
+The model is constructed from the pre-fit expectation for all backgrounds except
+for the \ttbar and \ZHF normalisation factors, which are set to approximate
+post-fit values of 0.97 and 1.35, respectively. The model is divided into three
+parts, each part describing a certain type of random variable:
+\begin{description}
 
-    \includegraphics[scale=0.8]{global_significance/observable_correlations/corr_hadhad_medium}
-    \subcaption{Submatrix for observables of
-      $\mX = 500, 600, 700\,\si{\GeV}$ discriminants}%
-    \label{fig:correlation_matrix_observables_medium}
-  \end{subfigure}
+\item[Observables] Observables are random variables representing the number of
+  events that are observed in a given bin (i.e.~$n_{cb}$ in
+  \Cref{eq:likelihood_histfactory}). The marginal distributions of the
+  observables are Poisson distributions with known expected value under the
+  background-only hypothesis. When only considering a single PNN discriminant,
+  these observables are mutually independent due to all bins being pairwise
+  disjoint. However, this is not the case when considering the PNN discriminants
+  for all 20 values of \mX. In this case, the joint distribution of all
+  observables is a multivariate Poisson distribution with non-trivial
+  dependencies between observables.
 
-  \begin{subfigure}{\textwidth}
-    \centering
+  The joint distribution of observables is estimated as follows:~First, the
+  marginal distributions of the observables are extracted from the nominal
+  background-only models. Second, the linear correlation coefficients for all
+  pairs of observables are estimated using MC simulation, which allows to
+  construct correlation matrices for the observables. Lastly, the marginal
+  distributions of the observables are linked using a Gaussian copula to form
+  the joint distribution of all observables,\footnote{This approach is motivated
+    by Sklar's theorem~\cite{Sklar1959FonctionsDR}, which states that any
+    $n$-dimensional joint distribution function can be factorised into
+    $n$~one-dimensional marginal distribution functions and an $n$-dimensional
+    copula~\cite{nelsen}. The copula describes the dependencies between the
+    random variables.} where the Gaussian copula is defined by the correlation
+  matrix estimated in the second step. Methods of drawing random variates from
+  the joint distribution described by the marginals and the Gaussian copula
+  exist~\cite{nelsen} and are used for the generation of toy experiments.
 
-    \includegraphics[scale=0.8]{global_significance/observable_correlations/corr_hadhad_high}
-    \subcaption{Submatrix for observables of
-      $\mX = 1000, 1100, 1200, 1400, 1600\,\si{\GeV}$ discriminants}%
-    \label{fig:correlation_matrix_observables_high}
-  \end{subfigure}
+\item[Global observables (Barlow--Beeston method)] The global observables
+  related to the simplified Barlow--Beeston method are random variables that
+  describe the effective number of unweighted events from simulation or CR data
+  in a given bin (i.e.~$m_{cb}$ in
+  \Cref{eq:likelihood_histfactory_constraints}). Similar to the observables, the
+  effective number of unweighted events has non-trivial correlations between
+  bins of different discriminants. Resampling techniques are applied to the MC
+  simulations and CR data used for background estimation. Subsequently, the
+  effective number of unweighted events is recalculated for every bin using the
+  resampled dataset. The resulting values of the global observables are then
+  used as part of the toy experiments.
 
-  \caption{Estimate of the correlation matrix between observables of \hadhad
-    channel. Two submatrices of the full matrix ($144 \times 144$) are
-    shown. Bins are enumerated in ascending order of the signal probability
-    according to the PNN discriminants (i.e.\ bins numbered with 1 contain the
-    most background-like events for a given classification problem).  Cells are
-    annotated if the correlation coefficient is larger than or equal to
-    \SI{5}{\percent}. Off-diagonal elements with a correlation coefficient of
-    \SI{100}{\percent} are due to rounding only.}%
-  \label{fig:correlation_matrix_observables}
-\end{figure}
+\item[Global observables (other systematic uncertainties)] The global
+  observables related to all other systematic uncertainties (i.e.~$a_p$ in
+  \Cref{eq:likelihood_histfactory_constraints}) are assumed to be fully
+  correlated for all hypothesis tests and are drawn from the Standard Normal
+  distribution.
 
-\Cref{fig:correlation_matrix_observables_medium} shows estimated correlation
-coefficients between observables of discriminants used to select signals from
-resonances in the intermediate mass range in the \hadhad channel. This
-correlation matrix has some noteworthy features:
-\begin{itemize}
-\item Off-diagonal elements of submatrices describing the correlation of
-  observables belonging to the same PNN discriminant are zero due to bins being
-  disjoint by construction.
+\end{description}
+The statistical model used in the \ZHF~CR is the same for all hypothesis tests;
+therefore, standard toy generation methods are used for the observables and the
+global observables related to the Barlow--Beeston method in the \ZHF~CR.
 
-\item The most background-like bins (i.e.\ bins enumerated with 1) have
-  correlation coefficients of about \SI{90}{\percent} or larger. This is due to
-  the presence of events that are easily rejected by the PNN discriminants,
-  which predominately populate the first bins. A correlation in such bins is
-  expected, independent of the targeted \mX, due events being selected that are
-  kinematically incompatible with resonant Higgs boson pair production. An
-  example for such events are the ones where both \mMMC and \mBB are far from
-  \mH.
-
-\item The observables of the most signal-like bins are expected to have little
-  correlation for the three PNN discriminants targeting the intermediate mass
-  range considered in~\Cref{fig:correlation_matrix_observables_medium}.
-  % The signal extraction procedure has sufficient mass
-  % resolution to distinguish between signal hypotheses in the
-  % intermediate mass range.
-\end{itemize}
-
-The expected correlation between observables of the high \mX discriminants are
-shown in~\Cref{fig:correlation_matrix_observables_high} for the \hadhad
-channel. As previously noted, the signal extraction method is unable to separate
-the signatures of signal-like events at high \mX. This is reflected in the
-correlation coefficient of the observables for the most signal-like bins of
-adjacent mass points reaching values of up to \SI{75}{\percent}. The correlation
-matrices estimated for the \lephad SLT and LTT channels yield similar
-results\todo{Put in appendix?}.
-
-Considering these dependencies between observables, the toy generation for the
-purpose of estimating the global significance needs to fulfil certain
-requirements. First, the model needs to accurately reproduce the marginal
-distributions of the observables, i.e.\ Poisson distributions with rates given
-by the background estimate, such that the distribution of the discovery test
-statistic for individual tests at fixed \mX can be reproduced. Second, it needs
-to model the dependence structure between observables to account for the overlap
-of phase space selected by the bins entering the statistical interpretation.
-
-A multivariate extension of the bivariate Poisson distribution would fulfil
-these requirements, however, such a model becomes intractable due to the large
-number of observables considered, and in particular due to the presence of
-negatively weighted events used for the background estimate.\footnote{In the
-  absence of negatively weighted events, toy experiments could be generated
-  using pseudo-data generated by drawing a random weight from $\pois(w_i)$ for
-  every event with weight $w_i$ used for the background estimate. Subsequently,
-  the set of pseudo-data can be used to determine the values of all
-  observables. Conceptually, this approach has some parallels to resampling
-  techniques like the Bootstrap
-  method~\cite{10.1214/aos/1176344552,efron1994introduction}.} Instead, a model
-based on the mathematical framework provided by Sklar's
-theorem~\cite{Sklar1959FonctionsDR} is adopted, allowing to factorise the
-marginal distributions from the dependency structure of the observables.
-
-Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint distribution
-function $H$ can be decomposed into its marginal distribution functions
-$F_1, \dots, F_n$ and an $n$-dimensional copula $\mathcal{C}$. The copula
-$\mathcal{C}$ is an $n$-dimensional distribution function,
-$\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$, with uniform marginal densities that
-describes the dependencies between random variables.\footnote{The copula is
-  uniquely identifiable for continuous marginals, however, this is not the case
-  for discrete marginal distributions.} The joint distribution can thus be
-expressed as
-\begin{align*}
-  H(x_1, \dots, x_n) = \mathcal{C}(F_1(x_1), \dots, F_n(x_n))
-\end{align*}
-according to the theorem.
-
-For the task of generating toy experiments, the only missing piece is the
-functional form of the copula since the marginal distributions are assumed to be
-known from the nominal background prediction. The Poisson distribution can be
-approximated by a Normal distribution provided the expected rate is not too
-small, suggesting that the copula describing the dependence structure of a
-multivariate Normal distribution might be applicable as an approximation. This
-copula, referred to as the Gaussian copula, can be derived using the inversion
-method described in Ref.~\cite{nelsen} and is given by
-\begin{align}
-  \label{eq:gaussian_copula}
-  \mathcal{C}_{\myvec{R}}(u_1, \dots, u_n) = \Phi_{\myvec{R}}(\Phi^{-1}(u_1), \dots, \Phi^{-1}(u_n))
-\end{align}
-where $\Phi_{\myvec{R}}$ is the CDF of the multivariate Normal distribution with
-zero mean and covariance equal to the correlation matrix~$\myvec{R}$, and
-$\Phi^{-1}$ is the quantile function of the univariate Standard Normal
-distribution. Similar approaches of modelling multivariate count data using
-copulas have been explored in Refs.~\cite{10.1002/wics.1398}\todo{Add more
-  references}.
-
-The parameters $\myvec{R}$ of the Gaussian copula are estimated using the
-correlation matrices derived with the bivariate Poisson model previously shown
-in~\Cref{fig:correlation_matrix_observables}. The modelling assumptions are
-investigated empirically in two dimensions using comparisons of simulated
-results for the bivariate Poisson model and the copula-based model. The
-dependence of two observables $A$ and $B$ is illustrated in
-\Cref{fig:copula_model_comparison} for both models in terms of the conditional
-mean and variance of $B$ given the observation $A = a$. This comparison is
-performed, instead of a direct comparison of joint distribution functions, to
-better illustrate the subtle differences between both models. The comparison
-yields the following findings:
-\begin{itemize}
-\item The conditional mean of $B$ given $A = a$ agrees well between models even
-  when considering bin pairs with the lowest rates $\lambda_i$ relevant for the
-  analysis. This agreement is not unexpected since the Pearson correlation
-  coefficient used to define the model is linked to the slope of the regression
-  line that predicts $\mathrm{E}(B \vert A = a)$.
-
-\item The conditional variance of $B$ given $A = a$ illustrates that both models
-  are not equivalent, however. For bin pairs with small expected rates
-  $\lambda_i$, the variance of the distribution of $B$ for fixed $A = a$ differs
-  by up \SI{15}{\percent} to between both models. These deviations are assumed
-  to be negligible compared to the linear trend that is properly captured by the
-  model.
-
-\item In the case of disjoint or fully overlapping\footnote{The case of fully
-    overlapping bins requires special treatment since the correlation matrix
-    would be singular.} bins (not shown in the figure) the bivariate Poisson
-  model and copula-based model are identical.
-\end{itemize}
-
-\begin{figure}[htbp]
-  \centering
-
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[scale=0.9]{global_significance/model_comparison/comparison_example_1}
-    \subcaption{Most signal-like bins of the $\mX = \SI{1100}{\GeV}$
-      and $\mX = \SI{1200}{\GeV}$ discriminants
-      ($\rho = \SI{75}{\percent}$).}
-  \end{subfigure}
-
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[scale=0.9]{global_significance/model_comparison/comparison_example_3}
-    \subcaption{Second bin of the $\mX = \SI{1000}{\GeV}$ and second
-      bin of the $\mX = \SI{1200}{\GeV}$ discriminant
-      ($\rho = \SI{47}{\percent}$).}
-  \end{subfigure}
-
-  \begin{subfigure}{\textwidth}
-    \centering
-    \includegraphics[scale=0.9]{global_significance/model_comparison/comparison_example_4}
-    \subcaption{Third bin of the $\mX = \SI{500}{\GeV}$ and second bin
-      of the $\mX = \SI{600}{\GeV}$ discriminant
-      ($\rho = \SI{32}{\percent}$).}
-  \end{subfigure}
-
-  \caption{Comparison of the bivariate Poisson model and the copula model with a
-    Gaussian copula specified by
-    $\rho = \lambda_2 / \sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 +
-      \lambda_3)}$ and marginal distributions given by
-    $A \sim \pois(\lambda_1 + \lambda_2)$ and
-    $B \sim \pois(\lambda_2 + \lambda_3)$. The conditional mean (left panels)
-    and variance (right panels) of $B$ given the observation $A = a$ is shown to
-    illustrate the dependence of both random variables. Three different
-    scenarios are shown varying in the expected rates $\lambda_i$ and in the
-    correlation coefficients $\rho$ between $A$ and $B$. The scenarios are
-    chosen from bin pairs for the \hadhad channel discriminants.  The
-    probability mass function (PMF) of $A$ is overlayed in arbitrary units
-    (a.u.).}%
-  \label{fig:copula_model_comparison}
-\end{figure}
-
-With these simplifying modelling assumptions, observables can be randomly
-generated using the multivariate copula-based model. The following algorithm
-allows to draw the vector of random variates $\myvec{x} = (x_1, \dots, x_n)$
-from the joint distribution described by the Gaussian copula and marginal
-distributions:
-\begin{enumerate}
-\item Draw a vector of random variates, $\myvec{u} = (u_1, \dots, u_n)$, from
-  the distribution described by $\mathcal{C}_{\myvec{R}}$.
-
-  The vector $\myvec{u}$ is obtained by generating random variates
-  $\myvec{n} = (n_1, \dots, n_n)$ from the centred multivariate Normal
-  distribution with covariance matrix equal to $\myvec{R}$, followed by an
-  element-wise application of the univariate Standard Normal CDF to $\myvec{n}$,
-  i.e.\ $u_i = \Phi(n_i)$ for every $i = 1, \dots, n$. This procedure follows
-  directly from the form of the Gaussian copula in~\Cref{eq:gaussian_copula}.
-
-  In practice, the matrices $\myvec{R}$ that are considered here are singular
-  due to multicollinearity between observables. This arises from 19 implicit
-  constraints due to the requirement that the sum of observables is the same for
-  all 20 discriminants in a given analysis channel, thus leading to 19 vanishing
-  eigenvalues of $\myvec{R}$. Therefore, multivariate Normal random variates are
-  generated in a lower dimensional space that removes the collinearity, followed
-  by a back-transformation to the $n$-dimensional space. The required
-  transformations are provided by singular value decomposition of $\myvec{R}$.
-
-\item Obtain $\myvec{x}$ by evaluating the quantile functions of the $n$
-  marginal distributions at the values of $\myvec{u}$ from the previous step
-  such that $x_i = F_{i}^{-1}(u_i)$ for $i = 1, \dots, n$. The marginal
-  distribution functions are given by Poisson distributions with expected rates
-  corresponding to the background prediction in a given bin.
-\end{enumerate}
-The multivariate count data generated with this method was inspected by
-generating large samples of size $\mathcal{O}(10^6)$ showing agreement in terms
-of the expected marginal distributions of the observables and closely
-reproducing the pair-wise correlation coefficients estimated with the bivariate
-Poisson model. A graphical illustration of the generation procedure is given
-in~\Cref{app:graphical_illustration_copula_model}.
+% MOVED THESE TO APPENDIX
+%
+% \subsubsection{Generation of Toy Observables}
+%
+% \subsubsection{Generation of Toy Global Observables}%
+%
+% -> appendix/toys.tex
 
 
-\subsubsection{Generation of Toy Global Observables}%
-\label{sec:toys_global_observables}
-
-Global observables have to be fluctuated when estimating the global significance
-with toy experiments. This section will focus on the generation of the global
-observables related to the Barlow-Beeston method, previously described in
-\Cref{sec:barlow_beeston}, that is used to include statistical uncertainties on
-the predicted background rates in the likelihood function. Due to the
-statistical nature of these uncertainties they cannot be neglected when
-estimating the global significances, particularly since these uncertainties have
-a large impact on the POI.
-
-Global observables related to all other systematic uncertainties are randomly
-assigned given their constraint terms in the likelihood function and assumed to
-be fully correlated between all tests. A detailed discussion of these is omitted
-since standard procedures are used.
-
-Regarding global observables associated to the Barlow-Beeston method, similar
-considerations can be made as for the observables discussed in the previous
-section. The phase space selected by pairs of bins can partially overlap,
-leading to dependencies between the background rate predictions (from simulation
-and CR data) between bins. The random generation of these (global) observables
-is simplified, however, since resampling methods can be used.
-
-The sample of simulated and CR events used to predict the background rates in
-all bins of the discriminants can be resampled using non-parametric Bootstrap
-methods~\cite{10.1214/aos/1176344552,efron1994introduction} to obtain replicas
-of the sample that capture the statistical uncertainties and correlations
-between background rate predictions. Every event in the original sample is
-assigned a random bootstrap weight $w_i^{\text{b}}$ drawn from
-$\pois(\lambda = 1)$ serving as an approximation to the regular non-parametric
-Bootstrap~\cite{google:poisson,ATL-PHYS-PUB-2021-011}. The resulting bootstrap
-replica provides new rate estimates for all bins given
-by~$\sum_{i} w_{i}^{\text{b}} w_i$, where $w_i$ is the nominal event weight,
-$w_i^{\text{b}}$ the bootstrap weight, and the sum goes over all events falling
-into bin $b$ of channel $c$. These rate estimates can be translated into the
-observed effective number of events $m_{cb}$ (global observables of the
-Barlow-Beeston method) using
-\begin{align*}
-  m_{cb} = \frac{1}{s_{cb}} \sum_{i} w_{i}^{\text{b}} \, w_i
-\end{align*}
-with the scaling factor given by $s_{cb} = \sum_i w_i^2 / \sum_i w_i$, and sums
-going over all events falling into bin $b$ of channel $c$. This relationship
-follows from the scaled Poisson approximation employed by the Barlow-Beeston
-method introduced in~\Cref{sec:barlow_beeston}. Multiple toy experiments are
-generated by repeating the Bootstrap procedure.
-
-In~\Cref{fig:comparison_bootstrap_poisson} the distributions of two exemplary
-global observables in the \hadhad channel are shown and compared with the
-distribution used to define the auxiliary measurement in the likelihood
-function. In general, both are not expected to agree perfectly due to the
-approximations used by the Barlow-Beeston method, however, both approaches agree
-well for scenarios relevant to this analysis. Even in the case depicted
-in~\Cref{fig:comparison_bootstrap_poisson_lowest_tau}, which corresponds to the
-bin with the smallest effective number of events of the \hadhad channel (in part
-due to large fraction of negatively weighted events), the agreement between both
-methods is sufficient.
-
-\begin{figure}[htbp]
-  \centering
-
-  \begin{subfigure}{0.485\textwidth}
-    \centering
-
-    \includegraphics[width=0.98\textwidth]{global_significance/gamma_globs/gamma_obs_251}
-    \subcaption{Most signal-like bin of the $\mX = \SI{251}{\GeV}$
-      discriminant in the \hadhad-channel.}%
-    \label{fig:comparison_bootstrap_poisson_lowest_tau}
-  \end{subfigure}\hfill%
-  \begin{subfigure}{0.485\textwidth}
-    \centering
-
-    \includegraphics[width=0.98\textwidth]{global_significance/gamma_globs/gamma_obs_1000}
-    \subcaption{Most signal-like bin of the $\mX = \SI{1000}{\GeV}$
-      discriminant in the \hadhad-channel.}
-  \end{subfigure}
-
-  \caption{Comparison of marginal distributions of global observables from the
-    Barlow-Beeston method. The red markers show the Poisson distribution used to
-    define the constraints on the $\gamma_{cb}$ NPs ($\gamma_{cb} = 1$ is
-    assumed) in the likelihood function. The grey histogram shows the
-    distribution of the global observable following the Bootstrap approach that
-    accounts for correlations of $m_{cb}$ between bins. Statistical
-    uncertainties on the Bootstrap histogram are negligible.}
-  \label{fig:comparison_bootstrap_poisson}
-\end{figure}
-
-
-\subsubsection{Global Significance Determination}
-
-In the following the determination of the global significance is discussed using
-toy experiments drawn from the background-only model introduced in the previous
-sections. The likelihood functions used to perform the discovery tests are
-structurally identical to the ones used to obtain the primary results (cf.\
-\Cref{sec:statistical_analysis}) only replacing the values of observables and
-global observables with the ones drawn from the model.
+\subsubsection{Sampling Distribution of the Discovery Test Statistic}
 
 Before proceeding with the estimation of the global significance, the validity
-of the asymptotic approximation used to determine the local significances from
-the observed values of the $q_0$ test statistic (i.e.\
-$z_{\text{local}} = \sqrt{q_0}$) is examined. For this purpose separate sets of
-toy experiments are generated using standard toy generation methods. Standard
-methods can be used because the modelling of dependencies between tests is not
-required when determining the sampling distribution of the test statistic at the
-level of an individual hypothesis test. The quality of the approximation is
-investigated, separately for all 20 hypothesis tests, using \num{100000} toy
-experiments per test such that the region close to the threshold of interest of
-$q_0 \approx 9$ ($z_{\text{local}} \approx 3$) is well populated. A
-representative example for the test of the $\mX = \SI{1000}{\GeV}$ signal
-hypothesis is shown in~\Cref{fig:q0_samplingdist}. The figure depicts a
-comparison of the $q_0$ sampling distributions under the background-only
-hypothesis and the resulting relationship between the observed value of $q_0$
-and the local significance.
+of the asymptotic approximation used to determine local significances from
+observed values of the $q_0$ test statistic
+% , i.e.~$z_{\text{local}} = \sqrt{q_0}$,
+is examined. For this purpose, separate sets of toy experiments are generated
+using standard toy generation methods.
+% Standard methods can be used because the modelling of dependencies between
+% tests is not required when determining the sampling distribution of the test
+% statistic at the level of an individual hypothesis test.
+The quality of the approximation is investigated for all 20 hypothesis tests
+using \num{100000} toy experiments per test.
+% such that the region close to the threshold of interest of $q_0 \approx 9$
+% ($z_{\text{local}} \approx 3$) is well-populated.
+A representative example of the $q_0$~sampling distribution under the
+background-only hypothesis and the resulting relationship between $q_0$ and the
+local significance is shown in~\Cref{fig:q0_samplingdist} and compared to the
+asymptotic approximation.
 
 \begin{figure}[htbp]
   \centering
@@ -1570,166 +1216,179 @@ and the local significance.
   \end{subfigure}
 
   \caption{Comparison of the $q_0$ sampling distribution under the
-    background-only hypothesis (a) for the asymptotic approximation and a
-    toy-based estimate ($N_{\text{toys}} = \num{100000}$). The resulting
-    relationship between the local significance and the observed value of $q_0$
-    is depicted in (b). Both are shown for the test of the
-    $\mX = \SI{1000}{\GeV}$ hypothesis combining all analysis channels.}%
+    background-only hypothesis for the asymptotic approximation and an estimate
+    using \num{100000} toy experiments (a). The resulting relationship between
+    the local significance and the observed value of $q_0$ (b). Both are shown
+    for the test of the $\mX = \SI{1000}{\GeV}$ signal hypothesis combining all
+    analysis channels.}%
   \label{fig:q0_samplingdist}
 \end{figure}
 
-The asymptotic approximation describes the relationship between the observed
-$q_0$ and $z_{\text{local}}$ well for all 20 tests considered in this
-analysis. It tends to underestimate the local significance slightly for most
-tests, however. For example, the excess observed in data for the test of the
-$\mX = \SI{1000}{\GeV}$ hypothesis yields a value of $q_0 = \num{9.08}$
-(combination of all analysis channels) resulting in the previously quoted local
-significance of \num{3.01} under the asymptotic approximation. The toy-based
-estimate yields a local significance of \num{3.09 +- 0.03} which results from
-the observed $q_0$ and the result depicted
-in~\Cref{fig:q0_samplingdist_q0sig}. The following analysis of the global
-significance proceeds using toy-based estimates of local
-significances.\footnote{For the purpose of determining the global significance,
-  the differences between the asymptotic approximation and the toy-based
-  estimate of the $q_0$ sampling distributions have negligible effect on the
-  result and lead to the same conclusions.}
+The asymptotic approximation provides a good description of the relationship
+between $q_0$ and $z_{\text{local}}$ for all 20 hypothesis tests considered in
+the search for resonant \HH production. Both methods of estimating the local
+significance agree within a few percent for all hypothesis tests. Nevertheless,
+toy-based estimates are used for the global significance estimation. In this
+case, the local significance of the excess at $\mX = \SI{1000}{\GeV}$ with
+$q_0 = \num{9.08}$ is estimated to be $\num{3.09 +- 0.03}$, which is obtained
+from~\Cref{fig:q0_samplingdist_q0sig}.
 
-A total of \num{10000} toy experiments are performed to ensure that the global
-significance can be estimated with a statistical uncertainty below
-\num{0.1}. This choice is based on the expectation of the global significance
-being close to $2\sigma$, which is obtained from analytical calculations under
-the assumption that the 20 tests are mutually independent.
-% The estimation of the global significance proceeds using the toy
-% generation procedure outlined in the previous sections to account for
-% dependencies between hypothesis tests.
+% The excess observed in data for the test of the $\mX = \SI{1000}{\GeV}$
+% hypothesis yields a value of $q_0 = \num{9.08}$ for the combination of all
+% channels. This value of the discovery test statistic corresponds to a local
+% significance of $\num{3.01}$ under the asymptotic approximation and
+% $\num{3.09 +- 0.03}$ for the toy-based estimate depicted
+% in~\Cref{fig:q0_samplingdist_q0sig}. The following analysis of the global
+% significance proceeds using toy-based estimates of local significances.
+%
+% \footnote{For the purpose of determining the global significance,
+%   the differences between the asymptotic approximation and the toy-based
+%   estimate of the $q_0$ sampling distributions have negligible impact on the
+%   result.}
 
-The following steps performed separately for every toy experiment:
+% ----------------------------------------------------------------------------
+\subsubsection{Global Significance Estimation}
+
+% In the following the determination of the global significance is discussed
+% using toy experiments drawn from the background-only model introduced in the
+% previous sections. The likelihood functions used to perform the discovery
+% tests are structurally identical to the ones used to obtain the primary
+% results (cf.\ \Cref{sec:statistical_analysis}) only replacing the values of
+% observables and global observables with the ones drawn from the model.
+
+A total of \num{10000} toy experiments are performed that use observables and
+global observables drawn from the substitute background-only model outlined
+previously.
+% The number of toy experiments is chosen such that the global significance can
+% be estimated with a statistical uncertainty below \num{0.1}.  This choice is
+% based on the expectation of a global significance close to $2$, which is
+% obtained from the assumption that all 20 tests are mutually independent.
+The following steps performed for every toy experiment:
 \begin{enumerate}
 
-\item The values of the $q_0$ test statistic are determined for all 20
-  hypothesis tests considered in the analysis. This step involves performing a
-  conditional ($\sigma = 0$) and an unconditional maximum likelihood fit of the
-  model parameters after replacing observables and global observables in the
-  likelihood functions with values from the toy experiment.
+\item The values of $q_0$ are determined for all 20 hypothesis tests considered
+  in the analysis. This step involves performing a conditional (background-only)
+  and an unconditional maximum likelihood fit of the model parameters after
+  replacing observables and global observables in the likelihood functions with
+  values from the toy experiment.
 
-\item The observed values of $q_0$ are translated to local significances using
-  the relationships between $z_{\text{local}}$ and $q_0$.
+\item The observed values of $q_0$ are translated into local significances using
+  the toy-based estimates of the relationship between $q_0$ and
+  $z_{\text{local}}$.
 
-\item The maximum local significance over all 20 tests is determined.
+\item The maximum local significance over all tests is determined.
 
 \end{enumerate}
-Performing these steps for all toy experiments yields an estimate of the
-distribution of the maximum local significance (over the 20 tests) under the
-background-only hypothesis.
+% Performing these steps for all toy experiments yields an estimate of the
+% distribution of \Zmaxlocal under the background-only hypothesis.
 
-The maximum likelihood fits required to obtain the test statistic do not always
+The fits required to obtain the discovery test statistic do not always
 succeed. A total of \num{74} fits\footnote{Out of \num{400000} fits, i.e.\
   $20\,\text{(number of tests)} \times 2\,\text{(conditional \& unconditional
     fit)} \times \num{10000}\,\text{(number of toys)}$.}  did not converge even
-after retrying the fits with altered optimiser settings. These failures do not
-occur randomly but systematically, being restricted to failures of unconditional
-fits for cases where a large deficit is observed in the toy data of a bin with
-large signal sensitivity. Since a deficit does not constitute a discovery in
-this search, the value of $q_0$ is set to 0 in these cases and the toy
-experiment is kept.
+after retrying with altered optimiser settings. The failures are restricted to
+unconditional fits in cases where a large deficit is observed in the toy data of
+a bin with large signal sensitivity. In these cases, the value of $q_0$ is set
+to 0 since a deficit does not constitute evidence in favour of the
+signal-plus-background hypothesis.
+% These failures do not occur randomly but systematically, being restricted to
+% failures of unconditional fits for cases where a large deficit is observed in
+% the toy data of a bin with large signal sensitivity. Since a deficit does not
+% constitute a discovery in this search, the value of $q_0$ is set to 0 in these
+% cases and the toy experiment is kept.
 
-The result of the toy experiments is shown in~\Cref{fig:zmax_toys} illustrating
-the effect of multiple testing leading to an expectation of \Zmaxlocal of about
-\num{1.8} even in the absence of a signal. Considering this effect, the global
-$p$-value is calculated as the fraction of toy experiments exceeding the
-observed~$z_{\text{local}}^{\text{max}}$ in data yielding
+The result of the toy experiments is shown in~\Cref{fig:zmax_toys}, which
+illustrates the effect of multiple hypothesis testing leading to an expectation
+of \Zmaxlocal of about \num{1.8} even in the absence of a signal. The toy
+experiments yield an estimate of the global $p$-value of
 \begin{align*}
   \pglobal = \num{0.0222}\numerrt{0.0015}{toy stat.}
 \end{align*}
 and an equivalent global significance of
 \begin{align*}
-  z_{\text{global}} = \num{2.01}\numerrt{0.03}{toy stat.} \,\text{,}
+  \zglobal = \num{2.01}\numerrt{0.03}{toy stat.} \,\text{,}
 \end{align*}
 where only statistical uncertainties from the finite number of toy experiments
-for the global significance determination are considered.
+for the global significance determination are considered. In addition, the
+statistical uncertainty of the toy-based estimate of the relationship between
+$q_0$ and $z_{\text{local}}$ is propagated to the global significance using the
+Bootstrap method~\cite{10.1214/aos/1176344552,efron1994introduction}. The
+resulting uncertainty on $z_{\text{global}}$ is \num{0.04} yielding a final
+result of
+\begin{align*}
+  \zglobal = \num{2.01}\numerrt{0.05}{total} \,\text{.}
+\end{align*}
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.62\textwidth]{global_significance/zmax_toys}
 
-  \caption{Estimate of the distribution of the maximum local significance over
-    the 20 hypothesis tests considered under the background-only hypothesis
-    using toy experiments. The local significance of the excess observed in data
-    is indicated in orange. The estimate after kernel smoothing is overlayed in
-    red (for illustration only). The quoted uncertainties are from the finite
-    number of toy experiments only.}%
+  \caption{Toy-based estimate of the distribution of the maximum local
+    significance, \Zmaxlocal, over the 20 hypothesis tests under the
+    background-only hypothesis. The local significance of the excess observed in
+    data is indicated in orange. The distribution after kernel smoothing is
+    overlayed in red for illustration purposes. The uncertainty on the global
+    $p$-value/significance only accounts for the finite number of toy
+    experiments.}%
   \label{fig:zmax_toys}
 \end{figure}
 
-The uncertainty on $z_{\text{global}}$ from the finite number of toy experiments
-used to determine the relationships between $q_0$ and $z_{\text{local}}$ is
-estimated using the Bootstrap method. The resulting uncertainty on
-$z_{\text{global}}$ is \num{0.04} yielding the final result of
+Lastly, the toy experiments can be used to estimate the correlations between
+local significances for all tests under the background-only hypothesis. For this
+purpose, a signed definition of the local significance given by
 \begin{align*}
-  z_{\text{global}} = \num{2.01}\numerrt{0.05}{total} \,\text{.}
+  z_{\text{local}}^{\text{signed}} = \sgn(\hat{\sigma}) \sqrt{q_0}
 \end{align*}
-% Uncertainties based on modelling assumptions are not included.
-
-\todo[inline]{State that the toy experiments were compared to the
-  'standard method' yielding compatible results?}
-
-Furthermore, the toy experiments can be used to estimate the joint distribution
-of test statistics for all hypothesis tests under the background-only assumption
-to illustrate the dependencies between tests directly. For this purpose, the
-signed definition of the discovery significance given
-by~$z_{\text{local}}^{\text{signed}} = \sgn(\hat{\sigma}) \sqrt{q_0}$ is used,
-with $\sgn(\hat{\sigma})$ being the sign of the best-fit cross-section and
-assuming the asymptotic approximation. This choice is made because signed
-significances have Standard Normal marginal distributions under the
-background-only hypothesis, lending itself for easier interpretation.
-
-\Cref{fig:corr_sig} shows the matrix of linear correlation coefficients between
-the signed discovery significances for all 20 tests determined using toy
-experiments. It illustrates the linear dependencies between test statistics,
-particularly highlighting the increasing dependency between tests for large \mX.
+is used, where $\sgn(\hat{\sigma})$ refers to the sign of the best-fit cross
+section. This choice is made for easier interpretation since
+$z_{\text{local}}^{\text{signed}}$ follows a Standard Normal distribution under
+the background-only assumption. The correlation matrix between
+$z_{\text{local}}^{\text{signed}}$ for all 20 hypothesised values of \mX is
+shown in \Cref{fig:corr_sig}. The figure illustrates the increasing correlation
+between tests at large \mX that was previously observed in the signal injection
+tests.
 
 \begin{figure}[htbp]
   \centering
 
   \includegraphics[width=0.7\textwidth]{global_significance/sig_corr}
 
-  \caption{Linear correlation coefficient between signed local significances of
-    the 20 hypothesis tests performed for the scalar resonance search under the
-    background-only hypothesis. The coefficients are estimated using \num{10000}
-    toy experiments drawn from the background-only substitute model. Cells are
-    annotated, omitting the diagonal, if the correlation coefficient is greater
-    than or equal to \SI{5}{\percent}.}%
+  \caption{Linear correlation coefficients between the signed local
+    significances of hypothesis tests testing the discovery of a signal with
+    mass $\mX$ and $\mX^\prime$ under the background-only hypothesis. The
+    coefficients are estimated using \num{10000} toy experiments drawn from the
+    background-only substitute model. Cells are annotated, omitting the
+    diagonal, if the correlation coefficient is greater than or equal to
+    \SI{5}{\percent}.}%
   \label{fig:corr_sig}
 \end{figure}
 
-Finally, the result of the toy-based estimation of the global significance
-yielding $z_{\text{global}} = \num{2.01 +- 0.05}$ is compared to case assuming
-that the hypothesis tests can be seen as mutually independent. With this
-simplification the global significance is analytically estimated to be \num{2.06
-  +- 0.04}, using the observed maximum local significance of \num{3.09 +- 0.03},
-which is compatible with the result based on toy experiments. This result might
-seem surprising given the large correlation between tests at high \mX shown
-in~\Cref{fig:corr_sig}, however, this finding is supported by
-simulation. Assuming the joint distribution of signed local significances is
-multivariate Normal with zero mean and covariance matrix given
-by~\Cref{fig:corr_sig}, the global significance can be estimated from simulation
-with negligible statistical precision and compared to the result assuming
-independence. The difference in global significance estimates between both
-methods amounts to \num{0.02}, concluding that the precision of the toy-based
-estimate is not sufficient to differentiate between the cases assuming
-independence and linear dependence according to~\Cref{fig:corr_sig}. For
-practical purposes, the dependencies between tests performed as part of this
-search are weak enough such that the assumption of independence yields
-acceptable estimates for the global significance.
+% Finally, the result of the toy-based estimation of the global significance
+% yielding $z_{\text{global}} = \num{2.01 +- 0.05}$ is compared to case assuming
+% that the hypothesis tests can be seen as mutually independent. With this
+% simplification the global significance is analytically estimated to be
+% \num{2.06 +- 0.04}, using the observed maximum local significance of \num{3.09
+% +- 0.03}, which is compatible with the result based on toy experiments. This
+% result might seem surprising given the large correlation between tests at high
+% \mX shown in~\Cref{fig:corr_sig}, however, this finding is supported by
+% simulation. Assuming the joint distribution of signed local significances is
+% multivariate Normal with zero mean and covariance matrix given
+% by~\Cref{fig:corr_sig}, the global significance can be estimated from
+% simulation with negligible statistical precision and compared to the result
+% assuming independence. The difference in global significance estimates between
+% both methods amounts to \num{0.02}, concluding that the precision of the
+% toy-based estimate is not sufficient to differentiate between the cases
+% assuming independence and linear dependence according
+% to~\Cref{fig:corr_sig}. For practical purposes, the dependencies between tests
+% performed as part of this search are weak enough such that the assumption of
+% independence yields acceptable estimates for the global significance.
 
-In conclusion, the global significance of the excess observed in data for the
-test of the $\mX = \SI{1000}{\GeV}$ hypothesis (with a local significance of
-$3.1\sigma$) is determined to be $2.0\sigma$ using a toy-based estimation
-method. Uncertainties on the estimated significances are below \num{0.1} and
-thus omitted in subsequent discussions for brevity.\todo{Methodological
-  uncertainties?}
-
+In conclusion, the local (global) significance of the excess observed in data
+for the test of the $\mX = \SI{1000}{\GeV}$ signal hypothesis is found to be
+$3.1 \sigma$ ($2.0 \sigma$) using a toy-based estimation method. The
+uncertainties on the estimated significances are below \num{0.1} and are omitted
+in subsequent discussions.
 
 %%% Local Variables:
 %%% mode: latex

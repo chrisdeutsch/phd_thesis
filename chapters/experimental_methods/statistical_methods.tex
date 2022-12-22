@@ -101,23 +101,24 @@ A description of the exact functional form of $\sigma_{csb}(\myvec{\alpha})$ and
 $\eta_{cs}(\myvec{\alpha})$ is omitted here but can be found in
 Ref.~\cite{cranmer2012}. The likelihood function of the statistical model is
 given by
-\begin{align*}
+\begin{align}
   L(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) = \Biggl[\,
   \prod_{c \in \mathcal{C}}
   \prod_{b \in \mathcal{B}_{c}}
   \pois\bigl( n_{cb}; \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) \bigr)
   \,\Biggr]
   \times L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) \,\text{,}
-  % \label{eq:likelihood_histfactory}
-\end{align*}
+  \label{eq:likelihood_histfactory}
+\end{align}
 where $L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma})$ is the likelihood
 function defining the external constraints on the NPs~$\myvec{\alpha}$ and
 $\myvec{\gamma}$. The external constraints are defined by
-\begin{align*}
+\begin{align}
   L_{\text{ext}}(\myvec{\alpha}, \myvec{\gamma}) =
   \Biggl[\, \prod_{p=1}^{n} f(a_p; \alpha_p)     \,\Biggr]
   \Biggl[\, \prod_{c \in \mathcal{C}} \prod_{b \in \mathcal{B}_{c}} \pois(m_{cb}; \gamma_{cb} \tau_{cb}) \,\Biggr] \,\text{,}
-\end{align*}
+  \label{eq:likelihood_histfactory_constraints}
+\end{align}
 with the terms in brackets being described in the following:
 \begin{itemize}
 
