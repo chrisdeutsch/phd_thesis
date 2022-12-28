@@ -1,71 +1,79 @@
 \section{Conclusion and Outlook}%
 \label{sec:result_discussion}
 
-\todo[inline]{Prospects?\\
-  \url{https://cds.cern.ch/record/2798448/files/ATL-PHYS-PUB-2021-044.pdf}\\
-  \url{https://cds.cern.ch/record/2802127/files/ATL-PHYS-PUB-2022-005.pdf} }
-
-The results obtained as part of the searches for non-resonant SM \HH production
-and resonant production via narrow width scalar bosons are discussed in the
-following.
-
-Both searches are largely limited by data statistical uncertainties which
-represent the majority of the uncertainty on extracted signal strengths or cross
-sections. Systematic uncertainties are comparatively small for the search for
-non-resonant SM \HH production and resonant production at intermediate to high
-masses. Only for the search for low mass scalar resonances uncertainties from
-systematic sources are comparable to data statistical uncertainties, however,
-they do not solely limit the final result.
-
-The largest improvements are expected from increases in the integrated
-luminosity expected for Run~3 of the LHC and beyond. The prospects of searches
-for Higgs boson pairs for Run~4 (high luminosity LHC) studied by the ATLAS
-collaboration in~\cite{ATL-PHYS-PUB-2021-044,ATL-PHYS-PUB-2022-005} are briefly
-discussed providing an outlook for future searches.
-
-% Or by further relaxing the selection requirements yielding larger signal
-% acceptance. Although this would also increase the background and thus might
-% not correspond to a net improvement of the results.
+The results of the search for SM~\HH and resonant \HH production in the
+\bbtautau channel are discussed in the following. The search is primarily
+limited by uncertainties originating from the finite size of the \pp-collision
+dataset collected during Run~2 of the LHC, which have the largest impact on the
+extracted signal strengths and cross sections. Systematic uncertainties are
+small and only relevant for searches for low-mass resonances. As a result, the
+sensitivity of this search greatly benefits from the increase in integrated
+luminosity compared to earlier searches
+(cf.~\Cref{seq:experimental_status}). Improvements in the analysis, mostly in
+the reconstruction and selection of physics objects, further increase the
+sensitivity to resonant and non-resonant \HH production. Finally, this chapter
+is concluded with an outlook on the expected sensitivity of searches for Higgs
+boson pair production at the end of the HL-LHC.
+% Prospects of these searches are studied by the ATLAS collaboration
+% in~\cite{ATL-PHYS-PUB-2021-044,ATL-PHYS-PUB-2022-005} and are briefly
+% discussed.
 
 \subsection{Search for SM \HH Production}
 
-The search presented in this work provides the most stringent expected upper
-limits on the signal strength of SM \HH production via \ggF and VBF for analysis
-targeting a single final state. This result is put into context by summarising
-past and present results of direct SM \HH searches by the ATLAS collaboration
+The search for SM~\HH production presented in this chapter provides the largest
+expected sensitivity to SM~\HH production via \ggF and VBF of any single
+analysis channel. The result is put into context in \Cref{fig:run2_hh_results}
+by comparing the upper limits on the SM~\HH signal strength of the most
+sensitive searches for SM~\HH production by the ATLAS and CMS collaborations.
+
+
+
+
+
+This result is put into context by summarising past and present results of
+direct SM \HH searches by the ATLAS collaboration
 in~\Cref{fig:atlas_run2_hh_results} and with the results of the CMS
 collaboration in~\Cref{tab:cms_nonresonant} for analyses of the Run~2 dataset of
 $pp$-collisions.
 
+% The upper limits on the SM~\HH signal strength in the most sensitive search
+% channels are summarised in~\Cref{fig:run2_hh_results}.
+
 \begin{figure}[tbp]
   \centering
 
-  \begin{subfigure}[b]{0.65\textwidth}
-    \hspace{1.05em}\includegraphics[width=0.9\textwidth]{discussion/results_139ifb}
+  \begin{subfigure}[b]{\textwidth}
+    \centering
 
-    \subcaption{Full Run~2 dataset with an integrated luminosity
-      of~\SI{139}{\per\femto\barn}~\cite{HDBS-2022-03}.}%
+    \hspace{0.98em}\includegraphics[width=0.585\textwidth]{discussion/results_139ifb}
+
+    \subcaption{Results of SM~\HH searches by the ATLAS collaboration. The
+      figure is taken from~\cite{HDBS-2022-03}.}%
     \label{fig:atlas_run2_139ifb}
   \end{subfigure}
 
   \vspace{12pt}
 
-  \begin{subfigure}[b]{0.65\textwidth}
-    \includegraphics[width=0.94\textwidth]{discussion/cms_results_run2}
+  \begin{subfigure}[b]{\textwidth}
+    \centering
 
-    \subcaption{CMS~\cite{CMS-HIG-22-001}.}
+    \includegraphics[width=0.611\textwidth]{discussion/cms_results_run2}
+
+    \subcaption{Results of SM~\HH searches by the CMS collaboration. The
+      multilepton channel targets $WWWW$, $WW\tau\tau$, and $\tau\tau\tau\tau$
+      final states with two or more reconstructed $e$, $\mu$, or
+      \tauhadvis~\cite{CMS-HIG-21-002}. The figure is taken
+      from~\cite{CMS-HIG-22-001}.}%
+    \label{fig:cms_run2_138ifb}
   \end{subfigure}
 
-  \caption{Comparison of ATLAS results for searches for non-resonant SM \HH
-    production from the beginning (a) and end of Run~2 (b) of the LHC. Upper
-    limits are shown in terms of the signal strength of SM \HH production via
-    \ggF neglecting the VBF production mode in (a) and in terms of the combined
-    signal strength of \ggF and VBF production mode in (b). Both results are
-    still comparable due to the small cross section of VBF \HH
-    production. Additionally, the assumed SM \HH cross sections changed between
-    results due to the availability of improved theoretical predictions.  Note
-    the different results for bbtautau. }
-  \label{fig:atlas_run2_hh_results}
+  \caption{Upper limits on the signal strength of SM~\HH production at
+    \SI{95}{\percent}~CL by the ATLAS~(a) and CMS~(b) collaborations using the
+    \pp-collision datasets collected during Run~2 of the LHC. The upper limits
+    are shown separately for different analysis channels and their
+    combination. The expected upper limits are derived assuming the absence of
+    SM~\HH production.}%
+  \label{fig:run2_hh_results}
 \end{figure}
 
 % \begin{table}[tbp]
@@ -109,6 +117,8 @@ hard \mHH spectrum. The presence of \tauhadvis (and electrons / muons) provides
 large rejection power against multi-jet backgrounds compared to the \bbbb
 channel. Moreover, the fraction of SM \HH events decaying into \bbtautau final
 states is significantly larger than that of \bbyy.
+
+% For earlier results see: \Cref{seq:experimental_status}
 
 In~\Cref{fig:atlas_run2_36ifb,fig:atlas_run2_139ifb} a comparison between
 searches for SM \HH production using the partial and full Run~2 $pp$-collision
@@ -343,6 +353,11 @@ APPENDIX). Moreover, a comparison of reconstruction and identification
 efficiencies for highly collinear \tauhadvis between simulation and data would
 be further confirm that these topologies are not affected by miscalibrations of
 the efficiencies.
+
+\todo[inline]{Prospects?\\
+  \url{https://cds.cern.ch/record/2798448/files/ATL-PHYS-PUB-2021-044.pdf}\\
+  \url{https://cds.cern.ch/record/2802127/files/ATL-PHYS-PUB-2022-005.pdf} }
+
 
 %%% Local Variables:
 %%% mode: latex
