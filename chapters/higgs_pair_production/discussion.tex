@@ -152,20 +152,20 @@ of the increase in instantaneous luminosity at the HL-LHC. In addition, the
 evolution of systematic uncertainties follows the recommendations in
 Ref.~\cite{ATL-PHYS-PUB-2019-005}. Given these assumptions the extrapolation of
 the search for SM~\HH production in the \bbtautau channel yields an expected
-discovery significance of $2.8\,\sigma$ under the SM
+discovery significance of $2.8 \sigma$ under the SM
 hypothesis~\cite{ATL-PHYS-PUB-2021-044}.
 % Thus evidence for non-resonant SM \HH production for a search in solely in the
 % \bbtautau channel is in reach provided some improvements can be made.
 A similar extrapolation was performed in the \bbyy channel resulting in an
-expected significance of $2.2\,\sigma$ at the end of the
+expected significance of $2.2 \sigma$ at the end of the
 HL-LHC~\cite{ATL-PHYS-PUB-2022-001}. Furthermore, the prospects of combining the
 \bbtautau and \bbyy channels at the end of the HL-LHC were investigated in
 Ref.~\cite{ATL-PHYS-PUB-2022-005} suggesting that evidence for SM~\HH production
-can be obtained with an expected significance of $3.2\,\sigma$ for the
-combination of both channels. Exceeding the discovery threshold of $5\,\sigma$
-at the end of the HL-LHC is realistic but would require the combination of the
-most sensitive channels of the ATLAS and CMS collaborations as well as
-substantial improvements in the individual search channels.
+can be obtained with an expected significance of $3.2 \sigma$ for the
+combination of both channels. Exceeding the discovery threshold of $5 \sigma$ at
+the end of the HL-LHC is realistic but would require the combination of the most
+sensitive channels of the ATLAS and CMS collaborations as well as substantial
+improvements in the individual search channels.
 
 % Extrapolations under similar assumptions were performed for the \bbyy search
 % channel yielding a significance of
@@ -192,6 +192,15 @@ substantial improvements in the individual search channels.
 
 \subsection{Search for Resonant \HH Production}
 
+\begin{figure}[htbp]
+  \centering
+
+  \includegraphics[width=0.65\textwidth]{discussion/atlas_comparison_boosted}
+
+  \caption{The Figure is taken from Ref.~\cite{HDBS-2018-40}.}%
+  \label{fig:comparison_resonant_atlas_incl_boosted}
+\end{figure}
+
 The sensitivity of the \bbtautau search channel to resonant production of Higgs
 boson pairs via narrow scalar resonances is complementary to the \bbyy and \bbbb
 channels. \Cref{fig:resonant_hh_comb_limits} shows a comparison of upper limits
@@ -208,20 +217,24 @@ ambiguities in constructing the Higgs boson candidates.
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{discussion/limits_resonant_combination}
+  \includegraphics[width=0.65\textwidth]{discussion/atlas_comparison_resonant}
 
-  \caption{Expected and observed upper limits on $\sigma(X \to \HH)$ for narrow
-    width scalar resonances $X$ at \SI{95}{\percent}~CL. Upper limits are shown
-    separately for searches in the \bbbb, \bbtautau, and \bbyy channels
-    performed with \SIrange{126}{139}{\per\femto\barn} of $pp$-collision data
-    taken during Run~2 of the LHC. The statistical combination of the three
-    measurements is shown in black including its $\pm 1$ and $\pm 2\,\sigma$
-    uncertainty band. The figure is taken from
-    Ref.~\cite{ATLAS-CONF-2021-052}.}%
-  \label{fig:resonant_hh_comb_limits}
+  % \caption{Expected and observed upper limits on $\sigma(X \to \HH)$ for
+  % narrow width scalar resonances $X$ at \SI{95}{\percent}~CL. Upper limits are
+  % shown separately for searches in the \bbbb, \bbtautau, and \bbyy channels
+  % performed with \SIrange{126}{139}{\per\femto\barn} of $pp$-collision data
+  % taken during Run~2 of the LHC. The statistical combination of the three
+  % measurements is shown in black including its $\pm 1$ and $\pm 2\,\sigma$
+  % uncertainty band. The figure is taken from
+  % Ref.~\cite{ATLAS-CONF-2021-052}.}%
+  \caption{Expected and observed upper limits on $\sigma(\pp \to X \to \HH)$ at
+    \SI{95}{\percent}~CL, where $X$ is a narrow-width, scalar resonance with
+    mass \mX. Upper limits are shown separately for searches by the ATLAS
+    collaboration in the \bbbb channel~\cite{HDBS-2018-41,hepdata.111124}, the
+    \bbyy channel~\cite{HDBS-2018-34,hepdata.105864}, and the \bbtautau
+    channel~\cite{HDBS-2018-40}.}%
+  \label{fig:resonant_hh_limits}
 \end{figure}
-
-\todo[inline]{Paragraph about the combination?}
 
 The excess observed for $\mX = \SI{1000}{\GeV}$ in the \bbtautau channel is
 compared to the results obtained by the \bbbb analysis to check the consistency
@@ -229,7 +242,7 @@ of the results. The best-fit cross section, expressed in terms of
 $\sigma(X \to \HH)$, obtained from the \bbtautau channel measurement is
 \SIpmerr{17.4}{+7.5}{-6.5}{\femto\barn} for a signal with a mass of
 \SI{1000}{\GeV}. This can be compared to the observed (expected) upper limit of
-\SI{6.5}{\femto\barn} (\SI{8.2}{\femto\barn}) at $\mX = \SI{1000}{\GeV}$ set by
+\SI{6.5}{\femto\barn} (\SI{8.1}{\femto\barn}) at $\mX = \SI{1000}{\GeV}$ set by
 the search in the \bbbb channel~\cite{HDBS-2018-41,hepdata.111124}. The cross
 section measured in the \bbtautau channel is therefore excluded at
 \SI{95}{\percent} CL by the search in the \bbbb final state. This lack of
@@ -240,24 +253,26 @@ at $\mX = \SI{1000}{\GeV}$ reduces the local significance of the combination, a
 small excess is observed in the \bbbb channel for $\mX = \SI{1100}{\GeV}$ which,
 in combination with the \bbtautau result, shifts the most significant excess of
 the combination to \SI{1100}{\GeV} with a local significance of about
-$3.2\,\sigma$~\cite{ATLAS-CONF-2021-052}.
+$3.2 \sigma$~\cite{ATLAS-CONF-2021-052}.
 
 % 4b exclusion (\SIpmerr{8.2}{+1.2}{-0.8}{\femto\barn})
 
-\begin{figure}[htbp]
-  \centering
+% \begin{figure}[htbp]
+%   \centering
 
-  \includegraphics[width=0.55\textwidth]{discussion/pvalues_resonant_combination}
+%   \includegraphics[width=0.55\textwidth]{discussion/pvalues_resonant_combination}
 
-  \caption{Observed values of the local $p$-values / local significances for the
-    \bbbb, \bbtautau, and \bbyy channel and their statistical combination for
-    the search for narrow width scalar resonances produced via \ggF. The figure
-    is adopted from Ref.~\cite{ATLAS-CONF-2021-052}.}
-  \label{fig:resonant_hh_comb_pvalues}
+%   \caption{Observed values of the local $p$-values / local significances for
+%   the \bbbb, \bbtautau, and \bbyy channel and their statistical combination
+%   for the search for narrow width scalar resonances produced via \ggF. The
+%   figure is adopted from Ref.~\cite{ATLAS-CONF-2021-052}.}
+%     \label{fig:resonant_hh_comb_pvalues}
 
-  \todo[inline]{The pvalues of the excess do not agree with the p-value scan
-    shown earlier.}
-\end{figure}
+%   \todo[inline]{The pvalues of the excess do not agree with the p-value scan
+%   shown earlier.}
+% \end{figure}
+
+
 
 Another comparison is provided by a search for resonant production of Higgs
 boson pairs with high momenta targeting final states with $b$-quarks and one or
@@ -301,8 +316,8 @@ collaboration are coincidental or from other sources.
 % - 2ish sigma excess but not competitive
 
 In conclusion, the broad excess observed at $\mX = \SI{1000}{\GeV}$ in the
-\bbtautau channel with a local (global) significance of $\num{3.1}\,\sigma$
-($\num{2.0}\,\sigma$) is not statistically significant after accounting for
+\bbtautau channel with a local (global) significance of $\num{3.1} \sigma$
+($\num{2.0} \sigma$) is not statistically significant after accounting for
 multiple hypothesis testing. Additionally, searches for resonant Higgs boson
 pair production performed by the CMS collaboration do not corroborate the
 excesses observed in this analysis and in the combination of the \bbbb,
@@ -323,11 +338,6 @@ APPENDIX). Moreover, a comparison of reconstruction and identification
 efficiencies for highly collinear \tauhadvis between simulation and data would
 be further confirm that these topologies are not affected by miscalibrations of
 the efficiencies.
-
-\todo[inline]{Prospects?\\
-  \url{https://cds.cern.ch/record/2798448/files/ATL-PHYS-PUB-2021-044.pdf}\\
-  \url{https://cds.cern.ch/record/2802127/files/ATL-PHYS-PUB-2022-005.pdf} }
-
 
 %%% Local Variables:
 %%% mode: latex
