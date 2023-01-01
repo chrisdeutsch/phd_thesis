@@ -958,7 +958,7 @@ of the $H \to \tautau$ and $H \to \bbbar$ candidates.
 % This leads to a broad plateau of the upper limit and a degradation of the
 % exclusion limits at the upper end of the considered mass range.
 
-The importance of individual analysis channels to the expected exclusion limit
+The importance of individual analysis channels to the expected upper limits
 varies with the considered resonance mass. Except for the smallest \mX, where
 the \hadhad channel has only limited signal acceptance, the \hadhad channel
 gives the most stringent limits in the range of low to intermediate \mX. This is
@@ -1141,12 +1141,12 @@ parts, each part describing a certain type of random variable:
   describe the effective number of unweighted events from simulation or CR data
   in a given bin (i.e.~$m_{cb}$ in
   \Cref{eq:likelihood_histfactory_constraints}). Similar to the observables, the
-  effective number of unweighted events has non-trivial correlations between
-  bins of different discriminants. Resampling techniques are applied to the MC
-  simulations and CR data used for background estimation. Subsequently, the
-  effective number of unweighted events is recalculated for every bin using the
-  resampled dataset. The resulting values of the global observables are then
-  used as part of the toy experiments.
+  effective number of unweighted events has non-trivial dependencies between
+  bins of different discriminants. Resampling techniques are applied to MC
+  simulations and CR data to produce alternative datasets for background
+  estimation. Subsequently, the effective number of unweighted events is
+  recalculated for every bin using the resampled datasets. The resulting values
+  of the global observables are then used as part of the toy experiments.
 
 \item[Global observables (other systematic uncertainties)] The global
   observables related to all other systematic uncertainties (i.e.~$a_p$ in
@@ -1276,10 +1276,10 @@ succeed. A total of \num{74} fits\footnote{Out of \num{400000} fits, i.e.\
   $20\,\text{(number of tests)} \times 2\,\text{(conditional \& unconditional
     fit)} \times \num{10000}\,\text{(number of toys)}$.}  did not converge even
 after retrying with altered optimiser settings. The failures are restricted to
-unconditional fits in cases where a large deficit is observed in the toy data of
-a bin with large signal sensitivity. In these cases, the value of $q_0$ is set
-to 0 since a deficit does not constitute evidence in favour of the
-signal-plus-background hypothesis.
+unconditional fits in cases where a large deficit is observed in a bin with
+large signal sensitivity. In these cases, the value of $q_0$ is set to 0 since a
+deficit does not constitute evidence in favour of the signal-plus-background
+hypothesis.
 % These failures do not occur randomly but systematically, being restricted to
 % failures of unconditional fits for cases where a large deficit is observed in
 % the toy data of a bin with large signal sensitivity. Since a deficit does not
@@ -1298,7 +1298,7 @@ and an equivalent global significance of
   \zglobal = \num{2.01}\numerrt{0.03}{toy stat.} \,\text{,}
 \end{align*}
 where only statistical uncertainties from the finite number of toy experiments
-for the global significance determination are considered. In addition, the
+for the global significance estimation are considered. In addition, the
 statistical uncertainty of the toy-based estimate of the relationship between
 $q_0$ and $z_{\text{local}}$ is propagated to the global significance using the
 Bootstrap method~\cite{10.1214/aos/1176344552,efron1994introduction}. The
