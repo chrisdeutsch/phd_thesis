@@ -89,18 +89,18 @@ regions. Alternative models that exclude certain SRs were investigated to
 understand the effect of individual channels on the results. At every step, the
 MLE of the model parameters, including the parameter errors and correlations,
 were inspected to ensure that the model behaves as expected. During early stages
-of the model development, these checks informed the construction of the
-model. However, after unblinding of the SRs the statistical model remained fixed
-to avoid the introduction of biases.
+of the analysis, these checks informed the construction of the statistical
+model. However, after unblinding of the SRs the model remained fixed to avoid
+the introduction of biases.
 
 
 \subsubsection{Binning of MVA Discriminants}%
 \label{sec:binning_alg}
 
-The signal sensitivity of the \HH searches depends on the binning used for the
-MVA discriminants in the statistical interpretation. The binning has to be
-chosen such that regions with high signal-to-background ratio (high MVA score)
-are well-separated from regions with low signal-to-background ratio
+The signal sensitivity of the search depends on the binning used for the MVA
+discriminants in the statistical interpretation. The binning has to be chosen
+such that regions with high signal-to-background ratio (high MVA score) are
+well-separated from regions with low signal-to-background ratio
 (low/intermediate MVA score).
 
 An iterative re-binning algorithm is used to determine the binning of the MVA
@@ -125,7 +125,7 @@ requirements:
   bin must be smaller
   than~\mbox{$\SI{50}{\percent} \times f_\text{s} + \SI{1}{\percent}$}, where
   $f_\text{s}$ is the fraction of signal events in the bin with respect to the
-  total number of signal events in the channel.\footnote{In the \lephad
+  total number of signal events selected in the channel.\footnote{In the \lephad
     channels, a requirement of $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used
     instead, where $f_{\text{b}}$ is the fraction of background events defined
     in analogy to~$f_{\text{s}}$.} This requirement limits the statistical
