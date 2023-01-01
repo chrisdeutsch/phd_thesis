@@ -744,19 +744,23 @@ in~\Cref{sec:result_discussion}.
 \subsection{Results of the Search for Resonant \HH Production}%
 \label{sec:results_res}
 
-The search for resonant production of Higgs boson pairs is interpreted in terms
-of the cross section of $pp \to X \to HH$. The interpretation is analogous to
-the approach taken for the search for SM~\HH production, replacing the BDT/NN
-discriminants by PNN discriminants evaluated with mass parameters set to the
-$\mX$ of the signal hypothesis under test.
-% The absence of SM~\HH production is assumed for this interpretation.
+The search for resonant \HH production uses the cross
+section~$\sigma(\pp \to X \to \HH)$ as the POI. Otherwise, the statistical
+interpretation proceeds in analogy to the SM~\HH case after replacing the BDT/NN
+discriminants by PNN discriminants evaluated with mass parameters set to the \mX
+of the signal hypothesis of interest.
 
 The PNN discriminants in the \hadhad~SR are shown for four exemplary mass points
-in~\Cref{fig:resonant_mva_postfit} after the fit of the background-only model to
-observed data in all channels.  Additionally, \Cref{tab:yields_postfit_resonant}
-summarises the expected number of events in a signal-like region of the PNN
-discriminant after the fit. Figures of the PNN discriminants in the \lephad
-channels can be found in~\Cref{sec:app_additional_figures}.
+in~\Cref{fig:resonant_mva_postfit} after the background-only fit to observed
+data in all regions. Moreover, \Cref{tab:yields_postfit_resonant} summarises the
+expected number of events in a signal-like region of the PNN discriminant after
+the fit. Figures of the PNN discriminants in the \lephad channels are summarised
+in~\Cref{sec:app_additional_figures}.\todo{Add to appendix.} The background
+processes relevant to the search vary with the \mX of the considered signal
+hypothesis. For low-mass resonances, the dominant backgrounds are top quark
+production and \faketauhadvis backgrounds. These background processes become
+less important for larger \mX, at which point the production of \Zjets becomes
+the dominant background.
 
 \begin{figure}[htbp]
   \centering
@@ -788,11 +792,12 @@ channels can be found in~\Cref{sec:app_additional_figures}.
     \subcaption{$\mX = \SI{1600}{\GeV}$}
   \end{subfigure}
 
-  \caption{Distribution of the PNN discriminant in the \hadhad channel after the
-    fit of the background-only model to observed data in all regions. The
-    distributions are shown for four different mass parameter values of the PNN
-    ranging from \SI{300}{\GeV} to \SI{1600}{\GeV}. The signal overlay is scaled
-    to the expected upper limit on~$\sigma(pp \to X \to HH)$ for a given \mX.}%
+  \caption{Distributions of selected PNN discriminants in the \hadhad channel
+    after the fit of the background-only model to observed data in all
+    regions. The distributions are shown for four different mass parameter
+    values of the PNN ranging from \SI{300}{\GeV} to \SI{1600}{\GeV}. The signal
+    overlay is scaled to the expected upper limit on~$\sigma(pp \to X \to HH)$
+    for a given \mX.}%
   \label{fig:resonant_mva_postfit}
 \end{figure}
 
@@ -800,12 +805,11 @@ channels can be found in~\Cref{sec:app_additional_figures}.
 \begin{table}[htbp]
   \centering
 
-  \caption{Expected number of events per physics process in the \hadhad SR for
-    signal-like bins of the PNN discriminant after a fit of the background-only
-    fit model to observed data in all regions. The two most signal-like bins are
-    shown for $\mX = \SI{300}{\GeV}$ and \SI{500}{\GeV}. $\dagger$:~Only the
-    most signal-like bin is shown for $\mX = \SI{1000}{\GeV}$ and
-    \SI{1600}{\GeV} (cf.~\Cref{fig:resonant_mva_postfit}).}%
+  \caption{Expected number of events in the \hadhad~SR for signal-like bins of
+    the PNN discriminant after a fit of the background-only fit model to
+    observed data in all regions. The two most signal-like bins are shown for
+    $\mX = \SI{300}{\GeV}$ and \SI{500}{\GeV}. $\dagger$:~Only the most
+    signal-like bin is shown for $\mX = \SI{1000}{\GeV}$ and \SI{1600}{\GeV}.}%
   \label{tab:yields_postfit_resonant}
 
   \resizebox{\textwidth}{!}{%
@@ -813,12 +817,6 @@ channels can be found in~\Cref{sec:app_additional_figures}.
     \input{tables/yields_postfit_resonant}
   }
 \end{table}
-
-The backgrounds relevant to the search change with \mX of the considered signal
-hypothesis. For the search for low-mass resonances, the dominant backgrounds are
-top quark production and \faketauhadvis backgrounds. These background processes
-become less relevant as larger \mX are considered, the production of \Zjets
-becoming the dominant background for intermediate resonance masses.
 
 The comparison of the PNN distributions after the background-only fit with the
 observed data show decent agreement with exception of the PNN discriminant for
@@ -838,10 +836,9 @@ expectation.
 % Hadhad: 2.828844777446568
 % Lephad: 1.1707826205098675
 The background-only and the signal-plus-background models are compared using
-tests for the discovery of a signal separately for all signal hypotheses. The
-combination of all channels yields an excess at $\mX = \SI{1000}{\GeV}$ with an
-observed $p$-value of $\num{1.3e-3}$, which corresponds to a significance of
-$\num{3.0}\sigma$.
+tests for the discovery of a signal. The combination of all channels yields an
+excess at $\mX = \SI{1000}{\GeV}$ with an observed $p$-value of $\num{1.3e-3}$,
+which corresponds to a discovery significance of $\num{3.0}\sigma$.
 % \footnote{By convention in HEP the discovery significance is expressed in
 % terms of $\sigma$ given by $\Phi^{-1}(1 - p)$, where $\Phi^{-1}$ is the
 % inverse cumulative distribution function (quantile function) of the Standard
@@ -862,7 +859,7 @@ account for multiple hypothesis testing and are therefore referred to as
   \includegraphics[width=0.65\textwidth]{results_res/resonant_comb_pvalues}
 
   \caption{Observed local $p$-values for the comparison of the background-only
-    and the signal-plus-background model as a function of the mass of the scalar
+    and the signal-plus-background model as a function of the mass of the
     resonance. The asymptotic approximation is used for the $p$-value
     computation.}%
   \label{fig:local_pvalues}
@@ -877,14 +874,14 @@ account for multiple hypothesis testing and are therefore referred to as
 % Discuss the width of the excess
 A broad excess can be observed in~\Cref{fig:local_pvalues} with tests of
 resonances with masses in the range of \SIrange{800}{1200}{\GeV} being
-significant at the $2\sigma$ level. At mass scales of \SI{1}{\TeV} a broad
+significant at the $2\sigma$-level. At mass scales of \SI{1000}{\GeV} a broad
 significance response is expected for a true signal primarily for two reasons:
 First, the absolute resolution of the \mHH reconstruction degrades with
 increasing \mX. Second, the PNNs are not optimised to distinguish between
 different signal hypotheses but rather between signal and background, which
 leads to additional broadening. \Cref{fig:local_pvalues_injected} compares the
 observed significances with the expectation after injecting signals with cross
-sections at their best-fit values. The injection tests show that the width of
+sections at their best-fit values. These injection tests show that the width of
 the observed significance response is in decent agreement with the expectation
 for a signal with a mass of about \SI{1000}{\GeV}.
 % This effect is further illustrated in \Cref{fig:local_pvalues_injected} where
@@ -898,13 +895,11 @@ for a signal with a mass of about \SI{1000}{\GeV}.
 
   \includegraphics[width=0.65\textwidth]{results_res/injection}
 
-  \caption{Expected local $p$-values from hypothesis tests performed on Asimov
+  \caption{Expected local $p$-values from discovery tests performed on Asimov
     datasets with injected signals with \mX ranging from
     \SIrange{900}{1100}{\GeV}. The injected signals are normalised to their
     best-fit cross section from the unconditional fit to observed data in all
-    channels.  Signals are injected in all SRs and the expected $p$-value
-    resulting from a discovery tests including all channels is shown. The
-    observed $p$-values (dashed line) is shown for comparison.}%
+    regions. The observed $p$-values (dashed line) are shown for comparison.}%
   \label{fig:local_pvalues_injected}
 \end{figure}
 
