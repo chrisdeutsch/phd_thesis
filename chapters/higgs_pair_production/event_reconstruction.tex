@@ -228,10 +228,11 @@ overlap removal procedure as a means to maximise the signal acceptance.
   % https://gitlab.cern.ch/atlas/athena/tree/21.2/PhysicsAnalysis/AnalysisCommon/AssociationUtils/
   % Harmonization note: https://cds.cern.ch/record/1743654/files/ATL-COM-PHYS-2014-451.pdf
 
-  \caption{Summary of the sequential overlap removal algorithm with rows
-    representing steps of the procedure. Steps are executed from top to bottom,
-    rejecting objects in the \emph{Reject} column in favour of objects in the
-    \emph{Accept} column if the condition is fulfilled.}%
+  \caption[Summary of the sequential overlap removal algorithm.]{Summary of the
+    sequential overlap removal algorithm with rows representing steps of the
+    procedure. Steps are executed from top to bottom, rejecting objects in the
+    \emph{Reject} column in favour of objects in the \emph{Accept} column if the
+    condition is fulfilled.}%
   \label{tab:overlap_removal}
 
   \resizebox{\textwidth}{!}{%
@@ -312,12 +313,14 @@ of about \SI{13}{\percent} as measured by the full width at half maximum.
 
   \includegraphics[width=0.65\textwidth]{reconstruction/bjet_corrections}
 
-  \caption{The effect of different $b$-jet momentum corrections on the
-    reconstructed \mBB in simulated SM \HH events in a 2~$b$-tag region of the
-    \hadhad channel. Bukin functions~\cite{Bukin:2007zha} are fitted to the \mBB
+  \caption[The effect of $b$-jet momentum corrections on the reconstructed \mBB
+  in simulated SM~\HH events in the 2~$b$-tag region of the \hadhad
+  channel.]{The effect of $b$-jet momentum corrections on the reconstructed \mBB
+    in simulated SM \HH events in the 2~$b$-tag region of the \hadhad
+    channel. Bukin functions~\cite{Bukin:2007zha} are fitted to the \mBB
     distributions. The location of the peak maximum is given by $x_{\text{p}}$
     and the full width at half maximum divided by $2\sqrt{2 \ln 2}$ is given by
-    $\sigma_{\text{p}}$. The uncorrected distribution is obtained using the
+    $\sigma_{\text{p}}$.  The uncorrected distribution is obtained using the
     standard jet calibration without further corrections for \btagged jets.}%
   \label{fig:bjet_momentum_corr_mbb}
 \end{figure}
