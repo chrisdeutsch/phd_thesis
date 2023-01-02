@@ -90,16 +90,17 @@ tree~\cite{hastie09}.
   \begin{subfigure}[b]{0.46\textwidth}
     \centering
     \includegraphics[scale=1.05]{ml/decision_tree}
-    \caption{Binary tree structure of a decision tree.}
+    \subcaption{Binary tree structure of a decision tree.}
   \end{subfigure}\hfill%
   \begin{subfigure}[b]{0.46\textwidth}
     \centering
     \includegraphics[scale=1.05]{ml/decision_tree_partitioning}
     \vspace*{0.7em}
-    \caption{The partitioning resulting from the binary tree in (a).}
+    \subcaption{The partitioning resulting from the binary tree in (a).}
   \end{subfigure}\hfill%
 
-  \caption{Example of a decision tree partitioning a two-dimensional space with
+  \caption[Example of a decision tree partitioning a two-dimensional
+  space.]{Example of a decision tree partitioning a two-dimensional space with
     coordinates~$(x_1, x_2)$. The tree has a depth of two and four leaf nodes
     that define the regions~$R_1, \dots, R_4$. The figure is adapted from
     Ref.~\cite{hastie09}.}%
@@ -608,14 +609,15 @@ being used in HEP is given in \Cref{sec:tauid}.
 
   \includegraphics[scale=1.0]{ml/lstm}
 
-  \caption{Computational graph of an LSTM layer for time step~$t$. Operations in
-    circles represent element-wise multiplication ($\times$), element-wise
-    addition ($+$), and element-wise application of the $\tanh$ activation
-    function ($\myvec{\phi}$). The graph illustrates the computations performed
-    as part of \Cref{eq:lstm_state_update,eq:lstm_output}. The computations
-    involved in the calculation of the gate activation vectors are omitted,
-    however, the dependency of the gate activation vectors on $\myvec{x}_{t}$
-    and $\myvec{y}_{t - 1}$ is indicated in parenthesis.}%
+  \caption[Computational graph of an LSTM layer.]{Computational graph of an LSTM
+    layer for time step~$t$. Operations in circles represent element-wise
+    multiplication ($\times$), element-wise addition ($+$), and element-wise
+    application of the $\tanh$ activation function ($\myvec{\phi}$). The graph
+    illustrates the computations performed as part of
+    \Cref{eq:lstm_state_update,eq:lstm_output}. The computations involved in the
+    calculation of the gate activation vectors are omitted, however, the
+    dependency of the gate activation vectors on $\myvec{x}_{t}$ and
+    $\myvec{y}_{t - 1}$ is indicated in parenthesis.}%
   \label{fig:lstm}
 \end{figure}
 

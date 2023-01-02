@@ -26,19 +26,17 @@ given.
 \begin{table}[htbp]
   \centering
 
-  \caption{Summary of input variables used for RNN \tauid. The local
-    hadronic calibration~\cite{PERF-2014-07} is used to calibrate
-    jets, clusters, and \tauhadvis candidates unless otherwise
-    noted. Definitions of geometrical topo-cluster moments measuring
-    the location and shape of clusters ($\lambda$,
-    $\langle \lambda^2 \rangle$, $\langle r^2 \rangle$) are given in
-    Ref.~\cite{PERF-2014-07}. Variables using cell-level calorimeter
-    information only consider cells that are part of topo-clusters for
-    noise suppression. $\dagger$:~Energy depositions in the
-    pre-sampler and first two layers of the electromagnetic
-    calorimeters that are part of topo-clusters are abbreviated as ``EM
-    clusters''. The table is adapted from
-    Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
+  \caption[Input variables used for RNN \tauid.]{Summary of input variables used
+    for RNN \tauid. The local hadronic calibration~\cite{PERF-2014-07} is used
+    to calibrate jets, clusters, and \tauhadvis candidates unless otherwise
+    noted. Definitions of geometrical topo-cluster moments measuring the
+    location and shape of clusters ($\lambda$, $\langle \lambda^2 \rangle$,
+    $\langle r^2 \rangle$) are given in Ref.~\cite{PERF-2014-07}. Variables
+    using cell-level calorimeter information only consider cells that are part
+    of topo-clusters for noise suppression. $\dagger$:~Energy depositions in the
+    pre-sampler and first two layers of the electromagnetic calorimeters that
+    are part of topo-clusters are abbreviated as ``EM clusters''. The table is
+    adapted from Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{tab:tauid_input_variables}
 
   \resizebox{0.99\textwidth}{!}{
@@ -83,13 +81,13 @@ exemplary distributions are shown in~\Cref{fig:tauid_high_level_vars}.
     \subcaption{}
   \end{subfigure}
 
-  \caption{Distributions of exemplary high-level input variables used
-    for \tauid. (a):~The ratio of the scalar sum of \pT of tracks
-    classified as \emph{isolation} with respect to tracks classified
-    as \emph{core} or \emph{isolation}. (b):~The ratio of \tauhadvis
-    candidate \pT estimated using a simplified particle flow approach
-    and the purely calorimeter-based measurement
-    (cf.~\Cref{tab:tauid_input_variables}). (c):~The mass of the
+  \caption[Distributions of exemplary high-level input variables used for
+  \tauid.]{Distributions of exemplary high-level input variables used for
+    \tauid. (a):~The ratio of the scalar sum of \pT of tracks classified as
+    \emph{isolation} with respect to tracks classified as \emph{core} or
+    \emph{isolation}. (b):~The ratio of \tauhadvis candidate \pT estimated using
+    a simplified particle flow approach and the purely calorimeter-based
+    measurement (cf.~\Cref{tab:tauid_input_variables}). (c):~The mass of the
     system of \emph{core} tracks for 3-prong \tauhadvis candidates.}%
   \label{fig:tauid_high_level_vars}
 \end{figure}
@@ -145,11 +143,11 @@ candidates.\todo{Add 2D plots in appendix?}
     \label{fig:tauid_low_level_variables_track2}
   \end{subfigure}
 
-  \caption{Distributions of the transverse momentum of the three
-    \pT-leading tracks associated to 1-prong \tauhadvis
-    candidates. For illustration purposes, the track \pT are
-    normalised to the \pT of the jet seeding the \tauhadvis
-    candidate.}%
+  \caption[Distributions of the transverse momentum of the three \pT-leading
+  tracks associated to 1-prong \tauhadvis candidates.]{Distributions of the
+    transverse momentum of the three \pT-leading tracks associated to 1-prong
+    \tauhadvis candidates. For illustration purposes, the track \pT are
+    normalised to the \pT of the jet seeding the \tauhadvis candidate.}%
   \label{fig:tauid_low_level_variables_track}
 \end{figure}
 
@@ -204,11 +202,11 @@ candidates.
     \label{fig:tauid_low_level_variables_cluster2}
   \end{subfigure}
 
-  \caption{Distributions of the transverse energy of the three
-    \ET-leading clusters associated to 3-prong \tauhadvis
-    candidates. For illustration purposes, the cluster \ET are
-    normalised to the \pT of the jet seeding the \tauhadvis
-    candidate.}%
+  \caption[Distributions of the transverse energy of the three \ET-leading
+  clusters associated to 3-prong \tauhadvis candidates.]{Distributions of the
+    transverse energy of the three \ET-leading clusters associated to 3-prong
+    \tauhadvis candidates. For illustration purposes, the cluster \ET are
+    normalised to the \pT of the jet seeding the \tauhadvis candidate.}%
   \label{fig:tauid_low_level_variables_cluster}
 \end{figure}
 
@@ -238,9 +236,9 @@ description of the network architecture is given in the following.
 
   \includegraphics[width=0.95\textwidth]{tauid/pubnote/rnn_network_architecture}
 
-  \caption{Schematic depiction of the architecture used for the RNN
-    \tauid algorithm. Individual layers of the network are depicted as
-    rectangles. The figure is taken from
+  \caption[Network architecture used for the RNN \tauid algorithm.]{Network
+    architecture used for the RNN \tauid algorithm. Individual layers of the
+    network are depicted as rectangles. The figure is taken from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_network_architecture}
 \end{figure}
@@ -344,10 +342,11 @@ pile-up conditions. The same procedure is applied for the BDT-based
     \subcaption{}
   \end{subfigure}
 
-  \caption{The distribution of the RNN score for 1-prong (a) and
-    3-prong (b) \tauhadvis candidates. The RNN scores are shown after
-    transformations that ensure that the scores of \truetauhadvis are
-    approximately uniformly distributed. The figures are adapted from
+  \caption[Distributions of the RNN score for 1-prong and 3-prong \tauhadvis
+  candidates.]{Distributions of the RNN score for 1-prong (a) and 3-prong (b)
+    \tauhadvis candidates. The RNN scores are shown after transformations that
+    ensure that the scores of \truetauhadvis are approximately uniformly
+    distributed. The figures are adapted from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:flattened_rnnscore}
 \end{figure}
