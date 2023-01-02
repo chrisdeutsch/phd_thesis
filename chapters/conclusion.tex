@@ -1,89 +1,90 @@
 This thesis presents a search for Higgs boson pair production in final states
-with two $b$~quarks and two \tauleptons using \SI{139}{\per\femto\barn} of
-\pp~collision data recorded by the ATLAS experiment during Run~2 of the
-LHC. Searches for Higgs boson pair production are instrumental in testing our
-understanding the EWSB in the SM. Specifically, searches for non-resonant Higgs
-boson pair production directly probe the shape of the Higgs potential--a
-fundamental ingredient in the theory proposed by Brout, Englert, Higgs and
-others.
+with two $b$-quarks and two \tauleptons using \SI{139}{\per\femto\barn} of
+\pp~collision data recorded by the ATLAS experiment during Run~2 of the LHC. The
+search for Higgs boson pair production is instrumental in testing our
+understanding of EWSB in the SM. Specifically, searches for non-resonant Higgs
+boson pair production directly probes the shape of the Higgs potential---a
+fundamental ingredient in the theory proposed by Brout, Englert, and
+Higgs. However, these searches are challenging since the Higgs boson pair
+production cross section is three orders of magnitude smaller than the single
+Higgs boson production cross section. Furthermore, searches for Higgs boson pair
+production are important probes of BSM physics, which could manifest as
+modifications of non-resonant Higgs boson pair production through higher order
+corrections, or resonant production of Higgs boson pairs through direct
+production of BSM particles that decay to pairs of Higgs bosons.
 
-% three orders of magnitude smaller than single Higgs boson production.
+The focus of this thesis lies on the channel with two hadronically decaying
+\tauleptons. This channel relies on the ability to efficiently identify hadronic
+\taulepton decays while suppressing backgrounds from quark- or gluon-initiated
+jets. For this purpose, a novel \tauid method is introduced that uses sequences
+of charged-particle tracks, sequences of topo-clusters in the calorimeters, and
+additional high-level information about \tauhadvis candidates as inputs. This is
+possible through the use of a recurrent neural network architecture that allows
+processing of variable-length sequences. This method represents a significant
+improvement over the previously used BDT-based algorithm only used high-level
+information. At fixed \tauhadvis efficieny working points, the RNN-based \tauid
+improves the rejection of \faketauhadvis from quark- or gluon-jets by
+\SI{80}{\percent} (\SIrange{40}{80}{\percent}) for 1-prong (3-prong) \tauhadvis
+candidates. The improvement in rejection of \faketauhadvis with high \pT exceeds
+a factor of two. The method presented in this thesis was adopted by the ATLAS
+collaboration as the recommended algorithm for \tauid for analyses of the Run~2
+\pp~collision dataset. Furthermore, it was adapted for the use in
+\tauhadvis-triggers at the end of Run~2 and the beginning of Run~3 of the LHC.
 
-% However, the Higgs boson pair production cross section predicted by the SM is
-% very small, about 1000 times smaller than single Higgs boson production,
-% making this a challenging task.
+A search for Higgs boson pair production via scalar, narrow-width resonances
+with masses in the range from \SIrange{251}{1600}{\GeV} is presented in this
+thesis. The \bbtautau channel provides competitive upper limits on the cross
+section of resonant \HH production in a mass range from
+\SIrange{375}{800}{\GeV}. Over this mass range, upper limits on the cross
+sections of $pp \to X \to \HH$ production are set from
+\SIrange{130}{30}{\femto\barn} at \SI{95}{\percent}~CL. The largest excess in
+the search is observed at $\mX = \SI{1000}{\GeV}$ with a local (global)
+significance of $3.1\sigma$ ($2.0\sigma$). The excess is not statistically
+significant given the conventional significance thresholds for discovery adopted
+in HEP. In addition, the excess is not supported by other search channels of the
+ATLAS and CMS collaborations, which yield more stringent upper limits at
+$\mX = \SI{1000}{\GeV}$.
 
+The non-resonant production of Higgs boson pairs predicted by the SM cannot be
+established given the size of the \pp~collision datasets collected during Run~2
+of the LHC. In this thesis a search for SM~\HH production via \ggF and VBF is
+presented. No statistically significant signal contribution is
+observed. Therefore, upper limits are set on the SM~\HH signal strength and
+production cross section, yielding upper limits of
+\begin{align*}
+  &\mu  < 4.7 \, \text{(observed)} && \mu < 3.9\,\text{(expected)}
+\end{align*}
+and
+\begin{align*}
+  &\xsecggfvbf < \SI{140}{\femto\barn} \,\text{(observed)} && \xsecggfvbf < \SI{110}{\femto\barn} \,\text{(expected)}
+\end{align*}
+at \SI{95}{\percent}~CL, where the expected upper limits are derived under the
+background-only hypothesis. The \bbtautau channel provides the highest expected
+sensitivity to SM~\HH production of any single channel to date.
 
-% BSM physics can affect non-resonant through effective couplings and resonant
-% through direct production of new particles.
-
-
-
-% Focus was on the \hadhad channel.
-
-% Tau-ID
-%
-% Novel \tauid method using sequences of charged-particle tracks and
-% topo-clusters in the calorimeters associated to \tauhadvis candidates as
-% inputs and combining with high-level information. Using RNN architecture.
-%
-% Significant improvement over the previously used method employing BDTs and
-% only high-level information. At fixed \tauhadvis efficiency working points,
-% the RNN improves the rejection of \tauhadvis candidates originating from
-% quark- or gluon-jets by \SI{80}{\percent} (\SIrange{40}{80}{\percent}) for
-% 1-prong (3-prong) \tauhadvis candidates. In some scenarios (high pt) the
-% rejection compared to the previously used method is doubled.
-%
-%
-% Adopted as the standard technique for \tauid during
-%
-% In addition, the technique was/is employed for \tauid at the HLT and is
-% continued to be used for triggers at the beginning of Run~3 of the LHC.
-%
-
-% Higgs boson pair production (resonant)
-%
-% scalar, narrow-width resonances in a mass range from \SIrange{251}{1600}{\GeV}
-%
-% the \bbtautau channel yields the largest expected sensitivity of any ATLAS
-% analysis to Higgs boson pair production via resonances in a mass range from
-% \SIrange{375}{800}{\GeV}
-%
-% In this range
-%
-% Broad excess for resonance masses around $\mX = \SI{1000}{\GeV}$ with a local
-% (global) significance of $3.1\sigma$ ($2.0\sigma$). Not found to be
-% statistically significant and also not confirmed by other experiments.
-%
-%
-%
-
-% Higgs boson pair production (non-resonant)
-% SM limit + klambda
-
-% SM Limit:
-%
-% So far, no sign of SM~\HH production (SM predicts xsec of about 32.7fb)
-%
-% mu limit: 4.7 (3.9) times the SM prediction for SM~\HH production
-%
-% xsec limit: 140 (110) fb
-%
-% Single channel with the largest expected sensitivity to date.
-%
-%
-%
-% Reinterpreted in terms of anomalous \klambda
-%
-% \klambda is constrained to be within
-% $-2.4 \leq \klambda \leq 9.2$ (obs)
-% $-2.0 \leq \klambda \leq 9.0$ (exp for bkg.\ only)
-%
+Finally, the search for SM~\HH production is reinterpreted to set upper limits
+on the non-resonant \HH production cross sections for anomalous values of the
+Higgs boson self-coupling constant.
+in the context of
+anomalous values of the Higgs boson self-coupling. Upper limits are set on the
+cross section of non-resonant \HH production for different hypothesised values
+of \klambda. Based on the cross section upper limits, \klambda is constrained to
+be within
+\begin{align*}
+  &-2.4 \leq \klambda \leq 9.2 \,\text{(observed)} && -2.0 \leq \klambda \leq 9.0 \,\text{(expected)} \,\text{.}
+\end{align*}
 
 % Paragraph about future prospects.
 % Run 3: First evidence?
 
-\vspace{10em}
+Under the SM assumption, the first observation of SM~\HH production possible at
+the HL-LHC. Moreover, the Higgs boson self-coupling.
+
+Therefore, searches for Higgs boson pair production remain an important part of
+future physics programmes...
+
+
+\vspace{10em}\noindent\textbf{Notes:}\\
 
 In~\cite{ATL-PHYS-PUB-2015-046} the HL-LHC prospects claim to set an
 upper limit of $4.3 \times \sigma_\text{SM}$. 6 years later we already
@@ -105,6 +106,11 @@ exceed this prospect.
 
 \todo[inline]{There should be a comma before ``while'' if it doesn't have
   temporal meaning. \url{https://www.grammarly.com/blog/comma-before-while/}.}
+
+\todo[inline]{Check consistent hyphen usage. $b$ quark, $b$-quark. top quark
+  etc.}
+
+\todo[inline]{top~quark should be top-quark.}
 
 %%% Local Variables:
 %%% mode: latex
