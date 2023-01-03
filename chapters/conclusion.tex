@@ -10,28 +10,29 @@ boson production at the LHC. Nevertheless, searches for Higgs boson pair
 production are already of interest to probe the BSM sector. This is because the
 presence of new physics could alter the non-resonant \HH production cross
 section or introduce resonant enhancements of the cross section due to BSM
-particles that are able to decay into Higgs bosons.
+particles decaying into pairs of Higgs bosons.
 
-% \bbtautau sub-channel with two hadronically decaying \tauleptons,
-% $\bbbar\hadhad$
 
-The focus of this thesis lies on the channel with two hadronically decaying
-\tauleptons. This channel relies on the ability to efficiently identify hadronic
-\taulepton decays while suppressing backgrounds from quark- or gluon-initiated
-jets. For this purpose, a novel \tauid method is introduced that uses sequences
-of charged-particle tracks, sequences of topo-clusters in the calorimeters, and
-additional high-level information about \tauhadvis candidates as inputs. This is
-possible through the use of a recurrent neural network architecture that allows
-processing of variable-length sequences. This method represents a significant
-improvement over the previously used BDT-based algorithm only used high-level
-information. At fixed \tauhadvis efficieny working points, the RNN-based \tauid
-improves the rejection of \faketauhadvis from quark- or gluon-jets by
+The search for Higgs boson pair production in the \bbtautau channel considers
+final states with one or two hadronic \taulepton decays. A particular focus is
+put on the sub-channel with two hadronic \taulepton decays in this thesis. This
+channel relies on the ability to efficiently identify \tauhadvis while
+suppressing backgrounds from quark- or gluon-initiated jets. For this purpose, a
+novel \tauid method is introduced that uses sequences of reconstructed
+charged-particle tracks and topo-clusters in the calorimeters, as well as
+high-level information about \tauhadvis candidates, as inputs. This is made
+possible by the use of a RNN architecture that allows to process variable-length
+sequences. This method significantly improves the \tauid performance over the
+BDT-based algorithm previously used by the ATLAS collaboration. At fixed
+\tauhadvis efficiency working points, the RNN-based \tauid improves the
+rejection of \faketauhadvis from quark- or gluon-initiated jets by
 \SI{80}{\percent} (\SIrange{40}{80}{\percent}) for 1-prong (3-prong) \tauhadvis
-candidates. The improvement in rejection of \faketauhadvis with high \pT exceeds
-a factor of two. The method presented in this thesis was adopted by the ATLAS
-collaboration as the recommended algorithm for \tauid for analyses of the Run~2
-\pp~collision dataset. Furthermore, it was adapted for the use in
-\tauhadvis-triggers at the end of Run~2 and the beginning of Run~3 of the LHC.
+candidates. Moreover, the improvement in \faketauhadvis rejection exceeds
+\SI{100}{\percent} for candidates with $\pT > \SI{70}{\GeV}$. The RNN-based
+\tauid was adopted by the ATLAS collaboration as the recommended \tauid
+algorithm for analyses of the Run~2 \pp~collision dataset. Furthermore, it was
+adapted for the use in \tauhadvis-triggers for data-taking at the end of Run~2
+and the beginning of Run~3 of the LHC.
 
 
 A search for Higgs boson pair production via scalar, narrow-width resonances
