@@ -51,12 +51,12 @@ modes. Feynman diagrams of the four dominant ones are shown in
 \Cref{fig:higgs_prod_feyn}, all of which have been experimentally confirmed to
 exist. The Higgs boson production cross section in \pp~collisions at a
 centre-of-mass energy of \SI{13}{\TeV} is shown in \Cref{fig:higgs_prod_xsec} as
-a function of $m_{H}$. For $m_{H} = \SI{125.0}{\GeV}$, the \ggF production mode
-has the largest cross section with
-$\sigma(\pp \to H) \approx \SI{50}{\pico\barn}$, followed by the the VBF mode
-with $\sigma(\pp \to qqH) \approx \SI{4}{\pico\barn}$, the $VH$ mode with
-$\sigma(\pp \to VH) \approx \SI{2}{\pico\barn}$ for $V = W^\pm$ or $Z$, and
-finally the $\ttbar H$ mode with
+a function of $m_{H}$. For $m_{H} = \SI{125.0}{\GeV}$, the gluon--gluon fusion
+(\ggF) production mode has the largest cross section with
+$\sigma(\pp \to H) \approx \SI{50}{\pico\barn}$, followed by the the vector
+boson fusion (VBF) mode with $\sigma(\pp \to qqH) \approx \SI{4}{\pico\barn}$,
+the $VH$ mode with $\sigma(\pp \to VH) \approx \SI{2}{\pico\barn}$ for
+$V = W^\pm$ or $Z$, and finally the $\ttbar H$ mode with
 $\sigma(\pp \to \ttbar H) \approx
 \SI{0.5}{\pico\barn}$~\cite{deFlorian:2016spz}.
 % \todo{The $\ttbar H$ production mode allows to access the top Yukawa coupling}
@@ -70,7 +70,7 @@ which are the processes of primary interest for this thesis, are covered in
   \begin{subfigure}{0.48\textwidth}
     \centering
     \includegraphics[scale=1]{feynman_graphs/higgs_prod_ggf}
-    \subcaption{Gluon-gluon fusion (\ggF)}
+    \subcaption{Gluon--gluon fusion (\ggF)}
   \end{subfigure}%
   \begin{subfigure}{0.48\textwidth}
     \centering
@@ -326,8 +326,8 @@ search channels most sensitive to SM \HH production are:
 
 \item[The \bbbb channel] has the largest branching ratio (\SI{34}{\percent}) of
   any final state. However, this channel is dominated by backgrounds from
-  multi-jet production due to its hadronic final state. As a result, selecting
-  signal events is challenging, requiring $b$-jet triggers with strict
+  multi-jet production due to its fully hadronic final state. As a result,
+  selecting signal events is challenging, requiring $b$-jet triggers with strict
   transverse momentum thresholds.
   % Moreover, identifying the individual $H \to \bbbar$ candidates
   % -> Not a huge problem for SM
@@ -344,15 +344,15 @@ search channels most sensitive to SM \HH production are:
 
 \item[The \bbyy channel] has a very small branching ratio of
   \SI{0.26}{\percent}, but the photon pair provides an outstanding signature to
-  select signal events. The reconstruction of the di-photon invariant mass,
-  $m_{\gamma\gamma}$, has a typical resolution of \SIrange{1}{2}{\GeV} in the
-  ATLAS and CMS experiments at the
-  LHC~\cite{PERF-2007-01,CMS-CMS-00-001}.\footnote{Compared to the typical
-    resolutions of $H \to \bbbar$ and $H \to \tautau$ reconstruction in the
-    \bbbb and \bbtautau channels, this represents an improvement of about an
+  select signal events. The di-photon invariant mass, $m_{\gamma\gamma}$, can be
+  reconstructed with a mass resolution of \SIrange{1}{2}{\GeV} in the ATLAS and
+  CMS detectors~\cite{PERF-2007-01,CMS-CMS-00-001}.\footnote{Compared to the
+    typical resolutions of $H \to \bbbar$ and $H \to \tautau$ reconstruction in
+    the \bbbb and \bbtautau channels, this represents an improvement of about an
     order of magnitude.} Therefore, $m_{\gamma\gamma}$ provides an excellent
   discriminant to reject most background processes leaving only continuum
-  $\gamma\gamma$ and single Higgs boson production as relevant backgrounds.
+  $\gamma\gamma$ production and single Higgs boson production as relevant
+  backgrounds.
 
 \end{description}
 
