@@ -172,17 +172,16 @@ channels.
     \label{fig:mass_reconstruction_HH}
   \end{subfigure}
 
-  \caption{Performance of methods used to reconstruct the
-    \PHiggs-system mass (a) and the \HH-system mass (b) in the \hadhad
-    signal region estimated using simulation of
-    $\PX \ra \HH \ra \bbtautau$ processes. The top panels show the
-    bias of the mass prediction given in terms of deviation of the
-    median mass prediction from the true mass value. The bottom panels
-    show the mass resolution estimate as half of the length of the
-    central interval containing \SI{68}{\percent} of all mass
-    predictions. For the \HH-system mass reconstruction shown in (b),
-    the bias and resolution is given relative to the mass of the
-    resonance.}%
+  \caption[Resolution and bias of the $H$- and $HH$-system mass reconstruction
+  in the \hadhad SR.]{Performance of methods used to reconstruct the
+    \PHiggs-system mass (a) and the \HH-system mass (b) in the \hadhad signal
+    region estimated using simulation of $\PX \ra \HH \ra \bbtautau$
+    processes. The top panels show the bias of the mass prediction given in
+    terms of deviation of the median mass prediction from the true mass
+    value. The bottom panels show the mass resolution estimate as half of the
+    length of the central interval containing \SI{68}{\percent} of all mass
+    predictions. For the \HH-system mass reconstruction shown in (b), the bias
+    and resolution is given relative to the mass of the resonance.}%
   \label{fig:mass_reconstruction}
 \end{figure}
 
@@ -208,10 +207,11 @@ the \hadhad channel are shown in~\Cref{fig:mva_inputs}.
 \begin{table}[htbp]
   \centering
 
-  \caption{Input variables of the multivariate classifiers used in the
-    \hadhad and \lephad channels. The same variables are used for the
-    search for SM \HH and resonant \HH production. Definitions of the
-    input variables used in the \lephad channels are given in
+  \caption[Input variables of the multivariate classifiers used in the \hadhad
+  and \lephad channels.]{Input variables of the multivariate classifiers used in
+    the \hadhad and \lephad channels. The same variables are used for the search
+    for SM \HH and resonant \HH production. Definitions of the input variables
+    used in the \lephad channels are given in
     \Cref{app:lephad_mva_variables}. The table is adapted from
     Ref.~\cite{ATLAS-CONF-2021-030}.}%
   \label{tab:mva_inputvar}
@@ -247,10 +247,10 @@ the \hadhad channel are shown in~\Cref{fig:mva_inputs}.
     \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distmHH_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
   \end{subfigure}
 
-  \caption{Distributions of the MVA input variables in the signal
-    region of the \hadhad channel prior to the maximum likelihood
-    fit. The uncertainty bands include all statistical and systematic
-    uncertainties of the background model. The normalisation of the
+  \caption[Distributions of the MVA input variables in the \hadhad
+  SR.]{Distributions of the MVA input variables in the \hadhad SR prior to the
+    maximum likelihood fit. The uncertainty bands include all statistical and
+    systematic uncertainties of the background model. The normalisation of the
     resonant and non-resonant \HH signals are scaled for visibility.}%
   \label{fig:mva_inputs}
 \end{figure}
@@ -334,14 +334,13 @@ evaluated on the hold-out dataset.
 
   \includegraphics[scale=1]{mva/kfold}
 
-  \caption{5-fold cross-validation approach for model selection on
-    even-numbered events. The separation of events into disjoint
-    subsets (folds) is indicated by rectangles. The purpose of the
-    subset is denoted below. A single step out of a total of five, the
-    number of possible assignments of the evaluation-fold, is
-    shown. The hold-out dataset consisting of odd-numbered events is
-    not used when performing model selection on even-numbered
-    events.}%
+  \caption[5-fold cross-validation approach for model selection.]{5-fold
+    cross-validation approach for model selection on even-numbered events. The
+    separation of events into disjoint subsets (folds) is indicated by
+    rectangles. The purpose of the subset is denoted below. A single step out of
+    a total of five, the number of possible assignments of the evaluation-fold,
+    is shown. The hold-out dataset consisting of odd-numbered events is not used
+    when performing model selection on even-numbered events.}%
   \label{fig:cross_validation}
 \end{figure}
 
@@ -386,7 +385,8 @@ values.\footnote{TMVA~v4.2.1~(ROOT~6.16/00)}
 \begin{table}[htbp]
   \centering
 
-  \caption{Hyperparameter values considered for the random grid search
+  \caption[Hyperparameter values of the BDT extracting the SM~\HH signal in the
+  \hadhad channel.]{Hyperparameter values considered for the random grid search
     used to optimise the performance of the BDT extracting the SM \HH
     signal. The underlined values show the final configuration after
     optimisation.}%
@@ -477,13 +477,13 @@ from cross-validation during model selection.
 
   \includegraphics[width=0.6\textwidth]{mva/prefit/Region_BMin0_incJet1_distSMBDT_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefitlog}
 
-  \caption{Distribution of the BDT score used to select the SM \HH
-    signal in the signal region of the \hadhad channel prior to the
-    maximum likelihood fit. The uncertainty bands include all
-    statistical and systematic uncertainties of the background
-    model. The normalisation of the SM \HH signal is scaled by a
-    factor of 10 for illustration purposes. The choice of binning for
-    the histograms will be discussed in~\Cref{sec:binning_alg}.}
+  \caption[Distribution of the BDT discriminant in the \hadhad SR.]{Distribution
+    of the BDT discriminant used to select the SM \HH signal in the \hadhad SR
+    prior to the maximum likelihood fit. The uncertainty bands include all
+    statistical and systematic uncertainties of the background model. The
+    normalisation of the SM \HH signal is scaled by a factor of 10 for
+    illustration purposes. The choice of binning for the histograms will be
+    discussed in~\Cref{sec:binning_alg}.}
   \label{fig:mva_smbdt_prefit}
 \end{figure}
 
@@ -551,12 +551,12 @@ similarities of the \mHH spectra between signal and background
 \begin{table}[htbp]
   \centering
 
-  \caption{Importance of the input variables in the BDT measured as
-    the change in ROC-AUC when permuting the values of a single
-    variable over all events. The mean $\Delta\text{ROC-AUC}$ over 10
-    permutations is displayed. The statistical uncertainty is below
-    0.001 and therefore omitted. Variables are ordered from most to
-    least important.}%
+  \caption[Importance of the input variables in the BDT discriminant selecting
+  the SM~\HH signal.]{Importance of the input variables in the BDT measured as
+    the change in ROC-AUC when permuting the values of a single variable over
+    all events. The mean $\Delta\text{ROC-AUC}$ over 10 permutations is
+    displayed. The statistical uncertainty is below 0.001 and therefore
+    omitted. Variables are ordered from most to least important.}%
   \label{tab:variable_importance_bdt}
 
   {
@@ -656,12 +656,13 @@ same.
 \begin{table}[htbp]
   \centering
 
-  \caption{Parameter values used to define the grid of hyperparameters
-    considered for the optimisation of the PNN
-    configuration. Parameters marked with $*$ and $\dagger$ are only
-    applicable when the number of hidden layers is larger than 1 and
-    2, respectively. The underlined values show the final PNN
-    configuration after hyperparameter optimisation.}%
+  \caption[Hyperparameter values of the PNN extracting the resonant \HH signals
+  in the \hadhad channel.]{Parameter values used to define the grid of
+    hyperparameters considered for the optimisation of the PNN
+    configuration. Parameters marked with $*$ and $\dagger$ are only applicable
+    when the number of hidden layers is larger than 1 and 2, respectively. The
+    underlined values show the final PNN configuration after hyperparameter
+    optimisation.}%
   \label{tab:hyperparameter_grid_pnn}
 
   \input{tables/hyperparameters_pnn}
@@ -737,14 +738,14 @@ $\PZ \to \tautau$ in association with jets from $b$- or $c$-quarks.
     \label{fig:pnn_score_prefit_1000}
   \end{subfigure}
 
-  \caption{Distribution of the PNN score evaluated with PNN mass
-    parameters set to \SI{300}{\GeV} (a), \SI{500}{\GeV} (b), and
-    \SI{1000}{\GeV} (c) prior to the fit.  The signal overlay is
-    normalised to
-    $\sigma(\Pproton\Pproton \to \PX \to \HH) =
-    \SI{1}{\pico\barn}$. The choice of binning and excess of data in
-    the most signal-like bin of the PNN ($\mX = \SI{1000}{\GeV}$)
-    score will be discussed in \Cref{sec:statistical_analysis}.}%
+  \caption[Distributions of the PNN discriminants in the \hadhad
+  SR.]{Distributions of the PNN discriminants evaluated with PNN mass parameters
+    set to \SI{300}{\GeV} (a), \SI{500}{\GeV} (b), and \SI{1000}{\GeV} (c) in
+    the \hadhad~SR prior to the fit.  The signal overlay is normalised to
+    $\sigma(\Pproton\Pproton \to \PX \to \HH) = \SI{1}{\pico\barn}$. The choice
+    of binning and excess of data in the most signal-like bin of the PNN
+    ($\mX = \SI{1000}{\GeV}$) score is discussed in
+    \Cref{sec:statistical_analysis}.}%
   \label{fig:pnn_score_prefit}
   \todo[inline]{Add 1600 point for consistency with statistical analysis.}
 \end{figure}
@@ -815,14 +816,14 @@ over the approach of using dedicated classifiers.
     \label{fig:pnn_interpolation}
   \end{subfigure}
 
-  \caption{Expected signal significance of a scalar resonance with
-    mass \mX as a function of the PNN mass parameter. The significance
-    is estimated by binning the PNN score for a given value of the
-    parameter and adding the Asimov significance of all bins in
-    quadrature. Only statistical uncertainties are considered. The
-    curves are normalised such that the significance is 1 when the PNN
-    mass parameter is equal to \mX of the hypothesis under
-    test. Dashed lines correspond to signal mass hypotheses not
+  \caption[Expected signal significance as a function of the PNN mass
+  parameter.]{Expected signal significance of a scalar resonance with mass \mX
+    as a function of the PNN mass parameter. The significance is estimated by
+    binning the PNN score for a given value of the parameter and adding the
+    Asimov significance of all bins in quadrature. Only statistical
+    uncertainties are considered. The curves are normalised such that the
+    significance is 1 when the PNN mass parameter is equal to \mX of the
+    hypothesis under test. Dashed lines correspond to signal mass hypotheses not
     included in the PNN training.}
   \label{fig:pnn_properties}
 \end{figure}
@@ -839,13 +840,14 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 \begin{table}[htbp]
   \centering
 
-  \caption{Permutation importance of the input variables to the PNN measured as
-    the change in ROC-AUC (for the binary classification task between a signal
-    with mass \mX and total background) when permuting the values of a single
-    variable over all events. The mean $\Delta\text{ROC-AUC}$ over 10
-    permutations is displayed. The statistical uncertainty is below 0.002 for
-    (a) and 0.001 for (b) and (c) and thus omitted.  Variables are ordered by
-    descending importance.}%
+  \caption[Importance of the input variables in the PNN
+  discriminant.]{Permutation importance of the input variables to the PNN
+    measured as the change in ROC-AUC (for the binary classification task
+    between a signal with mass \mX and total background) when permuting the
+    values of a single variable over all events. The mean $\Delta\text{ROC-AUC}$
+    over 10 permutations is displayed. The statistical uncertainty is below
+    0.002 for (a) and 0.001 for (b) and (c) and thus omitted.  Variables are
+    ordered by descending importance.}%
   \label{tab:pnn_ranking}
 
   \begin{subtable}[t]{.33\textwidth}
