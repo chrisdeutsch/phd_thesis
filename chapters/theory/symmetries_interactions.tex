@@ -169,7 +169,7 @@ according to
 \end{align*}
 Furthermore, the Lagrangian of QCD has to account for the energy density of the
 gluon fields (and their interactions). This contribution is given by the kinetic
-term of the Gluon fields and reads
+term of the gluon fields and reads
 \begin{align*}
   \lagrange_{g} = - \frac{1}{4} G_{\mu\nu}^{a} G^{\mu\nu}_{a} \,\text{,}
 \end{align*}
@@ -241,25 +241,25 @@ Two important features of the theory of QCD are highlighted in the following:
 
 The principle of local gauge invariance was previously used to obtain the
 Lagrangians of QED and QCD. The characteristics of the weak interaction make
-this approach more difficult. In particular, the mediators of the interaction
-are massive with masses of~\cite{pdg2020}
+this approach more difficult. First, the mediators of the interaction are
+massive with masses of ~\cite{pdg2020}
 \begin{align*}
   m_W = \SI{80.377 +- 0.012}{\GeV}
   \qquad \text{and} \qquad
-  m_{Z} = \SI{91.1876 +- 0.0021}{\GeV} \,\text{,}
+  m_{Z} = \SI{91.1876 +- 0.0021}{\GeV} \text{.}
 \end{align*}
-the symmetry with respect to parity (space-inversion) transformations is
-violated~\cite{Wu:1957my}, and charged-current weak interactions couple fermions
-of different flavour that differ by one unit in electric charge. As a result,
-the construction of a gauge theory of the weak interaction that respects local
-gauge invariance and describes the masses of gauge bosons and fermions requires
-additional mechanisms that were not needed for the description of QED and QCD.
-
+Second, the symmetry with respect to parity (space-inversion) transformations is
+violated~\cite{Wu:1957my}. Lastly, the charged-current weak interaction couples
+fermions of different flavour that differ by one unit in electric charge. Due to
+these characteristics, the construction of a gauge theory of the weak
+interaction that respects local gauge invariance requires the introduction of
+new mechanisms.
+% that were not needed for the description of QED and QCD.
 
 \subsubsection{Electroweak Unification}
 
 The theory of the electroweak interaction was developed by Glashow, Salam, and
-Weinberg in the 1960s to unify the electromagnetic and weak interaction in a
+Weinberg in the 1960s to unify the electromagnetic and weak interactions in a
 single model~\cite{Glashow:1961tr,Salam:1964ry,Weinberg:1967tq}. The theory is
 constructed as a non-Abelian gauge theory based on a symmetry group referred to
 as $SU(2)_{\text{L}} \otimes U(1)_{Y}$, the meaning of the subscripts will be
@@ -507,10 +507,10 @@ related to the mass of the scalar field. If $\mu^2 < 0$, the field configuration
 $\phi = \myvec{0}$ is at an unstable point and the true vacuum is given by the
 condition
 \begin{align*}
-  \sum_{i = 1}^4 \phi_i^2 = -\frac{\mu^2}{\lambda} \eqqcolon v^2 \,\text{,}
+  \sum_{i = 1}^4 \phi_i^2 = -\frac{\mu^2}{\lambda} \eqqcolon \varv^2 \,\text{,}
 \end{align*}
-which represents a continuum of degenerate states at a radius of $v$ from the
-origin in the space spanned by the four real scalar fields. The quantity $v$ is
+which represents a continuum of degenerate states at a radius of $\varv$ from the
+origin in the space spanned by the four real scalar fields. The quantity $\varv$ is
 therefore referred to as the \emph{vacuum expectation value} (VEV). Hereafter,
 this particular choice of potential is referred to as the Higgs potential. This
 choice is illustrated in \Cref{fig:mexican_hat} for a simplified model with only
@@ -524,8 +524,8 @@ a single complex scalar field.
   \caption[The ``Mexican-hat potential'' of a complex scalar field.]{The
     ``Mexican-hat potential'' of a single complex scalar field as a low
     dimensional example to illustrate the choice of the Higgs potential in the
-    SM. The degenerate vacuum states lie in a circle with radius $v$ given by
-    the condition $\phi_1^2 + \phi_2^2 = v^2$. Adapted from
+    SM. The degenerate vacuum states lie in a circle with radius $\varv$ given by
+    the condition $\phi_1^2 + \phi_2^2 = \varv^2$. Adapted from
     Ref.~\cite{higgs_potential_tikz}.}%
   \label{fig:mexican_hat}
 \end{figure}
@@ -542,7 +542,7 @@ perturbations relative to the vacuum state. Let the vacuum state be
   \phi_{\text{v}} = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
     0 \\
-    v
+    \varv
   \end{pmatrix} \,\text{,}
 \end{align*}
 chosen such that only the neutral component is non-vanishing to ensure that the
@@ -568,7 +568,7 @@ scalar fields can be expressed as
   \phi(\myvec{x}) = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
     0 \\
-    v + H(\myvec{x})
+    \varv + H(\myvec{x})
   \end{pmatrix}
   \label{eq:vacuum_state_perturb}
 \end{align}
@@ -580,16 +580,18 @@ perturbations of the vacuum state, i.e.\ using \Cref{eq:vacuum_state_perturb},
 and dropping terms not depending on $H$ yields
 \begin{align}
   V(H) =
-  \lambda v^2 H^2
-  + \lambda v H^3
+  \lambda \varv^2 H^2
+  + \lambda \varv H^3
   + \frac{\lambda}{4} H^4 \,\text{.}
   \label{eq:beh_potential}
 \end{align}
 The first term of $V(H)$ represents the mass term of the scalar field $H$ with a
-mass of $m_H = \sqrt{2\lambda} v$. The quantum of the scalar field is hereafter
-referred to as the Higgs boson ($H$). The terms cubic and quartic in the scalar
-field represent self-interactions between Higgs bosons with coupling strengths
-defined as\footnote{There exists no consensus regarding the definition of
+mass of $m_H = \sqrt{2\lambda} \varv$. The quantum of the scalar field is
+referred to as the Higgs boson ($H$).\footnote{Depending on the context, $H$
+  refers to the Higgs boson or the scalar field that describes the Higgs field
+  in unitary gauge.} The terms cubic and quartic in the scalar field represent
+self-interactions between Higgs bosons with coupling strengths defined
+as\footnote{There exists no consensus regarding the definition of
   $\lambda_{HHH}$ and $\lambda_{HHHH}$. In this thesis a convention is adopted
   such that the Higgs potential can be expressed as
   \begin{align*}
@@ -598,7 +600,7 @@ defined as\footnote{There exists no consensus regarding the definition of
   \end{align*}
 }
 \begin{align*}
-  \lambda_{HHH} \coloneqq \frac{3 m_{H}^2}{v} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq \frac{3 m_{H}^2}{v^2} \,\text{.}
+  \lambda_{HHH} \coloneqq \frac{3 m_{H}^2}{\varv} \qquad \text{and} \qquad \lambda_{HHHH} \coloneqq \frac{3 m_{H}^2}{\varv^2} \,\text{.}
 \end{align*}
 The Feynman vertices of Higgs boson self-interactions are depicted in
 \Cref{fig:vertex_hhh,fig:vertex_hhhh}.
@@ -610,19 +612,19 @@ derivative and inserting the physical fields describing the $W$ and $Z$ bosons
   (D_\mu \phi)^\dagger (D^\mu \phi) =
   \frac{1}{2} (\partial_\mu H) (\partial^\mu H)
   + \left[
-  \frac{g^2 v^2}{4} W^{-}_\mu {W^{+}}^\mu
+  \frac{g^2 \varv^2}{4} W^{-}_\mu {W^{+}}^\mu
   +
-  \frac{(g^2 + {g^\prime}^2) v^2}{8} Z_\mu Z^\mu
-  \right] \left( 1 + \frac{1}{v} H \right)^2 \,\text{.}
+  \frac{(g^2 + {g^\prime}^2) \varv^2}{8} Z_\mu Z^\mu
+  \right] \left( 1 + \frac{1}{\varv} H \right)^2 \,\text{.}
   \label{eq:higgs_covariant_derivative}
 \end{align}
 The first term of \Cref{eq:higgs_covariant_derivative} yields the kinetic term
 for the scalar field $H$. Moreover, the BEH mechanism dynamically generates mass
 terms for the $W^\pm$ and $Z$ bosons while leaving the photon massless. Using
-the four parameters of the electroweak theory ($g$, $g^\prime$, $m_{H}$, $v$)
+the four parameters of the electroweak theory ($g$, $g^\prime$, $m_{H}$, $\varv$)
 the masses of the bosons can be obtained from the Lagrangian such that
 \begin{align*}
-  &m_W = \frac{1}{2} g v  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, v && m_A = 0 \,\text{.}
+  &m_W = \frac{1}{2} g \varv  &&m_Z = \frac{1}{2} \sqrt{g^2 + {g^\prime}^2} \, \varv && m_{\text{photon}} = 0 \,\text{.}
 \end{align*}
 \Cref{eq:higgs_covariant_derivative} additionally describes interaction vertices
 of the form $WWH$, $ZZH$, $WWHH$, and $ZZHH$, which are depicted in
@@ -667,9 +669,9 @@ of the form $WWH$, $ZZH$, $WWHH$, and $ZZHH$, which are depicted in
     \subcaption{}
   \end{subfigure}
 
-  \caption[Interaction vertices of Higgs bosons coupling to other SM
-  bosons.]{Interaction vertices of Higgs bosons coupling to other bosons
-    predicted by the SM.}%
+  \caption[Interaction vertices between Higgs, $W$, and $Z$~bosons predicted by
+  the SM.]{Interaction vertices between Higgs, $W$, and $Z$~bosons predicted by
+    the SM.}%
   \label{fig:higgs_vertices}
 \end{figure}
 
@@ -703,7 +705,7 @@ gauge
 \begin{align*}
   \phi^{\text{c}} = \frac{1}{\sqrt{2}}
   \begin{pmatrix}
-    v + H(\myvec{x}) \\
+    \varv + H(\myvec{x}) \\
     0
   \end{pmatrix} \,\text{.}
 \end{align*}
@@ -727,17 +729,17 @@ $y_e$, $y_u$, and $y_d$. Finally, $\text{h.c.}$ represents the hermitian
 conjugate of the preceding terms. After EWSB and in unitary gauge
 \Cref{eq:lagrangian_yukawa} reads
 \begin{align*}
-  \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_{\hspace{-0.1em}f} v}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{v} H \right)
+  \lagrange_{\text{Yukawa}} \xrightarrow{\text{EWSB}} \sum_{f \in \{e, u, d\}} -\frac{y_{\hspace{-0.1em}f} \varv}{\sqrt{2}} [ \bar{f}_{\text{L}} f_{\text{R}} + \bar{f}_{\text{R}} f_{\text{L}} ] \left( 1 + \frac{1}{\varv} H \right)
 \end{align*}
 yielding fermion mass terms with masses
 \begin{align*}
-  m_{f} = \frac{y_{\hspace{-0.1em}f} v}{\sqrt{2}} \,\text{,}
+  m_{f} = \frac{y_{\hspace{-0.1em}f} \varv}{\sqrt{2}} \,\text{,}
 \end{align*}
 which are proportional to the Yukawa coupling constants, as well as interactions
 between Higgs bosons and fermions with a coupling strength proportional to the
 mass of the fermion given by
 \begin{align*}
-  g_{H\!f\!f} = \frac{m_f}{v} \,\text{.}
+  g_{H\!f\!f} = \frac{m_f}{\varv} \,\text{.}
 \end{align*}
 
 The Lagrangian of \Cref{eq:lagrangian_yukawa} can be further generalised to
