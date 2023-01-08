@@ -87,19 +87,18 @@ originating from $b$-quarks.% which hinges on the precision of the track
     \subcaption{}
   \end{subfigure}\hfill%
   \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth, trim=0 2.5cm 0 1cm,
-    clip]{atlas/atlas_indet_2}%
+    % trim args: left bottom right top
+    \includegraphics[width=\textwidth, trim=1.1cm 1cm 3.2cm 1cm,
+    clip]{atlas/atlas_indet_2_with_ibl}%
     \subcaption{}%
     \label{fig:indet_barrel}
   \end{subfigure}
 
   \caption[Overview of the ATLAS inner detector.]{Schematic view of the ID
     including the two end-caps (a). A zoomed in view of the barrel region of the
-    ID (b). The Insertable B-Layer (IBL), which was introduced into the ATLAS
-    detector after Run~1 of the LHC, is not displayed. The IBL is located
-    closest to the beampipe at a radius of
-    $r = \SI{33.5}{\milli\metre}$~\cite{ATLAS-TDR-19,PIX-2018-001}. The images
-    are taken from Ref.~\cite{PERF-2007-01}.}%
+    ID (b). The Insertable B-Layer (IBL), the innermost pixel detector layer,
+    was installed after Run~1 of the LHC~\cite{ATLAS-TDR-19,PIX-2018-001}. The
+    images are taken from Refs.~\cite{PERF-2007-01,IDTR-2019-05}.}%
   \label{fig:atlas_inner_detector}
 \end{figure}
 
@@ -113,10 +112,10 @@ tracking system in a cost-effective manner.
 
 % Pixel
 The ID sub-system closest to the beampipe are the pixel detectors located at
-distances of \SIrange{33.5}{122.5}{\milli\metre} from the beamline in the barrel
-region of the ATLAS detector (cf.\ \Cref{fig:atlas_inner_detector}). The pixel
-detectors are based on semiconductor technology with an active detector area
-that is segmented into a grid of rectangular elements, referred to as
+distances of \SIrange{33.25}{122.5}{\milli\metre} from the beamline in the
+barrel region of the ATLAS detector (cf.\ \Cref{fig:atlas_inner_detector}). The
+pixel detectors are based on semiconductor technology with an active detector
+area that is segmented into a grid of rectangular elements, referred to as
 pixels. These pixels have size of \SI{50}{\micro\metre} in the transverse
 direction and \SIrange{250}{400}{\micro\metre} along the
 beamline~\cite{PERF-2007-01,PIX-2018-001}. A charged particle traversing the
