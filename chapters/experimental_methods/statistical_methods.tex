@@ -18,20 +18,21 @@ The use of binned data
 is widespread for data visualisation and statistical modelling in HEP. Analyses
 of collider data typically consider multiple mutually disjoint regions, also
 referred to as \emph{channels}, defined by event selections. Each region
-consists of one or more bins defined by a discriminating variable. Events from
-different signal and background processes, hereafter referred to as
-\emph{physics processes}, contribute to these regions. In this context,
+consists of a histogram of a discriminating variable with one or more
+bins. Events from different signal and background processes, hereafter referred
+to as \emph{physics processes}, contribute to these regions. In this context,
 \textsc{HistFactory}~\cite{cranmer2012} is the tool used in this thesis for
 constructing statistical models for likelihood-based inference. The
 \textsc{HistFactory} model is introduced in the following, adopting the notation
 of Ref.~\cite{cranmer2012} with few modifications.
 
 Let $\mathcal{C}$ denote the set of channels and $\mathcal{B}_{c}$ the set of
-bins in channel~$c$. The probability of observing $n_{cb}$ events in bin~$b$ of
-channel~$c$ is modelled by a Poisson distribution with probability mass function
-$\pois(n_{cb}; \nu_{cb})$, where $\nu_{cb}$ denotes the expected number of
-events for the given bin. The expectation~$\nu_{cb}$, which has to be inferred
-from the observed data, is parameterised as~\cite{cranmer2012}
+bins of the histogram in channel~$c$. The probability of observing $n_{cb}$
+events in bin~$b$ of channel~$c$ is modelled by a Poisson distribution with
+probability mass function $\pois(n_{cb}; \nu_{cb})$, where $\nu_{cb}$ denotes
+the expected number of events in a given bin. The expectation~$\nu_{cb}$, which
+has to be inferred from the observed data, is parameterised
+as~\cite{cranmer2012}
 \begin{align*}
   \nu_{cb}(\myvec{\alpha}, \myvec{\phi}, \myvec{\gamma}) =
   \sum_{s \in \mathcal{S}_{c}} \, \gamma_{csb} \, \Phi_{cs}(\myvec{\phi}) \, \eta_{cs}(\myvec{\alpha}) \, \sigma_{csb}(\myvec{\alpha}) \,\text{,}
@@ -160,9 +161,9 @@ with the terms in brackets being described in the following:
   incorporates the statistical uncertainty by setting up auxiliary measurements
   of the effective number of unweighted events, $\gamma_{cb}\tau_{cb}$, for
   every bin. These measurements observe $m_{cb} = \tau_{cb}$, and therefore the
-  nominal value of the $\gamma_{cb}$ parameters is 1.\todo{Say that the
-    effective number of unweighted events is approximated by a Poisson
-    distribution?}
+  nominal value of the $\gamma_{cb}$ parameters is 1.
+  % \todo{Say that the effective number of unweighted events is approximated by
+  % a Poisson distribution?}
 \end{itemize}
 % Once all parameters of the \textsc{HistFactory} model are fixed, the
 % probability distributions of the observables~$n_{cb}$
