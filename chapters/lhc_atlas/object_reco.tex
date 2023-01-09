@@ -358,13 +358,13 @@ associated to the PV of the hard interaction using the reconstructed tracks.
 
 \subsubsection{$b$-tagging}
 
-The production of $b$-quarks is an important signature of rare physics processes
+The production of $b$-quarks is an important signature of many physics processes
 at the LHC. A $b$-quark produced in a hard scattering interaction leads to the
 formation of a jet, referred to as a $b$-jet. A distinct feature of $b$-jets is
 the presence of a $b$-hadron with a mass exceeding \SI{5}{\GeV}~\cite{pdg2020}.
-These $b$-hadrons are short-lived and will decay after traversing a short but
-often measurable distance in the ATLAS detector. For example, the lightest
-$B$-mesons, the $B^0$ and $B^\pm$, have proper lifetimes of about
+These $b$-hadrons are short-lived and decay after traversing a short but often
+measurable distance in the ATLAS detector. For example, the lightest $B$-mesons,
+the $B^0$ and $B^\pm$, have proper lifetimes of about
 \SI{1.5e-12}{\second}~\cite{pdg2020} and thus, assuming a $B$ meson momentum of
 \SI{10}{\GeV}, a mean flight path of about \SI{1}{\milli\metre} before
 decaying. The dominant decay modes of $b$-hadrons produce final states
@@ -421,14 +421,14 @@ of five algorithms using neural networks:
 
 \item[SV1 \& JetFitter] The \textsc{SV1}~\cite{ATL-PHYS-PUB-2017-011} and
   \textsc{JetFitter}~\cite{ATL-PHYS-PUB-2018-025} algorithms reconstruct the
-  secondary vertices resulting from the displaced decays of $b$- and
-  $c$-hadrons. While \textsc{SV1} reconstructs a single secondary vertex,
-  \textsc{JetFitter} attempts to reconstruct the cascade of $b$- and $c$-hadron
-  decays with two secondary vertices. The secondary vertices determined by both
-  algorithms are used to define discriminating variables that are provided to
-  the high-level $b$-tagging algorithms. Examples of these variables are the
-  invariant mass of the tracks associated to the vertices or the significance of
-  the distance between the secondary vertex and the PV of the hard interaction.
+  vertices resulting from the displaced decays of $b$- and $c$-hadrons. While
+  \textsc{SV1} reconstructs a single secondary vertex, \textsc{JetFitter}
+  attempts to reconstruct the cascade of $b$- and $c$-hadron decays with a
+  secondary and tertiary vertex. The vertices determined by both algorithms are
+  used to define discriminating variables that are provided to the high-level
+  $b$-tagging algorithms. Examples of these variables are the invariant mass of
+  the tracks associated to the vertices or the significance of the distance
+  between the secondary vertex and the PV of the hard interaction.
 
 \end{description}
 The \textsc{DL1r} $b$-tagging algorithm combines these discriminants with basic
