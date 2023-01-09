@@ -16,12 +16,12 @@ true- and \faketauhadvis. Tau identification is performed separately for 1- and
 \subsection{Input Variables}
 
 The input variables included in the RNN \tauid algorithm are summarised
-in~\Cref{tab:tauid_input_variables}. Three categories of inputs are
-considered. High-level inputs correspond to observables directly associated to
-\tauhadvis candidates. Track and cluster inputs refer to observables of tracks
-and clusters that are associated to a \tauhadvis candidate. In the following, a
-description of the input variable selection and track/cluster association is
-given.
+in~\Cref{tab:tauid_input_variables}. Three categories of inputs are considered:
+high-level, track, and cluster inputs. High-level inputs are observables
+directly associated to \tauhadvis candidates. Track and cluster inputs refer to
+observables of tracks and clusters that are associated to a \tauhadvis
+candidate. In the following, a description of the input variable selection and
+track/cluster association is given.
 
 \begin{table}[htbp]
   \centering
@@ -46,13 +46,13 @@ given.
 
 \subsubsection{High-Level Input Variables}
 
-The selection of high-level input variables is based on the BDT-based
-\tauid algorithm developed by the ATLAS
-collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
-Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
-deployed during Run~2 of the LHC. The BDT \tauid uses the high-level
-variables summarised in~\Cref{tab:tauid_input_variables} as inputs and
-serves as a baseline for comparison with the RNN-based algorithm.
+The selection of high-level input variables is based on the variables used in
+the BDT-based \tauid algorithm developed by the ATLAS
+collaboration~\cite{ATL-PHYS-PUB-2015-045}, which was updated in
+Ref.~\cite{cdeutsch-master} for the new \tauhadvis reconstruction techniques
+deployed during Run~2 of the LHC. The BDT \tauid uses only the high-level
+variables summarised in~\Cref{tab:tauid_input_variables} as inputs and serves as
+a baseline for comparison with the RNN-based algorithm.
 
 Variables sensitive to the lifetime and mass of the \taulepton
 ($|S_{\text{T}}^{\text{flight}}|$, $|S_{\text{leadtrack}}|$,
@@ -96,18 +96,17 @@ exemplary distributions are shown in~\Cref{fig:tauid_high_level_vars}.
 \subsubsection{Track Input Variables}
 
 Reconstructed tracks with $\pT > \SI{500}{\MeV}$ and within a cone of
-$\Delta R < 0.4$ about the \tauhadvis candidate axis are considered as
-inputs to the RNN \tauid. No selections are applied on the quality and
-impact parameters of reconstructed tracks, thus the inputs include
-fake tracks and tracks from pile-up events. Instead, track quality
-criteria ($N_{\text{IBL hits}}$, $N_{\text{Pixel hits}}$,
-$N_{\text{SCT hits}}$) and track impact parameters
-($|d_0^{\text{track}}|$, $|z_0^{\text{track}} \sin\theta|$) are
-included as observables of tracks used in the RNN \tauid algorithm.
+$\Delta R < 0.4$ about the \tauhadvis candidate axis are considered as inputs to
+the RNN \tauid. No selections are applied on the quality and impact parameters
+of reconstructed tracks, thus the inputs include tracks from the \taulepton
+decay as well as fake tracks and tracks from pile-up. Instead, track quality
+criteria ($N_{\text{IBL hits}}$, $N_{\text{Pixel hits}}$, $N_{\text{SCT hits}}$)
+and track impact parameters ($|d_0^{\text{track}}|$,
+$|z_0^{\text{track}} \sin\theta|$) are included as observables of tracks.
 
 In addition, several other track-level observables, summarised
-in~\Cref{fig:tauid_low_level_variables_track}, are included. Among the most
-important variables are the transverse momenta of reconstructed tracks
+in~\Cref{tab:tauid_input_variables}, are included. Among the most important
+variables are the transverse momenta of reconstructed tracks
 ($p_{\text{T}}^{\text{track}}$) and their angular separation from the \tauhadvis
 candidate axis ($\Delta \eta^{\text{track}}$, $\Delta
 \phi^{\text{track}}$). These variables are included to probe the isolation
@@ -119,7 +118,7 @@ the jet already at the level of individual input tracks. Exemplary distributions
 of the transverse momenta of the three \pT-leading tracks normalised to
 $p_{\text{T}}^{\text{jet seed}}$ are shown
 in~\Cref{fig:tauid_low_level_variables_track} for 1-prong \tauhadvis
-candidates.\todo{Add 2D plots in appendix?}
+candidates.%\todo{Add 2D plots in appendix?}
 
 % \todo[inline]{It would be nice to have 2D plots of leading track \pT vs
 % sub-leading track \pT in the appendix. Same for cluster \ET.}
@@ -151,10 +150,10 @@ candidates.\todo{Add 2D plots in appendix?}
   \label{fig:tauid_low_level_variables_track}
 \end{figure}
 
-The discrimination power of the RNN \tauid saturates after including
-the ten \pT-leading tracks. Therefore, the sequence of tracks is
-truncated at this point to reduce the required computational resources
-for training and evaluation of the networks.
+The discrimination power of the RNN \tauid saturates after including the ten
+\pT-leading tracks. Therefore, the sequence of tracks is truncated at this point
+to reduce the computational resources required for training and evaluation of
+the networks.
 
 
 \subsubsection{Cluster Input Variables}
@@ -204,7 +203,7 @@ candidates.
 
   \caption[Distributions of the transverse energy of the three \ET-leading
   clusters associated to 3-prong \tauhadvis candidates.]{Distributions of the
-    transverse energies of the three \ET-leading clusters associated to 3-prong<
+    transverse energies of the three \ET-leading clusters associated to 3-prong
     \tauhadvis candidates. For illustration purposes, the cluster \ET are
     normalised to the \pT of the jet seeding the \tauhadvis candidate.}%
   \label{fig:tauid_low_level_variables_cluster}
@@ -234,11 +233,15 @@ description of the network architecture is given in the following.
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.95\textwidth]{tauid/pubnote/rnn_network_architecture}
+  \vspace*{0.2em}
+
+  \includegraphics[width=0.98\textwidth]{tauid/pubnote/rnn_network_architecture}
+
+  \vspace*{0.2em}
 
   \caption[Network architecture used for the RNN \tauid algorithm.]{Network
     architecture used for the RNN \tauid algorithm. Individual layers of the
-    network are depicted as rectangles. The figure is taken from
+    network are depicted as rectangles. The figure is adapted from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_network_architecture}
 \end{figure}
@@ -249,41 +252,36 @@ and 16 units each. The \ReLU~\cite{nair:relu} activation function is
 used in all layers.
 
 The branches operating on track and cluster inputs are structured
-identically. Tracks (clusters) are provided to the network as
-sequences of vectors, each vector consisting of the values of the
-input variables for a given track (cluster). The track and cluster
-sequences are given in descending $p_{\text{T}}^{\text{track}}$ and
-$E_{T}^{\text{cluster}}$ order, respectively. First, the sequences are
-passed through two fully-connected layers with shared weights
-(\emph{shared dense}).  These layers have 32 units each and use the
-\ReLU activation function. \emph{Shared dense} layers map input
-sequences, $(\myvec{x}_i)_{i=1}^{n}$, to output sequences of the same
-length, $(\myvec{y}_i)_{i=1}^{n}$, using transformations of the form
+identically. Tracks (clusters) are provided to the network as sequences of
+vectors, each vector consisting of the values of the input variables for a given
+track (cluster). The track and cluster sequences are given in descending
+$p_{\text{T}}^{\text{track}}$ and $E_{T}^{\text{cluster}}$ order,
+respectively. First, the sequences are passed through two fully-connected layers
+with shared weights (\emph{shared dense}).  These layers have 32 units each and
+use the \ReLU activation function. \emph{Shared dense} layers map input
+sequences, $(\myvec{x}_t)_{t=1}^{N}$, to output sequences of the same length,
+$(\myvec{y}_t)_{t=1}^{N}$, using transformations of the form
 \begin{align*}
-  \myvec{y}_i = \myvec{\phi}(\myvec{W} \myvec{x}_i + \myvec{b}) \,\text{,}
+  \myvec{y}_t = \myvec{\phi}(\myvec{W} \myvec{x}_t + \myvec{b}) \,\text{,}
 \end{align*}
-where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and
-bias vectors, respectively, and $\myvec{\phi}$ is the activation
-function.  Notably, the weights and biases do not depend on the
-index~$i$, meaning the weights and biases are the same (i.e.\ shared)
-for all elements of the sequence. The \emph{shared dense} layers
-produce intermediate representations of the track and cluster
-sequences for further computation.
+where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and bias
+vectors, respectively, and $\myvec{\phi}$ is the activation function.  Notably,
+the weights and biases do not depend on the index~$t$, meaning the weights and
+biases are the same (i.e.\ shared) for all elements of the sequence. The
+\emph{shared dense} layers produce intermediate representations of the track and
+cluster sequences for further computation.
 
-The transformed sequences of tracks and clusters pass through two
-recurrent layers based on the \emph{long short-term memory} (LSTM)
-architecture~\cite{lstm} (cf.\ \Cref{sec:rnn}). The first LSTM layer
-maps the input sequence to an output sequence of the same length. In
-contrast to \emph{shared dense} layers, LSTM layers have an internal
-state that is updated as elements of the sequence are
-processed. Therefore, information about elements occurring in the
-sequence can be exploited when processing subsequent elements. The
-second LSTM layer repeats the process, however, all except the last
-element of the output sequence are discarded, thereby encoding the
-input sequence into a single output of fixed size. The size of the
-internal state and output space of the LSTM layers are chosen to be
-the same and correspond to 32 units for the first and 24 units for the
-second LSTM layer.
+The transformed sequences of tracks and clusters pass through two recurrent
+layers based on an LSTM architecture (cf.\ \Cref{sec:rnn}). The first LSTM layer
+maps the input sequence to an output sequence of the same length. In contrast to
+\emph{shared dense} layers, LSTM layers have an internal state that is updated
+as elements of the sequence are processed. Therefore, information about elements
+occurring in the sequence can be exploited when processing subsequent
+elements. The second LSTM layer repeats the process, however, all except the
+last element of the output sequence are discarded, thereby encoding the input
+sequence into a single output of fixed size. The size of the internal state and
+outputs of the LSTM layers are chosen to be the same and correspond to 32 units
+for the first and 24 units for the second LSTM layer.
 
 Finally, the outputs of the three branches are concatenated
 (\emph{Merge}) and passed through three fully-connected layers with

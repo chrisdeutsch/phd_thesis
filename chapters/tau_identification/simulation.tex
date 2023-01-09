@@ -1,11 +1,11 @@
 \section{Simulated Event Samples}%
 \label{sec:tauid_mc}
 
-The tau reconstruction and identification algorithms employed at the
-ATLAS experiment for Run~2 of the LHC were developed using simulated
-events that provide samples of \tauhadvis candidates. For \tauid,
-simulated $\gammastar \to \tautau$ and dijet events are used,
-yielding samples of true- and \faketauhadvis, respectively.
+The tau reconstruction and identification algorithms employed at the ATLAS
+experiment for Run~2 of the LHC were developed using simulated events that
+provide samples of \tauhadvis candidates. For \tauid, simulated
+$\gammastar \to \tautau$ and dijet events are used, yielding samples of true-
+and \faketauhadvis, respectively.
 
 % y->tautau:
 % https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID425xxx/MC15.425200.Pythia8EvtGen_A14NNPDF23LO_Gammatautau_MassWeight.py
@@ -23,25 +23,23 @@ uncertainties from the size of the \truetauhadvis sample.
 
 % Di-jet samples: JZ1W up to JZ6W
 % https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID361xxx/MC15.361021.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ1W.py
-Di-jet events are generated using
-\PYTHIA[8.186]~\cite{Sjostrand:2014zea} for the matrix element
-calculation at LO, parton showering, and hadronisation. The generation
-is performed in slices of \pT of the leading jet (anti-\kt with
-$R = 0.6$) constructed from generator-level particles. Slices with
-large jet transverse momenta are oversampled to increase the number of
-events with jets (\faketauhadvis) of large transverse momentum.
+Dijet events are generated using \PYTHIA[8.186]~\cite{Sjostrand:2014zea} for the
+matrix element calculation at LO, parton showering, and hadronisation. The
+generation is performed in slices of \pT of the leading jet (anti-\kt with
+$R = 0.6$) constructed from generator-level particles. Slices with large jet
+transverse momenta are oversampled to increase the number of events with jets
+(\faketauhadvis) of large transverse momentum.
 
 The $\gammastar \to \tautau$ and dijet samples use the A14 set of tuned
 parameters for \PYTHIA[8]~\cite{ATL-PHYS-PUB-2014-021} and the
 \NNPDF[2.3lo]~\cite{Ball:2012cx} set of parton distribution functions (PDFs).
 Decays of hadrons containing $b$- or $c$-quarks are simulated using
 \EVTGEN[v1.2.0]~\cite{Lange:2001uf}. The contamination of the hard scattering
-interaction with soft, inelastic proton--proton collision events (pile-up) is
-accounted for by overlaying the event with additional minimum-bias events. The
-response of the ATLAS detector is simulated for all generated
-events~\cite{SOFT-2010-01} and subsequently events are reconstructed from the
-simulated detector response using the \textsc{Athena} software
-suite~\cite{ATL-SOFT-PUB-2021-001}.
+interaction with soft, inelastic proton--proton collision events is accounted
+for by overlaying the event with additional minimum-bias events. The response of
+the ATLAS detector is simulated for all generated events~\cite{SOFT-2010-01} and
+subsequently events are reconstructed from the simulated detector response using
+the \textsc{Athena} software suite~\cite{ATL-SOFT-PUB-2021-001}.
 
 
 \subsection{\tauhadvis Candidate Selection}

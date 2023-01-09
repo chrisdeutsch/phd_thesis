@@ -9,16 +9,14 @@ high \tauhadvis reconstruction efficiencies.
 % More generally, the process of distinguishing between true- and \faketauhadvis
 % is called \tauid.
 
-The dominant source of \faketauhadvis at the ATLAS experiment are
-quark- or gluon-initiated jets due to their similarity to the hadronic
-and jet-like signature of \tauhadvis. Electrons can be another, less
-abundant source of \faketauhadvis which have to be distinguished from
-\truetauhadvis using a dedicated algorithm (\emph{electron
-  veto}). This chapter is concerned with the former source of
-\faketauhadvis and, in particular, with classifying the source of
-\tauhadvis candidates as either originating from \tauhad or from
-quark- or gluon-initiated jets. This process will be referred to as
-\tauid hereafter.
+The dominant source of \faketauhadvis at the ATLAS experiment are quark- or
+gluon-initiated jets due to their similarity to the hadronic and jet-like
+signature of \tauhadvis. Electrons can be another, less abundant source of
+\faketauhadvis that have to be distinguished from \truetauhadvis using a
+dedicated algorithm (\emph{electron veto}). This chapter is concerned with the
+former source of \faketauhadvis and, in particular, with classifying the source
+of \tauhadvis candidates as either originating from \tauhad or from quark- or
+gluon-initiated jets. This process is referred to as \tauid hereafter.
 % More motivation? Say something about reducing mis-identification
 % rates to reduce backgrounds?
 
@@ -36,7 +34,7 @@ gluon-initiated jets:
   invariant mass of the visible daughter particles of hadronic \taulepton
   decays. Ignoring reconstruction effects, this invariant mass is bounded by the
   mass of the \taulepton. This is not the case for \tauhadvis candidates
-  originating from quark- or gluon-initiated jets which do not have a strict
+  originating from quark- or gluon-initiated jets, which do not have a strict
   upper bound.
 
   The features described hereafter are consequences of, or closely
@@ -47,20 +45,17 @@ gluon-initiated jets:
   charged hadrons (most frequently $\pi^{\pm}$) and zero to two
   neutral pions.
   % Ellis, Stirling, Webber: 6.4 Quark and gluon jet differences
-  In contrast, the average multiplicity of charged and neutral
-  particles in jets originating from the fragmentation of partons
-  produced in hard scattering interactions is large and increases with
-  the momentum of the
-  jet~\cite{Ellis:1996mzs,STDM-2015-12}. Therefore, requirements on
-  (charged) particle multiplicities are effective at rejecting
-  \tauhadvis candidates originating from quark- or gluon-initiated
-  jets.\footnote{Gluon-initiated jets have, on average, a larger
-    particle multiplicity and a broader angular distribution of
-    particles compared to quark-initiated jets due to the larger
-    effective colour charge of
-    gluons~\cite{Ellis:1996mzs}. Consequently, quark-initiated jets
-    are more likely to be reconstructed and misidentified as
-    \tauhadvis candidates.}
+  In contrast, the average multiplicity of charged and neutral particles in jets
+  originating from the fragmentation of partons produced in hard scattering
+  interactions is large and increases with the momentum of the
+  jet~\cite{Ellis:1996mzs,STDM-2015-12}. Therefore, particle multiplicity
+  requirements are effective at rejecting \tauhadvis candidates originating from
+  quark- or gluon-initiated jets.\footnote{Gluon-initiated jets have, on
+    average, a larger particle multiplicity and a broader angular distribution
+    of particles compared to quark-initiated jets due to the larger effective
+    colour charge of gluons~\cite{Ellis:1996mzs}. Consequently, quark-initiated
+    jets are more likely to be reconstructed and misidentified as \tauhadvis
+    candidates.}
 
 \item[Collimated daughter particles] The \tauhadvis candidates typically
   considered by analyses at the ATLAS experiment have transverse momenta
@@ -72,10 +67,8 @@ gluon-initiated jets:
     object. The activity is often quantified using reconstructed
     charged-particle tracks or topo-clusters in a cone or annulus surrounding
     the object.} of \tauhadvis candidates allow to reject candidates originating
-  from quark- or gluon-initiated jets which have wider angular distribution of
-  hadrons.
-  % Maybe define 'isolation'? -> Lack of activity outside of a core
-  % region?
+  from quark- or gluon-initiated jets, which have a wider angular distribution
+  of hadrons.
 
   % Mean flight path of a p = 20 GeV tau is
   % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
@@ -83,19 +76,18 @@ gluon-initiated jets:
   \SI{2.9e-13}{\second} ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020} and
   thus typically travels for a few millimetres inside the beampipe before
   decaying. The distance traversed by the \taulepton before its decay results in
-  a secondary vertex that is displaced from the primary vertex (PV) of the hard
-  interaction. For \taulepton decay modes with three charged hadrons, this
-  secondary vertex can be reconstructed and its displacement from the PV
-  determined. For decay modes with only one charged hadron, the secondary vertex
-  cannot be reconstructed directly. However, the longitudinal and transverse
-  impact parameters of the reconstructed charged-hadron track can be used to
-  gauge the incompatibility of the track with the PV, thus being sensitive to
-  displaced decays of \tauleptons.
+  a decay vertex that is displaced from the PV. For \taulepton decay modes with
+  three charged hadrons, this secondary vertex can be reconstructed and its
+  displacement from the PV determined. For decay modes with only one charged
+  hadron, the secondary vertex cannot be reconstructed directly. However, the
+  longitudinal and transverse impact parameters of the reconstructed
+  charged-hadron track can be used to gauge the incompatibility of the track
+  with the PV, thus being sensitive to displaced decays of \tauleptons.
 
   Features sensitive to the \taulepton lifetime can be used to distinguish
   \tauhad from light-quark- or gluon-initiated jets, in which hadrons are
   produced promptly at the PV. An exception are jets originating from $b$- and
-  $c$-quarks. These often contain displaced decays of $b$- or $c$-flavoured
+  $c$-quarks. These also contain displaced decays of $b$- or $c$-flavoured
   hadrons. However, the other features remain effective in discerning \tauhad
   from $b$- and $c$-jets.
 
@@ -105,27 +97,25 @@ ATLAS collaboration used BDTs as binary classifiers using high-level
 discriminating variables, i.e.\ variables purposefully constructed for
 the classification task, as inputs.
 
-This chapter introduces a method of performing \tauid using neural networks that
-combines the information of high-level discriminating variables with information
-from reconstructed charged-particle tracks and topo-clusters in the
-calorimeters. Tracks and topo-clusters in the vicinity of \tauhadvis candidates
-and their associated features are included as inputs to neural networks. Since
-the number of tracks and topo-clusters associated to \tauhadvis candidates
-varies, a recurrent neural network (RNN) architecture is used that allows to
-operate on sequences of varying length. The method will be referred to as RNN
-\tauid hereafter.
+A method of performing \tauid using neural networks that combines the
+information of high-level discriminating variables with information from
+reconstructed charged-particle tracks and topo-clusters in the calorimeters is
+presented. Tracks and topo-clusters in the vicinity of \tauhadvis candidates and
+their associated features are included as inputs to neural networks. Since the
+number of tracks and topo-clusters associated to \tauhadvis candidates varies,
+an RNN architecture is used that allows to operate on sequences of varying
+length. The method is referred to as the RNN \tauid hereafter.
 
-The RNN \tauid algorithm was initially proposed in
-Ref.~\cite{cdeutsch-master} motivated by a similar approach developed
-for track impact parameter based
-$b$-tagging~\cite{ATL-PHYS-PUB-2017-003}. The algorithm was
-implemented in the reconstruction software of the ATLAS
-collaboration~\cite{ATL-SOFT-PUB-2021-001} and the results presented
-in this chapter were partially published in
-Ref.~\cite{ATL-PHYS-PUB-2019-033}. % The RNN \tauid was adopted by the
-% ATLAS collaboration as the recommended \tauid algorithm for analyses
-% using the \SI{139}{\per\femto\barn} \pp~collision dataset recorded
-% with the ATLAS detector during Run~2 of the LHC.
+The RNN \tauid algorithm was initially proposed in Ref.~\cite{cdeutsch-master}
+motivated by a similar approach developed for track impact parameter based
+$b$-tagging~\cite{ATL-PHYS-PUB-2017-003}. The algorithm was implemented in the
+reconstruction software of the ATLAS collaboration~\cite{ATL-SOFT-PUB-2021-001}
+and some of the results presented in this chapter were published in
+Ref.~\cite{ATL-PHYS-PUB-2019-033}.
+% The RNN \tauid was adopted by the ATLAS collaboration as the recommended
+% \tauid algorithm for analyses using the \SI{139}{\per\femto\barn}
+% \pp~collision dataset recorded with the ATLAS detector during Run~2 of the
+% LHC.
 
 This chapter is structured as follows: The simulated events used for the
 development and performance evaluation of \tauid are introduced in
