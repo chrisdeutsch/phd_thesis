@@ -9,12 +9,12 @@ identify higher-level objects that correspond to the signatures of particles
 such as electrons, muons, \tauleptons, or quarks/gluons in the form of jets.
 These objects, often referred to as \emph{physics objects}, provide estimates of
 the four-momentum and other properties of the underlying particle. The same
-algorithms are used to reconstruct and identify objects in simulation and in
-data recorded with the detector. Differences in the performance of the object
-reconstruction and selection in simulation and data are accounted for by
-calibration measurements of selection efficiencies, energy/momentum scales and
-resolutions. The following provides a summary of the object reconstruction
-relevant for the remainder of this thesis.
+algorithms are used to reconstruct and identify objects in simulated
+\pp~collision events and in data recorded with the detector. Differences in the
+performance of the object reconstruction and selection in simulation and data
+are accounted for by calibration measurements of selection efficiencies,
+energy/momentum scales and resolutions. The following provides a summary of the
+object reconstruction relevant for the remainder of this thesis.
 
 
 \subsection{Charged-Particle Tracks and Primary Vertices}
@@ -110,7 +110,8 @@ the local hadronic calibration is referred to as the LC scale.
 
 Topo-clusters are used as inputs for the reconstruction of higher-level physics
 objects in the ATLAS detector. For example, topo-clusters at EM and LC scale are
-used in the reconstruction of electrons and \tauhadvis, respectively.
+used for the reconstruction of electrons and hadronic \taulepton decays,
+respectively.
 
 
 \subsection{Electrons}%
@@ -270,12 +271,13 @@ $j$ is defined by the anti-\kt algorithm as~\cite{Cacciari:2008gp}
 where $p_{\text{T}i}$ refers to the transverse momentum of pseudo-jet $i$,
 $\dRy = \sqrt{\Delta y^2 + \Delta \phi^2}$ is the distance of two pseudo-jets in
 the $y\phi$-plane, with $y$ being the rapidity,\footnote{The rapidity is defined
-  as $y = \frac{1}{2} \ln \left( \frac{E + p_z}{E - p_z} \right)$, where $E$ is
-  then energy of a particle and $p_z$ the momentum component along the
-  beamline. In the ultrarelativistic limit the rapidity is equivalent to the
-  pseudo-rapidity.} and $R$ is the jet-radius parameter of the algorithm. A
-stopping criterion for the clustering algorithm is provided by the distance
-$d_{i\text{B}} = p_{\text{T}i}^{-2}$ by proceeding as
+  as
+  $y = \frac{1}{2} \ln\mathopen{}\left( \frac{E + p_z}{E - p_z}
+  \right)\mathclose{}$, where $E$ is then energy of a particle and $p_z$ the
+  momentum component along the beamline. In the ultrarelativistic limit the
+  rapidity is equivalent to the pseudorapidity.} and $R$ is the jet-radius
+parameter of the algorithm. A stopping criterion for the clustering algorithm is
+provided by the distance $d_{i\text{B}} = p_{\text{T}i}^{-2}$ by proceeding as
 follows~\cite{Cacciari:2008gp}:
 \begin{enumerate}
 \item Find the minimum distance $d_{ij}$ for all pairs of distinct pseudo-jets
