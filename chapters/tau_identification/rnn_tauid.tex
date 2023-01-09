@@ -16,12 +16,12 @@ true- and \faketauhadvis. Tau identification is performed separately for 1- and
 \subsection{Input Variables}
 
 The input variables included in the RNN \tauid algorithm are summarised
-in~\Cref{tab:tauid_input_variables}. Three categories of inputs are
-considered. High-level inputs correspond to observables directly associated to
-\tauhadvis candidates. Track and cluster inputs refer to observables of tracks
-and clusters that are associated to a \tauhadvis candidate. In the following, a
-description of the input variable selection and track/cluster association is
-given.
+in~\Cref{tab:tauid_input_variables}. Three categories of inputs are considered:
+high-level, track, and cluster inputs. High-level inputs are observables
+directly associated to \tauhadvis candidates. Track and cluster inputs refer to
+observables of tracks and clusters that are associated to a \tauhadvis
+candidate. In the following, a description of the input variable selection and
+track/cluster association is given.
 
 \begin{table}[htbp]
   \centering
@@ -46,13 +46,12 @@ given.
 
 \subsubsection{High-Level Input Variables}
 
-The selection of high-level input variables is based on the BDT-based
-\tauid algorithm developed by the ATLAS
-collaboration~\cite{ATL-PHYS-PUB-2015-045} and updated in
-Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
-deployed during Run~2 of the LHC. The BDT \tauid uses the high-level
-variables summarised in~\Cref{tab:tauid_input_variables} as inputs and
-serves as a baseline for comparison with the RNN-based algorithm.
+The selection of high-level input variables is based on the BDT-based \tauid
+algorithm developed by the ATLAS collaboration~\cite{ATL-PHYS-PUB-2015-045} and
+updated in Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
+deployed during Run~2 of the LHC. The BDT \tauid uses only the high-level
+variables summarised in~\Cref{tab:tauid_input_variables} as inputs and serves as
+a baseline for comparison with the RNN-based algorithm.
 
 Variables sensitive to the lifetime and mass of the \taulepton
 ($|S_{\text{T}}^{\text{flight}}|$, $|S_{\text{leadtrack}}|$,
@@ -96,18 +95,17 @@ exemplary distributions are shown in~\Cref{fig:tauid_high_level_vars}.
 \subsubsection{Track Input Variables}
 
 Reconstructed tracks with $\pT > \SI{500}{\MeV}$ and within a cone of
-$\Delta R < 0.4$ about the \tauhadvis candidate axis are considered as
-inputs to the RNN \tauid. No selections are applied on the quality and
-impact parameters of reconstructed tracks, thus the inputs include
-fake tracks and tracks from pile-up events. Instead, track quality
-criteria ($N_{\text{IBL hits}}$, $N_{\text{Pixel hits}}$,
-$N_{\text{SCT hits}}$) and track impact parameters
-($|d_0^{\text{track}}|$, $|z_0^{\text{track}} \sin\theta|$) are
-included as observables of tracks used in the RNN \tauid algorithm.
+$\Delta R < 0.4$ about the \tauhadvis candidate axis are considered as inputs to
+the RNN \tauid. No selections are applied on the quality and impact parameters
+of reconstructed tracks, thus the inputs include tracks from the \taulepton
+decay as well as fake tracks and tracks from pile-up. Instead, track quality
+criteria ($N_{\text{IBL hits}}$, $N_{\text{Pixel hits}}$, $N_{\text{SCT hits}}$)
+and track impact parameters ($|d_0^{\text{track}}|$,
+$|z_0^{\text{track}} \sin\theta|$) are included as observables of tracks.
 
 In addition, several other track-level observables, summarised
-in~\Cref{fig:tauid_low_level_variables_track}, are included. Among the most
-important variables are the transverse momenta of reconstructed tracks
+in~\Cref{tab:tauid_input_variables}, are included. Among the most important
+variables are the transverse momenta of reconstructed tracks
 ($p_{\text{T}}^{\text{track}}$) and their angular separation from the \tauhadvis
 candidate axis ($\Delta \eta^{\text{track}}$, $\Delta
 \phi^{\text{track}}$). These variables are included to probe the isolation
