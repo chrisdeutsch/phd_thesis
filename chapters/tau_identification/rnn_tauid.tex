@@ -46,9 +46,10 @@ track/cluster association is given.
 
 \subsubsection{High-Level Input Variables}
 
-The selection of high-level input variables is based on the BDT-based \tauid
-algorithm developed by the ATLAS collaboration~\cite{ATL-PHYS-PUB-2015-045} and
-updated in Ref.~\cite{cdeutsch-master} for new \tauhadvis reconstruction methods
+The selection of high-level input variables is based on the variables used in
+the BDT-based \tauid algorithm developed by the ATLAS
+collaboration~\cite{ATL-PHYS-PUB-2015-045}, which was updated in
+Ref.~\cite{cdeutsch-master} for the new \tauhadvis reconstruction techniques
 deployed during Run~2 of the LHC. The BDT \tauid uses only the high-level
 variables summarised in~\Cref{tab:tauid_input_variables} as inputs and serves as
 a baseline for comparison with the RNN-based algorithm.
@@ -117,7 +118,7 @@ the jet already at the level of individual input tracks. Exemplary distributions
 of the transverse momenta of the three \pT-leading tracks normalised to
 $p_{\text{T}}^{\text{jet seed}}$ are shown
 in~\Cref{fig:tauid_low_level_variables_track} for 1-prong \tauhadvis
-candidates.\todo{Add 2D plots in appendix?}
+candidates.%\todo{Add 2D plots in appendix?}
 
 % \todo[inline]{It would be nice to have 2D plots of leading track \pT vs
 % sub-leading track \pT in the appendix. Same for cluster \ET.}
@@ -149,10 +150,10 @@ candidates.\todo{Add 2D plots in appendix?}
   \label{fig:tauid_low_level_variables_track}
 \end{figure}
 
-The discrimination power of the RNN \tauid saturates after including
-the ten \pT-leading tracks. Therefore, the sequence of tracks is
-truncated at this point to reduce the required computational resources
-for training and evaluation of the networks.
+The discrimination power of the RNN \tauid saturates after including the ten
+\pT-leading tracks. Therefore, the sequence of tracks is truncated at this point
+to reduce the computational resources required for training and evaluation of
+the networks.
 
 
 \subsubsection{Cluster Input Variables}
@@ -202,7 +203,7 @@ candidates.
 
   \caption[Distributions of the transverse energy of the three \ET-leading
   clusters associated to 3-prong \tauhadvis candidates.]{Distributions of the
-    transverse energies of the three \ET-leading clusters associated to 3-prong<
+    transverse energies of the three \ET-leading clusters associated to 3-prong
     \tauhadvis candidates. For illustration purposes, the cluster \ET are
     normalised to the \pT of the jet seeding the \tauhadvis candidate.}%
   \label{fig:tauid_low_level_variables_cluster}
