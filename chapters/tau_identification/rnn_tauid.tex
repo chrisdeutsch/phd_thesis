@@ -233,11 +233,15 @@ description of the network architecture is given in the following.
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.95\textwidth]{tauid/pubnote/rnn_network_architecture}
+  \vspace*{0.2em}
+
+  \includegraphics[width=0.98\textwidth]{tauid/pubnote/rnn_network_architecture}
+
+  \vspace*{0.2em}
 
   \caption[Network architecture used for the RNN \tauid algorithm.]{Network
     architecture used for the RNN \tauid algorithm. Individual layers of the
-    network are depicted as rectangles. The figure is taken from
+    network are depicted as rectangles. The figure is adapted from
     Ref.~\cite{ATL-PHYS-PUB-2019-033}.}%
   \label{fig:tauid_network_architecture}
 \end{figure}
@@ -248,41 +252,36 @@ and 16 units each. The \ReLU~\cite{nair:relu} activation function is
 used in all layers.
 
 The branches operating on track and cluster inputs are structured
-identically. Tracks (clusters) are provided to the network as
-sequences of vectors, each vector consisting of the values of the
-input variables for a given track (cluster). The track and cluster
-sequences are given in descending $p_{\text{T}}^{\text{track}}$ and
-$E_{T}^{\text{cluster}}$ order, respectively. First, the sequences are
-passed through two fully-connected layers with shared weights
-(\emph{shared dense}).  These layers have 32 units each and use the
-\ReLU activation function. \emph{Shared dense} layers map input
-sequences, $(\myvec{x}_i)_{i=1}^{n}$, to output sequences of the same
-length, $(\myvec{y}_i)_{i=1}^{n}$, using transformations of the form
+identically. Tracks (clusters) are provided to the network as sequences of
+vectors, each vector consisting of the values of the input variables for a given
+track (cluster). The track and cluster sequences are given in descending
+$p_{\text{T}}^{\text{track}}$ and $E_{T}^{\text{cluster}}$ order,
+respectively. First, the sequences are passed through two fully-connected layers
+with shared weights (\emph{shared dense}).  These layers have 32 units each and
+use the \ReLU activation function. \emph{Shared dense} layers map input
+sequences, $(\myvec{x}_t)_{t=1}^{N}$, to output sequences of the same length,
+$(\myvec{y}_t)_{t=1}^{N}$, using transformations of the form
 \begin{align*}
-  \myvec{y}_i = \myvec{\phi}(\myvec{W} \myvec{x}_i + \myvec{b}) \,\text{,}
+  \myvec{y}_t = \myvec{\phi}(\myvec{W} \myvec{x}_t + \myvec{b}) \,\text{,}
 \end{align*}
-where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and
-bias vectors, respectively, and $\myvec{\phi}$ is the activation
-function.  Notably, the weights and biases do not depend on the
-index~$i$, meaning the weights and biases are the same (i.e.\ shared)
-for all elements of the sequence. The \emph{shared dense} layers
-produce intermediate representations of the track and cluster
-sequences for further computation.
+where $\myvec{W}$ and $\myvec{b}$ are trainable weight matrices and bias
+vectors, respectively, and $\myvec{\phi}$ is the activation function.  Notably,
+the weights and biases do not depend on the index~$t$, meaning the weights and
+biases are the same (i.e.\ shared) for all elements of the sequence. The
+\emph{shared dense} layers produce intermediate representations of the track and
+cluster sequences for further computation.
 
-The transformed sequences of tracks and clusters pass through two
-recurrent layers based on the \emph{long short-term memory} (LSTM)
-architecture~\cite{lstm} (cf.\ \Cref{sec:rnn}). The first LSTM layer
-maps the input sequence to an output sequence of the same length. In
-contrast to \emph{shared dense} layers, LSTM layers have an internal
-state that is updated as elements of the sequence are
-processed. Therefore, information about elements occurring in the
-sequence can be exploited when processing subsequent elements. The
-second LSTM layer repeats the process, however, all except the last
-element of the output sequence are discarded, thereby encoding the
-input sequence into a single output of fixed size. The size of the
-internal state and output space of the LSTM layers are chosen to be
-the same and correspond to 32 units for the first and 24 units for the
-second LSTM layer.
+The transformed sequences of tracks and clusters pass through two recurrent
+layers based on an LSTM architecture (cf.\ \Cref{sec:rnn}). The first LSTM layer
+maps the input sequence to an output sequence of the same length. In contrast to
+\emph{shared dense} layers, LSTM layers have an internal state that is updated
+as elements of the sequence are processed. Therefore, information about elements
+occurring in the sequence can be exploited when processing subsequent
+elements. The second LSTM layer repeats the process, however, all except the
+last element of the output sequence are discarded, thereby encoding the input
+sequence into a single output of fixed size. The size of the internal state and
+outputs of the LSTM layers are chosen to be the same and correspond to 32 units
+for the first and 24 units for the second LSTM layer.
 
 Finally, the outputs of the three branches are concatenated
 (\emph{Merge}) and passed through three fully-connected layers with
