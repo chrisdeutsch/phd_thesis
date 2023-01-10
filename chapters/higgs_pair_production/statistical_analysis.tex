@@ -110,7 +110,8 @@ constraints on the statistical uncertainty and expected number of events in each
 bin. These constraints ensure that asymptotic approximations can be used for the
 statistical interpretation. The algorithm described in the following was
 previously used in Ref.~\cite{HIGG-2016-16-witherratum} and is continued to be
-used in the \hadhad channel of this search.
+used in the \hadhad channel of this search. In the \lephad channel, a minor
+modification is applied to improve the signal sensitivity.
 % A different, but conceptually similar algorithm is used in the \lephad
 % channels, which is documented in Ref.~\cite{HDBS-2018-40}.
 
@@ -125,12 +126,18 @@ requirements:
   bin must be smaller
   than~\mbox{$\SI{50}{\percent} \times f_\text{s} + \SI{1}{\percent}$}, where
   $f_\text{s}$ is the fraction of signal events in the bin with respect to the
-  total number of signal events selected in the channel.\footnote{In the \lephad
-    channels, a requirement of $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used
-    instead, where $f_{\text{b}}$ is the fraction of background events defined
-    in analogy to~$f_{\text{s}}$.} This requirement limits the statistical
-  uncertainty of the background estimate in the most signal-like bins to be in a
-  range of \SIrange{10}{20}{\percent} after re-binning.
+  total number of signal events selected in the channel. This requirement limits
+  the statistical uncertainty of the background estimate in the most signal-like
+  bins to be in a range of \SIrange{10}{20}{\percent} after re-binning.
+
+  In the \lephad channel, a requirement of
+  $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used instead, where $f_{\text{b}}$
+  is the fraction of background events defined in analogy to~$f_{\text{s}}$.
+
+  % \footnote{In the \lephad
+  %   channels, a requirement of $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used
+  %   instead, where $f_{\text{b}}$ is the fraction of background events defined
+  %   in analogy to~$f_{\text{s}}$.}
 
 \item The expected number of background events in the bin must be larger than
   five.
