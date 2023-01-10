@@ -3,10 +3,10 @@
 
 This search uses \pp~collision data at a centre-of-mass energy of
 $\sqrt{s} = \SI{13}{\TeV}$ collected by the ATLAS experiment during \RunTwo of
-the LHC. All recorded events have to pass the data quality criteria of the ATLAS
-collaboration~\cite{DAPR-2018-01}, requiring a fully operational detector and
+the LHC. All recorded events have to pass data quality
+criteria~\cite{DAPR-2018-01}, requiring a fully operational ATLAS detector and
 stable beams at the LHC. The integrated luminosity of events passing the quality
-criteria corresponds to \SI{139.0}{\per\femto\barn} with an uncertainty of
+criteria corresponds to \SI{139}{\per\femto\barn} with an uncertainty of
 \SI{1.7}{\percent}~\cite{ATLAS-CONF-2019-021}. Events recorded by the ATLAS
 detector are reconstructed using the \textsc{Athena} software
 suite~\cite{ATL-SOFT-PUB-2021-001}.
@@ -104,12 +104,14 @@ The interference between resonant production of Higgs boson pairs and SM~\HH
 production is neglected.
 % Why narrow width? -> Broad resonances are very model dependent
 
-Lastly, decays of hadrons containing $b$ and $c$ quarks are simulated using
-\EVTGEN~\cite{Lange:2001uf} for all signal, top quark, and single Higgs boson
-processes (cf.~\Cref{tab:monte_carlo}). By default, full simulation of the ATLAS
+Lastly, decays of hadrons containing $b$- and $c$-quarks are simulated using
+\EVTGEN~\cite{Lange:2001uf} for all signal, top-quark, and single Higgs boson
+processes (cf.~\Cref{tab:monte_carlo}). Moreover, full simulation of the ATLAS
 detector is used for all processes except for resonant \HH production with
 $\mX \leq \SI{1000}{\GeV}$ and alternative samples used for the derivation of
-systematic uncertainties. In these cases, fast simulation is used instead.
+uncertainties. In these cases, fast simulation is used instead.\footnote{The
+  fast detector simulation was only validated for scalar resonances with
+  $\mX \leq \SI{1000}{\GeV}$.}
 
 %%% Local Variables:
 %%% mode: latex

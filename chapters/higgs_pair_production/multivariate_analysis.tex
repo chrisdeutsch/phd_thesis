@@ -15,7 +15,7 @@ discrimination.
 
 The final state particles from non-resonant and resonant production of
 Higgs boson pairs have distinct kinematic properties that can be used
-to reject backgrounds in the signal region.
+to reject backgrounds in the SR.
 % An example, largely independent of the \HH production mode, is the
 % reconstructed invariant mass of the $H \to \bbbar$ or
 % $H \to \tautau$ candidate.
@@ -60,7 +60,7 @@ hereafter called MVA scores, are later used as a discriminant in
 maximum likelihood fits to extract the signal of interest and to set
 upper limits on signal strengths and cross sections. No further
 selections are applied to events entering the signal extraction
-procedure such that the pre-selection regions are also signal regions
+procedure such that the pre-selection regions are also SRs
 of the respective channels. During the development of the analysis,
 regions at high MVA scores were blinded to avoid selection biases.
 
@@ -104,7 +104,7 @@ are reconstructed\footnote{The fraction of events with a
   misreconstructed $H \to \bbbar$ or $H \to \tautau$ candidate, i.e.\
   $b$-jet candidates or \tauhadvis not being matched to Higgs boson
   decay products at generator-level, are about \SI{2}{\percent} and
-  \SI{0.2}{\percent} in signal region of the \hadhad channel,
+  \SI{0.2}{\percent} in SR of the \hadhad channel,
   respectively.}  and are used to define discriminating variables.
 Among the most important variables are \PHiggs- and \HH-system
 invariant masses:
@@ -112,7 +112,7 @@ invariant masses:
 
 \item[\mBB] The invariant mass of the $H \to \bbbar$ candidate. It is
   reconstructed using the four-momenta of both \btagged jets in the
-  signal regions after $b$-jet momentum corrections. The Higgs boson
+  SRs after $b$-jet momentum corrections. The Higgs boson
   mass is reconstructed with a resolution of \SIrange{13}{18}{\GeV}
   for the signal processes considered in this search.
 
@@ -147,7 +147,7 @@ channels.
 % It provides an important discriminant in the search for resonant \HH
 % production at high \mX.
 
-% In the signal region of the \hadhad channel, the $H \to \tautau$
+% In the SR of the \hadhad channel, the $H \to \tautau$
 % candidate is reconstructed correctly for most signal events. The
 % fraction of events where the candidate is misreconstructed is about
 % \SIrange{0.1}{0.2}{\percent}. The fraction of signal events with a
@@ -191,7 +191,7 @@ with large momenta in the \HH rest frame, the exception being resonant
 to a small separation of the (visible) \PHiggs decay products. The
 distances \dRtautau and \dRbb between the visible decay products of
 the \tauleptons and $b$-jet candidates, respectively, provide
-discrimination power against multi-jet and top quark pair production
+discrimination power against multi-jet and top-quark pair production
 where \tauleptons and $b$-jet candidates are less collimated. Both
 variables are used as inputs to the MVAs in the \hadhad and \lephad
 SLT channel.
@@ -287,8 +287,8 @@ trained on the even- on odd-numbered events and the model trained on
 the odd- on even-numbered events. This approach, which is called
 2-fold \emph{cross-validation}~\cite{hastie09,bishop06}, provides
 unbiased predictions of the MVA scores for the entirety of the
-available dataset. The same evaluation method is applied to signal
-region data recorded by the ATLAS detector. After assigning MVA scores
+available dataset. The same evaluation method is applied to SR
+data recorded by the ATLAS detector. After assigning MVA scores
 to all events, no distinction is made between even- and odd-numbered
 events for the remainder of the analysis.
 
@@ -298,7 +298,7 @@ events for the remainder of the analysis.
 % \emph{cross-validation}~\cite{hastie09,bishop06}, provides an unbiased
 % evaluation of the MVA scores using the entirety of the available
 % dataset. The same evaluation method, including the separate treatment
-% of even- and odd-numbered events, is applied to signal region data
+% of even- and odd-numbered events, is applied to SR data
 % recorded by the ATLAS detector.
 
 Similar to the biased predictions obtained when evaluating machine
@@ -351,8 +351,8 @@ evaluated on the hold-out dataset.
 \label{sec:mva_smbdt}
 
 The search for SM \HH production in the \hadhad channel uses BDTs to
-separate signal from background events. Events passing the signal
-region selection (2~$b$-tag region) of the \hadhad channel are used to
+separate signal from background events. Events passing the SR
+selection (2~$b$-tag region) of the \hadhad channel are used to
 train BDT. The training considers the non-resonant \HH production via
 \ggF as the \emph{signal class}; the combination of all backgrounds as
 the \emph{background class}. The individual background processes,
@@ -465,7 +465,7 @@ providing the final classifiers to extract the SM \HH signal.
 
 In~\Cref{fig:mva_smbdt_prefit} the combined distribution of both BDTs,
 which are evaluated on events withheld from training and model
-selection, is shown in the signal region of the \hadhad channel. The
+selection, is shown in the SR of the \hadhad channel. The
 BDT score provides good separation power between the SM \HH signal and
 most background processes. The ROC-AUC of the final evaluation is
 \num{0.9772 +- 0.0004} (\num{0.9781 +- 0.0004}) when including
@@ -490,7 +490,7 @@ from cross-validation during model selection.
 The sensitivity to the SM \HH signal is driven by the last bins of the
 BDT score histogram.  The expected number of signal (background)
 events in the two most signal-like bins is 2.6 (24) out of 5.6 (9200)
-events entering the signal region. The selection of the two most
+events entering the SR. The selection of the two most
 signal-like bins provides a background rejection of
 $1 / \varepsilon_{\text{b}} \approx 380$ while selecting almost half
 of the signal events.
@@ -508,7 +508,7 @@ associated production with a \PZ boson. The kinematic properties of
 single Higgs boson production, particularly in the $Z\PHiggs$ mode, is
 similar to the non-resonant \HH signal and largely limited by the
 \PHiggs-system mass reconstruction performance such that about 1 in 15
-single Higgs boson events in the signal region are selected into one
+single Higgs boson events in the SR are selected into one
 of the two most signal-like bins, yielding an expectation of 4.8
 events. Other backgrounds populating the two most signal-like bins in
 BDT score are originating from \ttbar (with \truetauhadvis in the
@@ -700,7 +700,7 @@ inner CV separately for even- and odd-numbered events.
 \subsubsection{Evaluation and Variable Importance}
 
 \Cref{fig:pnn_score_prefit} shows the PNN score after evaluation on
-withheld data in the signal region of the \hadhad channel for three
+withheld data in the SR of the \hadhad channel for three
 different values of the mass parameter. In each case the signal of
 interest, resonant \HH production with \mX equal to the PNN mass
 parameter, is populating the high PNN score bins. The background
@@ -712,7 +712,7 @@ the total background with a small contribution from multi-jet.  The
 background composition in the intermediate mass range
 ($\mX \approx \SI{500}{\GeV}$) is similar to the case of non-resonant
 \HH production in the SM which has a mean reconstructed \mHH of about
-\SI{500}{\GeV} after the signal region selection. For high mass
+\SI{500}{\GeV} after the SR selection. For high mass
 resonances, the most relevant backgrounds are the production of
 $\PZ \to \tautau$ in association with jets from $b$- or $c$-quarks.
 

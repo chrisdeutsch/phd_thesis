@@ -10,12 +10,10 @@ of a multivariate analysis that is introduced in
 % In addition, control and validation regions are defined for the purpose of
 % estimating backgrounds or validating background estimates.
 
-All events considered in this analysis have to fulfil the data quality criteria
-of the ATLAS collaboration~\cite{DAPR-2018-01} and are required to have a
-reconstructed primary vertex. Moreover, events containing one or more jets that
-are classified as originating from non-collision backgrounds or calorimeter
-noise according to a loose jet cleaning working point~\cite{ATLAS-CONF-2015-029}
-are rejected.
+All events considered in this analysis are required to have a reconstructed
+primary vertex. Moreover, events containing one or more jets that are classified
+as originating from non-collision backgrounds or calorimeter noise according to
+a loose jet cleaning working point~\cite{ATLAS-CONF-2015-029} are rejected.
 
 % Events considered for further analysis are required to fulfil basic
 % quality criteria independent of the analysis channel:
@@ -48,16 +46,15 @@ are rejected.
 %   rejected.
 % \end{itemize}
 
-The search is divided into different channels that are determined by the decay
-mode of the \taulepton pair and the type of trigger that selected the event. The
-\lephad channel targets semi-leptonic decay modes using single-lepton triggers
-(SLTs) and lepton-plus-\tauhadvis triggers (LTTs). Each trigger defines a
-corresponding sub-channel referred to as the \lephad SLT and \lephad LTT
-channel, respectively. The \hadhad channel selects events with two \tauhadvis
-candidates using single-\tauhadvis triggers (STTs) and di-\tauhadvis triggers
-(DTTs). While different types of triggers are used in the \hadhad channel, the
-statistical analysis will not distinguish between events selected by STTs and
-DTTs.
+The search is divided into different channels depending on the decay mode of the
+\taulepton pair and the type of trigger that selected an event. The \lephad
+channel targets semi-leptonic decay modes using single-lepton triggers (SLTs)
+and lepton-plus-\tauhadvis triggers (LTTs). Each trigger defines a corresponding
+sub-channel referred to as the \lephad SLT and \lephad LTT channel,
+respectively. The \hadhad channel selects events with two \tauhadvis candidates
+using single-\tauhadvis triggers (STTs) and di-\tauhadvis triggers (DTTs). While
+different types of triggers are used in the \hadhad channel, the statistical
+analysis will not distinguish between events selected by STTs and DTTs.
 
 % While different types of triggers are used in this channel, the later
 % statistical analysis will not distinguish between events selected by STTs and
@@ -92,10 +89,11 @@ trigger.
 % \lephad SLT and LTT channel is ensured by only considering events with lepton
 % \pT below the SLT \pT~threshold for the LTT channel.
 
-An overview of the SR event selection is given in \Cref{tab:event_selection}. A
-more detailed description of the \hadhad channel trigger selection is given in
-\Cref{sec:hadhad_trigger_selection}. Further selections applied at event-level
-to define the SRs are discussed in \Cref{sec:sr_and_cr_selection}.
+An overview of the signal region (SR) event selection is given in
+\Cref{tab:event_selection}. A more detailed description of the \hadhad channel
+trigger selection is given in \Cref{sec:hadhad_trigger_selection}. Further
+selections applied at event-level to define the SRs are discussed in
+\Cref{sec:sr_and_cr_selection}.
 
 \begin{table}[htbp]
   \centering
@@ -222,17 +220,23 @@ following:
   The HLT threshold on the \pT of \tauhadvis candidates is applied after these
   steps.
 
-  Second, a two-stage tracking approach~\cite{TRIG-2016-01,ATLAS-CONF-2017-061}
-  using \emph{fast tracking}, instead of the more time-consuming \emph{precision
-    tracking}, is employed. The first stage performs tracking in a narrow region
-  surrounding the \tauhadvis candidate close to the calorimeters but extended
-  over a large section of the beamline. The \pT-leading track resulting from
-  this stage is used to narrow down the search space along the beamline by only
-  considering the beamline section within $|\Delta z| < \SI{10}{\milli\metre}$
-  of this track for the second stage of tracking, thus allowing to widen the
-  search region around the \tauhadvis candidate close to the calorimeters. After
-  the second stage of tracking, core and isolation tracks are defined according
-  to the conditions $\Delta R(\text{track}, \tauhadvis) < 0.2$ and
+  Second, a two-stage tracking approach using \emph{fast tracking}, instead of
+  the more time-consuming \emph{precision tracking} algorithm used during
+  offline event reconstruction (cf.~\Cref{sec:tracking_and_vertexing}) and at
+  later stages of the trigger, is
+  employed~\cite{TRIG-2016-01,ATLAS-CONF-2017-061,TRIG-2019-03}.
+  % instead of the more time-consuming offline track reconstruction algorithms
+  % (\emph{precision tracking}), is
+  % employed~\cite{TRIG-2016-01,ATLAS-CONF-2017-061,TRIG-2019-03}.
+  The first stage performs tracking in a narrow region surrounding the
+  \tauhadvis candidate close to the calorimeters but extended over a large
+  section of the beamline. The \pT-leading track resulting from this stage is
+  used to narrow down the search space along the beamline by only considering
+  the beamline section within $|\Delta z| < \SI{10}{\milli\metre}$ of this track
+  for the second stage of tracking, thus allowing to widen the search region
+  around the \tauhadvis candidate close to the calorimeters. After the second
+  stage of tracking, core and isolation tracks are defined according to the
+  conditions $\Delta R(\text{track}, \tauhadvis) < 0.2$ and
   $0.2 < \Delta R(\text{track}, \tauhadvis) < 0.4$, respectively. Subsequently,
   track multiplicity selections are applied by requiring \tauhadvis candidates
   to have one to three core tracks and at most one isolation track.
@@ -385,11 +389,11 @@ following:
   referred to as the \LOneTopo DTT.
 
   The \FourJTwelve DTT is introduced to improve the acceptance of signal events
-  with with small \HH-system masses, for example events from resonant \HH
+  with small \HH invariant masses, for example events from resonant \HH
   production via resonances of low mass. The \LOneTopo DTT has limited
   acceptance for such events due to the high \pT~thresholds on the leading jet
   and the \dRtautau requirement. For resonances with masses larger than
-  \SI{325}{\GeV} and for SM \HH production, the improvement in signal acceptance
+  \SI{325}{\GeV} and for SM~\HH production, the improvement in signal acceptance
   from including the \FourJTwelve DTT is negligible.
 
 \item[2018 data-taking period] New HLT algorithms were introduced for \tauhadvis
@@ -426,7 +430,11 @@ category due to the prescale.
 \begin{figure}[htbp]
   \centering
 
+  \vspace*{0.25em}
+
   \includegraphics[width=0.95\textwidth]{selection/trigger_flowchart}
+
+  \vspace*{0.1em}
 
   \caption[Flowchart of the \hadhad channel trigger selection.]{Flowchart of the
     \hadhad channel trigger selection. The leading and sub-leading \tauhadvis
@@ -491,7 +499,7 @@ estimation.
 
 The expected event yields after the SR selection of all three channels are
 summarised in~\Cref{tab:smhh_prefit_yields}. The bulk of events entering the SRs
-are from top quark backgrounds (\ttbar and single-$t$), \Zjets, and backgrounds
+are from top-quark backgrounds (\ttbar and single-$t$), \Zjets, and backgrounds
 in which a quark- or gluon-initiated jet is reconstructed as a \tauhadvis
 ($\text{jet} \to \faketauhadvis$).
 
@@ -602,7 +610,7 @@ following improvements:
   % to 3-prong \tauhadvis candidates.
 
 \item[$b$-tagging] Improved $b$-tagging algorithms allow to use a working point
-  with larger $b$-jet tagging efficiency while limiting the increase in
+  with higher $b$-jet tagging efficiency while limiting the increase in
   backgrounds from mistagged jets. Previously, the \textsc{MV2c10}
   tagger~\cite{ATL-PHYS-PUB-2016-012} with a target efficiency of
   \SI{70}{\percent} for $b$-jets from \ttbar was used. This tagger is replaced
@@ -686,13 +694,13 @@ of two \btagged jets in the SR.
 % the referenced sections:
 % \begin{description}
 
-% \item[$Z \ra \ell^{+}\ell^{-}$ ($\ell = e, \mu$) control region] A control
+% \item[$Z \ra \ell^{+}\ell^{-}$ ($\ell = e, \mu$) CR] A control
 %   region targeting the production of $Z$ bosons in association with quarks of
 %   heavy flavour in a di-lepton final state and two \btagged jets. This region
 %   is used for background estimation in \Cref{sec:bkg_zjets}.
 
-% \item[\ttbar control regions] Control regions defined in the \lephad channel
-%   by inverting the $\mBB$ selection of the signal region. This region targets
+% \item[\ttbar CR] CRs defined in the \lephad channel
+%   by inverting the $\mBB$ selection of the SR. This region targets
 %   the production of \ttbar with a final state containing $\ell + \tauhadvis$
 %   and is used for the estimation of \faketauhadvis backgrounds from \ttbar
 %   production in the \hadhad~(\Cref{sec:bkg_hadhad_ttbarfakes}) and \lephad

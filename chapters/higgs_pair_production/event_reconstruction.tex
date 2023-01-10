@@ -45,7 +45,7 @@ selection, which is discussed in \Cref{sec:event_selection}.
   approaching efficiencies close to \SI{100}{\percent} at larger transverse
   momenta~\cite{EGAM-2018-01}. This requirement is inverted as part of the
   \faketauhadvis background estimation in the \lephad channel to provide a
-  control region enhanced in multi-jet events.
+  control region (CR) enhanced in multi-jet events.
   % Energy calibration???
 
 \item[Muons] are required to have $\pT > \SI{7}{\GeV}$ and pass the loose
@@ -58,7 +58,7 @@ selection, which is discussed in \Cref{sec:event_selection}.
   approach~\cite{MUON-2018-03}. The muon selection efficiency of the isolation
   working point exceeds \SI{97}{\percent} for muons with $\pT > \SI{20}{\GeV}$
   in simulated \ttbar events~\cite{MUON-2018-03}. The isolation requirement is
-  inverted to provide a control region for the \faketauhadvis estimation in the
+  inverted to provide a CR for the \faketauhadvis background estimation in the
   \lephad channel.
 
   % Muons passing the loose working point are a superset of medium muons which
@@ -101,8 +101,9 @@ selection, which is discussed in \Cref{sec:event_selection}.
   % calorimeter-based energy measurement with information from the tau particle
   % flow algorithm~\cite{PERF-2014-06} in boosted regression trees.
 
-\item[Anti-\tauhadvis] follow the same selection criteria as \tauhadvis except
-  for a partial inversion of the \tauid requirement. Specifically, \tauhadvis
+\item[Anti-\tauhadvis] are used to define CRs for the \faketauhadvis background
+  estimation. They follow the same selection criteria as \tauhadvis except for a
+  partial inversion of the \tauid requirement. Specifically, \tauhadvis
   candidates are considered to be anti-\tauhadvis if they fail the loose \tauid
   working point but pass a very loose selection on the \tauid score of
   $\text{RNN score} > 0.01$.
@@ -114,11 +115,13 @@ selection, which is discussed in \Cref{sec:event_selection}.
   this case, anti-\tauhadvis are randomly selected until the required number of
   (anti-)\tauhadvis candidates, two in the \hadhad and one in the \lephad
   channel, is achieved. Anti-\tauhadvis that are not selected by the random
-  anti-\tauhadvis selection are treated as jets and are removed as part of the
-  overlap removal procedure discussed in~\Cref{sec:overlap_removal}.
+  anti-\tauhadvis selection
+  % are treated as jets and
+  are removed as part of an overlap removal procedure that is discussed
+  in~\Cref{sec:overlap_removal}.
 
-  The \hadhad and \lephad channels use the presence of anti-\tauhadvis to define
-  control regions for the estimation of backgrounds with \faketauhadvis.
+  % The \hadhad and \lephad channels use the presence of anti-\tauhadvis to
+  % define CRs for the estimation of backgrounds with \faketauhadvis.
 
 \item[Jets] are reconstructed using the anti-\kt
   algorithm~\cite{Cacciari:2008gp} with a radius parameter of~$R = 0.4$. The
@@ -138,7 +141,7 @@ selection, which is discussed in \Cref{sec:event_selection}.
   Jets in the central (forward) region of the detector defined by $|\eta| < 2.5$
   ($2.5 < |\eta| < 4.5$) are required to fulfil~$\pT > \SI{20}{\GeV}$
   ($\pT > \SI{30}{\GeV}$). Jets originating from pile-up are suppressed by
-  ensuring that all jets pass jet-vertex-tagger (JVT) requirements. In the
+  ensuring that all jets pass Jet Vertex Tagger (JVT) requirements. In the
   central region, jets have to pass the tight JVT working
   point~\cite{PERF-2014-03}. Jets in the forward regions
   % , which lack tracking system coverage,
@@ -149,7 +152,7 @@ selection, which is discussed in \Cref{sec:event_selection}.
   region to identify jets originating from $b$-quarks.
   % , distinguishing them from jets initiated by gluons or quarks of light- or
   % charm-flavour.
-  The \textsc{DL1r} algorithm~\cite{FTAG-2019-07} is used which combines the
+  The \textsc{DL1r} algorithm~\cite{FTAG-2019-07} is used, which combines the
   scores of several low-level taggers that exploit the signature of displaced
   decays of $b$-hadrons using information on the track impact parameters
   (\textsc{IP2D}, \textsc{IP3D} \& \textsc{RNNIP}) and secondary vertices
