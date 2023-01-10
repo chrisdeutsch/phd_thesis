@@ -110,7 +110,8 @@ constraints on the statistical uncertainty and expected number of events in each
 bin. These constraints ensure that asymptotic approximations can be used for the
 statistical interpretation. The algorithm described in the following was
 previously used in Ref.~\cite{HIGG-2016-16-witherratum} and is continued to be
-used in the \hadhad channel of this search.
+used in the \hadhad channel of this search. In the \lephad channel, a minor
+modification is applied to improve the signal sensitivity.
 % A different, but conceptually similar algorithm is used in the \lephad
 % channels, which is documented in Ref.~\cite{HDBS-2018-40}.
 
@@ -125,12 +126,18 @@ requirements:
   bin must be smaller
   than~\mbox{$\SI{50}{\percent} \times f_\text{s} + \SI{1}{\percent}$}, where
   $f_\text{s}$ is the fraction of signal events in the bin with respect to the
-  total number of signal events selected in the channel.\footnote{In the \lephad
-    channels, a requirement of $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used
-    instead, where $f_{\text{b}}$ is the fraction of background events defined
-    in analogy to~$f_{\text{s}}$.} This requirement limits the statistical
-  uncertainty of the background estimate in the most signal-like bins to be in a
-  range of \SIrange{10}{20}{\percent} after re-binning.
+  total number of signal events selected in the channel. This requirement limits
+  the statistical uncertainty of the background estimate in the most signal-like
+  bins to be in a range of \SIrange{10}{20}{\percent} after re-binning.
+
+  In the \lephad channel, a requirement of
+  $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used instead, where $f_{\text{b}}$
+  is the fraction of background events defined in analogy to~$f_{\text{s}}$.
+
+  % \footnote{In the \lephad
+  %   channels, a requirement of $10 f_{\text{s}} + 5 f_{\text{b}} > 1$ is used
+  %   instead, where $f_{\text{b}}$ is the fraction of background events defined
+  %   in analogy to~$f_{\text{s}}$.}
 
 \item The expected number of background events in the bin must be larger than
   five.
@@ -323,9 +330,10 @@ individual channels and differences in the impact of systematic uncertainties.
 % SM~\HH signal strength as the POI.
 Selected background processes are merged for illustration purposes only. The
 contributions from \ttbar and single top-quark production are combined into a
-``top-quark'' background. Contributions from minor backgrounds are combined into
-the ``other'' background category, which includes $Z \to \tautau + \text{LF}$,
-$Z \to e^{+}e^{-}$, $Z \to \mu^{+}\mu^{-}$, \Wjets, diboson, and $\ttbar V$.
+``top-quark'' background category. Contributions from minor backgrounds are
+combined into the ``other'' background category, which includes
+$Z \to \tautau + \text{LF}$, $Z \to e^{+}e^{-}$, $Z \to \mu^{+}\mu^{-}$, \Wjets,
+diboson, and $\ttbar V$.
 
 The background-only model is fitted to observed data in all
 channels. \Cref{fig:mvascores_postfit} compares the post-fit MVA score
@@ -461,8 +469,8 @@ bins originate from the production of top-quarks and \ZHF. Compared to the
 with a large contribution of about \SI{50}{\percent} (\SI{15}{\percent}) from
 single top production in the SLT (LTT) channel. As a result, the
 signal-to-background ratio in the most signal-like bins is reduced, in part also
-due to the decrease in resolution of the \mMMC and \mHH reconstruction resulting
-from an additional neutrino in the $H \to \lephad$ decay chain.
+due to the decrease in \mMMC and \mHH resolution resulting from an additional
+neutrino in the $H \to \lephad$ decay chain.
 
 % This is due to the
 % abundance of top-quark backgrounds and the larger difficulty of reconstructing
@@ -542,7 +550,7 @@ future analyses it might be beneficial to control for this effect.
 % Median significance: 0.667530
 % Median pValue: 0.252217
 A comparison of the background-only and signal-plus-background hypothesis is
-performed using a LRT-based test for the discovery of a positive signal
+performed using a test for the discovery of a positive signal
 (cf.~\Cref{sec:hypotesting}). This test yields an observed $p$-value of
 \SI{27}{\percent}; thus, the background-only hypothesis cannot be rejected.
 % (expected $p_0$-value of \SI{25.2}{\percent} from the $\mu = 1$ Asimov
@@ -1110,8 +1118,8 @@ observables not relevant for a given mass point) the background-only models used
 for the statistical interpretation in \Cref{sec:results_res}. This ensures that
 the same statistical analysis can be applied to toy experiments without
 introducing biases due to a mismatch between models. A detailed description of
-the substitute model is given in \Cref{app:toy_generation}; however, the key
-parts are highlighted here.
+the substitute model developed for this thesis is given in
+\Cref{app:toy_generation}; however, the key parts are highlighted here.
 
 The model is constructed from the pre-fit expectation for all backgrounds except
 for the \ttbar and \ZHF normalisation factors, which are set to approximate
