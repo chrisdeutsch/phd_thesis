@@ -220,17 +220,23 @@ following:
   The HLT threshold on the \pT of \tauhadvis candidates is applied after these
   steps.
 
-  Second, a two-stage tracking approach~\cite{TRIG-2016-01,ATLAS-CONF-2017-061}
-  using \emph{fast tracking}, instead of the more time-consuming \emph{precision
-    tracking}, is employed. The first stage performs tracking in a narrow region
-  surrounding the \tauhadvis candidate close to the calorimeters but extended
-  over a large section of the beamline. The \pT-leading track resulting from
-  this stage is used to narrow down the search space along the beamline by only
-  considering the beamline section within $|\Delta z| < \SI{10}{\milli\metre}$
-  of this track for the second stage of tracking, thus allowing to widen the
-  search region around the \tauhadvis candidate close to the calorimeters. After
-  the second stage of tracking, core and isolation tracks are defined according
-  to the conditions $\Delta R(\text{track}, \tauhadvis) < 0.2$ and
+  Second, a two-stage tracking approach using \emph{fast tracking}, instead of
+  the more time-consuming \emph{precision tracking} algorithm used during
+  offline event reconstruction (cf.~\Cref{sec:tracking_and_vertexing}) and at
+  later stages of the trigger, is
+  employed~\cite{TRIG-2016-01,ATLAS-CONF-2017-061,TRIG-2019-03}.
+  % instead of the more time-consuming offline track reconstruction algorithms
+  % (\emph{precision tracking}), is
+  % employed~\cite{TRIG-2016-01,ATLAS-CONF-2017-061,TRIG-2019-03}.
+  The first stage performs tracking in a narrow region surrounding the
+  \tauhadvis candidate close to the calorimeters but extended over a large
+  section of the beamline. The \pT-leading track resulting from this stage is
+  used to narrow down the search space along the beamline by only considering
+  the beamline section within $|\Delta z| < \SI{10}{\milli\metre}$ of this track
+  for the second stage of tracking, thus allowing to widen the search region
+  around the \tauhadvis candidate close to the calorimeters. After the second
+  stage of tracking, core and isolation tracks are defined according to the
+  conditions $\Delta R(\text{track}, \tauhadvis) < 0.2$ and
   $0.2 < \Delta R(\text{track}, \tauhadvis) < 0.4$, respectively. Subsequently,
   track multiplicity selections are applied by requiring \tauhadvis candidates
   to have one to three core tracks and at most one isolation track.
