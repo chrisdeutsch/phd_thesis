@@ -35,17 +35,19 @@ The search for SM~\HH production uses BDTs and NNs to distinguish signal from
 background events in the \hadhad and \lephad channels, respectively. When
 searching for resonant \HH production, multiple mass hypotheses for the scalar
 resonance %decaying into Higgs boson pairs
-are considered. The kinematic properties of final state particles in signal
-events depend on the mass of the resonance, \mX, and as a result the
-classification task varies continuously with \mX. This contrasts the former case
-in which the kinematic properties of signal events follow from a fixed
-distribution predicted by the SM. Classification tasks that vary as a function
-of a parameter, for example the mass of a resonance, can be performed by
-\emph{Parameterised Neural Networks} (PNNs), which were first introduced to HEP
-in Ref.~\cite{Baldi:2016fzo}. PNNs provide a single classifier that is able to
-handle sets of classification tasks described by one or more parameters;
-therefore, they are used as discriminants in the search for resonant \HH
-production in the \hadhad and \lephad channels.
+are considered. The kinematic properties of final state particles from resonant
+\HH production depend on the mass of the resonance and, therefore, the
+classification task varies continuously with \mX. %
+This is in contrast to the SM~\HH case in which the event kinematics follow from
+a fixed distribution predicted by the SM.
+% This contrasts the former case in which the kinematic properties of signal
+% events follow from a fixed distribution predicted by the SM.
+Classification tasks that vary as a function of a parameter, for example the
+mass of a resonance, can be performed by \emph{Parameterised Neural Networks}
+(PNNs), which were first introduced to HEP in Ref.~\cite{Baldi:2016fzo}. PNNs
+provide a single classifier that is able to handle sets of classification tasks
+described by one or more parameters; therefore, they are used as discriminants
+in the search for resonant \HH production in the \hadhad and \lephad channels.
 % while being able to smoothly interpolate to parameter values not seen during
 % training of the network.
 
