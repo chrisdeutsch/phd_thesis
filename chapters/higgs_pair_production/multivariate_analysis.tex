@@ -4,11 +4,12 @@
 The event selection described in~\Cref{sec:event_selection} serves
 % as a pre-selection
 to select events compatible with $\bbbar\hadhad$ or $\bbbar\lephad$ final states
-and ensures that reconstructed objects fulfil basic requirements. The
-signal-to-background ratio at this level of selection, with background being
-three orders of magnitude more abundant than the expected SM~\HH signal in the
-\hadhad channel (cf.~\Cref{tab:hadhad_presel_yields}), is not sufficient to
-provide any signal sensitivity without further signal-background discrimination.
+and ensures that reconstructed objects fulfil basic kinematic and identification
+requirements. The signal-to-background ratio at this level of selection, with
+background being three orders of magnitude more abundant than the expected
+SM~\HH signal in the \hadhad channel (cf.~\Cref{tab:hadhad_presel_yields}), is
+not sufficient to provide any signal sensitivity without further
+signal-background discrimination.
 
 Events from SM~\HH or resonant \HH production have distinct kinematic properties
 that can be used for signal-background discrimination. A number of reconstructed
@@ -26,11 +27,12 @@ classification task varies continuously with \mX. This is in contrast to the
 SM~\HH case in which the event kinematics follow from a fixed
 distribution. Classification tasks that vary as a function of a parameter, for
 example the mass of a resonance, can be performed by \emph{Parameterised Neural
-  Networks} (PNNs)~\cite{Baldi:2016fzo}. PNNs are used as discriminants in the
-search for resonant \HH production in the \hadhad and \lephad channels.
+  Networks} (PNNs)~\cite{Baldi:2016fzo}. PNNs are therefore used as
+discriminants in the search for resonant \HH production in the \hadhad and
+\lephad channels.
 
-The scores provided by these multivariate classification methods, hereafter
-called MVA scores, are later used as discriminants in maximum likelihood fits to
+The scores provided by the multivariate classification methods, hereafter called
+MVA scores, are later used as discriminants in maximum likelihood fits to
 extract the signal of interest and to set upper limits on signal strengths and
 cross sections.
 % No further selections are applied to events entering the signal extraction
@@ -45,10 +47,10 @@ motivated. \Cref{sec:mva_crossvalidation} introduces a method used to train,
 optimise, and evaluate classifiers that ensures that the predicted MVA scores
 are unbiased and can be used in the statistical interpretation of the search
 results. This method is employed in \Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn}
-to obtain the BDT- and PNN-based classifiers used to extract signal events in
-the \hadhad channel. In the \lephad channel, a similar approach of multivariate
-analysis is adopted, which is documented in Ref.~\cite{HDBS-2018-40} and is not
-discussed in this thesis.
+to obtain the BDT- and PNN-based classifiers for signal-background
+discrimination in the \hadhad channel. In the \lephad channel, a similar
+approach of multivariate analysis is adopted, which is documented in
+Ref.~\cite{HDBS-2018-40} and is not discussed in this thesis.
 
 
 \subsection{Discriminating Variables}%
