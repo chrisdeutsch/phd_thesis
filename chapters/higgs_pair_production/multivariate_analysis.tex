@@ -378,11 +378,11 @@ points, i.e.\ choices of thresholds on the classifier
 output~\cite{james13}.
 
 About 1600 BDT configurations are tested during the model selection process. The
-steps described in the following are applied on the datasets containing even-
-and odd-numbered events separately. The 5-fold CV approach described
+steps described in the following are applied separately to the datasets
+containing even- and odd-numbered events. The 5-fold CV approach described
 in~\Cref{sec:mva_crossvalidation} is used to evaluate the performance of a given
-hyperparameter configuration. For a fixed configuration, the ROC-AUC average and
-standard deviation is calculated over the five CV iterations.
+hyperparameter configuration. For every BDT configuration, the ROC-AUC average
+and standard deviation is calculated over the five iterations of the inner CV.
 
 Out of all evaluated configurations, the ROC-AUC of the 200 best performing
 model configurations are statistically indistinguishable based on the CV
