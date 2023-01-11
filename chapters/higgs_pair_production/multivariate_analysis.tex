@@ -18,20 +18,17 @@ for event classification. Depending on the \HH production mode and analysis
 channel, different methods are used.
 
 The search for SM~\HH production uses BDTs and NNs to distinguish signal from
-background events in the \hadhad and \lephad channels, respectively. The search
-for resonant \HH production considers multiple mass hypotheses for the scalar
-resonance. The kinematic properties of events from resonant \HH production
-depend on the mass of the resonance; therefore, the classification task varies
-continuously with \mX. This is in contrast to the SM~\HH case in which the event
-kinematics follow from a fixed distribution. Classification tasks that vary as a
-function of a parameter, for example the mass of a resonance, can be performed
-by \emph{Parameterised Neural Networks} (PNNs), which were first introduced to
-HEP in Ref.~\cite{Baldi:2016fzo}.
-% , which were first introduced to HEP in Ref..  PNNs are classifiers that are
-% able to handle sets of classification tasks described by one or more
-% parameters;
-Therefore, PNNs are used as discriminants in the search for resonant \HH
-production in the \hadhad and \lephad channels.
+background events in the \hadhad and \lephad channels, respectively. In the
+search for resonant \HH production, multiple hypotheses are considered for the
+mass of the scalar resonance. The kinematic properties of events from resonant
+\HH production depend on the mass of the resonance; therefore, the
+classification task varies continuously with \mX. This is in contrast to the
+SM~\HH case in which the event kinematics follow from a fixed
+distribution. Classification tasks that vary as a function of a parameter, for
+example the mass of a resonance, can be performed by \emph{Parameterised Neural
+  Networks} (PNNs)~\cite{Baldi:2016fzo}. Therefore, PNNs are used as
+discriminants in the search for resonant \HH production in the \hadhad and
+\lephad channels.
 
 The scores provided by these multivariate classification methods, hereafter
 called MVA scores, are later used as discriminants in maximum likelihood fits to
