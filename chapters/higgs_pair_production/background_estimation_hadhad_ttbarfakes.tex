@@ -166,7 +166,7 @@ The \jettotauhadvis misidentification efficiencies strongly depend on the
 charged-particle multiplicity and transverse momentum of reconstructed
 \tauhadvis candidates. This might also be reflected in corrections of the
 \jettotauhadvis misidentification efficiencies in simulation. Therefore, the SF
-measurement is performed in bins/regions of \Ntracks and \pT of the \tauhadvis
+measurement is performed in regions of \Ntracks and \pT of the \tauhadvis
 candidate given by:
 \begin{itemize}
 
@@ -202,12 +202,12 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
       \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.}
   \end{subfigure}
 
-  \caption[Expected and observed event yields in the SF-CR in bins of \tauhadvis
-  candidate \Ntracks and \pT.]{Expected and observed event yields in the SF-CR
-    in bins of \tauhadvis candidate \Ntracks and \pT. The bins are labelled as
-    ``1P'' and ``3P'' for $\Ntracks = 1$ and $\Ntracks = 3$, respectively, and
-    the \pT intervals are given in units of \si{\GeV}. The background model is
-    shown prior to the fit.}%
+  \caption[Expected and observed event yields in regions of \tauhadvis candidate
+  \Ntracks and \pT in the SF-CR.]{Expected and observed event yields in regions
+    of \tauhadvis candidate \Ntracks and \pT in the SF-CR. The bins are labelled
+    as ``1P'' and ``3P'' for $\Ntracks = 1$ and $\Ntracks = 3$, respectively,
+    and the \pT intervals are given in units of \si{\GeV}. The background model
+    is shown prior to the fit.}%
   \label{fig:ttbarsf_region_summary_prefit}
 \end{figure}
 
@@ -294,7 +294,7 @@ included in the SF measurement are only briefly summarised.
 
 Experimental uncertainties affecting the reconstruction and selection
 efficiencies of electrons, muons, \tauhadvis, and jets are accounted for in the
-SF measurement, including uncertainties on the efficiencies and mistag rates of
+SF measurement, including uncertainties on the efficiencies of
 $b$-tagging. Uncertainties on the reconstructed \pTmissAbs are propagated to the
 \mTW distributions in all regions. Trigger efficiency uncertainties are
 considered for single-lepton and single-\tauhadvis
@@ -302,9 +302,9 @@ triggers.\footnote{Uncertainties on single-\tauhadvis trigger efficiencies are
   only considered for SF measurements taking into account trigger-level \tauid
   requirements.}  Uncertainties on the re-weighting of the pile-up conditions in
 simulation and the integrated luminosity used to normalise simulated event
-samples are included in the measurement. Lastly, statistical uncertainties from
-the finite size of the simulation samples are included according to the
-simplified Barlow--Beeston method~\cite{barlow1993,conway2011}.
+samples are included in the measurement as well. Lastly, statistical
+uncertainties from the finite size of the simulation samples are included
+according to the simplified Barlow--Beeston method~\cite{barlow1993,conway2011}.
 
 Theory uncertainties on the modelling of \ttbar production using simulation are
 derived for this measurement according to prescriptions developed by the ATLAS
@@ -334,14 +334,15 @@ to the \Vjets background.
 
 \subsubsection{Results of the Scale Factor Measurement}
 
-The measured \faketauhadvis SFs are shown in \Cref{fig:ttbarSF_postfit_SF} for
-all relevant \tauid criteria. The size of the corrections described by the SFs
-can reach up to \SI{55}{\percent} for \faketauhadvis of high \pT where
-simulation overestimates the contribution of \faketauhadvis in \ttbar. SFs for
-\faketauhadvis reconstructed as 1-prong (3-prong) candidates with
-$\pT < \SI{70}{\GeV}$ are within \SI{20}{\percent} (\SI{40}{\percent}) of
-unity. Only small differences are observed between SFs measured for different
-\tauid requirements at trigger-level as is shown
+The measured \faketauhadvis SFs are shown in \Cref{fig:ttbarSF_postfit_SF}.
+% for all relevant \tauid criteria.
+The size of the corrections described by the SFs can reach up to
+\SI{55}{\percent} for \faketauhadvis of high \pT where simulation overestimates
+the contribution of \faketauhadvis in \ttbar. SFs for \faketauhadvis
+reconstructed as 1-prong (3-prong) candidates with $\pT < \SI{70}{\GeV}$ are
+within \SI{20}{\percent} (\SI{40}{\percent}) of unity. Only small differences
+are observed between SFs measured for different \tauid requirements at
+trigger-level as is shown
 in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
 
 \begin{figure}[htbp]
@@ -382,12 +383,13 @@ in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
 \end{figure}
 
 The fit model and the corresponding fit results are checked by comparing the
-post-fit predictions of the model with the observed data in all regions. In
-addition, pulls and constraints of nuisance parameters, and correlations between
-nuisance parameters and the POIs are inspected. Exemplary post-fit predictions
-of the model are shown in \Cref{fig:ttbarSF_postfit_ptmtw} in terms of the \pT
-of \tauhadvis candidates and \mTW in the SF-CR after requiring events to pass
-the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.
+post-fit predictions of the model with the observed data in all \tauhadvis
+candidate \Ntracks and \pT regions. In addition, pulls and constraints of
+nuisance parameters, and correlations between nuisance parameters and the POIs
+are inspected. Exemplary post-fit predictions of the model are shown in
+\Cref{fig:ttbarSF_postfit_ptmtw} in terms of the \pT of \tauhadvis candidates
+and \mTW in the SF-CR after requiring events to pass the
+\texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.
 
 \begin{figure}[htbp]
   \centering
@@ -620,7 +622,7 @@ effect is only relevant for \faketauhadvis with transverse momenta close to the
 \pT~threshold of the \texttt{tau35} trigger, i.e.\
 \SIrange[range-phrase=--]{40}{50}{\GeV} for 1-prong candidates and
 \SIrange[range-phrase=--]{40}{60}{\GeV} for 3-prong candidates. For
-\faketauhadvis with larger transverse momenta the differences between triggers
+\faketauhadvis with larger transverse momenta, the differences between triggers
 become negligible.
 
 % The difference in trigger efficiency between \texttt{tau25} and \texttt{tau35}
@@ -692,7 +694,7 @@ background prediction in the SR of the \hadhad channel is summarised. The
 relative uncertainties on the prediction split by uncertainty source are:
 \begin{itemize}
 
-\item Uncertainties of the SF measurement:~$\pm \SI{8.5}{\percent}$.
+\item Uncertainties from the SF measurement:~$\pm \SI{8.5}{\percent}$.
 
 \item Extrapolation uncertainties (SF-CR $\ra$ \hadhad
   SR):~$\pm \SI{9.7}{\percent}$.
@@ -709,15 +711,18 @@ background are the uncertainties on the SFs from the SF measurement and the
 extrapolation uncertainties. Due to the small expected number of FF events in
 the \hadhad SR (cf.~\Cref{tab:ttbarSF_yields}), the large extrapolation
 uncertainty for FF events has limited impact on the uncertainty of the total
-\ttbarFakes prediction. The uncertainty accounting for the effects of different
-\pT~(\ET)~thresholds of \tauhadvis-triggers has only a minor impact on the
-overall \ttbarFakes background prediction since only a small fraction of events
-is affected by this uncertainty. \Cref{tab:ttbarSF_yields} summarises the
-\ttbarFakes prediction in the \hadhad SR and compares it to the prediction from
-simulation without application of \faketauhadvis SFs. Generally, both
-predictions agree within uncertainties except for the FT~component. The
-predicted number of FT~events is smaller after application of \ttbarFake SFs due
-to SFs being smaller than unity for \faketauhadvis with high~\pT.
+\ttbarFakes prediction.
+% The uncertainty accounting for the effects of different \pT~(\ET)~thresholds
+% of \tauhadvis-triggers has only a minor impact on the overall \ttbarFakes
+% background prediction since only a small fraction of events is affected by
+% this uncertainty.
+\Cref{tab:ttbarSF_yields} summarises the \ttbarFakes prediction in the \hadhad
+SR and compares it to the prediction from simulation without application of
+\faketauhadvis SFs.
+% Generally, both predictions agree within uncertainties except for the
+% FT~component. The predicted number of FT~events is smaller after application
+% of \ttbarFake SFs due to SFs being smaller than unity for \faketauhadvis with
+% high~\pT.
 
 % The total \ttbarFakes event yield in the \hadhad SR is determined with a
 % relative uncertainty of \SI{13}{\percent}, agreeing with the uncorrected
@@ -799,8 +804,9 @@ This inversion of the \tauid requirement rejects most \ttbar events with
 true-\tauhadvis, yielding a region with \ttbarFakes purity of about
 \SI{80}{\percent}. Trigger-matching of the \antitau to a \tauhadvis at the HLT
 reduces the \ttbarFakes yield by about \SI{80}{\percent} due to the
-trigger-level identification requirements; however, the \ttbarFakes purity
-remains largely unchanged.
+trigger-level identification requirements; however, only a mild decrease in
+\ttbarFakes purity by about 5 percentage points is observed.
+% remains largely unchanged.
 
 A reduced set of experimental uncertainties is used for this measurement due to
 practical limitations in the dataset preparation for the

@@ -1,12 +1,12 @@
 Multi-jet production is a source of background in the \hadhad SR in which both
-\tauhadvis candidates originate from the misidentification of quark- or
-gluon-initiated jets. It represents the second-largest background with
-\faketauhadvis in the \hadhad SR after the dominant \ttbarFakes contribution.
+\tauhadvis candidates originate from quark- or gluon-initiated jets. It
+represents the second-largest background with \faketauhadvis in the \hadhad SR
+after the dominant \ttbarFakes contribution.
 
 \subsubsection{The Fake Factor Method}
 
 The multi-jet background is estimated using the data-driven fake factor
-method. It is applicable in cases where two observables exist that are
+method. This method is applicable in cases where two observables exist that are
 statistically independent for the background process to be estimated while also
 being strong discriminators between the background and other processes (i.e.\
 signal and non-multi-jet processes). Four disjoint regions can be defined, three
@@ -86,7 +86,8 @@ $N_\text{non-multi-jet}^{r}$ the expected number of non-multi-jet events in
 region~$r$ estimated using simulation. Lastly, the probability of misidentifying
 a quark- or gluon-initiated jet as a \tauhadvis depends on the properties of the
 reconstructed \tauhadvis candidate, especially on \Ntracks and \pT. To control
-for this effect, FFs are measured in bins of \tauhadvis candidate properties.
+for this dependence, FFs are measured in bins of \tauhadvis candidate
+properties. The choice of binning will be discussed shortly.
 
 % In addition, the probability of misidentifying a quark- or gluon-initiated jet
 % as a \tauhadvis depends on the properties of the reconstructed \tauhadvis
@@ -237,13 +238,13 @@ dependencies that are not captured by the parameterisation of the FFs.
 
 % Binning in years / trigger
 The FF measurement is performed separately for events selected by STTs and DTTs
-to account for the differences in selection applied by these triggers. STTs
-require one \tauhadvis candidate with high transverse momentum passing the HLT
-\tauid, while DTTs require two \tauhadvis candidates both passing HLT \tauid and
-significantly lower \pT~thresholds. In addition, the changes in
-\tauhadvis-triggers during Run~2 of the LHC are accounted for by performing the
-FF measurement separately for three major data-taking periods:~2015--2016, 2017,
-and 2018.
+to account for the differences in selection applied by these triggers.
+% STTs require one \tauhadvis candidate with high transverse momentum passing
+% the HLT \tauid, while DTTs require two \tauhadvis candidates both passing HLT
+% \tauid and significantly lower \pT~thresholds.
+In addition, the changes in \tauhadvis-triggers during Run~2 of the LHC are
+accounted for by performing the FF measurement separately for three major
+data-taking periods:~2015--2016, 2017, and 2018.
 
 % Reason for binning
 %
@@ -267,7 +268,7 @@ detector. Few multi-jet events are selected by STTs due to the large
 measurement. In this case, FFs are measured separately for cases where the
 anti-\tauhadvis is leading in \pT and sub-leading in \pT. This accounts for the
 \tauid applied at the HLT and the large difference in transverse momentum
-between the leading and sub-leading \tauhadvis candidate.
+between the leading and sub-leading \tauhadvis candidates.
 
 % In contrast, few multi-jet events are selected by STTs due to high \pT
 % thresholds on \tauhadvis preventing fine subdivision of the FF
@@ -292,8 +293,8 @@ between the leading and sub-leading \tauhadvis candidate.
   anti-\tauhadvis is the leading and one where it is the sub-leading \tauhadvis
   candidate. Provided the conditions for the FF method are fulfilled, both
   regions can be used to obtain separate estimates of the multi-jet background
-  in the OS ID region. The notation used to describe the FF measurement is
-  introduced in the following:
+  in the OS ID region. The following notation is used to describe the FF
+  measurement:
   \begin{description}[style=standard]
   \item[$\tau_0$ ($\tau_1$)] The \tauhadvis candidate leading (sub-leading) in \pT.
 
@@ -316,9 +317,11 @@ between the leading and sub-leading \tauhadvis candidate.
     \FF_{i}\ffargs &= \frac{\NmjID{SS}{i} \ffargs}{\NmjAntiID{SS}{i}\ffargs}
                      \quad \text{for} \quad i = 0, 1 \,\text{,}
   \end{align*}
-  where $\FF_{i}$ is the FF relating the ID region with the partition of the
-  Anti-ID region where $\tau_i$ is the anti-\tauhadvis. These can be used to
-  obtain two multi-jet estimates in the OS region given by
+  where $\FF_{i}$ is the FF relating the ID region with the part of the Anti-ID
+  region in which $\tau_i$ is the anti-\tauhadvis.
+  % relating the ID region with the partition of the Anti-ID region where
+  % $\tau_i$ is the anti-\tauhadvis.
+  These can be used to obtain two multi-jet estimates in the OS region given by
   \begin{align*}
     \NmjID{OS}{i}\ffargs = \FF_{i}\ffargs \cdot \NmjAntiID{OS}{i}\ffargs
     \quad \text{for} \quad i = 0, 1 \,\text{.}
@@ -361,17 +364,16 @@ between the leading and sub-leading \tauhadvis candidate.
   % Prior the agreement of the background estimates obtained with FF0
   % and FF1 were confirmed.
 
-  The motivation of using the approach of defining inclusive FFs is twofold:
-  First, it allows using all events in the Anti-ID region, independent of
-  whether the anti-\tauhadvis is leading or sub-leading in \pT, thus improving
-  the statistical precision of the background estimate. Second, the FFs can be
-  parameterised in properties of the anti-\tauhadvis directly, allowing to
-  target the key differences between the ID and Anti-ID regions. This represents
-  a change with respect to the previous publication in
-  Ref.~\cite{HIGG-2016-16-witherratum} in which FFs were parameterised in the
-  properties of both \tauhadvis candidates simultaneously. The high
-  dimensionality of the FF parameterisation was a limitation in the previous
-  measurement.}
+  The motivation of using inclusive FFs is twofold: First, it allows using all
+  events in the Anti-ID region, independent of whether the anti-\tauhadvis is
+  leading or sub-leading in \pT, thus improving the statistical precision of the
+  background estimate. Second, the FFs can be parameterised in properties of the
+  anti-\tauhadvis, allowing to target the key differences between the ID and
+  Anti-ID regions. This represents a change with respect to the previous
+  publication in Ref.~\cite{HIGG-2016-16-witherratum} in which FFs were
+  parameterised in the properties of both \tauhadvis candidates
+  simultaneously. Previously, the high dimensionality of the FF parameterisation
+  lead to large statistical uncertainties on the measured FFs.}
 
 % The inclusive FFs for events selected by DTTs are measured according
 % to~\Cref{eq:inclusive_fake_factor} and parameterised in \tauhadvis decay mode,
@@ -384,8 +386,8 @@ The result of the FF measurement for DTTs is summarised
 in~\Cref{fig:mjfakes_fake_factors}. Qualitatively, the behaviour of the FFs with
 respect to \tauhadvis candidate properties is the same between data-taking
 periods. Minor differences can be observed when comparing FFs between years. No
-attempt was made to combine the measurements as the statistical precision of the
-FF measurement is not a limiting factor in the analysis.
+attempt was made to combine the measurements for different years as the
+statistical precision of the FFs is not a limiting factor in the analysis.
 
 \begin{figure}[htbp]
   \centering
@@ -468,11 +470,10 @@ whether the anti-\tauhadvis is leading ($\tau_0$) or sub-leading ($\tau_1$) in
 \subsubsection{Validation of the Multi-jet Estimate in the 1 $b$-tag OS Region}
 
 An independent validation of the background estimate is performed in the 1
-$b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}). After the initial
-event selection, this region has a multi-jet purity of about \SI{50}{\percent}
-with the dominant non-multi-jet contributions originating from \Zjets and
-\ttbar. A multi-jet validation region (VR) is defined by additionally requiring
-events to fulfil
+$b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}). This region has a
+multi-jet purity of about \SI{50}{\percent} with the dominant non-multi-jet
+contributions originating from \Zjets and \ttbar. A multi-jet VR is defined by
+requiring events to fulfil
 \begin{align*}
   \mMMC > \SI{110}{\GeV} \quad \text{and} \quad \mathcal{S} < 3 \,\text{,}
 \end{align*}
@@ -690,8 +691,11 @@ multi-jet prediction in the SR.  The size of the subtraction in the
 showing that \ttbarFakes is the dominant source of non-multi-jet events in this
 region. Due to the large relative size of the subtracted non-multi-jet
 component, any uncertainties affecting the subtracted components have a large
-impact on the multi-jet estimate in the ID region. This is the main limitation
-of the multi-jet estimation method used in this analysis.
+impact on the multi-jet estimate in the ID region. This is the largest source of
+systematic uncertainty on the estimate of the multi-jet background in the
+analysis.
+% This is the main limitation of the multi-jet estimation method used in this
+% analysis.
 
 \begin{figure}[htbp]
   \centering
