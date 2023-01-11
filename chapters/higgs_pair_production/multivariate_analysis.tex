@@ -49,14 +49,13 @@ production in the \hadhad and \lephad channels.
 % while being able to smoothly interpolate to parameter values not seen during
 % training of the network.
 
-The scores provided by these multivariate classification methods,
-hereafter called MVA scores, are later used as a discriminant in
-maximum likelihood fits to extract the signal of interest and to set
-upper limits on signal strengths and cross sections. No further
-selections are applied to events entering the signal extraction
-procedure such that the pre-selection regions are also SRs
-of the respective channels. During the development of the analysis,
-regions at high MVA scores were blinded to avoid selection biases.
+The scores provided by these multivariate classification methods, hereafter
+called MVA scores, are later used as discriminants in maximum likelihood fits to
+extract the signal of interest and to set upper limits on signal strengths and
+cross sections. No further selections are applied to events entering the signal
+extraction procedure such that the pre-selection regions are also SRs of the
+respective channels. During the development of the analysis, regions at high MVA
+scores were blinded to avoid selection biases.
 
 In \Cref{sec:mva_discriminating variables} the choice of
 discriminating variables used to classify signal and background events
@@ -389,8 +388,8 @@ values.\footnote{TMVA~v4.2.1~(ROOT~6.16/00)}
   \input{tables/hyperparameters_bdt}
 \end{table}
 
-The metric used for optimisation is the area under the \emph{receiver
-  operating characteristic curve} (ROC-AUC). The ROC curve is defined
+The metric used for optimisation is the area under the receiver operating
+characteristic curve (ROC-AUC). Here, the ROC curve is defined
 % \footnote{The ROC curve relates the true positive rate
 %   ($\varepsilon_\text{s}$) and false positive rate
 %   ($\varepsilon_\text{b}$) given varying thresholds on the output of a
@@ -399,7 +398,7 @@ The metric used for optimisation is the area under the \emph{receiver
 as the parametric curve given by
 $(x, y) = \left( \varepsilon_{\text{s}}(t), 1 -
   \varepsilon_{\text{b}}(t) \right)$, where $t$ is a threshold applied
-on the score of a classifier, and $\varepsilon_\text{s}$ /
+to the score of a classifier, and $\varepsilon_\text{s}$ /
 $\varepsilon_\text{b}$ the signal and background efficiency of this
 selection. A value of the ROC-AUC of $1$ indicates perfect
 classification, while a value of $0.5$ corresponds to an uninformative
