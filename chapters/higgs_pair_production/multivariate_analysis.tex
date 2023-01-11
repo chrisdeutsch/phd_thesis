@@ -94,11 +94,10 @@ invariant masses:
   resolution is \SIrange{8}{10}{\percent}.
 
 \end{description}
-The bias and resolution of the \PHiggs and \HH mass reconstruction is
-summarised in~\Cref{fig:mass_reconstruction} for resonant \HH
-production as a function of the resonance mass. The three invariant
-masses are used as inputs to the MVAs in the \hadhad and \lephad
-channels.
+The bias and resolution of the \PHiggs and \HH mass reconstruction is summarised
+in~\Cref{fig:mass_reconstruction} for events from resonant \HH production as a
+function of the resonance mass. The three invariant masses are used as inputs to
+the MVAs in the \hadhad and \lephad channels.
 
 % The performance of the \PHiggs candidate mass reconstruction is
 % summarised in~\Cref{fig:mass_reconstruction_H} for the resonant
@@ -378,23 +377,20 @@ summarises the classifier's performance over all possible working
 points, i.e.\ choices of thresholds on the classifier
 output~\cite{james13}.
 
-About 1600 unique BDT configurations are tested during the model
-selection process. The steps described in the following are applied on
-the datasets containing even- and odd-numbered events separately. The
-5-fold CV approach described in~\Cref{sec:mva_crossvalidation} is used
-to evaluate the performance of a given hyperparameter
-configuration. For a fixed configuration the ROC-AUC average and
-standard deviation is calculated over the iterations of the CV.
+About 1600 BDT configurations are tested during the model selection process. The
+steps described in the following are applied on the datasets containing even-
+and odd-numbered events separately. The 5-fold CV approach described
+in~\Cref{sec:mva_crossvalidation} is used to evaluate the performance of a given
+hyperparameter configuration. For a fixed configuration, the ROC-AUC average and
+standard deviation is calculated over the five CV iterations.
 
-Out of all evaluated configurations, the ROC-AUC of the 200 best
-performing model configurations are statistically indistinguishable
-based on the CV results. In the absence of a clearly preferred
-configuration, the highest ranking configuration with the smallest
-maximum tree depth is selected. A smaller tree depth, effectively
-limiting the number variable interactions used in the
-classifier~\cite{hastie09}, is chosen to be less reliant on the
-quality of the modelling of higher order variable interactions in the
-training data.
+Out of all evaluated configurations, the ROC-AUC of the 200 best performing
+model configurations are statistically indistinguishable based on the CV
+results. In the absence of a clearly preferred configuration, the highest
+ranking configuration with the smallest maximum tree depth is selected. A
+smaller tree depth, effectively limiting the number variable interactions used
+in the classifier~\cite{hastie09}, is chosen to be less reliant on the quality
+of the modelling of higher-order variable interactions in the training data.
 
 The selected configuration, shown underlined
 in~\Cref{tab:hyperparameter_grid_bdt}, is the 5\textsuperscript{th}
@@ -645,20 +641,18 @@ events with \mHH around \SI{325}{\GeV} are most abundant
 (cf.~\Cref{fig:mva_inputs}) and therefore a value of \mX at the lower
 end of the range is selected for optimisation.
 
-About 1600 unique configurations of the PNNs are tested, the 400
-highest ranking ones in ROC-AUC showing compatible performance in
-terms of the performance estimate obtained from CV. A single
-configuration is obtained by choosing the best performing parameter
-set in CV on even-numbered events and using the same configuration for
-odd-numbered events. The chosen configuration, underlined
-in~\Cref{tab:hyperparameter_grid_pnn}, has a ROC-AUC in 5-fold CV of
-\num{0.9764 +- 0.0009} on even- and \num{0.9754 +- 0.0009} on
-odd-numbered events.\footnote{On the dataset with odd-numbered events
-  the chosen configuration is the 54\textsuperscript{th} highest
-  ranking one in terms of the ROC-AUC. For comparison, the highest
-  ranking model on odd-numbered event has a ROC-AUC of \num{0.9761 +-
-    0.0020}, showing compatible performance with the chosen
-  configuration.} The PNNs are then re-fit on all five folds of the
+About 1600 configurations of the PNNs are tested, the 400 highest ranking ones
+in ROC-AUC showing compatible performance in terms of the performance estimate
+obtained from CV. A single configuration is obtained by choosing the best
+performing parameter set in CV on even-numbered events and using the same
+configuration for odd-numbered events. The chosen configuration, underlined
+in~\Cref{tab:hyperparameter_grid_pnn}, has a ROC-AUC in 5-fold CV of \num{0.9764
+  +- 0.0009} on even- and \num{0.9754 +- 0.0009} on odd-numbered
+events.\footnote{On the dataset with odd-numbered events the chosen
+  configuration is the 54\textsuperscript{th} highest ranking one in terms of
+  the ROC-AUC. For comparison, the highest ranking model on odd-numbered event
+  has a ROC-AUC of \num{0.9761 +- 0.0020}, showing compatible performance with
+  the chosen configuration.} The PNNs are then re-fit on all five folds of the
 inner CV separately for even- and odd-numbered events.
 
 \subsubsection{Evaluation and Variable Importance}
