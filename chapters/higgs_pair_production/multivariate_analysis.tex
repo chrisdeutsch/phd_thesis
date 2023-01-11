@@ -1,14 +1,14 @@
 \section{Multivariate Analysis}%
 \label{sec:multivariate_analysis}
 
-The event selection described in~\Cref{sec:event_selection} serves as a
-pre-selection to select events compatible with $\bbbar\hadhad$ or
-$\bbbar\lephad$ final states and to ensure that reconstructed objects fulfil
-basic requirements. The signal-to-background ratio at this level of selection,
-with background being three orders of magnitude more abundant than the expected
-SM~\HH signal in the \hadhad channel (cf.~\Cref{tab:hadhad_presel_yields}), is
-not sufficient to provide any signal sensitivity without further
-signal-background discrimination.
+The event selection described in~\Cref{sec:event_selection} serves
+% as a pre-selection
+to select events compatible with $\bbbar\hadhad$ or $\bbbar\lephad$ final states
+and ensures that reconstructed objects fulfil basic requirements. The
+signal-to-background ratio at this level of selection, with background being
+three orders of magnitude more abundant than the expected SM~\HH signal in the
+\hadhad channel (cf.~\Cref{tab:hadhad_presel_yields}), is not sufficient to
+provide any signal sensitivity without further signal-background discrimination.
 
 Events from SM~\HH or resonant \HH production have distinct kinematic properties
 that can be used for signal-background discrimination. A number of reconstructed
@@ -18,27 +18,30 @@ classify events as signal or background. Depending on the \HH production mode
 and analysis category, different methods are used.
 
 The search for SM~\HH production uses BDTs and NNs to distinguish signal from
-background events in the \hadhad and \lephad channels, respectively. When
-searching for resonant \HH production, multiple mass hypotheses for the scalar
+background events in the \hadhad and \lephad channels, respectively. In the
+search for resonant \HH production, multiple mass hypotheses for the scalar
 resonance are considered. The kinematic properties of events from resonant \HH
 production depend on the mass of the resonance; therefore, the classification
 task varies continuously with \mX. This is in contrast to the SM~\HH case in
 which the event kinematics follow from a fixed distribution predicted by the
 SM. Classification tasks that vary as a function of a parameter, for example the
 mass of a resonance, can be performed by \emph{Parameterised Neural Networks}
-(PNNs)~\cite{Baldi:2016fzo}.
-% , which were first introduced to HEP in Ref..
-PNNs are classifiers that are able to handle sets of classification tasks
-described by one or more parameters; therefore, PNNs are used as discriminants
-in the search for resonant \HH production in the \hadhad and \lephad channels.
+(PNNs)~\cite{Baldi:2016fzo};
+% , which were first introduced to HEP in Ref..  PNNs are classifiers that are
+% able to handle sets of classification tasks described by one or more
+% parameters;
+therefore, PNNs are used as discriminants in the search for resonant \HH
+production in the \hadhad and \lephad channels.
 
 The scores provided by these multivariate classification methods, hereafter
 called MVA scores, are later used as discriminants in maximum likelihood fits to
 extract the signal of interest and to set upper limits on signal strengths and
-cross sections. No further selections are applied to events entering the signal
-extraction procedure such that the pre-selection regions are also SRs of the
-respective channels. During the development of the analysis, regions at high MVA
-scores were blinded to avoid selection biases.
+cross sections.
+% No further selections are applied to events entering the signal extraction
+% procedure such that the pre-selection regions are also SRs of the respective
+% channels.
+During the development of the analysis, regions at high MVA scores were blinded
+to avoid selection biases.
 
 In \Cref{sec:mva_discriminating variables} the choice of discriminating
 variables used to classify signal and background events is
@@ -48,17 +51,6 @@ are unbiased and can be used in the statistical interpretation of the search
 results. This method is employed in \Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn}
 to obtain the BDT- and PNN-based classifiers used to extract signal events in
 the \hadhad channel.
-
-% \Cref{sec:mva_crossvalidation} begins by describing the
-% cross-validation method used to ensure that model selection and MVA
-% predictions are unbiased. In~\Cref{sec:mva_discriminating variables}
-% the choice of discriminating variables used to classify signal and
-% background events will be motivated. Afterwards, the training and
-% optimisation of the classifiers used to extract SM \HH signal is
-% described in~\Cref{sec:mva_smbdt}. Finally, \Cref{sec:mva_pnn}
-% describes the event classification using PNNs for the search for
-% resonant production of \HH, including a brief discussion of their
-% properties.
 
 
 \subsection{Discriminating Variables}%
