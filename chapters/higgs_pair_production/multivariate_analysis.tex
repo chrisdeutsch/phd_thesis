@@ -1,13 +1,14 @@
 \section{Multivariate Analysis}%
 \label{sec:multivariate_analysis}
 
-The event selection described in~\Cref{sec:event_selection} serves to select
-events compatible with $\bbbar\hadhad$ or $\bbbar\lephad$ final states and
-ensures that reconstructed objects fulfil basic requirements. The
-signal-to-background ratio at this level of selection, with background being
-three orders of magnitude more abundant than the expected SM~\HH signal in the
-\hadhad channel (cf.~\Cref{tab:hadhad_presel_yields}), is not sufficient to
-provide any signal sensitivity without further signal-background discrimination.
+The event selection described in~\Cref{sec:event_selection} serves as a
+pre-selection to select events compatible with $\bbbar\hadhad$ or
+$\bbbar\lephad$ final states and to ensure that reconstructed objects fulfil
+basic requirements. The signal-to-background ratio at this level of selection,
+with background being three orders of magnitude more abundant than the expected
+SM~\HH signal in the \hadhad channel (cf.~\Cref{tab:hadhad_presel_yields}), is
+not sufficient to provide any signal sensitivity without further
+signal-background discrimination.
 
 Events from SM~\HH or resonant \HH production have distinct kinematic properties
 that can be used for signal-background discrimination. A number of reconstructed
@@ -39,15 +40,14 @@ extraction procedure such that the pre-selection regions are also SRs of the
 respective channels. During the development of the analysis, regions at high MVA
 scores were blinded to avoid selection biases.
 
-In \Cref{sec:mva_discriminating variables} the choice of
-discriminating variables used to classify signal and background events
-is motivated. \Cref{sec:mva_crossvalidation} introduces a method used
-to train, optimise, and evaluate classifiers that ensures that the
-predicted MVA scores are unbiased and can be used in the statistical
-interpretation of the search results. This method is employed in
-\Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn} to obtain the BDT- and
-PNN-based classifiers used to extract signal events in the \hadhad
-channel.
+In \Cref{sec:mva_discriminating variables} the choice of discriminating
+variables used to classify signal and background events is
+motivated. \Cref{sec:mva_crossvalidation} introduces a method used to train,
+optimise, and evaluate classifiers that ensures that the predicted MVA scores
+are unbiased and can be used in the statistical interpretation of the search
+results. This method is employed in \Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn}
+to obtain the BDT- and PNN-based classifiers used to extract signal events in
+the \hadhad channel.
 
 % \Cref{sec:mva_crossvalidation} begins by describing the
 % cross-validation method used to ensure that model selection and MVA
