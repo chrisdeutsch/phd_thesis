@@ -78,22 +78,20 @@ invariant masses:
 \begin{description}
 
 \item[\mBB] The invariant mass of the $H \to \bbbar$ candidate. It is
-  reconstructed using the four-momenta of both \btagged jets in the
-  SRs after $b$-jet momentum corrections. The Higgs boson
-  mass is reconstructed with a resolution of \SIrange{13}{18}{\GeV}
-  for the signal processes considered in this search.
+  reconstructed using the four-momenta of both \btagged jets in the SRs after
+  $b$-jet momentum corrections. The Higgs boson mass is reconstructed with a
+  resolution of \SIrange{13}{18}{\GeV} for the signal processes considered in
+  this search.
 
-\item[\mMMC] The invariant mass of the $H \to \tautau$ candidate
-  reconstructed by the MMC. In the \hadhad channel, the mass
-  resolution of the MMC ranges from \SIrange{15}{18}{\GeV} depending
-  on the signal process.
+\item[\mMMC] The invariant mass of the $H \to \tautau$ candidate reconstructed
+  by the MMC. In the \hadhad channel, the mass resolution of the MMC ranges from
+  \SIrange{15}{18}{\GeV} depending on the signal process.
 
-\item[\mHH] The invariant mass of the pair of Higgs bosons in signal
-  events. It is determined from the sum of four-momenta of the $b$-jet
-  candidates after momentum corrections and the $\tautau$-system
-  four-momentum reconstructed using the MMC. For signal events in the
-  \hadhad channel the relative mass resolution is
-  \SIrange{8}{10}{\percent}.
+\item[\mHH] The invariant mass of the pair of Higgs bosons in signal events. It
+  is determined from the sum of four-momenta of the $b$-jet candidates after
+  momentum corrections and the $\tautau$-system four-momentum reconstructed
+  using the MMC. For signal events in the \hadhad channel, the relative mass
+  resolution is \SIrange{8}{10}{\percent}.
 
 \end{description}
 The bias and resolution of the \PHiggs and \HH mass reconstruction is
@@ -139,10 +137,10 @@ channels.
     \label{fig:mass_reconstruction_HH}
   \end{subfigure}
 
-  \caption[Resolution and bias of the $H$- and $HH$-system mass reconstruction
-  in the \hadhad SR.]{Performance of methods used to reconstruct the
-    \PHiggs-system mass (a) and the \HH-system mass (b) in the \hadhad signal
-    region estimated using simulation of $\PX \ra \HH \ra \bbtautau$
+  \caption[Resolution and bias of the $H$- and $HH$-system invariant mass
+  reconstruction in the \hadhad SR.]{Performance of methods used to reconstruct
+    the \PHiggs-system (a) and the \HH-system (b) invariant mass in the \hadhad
+    signal region estimated using simulation of $\PX \ra \HH \ra \bbtautau$
     processes. The top panels show the bias of the mass prediction given in
     terms of deviation of the median mass prediction from the true mass
     value. The bottom panels show the mass resolution estimate as half of the
@@ -228,13 +226,12 @@ the \hadhad channel are shown in~\Cref{fig:mva_inputs}.
 
 Many machine learning algorithms
 % , due to their ability to approximate large classes of functions,
-are susceptible to fitting statistical fluctuations in the data that
-are used to train a model. As a result, predictions of performance
-characteristics of the model based on the training data might not
-generalise to previously unseen data. In extreme cases, frequently
-called overfitting, the performance of the model evaluated on an
-independent dataset starts to degrade when further increasing the
-capacity of the model~\cite{hastie09}.
+are susceptible to fitting statistical fluctuations in the data that are used to
+train a model. As a result, predictions of performance characteristics of the
+model based on the training data might not generalise to unseen data. In extreme
+cases, frequently called overfitting, the performance of the model evaluated on
+an independent dataset starts to degrade when further increasing the capacity of
+the model~\cite{hastie09}.
 
 When using machine learning methods in searches for new physics, it
 has to be ensured that the methods are evaluated on datasets that were
@@ -304,10 +301,10 @@ evaluated on the hold-out dataset.
   \caption[5-fold cross-validation approach for model selection.]{5-fold
     cross-validation approach for model selection on even-numbered events. The
     separation of events into disjoint subsets (folds) is indicated by
-    rectangles. The purpose of the subset is denoted below. A single step out of
-    a total of five, the number of possible assignments of the evaluation-fold,
-    is shown. The hold-out dataset consisting of odd-numbered events is not used
-    when performing model selection on even-numbered events.}%
+    rectangles. A single step out of a total of five, the number of possible
+    assignments of the evaluation-fold, is shown. The hold-out dataset
+    consisting of odd-numbered events is not used when performing model
+    selection on even-numbered events.}%
   \label{fig:cross_validation}
 \end{figure}
 
