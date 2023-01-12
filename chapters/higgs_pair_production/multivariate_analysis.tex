@@ -543,18 +543,16 @@ approach multiple classification tasks are solved in isolation,
 ignoring the more general classification problem. This was previously
 explored in Ref.~\cite{HIGG-2016-16-witherratum} using BDTs.
 
-An alternative approach is provided by parameterised classifiers where
-the dependency of the prediction problem is incorporated during
-training, thus solving it in a broader context. In particular,
-Parameterised Neural Networks are used due to the ability of neural
-networks to smoothly approximate large classes of continuous
-functions~\cite{Baldi:2016fzo}. As a result of these properties, it is
-shown in Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate
-the classification task to parameter values not seen in training. It
-is also suggested that parameterised classifiers may outperform
-approaches using one classifier per parameter value due to their
-ability to solve the more general, parameter-dependent classification
-problem.
+An alternative approach is provided by parameterised classifiers where the
+dependency of the prediction problem is incorporated during training, thus
+solving it in a broader context. In particular, PNNs are used due to the ability
+of neural networks to smoothly approximate large classes of continuous
+functions~\cite{Baldi:2016fzo}. As a result of these properties, it is shown in
+Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate the classification
+task to parameter values not seen in training. It is also suggested that
+parameterised classifiers may outperform approaches using one classifier per
+parameter value due to their ability to solve the more general,
+parameter-dependent classification problem.
 
 In this search PNNs are implemented as feedforward neural networks
 where, in addition to the five discriminating variables, the parameter
@@ -569,35 +567,31 @@ held fixed according to the classification problem to be solved.
 
 \subsubsection{Implementation and Hyperparameter Optimisation}
 
-The PNNs are trained using simulated signal events of 19 different
-mass hypotheses of the scalar resonance. An additional point at
-$\mX = \SI{375}{\GeV}$ was included at a later stage of the analysis
-and was not part of the training and optimisation process. The
-background processes considered in the training are the same as the
-ones used for the non-resonant SM \HH search. Non-resonant SM \HH
-production is not included as a background.
+The PNNs are trained using simulated signal events of 19 different mass
+hypotheses of the scalar resonance. An additional point at
+$\mX = \SI{375}{\GeV}$ was included at a later stage of the analysis and was not
+part of the training and optimisation process. The background processes
+considered in the training are the same as the ones used for the SM~\HH
+search. Moreover, SM~\HH production is not included as a background.
 % Because it has not yet been observed
-The signal event samples are combined, ensuring that every \mX
-hypothesis contributes with the same total event weight to the
-combined sample, subsequently normalising the combined signal and
-background sample to have equal weight. The 5-fold CV approach is used
-for model selection.
+The signal event samples are combined, ensuring that every \mX hypothesis
+contributes with the same total event weight to the combined sample,
+subsequently normalising the combined signal and background sample to have equal
+weight. The 5-fold CV approach is used for model selection.
 
-The training proceeds by minimising the binary cross-entropy loss
-using stochastic gradient descent with momentum and exponential
-learning rate decay. As part of the training process, the
-discriminating variables are centred and scaled by subtracting the
-median and dividing by the interquartile range of the variable for
-better conditioning of the loss minimisation. Similarly, the values of
-the mass parameter are (linearly) transformed into $[0, 1]$. The
-values of the mass parameter for background events is sampled from the
-\mX distribution in the combined signal sample and is re-sampled after
-every training epoch. The neural networks consist of multiple
-fully-connected layers with ReLU activation~\cite{nair:relu}, except
-for the final layer which uses sigmoid activation. The training is
-implemented in \textsc{Keras}~\cite{keras} using the
-\textsc{TensorFlow}~\cite{tensorflow2015-whitepaper} backend. Trained
-PNN are evaluated using \textsc{lwtnn}~\cite{lwtnn}.
+The training proceeds by minimising the binary cross-entropy loss using
+stochastic gradient descent with momentum and exponential learning rate
+decay. As part of the training process, the discriminating variables are centred
+and scaled by subtracting the median and dividing by the interquartile range of
+the variable for better conditioning of the loss minimisation. Similarly, the
+values of the mass parameter are (linearly) transformed into $[0, 1]$. The
+values of the mass parameter for background events is sampled from the \mX
+distribution in the combined signal sample and is re-sampled after every
+training epoch. The PNNs consist of multiple fully-connected layers with ReLU
+activation~\cite{nair:relu}, except for the final layer which uses sigmoid
+activation. The training is implemented in \textsc{Keras}~\cite{keras} using the
+\textsc{TensorFlow}~\cite{tensorflow2015-whitepaper} backend. Trained PNNs are
+evaluated using \textsc{lwtnn}~\cite{lwtnn}.
 
 The PNN hyperparameters are optimised, following the approach
 previously employed for the BDT, using a random grid search with
@@ -622,18 +616,17 @@ same.
   \input{tables/hyperparameters_pnn}
 \end{table}
 
-No clear choice of optimisation metric exists to evaluate a continuum
-of related classification task. For simplicity, the ROC-AUC of the PNN
-when performing binary classification of a resonant signal with
-$\mX = \SI{325}{\GeV}$ against the background is chosen. This choice
-is motivated by the strength of the $\PX \to \HH \to \bbtautau$ search
-channel in an intermediate mass range of the scalar resonance from
-approximately \SI{300}{\GeV} to \SI{600}{\GeV} compared to the \bbyy
-and \bbbb channels which are expected dominate the low and high \mX
-signal sensitivity, respectively. In the \hadhad channel, background
-events with \mHH around \SI{325}{\GeV} are most abundant
-(cf.~\Cref{fig:mva_inputs}) and therefore a value of \mX at the lower
-end of the range is selected for optimisation.
+No clear choice of optimisation metric exists to evaluate a continuum of related
+classification task. For simplicity, the ROC-AUC of the PNN when performing
+binary classification of a signal with $\mX = \SI{325}{\GeV}$ against the
+background is chosen. This choice is motivated by the strength of the
+$\PX \to \HH \to \bbtautau$ search channel in an intermediate mass range of the
+scalar resonance from approximately \SI{300}{\GeV} to \SI{800}{\GeV} compared to
+the \bbyy and \bbbb channels which are expected dominate the low and high \mX
+signal sensitivity, respectively. In the \hadhad channel, background events with
+\mHH around \SI{325}{\GeV} are most abundant (cf.~\Cref{fig:mva_inputs}) and
+therefore a value of \mX at the lower end of the range is selected for
+optimisation.
 
 About 1600 configurations of the PNNs are tested, the 400 highest ranking ones
 in ROC-AUC showing compatible performance in terms of the performance estimate
