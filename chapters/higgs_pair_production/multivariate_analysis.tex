@@ -38,8 +38,8 @@ cross sections.
 % No further selections are applied to events entering the signal extraction
 % procedure such that the pre-selection regions are also SRs of the respective
 % channels.
-During the development of the analysis, regions at high MVA scores were blinded
-to avoid selection biases.
+During the development of the analysis, regions at high MVA scores were blinded.
+% to avoid selection biases.
 
 In \Cref{sec:mva_discriminating variables} the choice of discriminating
 variables used to classify signal and background events is
@@ -50,16 +50,16 @@ results. This method is employed in \Cref{sec:mva_smbdt} and \Cref{sec:mva_pnn}
 to obtain the BDT- and PNN-based classifiers for signal-background
 discrimination in the \hadhad channel. In the \lephad channel, a similar
 approach of multivariate analysis is adopted, which is documented in
-Ref.~\cite{HDBS-2018-40} and is not discussed in detail.
+Ref.~\cite{HDBS-2018-40} and is not discussed in detail in this thesis.
 
 
 \subsection{Discriminating Variables}%
 \label{sec:mva_discriminating variables}
 
-The set of variables provided to the multivariate classification methods is
-critical to their performance in distinguishing between classes. The initial
-choice of variables considered in this search is based on the previous
-publication by the ATLAS collaboration in the same analysis
+The set of variables provided to multivariate classification methods is critical
+to their performance in distinguishing between classes. The initial choice of
+variables considered in this search is based on the previous publication by the
+ATLAS collaboration in the same analysis
 channel~\cite{HIGG-2016-16-witherratum}. Only minor changes to the input
 variable selection are performed for this search.
 
@@ -148,15 +148,15 @@ the MVAs in the \hadhad and \lephad channels.
   \label{fig:mass_reconstruction}
 \end{figure}
 
-Higgs bosons originating from signal processes are typically produced
-with large momenta in the \HH rest frame, the exception being resonant
-\HH production \mX close to the \HH production threshold, thus leading
-to a small separation of the (visible) \PHiggs decay products. The
-distances \dRtautau and \dRbb between the visible decay products of
-the \tauleptons and $b$-jet candidates, respectively, provide
-discrimination power against multi-jet and top-quark pair production
-where \tauleptons and $b$-jet candidates are less collimated. Both
-variables are used as inputs to the MVAs in the \hadhad and \lephad
+Higgs bosons originating from SM~\HH or resonant \HH production (with
+$\mX \gg 2\mH$) are typically produced with large momentum in the \HH rest
+frame. As a result, the angular separation of the Higgs boson decay products
+tends to be small. The angular distances \dRtautau and \dRbb between the visible
+decay products of the \taulepotons ($e$, $\mu$, \tauhadvis) and the $b$-jet
+candidates, respectively, are reconstructed. These variables provide
+discrimination power against backgrounds from multi-jet and top-quark pair
+production in which the \taulepton and $b$-jet candidates are less collimated.
+Both variables are used as inputs to the classifiers in the \hadhad and \lephad
 SLT channel.
 
 In a given analysis channel, the same set of input variables is used
