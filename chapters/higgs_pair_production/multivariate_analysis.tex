@@ -311,18 +311,18 @@ evaluated on the hold-out dataset.
   the \hadhad Channel}%
 \label{sec:mva_smbdt}
 
-The search for SM \HH production in the \hadhad channel uses BDTs to
-separate signal from background events. Events passing the SR
-selection (2~$b$-tag region) of the \hadhad channel are used to
-train BDT. The training considers the non-resonant \HH production via
-\ggF as the \emph{signal class}; the combination of all backgrounds as
-the \emph{background class}. The individual background processes,
-which are estimated from simulation or data (multi-jet background),
-are weighted according to their relative cross sections. SM \HH
-production via VBF is not included in the training.
+The search for SM \HH production in the \hadhad channel uses BDTs to separate
+signal from background events. Events passing the SR selection
+% (2~$b$-tag region)
+of the \hadhad channel are used to train BDT. The training considers the
+non-resonant \HH production via \ggF as the signal class; the combination of all
+backgrounds as the background class. The individual background processes, which
+are estimated from simulation or CR data (multi-jet background), are weighted
+according to their relative cross sections. SM~\HH production via VBF is not
+included in the training.
 % due to its low cross section compared to the \ggF production mode.
-The BDT implementation of the \emph{Toolkit for Multivariate Data
-  Analysis} (TMVA)~\cite{TMVA} is used.
+The BDT implementation of the \emph{Toolkit for Multivariate Data Analysis}
+(TMVA)~\cite{TMVA} is used.
 
 
 \subsubsection{Hyperparameter Optimisation}
@@ -454,27 +454,24 @@ $1 / \varepsilon_{\text{b}} \approx 380$ while selecting almost half
 of the signal events.
 
 The single largest background in the last two BDT score bins, with an
-expectation of 6.9 events, is associated production of
-$\PZ \rightarrow \tautau$ with jets originating from heavy-flavour
-quarks. The production of single Higgs bosons represents the second
-most abundant background in the signal-like bins of the final
-discriminant. The primary source being~$\PHiggs \rightarrow \tautau$
-with approximately equal contribution from the \ggF, $\PZ\PHiggs$, and
-$\ttbar\PHiggs$ production modes. A small fraction of
-\SI{15}{\percent} is originating from $\PHiggs \rightarrow \bbbar$ in
-associated production with a \PZ boson. The kinematic properties of
-single Higgs boson production, particularly in the $Z\PHiggs$ mode, is
-similar to the non-resonant \HH signal and largely limited by the
-\PHiggs-system mass reconstruction performance such that about 1 in 15
-single Higgs boson events in the SR are selected into one
-of the two most signal-like bins, yielding an expectation of 4.8
-events. Other backgrounds populating the two most signal-like bins in
-BDT score are originating from \ttbar (with \truetauhadvis in the
-decay) with an expectation of 4.6 events and \jettotauhadvis from
-multi-jet and \ttbar production with 2.2 and 3.4 expected events,
-respectively. The signal and background yields including all
-experimental and theoretical uncertainties will be summarised
-in~\Cref{sec:statistical_analysis}.
+expectation of 6.9 events, is associated production of $\PZ \rightarrow \tautau$
+with jets originating from quarks of heavy-flavour. The production of single
+Higgs bosons represents the second most abundant background in the signal-like
+bins of the final discriminant. The primary source
+being~$\PHiggs \rightarrow \tautau$ with approximately equal contribution from
+the \ggF, $\PZ\PHiggs$, and $\ttbar\PHiggs$ production modes. A small fraction
+of \SI{15}{\percent} is originating from $\PHiggs \rightarrow \bbbar$ in
+associated production with a \PZ boson. The kinematic properties of single Higgs
+boson production, particularly in the $Z\PHiggs$ mode, is similar to the
+non-resonant \HH signal and largely limited by the \PHiggs-system mass
+reconstruction performance such that about 1 in 15 single Higgs boson events in
+the SR are selected into one of the two most signal-like bins, yielding an
+expectation of 4.8 events. Other backgrounds populating the two most signal-like
+bins in BDT score are originating from \ttbar (with \truetauhadvis in the decay)
+with an expectation of 4.6 events and \jettotauhadvis from multi-jet and \ttbar
+production with 2.2 and 3.4 expected events, respectively. The signal and
+background yields including all experimental and theoretical uncertainties are
+summarised in~\Cref{sec:statistical_analysis}.
 
 The importance of input variables in the BDT can be estimated using
 the \emph{permutation importance} technique. It is a method to inspect
@@ -487,14 +484,13 @@ class labels, and other correlated input variables. The importance of
 a given feature is estimated by measuring the degradation in the
 quality of the model's predictions after permuting a given feature.
 
-This technique measures the importance of a variable in a given model
-which does not necessarily correspond to the importance of the
-variable in solving the underlying predictive problem. In the presence
-of highly collinear features this means that some importance can be
-assigned to multiple related variables even if a strict subset of
-variables contains the information relevant to the problem. This
-effect needs to be considered when interpreting rankings based on the
-permutation importance.
+This technique measures the importance of a variable in a given model, which
+does not necessarily correspond to the importance of the variable in solving the
+underlying predictive problem. In the presence of highly collinear features this
+means that some importance can be assigned to multiple related variables even if
+a strict subset of variables contains the information relevant to the
+problem. This effect needs to be considered when interpreting rankings based on
+the permutation importance.
 
 In~\Cref{tab:variable_importance_bdt} a ranking of the input variables
 to the BDT for the SM \HH signal is shown based on the change in
