@@ -695,15 +695,14 @@ $\PZ \to \tautau$ in association with jets from $b$- or $c$-quarks.
   \todo[inline]{Add 1600 point for consistency with statistical analysis.}
 \end{figure}
 
-The previously discussed properties of PNN, the ability to solve a
-continuously varying classification task parameterised by \mX and the
-ability to interpolate to values of \mX not seen during training, are
-investigated. For this, a performance metric is defined by binning the
-PNN score for a given value of the mass parameter using an algorithm
-that optimises the signal sensitivity while obeying certain
-constraints. The binning algorithm will be formally introduced
-in~\Cref{sec:binning_alg} for the statistical analysis of the results
-of this search.
+The previously discussed properties of PNN, the ability to solve a continuously
+varying classification task parameterised by \mX and the ability to interpolate
+to values of \mX not seen during training, are investigated. For this, a
+performance metric is defined by binning the PNN score for a given value of the
+mass parameter using an algorithm that optimises the signal sensitivity while
+obeying certain constraints. The binning algorithm is formally introduced
+in~\Cref{sec:binning_alg} for the statistical analysis of the results of this
+search.
 % The performance of the PNN is evaluated by binning its
 % output score for a given value of the parameter using the algorithm
 % also used for the statistical interpretation of the final results. The
@@ -711,12 +710,12 @@ of this search.
 % in~\Cref{sec:binning_alg}, aims optimise the signal sensitivity while
 % obeying constraints on the statistical uncertainty of the background
 % estimate and the expected number of events in each bin.
-The expected signal significance is approximated, assuming independent
-Poisson counting experiments without uncertainties on the background
-predictions, as~$\nu_\text{s} / \sqrt{\nu_\text{b}}$ for every bin,
-where $\nu_\text{s}$ and $\nu_\text{b}$ is the expected number of
-signal and background events, respectively. A combined significance is
-obtained by adding the bin-wise significances in quadrature.
+The expected signal significance is approximated, assuming independent Poisson
+counting experiments without uncertainties on the background predictions,
+as~$\nu_\text{s} / \sqrt{\nu_\text{b}}$ for every bin, where $\nu_\text{s}$ and
+$\nu_\text{b}$ is the expected number of signal and background events,
+respectively. A combined significance is obtained by adding the bin-wise
+significances in quadrature.
 
 % Ability to handle multiple classification tasks
 The combined significance is used in~\Cref{fig:pnn_detuning} to
