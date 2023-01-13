@@ -1,42 +1,35 @@
-The recommendations for the derivation of uncertainties on the modelling of
-selected physics processes by the ATLAS collaboration are summarised in the
-following. Modelling uncertainties for \ttbar and single top-quark processes are
-summarised in \Cref{app:top_uncertainties}. Uncertainties on the modelling of
-\Zjets processes are summarised in \Cref{app:zjets_uncertainties}.
+The recommendations of the ATLAS collaboration for the derivation of
+uncertainties on the modelling of selected physics processes using simulation is
+summarised. \Cref{app:top_uncertainties} describes the prescriptions adopted to
+derive uncertainties for \ttbar and single top-quark
+processes. \Cref{app:zjets_uncertainties} summarises the prescriptions for
+\Zjets processes.
 
-\todo[inline]{Make this more generic.}
 
-
-\subsection{Uncertainties on the Modelling of \ttbar and Single Top Production
-  in Simulation}%
+\subsection{Uncertainties on the Modelling of \ttbar and Single Top-Quark
+  Production using Simulation}%
 \label{app:top_uncertainties}
 
 % https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PmgTopProcesses
-Theoretical uncertainties on the acceptance of \ttbar in simulation, which uses
+Uncertainties on the acceptance of \ttbar and single top-quark events in
+simulation need to be estimated. The nominal simulation setup uses
 \POWHEGBOX[v2]~\cite{Frixione:2007nw} as a matrix element (ME) generator
-interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea} for the parton shower
-(PS), need to be estimated. The cross section of \ttbar is allowed to vary
-freely in the fit model, therefore uncertainties only affecting the
-normalisation of \ttbar are omitted. However, uncertainties changing the
-relative acceptance between regions (i.e.\ uncertainties depending on \tauhadvis
-\pT or decay mode) entering the fit and effects changing the shape of the \mTW
-discriminant need to be estimated. The following sources of uncertainties are
-considered:
+interfaced to \PYTHIA[8.230]~\cite{Sjostrand:2014zea} for the parton shower (PS)
+and hadronisation. The following sources of uncertainties are considered:
 \begin{description}
 
-\item[Hard scatter simulation and NLO+PS matching] The uncertainty on the
-  modelling due to the choice of generator describing the hard scatter process
-  is estimated by comparing the nominal simulation of \ttbar with an alternative
-  setup replacing \POWHEGBOX[v2] with \MGNLO as the ME generator. This
-  comparison serves to probe the effect of different matching schemes between
-  the NLO matrix element and parton shower employed by both
-  generators.\footnote{\POWHEGBOX[v2] uses the \POWHEG
+\item[Hard scatter simulation and NLO+PS matching] An uncertainty due to the
+  choice of generator describing the hard scatter process is estimated by
+  comparing the nominal simulation setup with an alternative in which
+  \POWHEGBOX[v2] is replaced with \MGNLO. This comparison also probes the effect
+  of different schemes of matching NLO ME generators to PS
+  simulations.\footnote{\POWHEGBOX[v2] uses the \POWHEG
     method~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} and \MGNLO the
     MC@NLO method~\cite{Frixione:2002ik} for NLO+PS matching.}
 
-\item[Parton shower and hadronisation model] The uncertainty of the modelling of
-  the parton shower and non-perturbative effects is estimated by replacing
-  \PYTHIA[8] with \HERWIG[7.0.4] as the PS generator.
+\item[Parton shower and hadronisation model] An uncertainty on the modelling of
+  the PS and non-perturbative effects is estimated by replacing \PYTHIA[8] with
+  \HERWIG[7.0.4] for the PS simulation.
 
 \item[Missing higher order contributions] The renormalisation scale~(\muR) and
   factorisation scale~(\muF) is doubled (halved) to probe the effect of
@@ -66,9 +59,7 @@ considered:
 The prescriptions to calculate the \ttbar modelling uncertainties are a revised
 version of the methodology outlined in Ref.~\cite{ATL-PHYS-PUB-2020-023} for
 analyses targeting the \pp~collision dataset collected with the ATLAS detector
-during Run~2 of the LHC.
-
-\todo[inline]{PDF + \alphas ?}
+during Run~2 of the LHC.\todo{PDF+\alphas ?}
 
 Variations of the renormalisation and factorisation scales used for the ME
 generation are provided by internal re-weighting in \POWHEGBOX[v2]. Similarly,
@@ -78,9 +69,6 @@ re-weighting~\cite{Mrenna:2016sih,pythia-variations-online}. This approach
 allows to estimate uncertainties without changing the particle-level predictions
 of the simulation program, thus avoiding the need to re-run the detector
 simulation.
-
-\todo[inline]{Note option of combining the initial state radiation and scale
-  variations uncertainties in old recommendations.}
 
 
 \subsection{Uncertainties on the Modelling of \Zjets production in Simulation}%
