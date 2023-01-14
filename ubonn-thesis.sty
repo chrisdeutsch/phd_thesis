@@ -279,13 +279,13 @@
 % should be split into.
 % \RequirePackage[scale=0.75]{geometry}
 \KOMAoptions{headinclude=true, footinclude=false}
-\KOMAoptions{DIV=12}
+\KOMAoptions{DIV=14}
 \newlength{\UBNcoveroffset}
 \ifthenelse{\boolean{UBN@twoside}}{
   \typeout{ubonn-thesis: set twoside option true.}
   \KOMAoptions{twoside=true}
   \typeout{ubonn_thesis: apply BCOR correction of 5mm.}
-  \KOMAoptions{BCOR=5mm}
+  \KOMAoptions{BCOR=8mm}
   \typeout{ubonn-thesis: centre cover/title page.}
   \KOMAoptions{titlepage=firstiscover}
   \setlength{\UBNcoveroffset}{\UBN@coveroffset}
