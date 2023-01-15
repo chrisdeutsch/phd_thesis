@@ -71,28 +71,27 @@ re-run the detector simulation.
 \subsection{Uncertainties on the Modelling of \Zjets production in Simulation}%
 \label{app:zjets_uncertainties}
 
-The relative acceptance uncertainties originating from the modelling of the \ZHF
-background in simulation are estimated by performing variations of the event
-generation process. A brief description of the variations is given in the
-following, reproducing the prescriptions developed by the ATLAS collaboration:
+The nominal \Zjets event simulation uses \SHERPA[2.2.1] for the simulation of
+the hard scatter event and parton showering. The following uncertainties are
+considered:
 \begin{description}
 
 \item[Factorisation and renormalisation scales] Six variations of the
   factorisation and renormalisation scales are performed using internal
   re-weighting implemented in \SHERPA[2.2.1]~\cite{Bothmann:2019yzt}, altering
   the scales by factors of $\frac{1}{2}$ and $2$. The following variations are
-  considered:
+  performed:
   \begin{align*}
     \left( \frac{\muF}{\muF^{\text{nom.}}}, \frac{\muR}{\muR^{\text{nom.}}} \right) \in
     \left\{ (\tfrac{1}{2}, \tfrac{1}{2}), (\tfrac{1}{2}, 1), (1, \tfrac{1}{2}), (1, 2), (2, 1), (2, 2) \right\} \,\text{,}
   \end{align*}
-  where $\muF^{\text{nom.}}$ and $\muR^{\text{nom.}}$ are the nominal values of
-  the scales.
+  where $\muF^{\text{nom.}}$ and $\muR^{\text{nom.}}$ are the nominal scale
+  values.
 
 \item[Resummation scale] The scale of the resummation of soft gluon emissions in
   the \SHERPA parton shower is varied by factors of $\frac{1}{2}$ and
-  2. Variations of the resummation scale are provided in parameterised form with
-  respect to the default \SHERPA configuration in Ref.~\cite{anders:2017}.
+  $2$. Variations of the resummation scale are provided in parameterised form
+  with respect to the default \SHERPA configuration in Ref.~\cite{anders:2017}.
 
 \item[Multi-jet merging scale] The simulation of \Zjets events with
   \SHERPA[2.2.1] uses matrix elements of NLO accuracy for up to two and LO for
@@ -104,7 +103,6 @@ following, reproducing the prescriptions developed by the ATLAS collaboration:
   \SI{30}{\GeV}~\cite{anders:2017}. These variations are provided, following the
   approach for the resummation scale, in parameterised form in
   Ref.~\cite{anders:2017}.
-  %\cite{ATLAS:2021yza}
 
 \item[PDF+\alphas and PDF choice] Uncertainties on the \NNPDF[3.0nnlo] set of
   PDFs~\cite{Ball:2014uwa} are evaluated using 100 replica sets provided through
@@ -123,11 +121,6 @@ following, reproducing the prescriptions developed by the ATLAS collaboration:
   parton showering.
 
 \end{description}
-Relative acceptance uncertainties on the \ZHF background are derived using these
-variations according to~\Cref{eq:relative_acceptance_uncertainty} for the three
-signal regions. The uncertainties are summarised
-in~\Cref{tab:uncertainties_zhf_extrapol} separately for all sources of
-uncertainty.
 
 
 %%% Local Variables:
