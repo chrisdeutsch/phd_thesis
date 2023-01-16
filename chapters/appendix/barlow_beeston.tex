@@ -20,18 +20,18 @@ The $\gamma$ nuisance parameters are constrained by auxiliary measurements using
 the observed samples of events entering the bins. These measurements contribute
 terms of the form
 \begin{align*}
-  \pois(m_{cb} | \gamma_{cb} \tau_{cb})
+  \pois(m_{cb} ; \gamma_{cb} \tau_{cb})
   \qquad \text{with} \qquad
   \tau_{cb} = \frac{( \sum_i w_i )^2}{\sum_i w_i^2} = \text{const.}
 \end{align*}
 to the likelihood function~\cite{cranmer2012}, where the sums go over all events
 contributing to bin $b$ in channel $c$ with event weights $w_i$. This
 corresponds to a measurement of the effective number of events based on the
-observed value $m_{cb}$, which is nominally equal to $\tau_{cb}$,\footnote{It
-  should be noted that $m_{cb}$ are generally not integer-valued quantities and
-  thus do not agree with the support of the Poisson distribution. Thus the
-  factorial term in the Poisson PMF is replaced by the continuous gamma function
-  to generalise the distribution to $\mathbb{R}^+$.} from the finite sample.
+observed value $m_{cb}$, which is nominally equal to
+$\tau_{cb}$,\footnote{Generally, $m_{cb}$ is not integer-valued and thus does
+  not agree with the support of the Poisson distribution. The factorial term in
+  the Poisson PMF is replaced by the continuous gamma function to generalise the
+  distribution to $\mathbb{R}^+$.} from the finite sample.
 
 This approach is based on the approximation of the \emph{compound Poisson
   distribution} (CPD) that describes the distribution of the sum of a Poisson
@@ -51,8 +51,9 @@ with
   s = \frac{\expect(W^2)}{\expect(W)} \qquad \tilde{\lambda} = \frac{\lambda \expect(W)^2}{\expect(W^2)}
 \end{align*}
 where $\expect(W)$ and $\expect(W^2)$ are the first and second moment of the
-weight distribution. The Barlow--Beeston method makes the assumption that the
-expectation values can be approximated by sample averages such that
+weight distribution, respectively. The Barlow--Beeston method makes the
+assumption that the expectation values can be approximated by sample averages
+such that
 \begin{align*}
   s = \frac{\sum_i w_i^2}{\sum_i w_i} \qquad \tilde{\lambda} = \frac{\lambda}{n} \frac{(\sum_i w_i)^2}{\sum_i w_i^2}
 \end{align*}
@@ -62,8 +63,8 @@ measurement of the effective number of events. A number of $\tilde{N}$ events
 contribute with equal weights given by $s$ to the sum, thus $\tilde{N}$ can be
 referred to as an effective number of events.
 
-These relationships will be needed in the context of the statistical
-interpretation of the results in~\Cref{sec:toys_global_observables}.
+% These relationships will be needed in the context of the statistical
+% interpretation of the results in~\Cref{sec:toys_global_observables}.
 
 %%% Local Variables:
 %%% mode: latex
