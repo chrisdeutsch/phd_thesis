@@ -17,7 +17,7 @@ predicted and true rates.
 % total background prediction is considered instead.
 
 The $\gamma$ nuisance parameters are constrained by auxiliary measurements using
-the observed samples of events. These measurements contribute terms of the form
+the observed sample of events. These measurements contribute terms of the form
 \begin{align*}
   \pois(m_{cb} ; \gamma_{cb} \tau_{cb})
   \qquad \text{with} \qquad
@@ -35,13 +35,14 @@ $\tau_{cb}$,\footnote{Generally, $m_{cb}$ is not integer-valued and thus not
 This approach is based on the approximation of the \emph{compound Poisson
   distribution} (CPD), which describes the distribution of the sum of a Poisson
 number of random weights, by a \emph{scaled Poisson distribution}
-(SPD)~\cite{Bohm:2013gla}. The CPD describes the distribution of rate
-predictions based on a finite sample of weighted events and can be defined as
+(SPD)~\cite{Bohm:2013gla}. Formally, the CPD can be defined as
+% The CPD describes the distribution of rate predictions based on a finite
+% sample of weighted events and can be defined as
 \begin{align*}
   X = \sum_{i = 1}^{N} W_i \,\text{,}  % \quad \text{with} \quad N \sim \pois(\lambda) \text{ and i.i.d.\ } W_i \text{ (independent of }N\text{)} \,\text{.}
 \end{align*}
 with $N \sim \pois(\lambda)$ and i.i.d.\ $W_i$ that are independent of $N$. The
-CPD can be approximated, see for example Ref.~\cite{Bohm:2013gla}, using a SPD
+CPD can be approximated, see for example Ref.~\cite{Bohm:2013gla}, using the SPD
 defined by
 \begin{align*}
   \tilde{X} = s \cdot \tilde{N} \quad \text{with} \quad \tilde{N} \sim \pois(\tilde{\lambda})
