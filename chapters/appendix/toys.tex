@@ -1,4 +1,4 @@
-\subsubsection{Generation of Observables}%
+\subsubsection{Generation of Observables}
 
 For the generation of random observables, the correlation between observables
 based on the overlap of bins needs to be quantified. Let $A$ and $B$ be
@@ -13,7 +13,7 @@ associated observables $X_i$:
 \item The phase space selected by bin B but not A with observable $X_3$.
 \end{itemize}
 Due to the partitioning of the phase space, the observables $X_i$ are i.i.d.\
-$\pois(\lambda_i)$ with rate parameters $\lambda_i$ for $i = 1, 2, 3$. The
+$\pois(\lambda_i)$ with parameters $\lambda_i$ for $i = 1, 2, 3$. The
 observables $A$ and $B$ can thus be written as
 \begin{align*}
   A &= X_1 + X_2 \sim \pois(\lambda_1 + \lambda_2) \\
@@ -27,14 +27,14 @@ by\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) = \var(X_2)
   = \frac{\lambda_2}{\sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 + \lambda_3)}} \,\text{.}
 \end{align*}
 This equation reflects the intuition that the overlap in selected phase space,
-described by the rate $\lambda_2$, induces a correlation between both
-observables. In the following, the model described by $A$ and $B$ is referred to
-as the bivariate Poisson model~\cite{teicher1954}.
+described by $\lambda_2$, induces a correlation between both observables. In the
+following, the model described by $A$ and $B$ is referred to as the bivariate
+Poisson model~\cite{teicher1954}.
 
 An approximation of the correlation coefficient for all pair-wise combinations
-of bins in an analysis channel can be obtained by replacing the rate parameters
-$\lambda_i$ by the rates from the background estimate. Submatrices of the
-correlation matrix obtained in the \hadhad channel are shown
+of bins in an analysis channel can be obtained by estimating the parameters
+$\lambda_i$ using MC simulation and CR data. Submatrices of the correlation
+matrix obtained in the \hadhad channel are shown
 in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from the
 \hadhad channel enter the statistical interpretation leading to a matrix of
 dimension $144 \times 144$. Similar matrices are obtained in the \lephad SLT and
@@ -47,7 +47,7 @@ LTT SRs with dimension $193 \times 193$ and $182 \times 182$, respectively.
     \centering
 
     \includegraphics[scale=0.8]{global_significance/observable_correlations/corr_hadhad_medium}
-    \subcaption{Submatrix for observables of
+    \subcaption{Submatrix for observables of the
       $\mX = 500, 600, 700\,\si{\GeV}$ discriminants}%
     \label{fig:correlation_matrix_observables_medium}
   \end{subfigure}
@@ -56,7 +56,7 @@ LTT SRs with dimension $193 \times 193$ and $182 \times 182$, respectively.
     \centering
 
     \includegraphics[scale=0.8]{global_significance/observable_correlations/corr_hadhad_high}
-    \subcaption{Submatrix for observables of
+    \subcaption{Submatrix for observables of the
       $\mX = 1000, 1100, 1200, 1400, 1600\,\si{\GeV}$ discriminants}%
     \label{fig:correlation_matrix_observables_high}
   \end{subfigure}
@@ -74,9 +74,10 @@ LTT SRs with dimension $193 \times 193$ and $182 \times 182$, respectively.
 
 \Cref{fig:correlation_matrix_observables_medium} shows estimated correlation
 coefficients between observables of discriminants used to select signals from
-resonances in the intermediate mass range in the \hadhad channel. This
-correlation matrix has some noteworthy features:
+resonances in the intermediate mass range in the \hadhad channel. A few features
+of the correlation matrix are discussed in the following:
 \begin{itemize}
+
 \item Off-diagonal elements of submatrices describing the correlation of
   observables belonging to the same PNN discriminant are zero due to bins being
   disjoint by construction.
@@ -104,8 +105,7 @@ channel. As previously noted, the signal extraction method is unable to separate
 the signatures of signal-like events at high \mX. This is reflected in the
 correlation coefficient of the observables for the most signal-like bins of
 adjacent mass points reaching values of up to \SI{75}{\percent}. The correlation
-matrices estimated for the \lephad SLT and LTT channels yield similar
-results\todo{Put in appendix?}.
+matrices estimated for the \lephad SLT and LTT channels yield similar results.
 
 Considering these dependencies between observables, the toy generation for the
 purpose of estimating the global significance needs to fulfil certain
@@ -136,10 +136,8 @@ function $H$ can be decomposed into its marginal distribution functions
 $F_1, \dots, F_n$ and an $n$-dimensional copula $\mathcal{C}$. The copula
 $\mathcal{C}$ is an $n$-dimensional distribution function,
 $\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$, with uniform marginal densities that
-describes the dependencies between random variables.\footnote{The copula is
-  uniquely identifiable for continuous marginals, however, this is not the case
-  for discrete marginal distributions.} The joint distribution can thus be
-expressed as
+describes the dependencies between random variables. The joint distribution can
+thus be expressed as
 \begin{align*}
   H(x_1, \dots, x_n) = \mathcal{C}(F_1(x_1), \dots, F_n(x_n))
 \end{align*}
@@ -160,9 +158,9 @@ method described in Ref.~\cite{nelsen} and is given by
 where $\Phi_{\myvec{R}}$ is the CDF of the multivariate Normal distribution with
 zero mean and covariance equal to the correlation matrix~$\myvec{R}$, and
 $\Phi^{-1}$ is the quantile function of the univariate Standard Normal
-distribution. Similar approaches of modelling multivariate count data using
-copulas have been explored in Refs.~\cite{10.1002/wics.1398}\todo{Add more
-  references}.
+distribution. A review of usages of copulas for modelling multivariate count
+data is given in Ref.~\cite{10.1002/wics.1398}.
+
 
 The parameters $\myvec{R}$ of the Gaussian copula are estimated using the
 correlation matrices derived with the bivariate Poisson model previously shown
@@ -274,12 +272,9 @@ generating large samples of size $\mathcal{O}(10^6)$ showing agreement in terms
 of the expected marginal distributions of the observables and closely
 reproducing the pair-wise correlation coefficients estimated with the bivariate
 Poisson model.
-% A graphical illustration of the generation procedure is given
-% in~\Cref{app:graphical_illustration_copula_model}.
 
 
-\subsubsection{Generation of Global Observables}%
-\label{sec:toys_global_observables}
+\subsubsection{Generation of Global Observables}
 
 Global observables have to be fluctuated when estimating the global significance
 with toy experiments. This section will focus on the generation of the global
