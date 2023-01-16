@@ -1,20 +1,29 @@
+The following describes the toy generation method used for the global
+significance estimation in \Cref{sec:global_significance}.
+
+
 \subsubsection{Generation of Observables}
 
-For the generation of random observables, the correlation between observables
-based on the overlap of bins needs to be quantified. Let $A$ and $B$ be
-observables corresponding to a pair of bins which are marginally distributed
-according to Poisson distributions. The dependence between $A$ and $B$ is given
-by the overlap in the kinematic region (phase space) selected by both bins. The
-phase space selected by either bin can be partitioned into three parts with
-associated observables $X_i$:
+To generate random values for the observables, the correlations between
+observables have to be quantified. Let $A$ and $B$ be the number of events
+selected by two bins, with $A$ and $B$ being marginally distributed according to
+Poisson distributions. The dependence between $A$ and $B$ is given by the
+overlap in the kinematic region selected by both bins. The kinematic region
+selected by either bin can be partitioned into three parts:
 \begin{itemize}
-\item The phase space selected by bin A but not B with observable $X_1$.
-\item The phase space selected by bin A and B with observable $X_2$.
-\item The phase space selected by bin B but not A with observable $X_3$.
+
+\item The kinematic region selected by bin A but not B with number of
+  events~$X_1$.
+
+\item The kinematic region selected by bin A and B with number of events~$X_2$.
+
+\item The kinematic region selected by bin B but not A with number of
+  events~$X_3$.
+
 \end{itemize}
-Due to the partitioning of the phase space, the observables $X_i$ are i.i.d.\
-$\pois(\lambda_i)$ with parameters $\lambda_i$ for $i = 1, 2, 3$. The
-observables $A$ and $B$ can thus be written as
+The observables $X_i$ are distributed according to $\pois(\lambda_i)$ for
+$i = 1, 2, 3$ and are mutually independent. Consequently, $A$ and $B$ can be
+written as
 \begin{align*}
   A &= X_1 + X_2 \sim \pois(\lambda_1 + \lambda_2) \\
   B &= X_2 + X_3 \sim \pois(\lambda_2 + \lambda_3)
@@ -26,54 +35,29 @@ by\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) = \var(X_2)
   \rho_{AB} = \frac{\cov(A, B)}{\sqrt{\var(A)\var(B)}}
   = \frac{\lambda_2}{\sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 + \lambda_3)}} \,\text{.}
 \end{align*}
-This equation reflects the intuition that the overlap in selected phase space,
-described by $\lambda_2$, induces a correlation between both observables. In the
-following, the model described by $A$ and $B$ is referred to as the bivariate
-Poisson model~\cite{teicher1954}.
+This equation reflects the intuition that the overlap in selected kinematic
+region, described by $\lambda_2$, induces a correlation between both
+observables. In the following, the model described by $A$ and $B$ is referred to
+as the bivariate Poisson model~\cite{teicher1954}.
 
 An approximation of the correlation coefficient for all pair-wise combinations
 of bins in an analysis channel can be obtained by estimating the parameters
-$\lambda_i$ using MC simulation and CR data. Submatrices of the correlation
-matrix obtained in the \hadhad channel are shown
+$\lambda_i$ using MC simulation and CR data. Exemplary submatrices of the
+correlation matrix obtained in the \hadhad channel are shown
 in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from the
 \hadhad channel enter the statistical interpretation leading to a matrix of
 dimension $144 \times 144$. Similar matrices are obtained in the \lephad SLT and
 LTT SRs with dimension $193 \times 193$ and $182 \times 182$, respectively.
 
-\begin{figure}[htbp]
-  \centering
+\Cref{fig:correlation_matrix_observables} shows estimated correlation
+coefficients between
 
-  \begin{subfigure}{\textwidth}
-    \centering
 
-    \includegraphics[scale=0.84]{global_significance/observable_correlations/corr_hadhad_medium}
-    \subcaption{Submatrix for observables of the
-      $\mX = 500, 600, 700\,\si{\GeV}$ discriminants}%
-    \label{fig:correlation_matrix_observables_medium}
-  \end{subfigure}
+PNN discriminants
 
-  \begin{subfigure}{\textwidth}
-    \centering
 
-    \includegraphics[scale=0.84]{global_significance/observable_correlations/corr_hadhad_high}
-    \subcaption{Submatrix for observables of the
-      $\mX = 1000, 1100, 1200, 1400, 1600\,\si{\GeV}$ discriminants}%
-    \label{fig:correlation_matrix_observables_high}
-  \end{subfigure}
 
-  \caption{Estimate of the correlation matrix between observables of \hadhad
-    channel. Two submatrices of the full matrix ($144 \times 144$) are
-    shown. Bins are enumerated in ascending order of the signal probability
-    according to the PNN discriminants (i.e.\ bins numbered with 1 contain the
-    most background-like events for a given classification problem).  Cells are
-    annotated if the correlation coefficient is larger than or equal to
-    \SI{5}{\percent}. Off-diagonal elements with a correlation coefficient of
-    \SI{100}{\percent} are due to rounding only.}%
-  \label{fig:correlation_matrix_observables}
-\end{figure}
-
-\Cref{fig:correlation_matrix_observables_medium} shows estimated correlation
-coefficients between observables of discriminants used to select signals from
+observables of discriminants used to select signals from
 resonances in the intermediate mass range in the \hadhad channel. A few features
 of the correlation matrix are discussed in the following:
 \begin{itemize}
@@ -93,19 +77,57 @@ of the correlation matrix are discussed in the following:
 
 \item The observables of the most signal-like bins are expected to have little
   correlation for the three PNN discriminants targeting the intermediate mass
-  range considered in~\Cref{fig:correlation_matrix_observables_medium}.
-  % The signal extraction procedure has sufficient mass
-  % resolution to distinguish between signal hypotheses in the
-  % intermediate mass range.
-\end{itemize}
+  range considered in~\Cref{fig:correlation_matrix_observables_medium}.  This is
+  in contrast to the correlation of the most signal-like bins of the high \mX
+  discriminants shown in \Cref{fig:correlation_matrix_observables_high}. In this
+  case, the PNN cannot properly distinguish between adjacent mass points leading
+  to correlations between observables of up to \SI{75}{\percent}.
 
-The expected correlation between observables of the high \mX discriminants are
-shown in~\Cref{fig:correlation_matrix_observables_high} for the \hadhad
-channel. As previously noted, the signal extraction method is unable to separate
-the signatures of signal-like events at high \mX. This is reflected in the
-correlation coefficient of the observables for the most signal-like bins of
-adjacent mass points reaching values of up to \SI{75}{\percent}. The correlation
-matrices estimated for the \lephad SLT and LTT channels yield similar results.
+\end{itemize}
+The correlation matrices in the \lephad SLT and LTT channels show similar
+features.
+
+% ^ MERGE WITH THIS The expected correlation between observables of the high \mX
+% discriminants are shown in~\Cref{fig:correlation_matrix_observables_high} for
+% the \hadhad channel. As previously noted, the signal extraction method is
+% unable to separate the signatures of signal-like events at high \mX. This is
+% reflected in the correlation coefficient of the observables for the most
+% signal-like bins of adjacent mass points reaching values of up to
+% \SI{75}{\percent}. The correlation matrices estimated for the \lephad SLT and
+% LTT channels yield similar results.
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{\textwidth}
+    \centering
+
+    \includegraphics[scale=0.84]{global_significance/observable_correlations/corr_hadhad_medium}
+    \subcaption{Submatrix for observables of the
+      $\mX = 500, 600, 700\,\si{\GeV}$ PNN discriminants}%
+    \label{fig:correlation_matrix_observables_medium}
+  \end{subfigure}
+
+  \begin{subfigure}{\textwidth}
+    \centering
+
+    \includegraphics[scale=0.84]{global_significance/observable_correlations/corr_hadhad_high}
+    \subcaption{Submatrix for observables of the
+      $\mX = 1000, 1100, 1200, 1400, 1600\,\si{\GeV}$ PNN discriminants}%
+    \label{fig:correlation_matrix_observables_high}
+  \end{subfigure}
+
+  \caption{Estimate of the correlation matrix between observables of \hadhad
+    channel. Two submatrices of the full matrix ($144 \times 144$) are
+    shown. Bins are enumerated in ascending order of the signal probability
+    according to the PNN discriminants (i.e.\ bins numbered with 1 contain the
+    most background-like events). Cells are annotated if the correlation
+    coefficient is larger than or equal to \SI{5}{\percent}. Off-diagonal
+    elements with a correlation coefficient of \SI{100}{\percent} are due to
+    rounding.}%
+  \label{fig:correlation_matrix_observables}
+\end{figure}
+
 
 Considering these dependencies between observables, the toy generation for the
 purpose of estimating the global significance needs to fulfil certain
