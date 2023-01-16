@@ -1,0 +1,140 @@
+% ------------------------------------------------------------------------------
+\subsection{Tables of Upper Limits for the Search for Resonant \HH Production}%
+\label{app:limit_tables}
+% ------------------------------------------------------------------------------
+
+{
+  \centering
+
+  \vspace*{1em}
+
+  \captionof{table}[Expected and observed upper limits on
+  $\sigma(\pp \to X \to \HH)$ for the combination of all channels.]{Expected and
+    observed upper limits on the cross section of $\pp \to X \to \HH$ at
+    \SI{95}{\percent}~CL for the combination of all channels.}%
+  \label{tab:comb_limits_resonant}
+
+  % Workspaces: comb_2022_01_29
+  \input{tables/res_comb_limits}
+}
+
+\clearpage
+
+{
+  \centering
+
+  \null\vfill
+
+  \captionof{table}{$\text{CL}_\text{s}$ upper limits on the cross section of
+    $\PX \ra \PHiggs \PHiggs \ra \bbtautau$ from the \hadhad-only fit. Limits
+    are in fb.}%
+  \label{tab:hadhad_limits_resonant}
+
+  % Workspaces: comb_2022_01_29
+  \input{tables/res_hadhad_limits}
+
+  \null\vfill
+}
+
+\clearpage
+
+{
+  \centering
+
+  \null\vfill
+
+  \captionof{table}{$\text{CL}_\text{s}$ upper limits on the cross section of
+    $\PX \ra \PHiggs \PHiggs \ra \bbtautau$ from the \lephad-only fit. Limits
+    are in fb.}%
+  \label{tab:lephad_limits_resonant}
+
+  % Workspaces: comb_2022_01_29
+  \input{tables/res_lephad_limits}
+
+  \null\vfill
+}
+
+
+% ------------------------------------------------------------------------------
+\clearpage
+\subsection{Post-Fit Distributions of PNN Discriminants in the \lephad
+  Channels}%
+\label{app:pnn_plots_lephad}
+% ------------------------------------------------------------------------------
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist300_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{300}{\GeV}$}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist500_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{500}{\GeV}$}
+  \end{subfigure}
+
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1000_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{1000}{\GeV}$}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1600_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT0_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{1600}{\GeV}$}
+  \end{subfigure}
+
+  \caption{Distribution of the PNN discriminant of the \lephad SLT channel after
+    the maximum likelihood fit of the background-only model in all SRs and
+    CRs. The signal overlay is scaled to the expected upper limit on
+    $\sigma(pp \to X \to HH)$.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist300_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{300}{\GeV}$}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist500_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{500}{\GeV}$}
+  \end{subfigure}
+
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1000_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{1000}{\GeV}$}
+  \end{subfigure}\hfill%
+  \begin{subfigure}{0.495\textwidth}
+    \centering
+
+    \includegraphics[width=\textwidth]{results_res/postfit/Region_BMin0_incJet1_dist1600_J2_D2HDMPNN_T2_SpcTauLH_Y2015_LTT1_L1_GlobalFit_conditionnal_mu0log}
+    \subcaption{$\mX = \SI{1600}{\GeV}$}
+  \end{subfigure}
+
+  \caption{Distribution of the PNN discriminant of the \lephad LTT
+    channel after the maximum likelihood fit of the background-only
+    model in all SRs and CRs. The signal overlay is
+    scaled to the expected upper limit on $\sigma(pp \to X \to HH)$.}
+\end{figure}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../phd_thesis"
+%%% End:
