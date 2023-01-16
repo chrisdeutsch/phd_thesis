@@ -1,8 +1,8 @@
-\subsubsection{Generation of Toy Observables}%
+\subsubsection{Generation of Observables}%
 
-For the generation of random toy observables, the correlation between
-observables based on the overlap of bins needs to be quantified. Let $A$ and $B$
-be observables corresponding to a pair of bins which are marginally distributed
+For the generation of random observables, the correlation between observables
+based on the overlap of bins needs to be quantified. Let $A$ and $B$ be
+observables corresponding to a pair of bins which are marginally distributed
 according to Poisson distributions. The dependence between $A$ and $B$ is given
 by the overlap in the kinematic region (phase space) selected by both bins. The
 phase space selected by either bin can be partitioned into three parts with
@@ -19,17 +19,17 @@ observables $A$ and $B$ can thus be written as
   A &= X_1 + X_2 \sim \pois(\lambda_1 + \lambda_2) \\
   B &= X_2 + X_3 \sim \pois(\lambda_2 + \lambda_3)
 \end{align*}
-and the Pearson correlation coefficient between $A$ and $B$ can be determined
-as\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) = \var(X_2)
+and the Pearson correlation coefficient between $A$ and $B$ is given
+by\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) = \var(X_2)
   = \lambda_2$ from the independence of $X_1$, $X_2$, and $X_3$.}
 \begin{align*}
   \rho_{AB} = \frac{\cov(A, B)}{\sqrt{\var(A)\var(B)}}
-  = \frac{\lambda_2}{\sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 + \lambda_3)}} \,\text{,}
+  = \frac{\lambda_2}{\sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 + \lambda_3)}} \,\text{.}
 \end{align*}
-which reflects the intuition that the overlap in selected phase space, described
-by the rate $\lambda_2$, induces a correlation between both observables. In the
-following, the model described by $A$ and $B$ will be referred to as the
-bivariate Poisson model.
+This equation reflects the intuition that the overlap in selected phase space,
+described by the rate $\lambda_2$, induces a correlation between both
+observables. In the following, the model described by $A$ and $B$ is referred to
+as the bivariate Poisson model~\cite{teicher1954}.
 
 An approximation of the correlation coefficient for all pair-wise combinations
 of bins in an analysis channel can be obtained by replacing the rate parameters
@@ -278,7 +278,7 @@ Poisson model.
 % in~\Cref{app:graphical_illustration_copula_model}.
 
 
-\subsubsection{Generation of Toy Global Observables}%
+\subsubsection{Generation of Global Observables}%
 \label{sec:toys_global_observables}
 
 Global observables have to be fluctuated when estimating the global significance
