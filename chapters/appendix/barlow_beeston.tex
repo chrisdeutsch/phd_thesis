@@ -1,56 +1,48 @@
-\subsection{Treatment of Statistical Uncertainties on Background Rate
-  Predictions}%
-\label{sec:barlow_beeston}
+The predicted background rate in a given bin $b$ of a channel $c$ is determined
+from a finite sample of events, e.g.\ from MC simulation, and thus does not
+directly correspond to the true expected rate. The background rate estimates are
+subject to uncertainties that have to be considered when performing inference,
+particularly when bins are only sparsely populated with events.
 
-The predicted background rate in a given bin $b$ of a channel $c$ is
-determined from a finite sample of events, e.g.\ from MC simulation,
-and thus does not directly correspond to the true expected rate. The
-background rate estimates are subject to uncertainties that have to be
-considered when performing inference, particularly when bins are only
-sparsely populated with events.
-
-This uncertainty is included in the likelihood function, employing the
-method proposed by Barlow and Beeston~\cite{barlow1993}, by replacing
-the expected background rate from the prediction using the finite
-sample with the true expected rate that has to be simultaneously
-inferred. In practice this is done by performing the substitution
-$\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$ that introduces new
-nuisance parameters $\gamma_{cb}$ specifying the relative difference
-between the predicted and true expected rates. Initially it was
+This uncertainty is included in the likelihood function, employing the method
+proposed by Barlow and Beeston~\cite{barlow1993}, by replacing the expected
+background rate from the prediction using the finite sample with the true
+expected rate that has to be simultaneously inferred. In practice this is done
+by performing the substitution $\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$ that
+introduces new nuisance parameters $\gamma_{cb}$ specifying the relative
+difference between the predicted and true expected rates. Initially it was
 proposed to introduce one such nuisance parameter for every background
 source~\cite{barlow1993}, however, a simplified version proposed in
-Ref.~\cite{conway2011} is used such that only the combined uncertainty
-on the total background prediction is considered instead.
+Ref.~\cite{conway2011} is used such that only the combined uncertainty on the
+total background prediction is considered instead.
 
-The $\gamma$ nuisance parameters are constrained by auxiliary
-measurements using the observed samples of events entering the
-bins. These measurements contribute terms of the form
+The $\gamma$ nuisance parameters are constrained by auxiliary measurements using
+the observed samples of events entering the bins. These measurements contribute
+terms of the form
 \begin{align*}
   \pois(m_{cb} | \gamma_{cb} \tau_{cb})
   \qquad \text{with} \qquad
   \tau_{cb} = \frac{( \sum_i w_i )^2}{\sum_i w_i^2} = \text{const.}
 \end{align*}
-to the likelihood function~\cite{cranmer2012}, where the sums go over
-all events contributing to bin $b$ in channel $c$ with event weights
-$w_i$. This corresponds to a measurement of the effective number of
-events based on the observed value $m_{cb}$, which is nominally equal
-to $\tau_{cb}$,\footnote{It should be noted that $m_{cb}$ are generally
-  not integer-valued quantities and thus do not agree with the support
-  of the Poisson distribution. Thus the factorial term in the Poisson
-  PMF is replaced by the continuous gamma function to generalise the
-  distribution to $\mathbb{R}^+$.} from the finite sample.
+to the likelihood function~\cite{cranmer2012}, where the sums go over all events
+contributing to bin $b$ in channel $c$ with event weights $w_i$. This
+corresponds to a measurement of the effective number of events based on the
+observed value $m_{cb}$, which is nominally equal to $\tau_{cb}$,\footnote{It
+  should be noted that $m_{cb}$ are generally not integer-valued quantities and
+  thus do not agree with the support of the Poisson distribution. Thus the
+  factorial term in the Poisson PMF is replaced by the continuous gamma function
+  to generalise the distribution to $\mathbb{R}^+$.} from the finite sample.
 
-This approach is based on the approximation of the \emph{compound
-  Poisson distribution} (CPD) that describes the distribution of the
-sum of a Poisson number of random weights with a \emph{scaled Poisson
-  distribution} (SPD)~\cite{Bohm:2013gla}. The CPD describes the
-distribution of rate predictions based on a finite sample of weighted
-events and can be defined as
+This approach is based on the approximation of the \emph{compound Poisson
+  distribution} (CPD) that describes the distribution of the sum of a Poisson
+number of random weights with a \emph{scaled Poisson distribution}
+(SPD)~\cite{Bohm:2013gla}. The CPD describes the distribution of rate
+predictions based on a finite sample of weighted events and can be defined as
 \begin{align*}
   X = \sum_{i = 1}^{N} W_i \quad \text{with} \quad N \sim \pois(\lambda) \quad \text{and} \quad \text{i.i.d.\ } W_i \text{ (independent of }N\text{)} \,\text{.}
 \end{align*}
-It can be approximated, see for example Ref.~\cite{Bohm:2013gla},
-using a scaled Poisson distribution defined by
+It can be approximated, see for example Ref.~\cite{Bohm:2013gla}, using a scaled
+Poisson distribution defined by
 \begin{align*}
   \tilde{X} = s \cdot \tilde{N} \quad \text{with} \quad \tilde{N} \sim \pois(\tilde{\lambda})
 \end{align*}
@@ -58,19 +50,17 @@ with
 \begin{align*}
   s = \frac{\expect(W^2)}{\expect(W)} \qquad \tilde{\lambda} = \frac{\lambda \expect(W)^2}{\expect(W^2)}
 \end{align*}
-where $\expect(W)$ and $\expect(W^2)$ are the first and second moment
-of the weight distribution. The Barlow--Beeston method makes the
-assumption that the expectation values can be approximated by sample
-averages such that
+where $\expect(W)$ and $\expect(W^2)$ are the first and second moment of the
+weight distribution. The Barlow--Beeston method makes the assumption that the
+expectation values can be approximated by sample averages such that
 \begin{align*}
   s = \frac{\sum_i w_i^2}{\sum_i w_i} \qquad \tilde{\lambda} = \frac{\lambda}{n} \frac{(\sum_i w_i)^2}{\sum_i w_i^2}
 \end{align*}
-with sample size $n$. Comparing the equation for $\tilde{\lambda}$
-with the constraint term entering the likelihood function illustrates
-the connection to a measurement of the effective number of events. A
-number of $\tilde{N}$ events contribute with equal weights given by
-$s$ to the sum, thus $\tilde{N}$ can be referred to as an effective
-number of events.
+with sample size $n$. Comparing the equation for $\tilde{\lambda}$ with the
+constraint term entering the likelihood function illustrates the connection to a
+measurement of the effective number of events. A number of $\tilde{N}$ events
+contribute with equal weights given by $s$ to the sum, thus $\tilde{N}$ can be
+referred to as an effective number of events.
 
 These relationships will be needed in the context of the statistical
 interpretation of the results in~\Cref{sec:toys_global_observables}.
