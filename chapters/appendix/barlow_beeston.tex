@@ -1,8 +1,9 @@
-The predicted background rate in a given bin $b$ of a channel $c$ is determined
-from a finite sample of events, e.g.\ from MC simulation, and thus does not
-directly correspond to the true expected rate. The background rate estimates are
-subject to uncertainties that have to be considered when performing inference,
-particularly when bins are only sparsely populated with events.
+The predicted background rate in bin $b$ of a channel $c$, $\nu_{cb}$, is often
+determined from a finite sample of events (e.g.\ from MC simulation) and thus
+does not directly correspond to the true expected rate. The background rate
+estimates are subject to uncertainties that have to be considered when
+performing inference, particularly when bins are only sparsely populated with
+events.
 
 This uncertainty is included in the likelihood function, employing the method
 proposed by Barlow and Beeston~\cite{barlow1993}, by replacing the expected
@@ -10,11 +11,11 @@ background rate from the prediction using the finite sample with the true
 expected rate that has to be simultaneously inferred. In practice this is done
 by performing the substitution $\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$ that
 introduces new nuisance parameters $\gamma_{cb}$ specifying the relative
-difference between the predicted and true expected rates. Initially it was
-proposed to introduce one such nuisance parameter for every background
-source~\cite{barlow1993}, however, a simplified version proposed in
-Ref.~\cite{conway2011} is used such that only the combined uncertainty on the
-total background prediction is considered instead.
+difference between the predicted and true expected rates.
+% Initially it was proposed to introduce one such nuisance parameter for every
+% background source~\cite{barlow1993}, however, a simplified version proposed in
+% Ref.~\cite{conway2011} is used such that only the combined uncertainty on the
+% total background prediction is considered instead.
 
 The $\gamma$ nuisance parameters are constrained by auxiliary measurements using
 the observed samples of events entering the bins. These measurements contribute
