@@ -146,8 +146,8 @@ be expressed as
 according to the theorem.
 
 For the task of generating toy experiments, the only missing piece is the
-functional form of the copula since the marginal distributions are assumed to be
-known from the nominal background prediction. The Poisson distribution can be
+functional form of the copula since the marginal distributions are already known
+from the nominal background estimate. The Poisson distribution can be
 approximated by a Normal distribution provided the expected rate is not too
 small, suggesting that the copula describing the dependence structure of a
 multivariate Normal distribution might be applicable as an approximation. This
@@ -176,11 +176,10 @@ performed, instead of a direct comparison of joint distribution functions, to
 better illustrate the subtle differences between both models. The comparison
 yields the following findings:
 \begin{itemize}
+
 \item The conditional mean of $B$ given $A = a$ agrees well between models even
   when considering bin pairs with the lowest rates $\lambda_i$ relevant for the
-  analysis. This agreement is not unexpected since the Pearson correlation
-  coefficient used to define the model is linked to the slope of the regression
-  line that predicts $\mathrm{E}(B \vert A = a)$.
+  analysis.
 
 \item The conditional variance of $B$ given $A = a$ illustrates that both models
   are not equivalent, however. For bin pairs with small expected rates
@@ -189,10 +188,9 @@ yields the following findings:
   to be negligible compared to the linear trend that is properly captured by the
   model.
 
-\item In the case of disjoint or fully overlapping\footnote{The case of fully
-    overlapping bins requires special treatment since the correlation matrix
-    would be singular.} bins (not shown in the figure) the bivariate Poisson
-  model and copula-based model are identical.
+\item In the case of disjoint or fully overlapping bins (not shown in the
+  figure) the bivariate Poisson model and copula-based model are identical.
+
 \end{itemize}
 
 \begin{figure}[htbp]
