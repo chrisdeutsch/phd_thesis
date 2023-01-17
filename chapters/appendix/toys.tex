@@ -6,7 +6,7 @@ significance estimation in \Cref{sec:global_significance}.
 
 To generate random values for the observables, the correlations between
 observables have to be quantified. Let $A$ and $B$ be the number of events
-selected by two bins, with $A$ and $B$ being marginally distributed according to
+selected by two bins with $A$ and $B$ being marginally distributed according to
 Poisson distributions. The dependence between $A$ and $B$ is given by the
 overlap in the kinematic region selected by both bins. The kinematic region
 selected by either bin can be partitioned into three parts:
@@ -113,8 +113,9 @@ and LTT channels.
 
 The toy generation for the global significance estimation needs to fulfil
 certain requirements. First, the model needs to reproduce the marginal
-distributions of the observables, i.e.\ Poisson distributions with parameters
-equal to the mean number of events predicted by the nominal background model.
+distributions of the observables, i.e.\ Poisson distributions with mean
+parameters equal to the number of events predicted by the nominal background
+model.
 % such that the distribution of the discovery test statistic for individual
 % tests at fixed \mX can be reproduced.
 Second, it needs to model the dependencies between observables due to the
@@ -153,7 +154,7 @@ approximated by a bivariate Normal distribution provided the means, $\lambda_i$,
 are not too small. This suggests that the copula of a multivariate Normal
 distribution might be a suitable approximation to model the dependencies between
 observables. This copula, referred to as the Gaussian copula, can be derived
-using the inversion method described in Ref.~\cite{nelsen} and is given by
+using the ``inversion method'' described in Ref.~\cite{nelsen} and is given by
 \begin{align}
   \mathcal{C}_{\myvec{R}}(u_1, \dots, u_n) = \Phi_{\myvec{R}}(\Phi^{-1}(u_1), \dots, \Phi^{-1}(u_n))
   \label{eq:gaussian_copula}
@@ -181,14 +182,12 @@ yields the following findings:
   analysis.
 
 \item The conditional variance of $B$ given $A = a$ illustrates that both models
-  are not equivalent, however. For bin pairs with small expected rates
-  $\lambda_i$, the variance of the distribution of $B$ for fixed $A = a$ differs
-  by up \SI{15}{\percent} to between both models.
-  % These deviations are assumed to be negligible compared to the linear trend
-  % that is properly captured by the model.
+  are not equivalent, however. For bin pairs with small $\lambda_i$, the
+  variance of the distribution of $B$ for fixed $A = a$ differs by up
+  \SI{15}{\percent} to between both models.
 
-\item In the case of disjoint or fully overlapping bins (not shown in the
-  figure) the bivariate Poisson model and copula-based model are identical.
+\item In the case of disjoint bins (not shown in the figure) the bivariate
+  Poisson model and copula-based model are identical.
 
 \end{itemize}
 
@@ -234,10 +233,10 @@ yields the following findings:
   \label{fig:copula_model_comparison}
 \end{figure}
 
-With these simplifying modelling assumptions, observables can be randomly
-generated using the copula-based model. The following algorithm is employed to
-draw a vector of random variates $\myvec{x} = (x_1, \dots, x_n)$ from the joint
-distribution described by the Gaussian copula and marginal distributions:
+With these simplifying assumptions, observables can be randomly generated using
+the copula-based model. The following algorithm is employed to draw a vector of
+random variates $\myvec{x} = (x_1, \dots, x_n)$ from the joint distribution
+described by the Gaussian copula and marginal distributions:
 \begin{enumerate}
 
 \item Draw a vector of random variates $\myvec{u} = (u_1, \dots, u_n)$ from the
@@ -257,7 +256,7 @@ distribution described by the Gaussian copula and marginal distributions:
   eigenvalues of $\myvec{R}$. Therefore, multivariate Normal random variates are
   generated in a lower dimensional space that removes the collinearity, followed
   by a back-transformation to the $n$-dimensional space. The required
-  transformations are provided by a singular value decomposition of $\myvec{R}$.
+  transformations are provided by an eigendecomposition of $\myvec{R}$.
 
 \item Obtain $\myvec{x}$ by evaluating the quantile functions of the $n$
   marginal distributions at the values of $\myvec{u}$ from the previous step
