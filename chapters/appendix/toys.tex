@@ -28,7 +28,7 @@ written as
   A &= X_1 + X_2 \sim \pois(\lambda_1 + \lambda_2) \\
   B &= X_2 + X_3 \sim \pois(\lambda_2 + \lambda_3)
 \end{align*}
-and the Pearson correlation coefficient between $A$ and $B$ is given
+and the linear correlation coefficient between $A$ and $B$ is given
 by\footnote{$\cov(A,B) = \cov(X_1 + X_2, X_2 + X_3) = \cov(X_2, X_2) = \var(X_2)
   = \lambda_2$ from the independence of $X_1$, $X_2$, and $X_3$.}
 \begin{align*}
@@ -58,35 +58,25 @@ correlation matrix are discussed in the following:
   observables belonging to the same PNN discriminant are zero due to bins being
   pairwise disjoint by construction.
 
-\item The most background-like bins (i.e.\ bins enumerated with 1) have
-  correlation coefficients of about \SI{90}{\percent} or larger. This is due to
-  the presence of events that are easily rejected by the PNN discriminants,
-  which predominately populate the first bins. A correlation in such bins is
-  expected, independent of the targeted \mX, due events being selected that are
-  kinematically incompatible with resonant Higgs boson pair production. An
-  example for such events are the ones where both \mMMC and \mBB are far from
-  \mH.
+\item The most background-like bins have correlation coefficients of about
+  \SI{90}{\percent} or larger. This is due to events that are easily rejected by
+  the PNN discriminants, which predominately populate the first bins. A large
+  correlation for such bins is expected, independent of the targeted \mX, due
+  events that are kinematically incompatible with resonant \HH
+  production. Examples for such events are ones where both \mMMC and \mBB are
+  far from \mH.
 
 \item The observables of the most signal-like bins are expected to have little
   correlation for the three PNN discriminants targeting the intermediate mass
   range considered in~\Cref{fig:correlation_matrix_observables_medium}.  This is
-  in contrast to the correlation of the most signal-like bins of the high \mX
+  in contrast to the correlation of the most signal-like bins of the high-\mX
   discriminants shown in \Cref{fig:correlation_matrix_observables_high}. In this
-  case, the PNN cannot properly distinguish between adjacent mass points leading
-  to correlations between observables of up to \SI{75}{\percent}.
+  case, the PNN cannot distinguish between adjacent mass points leading to
+  correlations between observables of up to \SI{75}{\percent}.
 
 \end{itemize}
-The correlation matrices in the \lephad SLT and LTT channels show similar
-features.
-
-% ^ MERGE WITH THIS The expected correlation between observables of the high \mX
-% discriminants are shown in~\Cref{fig:correlation_matrix_observables_high} for
-% the \hadhad channel. As previously noted, the signal extraction method is
-% unable to separate the signatures of signal-like events at high \mX. This is
-% reflected in the correlation coefficient of the observables for the most
-% signal-like bins of adjacent mass points reaching values of up to
-% \SI{75}{\percent}. The correlation matrices estimated for the \lephad SLT and
-% LTT channels yield similar results.
+Similar features are observed for the correlation matrices in the \lephad SLT
+and LTT channels.
 
 \begin{figure}[htbp]
   \centering
@@ -121,30 +111,27 @@ features.
   \label{fig:correlation_matrix_observables}
 \end{figure}
 
-
-Considering these dependencies between observables, the toy generation for the
-purpose of estimating the global significance needs to fulfil certain
-requirements. First, the model needs to accurately reproduce the marginal
-distributions of the observables, i.e.\ Poisson distributions with rates given
-by the background estimate, such that the distribution of the discovery test
-statistic for individual tests at fixed \mX can be reproduced. Second, it needs
-to model the dependence structure between observables to account for the overlap
-of phase space selected by the bins entering the statistical interpretation.
+The toy generation for the global significance estimation needs to fulfil
+certain requirements. First, the model needs to reproduce the marginal
+distributions of the observables, i.e.\ Poisson distributions with parameters
+equal to the mean number of events predicted by the background model.
+% such that the distribution of the discovery test statistic for individual
+% tests at fixed \mX can be reproduced.
+Second, it needs to model the dependencies between observables due to the
+overlap in the kinematic regions selected by bins.
+% to account for the overlap in the kinematic region selected between all bin
+% pairs.
 
 A multivariate extension of the bivariate Poisson distribution would fulfil
-these requirements, however, such a model becomes intractable due to the large
-number of observables considered, and in particular due to the presence of
-negatively weighted events used for the background estimate.\footnote{In the
-  absence of negatively weighted events, toy experiments could be generated
-  using pseudo-data generated by drawing a random weight from $\pois(w_i)$ for
-  every event with weight $w_i$ used for the background estimate. Subsequently,
-  the set of pseudo-data can be used to determine the values of all
-  observables. Conceptually, this approach has some parallels to resampling
-  techniques like the Bootstrap
-  method~\cite{10.1214/aos/1176344552,efron1994introduction}.} Instead, a model
-based on the mathematical framework provided by Sklar's
-theorem~\cite{Sklar1959FonctionsDR} is adopted, allowing to factorise the
-marginal distributions from the dependency structure of the observables.
+these requirements; however, such a model becomes intractable due to the large
+number of observables considered and the presence of negatively weighted events
+in the background estimate.\footnote{In the absence of negatively weighted
+  events, toy experiments can be generated by drawing a random weight from
+  $\pois(w_i)$ for every event with weight~$w_i$ used for background
+  estimation.} Instead, a model based on the mathematical framework provided by
+Sklar's theorem~\cite{Sklar1959FonctionsDR} is adopted, which can be used to
+factorise the marginal distributions from the dependency structure of the
+observables.
 
 Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint distribution
 function $H$ can be decomposed into its marginal distribution functions
@@ -152,7 +139,7 @@ $F_1, \dots, F_n$ and an $n$-dimensional copula $\mathcal{C}$. The copula
 $\mathcal{C}$ is an $n$-dimensional distribution function,
 $\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$, with uniform marginal densities that
 describes the dependencies between random variables. The joint distribution can
-thus be expressed as
+be expressed as
 \begin{align*}
   H(x_1, \dots, x_n) = \mathcal{C}(F_1(x_1), \dots, F_n(x_n))
 \end{align*}
