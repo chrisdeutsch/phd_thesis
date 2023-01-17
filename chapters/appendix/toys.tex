@@ -131,7 +131,8 @@ in the background estimate.\footnote{In the absence of negatively weighted
   estimation.} Instead, a model based on the mathematical framework provided by
 Sklar's theorem~\cite{Sklar1959FonctionsDR} is adopted, which can be used to
 factorise the marginal distributions from the dependency structure of the
-observables.
+observables. A review of similar approaches of modelling multivariate count data
+is given in Ref.~\cite{10.1002/wics.1398}.
 
 Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint distribution
 function $H$ can be decomposed into its marginal distribution functions
@@ -160,8 +161,7 @@ method described in Ref.~\cite{nelsen} and is given by
 where $\Phi_{\myvec{R}}$ is the CDF of the multivariate Normal distribution with
 zero mean and covariance equal to the correlation matrix~$\myvec{R}$, and
 $\Phi^{-1}$ is the quantile function of the univariate Standard Normal
-distribution. A review of usages of copulas for modelling multivariate count
-data is given in Ref.~\cite{10.1002/wics.1398}.
+distribution.
 
 
 The parameters $\myvec{R}$ of the Gaussian copula are estimated using the
@@ -178,7 +178,7 @@ yields the following findings:
 \begin{itemize}
 
 \item The conditional mean of $B$ given $A = a$ agrees well between models even
-  when considering bin pairs with the lowest rates $\lambda_i$ relevant for the
+  when considering bin pairs with the lowest $\lambda_i$ relevant for the
   analysis.
 
 \item The conditional variance of $B$ given $A = a$ illustrates that both models
