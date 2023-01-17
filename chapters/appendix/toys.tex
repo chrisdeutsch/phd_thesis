@@ -136,13 +136,13 @@ the marginal distributions from the dependency structure of the observables. A
 review of similar approaches of modelling multivariate count data is given in
 Ref.~\cite{10.1002/wics.1398}.
 
-Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint distribution
-function $H$ can be decomposed into $n$ marginal distribution functions
-$F_1, \dots, F_n$ and an $n$-dimensional copula $\mathcal{C}$. The copula
-$\mathcal{C}$ is an $n$-dimensional distribution function,
-$\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$, with uniform marginal densities that
-describes the dependencies between random variables. The joint distribution can
-be expressed as
+Sklar's theorem states, see for example Ref.~\cite{nelsen}, that any
+$n$-dimensional joint distribution function $H$ can be decomposed into $n$
+marginal distribution functions $F_1, \dots, F_n$ and an $n$-dimensional copula
+$\mathcal{C}$. The copula $\mathcal{C}$ is an $n$-dimensional distribution
+function, $\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$, with uniform marginal
+densities that describes the dependencies between random variables. The joint
+distribution can be expressed as
 \begin{align*}
   H(x_1, \dots, x_n) = \mathcal{C}(F_1(x_1), \dots, F_n(x_n))
 \end{align*}
@@ -165,11 +165,10 @@ zero mean and covariance equal to the correlation matrix~$\myvec{R}$ and
 $\Phi^{-1}$ is the quantile function of the univariate Standard Normal
 distribution.
 
-The parameters $\myvec{R}$ of the Gaussian copula are estimated using the
-correlation matrices derived with the bivariate Poisson model previously shown
-in~\Cref{fig:correlation_matrix_observables}. The modelling assumptions are
-investigated empirically in two dimensions using comparisons of simulated
-results for the bivariate Poisson model and the copula-based model. The
+The parameters $\myvec{R}$ of the Gaussian copula are estimated by the
+correlation matrices derived with the bivariate Poisson model. This
+approximation is investigated empirically in two dimensions by comparing
+simulated results of the bivariate Poisson model and the copula-based model. The
 dependence of two observables $A$ and $B$ is illustrated in
 \Cref{fig:copula_model_comparison} for both models in terms of the conditional
 mean and variance of $B$ given the observation $A = a$. This comparison is
