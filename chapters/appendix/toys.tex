@@ -114,7 +114,7 @@ and LTT channels.
 The toy generation for the global significance estimation needs to fulfil
 certain requirements. First, the model needs to reproduce the marginal
 distributions of the observables, i.e.\ Poisson distributions with parameters
-equal to the mean number of events predicted by the background model.
+equal to the mean number of events predicted by the nominal background model.
 % such that the distribution of the discovery test statistic for individual
 % tests at fixed \mX can be reproduced.
 Second, it needs to model the dependencies between observables due to the
@@ -135,7 +135,7 @@ observables. A review of similar approaches of modelling multivariate count data
 is given in Ref.~\cite{10.1002/wics.1398}.
 
 Sklar's theorem states~\cite{nelsen} that any $n$-dimensional joint distribution
-function $H$ can be decomposed into its marginal distribution functions
+function $H$ can be decomposed into $n$ marginal distribution functions
 $F_1, \dots, F_n$ and an $n$-dimensional copula $\mathcal{C}$. The copula
 $\mathcal{C}$ is an $n$-dimensional distribution function,
 $\mathcal{C}: [0, 1]^n \rightarrow [0, 1]$, with uniform marginal densities that
@@ -147,22 +147,21 @@ be expressed as
 according to the theorem.
 
 For the task of generating toy experiments, the only missing piece is the
-functional form of the copula since the marginal distributions are already known
-from the nominal background estimate. The Poisson distribution can be
-approximated by a Normal distribution provided the expected rate is not too
-small, suggesting that the copula describing the dependence structure of a
-multivariate Normal distribution might be applicable as an approximation. This
-copula, referred to as the Gaussian copula, can be derived using the inversion
-method described in Ref.~\cite{nelsen} and is given by
+functional form of the copula since the marginal distributions are known from
+the nominal background model. The bivariate Poisson distribution can be
+approximated by a bivariate Normal distribution provided the means, $\lambda_i$,
+are not too small. This suggests that the copula of a multivariate Normal
+distribution might be a suitable approximation to model the dependencies between
+observables. This copula, referred to as the Gaussian copula, can be derived
+using the inversion method described in Ref.~\cite{nelsen} and is given by
 \begin{align}
-  \label{eq:gaussian_copula}
   \mathcal{C}_{\myvec{R}}(u_1, \dots, u_n) = \Phi_{\myvec{R}}(\Phi^{-1}(u_1), \dots, \Phi^{-1}(u_n))
+  \label{eq:gaussian_copula}
 \end{align}
 where $\Phi_{\myvec{R}}$ is the CDF of the multivariate Normal distribution with
 zero mean and covariance equal to the correlation matrix~$\myvec{R}$, and
 $\Phi^{-1}$ is the quantile function of the univariate Standard Normal
 distribution.
-
 
 The parameters $\myvec{R}$ of the Gaussian copula are estimated using the
 correlation matrices derived with the bivariate Poisson model previously shown
@@ -198,41 +197,39 @@ yields the following findings:
 
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[scale=0.9]{global_significance/model_comparison/comparison_example_1}
+    \includegraphics[scale=0.94]{global_significance/model_comparison/comparison_example_1}
     \subcaption{Most signal-like bins of the $\mX = \SI{1100}{\GeV}$
       and $\mX = \SI{1200}{\GeV}$ discriminants
-      ($\rho = \SI{75}{\percent}$).}
+      ($\rho_{AB} = \SI{75}{\percent}$).}
   \end{subfigure}
 
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[scale=0.9]{global_significance/model_comparison/comparison_example_3}
+    \includegraphics[scale=0.94]{global_significance/model_comparison/comparison_example_3}
     \subcaption{Second bin of the $\mX = \SI{1000}{\GeV}$ and second
       bin of the $\mX = \SI{1200}{\GeV}$ discriminant
-      ($\rho = \SI{47}{\percent}$).}
+      ($\rho_{AB} = \SI{47}{\percent}$).}
   \end{subfigure}
 
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[scale=0.9]{global_significance/model_comparison/comparison_example_4}
-    \subcaption{Third bin of the $\mX = \SI{500}{\GeV}$ and second bin
-      of the $\mX = \SI{600}{\GeV}$ discriminant
-      ($\rho = \SI{32}{\percent}$).}
+    \includegraphics[scale=0.94]{global_significance/model_comparison/comparison_example_4}
+    \subcaption{Third bin of the $\mX = \SI{500}{\GeV}$ and second bin of the
+      $\mX = \SI{600}{\GeV}$ discriminant ($\rho_{AB} = \SI{32}{\percent}$).}
   \end{subfigure}
 
-  \caption{Comparison of the bivariate Poisson model and the copula model with a
-    Gaussian copula specified by
-    $\rho = \lambda_2 / \sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 +
+  \caption[Comparison of the bivariate Poisson model and a model consisting of
+  two Poisson marginal distributions linked by a Gaussian copula.]{Comparison of
+    the bivariate Poisson model and a model using the Gaussian copula defined by
+    $\rho_{AB} = \lambda_2 / \sqrt{(\lambda_1 + \lambda_2) \cdot (\lambda_2 +
       \lambda_3)}$ and marginal distributions given by
     $A \sim \pois(\lambda_1 + \lambda_2)$ and
-    $B \sim \pois(\lambda_2 + \lambda_3)$. The conditional mean (left panels)
-    and variance (right panels) of $B$ given the observation $A = a$ is shown to
-    illustrate the dependence of both random variables. Three different
-    scenarios are shown varying in the expected rates $\lambda_i$ and in the
-    correlation coefficients $\rho$ between $A$ and $B$. The scenarios are
-    chosen from bin pairs for the \hadhad channel discriminants.  The
-    probability mass function (PMF) of $A$ is overlayed in arbitrary units
-    (a.u.).}%
+    $B \sim \pois(\lambda_2 + \lambda_3)$. The conditional mean (left) and
+    variance (right) of $B$ given $A = a$ is shown to illustrate the dependence
+    of both random variables. Three different scenarios with varying $\lambda_i$
+    and $\rho_{AB}$ are shown, which are chosen from bin pairs in the \hadhad
+    channel. The probability mass function (PMF) of $A$ is overlayed in
+    arbitrary units (a.u.).}%
   \label{fig:copula_model_comparison}
 \end{figure}
 
