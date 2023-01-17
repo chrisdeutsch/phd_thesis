@@ -264,6 +264,7 @@ distribution described by the Gaussian copula and marginal distributions:
   such that $x_i = F_{i}^{-1}(u_i)$ for $i = 1, \dots, n$. The marginal
   distribution functions are given by Poisson distributions with mean parameters
   corresponding to the nominal background prediction in a given bin.
+
 \end{enumerate}
 The multivariate count data generated with this method was inspected by
 generating large samples of size $\mathcal{O}(10^6)$ showing agreement in terms
@@ -272,51 +273,47 @@ reproducing the pair-wise correlation coefficients estimated with the bivariate
 Poisson model.
 
 
-\subsubsection{Generation of Global Observables}
+\subsubsection{Generation of Global Observables for the Barlow--Beeston Method}
 
-Global observables have to be fluctuated when estimating the global significance
-with toy experiments. This section will focus on the generation of the global
-observables related to the Barlow--Beeston method, previously described in
-\Cref{app:barlow_beeston}, that is used to include statistical uncertainties on
-the predicted background rates in the likelihood function. Due to the
-statistical nature of these uncertainties they cannot be neglected when
-estimating the global significances, particularly since these uncertainties have
-a large impact on the POI.
-
-Global observables related to all other systematic uncertainties are randomly
-assigned given their constraint terms in the likelihood function and assumed to
-be fully correlated between all tests. A detailed discussion of these is omitted
-since standard procedures are used.
-
-Regarding global observables associated with the Barlow--Beeston method, similar
-considerations can be made as for the observables discussed in the previous
-section. The phase space selected by pairs of bins can partially overlap,
-leading to dependencies between the background rate predictions (from simulation
-and CR data) between bins. The random generation of these (global) observables
-is simplified, however, since resampling methods can be used.
-
-The sample of simulated and CR events used to predict the background rates in
-all bins of the discriminants can be resampled using non-parametric Bootstrap
+This section focuses on the generation of global observables introduced by the
+Barlow--Beeston method (cf.~\Cref{app:barlow_beeston}).
+%
+% Global observables have to be fluctuated when estimating the global significance
+% with toy experiments. This section will focus on the generation of the global
+% observables related to the Barlow--Beeston method, previously described in
+% \Cref{app:barlow_beeston}, that is used to include statistical uncertainties on
+% the predicted background rates in the likelihood function. Due to the
+% statistical nature of these uncertainties they cannot be neglected when
+% estimating the global significances, particularly since these uncertainties have
+% a large impact on the POI.
+%
+% Regarding global observables associated with the Barlow--Beeston method, similar
+% considerations can be made as for the observables discussed in the previous
+% section. The phase space selected by pairs of bins can partially overlap,
+% leading to dependencies between the background rate predictions (from simulation
+% and CR data) between bins. The random generation of these (global) observables
+% is simplified, however, since resampling methods can be used.
+%
+The sample of simulated and CR events used to predict the background in all bins
+of the discriminants is resampled using non-parametric Bootstrap
 methods~\cite{10.1214/aos/1176344552,efron1994introduction} to obtain replicas
-of the sample that capture the statistical uncertainties and correlations
-between background rate predictions. Every event in the original sample is
-assigned a random bootstrap weight $w_i^{\text{b}}$ drawn from
-$\pois(\lambda = 1)$ serving as an approximation to the regular non-parametric
-Bootstrap~\cite{google:poisson,ATL-PHYS-PUB-2021-011}. The resulting bootstrap
-replica provides new rate estimates for all bins given
-by~$\sum_{i} w_{i}^{\text{b}} w_i$, where $w_i$ is the nominal event weight,
-$w_i^{\text{b}}$ the bootstrap weight, and the sum goes over all events falling
-into bin $b$ of channel $c$. These rate estimates can be translated into the
-observed effective number of events $m_{cb}$ (global observables of the
-Barlow--Beeston method) using
+that capture the statistical uncertainties and correlations of the background
+predictions. Concretely, a random bootstrap weight $w_i^{\text{b}}$ drawn from
+$\pois(\lambda = 1)$ is assigned to every event, serving as an approximation to
+the regular non-parametric
+Bootstrap~\cite{google:poisson,ATL-PHYS-PUB-2021-011}. The resulting replica
+provides new background estimates for all bins given
+by~$\sum_{i} w_{i}^{\text{b}} \, w_i$, where $w_i$ is the nominal event weight
+and the sum goes over all events in bin~$b$ of channel~$c$. This estimate is
+translated into the effective number of events $m_{cb}$ according to
 \begin{align*}
   m_{cb} = \frac{1}{s_{cb}} \sum_{i} w_{i}^{\text{b}} \, w_i
 \end{align*}
 with the scaling factor given by $s_{cb} = \sum_i w_i^2 / \sum_i w_i$, and sums
 going over all events falling into bin $b$ of channel $c$. This relationship
-follows from the scaled Poisson approximation employed by the Barlow--Beeston
-method introduced in~\Cref{app:barlow_beeston}. Multiple toy experiments are
-generated by repeating the Bootstrap procedure.
+follows from the SPD approximation of the CPD employed by the Barlow--Beeston
+method. Multiple toy experiments are generated by repeating the Bootstrap
+procedure.
 
 In~\Cref{fig:comparison_bootstrap_poisson} the distributions of two exemplary
 global observables in the \hadhad channel are shown and compared with the
