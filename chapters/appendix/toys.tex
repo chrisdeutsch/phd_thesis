@@ -43,14 +43,13 @@ An approximation of the correlation coefficients for all bin pairs in a given
 channel can be obtained by estimating the parameters $\lambda_i$ using MC
 simulation and CR data. Excerpts of the correlation matrix obtained in the
 \hadhad channel are shown in~\Cref{fig:correlation_matrix_observables}. In
-total, 144 bins have to be considered in the \hadhad channel; therefore, the
-full correlation matrix is of dimension $144 \times 144$. Similar matrices are
+total, 144 bins are considered in the \hadhad channel; therefore, the full
+correlation matrix is of dimension $144 \times 144$. Similar matrices are
 obtained in the \lephad SLT and LTT SRs with dimension $193 \times 193$ and
 $182 \times 182$, respectively.
 
-\Cref{fig:correlation_matrix_observables} shows estimated correlation
-coefficients between observables in the \hadhad channel. A few features of the
-correlation matrix are noted in the following:
+A few features of the correlation matrix shown in
+\Cref{fig:correlation_matrix_observables} are noted in the following:
 \begin{itemize}
 
 \item Off-diagonal elements of submatrices describing the correlation between
@@ -59,23 +58,23 @@ correlation matrix are noted in the following:
 
 \item The most background-like bins have correlation coefficients of about
   \SI{90}{\percent} or larger. This is due to events that are easily rejected by
-  the PNN discriminants, which predominately populate the first bins. A large
-  correlation for such bins is expected, independent of the targeted \mX, due
-  events that are kinematically incompatible with resonant \HH
-  production. Examples for such events are ones where both \mMMC and \mBB are
-  far from \mH.
+  the PNN discriminants, which predominately populate the first bins.
+  % A large correlation for such bins is expected, independent of the targeted
+  % \mX, due events that are kinematically incompatible with resonant \HH
+  % production. Examples for such events are ones where both \mMMC and \mBB are
+  % far from \mH.
 
-\item The observables of the most signal-like bins are expected to have little
-  correlation for the three PNN discriminants targeting the intermediate mass
-  range considered in~\Cref{fig:correlation_matrix_observables_medium}.  This is
-  in contrast to the correlation of the most signal-like bins of the high-\mX
-  discriminants shown in \Cref{fig:correlation_matrix_observables_high}. In this
-  case, the PNN cannot distinguish between adjacent mass points leading to
-  correlations between observables of up to \SI{75}{\percent}.
+\item The observables of the most signal-like bins in the intermediate mass
+  range (cf.~\Cref{fig:correlation_matrix_observables_medium}) have little
+  correlation. In contrast, in the high mass regime
+  (cf.~\Cref{fig:correlation_matrix_observables_high}) the observables of the
+  most signal-like bins can have correlations of up to \SI{75}{\percent}. This
+  is due to the inability of the PNN to distinguish between different signal
+  hypotheses with large \mX.
 
 \end{itemize}
-Similar features are observed for the correlation matrices in the \lephad SLT
-and LTT channels.
+The correlation matrices in the \lephad SLT and LTT channels show similar
+features.
 
 \begin{figure}[htbp]
   \centering
@@ -167,16 +166,16 @@ distribution.
 The parameters $\myvec{R}$ of the Gaussian copula are estimated by the
 correlation matrices derived with the bivariate Poisson model. This
 approximation is investigated empirically in two dimensions by comparing
-simulated results of the bivariate Poisson model and the copula-based model. The
+simulated results of the bivariate Poisson model and a copula-based model. The
 dependence of two observables $A$ and $B$ is illustrated in
 \Cref{fig:copula_model_comparison} for both models in terms of the conditional
-mean and variance of $B$ given the observation $A = a$. This comparison is
-performed, instead of a direct comparison of joint distribution functions, to
-better illustrate the subtle differences between both models. The comparison
-yields the following findings:
+mean and variance of $B$ given $A = a$. This comparison is performed, instead of
+a direct comparison of joint distribution functions, to better illustrate the
+subtle differences between both models. The comparison yields the following
+findings:
 \begin{itemize}
 
-\item The conditional mean of $B$ given $A = a$ agrees well between models even
+\item The conditional mean of $B$ given $A = a$ agrees well between models, even
   when considering bin pairs with the lowest $\lambda_i$ relevant for the
   analysis.
 
