@@ -1,13 +1,14 @@
-The following describes the toy generation methods used for the global
-significance estimation in \Cref{sec:global_significance}.
+The toy generation methods used for the global significance estimation in
+\Cref{sec:global_significance} is described in the following.
 
 
 \subsubsection{Generation of Observables}
 
-To generate random values for the observables, the correlations between
-observables have to be quantified. Let $A$ and $B$ be the number of events
+The correlations between observables (i.e.~$n_{cb}$ in
+\Cref{eq:likelihood_histfactory}) have to be quantified before proceeding with
+the generation of toy experiments. Let $A$ and $B$ be the number of events
 selected by two bins with $A$ and $B$ being marginally distributed according to
-Poisson distributions. The dependence between $A$ and $B$ is given by the
+Poisson distributions. The correlation between $A$ and $B$ is given by the
 overlap in the kinematic region selected by both bins. The kinematic region
 selected by either bin can be partitioned into three parts:
 \begin{itemize}
@@ -40,14 +41,14 @@ $\lambda_2$, introduces a correlation between both observables. In the
 following, the model described by $A$ and $B$ is referred to as the bivariate
 Poisson model~\cite{teicher1954}.
 
-An approximation of the correlation coefficient for all pair-wise combinations
-of bins in an analysis channel can be obtained by estimating the parameters
-$\lambda_i$ using MC simulation and CR data. Exemplary submatrices of the
-correlation matrix obtained in the \hadhad channel are shown
-in~\Cref{fig:correlation_matrix_observables}. A total of 144 bins from the
-\hadhad channel enter the statistical interpretation leading to a matrix of
-dimension $144 \times 144$. Similar matrices are obtained in the \lephad SLT and
-LTT SRs with dimension $193 \times 193$ and $182 \times 182$, respectively.
+An approximation of the correlation coefficients for all bin pairs in a given
+channel can be obtained by estimating the parameters $\lambda_i$ using MC
+simulation and CR data. Excerpts of the correlation matrix obtained in the
+\hadhad channel are shown in~\Cref{fig:correlation_matrix_observables}. In
+total, 144 bins have to be considered in the \hadhad channel; therefore, the
+full correlation matrix is of dimension $144 \times 144$. Similar matrices are
+obtained in the \lephad SLT and LTT SRs with dimension $193 \times 193$ and
+$182 \times 182$, respectively.
 
 \Cref{fig:correlation_matrix_observables} shows estimated correlation
 coefficients between observables in the \hadhad channel. A few features of the
@@ -275,7 +276,8 @@ Poisson model.
 \subsubsection{Generation of Global Observables for the Barlow--Beeston Method}
 
 This section focuses on the generation of global observables introduced by the
-Barlow--Beeston method (cf.~\Cref{app:barlow_beeston}).
+Barlow--Beeston method (i.e.~$m_{cb}$ in
+\Cref{eq:likelihood_histfactory_constraints}).
 %
 % Global observables have to be fluctuated when estimating the global significance
 % with toy experiments. This section will focus on the generation of the global
