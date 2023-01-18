@@ -7,24 +7,22 @@ The toy generation methods used for the global significance estimation in
 The correlations between observables (i.e.~$n_{cb}$ in
 \Cref{eq:likelihood_histfactory}) have to be quantified before proceeding with
 the generation of toy experiments. Let $A$ and $B$ be the number of events
-selected by two bins with $A$ and $B$ being marginally distributed according to
-Poisson distributions. The correlation between $A$ and $B$ is given by the
-overlap in the kinematic region selected by both bins. The kinematic region
-selected by either bin can be partitioned into three parts:
+selected by two bins. Additionally, the marginal distributions of $A$ and $B$
+are Poisson. The correlation between $A$ and $B$ is given by the overlap in the
+kinematic region selected by both bins. The kinematic region selected by either
+bin can be partitioned into three parts:
 \begin{itemize}
 
-\item The kinematic region selected by bin A but not B with number of
+\item The region selected by bin A but not B with number of
   events~$X_1$.
 
-\item The kinematic region selected by bin A and B with number of events~$X_2$.
+\item The region selected by bin A and B with number of events~$X_2$.
 
-\item The kinematic region selected by bin B but not A with number of
-  events~$X_3$.
+\item The region selected by bin B but not A with number of events~$X_3$.
 
 \end{itemize}
-The observables $X_i$ are distributed according to $\pois(\lambda_i)$ for
-$i = 1, 2, 3$ and are mutually independent. Consequently, $A$ and $B$ can be
-written as
+The $X_i$ are distributed according to $\pois(\lambda_i)$ for $i = 1, 2, 3$ and
+are mutually independent. Consequently, $A$ and $B$ can be written as
 \begin{align*}
   A &= X_1 + X_2 \sim \pois(\lambda_1 + \lambda_2) \\
   B &= X_2 + X_3 \sim \pois(\lambda_2 + \lambda_3)
@@ -55,7 +53,7 @@ coefficients between observables in the \hadhad channel. A few features of the
 correlation matrix are noted in the following:
 \begin{itemize}
 
-\item Off-diagonal elements of submatrices describing the correlation of
+\item Off-diagonal elements of submatrices describing the correlation between
   observables belonging to the same PNN discriminant are zero due to bins being
   pairwise disjoint by construction.
 
