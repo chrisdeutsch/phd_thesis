@@ -2,17 +2,19 @@ The expected number of background events in bin $b$ of a channel $c$,
 $\nu_{cb}$, is often estimated using a finite sample of events (e.g.\ from MC
 simulation); therefore, $\nu_{cb}$ does not correspond to the true expected
 number of background events. The background predictions are subject to
-uncertainties that have to be considered when performing inference, particularly
-when bins are only sparsely populated by events.
+statistical uncertainties that have to be considered when performing inference,
+particularly when bins are only sparsely populated by events.
 
 This uncertainty is included in the likelihood function, employing the method
 proposed by Barlow and Beeston~\cite{barlow1993}, by replacing the expected
 number of background events estimated using the finite sample with its true
 value, which is unknown and has to be inferred from data. In practice, this is
-done by performing the substitution $\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$
-that introduces new nuisance parameters $\gamma_{cb}$, which specify the
-relative difference between the estimated and true expected number of background
-events.
+done by performing the substitution $\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$,
+which introduces new nuisance parameters $\gamma_{cb}$.
+% which specify the
+% relative difference between the estimated and true expected number of background
+% events.
+%
 % Initially it was proposed to introduce one such nuisance parameter for every
 % background source~\cite{barlow1993}, however, a simplified version proposed in
 % Ref.~\cite{conway2011} is used such that only the combined uncertainty on the
