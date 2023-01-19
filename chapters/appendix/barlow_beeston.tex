@@ -1,36 +1,38 @@
-The predicted background rate in bin $b$ of a channel $c$, $\nu_{cb}$, is often
-determined using a finite sample of events (e.g.\ from MC simulation) and thus
-does not correspond to the true rate. The background rate estimates are subject
-to uncertainties that have to be considered when performing inference,
-particularly when bins are only sparsely populated by events.
+The expected number of background events in bin $b$ of a channel $c$,
+$\nu_{cb}$, is often estimated using a finite sample of events (e.g.\ from MC
+simulation); therefore, $\nu_{cb}$ does not correspond to the true expected
+number of background events. The background predictions are subject to
+uncertainties that have to be considered when performing inference, particularly
+when bins are only sparsely populated by events.
 
 This uncertainty is included in the likelihood function, employing the method
 proposed by Barlow and Beeston~\cite{barlow1993}, by replacing the expected
-background rate from the prediction using the finite sample with the true rate,
-which has to be simultaneously inferred. In practice this is done by performing
-the substitution $\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$ that introduces new
-nuisance parameters $\gamma_{cb}$ specifying the relative difference between the
-predicted and true rates.
+number of background events estimated using the finite sample with its true
+value, which is unknown and has to be inferred from data. In practice, this is
+done by performing the substitution $\nu_{cb} \rightarrow \gamma_{cb} \nu_{cb}$
+that introduces new nuisance parameters $\gamma_{cb}$, which specify the
+relative difference between the estimated and true expected number of background
+events.
 % Initially it was proposed to introduce one such nuisance parameter for every
 % background source~\cite{barlow1993}, however, a simplified version proposed in
 % Ref.~\cite{conway2011} is used such that only the combined uncertainty on the
 % total background prediction is considered instead.
 
-The $\gamma$ nuisance parameters are constrained by auxiliary measurements using
-the observed sample of events. These measurements contribute terms of the form
+The $\gamma$ nuisance parameters are constrained by auxiliary measurements that
+contribute terms of the form
 \begin{align*}
   \pois(m_{cb} ; \gamma_{cb} \tau_{cb})
   \qquad \text{with} \qquad
   \tau_{cb} = \frac{( \sum_i w_i )^2}{\sum_i w_i^2} = \text{const.}
 \end{align*}
 to the likelihood function~\cite{cranmer2012}, where the sums go over all events
-contributing to bin $b$ in channel $c$ with event weights $w_i$. This
-corresponds to a measurement of the effective number of events based on the
-observed value $m_{cb}$, which is nominally equal to
-$\tau_{cb}$,\footnote{Generally, $m_{cb}$ is not integer-valued and thus not
-  covered by the support of the Poisson distribution; therefore, the factorial
-  term in the Poisson PMF is replaced by the gamma function to generalise the
-  distribution to $\mathbb{R}^+$.} for the finite sample of events.
+in bin $b$ of channel $c$ with event weights $w_i$. This corresponds to a
+measurement of the effective number of unweighted events based on the observed
+value $m_{cb}$, which is nominally equal to $\tau_{cb}$,\footnote{Generally,
+  $m_{cb}$ is not integer-valued and thus not covered by the support of the
+  Poisson distribution; therefore, the factorial term in the Poisson PMF is
+  replaced by the gamma function to generalise the distribution to
+  $\mathbb{R}^+$.} for the finite sample of events.
 
 This approach is based on the approximation of the \emph{compound Poisson
   distribution} (CPD), which describes the distribution of the sum of a Poisson
