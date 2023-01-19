@@ -292,14 +292,13 @@ Barlow--Beeston method (i.e.~$m_{cb}$ in
 % and CR data) between bins. The random generation of these (global) observables
 % is simplified, however, since resampling methods can be used.
 %
-The sample of simulated and CR events used for background estimation
-% in all bins of the discriminants
-is resampled using non-parametric bootstrap
-methods~\cite{10.1214/aos/1176344552,efron1994introduction} to obtain replicas
+The sample of simulated and CR events used for background estimation is
+resampled using a non-parametric bootstrap
+method~\cite{10.1214/aos/1176344552,efron1994introduction} to obtain new samples
 that capture the statistical uncertainties and correlations of the background
 predictions. Specifically, random weights $w_i^{\text{b}}$ drawn from $\pois(1)$
 are assigned to all events~\cite{ATL-PHYS-PUB-2021-011}. These weights define
-new background estimates~$\sum_{i} w_{i}^{\text{b}} \, w_i$ for all bins, where
+background estimates~$\sum_{i} w_{i}^{\text{b}} \, w_i$ for all bins, where
 $w_i$ is the nominal weight of event~$i$ and the sum goes over all events in a
 given bin. Subsequently, the background estimate resulting from the bootstrap
 procedure is translated into an effective number of unweighted events according
