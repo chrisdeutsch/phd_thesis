@@ -25,15 +25,16 @@ form
   \pois(m_{cb} ; \gamma_{cb} \tau_{cb})
   \qquad \text{with} \qquad
   \tau_{cb} = \frac{( \sum_i w_i )^2}{\sum_i w_i^2} = \text{const.}
+  %\label{eq:barlow_beeston_llhconstraint}
 \end{align*}
 to the likelihood function~\cite{cranmer2012}, where the sums go over all events
 in bin $b$ of channel $c$ with event weights $w_i$. This corresponds to a
-measurement of the effective number of unweighted events based on the observed
-value $m_{cb}$, which is nominally equal to $\tau_{cb}$,\footnote{Generally,
-  $m_{cb}$ is not integer-valued and thus not covered by the support of the
-  Poisson distribution; therefore, the factorial term in the Poisson PMF is
-  replaced by the gamma function to generalise the distribution to
-  $\mathbb{R}^+$.} for the finite sample of events.
+measurement of the effective number of events ($\gamma_{cb} \tau_{cb}$) based on
+the observed value $m_{cb}$, which is nominally equal to
+$\tau_{cb}$,\footnote{Generally, $m_{cb}$ is not integer-valued and thus not
+  covered by the support of the Poisson distribution; therefore, the factorial
+  term in the Poisson PMF is replaced by the gamma function to generalise the
+  distribution to $\mathbb{R}^+$.} for the finite sample of events.
 
 This approach is based on the approximation of the \emph{compound Poisson
   distribution} (CPD), which describes the distribution of the sum of a Poisson
@@ -45,8 +46,7 @@ number of random weights, by a \emph{scaled Poisson distribution}
   X = \sum_{i = 1}^{N} W_i \,\text{,}  % \quad \text{with} \quad N \sim \pois(\lambda) \text{ and i.i.d.\ } W_i \text{ (independent of }N\text{)} \,\text{.}
 \end{align*}
 with $N \sim \pois(\lambda)$ and i.i.d.\ $W_i$ that are independent of $N$. The
-CPD can be approximated, see for example Ref.~\cite{Bohm:2013gla}, using the SPD
-defined by
+CPD can be approximated using the SPD defined by
 \begin{align*}
   \tilde{X} = s \cdot \tilde{N} \quad \text{with} \quad \tilde{N} \sim \pois(\tilde{\lambda})
 \end{align*}
@@ -55,27 +55,25 @@ with
   s = \frac{\expect(W^2)}{\expect(W)} \qquad \tilde{\lambda} = \frac{\lambda \expect(W)^2}{\expect(W^2)}
 \end{align*}
 where $\expect(W)$ and $\expect(W^2)$ are the first and second moments of the
-weight distribution, respectively. The Barlow--Beeston method makes the
-assumption that the expectation values can be approximated by sample averages
-such that
+weight distribution, respectively~\cite{Bohm:2013gla}. The Barlow--Beeston
+method makes the assumption that the expectation values can be approximated by
+sample averages such that
 \begin{align*}
   s = \frac{\sum_i w_i^2}{\sum_i w_i} \qquad \tilde{\lambda} = \frac{\lambda}{n} \frac{(\sum_i w_i)^2}{\sum_i w_i^2}
 \end{align*}
-with sample size $n$. The form of the likelihood terms introduced by the
-Barlow--Beeston method is motivated by defining $m_{cb}$ to be the observed
-value of $\tilde{N}$ and $\gamma_{cb} = \lambda / n$. Using these definitions,
-the terms in the likelihood function read
-\begin{align*}
-  \pois(m_{cb}; \tilde{\lambda}) = \pois(m_{cb}; \gamma_{cb} \tau_{cb}) \,\text{.}
-\end{align*}
-Finally, the expected rate can be expressed as
-\begin{align*}
-  \expect(\tilde{X}) = s \cdot \expect(\tilde{N}) = \gamma_{cb} \sum_i w_i =
-  \gamma_{cb} \nu_{cb} \,\text{,}
-\end{align*}
-where $\nu_{cb} = \sum_i w_i$ is the background rate predicted using the finite
-sample of events, thus motivating the substitution
-$\nu_{cb} \to \gamma_{cb} \nu_{cb}$ performed in the Barlow--Beston method.
+with sample size~$n$. When defining $m_{cb}$ to be the observed value of
+$\tilde{N}$ and $\gamma_{cb} = \lambda / n$, then the
+$\pois(m_{cb}; \gamma_{cb} \tau_{cb})$ terms in the likelihood function are
+reproduced.
+
+% Finally, the expectation of $X$ and $\tilde{X}$ can be expressed as
+% \begin{align*}
+%   \expect(X) = \expect(\tilde{X}) = \gamma_{cb} \sum_i w_i =
+%   \gamma_{cb} \nu_{cb} \,\text{,}
+% \end{align*}
+% where $\nu_{cb} = \sum_i w_i$ is the background rate predicted using the
+% finite sample of events, thus motivating the substitution
+% $\nu_{cb} \to \gamma_{cb} \nu_{cb}$ performed in the Barlow--Beston method.
 
 %%% Local Variables:
 %%% mode: latex
