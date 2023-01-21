@@ -1,4 +1,4 @@
-@article{Dreyer:2018qbw,
+@Article{Dreyer:2018qbw,
     author = "Dreyer, Fr\'ed\'eric A. and Karlberg, Alexander",
     title = "{Vector-Boson Fusion Higgs Pair Production at N$^3$LO}",
     eprint = "1811.07906",
@@ -14,18 +14,19 @@
 }
 
 @Book{casella2001,
-  title     = {Statistical inference},
+  title     = {Statistical Inference},
   author    = {Casella, George and Berger, Roger L},
   year      = {2001},
   publisher = {Cengage Learning}
 }
 
-@Mastersthesis{cdeutsch-master,
-  author = {Christopher Deutsch},
+@Thesis{cdeutsch-master,
+  author = {Deutsch, Christopher},
   title  = {Identification and Classification of Hadronic Tau Lepton Decays
            in the ATLAS Experiment for Run 2 of the LHC},
-  school = {Universit{\"a}t Bonn},
+  school = {University of Bonn},
   year   = {2017},
+  type   = {Master's thesis}
 }
 
 @Book{cowan1998,
@@ -51,24 +52,26 @@
                    Shibata, Akira and Verkerke, Wouter",
   title         = "{HistFactory: A tool for creating statistical models for
                    use with RooFit and RooStats}",
-  institution   = "New York U.",
   collaboration = "ROOT Collaboration",
-  address       = "New York",
-  reportNumber  = "CERN-OPEN-2012-016",
-  month         = {1},
-  year          = {2021},
+  type          = "CERN-OPEN-2012-016",
+  year          = {2012},
   url           = "https://cds.cern.ch/record/1456844",
 }
 
-@misc{conway2011,
+@Inproceedings{conway2011,
   title         = {Incorporating Nuisance Parameters in Likelihoods for Multisource Spectra},
   author        = {J. S. Conway},
+  booktitle     = "Proceedings of the PHYSTAT 2011 Workshop on Statistical
+                  Issues Related to Discovery Claims in Search Experiments and
+                  Unfolding",
+  editor        = "Prosper, H. B. and Lyons, L.",
   year          = {2011},
   eprint        = {1103.0354},
   archivePrefix = {arXiv},
   primaryClass  = {physics.data-an},
+  address       = "Geneva, Switzerland",
+  date          = "2011-01-17/2011-01-20",
 }
-
 
 @Book{cramer1999,
   title = {Mathematical Methods of Statistics},
@@ -94,7 +97,6 @@
   eprint = {https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.1933.0009},
 }
 
-
 @Misc{lwtnn,
   author       = {Daniel Hay Guest and
                   Joshua Wyatt Smith and
@@ -103,42 +105,38 @@
                   Marie Lanfermann and
                   Attila Krasznahorkay and
                   Daniel Edison Marley},
-  title        = {lwtnn/lwtnn: Version 2.8.1},
-  month        = mar,
+  title        = {lwtnn: Version 2.8.1},
   year         = 2019,
   doi          = {10.5281/zenodo.2583131},
   url          = {https://doi.org/10.5281/zenodo.2583131}
 }
 
-
 @Misc{keras,
   title        = {Keras},
   author       = {Chollet, Fran\c{c}ois and others},
   year         = {2015},
-  howpublished = {\url{https://keras.io}},
+  url          = {https://keras.io},
 }
 
 
 @Misc{tensorflow2015-whitepaper,
-  title        = {{TensorFlow}: Large-Scale Machine Learning on Heterogeneous Systems},
-  note         = {Software available from tensorflow.org},
+  title        = {{TensorFlow}: Large-Scale Machine Learning on Heterogeneous
+                  Systems},
   author       = {Abadi, Mart\'{i}n and others},
   year         = {2015},
-  howpublished = {\url{https://www.tensorflow.org}},
+  url          = {https://www.tensorflow.org},
 }
 
 
 @Article{lstm,
   author  = {Hochreiter, Sepp and Schmidhuber, Jürgen},
   title   = {Long Short-Term Memory},
-  journal = {Neural Computation},
+  journal = {Neural Comput.},
   volume  = {9},
   number  = {8},
   pages   = {1735-1780},
   year    = {1997},
   doi     = {10.1162/neco.1997.9.8.1735},
-  URL     = {https://doi.org/10.1162/neco.1997.9.8.1735},
-  eprint  = {https://doi.org/10.1162/neco.1997.9.8.1735}
 }
 
 
@@ -169,14 +167,16 @@
 }
 
 
-@phdthesis{bokan,
+@Thesis{bokan,
     author = {Bokan, Petar},
     title = {Pair production of Higgs bosons in the final state with
                   bottom quarks and $\tau$ leptons in the ATLAS
                   experiment: Search results using LHC Run 2 data and
                   prospect studies at the HL-LHC},
+    type = {PhD Thesis},
     school = {Uppsala University},
     year = {2020},
+    url = {http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-419002},
 }
 
 
@@ -207,7 +207,7 @@
     urldate = {2022-05-30},
 }
 
-@article{Baglio:2020wgt,
+@Article{Baglio:2020wgt,
   author =       {Baglio, J. and Campanario, F. and Glaus, S. and
                   M\"uhlleitner, M. and Ronca, J. and Spira, M.},
   title =        "{$gg\to HH$ : Combined uncertainties}",
@@ -226,7 +226,7 @@
 }
 
 
-@article{Grazzini:2018bsd,
+@Article{Grazzini:2018bsd,
     author = "Grazzini, Massimiliano and Heinrich, Gudrun and Jones, Stephen and Kallweit, Stefan and Kerner, Matthias and Lindert, Jonas M. and Mazzitelli, Javier",
     title = "{Higgs boson pair production at NNLO with top quark mass effects}",
     eprint = "1803.02463",
@@ -244,51 +244,49 @@
 @Book{hastie09,
   title     = {The Elements of Statistical Learning: Data Mining, Inference, and Prediction},
   author    = {Hastie, T. and Tibshirani, R. and Friedman, J.H.},
-  isbn      = {9780387848846},
-  lccn      = {2008941148},
-  series    = {Springer series in statistics},
+  %isbn      = {9780387848846},
+  %lccn      = {2008941148},
+  %series    = {Springer series in statistics},
   year      = {2009},
   publisher = {Springer}
 }
 
 
-@book{bishop06,
+@Book{bishop06,
   title     = {Pattern Recognition and Machine Learning},
   author    = {Bishop, C.M.},
-  isbn      = {9780387310732},
-  lccn      = {2006922522},
-  series    = {Information Science and Statistics},
+  %isbn      = {9780387310732},
+  %lccn      = {2006922522},
+  %series    = {Information Science and Statistics},
   year      = {2006},
   publisher = {Springer}
 }
 
 
-@article{cawley10,
-  title     = {On over-fitting in model selection and subsequent selection bias in performance evaluation},
+@Article{cawley10,
+  title     = {On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation},
   author    = {Cawley, Gavin C and Talbot, Nicola LC},
-  journal   = {The Journal of Machine Learning Research},
+  journal   = {J. Mach. Learn. Res.},
   volume    = {11},
   pages     = {2079--2107},
   year      = {2010},
-  publisher = {JMLR. org}
 }
 
 
-@article{stone74,
- ISSN      = {00359246},
+@Article{stone74,
  URL       = {http://www.jstor.org/stable/2984809},
  author    = {M. Stone},
- journal   = {Journal of the Royal Statistical Society. Series B (Methodological)},
+ journal   = {J. R. Stat. Soc. B},
  number    = {2},
  pages     = {111--147},
- publisher = {[Royal Statistical Society, Wiley]},
  title     = {Cross-Validatory Choice and Assessment of Statistical Predictions},
  volume    = {36},
- year      = {1974}
+ year      = {1974},
+ doi       = "10.1111/j.2517-6161.1974.tb00994.x",
 }
 
 
-@article{Elagin:2010aw,
+@Article{Elagin:2010aw,
     author        = "Elagin, A. and Murat, P. and Pranko, A. and Safonov, A.",
     title         = "{A New Mass Reconstruction Technique for Resonances Decaying to di-tau}",
     eprint        = "1012.4686",
@@ -303,18 +301,19 @@
 }
 
 
-@article{Hocker:2007ht,
+@Article{Hocker:2007ht,
     author = "Hocker, Andreas and others",
     title = "{TMVA - Toolkit for Multivariate Data Analysis}",
     eprint = "physics/0703039",
     archivePrefix = "arXiv",
+    primaryClass = "physics.data-an",
     reportNumber = "CERN-OPEN-2007-007",
     month = "3",
     year = "2007"
 }
 
 
-@article{bergstra2012,
+@Article{bergstra2012,
   title={Random search for hyper-parameter optimization.},
   author={Bergstra, James and Bengio, Yoshua},
   journal={Journal of machine learning research},
@@ -324,30 +323,31 @@
 }
 
 
-@book{james13,
-  title={An Introduction to Statistical Learning: with Applications in R},
+@Book{james13,
+  title={An Introduction to Statistical Learning},
   author={James, G. and Witten, D. and Hastie, T. and Tibshirani, R.},
-  isbn={9781461471387},
-  lccn={13936251},
-  series={Springer Texts in Statistics},
+  %isbn={9781461471387},
+  %lccn={13936251},
+  %series={Springer Texts in Statistics},
   year={2013},
-  publisher={Springer New York},
+  publisher={Springer},
 }
 
 
-@article{breiman01,
-  title={Random forests},
-  author={Breiman, Leo},
-  journal={Machine learning},
-  volume={45},
-  number={1},
-  pages={5--32},
-  year={2001},
-  publisher={Springer}
+@Article{breiman01,
+  title = {Random Forests},
+  author = {Breiman, Leo},
+  journal = {Machine Learning},
+  volume = {45},
+  number = {1},
+  pages = {5--32},
+  year = {2001},
+  publisher = {Springer},
+  doi = "10.1023/A:1010933404324",
 }
 
 
-@article{Buckley:2014ana,
+@Article{Buckley:2014ana,
     author = {Buckley, Andy and Ferrando, James and Lloyd, Stephen and Nordstr\"om, Karl and Page, Ben and R\"ufenacht, Martin and Sch\"onherr, Marek and Watt, Graeme},
     title = "{LHAPDF6: parton density access in the LHC precision era}",
     eprint = "1412.7420",
@@ -375,7 +375,7 @@
   url =          {https://livrepository.liverpool.ac.uk/id/eprint/3009386}
 }
 
-@article{ATLAS:2021yza,
+@Article{ATLAS:2021yza,
   author =       "Aad, Georges and others",
   collaboration ="ATLAS",
   title =        "{Modelling and computational improvements to the
@@ -389,7 +389,7 @@
   year =         2021
 }
 
-@article{pdg2020,
+@Article{pdg2020,
     author = "Zyla, P.A. and others",
     collaboration = "Particle Data Group",
     title = "{Review of Particle Physics}",
@@ -402,7 +402,7 @@
 }
 
 
-@article{Gross:2010qma,
+@Article{Gross:2010qma,
     author = "Gross, Eilam and Vitells, Ofer",
     title = "{Trial factors for the look elsewhere effect in high energy physics}",
     eprint = "1005.1891",
@@ -415,29 +415,26 @@
     year = "2010"
 }
 
-@book{nelsen,
+@Book{nelsen,
     author = {Nelsen, Roger B.},
     title = {An Introduction to Copulas},
     year = {2006},
-    publisher = {Springer New York},
-    isbn = {978-0-387-28659-4},
+    publisher = {Springer},
+    %isbn = {978-0-387-28659-4},
 }
 
-@article{10.1002/wics.1398,
+@Article{10.1002/wics.1398,
     author = {Inouye, David I. and Yang, Eunho and Allen, Genevera I. and Ravikumar, Pradeep},
     title = {A review of multivariate distributions for count data derived from the Poisson distribution},
-    journal = {WIREs Computational Statistics},
+    journal = {Wiley Interdiscip. Rev. Comput. Stat.},
     volume = {9},
     number = {3},
     pages = {e1398},
-    keywords = {Poisson, Multivariate, Graphical models, Copulas, High dimensional},
-    doi = {https://doi.org/10.1002/wics.1398},
-    url = {https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wics.1398},
-    eprint = {https://wires.onlinelibrary.wiley.com/doi/pdf/10.1002/wics.1398},
+    doi = {10.1002/wics.1398},
     year = {2017},
 }
 
-@article{Sklar1959FonctionsDR,
+@Article{Sklar1959FonctionsDR,
     title={Fonctions de répartition à n dimensions et leurs marges},
     author={Sklar, A.},
     journal={Publ.\ Inst.\ Statist.\ Univ.\ Paris},
@@ -446,7 +443,7 @@
     year={1959},
 }
 
-@article{Bohm:2013gla,
+@Article{Bohm:2013gla,
     author = "Bohm, G. and Zech, G.",
     title = "{Statistics of weighted Poisson events and its applications}",
     eprint = "1309.1287",
@@ -466,30 +463,28 @@
     institution	= {Google}
 }
 
-@article{10.1214/aos/1176344552,
+@Article{10.1214/aos/1176344552,
     author = {B. Efron},
     title = {{Bootstrap Methods: Another Look at the Jackknife}},
     volume = {7},
-    journal = {The Annals of Statistics},
+    journal = {Ann. Stat.},
     number = {1},
     publisher = {Institute of Mathematical Statistics},
-    pages = {1 -- 26},
-    keywords = {bootstrap, discriminant analysis, error rate estimation, jackknife, Nonlinear regression, nonparametric variance estimation, Resampling, subsample values},
+    pages = {1--26},
     year = {1979},
     doi = {10.1214/aos/1176344552},
-    URL = {https://doi.org/10.1214/aos/1176344552}
 }
 
-@book{efron1994introduction,
+@Book{efron1994introduction,
   title     = {An Introduction to the Bootstrap},
   author    = {Efron, B. and Tibshirani, R.J.},
-  isbn      = {9781000064988},
+  %isbn      = {9781000064988},
   year      = {1994},
   publisher = {CRC Press}
 }
 
 % CMS results for HH
-@article{CMS-HIG-20-005-PREPRINT,
+@Article{CMS-HIG-20-005-PREPRINT,
     author = "{CMS Collaboration}",
     title = "{Search for Higgs boson pair production in the four b quark final state in proton-proton collisions at $\sqrt{s}$ = 13 TeV}",
     eprint = "2202.09617",
@@ -504,7 +499,7 @@
       author        = "{CMS Collaboration}",
       title         = "{Search for nonresonant Higgs boson pair production in
                        final states with two bottom quarks and two tau leptons in
-                       proton-proton collisions at $\sqrt{s} = 13~\mathrm{TeV}$}",
+                       proton-proton collisions at $\sqrt{s} = 13\,\text{TeV}$}",
       howpublished  = "CMS-PAS-HIG-20-010",
       year          = "2022",
       url           = "https://cds.cern.ch/record/2803419",
@@ -514,7 +509,7 @@
       author        = "{CMS Collaboration}",
       title         = "{Search for Higgs boson pairs decaying to $\textrm{WWWW}$,
                        $\textrm{WW}\tau\tau$, and $\tau\tau\tau\tau$ in
-                       proton-proton collisions at $\sqrt{s} = 13~\mathrm{TeV}$}",
+                       proton-proton collisions at $\sqrt{s} = 13\,\text{TeV}$}",
       howpublished  = "CMS-PAS-HIG-21-002",
       year          = "2022",
       url           = "https://cds.cern.ch/record/2799151",
@@ -539,7 +534,7 @@
       url           = "https://cds.cern.ch/record/2803918",
 }
 
-@book{hllhc:tdr,
+@Book{hllhc:tdr,
       title         = "{High-Luminosity Large Hadron Collider (HL-LHC): Technical
                        design report}",
       editor        = "Béjar Alonso, I and Brüning, O and Fessia, P
@@ -555,7 +550,7 @@
 @misc{hepdata.111124,
     author = "{ATLAS Collaboration}",
     title = "{Search for resonant pair production of Higgs bosons in the $b\bar{b}b\bar{b}$ final state using $pp$ collisions at $\sqrt{s}$ = 13 TeV with the ATLAS detector}",
-    howpublished = "{HEPData (collection)}",
+    howpublished = "{HEPData}",
     year = 2022,
     note = "\url{https://doi.org/10.17182/hepdata.111124}"
 }
@@ -563,7 +558,7 @@
 @misc{hepdata.105864,
     author = "{ATLAS Collaboration}",
     title = "{Search for Higgs boson pair production in the two bottom quarks plus two photons final state in $pp$ collisions at $\sqrt{s}=13$ TeV with the ATLAS detector}",
-    howpublished = "{HEPData (collection)}",
+    howpublished = "{HEPData}",
     year = 2022,
     note = "\url{https://doi.org/10.17182/hepdata.105864}"
 }
@@ -574,7 +569,7 @@
                   single- and double-Higgs production with the ATLAS
                   detector using \pp collisions at \(\sqrt{s} =
                   13\,\text{TeV}\)}",
-    howpublished = "{HEPData (collection)}",
+    howpublished = "{HEPData}",
     year = 2022,
     note = "\url{https://doi.org/10.17182/hepdata.135471}"
 }
@@ -585,12 +580,12 @@
                   Lorentz-boosted Higgs bosons in final states with
                   leptons and a bottom quark pair at $ \sqrt{s} $= 13
                   TeV}",
-    howpublished = "{HEPData (collection)}",
+    howpublished = "{HEPData}",
     year = 2021,
     note = "\url{https://doi.org/10.17182/hepdata.115024}"
 }
 
-@article{Cacciari:2008gn,
+@Article{Cacciari:2008gn,
     author = "Cacciari, Matteo and Salam, Gavin P. and Soyez, Gregory",
     title = "{The Catchment Area of Jets}",
     eprint = "0802.1188",
@@ -604,7 +599,7 @@
     year = "2008"
 }
 
-@article{Cacciari:2007fd,
+@Article{Cacciari:2007fd,
     author = "Cacciari, Matteo and Salam, Gavin P.",
     title = "{Pileup subtraction using jet areas}",
     eprint = "0707.1378",
@@ -618,7 +613,7 @@
     year = "2008"
 }
 
-@article{Bukin:2007zha,
+@Report{Bukin:2007zha,
     author = "Bukin, A. D.",
     title = "{Fitting function for asymmetric peaks}",
     eprint = "0711.4449",
@@ -628,16 +623,16 @@
     year = "2007"
 }
 
-@phdthesis{huebner,
-    author = {{Michael Hübner}},
+@Thesis{huebner,
+    author = {Hübner, Michael},
     title = {Higgs Boson Production Cross-Section Measurements in the Di-Tau Final State at ATLAS},
-    school = {Rheinische Friedrich-Wilhelms-Universität Bonn},
+    school = {University of Bonn},
+    type = {PhD Thesis},
     year = 2022,
-    month = apr,
     url = {https://hdl.handle.net/20.500.11811/9734}
 }
 
-@article{Maltoni:2012pa,
+@Article{Maltoni:2012pa,
     author = "Maltoni, Fabio and Ridolfi, Giovanni and Ubiali, Maria",
     title = "{b-initiated processes at the LHC: a reappraisal}",
     eprint = "1203.6393",
@@ -650,10 +645,10 @@
     volume = "07",
     pages = "022",
     year = "2012",
-    note = "[Erratum: JHEP 04, 095 (2013)]"
+    addendum = "Erratum: \href{https://doi.org/10.1007/JHEP04(2013)095}{JHEP \textbf{04} (2013) 095}"
 }
 
-@article{Napoletano:2018euk,
+@Article{Napoletano:2018euk,
     author = "Napoletano, Davide",
     title = "{Heavy quark mass effects in associated production}",
     eprint = "1808.04809",
@@ -666,7 +661,7 @@
     year = "2018"
 }
 
-@article{Napoletano:2019tla,
+@Article{Napoletano:2019tla,
     author = "Napoletano, Davide",
     title = "{$V$ and heavy flavour production: status and recent theoretical developments}",
     eprint = "1909.00143",
@@ -679,94 +674,101 @@
     year = "2019"
 }
 
-@thesis{duschinger,
+@Thesis{duschinger,
     author        = {Duschinger, Dirk Uwe},
     title         = {Search for neutral bosons decaying into the fully
                      hadronic di-tau final state with the ATLAS detector
                      at the LHC},
-    school        = {Technische Universit\"at Dresden},
+    school        = {TU Dresden},
+    type          = {PhD Thesis},
     month         = "9",
     year          = "2018",
     url           = "https://cds.cern.ch/record/2673361",
 }
 
-@thesis{guth,
+@Thesis{guth,
     author = {Guth, Manuel},
     title  = {Search for ttH(bb) Production in the Lepton + Jets
                   Channel and Quark Flavour Tagging with Deep Learning
                   at the ATLAS Experiment},
     school = {Albert-Ludwigs-Universit\"at Freiburg},
+    type   = {PhD Thesis},
     year   = "2021",
     doi    = "10.6094/UNIFR/194834",
     url    = "https://doi.org/10.6094/UNIFR/194834",
 }
 
-@book{Ellis:1996mzs,
+@Book{Ellis:1996mzs,
     author = "Ellis, R. Keith and Stirling, W. James and Webber, B. R.",
-    title = "{QCD and collider physics}",
-    doi = "10.1017/CBO9780511628788",
+    title = "{QCD and Collider Physics}",
+    %doi = "10.1017/CBO9780511628788",
     publisher = "Cambridge University Press",
-    volume = "8",
-    month = "2",
+    %volume = "8",
+    %month = "2",
     year = "2011"
 }
 
-@inproceedings{nair:relu,
+@Inproceedings{nair:relu,
     author = {Nair, Vinod and Hinton, Geoffrey E.},
     title = {Rectified Linear Units Improve Restricted Boltzmann Machines},
     year = {2010},
     booktitle = {Proceedings of the 27th International Conference on
                   Machine Learning},
+    editor = {Johannes F{\"u}rnkranz and Thorsten Joachims},
+    address = {Haifa, Israel},
 }
 
-@inproceedings{NIPS2017_f22e4747,
+@Inproceedings{NIPS2017_f22e4747,
     author = {Zaheer, Manzil and Kottur, Satwik and Ravanbakhsh, Siamak and Poczos, Barnabas and Salakhutdinov, Russ R and Smola, Alexander J},
-    booktitle = {Advances in Neural Information Processing Systems},
+    booktitle = {Advances in Neural Information Processing Systems 30},
     editor = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
-    pages = {},
-    publisher = {Curran Associates, Inc.},
     title = {Deep Sets},
-    url = {https://proceedings.neurips.cc/paper/2017/file/f22e4747da1aa27e363d86d40ff442fe-Paper.pdf},
-    volume = {30},
+    % url = {https://proceedings.neurips.cc/paper/2017/file/f22e4747da1aa27e363d86d40ff442fe-Paper.pdf},
     year = {2017}
 }
 
-@phdthesis{Maerker:2021hro,
+@Thesis{Maerker:2021hro,
     author = "Maerker, Max",
-    title = "{Search for heavy neutral Higgs bosons decaying into the fully hadronic di-tau final state with ATLAS}",
+    title = "{Search for heavy neutral Higgs bosons decaying into the fully
+                  hadronic di-tau final state with ATLAS}",
     reportNumber = "CERN-THESIS-2021-270",
-    school = {Technische Universit\"at Dresden, Institut f\"ur Kern- und Teilchenphysik, TU, Dresden (main)},
-    year = "2021"
+    school = {TU Dresden},
+    type = {PhD Thesis},
+    year = "2021",
+    url = "https://cds.cern.ch/record/2800824",
 }
 
-@inproceedings{Amoroso:2020lgh,
+@Inproceedings{Amoroso:2020lgh,
     author = "Amoroso, S. and others",
-    title = "{Les Houches 2019: Physics at TeV Colliders: Standard Model Working Group Report}",
-    booktitle = "{11th Les Houches Workshop on Physics at TeV Colliders}: {PhysTeV Les Houches}",
+    title = "{Les Houches 2019: Physics at TeV Colliders: Standard Model Working
+                  Group Report}",
+    booktitle = "Proceedings of the 11th Les Houches Workshop on Physics at TeV
+                  Colliders",
     eprint = "2003.01700",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph",
     month = "3",
-    year = "2020"
+    year = "2020",
+    address = "Les Houches, France",
 }
 
-@article{Borowka:2016ehy,
+@Article{Borowka:2016ehy,
     author = "Borowka, S. and Greiner, N. and Heinrich, G. and Jones, S. P. and Kerner, M. and Schlenk, J. and Schubert, U. and Zirke, T.",
     title = "{Higgs Boson Pair Production in Gluon Fusion at Next-to-Leading Order with Full Top-Quark Mass Dependence}",
     eprint = "1604.06447",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph",
     reportNumber = "MPP-2016-80, NSF-KITP-16-040, ZH-TH-14-16",
-    doi = "10.1103/PhysRevLett.117.079901",
+    doi = "10.1103/PhysRevLett.117.012001",
     journal = "Phys. Rev. Lett.",
     volume = "117",
     number = "1",
     pages = "012001",
     year = "2016",
-    note = "[Erratum: Phys.Rev.Lett. 117, 079901 (2016)]"
+    addendum = "Erratum: \href{https://doi.org/10.1103/PhysRevLett.117.079901}{Phys. Rev. Lett. \textbf{117} (2016) 079901}"
 }
 
-@article{Baglio:2018lrj,
+@Article{Baglio:2018lrj,
     author = {Baglio, Julien and Campanario, Francisco and Glaus, Seraina and M\"uhlleitner, Margarete and Spira, Michael and Streicher, Juraj},
     title = "{Gluon fusion into Higgs pairs at NLO QCD and the top mass scheme}",
     eprint = "1811.05692",
@@ -781,11 +783,12 @@
     year = "2019"
 }
 
-@article{Dawson:1998py,
+@Article{Dawson:1998py,
     author = "Dawson, S. and Dittmaier, S. and Spira, M.",
     title = "{Neutral Higgs boson pair production at hadron colliders: QCD corrections}",
     eprint = "hep-ph/9805244",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
     reportNumber = "DESY-98-028, BNL-HET-98-15, CERN-TH-98-135",
     doi = "10.1103/PhysRevD.58.115012",
     journal = "Phys. Rev. D",
@@ -794,7 +797,7 @@
     year = "1998"
 }
 
-@article{deFlorian:2013jea,
+@Article{deFlorian:2013jea,
     author = "de Florian, Daniel and Mazzitelli, Javier",
     title = "{Higgs Boson Pair Production at Next-to-Next-to-Leading Order in QCD}",
     eprint = "1309.6594",
@@ -807,7 +810,7 @@
     year = "2013"
 }
 
-@article{Heinrich:2017kxx,
+@Article{Heinrich:2017kxx,
     author = "Heinrich, G. and Jones, S. P. and Kerner, M. and Luisoni, G. and Vryonidou, E.",
     title = "{NLO predictions for Higgs boson pair production with full top quark mass dependence matched to parton showers}",
     eprint = "1703.09252",
@@ -821,7 +824,7 @@
     year = "2017"
 }
 
-@article{Bishara:2016kjn,
+@Article{Bishara:2016kjn,
     author = "Bishara, Fady and Contino, Roberto and Rojo, Juan",
     title = "{Higgs pair production in vector-boson fusion at the LHC and beyond}",
     eprint = "1611.03860",
@@ -835,7 +838,7 @@
     year = "2017"
 }
 
-@article{Gieseke:2012ft,
+@Article{Gieseke:2012ft,
     author = "Gieseke, Stefan and Rohr, Christian and Siodmok, Andrzej",
     title = "{Colour reconnections in Herwig++}",
     eprint = "1206.0041",
@@ -849,7 +852,7 @@
     year = "2012"
 }
 
-@article{Buchalla:2018yce,
+@Article{Buchalla:2018yce,
     author = "Buchalla, G. and Capozi, M. and Celis, A. and Heinrich, G. and Scyboz, L.",
     title = "{Higgs boson pair production in non-linear Effective Field Theory with full $m_t$-dependence at NLO QCD}",
     eprint = "1806.05162",
@@ -863,7 +866,7 @@
     year = "2018"
 }
 
-@article{deFlorian:2017qfk,
+@Article{deFlorian:2017qfk,
     author = "de Florian, Daniel and Fabre, Ignacio and Mazzitelli, Javier",
     title = "{Higgs boson pair production at NNLO in QCD including dimension 6 operators}",
     eprint = "1704.05700",
@@ -887,7 +890,7 @@
     year           = "2019",
 }
 
-@article{Heinrich:2019bkc,
+@Article{Heinrich:2019bkc,
     author = "Heinrich, G. and Jones, S. P. and Kerner, M. and Luisoni, G. and Scyboz, L.",
     title = "{Probing the trilinear Higgs boson coupling in di-Higgs production at NLO QCD including parton shower effects}",
     eprint = "1903.08137",
@@ -901,7 +904,7 @@
     year = "2019"
 }
 
-@article{Heinrich:2020ckp,
+@Article{Heinrich:2020ckp,
     author = "Heinrich, Gudrun and Jones, Stephen P. and Kerner, Matthias and Scyboz, Ludovic",
     title = "{A non-linear EFT description of $gg\to HH$ at NLO interfaced to POWHEG}",
     eprint = "2006.16877",
@@ -916,7 +919,7 @@
     year = "2020"
 }
 
-@article{Degrassi:2016wml,
+@Article{Degrassi:2016wml,
     author = "Degrassi, Giuseppe and Giardino, Pier Paolo and Maltoni, Fabio and Pagani, Davide",
     title = "{Probing the Higgs self coupling via single Higgs production at the LHC}",
     eprint = "1607.04251",
@@ -930,7 +933,7 @@
     year = "2016"
 }
 
-@article{Maltoni:2017ims,
+@Article{Maltoni:2017ims,
     author = "Maltoni, Fabio and Pagani, Davide and Shivaji, Ambresh and Zhao, Xiaoran",
     title = "{Trilinear Higgs coupling determination via single-Higgs
                   differential measurements at the LHC}",
@@ -987,17 +990,15 @@
       url           = "https://cds.cern.ch/record/1095929",
 }
 
-@article{Mobs:2684277,
+@Misc{Mobs:2684277,
       author        = "Mobs, Esma",
-      title         = "{The CERN accelerator complex in 2019. Complexe des
-                       accélérateurs du CERN en 2019}",
+      title         = "{The CERN accelerator complex in 2019}",
       month         = "7",
       year          = "2019",
       url           = "https://cds.cern.ch/record/2684277",
-      note          = "General Photo",
 }
 
-@article{ALICE:2008ngc,
+@Article{ALICE:2008ngc,
     author = "{ALICE Collaboration}",
     title = "{The ALICE experiment at the CERN LHC}",
     doi = "10.1088/1748-0221/3/08/S08002",
@@ -1007,7 +1008,7 @@
     year = "2008"
 }
 
-@article{LHCb:2008vvz,
+@Article{LHCb:2008vvz,
     author = "{LHCb Collaboration}",
     title = "{The LHCb Detector at the LHC}",
     reportNumber = "LHCb-DP-2008-001",
@@ -1018,9 +1019,10 @@
     year = "2008"
 }
 
-@article{TOTEM:2008lue,
-    author = "Anelli, G. and others",
-    collaboration = "TOTEM",
+@Article{TOTEM:2008lue,
+    author = "{TOTEM Collaboration}",
+    %author = "Anelli, G. and others",
+    %collaboration = "TOTEM",
     title = "{The TOTEM experiment at the CERN Large Hadron Collider}",
     doi = "10.1088/1748-0221/3/08/S08007",
     journal = "JINST",
@@ -1029,13 +1031,16 @@
     year = "2008"
 }
 
-@article{MoEDAL:2009jwa,
-    author = "Pinfold, James and others",
-    collaboration = "MoEDAL",
+@Report{MoEDAL:2009jwa,
+    author = "{MoEDAL Collaboration}",
+    % author = "Pinfold, James and others",
+    % collaboration = "MoEDAL",
     title = "{Technical Design Report of the MoEDAL Experiment}",
-    reportNumber = "CERN-LHCC-2009-006, MoEDAL-TDR-001",
-    month = "6",
-    year = "2009"
+    type = "MoEDAL-TDR-001; CERN-LHCC-2009-006",
+    % month = "6",
+    year = "2009",
+    url = "https://cds.cern.ch/record/1181486",
+
 }
 
 @online{atlas_luminosity_summary_plots,
@@ -1046,21 +1051,23 @@
     urldate = {2022-08-15},
 }
 
-@article{FASER:2019aik,
-    author = "Ariga, Akitaka and others",
-    collaboration = "FASER",
+@Report{FASER:2019aik,
+    % author = "Ariga, Akitaka and others",
+    % collaboration = "FASER",
+    author = "{FASER Collaboration}",
     title = "{FASER: ForwArd Search ExpeRiment at the LHC}",
     eprint = "1901.04468",
     archivePrefix = "arXiv",
     primaryClass = "hep-ex",
-    reportNumber = "UCI-TR-2019-01, KYUSHU-RCAPP-2018-08",
-    month = "1",
+    type = "UCI-TR-2019-01; KYUSHU-RCAPP-2018-08",
+    % month = "1",
     year = "2019"
 }
 
-@article{LHCf:2008lfy,
-    author = "Adriani, O. and others",
-    collaboration = "LHCf",
+@Article{LHCf:2008lfy,
+    author = "{LHCf Collaboration}",
+    %author = "Adriani, O. and others",
+    %collaboration = "LHCf",
     title = "{The LHCf detector at the CERN Large Hadron Collider}",
     doi = "10.1088/1748-0221/3/08/S08006",
     journal = "JINST",
@@ -1100,15 +1107,15 @@
     note = "{Work published under the MIT license}",
 }
 
-@book{Grupen:2008zz,
+@Book{Grupen:2008zz,
     author = "Grupen, Claus and Schwartz, Boris",
-    title = "{Particle detectors}",
-    publisher = "Cambridge Univ. Pr.",
-    address = "Cambridge, UK",
+    title = "{Particle Detectors}",
+    publisher = "Cambridge University Press",
+    %address = "Cambridge, UK",
     year = "2008"
 }
 
-@article{Boyarsky:2021moj,
+@Article{Boyarsky:2021moj,
     author = "Boyarsky, Alexey and Mikulenko, Oleksii and Ovchynnikov, Maksym and Shchutska, Lesya",
     title = "{Searches for new physics at SND@LHC}",
     eprint = "2104.09688",
@@ -1121,7 +1128,7 @@
     year = "2022"
 }
 
-@book{Kolanoski:2016gyf,
+@Book{Kolanoski:2016gyf,
     author = "Kolanoski, Hermann and Wermes, Norbert",
     title = "{Teilchendetektoren}: {Grundlagen und Anwendungen}",
     doi = "10.1007/978-3-662-45350-6",
@@ -1130,7 +1137,7 @@
     year = "2016"
 }
 
-@article{Salzburger:2015sgq,
+@Article{Salzburger:2015sgq,
     author = "Salzburger, Andreas",
     title = "{Optimisation of the ATLAS Track Reconstruction Software for Run-2}",
     doi = "10.1088/1742-6596/664/7/072042",
@@ -1141,7 +1148,7 @@
     year = "2015"
 }
 
-@article{Fruhwirth:1987fm,
+@Article{Fruhwirth:1987fm,
     author = "Fruhwirth, R.",
     title = "{Application of Kalman filtering to track and vertex fitting}",
     reportNumber = "HEPHY-PUB-87-503",
@@ -1152,16 +1159,16 @@
     year = "1987"
 }
 
-@article{Cornelissen:2007vba,
+@Booklet{Cornelissen:2007vba,
     author = "Cornelissen, T. and Elsing, M. and Fleischmann, S. and Liebig, W. and Moyse, E.",
     editor = "Salzburger, A.",
     title = "{Concepts, Design and Implementation of the ATLAS New Tracking (NEWT)}",
-    reportNumber = "ATL-SOFT-PUB-2007-007, ATL-COM-SOFT-2007-002",
-    month = "3",
-    year = "2007"
+    howpublished = "{ATL-SOFT-PUB-2007-007}",
+    year = "2007",
+    url = "https://cds.cern.ch/record/1020106",
 }
 
-@article{Fruhwirth:2007hz,
+@Article{Fruhwirth:2007hz,
     author = "Fruhwirth, R. and Waltenberger, W. and Vanlaer, P.",
     title = "{Adaptive vertex fitting}",
     reportNumber = "CERN-CMS-NOTE-2007-008, CMS-NOTE-2007-008",
@@ -1172,17 +1179,17 @@
     year = "2007"
 }
 
-@article{Akesson:2006sh,
+@Booklet{Akesson:2006sh,
     author = "Akesson, F. and Atkinson, T. and Costa, M. J. and Elsing, M. and Fleischmann, S. and Gaponenko, A. and Liebig, W. and Moyse, E. and Salzburger, A. and Siebel, M.",
     title = "{ATLAS Tracking Event Data Model}",
-    reportNumber = "ATL-SOFT-PUB-2006-004",
-    month = "7",
-    year = "2006"
+    howpublished = "ATL-SOFT-PUB-2006-004",
+    year = "2006",
+    url = "https://cds.cern.ch/record/973401",
 }
 
-@article{Higgs:1964pj,
+@Article{Higgs:1964pj,
     author = "Higgs, Peter W.",
-    editor = "Taylor, J. C.",
+    %editor = "Taylor, J. C.",
     title = "{Broken Symmetries and the Masses of Gauge Bosons}",
     doi = "10.1103/PhysRevLett.13.508",
     journal = "Phys. Rev. Lett.",
@@ -1191,9 +1198,9 @@
     year = "1964"
 }
 
-@article{Englert:1964et,
+@Article{Englert:1964et,
     author = "Englert, F. and Brout, R.",
-    editor = "Taylor, J. C.",
+    %editor = "Taylor, J. C.",
     title = "{Broken Symmetry and the Mass of Gauge Vector Mesons}",
     doi = "10.1103/PhysRevLett.13.321",
     journal = "Phys. Rev. Lett.",
@@ -1202,7 +1209,7 @@
     year = "1964"
 }
 
-@article{Weinberg:1967tq,
+@Article{Weinberg:1967tq,
     author = "Weinberg, Steven",
     title = "{A Model of Leptons}",
     doi = "10.1103/PhysRevLett.19.1264",
@@ -1212,7 +1219,7 @@
     year = "1967"
 }
 
-@article{Glashow:1961tr,
+@Article{Glashow:1961tr,
     author = "Glashow, S. L.",
     title = "{Partial Symmetries of Weak Interactions}",
     doi = "10.1016/0029-5582(61)90469-2",
@@ -1222,7 +1229,7 @@
     year = "1961"
 }
 
-@article{Salam:1964ry,
+@Article{Salam:1964ry,
     author = "Salam, Abdus and Ward, John Clive",
     title = "{Electromagnetic and weak interactions}",
     doi = "10.1016/0031-9163(64)90711-5",
@@ -1232,12 +1239,12 @@
     year = "1964"
 }
 
-@book{Thomson:2013zua,
+@Book{Thomson:2013zua,
     author = "Thomson, Mark",
     title = "{Modern Particle Physics}",
-    isbn = "978-1-107-03426-6",
+    %isbn = "978-1-107-03426-6",
     publisher = "Cambridge University Press",
-    address = "New York",
+    %address = "Cambridge, USA",
     year = "2013"
 }
 
@@ -1246,17 +1253,18 @@
   title =        "{Quarks and Leptons: An Introductory Course in
                    Modern Particle Physics}",
   year =         "1984",
-  publisher =    "Wiley",
-  reportNumber = "ISBN-9780471887416",
-  isbn =         "9780471887416"
+  publisher =    {John Wiley \& Sons}
+  % reportNumber = "ISBN-9780471887416",
+  % isbn =         "9780471887416"
 }
 
-@article{Super-Kamiokande:1998kpq,
+@Article{Super-Kamiokande:1998kpq,
     author = "Fukuda, Y. and others",
     collaboration = "Super-Kamiokande",
-    title = "{Evidence for oscillation of atmospheric neutrinos}",
+    title = "{Evidence for Oscillation of Atmospheric Neutrinos}",
     eprint = "hep-ex/9807003",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ex",
     reportNumber = "BU-98-17, ICRR-REPORT-422-98-18, UCI-98-8, KEK-PREPRINT-98-95, LSU-HEPA-5-98, UMD-98-003, SBHEP-98-5, TKU-PAP-98-06, TIT-HPE-98-09",
     doi = "10.1103/PhysRevLett.81.1562",
     journal = "Phys. Rev. Lett.",
@@ -1265,11 +1273,12 @@
     year = "1998"
 }
 
-@article{SNO:2002tuh,
+@Article{SNO:2002tuh,
     author = "Ahmad, Q. R. and others",
     collaboration = "SNO",
     title = "{Direct evidence for neutrino flavor transformation from neutral current interactions in the Sudbury Neutrino Observatory}",
     eprint = "nucl-ex/0204008",
+    primaryClass = "nucl-ex",
     archivePrefix = "arXiv",
     doi = "10.1103/PhysRevLett.89.011301",
     journal = "Phys. Rev. Lett.",
@@ -1278,7 +1287,7 @@
     year = "2002"
 }
 
-@article{Wu:1957my,
+@Article{Wu:1957my,
     author = "Wu, C. S. and Ambler, E. and Hayward, R. W. and Hoppes, D. D. and Hudson, R. P.",
     title = "{Experimental Test of Parity Conservation in $\beta$ Decay}",
     doi = "10.1103/PhysRev.105.1413",
@@ -1288,9 +1297,9 @@
     year = "1957"
 }
 
-@article{Yang:1954ek,
+@Article{Yang:1954ek,
     author = "Yang, Chen-Ning and Mills, Robert L.",
-    editor = "Hsu, Jong-Ping and Fine, D.",
+    %editor = "Hsu, Jong-Ping and Fine, D.",
     title = "{Conservation of Isotopic Spin and Isotopic Gauge Invariance}",
     doi = "10.1103/PhysRev.96.191",
     journal = "Phys. Rev.",
@@ -1299,7 +1308,7 @@
     year = "1954"
 }
 
-@article{Majorana:1937vz,
+@Article{Majorana:1937vz,
     author = "Majorana, Ettore",
     title = "{Teoria simmetrica dell\textquoteright{}elettrone e del positrone}",
     reportNumber = "RX-888",
@@ -1310,7 +1319,7 @@
     year = "1937"
 }
 
-@article{Cabibbo:1963yz,
+@Article{Cabibbo:1963yz,
     author = "Cabibbo, Nicola",
     title = "{Unitary Symmetry and Leptonic Decays}",
     doi = "10.1103/PhysRevLett.10.531",
@@ -1320,7 +1329,7 @@
     year = "1963"
 }
 
-@article{Kobayashi:1973fv,
+@Article{Kobayashi:1973fv,
     author = "Kobayashi, Makoto and Maskawa, Toshihide",
     title = "{CP Violation in the Renormalizable Theory of Weak Interaction}",
     reportNumber = "KUNS-242",
@@ -1331,7 +1340,7 @@
     year = "1973"
 }
 
-@article{Goldstone:1961eq,
+@Article{Goldstone:1961eq,
     author = "Goldstone, J.",
     title = "{Field Theories with Superconductor Solutions}",
     doi = "10.1007/BF02812722",
@@ -1341,9 +1350,9 @@
     year = "1961"
 }
 
-@article{Nambu:1960tm,
+@Article{Nambu:1960tm,
     author = "Nambu, Yoichiro",
-    editor = "Taylor, J. C.",
+    %editor = "Taylor, J. C.",
     title = "{Quasiparticles and Gauge Invariance in the Theory of Superconductivity}",
     doi = "10.1103/PhysRev.117.648",
     journal = "Phys. Rev.",
@@ -1352,7 +1361,7 @@
     year = "1960"
 }
 
-@article{Yukawa:1935xg,
+@Article{Yukawa:1935xg,
     author = "Yukawa, Hideki",
     title = "{On the Interaction of Elementary Particles I}",
     reportNumber = "PRINT-92-0144",
@@ -1363,11 +1372,12 @@
     year = "1935"
 }
 
-@article{Djouadi:2005gi,
+@Article{Djouadi:2005gi,
     author = "Djouadi, Abdelhak",
-    title = "{The Anatomy of electro-weak symmetry breaking. I: The Higgs boson in the standard model}",
+    title = "{The Anatomy of Electro--Weak Symmetry Breaking}",
     eprint = "hep-ph/0503172",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
     reportNumber = "LPT-ORSAY-05-17",
     doi = "10.1016/j.physrep.2007.10.004",
     journal = "Phys. Rept.",
@@ -1376,7 +1386,7 @@
     year = "2008"
 }
 
-@article{MuLan:2010shf,
+@Article{MuLan:2010shf,
     author = "Webber, D. M. and others",
     collaboration = "MuLan",
     title = "{Measurement of the Positive Muon Lifetime and Determination of the Fermi Constant to Part-per-Million Precision}",
@@ -1390,7 +1400,7 @@
     year = "2011"
 }
 
-@article{Maltoni:2014eza,
+@Article{Maltoni:2014eza,
     author = "Maltoni, F. and Vryonidou, E. and Zaro, M.",
     title = "{Top-quark mass effects in double and triple Higgs production in gluon-gluon fusion at NLO}",
     eprint = "1408.6542",
@@ -1404,7 +1414,7 @@
     year = "2014"
 }
 
-@article{Appelquist:1974tg,
+@Article{Appelquist:1974tg,
     author = "Appelquist, Thomas and Carazzone, J.",
     title = "{Infrared Singularities and Massive Fields}",
     reportNumber = "Print-74-1486 (HARVARD)",
@@ -1415,7 +1425,7 @@
     year = "1975"
 }
 
-@article{DiLuzio:2017tfn,
+@Article{DiLuzio:2017tfn,
     author = {Di Luzio, Luca and Gr\"ober, Ramona and Spannowsky, Michael},
     title = "{Maxi-sizing the trilinear Higgs self-coupling: how large could it be?}",
     eprint = "1704.02311",
@@ -1430,7 +1440,7 @@
     year = "2017"
 }
 
-@article{Lee:1977eg,
+@Article{Lee:1977eg,
     author = "Lee, Benjamin W. and Quigg, C. and Thacker, H. B.",
     title = "{Weak Interactions at Very High-Energies: The Role of the Higgs Boson Mass}",
     reportNumber = "FERMILAB-PUB-77-30-THY, FERMILAB-PUB-77-030-T",
@@ -1441,7 +1451,7 @@
     year = "1977"
 }
 
-@article{DiMicco:2019ngk,
+@Article{DiMicco:2019ngk,
     author = "Alison, J. and others",
     editor = "Di Micco, Biagio and Gouzevitch, Maxime and Mazzitelli, Javier and Vernieri, Caterina",
     title = "{Higgs boson potential at colliders: Status and perspectives}",
@@ -1456,11 +1466,12 @@
     year = "2020"
 }
 
-@article{Bowen:2007ia,
+@Article{Bowen:2007ia,
     author = "Bowen, Matthew and Cui, Yanou and Wells, James D.",
     title = "{Narrow trans-TeV Higgs bosons and $H \to hh$ decays: Two LHC search paths for a hidden sector Higgs boson}",
     eprint = "hep-ph/0701035",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
     reportNumber = "MCTP-07-02",
     doi = "10.1088/1126-6708/2007/03/036",
     journal = "JHEP",
@@ -1469,7 +1480,7 @@
     year = "2007"
 }
 
-@article{Dolan:2012ac,
+@Article{Dolan:2012ac,
     author = "Dolan, Matthew J. and Englert, Christoph and Spannowsky, Michael",
     title = "{New Physics in LHC Higgs boson pair production}",
     eprint = "1210.8166",
@@ -1484,7 +1495,7 @@
     year = "2013"
 }
 
-@article{No:2013wsa,
+@Article{No:2013wsa,
     author = "No, Jose M. and Ramsey-Musolf, Michael",
     title = "{Probing the Higgs Portal at the LHC Through Resonant di-Higgs Production}",
     eprint = "1310.6035",
@@ -1498,7 +1509,7 @@
     year = "2014"
 }
 
-@article{Chen:2014ask,
+@Article{Chen:2014ask,
     author = "Chen, Chien-Yi and Dawson, S. and Lewis, I. M.",
     title = "{Exploring resonant di-Higgs boson production in the Higgs singlet model}",
     eprint = "1410.5488",
@@ -1512,7 +1523,7 @@
     year = "2015"
 }
 
-@article{Robens:2016xkb,
+@Article{Robens:2016xkb,
     author = "Robens, Tania and Stefaniak, Tim",
     title = "{LHC Benchmark Scenarios for the Real Higgs Singlet Extension of the Standard Model}",
     eprint = "1601.07880",
@@ -1527,7 +1538,7 @@
     year = "2016"
 }
 
-@article{Barger:2007im,
+@Article{Barger:2007im,
     author = "Barger, Vernon and Langacker, Paul and McCaskey, Mathew and Ramsey-Musolf, Michael J. and Shaughnessy, Gabe",
     title = "{LHC Phenomenology of an Extended Standard Model with a Real Scalar Singlet}",
     eprint = "0706.4311",
@@ -1541,21 +1552,23 @@
     year = "2008"
 }
 
-@article{Patt:2006fw,
+@misc{Patt:2006fw,
     author = "Patt, Brian and Wilczek, Frank",
     title = "{Higgs-field portal into hidden sectors}",
     eprint = "hep-ph/0605188",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
     reportNumber = "MIT-CTP-3745",
     month = "5",
     year = "2006"
 }
 
-@article{Schabinger:2005ei,
+@Article{Schabinger:2005ei,
     author = "Schabinger, Robert M. and Wells, James D.",
     title = "{A Minimal spontaneously broken hidden sector and its impact on Higgs boson physics at the large hadron collider}",
     eprint = "hep-ph/0509209",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
     doi = "10.1103/PhysRevD.72.093007",
     journal = "Phys. Rev. D",
     volume = "72",
@@ -1563,11 +1576,12 @@
     year = "2005"
 }
 
-@article{OConnell:2006rsp,
+@Article{OConnell:2006rsp,
     author = "O'Connell, Donal and Ramsey-Musolf, Michael J. and Wise, Mark B.",
     title = "{Minimal Extension of the Standard Model Scalar Sector}",
     eprint = "hep-ph/0611014",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
     reportNumber = "CALT-68-2614",
     doi = "10.1103/PhysRevD.75.037701",
     journal = "Phys. Rev. D",
@@ -1576,7 +1590,7 @@
     year = "2007"
 }
 
-@article{Branco:2011iw,
+@Article{Branco:2011iw,
     author = "Branco, G. C. and Ferreira, P. M. and Lavoura, L. and Rebelo, M. N. and Sher, Marc and Silva, Joao P.",
     title = "{Theory and phenomenology of two-Higgs-doublet models}",
     eprint = "1106.0034",
@@ -1589,7 +1603,7 @@
     year = "2012"
 }
 
-@article{Djouadi:2013vqa,
+@Article{Djouadi:2013vqa,
     author = "Djouadi, Abdelhak and Quevillon, Jeremie",
     title = "{The MSSM Higgs sector at a high $M_{SUSY}$: reopening the low tan$\beta$ regime and heavy Higgs searches}",
     eprint = "1304.1787",
@@ -1603,7 +1617,7 @@
     year = "2013"
 }
 
-@article{Djouadi:2013uqa,
+@Article{Djouadi:2013uqa,
     author = "Djouadi, A. and Maiani, L. and Moreau, G. and Polosa, A. and Quevillon, J. and Riquer, V.",
     title = "{The post-Higgs MSSM scenario: Habemus MSSM?}",
     eprint = "1307.5205",
@@ -1617,21 +1631,22 @@
     year = "2013"
 }
 
-@article{Sakharov:1967dj,
+@Article{Sakharov:1967dj,
     author = "Sakharov, A. D.",
-    title = "{Violation of CP Invariance, C asymmetry, and baryon asymmetry of the universe}",
+    title = "{Violation of CP Invariance, C Asymmetry, and Baryon Asymmetry of the Universe}",
     doi = "10.1070/PU1991v034n05ABEH002497",
-    journal = "Pisma Zh. Eksp. Teor. Fiz.",
+    journal = "JETP Lett.",
     volume = "5",
-    pages = "32--35",
+    pages = "24--27",
     year = "1967"
 }
 
-@article{Trodden:1998ym,
+@Article{Trodden:1998ym,
     author = "Trodden, Mark",
     title = "{Electroweak baryogenesis}",
     eprint = "hep-ph/9803479",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
     reportNumber = "CWRU-P6-98",
     doi = "10.1103/RevModPhys.71.1463",
     journal = "Rev. Mod. Phys.",
@@ -1640,7 +1655,7 @@
     year = "1999"
 }
 
-@article{Haber:1984rc,
+@Article{Haber:1984rc,
     author = "Haber, Howard E. and Kane, Gordon L.",
     title = "{The Search for Supersymmetry: Probing Physics Beyond the Standard Model}",
     reportNumber = "UM-HE-TH-83-17, SCIPP-85-47",
@@ -1651,15 +1666,14 @@
     year = "1985"
 }
 
-@book{Gunion:1989we,
+@Book{Gunion:1989we,
     author = "Gunion, John F. and Haber, Howard E. and Kane, Gordon L. and Dawson, Sally",
     title = "{The Higgs Hunter's Guide}",
-    reportNumber = "SCIPP-89/13, UCD-89-4, BNL-41644",
-    volume = "80",
-    year = "2000"
+    publisher = "Perseus Publishing",
+    year = "2000",
 }
 
-@article{Fontes:2017zfn,
+@Article{Fontes:2017zfn,
     author = {Fontes, Duarte and M\"uhlleitner, Margarete and Rom\~ao, Jorge C. and Santos, Rui and Silva, Jo\~ao P. and Wittbrodt, Jonas},
     title = "{The C2HDM revisited}",
     eprint = "1711.09419",
@@ -1673,7 +1687,7 @@
     year = "2018"
 }
 
-@article{Christenson:1964fg,
+@Article{Christenson:1964fg,
     author = "Christenson, J. H. and Cronin, J. W. and Fitch, V. L. and Turlay, R.",
     title = "{Evidence for the $2\pi$ Decay of the $K_2^0$ Meson}",
     doi = "10.1103/PhysRevLett.13.138",
@@ -1683,7 +1697,7 @@
     year = "1964"
 }
 
-@article{T2K:2019bcf,
+@Article{T2K:2019bcf,
     author = "{The T2K Collaboration}",
     title = "{Constraint on the matter\textendash{}antimatter symmetry-violating phase in neutrino oscillations}",
     eprint = "1910.03887",
@@ -1695,10 +1709,10 @@
     number = "7803",
     pages = "339--344",
     year = "2020",
-    note = "[Erratum: Nature 583, E16 (2020)]"
+    addendum = "Erratum: \href{https://doi.org/10.1038/s41586-020-2415-5}{Nature \textbf{583} (2020) E16}"
 }
 
-@article{Rubin:1970zza,
+@Article{Rubin:1970zza,
     author = "Rubin, Vera C. and Ford, Jr., W. Kent",
     title = "{Rotation of the Andromeda Nebula from a Spectroscopic Survey of Emission Regions}",
     doi = "10.1086/150317",
@@ -1708,9 +1722,11 @@
     year = "1970"
 }
 
-@article{Rubin:1980zd,
+@Article{Rubin:1980zd,
     author = "Rubin, V. C. and Thonnard, N. and Ford, Jr., W. K.",
-    title = "{Rotational properties of 21 SC galaxies with a large range of luminosities and radii, from NGC 4605 /R = 4kpc/ to UGC 2885 /R = 122 kpc/}",
+    title = "{Rotational properties of 21 SC galaxies with a large range of
+                  luminosities and radii, from NGC 4605 \(R = 4\,\text{kpc}\) to
+                  UGC 2885 \(R = 122\,\text{kpc}\)}",
     doi = "10.1086/158003",
     journal = "Astrophys. J.",
     volume = "238",
@@ -1718,7 +1734,7 @@
     year = "1980"
 }
 
-@article{Zwicky:1933gu,
+@Article{Zwicky:1933gu,
     author = "Zwicky, F.",
     title = "{Die Rotverschiebung von extragalaktischen Nebeln}",
     doi = "10.1007/s10714-008-0707-4",
@@ -1728,7 +1744,7 @@
     year = "1933"
 }
 
-@article{Zwicky:1937zza,
+@Article{Zwicky:1937zza,
     author = "Zwicky, F.",
     title = "{On the Masses of Nebulae and of Clusters of Nebulae}",
     doi = "10.1086/143864",
@@ -1738,20 +1754,21 @@
     year = "1937"
 }
 
-@article{Clowe:2006eq,
+@Article{Clowe:2006eq,
     author = "Clowe, Douglas and Bradac, Marusa and Gonzalez, Anthony H. and Markevitch, Maxim and Randall, Scott W. and Jones, Christine and Zaritsky, Dennis",
     title = "{A direct empirical proof of the existence of dark matter}",
     eprint = "astro-ph/0608407",
     archivePrefix = "arXiv",
+    primaryClass = "astro-ph",
     reportNumber = "SLAC-PUB-12078",
     doi = "10.1086/508162",
-    journal = "Astrophys. J. Lett.",
+    journal = "Astrophys. J.",
     volume = "648",
     pages = "L109--L113",
     year = "2006"
 }
 
-@article{Susskind:1978ms,
+@Article{Susskind:1978ms,
     author = "Susskind, Leonard",
     title = "{Dynamics of Spontaneous Symmetry Breaking in the Weinberg-Salam Theory}",
     reportNumber = "SLAC-PUB-2142",
@@ -1762,20 +1779,22 @@
     year = "1979"
 }
 
-@article{Giudice:2008bi,
+@inbook{Giudice:2008bi,
     author = "Giudice, Gian Francesco",
-    editor = "Kane, Gordon and Pierce, Aaron",
     title = "{Naturally Speaking: The Naturalness Criterion and Physics at the LHC}",
+    booktitle = {Perspectives on LHC Physics},
+    editor = {Kane, Gordon and Pierce, Aaron},
     eprint = "0801.2562",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph",
     doi = "10.1142/9789812779762_0010",
-    pages = "155--178",
+    %pages = "155--178",
     month = "1",
-    year = "2008"
+    year = "2008",
+    publisher = {World Scientific},
 }
 
-@article{Gildener:1976ai,
+@Article{Gildener:1976ai,
     author = "Gildener, Eldad",
     title = "{Gauge Symmetry Hierarchies}",
     reportNumber = "Print-76-0529 (HARVARD)",
@@ -1786,7 +1805,7 @@
     year = "1976"
 }
 
-@article{Weinberg:1978ym,
+@Article{Weinberg:1978ym,
     author = "Weinberg, Steven",
     title = "{Gauge Hierarchies}",
     reportNumber = "HUTP-78/A060",
@@ -1797,9 +1816,9 @@
     year = "1979"
 }
 
-@article{tHooft:1971qjg,
+@Article{tHooft:1971qjg,
     author = "'t Hooft, Gerard",
-    editor = "Taylor, J. C.",
+    %editor = "Taylor, J. C.",
     title = "{Renormalizable Lagrangians for Massive Yang-Mills Fields}",
     doi = "10.1016/0550-3213(71)90139-8",
     journal = "Nucl. Phys. B",
@@ -1808,7 +1827,7 @@
     year = "1971"
 }
 
-@article{Fritzsch:1973pi,
+@Article{Fritzsch:1973pi,
     author = "Fritzsch, H. and Gell-Mann, Murray and Leutwyler, H.",
     title = "{Advantages of the Color Octet Gluon Picture}",
     reportNumber = "CALT-68-409",
@@ -1819,9 +1838,9 @@
     year = "1973"
 }
 
-@article{Politzer:1973fx,
+@Article{Politzer:1973fx,
     author = "Politzer, H. David",
-    editor = "Taylor, J. C.",
+    %editor = "Taylor, J. C.",
     title = "{Reliable Perturbative Results for Strong Interactions?}",
     doi = "10.1103/PhysRevLett.30.1346",
     journal = "Phys. Rev. Lett.",
@@ -1830,9 +1849,9 @@
     year = "1973"
 }
 
-@article{Gross:1973id,
+@Article{Gross:1973id,
     author = "Gross, David J. and Wilczek, Frank",
-    editor = "Taylor, J. C.",
+    %editor = "Taylor, J. C.",
     title = "{Ultraviolet Behavior of Nonabelian Gauge Theories}",
     doi = "10.1103/PhysRevLett.30.1343",
     journal = "Phys. Rev. Lett.",
@@ -1841,7 +1860,7 @@
     year = "1973"
 }
 
-@article{Gross:1973ju,
+@Article{Gross:1973ju,
     author = "Gross, D. J. and Wilczek, Frank",
     title = "{Asymptotically Free Gauge Theories - I}",
     reportNumber = "NAL-PUB-73-49-THY, FERMILAB-PUB-73-049-T",
@@ -1852,16 +1871,16 @@
     year = "1973"
 }
 
-@book{Peskin:1995ev,
+@Book{Peskin:1995ev,
     author = "Peskin, Michael E. and Schroeder, Daniel V.",
     title = "{An Introduction to quantum field theory}",
-    isbn = "978-0-201-50397-5",
+    % isbn = "978-0-201-50397-5",
     publisher = "Addison-Wesley",
-    address = "Reading, USA",
+    % address = "Reading, USA",
     year = "1995"
 }
 
-@article{KATRIN:2019yun,
+@Article{KATRIN:2019yun,
     author = "Aker, M. and others",
     collaboration = "KATRIN",
     title = "{Improved Upper Limit on the Neutrino Mass from a Direct Kinematic Method by KATRIN}",
@@ -1876,7 +1895,7 @@
     year = "2019"
 }
 
-@article{einstein:1905zedbk,
+@Article{einstein:1905zedbk,
     author = {Einstein, A.},
     title = {Zur Elektrodynamik bewegter Körper},
     journal = {Annalen der Physik},
@@ -1889,7 +1908,7 @@
     year = {1905}
 }
 
-@article{einstein:1905idtekvsea,
+@Article{einstein:1905idtekvsea,
     author = {Einstein, A.},
     title = {Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?},
     journal = {Annalen der Physik},
@@ -1902,7 +1921,7 @@
     year = {1905}
 }
 
-@article{Gell-Mann:1964ewy,
+@Article{Gell-Mann:1964ewy,
     author = "Gell-Mann, Murray",
     title = "{A Schematic Model of Baryons and Mesons}",
     doi = "10.1016/S0031-9163(64)92001-3",
@@ -1912,9 +1931,9 @@
     year = "1964"
 }
 
-@article{Wilson:1974sk,
+@Article{Wilson:1974sk,
     author = "Wilson, Kenneth G.",
-    editor = "Taylor, J. C.",
+    %editor = "Taylor, J. C.",
     title = "{Confinement of Quarks}",
     reportNumber = "CLNS-262",
     doi = "10.1103/PhysRevD.10.2445",
@@ -1924,19 +1943,21 @@
     year = "1974"
 }
 
-@article{Fritzsch:1972jv,
+@Inproceedings{Fritzsch:1972jv,
     author = "Fritzsch, Harald and Gell-Mann, Murray",
-    editor = "Jackson, J. D. and Roberts, A.",
     title = "{Current algebra: Quarks and what else?}",
+    booktitle = "Proceedings of the 16th International Conference On High-Energy
+                  Physics: Volume 2",
+    editor = "Jackson, J. D. and Roberts, A.",
     eprint = "hep-ph/0208010",
     archivePrefix = "arXiv",
-    journal = "eConf",
-    volume = "C720906V2",
-    pages = "135--165",
-    year = "1972"
+    primaryClass = "hep-ph",
+    address = "Batavia, Illinois",
+    date = "1972-09-06/1972-09-13",
+    %pages = {135},
 }
 
-@article{Fritzsch:1975tx,
+@Article{Fritzsch:1975tx,
     author = "Fritzsch, Harald and Minkowski, Peter",
     title = "{Psi Resonances, Gluons and the Zweig Rule}",
     reportNumber = "CALT-68-492",
@@ -1947,20 +1968,7 @@
     year = "1975"
 }
 
-@article{Verkerke:2003ir,
-    author = "Verkerke, Wouter and Kirkby, David P.",
-    editor = "Lyons, L. and Karagoz, Muge",
-    title = "{The RooFit toolkit for data modeling}",
-    eprint = "physics/0306116",
-    archivePrefix = "arXiv",
-    reportNumber = "CHEP-2003-MOLT007",
-    journal = "eConf",
-    volume = "C0303241",
-    pages = "MOLT007",
-    year = "2003"
-}
-
-@article{Moneta:2010pm,
+@Article{Moneta:2010pm,
     author = "Moneta, Lorenzo and Belasco, Kevin and Cranmer, Kyle S. and Kreiss, S. and Lazzaro, Alfio and Piparo, Danilo and Schott, Gregory and Verkerke, Wouter and Wolf, Matthias",
     editor = "Speer, T. and Boudjema, F. and Lauret, Jerome and Naumann, Axel and Teodorescu, L. and Uwer, P.",
     title = "{The RooStats Project}",
@@ -1974,11 +1982,12 @@
     year = "2010"
 }
 
-@article{Junk:1999kv,
+@Article{Junk:1999kv,
     author = "Junk, Thomas",
     title = "{Confidence level computation for combining searches with small statistics}",
     eprint = "hep-ex/9902006",
     archivePrefix = "arXiv",
+    primaryClass = "hep-ex",
     reportNumber = "CARLETON-OPAL-PHYS-99-01, CERN-EP-99-041",
     doi = "10.1016/S0168-9002(99)00498-2",
     journal = "Nucl. Instrum. Meth. A",
@@ -1987,96 +1996,71 @@
     year = "1999"
 }
 
-@article{Friedman:2000,
+@Article{Friedman:2000,
     author = {Jerome Friedman and Trevor Hastie and Robert Tibshirani},
     title = {{Additive logistic regression: a statistical view of boosting}},
     volume = {28},
-    journal = {The Annals of Statistics},
+    journal = {Ann. Stat.},
     number = {2},
     publisher = {Institute of Mathematical Statistics},
     pages = {337 -- 407},
     keywords = {‎classification‎, machine learning, nonparametric estimation, stagewise fitting, tree},
     year = {2000},
     doi = {10.1214/aos/1016218223},
-    URL = {https://doi.org/10.1214/aos/1016218223}
 }
 
-@article{Friedman:2001wbq,
+@Article{Friedman:2001wbq,
     author = "Friedman, Jerome H.",
     title = "{Greedy function approximation: A gradient boosting machine.}",
     doi = "10.1214/aos/1013203451",
-    journal = "Annals Statist.",
+    journal = "Ann. Stat.",
     volume = "29",
     number = "5",
     pages = "1189--1232",
     year = "2001"
 }
 
-@book{Breiman:1984jka,
+@Book{Breiman:1984jka,
     author = "Breiman, Leo and Friedman, Jerome and Olshen, R. A. and Stone, Charles J.",
-    title = "{Classification and regression trees}",
-    isbn = "978-0-412-04841-8",
-    publisher = "Chapman and Hall/CRC",
+    title = "{Classification and Regression Trees}",
+    % isbn = "978-0-412-04841-8",
+    publisher = {Chapman \& and Hall/CRC},
     year = "1984"
 }
 
-@InProceedings{freund_shapire:adaboost,
-    author="Freund, Yoav and Schapire, Robert E.",
-    editor="Vit{\'a}nyi, Paul",
-    title="A desicion-theoretic generalization of on-line learning and an application to boosting",
-    booktitle="Computational Learning Theory",
-    year="1995",
-    publisher="Springer Berlin Heidelberg",
-    address="Berlin, Heidelberg",
-    pages="23--37",
-    isbn="978-3-540-49195-8"
-}
-
-@inproceedings{freund_shapire:adaboost2,
-    author = {Freund, Yoav and Schapire, Robert E.},
-    title = {Experiments with a New Boosting Algorithm},
-    year = {1996},
-    isbn = {1558604197},
-    publisher = {Morgan Kaufmann Publishers Inc.},
-    address = {San Francisco, CA, USA},
-    booktitle = {Proceedings of the Thirteenth International Conference on International Conference on Machine Learning},
-    pages = {148–156},
-    numpages = {9},
-    location = {Bari, Italy},
-    series = {ICML'96}
-}
-
-@article{hornik1989multilayer,
+@Article{hornik1989multilayer,
   title={Multilayer feedforward networks are universal approximators},
   author={Hornik, Kurt and Stinchcombe, Maxwell and White, Halbert},
-  journal={Neural networks},
+  journal={Neural Netw.},
   volume={2},
   number={5},
   pages={359--366},
   year={1989},
-  publisher={Elsevier}
+  publisher={Elsevier},
+  doi = "10.1016/0893-6080(89)90020-8",
 }
 
-@article{cybenko1989approximation,
-  title={Approximation by superpositions of a sigmoidal function},
+@Article{cybenko1989approximation,
+  title={Approximation by Superpositions of a Sigmoidal Function},
   author={Cybenko, George},
-  journal={Mathematics of control, signals and systems},
+  journal={Math. Control Signals Syst.},
   volume={2},
   number={4},
   pages={303--314},
   year={1989},
-  publisher={Springer}
+  publisher={Springer},
+  doi = "10.1007/BF02551274",
 }
 
-@book{Goodfellow-et-al-2016,
+@Book{Goodfellow-et-al-2016,
     title={Deep Learning},
     author={Ian Goodfellow and Yoshua Bengio and Aaron Courville},
     publisher={MIT Press},
-    note={\url{http://www.deeplearningbook.org}},
+    %note={\url{http://www.deeplearningbook.org}},
     year={2016}
 }
 
-@article{rumelhart1986learning,
+@Article{rumelhart1986learning,
   title={Learning representations by back-propagating errors},
   author={Rumelhart, David E and Hinton, Geoffrey E and Williams, Ronald J},
   journal={Nature},
@@ -2084,19 +2068,11 @@
   number={6088},
   pages={533--536},
   year={1986},
-  publisher={Nature Publishing Group}
+  publisher={Nature Publishing Group},
+  doi = "10.1038/323533a0",
 }
 
-@article{hochreiter1991untersuchungen,
-  title={Untersuchungen zu dynamischen neuronalen Netzen},
-  author={Hochreiter, Sepp},
-  journal={Diploma, Technische Universit{\"a}t M{\"u}nchen},
-  volume={91},
-  number={1},
-  year={1991}
-}
-
-@article{vaswani2017attention,
+@Article{vaswani2017attention,
   title={Attention is all you need},
   author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
   journal={Advances in neural information processing systems},
@@ -2104,59 +2080,65 @@
   year={2017}
 }
 
-@article{gers2000learning,
+@Article{gers2000learning,
   title={Learning to forget: Continual prediction with LSTM},
   author={Gers, Felix A and Schmidhuber, J{\"u}rgen and Cummins, Fred},
-  journal={Neural computation},
+  journal={Neural Comput.},
   volume={12},
   number={10},
   pages={2451--2471},
   year={2000},
-  publisher={MIT Press}
+  doi = "10.1162/089976600300015015",
 }
 
-@article{cho2014properties,
+@Article{cho2014properties,
   title={On the properties of neural machine translation: Encoder-decoder approaches},
   author={Cho, Kyunghyun and Van Merri{\"e}nboer, Bart and Bahdanau, Dzmitry and Bengio, Yoshua},
   journal={arXiv preprint arXiv:1409.1259},
   year={2014}
 }
 
-@article{polyak1964some,
+@Article{polyak1964some,
   title={Some methods of speeding up the convergence of iteration methods},
   author={Polyak, Boris T},
-  journal={USSR Computational Mathematics and Mathematical Physics},
+  journal={USSR Comput. Math. Math. Phys.},
   volume={4},
   number={5},
   pages={1--17},
   year={1964},
-  publisher={Elsevier}
+  publisher={Elsevier},
+  doi = "10.1016/0041-5553(64)90137-5",
 }
 
-@inproceedings{sutskever2013importance,
-  title={On the importance of initialization and momentum in deep learning},
-  author={Sutskever, Ilya and Martens, James and Dahl, George and Hinton, Geoffrey},
-  booktitle={International conference on machine learning},
-  pages={1139--1147},
-  year={2013},
-  organization={PMLR}
+@Inproceedings{sutskever2013importance,
+  title     = {On the importance of initialization and momentum in deep learning},
+  author    = {Sutskever, Ilya and Martens, James and Dahl, George and Hinton, Geoffrey},
+  booktitle = {Proceedings of the 30th International Conference on Machine Learning},
+  editor    = "Dasgupta, S. and McAllester, D.",
+  address   = "Atlanta, USA",
+  % pages     = {1139--1147},
+  year      = {2013},
 }
 
-@book{james2013introduction,
+@Book{james2013introduction,
   title={An Introduction to Statistical Learning},
   author={James, Gareth and Witten, Daniela and Hastie, Trevor and Tibshirani, Robert},
   year={2013},
   publisher={Springer}
 }
 
-@inproceedings{Read:2000ru,
+@Inproceedings{Read:2000ru,
     author = "Read, Alexander L.",
-    title = "{Modified frequentist analysis of search results (The CL(s) method)}",
-    booktitle = "{Workshop on Confidence Limits}",
+    title = "{Modified frequentist analysis of search results (The \(CL_s\)
+                  method)}",
+    booktitle = "{Proceedings of the Workshop on Confidence Limits}",
+    editor = "Lyons, L. and Perrin, Y. and James, F. E.",
     reportNumber = "CERN-OPEN-2000-205",
-    pages = "81--101",
-    month = "8",
-    year = "2000"
+    % pages = "81--101",
+    address = "Geneva, Switzerland",
+    date = "2000-01-17/2000-01-18",
+    doi = "10.5170/CERN-2000-005",
+    url = "https://cds.cern.ch/record/411537"
 }
 
 @misc{Dimitriadi,
@@ -2165,7 +2147,7 @@
     howpublished = "personal communication",
 }
 
-@Article{FTAG-2019-07,
+@Report{FTAG-2019-07,
     author         = "{ATLAS Collaboration}",
     title          = "{ATLAS flavour-tagging algorithms for the LHC Run 2 $pp$
                   collision dataset}",
@@ -2174,17 +2156,17 @@
     eprint         = "2211.16345",
     archivePrefix  = "arXiv",
     primaryClass   = "hep-ex",
+    note = "{Submitted to Eur. Phys. J. C}",
 }
 
-@book{lehmann2005testing,
-  title={Testing statistical hypotheses},
+@Book{lehmann2005testing,
+  title={Testing Statistical Hypotheses},
   author={Lehmann, Erich Leo and Romano, Joseph P and Casella, George},
-  volume={3},
   year={2005},
-  publisher={Springer}
+  publisher={Springer},
 }
 
-@article{deBlas:2019rxi,
+@Article{deBlas:2019rxi,
     author = "de Blas, J. and others",
     title = "{Higgs Boson Studies at Future Particle Colliders}",
     eprint = "1905.03764",
@@ -2198,8 +2180,9 @@
     year = "2020"
 }
 
-@article{FCC:2018byv,
-    author = "Abada, A. and others",
+@Article{FCC:2018byv,
+    author = "{FCC Collaboration}",
+    % author = "Abada, A. and others",
     collaboration = "FCC",
     title = "{FCC Physics Opportunities}: {Future Circular Collider Conceptual Design Report Volume 1}",
     reportNumber = "CERN-ACC-2018-0056",
@@ -2211,7 +2194,7 @@
     year = "2019"
 }
 
-@article{Bambade:2019fyw,
+@Report{Bambade:2019fyw,
     author = "Bambade, Philip and others",
     title = "{The International Linear Collider: A Global Project}",
     eprint = "1903.01629",
@@ -2225,32 +2208,35 @@
     year = "2019"
 }
 
-@article{CLIC:2018fvx,
-    author = "de Blas, J. and others",
-    collaboration = "CLIC",
+@Book{CLIC:2018fvx,
+    author = "{CLIC Collaboration}",
+    editor = "de Blas, J. and others",
     title = "{The CLIC Potential for New Physics}",
     eprint = "1812.02093",
     archivePrefix = "arXiv",
     primaryClass = "hep-ph",
     reportNumber = "CERN-TH-2018-267, CERN-2018-009-M",
     doi = "10.23731/CYRM-2018-003",
-    volume = "3/2018",
     month = "12",
-    year = "2018"
+    year = "2018",
+    series = {CERN Yellow Reports: Monographs},
+    url = "http://cds.cern.ch/record/2650541",
+    publisher = "CERN",
 }
 
-@article{freund1997decision,
-  title={A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting},
-  author={Freund, Yoav and Schapire, Robert E},
-  journal={Journal of Computer and System Sciences},
-  volume={55},
-  number={1},
-  pages={119--139},
-  year={1997},
-  publisher={Elsevier}
+@Article{freund1997decision,
+  title = {A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting},
+  author = {Freund, Yoav and Schapire, Robert E},
+  journal = {J. Comput. Syst. Sci.},
+  volume = {55},
+  number = {1},
+  pages = {119--139},
+  year = {1997},
+  publisher = {Elsevier},
+  doi = "10.1006/jcss.1997.1504",
 }
 
-@article{aitken_1936,
+@Article{aitken_1936,
   title = {A further note on multivariate selection},
   author = {Aitken, A. C.},
   volume = {5},
@@ -2262,7 +2248,7 @@
   pages = {37--40}
 }
 
-@article{campbell_1934,
+@Article{campbell_1934,
   title = {The Poisson Correlation Function},
   author = {Campbell, J. T.},
   volume = {4},
@@ -2274,7 +2260,7 @@
   pages = {18--26}
 }
 
-@article{teicher1954,
+@Article{teicher1954,
   author = { Teicher, H.},
   title = {On the Multivariate Poisson Distribution},
   journal = {Scand. Actuar. J.},
@@ -2282,11 +2268,11 @@
   number = {1},
   pages = {1--9},
   year  = {1954},
-  publisher = {Taylor & Francis},
+  publisher = {Taylor \& Francis},
   doi = {10.1080/03461238.1954.10414190}
 }
 
-@Article{HDBS-2019-29,
+@Report{HDBS-2019-29,
     author         = "{ATLAS Collaboration}",
     title          = "{Search for nonresonant pair production of Higgs bosons in
                   the \(b\bar{b}b\bar{b}\) final state in \(pp\) collisions at
@@ -2296,4 +2282,5 @@
     eprint         = "2301.03212",
     archivePrefix  = "arXiv",
     primaryClass   = "hep-ex",
+    note           = "Submitted to Phys. Rev. D",
 }
