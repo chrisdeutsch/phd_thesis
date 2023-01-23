@@ -22,7 +22,7 @@
 % Adjustments to standard biblatex style.
 % Change option to backref=false when your thesis is ready to turn off back-referencing.
 % Pass the option showurl=false to shorten your bibliography by not including url fields.
-\usepackage[backref=true]{ubonn-biblatex}
+\usepackage[backref=false]{ubonn-biblatex}
 
 %------------------------------------------------------------------------------
 % Glossary package
@@ -51,9 +51,9 @@
 % Instead of colouring  links, cites, table of contents etc.
 % put them in a coloured box for the screen version.
 % This is probably a good idea when you print your thesis.
-% \hypersetup{colorlinks=false,
-%   linkbordercolor=blue,citebordercolor=magenta,urlbordercolor=darkgreen
-% }
+\hypersetup{colorlinks=false,
+  linkbordercolor=blue,citebordercolor=magenta,urlbordercolor=darkgreen
+}
 
 %------------------------------------------------------------------------------
 % When writing your thesis it is often helpful to have the date and
@@ -88,9 +88,15 @@
 %------------------------------------------------------------------------------
 % The following definitions are used to produce the title pages
 % needed at various stages
-\newcommand{\thesistitle}{Search for Resonant and Non-Resonant Higgs
-  Boson Pair Production in the $\bbbar\tautau$ Final State with the
-  ATLAS Experiment at the LHC}
+
+% Old title
+%
+% \newcommand{\thesistitle}{Search for Resonant and Non-Resonant Higgs
+%   Boson Pair Production in the $\bbbar\tautau$ Final State with the
+%   ATLAS Experiment at the LHC}
+
+\newcommand{\thesistitle}{Search for Higgs Boson Pair Production in the
+  $\bbbar\tautau$ Final State with the ATLAS Experiment at the LHC}
 
 \newcommand*{\thesisauthor}{Christopher Deutsch}
 \newcommand*{\thesistown}{Sinzig}
@@ -100,19 +106,19 @@
 \renewcommand*{\InstituteAddress}{\PIaddress}
 % Adjust \thesisreferee...text depending on male/female referee
 \newcommand*{\thesisrefereeonetext}{1.\ Gutachter}
-\newcommand*{\thesisrefereeone}{Prof.\ Dr.\ Jochen C.\ Dingfelder}
+\newcommand*{\thesisrefereeone}{Prof.\ Dr.\ Jochen Dingfelder}
 \newcommand*{\thesisrefereetwotext}{2.\ Gutachter}
-\newcommand*{\thesisrefereetwo}{Prof.\ Dr.\ Ian C.\ Brock}
+\newcommand*{\thesisrefereetwo}{Prof.\ Dr.\ Ian Brock}
 % Date when thesis was submitted (Master/Diplom)
 % Year or Month, Year when thesis was submitted (PhD)
-\newcommand*{\thesissubmit}{XX.YY.2022}
-% \newcommand*{\thesissubmit}{Month 2022}
+\newcommand*{\thesissubmit}{XX.YY.2023}
+% \newcommand*{\thesissubmit}{Month 2023}
 % Date of thesis examination (PhD)
-\newcommand*{\thesispromotion}{XX.YY.2022}
+\newcommand*{\thesispromotion}{XX.YY.2023}
 % Month and year of the final printed version of the thesis
 \newcommand*{\thesismonth}{MMM}
-\newcommand*{\thesisyear}{2022}
-\newcommand*{\thesisnumber}{BONN-IR-2022-XXX}
+\newcommand*{\thesisyear}{2023}
+\newcommand*{\thesisnumber}{BONN-IR-2023-XXX}
 % Dedication
 % \newcommand*{\thesisdedication}{}
 
