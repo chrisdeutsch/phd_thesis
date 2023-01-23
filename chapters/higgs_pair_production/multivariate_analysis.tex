@@ -122,18 +122,18 @@ the MVAs in the \hadhad and \lephad channels.
 \begin{figure}[htbp]
   \centering
 
-  \begin{subfigure}[t]{.5\textwidth}
+  \begin{subfigure}[t]{.45\textwidth}
     \centering
-    \includegraphics{mva/mass_resolution}
+    \includegraphics[width=\textwidth]{mva/mass_resolution}
     \subcaption{\PHiggs-system mass reconstruction}
     \label{fig:mass_reconstruction_H}
-  \end{subfigure}\hfill%
-  \begin{subfigure}[t]{.5\textwidth}
+  \end{subfigure}\hspace*{0.05\textwidth}%
+  \begin{subfigure}[t]{.45\textwidth}
     \centering
-    \includegraphics{mva/mhh_resolution}
+    \includegraphics[width=\textwidth]{mva/mhh_resolution}
     \subcaption{\HH-system mass reconstruction}
     \label{fig:mass_reconstruction_HH}
-  \end{subfigure}
+  \end{subfigure}%
 
   \caption[Performance of the $H$-system and $HH$-system invariant mass
   reconstruction in the \hadhad SR.]{Performance of the $H$-system (a) and
@@ -197,10 +197,10 @@ in~\Cref{fig:mva_inputs}.
   \end{subfigure}
 
   \begin{subfigure}[t]{.46\textwidth}
-    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distdRTauTau_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distdRTauTau_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_fontembed}
   \end{subfigure}\hfill %
   \begin{subfigure}[t]{.46\textwidth}
-    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distdRBB_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit}
+    \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distdRBB_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_fontembed}
   \end{subfigure}
 
   \begin{subfigure}[t]{.46\textwidth}
@@ -291,7 +291,7 @@ evaluated on the hold-out dataset.
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[scale=1]{mva/kfold}
+  \includegraphics[scale=0.91]{mva/kfold}
 
   \caption[5-fold cross-validation approach for model selection.]{5-fold
     cross-validation approach for model selection on even-numbered events. The
@@ -431,7 +431,7 @@ from cross-validation during model selection.
 \begin{figure}[htbp]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{mva/prefit/Region_BMin0_incJet1_distSMBDT_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefitlog}
+  \includegraphics[width=0.49\textwidth]{mva/prefit/Region_BMin0_incJet1_distSMBDT_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefitlog}
 
   \caption[Distribution of the BDT discriminant in the \hadhad SR.]{Distribution
     of the BDT discriminant used to select the SM \HH signal in the \hadhad SR
@@ -768,7 +768,7 @@ over the approach of using dedicated classifiers.
   parameter.]{Expected signal significance of a scalar resonance with mass \mX
     as a function of the PNN mass parameter. The significance is estimated by
     binning the PNN score for a given value of the parameter and adding the
-    Asimov significance of all bins in quadrature. Only statistical
+    signal significance of all bins in quadrature. Only statistical
     uncertainties are considered. The curves are normalised such that the
     significance is 1 when the PNN mass parameter is equal to \mX of the
     hypothesis under test. Dashed lines correspond to signal mass hypotheses not
