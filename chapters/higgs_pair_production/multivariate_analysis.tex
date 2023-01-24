@@ -125,26 +125,25 @@ the MVAs in the \hadhad and \lephad channels.
   \begin{subfigure}[t]{.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/mass_resolution}
-    \subcaption{\PHiggs-system mass reconstruction}
+    \subcaption{\PHiggs mass reconstruction}
     \label{fig:mass_reconstruction_H}
   \end{subfigure}\hspace*{0.05\textwidth}%
   \begin{subfigure}[t]{.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/mhh_resolution}
-    \subcaption{\HH-system mass reconstruction}
+    \subcaption{\HH mass reconstruction}
     \label{fig:mass_reconstruction_HH}
   \end{subfigure}%
 
-  \caption[Performance of the $H$-system and $HH$-system invariant mass
-  reconstruction in the \hadhad SR.]{Performance of the $H$-system (a) and
-    $HH$-system (b) invariant mass reconstruction in the \hadhad SR estimated
-    using simulated $X \to \HH \to \bbtautau$ events.  The top panels show the
-    bias of the mass prediction given in terms of deviation of the median mass
-    prediction from the true mass value. The bottom panels show the mass
-    resolution estimate as half of the length of the central interval containing
-    \SI{68}{\percent} of all mass predictions. For the \HH-system mass
-    reconstruction, the bias and resolution is given relative to the mass of the
-    resonance.}%
+  \caption[Performance of the $H$ and $HH$ invariant mass reconstruction in the
+  \hadhad SR.]{Performance of the $H$ (a) and $HH$ (b) invariant mass
+    reconstruction in the \hadhad SR for simulated $\pp \to X \to \HH$
+    events. The top panel shows the bias of the mass reconstruction in terms of
+    the median deviation of the reconstructed mass from its true value. The
+    bottom panel shows the mass resolution estimated as half of the length of
+    the central interval containing \SI{68}{\percent} of deviations between
+    reconstructed and true masses. For the \HH invariant mass reconstruction,
+    the relative deviation is used instead.}%
   \label{fig:mass_reconstruction}
 \end{figure}
 
@@ -167,13 +166,12 @@ in~\Cref{fig:mva_inputs}.
 \begin{table}[htbp]
   \centering
 
-  \caption[Input variables of the multivariate classifiers used in the \hadhad
-  and \lephad channels.]{Input variables of the multivariate classifiers used in
-    the \hadhad and \lephad channels. The same variables are used for the search
-    for SM \HH and resonant \HH production. Definitions of the input variables
-    used in the \lephad channels are given in
-    \Cref{app:lephad_mva_variables}. The table is adapted from
-    Ref.~\cite{HDBS-2018-40}.}%
+  \caption[Input variables of the classifiers used in the \hadhad and \lephad
+  channels.]{Input variables of the classifiers used in the \hadhad and \lephad
+    channels. The same variables are used for the search for SM \HH and resonant
+    \HH production. Definitions of the input variables used in the \lephad
+    channels are given in \Cref{app:lephad_mva_variables}. The table is adapted
+    from Ref.~\cite{HDBS-2018-40}.}%
   \label{tab:mva_inputvar}
 
   \renewcommand{\arraystretch}{1.1}%
