@@ -233,8 +233,8 @@ following:
   section of the beamline. The \pT-leading track resulting from this stage is
   used to narrow down the search space along the beamline by only considering
   the beamline section within $|\Delta z| < \SI{10}{\milli\metre}$ of this track
-  for the second stage of tracking, thus allowing to widen the search region
-  around the \tauhadvis candidate close to the calorimeters. After the second
+  for the second stage of tracking, thus allowing for an expansion of the search region
+  close to the calorimeters. After the second
   stage of tracking, core and isolation tracks are defined according to the
   conditions $\Delta R(\text{track}, \tauhadvis) < 0.2$ and
   $0.2 < \Delta R(\text{track}, \tauhadvis) < 0.4$, respectively. Subsequently,
@@ -272,7 +272,7 @@ following:
   \tauhadvis reconstruction are replaced by multivariate methods. Second, the
   HLT \tauid is replaced by a method based on the RNN \tauid algorithm
   introduced in \Cref{sec:tauid}. The improved background rejection of this
-  algorithm allowed to relax the track multiplicity requirements from 1--3
+  algorithm allowed relaxing the track multiplicity requirements from 1--3
   precision tracks to 0--3 precision tracks in the core region. Selecting
   \tauhadvis candidates without precision tracks in the core region recovers
   cases in which the fast track finding does not yield good quality seeds for
@@ -417,7 +417,7 @@ A flowchart summarising the trigger selection is depicted
 in~\Cref{fig:trigger_selection_flowchart}. Two features of the trigger selection
 are not illustrated in the figure. First, the \LOneTopo DTT only started
 operation with period B5 in 2017. In the intermittent period where \LOneTopo was
-not available the \tauhadvis trigger chain based on
+not available, the \tauhadvis trigger chain based on
 \texttt{TAU20IM\_2TAU12IM\_J25\_2J20\_3J12} is used instead. The
 $\dRtautau < 2.5$ selection necessary for the \LOneTopo DTT is still applied in
 this case. Second, for three runs in 2017 the L1 topological trigger system was
@@ -589,13 +589,14 @@ following improvements:
   association efficiency is reduced by up to \SI{10}{\percent}.
 
 \item[\Tauid] With the introduction of the RNN-based \tauid
-  (cf.~\Cref{sec:tauid}) the rejection of \tauhadvis originating from quark- or
-  gluon-initiated jets increased by \SIrange{40}{80}{\percent} compared to the
-  BDT-based identification algorithm. This allows to change the identification
-  working point from the \emph{medium BDT} to the \emph{loose RNN} working point
-  while maintaining similar rates of \faketauhadvis backgrounds. As a result, a
-  relative increase in \tauhadvis tagging efficiency of about \SI{13}{\percent}
-  (\SI{25}{\percent}) is achieved for 1-prong (3-prong) \tauhadvis.
+  (cf.~\Cref{sec:tauid}), the rejection of \tauhadvis candidates originating
+  from quark- or gluon-initiated jets increased by \SIrange{40}{80}{\percent}
+  compared to the BDT-based algorithm. This allows for a change of the
+  identification working point from the \emph{medium BDT} to the \emph{loose
+    RNN} working point while maintaining similar rates of \faketauhadvis
+  backgrounds. As a result, a relative increase in \tauhadvis identification
+  efficiency of about \SI{13}{\percent} (\SI{25}{\percent}) is achieved for
+  1-prong (3-prong) \tauhadvis.
 
   Additionally, an improved algorithm to reject 1-prong \tauhadvis candidates
   originating from electrons based on a BDT discriminant (electron veto) is used
@@ -609,9 +610,9 @@ following improvements:
   % \SIrange{4}{5}{\percent} for 1-prong \tauhadvis. No electron veto is applied
   % to 3-prong \tauhadvis candidates.
 
-\item[$b$-tagging] Improved $b$-tagging algorithms allow to use a working point
-  with higher $b$-jet tagging efficiency while limiting the increase in
-  backgrounds from mistagged jets. Previously, the \textsc{MV2c10}
+\item[$b$-tagging] Improved $b$-tagging algorithms allow for the use of working
+  points with higher $b$-jet tagging efficiency while limiting the increase in
+  background due to mistagged jets. Previously, the \textsc{MV2c10}
   tagger~\cite{ATL-PHYS-PUB-2016-012} with a target efficiency of
   \SI{70}{\percent} for $b$-jets from \ttbar was used. This tagger is replaced
   by the \textsc{DL1r} tagger~\cite{FTAG-2019-07} operating at the the

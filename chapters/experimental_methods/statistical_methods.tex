@@ -6,8 +6,8 @@
 The following introduces the statistical inference techniques used for the
 interpretation of results of searches and measurements at the ATLAS experiment.
 Among these are methods for parameter estimation and hypothesis testing. They
-are used to fit statistical models to observed data (or pseudodata) and to make
-frequentist statements about the presence or absence of a signal.
+are used for fitting statistical models to observed data (or pseudodata) and to
+make frequentist statements about the presence or absence of a signal.
 
 
 \subsection{The \textsc{HistFactory} Model}%
@@ -84,7 +84,7 @@ $\sigma_{csb}$ is described in the following~\cite{cranmer2012}:
   considered to be NPs if they are not POIs.
 
 \item $\gamma_{csb}$ are parameters that introduce additional degrees of freedom
-  for every bin. They are used to incorporate uncertainties from sources that
+  for every bin. They are used for incorporating uncertainties from sources that
   are independent between bins. An example of such an uncertainty is the
   statistical uncertainty arising from the use of finite samples of events to
   estimate $\sigma_{csb}$.
@@ -200,9 +200,9 @@ uses of Asimov datasets will be highlighted in subsequent sections.
 \label{sec:hypotesting}
 
 In HEP, one is often concerned with comparing the goodness of fit of competing
-statistical models to observed data. These comparisons allow to make statements
-about values of the signal strength that are still in agreement with the
-observations. The framework of statistical hypothesis testing provides a
+statistical models to observed data. These comparisons assist in making
+statements about values of the signal strength that are still in agreement with
+the observations. The framework of statistical hypothesis testing provides a
 principled approach to perform these comparisons.
 
 With the statistical model introduced previously, a null hypothesis, $H_0$, is
@@ -360,7 +360,7 @@ $\mu = \mu^*$ and $\mu = 0$ hypotheses. In this case, the power of the
 test~($1 - \beta$) approaches $\alpha$, which is illustrated
 in~\Cref{fig:cls_qmu_lowpower}. This means that a signal to which the experiment
 has no sensitivity will still be excluded with a probability of at
-least~$\alpha$ under the background-only hypothesis. In HEP such \emph{spurious
+least~$\alpha$ under the background-only hypothesis. In HEP, such \emph{spurious
   exclusions} are not desired, motivating the use of an alternative method for
 setting upper limits that takes into account the signal sensitivity of the
 experiment.
@@ -408,7 +408,7 @@ background-only hypothesis. Upper limits on the signal strength are then
 estimated by finding the largest value of $\mu$ for which $\CLs > \alpha$. In
 the limiting case of an experiment with no signal sensitivity the value of \CLs
 approaches unity, thus preventing spurious exclusions. Limits derived using this
-approach are also referred to as upper limits at $1 - \alpha$~CL, however, their
+approach are also referred to as upper limits at $1 - \alpha$~CL; however, their
 coverage probability exceeds $1 - \alpha$ by construction due to $\CLs >
 p_\mu$. Therefore, confidence intervals estimated using the \CLs technique are
 considered to be conservative. By convention, upper limits on $\mu$ are set at

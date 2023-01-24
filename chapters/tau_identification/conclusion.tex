@@ -1,13 +1,12 @@
 \section{Conclusion and Outlook}%
 \label{sec:tauid_conclusion}
 
-This chapter introduced a novel \tauid algorithm exploiting the
-discrimination power of high-level input variables in conjunction with
-low-level detector signatures of charged and neutral particles in the
-vicinity of \tauhadvis candidates. The main feature of the algorithm
-is the use of a recurrent neural network architecture that allows to
-operate on sequences of charged-particle tracks and clusters of energy
-in the calorimeters.
+This chapter introduced a novel \tauid algorithm exploiting the discrimination
+power of high-level input variables in conjunction with low-level detector
+signatures of charged and neutral particles in the vicinity of \tauhadvis
+candidates. The main feature of the algorithm is the use of an RNN architecture,
+which allows it to operate on sequences of charged-particle tracks and clusters
+of energy in the calorimeters.
 
 The new algorithm improves the rejection of \faketauhadvis
 reconstructed as 1- and 3-prong \tauhadvis candidates by about
@@ -21,20 +20,18 @@ track-based isolation of \tauhadvis.
 
 The method is considered by the ATLAS collaboration as the recommended \tauid
 algorithm for analyses of the \SI{139}{\per\femto\barn} \pp~collision dataset
-recorded during Run~2 of the LHC. In addition, the approach was adopted by the
-collaboration for \tauid at the high-level trigger in
-2018~\cite{ATL-DAQ-PUB-2019-001}. The superior background rejection of the RNN
-\tauid allowed to improve the efficiency of \tauhadvis-triggers while staying
-within the allocated trigger bandwidth for
-\tauhadvis-triggers~\cite{ATL-DAQ-PUB-2019-001}.
+recorded during Run~2 of the LHC. In addition, the approach was adopted for
+\tauid at the high-level trigger in 2018~\cite{ATL-DAQ-PUB-2019-001}. The
+superior background rejection of the RNN \tauid allowed for an increase in the
+efficiency of \tauhadvis-triggers while remaining within the allocated trigger
+bandwidth~\cite{ATL-DAQ-PUB-2019-001}.
 
-The improvements in \tauid, both at the high-level trigger and during
-offline event reconstruction, are utilised in~\Cref{sec:dihiggs} for
-the search for Higgs boson pair production. The improved background
-rejection of the RNN allows to relax the identification requirements
-applied to \tauhadvis and thus increase the acceptance of signal
-events without incurring large increases in backgrounds from
-misidentified \tauhadvis.
+The improvements in \tauid, both at the high-level trigger and during offline
+event reconstruction, are utilised in~\Cref{sec:dihiggs} for the search for
+Higgs boson pair production. Due to the improved background rejection of the
+RNN, it is possible to loosen the identification requirements for \tauhadvis in
+the search without incurring large increases in backgrounds from the
+misidentification of quark- or gluon-initiated jets as \tauhadvis.
 
 The \tauid algorithms employed by the CMS collaboration underwent a
 similar evolution as the one presented in this chapter. A BDT-based

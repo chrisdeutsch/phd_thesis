@@ -29,7 +29,7 @@ motivate the use of different background estimation techniques:
   background estimation is inherently process dependent.
 
 \item In the \hadhad channel, no suitable \ttbarFakes CR can be defined that
-  allows to separate \faketauhadvis backgrounds from \ttbar and multi-jet while
+  separates \faketauhadvis backgrounds from \ttbar and multi-jet while
   maintaining sufficient statistical precision for background estimation. This
   necessitates defining a CR in $\ell + \tauhadvis$ ($\ell = e, \mu$) final
   states in which the multi-jet contribution can be neglected.
@@ -148,9 +148,9 @@ During Run~2 of the LHC, these triggers had to be prescaled to limit their
 trigger rates.\footnote{A trigger with a prescale value of $n$ accepts events
   satisfying the trigger conditions with a probability of $1 / n$
   \cite{TRIG-2019-04}.} However, events passing the SF-CR selection were already
-recorded using unprescaled single-lepton triggers. This allows to re-run the
-single-\tauhadvis triggers during offline event reconstruction without
-application of a prescale.
+recorded using unprescaled single-lepton triggers. This allows single-\tauhadvis
+to be re-run during offline event reconstruction without application of a
+prescale.
 % This allows to re-run the single-\tauhadvis triggers used in this measurement
 % during offline event reconstruction without application of a prescale.
 The \verb|HLT_tau25_medium1_tracktwo| trigger chain was active for the entirety
@@ -178,11 +178,11 @@ candidate given by:
 
 \end{itemize}
 These regions are chosen such that their size allows for a determination of the
-corrections with limited impact of statistical uncertainties while allowing to
-extract potential \pT-dependencies of the correction factors. In cases where
-events are required to pass single-\tauhadvis triggers, the \pT intervals from
-25 to \SI{30}{\GeV} are omitted to ensure that the \tauhadvis-triggers operate
-in a regime where they are well-calibrated. This is analogous to the selections
+corrections with limited impact of statistical uncertainties while extracting
+potential \pT-dependencies of the correction factors. In cases where events are
+required to pass single-\tauhadvis triggers, the \pT intervals from 25 to
+\SI{30}{\GeV} are omitted to ensure that the \tauhadvis-triggers operate in a
+regime where they are well-calibrated. This is analogous to the selections
 applied in the SR of the \hadhad channel. Two examples of event yields in the
 regions entering the SF measurement are shown
 in~\Cref{fig:ttbarsf_region_summary_prefit}.
@@ -249,10 +249,10 @@ binned \mTW distributions in all regions of \tauhadvis candidate \pT and
 \Vjets events. The sample of \ttbar events is split by whether the reconstructed
 \tauhadvis candidate is a \faketauhadvis or not. The overall normalisation of
 the \ttbar background, irrespective of whether events contain a \faketauhadvis,
-is allowed to vary freely in the model.  In every region of \tauhadvis candidate
+is free to vary in the model.  In every region of \tauhadvis candidate
 \Ntracks and \pT, an unconstrained SF is introduced that changes the
 normalisation of the \ttbarFakes background in this region. These \faketauhadvis
-SFs are considered to be the POIs of the measurement.
+SFs are considered as the POIs of the measurement.
 
 The pre-fit expectation of the model in two exemplary regions is shown
 in~\Cref{fig:ttbarsf_mtw_examples_prefit} for SF-CR events passing the
@@ -678,7 +678,7 @@ the \hadhad SR in which the leading \tauhadvis candidate is the \faketauhadvis
 (TF~events), and cases in which both candidates are \faketauhadvis
 (FF~events). This comparison yields extrapolation uncertainties of
 \SI{14}{\percent} for TF~events, \SI{7}{\percent} for FT~events, and
-\SI{39}{\percent} for the FF~events. In all cases the uncertainty is dominated
+\SI{39}{\percent} for the FF~events. In all cases, the uncertainty is dominated
 by the comparison of \PYTHIA[8] and \HERWIG[7] for the simulation of the parton
 shower. The large uncertainty on FF~events is expected since the measurement in
 the SF-CR can only target events with exactly one \faketauhadvis.
@@ -736,7 +736,7 @@ SR and compares it to the prediction from simulation without application of
 
 % The SF method described in this section provides a measurement-driven approach
 % of estimating the \ttbarFakes background and its uncertainty in the SR of the
-% \hadhad channel.  In~\Cref{tab:ttbarSF_yields} the event yield of \ttbarFakes
+% \hadhad channel.  In~\Cref{tab:ttbarSF_yields}, the event yield of \ttbarFakes
 % in the \hadhad SR is shown and compared to \ttbar simulation without
 % corrections.
 

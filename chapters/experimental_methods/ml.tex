@@ -348,7 +348,7 @@ space~\cite{Friedman:2001wbq}. Steps~2a) and 2b) of the algorithm estimate the
 negative gradient of the loss function with respect to~$F(\myvec{x})$, which is
 evaluated at the function estimate of the previous boosting iteration. Classical
 gradient descent algorithms sometimes determine the step size of the parameter
-update by performing a line search along the direction of steepest descent. In
+update by performing a line search along the direction of the steepest descent. In
 the \textsc{TreeBoost} algorithm, this step size is determined by step 2c) on a
 per-leaf basis.
 % , however, for \textsc{TreeBoost} the size of the gradient descent step is
@@ -590,7 +590,7 @@ using the definitions introduced before.
 
 The computational graph of an LSTM layer for a single time step is depicted in
 \Cref{fig:lstm}, illustrating the role of the gates in controlling the flow of
-information. The forget gate allows to selectively forget/remember aspects about
+information. The forget gate is used to selectively forget/remember aspects about
 the internal state at time $t - 1$ by multiplying the state
 vector~$\myvec{s}_{t - 1}$ by the activation of the forget gate. Similarly, the
 input gate controls the inclusion of information derived from the current
@@ -616,7 +616,7 @@ being used in HEP is given in \Cref{sec:tauid}.
     application of the $\tanh$ activation function ($\myvec{\phi}$). The graph
     illustrates the computations performed as part of
     \Cref{eq:lstm_state_update,eq:lstm_output}. The computations involved in the
-    calculation of the gate activation vectors are omitted, however, the
+    calculation of the gate activation vectors are omitted; however, the
     dependency of the gate activation vectors on $\myvec{x}_{t}$ and
     $\myvec{y}_{t - 1}$ is indicated in parenthesis.}%
   \label{fig:lstm}
