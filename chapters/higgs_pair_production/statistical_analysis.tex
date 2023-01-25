@@ -380,11 +380,11 @@ restricted to the \ZHF~CR in~\Cref{sec:bkg_zjets}.
   \caption[Distributions of the MVA discriminants used for the SM~\HH search
   after the background-only fit.]{Distributions of the MVA discriminants used
     for the SM~\HH search in the \lephad~SLT~(a), \lephad~LTT~(b), and
-    \hadhad~(c) channel after fitting the background-only model to observed data
-    in all regions. The signal overlay is scaled to the expected upper limit on
-    the signal strength of $3.9$ from the combination of all channels. The
-    \faketauhadvis background in the \hadhad channel is shown separately for
-    \faketauhadvis from multi-jet (MJ) and \ttbar.}%
+    \hadhad~(c) channel after the fit of the background-only model to observed
+    data in all regions. The signal overlay is scaled to the expected upper
+    limit on the signal strength of $3.9$ from the combination of all
+    channels. The \faketauhadvis background in the \hadhad channel is shown
+    separately for \faketauhadvis from multi-jet (MJ) and \ttbar.}%
   \label{fig:mvascores_postfit}
 \end{figure}
 
@@ -535,9 +535,9 @@ future analyses it might be beneficial to control for this effect.
 
   \caption[Distributions of the BDT input variables in the \hadhad SR after the
   background-only fit.]{Distributions of the BDT input variables in the \hadhad
-    SR after fitting the background-only model to observed data in all regions.
-    The expected SM~\HH signal is overlayed with a normalisation corresponding
-    to $\mu = 400$.}%
+    SR after the fit of the background-only model to observed data in all
+    regions. The expected SM~\HH signal is overlayed with a normalisation
+    corresponding to $\mu = 400$.}%
   \label{fig:postfit_mva_inputs}
 \end{figure}
 
@@ -739,12 +739,12 @@ in~\Cref{sec:result_discussion}.
 \begin{table}[htbp]
   \centering
 
-  \caption[Expected and observed upper limits on the SM~\HH production cross
-  section and signal strength at \SI{95}{\percent}~CL.]{Expected and observed
-    upper limits on the SM~\HH production cross section via \ggF and VBF,
-    \xsecggfvbf, and the SM~\HH signal strength, $\mu$, at \SI{95}{\percent}~CL.
-    The expected limits are obtained under the assumption of the background-only
-    hypothesis. The table is adapted from Ref.~\cite{HDBS-2018-40}.}%
+  \caption[Upper limits on the SM~\HH production cross section and signal
+  strength at \SI{95}{\percent}~CL.]{Upper limits on the SM~\HH production cross
+    section via \ggF and VBF, \xsecggfvbf, and the SM~\HH signal strength,
+    $\mu$, at \SI{95}{\percent}~CL.  The expected limits are obtained under the
+    assumption of the background-only hypothesis. The table is adapted from
+    Ref.~\cite{HDBS-2018-40}.}%
   \label{tab:limits_non_resonant}
 
   % Workspaces: comb_2022_01_29
@@ -1211,12 +1211,13 @@ asymptotic approximation.
   \begin{subfigure}{0.485\textwidth}
     \centering
 
-    \includegraphics[width=0.95\textwidth]{global_significance/local_sig_toys/q0_1000}
+    \includegraphics[width=0.95\textwidth, trim=0 0.4cm 0 0, clip]{global_significance/local_sig_toys/q0_1000}
     \subcaption{}
   \end{subfigure}\hfill%
   \begin{subfigure}{0.485\textwidth}
     \centering
-    \includegraphics[width=0.95\textwidth]{global_significance/local_sig_toys/q0sig_1000}
+
+    \includegraphics[width=0.95\textwidth, trim=0 0.4cm 0 0, clip]{global_significance/local_sig_toys/q0sig_1000}
     \subcaption{}%
     \label{fig:q0_samplingdist_q0sig}
   \end{subfigure}
@@ -1334,12 +1335,12 @@ result of
 
   \caption[Toy-based estimate of the distribution of the maximum local
   significance under the background-only hypothesis.]{Toy-based estimate of the
-    distribution of the maximum local significance, \Zmaxlocal, over the 20
-    hypothesis tests under the background-only hypothesis. The local
-    significance of the excess observed in data is indicated in orange. The
-    distribution after kernel smoothing is overlayed in red for illustration
-    purposes. The uncertainty on the global $p$-value/significance only accounts
-    for the finite number of toy experiments.}%
+    distribution of the maximum local significance, \Zmaxlocal, under the
+    background-only hypothesis. The local significance of the largest excess
+    observed in data is indicated in orange. The distribution after kernel
+    smoothing is overlayed in red for illustration purposes. The uncertainty on
+    the global $p$-value/significance only accounts for the finite number of toy
+    experiments.}%
   \label{fig:zmax_toys}
 \end{figure}
 
