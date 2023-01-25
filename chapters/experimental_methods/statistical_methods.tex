@@ -147,22 +147,23 @@ with the terms in brackets being described in the following:
   $ \tau_{cb} = ( \sum_i w_i )^2 / \sum_i w_i^2 $ is defined, where the sums are
   over events making up the background prediction in the given bin and $w_i$ are
   the corresponding event weights. The constant~$\tau_{cb}$ can be interpreted
-  as an effective number of unweighted events,\footnote{Let
-    $Y_{\text{w}} = \sum_{i = 1}^{N} W_i$ and
-    $Y = \sum_{i = 1}^{N^\prime} 1 = N^\prime$, where $N$ and $N^\prime$ are
-    independent Poisson random variables and $W_i$ are i.i.d.\ weights that are
-    independent of $N$ and $N^\prime$. The effective number of unweighted events
-    refers to the value of $\expect(N^\prime)$ that ensures that the relative
-    standard deviation of $Y_{\text{w}}$ and $Y$ are equal. This condition
-    yields $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and
-    after approximating expected values with sample averages
-    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.} which measures
-  the statistical precision of the background estimate in the bin. The model
-  incorporates the statistical uncertainty by setting up auxiliary measurements
-  of the effective number of unweighted events, $\gamma_{cb}\tau_{cb}$, for
-  every bin. These measurements observe $m_{cb} = \tau_{cb}$, and therefore the
-  nominal value of the $\gamma_{cb}$ parameters is 1. Supplementary information
-  on the Barlow--Beeston method is given in \Cref{app:barlow_beeston}.
+  as an effective number of events, which measures the statistical precision of
+  the background estimate in the bin. The model incorporates the statistical
+  uncertainty by setting up auxiliary measurements of the effective number of
+  events,\footnote{Let $Y = \sum_{i = 1}^{N} W_i$ and
+    $Y^\prime = \sum_{i = 1}^{N^\prime} c$, where $N$ and $N^\prime$ are
+    independent Poisson random variables, $W_i$ are i.i.d.\ weights that are
+    independent of $N$ and $N^\prime$, and $c$ is a constant. The effective
+    number of events refers to the value of $\expect(N^\prime)$ such that
+    $\expect(Y) = \expect(Y^\prime)$ and $\var(Y) = \var(Y^\prime)$. This
+    condition yields
+    $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and after
+    approximating expected values with sample averages
+    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.}
+  $\gamma_{cb}\tau_{cb}$, for every bin. These measurements observe
+  $m_{cb} = \tau_{cb}$, and therefore the nominal value of the $\gamma_{cb}$
+  parameters is 1. Supplementary information on the Barlow--Beeston method is
+  given in \Cref{app:barlow_beeston}.
 
 \end{itemize}
 

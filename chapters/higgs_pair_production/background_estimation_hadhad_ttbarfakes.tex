@@ -109,7 +109,7 @@ shown in~\Cref{fig:ttbarSF_prefit_pt}.
 
   \caption[Distribution of \tauhadvis \pT and $\eta$ in the SF-CR.]{Distribution
     of \tauhadvis \pT and $\eta$ in the SF-CR prior to the fit. Events with
-    \tauhadvis candidate \pT larger than \SI{200}{\GeV} are merged into the last
+    \tauhadvis candidate \pT larger than \SI{200}{\GeV} are included in the last
     bin. All statistical and systematic uncertainties are included.}%
   \label{fig:ttbarSF_prefit_pt}
 \end{figure}
@@ -276,7 +276,7 @@ regions.
   measurement.]{Pre-fit \mTW distribution in two exemplary \tauhadvis candidate
     \Ntracks and \pT regions of the SF measurement after requiring events to
     pass the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and
-    trigger-matching. Events with $\mTW > \SI{200}{\GeV}$ are merged into the
+    trigger-matching. Events with $\mTW > \SI{200}{\GeV}$ are included in the
     last bin of the histograms.}%
   \label{fig:ttbarsf_mtw_examples_prefit}
 \end{figure}
@@ -372,14 +372,12 @@ in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
   \end{subfigure}
 
   \caption[\Faketauhadvis SFs for different \tauid criteria.]{\Faketauhadvis SFs
-    for different \tauid criteria relevant to the search for Higgs boson pair
-    production. A comparison of \faketauhadvis SFs for offline \tauid only, and
-    with offline and trigger-level \tauid is shown in (a) and (b) for 1- and
-    3-prong \tauhadvis candidates, respectively. Figures (c) and (d) compare the
-    effect of different \tauhadvis-trigger chains at the HLT on the extracted
-    SFs. In all cases, the last bin summarises the SFs for \tauhadvis candidate
-    with $\pT \geq \SI{70}{\GeV}$. The markers are shifted from their
-    geometrical bin centres for illustration purposes only.}%
+    for different \tauid criteria. Figures~(a) and (b) compare the SFs with and
+    without tau identification at the HLT. The effect of different
+    \tauhadvis-triggers on the extracted SFs is shown in Figures~(c) and (d). In
+    all cases, the last bin summarises the SFs for \tauhadvis candidates with
+    $\pT \geq \SI{70}{\GeV}$. The markers are shifted from their geometrical bin
+    centres for illustration purposes only.}%
   \label{fig:ttbarSF_postfit_SF}
 \end{figure}
 
@@ -401,12 +399,12 @@ and \mTW in the SF-CR after requiring events to pass the
   \caption[Post-fit distributions of \tauhadvis candidate \pT and \mTW in the
   SF-CR.]{Post-fit distributions of \tauhadvis candidate \pT and \mTW in the
     SF-CR for events passing the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger
-    and trigger-matching. Both distributions are shown inclusively in the
-    \Ntracks and \pT of the \tauhadvis candidates. Events with \tauhadvis \pT
-    (\mTW) larger than \SI{200}{\GeV} (\SI{250}{\GeV}) are merged into the last
-    bin. The uncertainty band contains all statistical and systematic
-    uncertainties, including post-fit uncertainties on \faketauhadvis SFs and
-    the overall \ttbar normalisation factor.}%
+    and trigger-matching. Both distributions are inclusive in \Ntracks and \pT
+    of \tauhadvis candidates. Events with \tauhadvis \pT (\mTW) larger than
+    \SI{200}{\GeV} (\SI{250}{\GeV}) are included in the last bin. The
+    uncertainty band contains all statistical and systematic uncertainties,
+    including post-fit uncertainties on \faketauhadvis SFs and on the overall
+    \ttbar normalisation factor.}%
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
 
@@ -484,9 +482,9 @@ illustrated in \Cref{fig:ttbarSF_corr_matrix} for an exemplary SF measurement.
   \faketauhadvis SF measurement for the \texttt{HLT\_tau25\_medium1\_tracktwo}
   trigger.]{Post-fit correlation matrix between selected parameters of the
     \faketauhadvis SF measurement for the \texttt{HLT\_tau25\_medium1\_tracktwo}
-    trigger. A reduced number of nuisance parameters is shown for illustration
-    purposes. Nuisance parameters are included if the absolute value of its
-    correlation coefficient with at least one POI exceeds \SI{30}{\percent}.}%
+    trigger. A reduced number of NPs is shown for illustration purposes. NPs are
+    included if the absolute value of its correlation coefficient with at least
+    one POI exceeds \SI{30}{\percent}.}%
   \label{fig:ttbarSF_corr_matrix}
 \end{figure}
 
@@ -526,24 +524,25 @@ with low transverse momenta.
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_1p}
-    \caption{1-prong \tauhadvis}
+    \caption{1-prong \tauhadvis}%
     \label{fig:ttbarSF_eigenvariations_1p}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_3p}
-    \caption{3-prong \tauhadvis}
+    \caption{3-prong \tauhadvis}%
     \label{fig:ttbarSF_eigenvariations_3p}
   \end{subfigure}
 
+  % Adding the deviations of all variations (\texttt{EIGEN0}--\texttt{EIGEN9})
+  % from the nominal result in quadrature recovers the total uncertainty.
+
   \caption[Systematic variations of the \faketauhadvis SFs for the
-  \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.]{Variations resulting from the
-    decorrelation procedure applied to the SF measurement for the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. The two variations leading
-    in the explained variance (\texttt{EIGEN0} and \texttt{EIGEN1}), as well as
-    the variation explaining the least variance (\texttt{EIGEN9}) are
-    shown. Adding the deviations of all variations
-    (\texttt{EIGEN0}--\texttt{EIGEN9}) from the nominal result in quadrature
-    recovers the total uncertainty.}%
+  \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.]{\Faketauhadvis SF variations
+    resulting from the decorrelation procedure applied to the measurement for
+    the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. The two variations
+    leading in the explained variance (\texttt{EIGEN0} and \texttt{EIGEN1}) as
+    well as the variation explaining the least variance (\texttt{EIGEN9}) are
+    shown.}%
   \label{fig:ttbarSF_eigenvariations}
 \end{figure}
 

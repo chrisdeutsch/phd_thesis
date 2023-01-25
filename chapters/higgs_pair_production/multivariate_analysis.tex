@@ -125,26 +125,26 @@ the MVAs in the \hadhad and \lephad channels.
   \begin{subfigure}[t]{.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/mass_resolution}
-    \subcaption{\PHiggs-system mass reconstruction}
+    \subcaption{\PHiggs mass reconstruction}
     \label{fig:mass_reconstruction_H}
   \end{subfigure}\hspace*{0.05\textwidth}%
   \begin{subfigure}[t]{.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/mhh_resolution}
-    \subcaption{\HH-system mass reconstruction}
+    \subcaption{\HH mass reconstruction}
     \label{fig:mass_reconstruction_HH}
   \end{subfigure}%
 
-  \caption[Performance of the $H$-system and $HH$-system invariant mass
-  reconstruction in the \hadhad SR.]{Performance of the $H$-system (a) and
-    $HH$-system (b) invariant mass reconstruction in the \hadhad SR estimated
-    using simulated $X \to \HH \to \bbtautau$ events.  The top panels show the
-    bias of the mass prediction given in terms of deviation of the median mass
-    prediction from the true mass value. The bottom panels show the mass
-    resolution estimate as half of the length of the central interval containing
-    \SI{68}{\percent} of all mass predictions. For the \HH-system mass
-    reconstruction, the bias and resolution is given relative to the mass of the
-    resonance.}%
+  \caption[Performance of the $H$ and $HH$ invariant mass reconstruction in the
+  \hadhad SR.]{Performance of the $H$ (a) and $HH$ (b) invariant mass
+    reconstruction in the \hadhad SR for simulated $\pp \to X \to \HH$
+    events. The top panel shows the bias of the mass reconstruction in terms of
+    the median deviation of the reconstructed mass from its true value. The
+    bottom panel shows the mass resolution estimated as half of the length of
+    the central interval containing \SI{68}{\percent} of deviations between the
+    reconstructed and true masses. For the \HH invariant mass reconstruction,
+    the relative deviation is used to define the relative bias and relative
+    resolution.}%
   \label{fig:mass_reconstruction}
 \end{figure}
 
@@ -167,13 +167,12 @@ in~\Cref{fig:mva_inputs}.
 \begin{table}[htbp]
   \centering
 
-  \caption[Input variables of the multivariate classifiers used in the \hadhad
-  and \lephad channels.]{Input variables of the multivariate classifiers used in
-    the \hadhad and \lephad channels. The same variables are used for the search
-    for SM \HH and resonant \HH production. Definitions of the input variables
-    used in the \lephad channels are given in
-    \Cref{app:lephad_mva_variables}. The table is adapted from
-    Ref.~\cite{HDBS-2018-40}.}%
+  \caption[Input variables of the classifiers used in the \hadhad and \lephad
+  channels.]{Input variables of the classifiers used in the \hadhad and \lephad
+    channels. The same variables are used for the search for SM \HH and resonant
+    \HH production. Definitions of the input variables used in the \lephad
+    channels are given in \Cref{app:lephad_mva_variables}. The table is adapted
+    from Ref.~\cite{HDBS-2018-40}.}%
   \label{tab:mva_inputvar}
 
   \renewcommand{\arraystretch}{1.1}%
@@ -207,11 +206,11 @@ in~\Cref{fig:mva_inputs}.
     \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distmHH_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
   \end{subfigure}
 
-  \caption[Distributions of the MVA input variables in the \hadhad
-  SR.]{Distributions of the MVA input variables in the \hadhad SR prior to the
-    maximum likelihood fit. The uncertainty bands include all statistical and
-    systematic uncertainties of the background model. The normalisation of the
-    resonant and non-resonant \HH signals are scaled for visibility.}%
+  \caption[Distributions of the MVA input variables in the \hadhad SR prior to
+  the fit.]{Distributions of the MVA input variables in the \hadhad SR prior to
+    the fit. The uncertainty bands include all statistical and systematic
+    uncertainties. The normalisation of signals from SM~\HH and resonant \HH
+    production are scaled for visibility.}%
   \label{fig:mva_inputs}
 \end{figure}
 
@@ -293,13 +292,13 @@ evaluated on the hold-out dataset.
 
   \includegraphics[scale=0.91]{mva/kfold}
 
-  \caption[5-fold cross-validation approach for model selection.]{5-fold
-    cross-validation approach for model selection on even-numbered events. The
-    separation of events into disjoint subsets (folds) is indicated by
-    rectangles. A single step out of a total of five, the number of possible
-    assignments of the evaluation-fold, is shown. The hold-out dataset
-    consisting of odd-numbered events is not used when performing model
-    selection on even-numbered events.}%
+  \caption[Illustration of the 5-fold cross-validation approach for model
+  selection.]{Illustration of the 5-fold cross-validation approach for model
+    selection on even-numbered events. The separation of events into disjoint
+    subsets (folds) is indicated by rectangles. A single step out of a total of
+    five, the number of possible assignments of the evaluation-fold, is
+    shown. The hold-out dataset consisting of odd-numbered events is not used
+    when performing model selection on even-numbered events.}%
   \label{fig:cross_validation}
 \end{figure}
 
@@ -344,11 +343,10 @@ values.\footnote{TMVA~v4.2.1~(ROOT~6.16.00)}
 \begin{table}[htbp]
   \centering
 
-  \caption[Hyperparameter values of the BDT extracting the SM~\HH signal in the
-  \hadhad channel.]{Hyperparameter values considered for the random grid search
-    used to optimise the performance of the BDT extracting the SM \HH
-    signal. The underlined values show the final configuration after
-    optimisation.}%
+  \caption[Hyperparameter values considered in the optimisation of the BDT for
+  the SM~\HH search.]{Hyperparameter values considered in the optimisation of
+    the BDT for the SM~\HH search. The underlined values show the configuration
+    after optimisation.}%
   \label{tab:hyperparameter_grid_bdt}
 
   \input{tables/hyperparameters_bdt}
@@ -433,13 +431,12 @@ from cross-validation during model selection.
 
   \includegraphics[width=0.49\textwidth]{mva/prefit/Region_BMin0_incJet1_distSMBDT_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefitlog}
 
-  \caption[Distribution of the BDT discriminant in the \hadhad SR.]{Distribution
-    of the BDT discriminant used to select the SM \HH signal in the \hadhad SR
-    prior to the maximum likelihood fit. The uncertainty bands include all
-    statistical and systematic uncertainties of the background model. The
-    normalisation of the SM \HH signal is scaled by a factor of 10 for
-    illustration purposes. The choice of binning for the histograms will be
-    discussed in~\Cref{sec:binning_alg}.}
+  \caption[Distribution of the BDT discriminant in the \hadhad SR prior to the
+  fit.]{Distribution of the BDT discriminant in the \hadhad SR prior to the
+    fit. The uncertainty bands include all statistical and systematic
+    uncertainties. The normalisation of the SM~\HH signal is scaled by a factor
+    of 10 for illustration. The choice of binning is discussed
+    in~\Cref{sec:binning_alg}.}
   \label{fig:mva_smbdt_prefit}
 \end{figure}
 
@@ -503,10 +500,10 @@ similarities of the \mHH spectra between signal and background
 \begin{table}[htbp]
   \centering
 
-  \caption[Importance of the input variables in the BDT discriminant selecting
-  the SM~\HH signal.]{Importance of the input variables in the BDT measured as
-    the change in ROC-AUC when permuting the values of a single variable over
-    all events. The mean $\Delta\text{ROC-AUC}$ over 10 permutations is
+  \caption[Importance of the BDT input variables for selecting events from
+  SM~\HH production.]{Importance of the BDT input variables measured as the
+    change in ROC-AUC when permuting the values of a single variable over all
+    events. The mean $\Delta\text{ROC-AUC}$ over 10 permutations is
     displayed. The statistical uncertainty is below 0.001 and therefore
     omitted. Variables are ordered from most to least important.}%
   \label{tab:variable_importance_bdt}
@@ -602,13 +599,12 @@ same.
 \begin{table}[htbp]
   \centering
 
-  \caption[Hyperparameter values of the PNN extracting the resonant \HH signals
-  in the \hadhad channel.]{Parameter values used to define the grid of
-    hyperparameters considered for the optimisation of the PNN
-    configuration. Parameters marked with $*$ and $\dagger$ are only applicable
-    when the number of hidden layers is larger than 1 and 2, respectively. The
-    underlined values show the final PNN configuration after hyperparameter
-    optimisation.}%
+  \caption[Hyperparameter values considered in the optimsation of the PNN for
+  the search for resonant \HH production.]{Hyperparameter values considered in
+    the optimisation of the PNN for the search for resonant \HH production.
+    Parameters marked with $*$ and $\dagger$ are only applicable when the number
+    of hidden layers is larger than 1 and 2, respectively. The underlined values
+    show the configuration after optimisation.}%
   \label{tab:hyperparameter_grid_pnn}
 
   \input{tables/hyperparameters_pnn}
@@ -751,16 +747,15 @@ over the approach of using dedicated classifiers.
 
   \begin{subfigure}[t]{.49\textwidth}
     \includegraphics[width=\textwidth]{mva/detuning}
-    \caption{Response of final PNN configuration used in the search
-      for resonant production of \HH.}
+    \caption{Response of PNNs used in the search for resonant \HH production.}%
     \label{fig:pnn_detuning}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.49\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/interpolation}
-    \caption{Comparison of PNN before hyperparameter optimisation when
-      including (solid) and excluding (dashed) certain resonance
-      masses in training.}
+    \caption{Comparison of PNNs before hyperparameter optimisation when
+      including (solid) and excluding (dashed) certain resonance masses in
+      training.}%
     \label{fig:pnn_interpolation}
   \end{subfigure}
 
@@ -768,11 +763,10 @@ over the approach of using dedicated classifiers.
   parameter.]{Expected signal significance of a scalar resonance with mass \mX
     as a function of the PNN mass parameter. The significance is estimated by
     binning the PNN score for a given value of the parameter and adding the
-    signal significance of all bins in quadrature. Only statistical
-    uncertainties are considered. The curves are normalised such that the
-    significance is 1 when the PNN mass parameter is equal to \mX of the
-    hypothesis under test. Dashed lines correspond to signal mass hypotheses not
-    included in the PNN training.}
+    signal significance of all bins in quadrature. The curves are normalised
+    such that the significance is 1 when the PNN mass parameter is equal to \mX
+    of the hypothesis under test. Dashed lines correspond to signal hypotheses
+    not included in the PNN training.}%
   \label{fig:pnn_properties}
 \end{figure}
 
@@ -788,14 +782,15 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 \begin{table}[htbp]
   \centering
 
+  % (for the binary classification task between a signal with mass \mX and total
+  % background)
+
   \caption[Importance of the input variables in the PNN
-  discriminant.]{Permutation importance of the input variables to the PNN
-    measured as the change in ROC-AUC (for the binary classification task
-    between a signal with mass \mX and total background) when permuting the
-    values of a single variable over all events. The mean $\Delta\text{ROC-AUC}$
-    over 10 permutations is displayed. The statistical uncertainty is below
-    0.002 for (a) and 0.001 for (b) and (c) and thus omitted.  Variables are
-    ordered by descending importance.}%
+  discriminant.]{Importance of the PNN input variables measured as the change in
+    ROC-AUC when permuting the values of a single variable over all events. The
+    mean $\Delta\text{ROC-AUC}$ over 10 permutations is displayed. The
+    statistical uncertainty is below 0.002 for (a) and 0.001 for (b) and (c) and
+    thus omitted. Variables are ordered by descending importance.}%
   \label{tab:pnn_ranking}
 
   \begin{subtable}[t]{.33\textwidth}
