@@ -372,11 +372,10 @@ in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
   \end{subfigure}
 
   \caption[\Faketauhadvis SFs for different \tauid criteria.]{\Faketauhadvis SFs
-    for different \tauid criteria. A comparison of measured \faketauhadvis SFs
-    for offline \tauid only as well as for offline and trigger-level \tauid is
-    shown in Figures~(a) and (b). Figures~(c) and (d) compare the effect of
-    different \tauhadvis-trigger chains at the HLT on the extracted SFs. In all
-    cases, the last bin summarises the SFs for \tauhadvis candidates with
+    for different \tauid criteria. Figures~(a) and (b) compare the SFs with and
+    without tau identification at the HLT. The effect of different
+    \tauhadvis-triggers on the extracted SFs is shown in Figures~(c) and (d). In
+    all cases, the last bin summarises the SFs for \tauhadvis candidates with
     $\pT \geq \SI{70}{\GeV}$. The markers are shifted from their geometrical bin
     centres for illustration purposes only.}%
   \label{fig:ttbarSF_postfit_SF}
@@ -525,24 +524,25 @@ with low transverse momenta.
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_1p}
-    \caption{1-prong \tauhadvis}
+    \caption{1-prong \tauhadvis}%
     \label{fig:ttbarSF_eigenvariations_1p}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_3p}
-    \caption{3-prong \tauhadvis}
+    \caption{3-prong \tauhadvis}%
     \label{fig:ttbarSF_eigenvariations_3p}
   \end{subfigure}
 
+  % Adding the deviations of all variations (\texttt{EIGEN0}--\texttt{EIGEN9})
+  % from the nominal result in quadrature recovers the total uncertainty.
+
   \caption[Systematic variations of the \faketauhadvis SFs for the
-  \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.]{Variations resulting from the
-    decorrelation procedure applied to the SF measurement for the
-    \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. The two variations leading
-    in the explained variance (\texttt{EIGEN0} and \texttt{EIGEN1}), as well as
-    the variation explaining the least variance (\texttt{EIGEN9}) are
-    shown. Adding the deviations of all variations
-    (\texttt{EIGEN0}--\texttt{EIGEN9}) from the nominal result in quadrature
-    recovers the total uncertainty.}%
+  \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.]{\Faketauhadvis SF variations
+    resulting from the decorrelation procedure applied to the measurement for
+    the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. The two variations
+    leading in the explained variance (\texttt{EIGEN0} and \texttt{EIGEN1}) as
+    well as the variation explaining the least variance (\texttt{EIGEN9}) are
+    shown.}%
   \label{fig:ttbarSF_eigenvariations}
 \end{figure}
 
