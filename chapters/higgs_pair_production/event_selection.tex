@@ -52,9 +52,11 @@ channel targets semi-leptonic decay modes using single-lepton triggers (SLTs)
 and lepton-plus-\tauhadvis triggers (LTTs). Each trigger defines a corresponding
 sub-channel referred to as the \lephad SLT and \lephad LTT channel,
 respectively. The \hadhad channel selects events with two \tauhadvis candidates
-using single-\tauhadvis triggers (STTs) and di-\tauhadvis triggers (DTTs). While
-different types of triggers are used in the \hadhad channel, the statistical
-analysis will not distinguish between events selected by STTs and DTTs.
+using single-\tauhadvis triggers (STTs) and di-\tauhadvis triggers (DTTs).
+Events selected by STTs and DTTs are combined into a single channel.
+% While different types of triggers are used in the \hadhad channel, the
+% statistical analysis will not distinguish between events selected by STTs and
+% DTTs.
 
 % While different types of triggers are used in this channel, the later
 % statistical analysis will not distinguish between events selected by STTs and
@@ -69,19 +71,18 @@ events are required to have exactly two \tauhadvis and events with electrons or
 muons are rejected. In the \lephad channels, events are required to have exactly
 one \tauhadvis and exactly one electron or muon. Additionally, electrons (muons)
 are required to pass the tight (medium) identification working point to reduce
-backgrounds with non-prompt leptons or jets being misidentified as electrons
-(muons).
+backgrounds with non-prompt leptons or jets misidentified as electrons (muons).
 
-Electrons, muons, and \tauhadvis have to be geometrically matched to their
-corresponding HLT objects according to the trigger that selected the event. This
-requirement is referred to as \emph{trigger-matching}. Trigger-dependent
-\pT~thresholds are applied to electrons, muons, and \tauhadvis to ensure that
-the triggers operate in regimes in which they are well-calibrated. The
-\pT~thresholds of SLTs and STTs increased with increasing instantaneous
-luminosity of the LHC during Run~2. For LTTs and DTTs, the \pT~thresholds on
-electrons, muons, and \tauhadvis remained constant during Run~2, the
-trigger-rates were instead limited by requiring additional jets at the L1
-trigger.
+Electrons, muons, and \tauhadvis have to be geometrically matched to the
+corresponding object at the HLT according to the trigger that selected the
+event. This requirement is referred to as
+\emph{trigger-matching}. Trigger-dependent \pT~thresholds are applied to
+electrons, muons, and \tauhadvis to ensure that the triggers operate in regimes
+in which they are well-calibrated. The \pT~thresholds of SLTs and STTs increased
+with increasing instantaneous luminosity of the LHC during Run~2. For LTTs and
+DTTs, the \pT~thresholds on electrons, muons, and \tauhadvis remained constant
+during Run~2, the trigger-rates were instead limited by requiring additional
+jets at the L1 trigger.
 
 % The inclusion of the \lephad LTT channel allows to select events with
 % electrons or muons with transverse momenta below the SLT \pT~threshold by
