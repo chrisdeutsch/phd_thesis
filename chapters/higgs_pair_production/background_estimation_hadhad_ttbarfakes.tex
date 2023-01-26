@@ -21,7 +21,7 @@ motivate the use of different background estimation techniques:
 \item The majority of \ttbarFakes background events consist of only one
   \faketauhadvis, while in multi-jet events both candidates are \faketauhadvis.
 
-\item The probability that a quark- or gluon-initiated jet reconstructed as
+\item The probability that a quark- or gluon-initiated jet reconstructed as a
   \tauhadvis passes \tauid, also called the \emph{fake rate}, depends on the
   type of parton that initiated the jet. In \ttbar events, \faketauhadvis
   predominately originate from quarks produced in decays of $W$~bosons, which
@@ -149,8 +149,8 @@ trigger rates.\footnote{A trigger with a prescale value of $n$ accepts events
   satisfying the trigger conditions with a probability of $1 / n$
   \cite{TRIG-2019-04}.} However, events passing the SF-CR selection were already
 recorded using unprescaled single-lepton triggers. This allows single-\tauhadvis
-to be re-run during offline event reconstruction without application of a
-prescale.
+triggers to be re-run during offline event reconstruction without application of
+a prescale.
 % This allows to re-run the single-\tauhadvis triggers used in this measurement
 % during offline event reconstruction without application of a prescale.
 The \verb|HLT_tau25_medium1_tracktwo| trigger chain was active for the entirety
@@ -223,9 +223,9 @@ $\myvec{p}_{\text{T}}^{\ell}$, and the missing transverse momentum, \pTmiss. The
 \mTW discriminant targets the differences between di- and semi-leptonic decay
 modes of \ttbar that are the primary sources of events with true- and
 \faketauhadvis, respectively. The differences are illustrated
-in~\Cref{fig:ttbarsf_mtw_pdf} with di-leptonic decay modes of \ttbar showing a
+in~\Cref{fig:ttbarsf_mtw_pdf}, with di-leptonic decay modes of \ttbar showing a
 heavy tail towards large \mTW due to the presence of additional neutrinos, while
-semi-leptonic decay modes have a pronounced peak close to the mass of the
+semi-leptonic decay modes have a more pronounced peak close to the mass of the
 $W$~boson.
 
 
@@ -338,12 +338,12 @@ to the \Vjets background.
 The measured \faketauhadvis SFs are shown in \Cref{fig:ttbarSF_postfit_SF}.
 % for all relevant \tauid criteria.
 The size of the corrections described by the SFs can reach up to
-\SI{55}{\percent} for \faketauhadvis of high \pT where simulation overestimates
+\SI{55}{\percent} for \faketauhadvis of high \pT, where simulation overestimates
 the contribution of \faketauhadvis in \ttbar. SFs for \faketauhadvis
 reconstructed as 1-prong (3-prong) candidates with $\pT < \SI{70}{\GeV}$ are
 within \SI{20}{\percent} (\SI{40}{\percent}) of unity. Only small differences
 are observed between SFs measured for different \tauid requirements at
-trigger-level as is shown
+trigger-level, as is shown
 in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
 
 \begin{figure}[htbp]
@@ -383,12 +383,11 @@ in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
 
 The fit model and the corresponding fit results are checked by comparing the
 post-fit predictions of the model with the observed data in all \tauhadvis
-candidate \Ntracks and \pT regions. In addition, pulls and constraints of
-nuisance parameters, and correlations between nuisance parameters and the POIs
-are inspected. Exemplary post-fit predictions of the model are shown in
-\Cref{fig:ttbarSF_postfit_ptmtw} in terms of the \pT of \tauhadvis candidates
-and \mTW in the SF-CR after requiring events to pass the
-\texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.
+candidate \Ntracks and \pT regions. In addition, pulls and constraints of NPs as
+well as correlations between NPs and the POIs are inspected. Exemplary post-fit
+predictions of the model are shown in \Cref{fig:ttbarSF_postfit_ptmtw} in terms
+of the \pT of \tauhadvis candidates and \mTW in the SF-CR after requiring events
+to pass the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.
 
 \begin{figure}[htbp]
   \centering
@@ -408,9 +407,9 @@ and \mTW in the SF-CR after requiring events to pass the
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
 
-The post- and pre-fit values of all nuisance parameters agree within their
+The post- and pre-fit values of all NPs agree within their
 uncertainties. Few instances are observed where the SF measurement puts more
-stringent constraints on the values of nuisance parameters than expected from
+stringent constraints on the values of NPs than expected from
 the prior estimation of the associated uncertainty. These cases are the
 \pTmissAbs scale uncertainty, the \ttbar modelling uncertainties resulting from
 comparison with alternative ME/PS generators, and the \tauhadvis energy scale
@@ -418,9 +417,9 @@ uncertainty. The constraints on these parameters tend to be moderate with ratios
 of post- to pre-fit uncertainties above \SI{70}{\percent}. Due to the
 sensitivity of the \mTW discriminant to the modelling of \pTmissAbs and the
 abundance of \ttbar events in the SF-CR, the fit is expected to have some power
-to constrain the associated nuisance parameters. Moreover, the \tauhadvis energy
+to constrain the associated NPs. Moreover, the \tauhadvis energy
 scale uncertainties are derived from $Z \ra \tau_{\mu} \tauhad$ tag-and-probe
-measurements~\cite{ATLAS-CONF-2017-029} that provide probe \tauhadvis with
+measurements~\cite{ATLAS-CONF-2017-029}, which provide probe \tauhadvis with
 smaller transverse momenta than the ones produced in \ttbar events. With the SF
 measurement being performed in \Ntracks and \pT bins of the \tauhadvis candidate
 and targeting \ttbar events, constraints on the \tauhadvis energy scale in the
@@ -562,13 +561,13 @@ SF correction is assumed to factorise and the product of SFs is assigned as an
 event-level weight.
 
 In events selected by DTTs, both \tauhadvis candidates have to fulfil the
-trigger-level identification requirements. In this case the set of SFs is chosen
-according to the trigger chain that selected the event, independently of which
+trigger-level identification requirements. In this case, the set of SFs is chosen
+according to the trigger chain that selected the event, independent of which
 \tauhadvis candidate is the \faketauhadvis. In contrast, only one \tauhadvis
 candidate has to fulfil the trigger-level requirements in events selected by
 STTs. For STT events, it is assumed that the \tauhadvis candidate leading in \pT
 is the one satisfying the trigger conditions. This assumption is correct for
-more than \SI{99}{\percent} \ttbar events containing \faketauhadvis in the STT
+more than \SI{99}{\percent} of \ttbar events containing \faketauhadvis in the STT
 category. Therefore, SFs measured for \faketauhadvis after trigger-matching are
 applied when the leading \tauhadvis candidate is the \faketauhadvis; SFs derived
 without trigger-matching are applied when the sub-leading \tauhadvis candidate
@@ -611,7 +610,7 @@ A systematic uncertainty accounting for the effect of \tauhadvis \pT (\ET)
 thresholds at the HLT~(L1 trigger) on the \faketauhadvis SFs is estimated. The
 nominal SF measurement is performed using \tauhadvis-triggers with thresholds of
 $\pT > \SI{25}{\GeV}$ at the HLT and $\ET > \SI{12}{\GeV}$ at the L1
-trigger~(\texttt{tau25}). However, triggers with larger thresholds are also
+trigger~(\texttt{tau25}). However, triggers with higher thresholds are also
 employed in the \hadhad channel. For example, thresholds of
 $\pT > \SI{35}{\GeV}$ at the HLT and $\ET > \SI{20}{\GeV}$ at the L1 trigger
 (\texttt{tau35}) are applied to the leading \tauhadvis candidate selected by
@@ -663,7 +662,7 @@ employed in the analysis, resulting in a relative uncertainty of approximately
 
 The measurement of the SFs is performed in the SF-CR and applied to events in
 the SR of the \hadhad channel. An uncertainty is assigned to account for the
-extrapolation of the SF measurement from the SF-CR to the \hadhad SR. The
+extrapolation of the SFs from the SF-CR to the \hadhad SR. The
 uncertainties are derived by performing variations of the \ttbar modelling in
 simulation and comparing the acceptance of \ttbarFakes events in the SF-CR and
 the \hadhad SR. Variations of the matrix element generator, the parton shower
@@ -812,7 +811,7 @@ A reduced set of experimental uncertainties is used for this measurement due to
 practical limitations in the dataset preparation for the
 $\ell + \text{anti-}\tauhadvis$ region. Uncertainties varying the four-momentum
 of reconstructed objects are omitted except uncertainties on the \tauhadvis
-energy scale. Other uncertainties that can be expressed by alternative event
+energy scale. Other uncertainties that can be expressed as alternative event
 weights, for example uncertainties on tagging efficiencies, are considered. Due
 to this constraint, the total deviation of the central value of the SFs from
 unity is assigned as an additional uncertainty on the measured SFs for \antitau.
