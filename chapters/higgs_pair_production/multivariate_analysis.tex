@@ -540,7 +540,7 @@ explored in Ref.~\cite{HIGG-2016-16-witherratum} using BDTs.
 An alternative approach is provided by parameterised classifiers where the
 dependency of the prediction problem is incorporated during training, thus
 solving it in a broader context. In particular, PNNs are used due to the ability
-of neural networks to smoothly approximate large classes of continuous
+of NNs to smoothly approximate large classes of continuous
 functions~\cite{Baldi:2016fzo}. As a result of these properties, it is shown in
 Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate the classification
 task to parameter values not seen in training. It is also suggested that
@@ -548,14 +548,14 @@ parameterised classifiers may outperform approaches using one classifier per
 parameter value due to their ability to solve the more general,
 parameter-dependent classification problem.
 
-In this search, PNNs are implemented as feedforward neural networks
+In this search, PNNs are implemented as feedforward NNs
 where, in addition to the five discriminating variables, the parameter
 value specifying the classification task is provided as an input to
 the network. During training, the value of the parameter is assigned
 to be the generator-level \mX for signal events and random,
 uninformative values for background events. Otherwise, PNNs are
 amenable to the methods commonly employed to train non-parameterised
-feedforward neural networks. At evaluation time the parameter value is
+feedforward NNs. At evaluation time the parameter value is
 held fixed according to the classification problem to be solved.
 
 
@@ -570,8 +570,8 @@ search. Moreover, SM~\HH production is not included as a background.
 % Because it has not yet been observed
 The signal event samples are combined, ensuring that every \mX hypothesis
 contributes with the same total event weight to the combined sample,
-subsequently normalising the combined signal and background sample to have equal
-weight. The 5-fold CV approach is used for model selection.
+subsequently normalising the combined signal sample and the background sample to
+have equal weight. The 5-fold CV approach is used for model selection.
 
 The training proceeds by minimising the binary cross-entropy loss using
 SGD with momentum and exponential learning rate
@@ -615,7 +615,7 @@ binary classification of a signal with $\mX = \SI{325}{\GeV}$ against the
 background is chosen. This choice is motivated by the strength of the
 $\PX \to \HH \to \bbtautau$ search channel in an intermediate mass range of the
 scalar resonance from approximately \SI{300}{\GeV} to \SI{800}{\GeV} compared to
-the \bbyy and \bbbb channels which are expected dominate the low and high \mX
+the \bbyy and \bbbb channels, which are expected dominate the low and high \mX
 signal sensitivity, respectively. In the \hadhad channel, background events with
 \mHH around \SI{325}{\GeV} are most abundant (cf.~\Cref{fig:mva_inputs}) and
 therefore a value of \mX at the lower end of the range is selected for
@@ -638,7 +638,7 @@ inner CV separately for even- and odd-numbered events.
 \subsubsection{Evaluation and Variable Importance}
 
 \Cref{fig:pnn_score_prefit} shows the PNN score after evaluation on
-withheld data in the SR of the \hadhad channel for three
+withheld data in the SR of the \hadhad channel for four
 different values of the mass parameter. In each case, the signal of
 interest, resonant \HH production with \mX equal to the PNN mass
 parameter, is populating the high PNN score bins. The background
@@ -649,7 +649,7 @@ both true- and \faketauhadvis constituting about \SI{80}{\percent} of
 the total background with a small contribution from multi-jet.  The
 background composition in the intermediate mass range
 ($\mX \approx \SI{500}{\GeV}$) is similar to the case of non-resonant
-\HH production in the SM which has a mean reconstructed \mHH of about
+\HH production in the SM, which has a mean reconstructed \mHH of about
 \SI{500}{\GeV} after the SR selection. For high mass
 resonances, the most relevant backgrounds are the production of
 $\PZ \to \tautau$ in association with jets from $b$- or $c$-quarks.
@@ -700,18 +700,19 @@ to values of \mX not seen during training, are investigated. For this, a
 performance metric is defined by binning the PNN score for a given value of the
 mass parameter using an algorithm that optimises the signal sensitivity while
 obeying certain constraints. The binning algorithm is formally introduced
-in~\Cref{sec:binning_alg} for the statistical analysis of the results of this
-search.
-% The performance of the PNN is evaluated by binning its
-% output score for a given value of the parameter using the algorithm
-% also used for the statistical interpretation of the final results. The
-% binning algorithm, which will be formally introduced
-% in~\Cref{sec:binning_alg}, aims optimise the signal sensitivity while
-% obeying constraints on the statistical uncertainty of the background
-% estimate and the expected number of events in each bin.
+in~\Cref{sec:binning_alg}.
+% for the statistical analysis of the results of this search.
+%
+% The performance
+% of the PNN is evaluated by binning its output score for a given value of the
+% parameter using the algorithm also used for the statistical interpretation of
+% the final results. The binning algorithm, which will be formally introduced
+% in~\Cref{sec:binning_alg}, aims optimise the signal sensitivity while obeying
+% constraints on the statistical uncertainty of the background estimate and the
+% expected number of events in each bin.
 The expected signal significance is approximated, assuming independent Poisson
 counting experiments without uncertainties on the background predictions,
-as~$\nu_\text{s} / \sqrt{\nu_\text{b}}$ for every bin, where $\nu_\text{s}$ and
+by~$\nu_\text{s} / \sqrt{\nu_\text{b}}$ for every bin, where $\nu_\text{s}$ and
 $\nu_\text{b}$ is the expected number of signal and background events,
 respectively. A combined significance is obtained by adding the bin-wise
 significances in quadrature.
