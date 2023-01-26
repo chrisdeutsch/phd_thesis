@@ -575,7 +575,7 @@ subsequently normalising the combined signal and background sample to have equal
 weight. The 5-fold CV approach is used for model selection.
 
 The training proceeds by minimising the binary cross-entropy loss using
-stochastic gradient descent with momentum and exponential learning rate
+SGD with momentum and exponential learning rate
 decay. As part of the training process, the discriminating variables are centred
 and scaled by subtracting the median and dividing by the interquartile range of
 the variable for better conditioning of the loss minimisation. Similarly, the

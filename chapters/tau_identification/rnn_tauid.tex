@@ -301,16 +301,15 @@ binary cross-entropy loss on the training dataset. The loss of the
 network is monitored on the validation datasets and is used to steer
 the training procedure.
 
-Stochastic gradient descent with momentum is used for loss
-minimisation. Prior to the training, transformations are applied to
-input variables for better conditioning of the minimisation
-problem. The learning rate of the optimiser is reduced when the
-validation loss did not improve for four successive training
-epochs. Similarly, the training is stopped after ten epochs without
-improvements of the validation loss in which case the model parameters
-resulting in the best validation loss are restored.
+SGD with momentum is used for loss minimisation. Prior to the training,
+transformations are applied to input variables for better conditioning of the
+minimisation problem. The learning rate of the optimiser is reduced when the
+validation loss did not improve for four successive training epochs, where an
+epoch refers to a single pass over the training data. Similarly, the training is
+stopped after ten epochs without improvements of the validation loss in which
+case the model parameters resulting in the best validation loss are restored.
 
-The trained networks are implemented for evaluation during offline
+The trained NNs are implemented for evaluation during offline
 event reconstruction in the \textsc{Athena} software
 suite~\cite{ATL-SOFT-PUB-2021-001} using the \textsc{lwtnn}
 library~\cite{lwtnn}.
