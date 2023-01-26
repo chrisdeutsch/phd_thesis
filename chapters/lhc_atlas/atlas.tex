@@ -68,16 +68,17 @@ The ID, schematically depicted in \Cref{fig:atlas_inner_detector}, is the
 innermost part of the ATLAS detector. It performs non-destructive measurements
 of the trajectories of charged particles within $|\eta| < 2.5$ by measuring the
 points where charged particles cross active detector layers. The measurement of
-several points on the trajectory, and the known magnetic field in the ID, is
-used to reconstruct the trajectory of the particle. The reconstructed trajectory
-is referred to as the \emph{charged-particle track} and often abbreviated as
-\emph{track}. The precise measurement of charged-particle tracks is important to
-reconstruct the primary vertex (PV) of the hard interaction with high spatial
-resolution. This facilitates the removal of tracks from pile-up, which are
-typically displaced from the PV along the $z$-axis. Moreover, the accurate
-reconstruction of secondary vertices, i.e.\ displaced vertices originating from
-decays of unstable particles produced in the hard interaction, is crucial to
-identify jets originating from
+several points on the trajectory
+% , and the known magnetic field in the ID,
+is used to reconstruct the trajectory of the particle. The reconstructed
+trajectory is referred to as the \emph{charged-particle track}, which is often
+abbreviated as \emph{track}. The precise measurement of charged-particle tracks
+is important to reconstruct the primary vertex (PV) of the hard interaction with
+high spatial resolution. This facilitates the removal of tracks from pile-up,
+which are typically displaced from the PV along the $z$-axis. Moreover, the
+accurate reconstruction of secondary vertices, i.e.\ displaced vertices
+originating from decays of unstable particles produced in the hard interaction,
+is crucial to identify jets originating from
 $b$-quarks.% which hinges on the precision of the track
 % reconstruction in the ID.
 
@@ -137,7 +138,7 @@ active detector area is segmented in long but thin strips (microstrips) with a
 pitch between strips of about \SI{80}{\micro\metre}~\cite{PERF-2007-01}. A
 single microstrip detector layer only provides a position measurement in the
 plane perpendicular to the strips. Therefore, SCT modules consist of two layers
-of microstrips which are tilted by a small angle to resolve the ambiguity in the
+of microstrips that are tilted by a small angle to resolve the ambiguity in the
 direction parallel to the strips. The SCT is arranged in four layers in the
 barrel and nine disks in the end-cap region, yielding at least four measurements
 for tracks within the acceptance of the tracking system~\cite{PERF-2007-01}.
@@ -218,9 +219,9 @@ as \emph{electromagnetic showers}, are homogeneous and compact with high energy
 density. The dimensions of the electromagnetic calorimeters are chosen such that
 they fully contain electromagnetic showers originating from promptly produced
 electrons/positrons and photons. The interactions of hadrons with the
-calorimeter material are driven by nuclear interactions which also result in
+calorimeter material are driven by nuclear interactions, which also result in
 cascades of secondary particles. A variety of processes are relevant for the
-evolution of these so-called \emph{hadronic showers}, for example: inelastic
+evolution of these so-called \emph{hadronic showers}---for example, inelastic
 scattering of hadrons at nuclei, spallation, fission, or neutron
 capture~\cite{Kolanoski:2016gyf}. Moreover, electromagnetic showers are an
 important sub-component of hadronic showers which, for example, originate from
@@ -229,7 +230,7 @@ larger, both laterally and longitudinally, than the ones of electromagnetic
 showers.
 % Moreover, hadronic showers show localised fluctuations distinguishing them from
 % the homogenous electromagnetic showers.
-This is reflected in the design of the ATLAS calorimeter system with the
+This is reflected in the design of the ATLAS calorimeter system, with the
 hadronic calorimeter having almost four times the radial thickness of the
 electromagnetic calorimeter~\cite{ATLAS-TDR-02,ATLAS-TDR-03}.
 
@@ -249,10 +250,11 @@ end-cap ($1.375 < |\eta| < 3.2$), and forward ($3.1 < |\eta| < 4.9$)
 region~\cite{PERF-2007-01}. The electromagnetic calorimeters in the barrel and
 end-cap region consist of lead absorbers with LAr-filled gaps that are
 instrumented with electrodes to form ionisation chambers. The calorimeter is
-segmented both laterally and longitudinally, with varying granularity, to
-provide information on the location and shape of showers in the calorimeter. The
-forward electromagnetic calorimeter uses copper absorbers and a single
-longitudinal layer instead.
+segmented both laterally and longitudinally
+% , with varying granularity,
+to provide information on the location and shape of showers in the
+calorimeter. The forward electromagnetic calorimeter uses copper absorbers and a
+single longitudinal layer instead.
 % Additionally, the region of $|\eta| < 1.8$ in front
 % of the calorimeter is instrumented with a so-called pre-sampler, which is a
 % thin layer of LAr-based calorimeter used to
@@ -276,9 +278,9 @@ with reduced granularity compared to the electromagnetic calorimeter.
 \label{sec:atlas_ms}
 
 The MS, shown in \Cref{fig:atlas_muon_system}, is the outermost and largest part
-of the ATLAS detector. It is a tracking detector providing independent momentum
-measurements of muons that pass the calorimeters. The active detector elements
-of the MS are based on gaseous ionisation detectors for cost-effective
+of the ATLAS detector. It is a tracking detector that provides independent
+momentum measurements of muons that pass the calorimeters. The active detector
+elements of the MS are based on gaseous ionisation detectors for cost-effective
 instrumentation of large areas. The MS provides a coverage of $|\eta| < 2.7$ for
 precision tracking and $|\eta| < 2.4$ for triggering on muons.
 
@@ -292,13 +294,13 @@ precision tracking and $|\eta| < 2.4$ for triggering on muons.
   \label{fig:atlas_muon_system}
 \end{figure}
 
-The ATLAS detector uses multiple layers monitored drift tube
-chambers\footnote{Deformations of the muon chambers are actively monitored using
-  an optical alignment system built into the frame of the chambers.} (MDTs) for
+The ATLAS detector uses multiple layers \emph{monitored drift tube
+  chambers}\footnote{Deformations of the muon chambers are actively monitored
+  using an optical alignment system built into the frame of the chambers.} for
 precision tracking in $|\eta| < 2.7$. To cope with the large rate of incident
 particles in the forward region, the innermost layer in $2.0 < |\eta| < 2.7$ is
-replaced by cathode strip chambers (CSCs). The MS is complemented with resistive
-plate chambers (RPCs) and thin gap chambers (TGCs) in the barrel
+replaced by \emph{cathode strip chambers}. The MS is complemented with
+\emph{resistive plate chambers} and \emph{thin gap chambers} in the barrel
 ($|\eta| < 1.05$) and end-cap ($1.05 < |\eta| < 2.7$) region, respectively,
 providing the necessary timing information to identify the bunch crossing a muon
 originates from. The MS is arranged, as depicted
@@ -339,7 +341,7 @@ employed by the ATLAS experiment had to evolve to meet the bandwidth
 requirements. Therefore, the exact selections of triggers targeting particular
 signatures changed as Run~2 progressed. During Run~2, the ATLAS trigger system
 reduced the rate of selected events to about
-\SI{1.2}{\kilo\hertz}~\cite{TRIG-2019-04} which could be recorded for
+\SI{1.2}{\kilo\hertz}~\cite{TRIG-2019-04}, which could be recorded for
 (\emph{offline}) analysis.
 
 The ATLAS trigger system consists of two stages. The first stage, called the

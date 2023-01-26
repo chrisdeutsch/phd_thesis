@@ -14,7 +14,7 @@ algorithms are used to reconstruct and identify objects in simulated
 performance of the object reconstruction and selection in simulation and data
 are accounted for by calibration measurements of selection efficiencies,
 energy/momentum scales and resolutions. The following provides a summary of the
-object reconstruction relevant for the remainder of this thesis.
+object reconstruction relevant for this thesis.
 
 
 \subsection{Charged-Particle Tracks and Primary Vertices}%
@@ -53,10 +53,10 @@ In the ATLAS experiment, two primary tracking algorithms are used that are
 referred to as the \emph{inside-out} and \emph{outside-in}
 algorithms~\cite{Cornelissen:2007vba,Salzburger:2015sgq,PERF-2015-08}. The
 inside-out algorithm starts by reconstructing tracks in the pixel and SCT
-detector only, then extending the track using measurements in the TRT. In
-contrast, the outside-in algorithm starts with the reconstruction of track
-segments in the TRT which are then combined with space-points from the pixel and
-SCT detectors. The outside-in algorithm is used to improve the reconstruction
+detector, then extending the track using measurements in the TRT. In contrast,
+the outside-in algorithm starts with the reconstruction of track segments in the
+TRT, which are then combined with space-points from the pixel and SCT
+detectors. The outside-in algorithm is used to improve the reconstruction
 efficiency for tracks from secondary particles, such as electrons produced in
 conversions of photons in the detector material, for which the inside-out
 algorithm can fail to reconstruct a track. The track reconstruction algorithms
@@ -77,7 +77,7 @@ iteratively determine the vertex position while weighting reconstructed tracks
 according to their compatibility with the vertex position. After the fit, tracks
 that are incompatible with the fitted vertex are considered as unassociated and
 the process is repeated on all unassociated tracks. After the PV reconstruction,
-only PVs with two associated tracks are kept. The PV with the largest sum of
+only PVs with two or more associated tracks are kept. The PV with the largest sum of
 $\pT^2$ of associated tracks is selected as the PV of the hard
 interaction. Other vertices are considered as originating from
 pile-up~\cite{PERF-2015-01}.
@@ -104,7 +104,7 @@ energies of topo-clusters are calibrated assuming the response originates from
 an electromagnetic shower (EM scale). However, the development of
 electromagnetic and hadronic showers leads to differences in their shower
 shapes, as previously discussed in \Cref{sec:atlas_calorimeters}. This is
-exploited by the \emph{local hadronic calibration}~\cite{PERF-2014-07} which
+exploited by the \emph{local hadronic calibration}~\cite{PERF-2014-07}, which
 uses shower shape information of topo-clusters to determine their likely origin
 and apply an appropriately weighted combination of calibrations for
 electromagnetic and hadronic showers. The energy scale of topo-clusters after
