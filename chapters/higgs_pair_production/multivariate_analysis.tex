@@ -725,13 +725,13 @@ is obtained when the mass parameter is set close to the resonance mass
 of the signal hypothesis.
 % Ability to interpolate
 In~\Cref{fig:pnn_interpolation}, the ability of PNNs to interpolate to
-classification tasks that were not part of the training is shown. The
-signal significance is compared between a PNN excluding and including
-a given signal hypothesis in training. The comparison shows similar
-performance in both cases. This property motivates the use of PNNs
-also for resonance masses that were not part of the training, and was
-exploited to include an additional signal with $\mX = \SI{375}{\GeV}$
-without retraining of the PNNs. % Why was it added? -> potential gap
+classification tasks that were not part of the training is shown. The signal
+significance is compared between a PNN excluding and including a given signal
+hypothesis in training. The comparison shows similar performance in both
+cases. This property motivates the use of PNNs also for resonance masses that
+were not part of the training, which was exploited to include an additional
+signal with $\mX = \SI{375}{\GeV}$ without retraining of the
+PNNs. % Why was it added? -> potential gap
 % in sensitivity
 Finally, the performance of the PNNs is compared to a strategy of
 using dedicated BDTs for every signal mass hypothesis. The comparison
@@ -770,13 +770,11 @@ over the approach of using dedicated classifiers.
   \label{fig:pnn_properties}
 \end{figure}
 
-A ranking of the variable importance is provided
-in~\Cref{tab:pnn_ranking} following the permutation importance
-approach introduced previously. The \PHiggs-system masses continue
-being important discriminants to reject backgrounds relevant for
-searches of resonances in the low to intermediate mass range. The
-reconstructed mass of the \HH-system provides an important
-discriminant over the entire range of considered resonance masses,
+A ranking of the variable importance is provided in~\Cref{tab:pnn_ranking} based
+on the permutation importance technique. The \PHiggs-system masses continue to
+be important discriminants to reject backgrounds relevant to searches of
+resonances in the low to intermediate mass range. The reconstructed mass of the
+\HH-system provides an important discriminant over the entire mass range,
 becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 
 \begin{table}[htbp]
@@ -819,24 +817,22 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
   % \end{subtable}
 \end{table}
 
-The sensitivity of the signal extraction method to the mass of the
-resonance decreases with increasing \mX, as is indicated by the width
-of the curves in \Cref{fig:pnn_detuning}. This decrease in mass
-sensitivity has two primary sources. First, the mass resolution of the
-reconstructed \mHH increases approximately linearly with \mX. Second,
-the PNN has high separation power between events from background
-processes and resonant \HH production at high mass.\footnote{The
-  discrimination power of the PNN as a function of the \mX of the
-  signal hypothesis is shown in \Cref{fig:pnn_rocauc_vs_mx} in the
-  appendix.}  Due to the large separation power, the mass sensitivity
-in the high mass regime is limited by the width of bins in the high
-PNN score region, the bin width being driven by constraints imposed on
-the binning algorithm. In these cases, the signal extraction method
-employed in this search shows worse mass sensitivity than suggested by
-the resolution of the \mHH reconstruction itself. Consequently, the
-approach of using the score of a multivariate classifier as a final
-discriminant in this search is optimised for the discovery of a signal
-as opposed to perform a measurement of the resonance mass.
+The sensitivity of the signal extraction method to the mass of the resonance
+decreases with increasing \mX, as is indicated by the width of the curves in
+\Cref{fig:pnn_detuning}. This decrease in mass sensitivity has two primary
+sources. First, the \mHH resolution increases approximately linearly with
+\mX. Second, the PNN has high separation power between events from background
+processes and resonant \HH production at high mass.\footnote{The discrimination
+  power of the PNN as a function of the \mX of the signal hypothesis is shown in
+  \Cref{fig:pnn_rocauc_vs_mx} in the appendix.}  Due to the large separation
+power, the mass sensitivity in the high mass regime is limited by the width of
+bins in the high PNN score region, the bin width being driven by constraints
+imposed on the binning algorithm. In these cases, the signal extraction method
+employed in this search shows worse mass sensitivity than suggested by the
+resolution of the \mHH reconstruction itself. Consequently, the approach of
+using the score of a multivariate classifier as a final discriminant in this
+search is optimised for the discovery of a signal as opposed to perform a
+measurement of the resonance mass.
 
 % The width of the significance response of the PNN as the mass
 % parameter is varied can serve to understand the sensitivity and
