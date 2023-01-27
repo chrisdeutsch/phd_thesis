@@ -33,42 +33,40 @@ RNN, it is possible to loosen the identification requirements for \tauhadvis in
 the search without incurring large increases in backgrounds from the
 misidentification of quark- or gluon-initiated jets as \tauhadvis.
 
-The \tauid algorithms employed by the CMS collaboration underwent a
-similar evolution as the one presented in this chapter. A BDT-based
-discriminant based on high-level features~\cite{CMS-TAU-16-003} was
-replaced by a deep neural network that combines high-level information
-with information from reconstructed particles in the vicinity of the
-\tauhadvis~\cite{CMS-TAU-20-001}. Similarly, the CMS collaboration
-observed a large reduction in the \faketauhadvis misidentification
-efficiency by factors exceeding 1.8~\cite{CMS-TAU-20-001} compared to
-the previous method which only relied on high-level features. While
+The \tauid algorithms employed by the CMS collaboration underwent a similar
+evolution as the one presented in this chapter. A BDT-based discriminant based
+on high-level features~\cite{CMS-TAU-16-003} was replaced by a deep neural
+network that combines high-level information with information from reconstructed
+particles in the vicinity of the \tauhadvis~\cite{CMS-TAU-20-001}. Similarly,
+the CMS collaboration observed a large reduction in the \faketauhadvis
+misidentification efficiency by factors exceeding 1.8 compared to the previous
+method~\cite{CMS-TAU-20-001}, which only relied on high-level features. While
 the concept is similar to the approach presented here, the technical
-implementation adopted by the CMS collaboration differs and is
-documented in Ref.~\cite{CMS-TAU-20-001}.
+implementation adopted by the CMS collaboration differs and is documented in
+Ref.~\cite{CMS-TAU-20-001}.
 % exploiting particle-level information in the vicinity of \tauhadvis
 % candidates using convolutional layers instead.
 
 % https://atlas-glance.cern.ch/atlas/analysis/analyses/details.php?id=7262
 % https://atlas-glance.cern.ch/atlas/analysis/pubnotes/details.php?id=6503
-The RNN-based \tauid continues to be used by the ATLAS experiment at the
-beginning of Run~3 of the LHC for identification at the high-level trigger and
-for offline event reconstruction~\cite{ATL-PHYS-PUB-2022-044}. In the long term,
-changes to the \tauid strategy are expected. A new RNN-based \tauhadvis track
+The RNN \tauid continues to be used by the ATLAS experiment at the beginning of
+Run~3 of the LHC for identification at the high-level trigger and for offline
+event reconstruction~\cite{ATL-PHYS-PUB-2022-044}. In the long term, changes to
+the \tauid strategy are expected. A new RNN-based \tauhadvis track
 classification algorithm~\cite{Maerker:2021hro} was deployed for \tauhadvis
 reconstruction in Run~3~\cite{ATL-PHYS-PUB-2022-044}. This algorithm could be
 integrated into or combined with the \tauid procedure to provide isolation
 information directly. Such an approach is motivated by the large overlap in
 track observables used by both algorithms and the inherent connection between
 \tauhadvis track selection and \tauid. Second, other types of networks operating
-on variable size collections of inputs (e.g.\ tracks and clusters) are explored
-by the collaboration. For \tauid, \deepsets~\cite{NIPS2017_f22e4747} are an
-alternative to the RNN-based approach. \deepsets operate on unordered sets of
-inputs and therefore, unlike RNN, do not require a specific ordering of the
-inputs. Preliminary results show that \tauid based on \deepsets yields results
-that are competitive with the implementation using RNN while requiring
-significantly less time for training and prediction.\footnote{Similar findings
-  were obtained for \deepsets-based $b$-tagging algorithms in
-  Ref.~\cite{ATL-PHYS-PUB-2020-014}.}
+on variable size collections of inputs are explored by the collaboration. For
+\tauid, \deepsets~\cite{NIPS2017_f22e4747} are an alternative to the RNN-based
+approach. \deepsets operate on unordered sets of inputs and therefore, unlike
+RNN, do not require a specific ordering of the inputs. Preliminary results show
+that \tauid based on \deepsets yields results that are competitive with the
+implementation using RNN while requiring significantly less time for training
+and prediction.\footnote{Similar findings were obtained for \deepsets-based
+  $b$-tagging algorithms in Ref.~\cite{ATL-PHYS-PUB-2020-014}.}
 
 % Write something about the reduction in time between iterations
 % allowing for more thorough optimisation of input variables, and

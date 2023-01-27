@@ -14,7 +14,7 @@ algorithms are used to reconstruct and identify objects in simulated
 performance of the object reconstruction and selection in simulation and data
 are accounted for by calibration measurements of selection efficiencies,
 energy/momentum scales and resolutions. The following provides a summary of the
-object reconstruction relevant for the remainder of this thesis.
+object reconstruction relevant for this thesis.
 
 
 \subsection{Charged-Particle Tracks and Primary Vertices}%
@@ -53,10 +53,10 @@ In the ATLAS experiment, two primary tracking algorithms are used that are
 referred to as the \emph{inside-out} and \emph{outside-in}
 algorithms~\cite{Cornelissen:2007vba,Salzburger:2015sgq,PERF-2015-08}. The
 inside-out algorithm starts by reconstructing tracks in the pixel and SCT
-detector only, then extending the track using measurements in the TRT. In
-contrast, the outside-in algorithm starts with the reconstruction of track
-segments in the TRT which are then combined with space-points from the pixel and
-SCT detectors. The outside-in algorithm is used to improve the reconstruction
+detector, then extending the track using measurements in the TRT. In contrast,
+the outside-in algorithm starts with the reconstruction of track segments in the
+TRT, which are then combined with space-points from the pixel and SCT
+detectors. The outside-in algorithm is used to improve the reconstruction
 efficiency for tracks from secondary particles, such as electrons produced in
 conversions of photons in the detector material, for which the inside-out
 algorithm can fail to reconstruct a track. The track reconstruction algorithms
@@ -77,7 +77,7 @@ iteratively determine the vertex position while weighting reconstructed tracks
 according to their compatibility with the vertex position. After the fit, tracks
 that are incompatible with the fitted vertex are considered as unassociated and
 the process is repeated on all unassociated tracks. After the PV reconstruction,
-only PVs with two associated tracks are kept. The PV with the largest sum of
+only PVs with two or more associated tracks are kept. The PV with the largest sum of
 $\pT^2$ of associated tracks is selected as the PV of the hard
 interaction. Other vertices are considered as originating from
 pile-up~\cite{PERF-2015-01}.
@@ -104,7 +104,7 @@ energies of topo-clusters are calibrated assuming the response originates from
 an electromagnetic shower (EM scale). However, the development of
 electromagnetic and hadronic showers leads to differences in their shower
 shapes, as previously discussed in \Cref{sec:atlas_calorimeters}. This is
-exploited by the \emph{local hadronic calibration}~\cite{PERF-2014-07} which
+exploited by the \emph{local hadronic calibration}~\cite{PERF-2014-07}, which
 uses shower shape information of topo-clusters to determine their likely origin
 and apply an appropriately weighted combination of calibrations for
 electromagnetic and hadronic showers. The energy scale of topo-clusters after
@@ -185,7 +185,7 @@ muon reconstruction is based on Ref.~\cite{MUON-2018-03}.
 A stand-alone reconstruction of tracks in the MS is attempted by first
 reconstructing straight-line segments in individual layers of the MS. Track
 candidates are constructed from multiple track segments compatible with the
-trajectory of a muon produced at the interaction point. These candidates seed a
+trajectory of a muon produced at the IP. These candidates seed a
 fit to obtain the muon trajectory and the associated track parameters. Different
 reconstruction methods are employed yielding five types of reconstructed muons:
 \begin{description}
@@ -221,20 +221,19 @@ reconstruction methods are employed yielding five types of reconstructed muons:
 
 \end{description}
 Several muon identification working points are defined using these muon types
-and additional requirements on the quality of the ID and MS tracks, and
+and additional requirements on the quality of the ID and MS tracks and the
 compatibility of ID and MS tracks in terms of charge and momentum. In this
 thesis, the \emph{loose} and \emph{medium} working points are used, which are
 summarised hereafter. Of these working points, the medium working point has the
 most stringent requirements on the quality of reconstructed muons. It requires
 muons to be reconstructed as combined or inside-out muons or, alternatively, MS
 extrapolated muons in $2.5 < |\eta| < 2.7$ to improve the reconstruction
-efficiency outside the acceptance of ID track reconstruction. The
-\emph{loose} working point augments the medium working point by additionally
-allowing segment- and calorimeter-tagged muons in $|\eta| < 0.1$, a region with
-a gap in the MS instrumentation (cf.~\Cref{sec:atlas_ms}), and relaxing the MS
-track quality requirements applied to inside-out muons. Muons passing the
-\emph{loose} working point are a superset of muons passing the \emph{medium}
-working point.
+efficiency outside the acceptance of ID track reconstruction. The \emph{loose}
+working point augments the medium working point by additionally allowing
+segment- and calorimeter-tagged muons in $|\eta| < 0.1$, a region with a gap in
+the MS instrumentation, and relaxing the MS track quality requirements applied
+to inside-out muons. Muons passing the \emph{loose} working point are a superset
+of muons passing the \emph{medium} working point.
 
 Isolation requirements are applied to reconstructed muon candidates to
 distinguish prompt from non-prompt muons. A similar approach to the one adopted
@@ -245,15 +244,15 @@ for electrons, previously discussed in \Cref{sec:ele_rec}, is used.
 \label{sec:jet_rec}
 
 The production of quarks or gluons in hard scattering interactions leads to the
-development of collimated sprays of particles which are referred to as
-jets. Jets are produced as a result of the colour confinement in QCD, leading to
-a fragmentation of the initial quark/gluon until the energy of the resulting
+development of collimated sprays of particles referred to as jets. Jets are
+produced as a result of the colour confinement in QCD, leading to a
+fragmentation of the initial quark/gluon until the energy of the resulting
 fragments is sufficiently small to bind into colourless hadrons. The primary
 constituents of jets are charged/neutral hadrons and photons from hadron
 decays. To reconstruct the kinematic properties of the quark/gluon that
 initiated the jet, the four-momenta of all particles from the fragmentation and
 hadronisation process have to be collected. This task is addressed by jet
-algorithms which combine particles, or other entities, into clusters to
+algorithms, which combine particles, or other entities, into clusters to
 reconstruct jets. In the ATLAS experiment, the anti-\kt jet clustering
 algorithm~\cite{Cacciari:2008gp} is most frequently used.
 
@@ -344,7 +343,7 @@ inputs to the anti-\kt jet clustering algorithm to reconstruct jets used for
 physics analyses.
 
 Jet reconstruction using particle flow has several advantages compared to a
-calorimeter-based approach, as detailed in Ref.~\cite{PERF-2015-09}. The energy
+calorimeter-based approach as detailed in Ref.~\cite{PERF-2015-09}. The energy
 resolution for jets at low transverse momenta
 ($\pT^{\text{jet}} \lessapprox \SI{50}{\GeV}$, see for example
 Ref.~\cite{JETM-2018-05}) is improved due to the inclusion of tracking
@@ -352,10 +351,11 @@ information. In part, this is due to the ability to account for charged hadrons
 with transverse momenta down to \SI{500}{\MeV} in the reconstruction of jets. In
 comparison, calorimeter-based jet reconstruction has shortcomings in accounting
 for low-\pT charged hadrons due to charged hadrons being bent out of the jet
-clustering cone, or their calorimeter signals being suppressed by the
-topo-cluster algorithm. Moreover, jets reconstructed using particle flow are
-less susceptible to pile-up since charged particle flow objects can be
-associated to the PV of the hard interaction using the reconstructed tracks.
+clustering cone or their calorimeter signals being suppressed by the noise
+thresholds of the topo-cluster algorithm. Moreover, jets reconstructed using
+particle flow are less susceptible to pile-up since charged particle flow
+objects can be associated to the PV of the hard interaction using the
+reconstructed tracks.
 
 
 \subsubsection{$b$-tagging}
@@ -513,21 +513,21 @@ anti-\kt algorithm with $R = 0.4$ applied to topo-clusters at LC scale. Only
 jets with $\pT > \SI{10}{\GeV}$ and within $|\eta| < 2.5$ are considered as
 seeds for \tauhadvis reconstruction.
 
-A PV is associated to the \tauhadvis candidate using information from the
-tracking system. The PV association considers ID tracks that are matched to the
-seed jet via ghost-association~\cite{Cacciari:2008gn}, are within
-$\Delta R < 0.2$ of the jet axis, and fulfil $\pT > \SI{1}{\GeV}$ and basic
-track quality criteria. For every PV, the scalar sum of \pT of tracks that are
-assigned to the vertex and pass the selection criteria is determined. The PV
-maximising this sum is associated to the \tauhadvis candidate and is referred to
-as the \emph{tau vertex}.
+A PV is associated to the \tauhadvis candidate using tracking information. The
+PV association considers ID tracks that are matched to the seed jet via
+ghost-association~\cite{Cacciari:2008gn}, are within $\Delta R < 0.2$ of the jet
+axis, and fulfil $\pT > \SI{1}{\GeV}$ and basic track quality criteria. For
+every PV, the scalar sum of \pT of tracks that are assigned to the vertex and
+pass the selection criteria is determined. The PV maximising this sum is
+associated to the \tauhadvis candidate and is referred to as the \emph{tau
+  vertex}.
 
 An initial estimate of the \tauhadvis candidate four-momentum is derived by
 summing the four-momenta of topo-clusters (at LC scale) in a cone of
-$\Delta R < 0.2$ about the jet axis. Moreover, the four-momentum is transformed
-into the coordinate system with the tau vertex at its origin. The axis defined
-by the tau vertex and the three-momentum of the \tauhadvis candidate is referred
-to as the \tauhadvis axis.
+$\Delta R < 0.2$ about the jet axis. Afterwards, the four-momentum is
+transformed into the coordinate system with the tau vertex at its origin. The
+axis defined by the tau vertex and the three-momentum of the \tauhadvis
+candidate is referred to as the \tauhadvis axis.
 
 Tracks in the ID are associated to a \tauhadvis candidate if they are within
 $\Delta R < 0.4$ of the \tauhadvis axis. Tracks originating from charged hadrons
@@ -590,7 +590,7 @@ to reject \tauhadvis candidates originating from sources other than hadronic
 \taulepton decays. The primary source being quark- or gluon-initiated jets and
 electrons that are mis-reconstructed as \tauhadvis candidates. A separate step,
 referred to as \tauid, is performed to reject \tauhadvis candidates from these
-sources. A detailed description of \tauid is given in \Cref{sec:tauid}.
+sources. A description of \tauid is given in \Cref{sec:tauid}.
 
 
 \subsection{Missing Transverse Energy}%

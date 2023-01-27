@@ -1,20 +1,21 @@
 \section{Object Reconstruction and Selection}
 \label{sec:object_reconstruction}
 
-The reconstruction and selection of physics objects, i.e.\ objects representing
-the signature of particles produced in \pp~collisions, is described in this
-section. The most relevant objects in this search are electrons, muons,
-\tauhadvis, jets, $b$-tagged jets, and the missing transverse momentum. These
-objects are reconstructed and identified using algorithms that target their
-distinct signatures in the ATLAS detector.
-%The same algorithms are used to
-%reconstruct and identify objects in simulation and in data recorded with the
-%detector.
+The reconstruction and selection of physics objects
+% , i.e.\ objects representing the signature of particles produced in
+% \pp~collisions,
+is described in this section. The most relevant objects in this search are
+electrons, muons, \tauhadvis, jets, $b$-tagged jets, and the missing transverse
+momentum. These objects are reconstructed and identified using algorithms that
+target their distinct signatures in the ATLAS detector
+(cf.~\Cref{sec:object_reco_at_atlas}).
+% The same algorithms are used to reconstruct and identify objects in simulation
+% and in data recorded with the detector.
 Differences between the performance of the object reconstruction and selection
 in simulation and data are accounted for by dedicated calibration measurements
-of efficiencies, energy/momentum scales and resolutions. Uncertainties on these
-measurements are propagated to the final results by performing variations of
-these properties in simulation.
+of efficiencies, energy/momentum scales and resolutions.
+% Uncertainties on these measurements are propagated to the final results by
+% performing variations of these properties in simulation.
 
 The baseline selection of objects used in this search is described in the
 following. More restrictive selections are applied as part of the event
@@ -53,8 +54,8 @@ selection, which is discussed in \Cref{sec:event_selection}.
   identification efficiency of the loose working point exceeds \SI{97}{\percent}
   for muons with $\pT > \SI{10}{\GeV}$ in simulated \ttbar
   events~\cite{MUON-2018-03}. In addition, muons are required to pass the loose
-  isolation point based on an isolation requirement combining information on
-  charged and neutral particle signatures using a particle flow
+  isolation working point based on isolation requirements combining information
+  on charged and neutral particle signatures using a particle flow
   approach~\cite{MUON-2018-03}. The muon selection efficiency of the isolation
   working point exceeds \SI{97}{\percent} for muons with $\pT > \SI{20}{\GeV}$
   in simulated \ttbar events~\cite{MUON-2018-03}. The isolation requirement is
@@ -89,7 +90,7 @@ selection, which is discussed in \Cref{sec:event_selection}.
   A BDT-based electron veto algorithm is applied to 1-prong \tauhadvis
   candidates to reject cases where electrons are reconstructed as 1-prong
   \tauhadvis. This algorithm has an efficiency of \SI{95}{\percent} in selecting
-  \tauhadvis candidates matched to hadronic \taulepton decays.
+  \tauhadvis candidates originating from hadronic \taulepton decays.
 
   The loose working point of the RNN-based \tauid algorithm introduced in
   \Cref{sec:tauid} is used to reject \tauhadvis candidates originating from
@@ -123,10 +124,10 @@ selection, which is discussed in \Cref{sec:event_selection}.
   % The \hadhad and \lephad channels use the presence of anti-\tauhadvis to
   % define CRs for the estimation of backgrounds with \faketauhadvis.
 
-\item[Jets] are reconstructed using the anti-\kt
-  algorithm~\cite{Cacciari:2008gp} with a radius parameter of~$R = 0.4$. The
-  inputs to the jet algorithm are provided by the particle flow reconstruction
-  algorithm previously described in~\Cref{sec:jet_rec}.
+\item[Jets] are reconstructed using the anti-\kt algorithm with a radius
+  parameter of~$R = 0.4$. The inputs to the jet algorithm are provided by the
+  particle flow reconstruction algorithm previously described
+  in~\Cref{sec:jet_rec}.
 
   % , described in Refs.~\cite{PERF-2015-09,JETM-2018-05}, exploiting the
   % superior momentum resolution of the tracking system for charged particles
@@ -267,11 +268,11 @@ important variable in distinguishing signal from background events.
 Corrections are applied to $b$-tagged jets in order to improve the scale and
 resolution of the $b$-jet momentum reconstruction.
 % , consequently improving the scale and resolution of the reconstructed \mBB.
-These $b$-jet momentum corrections are applied in addition to the standard jet
+These corrections are applied in addition to the standard jet
 calibration~\cite{JETM-2018-05}, targeting the effects of out-of-cone radiation
 and semi-muonic $b$- or $c$-hadron decays inside the $b$-jet on the
-reconstructed jet four-momentum. Two separate corrections, which were previously
-used by the ATLAS collaboration in
+four-momentum of reconstructed jets. Two separate corrections, which were
+previously used by the ATLAS collaboration in
 Refs.~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}, are applied:
 \begin{description}
 
@@ -283,22 +284,22 @@ Refs.~\cite{HIGG-2016-29,HIGG-2018-04,HIGG-2018-51}, are applied:
   the jet axis.
   % (i.e.\ a shrinking cone with increasing \pT of the muon).
   No requirements are applied on the isolation of muons entering the muon-in-jet
-  correction. In case one or more muons fulfilling the criteria are selected,
-  the four-momentum of the muon closest to the jet axis, after correcting for
-  the energy it deposited in the calorimeters, is added to the four-momentum of
-  the jet.
+  correction. In case one or more muons fulfil the criteria, the muon closest to
+  the jet axis is selected. The four-momentum of the selected muon is added to
+  the four-momentum of the jet, after correcting for the energy it deposited in
+  the calorimeters.
 
 \item[\pTreco correction] The \pTreco correction accounts for out-of-cone
   radiation as well as momentum carried away by neutrinos produced in
   semi-leptonic decays of hadrons in the jet. It is derived using $b$-tagged
   jets in simulated \ttbar events as a function of the \pT of the reconstructed
-  jet, \pTreco, separately for jets containing a muon according to the
-  muon-in-jet correction and jets that do not contain a muon. The correction is
-  applied as a multiplicative factor on the jet momentum scale and is derived as
-  the ratio $p_{\text{T}}^{\text{truth}} / \pTreco$ in bins of \pTreco, where
-  $p_{\text{T}}^{\text{truth}}$ is the transverse momentum of the truth jet, a
-  jet constructed from generator-level particles, that is geometrically matched
-  to the jet at reconstruction-level.
+  jet, \pTreco, separately for jets containing a muon (according to the criteria
+  of the muon-in-jet correction) and jets that do not contain a muon. The
+  correction is applied as a multiplicative factor on the jet momentum scale and
+  is derived as the ratio $p_{\text{T}}^{\text{truth}} / \pTreco$ in bins of
+  \pTreco, where $p_{\text{T}}^{\text{truth}}$ is the transverse momentum of the
+  truth jet, a jet constructed from generator-level particles, that is
+  geometrically matched to the jet at reconstruction-level.
 
 \end{description}
 Both corrections are performed at the level of individual jets and do not use
@@ -332,58 +333,51 @@ of about \SI{13}{\percent} as measured by the full width at half maximum.
 \subsection{$H \to \tau^{+}\tau^{-}$ Candidate Reconstruction}%
 \label{sec:htautau_reco}
 
-Reconstruction of the $H \to \tau^{+}\tau^{-}$ candidate's four-momentum in
-signal events is challenging due to the presence of at least two neutrinos
-originating from decays of \tauleptons that cannot be measured directly. The
-starting point of the reconstruction are the visible decay products from
-\taulepton decays. In the \hadhad channel, these are given by the two \tauhadvis
-candidates, while in the \lephad channel the visible decay products are the
-\tauhadvis candidate and either an electron or a muon. To obtain the
-four-momentum of the di-$\tau$ system, %
+Reconstruction of the $H \to \tau^{+}\tau^{-}$ four-momentum is challenging due
+to the presence of at least two neutrinos originating from decays of \tauleptons
+that cannot be measured directly. The starting point of the reconstruction are
+the visible decay products of \taulepton decays. In the \hadhad channel, these
+are given by the two \tauhadvis candidates, while in the \lephad channel the
+visible decay products are the \tauhadvis candidate and either an electron or a
+muon. To obtain the four-momentum of the di-$\tau$ system,
 % consisting of visible and invisible decay products
 additional information on the neutrinos produced from the \taulepton decay is
 required. The allowed configurations of neutrinos from \taulepton decays can be
-restricted using the observed visible decay products and kinematic constraints
-from the known mass of the \taulepton and the measurement of \pTmiss under the
-assumption that its sole source are neutrinos produced from decays of
-\tauleptons. However, the resulting system of kinematic equations is
-underdetermined leaving multiple degrees of freedom for the unobserved
-neutrinos.
+restricted using the visible decay products and kinematic constraints from the
+known mass of the \taulepton and the measurement of \pTmiss under the assumption
+that its sole source are neutrinos produced from decays of \tauleptons. However,
+the resulting system of kinematic equations is underdetermined leaving multiple
+degrees of freedom for the unobserved neutrinos.
 
-The Missing Mass Calculator (MMC) technique~\cite{Elagin:2010aw} is
-used to estimate the four-momentum of the di-$\tau$ system and thus
-its invariant mass, referred to as \mMMC hereafter. The MMC uses the
-fact that not all configurations of neutrinos are equally likely,
-assigning a probability density for every configuration conditional on
-the \taulepton decay mode and other properties of the visible decay
-products. In addition, the constraint on the total neutrino transverse
-momentum from the \pTmiss measurement are relaxed to allow for
-measurement errors within the experimental resolution, the resolution
-being parameterised as a function of the event activity\footnote{The
-  event activity, also referred to as $\sum \ET$, is the scalar sum
-  of transverse momenta of all hard objects produced in an event and
-  the track soft term.} and jet multiplicity. The probability density
-functions used by the MMC are derived from simulation of resonant
-production of \taulepton pairs.
+The Missing Mass Calculator (MMC) technique~\cite{Elagin:2010aw} is used to
+estimate the four-momentum of the di-$\tau$ system and thus its invariant mass,
+\mMMC. The MMC uses the fact that not all configurations of neutrinos are
+equally likely and assigns a probability density to every configuration
+conditional on the \taulepton decay mode and other properties of the visible
+\taulepton decay products. In addition, the constraint on the total neutrino
+transverse momentum from the \pTmiss measurement is relaxed to allow for errors
+within the experimental \pTmiss resolution, the resolution being parameterised
+as a function of the event activity\footnote{The event activity, also referred
+  to as $\sum \ET$, is the scalar sum of transverse momenta of all hard objects
+  produced in an event and the track soft term.} and jet multiplicity. The
+probability density functions used by the MMC are derived from simulation of
+resonant production of \taulepton pairs.
 
-For any single event the MMC estimates the conditional
-distribution\footnote{The distribution is conditional on the observed
-  properties of the event such as the reconstructed four-momenta of
-  the visible \taulepton decay products, the \taulepton decay mode,
-  \pTmiss, $\sum \ET$, and the jet multiplicity.} of an observable of
-interest depending on unobserved neutrino properties, for example the
-mass of the di-$\tau$ system, using simulation. %
-% The distribution of an observable of interest that depends on
-% unobserved neutrino properties given, for example the mass of the
-% di-$\tau$ system, can be estimated using simulation.
-A sequence of kinematically allowed neutrino configurations is
-generated using Markov Chain Monte Carlo according to the
-(conditional) probability density that describes the distribution of
-neutrino configurations. For every configuration the value of the
-observable of interest is calculated and filled into a histogram,
-which serves as a binned approximation of the observable's conditional
-distribution. Finally, the most probable value of the observable is
-used as an event-level estimator.
+For any single event, the MMC estimates the conditional
+distribution\footnote{The distribution is conditional on the observed properties
+  of the event such as the reconstructed four-momenta of the visible \taulepton
+  decay products, the \taulepton decay mode, \pTmiss, $\sum \ET$, and the jet
+  multiplicity.} of an observable of interest that depends on properties of the
+unobserved neutrinos, for example the mass of the di-$\tau$ system, using
+simulation. A sequence of kinematically allowed neutrino configurations is
+generated using Markov Chain Monte Carlo according to the conditional
+distribution of neutrino configurations.
+% (conditional) probability density that describes the distribution of neutrino
+% configurations.
+For every configuration, the value of the observable of interest is calculated
+and filled into a histogram, which serves as a binned approximation of the
+observable's conditional distribution. Finally, the most probable value of the
+observable is used as an event-level estimator.
 
 Frequently, the most probable di-$\tau$ invariant mass is used as the estimator
 when the mass is of primary interest such as in measurements of
@@ -393,13 +387,13 @@ di-$\tau$ system, which is required to calculate the invariant mass of the
 $HH$-system, \mHH.
 % , when combined with the four-momentum of the $H \to \bbbar$ candidate.
 Instead of the most probable mass estimator, an estimator based on the most
-probable neutrino momenta is used, which reconstructs the four-vector of the
-di-$\tau$ system.
+probable neutrino momenta is used, which can be used to reconstruct the
+four-momentum of the di-$\tau$ system.
 
 A description of the technical implementation of the MMC used by the ATLAS
-collaboration is given in Ref.~\cite{huebner}, which is used as the basis for
-the four-momentum reconstruction of the $H \to \tau^{+}\tau^{-}$ candidate in
-this search.
+collaboration is given in Ref.~\cite{huebner}, which is used as the basis of the
+four-momentum reconstruction for $H \to \tau^{+}\tau^{-}$ candidates in this
+search.
 
 %%% Local Variables:
 %%% mode: latex

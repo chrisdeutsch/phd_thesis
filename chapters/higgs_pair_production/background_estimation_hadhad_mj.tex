@@ -76,18 +76,18 @@ referred to as the fake factor (FF).
 % \footnote{The use of identification or isolation criteria to defining the
 % ratio is the main difference between the fake factor method and the more
 % general ABCD method.}
-Generally, the CRs do not provide pure samples of multi-jet events, and thus the
-number of multi-jet events has to be estimated according to
+Generally, the CRs do not provide pure samples of multi-jet events; therefore,
+the number of multi-jet events is estimated according to
 \begin{align*}
   N_\text{multi-jet}^{r} = N_\text{data}^{r} - N_\text{non-multi-jet}^{r} \,\text{,}
 \end{align*}
 where $N_\text{data}^{r}$ is the observed number of events in region~$r$ and
 $N_\text{non-multi-jet}^{r}$ the expected number of non-multi-jet events in
 region~$r$ estimated using simulation. Lastly, the probability of misidentifying
-a quark- or gluon-initiated jet as a \tauhadvis depends on the properties of the
-reconstructed \tauhadvis candidate, especially on \Ntracks and \pT. To control
+a quark- or gluon-initiated jet as a \tauhadvis depends on properties of
+reconstructed \tauhadvis candidates, especially on \Ntracks and \pT. To control
 for this dependence, FFs are measured in bins of \tauhadvis candidate
-properties. The choice of binning will be discussed shortly.
+properties. The choice of binning is discussed at a later point.
 
 % In addition, the probability of misidentifying a quark- or gluon-initiated jet
 % as a \tauhadvis depends on the properties of the reconstructed \tauhadvis
@@ -201,8 +201,8 @@ for possible differences between FFs measured in 1 and 2 $b$-tag regions and the
 uncertainties associated with this extrapolation. The 1 $b$-tag OS ID region
 serves as a validation region (VR) to check the agreement of the background
 prediction with the observed data. Any non-closure observed in this region
-indicates either a violation of the assumptions of the FF method, or
-dependencies that are not captured by the parameterisation of the FFs.
+indicates either a violation of the assumptions of the FF method or dependencies
+that are not captured by the parameterisation of the FFs.
 
 \begin{figure}[htbp]
   \centering
@@ -238,7 +238,7 @@ dependencies that are not captured by the parameterisation of the FFs.
 
 % Binning in years / trigger
 The FF measurement is performed separately for events selected by STTs and DTTs
-to account for the differences in selection applied by these triggers.
+to account for the differences in selection.
 % STTs require one \tauhadvis candidate with high transverse momentum passing
 % the HLT \tauid, while DTTs require two \tauhadvis candidates both passing HLT
 % \tauid and significantly lower \pT~thresholds.
@@ -336,9 +336,9 @@ between the leading and sub-leading \tauhadvis candidates.
     \FF_\text{incl.}\ffargs = \frac{1}{2} \left[ f_0\ffargs \cdot \FF_0\ffargs
     + f_1\ffargs \cdot \FF_1\ffargs \right] \,\text{,}
   \end{align*}
-  with $f_i\ffargs$ being the fraction of anti-\tauhadvis in the bin given by
-  $\myvec{x}_\tau$ that are leading ($i = 0$) or sub-leading ($i = 1$) in \pT,
-  formally given by
+  with $f_i\ffargs$ being the fraction of anti-\tauhadvis in the bin specified
+  by $\myvec{x}_\tau$ that are leading ($i = 0$) or sub-leading ($i = 1$) in
+  \pT, formally given by
   \begin{align*}
     f_i\ffargs = \frac{\NmjAntiID{SS}{i}\ffargs}
                       {\NmjAntiID{SS}{0}\ffargs + \NmjAntiID{SS}{1}\ffargs} \,\text{.}
@@ -364,14 +364,14 @@ between the leading and sub-leading \tauhadvis candidates.
   % Prior the agreement of the background estimates obtained with FF0
   % and FF1 were confirmed.
 
-  The motivation of using inclusive FFs is twofold: First, it allows using all
-  events in the Anti-ID region, independent of whether the anti-\tauhadvis is
-  leading or sub-leading in \pT, thus improving the statistical precision of the
-  background estimate. Second, the FFs can be parameterised in properties of the
-  anti-\tauhadvis, thus targeting the key differences between the ID and
-  Anti-ID regions. This represents a change with respect to the previous
-  publication in Ref.~\cite{HIGG-2016-16-witherratum} in which FFs were
-  parameterised in the properties of both \tauhadvis candidates
+  The motivation of using inclusive FFs is twofold: First, it allows for all
+  events in the Anti-ID region to be used, independent of whether the
+  anti-\tauhadvis is leading or sub-leading in \pT, thus improving the
+  statistical precision of the background estimate. Second, the FFs can be
+  parameterised in properties of the anti-\tauhadvis, thus targeting the key
+  differences between the ID and Anti-ID regions. This represents a change with
+  respect to the previous publication in Ref.~\cite{HIGG-2016-16-witherratum} in
+  which FFs were parameterised in the properties of both \tauhadvis candidates
   simultaneously. Previously, the high dimensionality of the FF parameterisation
   lead to large statistical uncertainties on the measured FFs.}
 
@@ -425,8 +425,7 @@ The measurement of FFs for events selected by STTs can proceed
 using~\Cref{eq:inclusive_fake_factor}. The measured STT FFs are shown
 in~\Cref{fig:mjfakes_stt_ffs} for the three major data-taking periods. Each
 period is divided into four categories depending on $N_{\text{tracks}}$ and
-whether the anti-\tauhadvis is leading ($\tau_0$) or sub-leading ($\tau_1$) in
-\pT.
+whether the anti-\tauhadvis is leading or sub-leading in \pT.
 
 % The measurement of FFs for events selected by STTs proceeds differently from
 % the DTT case. Due to the selections applied at the HLT and the usually large
@@ -471,7 +470,7 @@ whether the anti-\tauhadvis is leading ($\tau_0$) or sub-leading ($\tau_1$) in
 
 An independent validation of the background estimate is performed in the 1
 $b$-tag OS ID region (cf.\ \Cref{fig:fakefactor_regions}). This region has a
-multi-jet purity of about \SI{50}{\percent} with the dominant non-multi-jet
+multi-jet purity of about \SI{50}{\percent}, with the dominant non-multi-jet
 contributions originating from \Zjets and \ttbar. A multi-jet VR is defined by
 requiring events to fulfil
 \begin{align*}
@@ -482,12 +481,11 @@ significance~\cite{ATLAS-CONF-2018-038}. The \pTmissAbs significance measures
 the statistical significance of a test comparing the hypothesis that the
 reconstructed \pTmissAbs is compatible with zero within the expected measurement
 errors to the alternative hypothesis of \pTmissAbs primarily originating from
-undetected weakly interacting particles. The distributions of \mMMC and
-$\mathcal{S}$ prior to the multi-jet VR selection are shown
-in~\Cref{fig:fake_factor_OSVR_cutvars}. After the selection, the multi-jet
-purity in the VR increases to \SI{75}{\percent} with a multi-jet selection
-efficiency of about \SI{50}{\percent} with respect to the inclusive 1 $b$-tag OS
-ID region.
+undetected particles. The distributions of \mMMC and $\mathcal{S}$ prior to the
+multi-jet VR selection are shown in~\Cref{fig:fake_factor_OSVR_cutvars}. After
+the selection, the multi-jet purity in the VR increases to \SI{75}{\percent}
+with a multi-jet selection efficiency of about \SI{50}{\percent} with respect to
+the inclusive 1 $b$-tag OS ID region.
 
 % The distributions of the variables used to define the multi-jet VR are shown
 % in~\Cref{fig:fake_factor_OSVR_cutvars} after pre-selection. The contribution
@@ -643,17 +641,17 @@ applying FFs from the 1~$b$-tag~SS~region to events in the
 addition, these FFs are multiplied by a 1~to~2 $b$-tag transfer factor to
 account for possible differences between FFs for 1 and 2~$b$-tag regions
 (cf.~\Cref{fig:fakefactor_regions}). The change in \btag requirement is not
-expected to affect the FFs, such that the transfer factors mainly serve to
-provide an estimate of the uncertainty on the extrapolation.
+expected to affect the FFs; thus, the transfer factors mainly serve to provide
+an estimate of the uncertainty on the extrapolation.
 
 The transfer factors are determined by comparing FFs measured in the
-2~$b$-tag~SS~region to ones extracted in the 1~$b$-tag~SS~region. Due to the
-large multi-jet rejection of the 2~$b$-tag~requirement, the comparison is
-performed using FFs measured inclusively in the trigger category, \tauhadvis \pT
-and \tauhadvis $\eta$ but separately for 1- and 3-prong \tauhadvis candidates,
-for cases where the anti-\tauhadvis is leading and sub-leading in \pT, and for
-the three data-taking periods. The 1 to 2~$b$-tag transfer factor is defined as
-the ratio
+2~$b$-tag~SS~region to the ones from the 1~$b$-tag~SS~region. Due to the large
+multi-jet rejection of the 2~$b$-tag~requirement, the comparison is performed
+using FFs measured inclusively in the trigger category, \tauhadvis \pT, and
+\tauhadvis $\eta$ but separately for 1- and 3-prong \tauhadvis candidates, for
+cases where the anti-\tauhadvis is leading and sub-leading in \pT, and for the
+three data-taking periods. The 1 to 2~$b$-tag transfer factor is defined as the
+ratio
 \begin{align*}
   \text{TF}_{1 \ra 2\,b\text{-tag}} = \frac{\FF_{\text{SS}}^{2\,b\text{-tag}}}{\FF_{\text{SS}}^{1\,b\text{-tag}}} \,\text{.}
 \end{align*}
@@ -837,7 +835,7 @@ of~$\pm\SI{7.4}{\percent}$.
 
 Other non-multi-jet processes account for approximately \SI{9}{\percent} of the
 non-multi-jet subtraction in the 2~$b$-tag OS Anti-ID region. The dominant
-contributions are events from \Vjets and single top production, both processes
+contributions are events from \Vjets and single-top production, both processes
 contributing similarly to the subtraction. As a conservative estimate, the
 normalisation of the subtracted components is varied by~$\pm \SI{50}{\percent}$
 and propagated to the multi-jet prediction in the SR. This variation changes the
@@ -854,10 +852,10 @@ multi-jet normalisation in the SR is~$\pm \SI{1.9}{\percent}$.
 A summary of all uncertainties affecting the multi-jet background prediction in
 the \hadhad~SR is given in~\Cref{tab:multi_jet_uncertainties}. The dominant
 sources of uncertainty on the multi-jet normalisation are the subtraction of
-\ttbarFakes, the subtraction of other non-multi-jet processes~(\Vjets and single
-top), and the extrapolation of 1~$b$-tag FFs to 2~$b$-tag regions. The total
-uncertainty on the normalisation of the multi-jet estimate is approximately
-\SI{12}{\percent}.
+\ttbarFakes, the subtraction of other non-multi-jet processes~(\Vjets and
+single-top), and the extrapolation of 1~$b$-tag FFs to 2~$b$-tag regions. The
+total uncertainty on the normalisation of the multi-jet estimate is
+approximately \SI{12}{\percent}.
 
 \begin{table}[htbp]
   \centering

@@ -17,7 +17,7 @@ the hard scattering process was removed to provide an unpolarised
 sample of \tauleptons. In addition, the cross section of the process
 was modified at generator-level to enhance the number of events with
 high invariant $\tautau$ masses to increase the number of \tauhadvis
-candidates with large transverse momenta. Finally, both \tauleptons
+candidates with large transverse momenta. Both \tauleptons
 are enforced to decay hadronically to minimise statistical
 uncertainties from the size of the \truetauhadvis sample.
 
@@ -37,23 +37,23 @@ Decays of hadrons containing $b$- or $c$-quarks are simulated using
 \EVTGEN[v1.2.0]~\cite{Lange:2001uf}. The contamination of the hard scattering
 interaction with soft, inelastic proton--proton collision events is accounted
 for by overlaying the event with additional minimum-bias events. The response of
-the ATLAS detector is simulated for all generated events~\cite{SOFT-2010-01} and
-subsequently events are reconstructed from the simulated detector response using
-the \textsc{Athena} software suite~\cite{ATL-SOFT-PUB-2021-001}.
+the ATLAS detector is simulated for all generated events~\cite{SOFT-2010-01};
+subsequently, events are reconstructed from the simulated detector response
+using the \textsc{Athena} software suite~\cite{ATL-SOFT-PUB-2021-001}.
 
 
 \subsection{\tauhadvis Candidate Selection}
 \label{sec:tauid_candidate_selection}
 
-The simulated events are used to construct samples of \tauhadvis
-candidates for the development and performance evaluation of \tauid
-algorithms. Only candidates passing the \tauhadvis reconstruction are
-considered, and the following selections are applied in addition:
+The simulated events are used to construct samples of \tauhadvis candidates for
+the development and performance evaluation of \tauid algorithms. Only candidates
+passing the \tauhadvis reconstruction are considered and the following
+selections are applied in addition:
 \begin{itemize}
 
-\item The number of \emph{core} tracks (cf.\ \Cref{sec:tau_rec}) of the
-  \tauhadvis candidate, \Ntracks, is either one or three. These are referred to
-  as 1- or 3-prong \tauhadvis candidates, respectively.
+\item The number of \emph{core} tracks (\Ntracks) of the \tauhadvis candidate is
+  either one or three. These are referred to as 1- or 3-prong \tauhadvis
+  candidates, respectively.
 
 \item The (visible) transverse momentum of the candidate needs to
   fulfil $\pT > \SI{20}{\GeV}$.

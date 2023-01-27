@@ -192,7 +192,7 @@ The following is concerned with a boosting algorithm called gradient
 boosting~\cite{Friedman:2001wbq}. Gradient boosting is particularly versatile,
 as it constructs models by minimising an arbitrary differentiable loss function.
 This allows gradient boosting to be applied to various kinds of prediction
-tasks, an example of binary classification being given hereafter.
+tasks. An example of binary classification is given hereafter.
 
 % The following\todo{Should say that there are other algorithms.} is concerned
 % with a boosting algorithm referred to as gradient
@@ -567,7 +567,7 @@ The function~$\myvec{\sigma}$ refers to the element-wise application of the
 logistic (sigmoid) function, thus the components of the gate activation vectors
 take values in $(0, 1)$. Moreover, an LSTM layer includes an internal state that
 propagates and evolves forward through time. At time $t$, the state of an LSTM
-is denoted by $\myvec{s}_{t}$, and the initial state is set to
+is denoted by $\myvec{s}_{t}$ and the initial state is set to
 $\myvec{s}_{0} = \myvec{0}$. The internal state of an LSTM at time $t$ is given
 by the following recurrence relation~\cite{Goodfellow-et-al-2016,keras}
 \begin{align}
@@ -578,7 +578,7 @@ by the following recurrence relation~\cite{Goodfellow-et-al-2016,keras}
 where $\circ$ is the element-wise multiplication of two vectors, $\myvec{\phi}$
 is an activation function defined by the element-wise application of the
 hyperbolic tangent,\footnote{The choice of activation function in
-  \Cref{eq:lstm_state_update} is specific to the implementation of LSTM networks
+  \Cref{eq:lstm_state_update} is specific to the implementation of LSTM layers
   in \textsc{Keras}~\cite{keras}.} and $\myvec{U}$, $\myvec{W}$, and $\myvec{b}$
 are weights and biases shared across time steps. Finally, the output of the LSTM
 layer at time~$t$ is given by~\cite{Goodfellow-et-al-2016}

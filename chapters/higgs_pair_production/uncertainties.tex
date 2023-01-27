@@ -43,10 +43,10 @@ these calibrations are used for electrons~\cite{EGAM-2018-01,TRIG-2018-05},
 muons~\cite{MUON-2018-03}, \tauhadvis~\cite{ATLAS-CONF-2017-029},
 jets~\cite{JETM-2018-05},
 flavour-tagging~\cite{FTAG-2018-01,FTAG-2020-08,FTAG-2021-002}, and the
-\pTmissAbs reconstruction~\cite{ATLAS-CONF-2018-023}. These measurements yield
-uncertainties on the momentum scale, momentum resolution, and selection
-efficiencies of reconstructed objects. The major categories of instrumental
-uncertainties are summarised in
+\pTmissAbs reconstruction~\cite{ATLAS-CONF-2018-023}. The calibration
+measurements yield uncertainties on the momentum scale, momentum resolution, and
+selection efficiency of reconstructed objects. The major categories of
+instrumental uncertainties are summarised in
 \Cref{tab:experimental_uncertainties_2}. Uncertainties on the selection
 efficiencies of electron, muon, and \tauhadvis triggers are only considered in
 channels where these triggers are used. All uncertainties affecting the
@@ -97,12 +97,11 @@ the background model.
 \label{sec:theory_uncertainties}
 
 A number of theoretical uncertainties need to be considered for signal and
-background processes estimated using simulation. For a given process these
-uncertainties are split, where applicable, into uncertainties on the cross
-section and uncertainties on the acceptance due to analysis
-selections. Generally, acceptance uncertainties for a given signal or background
-process are assumed to be correlated across regions if the uncertainty
-originates from the same source.
+background processes estimated using simulation. For a given process, these
+uncertainties are split into uncertainties on the cross section and
+uncertainties on the acceptance due to analysis selections. Generally,
+acceptance uncertainties for a given signal or background process are assumed to
+be correlated across regions if the uncertainty originates from the same source.
 
 The description of the theory uncertainties is structured as follows: First, the
 uncertainties on the major \ZHF and \ttbar backgrounds are described. Second,
@@ -113,15 +112,15 @@ on the modelling of the signal processes are presented.
 \subsubsection{Acceptance Uncertainties on \ZHF and \ttbar Backgrounds}
 
 The normalisation of the \ZHF and \ttbar backgrounds are measured in the
-simultaneous fit to the observed data in all regions. Constraints on the
+simultaneous fit to observed data in all regions. Constraints on the
 normalisation of the \ZHF background can be obtained from data in the
 \ZHF~CR. Similarly, the \ttbar normalisation can be constrained in the SR of the
 \lephad SLT channel and the \ZHF~CR. Since the normalisation of these processes
-is determined in the fit to data, any uncertainties on the normalisation of
-these processes (e.g.~cross section uncertainties) are omitted. Instead,
-uncertainties on the relative acceptance of \ZHF and \ttbar between analysis
-regions have to be considered. These uncertainties are hereafter referred to as
-\emph{relative acceptance uncertainties}.
+is determined in the fit to data, any uncertainties on the normalisation
+(e.g.~cross section uncertainties) are omitted. Instead, uncertainties on the
+relative acceptance of \ZHF and \ttbar between analysis regions have to be
+considered. These uncertainties are hereafter referred to as \emph{relative
+  acceptance uncertainties}.
 % The approach outlined below was originally adopted by the previous search
 % performed in this channel~\cite{HIGG-2016-16-witherratum} from searches and
 % measurements of $VH$~($H\to\bbbar$)
@@ -138,7 +137,7 @@ ratio
 \begin{align*}
   \mathcal{R} = \frac{(\AccTimesEff)_{\text{B}}}{(\AccTimesEff)_{\text{A}}} \,\text{,}
 \end{align*}
-which will be referred to as the \emph{relative acceptance} between regions~A
+which is referred to as the \emph{relative acceptance} between regions~A
 and~B. Uncertainties on the modelling of $\mathcal{R}$ in simulation are
 assigned as uncertainties on the normalisation of the background process in
 region~B and no additional uncertainties are assigned in the reference
@@ -278,12 +277,12 @@ given in the following:
 
 \item[Single top-quark] Uncertainties on the cross section used to normalise the
   predictions are taken from Ref.~\cite{stopxsec}. An acceptance uncertainty of
-  \SI{20}{\percent} is assigned to the minor contribution of single top-quark
+  \SI{20}{\percent} is assigned to the minor contribution of single-top-quark
   production via $s$- and $t$-channel diagrams, which is adopted from
   Ref.~\cite{HIGG-2018-51}.
 
   Acceptance uncertainties in the phase space selected by the analysis are
-  derived for $tW$~production, which is the dominant source of single top-quark
+  derived for $tW$~production, which is the dominant source of single-top-quark
   background in this analysis. The acceptance uncertainties from the NLO+PS
   matching and the choice of parton shower program are estimated by comparison
   with alternative simulation setups using \MGNLO and \HERWIG[7],
@@ -315,8 +314,8 @@ given in the following:
   collected during Run~2 of the LHC.
 
   Acceptance uncertainties in the phase space selected by the analysis are
-  derived for single Higgs boson backgrounds produced via $ZH$, $\ttbar H$ for
-  both $H \to \tautau$ and $H \to \bbbar$. They are derived by varying the
+  derived for single Higgs boson backgrounds produced via $ZH$ and $\ttbar H$
+  for both $H \to \tautau$ and $H \to \bbbar$. They are derived by varying the
   parton shower program, the factorisation and renormalisation scale, the PDFs
   and \alphas. Additionally, uncertainties on the NLO+PS matching and the
   modelling of initial- and final-state radiation are assigned to the $\ttbar H$
@@ -451,8 +450,8 @@ extrapolation to $\mX = \SI{1600}{\GeV}$ can lead to an uncertainty of up to
   \label{fig:resonant_partonshower}
 \end{figure}
 
-Acceptance uncertainties from factorisation and renormalisation scales, and
-PDF+\alphas are evaluated at generator-level for two mass points with
+Acceptance uncertainties from factorisation and renormalisation scales as well
+as PDF+\alphas are evaluated at generator-level for two mass points with
 $\mX = \SI{500}{\GeV}$ and \SI{1000}{\GeV} after approximating the selections
 applied in the analysis. The uncertainties are found to be negligible and are
 therefore omitted.

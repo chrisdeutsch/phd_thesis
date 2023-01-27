@@ -52,9 +52,11 @@ channel targets semi-leptonic decay modes using single-lepton triggers (SLTs)
 and lepton-plus-\tauhadvis triggers (LTTs). Each trigger defines a corresponding
 sub-channel referred to as the \lephad SLT and \lephad LTT channel,
 respectively. The \hadhad channel selects events with two \tauhadvis candidates
-using single-\tauhadvis triggers (STTs) and di-\tauhadvis triggers (DTTs). While
-different types of triggers are used in the \hadhad channel, the statistical
-analysis will not distinguish between events selected by STTs and DTTs.
+using single-\tauhadvis triggers (STTs) and di-\tauhadvis triggers (DTTs).
+Events selected by STTs and DTTs are combined into a single channel.
+% While different types of triggers are used in the \hadhad channel, the
+% statistical analysis will not distinguish between events selected by STTs and
+% DTTs.
 
 % While different types of triggers are used in this channel, the later
 % statistical analysis will not distinguish between events selected by STTs and
@@ -69,12 +71,13 @@ events are required to have exactly two \tauhadvis and events with electrons or
 muons are rejected. In the \lephad channels, events are required to have exactly
 one \tauhadvis and exactly one electron or muon. Additionally, electrons (muons)
 are required to pass the tight (medium) identification working point to reduce
-backgrounds with non-prompt leptons or jets being misidentified as electrons
-(muons).
+backgrounds with non-prompt leptons or jets misidentified as electrons (muons).
 
-Electrons, muons, and \tauhadvis have to be geometrically matched to their
-corresponding HLT objects according to the trigger that selected the event. This
-requirement is referred to as \emph{trigger-matching}. Trigger-dependent
+Electrons, muons, and \tauhadvis have to be geometrically matched to the
+corresponding object at the HLT that fulfilled the selection criteria of the
+trigger that selected the event.
+% according to the trigger that selected the event.
+This requirement is referred to as \emph{trigger-matching}. Trigger-dependent
 \pT~thresholds are applied to electrons, muons, and \tauhadvis to ensure that
 the triggers operate in regimes in which they are well-calibrated. The
 \pT~thresholds of SLTs and STTs increased with increasing instantaneous
@@ -209,8 +212,8 @@ following:
 
   First, a purely calorimeter-based reconstruction of the \tauhadvis candidate
   is performed in the region of interest (ROI) provided by the L1 trigger. The
-  topo-cluster algorithm is applied to the calorimeter cells within the ROI, and
-  the resulting topo-clusters are calibrated using the local hadronic
+  topo-cluster algorithm is applied to the calorimeter cells in the ROI, and the
+  resulting topo-clusters are calibrated using the local hadronic
   calibration. The energy of \tauhadvis candidates is determined from clusters
   in a core region ($\Delta R < 0.2$) around the barycentre of topo-cluster
   energy in the ROI. Subsequently, a \tauhadvis-specific energy calibration is
@@ -241,7 +244,7 @@ following:
   track multiplicity selections are applied by requiring \tauhadvis candidates
   to have one to three core tracks and at most one isolation track.
 
-  Finally, a \tauhadvis selection similar to the offline \tauhadvis selection is
+  Lastly, a \tauhadvis selection similar to the offline \tauhadvis selection is
   performed. The tracks resulting from the two-stage tracking are used as seeds
   for precision tracking. The precision tracks are then used to calculate
   discriminating variables used for \tauid. A BDT-based \tauid algorithm
@@ -281,9 +284,9 @@ following:
   efficiency of the trigger.
 
   The \texttt{mediumRNN\_tracktwoMVA} HLT chain is intended to be used in
-  conjunction with the corresponding \texttt{medium1\_tracktwoEF} chain by
-  combining both using a logical \emph{or}. Calibrations for this combination
-  are provided by the ATLAS collaboration.
+  conjunction with the \texttt{medium1\_tracktwoEF} chain by combining both
+  using a logical \emph{or}. Calibrations for this combination are provided by
+  the ATLAS collaboration.
 \end{description}
 
 % INCLUDE OR NOT INCLUDE???
@@ -390,11 +393,11 @@ following:
 
   The \FourJTwelve DTT is introduced to improve the acceptance of signal events
   with small \HH invariant masses, for example events from resonant \HH
-  production via resonances of low mass. The \LOneTopo DTT has limited
-  acceptance for such events due to the high \pT~thresholds on the leading jet
-  and the \dRtautau requirement. For resonances with masses larger than
-  \SI{325}{\GeV} and for SM~\HH production, the improvement in signal acceptance
-  from including the \FourJTwelve DTT is negligible.
+  production via low-mass resonances. The \LOneTopo DTT has limited acceptance
+  for such events due to the high \pT~thresholds on the leading jet and the
+  \dRtautau requirement. For resonances with masses larger than \SI{325}{\GeV}
+  and for SM~\HH production, the improvement in signal acceptance from including
+  the \FourJTwelve DTT is negligible.
 
 \item[2018 data-taking period] New HLT algorithms were introduced for \tauhadvis
   triggers in 2018, updating the existing \LOneTopo- and \FourJTwelve-based
@@ -479,14 +482,14 @@ significantly. Instead, 0 and 1 $b$-tag regions are used as control and
 validation regions.
 
 The electric charge of the electron, muon, or \tauhadvis candidate has to be
-reconstructed with opposite-sign (OS) with respect to the charge of the other
+reconstructed with opposite sign (OS) with respect to the charge of the other
 \tauhadvis candidate in the event. Events from processes producing \taulepton
 pairs, such as the signal processes, \Zjets, $H \to \tautau$, and \ttbar, are
 expected to be reconstructed with OS electric charge. Events with same-sign (SS)
 electric charge of the visible \taulepton decay products predominately originate
 from events in which a quark- or gluon-initiated jet is misidentified as a
 \tauhadvis. Therefore, the SS region is used in the \hadhad channel for the
-estimation of the multi-jet background.
+estimation of multi-jet backgrounds.
 
 All events considered in this search are required to successfully pass the
 di-$\tau$ mass reconstruction using the MMC. Drell--Yan processes producing
@@ -497,7 +500,7 @@ to define an orthogonal \ttbar CR by inverting the selection on \mBB. This
 region is used for measurements related to the \faketauhadvis background
 estimation.
 
-The expected event yields after the SR selection of all three channels are
+The expected event yields after the SR selection in all three channels are
 summarised in~\Cref{tab:smhh_prefit_yields}. The bulk of events entering the SRs
 are from top-quark backgrounds (\ttbar and single-$t$), \Zjets, and backgrounds
 in which a quark- or gluon-initiated jet is reconstructed as a \tauhadvis
@@ -581,12 +584,13 @@ following improvements:
   efficiency due to the $\Ntracks \in \{1, 3\}$ requirement on \tauhadvis. The
   relative improvement in efficiency with respect to the cut-based method is
   \SIrange{20}{30}{\percent} for 1-prong \tauhadvis in the \tauhadvis \pT range
-  relevant for the SM \HH search.\footnote{More than \SI{80}{\percent} of SM \HH
-    events have a leading \tauhadvis candidate with \pT less than
-    \SI{150}{\GeV}.} The efficiency for 3-prong \tauhadvis remains largely
-  unchanged for \tauhadvis \pT below \SI{100}{\GeV} compared to the cut-based
-  method. However, for 3-prong \tauhadvis with $\pT > \SI{100}{\GeV}$, the track
-  association efficiency is reduced by up to \SI{10}{\percent}.
+  relevant for the SM \HH search.
+  % \footnote{More than \SI{80}{\percent} of SM \HH events have a leading
+  % \tauhadvis candidate with \pT less than \SI{150}{\GeV}.}
+  The efficiency for 3-prong \tauhadvis remains largely unchanged for \tauhadvis
+  \pT below \SI{100}{\GeV} compared to the cut-based method. However, for
+  3-prong \tauhadvis with $\pT > \SI{100}{\GeV}$, the track association
+  efficiency is reduced by up to \SI{10}{\percent}.
 
 \item[\Tauid] With the introduction of the RNN-based \tauid
   (cf.~\Cref{sec:tauid}), the rejection of \tauhadvis candidates originating

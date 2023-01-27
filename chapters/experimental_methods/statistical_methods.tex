@@ -148,10 +148,8 @@ with the terms in brackets being described in the following:
   over events making up the background prediction in the given bin and $w_i$ are
   the corresponding event weights. The constant~$\tau_{cb}$ can be interpreted
   as an effective number of events, which measures the statistical precision of
-  the background estimate in the bin. The model incorporates the statistical
-  uncertainty by setting up auxiliary measurements of the effective number of
-  events,\footnote{Let $Y = \sum_{i = 1}^{N} W_i$ and
-    $Y^\prime = \sum_{i = 1}^{N^\prime} c$, where $N$ and $N^\prime$ are
+  the background estimate in the bin.\footnote{Let $Y = \sum_{i = 1}^{N} W_i$
+    and $Y^\prime = \sum_{i = 1}^{N^\prime} c$, where $N$ and $N^\prime$ are
     independent Poisson random variables, $W_i$ are i.i.d.\ weights that are
     independent of $N$ and $N^\prime$, and $c$ is a constant. The effective
     number of events refers to the value of $\expect(N^\prime)$ such that
@@ -159,11 +157,12 @@ with the terms in brackets being described in the following:
     condition yields
     $\expect(N^\prime) = \expect(N) \expect(W)^2 / \expect(W^2)$, and after
     approximating expected values with sample averages
-    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.}
-  $\gamma_{cb}\tau_{cb}$, for every bin. These measurements observe
-  $m_{cb} = \tau_{cb}$, and therefore the nominal value of the $\gamma_{cb}$
-  parameters is 1. Supplementary information on the Barlow--Beeston method is
-  given in \Cref{app:barlow_beeston}.
+    $\expect(N^\prime) \approx ( \sum_i w_i )^2 / \sum_i w_i^2$.} The model
+  incorporates the statistical uncertainty by setting up auxiliary measurements
+  of the effective number of events, $\gamma_{cb}\tau_{cb}$, for every
+  bin. These measurements observe $m_{cb} = \tau_{cb}$, and therefore the
+  nominal value of the $\gamma_{cb}$ parameters is 1. Supplementary information
+  on the Barlow--Beeston method is given in \Cref{app:barlow_beeston}.
 
 \end{itemize}
 
@@ -194,7 +193,7 @@ parameters, the Asimov dataset is the dataset in which the observables $n_{cb}$
 and the global observables $a_p$ and $m_{cb}$ are equal to their expected
 values. Asimov datasets can be used, in place of the observed data, to evaluate
 the expected experimental sensitivity of searches and measurements in HEP. Some
-uses of Asimov datasets will be highlighted in subsequent sections.
+uses of Asimov datasets are highlighted in subsequent sections.
 
 
 \subsection{Hypothesis Testing in Particle Physics}%
@@ -419,7 +418,7 @@ background-only Asimov data instead of the observed
 data~\cite{Cowan:2010js}. The median upper limit is also referred to as the
 \emph{expected upper limit}. An example of the limit setting procedure using the
 \CLs method is given in \Cref{fig:cls_example}. All upper limits in the
-remainder of this thesis were determined using the \CLs~technique.
+remainder of this thesis are determined using the \CLs~technique.
 
 \begin{figure}[htbp]
   \centering
