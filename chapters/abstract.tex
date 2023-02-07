@@ -10,7 +10,7 @@ proton--proton collision data at a centre-of-mass energy of \SI{13}{\TeV}
 recorded by the ATLAS detector at the Large Hadron Collider in 2015--2018.
 Searches for Higgs boson pair production are important to solidify our
 understanding of electroweak symmetry breaking in the Standard Model (SM) and to
-search for phenomena beyond the SM.
+search for phenomena beyond the SM (BSM).
 
 The search presented in this thesis targets channels with at least one hadronic
 \taulepton decay (i.e.~$\tau \to \nu_{\tau} + \text{hadrons}$). A crucial
@@ -19,10 +19,9 @@ hadronic \taulepton decays from those of quark- or gluon-initiated jets in the
 ATLAS detector. For this purpose, a novel \tauid algorithm based on recurrent
 neural networks is introduced. The algorithm exploits information of
 reconstructed charged-particle tracks, topological clusters of calorimeter cell
-signals, and purposefully constructed discriminating variables
-to\todo{TODO}. The new \tauid method significantly outperforms the methods used
-perviously and has since become the default algorithm for \tauid at the ATLAS
-experiment.
+signals, and purposefully constructed discriminating variables for \tauid. The
+new \tauid method significantly outperforms the methods used perviously and has
+since become the default algorithm for \tauid at the ATLAS experiment.
 
 Three different types of Higgs boson pair production are considered in this
 thesis: non-resonant Higgs boson pair production predicted by the SM (SM~\HH
@@ -32,14 +31,27 @@ of the Higgs boson self-coupling constant~\lambdahhh.
 % In all cases, machine learning methods are used to select signal event
 % candidates from the abundance of SM backgrounds.
 
-The search for SM~\HH production considers the gluon--gluon fusion (\ggF) and
-vector boson fusion (VBF) production modes. No statistically significant
-deviation from the background-only hypothesis is observed; therefore, upper
-limits are set on the production cross section \xsecggfvbf and the signal
+In the search for SM~\HH production, the gluon--gluon fusion (\ggF) and vector
+boson fusion (VBF) production modes are targeted; however, the analysis is
+primarily optimised for the dominant \ggF production mode. No statistically
+significant deviation from the background-only hypothesis is
+observed. Therefore, upper limits are set on the production cross section
+\xsecggfvbf and the signal
 strength~$\mu = \xsecggfvbf / \xsecggfvbf^{\text{SM}}$ of SM~\HH production,
 where $\xsecggfvbf^{\text{SM}}$ is the cross section predicted by the SM. The
 search yields upper limits of $\mu < \num{4.7}$ and
 $\xsecggfvbf < \SI{140}{\femto\barn}$ at \SI{95}{\percent} confidence level.
+
+
+
+
+Certain BSM theories predict resonant production
+
+
+Resonant \HH production can arise in BSM models
+
+The search for resonant \HH production considers resonances with masses ranging
+from \SIrange{251}{1600}{\GeV}.
 
 % BSM enhancements of the Higgs boson pair production cross section due to
 % resonant production of
@@ -47,7 +59,6 @@ $\xsecggfvbf < \SI{140}{\femto\barn}$ at \SI{95}{\percent} confidence level.
 , for example, as it arises in models with extended Higgs sectors.
 
 narrow width, scalar resonances with masses ranging from
-\SIrange{251}{1600}{\GeV}.
 
 % Depending on the mass of the resonance, the upper limits on the cross section
 % of $\pp \to X \to \HH$ range from \SIrange{20}{900}{\femto\barn}
