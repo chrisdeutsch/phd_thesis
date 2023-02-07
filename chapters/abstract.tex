@@ -2,42 +2,61 @@
 \chapter*{Abstract}
 % ------------------------------------------------------------------------------
 
-% ca 500 words?
+% ca 500-600 words?
 
 This thesis presents a search for Higgs boson pair production in final states
 with two $b$-quarks and two \tauleptons using \SI{139}{\per\femto\barn} of
 proton--proton collision data at a centre-of-mass energy of \SI{13}{\TeV}
 recorded by the ATLAS detector at the Large Hadron Collider in 2015--2018.
 Searches for Higgs boson pair production are important to solidify our
-understanding of electroweak symmetry breaking in the Standard~Model and, in
-addition, serve as probes for physics beyond the Standard~Model.
+understanding of electroweak symmetry breaking in the Standard Model (SM) and,
+in addition, serve as probes for physics beyond the SM.
 
 The search presented in this thesis targets channels with at least one hadronic
 \taulepton decay (i.e.~$\tau \to \nu_{\tau} + \text{hadrons}$). A crucial
-component of searches in these channels is the ability to distinguish the
-signatures of hadronic \taulepton decays from those of quark- or gluon-initiated
-jets in the ATLAS detector. For this purpose, a novel \tauid algorithm based on
-recurrent neural networks is introduced. The algorithm exploits information of
+component of this search is the ability to distinguish the signatures of
+hadronic \taulepton decays from those of quark- or gluon-initiated jets in the
+ATLAS detector. For this purpose, a novel \tauid algorithm based on recurrent
+neural networks is introduced. The algorithm exploits information of
 reconstructed charged-particle tracks, topological clusters of calorimeter cell
-signals, and purposefully constructed discriminating variables. The new \tauid
-method significantly outperforms the methods used perviously and has since
-become the default algorithm for \tauid at the ATLAS experiment.
+signals, and purposefully constructed discriminating variables
+to\todo{TODO}. The new \tauid method significantly outperforms the methods used
+perviously and has since become the default algorithm for \tauid at the ATLAS
+experiment.
 
-Upper limits are set on the signal strength, $\mu$, and the cross section,
-$\xsecggfvbf$, at \SI{95}{\percent}~CL. Yielding: $\mu < \num{4.7}$ and
+First, a search for non-resonant Higgs boson pair production predicted by the SM
+is presented. The gluon--gluon fusion (\ggF) and vector boson fusion (VBF)
+production modes are considered. No statistically significant deviation from the
+background-only hypothesis is observed; therefore, upper limits are set on the
+production cross section (\xsecggfvbf) and the signal strength
+($\mu = \xsecggfvbf / \xsecggfvbf^{\text{SM}}$) of SM Higgs boson pair
+production via \ggF and VBF. At \SI{95}{\percent} confidence level, the signal
+strength is constrained to be $\mu < \num{4.7}$ and the production cross section
 $\xsecggfvbf < \SI{140}{\femto\barn}$.
 
+BSM enhancements of the Higgs boson pair production cross section due to
+resonant production of
 
-% Search for SM~\HH production
+, for example, as it arises in models with extended Higgs sectors.
 
-% No statistically significant deviation from the background-only hypothesis is
-% observed.
+narrow width, scalar resonances with masses ranging from
+\SIrange{251}{1600}{\GeV}.
 
+% Depending on the mass of the resonance, the upper limits on the cross section
+% of $\pp \to X \to \HH$ range from \SIrange{20}{900}{\femto\barn}
 
 % Search for resonant \HH production.
 % - No statistically significant excess is observed.
 % - Limits are set for resonance masses ranging from 251 GeV to 1600 GeV
 % - The largest excess is at 1 TeV with a local (global) significance of 3.1 (2.0) $\sigma$
+
+Lastly, the search for non-resonant Higgs boson pair production is reinterpreted
+in terms of anomalous values of the Higgs boson self-coupling constant
+$\lambdahhh$. Upper limits are set at \SI{95}{\percent} as a function of the
+self-coupling modifier $\klambda$, where
+$\klambda = \lambdahhh / \lambdahhh^{\text{SM}}$. Based on these upper limits,
+an allowed \klambda interval of $\num{-2.4} \leq \klambda \leq 9.2$ is obtained.
+
 
 
 % Self coupling:
@@ -46,7 +65,6 @@ $\xsecggfvbf < \SI{140}{\femto\barn}$.
 % boson self-coupling constant. The allowed \klambda interval yields
 % $-2.4 \leq \klambda \leq 9.2$.
 
-% Tau-ID
 
 % Non-resonant and resonant
 %
