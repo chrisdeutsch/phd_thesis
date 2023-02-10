@@ -15,4 +15,10 @@ auto/
 *-converted-to.pdf
 *.synctex.gz
 *.bak
-
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
