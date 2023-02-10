@@ -26,7 +26,7 @@
 
 %------------------------------------------------------------------------------
 % Glossary package
-% \usepackage[acronym,toc,nosuper]{glossaries}
+\usepackage[acronym,toc,nosuper,nonumberlist,nopostdot]{glossaries}
 % TikZ packages and libraries
 % \usepackage{tikz}
 % \usepackage{tikz-3dplot}
@@ -153,10 +153,10 @@
 
 %------------------------------------------------------------------------------
 % Make a glossary and a list of acronyms
-% \makeglossaries
+\makeglossaries
 
 % Glossary entries
-% \input{thesis_glossary}
+\input{thesis_glossary}
 
 % Draft version - add the word DRAFT on the cover pages
 \ifthenelse{\equal{\ThesisVersion}{Draft}}{%
@@ -319,7 +319,9 @@
 
 %------------------------------------------------------------------------------
 % Print the glossary and list of acronyms
+\glsaddallunused
 % \printglossaries
+\printglossary[type=\acronymtype, title=List of Abbreviations, toctitle=List of Abbreviations]
 
 %------------------------------------------------------------------------------
 % You could instead add your acknowledgements here - don't forget to
