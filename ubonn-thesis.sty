@@ -6,13 +6,13 @@
 % See CHANGELOG.md or Git log for history of changes.
 % Responsible: Ian Brock (brock@physik.uni-bonn.de).
 %------------------------------------------------------------------------------
-\ProvidesPackage{ubonn-thesis}[2021/07/01 Version 9.0.0 University of Bonn thesis package]
+\ProvidesPackage{ubonn-thesis}[2022/07/19 Version 9.1.0 University of Bonn thesis package]
 \NeedsTeXFormat{LaTeX2e}
-% Needs 2013 TeX Live or later - this contains 2011/06/27 version of LaTeX.
-\NeedsTeXFormat{LaTeX2e}[2011/01/01]
+% Needs 2015 TeX Live or later - this contains version 3.19 of KOMA-Script.
+\NeedsTeXFormat{LaTeX2e}[2015/01/01]
 
 % Set TeX Live version
-\providecommand*{\texlive}{2017}
+\providecommand*{\texlive}{2020}
 
 % Set institute information
 \providecommand*{\InstituteName}{\PI}
@@ -61,6 +61,8 @@
 \DeclareBoolOption[true]{siunitx}
 \DeclareBoolOption[false]{eVkern}
 \DeclareBoolOption[false]{dcolumn}
+\DeclareBoolOption[true]{cleveref}
+\DeclareBoolOption[true]{clevercaps}
 \DeclareBoolOption[false]{diffcoeff}
 \DeclareBoolOption[false]{derivative}
 \DeclareBoolOption[false]{physics}
@@ -72,18 +74,18 @@
 \DeclareBoolOption[false]{feynmp}
 \DeclareBoolOption[false]{titlesec}
 \DeclareBoolOption[false]{astrobib}
+\DeclareBoolOption[false]{firstinits}
 \DeclareBoolOption[true]{floatopt}
 \DeclareBoolOption[false]{todonotes}
 \DeclareBoolOption[false]{shownotes}
-\DeclareBoolOption[true]{cleveref}
-\DeclareBoolOption[true]{clevercaps}
-\DeclareBoolOption[false]{firstinits}
 \DeclareBoolOption[false]{showframe}
 \DeclareStringOption[1cm]{coveroffset}
 \DeclareStringOption{texlive}
-\DeclareStringOption[biber]{backend}
-\DeclareStringOption{bibencoding}
 \DeclareStringOption[numeric-comp]{bibstyle}
+\DeclareStringOption[biber]{backend}
+\DeclareStringOption[chapter]{refsection}
+\DeclareStringOption{bibencoding}
+% \DeclareStringOption[ragged]{block}
 \ProcessKeyvalOptions*
 
 %-------------------------------------------------------------------------------
@@ -268,7 +270,7 @@
 % For biblatex, add option [heading=bibintoc] to \printbibliography
 % For traditional BibTeX, add option \KOMAoptions{toc=bibliography}
 % No paragraph indentation, but instead half-line space
-%\KOMAoptions{parskip=half}
+% \KOMAoptions{parskip=half}
 
 %------------------------------------------------------------------------------
 % Page layout
@@ -369,6 +371,7 @@
   \ifthenelse{\boolean{UBN@newtx}}{%
     \RequirePackage{newtxtext}
     \RequirePackage{newtxmath}
+    \RequirePackage[T1]{fontenc}
   }{}
   % Times-roman font
   \ifthenelse{\boolean{UBN@txfonts}}{%
@@ -445,7 +448,9 @@
   \sisetup{detect-all}
   \ifthenelse{\boolean{UBN@eVkern}}{%
     \typeout{ubonn-thesis: Applying kern to eV.}
-    \DeclareSIUnit\electronvolt{\text{e\kern-.1em V}}
+    \protected\def\electronvoltsymbol{e\kern-0.1em\relax V}
+    \DeclareSIUnit\electronvolt{\text{\electronvoltsymbol}}
+    % \DeclareSIUnit\electronvolt{\text{e\kern-.1em V}}
   }{}
   % Barn needed in some versions of siunitx.
   \DeclareSIUnit\barn{b}
@@ -656,22 +661,28 @@
 % Older versions of TeX Live use the option firstinits instead.
 % Some more tweaks should be made to the appearance,
 % see/include ubonn-biblatex.sty.
-\ifUBN@biblatex
-  \ifx\UBN@bibencoding\@empty
+\ifthenelse{\boolean{UBN@biblatex}}{%
+  \ifthenelse{\equal{\UBN@bibencoding}{}}{%
     \newcommand*{\UBN@biblatexencoding}{}
-  \else
+  }{%
     \newcommand*{\UBN@biblatexencoding}{bibencoding=\UBN@bibencoding,}
-  \fi
-  \ifUBN@astrobib
-    \RequirePackage[backend=\UBN@backend, \UBN@biblatexencoding
-      style=authoryear, natbib=true, refsection=chapter,
-      block=none, \UBN@initials]{biblatex}
-  \else
-    \RequirePackage[backend=\UBN@backend, \UBN@biblatexencoding
+  }
+  % \typeout{UBN@backend: <\UBN@backend>}
+  % \typeout{UBN@biblatexencoding: <\UBN@biblatexencoding>}
+  % \typeout{UBN@refsection: <\UBN@refsection>}
+  % \typeout{UBN@initials: <\UBN@initials>}
+  \ifthenelse{\boolean{UBN@astrobib}}{%
+    \RequirePackage[backend=\UBN@backend,
+      style=authoryear, natbib=true, refsection=\UBN@refsection,
+      \UBN@initials, uniquename=init,
+      \UBN@biblatexencoding]{biblatex}
+  }{%
+    \RequirePackage[backend=\UBN@backend,
       style=\UBN@bibstyle, sorting=none,
-      \UBN@initials]{biblatex}
-  \fi
-\fi
+      \UBN@initials,
+      \UBN@biblatexencoding]{biblatex}
+  }
+}{}
 
 %-------------------------------------------------------------------------------
 % Add ability to click on links and references.
@@ -699,9 +710,19 @@
 \ifthenelse{\boolean{UBN@cleveref}}{%
   \typeout{ubonn-thesis: using cleveref.}
   \ifthenelse{\boolean{UBN@clevercaps}}{%
-    \RequirePackage[capitalise, \UBN@language]{cleveref}
+    \typeout{ubonn-thesis: capitalise Fig. etc.}
+    % \ifthenelse{\texlive < 2022}{%
+      \RequirePackage[capitalise, \UBN@language]{cleveref}
+    % }{%
+      % \RequirePackage[capitalise]{cleveref}
+    % }
   }{%
-    \RequirePackage[\UBN@language]{cleveref}
+    \typeout{ubonn-thesis: do not capitalise fig. etc.}
+    % \ifthenelse{\texlive < 2022}{%
+      \RequirePackage[\UBN@language]{cleveref}
+    % }{%
+      % \RequirePackage{cleveref}
+    % }
   }
 }{%
   \typeout{ubonn-thesis: not using cleveref.}
@@ -719,7 +740,9 @@
 
 % Do not put a dot after Section/Chapter, nor in the figure caption.
 \KOMAoptions{numbers=noendperiod}
-% Write Chapter 1 at beginning of each chapter, if this is not an article
+% Write Chapter 1 at beginning of each chapter, if this is not an article.
+% Comment out this line and the \renewcommand*{\chapterformat} below
+% if you do not want "Chapter".
 \@ifclassloaded{scrartcl}{}{\KOMAoptions{chapterprefix=true,appendixprefix=true}}
 
 %-------------------------------------------------------------------------------
@@ -757,6 +780,24 @@
       \vspace{-\baselineskip}\noindent{\setlength{\parskip}{0pt}\Huge\hrulefill\par}
       \vspace{\baselineskip}
     }
+
+    %\renewcommand*{\thechapter}{\Roman{chapter}}
+      % \newcommand*{\chapternumbersize}{\Huge}
+      % \renewcommand*{\chapterformat}{%
+      %   \raggedleft
+      %   \ifXeTeX
+      %     \Large\chapapp\enskip\chapternumbersize\thechapter\\
+      %   \else
+      %     \textls{\Large\chapapp}\enskip\chapternumbersize\thechapter\\
+      %   \fi
+      %   %\MakeUppercase{\Large\chapapp}\enskip\chapternumbersize\thechapter\\
+      %   \hrulefill\\[-.25ex]
+      % }
+      % \renewcommand*{\chapterheadstartvskip}{\vskip 4\baselineskip}
+      % \renewcommand*{\chapterheadendvskip}{%
+      %   \vspace{-\baselineskip}\noindent{\setlength{\parskip}{0pt}\Huge\hrulefill\par}
+      %   \vspace{\baselineskip}
+      % }
   }
 }
 
