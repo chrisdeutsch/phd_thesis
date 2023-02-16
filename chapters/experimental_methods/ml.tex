@@ -564,7 +564,7 @@ $\myvec{W}^{\text{f/i/o}}$, as well as bias
 vectors~$\myvec{b}^{\text{f/i/o}}$. For a given gate, the weights and biases are
 the same for all time steps, which is an implementation of parameter sharing.
 The function~$\myvec{\sigma}$ refers to the element-wise application of the
-logistic (sigmoid) function, thus the components of the gate activation vectors
+logistic (sigmoid) function; thus, the components of the gate activation vectors
 take values in $(0, 1)$. Moreover, an LSTM layer includes an internal state that
 propagates and evolves forward through time. At time $t$, the state of an LSTM
 is denoted by $\myvec{s}_{t}$ and the initial state is set to
