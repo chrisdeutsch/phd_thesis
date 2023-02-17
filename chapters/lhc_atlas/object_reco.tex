@@ -3,12 +3,12 @@
 
 Particles produced in \pp~collision events are reconstructed from their signals
 in the sub-systems of the ATLAS detector. At first, low-level objects such as
-charged-particle tracks, primary vertices, and clusters of energy in the
-calorimeters are reconstructed. These objects are used to reconstruct and
-identify higher-level objects that correspond to the signatures of particles
-such as electrons, muons, \tauleptons, or quarks/gluons in the form of jets.
-These objects, often referred to as \emph{physics objects}, provide estimates of
-the four-momentum and other properties of the underlying particle. The same
+charged-particle tracks, primary vertices, and clusters of calorimeter cell
+signals are reconstructed. These objects are used to reconstruct and identify
+high-level objects that correspond to the signatures of particles such as
+electrons, muons, \tauleptons, or quarks/gluons in the form of jets.  These
+objects, often referred to as \emph{physics objects}, provide estimates of the
+four-momentum and other properties of the underlying particle. The same
 algorithms are used to reconstruct and identify objects in simulated
 \pp~collision events and in data recorded with the detector. Differences in the
 performance of the object reconstruction and selection in simulation and data
@@ -83,7 +83,7 @@ interaction. Other vertices are considered as originating from
 pile-up~\cite{PERF-2015-01}.
 
 
-\subsection{Topological Clustering of Energy in Calorimeter Cells}
+\subsection{Topological Clustering of Calorimeter Cell Signals}
 
 The segmentation of the calorimeters in lateral and longitudinal direction
 allows for the reconstruction of the three-dimensional shape of electromagnetic
@@ -198,8 +198,8 @@ reconstruction methods are employed yielding five types of reconstructed muons:
   tracks.
 
 \item[Inside-out muons] are reconstructed by extending a track in the ID with
-  hits in the MS. The additional hits are being used for a combined fit of the
-  muon trajectory in the ID and MS.
+  hits in the MS. The additional hits are used for a combined fit of the muon
+  trajectory in the ID and MS.
   % The inside-out strategy aims to recover cases where the stand-alone track
   % reconstruction in the MS fails to find a track.
 
@@ -345,7 +345,7 @@ physics analyses.
 Jet reconstruction using particle flow has several advantages compared to a
 calorimeter-based approach as detailed in Ref.~\cite{PERF-2015-09}. The energy
 resolution for jets at low transverse momenta
-($\pT^{\text{jet}} \lessapprox \SI{50}{\GeV}$, see for example
+($p_\text{T, jet} \lessapprox \SI{50}{\GeV}$, see for example
 Ref.~\cite{JETM-2018-05}) is improved due to the inclusion of tracking
 information. In part, this is due to the ability to account for charged hadrons
 with transverse momenta down to \SI{500}{\MeV} in the reconstruction of jets. In
@@ -354,8 +354,7 @@ for low-\pT charged hadrons due to charged hadrons being bent out of the jet
 clustering cone or their calorimeter signals being suppressed by the noise
 thresholds of the topo-cluster algorithm. Moreover, jets reconstructed using
 particle flow are less susceptible to pile-up since charged particle flow
-objects can be associated to the PV of the hard interaction using the
-reconstructed tracks.
+objects can be associated to the PV of the hard interaction.
 
 
 \subsubsection{$b$-tagging}
@@ -397,10 +396,10 @@ employed in this thesis:
   as features in $b$-tagging.
 \end{description}
 
-The $b$-tagging algorithms used at the ATLAS experiment combine discriminants
-provided by multiple low-level algorithms. In this thesis, the \textsc{DL1r}
-$b$-tagging algorithm~\cite{FTAG-2019-07} is used that combines the outputs
-of five algorithms using neural networks:
+The $b$-tagging algorithms used at the ATLAS experiment combine the
+discriminants of multiple low-level algorithms. In this thesis, the
+\textsc{DL1r} $b$-tagging algorithm~\cite{FTAG-2019-07} is used, which uses
+neural networks to combine the outputs of the following algorithms:
 \begin{description}
 
 \item[IP2D \& IP3D] The \textsc{IP2D} and \textsc{IP3D}
@@ -416,7 +415,7 @@ of five algorithms using neural networks:
 \item[RNNIP] The \textsc{RNNIP} algorithm~\cite{ATL-PHYS-PUB-2017-003} extends
   the idea of \textsc{IP2D} and \textsc{IP3D} by also considering dependencies
   of impact parameter significances between tracks associated to a jet. This is
-  accomplished with a recurrent neural network taking tracks of the jet as
+  accomplished with a recurrent neural network taking the tracks of a jet as
   inputs. Track properties, such as the impact parameter significances, are
   passed to the network with every track. Based on these inputs, \textsc{RNNIP}
   estimates the probability of a jet being a $b$-, $c$-, or \emph{light}-jet.
@@ -593,7 +592,7 @@ referred to as \tauid, is performed to reject \tauhadvis candidates from these
 sources. A description of \tauid is given in \Cref{sec:tauid}.
 
 
-\subsection{Missing Transverse Energy}%
+\subsection{Missing Transverse Momentum}%
 \label{sec:atlas_met}
 
 The missing transverse momentum, \pTmiss, is used to reconstruct the total
@@ -639,7 +638,7 @@ referred to as the \emph{track soft term}.
 \Cref{eq:met} illustrates the difficulties in reconstructing the total
 transverse momentum of invisible particles using \pTmiss. Any detectable object
 that fails to be detected, either due to detector acceptance effects or
-inefficiencies in the object reconstruction, will introduce deviations from the
+inefficiencies in the object reconstruction, introduces deviations from the
 total transverse momentum of invisible particles. Moreover, uncertainties on
 transverse momenta of all reconstructed objects accumulate in the calculation of
 \pTmiss, leading to large uncertainties on \pTmiss particularly in events with

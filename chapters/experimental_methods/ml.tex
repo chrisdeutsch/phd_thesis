@@ -17,7 +17,7 @@ predictors~$\myvec{X}$ by learning from a sample of labelled training
 data~$\{ (\myvec{x}_i, \myvec{y}_i) \}_{i=1}^{N}$. Depending on the type of
 outcome a distinction between classification (categorical outcomes) and
 regression (continuous outcomes, count outcomes, etc.) is made. Supervised
-learning is particularly applicable in HEP, since large amounts of labelled
+learning is particularly applicable in HEP since large amounts of labelled
 training data can be generated using Monte Carlo (MC) simulation.
 % , the simulations being heavily tuned to experimental observations to
 % accurately represent the data-generating processes.
@@ -32,7 +32,7 @@ discrimination in the search for non-resonant \HH production. The basic
 principles of \emph{neural networks} are introduced
 in~\Cref{sec:neural_networks}, including a discussion of an architecture
 referred to as \emph{recurrent neural networks}. Neural networks are used for
-the identification of hadronic \taulepton decays in \Cref{sec:tauid}, as well as
+the identification of hadronic \taulepton decays in \Cref{sec:tauid} as well as
 for the search for resonant \HH production in~\Cref{sec:dihiggs}.
 
 
@@ -49,7 +49,7 @@ iteration to emphasise prediction errors made by previous boosting
 iterations. Finally, the predictions of the ensemble of trees are combined with
 the goal of providing superior classification/regression performance compared to
 a single decision tree. The following sections discuss the application of
-decision trees to regression tasks (regression trees), as well as a
+decision trees to regression tasks (regression trees) as well as a
 \emph{gradient boosting} algorithm that builds ensembles of regression trees to
 perform binary classification.
 
@@ -347,7 +347,7 @@ performed in the space of functions and not in parameter
 space~\cite{Friedman:2001wbq}. Steps~2a) and 2b) of the algorithm estimate the
 negative gradient of the loss function with respect to~$F(\myvec{x})$, which is
 evaluated at the function estimate of the previous boosting iteration. Classical
-gradient descent algorithms sometimes determine the step size of the parameter
+gradient descent algorithms often determine the step size of the parameter
 update by performing a line search along the direction of the steepest descent. In
 the \textsc{TreeBoost} algorithm, this step size is determined by step 2c) on a
 per-leaf basis.
@@ -564,7 +564,7 @@ $\myvec{W}^{\text{f/i/o}}$, as well as bias
 vectors~$\myvec{b}^{\text{f/i/o}}$. For a given gate, the weights and biases are
 the same for all time steps, which is an implementation of parameter sharing.
 The function~$\myvec{\sigma}$ refers to the element-wise application of the
-logistic (sigmoid) function, thus the components of the gate activation vectors
+logistic (sigmoid) function; thus, the components of the gate activation vectors
 take values in $(0, 1)$. Moreover, an LSTM layer includes an internal state that
 propagates and evolves forward through time. At time $t$, the state of an LSTM
 is denoted by $\myvec{s}_{t}$ and the initial state is set to
