@@ -302,8 +302,8 @@ evaluated on the hold-out dataset.
 
 
 
-\subsection{Extraction of Signals from SM \HH Production with BDTs in
-  the \hadhad Channel}%
+\subsection{Extraction of Signals from SM \HH Production in the \hadhad
+  Channel}%
 \label{sec:mva_smbdt}
 
 The search for SM \HH production in the \hadhad channel uses BDTs to separate
@@ -358,16 +358,14 @@ characteristic curve (ROC-AUC). Here, the ROC curve is defined
 %   binary classifier. The definition used here uses conventions
 %   commonly used in HEP to express this relationship.}
 as the parametric curve given by
-$(x, y) = \left( \varepsilon_{\text{s}}(t), 1 -
-  \varepsilon_{\text{b}}(t) \right)$, where $t$ is a threshold applied
-to the score of a classifier, and $\varepsilon_\text{s}$ /
-$\varepsilon_\text{b}$ the signal and background efficiency of this
-selection. A value of the ROC-AUC of $1$ indicates perfect
+$(x, y) = \left( \varepsilon_{\text{s}}(t), 1 - \varepsilon_{\text{b}}(t)
+\right)$, where $t$ is a threshold applied to the score of a classifier and
+$\varepsilon_\text{s}$ ($\varepsilon_\text{b}$) the signal (background)
+efficiency of this selection. A value of the ROC-AUC of $1$ indicates perfect
 classification, while a value of $0.5$ corresponds to an uninformative
-classifier. The ROC-AUC is chosen as the metric to be optimised as it
-summarises the classifier's performance over all possible working
-points, i.e.\ choices of thresholds on the classifier
-output~\cite{james13}.
+classifier. The ROC-AUC is chosen as the metric to be optimised as it summarises
+the classifier's performance over all possible working points, i.e.\ choices of
+thresholds on the classifier output~\cite{james13}.
 
 About 1600 BDT configurations are tested during the model selection process. The
 steps described in the following are applied separately to the datasets
@@ -514,8 +512,8 @@ the \mHH spectra between signal and background (cf.~\Cref{fig:mva_inputs}).
 \end{table}
 
 
-\subsection{Extraction of Signals from Resonant \HH Production with
-  PNNs in the \hadhad Channel}%
+\subsection{Extraction of Signals from Resonant \HH Production in the \hadhad
+  Channel}%
 \label{sec:mva_pnn}
 
 The search for resonant \HH production considers scalar resonances
