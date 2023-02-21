@@ -516,17 +516,15 @@ the \mHH spectra between signal and background (cf.~\Cref{fig:mva_inputs}).
   Channel}%
 \label{sec:mva_pnn}
 
-The search for resonant \HH production considers scalar resonances
-with masses ranging from \SIrange{251}{1600}{\GeV}, probing a wide
-range of kinematic configurations of final state
-particles. Consequently, the joint probability density of the
-discriminating variables for signal processes varies with the assumed
-mass of the resonance. This is particularly visible in the marginal
-distributions of \mHH, \dRtautau, and \dRbb, previously shown
-in~\Cref{fig:mva_inputs} for three \mX hypotheses, where the overlap
-between the signal and background spectra changes as \mX is
-varied. For optimal signal sensitivity for all assumed \mX, this
-dependency should be exploited.
+The search for resonant \HH production considers scalar resonances with masses
+ranging from \SIrange{251}{1600}{\GeV}, probing a wide range of kinematic
+configurations of final state particles. Consequently, the joint distribution of
+the discriminating variables for signal processes varies with the assumed mass
+of the resonance. This is particularly visible in the marginal distributions of
+\mHH, \dRtautau, and \dRbb, previously shown in~\Cref{fig:mva_inputs} for three
+\mX hypotheses, where the overlap between the signal and background spectra
+changes as \mX is varied. For optimal signal sensitivity for all assumed \mX,
+this dependency should be exploited.
 
 Using multivariate classifiers for signal extraction, one possible
 method of incorporating the \mX dependency of the classification
@@ -542,7 +540,7 @@ of NNs to smoothly approximate large classes of continuous
 functions~\cite{Baldi:2016fzo}. As a result of these properties, it is shown in
 Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate the classification
 task to parameter values not seen in training. It is also suggested that
-parameterised classifiers may outperform approaches using one classifier per
+parameterised classifiers may outperform approaches of using one classifier per
 parameter value due to their ability to solve the more general,
 parameter-dependent classification problem.
 
@@ -818,7 +816,7 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 The sensitivity of the signal extraction method to the mass of the resonance
 decreases with increasing \mX, as is indicated by the width of the curves in
 \Cref{fig:pnn_detuning}. This decrease in mass sensitivity has two primary
-sources. First, the \mHH resolution increases approximately linearly with
+sources. First, the \mHH resolution decreases approximately linearly with
 \mX. Second, the PNN has high separation power between events from background
 processes and resonant \HH production at high mass.\footnote{The discrimination
   power of the PNN as a function of the \mX of the signal hypothesis is shown in
