@@ -64,7 +64,7 @@ internal re-weighting in \POWHEGBOX[v2]. Similarly, \PYTHIA[8] provides
 variations of initial and final state emissions by varying the renormalisation
 scales in the PS by re-weighting~\cite{Mrenna:2016sih,pythia-variations-online}.
 This approach allows estimating uncertainties without changing the
-particle-level predictions of the simulation program, thus avoiding the need to
+particle-level predictions of the simulation program thus avoiding the need to
 re-run the detector simulation.
 
 
@@ -107,7 +107,7 @@ considered:
 \item[PDF+\alphas and PDF choice] Uncertainties on the \NNPDF[3.0nnlo] set of
   PDFs~\cite{Ball:2014uwa} are evaluated using 100 replica sets provided through
   the \textsc{LHAPDF6} library~\cite{Buckley:2014ana} and implemented using
-  internal re-weighting in \SHERPA. The uncertainty on \alphas propagated by
+  internal re-weighting in \SHERPA. The uncertainty on \alphas is estimated by
   comparing \NNPDF[3.0nnlo] PDF sets with $\alphas(\mZ^2) = 0.117$ and $0.119$
   with the nominal set using a value of $0.118$. Finally, an uncertainty on the
   choice of PDF set is estimated by comparing with two alternative PDF sets
