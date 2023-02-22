@@ -16,17 +16,17 @@ the expected number of events for the background process between CRs and the
 signal-like region. This can be used to estimate the background in the
 signal-like region using data observed in the CRs.
 
-In the \hadhad channel, two observables that allow for the definition of CRs enriched in
-multi-jet events are the identification requirements fulfilled by the \tauhadvis
-candidates and the sign of the electric charges of both candidates. Two disjoint
-regions are defined based on the \tauid requirement: the ID~region and the
-\antiid~region. The ID~region consists of events in which both \tauhadvis
-candidates pass the loose \tauid working point. The identification criterion is
-partially inverted to define a multi-jet enriched CR by requiring exactly one
-loose \tauhadvis and exactly one
+In the \hadhad channel, two observables that allow for the definition of CRs
+enriched in multi-jet events are the identification requirements fulfilled by
+the \tauhadvis candidates and the sign of the electric charges of both
+candidates. Two disjoint regions are defined based on the \tauid requirement:
+the ID~region and the \antiid~region. The ID~region consists of events in which
+both \tauhadvis candidates pass the loose \tauid working point. The
+identification criterion is partially inverted to define a multi-jet enriched CR
+by requiring exactly one loose \tauhadvis and exactly one
 anti-\tauhadvis~(cf.~\Cref{sec:object_reconstruction}). This region is referred
 to as the \antiid~region. Similarly, two regions are defined based on the charge
-signs of the two \tauhadvis candidates: an OS~region and a SS~region. Lastly,
+signs of the two \tauhadvis candidates: an OS~region and an SS~region. Lastly,
 the \tauid and charge sign criterion are combined to define four distinct
 regions: the OS~ID~region (the signal-like region), the OS~Anti-ID~region, the
 SS~ID~region, and the SS~Anti-ID~region.
@@ -102,11 +102,11 @@ summarised. The 2 $b$-tag region, while most similar to the SR, is not well
 suited to estimate FFs:
 \begin{itemize}
 
-\item The 2 $b$-tag regions relevant for the FF measurement have large
-  contributions from non-multi-jet sources, primarily \ttbarFakes, that have to
-  be subtracted. The large size of the subtraction leads to a degradation of the
-  statistical precision of the FFs and an increase in systematic uncertainties
-  from modelling uncertainties on the subtracted components.
+\item The 2 $b$-tag SS regions have large contributions from non-multi-jet
+  sources, primarily \ttbarFakes, that have to be subtracted. The large size of
+  the subtraction leads to a degradation of the statistical precision of the FFs
+  and an increase in systematic uncertainties from modelling uncertainties on
+  the subtracted components.
 
 \item The strict \btag requirement suppresses the multi-jet contribution in the
   CRs preventing a measurement of FFs in bins of \tauhadvis candidate
@@ -596,8 +596,8 @@ propagated to the multi-jet estimate.
 
   \begin{subfigure}[t]{0.48\textwidth}
     \includegraphics[width=\textwidth]{fakefactors/os_ss/fake_factors_osss_18_fontembed}
-    \subcaption{Comparison of OS and SS FFs for events selected by DTTs. Only
-      the 2018 data-taking period.}%
+    \subcaption{Comparison of OS and SS FFs for events selected by DTTs. FFs for
+      the 2018 data-taking period are shown.}%
     \label{fig:fake_factor_OSSS_dtt}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{0.48\textwidth}
@@ -637,7 +637,7 @@ propagated to the multi-jet estimate.
 
 The multi-jet background in the \hadhad SR (2~$b$-tag~OS~ID) is estimated by
 applying FFs from the 1~$b$-tag~SS~region to events in the
-2~$b$-tag~OS~Anti-ID~region after subtraction of non-multi-jet processes. In
+2~$b$-tag~OS~Anti-ID~region after subtraction of non-multi-jet contributions. In
 addition, these FFs are multiplied by a 1~to~2 $b$-tag transfer factor to
 account for possible differences between FFs for 1 and 2~$b$-tag regions
 (cf.~\Cref{fig:fakefactor_regions}). The change in \btag requirement is not
@@ -650,8 +650,8 @@ multi-jet rejection of the 2~$b$-tag~requirement, the comparison is performed
 using FFs measured inclusively in the trigger category, \tauhadvis \pT, and
 \tauhadvis $\eta$ but separately for 1- and 3-prong \tauhadvis candidates, for
 cases where the anti-\tauhadvis is leading and sub-leading in \pT, and for the
-three data-taking periods. The 1 to 2~$b$-tag transfer factor is defined as the
-ratio
+three major data-taking periods. The 1 to 2~$b$-tag transfer factor is defined
+as the ratio
 \begin{align*}
   \text{TF}_{1 \ra 2\,b\text{-tag}} = \frac{\FF_{\text{SS}}^{2\,b\text{-tag}}}{\FF_{\text{SS}}^{1\,b\text{-tag}}} \,\text{.}
 \end{align*}
@@ -660,7 +660,7 @@ in~\Cref{fig:mjfakes_transfer_factor}, showing no significant difference between
 FFs derived in the 1 and 2 $b$-tag regions. However, the power of this
 comparison is limited due to large uncertainties on the FF estimate in the
 2~$b$-tag~region. Therefore, extrapolation uncertainties based on the
-uncertainties of the transfer factor measurement still have to be assigned.
+uncertainties of the transfer factor measurement are still assigned.
 % Extrapolation uncertainties are defined by varying the transfer factors within
 % their uncertainty, separately for every transfer factor bin, propagating the
 % effect to the multi-jet estimate in the 2 $b$-tag region.
@@ -687,11 +687,11 @@ non-multi-jet processes has to be performed when applying FFs to obtain the
 multi-jet prediction in the SR.  The size of the subtraction in the
 2~$b$-tag~OS~Anti-ID is illustrated in~\Cref{fig:mjfakes_2tag_os_antiid},
 showing that \ttbarFakes is the dominant source of non-multi-jet events in this
-region. Due to the large relative size of the subtracted non-multi-jet
-component, any uncertainties affecting the subtracted components have a large
-impact on the multi-jet estimate in the ID region. This is the largest source of
-systematic uncertainty on the estimate of the multi-jet background in the
-analysis.
+region. Due to the large %relative
+size of the subtracted non-multi-jet contributions, any uncertainties on the
+subtracted components have a large impact on the multi-jet estimate in the ID
+region. This is the largest source of systematic uncertainty on the multi-jet
+background estimate.
 % This is the main limitation of the multi-jet estimation method used in this
 % analysis.
 
@@ -755,8 +755,8 @@ multi-jet estimate in the \hadhad SR:
 The effect of FF statistical uncertainties on the multi-jet prediction in the SR
 is estimated by performing variations of FFs separately for all bins of the FF
 measurement. The discriminants used in this analysis are insensitive to
-variations of FFs in a single bin and therefore all variations are combined into
-a single normalisation uncertainty. The resulting uncertainty on the multi-jet
+variations of FFs in a single bin; therefore, all variations are combined into a
+single normalisation uncertainty. The resulting uncertainty on the multi-jet
 estimate in the SR is~$\pm \SI{1.4}{\percent}$.
 
 % OS-SS uncertainty
@@ -764,8 +764,8 @@ The non-closure uncertainty from the comparison of FFs measured in the 1 $b$-tag
 SS and OS regions is estimated by assigning the full difference between the
 central values of both measurements as an uncertainty on the FFs. The impact of
 this variation on the shape of distributions in the SR is taken into account in
-the background model. The differences between OS and SS FFs are generally small,
-thus the non-closure uncertainty has only a minor impact of
+the background model. The differences between OS and SS FFs are generally small;
+thus, the non-closure uncertainty has only a minor impact of
 $\pm \SI{1.0}{\percent}$ on the normalisation of the multi-jet estimate.
 
 % Extrapolation uncertainty (varying coherently for all four
@@ -786,10 +786,10 @@ variations on the multi-jet normalisation in the SR is~$\pm \SI{5.5}{\percent}$.
 %   other (50% up and down)
 Systematic uncertainties from the subtraction of non-multi-jet events in the 2
 $b$-tag OS Anti-ID region are estimated by performing variations of the
-subtracted components. The subtraction of \ttbarTrue, \ttbarFakes, and other
-non-multi-jet events is varied separately. In all cases, the effect of the
-variations on the shape of the multi-jet prediction in the SR is taken into
-account in the model of the multi-jet background.
+subtracted components. The subtractions of \ttbarTrue, \ttbarFakes, and other
+non-multi-jet contributions are varied separately. In all cases, the effect of
+the variations on the shape of the multi-jet prediction in the SR is taken into
+account in the background model.
 
 The uncertainty resulting from the subtraction of \ttbarTrue, which constitutes
 about \SI{13}{\percent} of the total subtraction, is obtained by varying the
@@ -819,12 +819,12 @@ of~$\pm \SI{2.8}{\percent}$. This uncertainty is small due to the small relative
 size of the \ttbarTrue subtraction.
 
 The subtraction of \ttbarFakes accounts for \SI{78}{\percent} of the total
-non-multi-jet subtraction. The uncertainty on the subtraction of \ttbarFake
-events is defined using the \ttbarFakes SF measurement for \antitau previously
-described in \Cref{sec:bkg_hadhad_ttbarfakes}. The SF variations explaining most
-of the variance of the SF measurement are used to define the \ttbarFakes
-subtraction uncertainty, yielding a total of four variations. Other variations
-of the measured SFs have negligible impact on the multi-jet prediction and are
+non-multi-jet subtraction. The uncertainty on the subtraction is defined using
+the SF measurement for \antitau previously described in
+\Cref{sec:bkg_hadhad_ttbarfakes}. The SF variations explaining most of the
+variance of the SF measurement are used to define the \ttbarFakes subtraction
+uncertainty, yielding a total of four variations. Other variations of the
+measured SFs have negligible impact on the multi-jet prediction and are
 therefore omitted to reduce the number of parameters in the background model. An
 additional uncertainty is assigned according to the difference between the
 \ttbarFakes prediction with and without application of SFs to account for the

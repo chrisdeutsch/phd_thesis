@@ -302,8 +302,8 @@ evaluated on the hold-out dataset.
 
 
 
-\subsection{Extraction of Signals from SM \HH Production with BDTs in
-  the \hadhad Channel}%
+\subsection{Extraction of Signals from SM \HH Production in the \hadhad
+  Channel}%
 \label{sec:mva_smbdt}
 
 The search for SM \HH production in the \hadhad channel uses BDTs to separate
@@ -358,16 +358,14 @@ characteristic curve (ROC-AUC). Here, the ROC curve is defined
 %   binary classifier. The definition used here uses conventions
 %   commonly used in HEP to express this relationship.}
 as the parametric curve given by
-$(x, y) = \left( \varepsilon_{\text{s}}(t), 1 -
-  \varepsilon_{\text{b}}(t) \right)$, where $t$ is a threshold applied
-to the score of a classifier, and $\varepsilon_\text{s}$ /
-$\varepsilon_\text{b}$ the signal and background efficiency of this
-selection. A value of the ROC-AUC of $1$ indicates perfect
+$(x, y) = \left( \varepsilon_{\text{s}}(t), 1 - \varepsilon_{\text{b}}(t)
+\right)$, where $t$ is a threshold applied to the score of a classifier and
+$\varepsilon_\text{s}$ ($\varepsilon_\text{b}$) the signal (background)
+efficiency of this selection. A value of the ROC-AUC of $1$ indicates perfect
 classification, while a value of $0.5$ corresponds to an uninformative
-classifier. The ROC-AUC is chosen as the metric to be optimised as it
-summarises the classifier's performance over all possible working
-points, i.e.\ choices of thresholds on the classifier
-output~\cite{james13}.
+classifier. The ROC-AUC is chosen as the metric to be optimised as it summarises
+the classifier's performance over all possible working points, i.e.\ choices of
+thresholds on the classifier output~\cite{james13}.
 
 About 1600 BDT configurations are tested during the model selection process. The
 steps described in the following are applied separately to the datasets
@@ -514,21 +512,19 @@ the \mHH spectra between signal and background (cf.~\Cref{fig:mva_inputs}).
 \end{table}
 
 
-\subsection{Extraction of Signals from Resonant \HH Production with
-  PNNs in the \hadhad Channel}%
+\subsection{Extraction of Signals from Resonant \HH Production in the \hadhad
+  Channel}%
 \label{sec:mva_pnn}
 
-The search for resonant \HH production considers scalar resonances
-with masses ranging from \SIrange{251}{1600}{\GeV}, probing a wide
-range of kinematic configurations of final state
-particles. Consequently, the joint probability density of the
-discriminating variables for signal processes varies with the assumed
-mass of the resonance. This is particularly visible in the marginal
-distributions of \mHH, \dRtautau, and \dRbb, previously shown
-in~\Cref{fig:mva_inputs} for three \mX hypotheses, where the overlap
-between the signal and background spectra changes as \mX is
-varied. For optimal signal sensitivity for all assumed \mX, this
-dependency should be exploited.
+The search for resonant \HH production considers scalar resonances with masses
+ranging from \SIrange{251}{1600}{\GeV}, probing a wide range of kinematic
+configurations of final state particles. Consequently, the joint distribution of
+the discriminating variables for signal processes varies with the assumed mass
+of the resonance. This is particularly visible in the marginal distributions of
+\mHH, \dRtautau, and \dRbb, previously shown in~\Cref{fig:mva_inputs} for three
+\mX hypotheses, where the overlap between the signal and background spectra
+changes as \mX is varied. For optimal signal sensitivity for all assumed \mX,
+this dependency should be exploited.
 
 Using multivariate classifiers for signal extraction, one possible
 method of incorporating the \mX dependency of the classification
@@ -544,7 +540,7 @@ of NNs to smoothly approximate large classes of continuous
 functions~\cite{Baldi:2016fzo}. As a result of these properties, it is shown in
 Ref.~\cite{Baldi:2016fzo} that PNNs are able to interpolate the classification
 task to parameter values not seen in training. It is also suggested that
-parameterised classifiers may outperform approaches using one classifier per
+parameterised classifiers may outperform approaches of using one classifier per
 parameter value due to their ability to solve the more general,
 parameter-dependent classification problem.
 
@@ -659,26 +655,26 @@ $\PZ \to \tautau$ in association with jets from $b$- or $c$-quarks.
 
   \begin{subfigure}[t]{.49\textwidth}
     \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distPNN300_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
-    \caption{}
+    \subcaption{}
     \label{fig:pnn_score_prefit_300}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.49\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distPNN500_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
-    \caption{}
+    \subcaption{}
     \label{fig:pnn_score_prefit_500}
   \end{subfigure}
 
   \begin{subfigure}[t]{.49\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distPNN1000_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
-    \caption{}
+    \subcaption{}
     \label{fig:pnn_score_prefit_1000}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.49\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/prefit/Region_BMin0_incJet1_distPNN1600_J2_Y2015_DLLOS_T2_SpcTauHH_L0_Prefit_logy}
-    \caption{}
+    \subcaption{}
     \label{fig:pnn_score_prefit_1600}
   \end{subfigure}
 
@@ -747,13 +743,13 @@ over the approach of using dedicated classifiers.
 
   \begin{subfigure}[t]{.49\textwidth}
     \includegraphics[width=\textwidth]{mva/detuning}
-    \caption{Response of PNNs used in the search for resonant \HH production.}%
+    \subcaption{Response of PNNs used in the search for resonant \HH production.}%
     \label{fig:pnn_detuning}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.49\textwidth}
     \centering
     \includegraphics[width=\textwidth]{mva/interpolation}
-    \caption{Comparison of PNNs before hyperparameter optimisation when
+    \subcaption{Comparison of PNNs before hyperparameter optimisation when
       including (solid) and excluding (dashed) certain resonance masses in
       training.}%
     \label{fig:pnn_interpolation}
@@ -820,7 +816,7 @@ becoming the highest ranked PNN input for~$\mX > \SI{500}{\GeV}$.
 The sensitivity of the signal extraction method to the mass of the resonance
 decreases with increasing \mX, as is indicated by the width of the curves in
 \Cref{fig:pnn_detuning}. This decrease in mass sensitivity has two primary
-sources. First, the \mHH resolution increases approximately linearly with
+sources. First, the \mHH resolution decreases approximately linearly with
 \mX. Second, the PNN has high separation power between events from background
 processes and resonant \HH production at high mass.\footnote{The discrimination
   power of the PNN as a function of the \mX of the signal hypothesis is shown in

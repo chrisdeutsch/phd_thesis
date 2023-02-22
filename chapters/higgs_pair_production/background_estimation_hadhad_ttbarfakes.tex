@@ -193,12 +193,12 @@ in~\Cref{fig:ttbarsf_region_summary_prefit}.
   \begin{subfigure}[t]{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_offl}
 
-    \caption{Events without trigger-level \tauid requirements.}
+    \subcaption{Events without trigger-level \tauid requirements.}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/Summary_tau25}
 
-    \caption{Events passing \tauhadvis trigger-matching and the
+    \subcaption{Events passing \tauhadvis trigger-matching and the
       \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.}
   \end{subfigure}
 
@@ -265,11 +265,11 @@ regions.
 
   \begin{subfigure}{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3035_1P}
-    \caption{$\Ntracks = 1$ and $\SI{30}{\GeV} \leq \pT < \SI{35}{\GeV}$.}
+    \subcaption{$\Ntracks = 1$ and $\SI{30}{\GeV} \leq \pT < \SI{35}{\GeV}$.}
   \end{subfigure}\hfill%
   \begin{subfigure}{.48\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/tau25/TauPt3040_3P}
-    \caption{$\Ntracks = 3$ and $\SI{30}{\GeV} \leq \pT < \SI{40}{\GeV}$.}
+    \subcaption{$\Ntracks = 3$ and $\SI{30}{\GeV} \leq \pT < \SI{40}{\GeV}$.}
   \end{subfigure}
 
   \caption[Pre-fit \mTW distribution in two exemplary regions of the SF
@@ -351,23 +351,23 @@ in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_offl_tau25_1p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_postfit_SF_a}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_offl_tau25_3p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_postfit_SF_b}
   \end{subfigure}
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_tau25_1p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_postfit_SF_c}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_tau25_3p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_postfit_SF_d}
   \end{subfigure}
 
@@ -523,12 +523,12 @@ with low transverse momenta.
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_1p}
-    \caption{1-prong \tauhadvis}%
+    \subcaption{1-prong \tauhadvis}%
     \label{fig:ttbarSF_eigenvariations_1p}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/ttbarSF_eigvar_3p}
-    \caption{3-prong \tauhadvis}%
+    \subcaption{3-prong \tauhadvis}%
     \label{fig:ttbarSF_eigenvariations_3p}
   \end{subfigure}
 
@@ -814,7 +814,8 @@ of reconstructed objects are omitted except uncertainties on the \tauhadvis
 energy scale. Other uncertainties that can be expressed as alternative event
 weights, for example uncertainties on tagging efficiencies, are considered. Due
 to this constraint, the total deviation of the central value of the SFs from
-unity is assigned as an additional uncertainty on the measured SFs for \antitau.
+unity is assigned as an additional uncertainty when applying the measured SFs to
+\antitau.
 
 The measured SFs for \antitau are shown in~\Cref{fig:ttbarSF_antiid_SF}. The SFs
 are generally within \SI{20}{\percent} of unity. The same decorrelation
@@ -827,23 +828,23 @@ SFs to \antitau in the \hadhad channel. The context and impact of the SFs for
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/scale_factors/ttbarSF_antitau_offl_tau25_1p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_antiid_SF_a}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/scale_factors/ttbarSF_antitau_offl_tau25_3p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_antiid_SF_b}
   \end{subfigure}
 
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/scale_factors/ttbarSF_antitau_tau25_1p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_antiid_SF_c}
   \end{subfigure}\hfill%
   \begin{subfigure}[t]{.495\textwidth}
     \includegraphics[width=\textwidth]{ttbarSF/scale_factors/ttbarSF_antitau_tau25_3p}
-    \caption{}
+    \subcaption{}
     \label{fig:ttbarSF_antiid_SF_d}
   \end{subfigure}
 

@@ -74,8 +74,8 @@ are required to pass the tight (medium) identification working point to reduce
 backgrounds with non-prompt leptons or jets misidentified as electrons (muons).
 
 Electrons, muons, and \tauhadvis have to be geometrically matched to the
-corresponding object at the HLT that fulfilled the selection criteria of the
-trigger that selected the event.
+corresponding object at the HLT that fulfilled the criteria of the trigger that
+selected the event.
 % according to the trigger that selected the event.
 This requirement is referred to as \emph{trigger-matching}. Trigger-dependent
 \pT~thresholds are applied to electrons, muons, and \tauhadvis to ensure that
@@ -212,7 +212,7 @@ following:
 
   First, a purely calorimeter-based reconstruction of the \tauhadvis candidate
   is performed in the region of interest (ROI) provided by the L1 trigger. The
-  topo-cluster algorithm is applied to the calorimeter cells in the ROI, and the
+  topo-cluster algorithm is applied to the calorimeter cells in the ROI and the
   resulting topo-clusters are calibrated using the local hadronic
   calibration. The energy of \tauhadvis candidates is determined from clusters
   in a core region ($\Delta R < 0.2$) around the barycentre of topo-cluster
@@ -496,9 +496,8 @@ di-$\tau$ mass reconstruction using the MMC. Drell--Yan processes producing
 \taulepton pairs with low invariant mass are rejected by requiring
 $\mMMC > \SI{60}{\GeV}$. In addition, the SRs of the \lephad SLT and LTT channel
 only consider events fulfilling $\mBB < \SI{150}{\GeV}$. This selection allows
-to define an orthogonal \ttbar CR by inverting the selection on \mBB. This
-region is used for measurements related to the \faketauhadvis background
-estimation.
+defining an orthogonal \ttbar CR by inverting the selection on \mBB. This region
+is used for measurements related to the \faketauhadvis background estimation.
 
 The expected event yields after the SR selection in all three channels are
 summarised in~\Cref{tab:smhh_prefit_yields}. The bulk of events entering the SRs

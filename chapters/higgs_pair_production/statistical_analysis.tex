@@ -24,7 +24,7 @@ A separate statistical model is constructed for every signal hypothesis to be
 probed. These models describe the distribution of event counts in bins of the
 MVA discriminants in the SRs and \mll in the \ZHF~CR. They are built with
 \textsc{HistFactory} (cf.~\Cref{sec:histfactory}) and include the signal and
-background estimates, as well as the associated uncertainties, described in
+background estimates, including the associated uncertainties, described in
 previous sections. The discriminants used in all analysis channels are
 summarised in~\Cref{tab:fitted_variable}.
 
@@ -438,9 +438,10 @@ restricted to the \ZHF~CR in~\Cref{sec:bkg_zjets}.
 % discriminants, illustrating the background composition in a phase space
 % comparable to the one occupied by the signal process.
 
-The expected event yields in the two most signal-like bins is summarised in
+The expected event yields in the two most signal-like bins are summarised in
 \Cref{tab:postfit_yields_smhh_signallike} to illustrate the background
-composition in a phase space similar to the one occupied by the signal process.
+composition in a kinematic region similar to the one occupied by the signal
+process.
 % Top-quark: 3(ttbar):1(stop)
 In the \hadhad channel, the dominant background in the two most signal-like bins
 of the BDT is the production of \ZHF with an expectation of about 8 events. The
@@ -755,20 +756,20 @@ in~\Cref{sec:result_discussion}.
 \subsection{Results of the Search for Resonant \HH Production}%
 \label{sec:results_res}
 
-The search for resonant \HH production uses the cross
-section~$\sigma(\pp \to X \to \HH)$ as the POI. Otherwise, the statistical
-interpretation proceeds in analogy to the SM~\HH case after replacing the BDT/NN
-discriminants by PNN discriminants evaluated with mass parameters set to the \mX
-of the signal hypothesis of interest.
+In the search for resonant \HH production, the cross
+section~$\sigma(\pp \to X \to \HH)$ is used as the POI. Otherwise, the
+statistical interpretation proceeds in analogy to the SM~\HH case after
+replacing the BDT/NN discriminants by PNN discriminants evaluated with mass
+parameters set to the \mX of the signal hypothesis of interest.
 
 The PNN discriminants in the \hadhad~SR are shown for four exemplary mass points
 in~\Cref{fig:resonant_mva_postfit} after the background-only fit to observed
 data in all regions. Moreover, \Cref{tab:yields_postfit_resonant} summarises the
-expected number of events in a signal-like region of the PNN discriminant after
-the fit. Figures of the PNN discriminants in the \lephad channels are summarised
-in~\Cref{app:pnn_plots_lephad}. The background processes relevant to the search
-vary with the \mX of the considered signal hypothesis. For low-mass resonances,
-the dominant backgrounds are top-quark production and \faketauhadvis
+expected number of events in the most signal-like bins of the PNN discriminant
+after the fit. Figures of the PNN discriminants in the \lephad channels are
+summarised in~\Cref{app:pnn_plots_lephad}. The background processes relevant to
+the search vary with the \mX of the considered signal hypothesis. For low-mass
+resonances, the dominant backgrounds are top-quark production and \faketauhadvis
 backgrounds. These background processes become less important for larger \mX, at
 which point the production of \Zjets becomes the dominant background.
 
@@ -836,7 +837,7 @@ observed data show decent agreement with exception of the PNN discriminant for
 resonances with $\mX = \SI{1000}{\GeV}$ shown in~\Cref{fig:pnn1000_postfit}. In
 the most signal-like bin of the corresponding PNN distribution 14 events are
 observed, while the background-only model predicts a total of \num{6.29 +- 0.88}
-events. This represents a large excess in the number of observed events over the
+events. This represents a large excess in the observed number of events over the
 expectation.
 
 % Pvalues
@@ -1017,7 +1018,7 @@ play a more important role at low \mX.
   for the search for resonant \HH production.]{Breakdown of the variance of
     $\hat{\sigma}$, the MLE of the cross section $\sigma(pp \to X\to HH)$, by
     uncertainty category for the fit to observed data in all regions. The
-    decomposition is determined analogously to~\Cref{tab:breakdown_nonres}.}%
+    decomposition is determined in analogy to~\Cref{tab:breakdown_nonres}.}%
   \label{tab:breakdown_res}
 
   % A similar breakdown based on fits to Asimov data is given in
@@ -1106,7 +1107,7 @@ a single mass point. However, a background model that jointly describes all
 discriminants is required to generate toy experiments for the global
 significance estimation. The need for such a model was already indicated by the
 large width of the significance response in the signal injection tests
-(cf.~\Cref{fig:local_pvalues_injected}), which is caused by a partial overlap of
+(cf.~\Cref{fig:local_pvalues_injected}), which is caused by a partial overlap in
 events selected by the most signal-like bins of the PNN discriminants for
 adjacent mass points.
 
