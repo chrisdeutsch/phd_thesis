@@ -405,9 +405,9 @@ neural networks to combine the outputs of the following algorithms:
 \item[IP2D \& IP3D] The \textsc{IP2D} and \textsc{IP3D}
   algorithms~\cite{ATL-PHYS-PUB-2017-013} provide $b$-tagging discriminants
   based on likelihood-ratio classifiers constructed from the distribution of
-  impact parameter significances in $b$-, $c-$, and \emph{light}-jets. While
-  \textsc{IP2D} only considers the distribution of the transverse impact
-  parameter significance of tracks, \textsc{IP3D} considers the joint
+  impact parameter significances in $b$-, $c$-, and \emph{light}-quark
+  jets. While \textsc{IP2D} only considers the distribution of the transverse
+  impact parameter significance of tracks, \textsc{IP3D} considers the joint
   distribution of transverse and longitudinal impact parameter significances.
   In both cases, the likelihoods of all tracks in the jet are combined by
   neglecting any dependencies of the impact parameters between tracks.
@@ -418,7 +418,8 @@ neural networks to combine the outputs of the following algorithms:
   accomplished with a recurrent neural network taking the tracks of a jet as
   inputs. Track properties, such as the impact parameter significances, are
   passed to the network with every track. Based on these inputs, \textsc{RNNIP}
-  estimates the probability of a jet being a $b$-, $c$-, or \emph{light}-jet.
+  estimates the probability of a jet being a $b$-, $c$-, or
+  \emph{light}-quark jet.
 
 \item[SV1 \& JetFitter] The \textsc{SV1}~\cite{ATL-PHYS-PUB-2017-011} and
   \textsc{JetFitter}~\cite{ATL-PHYS-PUB-2018-025} algorithms reconstruct the
@@ -438,8 +439,8 @@ Selections on this discriminant define several $b$-tagging working points with
 different probabilities of correctly identifying a $b$-jet, referred to as the
 $b$-tagging efficiency. In this thesis, a working point with \SI{77}{\percent}
 $b$-tagging efficiency in simulated \ttbar events is used.  This working point
-has \emph{light}- and $c$-jet rejection factors of approximately 200 and 6 in
-simulated \ttbar events, respectively~\cite{FTAG-2019-07}.
+has $c$- and \emph{light}-quark jet rejection factors of approximately 6 and 200
+in simulated \ttbar events, respectively~\cite{FTAG-2019-07}.
 
 % Alternative source for rejection factors:
 % http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PLOTS/FTAG-2019-005/
