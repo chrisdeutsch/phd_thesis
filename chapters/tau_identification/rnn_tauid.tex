@@ -9,7 +9,7 @@ charged-particle tracks and topo-clusters in the calorimeters, hereafter
 abbreviated as tracks and clusters, are included as low-level inputs to the
 algorithm. Their inclusion targets the differences in charged- and
 neutral-hadron multiplicities and track- and calorimeter-based isolation between
-true- and \faketauhadvis. Tau identification is performed separately for 1- and
+true and \faketauhadvis. Tau identification is performed separately for 1- and
 3-prong \tauhadvis candidates due to their distinct signatures.
 
 
@@ -318,11 +318,11 @@ The classification score computed by the RNN \tauid is transformed to
 be approximately uniformly distributed for \truetauhadvis
 candidates. The transformed score, referred to as the RNN score and
 shown in~\Cref{fig:flattened_rnnscore}, allows the definition of working
-points for a specific \truetauhadvis identification efficiency target by
+points for a specific \truetauhadvisC identification efficiency target by
 applying a threshold to the score. Moreover, the transformation is
 derived in bins of \tauhadvis \pT (calorimeter-based \pT estimate at
 LC scale) and the average number of interactions per bunch crossing,
-$\mu$, to ensure that the \truetauhadvis efficiencies of working
+$\mu$, to ensure that the \truetauhadvisC efficiencies of working
 points remains approximately constant with changing \tauhadvis \pT or
 pile-up conditions. The same procedure is applied for the BDT-based
 \tauid algorithm.
