@@ -112,7 +112,7 @@ the local hadronic calibration is referred to as the LC scale.
 
 Topo-clusters are used as inputs for the reconstruction of higher-level physics
 objects in the ATLAS detector. For example, topo-clusters at EM and LC scale are
-used for the reconstruction of electrons and hadronic \taulepton decays,
+used for the reconstruction of electrons and hadronic \tauleptonC decays,
 respectively.
 
 
@@ -453,8 +453,8 @@ The \taulepton is the heaviest lepton in the SM with a mass of
 \SI{1.777}{\GeV}~\cite{pdg2020}. It is sufficiently massive to decay into final
 states with a charged lepton or hadrons. These decay modes are referred to as
 leptonic (\taulep) and hadronic (\tauhad) decay modes, respectively. The
-\taulepton decay and its branching ratios are depicted in
-\Cref{fig:tau_feynman_br}. The majority of \taulepton decays produce final
+\tauleptonC decay and its branching ratios are depicted in
+\Cref{fig:tau_feynman_br}. The majority of \tauleptonC decays produce final
 states with one or three charged hadrons, predominately $\pi^{\pm}$, which are
 referred to as 1- and 3-prong \tauhad, respectively.
 
@@ -490,17 +490,17 @@ referred to as 1- and 3-prong \tauhad, respectively.
   \caption[Feynman diagram and branching ratios of the $\tau^{-}$
   decay.]{Feynman diagram (a) and branching ratios (b) of the $\tau^{-}$ decay.
     The eigenstate coupling to the $u$-quark via the $W$ boson is denoted as
-    $d^\prime$.  The \taulepton decay branching ratios are taken from
+    $d^\prime$.  The branching ratios of the \tauleptonC decay are taken from
     Ref.~\cite{pdg2020} rounded to the nearest integer percentage.}%
   \label{fig:tau_feynman_br}
 \end{figure}
 
 At the ATLAS experiment, \tauleptons are reconstructed from the signature of
 their visible decay products, neglecting any neutrinos produced in the
-decay. Leptonic \taulepton decays are reconstructed as electrons or muons using
+decay. Leptonic \tauleptonC decays are reconstructed as electrons or muons using
 the reconstruction techniques previously introduced
 in~\Cref{sec:ele_rec,sec:muon_rec}. The remainder of this section focuses on the
-reconstruction of the visible decay products of hadronic \taulepton decays,
+reconstruction of the visible decay products of hadronic \tauleptonC decays,
 referred to as \tauhadvis, for which dedicated reconstruction techniques are
 employed. The reconstruction of \tauhadvis at the beginning of Run~2 is
 described in Ref.~\cite{ATLAS-CONF-2017-029}. Several improvements have been
@@ -531,7 +531,7 @@ candidate is referred to as the \tauhadvis axis.
 
 Tracks in the ID are associated to a \tauhadvis candidate if they are within
 $\Delta R < 0.4$ of the \tauhadvis axis. Tracks originating from charged hadrons
-produced in the \taulepton decay are identified by Boosted Decision
+produced in the \tauleptonC decay are identified by Boosted Decision
 Trees~\cite{duschinger}. These tracks are referred to as \emph{core} tracks,
 since they are usually found in the \emph{core region} of $\Delta R < 0.2$ about
 the \tauhadvis axis. The number of \emph{core} tracks associated to a \tauhadvis
@@ -551,7 +551,7 @@ respectively. \emph{Isolation} tracks are used to define variables sensitive to
 the charged-particle activity in the vicinity of the \tauhadvis candidate.
 
 Calibrations of the \tauhadvis candidate four-momentum to the \tauhadvis energy
-scale (TES) are derived using simulated events containing hadronic \taulepton
+scale (TES) are derived using simulated events containing hadronic \tauleptonC
 decays. Two different calibration methods are used:
 \begin{description}
 
@@ -570,13 +570,13 @@ decays. Two different calibration methods are used:
   calibrations performed using Boosted Regression Trees (BRT). This calibration
   uses information from \emph{Tau Particle Flow}
   reconstruction~\cite{PERF-2014-06}, which attempts to reconstruct individual
-  charged and neutral hadrons produced in the \taulepton decay, as inputs. Tau
+  charged and neutral hadrons produced in the \tauleptonC decay, as inputs. Tau
   Particle Flow provides an alternative method to reconstruct the \tauhadvis
   four-momentum with improved angular resolution, and improved energy resolution
   for \tauhadvis with transverse energies below approximately
   \SI{100}{\GeV}~\cite{PERF-2014-06}. The BRT also includes variables sensitive
   to the pile-up conditions, the shapes of showers in the calorimeter, and the
-  reconstructed \taulepton decay mode. In addition, \pTLC is included as an
+  reconstructed \tauleptonC decay mode. In addition, \pTLC is included as an
   input since the calorimeter-based estimate of \tauhadvis \pT is superior for
   high-\pT \tauhadvis.
 
@@ -587,7 +587,7 @@ from \SIrange[range-units=single]{5}{7}{\percent}~\cite{ATLAS-CONF-2017-029}.
 
 The \tauhadvis reconstruction techniques presented thus far have limited ability
 to reject \tauhadvis candidates originating from sources other than hadronic
-\taulepton decays. The primary source being quark- or gluon-initiated jets and
+\tauleptonC decays. The primary source being quark- or gluon-initiated jets and
 electrons that are mis-reconstructed as \tauhadvis candidates. A separate step,
 referred to as \tauid, is performed to reject \tauhadvis candidates from these
 sources. A description of \tauid is given in \Cref{sec:tauid}.
