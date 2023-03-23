@@ -3,22 +3,22 @@
 
 Thresholds on the RNN scores of 1- and 3-prong \tauhadvis candidates define
 working points of varying \tauhadvis identification efficiencies and
-\faketauhadvis rejection factors.\footnote{The \tauhadvis identification
+\faketauhadvisC rejection factors.\footnote{The \tauhadvis identification
   efficiency is the fraction of \truetauhadvis from simulated
   $\gammastar \to \tautau$ events that pass a given working point. The
-  \faketauhadvis rejection is the reciprocal of the fraction of \faketauhadvis
+  \faketauhadvisC rejection is the reciprocal of the fraction of \faketauhadvis
   from simulated dijet events that pass a given working point.} Four named
 working points are defined to cover the needs of most physics analyses at the
 ATLAS experiment. These working points are, in order of increasing
-\faketauhadvis rejection: \emph{very loose}, \emph{loose}, \emph{medium}, and
+\faketauhadvisC rejection: \emph{very loose}, \emph{loose}, \emph{medium}, and
 \emph{tight}.
 
 The targeted \tauhadvis identification efficiencies of the working points are
 summarised in \Cref{tab:rnn_wps}. The rejection of \faketauhadvis from simulated
 dijet events is compared between the BDT- and RNN-based \tauid algorithms for
 working points targeting the same \tauhadvis efficiency. The RNN \tauid improves
-the \faketauhadvis rejection by about \SI{80}{\percent} for 1-prong and between
-\SIrange{40}{80}{\percent} for 3-prong \tauhadvis candidates over the BDT-based
+the \faketauhadvisC rejection by about \SI{80}{\percent} for 1-prong and between
+\SIrange[range-units=single]{40}{80}{\percent} for 3-prong \tauhadvis candidates over the BDT-based
 method. The majority of these improvements stem from the inclusion of
 charge-particle track information in addition to the high-level variables also
 used in the BDT. The \emph{receiver operating characteristic curves} of both
@@ -32,7 +32,7 @@ algorithms are shown in \Cref{fig:tauid_rnn_bdt_roc_comparison}.
     \tauid. Only the targeted \tauhadvis efficiency (target \tauhadvis eff.) of
     the working points is given, which can deviate by ca.\ \SI{1}{\percent} from
     the efficiency observed in simulated $\gammastar \to \tautau$ events. The
-    \faketauhadvis rejection is evaluated using the \tauhadvis candidate sample
+    \faketauhadvisC rejection is evaluated using the \tauhadvis candidate sample
     from dijet events.}%
   \label{tab:rnn_wps}
 
@@ -48,7 +48,7 @@ algorithms are shown in \Cref{fig:tauid_rnn_bdt_roc_comparison}.
   based on RNN and BDT.]{Receiver operating characteristic curves of the \tauid
     algorithms based on RNN (solid) and BDT (dashed) shown separately for
     1-prong (red) and 3-prong (blue) \tauhadvis candidates. The true- and
-    \faketauhadvis efficiencies are evaluated using samples of \tauhadvis
+    \faketauhadvisC efficiencies are evaluated using samples of \tauhadvis
     candidates from $\gammastar \to \tautau$ and dijet events, respectively.}%
   \label{fig:tauid_rnn_bdt_roc_comparison}
 \end{figure}
@@ -114,15 +114,15 @@ The rejection of \faketauhadvis from simulated dijet events by the \emph{medium}
 \tauid working points of the BDT- and RNN-based methods is compared
 in~\Cref{fig:tauid_faketau_rej}. The comparison is performed separately for 1-
 and 3-prong \tauhadvis candidates and in bins of \tauhadvis \pT, \tauhadvis
-$|\eta|$, and $\mu$. In general, the \faketauhadvis rejection of \tauid is
+$|\eta|$, and $\mu$. In general, the \faketauhadvisC rejection of \tauid is
 analysis and process dependent\footnote{The ratio of quark- to gluon-initiated
-  jets affects the \faketauhadvis rejection since gluon-initiated jets are more
+  jets affects the \faketauhadvisC rejection since gluon-initiated jets are more
   easily rejected by \tauid. Additionally, the rejection depends on the \pT and
   \Ntracks of \faketauhadvis and thus on the selections applied by analyses.}
 and thus the comparison mainly serves as a benchmark of the identification
 algorithms.
 
-The \faketauhadvis rejection of \tauid increases with \tauhadvis
+The \faketauhadvisC rejection of \tauid increases with \tauhadvis
 candidate \pT, as is shown in
 \Cref{fig:tauid_faketau_rej_a,fig:tauid_faketau_rej_b}. This trend is
 partially explained by the increasing discrimination power of
@@ -138,15 +138,15 @@ jets.
 % the secondary vertex will, on average, have a larger displacement
 % from the PV.
 
-The RNN \tauid improves the \faketauhadvis rejection by a factor of
+The RNN \tauid improves the \faketauhadvisC rejection by a factor of
 two for 1- and 3-prong \tauhadvis candidates with
 $\pT > \SI{70}{\GeV}$ over the BDT-based approach at comparable
-working points. Similar behaviour of the \faketauhadvis rejection is
+working points. Similar behaviour of the \faketauhadvisC rejection is
 observed for both methods with respect to the pseudorapidity of
 \tauhadvis candidates. However, the RNN \tauid is more susceptible to
 pile-up compared to the BDT-based method. This is depicted
 in~\Cref{fig:tauid_faketau_rej_e,fig:tauid_faketau_rej_f} showing a
-degradation in \faketauhadvis rejection as the average number of
+degradation in \faketauhadvisC rejection as the average number of
 interactions per bunch crossing increases.
 
 \begin{figure}[htbp]

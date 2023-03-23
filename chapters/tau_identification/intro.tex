@@ -4,19 +4,20 @@ is applied to \tauhadvis candidates passing \tauhadvis reconstruction and aims
 to differentiate between candidates originating from \tauhad (\truetauhadvis)
 and those originating from non-\tauhad sources (\faketauhadvis). This step is
 necessary since \tauhadvis reconstruction is not optimised to reject
-\faketauhadvis but rather to correctly reconstruct \truetauhadvis and maintain
-high \tauhadvis reconstruction efficiencies.
-% More generally, the process of distinguishing between true- and \faketauhadvis
+\faketauhadvis candidates but rather to correctly reconstruct \truetauhadvis
+candidates and maintain high \tauhadvis reconstruction efficiencies.
+% More generally, the process of distinguishing between true and \faketauhadvis
 % is called \tauid.
 
-The dominant source of \faketauhadvis at the ATLAS experiment are quark- or
-gluon-initiated jets due to their similarity to the hadronic and jet-like
-signature of \tauhadvis. Electrons can be another, less abundant source of
-\faketauhadvis that have to be distinguished from \truetauhadvis using a
-dedicated algorithm (\emph{electron veto}). This chapter is concerned with the
-former source of \faketauhadvis and, in particular, with classifying the source
-of \tauhadvis candidates as either originating from \tauhad or from quark- or
-gluon-initiated jets. This process is referred to as \tauid hereafter.
+The dominant source of \faketauhadvis candidates at the ATLAS experiment are
+quark- or gluon-initiated jets due to their similarity to the hadronic and
+jet-like signature of \tauhadvis. Electrons can be another, less abundant source
+of \faketauhadvis candidates that have to be distinguished from \truetauhadvis
+candidates using a dedicated algorithm (\emph{electron veto}). This chapter is
+concerned with the former source of \faketauhadvis candidates and, in
+particular, with classifying the source of \tauhadvis candidates as either
+originating from \tauhad or from quark- or gluon-initiated jets. This process is
+referred to as \tauid hereafter.
 % More motivation? Say something about reducing mis-identification
 % rates to reduce backgrounds?
 
@@ -73,8 +74,9 @@ gluon-initiated jets:
   % Mean flight path of a p = 20 GeV tau is
   % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
 \item[\taulepton lifetime] The \taulepton has a proper lifetime of
-  \SI{2.9e-13}{\second} ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020} and
-  thus typically travels for a few millimetres inside the beampipe before
+  \SI{2.9e-13}{\second} ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020};
+  therefore, \tauleptons with momenta in the range of \SIrange{20}{100}{\GeV}
+  typically travel for a few millimetres inside the beampipe before
   decaying. The distance traversed by the \taulepton before its decay results in
   a decay vertex that is displaced from the PV. For \taulepton decay modes with
   three charged hadrons, this secondary vertex can be reconstructed and its

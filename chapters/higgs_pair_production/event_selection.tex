@@ -497,7 +497,7 @@ di-$\tau$ mass reconstruction using the MMC. Drell--Yan processes producing
 $\mMMC > \SI{60}{\GeV}$. In addition, the SRs of the \lephad SLT and LTT channel
 only consider events fulfilling $\mBB < \SI{150}{\GeV}$. This selection allows
 defining an orthogonal \ttbar CR by inverting the selection on \mBB. This region
-is used for measurements related to the \faketauhadvis background estimation.
+is used for measurements related to the \faketauhadvisC background estimation.
 
 The expected event yields after the SR selection in all three channels are
 summarised in~\Cref{tab:smhh_prefit_yields}. The bulk of events entering the SRs
@@ -512,7 +512,7 @@ in which a quark- or gluon-initiated jet is reconstructed as a \tauhadvis
   \caption[Event yields in the SRs prior to the fit.]{Event yields in the SRs
     prior to the fit. The expected yields are shown including all statistical
     and systematic uncertainties. The SM~\HH event yields are given for the SM
-    expectation. The \faketauhadvis background estimation technique employed in
+    expectation. The \faketauhadvisC background estimation technique employed in
     the \lephad channels does not distinguish between different sources of
     \faketauhadvis. The category ``other backgrounds'' combines minor
     contributions from $Z \to \tautau + (bl,cl,ll)$, $Z \to e^{+}e^{-}$,
@@ -527,14 +527,14 @@ in which a quark- or gluon-initiated jet is reconstructed as a \tauhadvis
   }
 \end{table}
 
-The SM~\HH acceptance times efficiency (\AccTimesEff) of the SR selections is
+The acceptance times efficiency (\AccTimesEff) for SM~\HH events in the SRs is
 summarised in~\Cref{tab:nonres_acc_times_eff} for all three channels. Compared
 to the previously published result in this
 channel~\cite{HIGG-2016-16-witherratum}, this analysis shows an increase in the
-SM~\HH \AccTimesEff by a factor of about 2 (1.5) for the \hadhad (\lephad)
-channel. This increase is a consequence of improved \tauhadvis reconstruction
-techniques and loosened identification requirements for \tauhadvis and \btagged
-jets.
+\AccTimesEff for SM~\HH events by a factor of about 2 (1.5) for the \hadhad
+(\lephad) channel. This increase is a consequence of improved \tauhadvis
+reconstruction techniques and loosened identification requirements for
+\tauhadvis and \btagged jets.
 % compared to the previous result.
 The reason for loosening the identification criteria is twofold: First, the
 \tauhadvis identification and $b$-tagging algorithms were significantly
@@ -558,23 +558,23 @@ improves with a less stringent object selection.
 \begin{table}[htbp]
   \centering
 
-  \caption[SM~\HH \AccTimesEff of the SR selections in all three
-  channels.]{SM~\HH \AccTimesEff of the SR selections in all three channels. The
-    \AccTimesEff is given as the fraction of selected events with respect to all
-    generated $pp \to \HH \to \bbbar\hadhad$ ($pp \to \HH \to \bbbar\lephad$)
-    events in the \hadhad (\lephad) channel. The signal acceptance of the
-    previous iteration of the $\HH \to \bbtautau$ search by the ATLAS
-    collaboration using \SI{36.1}{\per\femto\barn} of \pp~collision data is
-    shown in the last row. $\dagger$:~The SM~\HH \AccTimesEff is given for the
-    combination of \lephad SLT and LTT channel.}%
+  \caption[Acceptance times efficiency for SM~\HH events in the SRs.]{Acceptance
+    times efficiency for SM~\HH events in the SRs. The \AccTimesEff is given as
+    the fraction of selected events with respect to all generated
+    $pp \to \HH \to \bbbar\hadhad$ ($pp \to \HH \to \bbbar\lephad$) events in
+    the \hadhad (\lephad) channel. The signal acceptance of the previous
+    iteration of the $\HH \to \bbtautau$ search by the ATLAS collaboration using
+    \SI{36.1}{\per\femto\barn} of \pp~collision data is shown in the last
+    row. $\dagger$:~The \AccTimesEff is given for the combination of \lephad SLT
+    and LTT channel.}%
   \label{tab:nonres_acc_times_eff}
 
   \input{tables/signal_acceptance}
 \end{table}
 
-The majority of the increase in the SM \HH \AccTimesEff of the SR selections
-with respect to Ref.~\cite{HIGG-2016-16-witherratum} can be explained by the
-following improvements:
+The majority of the increase in the \AccTimesEff for SM~\HH events with respect
+to Ref.~\cite{HIGG-2016-16-witherratum} can be explained by the following
+improvements:
 \begin{description}
 
 \item[\tauhadvis track association] The introduction of a multivariate method
@@ -582,7 +582,7 @@ following improvements:
   cut-based method, lead to an overall improvement in the \tauhadvis selection
   efficiency due to the $\Ntracks \in \{1, 3\}$ requirement on \tauhadvis. The
   relative improvement in efficiency with respect to the cut-based method is
-  \SIrange{20}{30}{\percent} for 1-prong \tauhadvis in the \tauhadvis \pT range
+  \SIrange[range-units=single]{20}{30}{\percent} for 1-prong \tauhadvis in the \tauhadvis \pT range
   relevant for the SM \HH search.
   % \footnote{More than \SI{80}{\percent} of SM \HH events have a leading
   % \tauhadvis candidate with \pT less than \SI{150}{\GeV}.}
@@ -593,10 +593,10 @@ following improvements:
 
 \item[\Tauid] With the introduction of the RNN-based \tauid
   (cf.~\Cref{sec:tauid}), the rejection of \tauhadvis candidates originating
-  from quark- or gluon-initiated jets increased by \SIrange{40}{80}{\percent}
+  from quark- or gluon-initiated jets increased by \SIrange[range-units=single]{40}{80}{\percent}
   compared to the BDT-based algorithm. This allows for a change of the
   identification working point from the \emph{medium BDT} to the \emph{loose
-    RNN} working point while maintaining similar rates of \faketauhadvis
+    RNN} working point while maintaining similar rates of \faketauhadvisC
   backgrounds. As a result, a relative increase in \tauhadvis identification
   efficiency of about \SI{13}{\percent} (\SI{25}{\percent}) is achieved for
   1-prong (3-prong) \tauhadvis.
@@ -604,13 +604,13 @@ following improvements:
   Additionally, an improved algorithm to reject 1-prong \tauhadvis candidates
   originating from electrons based on a BDT discriminant ($e$-veto) is used
   in this search. This algorithm improves the tagging efficiency by
-  \SIrange{4}{5}{\percent} for 1-prong \tauhadvis compared to the previous
+  \SIrange[range-units=single]{4}{5}{\percent} for 1-prong \tauhadvis compared to the previous
   method. No $e$-veto is applied to 3-prong \tauhadvis candidates.
 
   % The algorithm replaced a method using the likelihood-based electron
   % identification score of an electron candidate geometrically matched to the
   % \tauhadvis, leading to a relative improvement in the tagging efficiency of
-  % \SIrange{4}{5}{\percent} for 1-prong \tauhadvis. No electron veto is applied
+  % \SIrange[range-units=single]{4}{5}{\percent} for 1-prong \tauhadvis. No electron veto is applied
   % to 3-prong \tauhadvis candidates.
 
 \item[$b$-tagging] Improved $b$-tagging algorithms allow for the use of working
@@ -628,17 +628,17 @@ following improvements:
   % (\textsc{RNNIP}) as an input~\cite{ATL-PHYS-PUB-2017-003}.
 
   % A comparison of the working points of the \textsc{MV2c10} and \textsc{DL1r}
-  % taggers with $b$-jet tagging efficiencies from \SIrange{70}{77}{\percent}
+  % taggers with $b$-jet tagging efficiencies from \SIrange[range-units=single]{70}{77}{\percent}
   % shows an improvement in the \emph{light}- and $c$-jet rejection of
-  % \SIrange{80}{100}{\percent} and \SIrange{20}{40}{\percent}, respectively,
+  % \SIrange[range-units=single]{80}{100}{\percent} and \SIrange[range-units=single]{20}{40}{\percent}, respectively,
   % for the \textsc{DL1r} tagger~\cite{FTAG-2019-07}.
 \end{description}
 These object-level efficiency improvements compound when considering the
 efficiencies at event-level
 % due to the selection of two $b$-tagged jets and two (one) reconstructed and
 % identified \tauhadvis in the SR of the \hadhad (\lephad) channel.
-and explain the majority of the increase in SM~\HH \AccTimesEff with respect to
-the previous search in this channel.
+and explain the majority of the increase in \AccTimesEff for SM~\HH events with
+respect to the previous search in this channel.
 
 The \AccTimesEff of the SR selection for signals from resonant \HH production
 are shown in \Cref{fig:signal_acceptance_resonant} as a function of the
@@ -706,7 +706,7 @@ of two \btagged jets in the SR.
 % \item[\ttbar CR] CRs defined in the \lephad channel
 %   by inverting the $\mBB$ selection of the SR. This region targets
 %   the production of \ttbar with a final state containing $\ell + \tauhadvis$
-%   and is used for the estimation of \faketauhadvis backgrounds from \ttbar
+%   and is used for the estimation of \faketauhadvisC backgrounds from \ttbar
 %   production in the \hadhad~(\Cref{sec:bkg_hadhad_ttbarfakes}) and \lephad
 %   channels~(\Cref{sec:bkg_lephad_combined_ff}).
 

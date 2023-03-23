@@ -9,7 +9,7 @@ charged-particle tracks and topo-clusters in the calorimeters, hereafter
 abbreviated as tracks and clusters, are included as low-level inputs to the
 algorithm. Their inclusion targets the differences in charged- and
 neutral-hadron multiplicities and track- and calorimeter-based isolation between
-true- and \faketauhadvis. Tau identification is performed separately for 1- and
+true and \faketauhadvis. Tau identification is performed separately for 1- and
 3-prong \tauhadvis candidates due to their distinct signatures.
 
 
@@ -151,7 +151,7 @@ candidates.%\todo{Add 2D plots in appendix?}
 \end{figure}
 
 The discrimination power of the RNN \tauid saturates after including the ten
-\pT-leading tracks; therefore, the sequence of tracks is truncated at this point
+highest-\pT tracks; therefore, the sequence of tracks is truncated at this point
 to reduce the computational resources required for training and evaluation of
 the networks.
 
@@ -209,9 +209,9 @@ candidates.
   \label{fig:tauid_low_level_variables_cluster}
 \end{figure}
 
-The classification performance of the RNN \tauid saturates after the
-inclusion of the six \ET-leading clusters, thus the sequence of input
-clusters is truncated at this point.
+The classification performance of the RNN \tauid saturates after the inclusion
+of the six highest-\ET clusters, thus the sequence of input clusters is
+truncated at this point.
 
 
 \subsection{Network Architecture}
@@ -318,11 +318,11 @@ The classification score computed by the RNN \tauid is transformed to
 be approximately uniformly distributed for \truetauhadvis
 candidates. The transformed score, referred to as the RNN score and
 shown in~\Cref{fig:flattened_rnnscore}, allows the definition of working
-points for a specific \truetauhadvis identification efficiency target by
+points for a specific \truetauhadvisC identification efficiency target by
 applying a threshold to the score. Moreover, the transformation is
 derived in bins of \tauhadvis \pT (calorimeter-based \pT estimate at
 LC scale) and the average number of interactions per bunch crossing,
-$\mu$, to ensure that the \truetauhadvis efficiencies of working
+$\mu$, to ensure that the \truetauhadvisC efficiencies of working
 points remains approximately constant with changing \tauhadvis \pT or
 pile-up conditions. The same procedure is applied for the BDT-based
 \tauid algorithm.

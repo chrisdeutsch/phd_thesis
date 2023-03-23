@@ -3,18 +3,18 @@ originates from a misidentified quark- or gluon-initiated jet are the
 second-largest background in the \hadhad channel. A fraction of
 \SI{85}{\percent} of events from this background stem from semi-leptonic decay
 modes of \ttbar. In these events, the selected \tauhadvis candidates consist of
-one true- and one \faketauhadvis. The remaining \SI{15}{\percent} are
+one true and one \faketauhadvis. The remaining \SI{15}{\percent} are
 \ttbarFakes events with two \faketauhadvis.
 % The fraction of \ttbarFakes events with both candidates being \faketauhadvis
 % is about \SI{15}{\percent} and thus comparatively small.
 The \ttbarFakes background is estimated using simulation after applying
-data-driven corrections in the form of \faketauhadvis scale factors (SFs)
+data-driven corrections in the form of \faketauhadvisC scale factors (SFs)
 measured in a CR enriched in \ttbar events. The SFs correct the \jettotauhadvis
 misidentification efficiencies predicted by simulation, which are not centrally
 calibrated by the ATLAS collaboration due to their process dependency.
 
 Before proceeding with the description of the method, differences between
-\faketauhadvis backgrounds from \ttbar and multi-jet are highlighted that
+\faketauhadvisC backgrounds from \ttbar and multi-jet are highlighted that
 motivate the use of different background estimation techniques:
 \begin{itemize}
 
@@ -25,25 +25,25 @@ motivate the use of different background estimation techniques:
   \tauhadvis passes \tauid, also called the \emph{fake rate}, depends on the
   type of parton that initiated the jet. In \ttbar events, \faketauhadvis
   predominately originate from quarks produced in decays of $W$~bosons, which
-  have larger fake rates than gluon-initiated jets. As a result, \faketauhadvis
+  have larger fake rates than gluon-initiated jets. As a result, \faketauhadvisC
   background estimation is inherently process dependent.
 
 \item In the \hadhad channel, no suitable \ttbarFakes CR can be defined that
-  separates \faketauhadvis backgrounds from \ttbar and multi-jet while
+  separates \faketauhadvisC backgrounds from \ttbar and multi-jet while
   maintaining sufficient statistical precision for background estimation. This
   necessitates defining a CR in $\ell + \tauhadvis$ ($\ell = e, \mu$) final
   states in which the multi-jet contribution can be neglected.
 
 \end{itemize}
-The main disadvantage of separately estimating the \faketauhadvis background
+The main disadvantage of separately estimating the \faketauhadvisC background
 from \ttbar and multi-jet is the inflation of systematic uncertainties on the
-estimate of the total \faketauhadvis background compared to a combined
+estimate of the total \faketauhadvisC background compared to a combined
 approach.\footnote{An example of a combined approach is the combined fake factor
   method employed in the \lephad channel. This method is summarised
   in~\Cref{sec:bkg_lephad_combined_ff}.}  However, these inflated uncertainties
 have little effect on the signal sensitivity for two reasons: First, the
 targeted signal processes have distinct kinematic properties that differentiate
-them from \faketauhadvis backgrounds. Second, the search is limited by
+them from \faketauhadvisC backgrounds. Second, the search is limited by
 statistical uncertainties as opposed to systematic ones.
 
 
@@ -52,7 +52,7 @@ statistical uncertainties as opposed to systematic ones.
 The CR for the SF measurement (SF-CR) targets final states with an electron or
 muon and a \tauhadvis candidate. The region definition is based on the
 selections applied in the \lephad channels, where a similar CR is used for
-\faketauhadvis background estimation. Minor changes are applied to its
+\faketauhadvisC background estimation. Minor changes are applied to its
 definition to ensure consistency with the SR selection of the \hadhad
 channel. The most important selection criteria and differences are briefly
 summarised:
@@ -84,7 +84,7 @@ summarised:
 
 % \footnote{Leptons $\ell$ and true \tauhadvis are have high
 % probability to be reconstructed with the correct electric charge in
-% the SF-CR. In \ttbar the \faketauhadvis candidate is more likely to
+% the SF-CR. In \ttbar the \faketauhadvisC candidate is more likely to
 % have opposite-sign electric charge . As a result, in the same-sign
 % region the quark/gluon composition of jets is likely different which
 % also affects the fake rates.}.
@@ -221,7 +221,7 @@ misidentification efficiencies. The transverse mass of the electron/muon and
 where $\Delta \phi$ is the angle between the lepton transverse momentum,
 $\myvec{p}_{\text{T}}^{\ell}$, and the missing transverse momentum, \pTmiss. The
 \mTW discriminant targets the differences between di- and semi-leptonic decay
-modes of \ttbar that are the primary sources of events with true- and
+modes of \ttbar that are the primary sources of events with true and
 \faketauhadvis, respectively. The differences are illustrated
 in~\Cref{fig:ttbarsf_mtw_pdf}, with di-leptonic decay modes of \ttbar showing a
 heavy tail towards large \mTW due to the presence of additional neutrinos, while
@@ -243,7 +243,7 @@ $W$~boson.
   \label{fig:ttbarsf_mtw_pdf}
 \end{figure}
 
-The \faketauhadvis SFs are measured using a simultaneous likelihood fit of the
+The \faketauhadvisC SFs are measured using a simultaneous likelihood fit of the
 binned \mTW distributions in all regions of \tauhadvis candidate \pT and
 \Ntracks. The fit model is constructed using simulated \ttbar, single-top, and
 \Vjets events. The sample of \ttbar events is split by whether the reconstructed
@@ -251,7 +251,7 @@ binned \mTW distributions in all regions of \tauhadvis candidate \pT and
 the \ttbar background, irrespective of whether events contain a \faketauhadvis,
 is free to vary in the model.  In every region of \tauhadvis candidate
 \Ntracks and \pT, an unconstrained SF is introduced that changes the
-normalisation of the \ttbarFakes background in this region. These \faketauhadvis
+normalisation of the \ttbarFakes background in this region. These \faketauhadvisC
 SFs are considered as the POIs of the measurement.
 
 The pre-fit expectation of the model in two exemplary regions is shown
@@ -335,7 +335,7 @@ to the \Vjets background.
 
 \subsubsection{Results of the Scale Factor Measurement}
 
-The measured \faketauhadvis SFs are shown in \Cref{fig:ttbarSF_postfit_SF}.
+The measured \faketauhadvisC SFs are shown in \Cref{fig:ttbarSF_postfit_SF}.
 % for all relevant \tauid criteria.
 The size of the corrections described by the SFs can reach up to
 \SI{55}{\percent} for \faketauhadvis of high \pT, where simulation overestimates
@@ -371,7 +371,7 @@ in~\Cref{fig:ttbarSF_postfit_SF_c,fig:ttbarSF_postfit_SF_d}.
     \label{fig:ttbarSF_postfit_SF_d}
   \end{subfigure}
 
-  \caption[\Faketauhadvis SFs for different \tauid criteria.]{\Faketauhadvis SFs
+  \caption[\FaketauhadvisC SFs for different \tauid criteria.]{\FaketauhadvisC SFs
     for different \tauid criteria. Figures~(a) and (b) compare the SFs with and
     without tau identification at the HLT. The effect of different
     \tauhadvis-triggers on the extracted SFs is shown in Figures~(c) and (d). In
@@ -402,7 +402,7 @@ to pass the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger and trigger-matching.
     of \tauhadvis candidates. Events with \tauhadvis \pT (\mTW) larger than
     \SI{200}{\GeV} (\SI{250}{\GeV}) are included in the last bin. The
     uncertainty band contains all statistical and systematic uncertainties,
-    including post-fit uncertainties on \faketauhadvis SFs and on the overall
+    including post-fit uncertainties on \faketauhadvisC SFs and on the overall
     \ttbar normalisation factor.}%
   \label{fig:ttbarSF_postfit_ptmtw}
 \end{figure}
@@ -454,7 +454,7 @@ SF measurement are expected.
 
 The limited discrimination power of \mTW in distinguishing \ttbar events with
 and without \faketauhadvis leads to large anti-correlations between
-\faketauhadvis SFs and the \ttbar normalisation factor. Due to this coupling,
+\faketauhadvisC SFs and the \ttbar normalisation factor. Due to this coupling,
 positive correlations are induced between the SFs themselves. This is
 illustrated in \Cref{fig:ttbarSF_corr_matrix} for an exemplary SF measurement.
 
@@ -464,11 +464,11 @@ illustrated in \Cref{fig:ttbarSF_corr_matrix} for an exemplary SF measurement.
 % in~\Cref{fig:ttbarSF_corr_matrix} showing the most relevant correlations between
 % parameters of interest and nuisance parameters.  The anti-correlations are a
 % result of the limited discrimination power of \mTW in distinguishing between
-% \ttbar with true- and \faketauhadvis, which is especially poor for low
+% \ttbar with true and \faketauhadvis, which is especially poor for low
 % \tauhadvis transverse momenta. Thus a change in the overall \ttbar
 % normalisation, affecting both \ttbar with true and \faketauhadvis, can be
-% partially compensated by an increase in the \faketauhadvis scale factors. This
-% coupling between \faketauhadvis scale factors and \ttbar normalisation
+% partially compensated by an increase in the \faketauhadvisC scale factors. This
+% coupling between \faketauhadvisC scale factors and \ttbar normalisation
 % introduces large positive correlations also between the scale factors
 % themselves.
 
@@ -478,9 +478,9 @@ illustrated in \Cref{fig:ttbarSF_corr_matrix} for an exemplary SF measurement.
   \includegraphics[scale=0.88]{ttbarSF/correlation_matrix}
 
   \caption[Post-fit correlation matrix between selected parameters of the
-  \faketauhadvis SF measurement for the \texttt{HLT\_tau25\_medium1\_tracktwo}
+  \faketauhadvisC SF measurement for the \texttt{HLT\_tau25\_medium1\_tracktwo}
   trigger.]{Post-fit correlation matrix between selected parameters of the
-    \faketauhadvis SF measurement for the \texttt{HLT\_tau25\_medium1\_tracktwo}
+    \faketauhadvisC SF measurement for the \texttt{HLT\_tau25\_medium1\_tracktwo}
     trigger. A reduced number of NPs is shown for illustration purposes. NPs are
     included if the absolute value of its correlation coefficient with at least
     one POI exceeds \SI{30}{\percent}.}%
@@ -535,8 +535,8 @@ with low transverse momenta.
   % Adding the deviations of all variations (\texttt{EIGEN0}--\texttt{EIGEN9})
   % from the nominal result in quadrature recovers the total uncertainty.
 
-  \caption[Systematic variations of the \faketauhadvis SFs for the
-  \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.]{\Faketauhadvis SF variations
+  \caption[Systematic variations of the \faketauhadvisC SFs for the
+  \texttt{HLT\_tau25\_medium1\_tracktwo} trigger.]{\FaketauhadvisC SF variations
     resulting from the decorrelation procedure applied to the measurement for
     the \texttt{HLT\_tau25\_medium1\_tracktwo} trigger. The two variations
     leading in the explained variance (\texttt{EIGEN0} and \texttt{EIGEN1}) as
@@ -546,11 +546,11 @@ with low transverse momenta.
 \end{figure}
 
 
-\subsubsection{Application of \Faketauhadvis Scale Factors in the \hadhad
+\subsubsection{Application of \FaketauhadvisC Scale Factors in the \hadhad
   Channel}
 
 The \ttbarFakes background in the SR of the \hadhad channel is estimated by
-applying \faketauhadvis SFs to \ttbar events from simulation with at least one
+applying \faketauhadvisC SFs to \ttbar events from simulation with at least one
 \faketauhadvis. These events are required to pass the SR selection criteria of
 the \hadhad channel, including the trigger selection described
 in~\Cref{sec:trigger}. The SFs are chosen depending on the trigger category and
@@ -607,7 +607,7 @@ determined. Second, an uncertainty on the extrapolation of the measured SFs from
 $\ell + \tauhadvis$ final states to final states with two \tauhadvis is derived.
 
 A systematic uncertainty accounting for the effect of \tauhadvis \pT (\ET)
-thresholds at the HLT~(L1 trigger) on the \faketauhadvis SFs is estimated. The
+thresholds at the HLT~(L1 trigger) on the \faketauhadvisC SFs is estimated. The
 nominal SF measurement is performed using \tauhadvis-triggers with thresholds of
 $\pT > \SI{25}{\GeV}$ at the HLT and $\ET > \SI{12}{\GeV}$ at the L1
 trigger~(\texttt{tau25}). However, triggers with higher thresholds are also
@@ -717,7 +717,7 @@ uncertainty for FF events has limited impact on the uncertainty of the total
 % this uncertainty.
 \Cref{tab:ttbarSF_yields} summarises the \ttbarFakes prediction in the \hadhad
 SR and compares it to the prediction from simulation without application of
-\faketauhadvis SFs.
+\faketauhadvisC SFs.
 % Generally, both predictions agree within uncertainties except for the
 % FT~component. The predicted number of FT~events is smaller after application
 % of \ttbarFake SFs due to SFs being smaller than unity for \faketauhadvis with
@@ -727,7 +727,7 @@ SR and compares it to the prediction from simulation without application of
 % relative uncertainty of \SI{13}{\percent}, agreeing with the uncorrected
 % estimate of the total yield within uncertainties. The expected number of
 % \ttbarFakes events is slightly smaller after correction since the measured
-% scale factors for high \pT \faketauhadvis tend to be smaller than unity. This
+% scale factors for high \pT \faketauhadvisC tend to be smaller than unity. This
 % is also reflected in the larger relative change of the the FT-component (the
 % leading \tauhadvis candidate is a \faketauhadvis), for which the
 % \faketauhadvis has an average \pT of \SI{65}{\GeV}.
@@ -746,11 +746,11 @@ SR and compares it to the prediction from simulation without application of
   % candidate is the \faketauhadvis, or both candidate are \faketauhadvis (FF).
 
   \caption[Expected number of \ttbarFakes events in the \hadhad SR with and
-  without application of the \faketauhadvis~SFs.]{Expected number of \ttbarFakes
+  without application of the \faketauhadvisC~SFs.]{Expected number of \ttbarFakes
     events in the \hadhad SR with (right) and without (left) application of the
-    \faketauhadvis~SFs. Only MC statistical uncertainties are shown for the
-    estimate without application of the \faketauhadvis~SFs. The background
-    estimate using the \faketauhadvis~SFs includes statistical uncertainties and
+    \faketauhadvisC~SFs. Only MC statistical uncertainties are shown for the
+    estimate without application of the \faketauhadvisC~SFs. The background
+    estimate using the \faketauhadvisC~SFs includes statistical uncertainties and
     all systematic uncertainties related to the SF method. Other experimental
     uncertainties are omitted.}%
   \label{tab:ttbarSF_yields}
@@ -764,7 +764,7 @@ SR and compares it to the prediction from simulation without application of
 % different parton shower programs. The \faketauhadvis \pT-dependent PS
 % uncertainty, affecting the TF- and FT-components of the background, has a
 % particularly large impact on the TF contribution. This is due to the large
-% uncertainty for 1-prong \faketauhadvis candidates, making up $\frac{3}{4}$ of
+% uncertainty for 1-prong \faketauhadvisC candidates, making up $\frac{3}{4}$ of
 % \faketauhadvis in \ttbar, at low transverse momenta as shown
 % in~\Cref{fig:ttbarSF_extrapol_shape_a}. Due to the momentum ordering, the
 % average \faketauhadvis \pT in \ttbarFakes (TF) is approximately \SI{40}{\GeV}.
@@ -778,7 +778,7 @@ SR and compares it to the prediction from simulation without application of
 % 90% PS uncertainty for 1-prong taus is anti-correlated due to sign-change of uncertainty
 
 
-\subsubsection{Estimation of \Faketauhadvis Scale Factors for Anti-\tauhadvis}
+\subsubsection{Estimation of \FaketauhadvisC Scale Factors for Anti-\tauhadvis}
 
 The estimation of the \multijet background in the \hadhad SR, which is described
 in~\Cref{sec:bkg_hadhad_ff}, requires a large subtraction of \ttbarFakes events
@@ -848,8 +848,8 @@ SFs to \antitau in the \hadhad channel. The context and impact of the SFs for
     \label{fig:ttbarSF_antiid_SF_d}
   \end{subfigure}
 
-  \caption[\Faketauhadvis SFs for anti-\tauhadvis and different \tauid criteria
-  applied at trigger-level.]{\Faketauhadvis SFs for anti-\tauhadvis and
+  \caption[\FaketauhadvisC SFs for anti-\tauhadvis and different \tauid criteria
+  applied at trigger-level.]{\FaketauhadvisC SFs for anti-\tauhadvis and
     different \tauid criteria applied at trigger-level. Figures~(a) and~(b)
     compare the SFs with and without \tauid at the HLT. The effect of different
     \tauhadvis-triggers on the extracted SFs is shown in~(c) and~(d). The last
