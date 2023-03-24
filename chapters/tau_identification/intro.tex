@@ -1,5 +1,5 @@
 This chapter describes a novel algorithm used at the ATLAS experiment to
-identify the visible decay products of hadronic \taulepton decays. The algorithm
+identify the visible decay products of hadronic \tauleptonC decays. The algorithm
 is applied to \tauhadvis candidates passing \tauhadvis reconstruction and aims
 to differentiate between candidates originating from \tauhad (\truetauhadvis)
 and those originating from non-\tauhad sources (\faketauhadvis). This step is
@@ -26,13 +26,13 @@ A number of features can be exploited to differentiate between
 gluon-initiated jets:
 \begin{description}
 
-\item[\taulepton mass] The \taulepton has a mass of
+\item[\tauleptonC mass] The \taulepton has a mass of
   \SI{1.777}{\GeV}~\cite{pdg2020} and is therefore sufficiently massive to decay
   hadronically while still having a small mass compared to the energy scales
   typically studied at the ATLAS experiment.
 
-  The \taulepton mass can be used as a feature directly by considering the
-  invariant mass of the visible daughter particles of hadronic \taulepton
+  The \tauleptonC mass can be used as a feature directly by considering the
+  invariant mass of the visible daughter particles of hadronic \tauleptonC
   decays. Ignoring reconstruction effects, this invariant mass is bounded by the
   mass of the \taulepton. This is not the case for \tauhadvis candidates
   originating from quark- or gluon-initiated jets, which do not have a strict
@@ -67,18 +67,18 @@ gluon-initiated jets:
     reconstructed object refers to a lack of activity in the vicinity of the
     object. The activity is often quantified using reconstructed
     charged-particle tracks or topo-clusters in a cone or annulus surrounding
-    the object.} of \tauhadvis candidates allow for the rejection of candidates
+    the object.} of \tauhadvis candidates can be used to reject candidates
   originating from quark- or gluon-initiated jets, which have a wider angular
   distribution of hadrons.
 
   % Mean flight path of a p = 20 GeV tau is
   % L = beta * gamma * c * tau = p/m0 * 87mu ~ 1mm
-\item[\taulepton lifetime] The \taulepton has a proper lifetime of
+\item[\tauleptonC lifetime] The \taulepton has a proper lifetime of
   \SI{2.9e-13}{\second} ($c \tau = \SI{87}{\micro\metre}$)~\cite{pdg2020};
   therefore, \tauleptons with momenta in the range of \SIrange{20}{100}{\GeV}
   typically travel for a few millimetres inside the beampipe before
   decaying. The distance traversed by the \taulepton before its decay results in
-  a decay vertex that is displaced from the PV. For \taulepton decay modes with
+  a decay vertex that is displaced from the PV. For \tauleptonC decay modes with
   three charged hadrons, this secondary vertex can be reconstructed and its
   displacement from the PV determined. For decay modes with only one charged
   hadron, the secondary vertex cannot be reconstructed directly. However, the
@@ -86,10 +86,10 @@ gluon-initiated jets:
   charged-hadron track can be used to gauge the incompatibility of the track
   with the PV. % , thus being sensitive to displaced decays of \tauleptons.
 
-  Features sensitive to the \taulepton lifetime can be used to distinguish
+  Features sensitive to the \tauleptonC lifetime can be used to distinguish
   \tauhad from light-quark- or gluon-initiated jets in which hadrons are
-  produced promptly at the PV. An exception are jets originating from $b$- and
-  $c$-quarks. These also contain displaced decays of $b$- or $c$-flavoured
+  produced promptly at the PV. An exception are jets originating from $b$ and
+  $c$~quarks. These also contain displaced decays of $b$- or $c$-flavoured
   hadrons. Nevertheless, the other features remain effective in discerning
   \tauhad from $b$- and $c$-jets.
 
