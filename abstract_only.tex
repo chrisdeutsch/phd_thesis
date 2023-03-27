@@ -1,0 +1,77 @@
+\documentclass[fontsize=11pt, paper=a4]{scrartcl}
+\usepackage[twoside=false, texlive=2020]{ubonn-thesis}
+\usepackage{thesis_defs}
+\usepackage{atlasmisc}
+\usepackage{atlasparticle}
+\usepackage{atlasunit}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{Search for Higgs Boson Pair Production in the\\$\bbbar\tautau$ Final State
+  with the ATLAS\\Experiment at the LHC}
+\subtitle{Dissertation Summary}
+\author{Christopher Deutsch}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\noindent A search for Higgs boson pair (\HH) production in final states with
+two $b$~quarks and two \tauleptons using \SI{139}{\per\femto\barn} of
+proton--proton collision data at a centre-of-mass energy of \SI{13}{\TeV}
+recorded by the ATLAS detector at the Large Hadron Collider is
+presented. Searches for Higgs boson pair production are vital for solidifying
+our understanding of electroweak symmetry breaking in the Standard Model (SM)
+since they serve as direct probes of the Higgs boson self-coupling. In addition,
+they can provide sensitivity to new physical phenomena introduced by theories
+beyond the SM (BSM).
+
+The search presented in this thesis targets channels with one or more hadronic
+\tauleptonC decays. It relies on effective \tauid algorithms, which are
+algorithms that distinguish signatures of hadronic \tauleptonC decays in the
+ATLAS detector from those of other sources, such as quark- or gluon-initiated
+jets. A novel \tauid algorithm based on recurrent neural networks is
+introduced. It exploits information from reconstructed charged-particle tracks,
+topological clusters of calorimeter cell signals, and purposefully constructed
+discriminating variables for \tauid. The new technique outperforms the method
+previously employed in the ATLAS experiment and has since become the default
+algorithm for \tauid.
+
+Three different types of Higgs boson pair production are considered in this
+thesis: non-resonant \HH production predicted by the SM (SM~\HH production);
+resonant \HH production via scalar, narrow-width resonances; and non-resonant
+\HH production with anomalous values of the Higgs boson self-coupling
+constant~\lambdahhh.
+% In all cases, machine learning methods are used to separate signal from
+% background events.
+
+The search for SM~\HH production targets the gluon--gluon fusion (\ggF) and
+vector boson fusion (VBF) production modes. No statistically significant
+deviation from the background-only hypothesis is observed; therefore, upper
+limits are set on the SM~\HH production cross section \xsecggfvbf and signal
+strength~$\mu = \xsecggfvbf / \xsecggfvbf^{\text{SM}}$, where
+$\xsecggfvbf^{\text{SM}}$ is the SM cross section prediction. The search yields
+upper limits of $\mu < \num{4.7}$ and $\xsecggfvbf < \SI{140}{\femto\barn}$ at
+\SI{95}{\percent} confidence level (CL).
+
+Various BSM theories predict the existence of new scalar particles~$X$ that are
+able to decay into pairs of Higgs bosons. Such scenarios are probed by
+performing a search for \HH production via intermediate resonances with masses
+ranging from \SIrange{251}{1600}{\GeV}. Over the considered mass range, the
+largest deviation from the background-only hypothesis is observed for a mass of
+\SI{1000}{\GeV} with a local (global) significance of $3.1\sigma$
+($2.0\sigma$). Upper limits are set on the $\pp \to X \to \HH$ production cross
+section, which range from \SIrange{20}{900}{\femto\barn} depending on the mass
+of the resonance.
+
+Finally, the search for SM~\HH production is reinterpreted in the context of
+anomalous values of the Higgs boson self-coupling constant. Upper limits at
+\SI{95}{\percent}~CL are set on the non-resonant \HH production cross section as
+a function of the self-coupling modifier
+$\klambda = \lambdahhh / \lambdahhh^{\text{SM}}$, where $\lambdahhh^{\text{SM}}$
+is the Higgs boson self-coupling predicted by the SM. The upper limits on the
+non-resonant \HH production cross section are compared to theory predictions,
+providing constraints on the self-coupling modifier of
+$\num{-2.4} \leq \klambda \leq 9.2$.
+
+\end{document}
